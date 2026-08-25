@@ -17,14 +17,51 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, aft
 import usbManager from '@ohos.usbManager';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
+import Utils from './Util.test';
 
 const TAG: string = "[USBDeviceStructTest]";
 let domain: int = 0x0000;
 let gEndpoint: usbManager.USBEndpoint | null = null;
 let gInterface: usbManager.USBInterface | null = null;
 let gConfig: usbManager.USBConfiguration | null = null;
+
+interface EndpointInfo {
+  usbInterface: usbManager.USBInterface;
+  usbEndpoint: usbManager.USBEndpoint;
+}
+
+function getEndpoint(device: usbManager.USBDevice, direction: number, type: number): EndpointInfo | undefined {
+  let usbConfigs: Array<usbManager.USBConfiguration> = device.configs;
+  let usbInterface: usbManager.USBInterface | undefined = undefined;
+  let usbEndpoint: usbManager.USBEndpoint | undefined = undefined;
+  for (let i = 0; i < usbConfigs.length; i++) {
+    let usbInterfaces: Array<usbManager.USBInterface> = usbConfigs[i]!.interfaces;
+    for (let j = 0; j < usbInterfaces.length; j++) {
+      let usbEndpoints: Array<usbManager.USBEndpoint> = usbInterfaces[j]!.endpoints;
+      usbEndpoint = usbEndpoints.find((value: usbManager.USBEndpoint): boolean => {
+        return value.direction === direction && value.type === type;
+      });
+      if (usbEndpoint !== undefined) {
+        usbInterface = usbInterfaces[j]!;
+        break;
+      }
+    }
+    if (usbEndpoint !== undefined) {
+      break;
+    }
+  }
+  if (usbEndpoint === undefined || usbInterface === undefined) {
+    hilog.error(domain, TAG, '%{public}s', 'getEndpoint: no matching endpoint found');
+    return undefined;
+  }
+  return { usbInterface: usbInterface, usbEndpoint: usbEndpoint };
+}
+
 let gAccessory: usbManager.USBAccessory | null = null;
 let gCallbackData: usbManager.SubmitTransferCallback | null = null;
+
+const TRANSFER_TIMEOUT: int = 8000;
+const GRACE_TIMEOUT: int = 500;
 
 function refreshDevice(): boolean {
   gEndpoint = null;
@@ -32,24 +69,37 @@ function refreshDevice(): boolean {
   gConfig = null;
   try {
     let deviceList: Array<usbManager.USBDevice> = usbManager.getDevices();
+    hilog.info(domain, TAG, '%{public}s', `refreshDevice: found ${deviceList.length} device(s)`);
     if (deviceList.length === 0) {
       return false;
     }
-    let configs: Array<usbManager.USBConfiguration> = deviceList[0].configs;
+    let device: usbManager.USBDevice = deviceList[0]!;
+    hilog.info(domain, TAG, '%{public}s',
+      `device[0]: name=${device.name}, busNum=${device.busNum}, devAddress=${device.devAddress}, vendorId=${device.vendorId}, productId=${device.productId}, class=${device.clazz}, subClass=${device.subClass}, protocol=${device.protocol}, configs=${device.configs.length}`);
+    let configs: Array<usbManager.USBConfiguration> = deviceList[0]!.configs;
     if (configs.length === 0) {
+      hilog.info(domain, TAG, '%{public}s', 'refreshDevice: no configs');
       return false;
     }
-    gConfig = configs[0];
-    let interfaces: Array<usbManager.USBInterface> = configs[0].interfaces;
+    gConfig = configs[0]!;
+    hilog.info(domain, TAG, '%{public}s',
+      `config[0]: id=${gConfig!.id}, name=${gConfig!.name}, attributes=${gConfig!.attributes}, maxPower=${gConfig!.maxPower}, isSelfPowered=${gConfig!.isSelfPowered}, isRemoteWakeup=${gConfig!.isRemoteWakeup}, interfaces=${gConfig!.interfaces.length}`);
+    let interfaces: Array<usbManager.USBInterface> = configs[0]!.interfaces;
     if (interfaces.length === 0) {
+      hilog.info(domain, TAG, '%{public}s', 'refreshDevice: no interfaces');
       return false;
     }
-    gInterface = interfaces[0];
-    let endpoints: Array<usbManager.USBEndpoint> = interfaces[0].endpoints;
+    gInterface = interfaces[0]!;
+    hilog.info(domain, TAG, '%{public}s',
+      `interface[0]: id=${gInterface!.id}, name=${gInterface!.name}, class=${gInterface!.clazz}, subClass=${gInterface!.subClass}, protocol=${gInterface!.protocol}, alternateSetting=${gInterface!.alternateSetting}, endpoints=${gInterface!.endpoints.length}`);
+    let endpoints: Array<usbManager.USBEndpoint> = interfaces[0]!.endpoints;
     if (endpoints.length === 0) {
+      hilog.info(domain, TAG, '%{public}s', 'refreshDevice: no endpoints');
       return false;
     }
-    gEndpoint = endpoints[0];
+    gEndpoint = endpoints[0]!;
+    hilog.info(domain, TAG, '%{public}s',
+      `endpoint[0]: addr=${gEndpoint!.endpointAddr}, direction=${gEndpoint!.direction}, type=${gEndpoint!.type}, attributes=${gEndpoint!.attributes}, interval=${gEndpoint!.interval}, maxPacketSize=${gEndpoint!.maxPacketSize}, interfaceId=${gEndpoint!.interfaceId}`);
     return true;
   } catch (error) {
     hilog.error(domain, TAG, '%{public}s', `refreshDevice error: ${(error as BusinessError).message}`);
@@ -61,10 +111,13 @@ function refreshAccessory(): boolean {
   gAccessory = null;
   try {
     let accList: Array<usbManager.USBAccessory> = usbManager.getAccessoryList();
+    hilog.info(domain, TAG, '%{public}s', `refreshAccessory: found ${accList.length} accessory(ies)`);
     if (accList.length === 0) {
       return false;
     }
-    gAccessory = accList[0];
+    gAccessory = accList[0]!;
+    hilog.info(domain, TAG, '%{public}s',
+      `accessory[0]: manufacturer=${gAccessory!.manufacturer}, product=${gAccessory!.product}, description=${gAccessory!.description}, version=${gAccessory!.version}, serial=${gAccessory!.serialNumber}`);
     return true;
   } catch (error) {
     hilog.info(domain, TAG, '%{public}s', `refreshAccessory no accessory: ${(error as BusinessError).message}`);
@@ -82,51 +135,33 @@ async function submitIsoTransfer(): Promise<boolean> {
     if (deviceList.length === 0) {
       return false;
     }
-    let device: usbManager.USBDevice = deviceList[0];
-    let isoEndpoint: usbManager.USBEndpoint | null = null;
-    let configs: Array<usbManager.USBConfiguration> = device.configs;
-    for (let i = 0; i < configs.length; i++) {
-      let interfaces: Array<usbManager.USBInterface> = configs[i].interfaces;
-      for (let j = 0; j < interfaces.length; j++) {
-        let endpoints: Array<usbManager.USBEndpoint> = interfaces[j].endpoints;
-        for (let k = 0; k < endpoints.length; k++) {
-          if (endpoints[k].type === usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS) {
-            isoEndpoint = endpoints[k];
-            isoIface = interfaces[j];
-            break;
-          }
-        }
-        if (isoEndpoint !== null) {
-          break;
-        }
-      }
-      if (isoEndpoint !== null) {
-        break;
-      }
-    }
-    if (isoEndpoint === null || isoIface === null) {
+    let device: usbManager.USBDevice = deviceList[0]!;
+    let endpointInfo: EndpointInfo | undefined = getEndpoint(device,
+      usbManager.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE,
+      usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS);
+    if (endpointInfo === undefined) {
+      hilog.info(domain, TAG, '%{public}s', 'submitIsoTransfer: no isochronous OUT endpoint found');
       return false;
     }
+    let isoEndpoint: usbManager.USBEndpoint = endpointInfo.usbEndpoint;
+    isoIface = endpointInfo.usbInterface;
+    hilog.info(domain, TAG, '%{public}s',
+      `submitIsoTransfer: found iso endpoint addr=${isoEndpoint.address}, type=${isoEndpoint.type}, direction=${isoEndpoint.direction}, maxPacketSize=${isoEndpoint.maxPacketSize}, iface id=${isoIface.id}`);
     if (!usbManager.hasRight(device.name)) {
       await usbManager.requestRight(device.name);
     }
     let devPipe: usbManager.USBDevicePipe = usbManager.connectDevice(device);
     pipe = devPipe;
-    let ret: int = usbManager.claimInterface(devPipe, isoIface, true);
+    let iface: usbManager.USBInterface = isoIface;
+    let ret: int = usbManager.claimInterface(devPipe, iface, true);
     if (ret !== 0) {
       hilog.error(domain, TAG, '%{public}s', `submitIsoTransfer claimInterface failed, ret: ${ret}`);
       usbManager.closePipe(devPipe);
       return false;
     }
     isClaimed = true;
-    const TRANSFER_TIMEOUT: int = 8000;
-    let resolveTransfer: (() => void) | null = null;
-    const transferWait: Promise<void> = new Promise<void>((resolve: () => void): void => {
-      resolveTransfer = resolve;
-      setTimeout(resolve, TRANSFER_TIMEOUT);
-    });
+    let transferWait: Promise<int> = Utils.msSleep(TRANSFER_TIMEOUT);
     let endpointAddr: int = isoEndpoint.address;
-    let iface: usbManager.USBInterface = isoIface;
     let transferParams: usbManager.UsbDataTransferParams = {
       devPipe: devPipe,
       flags: usbManager.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK,
@@ -134,19 +169,21 @@ async function submitIsoTransfer(): Promise<boolean> {
       type: usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS,
       timeout: 5000,
       length: 16,
-      callback: (err: BusinessError | null, data: usbManager.SubmitTransferCallback): void => {
+      callback: (err: BusinessError | null, data: usbManager.SubmitTransferCallback | undefined): void => {
         if (err !== null) {
-          hilog.error(domain, TAG, '%{public}s', `submitIsoTransfer callback err: ${err.code}, ${err.message}`);
+          hilog.error(domain, TAG, '%{public}s', `submitIsoTransfer callback err: ${err!.code}, ${err!.message}`);
         }
-        gCallbackData = data;
-        if (resolveTransfer !== null) {
-          resolveTransfer();
+        if (data !== null && data !== undefined) {
+          gCallbackData = data;
+          hilog.info(domain, TAG, '%{public}s',
+            `submitIsoTransfer callback: status=${data.status}, isoPacketDescs.length=${data.isoPacketDescs.length}`);
         }
         try {
           usbManager.releaseInterface(devPipe, iface);
           usbManager.closePipe(devPipe);
         } catch (cleanupError) {
-          hilog.error(domain, TAG, '%{public}s', `submitIsoTransfer cleanup error: ${(cleanupError as BusinessError).message}`);
+          hilog.error(domain, TAG, '%{public}s',
+            `submitIsoTransfer cleanup error: ${(cleanupError as BusinessError).message}`);
         }
       },
       userData: new Uint8Array(16),
@@ -156,12 +193,14 @@ async function submitIsoTransfer(): Promise<boolean> {
     try {
       usbManager.usbSubmitTransfer(transferParams);
     } catch (submitError) {
-      hilog.error(domain, TAG, '%{public}s', `submitIsoTransfer usbSubmitTransfer failed: ${(submitError as BusinessError).message}`);
+      hilog.error(domain, TAG, '%{public}s',
+        `submitIsoTransfer usbSubmitTransfer failed: ${(submitError as BusinessError).message}`);
       try {
         usbManager.releaseInterface(devPipe, iface);
         usbManager.closePipe(devPipe);
       } catch (cleanupError) {
-        hilog.error(domain, TAG, '%{public}s', `submitIsoTransfer cleanup error: ${(cleanupError as BusinessError).message}`);
+        hilog.error(domain, TAG, '%{public}s',
+          `submitIsoTransfer cleanup error: ${(cleanupError as BusinessError).message}`);
       }
       return false;
     }
@@ -171,18 +210,17 @@ async function submitIsoTransfer(): Promise<boolean> {
       try {
         usbManager.usbCancelTransfer(transferParams);
       } catch (cancelError) {
-        hilog.error(domain, TAG, '%{public}s', `submitIsoTransfer usbCancelTransfer failed: ${(cancelError as BusinessError).message}`);
+        hilog.error(domain, TAG, '%{public}s',
+          `submitIsoTransfer usbCancelTransfer failed: ${(cancelError as BusinessError).message}`);
       }
-      const GRACE_TIMEOUT: int = 500;
-      await new Promise<void>((resolve: () => void): void => {
-        setTimeout(resolve, GRACE_TIMEOUT);
-      });
+      await Utils.msSleep(GRACE_TIMEOUT);
       if (gCallbackData === null) {
         try {
           usbManager.releaseInterface(devPipe, iface);
           usbManager.closePipe(devPipe);
         } catch (cleanupError) {
-          hilog.error(domain, TAG, '%{public}s', `submitIsoTransfer cleanup error: ${(cleanupError as BusinessError).message}`);
+          hilog.error(domain, TAG, '%{public}s',
+            `submitIsoTransfer cleanup error: ${(cleanupError as BusinessError).message}`);
         }
       }
       return false;
@@ -197,24 +235,43 @@ async function submitIsoTransfer(): Promise<boolean> {
         }
         usbManager.closePipe(pipe);
       } catch (cleanupError) {
-        hilog.error(domain, TAG, '%{public}s', `submitIsoTransfer cleanup error: ${(cleanupError as BusinessError).message}`);
+        hilog.error(domain, TAG, '%{public}s',
+          `submitIsoTransfer cleanup error: ${(cleanupError as BusinessError).message}`);
       }
     }
     return false;
   }
 }
 
-export default function USBDeviceStructTest() {
-  describe('USBDeviceStructTest', () => {
-    let isDeviceReady: boolean = false;
-    let isAccessoryReady: boolean = false;
-    let isIsoReady: boolean = false;
+type NullCheckRef = usbManager.USBEndpoint | usbManager.USBInterface | usbManager.USBConfiguration |
+usbManager.USBAccessory | usbManager.SubmitTransferCallback | null;
 
+function skipIfNull(ref: NullCheckRef, label: string, done: () => void): boolean {
+  if (ref === null) {
+    hilog.info(domain, TAG, `no ${label}, skip`);
+    done();
+    return true;
+  }
+  return false;
+}
+
+function isValidTransferStatus(status: usbManager.UsbTransferStatus): boolean {
+  return status === usbManager.UsbTransferStatus.TRANSFER_COMPLETED
+    || status === usbManager.UsbTransferStatus.TRANSFER_ERROR
+    || status === usbManager.UsbTransferStatus.TRANSFER_TIMED_OUT
+    || status === usbManager.UsbTransferStatus.TRANSFER_CANCELED
+    || status === usbManager.UsbTransferStatus.TRANSFER_STALL
+    || status === usbManager.UsbTransferStatus.TRANSFER_NO_DEVICE
+    || status === usbManager.UsbTransferStatus.TRANSFER_OVERFLOW;
+}
+
+export default function USBDeviceStructTest(): void {
+  describe('USBDeviceStructTest', (): void => {
     beforeAll(async (): Promise<void> => {
-      isDeviceReady = refreshDevice();
-      isAccessoryReady = refreshAccessory();
-      if (isDeviceReady) {
-        isIsoReady = await submitIsoTransfer();
+      let deviceReady: boolean = refreshDevice();
+      let accessoryReady: boolean = refreshAccessory();
+      if (deviceReady) {
+        await submitIsoTransfer();
       }
     })
 
@@ -239,27 +296,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBEndpointAttributes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBEndpointAttributes001 start');
-      if (gEndpoint === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBEndpointAttributes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gEndpoint, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let endpoint: usbManager.USBEndpoint = gEndpoint;
-          let attributes: int = endpoint.attributes;
+          let attributes: int = gEndpoint!.attributes;
           hilog.info(domain, TAG, 'attributes: ' + attributes);
-          expect(typeof(attributes)).assertEqual("int");
           expect(attributes >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBEndpointAttributes001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBEndpointAttributes001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBEndpointInterval001
@@ -269,27 +322,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBEndpointInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBEndpointInterval001 start');
-      if (gEndpoint === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBEndpointInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gEndpoint, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let endpoint: usbManager.USBEndpoint = gEndpoint;
-          let interval: int = endpoint.interval;
+          let interval: int = gEndpoint!.interval;
           hilog.info(domain, TAG, 'interval: ' + interval);
-          expect(typeof(interval)).assertEqual("int");
           expect(interval >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBEndpointInterval001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBEndpointInterval001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBEndpointMaxPacketSize001
@@ -299,27 +348,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBEndpointMaxPacketSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBEndpointMaxPacketSize001 start');
-      if (gEndpoint === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBEndpointMaxPacketSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gEndpoint, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let endpoint: usbManager.USBEndpoint = gEndpoint;
-          let maxPacketSize: int = endpoint.maxPacketSize;
+          let maxPacketSize: int = gEndpoint!.maxPacketSize;
           hilog.info(domain, TAG, 'maxPacketSize: ' + maxPacketSize);
-          expect(typeof(maxPacketSize)).assertEqual("int");
           expect(maxPacketSize > 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBEndpointMaxPacketSize001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBEndpointMaxPacketSize001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBEndpointDirection001
@@ -329,27 +374,24 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBEndpointDirection001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBEndpointDirection001 start');
-      if (gEndpoint === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBEndpointDirection001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gEndpoint, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let endpoint: usbManager.USBEndpoint = gEndpoint;
-          let direction: usbManager.USBRequestDirection = endpoint.direction;
+          let direction: usbManager.USBRequestDirection = gEndpoint!.direction;
           hilog.info(domain, TAG, 'direction: ' + direction);
           expect(direction === usbManager.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE
             || direction === usbManager.USBRequestDirection.USB_REQUEST_DIR_FROM_DEVICE).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBEndpointDirection001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBEndpointDirection001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBEndpointAddr001
@@ -359,27 +401,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBEndpointAddr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBEndpointAddr001 start');
-      if (gEndpoint === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBEndpointAddr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gEndpoint, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let endpoint: usbManager.USBEndpoint = gEndpoint;
-          let endpointAddr: int = endpoint.endpointAddr;
+          let endpointAddr: int = gEndpoint!.endpointAddr;
           hilog.info(domain, TAG, 'endpointAddr: ' + endpointAddr);
-          expect(typeof(endpointAddr)).assertEqual("int");
           expect(endpointAddr >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBEndpointAddr001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBEndpointAddr001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBEndpointType001
@@ -389,28 +427,25 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBEndpointType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBEndpointType001 start');
-      if (gEndpoint === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBEndpointType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gEndpoint, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let endpoint: usbManager.USBEndpoint = gEndpoint;
-          let type: int = endpoint.type;
+          let type: int = gEndpoint!.type;
           hilog.info(domain, TAG, 'type: ' + type);
           expect(type === usbManager.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS
             || type === usbManager.UsbEndpointTransferType.TRANSFER_TYPE_BULK
             || type === usbManager.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBEndpointType001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBEndpointType001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBEndpointInterfaceId001
@@ -420,28 +455,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBEndpointInterfaceId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBEndpointInterfaceId001 start');
-      if (gEndpoint === null || gInterface === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBEndpointInterfaceId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gEndpoint, 'device', done) || skipIfNull(gInterface, 'interface', done)) {
+          return Promise.resolve();
+        }
         try {
-          let endpoint: usbManager.USBEndpoint = gEndpoint;
-          let iface: usbManager.USBInterface = gInterface;
-          let interfaceId: int = endpoint.interfaceId;
-          hilog.info(domain, TAG, 'interfaceId: ' + interfaceId + ', interface.id: ' + iface.id);
-          expect(typeof(interfaceId)).assertEqual("int");
-          expect(interfaceId === iface.id).assertTrue();
+          let interfaceId: int = gEndpoint!.interfaceId;
+          hilog.info(domain, TAG, 'interfaceId: ' + interfaceId + ', interface.id: ' + gInterface!.id);
+          expect(interfaceId === gInterface!.id).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBEndpointInterfaceId001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBEndpointInterfaceId001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBInterfaceId001
@@ -451,27 +481,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBInterfaceId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBInterfaceId001 start');
-      if (gInterface === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBInterfaceId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gInterface, 'interface', done)) {
+          return Promise.resolve();
+        }
         try {
-          let iface: usbManager.USBInterface = gInterface;
-          let id: int = iface.id;
+          let id: int = gInterface!.id;
           hilog.info(domain, TAG, 'id: ' + id);
-          expect(typeof(id)).assertEqual("int");
           expect(id >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBInterfaceId001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBInterfaceId001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBInterfaceProtocol001
@@ -481,27 +507,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBInterfaceProtocol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBInterfaceProtocol001 start');
-      if (gInterface === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBInterfaceProtocol001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gInterface, 'interface', done)) {
+          return Promise.resolve();
+        }
         try {
-          let iface: usbManager.USBInterface = gInterface;
-          let protocol: int = iface.protocol;
+          let protocol: int = gInterface!.protocol;
           hilog.info(domain, TAG, 'protocol: ' + protocol);
-          expect(typeof(protocol)).assertEqual("int");
           expect(protocol >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBInterfaceProtocol001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBInterfaceProtocol001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBInterfaceClazz001
@@ -511,27 +533,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBInterfaceClazz001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBInterfaceClazz001 start');
-      if (gInterface === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBInterfaceClazz001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gInterface, 'interface', done)) {
+          return Promise.resolve();
+        }
         try {
-          let iface: usbManager.USBInterface = gInterface;
-          let clazz: int = iface.clazz;
+          let clazz: int = gInterface!.clazz;
           hilog.info(domain, TAG, 'clazz: ' + clazz);
-          expect(typeof(clazz)).assertEqual("int");
           expect(clazz >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBInterfaceClazz001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBInterfaceClazz001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBInterfaceSubClass001
@@ -541,27 +559,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBInterfaceSubClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBInterfaceSubClass001 start');
-      if (gInterface === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBInterfaceSubClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gInterface, 'interface', done)) {
+          return Promise.resolve();
+        }
         try {
-          let iface: usbManager.USBInterface = gInterface;
-          let subClass: int = iface.subClass;
+          let subClass: int = gInterface!.subClass;
           hilog.info(domain, TAG, 'subClass: ' + subClass);
-          expect(typeof(subClass)).assertEqual("int");
           expect(subClass >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBInterfaceSubClass001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBInterfaceSubClass001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBInterfaceAlternateSetting001
@@ -571,27 +585,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBInterfaceAlternateSetting001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBInterfaceAlternateSetting001 start');
-      if (gInterface === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBInterfaceAlternateSetting001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gInterface, 'interface', done)) {
+          return Promise.resolve();
+        }
         try {
-          let iface: usbManager.USBInterface = gInterface;
-          let alternateSetting: int = iface.alternateSetting;
+          let alternateSetting: int = gInterface!.alternateSetting;
           hilog.info(domain, TAG, 'alternateSetting: ' + alternateSetting);
-          expect(typeof(alternateSetting)).assertEqual("int");
           expect(alternateSetting >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBInterfaceAlternateSetting001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBInterfaceAlternateSetting001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBInterfaceName001
@@ -601,26 +611,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBInterfaceName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBInterfaceName001 start');
-      if (gInterface === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBInterfaceName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gInterface, 'interface', done)) {
+          return Promise.resolve();
+        }
         try {
-          let iface: usbManager.USBInterface = gInterface;
-          let name: string = iface.name;
+          let name: string = gInterface!.name;
           hilog.info(domain, TAG, 'name: ' + name);
-          expect(typeof(name)).assertEqual("string");
+          expect(typeof (name)).assertEqual("string");
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBInterfaceName001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBInterfaceName001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBConfigId001
@@ -630,27 +637,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBConfigId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBConfigId001 start');
-      if (gConfig === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBConfigId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gConfig, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let config: usbManager.USBConfiguration = gConfig;
-          let id: int = config.id;
+          let id: int = gConfig!.id;
           hilog.info(domain, TAG, 'config id: ' + id);
-          expect(typeof(id)).assertEqual("int");
           expect(id >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBConfigId001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBConfigId001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBConfigAttributes001
@@ -660,27 +663,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBConfigAttributes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBConfigAttributes001 start');
-      if (gConfig === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBConfigAttributes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gConfig, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let config: usbManager.USBConfiguration = gConfig;
-          let attributes: int = config.attributes;
+          let attributes: int = gConfig!.attributes;
           hilog.info(domain, TAG, 'config attributes: ' + attributes);
-          expect(typeof(attributes)).assertEqual("int");
           expect(attributes >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBConfigAttributes001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBConfigAttributes001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBConfigMaxPower001
@@ -690,27 +689,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBConfigMaxPower001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBConfigMaxPower001 start');
-      if (gConfig === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBConfigMaxPower001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gConfig, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let config: usbManager.USBConfiguration = gConfig;
-          let maxPower: int = config.maxPower;
+          let maxPower: int = gConfig!.maxPower;
           hilog.info(domain, TAG, 'config maxPower: ' + maxPower);
-          expect(typeof(maxPower)).assertEqual("int");
           expect(maxPower >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBConfigMaxPower001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBConfigMaxPower001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBConfigName001
@@ -720,26 +715,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBConfigName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBConfigName001 start');
-      if (gConfig === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBConfigName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gConfig, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let config: usbManager.USBConfiguration = gConfig;
-          let name: string = config.name;
+          let name: string = gConfig!.name;
           hilog.info(domain, TAG, 'config name: ' + name);
-          expect(typeof(name)).assertEqual("string");
+          expect(typeof (name)).assertEqual("string");
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBConfigName001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBConfigName001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBConfigIsRemoteWakeup001
@@ -749,27 +741,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBConfigIsRemoteWakeup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBConfigIsRemoteWakeup001 start');
-      if (gConfig === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBConfigIsRemoteWakeup001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gConfig, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let config: usbManager.USBConfiguration = gConfig;
-          let isRemoteWakeup: boolean = config.isRemoteWakeup;
+          let isRemoteWakeup: boolean = gConfig!.isRemoteWakeup;
           hilog.info(domain, TAG, 'config isRemoteWakeup: ' + isRemoteWakeup);
-          expect(typeof(isRemoteWakeup)).assertEqual("boolean");
-          expect(isRemoteWakeup === true || isRemoteWakeup === false).assertTrue();
+          expect(typeof (isRemoteWakeup)).assertEqual("boolean");
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBConfigIsRemoteWakeup001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBConfigIsRemoteWakeup001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBConfigIsSelfPowered001
@@ -779,27 +767,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBConfigIsSelfPowered001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBConfigIsSelfPowered001 start');
-      if (gConfig === null) {
-        hilog.info(domain, TAG, 'no device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBConfigIsSelfPowered001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gConfig, 'device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let config: usbManager.USBConfiguration = gConfig;
-          let isSelfPowered: boolean = config.isSelfPowered;
+          let isSelfPowered: boolean = gConfig!.isSelfPowered;
           hilog.info(domain, TAG, 'config isSelfPowered: ' + isSelfPowered);
-          expect(typeof(isSelfPowered)).assertEqual("boolean");
-          expect(isSelfPowered === true || isSelfPowered === false).assertTrue();
+          expect(typeof (isSelfPowered)).assertEqual("boolean");
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBConfigIsSelfPowered001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBConfigIsSelfPowered001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBAccessoryManufacturer001
@@ -809,26 +793,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBAccessoryManufacturer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBAccessoryManufacturer001 start');
-      if (gAccessory === null) {
-        hilog.info(domain, TAG, 'no accessory, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBAccessoryManufacturer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gAccessory, 'accessory', done)) {
+          return Promise.resolve();
+        }
         try {
-          let accessory: usbManager.USBAccessory = gAccessory;
-          let manufacturer: string = accessory.manufacturer;
+          let manufacturer: string = gAccessory!.manufacturer;
           hilog.info(domain, TAG, 'accessory manufacturer: ' + manufacturer);
-          expect(typeof(manufacturer)).assertEqual("string");
+          expect(typeof (manufacturer)).assertEqual("string");
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBAccessoryManufacturer001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBAccessoryManufacturer001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBAccessoryProduct001
@@ -838,26 +819,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBAccessoryProduct001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBAccessoryProduct001 start');
-      if (gAccessory === null) {
-        hilog.info(domain, TAG, 'no accessory, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBAccessoryProduct001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gAccessory, 'accessory', done)) {
+          return Promise.resolve();
+        }
         try {
-          let accessory: usbManager.USBAccessory = gAccessory;
-          let product: string = accessory.product;
+          let product: string = gAccessory!.product;
           hilog.info(domain, TAG, 'accessory product: ' + product);
-          expect(typeof(product)).assertEqual("string");
+          expect(typeof (product)).assertEqual("string");
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBAccessoryProduct001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBAccessoryProduct001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBAccessoryDescription001
@@ -867,26 +845,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBAccessoryDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBAccessoryDescription001 start');
-      if (gAccessory === null) {
-        hilog.info(domain, TAG, 'no accessory, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBAccessoryDescription001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gAccessory, 'accessory', done)) {
+          return Promise.resolve();
+        }
         try {
-          let accessory: usbManager.USBAccessory = gAccessory;
-          let description: string = accessory.description;
+          let description: string = gAccessory!.description;
           hilog.info(domain, TAG, 'accessory description: ' + description);
-          expect(typeof(description)).assertEqual("string");
+          expect(typeof (description)).assertEqual("string");
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBAccessoryDescription001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBAccessoryDescription001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBAccessoryVersion001
@@ -896,26 +871,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBAccessoryVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBAccessoryVersion001 start');
-      if (gAccessory === null) {
-        hilog.info(domain, TAG, 'no accessory, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBAccessoryVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gAccessory, 'accessory', done)) {
+          return Promise.resolve();
+        }
         try {
-          let accessory: usbManager.USBAccessory = gAccessory;
-          let version: string = accessory.version;
+          let version: string = gAccessory!.version;
           hilog.info(domain, TAG, 'accessory version: ' + version);
-          expect(typeof(version)).assertEqual("string");
+          expect(typeof (version)).assertEqual("string");
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBAccessoryVersion001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBAccessoryVersion001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUSBAccessorySerialNumber001
@@ -925,26 +897,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUSBAccessorySerialNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUSBAccessorySerialNumber001 start');
-      if (gAccessory === null) {
-        hilog.info(domain, TAG, 'no accessory, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUSBAccessorySerialNumber001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gAccessory, 'accessory', done)) {
+          return Promise.resolve();
+        }
         try {
-          let accessory: usbManager.USBAccessory = gAccessory;
-          let serialNumber: string = accessory.serialNumber;
+          let serialNumber: string = gAccessory!.serialNumber;
           hilog.info(domain, TAG, 'accessory serialNumber: ' + serialNumber);
-          expect(typeof(serialNumber)).assertEqual("string");
+          expect(typeof (serialNumber)).assertEqual("string");
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUSBAccessorySerialNumber001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUSBAccessorySerialNumber001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUsbTransferStatusCompleted001
@@ -954,11 +923,12 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbTransferStatusCompleted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
-      hilog.info(domain, TAG, 'testUsbTransferStatusCompleted001 start');
-      expect(usbManager.UsbTransferStatus.TRANSFER_COMPLETED).assertEqual(0);
-      done();
-    })
+    it('testUsbTransferStatusCompleted001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        hilog.info(domain, TAG, 'testUsbTransferStatusCompleted001 start');
+        expect(usbManager.UsbTransferStatus.TRANSFER_COMPLETED).assertEqual(0);
+        done();
+      })
 
     /**
      * @tc.name   testUsbTransferStatusError001
@@ -968,11 +938,12 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbTransferStatusError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
-      hilog.info(domain, TAG, 'testUsbTransferStatusError001 start');
-      expect(usbManager.UsbTransferStatus.TRANSFER_ERROR).assertEqual(1);
-      done();
-    })
+    it('testUsbTransferStatusError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        hilog.info(domain, TAG, 'testUsbTransferStatusError001 start');
+        expect(usbManager.UsbTransferStatus.TRANSFER_ERROR).assertEqual(1);
+        done();
+      })
 
     /**
      * @tc.name   testUsbTransferStatusTimedOut001
@@ -982,11 +953,12 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbTransferStatusTimedOut001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
-      hilog.info(domain, TAG, 'testUsbTransferStatusTimedOut001 start');
-      expect(usbManager.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(2);
-      done();
-    })
+    it('testUsbTransferStatusTimedOut001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        hilog.info(domain, TAG, 'testUsbTransferStatusTimedOut001 start');
+        expect(usbManager.UsbTransferStatus.TRANSFER_TIMED_OUT).assertEqual(2);
+        done();
+      })
 
     /**
      * @tc.name   testUsbTransferStatusCanceled001
@@ -996,11 +968,12 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbTransferStatusCanceled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
-      hilog.info(domain, TAG, 'testUsbTransferStatusCanceled001 start');
-      expect(usbManager.UsbTransferStatus.TRANSFER_CANCELED).assertEqual(3);
-      done();
-    })
+    it('testUsbTransferStatusCanceled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        hilog.info(domain, TAG, 'testUsbTransferStatusCanceled001 start');
+        expect(usbManager.UsbTransferStatus.TRANSFER_CANCELED).assertEqual(3);
+        done();
+      })
 
     /**
      * @tc.name   testUsbTransferStatusStall001
@@ -1010,11 +983,12 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbTransferStatusStall001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
-      hilog.info(domain, TAG, 'testUsbTransferStatusStall001 start');
-      expect(usbManager.UsbTransferStatus.TRANSFER_STALL).assertEqual(4);
-      done();
-    })
+    it('testUsbTransferStatusStall001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        hilog.info(domain, TAG, 'testUsbTransferStatusStall001 start');
+        expect(usbManager.UsbTransferStatus.TRANSFER_STALL).assertEqual(4);
+        done();
+      })
 
     /**
      * @tc.name   testUsbTransferStatusNoDevice001
@@ -1024,11 +998,12 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbTransferStatusNoDevice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
-      hilog.info(domain, TAG, 'testUsbTransferStatusNoDevice001 start');
-      expect(usbManager.UsbTransferStatus.TRANSFER_NO_DEVICE).assertEqual(5);
-      done();
-    })
+    it('testUsbTransferStatusNoDevice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        hilog.info(domain, TAG, 'testUsbTransferStatusNoDevice001 start');
+        expect(usbManager.UsbTransferStatus.TRANSFER_NO_DEVICE).assertEqual(5);
+        done();
+      })
 
     /**
      * @tc.name   testUsbTransferStatusOverflow001
@@ -1038,11 +1013,12 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbTransferStatusOverflow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
-      hilog.info(domain, TAG, 'testUsbTransferStatusOverflow001 start');
-      expect(usbManager.UsbTransferStatus.TRANSFER_OVERFLOW).assertEqual(6);
-      done();
-    })
+    it('testUsbTransferStatusOverflow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      (done: () => void): void => {
+        hilog.info(domain, TAG, 'testUsbTransferStatusOverflow001 start');
+        expect(usbManager.UsbTransferStatus.TRANSFER_OVERFLOW).assertEqual(6);
+        done();
+      })
 
     /**
      * @tc.name   testUsbIsoPacketDescriptorLength001
@@ -1052,32 +1028,29 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbIsoPacketDescriptorLength001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUsbIsoPacketDescriptorLength001 start');
-      if (isIsoReady === false || gCallbackData === null) {
-        hilog.info(domain, TAG, 'no isochronous device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUsbIsoPacketDescriptorLength001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gCallbackData, 'isochronous device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let isoPackets: Array<usbManager.UsbIsoPacketDescriptor> = gCallbackData.isoPacketDescs;
+          let isoPackets: Array<usbManager.UsbIsoPacketDescriptor> = gCallbackData!.isoPacketDescs;
           if (isoPackets.length === 0) {
             hilog.info(domain, TAG, 'no isoPacketDescs, skip');
             done();
             return Promise.resolve();
           }
-          let length: int = isoPackets[0].length;
+          let length: int = isoPackets[0]!.length;
           hilog.info(domain, TAG, 'isoPacketDesc length: ' + length);
-          expect(typeof(length)).assertEqual("int");
           expect(length >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUsbIsoPacketDescriptorLength001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUsbIsoPacketDescriptorLength001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUsbIsoPacketDescriptorActualLength001
@@ -1087,32 +1060,29 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbIsoPacketDescriptorActualLength001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUsbIsoPacketDescriptorActualLength001 start');
-      if (isIsoReady === false || gCallbackData === null) {
-        hilog.info(domain, TAG, 'no isochronous device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUsbIsoPacketDescriptorActualLength001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gCallbackData, 'isochronous device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let isoPackets: Array<usbManager.UsbIsoPacketDescriptor> = gCallbackData.isoPacketDescs;
+          let isoPackets: Array<usbManager.UsbIsoPacketDescriptor> = gCallbackData!.isoPacketDescs;
           if (isoPackets.length === 0) {
             hilog.info(domain, TAG, 'no isoPacketDescs, skip');
             done();
             return Promise.resolve();
           }
-          let actualLength: int = isoPackets[0].actualLength;
+          let actualLength: int = isoPackets[0]!.actualLength;
           hilog.info(domain, TAG, 'isoPacketDesc actualLength: ' + actualLength);
-          expect(typeof(actualLength)).assertEqual("int");
           expect(actualLength >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUsbIsoPacketDescriptorActualLength001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUsbIsoPacketDescriptorActualLength001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testUsbIsoPacketDescriptorStatus001
@@ -1122,37 +1092,29 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testUsbIsoPacketDescriptorStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testUsbIsoPacketDescriptorStatus001 start');
-      if (isIsoReady === false || gCallbackData === null) {
-        hilog.info(domain, TAG, 'no isochronous device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testUsbIsoPacketDescriptorStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gCallbackData, 'isochronous device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let isoPackets: Array<usbManager.UsbIsoPacketDescriptor> = gCallbackData.isoPacketDescs;
+          let isoPackets: Array<usbManager.UsbIsoPacketDescriptor> = gCallbackData!.isoPacketDescs;
           if (isoPackets.length === 0) {
             hilog.info(domain, TAG, 'no isoPacketDescs, skip');
             done();
             return Promise.resolve();
           }
-          let status: usbManager.UsbTransferStatus = isoPackets[0].status;
+          let status: usbManager.UsbTransferStatus = isoPackets[0]!.status;
           hilog.info(domain, TAG, 'isoPacketDesc status: ' + status);
-          expect(status === usbManager.UsbTransferStatus.TRANSFER_COMPLETED
-            || status === usbManager.UsbTransferStatus.TRANSFER_ERROR
-            || status === usbManager.UsbTransferStatus.TRANSFER_TIMED_OUT
-            || status === usbManager.UsbTransferStatus.TRANSFER_CANCELED
-            || status === usbManager.UsbTransferStatus.TRANSFER_STALL
-            || status === usbManager.UsbTransferStatus.TRANSFER_NO_DEVICE
-            || status === usbManager.UsbTransferStatus.TRANSFER_OVERFLOW).assertTrue();
+          expect(isValidTransferStatus(status)).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testUsbIsoPacketDescriptorStatus001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testUsbIsoPacketDescriptorStatus001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testSubmitTransferCallbackStatus001
@@ -1162,31 +1124,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSubmitTransferCallbackStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testSubmitTransferCallbackStatus001 start');
-      if (isIsoReady === false || gCallbackData === null) {
-        hilog.info(domain, TAG, 'no isochronous device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testSubmitTransferCallbackStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gCallbackData, 'isochronous device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let status: usbManager.UsbTransferStatus = gCallbackData.status;
+          let status: usbManager.UsbTransferStatus = gCallbackData!.status;
           hilog.info(domain, TAG, 'callback status: ' + status);
-          expect(status === usbManager.UsbTransferStatus.TRANSFER_COMPLETED
-            || status === usbManager.UsbTransferStatus.TRANSFER_ERROR
-            || status === usbManager.UsbTransferStatus.TRANSFER_TIMED_OUT
-            || status === usbManager.UsbTransferStatus.TRANSFER_CANCELED
-            || status === usbManager.UsbTransferStatus.TRANSFER_STALL
-            || status === usbManager.UsbTransferStatus.TRANSFER_NO_DEVICE
-            || status === usbManager.UsbTransferStatus.TRANSFER_OVERFLOW).assertTrue();
+          expect(isValidTransferStatus(status)).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testSubmitTransferCallbackStatus001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testSubmitTransferCallbackStatus001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
 
     /**
      * @tc.name   testSubmitTransferCallbackIsoPacketDescs001
@@ -1196,25 +1150,23 @@ export default function USBDeviceStructTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSubmitTransferCallbackIsoPacketDescs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, TAG, 'testSubmitTransferCallbackIsoPacketDescs001 start');
-      if (isIsoReady === false || gCallbackData === null) {
-        hilog.info(domain, TAG, 'no isochronous device, skip');
-        done();
-        return Promise.resolve();
-      } else {
+    it('testSubmitTransferCallbackIsoPacketDescs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        if (skipIfNull(gCallbackData, 'isochronous device', done)) {
+          return Promise.resolve();
+        }
         try {
-          let isoPacketDescs: Array<usbManager.UsbIsoPacketDescriptor> = gCallbackData.isoPacketDescs;
+          let isoPacketDescs: Array<usbManager.UsbIsoPacketDescriptor> = gCallbackData!.isoPacketDescs;
           hilog.info(domain, TAG, 'isoPacketDescs length: ' + isoPacketDescs.length);
           expect(Array.isArray(isoPacketDescs)).assertTrue();
           expect(isoPacketDescs.length >= 0).assertTrue();
           done();
         } catch (error) {
-          hilog.error(domain, TAG, 'testSubmitTransferCallbackIsoPacketDescs001 catch error: ', `${(error as BusinessError).message}`);
+          hilog.error(domain, TAG, 'testSubmitTransferCallbackIsoPacketDescs001 catch error: ',
+            `${(error as BusinessError).message}`);
           expect().assertFail();
           done();
         }
-      }
-    })
+      })
   })
 }
