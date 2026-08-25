@@ -2065,5 +2065,247 @@ export default function relationalStoreCoverageTest() {
       expect(data_relationalStore.SubscribeType.SUBSCRIBE_TYPE_CLOUD_DETAILS).assertEqual(2);
       console.info(TAG + "----- SUB_DistributedData_RelationalStore_SDK_SubscribeType_0100 end-----");
     });
+    // ==================== 20260817setDistributedTables=====================================================================================================================================
+    /**
+     * @tc.name   setCloudDistributedTableTest1100
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1100
+     * @tc.desc   Test setDistributedTables with null and undefined callback parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('setCloudDistributedTableTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+      console.log(TAG + "************* setCloudDistributedTableTest1100 start *************");
+      if(rdbStore== undefined) {
+        expect(null).assertFail();
+      } else {
+        try {
+          await rdbStore.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
+        } catch (e) {
+          console.error(`executeSql error, code is ${e.code}, messegeis ${e.message}`);
+          expect(null).assertFail();
+        }
+        try {
+          rdbStore.setDistributedTables(["EMPLOYEE"], null, (err) => {
+            if(err){
+              expect().assertFail();
+            }else{
+              console.info('setCloudDistributedTables EMPLOYEE successfully');
+              try {
+                rdbStore!.setDistributedTables(["EMPLOYEE"], undefined, (error: BusinessError) =>{
+                  if(error){
+                    console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${error.code}, messegeis ${error.message}`);
+                    expect().assertFail();
+                  }else{
+                    console.info('setCloudDistributedTables EMPLOYEE successfully');
+                    done();
+                  }
+                });
+              } catch (err) {
+                console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+                expect(err.code).assertEqual("401");
+              }
+            }
+          });
+        } catch (err) {
+          console.error(`setCloudDistributedTables EMPLOYEE failed, code is ${err.code}, messegeis ${err.message}`);
+          expect(err.code).assertEqual("401");
+        }
+      }
+      console.log(TAG + "************* setCloudDistributedTableTest1100 end *************");
+    })
+    // ==================== RdbStore.createTransaction ====================
+    /**
+     * @tc.name   testCreateTransaction0001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_CreateTransaction_0100
+     * @tc.desc   RdbStore createTransaction with out of range transactionType enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testCreateTransaction0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "************* testCreateTransaction0001 start *************");
+      try {
+        let options: data_relationalStore.TransactionOptions = {
+          transactionType: 999 as data_relationalStore.TransactionType
+        };
+        await rdbStore!.createTransaction(options);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(TAG + `createTransaction invalid enum, code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual("401");
+        done();
+      }
+      console.info(TAG + "************* testCreateTransaction0001 end *************");
+    });
+
+    // ==================== RdbStore.rekey ====================
+
+    /**
+     * @tc.name   testRekeyEncryptionAlgoOutOfRange
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Rekey_EncryptionAlgo_0100
+     * @tc.desc   RdbStore rekey with out of range encryptionAlgo enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testRekeyEncryptionAlgoOutOfRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "************* testRekeyEncryptionAlgoOutOfRange start *************");
+      try {
+        let cryptoParam: data_relationalStore.CryptoParam = {
+          encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
+          encryptionAlgo: 999 as data_relationalStore.EncryptionAlgo
+        };
+        await rdbStore!.rekey(cryptoParam);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(TAG + `rekey invalid encryptionAlgo, code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual("14800001");
+        done();
+      }
+      console.info(TAG + "************* testRekeyEncryptionAlgoOutOfRange end *************");
+    });
+
+    /**
+     * @tc.name   testRekeyHmacAlgoOutOfRange
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Rekey_HmacAlgo_0100
+     * @tc.desc   RdbStore rekey with out of range hmacAlgo enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testRekeyHmacAlgoOutOfRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "************* testRekeyHmacAlgoOutOfRange start *************");
+      try {
+        let cryptoParam: data_relationalStore.CryptoParam = {
+          encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
+          hmacAlgo: 999 as data_relationalStore.HmacAlgo
+        };
+        await rdbStore!.rekey(cryptoParam);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(TAG + `rekey invalid hmacAlgo, code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual("14800001");
+        done();
+      }
+      console.info(TAG + "************* testRekeyHmacAlgoOutOfRange end *************");
+    });
+
+    /**
+     * @tc.name   testRekeyKdfAlgoOutOfRange
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_Rekey_KdfAlgo_0100
+     * @tc.desc   RdbStore rekey with out of range kdfAlgo enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testRekeyKdfAlgoOutOfRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "************* testRekeyKdfAlgoOutOfRange start *************");
+      try {
+        let cryptoParam: data_relationalStore.CryptoParam = {
+          encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
+          kdfAlgo: 999 as data_relationalStore.KdfAlgo
+        };
+        await rdbStore!.rekey(cryptoParam);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(TAG + `rekey invalid kdfAlgo, code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual("14800001");
+        done();
+      }
+      console.info(TAG + "************* testRekeyKdfAlgoOutOfRange end *************");
+    });
+
+    // ==================== RdbStore.rekeyEx ====================
+
+    /**
+     * @tc.name   testRekeyExEncryptionAlgoOutOfRange
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RekeyEx_EncryptionAlgo_0100
+     * @tc.desc   RdbStore rekeyEx with out of range encryptionAlgo enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testRekeyExEncryptionAlgoOutOfRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "************* testRekeyExEncryptionAlgoOutOfRange start *************");
+      try {
+        let cryptoParam: data_relationalStore.CryptoParam = {
+          encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
+          encryptionAlgo: 999 as data_relationalStore.EncryptionAlgo
+        };
+        await rdbStore!.rekeyEx(cryptoParam);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(TAG + `rekeyEx invalid encryptionAlgo, code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual("14800001");
+        done();
+      }
+      console.info(TAG + "************* testRekeyExEncryptionAlgoOutOfRange end *************");
+    });
+
+    /**
+     * @tc.name   testRekeyExHmacAlgoOutOfRange
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RekeyEx_HmacAlgo_0100
+     * @tc.desc   RdbStore rekeyEx with out of range hmacAlgo enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testRekeyExHmacAlgoOutOfRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "************* testRekeyExHmacAlgoOutOfRange start *************");
+      try {
+        let cryptoParam: data_relationalStore.CryptoParam = {
+          encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
+          hmacAlgo: 999 as data_relationalStore.HmacAlgo
+        };
+        await rdbStore!.rekeyEx(cryptoParam);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(TAG + `rekeyEx invalid hmacAlgo, code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual("14800001");
+        done();
+      }
+      console.info(TAG + "************* testRekeyExHmacAlgoOutOfRange end *************");
+    });
+
+    /**
+     * @tc.name   testRekeyExKdfAlgoOutOfRange
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_RekeyEx_KdfAlgo_0100
+     * @tc.desc   RdbStore rekeyEx with out of range kdfAlgo enum value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('testRekeyExKdfAlgoOutOfRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + "************* testRekeyExKdfAlgoOutOfRange start *************");
+      try {
+        let cryptoParam: data_relationalStore.CryptoParam = {
+          encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
+          kdfAlgo: 999 as data_relationalStore.KdfAlgo
+        };
+        await rdbStore!.rekeyEx(cryptoParam);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.error(TAG + `rekeyEx invalid kdfAlgo, code:${error.code}, message:${error.message}`);
+        expect(error.code).assertEqual("14800001");
+        done();
+      }
+      console.info(TAG + "************* testRekeyExKdfAlgoOutOfRange end *************");
+    });
+
   })
 }
