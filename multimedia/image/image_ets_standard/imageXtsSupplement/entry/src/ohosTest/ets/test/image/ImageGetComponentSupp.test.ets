@@ -165,12 +165,10 @@ async function ImageGetComponent(done: Function, testName: string, callback: (re
       console.info(TAG,testName,"get receiver SurfaceId success");
       callback(receiver);
       await sleep(1000);
-      await releasePhotoSession();
       done();
     }
   } catch (error) {
     console.info(TAG ,testName, error.message, error.code);
-    await releasePhotoSession();
     done();
   }
 }
@@ -241,19 +239,14 @@ export default function ImageGetComponentSupp() {
           });
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
+          await mPhotoSession.start();
+          await sleep(2000);
+          await releasePhotoSession();
         });
       } catch (error) {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -298,19 +291,14 @@ export default function ImageGetComponentSupp() {
           });
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
+          await mPhotoSession.start();
+          await sleep(2000);
+          await releasePhotoSession();
         });
       } catch (error) {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
          
@@ -355,19 +343,14 @@ export default function ImageGetComponentSupp() {
           });
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
+          await mPhotoSession.start();
+          await sleep(2000);
+          await releasePhotoSession();
         });
       } catch (error) {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -412,19 +395,14 @@ export default function ImageGetComponentSupp() {
           });
           createPhotoOutput();
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-          mPhotoSession.start();
+          await mPhotoSession.start();
+          await sleep(2000);
+          await releasePhotoSession();
         });
       } catch (error) {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -466,7 +444,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -477,13 +457,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -520,7 +493,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -531,13 +506,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -588,7 +556,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -599,13 +569,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -649,7 +612,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -660,13 +625,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -704,7 +662,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -715,13 +675,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -759,7 +712,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -770,13 +725,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -814,7 +762,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -825,13 +775,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -869,7 +812,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -880,13 +825,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -922,7 +860,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -933,13 +873,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -972,7 +905,6 @@ export default function ImageGetComponentSupp() {
                 try {
                   console.info(TAG, testName, 'Image timestamp:', img.timestamp);
                   expect(img.timestamp >= 0).assertTrue();
-
                   done();
                 } catch (assertError) {
                   console.error(TAG, testName, 'Assertion error:', assertError.message);
@@ -983,7 +915,9 @@ export default function ImageGetComponentSupp() {
             });
             createPhotoOutput();
             await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-            mPhotoSession.start();
+            await mPhotoSession.start();
+            await sleep(2000);
+            await releasePhotoSession();
           } catch (error) {
             console.error(TAG, testName, 'Receiver setup error:', error.message, error.code);
             expect().assertFail();
@@ -994,13 +928,6 @@ export default function ImageGetComponentSupp() {
         console.error(TAG, testName, 'Test setup failed:', error.message, error.code);
         expect().assertFail();
         done();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
       }
     });
 
@@ -1050,18 +977,12 @@ export default function ImageGetComponentSupp() {
         });
         createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
+        await mPhotoSession.start();
         await sleep(2000);
+        await releasePhotoSession();
       } catch (error) {
         console.error(TAG, testName, 'Test setup error:', error.message, error.code);
         expect().assertFail();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
         done();
       }
     });
@@ -1113,18 +1034,13 @@ export default function ImageGetComponentSupp() {
         });
         createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
+        await mPhotoSession.start();
         await sleep(2000);
+        await releasePhotoSession();
       } catch (error) {
         console.error(TAG, testName, 'Test setup error:', error.message, error.code);
         expect().assertFail();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
+        done();
       }
     });
 
@@ -1171,21 +1087,15 @@ export default function ImageGetComponentSupp() {
             done();
           }
         });
-    
         createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
+        await mPhotoSession.start();
         await sleep(2000);
+        await releasePhotoSession();
       } catch (error) {
         console.error(TAG, testName, 'Test setup error:', error.message, error.code);
         expect().assertFail();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
+        done();
       }
     });
 
@@ -1234,18 +1144,13 @@ export default function ImageGetComponentSupp() {
         });
         createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
+        await mPhotoSession.start();
         await sleep(2000);
+        await releasePhotoSession();
       } catch (error) {
         console.error(TAG, testName, 'Test setup error:', error.message, error.code);
         expect().assertFail();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
+        done();
       }
     });
 
@@ -1294,18 +1199,13 @@ export default function ImageGetComponentSupp() {
         });
         createPhotoOutput();
         await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        mPhotoSession.start();
+        await mPhotoSession.start();
         await sleep(2000);
+        await releasePhotoSession();
       } catch (error) {
         console.error(TAG, testName, 'Test setup error:', error.message, error.code);
         expect().assertFail();
-      } finally {
-        try {
-          await releasePhotoSession();
-          console.info(TAG, testName, "releasePhotoSession success");
-        } catch (releaseError) {
-          console.warn(TAG, testName, 'Failed to release resources:', releaseError.message);
-        }
+        done();
       }
     });
 
