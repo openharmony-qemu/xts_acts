@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
+import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach,expect } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -24,7 +24,7 @@ import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 
 let testAbilityContext:common.UIAbilityContext;
-export default function webviewController() {
+export default function webviewController():void {
 
   describe('webviewController', () => {
     beforeAll(async (): Promise<void> => {
@@ -172,5 +172,29 @@ export default function webviewController() {
         await Utils.msSleep(5000);
         done();
       })
+
+
+    /**
+     * @tc.name   testOnSwitchNextPageBypass
+     * @tc.number SUB_WEB_PAGE_BYPASS_0800
+     * @tc.desc   emitOnSwitchNextPageBypass test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnSwitchNextPageBypass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent('emitOnSwitchNextPageBypass', 10);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('webviewController', 10, '');
+          await Utils.msSleep(5000);
+        } catch(err) {
+          expect().assertFail();
+        }
+        done();
+      })
   })
 }
+
+
