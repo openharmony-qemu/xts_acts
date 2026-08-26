@@ -62,7 +62,7 @@ export default function touchAbleJsunit() {
      * @tc.desc     testTouchAble_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testTouchAble_static_001', Level.LEVEL0, async (): Promise<void> => {
+it('testTouchAble_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(1000)
       } catch (err) {
@@ -71,6 +71,7 @@ it('testTouchAble_static_001', Level.LEVEL0, async (): Promise<void> => {
       let strJson: string = inspector.getInspectorByKey('ellipse');
       console.info("[testTouchAble001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('focusable')).assertEqual(false);
+      done();
     });
 
     

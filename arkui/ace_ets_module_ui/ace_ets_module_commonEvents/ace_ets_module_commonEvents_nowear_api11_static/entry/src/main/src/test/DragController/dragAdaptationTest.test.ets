@@ -60,7 +60,7 @@ export default function dragAdaptationTest() {
      * @tc.desc     dragAdaptationTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('dragAdaptationTest_static_001', Level.LEVEL0, async (): Promise<void> => {
+ it('dragAdaptationTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         if (AppStorage.get<number>("winLeft") == 0) {
           let driver = Driver.create();
@@ -118,8 +118,10 @@ it('dragAdaptationTest_static_001', Level.LEVEL0, async (): Promise<void> => {
 
         expect("").assertEqual("");
         console.info("[dragAdaptationTest_static_001] end");
+        done();
       } catch (err) {
         console.error('[dragAdaptationTest_static_001] error: ' + err);
+        done();
       }
     });
   })

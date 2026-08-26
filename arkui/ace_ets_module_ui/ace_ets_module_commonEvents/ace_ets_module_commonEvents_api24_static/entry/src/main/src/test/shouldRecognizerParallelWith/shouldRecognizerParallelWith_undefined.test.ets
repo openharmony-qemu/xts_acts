@@ -64,7 +64,7 @@ export default function shouldRecognizerParallelWith_undefined(): void{
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_undefined_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_undefined_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
       console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_undefined_0100] START');
       await CommonFunc.sleep(1000);
@@ -95,9 +95,11 @@ export default function shouldRecognizerParallelWith_undefined(): void{
 
       await CommonFunc.sleep(1000);
       console.info('[SUB_ARKUI_MouseEvent_shouldRecognizerParallelWith_undefined_0100] END');
+      done();
       } catch (e) {
         console.error('error: ' + JSON.stringify(e));
         expect().assertFail();
+        done();
       }
     });
   })
