@@ -1,6 +1,7 @@
 import { describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import { data } from "@kit.TelephonyKit";
 import { BusinessError } from "@kit.BasicServicesKit";
+import sim from '@ohos.telephony.sim';
 
 const ExpectTrue: (n: boolean) => void = (n: boolean) => {
   try {
@@ -33,14 +34,21 @@ export default function datatestNoPTest() {
     it('testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0100';
       console.info(`${caseName} test start `);
+      let maxSimCount: number = await sim.getMaxSimCount();
       try {
-        let isEnabled: boolean = await data.isCellularDataRoamingEnabledSync(1);
+        let isEnabled: boolean = await data.isCellularDataRoamingEnabledSync(0);
         console.log(`${caseName} get result success `,isEnabled)
         ExpectTrue(false);
         done();
       } catch (error) {
-        console.info(`${caseName} fall`,JSON.stringify(error));
-        ExpectTrue(error.code == 201);
+        console.info(`${caseName} fail`,JSON.stringify(error));
+        if (maxSimCount > 0) {
+          ExpectTrue(error.code == 201);
+        } else if (maxSimCount === 0) {
+          ExpectTrue(error.code == 401);
+        } else {
+          ExpectTrue(false);
+        }
         done();
       }
       console.info(`${caseName} test end`);
