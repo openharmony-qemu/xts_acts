@@ -1356,5 +1356,320 @@ export default function appManagerTest() {
       }
 
     });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0100
+     * @tc.desc   Test duplicate registration of applicationState observer (same observer, no bundleNameList)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0100', Level.LEVEL0, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0100';
+      let observer: appManager.ApplicationStateObserver = {
+        onForegroundApplicationChanged(appStateData) {
+          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
+        },
+        onAbilityStateChanged(abilityStateData) {
+          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
+        },
+        onProcessCreated(processData) {
+          console.log(TAG + ' onProcessCreated', processData);
+        },
+        onProcessDied(processData) {
+          console.log(TAG + ' onProcessDied', processData);
+        },
+        onProcessStateChanged(processData) {
+          console.log(TAG + ' onProcessStateChanged', processData);
+        },
+        onAppStarted(appStateData) {
+          console.log(TAG + ' onAppStarted', appStateData);
+        },
+        onAppStopped(appStateData) {
+          console.log(TAG + ' onAppStopped', appStateData);
+        },
+      };
+      try {
+        const id1 = appManager.on('applicationState', observer);
+        const id2 = appManager.on('applicationState', observer);
+        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2);
+        expect(typeof id1).assertEqual('number');
+        expect(typeof id2).assertEqual('number');
+        done();
+      } catch (err) {
+        console.log(TAG + ' err.code: ' + err.code);
+        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0200
+     * @tc.desc   Test duplicate registration of applicationState observer returns different IDs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0200', Level.LEVEL0, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0200';
+      let observer: appManager.ApplicationStateObserver = {
+        onForegroundApplicationChanged(appStateData) {
+          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
+        },
+        onAbilityStateChanged(abilityStateData) {
+          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
+        },
+        onProcessCreated(processData) {
+          console.log(TAG + ' onProcessCreated', processData);
+        },
+        onProcessDied(processData) {
+          console.log(TAG + ' onProcessDied', processData);
+        },
+        onProcessStateChanged(processData) {
+          console.log(TAG + ' onProcessStateChanged', processData);
+        },
+        onAppStarted(appStateData) {
+          console.log(TAG + ' onAppStarted', appStateData);
+        },
+        onAppStopped(appStateData) {
+          console.log(TAG + ' onAppStopped', appStateData);
+        },
+      };
+      try {
+        const id1 = appManager.on('applicationState', observer);
+        const id2 = appManager.on('applicationState', observer);
+        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2);
+        expect(id1).assertEqual(id2);
+        done();
+      } catch (err) {
+        console.log(TAG + ' err.code: ' + err.code);
+        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0300
+     * @tc.desc   Test triple registration of applicationState observer (same observer)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0300', Level.LEVEL0, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0300';
+      let observer: appManager.ApplicationStateObserver = {
+        onForegroundApplicationChanged(appStateData) {
+          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
+        },
+        onAbilityStateChanged(abilityStateData) {
+          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
+        },
+        onProcessCreated(processData) {
+          console.log(TAG + ' onProcessCreated', processData);
+        },
+        onProcessDied(processData) {
+          console.log(TAG + ' onProcessDied', processData);
+        },
+        onProcessStateChanged(processData) {
+          console.log(TAG + ' onProcessStateChanged', processData);
+        },
+        onAppStarted(appStateData) {
+          console.log(TAG + ' onAppStarted', appStateData);
+        },
+        onAppStopped(appStateData) {
+          console.log(TAG + ' onAppStopped', appStateData);
+        },
+      };
+      try {
+        const id1 = appManager.on('applicationState', observer);
+        const id2 = appManager.on('applicationState', observer);
+        const id3 = appManager.on('applicationState', observer);
+        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2 + ', id3: ' + id3);
+        expect(typeof id1).assertEqual('number');
+        expect(typeof id2).assertEqual('number');
+        expect(typeof id3).assertEqual('number');
+        expect(id1).assertEqual(id2);
+        expect(id2).assertEqual(id3);
+        done();
+      } catch (err) {
+        console.log(TAG + ' err.code: ' + err.code);
+        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0400
+     * @tc.desc   Test duplicate registration of applicationState observer with same bundleNameList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0400', Level.LEVEL0, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0400';
+      let observer: appManager.ApplicationStateObserver = {
+        onForegroundApplicationChanged(appStateData) {
+          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
+        },
+        onAbilityStateChanged(abilityStateData) {
+          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
+        },
+        onProcessCreated(processData) {
+          console.log(TAG + ' onProcessCreated', processData);
+        },
+        onProcessDied(processData) {
+          console.log(TAG + ' onProcessDied', processData);
+        },
+        onProcessStateChanged(processData) {
+          console.log(TAG + ' onProcessStateChanged', processData);
+        },
+        onAppStarted(appStateData) {
+          console.log(TAG + ' onAppStarted', appStateData);
+        },
+        onAppStopped(appStateData) {
+          console.log(TAG + ' onAppStopped', appStateData);
+        },
+      };
+      let bundleNameList = ['com.example.app1', 'com.example.app2'];
+      try {
+        const id1 = appManager.on('applicationState', observer, bundleNameList);
+        const id2 = appManager.on('applicationState', observer, bundleNameList);
+        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2);
+        expect(typeof id1).assertEqual('number');
+        expect(typeof id2).assertEqual('number');
+        expect(id1).assertEqual(id2);
+        done();
+      } catch (err) {
+        console.log(TAG + ' err.code: ' + err.code);
+        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0500
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0500
+     * @tc.desc   Test duplicate registration of applicationState observer with different bundleNameLists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0500', Level.LEVEL0, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0500';
+      let observer: appManager.ApplicationStateObserver = {
+        onForegroundApplicationChanged(appStateData) {
+          console.log(TAG + ' onForegroundApplicationChanged', appStateData);
+        },
+        onAbilityStateChanged(abilityStateData) {
+          console.log(TAG + ' onAbilityStateChanged', abilityStateData);
+        },
+        onProcessCreated(processData) {
+          console.log(TAG + ' onProcessCreated', processData);
+        },
+        onProcessDied(processData) {
+          console.log(TAG + ' onProcessDied', processData);
+        },
+        onProcessStateChanged(processData) {
+          console.log(TAG + ' onProcessStateChanged', processData);
+        },
+        onAppStarted(appStateData) {
+          console.log(TAG + ' onAppStarted', appStateData);
+        },
+        onAppStopped(appStateData) {
+          console.log(TAG + ' onAppStopped', appStateData);
+        },
+      };
+      let bundleNameList1 = ['com.example.app1'];
+      let bundleNameList2 = ['com.example.app2', 'com.example.app3'];
+      try {
+        const id1 = appManager.on('applicationState', observer, bundleNameList1);
+        const id2 = appManager.on('applicationState', observer, bundleNameList2);
+        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2);
+        expect(typeof id1).assertEqual('number');
+        expect(typeof id2).assertEqual('number');
+        done();
+      } catch (err) {
+        console.log(TAG + ' err.code: ' + err.code);
+        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0600
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0600
+     * @tc.desc   Test multiple observers registration for same applicationState event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0600', Level.LEVEL0, (done: Function) => {
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_On_Duplicate_0600';
+      let observer1: appManager.ApplicationStateObserver = {
+        onForegroundApplicationChanged(appStateData) {
+          console.log(TAG + ' observer1 onForegroundApplicationChanged', appStateData);
+        },
+        onAbilityStateChanged(abilityStateData) {
+          console.log(TAG + ' observer1 onAbilityStateChanged', abilityStateData);
+        },
+        onProcessCreated(processData) {
+          console.log(TAG + ' observer1 onProcessCreated', processData);
+        },
+        onProcessDied(processData) {
+          console.log(TAG + ' observer1 onProcessDied', processData);
+        },
+        onProcessStateChanged(processData) {
+          console.log(TAG + ' observer1 onProcessStateChanged', processData);
+        },
+        onAppStarted(appStateData) {
+          console.log(TAG + ' observer1 onAppStarted', appStateData);
+        },
+        onAppStopped(appStateData) {
+          console.log(TAG + ' observer1 onAppStopped', appStateData);
+        },
+      };
+      let observer2: appManager.ApplicationStateObserver = {
+        onForegroundApplicationChanged(appStateData) {
+          console.log(TAG + ' observer2 onForegroundApplicationChanged', appStateData);
+        },
+        onAbilityStateChanged(abilityStateData) {
+          console.log(TAG + ' observer2 onAbilityStateChanged', abilityStateData);
+        },
+        onProcessCreated(processData) {
+          console.log(TAG + ' observer2 onProcessCreated', processData);
+        },
+        onProcessDied(processData) {
+          console.log(TAG + ' observer2 onProcessDied', processData);
+        },
+        onProcessStateChanged(processData) {
+          console.log(TAG + ' observer2 onProcessStateChanged', processData);
+        },
+        onAppStarted(appStateData) {
+          console.log(TAG + ' observer2 onAppStarted', appStateData);
+        },
+        onAppStopped(appStateData) {
+          console.log(TAG + ' observer2 onAppStopped', appStateData);
+        },
+      };
+      let bundleNameList = ['com.example.app1', 'com.example.app2'];
+      try {
+        const id1 = appManager.on('applicationState', observer1);
+        const id2 = appManager.on('applicationState', observer2);
+        const id3 = appManager.on('applicationState', observer1, bundleNameList);
+        console.log(TAG + ' id1: ' + id1 + ', id2: ' + id2 + ', id3: ' + id3);
+        expect(typeof id1).assertEqual('number');
+        expect(typeof id2).assertEqual('number');
+        expect(typeof id3).assertEqual('number');
+        done();
+      } catch (err) {
+        console.log(TAG + ' err.code: ' + err.code);
+        expect(err.code).assertEqual(ERROR_PERMISSION_CODE);
+        done();
+      }
+    });
   })
 }

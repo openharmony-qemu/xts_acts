@@ -1424,5 +1424,71 @@ export default function ApiCoverTest() {
       expect(abilityName).assertEqual('TestAbility');
       done();
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ProcessCache_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_0800
+     * @tc.desc   setSupportedProcessCache with null parameter should throw error 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_ProcessCache_0800', Level.LEVEL0, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_ProcessCache_0800`;
+      console.log(`${tag}, test begin`);
+      try {
+        AppStorage.get<common.ApplicationContext>("applicationContext")?.setSupportedProcessCache(null);
+        expect().assertFail();
+      } catch(e) {
+        console.error(`${tag}, e.code: ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+      console.log(`${tag}, test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_killAllProcesses_3300
+     * @tc.number SUB_Ability_AbilityRuntime_killAllProcesses_3300
+     * @tc.desc   killAllProcesses with null parameter should throw error 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_killAllProcesses_3300', Level.LEVEL0, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_killAllProcesses_3300`;
+      console.log(`${tag}, test begin`);
+      try {
+        await AppStorage.get<common.ApplicationContext>("applicationContext")?.killAllProcesses(null);
+        expect().assertFail();
+      } catch(e) {
+        console.error(`${tag}, e.code: ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+      console.log(`${tag}, test end`);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_killAllProcesses_3400
+     * @tc.number SUB_Ability_AbilityRuntime_killAllProcesses_3400
+     * @tc.desc   killAllProcesses with undefined parameter should throw error 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_killAllProcesses_3400', Level.LEVEL0, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_killAllProcesses_3400`;
+      console.log(`${tag}, test begin`);
+      try {
+        await AppStorage.get<common.ApplicationContext>("applicationContext")?.killAllProcesses(undefined);
+        expect().assertFail();
+      } catch(e) {
+        console.error(`${tag}, e.code: ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+      console.log(`${tag}, test end`);
+      done();
+    });
   })
 }

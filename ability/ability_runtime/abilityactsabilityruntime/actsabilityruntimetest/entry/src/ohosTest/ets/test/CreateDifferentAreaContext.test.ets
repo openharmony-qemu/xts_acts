@@ -500,5 +500,57 @@ export default function AbilityRuntimeCreateDifferentAreaContext() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDifferentAreaContext_3400
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDifferentAreaContext_3400
+     * @tc.desc   Create a creatAreaModeContext with null parameter using the UIAbilityContext method, expect error 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CreateDifferentAreaContext_3400', Level.LEVEL0, async (done:Function) => {
+      let testNum = 'SUB_Ability_AbilityRuntime_CreateDifferentAreaContext_3400'
+      try {
+        await context.createAreaModeContext(null)
+        expect().assertFail()
+        done();
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', `${testNum},requestPermissionsFromUser  restart failed: ${err.code}, ${err.message}`);
+        expect(err?.code).assertEqual(401)
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CreateDifferentAreaContext_3500
+     * @tc.number SUB_Ability_AbilityRuntime_CreateDifferentAreaContext_3500
+     * @tc.desc   Create a creatAreaModeContext of EL1 using the UIAbilityContext method to retrieve the dir attribute from the Context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_CreateDifferentAreaContext_3500', Level.LEVEL0, async (done:Function) => {
+      let testNum = 'SUB_Ability_AbilityRuntime_CreateDifferentAreaContext_3500'
+      try {
+        let areaModeContext = await context.createAreaModeContext(contextConstant.AreaMode.EL1)
+        console.log(`${testNum},createAreaModeContext success: ${JSON.stringify(areaModeContext)}`)
+        expect(areaModeContext.cacheDir).assertEqual('/data/storage/el1/base/haps/entry_test/cache')
+        expect(areaModeContext.filesDir).assertEqual('/data/storage/el1/base/haps/entry_test/files')
+        expect(areaModeContext.tempDir).assertEqual('/data/storage/el1/base/haps/entry_test/temp')
+        expect(areaModeContext.databaseDir).assertEqual('/data/storage/el1/database/entry_test')
+        expect(areaModeContext.preferencesDir).assertEqual('/data/storage/el1/base/haps/entry_test/preferences')
+        expect(areaModeContext.bundleCodeDir).assertEqual('/data/storage/el1/bundle')
+        expect(areaModeContext.distributedFilesDir).assertEqual('/data/storage/el2/distributedfiles')
+        expect(areaModeContext.resourceDir).assertEqual('')
+        expect(areaModeContext.cloudFileDir).assertEqual('/data/storage/el2/cloud')
+        expect(areaModeContext.area).assertEqual(0)
+        done();
+      } catch (err) {
+        hilog.error(0x0000, 'testTag', `${testNum},requestPermissionsFromUser  restart failed: ${err.code}, ${err.message}`);
+        expect().assertFail()
+        done();
+      }
+    })
   })
 }

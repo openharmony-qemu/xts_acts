@@ -29,6 +29,56 @@ function sleep(time:number):Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time))
 }
 
+let testWillListKey: string[] = [];
+let willCallBack: AbilityLifecycleCallback = {
+  onAbilityWillCreate(ability) {
+    testWillListKey.push(ability.context.abilityInfo.name + " onAbilityWillCreate");
+  },
+  onWindowStageWillCreate(ability, windowStage) {
+    testWillListKey.push(ability.context.abilityInfo.name + " onWindowStageWillCreate");
+  },
+  onWillNewWant(ability) {
+    testWillListKey.push(ability.context.abilityInfo.name + " onWillNewWant");
+  },
+  onNewWant(ability) {
+    testWillListKey.push(ability.context.abilityInfo.name + " onNewWant");
+  },
+  onWindowStageWillDestroy(ability, windowStage) {
+    testWillListKey.push(ability.context.abilityInfo.name + " onWindowStageWillDestroy");
+  },
+  onAbilityWillDestroy(ability) {
+    testWillListKey.push(ability.context.abilityInfo.name + " onAbilityWillDestroy");
+  },
+  onAbilityWillForeground(ability) {
+    testWillListKey.push(ability.context.abilityInfo.name + " onAbilityWillForeground");
+  },
+  onAbilityWillBackground(ability) {
+    testWillListKey.push(ability.context.abilityInfo.name + " onAbilityWillBackground");
+  },
+  onAbilityWillContinue(ability) {
+    testWillListKey.push(ability.context.abilityInfo.name + " onAbilityWillContinue");
+  },
+  onAbilityCreate(ability) {
+  },
+  onWindowStageCreate(ability, windowStage) {
+  },
+  onWindowStageActive(ability, windowStage) {
+  },
+  onWindowStageInactive(ability, windowStage) {
+  },
+  onAbilityForeground(ability) {
+  },
+  onAbilityBackground(ability) {
+  },
+  onWindowStageDestroy(ability, windowStage) {
+  },
+  onAbilityDestroy(ability) {
+  },
+  onAbilityContinue(ability) {
+  }
+}
+let willCallBackId: number = -1;
+
 function startAbilityTest(abilityName: string, tag: string) {
   globalThis.abilityContext.startAbility({
     bundleName: "com.ohos.actslifecycle",
@@ -157,6 +207,36 @@ export default function abilityTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} afterEach...`);
       done()
     });
+
+    beforeAll(async (done: Function) => {
+      hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} beforeAll register willCallBack`);
+      try {
+        willCallBackId = globalThis.abilityContext.getApplicationContext().registerAbilityLifecycleCallback(willCallBack);
+      } catch (err) {
+        hilog.error(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} beforeAll getApplicationContext failed: ${JSON.stringify(err)}`);
+      }
+      hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} beforeAll willCallBackId:${willCallBackId}`);
+      done()
+    })
+
+    afterAll(async (done: Function) => {
+      hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} afterAll unregister willCallBack`);
+      if (willCallBackId > 0) {
+        try {
+          globalThis.abilityContext.getApplicationContext()
+            .unregisterAbilityLifecycleCallback(willCallBackId, (error:base.BusinessError, data:ESObject) => {
+              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} afterAll unregister willCallBack success,
+                err:  ${JSON.stringify(error)} ",data: ${JSON.stringify(data)}`);
+              done()
+            });
+        } catch (err) {
+          hilog.error(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} afterAll getApplicationContext failed: ${JSON.stringify(err)}`);
+          done()
+        }
+      } else {
+        done()
+      }
+    })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0100
@@ -1007,6 +1087,180 @@ export default function abilityTest() {
       expect(templeStr.indexOf("MainAbilityA onAbilityWillBackground") != -1).assertTrue();
       expect(templeStr.indexOf("MainAbilityA onWindowStageWillDestroy") != -1).assertTrue();
       done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2400
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2400
+     * @tc.desc   actual callback onAbilityWillCreate, onWindowStageWillCreate, onAbilityWillForeground
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2400', Level.LEVEL3, async (done: Function) => {
+      TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2400';
+      testWillListKey.length = 0;
+      startAbilityTest("MainAbility3", TEST_CASE_NAME)
+      await sleep(1500);
+      let willListStr = testWillListKey.join(',');
+      hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} willList :${willListStr}`);
+      expect(willListStr.indexOf("MainAbility3 onAbilityWillCreate") != -1).assertTrue();
+      expect(willListStr.indexOf("MainAbility3 onWindowStageWillCreate") != -1).assertTrue();
+      expect(willListStr.indexOf("MainAbility3 onAbilityWillForeground") != -1).assertTrue();
+      isTerminateSelfMainAbility3Multition = true;
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2500
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2500
+     * @tc.desc   actual callback onWillNewWant, onNewWant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2500', Level.LEVEL3, async (done: Function) => {
+      TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2500';
+      testWillListKey.length = 0;
+      startAbilityTest("MainAbilitySingle1", TEST_CASE_NAME)
+      await sleep(1000);
+      testWillListKey.length = 0;
+      startAbilityTest("MainAbilitySingle1", TEST_CASE_NAME)
+      await sleep(1500);
+      let willListStr = testWillListKey.join(',');
+      hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} willList :${willListStr}`);
+      expect(willListStr.indexOf("MainAbilitySingle1 onWillNewWant") != -1).assertTrue();
+      expect(willListStr.indexOf("MainAbilitySingle1 onNewWant") != -1).assertTrue();
+      isTerminateSelfSingle1 = true;
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2600
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2600
+     * @tc.desc   actual callback onAbilityWillBackground, onWindowStageWillDestroy, onAbilityWillDestroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2600', Level.LEVEL3, async (done: Function) => {
+      TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2600';
+      testWillListKey.length = 0;
+      startAbilityTest("MainAbility3", TEST_CASE_NAME)
+      await sleep(1500);
+      testWillListKey.length = 0;
+      if (globalThis.mainAbility3Contexts && globalThis.mainAbility3Contexts.length > 0) {
+        try {
+          await globalThis.mainAbility3Contexts.forEach((item:common.UIAbilityContext) => {
+            item.terminateSelf()
+          })
+        } catch (err) {
+          hilog.error(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} failed: ${JSON.stringify(err)}`);
+        }
+        globalThis.mainAbility3Contexts.splice(0, globalThis.mainAbility3Contexts.length)
+      }
+      await sleep(1500);
+      let willListStr = testWillListKey.join(',');
+      hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} willList :${willListStr}`);
+      expect(willListStr.indexOf("MainAbility3 onAbilityWillBackground") != -1).assertTrue();
+      expect(willListStr.indexOf("MainAbility3 onWindowStageWillDestroy") != -1).assertTrue();
+      expect(willListStr.indexOf("MainAbility3 onAbilityWillDestroy") != -1).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2700
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2700
+     * @tc.desc   actual callback onAbilityWillBackground
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2700', Level.LEVEL3, async (done: Function) => {
+      TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2700';
+      if (deviceSupport != 'false') {
+        testWillListKey.length = 0;
+        startAbilityTest("MainAbilityA", TEST_CASE_NAME)
+        await sleep(1000);
+        testWillListKey.length = 0;
+        startAbilityTest("MainAbilityB", TEST_CASE_NAME)
+        try {
+          await sleep(1500);
+        }catch (err){
+          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} sleep error:`+ err);
+
+        }
+        
+        let willListStr = testWillListKey.join(',');
+        hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} willList :${willListStr}`);
+        expect(willListStr.indexOf("MainAbilityA onAbilityWillBackground") != -1).assertTrue();
+        isTerminateSelfMainAbilityA = true;
+        isTerminateSelfMainAbilityB = true;
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2800
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2800
+     * @tc.desc   actual callback onAbilityWillContinue register and unregister
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2800', Level.LEVEL3, async (done: Function) => {
+      TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2800';
+      let continueCallBack: AbilityLifecycleCallback = {
+        onAbilityWillContinue(ability) {
+          hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} onAbilityWillContinue callback`);
+        },
+        onAbilityCreate(ability) {
+        },
+        onWindowStageCreate(ability, windowStage) {
+        },
+        onWindowStageActive(ability, windowStage) {
+        },
+        onWindowStageInactive(ability, windowStage) {
+        },
+        onAbilityForeground(ability) {
+        },
+        onAbilityBackground(ability) {
+        },
+        onWindowStageDestroy(ability, windowStage) {
+        },
+        onAbilityDestroy(ability) {
+        },
+        onAbilityContinue(ability) {
+        }
+      }
+      let continueCallBackId: number;
+      try {
+        continueCallBackId = globalThis.abilityContext.getApplicationContext()
+          .registerAbilityLifecycleCallback(continueCallBack);
+      } catch (err) {
+        hilog.error(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} registerAbilityLifecycleCallback failed: ${JSON.stringify(err)}`);
+        done();
+        return;
+      }
+      hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} continueCallBackId:${continueCallBackId}`);
+      expect(continueCallBackId > 0).assertTrue();
+      await sleep(1000);
+      try {
+        await globalThis.abilityContext.getApplicationContext()
+          .unregisterAbilityLifecycleCallback(continueCallBackId).then((data:void) => {
+            hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregister continueCallBack success,
+              continueCallBackId:  ${continueCallBackId} ",data: ${JSON.stringify(data)}`);
+            done()
+          }).catch((error:BusinessError) => {
+            hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregister continueCallBack
+              error continueCallBackId:  ${JSON.stringify(continueCallBackId)} ",error: ${JSON.stringify(error)}`);
+            expect().assertFail()
+            done()
+          })
+      } catch (err) {
+        hilog.error(0x0000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} unregisterAbilityLifecycleCallback failed: ${JSON.stringify(err)}`);
+        done()
+      }
     })
   })
 }
