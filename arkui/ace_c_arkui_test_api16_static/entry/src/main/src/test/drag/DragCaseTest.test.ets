@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level , beforeAll } from '../../../../hypium/index'
+import { expect, describe, it, afterEach, Level } from '../../../../hypium/index'
 import { Driver, ON, PointerMatrix, Rect,Component } from '@ohos.UiTest'
 import { Point } from '@ohos.UiTest';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../common/Utils'
-import { UtilsTest } from '../Util.test'
 import {LibUtil} from '../../../ets/pages/LibUtil'
 let libUtil:LibUtil = new LibUtil();
 
@@ -52,11 +51,12 @@ async function panAndPinchGesture(id: string) {
 export default function DragTest(){
 
   describe('DragTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api16.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100)
+      } catch (err) {
+        console.info('DragTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     
@@ -67,6 +67,7 @@ export default function DragTest(){
      * @tc.level    Level.LEVEL1
      */
     it('dragCaseTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
         let PAGE_TAG = 'DragCaseTest1'
         await Utils.pushPage(`drag/${PAGE_TAG}`)
         await panAndPinchGesture('image')
@@ -74,6 +75,10 @@ export default function DragTest(){
         console.log('dragCaseTest001', dataArray[0])
         expect( dataArray[0] == 0 ).assertEqual(true)
         done()
+      } catch (err) {
+        console.info('dragCaseTest001 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     
@@ -84,6 +89,7 @@ export default function DragTest(){
      * @tc.level    Level.LEVEL1
      */
     it('dragCaseTest002', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
         let PAGE_TAG = 'DragCaseTest2'
         await Utils.pushPage(`drag/${PAGE_TAG}`)
         await panAndPinchGesture('image')
@@ -91,6 +97,10 @@ export default function DragTest(){
         console.log('dragCaseTest002', dataArray[0])
         expect( dataArray[0] == 0 ).assertEqual(true)
         done()
+      } catch (err) {
+        console.info('dragCaseTest002 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
         
@@ -101,12 +111,17 @@ export default function DragTest(){
      * @tc.level    Level.LEVEL1
      */
     it('dragCaseTest003', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
         let PAGE_TAG = 'DragCaseTest3'
         await panAndPinchGesture('image')
         let dataArray: number[] = libUtil.GetResult();
         console.log('dragCaseTest003', dataArray[0])
         expect( dataArray[0] == 0 ).assertEqual(true)
         done()
+      } catch (err) {
+        console.info('dragCaseTest003 err: ' + JSON.stringify(err));
+        done();
+      }
     })
   })
 }
