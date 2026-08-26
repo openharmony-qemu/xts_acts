@@ -542,36 +542,40 @@ export default function StreamWritableLifecycleFlowTest(): void {
         let callbackCalled: boolean = false;
         let writes: int = 0;
         let finishes: int = 0;
-        await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
-          let sink = new FlowCollectWritable();
-          sink.on("finish", (): void => {
-            chunks = sink.chunks;
-            finishes++;
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
+            let sink = new FlowCollectWritable();
+            sink.on("finish", (): void => {
+              chunks = sink.chunks;
+              finishes++;
+              resolve(undefined as void);
+            });
+            sink.write("first", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              writes++;
+            });
+            sink.write("second", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              callbackCalled = true;
+              writes++;
+            });
+            sink.end();
           });
-          sink.write("first", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            writes++;
-          });
-          sink.write("second", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            callbackCalled = true;
-            writes++;
-          });
-          sink.end();
-        });
-        expect(chunks.length).assertEqual(2);
-        expect(chunks[0]).assertEqual("first");
-        expect(chunks[1]).assertEqual("second");
-        expect(callbackCalled).assertTrue();
-        expect(writes).assertEqual(2);
-        expect(finishes).assertEqual(1);
+          expect(chunks.length).assertEqual(2);
+          expect(chunks[0]).assertEqual("first");
+          expect(chunks[1]).assertEqual("second");
+          expect(callbackCalled).assertTrue();
+          expect(writes).assertEqual(2);
+          expect(finishes).assertEqual(1);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -642,25 +646,29 @@ export default function StreamWritableLifecycleFlowTest(): void {
       async (done: () => void): Promise<void> => {
         let text: string = '';
         let callbackCalled: boolean = false;
-        await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
-          let sink = new FlowCollectWritable();
-          sink.on('finish', (): void => {
-            text = sink.text;
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
+            let sink = new FlowCollectWritable();
+            sink.on('finish', (): void => {
+              text = sink.text;
+              resolve(undefined as void);
+            });
+            sink.write('phase-one', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              callbackCalled = true;
+              setTimeout((): void => {
+                sink.end('phase-two');
+              }, 0);
+            });
           });
-          sink.write('phase-one', 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            callbackCalled = true;
-            setTimeout((): void => {
-              sink.end('phase-two');
-            }, 0);
-          });
-        });
-        expect(callbackCalled).assertTrue();
-        expect(text).assertEqual('phase-onephase-two');
+          expect(callbackCalled).assertTrue();
+          expect(text).assertEqual('phase-onephase-two');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 

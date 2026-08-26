@@ -260,69 +260,79 @@ export default function StreamProtocolLifecycleFlowTest(): void {
         let capturedFirstSecondRecords: string[] = [];
         let capturedSecondValues: string[] = [];
         let capturedSecondSinkRecords: string[] = [];
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          let source = new ScenarioReadable(['a', 'b']);
-          let first = new ScenarioAsyncTransform('A:', 5);
-          let second = new ScenarioAsyncTransform('B:', 1);
-          let sink = new ScenarioCollectWritable();
-          let firstData: int = 0;
-          let secondData: int = 0;
-          first.on('data', (chunk: Object): void => {
-            let value: string = chunk.toString();
-            firstData++;
-            capturedFirstValues.push(value);
-            second.write(value, 'utf8', (err?: Error): void => {
-              if (err !== undefined) { reject(err); return; }
-              capturedFirstSecondRecords.push(second.inputRecords[second.inputRecords.length - 1] as string);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            let source = new ScenarioReadable(['a', 'b']);
+            let first = new ScenarioAsyncTransform('A:', 5);
+            let second = new ScenarioAsyncTransform('B:', 1);
+            let sink = new ScenarioCollectWritable();
+            let firstData: int = 0;
+            let secondData: int = 0;
+            first.on('data', (chunk: Object): void => {
+              let value: string = chunk.toString();
+              firstData++;
+              capturedFirstValues.push(value);
+              second.write(value, 'utf8', (err?: Error): void => {
+                if (err !== undefined) {
+                  reject(err);
+                  return;
+                }
+                capturedFirstSecondRecords.push(second.inputRecords[second.inputRecords.length - 1] as string);
+              });
             });
-          });
-          second.on('data', (chunk: Object): void => {
-            let value: string = chunk.toString();
-            secondData++;
-            capturedSecondValues.push(value);
-            sink.write(value, 'utf8', (err?: Error): void => {
-              if (err !== undefined) { reject(err); return; }
-              capturedSecondSinkRecords.push(sink.records[sink.writeCount - 1] as string);
+            second.on('data', (chunk: Object): void => {
+              let value: string = chunk.toString();
+              secondData++;
+              capturedSecondValues.push(value);
+              sink.write(value, 'utf8', (err?: Error): void => {
+                if (err !== undefined) {
+                  reject(err);
+                  return;
+                }
+                capturedSecondSinkRecords.push(sink.records[sink.writeCount - 1] as string);
+              });
             });
+            source.on('data', (chunk: Object): void => {
+              first.write(chunk.toString(), 'utf8');
+            });
+            source.on('end', (): void => {
+              first.end();
+            });
+            first.on('end', (): void => {
+              second.end();
+            });
+            second.on('end', (): void => {
+              sink.end();
+            });
+            sink.on('finish', (): void => {
+              capturedSinkText = sink.text;
+              capturedSinkWriteCount = sink.writeCount;
+              capturedFirstData = firstData;
+              capturedFirstTransformCount = first.transformCount;
+              capturedSecondData = secondData;
+              resolve(undefined as void);
+            });
+            source.resume();
           });
-          source.on('data', (chunk: Object): void => {
-            first.write(chunk.toString(), 'utf8');
-          });
-          source.on('end', (): void => {
-            first.end();
-          });
-          first.on('end', (): void => {
-            second.end();
-          });
-          second.on('end', (): void => {
-            sink.end();
-          });
-          sink.on('finish', (): void => {
-            capturedSinkText = sink.text;
-            capturedSinkWriteCount = sink.writeCount;
-            capturedFirstData = firstData;
-            capturedFirstTransformCount = first.transformCount;
-            capturedSecondData = secondData;
-            resolve(undefined as void);
-          });
-          source.resume();
-        });
-        expect(capturedSinkText).assertEqual('B:A:aB:A:b');
-        expect(capturedFirstData).assertEqual(2);
-        expect(capturedFirstTransformCount).assertEqual(2);
-        expect(capturedSecondData).assertEqual(2);
-        expect(capturedSinkWriteCount).assertEqual(2);
-        for (let i: int = 0; i < capturedFirstValues.length; i++) {
-          expect(capturedFirstValues[i]).assertEqual('A:' + ['a', 'b'][i]);
-        }
-        for (let i: int = 0; i < capturedSecondValues.length; i++) {
-          expect(capturedSecondValues[i]).assertEqual('B:A:' + ['a', 'b'][i]);
-        }
-        for (let i: int = 0; i < capturedFirstSecondRecords.length; i++) {
-          expect(capturedFirstSecondRecords[i]).assertEqual(capturedFirstValues[i]);
-        }
-        for (let i: int = 0; i < capturedSecondSinkRecords.length; i++) {
-          expect(capturedSecondSinkRecords[i]).assertEqual(capturedSecondValues[i]);
+          expect(capturedSinkText).assertEqual('B:A:aB:A:b');
+          expect(capturedFirstData).assertEqual(2);
+          expect(capturedFirstTransformCount).assertEqual(2);
+          expect(capturedSecondData).assertEqual(2);
+          expect(capturedSinkWriteCount).assertEqual(2);
+          for (let i: int = 0; i < capturedFirstValues.length; i++) {
+            expect(capturedFirstValues[i]).assertEqual('A:' + ['a', 'b'][i]);
+          }
+          for (let i: int = 0; i < capturedSecondValues.length; i++) {
+            expect(capturedSecondValues[i]).assertEqual('B:A:' + ['a', 'b'][i]);
+          }
+          for (let i: int = 0; i < capturedFirstSecondRecords.length; i++) {
+            expect(capturedFirstSecondRecords[i]).assertEqual(capturedFirstValues[i]);
+          }
+          for (let i: int = 0; i < capturedSecondSinkRecords.length; i++) {
+            expect(capturedSecondSinkRecords[i]).assertEqual(capturedSecondValues[i]);
+          }
+        } catch (e) {
+          expect(false).assertTrue();
         }
         done();
       });
@@ -453,39 +463,49 @@ export default function StreamProtocolLifecycleFlowTest(): void {
         let capturedDrainRecord0: string = '';
         let capturedTailRecord: string = '';
         let capturedTailAccepted: boolean = false;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          let sink = new ScenarioCollectWritable();
-          let large: string = 'L'.repeat(20000);
-          sink.on('drain', (): void => {
-            capturedDrainRecord0 = sink.records[0];
-            let accepted: boolean = sink.write('tail', 'utf8', (err?: Error): void => {
-              if (err !== undefined) { reject(err); return; }
-              capturedTailRecord = sink.records[1];
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            let sink = new ScenarioCollectWritable();
+            let large: string = 'L'.repeat(20000);
+            sink.on('drain', (): void => {
+              capturedDrainRecord0 = sink.records[0];
+              let accepted: boolean = sink.write('tail', 'utf8', (err?: Error): void => {
+                if (err !== undefined) {
+                  reject(err);
+                  return;
+                }
+                capturedTailRecord = sink.records[1];
+              });
+              capturedTailAccepted = accepted;
+              sink.end();
             });
-            capturedTailAccepted = accepted;
-            sink.end();
+            sink.on('finish', (): void => {
+              capturedSinkText = sink.text;
+              capturedWriteCount = sink.writeCount;
+              capturedCallbackCount = sink.callbackCount;
+              capturedWritableFinished = sink.writableFinished;
+              resolve(undefined as void);
+            });
+            let result: boolean = sink.write(large, 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              capturedWriteRecord0 = sink.records[0];
+            });
+            expect(result).assertFalse();
           });
-          sink.on('finish', (): void => {
-            capturedSinkText = sink.text;
-            capturedWriteCount = sink.writeCount;
-            capturedCallbackCount = sink.callbackCount;
-            capturedWritableFinished = sink.writableFinished;
-            resolve(undefined as void);
-          });
-          let result: boolean = sink.write(large, 'utf8', (err?: Error): void => {
-            if (err !== undefined) { reject(err); return; }
-            capturedWriteRecord0 = sink.records[0];
-          });
-          expect(result).assertFalse();
-        });
-        expect(capturedWriteRecord0).assertEqual('L'.repeat(20000));
-        expect(capturedDrainRecord0).assertEqual('L'.repeat(20000));
-        expect(capturedTailAccepted).assertTrue();
-        expect(capturedTailRecord).assertEqual('tail');
-        expect(capturedSinkText).assertEqual('L'.repeat(20000) + 'tail');
-        expect(capturedWriteCount).assertEqual(2);
-        expect(capturedCallbackCount).assertEqual(2);
-        expect(capturedWritableFinished).assertTrue();
+          expect(capturedWriteRecord0).assertEqual('L'.repeat(20000));
+          expect(capturedDrainRecord0).assertEqual('L'.repeat(20000));
+          expect(capturedTailAccepted).assertTrue();
+          expect(capturedTailRecord).assertEqual('tail');
+          expect(capturedSinkText).assertEqual('L'.repeat(20000) + 'tail');
+          expect(capturedWriteCount).assertEqual(2);
+          expect(capturedCallbackCount).assertEqual(2);
+          expect(capturedWritableFinished).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -505,52 +525,59 @@ export default function StreamProtocolLifecycleFlowTest(): void {
         let capturedSinkWriteCount: int = 0;
         let capturedSourceValues: string[] = [];
         let capturedSinkRecords: string[] = [];
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          let largeA: string = 'A'.repeat(20000);
-          let largeB: string = 'B'.repeat(20000);
-          let source = new ScenarioReadable([largeA, 'middle', largeB, 'last']);
-          let sink = new ScenarioCollectWritable();
-          let dataCount: int = 0;
-          let drainCount: int = 0;
-          source.on('data', (chunk: Object): void => {
-            let value: string = chunk.toString();
-            dataCount++;
-            capturedSourceValues.push(value);
-            let accepted: boolean = sink.write(value, 'utf8', (err?: Error): void => {
-              if (err !== undefined) { reject(err); return; }
-              capturedSinkRecords.push(sink.records[dataCount - 1] as string);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            let largeA: string = 'A'.repeat(20000);
+            let largeB: string = 'B'.repeat(20000);
+            let source = new ScenarioReadable([largeA, 'middle', largeB, 'last']);
+            let sink = new ScenarioCollectWritable();
+            let dataCount: int = 0;
+            let drainCount: int = 0;
+            source.on('data', (chunk: Object): void => {
+              let value: string = chunk.toString();
+              dataCount++;
+              capturedSourceValues.push(value);
+              let accepted: boolean = sink.write(value, 'utf8', (err?: Error): void => {
+                if (err !== undefined) {
+                  reject(err);
+                  return;
+                }
+                capturedSinkRecords.push(sink.records[dataCount - 1] as string);
+              });
+              if (!accepted) {
+                source.pause();
+              }
             });
-            if (!accepted) {
-              source.pause();
-            }
-          });
-          sink.on('drain', (): void => {
-            drainCount++;
+            sink.on('drain', (): void => {
+              drainCount++;
+              source.resume();
+            });
+            source.on('end', (): void => {
+              sink.end();
+            });
+            sink.on('finish', (): void => {
+              capturedSinkText = sink.text;
+              capturedDataCount = dataCount;
+              capturedDrainCount = drainCount;
+              capturedSinkWriteCount = sink.writeCount;
+              resolve(undefined as void);
+            });
             source.resume();
           });
-          source.on('end', (): void => {
-            sink.end();
-          });
-          sink.on('finish', (): void => {
-            capturedSinkText = sink.text;
-            capturedDataCount = dataCount;
-            capturedDrainCount = drainCount;
-            capturedSinkWriteCount = sink.writeCount;
-            resolve(undefined as void);
-          });
-          source.resume();
-        });
-        expect(capturedSinkText).assertEqual('A'.repeat(20000) + 'middle' + 'B'.repeat(20000) + 'last');
-        expect(capturedDataCount).assertEqual(4);
-        expect(capturedDrainCount).assertEqual(2);
-        expect(capturedSinkWriteCount).assertEqual(4);
-        for (let i: int = 0; i < capturedSourceValues.length; i++) {
-          let expectedValue: string = i === 0 ? 'A'.repeat(20000) :
-            (i === 1 ? 'middle' : (i === 2 ? 'B'.repeat(20000) : 'last'));
-          expect(capturedSourceValues[i]).assertEqual(expectedValue);
-        }
-        for (let i: int = 0; i < capturedSinkRecords.length; i++) {
-          expect(capturedSinkRecords[i]).assertEqual(capturedSourceValues[i]);
+          expect(capturedSinkText).assertEqual('A'.repeat(20000) + 'middle' + 'B'.repeat(20000) + 'last');
+          expect(capturedDataCount).assertEqual(4);
+          expect(capturedDrainCount).assertEqual(2);
+          expect(capturedSinkWriteCount).assertEqual(4);
+          for (let i: int = 0; i < capturedSourceValues.length; i++) {
+            let expectedValue: string = i === 0 ? 'A'.repeat(20000) :
+              (i === 1 ? 'middle' : (i === 2 ? 'B'.repeat(20000) : 'last'));
+            expect(capturedSourceValues[i]).assertEqual(expectedValue);
+          }
+          for (let i: int = 0; i < capturedSinkRecords.length; i++) {
+            expect(capturedSinkRecords[i]).assertEqual(capturedSourceValues[i]);
+          }
+        } catch (e) {
+          expect(false).assertTrue();
         }
         done();
       });
@@ -571,38 +598,51 @@ export default function StreamProtocolLifecycleFlowTest(): void {
         let capturedRecord0: string = '';
         let capturedRecord1: string = '';
         let capturedRecord2: string = '';
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          let sink = new ScenarioCollectWritable();
-          sink.cork();
-          sink.write('T:one', 'utf8', (err?: Error): void => {
-            if (err !== undefined) { reject(err); return; }
-            capturedRecord0 = sink.records[0];
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            let sink = new ScenarioCollectWritable();
+            sink.cork();
+            sink.write('T:one', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              capturedRecord0 = sink.records[0];
+            });
+            sink.write('T:two', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              capturedRecord1 = sink.records[1];
+            });
+            sink.write('T:three', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              capturedRecord2 = sink.records[2];
+            });
+            sink.on('finish', (): void => {
+              capturedSinkText = sink.text;
+              capturedWriteCount = sink.writeCount;
+              capturedWritableCorked = sink.writableCorked;
+              resolve(undefined as void);
+            });
+            setTimeout((): void => {
+              sink.uncork();
+              sink.end();
+            }, 0);
           });
-          sink.write('T:two', 'utf8', (err?: Error): void => {
-            if (err !== undefined) { reject(err); return; }
-            capturedRecord1 = sink.records[1];
-          });
-          sink.write('T:three', 'utf8', (err?: Error): void => {
-            if (err !== undefined) { reject(err); return; }
-            capturedRecord2 = sink.records[2];
-          });
-          sink.on('finish', (): void => {
-            capturedSinkText = sink.text;
-            capturedWriteCount = sink.writeCount;
-            capturedWritableCorked = sink.writableCorked;
-            resolve(undefined as void);
-          });
-          setTimeout((): void => {
-            sink.uncork();
-            sink.end();
-          }, 0);
-        });
-        expect(capturedSinkText).assertEqual('T:oneT:twoT:three');
-        expect(capturedWriteCount).assertEqual(3);
-        expect(capturedWritableCorked).assertEqual(0);
-        expect(capturedRecord0).assertEqual('T:one');
-        expect(capturedRecord1).assertEqual('T:two');
-        expect(capturedRecord2).assertEqual('T:three');
+          expect(capturedSinkText).assertEqual('T:oneT:twoT:three');
+          expect(capturedWriteCount).assertEqual(3);
+          expect(capturedWritableCorked).assertEqual(0);
+          expect(capturedRecord0).assertEqual('T:one');
+          expect(capturedRecord1).assertEqual('T:two');
+          expect(capturedRecord2).assertEqual('T:three');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -822,86 +862,93 @@ export default function StreamProtocolLifecycleFlowTest(): void {
         let capturedLastSinkRecord: string = '';
         let capturedWritableFinished: boolean = false;
         let capturedFlushOrderValid: boolean = true;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          let largeA: string = 'A'.repeat(20000);
-          let largeB: string = 'B'.repeat(20000);
-          let source = new ScenarioReadable(['TX|A:' + largeA, '|B:' + largeB, '|']);
-          let transform = new CommitFrameTransform();
-          let duplex = new ScenarioDuplex('ACK:');
-          let sink = new ScenarioCollectWritable(5);
-          let drainCount: int = 0;
-          let dataCount: int = 0;
-          let pending: string[] = [];
-          let blocked: boolean = false;
-          let ended: boolean = false;
-          let flushQueue: Function = (): void => {
-            while (!blocked && pending.length > 0) {
-              let value: string = pending.shift() as string;
-              let currentValue: string = value;
-              let accepted: boolean = sink.write(value, 'utf8', (err?: Error): void => {
-                if (err !== undefined) { reject(err); return; }
-                if (sink.records[sink.records.length - 1] !== currentValue) {
-                  capturedFlushOrderValid = false;
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            let largeA: string = 'A'.repeat(20000);
+            let largeB: string = 'B'.repeat(20000);
+            let source = new ScenarioReadable(['TX|A:' + largeA, '|B:' + largeB, '|']);
+            let transform = new CommitFrameTransform();
+            let duplex = new ScenarioDuplex('ACK:');
+            let sink = new ScenarioCollectWritable(5);
+            let drainCount: int = 0;
+            let dataCount: int = 0;
+            let pending: string[] = [];
+            let blocked: boolean = false;
+            let ended: boolean = false;
+            let flushQueue: Function = (): void => {
+              while (!blocked && pending.length > 0) {
+                let value: string = pending.shift() as string;
+                let currentValue: string = value;
+                let accepted: boolean = sink.write(value, 'utf8', (err?: Error): void => {
+                  if (err !== undefined) {
+                    reject(err);
+                    return;
+                  }
+                  if (sink.records[sink.records.length - 1] !== currentValue) {
+                    capturedFlushOrderValid = false;
+                  }
+                });
+                if (!accepted) {
+                  blocked = true;
                 }
-              });
-              if (!accepted) {
-                blocked = true;
               }
-            }
-            if (ended && !blocked && pending.length === 0) {
-              sink.end();
-            }
-          };
-          source.on('data', (chunk: Object): void => {
-            transform.write(chunk.toString(), 'utf8');
+              if (ended && !blocked && pending.length === 0) {
+                sink.end();
+              }
+            };
+            source.on('data', (chunk: Object): void => {
+              transform.write(chunk.toString(), 'utf8');
+            });
+            source.on('end', (): void => {
+              transform.end();
+            });
+            transform.on('data', (chunk: Object): void => {
+              duplex.write(chunk.toString(), 'utf8');
+            });
+            transform.on('end', (): void => {
+              duplex.end();
+            });
+            duplex.on('data', (chunk: Object): void => {
+              let value: string = chunk.toString();
+              dataCount++;
+              pending.push(value);
+              flushQueue.unsafeCall();
+            });
+            duplex.on('end', (): void => {
+              ended = true;
+              flushQueue.unsafeCall();
+            });
+            sink.on('drain', (): void => {
+              drainCount++;
+              blocked = false;
+              flushQueue.unsafeCall();
+            });
+            sink.on('finish', (): void => {
+              capturedSinkText = sink.text;
+              capturedTransformFramesLength = transform.frames.length;
+              capturedPending = transform.pending;
+              capturedDrainCount = drainCount;
+              capturedDataCount = dataCount;
+              capturedSinkWriteCount = sink.writeCount;
+              capturedLastSinkRecord = sink.records[sink.records.length - 1];
+              capturedWritableFinished = sink.writableFinished;
+              resolve(undefined as void);
+            });
+            source.resume();
           });
-          source.on('end', (): void => {
-            transform.end();
-          });
-          transform.on('data', (chunk: Object): void => {
-            duplex.write(chunk.toString(), 'utf8');
-          });
-          transform.on('end', (): void => {
-            duplex.end();
-          });
-          duplex.on('data', (chunk: Object): void => {
-            let value: string = chunk.toString();
-            dataCount++;
-            pending.push(value);
-            flushQueue.unsafeCall();
-          });
-          duplex.on('end', (): void => {
-            ended = true;
-            flushQueue.unsafeCall();
-          });
-          sink.on('drain', (): void => {
-            drainCount++;
-            blocked = false;
-            flushQueue.unsafeCall();
-          });
-          sink.on('finish', (): void => {
-            capturedSinkText = sink.text;
-            capturedTransformFramesLength = transform.frames.length;
-            capturedPending = transform.pending;
-            capturedDrainCount = drainCount;
-            capturedDataCount = dataCount;
-            capturedSinkWriteCount = sink.writeCount;
-            capturedLastSinkRecord = sink.records[sink.records.length - 1];
-            capturedWritableFinished = sink.writableFinished;
-            resolve(undefined as void);
-          });
-          source.resume();
-        });
-        expect(capturedSinkText).assertEqual('ACK:VALID:TXACK:VALID:A:' + 'A'.repeat(20000) +
-          'ACK:VALID:B:' + 'B'.repeat(20000) + 'ACK:COMMIT');
-        expect(capturedTransformFramesLength).assertEqual(3);
-        expect(capturedPending).assertEqual('');
-        expect(capturedDrainCount).assertEqual(2);
-        expect(capturedDataCount).assertEqual(4);
-        expect(capturedSinkWriteCount).assertEqual(4);
-        expect(capturedLastSinkRecord).assertEqual('ACK:COMMIT');
-        expect(capturedWritableFinished).assertTrue();
-        expect(capturedFlushOrderValid).assertTrue();
+          expect(capturedSinkText).assertEqual('ACK:VALID:TXACK:VALID:A:' + 'A'.repeat(20000) +
+            'ACK:VALID:B:' + 'B'.repeat(20000) + 'ACK:COMMIT');
+          expect(capturedTransformFramesLength).assertEqual(3);
+          expect(capturedPending).assertEqual('');
+          expect(capturedDrainCount).assertEqual(2);
+          expect(capturedDataCount).assertEqual(4);
+          expect(capturedSinkWriteCount).assertEqual(4);
+          expect(capturedLastSinkRecord).assertEqual('ACK:COMMIT');
+          expect(capturedWritableFinished).assertTrue();
+          expect(capturedFlushOrderValid).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -925,75 +972,82 @@ export default function StreamProtocolLifecycleFlowTest(): void {
         let capturedRetrySinkWriteCount: int = 0;
         let capturedRetryWritableFinished: boolean = false;
         let capturedRetryRecordsValid: boolean = true;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          let firstSource = new ScenarioReadable(['BAD|']);
-          let firstTransform = new CommitFrameTransform('BAD');
-          let firstError: boolean = false;
-          firstSource.on('data', (chunk: Object): void => {
-            firstTransform.write(chunk.toString(), 'utf8');
-          });
-          firstSource.on('end', (): void => {
-          });
-          firstTransform.on('error', (error: Error): void => {
-            capturedFirstErrorName = error.name;
-            capturedFirstErrorMessage = error.message;
-            firstError = true;
-            let retrySource = new ScenarioReadable(['RE', 'TRY:1|RETRY:2|']);
-            let retryTransform = new CommitFrameTransform();
-            let retryDuplex = new ScenarioDuplex('ACK:');
-            let retrySink = new ScenarioCollectWritable();
-            retryTransform.on('data', (chunk: Object): void => {
-              retryDuplex.write(chunk.toString(), 'utf8');
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            let firstSource = new ScenarioReadable(['BAD|']);
+            let firstTransform = new CommitFrameTransform('BAD');
+            let firstError: boolean = false;
+            firstSource.on('data', (chunk: Object): void => {
+              firstTransform.write(chunk.toString(), 'utf8');
             });
-            retryTransform.on('end', (): void => {
-              retryDuplex.end();
+            firstSource.on('end', (): void => {
             });
-            retryDuplex.on('data', (chunk: Object): void => {
-              let value: string = chunk.toString();
-              let currentValue: string = value;
-              retrySink.write(value, 'utf8', (err?: Error): void => {
-                if (err !== undefined) { reject(err); return; }
-                if (retrySink.records[retrySink.records.length - 1] !== currentValue) {
-                  capturedRetryRecordsValid = false;
-                }
+            firstTransform.on('error', (error: Error): void => {
+              capturedFirstErrorName = error.name;
+              capturedFirstErrorMessage = error.message;
+              firstError = true;
+              let retrySource = new ScenarioReadable(['RE', 'TRY:1|RETRY:2|']);
+              let retryTransform = new CommitFrameTransform();
+              let retryDuplex = new ScenarioDuplex('ACK:');
+              let retrySink = new ScenarioCollectWritable();
+              retryTransform.on('data', (chunk: Object): void => {
+                retryDuplex.write(chunk.toString(), 'utf8');
               });
+              retryTransform.on('end', (): void => {
+                retryDuplex.end();
+              });
+              retryDuplex.on('data', (chunk: Object): void => {
+                let value: string = chunk.toString();
+                let currentValue: string = value;
+                retrySink.write(value, 'utf8', (err?: Error): void => {
+                  if (err !== undefined) {
+                    reject(err);
+                    return;
+                  }
+                  if (retrySink.records[retrySink.records.length - 1] !== currentValue) {
+                    capturedRetryRecordsValid = false;
+                  }
+                });
+              });
+              retryDuplex.on('finish', (): void => {
+                retryDuplex.push(null);
+              });
+              retryDuplex.on('end', (): void => {
+                retrySink.end();
+              });
+              retrySink.on('finish', (): void => {
+                capturedFirstError = firstError;
+                capturedRetryFrames = retryTransform.frames.join('|');
+                capturedBadIndex = retryTransform.frames.indexOf('BAD');
+                capturedRetrySinkText = retrySink.text;
+                capturedRetryDuplexWriteCount = retryDuplex.writeCount;
+                capturedRetrySinkWriteCount = retrySink.writeCount;
+                capturedRetryWritableFinished = retrySink.writableFinished;
+                resolve(undefined as void);
+              });
+              retrySource.on('data', (chunk: Object): void => {
+                retryTransform.write(chunk.toString(), 'utf8');
+              });
+              retrySource.on('end', (): void => {
+                retryTransform.end();
+              });
+              retrySource.resume();
             });
-            retryDuplex.on('finish', (): void => {
-              retryDuplex.push(null);
-            });
-            retryDuplex.on('end', (): void => {
-              retrySink.end();
-            });
-            retrySink.on('finish', (): void => {
-              capturedFirstError = firstError;
-              capturedRetryFrames = retryTransform.frames.join('|');
-              capturedBadIndex = retryTransform.frames.indexOf('BAD');
-              capturedRetrySinkText = retrySink.text;
-              capturedRetryDuplexWriteCount = retryDuplex.writeCount;
-              capturedRetrySinkWriteCount = retrySink.writeCount;
-              capturedRetryWritableFinished = retrySink.writableFinished;
-              resolve(undefined as void);
-            });
-            retrySource.on('data', (chunk: Object): void => {
-              retryTransform.write(chunk.toString(), 'utf8');
-            });
-            retrySource.on('end', (): void => {
-              retryTransform.end();
-            });
-            retrySource.resume();
+            firstSource.resume();
           });
-          firstSource.resume();
-        });
-        expect(capturedFirstErrorName).assertEqual('Error');
-        expect(capturedFirstErrorMessage).assertEqual('commit frame rejected: BAD');
-        expect(capturedFirstError).assertTrue();
-        expect(capturedRetryFrames).assertEqual('RETRY:1|RETRY:2');
-        expect(capturedBadIndex).assertEqual(-1);
-        expect(capturedRetrySinkText).assertEqual('ACK:VALID:RETRY:1ACK:VALID:RETRY:2ACK:COMMIT');
-        expect(capturedRetryDuplexWriteCount).assertEqual(3);
-        expect(capturedRetrySinkWriteCount).assertEqual(3);
-        expect(capturedRetryWritableFinished).assertTrue();
-        expect(capturedRetryRecordsValid).assertTrue();
+          expect(capturedFirstErrorName).assertEqual('Error');
+          expect(capturedFirstErrorMessage).assertEqual('commit frame rejected: BAD');
+          expect(capturedFirstError).assertTrue();
+          expect(capturedRetryFrames).assertEqual('RETRY:1|RETRY:2');
+          expect(capturedBadIndex).assertEqual(-1);
+          expect(capturedRetrySinkText).assertEqual('ACK:VALID:RETRY:1ACK:VALID:RETRY:2ACK:COMMIT');
+          expect(capturedRetryDuplexWriteCount).assertEqual(3);
+          expect(capturedRetrySinkWriteCount).assertEqual(3);
+          expect(capturedRetryWritableFinished).assertTrue();
+          expect(capturedRetryRecordsValid).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -1077,55 +1131,62 @@ export default function StreamProtocolLifecycleFlowTest(): void {
         let capturedDuplexWriteCallback: boolean = false;
         let capturedDuplexEndedAfterCallback: boolean = false;
         let capturedWritableFinished: boolean = false;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          let source = new ScenarioReadable([]);
-          let transform = new CommitFrameTransform();
-          let duplex = new ScenarioDuplex('ACK:');
-          let sink = new ScenarioCollectWritable();
-          source.on('data', (chunk: Object): void => {
-            transform.write(chunk.toString(), 'utf8');
-          });
-          source.on('end', (): void => {
-            transform.end();
-          });
-          transform.on('data', (chunk: Object): void => {
-            duplex.write(chunk.toString(), 'utf8', (err?: Error): void => {
-              if (err !== undefined) { reject(err); return; }
-              capturedDuplexWriteCallback = true;
-              setTimeout((): void => {
-                capturedDuplexEndedAfterCallback = capturedDuplexWriteCallback;
-                duplex.end();
-              }, 0);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            let source = new ScenarioReadable([]);
+            let transform = new CommitFrameTransform();
+            let duplex = new ScenarioDuplex('ACK:');
+            let sink = new ScenarioCollectWritable();
+            source.on('data', (chunk: Object): void => {
+              transform.write(chunk.toString(), 'utf8');
             });
+            source.on('end', (): void => {
+              transform.end();
+            });
+            transform.on('data', (chunk: Object): void => {
+              duplex.write(chunk.toString(), 'utf8', (err?: Error): void => {
+                if (err !== undefined) {
+                  reject(err);
+                  return;
+                }
+                capturedDuplexWriteCallback = true;
+                setTimeout((): void => {
+                  capturedDuplexEndedAfterCallback = capturedDuplexWriteCallback;
+                  duplex.end();
+                }, 0);
+              });
+            });
+            duplex.on('data', (chunk: Object): void => {
+              sink.write(chunk.toString(), 'utf8');
+            });
+            duplex.on('finish', (): void => {
+              duplex.push(null);
+            });
+            duplex.on('end', (): void => {
+              sink.end();
+            });
+            sink.on('finish', (): void => {
+              capturedSinkText = sink.text;
+              capturedFrames = transform.frames.join('|');
+              capturedPending = transform.pending;
+              capturedFlushCount = transform.flushCount;
+              capturedDuplexWriteCount = duplex.writeCount;
+              capturedWritableFinished = sink.writableFinished;
+              resolve(undefined as void);
+            });
+            source.resume();
           });
-          duplex.on('data', (chunk: Object): void => {
-            sink.write(chunk.toString(), 'utf8');
-          });
-          duplex.on('finish', (): void => {
-            duplex.push(null);
-          });
-          duplex.on('end', (): void => {
-            sink.end();
-          });
-          sink.on('finish', (): void => {
-            capturedSinkText = sink.text;
-            capturedFrames = transform.frames.join('|');
-            capturedPending = transform.pending;
-            capturedFlushCount = transform.flushCount;
-            capturedDuplexWriteCount = duplex.writeCount;
-            capturedWritableFinished = sink.writableFinished;
-            resolve(undefined as void);
-          });
-          source.resume();
-        });
-        expect(capturedFrames).assertEqual('');
-        expect(capturedPending).assertEqual('');
-        expect(capturedFlushCount).assertEqual(1);
-        expect(capturedSinkText).assertEqual('ACK:COMMIT');
-        expect(capturedDuplexWriteCount).assertEqual(1);
-        expect(capturedDuplexWriteCallback).assertTrue();
-        expect(capturedDuplexEndedAfterCallback).assertTrue();
-        expect(capturedWritableFinished).assertTrue();
+          expect(capturedFrames).assertEqual('');
+          expect(capturedPending).assertEqual('');
+          expect(capturedFlushCount).assertEqual(1);
+          expect(capturedSinkText).assertEqual('ACK:COMMIT');
+          expect(capturedDuplexWriteCount).assertEqual(1);
+          expect(capturedDuplexWriteCallback).assertTrue();
+          expect(capturedDuplexEndedAfterCallback).assertTrue();
+          expect(capturedWritableFinished).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 

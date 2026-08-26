@@ -377,14 +377,17 @@ export default function StreamDuplexInteractionTest(): void {
         let ds: DuplexErrorWrite = new DuplexErrorWrite();
         let readableAtError: boolean = false;
         let readableEndedAtError: boolean = false;
+        let errorMessage: string = '';
         await new Promise<void>((resolve: (value: void) => void): void => {
-          ds.on('error', (err: Object): void => {
+          ds.on('error', (err: Error): void => {
+            errorMessage = err.message;
             readableAtError = ds.readable;
             readableEndedAtError = ds.readableEnded;
             resolve(undefined);
           });
           ds.write('x', 'utf8');
         });
+        expect(errorMessage).assertEqual('duplex write error');
         expect(readableAtError).assertTrue();
         expect(readableEndedAtError).assertFalse();
         done();
@@ -761,42 +764,46 @@ export default function StreamDuplexInteractionTest(): void {
         let finishCallback: boolean = false;
         let finishEvent: boolean = false;
 
-        await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
-          ds.write('text', 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-            }
-            firstCallback = true;
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
+            ds.write('text', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+              }
+              firstCallback = true;
+            });
+            ds.write(byteChunk, 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+              }
+              secondCallback = true;
+            });
+            ds.on('finish', (): void => {
+              finishEvent = true;
+            });
+            ds.end('tail', 'utf8', (): void => {
+              finishCallback = true;
+              resolve(undefined as void);
+            });
           });
-          ds.write(byteChunk, 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-            }
-            secondCallback = true;
-          });
-          ds.on('finish', (): void => {
-            finishEvent = true;
-          });
-          ds.end('tail', 'utf8', (): void => {
-            finishCallback = true;
-            resolve(undefined as void);
-          });
-        });
 
-        expect(firstCallback).assertTrue();
-        expect(secondCallback).assertTrue();
-        expect(finishCallback).assertTrue();
-        expect(ds.writeCount).assertEqual(3);
-        expect(ds.dataChunks[0]).assertEqual('text');
-        let recordedBytes: Uint8Array = ds.dataChunks[1] as Uint8Array;
-        expect(recordedBytes.length).assertEqual(4);
-        expect(recordedBytes[0]).assertEqual(98);
-        expect(recordedBytes[3]).assertEqual(101);
-        expect(ds.dataChunks[2]).assertEqual('tail');
-        expect(ds.dataEncodings[0]).assertEqual('utf8');
-        expect(ds.dataEncodings[1]).assertEqual('utf8');
-        expect(ds.dataEncodings[2]).assertEqual('utf8');
-        expect(ds.writableFinished).assertTrue();
+          expect(firstCallback).assertTrue();
+          expect(secondCallback).assertTrue();
+          expect(finishCallback).assertTrue();
+          expect(ds.writeCount).assertEqual(3);
+          expect(ds.dataChunks[0]).assertEqual('text');
+          let recordedBytes: Uint8Array = ds.dataChunks[1] as Uint8Array;
+          expect(recordedBytes.length).assertEqual(4);
+          expect(recordedBytes[0]).assertEqual(98);
+          expect(recordedBytes[3]).assertEqual(101);
+          expect(ds.dataChunks[2]).assertEqual('tail');
+          expect(ds.dataEncodings[0]).assertEqual('utf8');
+          expect(ds.dataEncodings[1]).assertEqual('utf8');
+          expect(ds.dataEncodings[2]).assertEqual('utf8');
+          expect(ds.writableFinished).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -899,32 +906,36 @@ export default function StreamDuplexInteractionTest(): void {
         let value = '';
         let dataChunkVal: string = '';
         let record0AtCb: string = '';
-        await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
-          duplex.pause();
-          duplex.on('data', (chunk: Object): void => {
-            dataChunkVal = chunk.toString();
-            value += chunk.toString();
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
+            duplex.pause();
+            duplex.on('data', (chunk: Object): void => {
+              dataChunkVal = chunk.toString();
+              value += chunk.toString();
+            });
+            duplex.on('finish', (): void => {
+              duplex.push(null);
+            });
+            duplex.on('end', (): void => {
+              resolve(undefined as void);
+            });
+            duplex.write('held', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              record0AtCb = duplex.records[0];
+              duplex.push(null);
+              duplex.resume();
+              duplex.end();
+            });
           });
-          duplex.on('finish', (): void => {
-            duplex.push(null);
-          });
-          duplex.on('end', (): void => {
-            resolve(undefined as void);
-          });
-          duplex.write('held', 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            record0AtCb = duplex.records[0];
-            duplex.push(null);
-            duplex.resume();
-            duplex.end();
-          });
-        });
-        expect(dataChunkVal).assertEqual('P:held');
-        expect(record0AtCb).assertEqual('held');
-        expect(value).assertEqual('P:held');
+          expect(dataChunkVal).assertEqual('P:held');
+          expect(record0AtCb).assertEqual('held');
+          expect(value).assertEqual('P:held');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -1061,40 +1072,44 @@ export default function StreamDuplexInteractionTest(): void {
         let writableEndedAtFinish: boolean = false;
         let writeCountAtFinish: int = 0;
         let record0AtCb: string = '';
-        await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
-          duplex.on('data', (chunk: Object): void => {
-            let value: string = chunk.toString();
-            if (response.length === 0) {
-              firstDataVal = value;
-            } else {
-              secondDataVal = value;
-            }
-            response += value;
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
+            duplex.on('data', (chunk: Object): void => {
+              let value: string = chunk.toString();
+              if (response.length === 0) {
+                firstDataVal = value;
+              } else {
+                secondDataVal = value;
+              }
+              response += value;
+            });
+            duplex.on('finish', (): void => {
+              writableEndedAtFinish = duplex.writableEnded;
+              writeCountAtFinish = duplex.writeCount;
+              duplex.push(null);
+            });
+            duplex.on('end', (): void => {
+              resolve(undefined as void);
+            });
+            duplex.push('server-ready');
+            duplex.write('request', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              record0AtCb = duplex.records[0];
+            });
+            duplex.end();
           });
-          duplex.on('finish', (): void => {
-            writableEndedAtFinish = duplex.writableEnded;
-            writeCountAtFinish = duplex.writeCount;
-            duplex.push(null);
-          });
-          duplex.on('end', (): void => {
-            resolve(undefined as void);
-          });
-          duplex.push('server-ready');
-          duplex.write('request', 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            record0AtCb = duplex.records[0];
-          });
-          duplex.end();
-        });
-        expect(firstDataVal).assertEqual('server-ready');
-        expect(secondDataVal).assertEqual('RESP:request');
-        expect(writableEndedAtFinish).assertTrue();
-        expect(writeCountAtFinish).assertEqual(1);
-        expect(record0AtCb).assertEqual('request');
-        expect(response).assertEqual('server-readyRESP:request');
+          expect(firstDataVal).assertEqual('server-ready');
+          expect(secondDataVal).assertEqual('RESP:request');
+          expect(writableEndedAtFinish).assertTrue();
+          expect(writeCountAtFinish).assertEqual(1);
+          expect(record0AtCb).assertEqual('request');
+          expect(response).assertEqual('server-readyRESP:request');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
 
         done();
       });
