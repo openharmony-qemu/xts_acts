@@ -55,16 +55,16 @@ export default function dragAdaptationTest() {
 
 
 /**
-     * @tc.number   dragAdaptationTest_static_001
-     * @tc.name     dragAdaptationTest_static_001
-     * @tc.desc     dragAdaptationTest_static_001
+     * @tc.number   SUB_ArkUI_DragAdaptationTest_static_0100
+     * @tc.name     SUB_ArkUI_DragAdaptationTest_static_0100
+     * @tc.desc     SUB_ArkUI_DragAdaptationTest_static_0100
      * @tc.level    Level.LEVEL0
      */
- it('dragAdaptationTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('SUB_ArkUI_DragAdaptationTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         if (AppStorage.get<number>("winLeft") == 0) {
           let driver = Driver.create();
-          console.info('dragAdaptationTest dragAdaptationTest_static_001 START');
+          console.info('dragAdaptationTest SUB_ArkUI_DragAdaptationTest_static_0100 START');
           await CommonFunc.sleep(1000);
           let textArea1 = await driver.findComponent(ON.id('textArea1'));
           await CommonFunc.sleep(500);
@@ -72,7 +72,7 @@ export default function dragAdaptationTest() {
           await CommonFunc.sleep(500);
           await (textArea2?.click() as Promise<void>);
           await CommonFunc.sleep(500);
-          console.log('dragAdaptationTest_static_001 = ')
+          console.log('SUB_ArkUI_DragAdaptationTest_static_0100 = ')
           // let button1 = await driver.findComponent(ON.text('下一步'));
           // await CommonFunc.sleep(500);
           // await (button1?.click() as Promise<void>);
@@ -82,18 +82,18 @@ export default function dragAdaptationTest() {
           let button3 = await driver.findComponent(ON.text('全选'));
           await CommonFunc.sleep(500);
           await (button3?.click() as Promise<void>);
-          console.info('dragAdaptationTest_static_001 全选 success');
+          console.info('SUB_ArkUI_DragAdaptationTest_static_0100 全选 success');
           await CommonFunc.sleep(500);
           console.log('dragTo before')
           textArea1?.dragTo(textArea2!);
           console.log('dragTo after')
           await CommonFunc.sleep(3000);
-          console.info('dragAdaptationTest_static_001 dragTo success');
+          console.info('SUB_ArkUI_DragAdaptationTest_static_0100 dragTo success');
           // let button4 = await driver.findComponent(ON.text('取消'));
           // await CommonFunc.sleep(500);
           // await (button4?.click() as Promise<void>);
           // await CommonFunc.sleep(500);
-          // console.info('dragAdaptationTest_static_001 取消 success');
+          // console.info('SUB_ArkUI_DragAdaptationTest_static_0100 取消 success');
 
           await (textArea1?.longClick() as Promise<void>);
           await CommonFunc.sleep(500);
@@ -101,26 +101,26 @@ export default function dragAdaptationTest() {
           await CommonFunc.sleep(500);
           await (button5?.click() as Promise<void>);
           await CommonFunc.sleep(500);
-          console.info('dragAdaptationTest_static_001 2 全选 success');
+          console.info('SUB_ArkUI_DragAdaptationTest_static_0100 2 全选 success');
           let button6 = await driver.findComponent(ON.text('复制'));
           await CommonFunc.sleep(500);
           await (button6?.click() as Promise<void>);
           await CommonFunc.sleep(500);
-          console.info('dragAdaptationTest_static_001 2 复制 success');
+          console.info('SUB_ArkUI_DragAdaptationTest_static_0100 2 复制 success');
           textArea1?.dragTo(textArea2!);
           await CommonFunc.sleep(2000);
           // let button7 = await driver.findComponent(ON.type('Button'));
           // await CommonFunc.sleep(500);
           // await (button7?.click() as Promise<void>);
           await CommonFunc.sleep(500);
-          console.info('dragAdaptationTest_static_001 2 Button success');
+          console.info('SUB_ArkUI_DragAdaptationTest_static_0100 2 Button success');
         }
 
         expect("").assertEqual("");
-        console.info("[dragAdaptationTest_static_001] end");
+        console.info("[SUB_ArkUI_DragAdaptationTest_static_0100] end");
         done();
       } catch (err) {
-        console.error('[dragAdaptationTest_static_001] error: ' + err);
+        console.error('[SUB_ArkUI_DragAdaptationTest_static_0100] error: ' + err);
         done();
       }
     });

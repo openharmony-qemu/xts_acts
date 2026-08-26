@@ -57,19 +57,19 @@ export default function touchAbleJsunit() {
 
     
     /**
-     * @tc.number   testTouchAble_static_001
-     * @tc.name     testTouchAble_static_001
-     * @tc.desc     testTouchAble_static_001
+     * @tc.number   SUB_ArkUI_TouchAble_static_0100
+     * @tc.name     SUB_ArkUI_TouchAble_static_0100
+     * @tc.desc     SUB_ArkUI_TouchAble_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('testTouchAble_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('SUB_ArkUI_TouchAble_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await CommonFunc.sleep(1000)
       } catch (err) {
-        console.error("testTouchAble_static_001 sleep error:" + err);
+        console.error("SUB_ArkUI_TouchAble_static_0100 sleep error:" + err);
       }
       let strJson: string = inspector.getInspectorByKey('ellipse');
-      console.info("[testTouchAble001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("[SUB_ArkUI_TouchAble_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('focusable')).assertEqual(false);
       done();
     });
