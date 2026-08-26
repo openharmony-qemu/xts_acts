@@ -53,7 +53,7 @@ struct customSaveSetNull {
               .setText(this.customText)
               .iconSize(this.iconSize)
               .iconBorderRadius(this.iconRadius)
-              .key('customSave0')
+              .id('customSave0')
           }
           .visibility(this.isShow === 0 ? Visibility.Visible : Visibility.None)
 
@@ -80,7 +80,7 @@ struct customSaveSetNull {
               .setText(null)
               .iconSize(this.iconSize)
               .iconBorderRadius(this.iconRadius)
-              .key('customSave1')
+              .id('customSave1')
           }
           .visibility(this.isShow === 1 ? Visibility.Visible : Visibility.None)
 
@@ -107,7 +107,7 @@ struct customSaveSetNull {
               .setText(this.customText)
               .iconSize(null)
               .iconBorderRadius(this.iconRadius)
-              .key('customSave2')
+              .id('customSave2')
           }
           .visibility(this.isShow === 2 ? Visibility.Visible : Visibility.None)
 
@@ -134,7 +134,7 @@ struct customSaveSetNull {
               .setText(this.customText)
               .iconSize(this.iconSize)
               .iconBorderRadius(null)
-              .key('customSave3')
+              .id('customSave3')
           }
           .visibility(this.isShow === 3 ? Visibility.Visible : Visibility.None)
 
@@ -162,7 +162,7 @@ struct customSaveSetNull {
               .symbolIconColor(undefined)
               .symbolRenderingStrategy(undefined)
               .symbolFontWeight(undefined)
-              .key('customSave4')
+              .id('customSave4')
           }
           .visibility(this.isShow === 4 ? Visibility.Visible : Visibility.None)
 
@@ -190,7 +190,7 @@ struct customSaveSetNull {
               .symbolIconColor(null)
               .symbolRenderingStrategy(null)
               .symbolFontWeight(null)
-              .key('customSave5')
+              .id('customSave5')
           }
           .visibility(this.isShow === 5 ? Visibility.Visible : Visibility.None)
 
