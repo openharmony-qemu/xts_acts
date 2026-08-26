@@ -15,25 +15,19 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { CustomTheme } from '@ohos.arkui.theme';
 
 const SLEEP_TIME = 1000;
 
 export default function OtherInterfacesTest() {
   describe('OtherInterfacesTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] OtherInterfacesTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.common.componentSnapshot.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] OtherInterfacesTest beforeEach start");
       let options: router.RouterOptions = {
@@ -72,7 +66,11 @@ export default function OtherInterfacesTest() {
       if (AppStorage.get<boolean>('fontRegisterFont') != undefined) {
         AppStorage.delete('fontRegisterFont');
       }
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.error("[ARKUI_NEW] OtherInterfacesTest afterEach sleep error: " + err);
+      }
       console.info("[ARKUI_NEW] OtherInterfacesTest afterEach end");
     });
 

@@ -116,7 +116,7 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(1000);
+        await Utils.sleep(2000);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
