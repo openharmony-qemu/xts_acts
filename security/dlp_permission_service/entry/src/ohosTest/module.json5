@@ -17,7 +17,7 @@
   "module": {
     "name": "phone",
     "type": "feature",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
+    "srcEntry": "./ets/Application/AbilityStage.ets",
     "description": "$string:phone_entry_dsc",
     "mainElement": "MainAbility",
     "deviceTypes": [],
@@ -47,7 +47,7 @@
     "abilities": [
       {
         "name": "com.ohos.dlp_xts.MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ts",
+        "srcEntry": "./ets/MainAbility/MainAbility.ets",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",

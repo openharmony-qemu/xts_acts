@@ -12,10 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { BusinessError } from '@ohos.base';
+import { window } from '@kit.ArkUI';
+import { AbilityConstant } from '@kit.AbilityKit';
+import { Want } from '@kit.AbilityKit';
 import Ability from '@ohos.app.ability.UIAbility'
 
 export default class TestAbility extends Ability {
-  onCreate(want, launchParam): void {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     console.log('TestAbility onCreate');
   }
 
@@ -23,9 +27,9 @@ export default class TestAbility extends Ability {
     console.log('TestAbility onDestroy');
   }
 
-  onWindowStageCreate(windowStage): void {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     console.log('TestAbility onWindowStageCreate');
-    windowStage.loadContent('TestAbility/pages/index', (err, data) => {
+    windowStage.loadContent('TestAbility/pages/index', (err: BusinessError) => {
       if (err.code) {
         console.error('Failed to load the content. Cause:' + JSON.stringify(err));
         return;
