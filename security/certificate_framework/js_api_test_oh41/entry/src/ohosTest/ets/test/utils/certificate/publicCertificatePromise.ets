@@ -77,7 +77,7 @@ function createX509CertInstancePromise(certType: string): Promise<cert.X509Cert>
   });
 }
 
-function createX509CertInstanceforCRLTestPromise(flag: IAnyObj | string): Promise<cert.X509Cert> {
+function createX509CertInstanceforCRLTestPromise(flag: cert.X509Cert | string): Promise<cert.X509Cert> {
   let certformat: cert.EncodingFormat;
   let encodingData: Uint8Array = new Uint8Array();
   let invalidParams = false;
@@ -119,7 +119,7 @@ function createX509CertInstanceforCRLTestPromise(flag: IAnyObj | string): Promis
   });
 }
 
-async function verifyX509CertPromise(certType: string, flag: string): Promise<void> {
+async function verifyX509CertPromise(certType: string, flag: string): Promise<void | number> {
   let gInstance: cert.X509Cert;
   let publicKey: cryptoFramework.PubKey | string;
   return new Promise((resolve, reject) => {
@@ -152,7 +152,7 @@ async function verifyX509CertPromise(certType: string, flag: string): Promise<vo
   });
 }
 
-async function checkValidityX509CertPromise(certType: string, date: string): Promise<void> {
+async function checkValidityX509CertPromise(certType: string, date: string): Promise<void | number> {
   let result: void;
   return new Promise((resolve, reject) => {
     createX509CertInstancePromise(certType)
@@ -632,8 +632,8 @@ async function checkGetRevokedCertX509CRLPromise(certType: string) {
   });
 }
 
-function checkValidateOfCertChainValidatorPromise(algName: string, flag: string): Promise<void> {
-  return new Promise((resolve, reject) => {
+function checkValidateOfCertChainValidatorPromise(algName: string, flag: string): Promise<void | number> {
+  return new Promise<void | number>((resolve, reject) => {
     let validator: cert.CertChainValidator;
     try {
       validator = cert.createCertChainValidator(algName);

@@ -16,6 +16,7 @@
 import { expect } from "@ohos/hypium";
 import cryptoFramework from "@ohos.security.cryptoFramework";
 import cert from "@ohos.security.cert";
+import { BusinessError } from '@ohos.base';
 import { convertToUint8Array, stringTouInt8Array, uInt8ArrayToString, } from "../common/commonFunction";
 import {
   chainFirstCaCert,
@@ -135,7 +136,7 @@ async function verifyX509Cert(certInstance: cert.X509Cert, pubKey: cryptoFramewo
   });
 }
 
-async function verifyX509CertCallback(certType: string, flag: string): Promise<void> {
+async function verifyX509CertCallback(certType: string, flag: string): Promise<void | number> {
   let gInstance: cert.X509Cert;
   let pubKey: cryptoFramework.PubKey | string;
   return new Promise((resolve, reject) => {
@@ -169,7 +170,7 @@ async function verifyX509CertCallback(certType: string, flag: string): Promise<v
   });
 }
 
-async function checkValidityX509CertCallback(certType: string, date: string): Promise<null> {
+async function checkValidityX509CertCallback(certType: string, date: string): Promise<null | number> {
   return new Promise((resolve, reject) => {
     createX509CertInstanceCallback(certType)
       .then((instance) => {
@@ -378,7 +379,7 @@ function createX509CRLInstanceCallback(certType: string): Promise<cert.X509CRL> 
   });
 }
 
-function checkIsRevokedX509CRLCallback(crlInstance: cert.X509CRL, flag: string): Promise<boolean> {
+function checkIsRevokedX509CRLCallback(crlInstance: cert.X509CRL, flag: string): Promise<boolean | number> {
   let status: boolean;
   return new Promise((resolve, reject) => {
     createX509CertInstanceforCRLTestCallback(flag)
@@ -691,8 +692,8 @@ async function checkGetRevokedCertX509CRLCallback(certType: string) {
   });
 }
 
-function checkValidateOfCertChainValidatorCallback(algName: string, flag: string) {
-  return new Promise<void>((resolve, reject) => {
+function checkValidateOfCertChainValidatorCallback(algName: string, flag: string): Promise<void | number> {
+  return new Promise<void | number>((resolve, reject) => {
     let validator: cert.CertChainValidator;
     try {
       validator = cert.createCertChainValidator(algName);
@@ -755,7 +756,7 @@ function checkValidateOfCertChainValidatorCallback(algName: string, flag: string
       encodingFormat: cert.EncodingFormat.FORMAT_PEM,
     };
     console.log("certChainData.data is: " + certChainData.data);
-    validator.validate(certChainData, (err: IAnyObj) => {
+    validator.validate(certChainData, (err: BusinessError<void> | null) => {
       if (err) {
         console.error("[callback]: validate error: " + err);
         if (flag == "error") {

@@ -19,7 +19,15 @@ export interface DataUint8Array {
 }
 
 export interface IAnyObj {
-  [key: string]: any;
+  code: number;
+  message: string;
+}
+
+export interface CryptoParamsSpec {
+  iv: DataUint8Array;
+  aad?: DataUint8Array;
+  authTag?: DataUint8Array;
+  algoName: string;
 }
 
 export interface X509CRLParameters {

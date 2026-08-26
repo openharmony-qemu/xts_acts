@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { reg } from './commonParam';
-import { DataUint8Array, IAnyObj } from './commonType';
+import { CryptoParamsSpec, DataUint8Array } from './commonType';
 import { buffer } from '@kit.ArkTS';
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
@@ -73,7 +73,7 @@ function genIvParamsSpec(n: number) {
   }
   let dataIv = new Uint8Array(arr);
   let dataBlob: DataUint8Array = { data: dataIv };
-  let ivParamSpec: IAnyObj = {
+  let ivParamSpec: CryptoParamsSpec = {
     iv: dataBlob,
     algoName: "IvParamsSpec",
   };
@@ -89,8 +89,8 @@ function genGcmParamsSpec() {
   let ivBlob: DataUint8Array = { data: dataIv };
   arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataTag = new Uint8Array(arr);
-  let tagBlob: IAnyObj = { data: dataTag };
-  let gcmParamsSpec: IAnyObj = {
+  let tagBlob: DataUint8Array = { data: dataTag };
+  let gcmParamsSpec: CryptoParamsSpec = {
     iv: ivBlob,
     aad: aadBlob,
     authTag: tagBlob,
@@ -109,7 +109,7 @@ function genCcmParamsSpec() {
   arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   let dataTag = new Uint8Array(arr);
   let tagBlob: DataUint8Array = { data: dataTag };
-  let ccmParamsSpec: IAnyObj = {
+  let ccmParamsSpec: CryptoParamsSpec = {
     iv: ivBlob,
     aad: aadBlob,
     authTag: tagBlob,
