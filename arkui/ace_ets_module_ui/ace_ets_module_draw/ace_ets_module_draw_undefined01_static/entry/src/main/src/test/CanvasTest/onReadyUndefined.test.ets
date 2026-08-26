@@ -14,21 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index';
+
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 export default function onReadyUndefined() {
   describe('onReadyUndefined', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility('com.arkui.ace.draw.undefined01.static', 'EntryAbility');
-      await UtilsTest.msSleep(4000);
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('onReadyUndefined beforeEach start');
@@ -42,7 +37,7 @@ export default function onReadyUndefined() {
         console.info('get onReadyUndefined state pages:' + JSON.stringify(pages));
         if (!('onReadyUndefined' == pages.name)) {
           console.info('get onReadyUndefined pages.name:' + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -59,23 +54,29 @@ export default function onReadyUndefined() {
      */
     it('onReadyUndefined_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('onReadyUndefined_static_0100 START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
 
-      let strJson = inspector.getInspectorByKey('onReadySet');
-      let obj1 = JSON.parseJsonElement(strJson)
-      console.info('onReady true value: ' +JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('test');
+        let strJson = inspector.getInspectorByKey('onReadySet');
+        let obj1 = JSON.parseJsonElement(strJson)
+        console.info('onReady true value: ' +JSON.stringify(obj1.getElement('$attrs').getString('content')));
+        expect(obj1.getElement('$attrs').getString('content')).assertEqual('test');
 
-      let driver = Driver.create();
-      let btn_true = await driver.findComponent(ON.id('onReadyChange')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        let btn_true = await driver.findComponent(ON.id('onReadyChange')) as Component;
+        await btn_true.click();
+        await CommonFunc.sleep(1000);
 
-      let strJson1 = inspector.getInspectorByKey('onReadySet');
-      let obj2 = JSON.parseJsonElement(strJson1)
-      console.info('onReady true value: ' +JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('test');
-      done();
+        let strJson1 = inspector.getInspectorByKey('onReadySet');
+        let obj2 = JSON.parseJsonElement(strJson1)
+        console.info('onReady true value: ' +JSON.stringify(obj2.getElement('$attrs').getString('content')));
+        expect(obj2.getElement('$attrs').getString('content')).assertEqual('test');
+        done();
+      } catch (err) {
+        console.error('onReadyUndefined_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

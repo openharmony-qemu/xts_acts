@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const PAGE = 'MainAbility/pages/componentContentApi/componentContentApi';
@@ -39,12 +38,6 @@ function arkuiNewErr(suite: string, phase: string, detail: string): void {
 
 export default function ComponentContentApiTest() {
   describe('ComponentContentApiTest', () => {
-    beforeAll(async (): Promise<void> => {
-      arkuiNewLog(SUITE, 'beforeAll', 'start');
-      await UtilsTest.startAbility('com.arkui.ace.xComponent.static', 'EntryAbility');
-      arkuiNewLog(SUITE, 'beforeAll', 'end');
-    });
-
     beforeEach(async (): Promise<void> => {
       arkuiNewLog(SUITE, 'beforeEach', 'start');
       AppStorage.delete('ccApi_created');
@@ -55,7 +48,7 @@ export default function ComponentContentApiTest() {
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
-        routerInstance.replaceUrl(options);
+        await routerInstance.replaceUrl(options);
         await Utils.sleep(600);
       } catch (err) {
         arkuiNewErr(SUITE, 'beforeEach', 'replaceUrl error: ' + err);

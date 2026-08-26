@@ -15,11 +15,10 @@
  */
 
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
@@ -28,13 +27,6 @@ const PAGE = 'MainAbility/pages/inspectorLabel/InspectorLabelTest';
 
 export default function InspectorLabelTest() {
   describe('InspectorLabelTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('InspectorLabelTest beforeAll start');
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility('com.arkui.ace.xComponent.static', 'EntryAbility');
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('InspectorLabelTest beforeEach start');
       let options: router.RouterOptions = {
@@ -46,7 +38,7 @@ export default function InspectorLabelTest() {
         let pages = routerInstance.getState();
         console.info('InspectorLabelTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'InspectorLabelTest') {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
         }
         await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {

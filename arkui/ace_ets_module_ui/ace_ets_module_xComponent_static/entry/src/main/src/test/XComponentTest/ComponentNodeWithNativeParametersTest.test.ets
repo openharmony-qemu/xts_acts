@@ -15,27 +15,17 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
-import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-import { XComponentController, SurfaceConfig } from '@ohos.arkui.component';
 
 const SLEEP_TIME = 1000;
 
 export default function ComponentNodeWithNativeParametersTest() {
   describe('ComponentNodeWithNativeParametersTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("themePageToggleTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.xComponent.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("themePageToggleTest beforeEach start");
@@ -51,7 +41,7 @@ export default function ComponentNodeWithNativeParametersTest() {
           console.info("get themePageToggleTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push themePageToggleTest page result:" + JSON.stringify(result));
         }
@@ -62,26 +52,26 @@ export default function ComponentNodeWithNativeParametersTest() {
     });
 
     /**
-     * @tc.number SUB_ARKUI_XComponent_ComponentNodeWithNativeParametersTest_1000
-     * @tc.name SUB_ARKUI_XComponent_ComponentNodeWithNativeParametersTest_1000
+     * @tc.number ComponentNodeWithNativeParametersTest_001
+     * @tc.name ComponentNodeWithNativeParametersTest_001
      * @tc.desc Test XComponent page title renders
      */
-    it('SUB_ARKUI_XComponent_ComponentNodeWithNativeParametersTest_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SUB_ARKUI_XComponent_ComponentNodeWithNativeParametersTest_1000 execute: START');
+    it('ComponentNodeWithNativeParametersTest_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('ComponentNodeWithNativeParametersTest_001 execute: START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('componentNodeWithNativeParameters_id'));
         let obj1 = JSON.parseJsonElement(inspector.getInspectorByKey('componentNodeWithNativeParameters1_id'));
-        console.info("[SUB_ARKUI_XComponent_ComponentNodeWithNativeParametersTest_1000] component obj is: " + obj.getElement('$attrs'));
-        console.info("[SUB_ARKUI_XComponent_ComponentNodeWithNativeParametersTest_1000] component obj is backgroundColor: " + obj.getElement('$attrs').getString('backgroundColor'));
-        console.info("[SUB_ARKUI_XComponent_ComponentNodeWithNativeParametersTest_1000] component obj1 is: " + obj1.getElement('$attrs'));
-        console.info("[SUB_ARKUI_XComponent_ComponentNodeWithNativeParametersTest_1000] component obj1 is backgroundColor: " + obj1.getElement('$attrs').getString('backgroundColor'));
+        console.info("[ComponentNodeWithNativeParametersTest_001] component obj is: " + obj.getElement('$attrs'));
+        console.info("[ComponentNodeWithNativeParametersTest_001] component obj is backgroundColor: " + obj.getElement('$attrs').getString('backgroundColor'));
+        console.info("[ComponentNodeWithNativeParametersTest_001] component obj1 is: " + obj1.getElement('$attrs'));
+        console.info("[ComponentNodeWithNativeParametersTest_001] component obj1 is backgroundColor: " + obj1.getElement('$attrs').getString('backgroundColor'));
 
         expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF808080')
         expect(obj1.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF008000')
         done();
       } catch (error) {
-        console.error('SUB_ARKUI_XComponent_ComponentNodeWithNativeParametersTest_1000 execute: ComponentNodeWithOptions error:' + error);
+        console.error('ComponentNodeWithNativeParametersTest_001 execute: ComponentNodeWithOptions error:' + error);
         expect().assertFail();
         done();
       }

@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { CustomComponentLifecycleObserver, ReuseObject } from '@ohos.arkui.component';
 
@@ -27,12 +26,6 @@ const SLEEP_TIME = 1000;
 
 export default function CustomComponentLifecycleTest(): void {
   describe('CustomComponentLifecycleTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] CustomComponentLifecycleTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.customComponent.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('[ARKUI_NEW] CustomComponentLifecycleTest beforeEach start');
       let options: router.RouterOptions = { url: 'MainAbility/pages/CustomComponent/CustomComponentLifecycleIndex' };
@@ -42,7 +35,7 @@ export default function CustomComponentLifecycleTest(): void {
         let pages = routerInstance.getState();
         console.info('[ARKUI_NEW] CustomComponentLifecycleTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== "CustomComponentLifecycleIndex") {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {
