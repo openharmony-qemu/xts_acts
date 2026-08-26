@@ -1997,3 +1997,236 @@ static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006591,
 
 static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006592,
         "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.basic_lowp_int_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006593,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.basic_mediump_int_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006594,
+        "KHR-GL33.shaders.loops.do_while_dynami",
+        "c_iterations.basic_mediump_int_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006595,
+        "KHR-GL33.shaders.loops.do_while_dynami",
+        "c_iterations.basic_mediump_float_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006596,
+        "KHR-GL33.shaders.loops.do_while_dynamic",
+        "_iterations.basic_mediump_float_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006597,
+        "KHR-GL33.shaders.loops.do_while_dyna",
+        "mic_iterations.basic_highp_int_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006598,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.basic_highp_int_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006599,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.basic_highp_float_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006600,
+        "KHR-GL33.shaders.loops.do_while_dynami",
+        "c_iterations.basic_highp_float_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006601,
+        "KHR-GL33.shaders.loops.do_while_dy",
+        "namic_iterations.empty_body_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006602,
+        "KHR-GL33.shaders.loops.do_while_dyn",
+        "amic_iterations.empty_body_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006603,
+        "KHR-GL33.shaders.loops.do_while_dynamic_iteratio",
+        "ns.infinite_with_unconditional_break_first_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006604,
+        "KHR-GL33.shaders.loops.do_while_dynamic_iteration",
+        "s.infinite_with_unconditional_break_first_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006605,
+        "KHR-GL33.shaders.loops.do_while_dynamic_iteratio",
+        "ns.infinite_with_unconditional_break_last_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006606,
+        "KHR-GL33.shaders.loops.do_while_dynamic_iteration",
+        "s.infinite_with_unconditional_break_last_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006607,
+        "KHR-GL33.shaders.loops.do_while_dynamic_iter",
+        "ations.infinite_with_conditional_break_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006608,
+        "KHR-GL33.shaders.loops.do_while_dynamic_itera",
+        "tions.infinite_with_conditional_break_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006609,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.single_statement_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006610,
+        "KHR-GL33.shaders.loops.do_while_dynami",
+        "c_iterations.single_statement_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006611,
+        "KHR-GL33.shaders.loops.do_while_dynami",
+        "c_iterations.compound_statement_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006612,
+        "KHR-GL33.shaders.loops.do_while_dynamic",
+        "_iterations.compound_statement_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006613,
+        "KHR-GL33.shaders.loops.do_while_dynami",
+        "c_iterations.sequence_statement_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006614,
+        "KHR-GL33.shaders.loops.do_while_dynamic",
+        "_iterations.sequence_statement_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006615,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.single_iteration_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006616,
+        "KHR-GL33.shaders.loops.do_while_dynami",
+        "c_iterations.single_iteration_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006617,
+        "KHR-GL33.shaders.loops.do_while_dynamic_",
+        "iterations.select_iteration_count_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006618,
+        "KHR-GL33.shaders.loops.do_while_dynamic_i",
+        "terations.select_iteration_count_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006619,
+        "KHR-GL33.shaders.loops.do_while_dynamic",
+        "_iterations.conditional_continue_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006620,
+        "KHR-GL33.shaders.loops.do_while_dynamic_",
+        "iterations.conditional_continue_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006621,
+        "KHR-GL33.shaders.loops.do_while_dynamic_",
+        "iterations.unconditional_continue_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006622,
+        "KHR-GL33.shaders.loops.do_while_dynamic_i",
+        "terations.unconditional_continue_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006623,
+        "KHR-GL33.shaders.loops.do_while_dyn",
+        "amic_iterations.only_continue_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006624,
+        "KHR-GL33.shaders.loops.do_while_dyna",
+        "mic_iterations.only_continue_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006625,
+        "KHR-GL33.shaders.loops.do_while_dyna",
+        "mic_iterations.double_continue_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006626,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.double_continue_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006627,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.conditional_break_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006628,
+        "KHR-GL33.shaders.loops.do_while_dynami",
+        "c_iterations.conditional_break_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006629,
+        "KHR-GL33.shaders.loops.do_while_dynami",
+        "c_iterations.unconditional_break_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006630,
+        "KHR-GL33.shaders.loops.do_while_dynamic",
+        "_iterations.unconditional_break_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006631,
+        "KHR-GL33.shaders.loops.do_while_dyn",
+        "amic_iterations.pre_increment_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006632,
+        "KHR-GL33.shaders.loops.do_while_dyna",
+        "mic_iterations.pre_increment_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006633,
+        "KHR-GL33.shaders.loops.do_while_dyna",
+        "mic_iterations.post_increment_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006634,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.post_increment_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006635,
+        "KHR-GL33.shaders.loops.do_while_dynamic",
+        "_iterations.mixed_break_continue_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006636,
+        "KHR-GL33.shaders.loops.do_while_dynamic_",
+        "iterations.mixed_break_continue_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006637,
+        "KHR-GL33.shaders.loops.do_while_dyna",
+        "mic_iterations.vector_counter_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006638,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.vector_counter_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006639,
+        "KHR-GL33.shaders.loops.do_while_dyna",
+        "mic_iterations.101_iterations_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006640,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.101_iterations_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006641,
+        "KHR-GL33.shaders.loops.do_while_d",
+        "ynamic_iterations.sequence_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006642,
+        "KHR-GL33.shaders.loops.do_while_dy",
+        "namic_iterations.sequence_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006643,
+        "KHR-GL33.shaders.loops.do_while_",
+        "dynamic_iterations.nested_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006644,
+        "KHR-GL33.shaders.loops.do_while_d",
+        "ynamic_iterations.nested_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006645,
+        "KHR-GL33.shaders.loops.do_while_dyna",
+        "mic_iterations.nested_sequence_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006646,
+        "KHR-GL33.shaders.loops.do_while_dynam",
+        "ic_iterations.nested_sequence_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006647,
+        "KHR-GL33.shaders.loops.do_while_dynamic_i",
+        "terations.nested_tricky_dataflow_1_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006648,
+        "KHR-GL33.shaders.loops.do_while_dynamic_it",
+        "erations.nested_tricky_dataflow_1_fragment");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006649,
+        "KHR-GL33.shaders.loops.do_while_dynamic_i",
+        "terations.nested_tricky_dataflow_2_vertex");
+
+static SHRINK_HWTEST_F(ActsDeqpgles30007TestSuite, TestCase_006650,
+        "KHR-GL33.shaders.loops.do_while_dynamic_it",
+        "erations.nested_tricky_dataflow_2_fragment");
