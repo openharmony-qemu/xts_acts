@@ -453,6 +453,55 @@ export default function CameraInputTest() {
     });
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200
+     * @tc.desc   test cameraInput off cameraOcclusionDetection with no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200', Level.LEVEL0, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200--------------");
+   
+      if (mCameraNum == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200 FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        let camerasArray = mCameraDevicesArray;
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200 start for camera[" + i + "]");
+          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+          try {
+            cameraInput.on('cameraOcclusionDetection', occlusionDetectChange);
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200 on('cameraOcclusionDetection') SUCCESSFUL");
+            done();
+          } catch (error) {
+            let err = error as BusinessError
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200 on('cameraOcclusionDetection') FAILED!");
+            console.info(TAG + 'ERRORCODE: ' + error.code)
+            expect().assertFail()
+            done();
+          }
+
+          try {
+            cameraInput.off('cameraOcclusionDetection');
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200 off('cameraOcclusionDetection') SUCCESSFUL");
+            done();
+          } catch (error) {
+            let err = error as BusinessError
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200 off('cameraOcclusionDetection') FAILED!");
+            console.info(TAG + 'ERRORCODE: ' + error.code)
+            expect().assertFail()
+            done();
+          }
+        }
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_CAMERAOCCLUSIONDETECTION_0200 PASSED");
+        done();
+      }
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_RELEASE_ERROR_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_RELEASE_ERROR_0100
      * @tc.desc   camera status callback on RELEASE async api for error
@@ -769,5 +818,166 @@ export default function CameraInputTest() {
       console.info(TAG + functionTag + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100 ends here");
       done();
     });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_ERRORCODE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_ERRORCODE_0200
+     * @tc.desc   cameraInput open api when param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_ERRORCODE_0200', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_ERRORCODE_0200"
+      console.info("--------------" + caseName + "--------------");
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG +
+          "Entering " + caseName + " cameraManager == null || undefined");
+        expect().assertFail();
+      } else {
+        let camerasArray = mCameraDevicesArray;
+        for (let i = 0; i < camerasArray.length; i++) {
+          console.info(TAG + "Entering createCameraInput with camera: " + camerasArray[i].cameraId);
+          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+          expect(isEmpty(cameraInput)).assertFalse();
+          try {
+            await cameraInput.open(null);
+            console.info(TAG + " " + caseName + " open cameraInput" )
+          } catch(err) {
+            console.info(TAG + " " + caseName + " open FAILED: " +
+            err.code);
+            expect(Number(err.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT);
+          }
+          await cameraInput.close();
+        }
+      }
+      console.info(TAG + "Entering " + caseName + " ends here");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_ERRORCODE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_ERRORCODE_0300
+     * @tc.desc   cameraInput open api when param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_ERRORCODE_0300', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_ERRORCODE_0300"
+      console.info("--------------" + caseName + "--------------");
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG +
+          "Entering " + caseName + " cameraManager == null || undefined");
+        expect().assertFail();
+      } else {
+        let camerasArray = mCameraDevicesArray;
+        for (let i = 0; i < camerasArray.length; i++) {
+          console.info(TAG + "Entering createCameraInput with camera: " + camerasArray[i].cameraId);
+          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+          expect(isEmpty(cameraInput)).assertFalse();
+          try {
+            await cameraInput.open(undefined);
+            console.info(TAG + " " + caseName + " open cameraInput" )
+          } catch(err) {
+            console.info(TAG + " " + caseName + " open FAILED: " +
+            err.code);
+            expect(Number(err.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT);
+          }
+          await cameraInput.close();
+        }
+      }
+      console.info(TAG + "Entering " + caseName + " ends here");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200
+     * @tc.desc   cameraInput usePhysicalCameraOrientation when param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200', Level.LEVEL0, async (done: Function) => {
+      let functionTag = "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200";
+      console.info(functionTag);
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200 cameraManager == null || undefined");
+        expect().assertFail();
+      } else {
+        let camerasArray = mCameraDevicesArray;
+        for (let i = 0; i < camerasArray.length; i++) {
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200 createCameraInput with camera: " +
+          camerasArray[i].cameraId);
+          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+
+          expect(isEmpty(cameraInput)).assertFalse();
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200 cameraInput open with camera: " +
+          camerasArray[i].cameraId);
+
+          try {
+            cameraInput.usePhysicalCameraOrientation(null);
+            console.info(`cameraInput usePhysicalCameraOrientation expect failed, but success`)
+            expect().assertFail()
+          } catch (error) {
+            console.info(TAG + "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200 FAILED");
+            console.info(TAG + "ERRORCODE: " + error.code);
+            expect(Number(error.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT)
+            done();
+          }
+        }
+      }
+      console.info(TAG + functionTag + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200 ends here");
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300
+     * @tc.desc   cameraInput usePhysicalCameraOrientation when param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300', Level.LEVEL0, async (done: Function) => {
+      let functionTag = "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300";
+      console.info(functionTag);
+      if (isEmpty(mCameraManager)) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300 cameraManager == null || undefined");
+        expect().assertFail();
+      } else {
+        let camerasArray = mCameraDevicesArray;
+        for (let i = 0; i < camerasArray.length; i++) {
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300 createCameraInput with camera: " +
+          camerasArray[i].cameraId);
+          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+
+          expect(isEmpty(cameraInput)).assertFalse();
+          console.info(TAG + functionTag +
+            "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300 cameraInput open with camera: " +
+          camerasArray[i].cameraId);
+
+          try {
+            cameraInput.usePhysicalCameraOrientation(undefined);
+            console.info(`cameraInput usePhysicalCameraOrientation expect failed, but success`)
+            expect().assertFail()
+          } catch (error) {
+            console.info(TAG + "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300 FAILED");
+            console.info(TAG + "ERRORCODE: " + error.code);
+            expect(Number(error.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT)
+            done();
+          }
+        }
+      }
+      console.info(TAG + functionTag + "Entering SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300 ends here");
+      done();
+    });
+
   })
 }
