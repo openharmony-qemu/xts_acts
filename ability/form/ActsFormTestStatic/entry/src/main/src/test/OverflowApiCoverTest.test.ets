@@ -144,7 +144,7 @@ export default function OverflowApiCoverTest() {
           console.info('activateSceneAnimation succeed');
           expect().not().assertFail();
         }).catch((error: Error): void => {
-          expect(error.code).assertEqual(16501001);
+          expect(error.code).assertEqual(202);
         })
       } catch (error) {
         if (error.code == 801) {
@@ -175,7 +175,7 @@ export default function OverflowApiCoverTest() {
           console.info('deactivateSceneAnimation succeed');
           expect().not().assertFail();
         }).catch((error: Error): void => {
-          expect(error.code).assertEqual(16501001);
+          expect(error.code).assertEqual(202);
         })
       } catch (error) {
         if (error.code == 801) {
