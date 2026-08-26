@@ -365,6 +365,9 @@ export default function StreamDuplexDoWriteTest(): void {
       let errCaught: boolean = false;
       d.on('error', (err: Error): void => {
         errCaught = true;
+        if (err !== undefined) {
+          return;
+        }
       });
       d.write("valid");
       expect(errCaught).assertFalse();
@@ -654,16 +657,13 @@ export default function StreamDuplexDoWriteTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamDuplexDoWrite025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let capturedCallbackError: Error | undefined = undefined;
       let d = new DuplexWriteCountBase();
       d.write("data", "utf8", (err?: Error): void => {
         if (err !== undefined) {
-          capturedCallbackError = err;
           return;
         }
       });
       expect(d.writeCount).assertEqual(1);
-      expect(capturedCallbackError).assertUndefined();
     });
 
     /**

@@ -171,16 +171,31 @@ export default function StreamWritableWriteTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableWrite004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new WriteTestBase();
-      let callbackCalled: boolean = false;
-      let result = ws.write("data", "utf8", (err?: Error): void => {
-        callbackCalled = true;
+    it('testStreamWritableWrite004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new WriteTestBase();
+        let callbackCalled: boolean = false;
+        let result: boolean = false;
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            result = ws.write("data", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              callbackCalled = true;
+              resolve(undefined as void);
+            });
+          });
+          expect(result).assertTrue();
+          expect(ws.dataChunk).assertEqual("data");
+          expect(callbackCalled).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(result).assertTrue();
-      expect(ws.dataChunk).assertEqual("data");
-      expect(callbackCalled).assertTrue();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_WRITE_0500
@@ -802,6 +817,7 @@ export default function StreamWritableWriteTest(): void {
             resolve(err);
           });
           ws.write("data", "utf8", (err?: Error): void => {
+
           });
         });
         let err: Error = new Error();
@@ -824,6 +840,7 @@ export default function StreamWritableWriteTest(): void {
       let chunk = new Uint8Array(1);
       chunk[0] = NaN;
       ws.write(chunk, 'utf8', (err?: Error): void => {
+
       });
       let received = ws.dataChunk as Uint8Array;
       expect(received.length).assertEqual(1);
@@ -844,6 +861,7 @@ export default function StreamWritableWriteTest(): void {
       chunk[0] = Infinity;
       chunk[1] = -Infinity;
       ws.write(chunk, 'utf8', (err?: Error): void => {
+
       });
       let received = ws.dataChunk as Uint8Array;
       expect(received.length).assertEqual(2);
@@ -859,22 +877,36 @@ export default function StreamWritableWriteTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableWrite040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new WriteTestBase();
-      let chunk = new Uint8Array(4);
-      chunk[0] = 256;
-      chunk[1] = 257;
-      chunk[2] = 65536;
-      chunk[3] = 511;
-      ws.write(chunk, 'utf8', (err?: Error): void => {
+    it('testStreamWritableWrite040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new WriteTestBase();
+        let chunk = new Uint8Array(4);
+        chunk[0] = 256;
+        chunk[1] = 257;
+        chunk[2] = 65536;
+        chunk[3] = 511;
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            ws.write(chunk, 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
+          });
+          let received = ws.dataChunk as Uint8Array;
+          expect(received.length).assertEqual(4);
+          expect(received[0]).assertEqual(0);
+          expect(received[1]).assertEqual(1);
+          expect(received[2]).assertEqual(0);
+          expect(received[3]).assertEqual(255);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      let received = ws.dataChunk as Uint8Array;
-      expect(received.length).assertEqual(4);
-      expect(received[0]).assertEqual(0);
-      expect(received[1]).assertEqual(1);
-      expect(received[2]).assertEqual(0);
-      expect(received[3]).assertEqual(255);
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_WRITE_4100
@@ -884,14 +916,28 @@ export default function StreamWritableWriteTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableWrite041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new WriteTestBase();
-      let loneSurrogate = '\uD800';
-      ws.write(loneSurrogate, 'utf8', (err?: Error): void => {
+    it('testStreamWritableWrite041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new WriteTestBase();
+        let loneSurrogate = '\uD800';
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            ws.write(loneSurrogate, 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
+          });
+          expect(ws.dataChunk).assertEqual(loneSurrogate);
+          expect(ws.dataEncoding).assertEqual('utf8');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(ws.dataChunk).assertEqual(loneSurrogate);
-      expect(ws.dataEncoding).assertEqual('utf8');
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_WRITE_4200
@@ -901,14 +947,32 @@ export default function StreamWritableWriteTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableWrite042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new WriteTestBase();
-      ws.write("a", "utf8", (err?: Error): void => {
+    it('testStreamWritableWrite042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new WriteTestBase();
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            ws.write("a", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+            });
+            ws.write("b", "gbk", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
+          });
+          expect(ws.dataChunk).assertEqual("b");
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      ws.write("b", "gbk", (err?: Error): void => {
-      });
-      expect(ws.dataChunk).assertEqual("b");
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_WRITE_4300
@@ -918,14 +982,28 @@ export default function StreamWritableWriteTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableWrite043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new WriteTestBase();
-      ws.write("data", "utf8", (err?: Error): void => {
-        setTimeout((): void => {
-        }, 100);
+    it('testStreamWritableWrite043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new WriteTestBase();
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            ws.write("data", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              setTimeout((): void => {
+                resolve(undefined as void);
+              }, 100);
+            });
+          });
+          expect(ws.writable).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(ws.writable).assertTrue();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_WRITE_4400
@@ -935,15 +1013,30 @@ export default function StreamWritableWriteTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamWritableWrite044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new WriteTestBase();
-      let chunk: string = 'a'.repeat(20480);
-      let result = ws.write(chunk, "ascii", (err?: Error): void => {
+    it('testStreamWritableWrite044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new WriteTestBase();
+        let chunk: string = 'a'.repeat(20480);
+        let result: boolean = false;
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            result = ws.write(chunk, "ascii", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
+          });
+          expect(result).assertFalse();
+          expect((ws.dataChunk as string).length).assertEqual(20480);
+          expect(ws.dataEncoding).assertEqual("ascii");
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(result).assertFalse();
-      expect((ws.dataChunk as string).length).assertEqual(20480);
-      expect(ws.dataEncoding).assertEqual("ascii");
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_WRITE_4500

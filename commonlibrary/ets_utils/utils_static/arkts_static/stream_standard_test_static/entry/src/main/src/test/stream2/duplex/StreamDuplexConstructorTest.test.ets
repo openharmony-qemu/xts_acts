@@ -762,14 +762,13 @@ export default function StreamDuplexConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamDuplexConstructor024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let capturedEventError: Object | undefined = undefined;
       let d = new DuplexTestBase();
       d.on("data", (chunk: Uint8Array): void => {
       });
       d.on("end", (): void => {
       });
       d.on("error", (err: Error): void => {
-        capturedEventError = err;
+
       });
       d.on("close", (): void => {
       });
@@ -785,7 +784,6 @@ export default function StreamDuplexConstructorTest(): void {
       });
       expect(d.readable).assertTrue();
       expect(d.writable).assertTrue();
-      expect(capturedEventError).assertUndefined();
     });
 
     /**

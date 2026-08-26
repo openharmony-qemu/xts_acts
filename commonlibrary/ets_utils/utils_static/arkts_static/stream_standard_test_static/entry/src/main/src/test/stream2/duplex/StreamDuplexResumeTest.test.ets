@@ -614,9 +614,9 @@ export default function StreamDuplexResumeTest(): void {
       let errorCount: int = 0;
       let errorMessage: string = '';
       let errorPromise = new Promise<void>((resolve: (value: void) => void): void => {
-        ds.on("error", (err: Object): void => {
+        ds.on("error", (err: Error): void => {
           errorCount++;
-          errorMessage = (err as Error).message;
+          errorMessage = err.message;
           resolve(undefined as void);
         });
       });

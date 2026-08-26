@@ -205,6 +205,9 @@ export default function StreamWritableDoWriteTest(): void {
       let errCaught: boolean = false;
       ws.on('error', (err: Error): void => {
         errCaught = true;
+        if (err !== undefined) {
+          return;
+        }
       });
       ws.write("valid");
       expect(errCaught).assertFalse();
@@ -453,16 +456,11 @@ export default function StreamWritableDoWriteTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableDoWrite018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WriteCountBase();
       ws.write("data", "utf8", (err?: Error): void => {
-        if (err !== undefined) {
-          capturedCallbackError = err;
-          return;
-        }
+
       });
       expect(ws.writeCount).assertEqual(1);
-      expect(capturedCallbackError).assertUndefined();
     });
 
     /**

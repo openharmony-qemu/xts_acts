@@ -687,6 +687,9 @@ export default function StreamReadableDoInitializeTest(): void {
           let rs = new TestDI023();
           rs.on("error", (e: Object): void => {
             errorReceived = true;
+            if (e !== undefined) {
+              return;
+            }
           });
           rs.on("data", (): void => {
           });
@@ -831,16 +834,13 @@ export default function StreamReadableDoInitializeTest(): void {
     it('testStreamReadableDoInitialize027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let rs = new TestDI031();
       let errorReceived: boolean = false;
-      let errorText: string = '';
       rs.on("error", (e: Object): void => {
         errorReceived = true;
-        errorText = e.toString();
       });
       rs.on("data", (): void => {
       });
       rs.push("test");
       expect(errorReceived).assertFalse();
-      expect(errorText).assertEqual('');
       expect(rs.readable).assertTrue();
     });
 

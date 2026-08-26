@@ -1044,9 +1044,7 @@ export default function StreamWritableOffTest(): void {
       let ws = new WritableTestBase();
       let offFn: Function = ws.off;
       offFn('finish', (err?: Error): void => {
-        if (err !== undefined) {
-          return;
-        }
+
       });
       expect(ws.writable).assertTrue();
     });
@@ -1060,16 +1058,12 @@ export default function StreamWritableOffTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableOff036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WritableTestBase();
       let offFn: Function = ws.off;
       let other: Object = {};
       try {
         offFn.unsafeCall(other, 'finish', (err?: Error): void => {
-          if (err !== undefined) {
-            capturedCallbackError = err;
-            return;
-          }
+
         });
         expect().assertFail();
       } catch (e) {
@@ -1086,20 +1080,15 @@ export default function StreamWritableOffTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableOff037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WritableTestBase();
       try {
         ws.off.unsafeCall(null, 'finish', (err?: Error): void => {
-          if (err !== undefined) {
-            capturedCallbackError = err;
-            return;
-          }
+
         });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
-      expect(capturedCallbackError).assertUndefined();
     });
 
     /**

@@ -289,17 +289,13 @@ export default function StreamWritableEndTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableEnd009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WritableTestBase();
       let errorCaught: boolean = false;
       let callbackFired: boolean = false;
       try {
         ws.end(undefined as String, undefined as String, (err?: Error): void => {
           callbackFired = true;
-          if (err !== undefined) {
-            capturedCallbackError = err;
-            return;
-          }
+
         });
       } catch (e) {
         errorCaught = true;
@@ -307,7 +303,6 @@ export default function StreamWritableEndTest(): void {
       }
       expect(errorCaught).assertTrue();
       expect(callbackFired).assertFalse();
-      expect(capturedCallbackError).assertUndefined();
     });
 
     /**
