@@ -75,8 +75,8 @@ export default function EtherNetTest() {
       console.info(`${caseName} test end `)
     });
     /**
-     * @tc.number: testNetworkEthernetHttpproxy0100
-     * @tc.name: SUB_NetworkEthernet_Httpproxy_0100
+     * @tc.number: SUB_Network_Ethernet_Httpproxy_0100
+     * @tc.name: testNetworkEthernetHttpproxy0100
      * @tc.desc: Verify that ethernet.HttpProxy type is consistent with connection.HttpProxy structure
      * @tc.type: Type
      * @tc.size: MediumTest
@@ -112,8 +112,8 @@ export default function EtherNetTest() {
     });
 
     /**
-     * @tc.number: testNetworkEthernetHttpproxy0200
-     * @tc.name: SUB_NetworkEthernet_Httpproxy_0200
+     * @tc.number: SUB_Network_Ethernet_Httpproxy_0200
+     * @tc.name: testNetworkEthernetHttpproxy0200
      * @tc.desc: Verify ethernet.HttpProxy is type-equivalent to connection.HttpProxy by cross-assignment
      * @tc.type: Type
      * @tc.size: MediumTest
@@ -150,8 +150,8 @@ export default function EtherNetTest() {
     });
 
     /**
-     * @tc.number: testNetworkEthernetHttpproxy0300
-     * @tc.name: SUB_NetworkEthernet_Httpproxy_0300
+     * @tc.number: SUB_Network_Ethernet_Httpproxy_0300
+     * @tc.name: testNetworkEthernetHttpproxy0300
      * @tc.desc: Verify HttpProxy works with an empty exclusion list
      * @tc.type: Type
      * @tc.size: MediumTest
