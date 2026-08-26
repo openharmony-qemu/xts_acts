@@ -144,6 +144,11 @@ export default function swipeRefresherV2PageTest() {
       console.info('[swipeRefresherV2PageTest_0400] START');
       let driver = await Driver.create();
       await driver.delayMs(2000);
+      let scene3Text = await driver.findComponent(ON.text('场景3: content为空字符串'));
+      if (scene3Text !== null) {
+      await driver.swipe(0, 500, 0, 0, 500);  // 向上滑动使下方内容可见
+      await driver.delayMs(1000);
+      }
       
       let button = await driver.findComponent(ON.text('触发加载'));
       expect(button !== null).assertTrue();
