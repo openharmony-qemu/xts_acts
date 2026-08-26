@@ -2173,6 +2173,12 @@ export default function TCPSocketConnectionTest() {
         expectTrue(tcpSocket !== undefined);
         expectTrue(tcpSocket !== null);
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (error) {
+            console.info(`${caseName} getDefaultNet error: ${JSON.stringify(error)}`);
+            expectTrue(false);
+            done();
+            return;
+          }
           if (data.netId == 0) {
             console.info(`${caseName} Please connect to the network`);
             expectTrue(false);
