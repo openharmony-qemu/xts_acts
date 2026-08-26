@@ -3252,7 +3252,7 @@ export default function HttpErrorCodeTest() {
 
     /**
      * @tc.name   testTlsConfigCipherSuites0100
-     * @tc.number SUB_NetworkMgr_TlsConfig_CipherSuites_0100
+     * @tc.number SUB_NetworkMgr_Http_TlsConfig_CipherSuites_0100
      * @tc.desc   Verify TlsConfig cipherSuites can be set with valid cipher suites
      * @tc.type   FUNC
      * @tc.size   MEDIUMTEST
@@ -3306,7 +3306,7 @@ export default function HttpErrorCodeTest() {
 
     /**
      * @tc.name   testTlsV13SpecificCipherSuite0100
-     * @tc.number SUB_NetworkMgr_TlsV13SpecificCipherSuite_0100
+     * @tc.number SUB_NetworkMgr_Http_TlsConfig_TlsV13SpecificCipherSuite_0100
      * @tc.desc   Verify TlsV13SpecificCipherSuite type accepts valid TLS v1.3 cipher suite values
      * @tc.type   FUNC
      * @tc.size   MEDIUMTEST
@@ -3374,7 +3374,7 @@ export default function HttpErrorCodeTest() {
 
     /**
      * @tc.name   testTlsV12SpecificCipherSuite0100
-     * @tc.number SUB_NetworkMgr_TlsV12SpecificCipherSuite_0100
+     * @tc.number SUB_NetworkMgr_Http_TlsConfig_TlsV12SpecificCipherSuite_0100
      * @tc.desc   Verify TlsV12SpecificCipherSuite type accepts valid TLS v1.2 cipher suite values
      * @tc.type   FUNC
      * @tc.size   MEDIUMTEST
@@ -3463,7 +3463,7 @@ export default function HttpErrorCodeTest() {
 
     /**
      * @tc.name   testTlsV10SpecificCipherSuite0100
-     * @tc.number SUB_NetworkMgr_TlsV10SpecificCipherSuite_0100
+     * @tc.number SUB_NetworkMgr_Http_TlsConfig_TlsV10SpecificCipherSuite_0100
      * @tc.desc   Verify TlsV10SpecificCipherSuite type accepts valid TLS v1.0 cipher suite values
      * @tc.type   FUNC
      * @tc.size   MEDIUMTEST
@@ -3548,7 +3548,7 @@ export default function HttpErrorCodeTest() {
 
     /**
      * @tc.name   testTlsV13CipherSuite0100
-     * @tc.number SUB_NetworkMgr_TlsV13CipherSuite_0100
+     * @tc.number SUB_NetworkMgr_Http_TlsV13CipherSuite_0100
      * @tc.desc   Verify TlsV13CipherSuite type accepts valid TLS v1.2 and TLS v1.3 cipher suite values
      * @tc.type   FUNC
      * @tc.size   MEDIUMTEST
@@ -3650,7 +3650,7 @@ export default function HttpErrorCodeTest() {
 
     /**
      * @tc.name   testTlsV12CipherSuite0100
-     * @tc.number SUB_NetworkMgr_TlsV12CipherSuite_0100
+     * @tc.number SUB_NetworkMgr_Http_TlsV12CipherSuite_0100
      * @tc.desc   Verify TlsV12CipherSuite type accepts valid TlsV11CipherSuite and TlsV12SpecificCipherSuite values
      * @tc.type   FUNC
      * @tc.size   MEDIUMTEST
@@ -3743,7 +3743,7 @@ export default function HttpErrorCodeTest() {
 
     /**
      * @tc.name   testTlsV11CipherSuite0100
-     * @tc.number SUB_NetworkMgr_TlsV11CipherSuite_0100
+     * @tc.number SUB_NetworkMgr_Http_TlsV11CipherSuite_0100
      * @tc.desc   Verify TlsV11CipherSuite type accepts valid TlsV10CipherSuite values
      * @tc.type   FUNC
      * @tc.size   MEDIUMTEST
@@ -3828,7 +3828,7 @@ export default function HttpErrorCodeTest() {
 
     /**
      * @tc.name   testTlsV10CipherSuite0100
-     * @tc.number SUB_NetworkMgr_TlsV10CipherSuite_0100
+     * @tc.number SUB_NetworkMgr_Http_TlsV10CipherSuite_0100
      * @tc.desc   Verify TlsV10CipherSuite type accepts valid TlsV10SpecificCipherSuite values
      * @tc.type   FUNC
      * @tc.size   MEDIUMTEST
