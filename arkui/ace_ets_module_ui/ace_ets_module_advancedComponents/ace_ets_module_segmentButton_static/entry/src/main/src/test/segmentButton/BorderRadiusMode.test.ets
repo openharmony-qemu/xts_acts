@@ -13,30 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
-  ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { describe, afterEach, it, expect, Level } from '../../../../hypium';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import inspector from '@ohos.arkui.inspector';
 import {
-  SegmentButton,
   BorderRadiusMode
 } from '@kit.ArkUI';
 
 export default function BorderRadiusModeTest() {
   describe('BorderRadiusModeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("BorderRadiusModeTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
-    });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BorderRadiusModeTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("BorderRadiusModeTest after each called");
     });
 

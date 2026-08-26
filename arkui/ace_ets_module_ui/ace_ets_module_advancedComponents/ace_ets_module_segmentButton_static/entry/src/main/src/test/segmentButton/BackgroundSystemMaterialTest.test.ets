@@ -15,25 +15,18 @@
  * limitations under the License.
  */
 
-import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll, afterEach } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, afterEach } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import uiMaterial from '@ohos.arkui.uiMaterial';
 
 export default function BackgroundSystemMaterialTest() {
   describe('BackgroundSystemMaterialTest', () => {
 
-    beforeAll(async (): Promise<void> => {
-      console.info("BackgroundSystemMaterialTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
-    });
-
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("BackgroundSystemMaterialTest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/segmentButton/BackgroundSystemMaterial",
@@ -45,7 +38,7 @@ export default function BackgroundSystemMaterialTest() {
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("BackgroundSystemMaterial" == pages.name)) {
           console.info("get BackgroundSystemMaterial pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -54,8 +47,12 @@ export default function BackgroundSystemMaterialTest() {
       console.info("BackgroundSystemMaterial beforeEach end");
     });
 
-    afterEach(async () => {
-      await CommonFunc.sleep(1000);
+    afterEach(async (): Promise<void> => {
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BackgroundSystemMaterialTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("BackgroundSystemMaterialTest after each called");
     });
 
@@ -69,13 +66,18 @@ export default function BackgroundSystemMaterialTest() {
      */
     it('BackgroundSystemMaterialTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('[BackgroundSystemMaterialTest_static_0100] START');
-        expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-        expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-        await CommonFunc.sleep(1000);
-        console.info('[BackgroundSystemMaterialTest_static_0100] END');
-        done();
+        try {
+          expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+          expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+          await CommonFunc.sleep(1000);
+          console.info('[BackgroundSystemMaterialTest_static_0100] END');
+        } catch (error) {
+          console.error('[BackgroundSystemMaterialTest_static_0100] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
-    
+
     /**
      * @tc.name   BackgroundSystemMaterialTest_static_0200
      * @tc.number SUB_ARKUI_API_BackgroundSystemMaterialTest_static_0200
@@ -86,12 +88,17 @@ export default function BackgroundSystemMaterialTest() {
      */
     it('BackgroundSystemMaterialTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('[BackgroundSystemMaterialTest_static_0200] START');
-        expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-        expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-        expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
-        await CommonFunc.sleep(1000);
-        console.info('[BackgroundSystemMaterialTest_static_0200] END');
-        done();
+        try {
+          expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+          expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+          expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+          await CommonFunc.sleep(1000);
+          console.info('[BackgroundSystemMaterialTest_static_0200] END');
+        } catch (error) {
+          console.error('[BackgroundSystemMaterialTest_static_0200] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -104,15 +111,20 @@ export default function BackgroundSystemMaterialTest() {
      */
     it('BackgroundSystemMaterialTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.info('[BackgroundSystemMaterialTest_static_0300] START');
-        let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray('$children')[0]
-          .getArray('$children')[0]
-          .getArray('$children')[2];
-        console.info("[BackgroundSystemMaterialTest_static_0300] component obj is: " + JSON.stringify(obj));
-        expect(obj.getElement('$attrs')).not().assertNull();
-        await CommonFunc.sleep(1000);
-        console.info('[BackgroundSystemMaterialTest_static_0300] END');
-        done();
+        try {
+          let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray('$children')[0]
+            .getArray('$children')[0]
+            .getArray('$children')[2];
+          console.info("[BackgroundSystemMaterialTest_static_0300] component obj is: " + JSON.stringify(obj));
+          expect(obj.getElement('$attrs')).not().assertNull();
+          await CommonFunc.sleep(1000);
+          console.info('[BackgroundSystemMaterialTest_static_0300] END');
+        } catch (error) {
+          console.error('[BackgroundSystemMaterialTest_static_0300] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
   })

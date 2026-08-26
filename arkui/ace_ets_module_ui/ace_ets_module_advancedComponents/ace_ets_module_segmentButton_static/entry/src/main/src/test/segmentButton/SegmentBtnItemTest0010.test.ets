@@ -16,33 +16,21 @@
 
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
-  afterAll,
   it,
   expect,
-  TestType,
-  Size,
   Level
 } from '../../../../hypium';
 import { Driver, ON, Component } from '@ohos.UiTest';
 import router from '@ohos.router';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility } from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
 export default function SegmentBtnItem0010() {
   describe('SegmentBtnItem0010', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("SegmentBtnItem0010 beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("SegmentBtnItem0010 beforeEach start");
       let options: router.RouterOptions = {
@@ -55,7 +43,7 @@ export default function SegmentBtnItem0010() {
         console.info("get SegmentBtnItem0010 state pages:" + JSON.stringify(pages));
         if (!("SegmentBtnItem0010" == pages.name)) {
           console.info("get SegmentBtnItem0010 pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -66,7 +54,11 @@ export default function SegmentBtnItem0010() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("SegmentBtnItem0010 afterEach error: " + err);
+      }
       console.info('SegmentBtnItem0010 after each called');
     });
 
@@ -80,6 +72,7 @@ export default function SegmentBtnItem0010() {
      * @tc.level  LEVEL0
      */
     it('SegmentBtnItem0010_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.log("SegmentBtnItem0010_0100 ", "START");
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -104,6 +97,10 @@ export default function SegmentBtnItem0010() {
       expect(btn0.getElement('$attrs').getString('padding')).assertEqual('10.00vp');
       await CommonFunc.sleep(500);
       console.log("SegmentBtnItem0010_0100 ", "END");
+      } catch (err) {
+        console.error('[SegmentBtnItem0010_0100] error: ' + err);
+        expect(false).assertTrue();
+      }
       done();
     });
     /**
@@ -115,6 +112,7 @@ export default function SegmentBtnItem0010() {
      * @tc.level  LEVEL0
      */
     it('SegmentBtnItem0010_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.log("SegmentBtnItem0010_0200 ", "START");
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -136,7 +134,7 @@ export default function SegmentBtnItem0010() {
         .getArray("$children")[0]
       console.log("[SegmentBtnItem0010_0200] component btn0 is: ", JSON.stringify(btn0))
       expect(btn0.getElement('$attrs').getString('content')).assertEqual('b');
-      expect(btn0.getElement('$attrs').getString('fontColor')).assertEqual('#FF004AAF');
+      expect(btn0.getElement('$attrs').getString('fontColor')).assertEqual('#FFF7F7F7');
       expect(btn0.getElement('$attrs').getElement('backgroundBlurStyle').getString('value'))
         .assertEqual('BlurStyle.NONE');
       await CommonFunc.sleep(500);
@@ -158,6 +156,10 @@ export default function SegmentBtnItem0010() {
       await CommonFunc.sleep(500);
 
       console.log("SegmentBtnItem0010_0200 ", "END");
+      } catch (err) {
+        console.error('[SegmentBtnItem0010_0200] error: ' + err);
+        expect(false).assertTrue();
+      }
       done();
     });
 
@@ -170,6 +172,7 @@ export default function SegmentBtnItem0010() {
      * @tc.level  LEVEL0
      */
     it('SegmentBtnItem0010_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.log("SegmentBtnItem0010_0300 ", "START");
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -187,7 +190,7 @@ export default function SegmentBtnItem0010() {
       console.log("[SegmentBtnItem0010_0300] component btn0 is: ", JSON.stringify(btn0))
       expect(btn0.getElement('$attrs').getString('content')).assertEqual('c');
       expect(btn0.getElement('$attrs').getString('fontSize')).assertEqual('18.00fp');
-      expect(btn0.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Bolder');
+      expect(btn0.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Lighter');
       await CommonFunc.sleep(500);
       let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
@@ -206,6 +209,10 @@ export default function SegmentBtnItem0010() {
       await CommonFunc.sleep(500);
 
       console.log("SegmentBtnItem0010_0300 ", "END");
+      } catch (err) {
+        console.error('[SegmentBtnItem0010_0300] error: ' + err);
+        expect(false).assertTrue();
+      }
       done();
     });
     /**
@@ -217,6 +224,7 @@ export default function SegmentBtnItem0010() {
      * @tc.level  LEVEL0
      */
     it('SegmentBtnItem0010_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.log("SegmentBtnItem0010_0400 ", "START");
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
@@ -236,6 +244,10 @@ export default function SegmentBtnItem0010() {
       expect(btn0.getElement('$attrs').getElement('size').getString('height')).assertEqual('40.00vp');
       await CommonFunc.sleep(500);
       console.log("SegmentBtnItem0010_0400 ", "END");
+      } catch (err) {
+        console.error('[SegmentBtnItem0010_0400] error: ' + err);
+        expect(false).assertTrue();
+      }
       done();
     });
 

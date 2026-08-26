@@ -16,32 +16,21 @@
 
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
-  afterAll,
   it,
   expect,
-  TestType,
-  Size,
   Level
 } from '../../../../hypium';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility } from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
 export default function localizedTextPadding() {
   describe('localizedTextPadding', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("localizedTextPadding beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("localizedTextPadding beforeEach start");
@@ -55,7 +44,7 @@ export default function localizedTextPadding() {
         console.info("get localizedTextPadding state pages:" + JSON.stringify(pages));
         if (!("localizedTextPadding" == pages.name)) {
           console.info("get localizedTextPadding pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -66,7 +55,11 @@ export default function localizedTextPadding() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('localizedTextPadding afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('localizedTextPadding after each called');
     });
 
@@ -81,18 +74,23 @@ export default function localizedTextPadding() {
      */
     it('localizedTextPadding_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('localizedTextPadding_0100 START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.findComponent(ON.id('localizedTextPadding_start'));
-      await CommonFunc.sleep(200);
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let mText = inspector.getInspectorByKey("localizedTextPadding_start");
-      console.log("[localizedTextPadding_0100] attrs is: ", JSON.stringify(JSON.parseJsonElement(mText)));
-      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-        .assertEqual('start:{"unit":1,"value":20}');
-      console.info('[localizedTextPadding_0100] END');
+      try {
+        await CommonFunc.sleep(1000);
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(200);
+        let btn = await driver.findComponent(ON.id('localizedTextPadding_start'));
+        await CommonFunc.sleep(200);
+        await (btn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let mText = inspector.getInspectorByKey("localizedTextPadding_start");
+        console.log("[localizedTextPadding_0100] attrs is: ", JSON.stringify(JSON.parseJsonElement(mText)));
+        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+          .assertEqual('start:{"unit":1,"value":20}');
+        console.info('[localizedTextPadding_0100] END');
+      } catch (error) {
+        console.error('[localizedTextPadding_0100] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     });
     /**
@@ -105,18 +103,23 @@ export default function localizedTextPadding() {
      */
     it('localizedTextPadding_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('localizedTextPadding_0200 START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(200);
-      let btn = await driver.findComponent(ON.id('localizedTextPadding_end'));
-      await CommonFunc.sleep(200);
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let mText2 = inspector.getInspectorByKey("localizedTextPadding_end");
-      console.log("[localizedTextPadding_0200] attrs is: ", JSON.stringify(JSON.parseJsonElement(mText2)));
-      expect(JSON.parseJsonElement(mText2).getElement('$attrs').getString('label'))
-        .assertEqual('end:{"unit":1,"value":30}');
-      console.info('[localizedTextPadding_0200] END');
+      try {
+        await CommonFunc.sleep(1000);
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(200);
+        let btn = await driver.findComponent(ON.id('localizedTextPadding_end'));
+        await CommonFunc.sleep(200);
+        await (btn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let mText2 = inspector.getInspectorByKey("localizedTextPadding_end");
+        console.log("[localizedTextPadding_0200] attrs is: ", JSON.stringify(JSON.parseJsonElement(mText2)));
+        expect(JSON.parseJsonElement(mText2).getElement('$attrs').getString('label'))
+          .assertEqual('end:{"unit":1,"value":30}');
+        console.info('[localizedTextPadding_0200] END');
+      } catch (error) {
+        console.error('[localizedTextPadding_0200] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     });
 

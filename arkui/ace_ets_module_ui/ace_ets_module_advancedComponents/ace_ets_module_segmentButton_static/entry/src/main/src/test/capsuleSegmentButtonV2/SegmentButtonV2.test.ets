@@ -14,23 +14,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
-import { Driver, ON } from '@ohos.UiTest';
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '../../../../hypium';
 import router from '@ohos.router';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
 export default function SegmentButtonV2Test() {
   describe('SegmentButtonV2Test', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("SegmentButtonV2Test beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("SegmentButtonV2Test beforeEach start");
@@ -44,7 +36,7 @@ export default function SegmentButtonV2Test() {
         console.info("get SegmentButtonV2Test state pages:" + JSON.stringify(pages));
         if (!("PopupDirection" == pages.name)) {
           console.info("get SegmentButtonV2Test pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -55,7 +47,11 @@ export default function SegmentButtonV2Test() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SegmentButtonV2Test afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('SegmentButtonV2Test after each called');
     });
 
@@ -69,24 +65,29 @@ export default function SegmentButtonV2Test() {
     it('SegmentButtonV2Test_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0100", "START");
-        let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.log("SegmentButtonV2Test_static_0100", JSON.stringify(tabSegmentButton))
-        console.log("SegmentButtonV2Test_static_0100 itemSelectedFontSize ", tabSegmentButton.getElement('$attrs').getString('fontSize'))
-        console.log("SegmentButtonV2Test_static_0100 itemSelectedFontWeight ", tabSegmentButton.getElement('$attrs').getString('fontWeight'))
-        expect(tabSegmentButton.getElement('$attrs').getString('fontSize')).assertEqual('18.00fp');
-        expect(tabSegmentButton.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Medium');
-        await CommonFunc.sleep(500);
-        console.log("TabSegmentButtonV2Test_static_0100", "END");
-        done();
+        try {
+          let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[5]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+          console.log("SegmentButtonV2Test_static_0100", JSON.stringify(tabSegmentButton))
+          console.log("SegmentButtonV2Test_static_0100 itemSelectedFontSize ", tabSegmentButton.getElement('$attrs').getString('fontSize'))
+          console.log("SegmentButtonV2Test_static_0100 itemSelectedFontWeight ", tabSegmentButton.getElement('$attrs').getString('fontWeight'))
+          expect(tabSegmentButton.getElement('$attrs').getString('fontSize')).assertEqual('18.00fp');
+          expect(tabSegmentButton.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Medium');
+          await CommonFunc.sleep(500);
+          console.log("TabSegmentButtonV2Test_static_0100", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0100] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -99,26 +100,31 @@ export default function SegmentButtonV2Test() {
     it('SegmentButtonV2Test_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0200", "START");
-        let symbol = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[1]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.log("SegmentButtonV2Test_static_0200 itemSymbolFontSize ", symbol.getElement('$attrs').getString('fontSize'))
-        expect(symbol.getElement('$attrs').getString('fontSize')).assertEqual('20.00fp');
-        await CommonFunc.sleep(500);
-        console.log("SegmentButtonV2Test_static_0200", "END");
-        done();
+        try {
+          let symbol = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[1]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[5]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+          console.log("SegmentButtonV2Test_static_0200 itemSymbolFontSize ", symbol.getElement('$attrs').getString('fontSize'))
+          expect(symbol.getElement('$attrs').getString('fontSize')).assertEqual('20.00fp');
+          await CommonFunc.sleep(500);
+          console.log("SegmentButtonV2Test_static_0200", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0200] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
-    
-    
-    
+
+
+
     /**
      * @tc.number   SegmentButtonV2Test_static_0300
      * @tc.name     SegmentButtonV2Test_static_0300
@@ -127,23 +133,28 @@ export default function SegmentButtonV2Test() {
      */
 it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0300", "START");
-        let imageSegment = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.log("SegmentButtonV2Test_static_0300 itemIconSize ", imageSegment.getElement('$attrs').getElement('size').getString('width'))
-        console.log("SegmentButtonV2Test_static_0300 itemSelectedIconFillColor ", imageSegment.getElement('$attrs').getString('fillColor'))
-        expect(imageSegment.getElement('$attrs').getElement('size').getString('width')).assertEqual('30.00vp');
-        expect(imageSegment.getElement('$attrs').getString('fillColor')).assertEqual('#FF000000');
-        await CommonFunc.sleep(500);
-        console.log("SegmentButtonV2Test_static_0300", "END");
-        done();
+        try {
+          let imageSegment = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[2]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[5]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+          console.log("SegmentButtonV2Test_static_0300 itemIconSize ", imageSegment.getElement('$attrs').getElement('size').getString('width'))
+          console.log("SegmentButtonV2Test_static_0300 itemSelectedIconFillColor ", imageSegment.getElement('$attrs').getString('fillColor'))
+          expect(imageSegment.getElement('$attrs').getElement('size').getString('width')).assertEqual('30.00vp');
+          expect(imageSegment.getElement('$attrs').getString('fillColor')).assertEqual('#FF000000');
+          await CommonFunc.sleep(500);
+          console.log("SegmentButtonV2Test_static_0300", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0300] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -156,20 +167,25 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
     it('SegmentButtonV2Test_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0400", "START");
-        let imageUnselected = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[1]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.log("SegmentButtonV2Test_static_0400 itemIconFillColor ", imageUnselected.getElement('$attrs').getString('fillColor'))
-        expect(imageUnselected.getElement('$attrs').getString('fillColor')).assertEqual('#99000000');
-        console.log("SegmentButtonV2Test_static_0400", "END");
-        done();
+        try {
+          let imageUnselected = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[2]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[5]
+            .getArray("$children")[1]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+          console.log("SegmentButtonV2Test_static_0400 itemIconFillColor ", imageUnselected.getElement('$attrs').getString('fillColor'))
+          expect(imageUnselected.getElement('$attrs').getString('fillColor')).assertEqual('#99000000');
+          console.log("SegmentButtonV2Test_static_0400", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0400] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -182,21 +198,26 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
     it('SegmentButtonV2Test_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0500", "START");
-        let symbol = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[1]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.log("SegmentButtonV2Test_static_0500 itemSymbolFontSize ", symbol.getElement('$attrs').getString('fontSize'))
-        expect(symbol.getElement('$attrs').getString('fontSize')).assertEqual('20.00fp');
-        await CommonFunc.sleep(500);
-        console.log("SegmentButtonV2Test_static_0500", "END");
-        done();
+        try {
+          let symbol = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[1]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[5]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+          console.log("SegmentButtonV2Test_static_0500 itemSymbolFontSize ", symbol.getElement('$attrs').getString('fontSize'))
+          expect(symbol.getElement('$attrs').getString('fontSize')).assertEqual('20.00fp');
+          await CommonFunc.sleep(500);
+          console.log("SegmentButtonV2Test_static_0500", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0500] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -209,19 +230,24 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
     it('SegmentButtonV2Test_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0600", "START");
-        let itemMinHeight = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-        console.log("SegmentButtonV2Test_static_0600 itemMinHeight ", itemMinHeight.getElement('$attrs').getString('height'))
-        expect(itemMinHeight.getElement('$attrs').getString('height')).assertEqual('80.00vp');
-        await CommonFunc.sleep(500);
-        console.log("SegmentButtonV2Test_static_0600", "END");
-        done();
+        try {
+          let itemMinHeight = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[2]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[5]
+            .getArray("$children")[0]
+          console.log("SegmentButtonV2Test_static_0600 itemMinHeight ", itemMinHeight.getElement('$attrs').getString('height'))
+          expect(itemMinHeight.getElement('$attrs').getString('height')).assertEqual('80.00vp');
+          await CommonFunc.sleep(500);
+          console.log("SegmentButtonV2Test_static_0600", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0600] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -234,23 +260,28 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
     it('SegmentButtonV2Test_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0700", "START");
-        let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.log("SegmentButtonV2Test_static_0700", JSON.stringify(tabSegmentButton))
-        console.log("SegmentButtonV2Test_static_0700 itemSelectedFontSize ", tabSegmentButton.getElement('$attrs').getString('padding'))
-        console.log("SegmentButtonV2Test_static_0700 itemSelectedFontWeight ", tabSegmentButton.getElement('$attrs').getElement('shadow').getString('color'))
-        expect(tabSegmentButton.getElement('$attrs').getString('padding')).assertEqual('30.00vp');
-        expect(tabSegmentButton.getElement('$attrs').getElement('shadow').getString('color')).assertEqual('#FF000000');
-        await CommonFunc.sleep(500);
-        console.log("TabSegmentButtonV2Test_static_0100", "END");
-        done();
+        try {
+          let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[5]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+          console.log("SegmentButtonV2Test_static_0700", JSON.stringify(tabSegmentButton))
+          console.log("SegmentButtonV2Test_static_0700 itemSelectedFontSize ", tabSegmentButton.getElement('$attrs').getString('padding'))
+          console.log("SegmentButtonV2Test_static_0700 itemSelectedFontWeight ", tabSegmentButton.getElement('$attrs').getElement('shadow').getString('color'))
+          expect(tabSegmentButton.getElement('$attrs').getString('padding')).assertEqual('30.00vp');
+          expect(tabSegmentButton.getElement('$attrs').getElement('shadow').getString('color')).assertEqual('#FF000000');
+          await CommonFunc.sleep(500);
+          console.log("TabSegmentButtonV2Test_static_0100", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0700] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -263,17 +294,22 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
     it('SegmentButtonV2Test_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0800", "START");
-        let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.log("SegmentButtonV2Test_static_0800", JSON.stringify(tabSegmentButton))
-        console.log("SegmentButtonV2Test_static_0800 buttonBackgroundColor ", tabSegmentButton.getElement('$attrs').getString('backgroundColor'))
-        expect(tabSegmentButton.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00');
-        await CommonFunc.sleep(500);
-        console.log("SegmentButtonV2Test_static_0800", "END");
-        done();
+        try {
+          let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+          console.log("SegmentButtonV2Test_static_0800", JSON.stringify(tabSegmentButton))
+          console.log("SegmentButtonV2Test_static_0800 buttonBackgroundColor ", tabSegmentButton.getElement('$attrs').getString('backgroundColor'))
+          expect(tabSegmentButton.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00');
+          await CommonFunc.sleep(500);
+          console.log("SegmentButtonV2Test_static_0800", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0800] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -286,22 +322,27 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
     it('SegmentButtonV2Test_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0700", "START");
-        let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.log("SegmentButtonV2Test_static_0900", JSON.stringify(tabSegmentButton))
-        console.log("SegmentButtonV2Test_static_0900 buttonBackgroundBlurStyle ",
-          tabSegmentButton.getElement('$attrs').getElement('backgroundBlurStyle').getString('value'))
-        console.log("SegmentButtonV2Test_static_0900 buttonBackgroundBlurStyleOptions ",
-          tabSegmentButton.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode'))
-        expect(tabSegmentButton.getElement('$attrs').getElement('backgroundBlurStyle').getString('value')).assertEqual('BlurStyle.Thin');
-        expect(tabSegmentButton.getElement('$attrs').getElement('backgroundBlurStyle').getElement("options").getString('colorMode')).assertEqual('ThemeColorMode.System');
-        await CommonFunc.sleep(500);
-        console.log("SegmentButtonV2Test_static_0900", "END");
-        done();
+        try {
+          let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+          console.log("SegmentButtonV2Test_static_0900", JSON.stringify(tabSegmentButton))
+          console.log("SegmentButtonV2Test_static_0900 buttonBackgroundBlurStyle ",
+            tabSegmentButton.getElement('$attrs').getElement('backgroundBlurStyle').getString('value'))
+          console.log("SegmentButtonV2Test_static_0900 buttonBackgroundBlurStyleOptions ",
+            tabSegmentButton.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode'))
+          expect(tabSegmentButton.getElement('$attrs').getElement('backgroundBlurStyle').getString('value')).assertEqual('BlurStyle.Thin');
+          expect(tabSegmentButton.getElement('$attrs').getElement('backgroundBlurStyle').getElement("options").getString('colorMode')).assertEqual('ThemeColorMode.System');
+          await CommonFunc.sleep(500);
+          console.log("SegmentButtonV2Test_static_0900", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0900] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -314,19 +355,24 @@ it('SegmentButtonV2Test_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Leve
     it('SegmentButtonV2Test_static_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.log("SegmentButtonV2Test_static_0110", "START");
-        let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-        console.log("SegmentButtonV2Test_static_0110", JSON.stringify(tabSegmentButton))
-        console.log("SegmentButtonV2Test_static_0110 buttonPadding ", tabSegmentButton.getElement('$attrs').getString('padding'))
-        expect(tabSegmentButton.getElement('$attrs').getString('padding')).assertEqual('20.00fp');
-        await CommonFunc.sleep(500);
-        console.log("SegmentButtonV2Test_static_0110", "END");
-        done();
+        try {
+          let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[0]
+            .getArray("$children")[5]
+          console.log("SegmentButtonV2Test_static_0110", JSON.stringify(tabSegmentButton))
+          console.log("SegmentButtonV2Test_static_0110 buttonPadding ", tabSegmentButton.getElement('$attrs').getString('padding'))
+          expect(tabSegmentButton.getElement('$attrs').getString('padding')).assertEqual('20.00fp');
+          await CommonFunc.sleep(500);
+          console.log("SegmentButtonV2Test_static_0110", "END");
+        } catch (error) {
+          console.error('[SegmentButtonV2Test_static_0110] error: ' + JSON.stringify(error));
+          expect(false).assertTrue();
+          done();
+        }
       });
 
   })

@@ -14,26 +14,17 @@
  * limitations under the License.
  */
 
-import { Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation,
-  ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll, afterEach } from '../../../../hypium/index';
-import { i18n } from '@kit.LocalizationKit';
-import display from '@ohos.display';
+import { beforeEach, describe, expect, it, Level, afterEach } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test'
 import inspector from '@ohos.arkui.inspector'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 
 export default function SegmentButtonItemOptionsArrayPushTest() {
   describe('SegmentButtonItemOptionsArrayPushTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("SegmentButtonItemOptionsArrayPushTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info("SegmentButtonItemOptionsArrayPushTest beforeEach start");
@@ -47,7 +38,7 @@ export default function SegmentButtonItemOptionsArrayPushTest() {
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("SegmentButtonItemOptionsArray1" == pages.name)) {
           console.info("get SegmentButtonItemOptionsArrayPushTest pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -57,7 +48,11 @@ export default function SegmentButtonItemOptionsArrayPushTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SegmentButtonItemOptionsArrayPushTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("SegmentButtonItemOptionsArrayPushTest after each called");
     });
 
@@ -69,19 +64,24 @@ export default function SegmentButtonItemOptionsArrayPushTest() {
      */
     it('SegmentButtonItemOptionsArrayPushTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayPushTest_static_001 START');
-      await CommonFunc.sleep(2000);
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(500);
-      let btn = await driver.findComponent(ON.id('SegmentButtonItemOptionsArray_push'));
-      await CommonFunc.sleep(500);
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let btn2 = await driver.findComponent(ON.text('a'));
-      expect(btn2).not().assertUndefined();
-      console.info("[SegmentButtonItemOptionsArrayPushTest_static_001] click succ");
-      expect(AppStorage.get<string>("SegmentButtonItemOptionsArray_push")).assertEqual('push succ');
-      AppStorage.delete("SegmentButtonItemOptionsArray_push");
-      console.info('[SegmentButtonItemOptionsArrayPushTest_static_001] END');
+      try {
+        await CommonFunc.sleep(2000);
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(500);
+        let btn = await driver.findComponent(ON.id('SegmentButtonItemOptionsArray_push'));
+        await CommonFunc.sleep(500);
+        await (btn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let btn2 = await driver.findComponent(ON.text('a'));
+        expect(btn2).not().assertUndefined();
+        console.info("[SegmentButtonItemOptionsArrayPushTest_static_001] click succ");
+        expect(AppStorage.get<string>("SegmentButtonItemOptionsArray_push")).assertEqual('push succ');
+        AppStorage.delete("SegmentButtonItemOptionsArray_push");
+        console.info('[SegmentButtonItemOptionsArrayPushTest_static_001] END');
+      } catch (error) {
+        console.error('[SegmentButtonItemOptionsArrayPushTest_static_001] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     });
   })

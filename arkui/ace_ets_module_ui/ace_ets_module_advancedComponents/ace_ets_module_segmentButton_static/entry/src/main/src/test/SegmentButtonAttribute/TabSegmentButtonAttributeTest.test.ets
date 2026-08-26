@@ -14,13 +14,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '../../../../hypium';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
-  ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
@@ -28,10 +24,6 @@ import inspector from '@ohos.arkui.inspector';
 export default function TabSegmentButtonAttributeTest() {
   describe('TabSegmentButtonAttributeTest', () => {
 
-    beforeAll(async (): Promise<void> => {
-      console.info("SegmentButtonV2Test beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("TabSegmentButtonAttributeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -46,7 +38,7 @@ export default function TabSegmentButtonAttributeTest() {
           console.info("get TabSegmentButtonAttributeTest pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push TabSegmentButtonAttributeTest page result:" + JSON.stringify(result));
         }
@@ -57,8 +49,12 @@ export default function TabSegmentButtonAttributeTest() {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info('TabSegmentButtonAttributeTest after each called');
+      } catch (err) {
+        console.error('TabSegmentButtonAttributeTest afterEach error: ' + err);
+      }
     });
 
 
@@ -70,6 +66,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_0100", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -87,6 +84,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_0100", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_0100 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -97,6 +99,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_0200", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -109,6 +112,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_0200", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_0200 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -120,6 +128,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_0300", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -133,6 +142,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_0300", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_0300 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -143,6 +157,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_0400", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -160,6 +175,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_0400", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_0400 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -171,6 +191,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_0500", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -185,6 +206,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_0500", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_0500 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -195,6 +221,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_0600", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -208,6 +235,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_0600", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_0600 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -218,6 +250,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_0700", "START");
         let itemMinHeight = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -231,6 +264,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_0700", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_0700 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -242,6 +280,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_0800", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -259,6 +298,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_0800", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_0800 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -269,6 +313,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_0900", "START");
         let itemSpace = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -301,6 +346,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_0900", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_0900 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
 
@@ -312,6 +362,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_1000", "START");
         let symbol = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -328,6 +379,11 @@ export default function TabSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonAttributeTest_static_1000", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_1000 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
 
     /**
@@ -338,6 +394,7 @@ export default function TabSegmentButtonAttributeTest() {
      */
     it('TabSegmentButtonAttributeTest_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         console.log("TabSegmentButtonAttributeTest_static_1100", "START");
         let imageUnselected = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -353,6 +410,11 @@ export default function TabSegmentButtonAttributeTest() {
         expect(imageUnselected.getElement('$attrs').getString('fillColor')).assertEqual('#99000000');
         console.log("TabSegmentButtonAttributeTest_static_1100", "END");
         done();
+        } catch (err) {
+          console.error("TabSegmentButtonAttributeTest_static_1100 error: " + err);
+          expect(false).assertTrue();
+          done();
+        }
       });
   })
 }

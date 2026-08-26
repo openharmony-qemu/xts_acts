@@ -13,25 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import deviceInfo from '@ohos.deviceInfo';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function segmentButtonEnableStateAnimation() {
   describe('segmentButtonEnableStateAnimation', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("segmentButtonEnableStateAnimation beforeEach start");
       let options: router.RouterOptions = {
@@ -44,7 +35,7 @@ export default function segmentButtonEnableStateAnimation() {
         console.info("get segmentButtonEnableStateAnimation state pages: " + JSON.stringify(pages));
         if (!("segmentButtonEnableStateAnimation" == pages.name)) {
           console.info("get segmentButtonEnableStateAnimation state pages.name: " + JSON.stringify(pages.name));
-          pageRouter.pushUrl(options);
+          await pageRouter.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -53,8 +44,12 @@ export default function segmentButtonEnableStateAnimation() {
       console.info("segmentButtonEnableStateAnimation beforeEach end");
     });
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
-      console.info("segmentButtonEnableStateAnimation after each called");
+      try {
+        await CommonFunc.sleep(1000);
+        console.info("segmentButtonEnableStateAnimation after each called");
+      } catch (err) {
+        console.error("afterEach error: " + err);
+      }
     });
 
     /**
@@ -66,19 +61,25 @@ export default function segmentButtonEnableStateAnimation() {
      * @tc.level  LEVEL0
      */
     it('segmentButtonEnableStateAnimation_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.log("[segmentButtonEnableStateAnimation_001] START");
-      const driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      const button = await driver.findComponent(ON.id('true'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        console.log("[segmentButtonEnableStateAnimation_001] START");
+        const driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        const button = await driver.findComponent(ON.id('true'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      let textJ = inspector.getInspectorByKey('text');
-      let text = JSON.parseJsonElement(textJ);
+        let textJ = inspector.getInspectorByKey('text');
+        let text = JSON.parseJsonElement(textJ);
 
-      expect(text.getElement('$attrs').getString('content')).assertEqual('true');
-      console.log("[segmentButtonEnableStateAnimation_001] END");
-      done();
+        expect(text.getElement('$attrs').getString('content')).assertEqual('true');
+        console.log("[segmentButtonEnableStateAnimation_001] END");
+        done();
+      } catch (err) {
+        console.error('segmentButtonEnableStateAnimation_001 error: ' + err);
+        expect(false).assertTrue();
+        done();
+      }
     })
   })
 }

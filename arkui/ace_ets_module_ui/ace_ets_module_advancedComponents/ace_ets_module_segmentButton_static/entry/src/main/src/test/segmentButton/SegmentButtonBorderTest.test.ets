@@ -16,32 +16,21 @@
 
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
-  afterAll,
   it,
   expect,
-  TestType,
-  Size,
   Level
 } from '../../../../hypium';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver } from '@ohos.UiTest';
 import router from '@ohos.router';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility } from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 
 export default function SegmentButtonBorderTest() {
   describe('SegmentButtonBorderTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("SegmentButtonBorderTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("SegmentButtonBorderTest beforeEach start");
@@ -55,7 +44,7 @@ export default function SegmentButtonBorderTest() {
         console.info("get SegmentButtonBorderTest state pages:" + JSON.stringify(pages));
         if (!("SegmentButtonBorderTest" == pages.name)) {
           console.info("get SegmentButtonBorderTest pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -66,7 +55,11 @@ export default function SegmentButtonBorderTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SegmentButtonBorderTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('SegmentButtonBorderTest after each called');
     });
 
@@ -81,42 +74,47 @@ export default function SegmentButtonBorderTest() {
      */
     it('SegmentButtonBorderTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonBorderTest_0100 START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(200);
-      let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[1]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-      console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj))
-      expect(obj.getElement('$attrs').getString('borderRadius')).assertEqual('14.00vp');
-      let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[1]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-      console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj2))
-      // expect(obj2.getElement('$attrs').getString('borderRadius')).assertEqual(JSON.stringify({
-      //   topLeft: "12.00vp",
-      //   topRight: "12.00vp",
-      //   bottomLeft: "12.00vp",
-      //   bottomRight: "12.00vp"
-      // }));
+      try {
+        await CommonFunc.sleep(1000);
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(200);
+        let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[1]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+        console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj))
+        expect(obj.getElement('$attrs').getString('borderRadius')).assertEqual('14.00vp');
+        let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[1]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+        console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj2))
+        // expect(obj2.getElement('$attrs').getString('borderRadius')).assertEqual(JSON.stringify({
+        //   topLeft: "12.00vp",
+        //   topRight: "12.00vp",
+        //   bottomLeft: "12.00vp",
+        //   bottomRight: "12.00vp"
+        // }));
 
 
-      console.info('[SegmentButtonBorderTest_0100] END');
+        console.info('[SegmentButtonBorderTest_0100] END');
+      } catch (error) {
+        console.error('[SegmentButtonBorderTest_0100] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     });
     /**
@@ -129,41 +127,39 @@ export default function SegmentButtonBorderTest() {
      */
     it('SegmentButtonBorderTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonBorderTest_0200 START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(200);
-      let obj3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[3]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-      console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj3))
-      expect(obj3.getElement('$attrs').getString('borderRadius')).assertEqual('20.00vp');
-      let obj4 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[3]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-        .getArray("$children")[0]
-      console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj4))
-      // expect(obj4.getElement('$attrs').getString('borderRadius')).assertEqual(JSON.stringify({
-      //   topLeft: "18.00vp",
-      //   topRight: "18.00vp",
-      //   bottomLeft: "18.00vp",
-      //   bottomRight: "18.00vp"
-      // }));
-
-      console.info('[SegmentButtonBorderTest_0200] END');
+      try {
+        await CommonFunc.sleep(1000);
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(200);
+        let obj3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[3]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+        console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj3))
+        expect(obj3.getElement('$attrs').getString('borderRadius')).assertEqual('20.00vp');
+        let obj4 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[3]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+          .getArray("$children")[0]
+        console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj4))
+        console.info('[SegmentButtonBorderTest_0200] END');
+      } catch (error) {
+        console.error('[SegmentButtonBorderTest_0200] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     });
 

@@ -47,126 +47,125 @@ export default function XComponentTest() {
     });
 
     /**
-     * @tc.name   surfaceConfigIsOpaqueTrue
-     * @tc.number SUB_ARKUI_API_surfaceConfigIsOpaqueTrue
+     * @tc.name   XComponentTest_0100
+     * @tc.number SUB_ARKUI_API_XComponentTest_0100
      * @tc.desc   ArkUIApi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('surfaceConfigIsOpaqueTrue', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: surfaceConfigIsOpaqueTrue START');
+    it('XComponentTest_0100', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0100 START');
       try {
         let config: SurfaceConfig = { isOpaque: true };
         expect(config.isOpaque).assertEqual(true);
         done();
       } catch (err) {
-        console.error('XComponentTest surfaceConfigIsOpaqueTrue error: ' + err);
+        console.error('XComponentTest XComponentTest_0100 error: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name   surfaceConfigIsOpaqueFalse
-     * @tc.number SUB_ARKUI_API_surfaceConfigIsOpaqueFalse
+     * @tc.name   XComponentTest_0200
+     * @tc.number SUB_ARKUI_API_XComponentTest_0200
      * @tc.desc   ArkUIApi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('surfaceConfigIsOpaqueFalse', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: surfaceConfigIsOpaqueFalse START');
+    it('XComponentTest_0200', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0200 START');
       try {
         let config: SurfaceConfig = { isOpaque: false };
         expect(config.isOpaque).assertEqual(false);
         done();
       } catch (err) {
-        console.error('XComponentTest surfaceConfigIsOpaqueFalse error: ' + err);
+        console.error('XComponentTest XComponentTest_0200 error: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name   surfaceConfigIsOpaqueUndefined
-     * @tc.number SUB_ARKUI_API_surfaceConfigIsOpaqueUndefined
+     * @tc.name   XComponentTest_0300
+     * @tc.number SUB_ARKUI_API_XComponentTest_0300
      * @tc.desc   ArkUIApi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('surfaceConfigIsOpaqueUndefined', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: surfaceConfigIsOpaqueUndefined START');
+    it('XComponentTest_0300', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0300 START');
       try {
         let config: SurfaceConfig = {};
         expect(config.isOpaque === undefined).assertTrue();
         done();
       } catch (err) {
-        console.error('XComponentTest surfaceConfigIsOpaqueUndefined error: ' + err);
+        console.error('XComponentTest XComponentTest_0300 error: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name   xComponentControllerLockCanvas
-     * @tc.number SUB_ARKUI_API_xComponentControllerLockCanvas
-     * @tc.desc   ArkUIApi
+     * @tc.name   XComponentTest_0400
+     * @tc.number SUB_ARKUI_API_XComponentTest_0400
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('xComponentControllerLockCanvas', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: xComponentControllerLockCanvas START');
+    it('XComponentTest_0400', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0400 START');
       try {
         const ctrl = new XComponentController();
         expect(typeof ctrl.lockCanvas === 'function').assertTrue();
         done();
       } catch (err) {
-        console.error('XComponentTest xComponentControllerLockCanvas error: ' + err);
+        console.error('XComponentTest XComponentTest_0400 error: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name   xComponentControllerUnlockCanvasAndPost
-     * @tc.number SUB_ARKUI_API_xComponentControllerUnlockCanvasAndPost
+     * @tc.name   XComponentTest_0500
+     * @tc.number SUB_ARKUI_API_XComponentTest_0500
      * @tc.desc   ArkUIApi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('xComponentControllerUnlockCanvasAndPost', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: xComponentControllerUnlockCanvasAndPost START');
+    it('XComponentTest_0500', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0500 START');
       try {
         const ctrl = new XComponentController();
         expect(typeof ctrl.unlockCanvasAndPost === 'function').assertTrue();
         done();
       } catch (err) {
-        console.error('XComponentTest xComponentControllerUnlockCanvasAndPost error: ' + err);
+        console.error('XComponentTest XComponentTest_0500 error: ' + err);
         expect().assertFail();
         done();
       }
     });
 
     /**
-     * @tc.name   xComponentControllerSetSurfaceConfig
-     * @tc.number SUB_ARKUI_API_xComponentControllerSetSurfaceConfig
+     * @tc.name   XComponentTest_0600
+     * @tc.number SUB_ARKUI_API_XComponentTest_0600
      * @tc.desc   ArkUIApi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('xComponentControllerSetSurfaceConfig', Level.LEVEL1, (done: () => void): void => {
-      console.info('XComponentTest execute: xComponentControllerSetSurfaceConfig START');
+    it('XComponentTest_0600', Level.LEVEL1, (done: () => void): void => {
+      console.info('XComponentTest execute: XComponentTest_0600 START');
       try {
         const ctrl = new XComponentController();
         expect(typeof ctrl.setXComponentSurfaceConfig === 'function').assertTrue();
         done();
       } catch (err) {
-        console.error('XComponentTest xComponentControllerSetSurfaceConfig error: ' + err);
+        console.error('XComponentTest XComponentTest_0600 error: ' + err);
         expect().assertFail();
         done();
       }
