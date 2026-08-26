@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common';
-import { MessageManager, Callback } from '../../MainAbility/common/MessageManager';
+
 
 export default function ImageAnimatorAttributeModifierTest() {
   describe('ImageAnimatorAttributeModifierTest', () => {
@@ -63,9 +63,7 @@ export default function ImageAnimatorAttributeModifierTest() {
         console.info('[ImageAnimatorAttributeModifierTest_0100] initial state: ' + obj.$attrs.state);
         expect(obj.$attrs.state).assertEqual('AnimationStatus.Initial');
 
-        globalThis.value.message.notify({
-          name: 'state', value: AnimationStatus.Running
-        })
+        AppStorage.setOrCreate('imageAnimatorState', AnimationStatus.Running)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);
@@ -96,9 +94,7 @@ export default function ImageAnimatorAttributeModifierTest() {
         console.info('[ImageAnimatorAttributeModifierTest_0200] initial duration: ' + obj.$attrs.duration);
         expect(obj.$attrs.duration).assertEqual('1000');
 
-        globalThis.value.message.notify({
-          name: 'duration', value: 5000
-        })
+        AppStorage.setOrCreate('imageAnimatorDuration', 5000)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);
@@ -129,9 +125,7 @@ export default function ImageAnimatorAttributeModifierTest() {
         console.info('[ImageAnimatorAttributeModifierTest_0300] initial reverse: ' + obj.$attrs.reverse);
         expect(obj.$attrs.reverse).assertEqual('false');
 
-        globalThis.value.message.notify({
-          name: 'reverse', value: true
-        })
+        AppStorage.setOrCreate('imageAnimatorReverse', true)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);
@@ -162,9 +156,7 @@ export default function ImageAnimatorAttributeModifierTest() {
         console.info('[ImageAnimatorAttributeModifierTest_0400] initial fixedSize: ' + obj.$attrs.fixedSize);
         expect(obj.$attrs.fixedSize).assertEqual('true');
 
-        globalThis.value.message.notify({
-          name: 'fixedSize', value: false
-        })
+        AppStorage.setOrCreate('imageAnimatorFixedSize', false)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);
@@ -195,9 +187,7 @@ export default function ImageAnimatorAttributeModifierTest() {
         console.info('[ImageAnimatorAttributeModifierTest_0500] initial fillMode: ' + obj.$attrs.fillMode);
         expect(obj.$attrs.fillMode).assertEqual('FillMode.Forwards');
 
-        globalThis.value.message.notify({
-          name: 'fillMode', value: FillMode.None
-        })
+        AppStorage.setOrCreate('imageAnimatorFillMode', FillMode.None)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);
@@ -228,9 +218,7 @@ export default function ImageAnimatorAttributeModifierTest() {
         console.info('[ImageAnimatorAttributeModifierTest_0600] initial iterations: ' + obj.$attrs.iterations);
         expect(obj.$attrs.iterations).assertEqual('1');
 
-        globalThis.value.message.notify({
-          name: 'iterations', value: -1
-        })
+        AppStorage.setOrCreate('imageAnimatorIterations', -1)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);
@@ -261,9 +249,7 @@ export default function ImageAnimatorAttributeModifierTest() {
         console.info('[ImageAnimatorAttributeModifierTest_0700] initial monitorInvisibleArea: ' + obj.$attrs.monitorInvisibleArea);
         expect(obj.$attrs.monitorInvisibleArea).assertEqual('false');
 
-        globalThis.value.message.notify({
-          name: 'monitorInvisibleArea', value: true
-        })
+        AppStorage.setOrCreate('imageAnimatorMonitorInvisibleArea', true)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);
@@ -289,29 +275,17 @@ export default function ImageAnimatorAttributeModifierTest() {
       console.info('[ImageAnimatorAttributeModifierTest_0800] START');
       try {
         await CommonFunc.sleep(1000);
-        globalThis.value.message.notify({
-          name: 'state', value: AnimationStatus.Running
-        })
+        AppStorage.setOrCreate('imageAnimatorState', AnimationStatus.Running)
         await CommonFunc.sleep(500);
-        globalThis.value.message.notify({
-          name: 'duration', value: 3000
-        })
+        AppStorage.setOrCreate('imageAnimatorDuration', 3000)
         await CommonFunc.sleep(500);
-        globalThis.value.message.notify({
-          name: 'reverse', value: true
-        })
+        AppStorage.setOrCreate('imageAnimatorReverse', true)
         await CommonFunc.sleep(500);
-        globalThis.value.message.notify({
-          name: 'fixedSize', value: false
-        })
+        AppStorage.setOrCreate('imageAnimatorFixedSize', false)
         await CommonFunc.sleep(500);
-        globalThis.value.message.notify({
-          name: 'fillMode', value: FillMode.Both
-        })
+        AppStorage.setOrCreate('imageAnimatorFillMode', FillMode.Both)
         await CommonFunc.sleep(500);
-        globalThis.value.message.notify({
-          name: 'iterations', value: 3
-        })
+        AppStorage.setOrCreate('imageAnimatorIterations', 3)
         await CommonFunc.sleep(1000);
 
         let strJson = getInspectorByKey('imageAnimatorModifier');
@@ -348,18 +322,14 @@ export default function ImageAnimatorAttributeModifierTest() {
       console.info('[ImageAnimatorAttributeModifierTest_0900] START');
       try {
         await CommonFunc.sleep(1000);
-        globalThis.value.message.notify({
-          name: 'state', value: AnimationStatus.Running
-        })
+        AppStorage.setOrCreate('imageAnimatorState', AnimationStatus.Running)
         await CommonFunc.sleep(1000);
         let strJson = getInspectorByKey('imageAnimatorModifier');
         let obj: ESObject = JSON.parse(strJson);
         console.info('[ImageAnimatorAttributeModifierTest_0900] running state: ' + obj.$attrs.state);
         expect(obj.$attrs.state).assertEqual('AnimationStatus.Running');
 
-        globalThis.value.message.notify({
-          name: 'state', value: AnimationStatus.Paused
-        })
+        AppStorage.setOrCreate('imageAnimatorState', AnimationStatus.Paused)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);
@@ -385,18 +355,14 @@ export default function ImageAnimatorAttributeModifierTest() {
       console.info('[ImageAnimatorAttributeModifierTest_1000] START');
       try {
         await CommonFunc.sleep(1000);
-        globalThis.value.message.notify({
-          name: 'state', value: AnimationStatus.Running
-        })
+        AppStorage.setOrCreate('imageAnimatorState', AnimationStatus.Running)
         await CommonFunc.sleep(1000);
         let strJson = getInspectorByKey('imageAnimatorModifier');
         let obj: ESObject = JSON.parse(strJson);
         console.info('[ImageAnimatorAttributeModifierTest_1000] running state: ' + obj.$attrs.state);
         expect(obj.$attrs.state).assertEqual('AnimationStatus.Running');
 
-        globalThis.value.message.notify({
-          name: 'state', value: AnimationStatus.Stopped
-        })
+        AppStorage.setOrCreate('imageAnimatorState', AnimationStatus.Stopped)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);
@@ -427,9 +393,7 @@ export default function ImageAnimatorAttributeModifierTest() {
         console.info('[ImageAnimatorAttributeModifierTest_1100] initial fillMode: ' + obj.$attrs.fillMode);
         expect(obj.$attrs.fillMode).assertEqual('FillMode.Forwards');
 
-        globalThis.value.message.notify({
-          name: 'fillMode', value: FillMode.Backwards
-        })
+        AppStorage.setOrCreate('imageAnimatorFillMode', FillMode.Backwards)
         await CommonFunc.sleep(1000);
         let strJson2 = getInspectorByKey('imageAnimatorModifier');
         let obj2: ESObject = JSON.parse(strJson2);

@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { MessageManager, Callback } from '../../common/MessageManager';
 
 class MyImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   public stateValue: AnimationStatus = AnimationStatus.Initial;
@@ -38,38 +37,22 @@ class MyImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribut
 @Component
 struct ImageAnimatorAttributeModifierPage {
   @State modifier: MyImageAnimatorModifier = new MyImageAnimatorModifier()
-  messageManager: MessageManager = new MessageManager()
+  @StorageLink('imageAnimatorState') @Watch('onStorageChange') storageState: AnimationStatus = AnimationStatus.Initial;
+  @StorageLink('imageAnimatorDuration') @Watch('onStorageChange') storageDuration: number = 1000;
+  @StorageLink('imageAnimatorReverse') @Watch('onStorageChange') storageReverse: boolean = false;
+  @StorageLink('imageAnimatorFixedSize') @Watch('onStorageChange') storageFixedSize: boolean = true;
+  @StorageLink('imageAnimatorFillMode') @Watch('onStorageChange') storageFillMode: FillMode = FillMode.Forwards;
+  @StorageLink('imageAnimatorIterations') @Watch('onStorageChange') storageIterations: number = 1;
+  @StorageLink('imageAnimatorMonitorInvisibleArea') @Watch('onStorageChange') storageMonitor: boolean = false;
 
-  onPageShow() {
-    console.info('ImageAnimatorAttributeModifier onPageShow')
-    globalThis.value = {
-      name: 'messageManager', message: this.messageManager
-    }
-    let callback: Callback = (message: ESObject) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'state') {
-        this.modifier.stateValue = message.value
-      }
-      if (message.name == 'duration') {
-        this.modifier.durationValue = message.value
-      }
-      if (message.name == 'reverse') {
-        this.modifier.reverseValue = message.value
-      }
-      if (message.name == 'fixedSize') {
-        this.modifier.fixedSizeValue = message.value
-      }
-      if (message.name == 'fillMode') {
-        this.modifier.fillModeValue = message.value
-      }
-      if (message.name == 'iterations') {
-        this.modifier.iterationsValue = message.value
-      }
-      if (message.name == 'monitorInvisibleArea') {
-        this.modifier.monitorInvisibleAreaValue = message.value
-      }
-    }
-    this.messageManager.registerCallback(callback)
+  onStorageChange() {
+    this.modifier.stateValue = this.storageState;
+    this.modifier.durationValue = this.storageDuration;
+    this.modifier.reverseValue = this.storageReverse;
+    this.modifier.fixedSizeValue = this.storageFixedSize;
+    this.modifier.fillModeValue = this.storageFillMode;
+    this.modifier.iterationsValue = this.storageIterations;
+    this.modifier.monitorInvisibleAreaValue = this.storageMonitor;
   }
 
   build() {
@@ -105,13 +88,13 @@ struct ImageAnimatorAttributeModifierPage {
 
       Row({ space: 10 }) {
         Button('start').layoutWeight(1).onClick(() => {
-          this.modifier.stateValue = AnimationStatus.Running
+          this.storageState = AnimationStatus.Running
         }).key('btn_start')
         Button('pause').layoutWeight(1).onClick(() => {
-          this.modifier.stateValue = AnimationStatus.Paused
+          this.storageState = AnimationStatus.Paused
         }).key('btn_pause')
         Button('stop').layoutWeight(1).onClick(() => {
-          this.modifier.stateValue = AnimationStatus.Stopped
+          this.storageState = AnimationStatus.Stopped
         }).key('btn_stop')
       }
       .width('100%')
@@ -119,13 +102,13 @@ struct ImageAnimatorAttributeModifierPage {
 
       Row({ space: 10 }) {
         Button('reverse').layoutWeight(1).onClick(() => {
-          this.modifier.reverseValue = !this.modifier.reverseValue
+          this.storageReverse = !this.storageReverse
         }).key('btn_reverse')
         Button('fixedSize').layoutWeight(1).onClick(() => {
-          this.modifier.fixedSizeValue = !this.modifier.fixedSizeValue
+          this.storageFixedSize = !this.storageFixedSize
         }).key('btn_fixedSize')
         Button('infinite').layoutWeight(1).onClick(() => {
-          this.modifier.iterationsValue = -1
+          this.storageIterations = -1
         }).key('btn_infinite')
       }
       .width('100%')
@@ -133,13 +116,13 @@ struct ImageAnimatorAttributeModifierPage {
 
       Row({ space: 10 }) {
         Button('fillNone').layoutWeight(1).onClick(() => {
-          this.modifier.fillModeValue = FillMode.None
+          this.storageFillMode = FillMode.None
         }).key('btn_fillNone')
         Button('duration').layoutWeight(1).onClick(() => {
-          this.modifier.durationValue = 5000
+          this.storageDuration = 5000
         }).key('btn_duration')
         Button('monitor').layoutWeight(1).onClick(() => {
-          this.modifier.monitorInvisibleAreaValue = true
+          this.storageMonitor = true
         }).key('btn_monitor')
       }
       .width('100%')
