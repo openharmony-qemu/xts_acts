@@ -16,7 +16,10 @@
   "apiType": 'stageMode',
   "buildOption": {
     "sourceOption": {
-      "workers": []
+      "workers": [
+        "./src/ohosTest/ets/test/CollectionsMapWorker.ets"
+
+      ]
     }
   },
   "targets": [

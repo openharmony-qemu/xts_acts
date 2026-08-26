@@ -22,6 +22,15 @@ import CollectionsMapGetTest from "./CollectionsMapGetTest.test";
 import CollectionsMapHasTest from "./CollectionsMapHasTest.test";
 import CollectionsMapApisTest from "./CollectionsMapApisTest.test";
 import CollectionsMapValuesTest from "./CollectionsMapValuesTest.test";
+import collectionsMapConstructorTest01 from './CollectionsMapConstructorTest01.test';
+import collectionsMapClearSizeTest from './CollectionsMapClearSize.test';
+import collectionsMapHasDeleteTest from './CollectionsMapHasDelete.test';
+import collectionsMapKeysValuesTest from './CollectionsMapKeysValues.test';
+import collectionsMapNonOrthogonalTest from './CollectionsMapNonOrthogonal.test';
+import collectionsMapForEachEntriesTest from './CollectionsMapForEachEntries.test';
+import collectionsMapSetGet from './CollectionsMapSetGet.test';
+import collectionsMapConcurrentTest from './CollectionsMapConcurrent.test';
+
 
 export default function testsuite() {
   CollectionsMapClearTest();
@@ -33,4 +42,12 @@ export default function testsuite() {
   CollectionsMapHasTest();
   CollectionsMapApisTest();
   CollectionsMapValuesTest();
+  collectionsMapConstructorTest01();
+  collectionsMapClearSizeTest();
+  collectionsMapForEachEntriesTest();
+  collectionsMapHasDeleteTest();
+  collectionsMapKeysValuesTest();
+  collectionsMapNonOrthogonalTest();
+  collectionsMapSetGet();
+  collectionsMapConcurrentTest();
 };

@@ -1,0 +1,242 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { collections } from '@kit.ArkTS';
+import { taskpool } from '@kit.ArkTS';
+import { ArkTSUtils } from '@kit.ArkTS';
+
+@Concurrent
+export async function concurrentForEachCount(map: collections.Map<string, number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count: number = 0;
+      map.forEach((_value: number, _key: string) => {
+        count++;
+      });
+      return count;
+    } catch (_e) {
+      return -1;
+    }
+  });
+}
+
+@Concurrent
+export function concurrentModifyDuringForEach(map: collections.Map<string, number>): number {
+  try {
+    map.forEach((value: number, key: string) => {
+      if (value === 50) {
+        map.delete(key);
+      }
+    });
+    return 0;
+  } catch (e) {
+    let err: Record<string, number> = e as Record<string, number>;
+    return err['code'] ?? -1;
+  }
+}
+
+@Concurrent
+export async function concurrentIterateEntries(map: collections.Map<string, number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count: number = 0;
+      let iter: Iterator<[string, number]> = map.entries();
+      let result: IteratorResult<[string, number]> = iter.next();
+      while (!result.done) {
+        count++;
+        result = iter.next();
+      }
+      return count;
+    } catch (_e) {
+      return -1;
+    }
+  });
+}
+
+@Concurrent
+export async function concurrentIterateKeys(map: collections.Map<string, number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count: number = 0;
+      let iter: Iterator<string> = map.keys();
+      let result: IteratorResult<string> = iter.next();
+      while (!result.done) {
+        count++;
+        result = iter.next();
+      }
+      return count;
+    } catch (_e) {
+      return -1;
+    }
+  });
+}
+
+@Concurrent
+export async function concurrentIterateValues(map: collections.Map<string, number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count: number = 0;
+      let iter: Iterator<number> = map.values();
+      let result: IteratorResult<number> = iter.next();
+      while (!result.done) {
+        count++;
+        result = iter.next();
+      }
+      return count;
+    } catch (_e) {
+      return -1;
+    }
+  });
+}
+
+@Concurrent
+export function concurrentLongForEach(map: collections.Map<string, number>): number {
+  try {
+    let count: number = 0;
+    map.forEach((_value: number, _key: string) => {
+      count++;
+    });
+    return count;
+  } catch (_e) {
+    return -1;
+  }
+}
+
+@Sendable
+export class Person {
+  name: string = '';
+  age: number = 0;
+}
+
+@Concurrent
+export async function accessSendableElement(map: collections.Map<string, Person>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<string> {
+  return await lock.lockAsync(async (): Promise<string> => {
+    try {
+      let person: Person | undefined = map.get('p1');
+      return person?.name ?? '';
+    } catch (_e) {
+      return '';
+    }
+  });
+}
+
+@Concurrent
+export async function safeSetWithLock(
+  map: collections.Map<string, number>,
+  lock: ArkTSUtils.locks.AsyncLock
+): Promise<number> {
+  try {
+    await lock.lockAsync(() => {
+      map.set('locked_key', 999);
+    });
+    return map.get('locked_key') ?? -1;
+  } catch (_e) {
+    return -1;
+  }
+}
+
+@Concurrent
+export async function receiveMapParam(map: collections.Map<string, number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      return map.size;
+    } catch (_e) {
+      return -1;
+    }
+  });
+}
+
+@Concurrent
+export async function returnMap(lock: ArkTSUtils.locks.AsyncLock): Promise<collections.Map<string, number>> {
+  return await lock.lockAsync(async (): Promise<collections.Map<string, number>> => {
+    try {
+      let result: collections.Map<string, number> = new collections.Map<string, number>();
+      result.set('result', 100);
+      return result;
+    } catch (_e) {
+      return new collections.Map<string, number>();
+    }
+  });
+}
+
+@Concurrent
+export function forEachWithProgress(map: collections.Map<string, number>): number {
+  try {
+    let count: number = 0;
+    map.forEach((_value: number, _key: string) => {
+      count++;
+      if (count % 25 === 0) {
+        taskpool.Task.sendData(count);
+      }
+    });
+    return count;
+  } catch (_e) {
+    return -1;
+  }
+}
+
+@Concurrent
+export async function repeatedForEach(map: collections.Map<string, number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let count: number = 0;
+      for (let loop: number = 0; loop < 10; loop++) {
+        map.forEach((_value: number, _key: string) => {
+          count++;
+        });
+      }
+      return count;
+    } catch (_e) {
+      return -1;
+    }
+  });
+}
+
+@Concurrent
+export async function stressIterate(map: collections.Map<string, number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      let total: number = 0;
+      for (let i: number = 0; i < 10000; i++) {
+        map.forEach((_value: number, _key: string) => {
+          total++;
+        });
+      }
+      return total;
+    } catch (_e) {
+      return -1;
+    }
+  });
+}
+
+@Concurrent
+export async function largeMapHandler(map: collections.Map<string, number>,
+  lock: ArkTSUtils.locks.AsyncLock): Promise<number> {
+  return await lock.lockAsync(async (): Promise<number> => {
+    try {
+      return map.size;
+    } catch (_e) {
+      return -1;
+    }
+  });
+}
