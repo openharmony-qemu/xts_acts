@@ -3965,7 +3965,6 @@ static napi_value OhAvPlayerGetNewestVideoSample(napi_env env, napi_callback_inf
         GetFDSourceInfo(player);
         waitAvPlayerStateChange(player, AV_INITIALIZED);
         OH_AVPlayer_SetVideoSurface(player, window1);
-        OH_AVPlayer_SetVideoSurface(player, window2);
         OH_AVPlayerVideoOutput *videoOutput = OH_AVPlayer_SetVideoSideOutput(player, window2);
         OH_AVPlayer_Prepare(player);
         waitAvPlayerStateChange(player, AV_PREPARED);
