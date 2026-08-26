@@ -37,11 +37,8 @@ export default function XComponentTest() {
         console.info("get themePageToggleTest state pages:" + JSON.stringify(pages));
         if (!("MainAbility/pages/XComponent/XComponentIndex" == pages.name)) {
           console.info("get themePageToggleTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
           await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push themePageToggleTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push themePageToggleTest page error:" + err);
@@ -49,14 +46,13 @@ export default function XComponentTest() {
       console.info("themePageToggleTest beforeEach end");
     });
 
-    // ============================================================
-    // SurfaceConfig.isOpaque
-    // ============================================================
-
     /**
-     * @tc.number XComponentTest_001
-     * @tc.name surfaceConfigIsOpaqueTrue
-     * @tc.desc Test SurfaceConfig.isOpaque with true
+     * @tc.name   surfaceConfigIsOpaqueTrue
+     * @tc.number SUB_ARKUI_API_surfaceConfigIsOpaqueTrue
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('surfaceConfigIsOpaqueTrue', Level.LEVEL1, (done: () => void): void => {
       console.info('XComponentTest execute: surfaceConfigIsOpaqueTrue START');
@@ -72,9 +68,12 @@ export default function XComponentTest() {
     });
 
     /**
-     * @tc.number XComponentTest_002
-     * @tc.name surfaceConfigIsOpaqueFalse
-     * @tc.desc Test SurfaceConfig.isOpaque with false
+     * @tc.name   surfaceConfigIsOpaqueFalse
+     * @tc.number SUB_ARKUI_API_surfaceConfigIsOpaqueFalse
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('surfaceConfigIsOpaqueFalse', Level.LEVEL1, (done: () => void): void => {
       console.info('XComponentTest execute: surfaceConfigIsOpaqueFalse START');
@@ -90,9 +89,12 @@ export default function XComponentTest() {
     });
 
     /**
-     * @tc.number XComponentTest_003
-     * @tc.name surfaceConfigIsOpaqueUndefined
-     * @tc.desc Test SurfaceConfig.isOpaque with undefined (default)
+     * @tc.name   surfaceConfigIsOpaqueUndefined
+     * @tc.number SUB_ARKUI_API_surfaceConfigIsOpaqueUndefined
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('surfaceConfigIsOpaqueUndefined', Level.LEVEL1, (done: () => void): void => {
       console.info('XComponentTest execute: surfaceConfigIsOpaqueUndefined START');
@@ -107,14 +109,13 @@ export default function XComponentTest() {
       }
     });
 
-    // ============================================================
-    // XComponentController methods
-    // ============================================================
-
     /**
-     * @tc.number XComponentTest_004
-     * @tc.name xComponentControllerLockCanvas
-     * @tc.desc Test XComponentController.lockCanvas method exists
+     * @tc.name   xComponentControllerLockCanvas
+     * @tc.number SUB_ARKUI_API_xComponentControllerLockCanvas
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('xComponentControllerLockCanvas', Level.LEVEL1, (done: () => void): void => {
       console.info('XComponentTest execute: xComponentControllerLockCanvas START');
@@ -130,9 +131,12 @@ export default function XComponentTest() {
     });
 
     /**
-     * @tc.number XComponentTest_005
-     * @tc.name xComponentControllerUnlockCanvasAndPost
-     * @tc.desc Test XComponentController.unlockCanvasAndPost method exists
+     * @tc.name   xComponentControllerUnlockCanvasAndPost
+     * @tc.number SUB_ARKUI_API_xComponentControllerUnlockCanvasAndPost
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('xComponentControllerUnlockCanvasAndPost', Level.LEVEL1, (done: () => void): void => {
       console.info('XComponentTest execute: xComponentControllerUnlockCanvasAndPost START');
@@ -148,9 +152,12 @@ export default function XComponentTest() {
     });
 
     /**
-     * @tc.number XComponentTest_006
-     * @tc.name xComponentControllerSetSurfaceConfig
-     * @tc.desc Test XComponentController.setXComponentSurfaceConfig method exists
+     * @tc.name   xComponentControllerSetSurfaceConfig
+     * @tc.number SUB_ARKUI_API_xComponentControllerSetSurfaceConfig
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('xComponentControllerSetSurfaceConfig', Level.LEVEL1, (done: () => void): void => {
       console.info('XComponentTest execute: xComponentControllerSetSurfaceConfig START');

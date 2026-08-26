@@ -52,26 +52,29 @@ export default function ComponentNodeWithOptionsTest() {
     });
 
     /**
-     * @tc.number ComponentNodeWithOptionsTest_001
-     * @tc.name ComponentNodeWithOptionsTest_001
-     * @tc.desc Test XComponent page title renders
+     * @tc.name   ComponentNodeWithOptionsTest_0100
+     * @tc.number SUB_ARKUI_API_ComponentNodeWithOptionsTest_0100
+     * @tc.desc   ArkUIApi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    it('ComponentNodeWithOptionsTest_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ComponentNodeWithOptionsTest_001 execute: START');
+    it('ComponentNodeWithOptionsTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('ComponentNodeWithOptionsTest_0100 execute: START');
       try {
         await CommonFunc.sleep(SLEEP_TIME);
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('createXComponentNodeWithOptions_id'));
         let obj1 = JSON.parseJsonElement(inspector.getInspectorByKey('createXComponentNodeWithOptions1_id'));
-        console.info("[ComponentNodeWithOptionsTest_001] component obj is: " + obj.getElement('$attrs'));
-        console.info("[ComponentNodeWithOptionsTest_001] component obj is backgroundColor: " + obj.getElement('$attrs').getString('backgroundColor'));
-        console.info("[ComponentNodeWithOptionsTest_001] component obj1 is: " + obj1.getElement('$attrs'));
-        console.info("[ComponentNodeWithOptionsTest_001] component obj1 is backgroundColor: " + obj1.getElement('$attrs').getString('backgroundColor'));
+        console.info("[ComponentNodeWithOptionsTest_0100] component obj is: " + obj.getElement('$attrs'));
+        console.info("[ComponentNodeWithOptionsTest_0100] component obj is backgroundColor: " + obj.getElement('$attrs').getString('backgroundColor'));
+        console.info("[ComponentNodeWithOptionsTest_0100] component obj1 is: " + obj1.getElement('$attrs'));
+        console.info("[ComponentNodeWithOptionsTest_0100] component obj1 is backgroundColor: " + obj1.getElement('$attrs').getString('backgroundColor'));
 
         expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF808080')
         expect(obj1.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF008000')
         done();
       } catch (error) {
-        console.error('ComponentNodeWithOptionsTest_001 execute: ComponentNodeWithOptions error:' + error);
+        console.error('ComponentNodeWithOptionsTest_0100 execute: ComponentNodeWithOptions error:' + error);
         expect().assertFail();
         done();
       }

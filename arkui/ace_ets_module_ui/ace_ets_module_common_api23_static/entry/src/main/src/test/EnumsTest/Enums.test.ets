@@ -15,13 +15,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { TextAlign, AxisModel, AxisType, ResponseRegionSupportedTool, PresetFillType } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
 
@@ -29,10 +28,6 @@ const SLEEP_TIME = 1000;
 
 export default function EnumsTest() {
   describe('EnumsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('EnumsTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.common.api23.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('EnumsTest beforeEach start');
@@ -45,17 +40,21 @@ export default function EnumsTest() {
         let pages = routerInstance.getState();
         console.info('EnumsTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'Enums') {
-          routerInstance.replaceUrl(options);
+          await routerInstance.pushUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {
-        console.error('EnumsTest replaceUrl error: ' + err);
+        console.error('EnumsTest pushUrl error: ' + err);
         expect().assertFail();
       }
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('EnumsTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('EnumsTest after each called');
     });
 
