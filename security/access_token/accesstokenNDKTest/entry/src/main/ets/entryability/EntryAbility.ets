@@ -47,7 +47,7 @@ export default class EntryAbility extends UIAbility {
       hilog.info(0x0000, 'testTag', 'Succeeded in loading the content');
 
       let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-      let permission: Array<Permissions> = ["ohos.permission.CAMERA"];
+      let permission: Permissions[] = ["ohos.permission.CAMERA"];
       try {
         atManager.requestPermissionsFromUser(this.context, permission).then((data) => {
           console.error('SUB_Access_Token_CheckPermission_0100 data：' + JSON.stringify(data));
