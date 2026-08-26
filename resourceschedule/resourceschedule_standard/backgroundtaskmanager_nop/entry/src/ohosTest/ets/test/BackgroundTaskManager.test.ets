@@ -860,7 +860,6 @@ export default function BackgroundTaskManagerTest() {
                   };
                   backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 updateDataTransferProgress success (permission exists)');
-                  expect(true).assertTrue();
                 } catch (err) {
                   let e: BusinessError = err as BusinessError;
                   hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_2000 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
