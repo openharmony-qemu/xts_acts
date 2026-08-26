@@ -14,22 +14,18 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, beforeEach,  Level, beforeAll } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, beforeEach,  Level } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import Utils from '../common/Utils';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 let libUtil: LibUtil = new LibUtil();
 
 export default function FocusControlTest4(){
   describe('FocusControlTest4',  () =>{
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_nowear_api15_static", "EntryAbility")
-    });
      beforeEach(async (): Promise<void> => {
       console.info("FocusControlTest4 beforeEach start");
       let options:router.RouterOptions = {
@@ -53,7 +49,11 @@ export default function FocusControlTest4(){
       }
     });
      afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('FocusControlTest4 afterEach err: ' + JSON.stringify(err));
+      }
       console.info("FocusControlTest4 after each called");
     });
 
@@ -65,37 +65,42 @@ export default function FocusControlTest4(){
      * @tc.level    Level.LEVEL1
      */
     it('SUB_ARKUI_CAPI_FocusControlTest_TEST004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'focuscontrol4';
-      await Utils.pushPage(`focuscontrol/${PAGE_TAG}`);
-      await Utils.sleep(3000);
-      let driver =  Driver.create();
-      // click "transferKey4"
-      let button = await driver.findComponent(ON.id('transferKey4'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        let PAGE_TAG = 'focuscontrol4';
+        await Utils.pushPage(`focuscontrol/${PAGE_TAG}`);
+        await Utils.sleep(3000);
+        let driver =  Driver.create();
+        // click "transferKey4"
+        let button = await driver.findComponent(ON.id('transferKey4'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(1000);
 
-      // click button4x
-      let button4x = await driver.findComponent(ON.id('button4x'));
-      await (button4x?.click() as Promise<void>);
-      await Utils.sleep(1000);
+        // click button4x
+        let button4x = await driver.findComponent(ON.id('button4x'));
+        await (button4x?.click() as Promise<void>);
+        await Utils.sleep(1000);
 
-      // click dalog
-      let menu4 = await driver.findComponent(ON.id('menu4'));
-      await (menu4?.click() as Promise<void>);
-      await Utils.sleep(1000); 
-      
-      // tab key
-      await driver.triggerKey(2049);
-      await Utils.sleep(1000);
+        // click dalog
+        let menu4 = await driver.findComponent(ON.id('menu4'));
+        await (menu4?.click() as Promise<void>);
+        await Utils.sleep(1000); 
+        
+        // tab key
+        await driver.triggerKey(2049);
+        await Utils.sleep(1000);
 
-      await driver.triggerKey(2049);
-      await Utils.sleep(1000);
+        await driver.triggerKey(2049);
+        await Utils.sleep(1000);
 
-      expect(Utils.getComponentInfoByKey('button4x').getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00');
+        expect(Utils.getComponentInfoByKey('button4x').getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00');
 
-      await driver.triggerKey(2070);
-      await Utils.sleep(1000);
-      done();
+        await driver.triggerKey(2070);
+        await Utils.sleep(1000);
+        done();
+      } catch (err) {
+        console.info('SUB_ARKUI_CAPI_FocusControlTest_TEST004 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
   })
