@@ -3240,7 +3240,7 @@ export default function WindowLifecycle() {
      let driver = Driver.create()
      let displayInfo: display.Display = display.getDefaultDisplaySync()
      console.log(`${caseName} getDefaultDisplaySync: ${JSON.stringify(displayInfo)}`);
-     if (deviceType === '2in1') {
+     if (deviceType === '2in1' && isFreeWindowMode) {
        try {
          let mainWindowClass = windowStage.getMainWindowSync();
          await mainWindowClass.setWindowTitle("windowClass2")
@@ -3255,14 +3255,13 @@ export default function WindowLifecycle() {
            done()
          })
          await sleep(1000);
-         // 2、将辅助hap拖进左分屏，点击预览窗口的主应用形成分屏
-         let title = await driver.findComponent(ON.text('windowClass1'))
-         console.log(caseName + " title :" + title);
-         await sleep(1000)
-         let titlePoint = await title.getBounds()
-         console.log(caseName + " titlePoint :" + JSON.stringify(titlePoint));
-         await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
-         await sleep(1000)
+         // 2、辅助hap进左分屏，点击预览窗口的主应用形成分屏
+         let component = await driver.findComponent(ON.id('EnhanceMaximizeBtn'));
+         await component.longClick();
+         let enhanceMaximizeBtnPoint = await component.getBounds()
+         console.log(caseName + " enhanceMaximizeBtnPoint :" + JSON.stringify(enhanceMaximizeBtnPoint));
+         await driver.click(enhanceMaximizeBtnPoint.left - 100, enhanceMaximizeBtnPoint.top + 80)
+         await sleep(1000);
          let displayOrientation: display.Orientation = displayInfo.orientation
          // 点击待分屏区域 形成分屏
          let foldStatus: display.FoldStatus = display.getFoldStatus()
@@ -3270,9 +3269,9 @@ export default function WindowLifecycle() {
          if ((displayOrientation === display.Orientation.PORTRAIT ||
            displayOrientation === display.Orientation.PORTRAIT_INVERTED) &&
            foldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED) {
-           await driver.click(displayInfo.width * 0.5, displayInfo.height * 0.75);
+           await driver.click(Math.round(displayInfo.width * 0.5), Math.round(displayInfo.height * 0.75));
          } else {
-           await driver.click(displayInfo.width * 0.75, displayInfo.height * 0.5);
+           await driver.click(Math.round(displayInfo.width * 0.75), Math.round(displayInfo.height * 0.5));
          }
          await sleep(1000);
          //点击辅助hap,使辅助hap获焦
@@ -3287,12 +3286,12 @@ export default function WindowLifecycle() {
          console.log(caseName + " mainWindowClass isFocused: " + JSON.stringify(isFocused));
          expect(isFocused).assertEqual(true);
          // 4、互换左右分屏位置
-         let component = await driver.findComponent(ON.id('EnhanceMaximizeBtn'));
-         await component.longClick();
-         let enhanceMaximizeBtnPoint = await component.getBounds()
-         console.log(caseName + " enhanceMaximizeBtnPoint :" + JSON.stringify(enhanceMaximizeBtnPoint));
-         await driver.click(enhanceMaximizeBtnPoint.left - 100, enhanceMaximizeBtnPoint.top + 80)
-         await sleep(1000);
+        let component2 = await driver.findComponent(ON.id('EnhanceMaximizeBtn'));
+        await component2.longClick();
+        let enhanceMaximizeBtnPoint2 = await component2.getBounds()
+        console.log(caseName + " enhanceMaximizeBtnPoint2 :" + JSON.stringify(enhanceMaximizeBtnPoint2));
+        await driver.click(enhanceMaximizeBtnPoint2.left - 100, enhanceMaximizeBtnPoint2.top + 80)
+        await sleep(1000);
          //点击辅助hap,使辅助hap获焦
          let HelloWorld = await driver.findComponent(ON.id('HelloWorld'))
          console.log(caseName + " HelloWorld :" + JSON.stringify(HelloWorld));
@@ -3336,7 +3335,7 @@ export default function WindowLifecycle() {
      let driver = Driver.create()
      let displayInfo: display.Display = display.getDefaultDisplaySync()
      console.log(`${caseName} getDefaultDisplaySync: ${JSON.stringify(displayInfo)}`);
-     if (deviceType === '2in1') {
+     if (deviceType === '2in1' && isFreeWindowMode) {
        try {
          let mainWindowClass = windowStage.getMainWindowSync();
          await mainWindowClass.setWindowTitle("windowClass2")
@@ -3354,14 +3353,13 @@ export default function WindowLifecycle() {
          //主应用提升层级到最上层
          await mainWindowClass.restore();
          await sleep(1000)
-         // 2、将辅助hap拖进左分屏，点击预览窗口的主应用形成分屏
-         let title = await driver.findComponent(ON.text('windowClass2'))
-         console.log(caseName + " title :" + title);
-         await sleep(1000)
-         let titlePoint = await title.getBounds()
-         console.log(caseName + " titlePoint :" + JSON.stringify(titlePoint));
-         await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
-         await sleep(1000)
+         // 2、辅助hap进左分屏，点击预览窗口的主应用形成分屏
+         let component = await driver.findComponent(ON.id('EnhanceMaximizeBtn'));
+         await component.longClick();
+         let enhanceMaximizeBtnPoint = await component.getBounds()
+         console.log(caseName + " enhanceMaximizeBtnPoint :" + JSON.stringify(enhanceMaximizeBtnPoint));
+         await driver.click(enhanceMaximizeBtnPoint.left - 100, enhanceMaximizeBtnPoint.top + 80)
+         await sleep(1000);
          // 3、在点击辅助demo形成分屏并获焦，3s后测试套窗口调用window.restore和window.isFocused接口
          let displayOrientation: display.Orientation = displayInfo.orientation
          // 点击待分屏区域 形成分屏
@@ -3370,9 +3368,9 @@ export default function WindowLifecycle() {
          if ((displayOrientation === display.Orientation.PORTRAIT ||
            displayOrientation === display.Orientation.PORTRAIT_INVERTED) &&
            foldStatus === display.FoldStatus.FOLD_STATUS_EXPANDED) {
-           await driver.click(displayInfo.width * 0.5, displayInfo.height * 0.75);
+           await driver.click(Math.round(displayInfo.width * 0.5), Math.round(displayInfo.height * 0.75));
          } else {
-           await driver.click(displayInfo.width * 0.75, displayInfo.height * 0.5);
+           await driver.click(Math.round(displayInfo.width * 0.75), Math.round(displayInfo.height * 0.5));
          }
          await sleep(1000)
          //点击辅助hap,使辅助hap获焦
@@ -3387,11 +3385,11 @@ export default function WindowLifecycle() {
          console.log(caseName + " mainWindowClass isFocused: " + JSON.stringify(isFocused));
          expect(isFocused).assertEqual(true);
          // 4、互换左右分屏位置
-         let component = await driver.findComponent(ON.id('EnhanceMaximizeBtn'));
-         await component.longClick();
-         let enhanceMaximizeBtnPoint = await component.getBounds()
-         console.log(caseName + " enhanceMaximizeBtnPoint :" + JSON.stringify(enhanceMaximizeBtnPoint));
-         await driver.click(enhanceMaximizeBtnPoint.left - 100, enhanceMaximizeBtnPoint.top + 150)
+         let component2 = await driver.findComponent(ON.id('EnhanceMaximizeBtn'));
+         await component2.longClick();
+         let enhanceMaximizeBtnPoint2 = await component2.getBounds()
+         console.log(caseName + " enhanceMaximizeBtnPoint2 :" + JSON.stringify(enhanceMaximizeBtnPoint2));
+         await driver.click(enhanceMaximizeBtnPoint2.left - 100, enhanceMaximizeBtnPoint2.top + 170)
          await sleep(1000);
          //点击辅助hap,使辅助hap获焦
          let HelloWorld = await driver.findComponent(ON.id('HelloWorld'))
@@ -4331,6 +4329,129 @@ export default function WindowLifecycle() {
           done();
         }
       });
+ /**
+     * @tc.name   SUB_WINDOW_CreateSubWindow_Not_More_Ten_0100
+     * @tc.number SUB_WINDOW_CreateSubWindow_Not_More_Ten_0100
+     * @tc.desc   SUB_WINDOW_CreateSubWindow_Not_More_Ten_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_WINDOW_CreateSubWindow_Not_More_Ten_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_CreateSubWindow_Not_More_Ten_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let windowClassArr: Array<window.Window> = [];
+      let options: window.SubWindowOptions = {
+        title: 'SUB_WINDOW_CreateSubWindow_Not_More_Ten_0100',
+        decorEnabled: true
+      };
+      let current: window.Window = windowStage.getMainWindowSync();
+      try {
+        if (isFreeWindowMode) {
+          for (let index = 0; index < 10; index++) {
+            current = await current.createSubWindowWithOptions(`SUB_WINDOW_CreateSubWindow_Not_More_Ten_0100_${index}`,
+              options);
+            await sleep(300)
+            windowClassArr.push(current);
+          }
+          console.info(msgStr + 'windowClassArr. length: ' + windowClassArr.length);
+          let promise = current.createSubWindowWithOptions('SUB_WINDOW_CreateSubWindow_Not_More_Ten_0100_10', options);
+          promise.then(async (data) => {
+            console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
+            if (windowClassArr.length > 0) {
+              await windowClassArr[0].destroyWindow()
+              windowClassArr.length = 0;
+            }
+            await data.destroyWindow();
+            expect().assertFail();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+            if (windowClassArr.length > 0) {
+              await windowClassArr[0].destroyWindow()
+              windowClassArr.length = 0;
+            }
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } else {
+          done();
+        }
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
+        if (windowClassArr.length > 0) {
+          await windowClassArr[0].destroyWindow()
+          windowClassArr.length = 0;
+        }
+        expect().assertFail();
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_WINDOW_FloatWindow_CreateSubWindow_Not_More_Ten_0100
+     * @tc.number SUB_WINDOW_FloatWindow_CreateSubWindow_Not_More_Ten_0100
+     * @tc.desc   SUB_WINDOW_FloatWindow_CreateSubWindow_Not_More_Ten_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_WINDOW_FloatWindow_CreateSubWindow_Not_More_Ten_0100', Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_WINDOW_FloatWindow_CreateSubWindow_Not_More_Ten_0100";
+      let msgStr = 'jsunittest ' + caseName + ' ';
+      console.log(msgStr + 'begin.');
+      let options: window.SubWindowOptions = {
+        title: 'SUB_WINDOW_FloatWindow_CreateSubWindow_Not_More_Ten_0100',
+        decorEnabled: true
+      };
+      let count = 0;
+      try {
+        let config: window.Configuration = {
+          name: "SUB_WINDOW_CreateSubWindow_Not_More_Ten_0200",
+          windowType: window.WindowType.TYPE_FLOAT,
+          ctx: context
+        };
+        let floatWindow: window.Window = await window.createWindow(config);
+        let current: window.Window = floatWindow;
+        if (isFreeWindowMode) {
+          for (let index = 0; index < 9; index++) {
+            current =
+              await current.createSubWindowWithOptions(`SUB_WINDOW_FloatWindow_CreateSubWindow_Not_More_Ten_0100_${index}`,
+                options);
+            count ++;
+            await sleep(100)
+          }
+          console.info(msgStr + ' count: ' + count);
+          let promise =
+            current.createSubWindowWithOptions('SUB_WINDOW_FloatWindow_CreateSubWindow_Not_More_Ten_0100_10', options);
+          promise.then(async (data) => {
+            console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
+            await data.destroyWindow();
+            await floatWindow.destroyWindow();
+            expect().assertFail();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+            await floatWindow.destroyWindow();
+            expect(err.code).assertEqual(1300002);
+            expect(err.message !== '').assertTrue();
+            done();
+          });
+        } else {
+          done();
+        }
+      } catch (exception) {
+        console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code) + ` message:${exception.message}`);
+        if (exception.code === 1300002) {
+          expect(exception.message !== '').assertTrue();
+        } else {
+          expect().assertFail();
+        }
+        done()
+      }
+    })
 
   })
 
