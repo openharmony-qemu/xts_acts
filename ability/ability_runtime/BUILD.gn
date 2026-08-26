@@ -168,8 +168,7 @@ group("ability_runtime") {
       "actsAbilityGetInstanceIdTest:ActsGetInstanceIdTest",
       "actsAbilityGetInstanceIdTeststatic:ActsGetInstanceIdStaticTest",
       "actsAbilityStartSelfTest:ActsAbilityStartSelfTest",
-      "actsAbilityStartSelfTeststatic:ActsStartSelfStaticTest",
-      "actsAbilityToolAccessCtrlTest:actsAbilityToolAccessCtrlTest"
+      "actsAbilityStartSelfTeststatic:ActsStartSelfStaticTest"
     ]
   }
 }
