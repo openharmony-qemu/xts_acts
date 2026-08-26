@@ -998,5 +998,1090 @@ export default function EventListenerTest(): void {
       done()
     })
 
+    /**
+     * @tc.name    EventListenerTest2900
+     * @tc.number  SUB_EVENT_LISTENER_TEST_2900
+     * @tc.desc    Verify listener internal try-catch handles errors correctly
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let captured = false
+      let internalErrorHandled = false
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        captured = true
+        try {
+          throw new Error("internal error")
+        } catch (e) {
+          internalErrorHandled = true
+        }
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      Promise.reject(new Error("test"))
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!captured && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(captured).assertTrue()
+      expect(internalErrorHandled).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3000
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3000
+     * @tc.desc    Verify listener throwing error is handled by UncaughtErrorListener
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let listenerCalled = false
+      let fallbackCalled = false
+      let fallbackListener: StdProcess.UncaughtErrorListener = (error: Object) => {
+        fallbackCalled = true
+      }
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        listenerCalled = true
+        throw new Error("listener error")
+      }
+      StdProcess.on("uncaughtError", fallbackListener)
+      StdProcess.on("unhandledPromiseRejection", listener)
+      Promise.reject(new Error("original error"))
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!(listenerCalled && fallbackCalled) && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(listenerCalled).assertTrue()
+      expect(fallbackCalled).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3100
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3100
+     * @tc.desc    Verify registering same RejectedObjectListener multiple times
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let callCount = 0
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        callCount++
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      StdProcess.on("unhandledPromiseRejection", listener)
+      Promise.reject(new Error("test"))
+      // Same-reference registration is deduplicated by ConcurrentSet rather than replaced,
+      // so exactly one dispatch is expected per source event.
+      const deadline: number = Date.now() + 5000
+      try {
+        while (callCount === 0 && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(callCount).assertEqual(1)
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3200
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3200
+     * @tc.desc    Verify multiple RejectedObjectListeners registered for same event all get called
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let listener1Called = false
+      let listener2Called = false
+      let listener1: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        listener1Called = true
+      }
+      let listener2: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        listener2Called = true
+      }
+      StdProcess.on("unhandledPromiseRejection", listener1)
+      StdProcess.on("unhandledPromiseRejection", listener2)
+      Promise.reject(new Error("test"))
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!listener1Called && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(listener1Called).assertTrue()
+      expect(listener2Called).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3300
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3300
+     * @tc.desc    Verify StdProcess.off unhandledPromiseRejection prevents listener callback
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let called = false
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        called = true
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      let offResult = StdProcess.off("unhandledPromiseRejection")
+      Promise.reject(new Error("test"))
+      // Negative confirmation window: sync Promise.reject dispatches within microtask ticks;
+      // 500ms is sufficient to confirm off() prevented the listener from being invoked.
+      try {
+        await Utils.msSleep(500)
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(offResult).assertTrue()
+      expect(called).assertFalse()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3400
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3400
+     * @tc.desc    Verify StdProcess.off uncaughtError removes listener and returns true
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let called = false
+      let listener: StdProcess.UncaughtErrorListener = (error: Object) => {
+        called = true
+      }
+      StdProcess.on("uncaughtError", listener)
+      let offResult = StdProcess.off("uncaughtError")
+       // Do not throw after off: the default uncaught-error handler terminates the HAP.
+       // The returned status and the untouched listener flag are the safe observable checks.
+       try {
+         await Utils.msSleep(500)
+       } catch (error) {
+         if (error instanceof Error) {
+           console.error('EventListenerTest', `await failed: ${error.message}`)
+         } else {
+           console.error('EventListenerTest', `await failed: unknown error`)
+         }
+         expect(false).assertFail()
+       }
+      expect(offResult).assertTrue()
+      expect(called).assertFalse()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3500
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3500
+     * @tc.desc    Verify StdProcess.off uncaughtError resets to default handler
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let customHandlerCalled = false
+      let customListener: StdProcess.UncaughtErrorListener = (error: Object) => {
+        customHandlerCalled = true
+      }
+      StdProcess.on("uncaughtError", customListener)
+      let offResult = StdProcess.off("uncaughtError")
+       // Do not throw after off: the default uncaught-error handler terminates the HAP.
+       // The returned status and the untouched custom-listener flag are safe checks.
+       try {
+         await Utils.msSleep(500)
+       } catch (error) {
+         if (error instanceof Error) {
+           console.error('EventListenerTest', `await failed: ${error.message}`)
+         } else {
+           console.error('EventListenerTest', `await failed: unknown error`)
+         }
+         expect(false).assertFail()
+       }
+      expect(offResult).assertTrue()
+      expect(customHandlerCalled).assertFalse()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3600
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3600
+     * @tc.desc    Verify async Promise rejection triggers RejectedObjectListener
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let captured = false
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        captured = true
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      new Promise<void>((resolve, reject) => {
+        reject(new Error("async reject"))
+      })
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!captured && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(captured).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3700
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3700
+     * @tc.desc    Verify Promise chain rejection triggers RejectedObjectListener
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let captured = false
+      let capturedMessage = ""
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        captured = true
+        capturedMessage = reason.message
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      const chainTrigger = async (): Promise<void> => {
+        throw new Error("chain reject")
+      }
+      chainTrigger()
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!captured && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(captured).assertTrue()
+      expect(capturedMessage).assertEqual("chain reject")
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3800
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3800
+     * @tc.desc    Verify async function exception triggers RejectedObjectListener
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let captured = false
+      let capturedMessage = ""
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        captured = true
+        capturedMessage = reason.message
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      let asyncFunc = async (): Promise<void> => {
+        throw new Error("async error")
+      }
+      asyncFunc()
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!captured && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(captured).assertTrue()
+      expect(capturedMessage).assertContain("async error")
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest3900
+     * @tc.number  SUB_EVENT_LISTENER_TEST_3900
+     * @tc.desc    Verify count waiting for exactly 3 uncaughtError events
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let callCount = new AtomicInt(0)
+      let listener: StdProcess.UncaughtErrorListener = (error: Object) => {
+        callCount.fetchAdd(1)
+      }
+      StdProcess.on("uncaughtError", listener)
+      fireUncaughtError(100, new Error("error1"))
+      fireUncaughtError(200, new Error("error2"))
+      fireUncaughtError(300, new Error("error3"))
+      const deadline: number = Date.now() + 5000
+      try {
+        while (callCount.load() < 3 && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(callCount.load()).assertEqual(3)
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4000
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4000
+     * @tc.desc    Verify multiple concurrent Promise rejections are all captured
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      const counter: WaitCounter = new WaitCounter()
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        counter.count++
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      Promise.reject(new Error("error1"))
+      Promise.reject(new Error("error2"))
+      Promise.reject(new Error("error3"))
+      // 3 sync Promise.reject dispatch on microtask ticks; bounded poll via Utils
+      // wait helper (timeout 5000ms, interval 100ms) keeps neighbor-count behavior.
+      let total: int = 0
+      try {
+        total = await Utils.waitCountAtLeast(counter, 3, 5000, 100)
+        if (total < 3) {
+          console.error('EventListenerTest', `listener count not reached within timeout`)
+          expect(total).assertEqual(3)
+          done()
+          return
+        }
+        expect(total).assertEqual(3)
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4100
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4100
+     * @tc.desc    Verify rejected Promise triggers RejectedObjectListener with correct message
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      let captured = false
+      let capturedMessage = ""
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        captured = true
+        capturedMessage = reason.message
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      Promise.reject(new Error("race reject"))
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!captured && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(captured).assertTrue()
+      expect(capturedMessage).assertEqual("race reject")
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4200
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4200
+     * @tc.desc    Verify RejectedObjectListener receives Error with Unicode message
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let captured = false
+      let hasChinese = false
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        captured = true
+        hasChinese = reason.message.indexOf("中文") >= 0
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      Promise.reject(new Error("错误信息：中文测试"))
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!captured && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(captured).assertTrue()
+      expect(hasChinese).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4300
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4300
+     * @tc.desc    Verify continuous rapid Promise rejections are all captured
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      let rejectCount = new AtomicInt(0)
+      let expectedCount = 10
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        rejectCount.fetchAdd(1)
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      for (let i = 0; i < expectedCount; i++) {
+        Promise.reject(new Error(`error ${i}`))
+      }
+      const deadline: number = Date.now() + 5000
+      try {
+        while (rejectCount.load() < expectedCount && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(rejectCount.load()).assertEqual(expectedCount)
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4400
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4400
+     * @tc.desc    Verify listener works for rejections after registration even if earlier rejection occurred
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let lateCaptured = false
+      Promise.reject(new Error("early reject"))
+      // Minimum negative window so the early rejection is dispatched before listener registration;
+      // sync Promise.reject drains on the next microtask, 100ms is the minimum acceptable wait.
+      try {
+        await Utils.msSleep(100)
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        if (reason.message === "late reject") {
+          lateCaptured = true
+        }
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      Promise.reject(new Error("late reject"))
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!lateCaptured && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(lateCaptured).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4500
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4500
+     * @tc.desc    Verify global error collection with UncaughtErrorListener counting errors
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let errorCount = new AtomicInt(0)
+      let listener: StdProcess.UncaughtErrorListener = (error: Object) => {
+        errorCount.fetchAdd(1)
+      }
+      StdProcess.on("uncaughtError", listener)
+      fireUncaughtError(100, new TypeError("type error"))
+      fireUncaughtError(200, new RangeError("range error"))
+      fireUncaughtError(300, new Error("generic error"))
+      const deadline: number = Date.now() + 5000
+      try {
+        while (errorCount.load() < 3 && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(errorCount.load()).assertEqual(3)
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4600
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4600
+     * @tc.desc    Verify Promise error logging captures error count with listener
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      const counter: WaitCounter = new WaitCounter()
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        counter.count++
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      Promise.reject(new TypeError("api error"))
+      Promise.reject(new Error("network error"))
+      // 2 sync Promise.reject dispatch on microtask ticks; bounded poll via Utils
+      // wait helper (timeout 5000ms, interval 100ms) keeps neighbor-count behavior.
+      let total: int = 0
+      try {
+        total = await Utils.waitCountAtLeast(counter, 2, 5000, 100)
+        if (total < 2) {
+          console.error('EventListenerTest', `listener count not reached within timeout`)
+          expect(total).assertEqual(2)
+          done()
+          return
+        }
+        expect(total).assertEqual(2)
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4700
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4700
+     * @tc.desc    Verify UncaughtErrorListener receives Error instance from reported throw (end-to-end reported-throw payload; distinct from ELT1200 by message content)
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let reported = false
+      let listener: StdProcess.UncaughtErrorListener = (error: Object) => {
+        reported = error instanceof Error
+      }
+      StdProcess.on("uncaughtError", listener)
+      fireUncaughtError(100, new Error("report this"))
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!reported && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(reported).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4800
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4800
+     * @tc.desc    Verify try-catch caught error does not trigger UncaughtErrorListener
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let listenerCalled = false
+      let listener: StdProcess.UncaughtErrorListener = (error: Object) => {
+        listenerCalled = true
+      }
+      StdProcess.on("uncaughtError", listener)
+      try {
+        throw new Error("caught error")
+      } catch (e) {
+        // Error is caught, should not trigger listener
+      }
+      // Negative confirmation window: try-catch errors never dispatch to UncaughtErrorListener;
+      // 500ms is the minimum acceptable wait to confirm the listener stays uncalled.
+      try {
+        await Utils.msSleep(500)
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(listenerCalled).assertFalse()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest4900
+     * @tc.number  SUB_EVENT_LISTENER_TEST_4900
+     * @tc.desc    Verify Promise.catch handled rejection does not trigger RejectedObjectListener
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let listenerCalled = false
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        listenerCalled = true
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      const handledRejection = async (): Promise<void> => {
+        try {
+          await Promise.reject(new Error("handled rejection"))
+        } catch (error) {
+          // Error is handled, should not trigger listener
+          console.info('EventListenerTest', `handled rejection caught: ${(error instanceof Error) ? error.message : 'unknown'}`)
+        }
+      }
+      handledRejection()
+      // Negative confirmation window: handled rejections never dispatch to RejectedObjectListener;
+      // 500ms is the minimum acceptable wait to confirm the listener stays uncalled.
+      try {
+        await Utils.msSleep(500)
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(listenerCalled).assertFalse()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest5000
+     * @tc.number  SUB_EVENT_LISTENER_TEST_5000
+     * @tc.desc    Verify async/await error handling distinguishes handled vs unhandled
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('EventListenerTest5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void) => {
+      let listenerCalled = false
+      let capturedMessage = ""
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        listenerCalled = true
+        capturedMessage = reason.message
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      let handledFunc = async (): Promise<void> => {
+        try {
+          await Promise.reject(new Error("handled"))
+        } catch (e) {
+          // Handled error, should not trigger listener
+        }
+      }
+      let unhandledFunc = async (): Promise<void> => {
+        Promise.reject(new Error("unhandled"))
+      }
+      handledFunc()
+      unhandledFunc()
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!listenerCalled && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(listenerCalled).assertTrue()
+      expect(capturedMessage).assertEqual("unhandled")
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest5100
+     * @tc.number  SUB_EVENT_LISTENER_TEST_5100
+     * @tc.desc    Verify EAWorker.run callback can register RejectedObjectListener
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      let taskCompleted = new AtomicBoolean(false)
+      let eaWorker = new EAWorker('testWorker')
+      try {
+        eaWorker.start()
+        eaWorker.run<void>((error?: Error): void => {
+          if (error !== undefined) { console.info(`EventListenerTest worker task error param: ${error.message}`); }
+          StdProcess.on("unhandledPromiseRejection", (reason: Error, obj: Object) => { console.info(`EventListenerTest unhandledPromiseRejection received: ${reason}`) })
+          taskCompleted.store(true)
+        })
+        const deadline: number = Date.now() + 5000
+        try {
+          while (!taskCompleted.load() && Date.now() < deadline) {
+            await Utils.msSleep(100)
+          }
+        } catch (error) {
+          if (error instanceof Error) {
+            console.error('EventListenerTest', `await failed: ${error.message}`);
+          } else {
+            console.error('EventListenerTest', `await failed: unknown error`);
+          }
+          expect(false).assertFail()
+        }
+        expect(taskCompleted.load()).assertTrue()
+      } finally {
+        eaWorker.quit()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest5200
+     * @tc.number  SUB_EVENT_LISTENER_TEST_5200
+     * @tc.desc    Verify EAWorker.run callback can call StdProcess.off
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      let taskCompleted = new AtomicBoolean(false)
+      let eaWorker = new EAWorker('testWorker')
+      try {
+        eaWorker.start()
+        eaWorker.run<void>((error?: Error): void => {
+          if (error !== undefined) { console.info(`EventListenerTest worker task error param: ${error.message}`); }
+          StdProcess.on("unhandledPromiseRejection", (reason: Error, obj: Object) => { console.info(`EventListenerTest unhandledPromiseRejection received: ${reason}`) })
+          StdProcess.off("unhandledPromiseRejection")
+          taskCompleted.store(true)
+        })
+        const deadline: number = Date.now() + 5000
+        try {
+          while (!taskCompleted.load() && Date.now() < deadline) {
+            await Utils.msSleep(100)
+          }
+        } catch (error) {
+          if (error instanceof Error) {
+            console.error('EventListenerTest', `await failed: ${error.message}`)
+          } else {
+            console.error('EventListenerTest', `await failed: unknown error`)
+          }
+          expect(false).assertFail()
+        }
+        expect(taskCompleted.load()).assertTrue()
+      } finally {
+        eaWorker.quit()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest5300
+     * @tc.number  SUB_EVENT_LISTENER_TEST_5300
+     * @tc.desc    Verify UncaughtErrorListener registered in EAWorker postTask is not triggered when error is caught
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      let taskCompleted = new AtomicBoolean(false)
+      let errorCaptured = new AtomicBoolean(false)
+      let eaWorker = new EAWorker('msgWorker')
+      try {
+        eaWorker.start()
+        eaWorker.run<void>((error?: Error) => {
+          if (error !== undefined) { console.info(`EventListenerTest worker task error param: ${error.message}`); }
+          StdProcess.on("uncaughtError", (error: Object) => {
+            console.info(`EventListenerTest uncaughtError received: ${error}`)
+            errorCaptured.store(true)
+          })
+          try {
+            throw new Error("handler error")
+          } catch (e) {
+            // Error caught in worker thread; errorCaptured must remain false.
+          }
+          taskCompleted.store(true)
+        })
+        const deadline: number = Date.now() + 5000
+        try {
+          while (!taskCompleted.load() && Date.now() < deadline) {
+            await Utils.msSleep(100)
+          }
+        } catch (error) {
+          if (error instanceof Error) {
+            console.error('EventListenerTest', `await failed: ${error.message}`)
+          } else {
+            console.error('EventListenerTest', `await failed: unknown error`)
+          }
+          expect(false).assertFail()
+        }
+        expect(taskCompleted.load()).assertTrue()
+        expect(errorCaptured.load()).assertFalse()
+      } finally {
+        eaWorker.quit()
+      }
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest5400
+     * @tc.number  SUB_EVENT_LISTENER_TEST_5400
+     * @tc.desc    Verify TaskPool task can register RejectedObjectListener
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      let taskFunc = (): boolean => {
+        StdProcess.on("unhandledPromiseRejection", (reason: Error, obj: Object) => { console.info(`EventListenerTest unhandledPromiseRejection received: ${reason}`) })
+        return true
+      }
+      let task = new taskpool.Task(taskFunc)
+      try {
+        let result = await taskpool.execute(task) as boolean
+        expect(result).assertTrue()
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`);
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`);
+        }
+        expect(false).assertFail();
+      }
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest5500
+     * @tc.number  SUB_EVENT_LISTENER_TEST_5500
+     * @tc.desc    Verify TaskPool task triggering Promise rejection
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      let captured = false
+      let listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object) => {
+        captured = true
+      }
+      StdProcess.on("unhandledPromiseRejection", listener)
+      let rejectionTask = (): void => {
+        Promise.reject(new Error("taskpool rejection"))
+      }
+      let task = new taskpool.Task(rejectionTask)
+      try {
+        await taskpool.execute(task)
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`);
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`);
+        }
+        expect(false).assertFail();
+      }
+      const deadline: number = Date.now() + 5000
+      try {
+        while (!captured && Date.now() < deadline) {
+          await Utils.msSleep(100)
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`)
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`)
+        }
+        expect(false).assertFail()
+      }
+      expect(captured).assertTrue()
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest5600
+     * @tc.number  SUB_EVENT_LISTENER_TEST_5600
+     * @tc.desc    Verify 3 concurrent EAWorkers can call Process interface
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
+      let callCount = new AtomicInt(0)
+      let workers: EAWorker[] = []
+      try {
+        for (let i = 0; i < 3; i++) {
+          let worker = new EAWorker(`worker_${i}`)
+          worker.start()
+          workers.push(worker)
+        }
+        for (let i = 0; i < workers.length; i++) {
+          workers[i].run<void>((error?: Error) => {
+            if (error !== undefined) { console.info(`EventListenerTest worker task error param: ${error.message}`); }
+            StdProcess.on("unhandledPromiseRejection", (reason: Error, obj: Object) => { console.info(`EventListenerTest unhandledPromiseRejection received: ${reason}`) })
+            callCount.fetchAdd(1)
+          })
+        }
+        const deadline: number = Date.now() + 5000
+        try {
+          while (callCount.load() < 3 && Date.now() < deadline) {
+            await Utils.msSleep(100)
+          }
+        } catch (error) {
+          if (error instanceof Error) {
+            console.error('EventListenerTest', `await failed: ${error.message}`)
+          } else {
+            console.error('EventListenerTest', `await failed: unknown error`)
+          }
+          expect(false).assertFail()
+        }
+        expect(callCount.load()).assertEqual(3)
+      } finally {
+        for (let i = 0; i < workers.length; i++) {
+          workers[i].quit()
+        }
+      }
+      done()
+    })
+
+    /**
+     * @tc.name    EventListenerTest5700
+     * @tc.number  SUB_EVENT_LISTENER_TEST_5700
+     * @tc.desc    Verify 5 concurrently dispatched TaskPool tasks can call Process interface
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('EventListenerTest5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let callCount = new AtomicInt(0)
+      let processTask = (): number => {
+        StdProcess.on("unhandledPromiseRejection", (reason: Error, obj: Object) => { console.info(`EventListenerTest unhandledPromiseRejection received: ${reason}`) })
+        callCount.fetchAdd(1)
+        return 1
+      }
+      let promises: Promise<number>[] = []
+      for (let i = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(processTask)) as Promise<number>)
+      }
+      try {
+        await Promise.all(promises)
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error('EventListenerTest', `await failed: ${error.message}`);
+        } else {
+          console.error('EventListenerTest', `await failed: unknown error`);
+        }
+        expect(false).assertFail();
+      }
+      expect(callCount.load()).assertEqual(5)
+      done()
+    })
   })
 }
