@@ -3788,7 +3788,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (err) {
             console.info(`previewOutPut setLogViewAssistEnable enable failed: ${JSON.stringify(err)}`);
-            expect(err.code == 801).assertTrue()
+            expect(err.code).assertEqual(801)
           }
           try {
             previewOutput.setLogViewAssistEnable(false)
@@ -3796,7 +3796,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (err) {
             console.info(`previewOutPut setLogViewAssistEnable diaable failed: ${JSON.stringify(err)}`);
-            expect(err.code == 801).assertTrue()
+            expect(err.code).assertEqual(801)
           }
         }
         console.info(`${caseName} PASSED`)
@@ -3837,7 +3837,7 @@ export default function cameraJSUnitOutput() {
           expect().assertFail()
         } catch (error) {
           console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-          expect(error.code == 801).assertTrue()
+          expect(error.code).assertEqual(801)
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -3968,7 +3968,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (error) {
             console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-            expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue()
+            expect(error.code).assertEqual(cameraObj.CameraErrorCode.SESSION_NOT_CONFIG)
           }
         }
         console.info(`${caseName} PASSED`)

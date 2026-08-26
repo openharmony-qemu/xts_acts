@@ -633,7 +633,7 @@ export default function MetadataOutputTest() {
                 expect().assertFail();
               } catch (error) {
                 console.error(TAG, testName + ' failed ' + error, error.code);
-                expect(Number(error.code)).assertEqual(401);
+                expect(error.code).assertEqual(401);
               }
             }
           }
@@ -709,7 +709,7 @@ export default function MetadataOutputTest() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(Number(error.code)).assertEqual(7400103);
+        expect(error.code).assertEqual(7400103);
         done();
       }
     })
@@ -740,7 +740,7 @@ export default function MetadataOutputTest() {
         expect().assertFail();
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
-        expect(Number(error.code)).assertEqual(7400103);
+        expect(error.code).assertEqual(7400103);
         done();
       }
     })
@@ -880,7 +880,7 @@ export default function MetadataOutputTest() {
             mMetadataOutput.lockMetadataObjectTracking(null);
           } catch (error) {
             console.error(TAG, testName + 'lockMetadataObjectTracking failed. err: ' + error.code + ', msg: ' + error.message);
-            expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue()
+            expect(error.code).assertEqual(camera.CameraErrorCode.INVALID_ARGUMENT)
           }
         }
         console.info(TAG, testName + ' start release');
@@ -938,7 +938,7 @@ export default function MetadataOutputTest() {
             mMetadataOutput.lockMetadataObjectTracking(undefined);
           } catch (error) {
             console.error(TAG, testName + 'lockMetadataObjectTracking failed. err: ' + error.code + ', msg: ' + error.message);
-            expect(error.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue()
+            expect(error.code).assertEqual(camera.CameraErrorCode.INVALID_ARGUMENT)
           }
         }
         console.info(TAG, testName + ' start release');
