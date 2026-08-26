@@ -15,31 +15,16 @@
  */
 
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function rowSplitJsunit() {
 
   describe('RowSplitTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("RowSplitTest beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("RowSplitTest beforeEach start");
@@ -53,18 +38,23 @@ export default function rowSplitJsunit() {
         console.info("get RowSplitTest state pages:" + "");
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get RowSplitTest pages.name:" + "");
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push RowSplitTest page error:" + err);
+        expect().assertFail();
       }
       console.info("RowSplitTest beforeEach end");
     });
 
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (error) {
+        console.error("RowSplitTest afterEach error:" + error);
+      }
       console.info("RowSplit after each called");
     });
 
@@ -76,15 +66,20 @@ export default function rowSplitJsunit() {
      * @tc.level    0
      */
     it('testRowSplitGetInspectorByKey_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('testGetInspectorByKey START');
-      let strJson = inspector.getInspectorByKey('rowSplit');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("cd rowSplit component obj is: " + JSON.stringify(obj));
-      console.log("cd rowSplit type" + JSON.stringify(obj.getString('$type')));
-      console.log("cd rowSplit  resizeable" + JSON.stringify(obj.getElement('$attrs').getString('resizeable')));
-      expect(obj.getString('$type')).assertEqual('RowSplit');
-      expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('false');
-      console.info('cd RowSplitInspectorByKey END');
+      try {
+        console.info('testGetInspectorByKey START');
+        let strJson = inspector.getInspectorByKey('rowSplit');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("cd rowSplit component obj is: " + JSON.stringify(obj));
+        console.log("cd rowSplit type" + JSON.stringify(obj.getString('$type')));
+        console.log("cd rowSplit  resizeable" + JSON.stringify(obj.getElement('$attrs').getString('resizeable')));
+        expect(obj.getString('$type')).assertEqual('RowSplit');
+        expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('false');
+        console.info('cd RowSplitInspectorByKey END');
+      } catch (error) {
+        console.error('[testRowSplitGetInspectorByKey_static_010] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     });
 
@@ -96,12 +91,17 @@ export default function rowSplitJsunit() {
      * @tc.level    0
      */
     it('testRowSplitGetInspectorByKey_static_020', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('rowSplit1');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("cd rowSplit1 component obj is: " + JSON.stringify(obj));
-      console.log("cd rowSplit1  resizeable" + JSON.stringify(obj.getElement('$attrs').getString('resizeable')));
-      expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('true');
-      console.info('cd RowSplit1InspectorByKey END');
+      try {
+        let strJson = inspector.getInspectorByKey('rowSplit1');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("cd rowSplit1 component obj is: " + JSON.stringify(obj));
+        console.log("cd rowSplit1  resizeable" + JSON.stringify(obj.getElement('$attrs').getString('resizeable')));
+        expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('true');
+        console.info('cd RowSplit1InspectorByKey END');
+      } catch (error) {
+        console.error('[testRowSplitGetInspectorByKey_static_020] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     });
   })

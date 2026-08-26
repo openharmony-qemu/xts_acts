@@ -112,6 +112,7 @@ export default function XComponentTest() {
     /**
      * @tc.name   XComponentTest_0400
      * @tc.number SUB_ARKUI_API_XComponentTest_0400
+     * @tc.desc   ArkUIApi
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

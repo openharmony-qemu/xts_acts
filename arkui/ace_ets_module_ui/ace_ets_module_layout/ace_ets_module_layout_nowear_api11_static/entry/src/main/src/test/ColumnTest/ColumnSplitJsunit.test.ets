@@ -14,32 +14,18 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function columnSplitJsunit() {
 
 
   describe('columnSplitTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("columnSplitTest beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("columnSplitTest beforeEach start");
@@ -53,18 +39,23 @@ export default function columnSplitJsunit() {
         console.info("get columnSplitTest state pages:" + "");
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get columnSplitTest pages.name:" + "");
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push columnSplitTest page error:" + err);
+        expect().assertFail();
       }
       console.info("columnSplitTest beforeEach end");
     });
 
 
     afterEach(async () => {
-      await UtilsTest.msSleep(1000)
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('columnSplitTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("ColumnSplit after each called");
     });
 
@@ -76,15 +67,20 @@ export default function columnSplitJsunit() {
      * @tc.level    0
      */
     it('testColumnSplit_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('new columnSplit0 START');
-      let strJson = inspector.getInspectorByKey('columnSplit');
-      await UtilsTest.msSleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("component obj is: " + strJson);
-      expect(obj.getString('$type')).assertEqual('ColumnSplit');
-      console.info("yr ColumnSplit0 type: " + obj.getString('$type'));
-      expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('true');
-      console.info('new columnSplit0 END');
+      try {
+        console.info('new columnSplit0 START');
+        let strJson = inspector.getInspectorByKey('columnSplit');
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("component obj is: " + strJson);
+        expect(obj.getString('$type')).assertEqual('ColumnSplit');
+        console.info("yr ColumnSplit0 type: " + obj.getString('$type'));
+        expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('true');
+        console.info('new columnSplit0 END');
+      } catch (error) {
+        console.error('[testColumnSplit_static_010] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     })
 
@@ -96,13 +92,18 @@ export default function columnSplitJsunit() {
      * @tc.level    0
      */
     it('testColumnSplit_static_020', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('new columnSplit1 START');
-      let strJson = inspector.getInspectorByKey('columnSplit1');
-      await UtilsTest.msSleep(1000)
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("component obj is: " + strJson);
-      expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('false');
-      console.info('new columnSplit1 END');
+      try {
+        console.info('new columnSplit1 START');
+        let strJson = inspector.getInspectorByKey('columnSplit1');
+        await Utils.sleep(1000)
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("component obj is: " + strJson);
+        expect(obj.getElement('$attrs').getString('resizeable')).assertEqual('false');
+        console.info('new columnSplit1 END');
+      } catch (error) {
+        console.error('[testColumnSplit_static_020] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     })
   })

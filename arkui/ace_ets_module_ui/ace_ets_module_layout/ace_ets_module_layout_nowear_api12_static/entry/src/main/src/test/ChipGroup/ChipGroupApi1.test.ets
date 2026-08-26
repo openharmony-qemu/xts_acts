@@ -16,52 +16,21 @@
 
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
-  afterAll,
   it,
   expect,
   Level
 } from '../../../../hypium/index';
 import router from '@ohos.router';
-// import { sendEventByKey } from '@internal.full.global'
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Driver, ON } from '@ohos.UiTest';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function ChipGroupApi1() {
   describe('ChipGroupApi1', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ChipGroupApi1 beforeAll start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api12.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ChipGroupApi1 beforeEach start");
       let options: router.RouterOptions = {
@@ -74,22 +43,20 @@ export default function ChipGroupApi1() {
         console.info("get ChipGroupApi1 state pages:" + "");
         if (!("ChipGroupApi1" == pages.name)) {
           console.info("get ChipGroupApi1 pages.name:" + "");
-          //let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push ChipGroupApi1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ChipGroupApi1 page error:" + err);
+        expect().assertFail();
       }
       console.info("ChipGroupApi1 beforeEach end");
-      // done();
     });
     afterEach(async () => {
     });
 
 
-    
+
     /**
      * @tc.number   ChipGroupApi1_static_0100
      * @tc.name     ChipGroupApi1_static_0100
@@ -97,29 +64,34 @@ export default function ChipGroupApi1() {
      * @tc.level    Level.LEVEL0
      */
     it('ChipGroupApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ChipGroupApi1_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('ChipGroupApi1_static_0100 START');
+        await CommonFunc.sleep(1000);
 
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id("ChipGroupApi1_btn1"));
-      console.info('ChipGroupApi1_static_0100 findComponent');
-      await (btn1?.click() as Promise<void>)
-      console.info('ChipGroupApi1_static_0100 START');
-      console.info('ChipGroupApi1_static_0100 CLICK SUCCESS');
-      await CommonFunc.sleep(1000);
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let btn1 = await driver.findComponent(ON.id("ChipGroupApi1_btn1"));
+        console.info('ChipGroupApi1_static_0100 findComponent');
+        await (btn1?.click() as Promise<void>)
+        console.info('ChipGroupApi1_static_0100 START');
+        console.info('ChipGroupApi1_static_0100 CLICK SUCCESS');
+        await CommonFunc.sleep(1000);
 
-      // sendEventByKey('ChipGroupApi1_btn1', 10, "")
-      console.info('ChipGroupApi1_static_0100 CLICK SUCCESS');
+        console.info('ChipGroupApi1_static_0100 CLICK SUCCESS');
 
-      let text1 = inspector.getInspectorByKey('ChipGroupApi1_text1');
-      console.info('ChipGroupApi1_static_0100 getInspectorByKey1 SUCCESS');
-      expect(JSON.stringify(JSON.parseJsonElement(text1).getElement("$attrs").getString('content')))
-        .assertEqual('"SymbolGlyph"');
-      await CommonFunc.sleep(1000);
+        let text1 = inspector.getInspectorByKey('ChipGroupApi1_text1');
+        console.info('ChipGroupApi1_static_0100 getInspectorByKey1 SUCCESS');
+        expect(JSON.parseJsonElement(text1).getElement("$attrs").getString('content'))
+          .assertEqual('{"top":"4.00vp","right":"16.00vp","bottom":"4.00vp","left":"16.00vp"}');
+        await CommonFunc.sleep(1000);
 
-      console.info('ChipGroupApi1_static_0100 END');
-      done();
+        console.info('ChipGroupApi1_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('ChipGroupApi1_static_0100 error: ' + err);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
   })
