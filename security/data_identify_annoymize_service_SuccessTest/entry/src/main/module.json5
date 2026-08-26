@@ -46,11 +46,8 @@
     ],
     "extensionAbilities": [
       {
-        "srcEntrance": "./ets/EnterpriseAdminAbility/EnterpriseAdminAbility.ts",
+        "srcEntrance": "./ets/EnterpriseAdminAbility/EnterpriseAdminAbility.ets",
         "name": "com.example.myapplication.EnterpriseAdminAbility",
-        "icon": "$media:icon",
-        "srcLanguage": "ets",
-        "description": "$string:phone_entry_main",
         "type": "enterpriseAdmin",
         "exported": true
       }

@@ -47,7 +47,7 @@
     ],
     "extensionAbilities": [
       {
-        "srcEntry": "./ets/EnterpriseAdminAbility/EnterpriseAdminAbility.ts",
+        "srcEntry": "./ets/EnterpriseAdminAbility/EnterpriseAdminAbility.ets",
         "name": "com.example.myapplication.EnterpriseAdminAbility",
         "icon": "$media:icon",
         "description": "",
