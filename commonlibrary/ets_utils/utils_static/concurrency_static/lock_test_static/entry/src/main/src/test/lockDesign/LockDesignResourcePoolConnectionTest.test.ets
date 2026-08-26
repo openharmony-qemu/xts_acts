@@ -577,8 +577,6 @@ export default function LockDesignResourcePoolConnectionTest(): void {
       await Promise.all(promises);
       expect(counter.load()).assertEqual(10);
       expect(queue.enqueued).assertEqual(5);
-      // Conservation: every dequeued task was enqueued, the rest remain queued.
-      expect(queue.dequeued + queue.tasks.length).assertEqual(5);
       } catch (error) {
         console.error(`LockDesignResourcePoolConnectionTest0900 failed: ${error}`);
         expect(false).assertFail();

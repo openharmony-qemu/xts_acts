@@ -95,12 +95,8 @@ export default function MutexConstructorTest(): void {
     it('MutexConstructorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let successCount: number = 0;
       for (let i = 0; i < 1000; i++) {
-        try {
-          const mutex = new Mutex();
-          successCount++;
-        } catch (error) {
-          // Construction failed
-        }
+        const mutex = new Mutex();
+        successCount++;
       }
       expect(successCount).assertEqual(1000);
     })

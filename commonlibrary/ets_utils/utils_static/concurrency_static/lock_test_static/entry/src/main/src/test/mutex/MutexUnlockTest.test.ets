@@ -367,7 +367,7 @@ export default function MutexUnlockTest(): void {
         workers.push(worker);
       }
       try {
-        let jobs = new Array<Job<void>>();
+        let jobs: Job<void>[] = [];
         for (let i: int = 0; i < workers.length; i++) {
           jobs.push(workers[i].run<void>(eaWorkerConcurrentUnlockTask, mutex, counter));
         }

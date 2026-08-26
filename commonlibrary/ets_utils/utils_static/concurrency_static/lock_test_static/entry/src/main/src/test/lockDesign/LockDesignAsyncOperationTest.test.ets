@@ -445,16 +445,16 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new AsyncLockData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(asyncLockTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(3);
-      expect(data.value).assertEqual(3);
+        const mutex = new Mutex();
+        const data = new AsyncLockData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(asyncLockTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(3);
+        expect(data.value).assertEqual(3);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest0100 failed: ${error}`);
         expect(false).assertFail();
@@ -472,16 +472,16 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new AsyncConcurrentData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(asyncConcurrentTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(5);
-      expect(data.completed).assertEqual(5);
+        const mutex = new Mutex();
+        const data = new AsyncConcurrentData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(asyncConcurrentTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(5);
+        expect(data.completed).assertEqual(5);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest0200 failed: ${error}`);
         expect(false).assertFail();
@@ -499,16 +499,16 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new AsyncErrorData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(asyncErrorTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(3);
-      expect(data.executed).assertEqual(3);
+        const mutex = new Mutex();
+        const data = new AsyncErrorData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(asyncErrorTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(3);
+        expect(data.executed).assertEqual(3);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest0300 failed: ${error}`);
         expect(false).assertFail();
@@ -526,16 +526,16 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new AsyncTimeoutData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(asyncTimeoutLockTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(3);
-      expect(data.completed).assertEqual(3);
+        const mutex = new Mutex();
+        const data = new AsyncTimeoutData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(asyncTimeoutLockTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(3);
+        expect(data.completed).assertEqual(3);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest0400 failed: ${error}`);
         expect(false).assertFail();
@@ -553,14 +553,14 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new PromiseLockData();
-      const counter = new AtomicInt(0);
-      let t1 = taskpool.execute(new taskpool.Task(promiseResolveTask, mutex, data, counter));
-      await Promise.all([t1]);
-      expect(counter.load()).assertEqual(1);
-      expect(data.value).assertEqual(1);
-      expect(data.resolved).assertTrue();
+        const mutex = new Mutex();
+        const data = new PromiseLockData();
+        const counter = new AtomicInt(0);
+        let t1 = taskpool.execute(new taskpool.Task(promiseResolveTask, mutex, data, counter));
+        await Promise.all([t1]);
+        expect(counter.load()).assertEqual(1);
+        expect(data.value).assertEqual(1);
+        expect(data.resolved).assertTrue();
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest0500 failed: ${error}`);
         expect(false).assertFail();
@@ -578,16 +578,16 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new PromiseConcurrentData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(promiseConcurrentTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(5);
-      expect(data.results.length).assertEqual(5);
+        const mutex = new Mutex();
+        const data = new PromiseConcurrentData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(promiseConcurrentTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(5);
+        expect(data.results.length).assertEqual(5);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest0600 failed: ${error}`);
         expect(false).assertFail();
@@ -605,17 +605,17 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new PromiseChainData();
-      const counter = new AtomicInt(0);
-      for (let i: number = 0; i < 3; i++) {
-        await taskpool.execute(new taskpool.Task(promiseChainTask, mutex, data, counter));
-      }
-      expect(counter.load()).assertEqual(3);
-      expect(data.chain.length).assertEqual(3);
-      expect(data.chain[0]).assertEqual(1);
-      expect(data.chain[1]).assertEqual(2);
-      expect(data.chain[2]).assertEqual(3);
+        const mutex = new Mutex();
+        const data = new PromiseChainData();
+        const counter = new AtomicInt(0);
+        for (let i: number = 0; i < 3; i++) {
+          await taskpool.execute(new taskpool.Task(promiseChainTask, mutex, data, counter));
+        }
+        expect(counter.load()).assertEqual(3);
+        expect(data.chain.length).assertEqual(3);
+        expect(data.chain[0]).assertEqual(1);
+        expect(data.chain[1]).assertEqual(2);
+        expect(data.chain[2]).assertEqual(3);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest0700 failed: ${error}`);
         expect(false).assertFail();
@@ -633,16 +633,16 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new PromiseTimeoutData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(promiseTimeoutTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(3);
-      expect(data.completed).assertEqual(3);
+        const mutex = new Mutex();
+        const data = new PromiseTimeoutData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(promiseTimeoutTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(3);
+        expect(data.completed).assertEqual(3);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest0800 failed: ${error}`);
         expect(false).assertFail();
@@ -660,18 +660,18 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const pool = new FileDescriptorPool();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(fdOpenCloseTask, mutex, pool, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(5);
-      expect(pool.opened).assertEqual(5);
-      expect(pool.closed).assertEqual(5);
-      expect(pool.descriptors.length).assertEqual(5);
+        const mutex = new Mutex();
+        const pool = new FileDescriptorPool();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(fdOpenCloseTask, mutex, pool, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(5);
+        expect(pool.opened).assertEqual(5);
+        expect(pool.closed).assertEqual(5);
+        expect(pool.descriptors.length).assertEqual(5);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest0900 failed: ${error}`);
         expect(false).assertFail();
@@ -690,18 +690,18 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new FileLockData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(fileLockUnlockTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(5);
-      expect(data.lockCount).assertEqual(5);
-      expect(data.unlockCount).assertEqual(5);
-      expect(data.locked).assertFalse();
+        const mutex = new Mutex();
+        const data = new FileLockData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(fileLockUnlockTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(5);
+        expect(data.lockCount).assertEqual(5);
+        expect(data.unlockCount).assertEqual(5);
+        expect(data.locked).assertFalse();
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1000 failed: ${error}`);
         expect(false).assertFail();
@@ -719,19 +719,19 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-      const rwlock = new RWLock();
-      const data = new LogData();
-      const counter = new AtomicInt(0);
-      // Execute write task first and wait for it to complete
-      await taskpool.execute(new taskpool.Task(logWriteTask, rwlock, data, counter));
-      // Then execute all read tasks concurrently
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(logReadTask, rwlock, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(6);
-      expect(data.logs.length).assertEqual(1);
+        const rwlock = new RWLock();
+        const data = new LogData();
+        const counter = new AtomicInt(0);
+        // Execute write task first and wait for it to complete
+        await taskpool.execute(new taskpool.Task(logWriteTask, rwlock, data, counter));
+        // Then execute all read tasks concurrently
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(logReadTask, rwlock, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(6);
+        expect(data.logs.length).assertEqual(1);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1100 failed: ${error}`);
         expect(false).assertFail();
@@ -749,17 +749,17 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const buf = new LogBuffer();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(logBufferFlushTask, mutex, buf, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(5);
-      expect(buf.buffer.length).assertEqual(5);
-      expect(buf.flushed).assertEqual(5);
+        const mutex = new Mutex();
+        const buf = new LogBuffer();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(logBufferFlushTask, mutex, buf, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(5);
+        expect(buf.buffer.length).assertEqual(5);
+        expect(buf.flushed).assertEqual(5);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1200 failed: ${error}`);
         expect(false).assertFail();
@@ -777,17 +777,17 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new LogRotateData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(logRotateTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(3);
-      expect(data.rotated).assertEqual(3);
-      expect(data.files.length).assertEqual(3);
+        const mutex = new Mutex();
+        const data = new LogRotateData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(logRotateTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(3);
+        expect(data.rotated).assertEqual(3);
+        expect(data.files.length).assertEqual(3);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1300 failed: ${error}`);
         expect(false).assertFail();
@@ -805,17 +805,17 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new LogCompressData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(logCompressTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(3);
-      expect(data.compressed).assertEqual(3);
-      expect(data.totalSize).assertEqual(12);
+        const mutex = new Mutex();
+        const data = new LogCompressData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(logCompressTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(3);
+        expect(data.compressed).assertEqual(3);
+        expect(data.totalSize).assertEqual(12);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1400 failed: ${error}`);
         expect(false).assertFail();
@@ -833,18 +833,18 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-      const rwlock = new RWLock();
-      const data = new StateQueryData();
-      const counter = new AtomicInt(0);
-      await taskpool.execute(new taskpool.Task(stateUpdateTask, rwlock, data, counter));
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(stateQueryTask, rwlock, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(6);
-      expect(data.updateCount).assertEqual(1);
-      expect(data.stateValue).assertEqual(1);
+        const rwlock = new RWLock();
+        const data = new StateQueryData();
+        const counter = new AtomicInt(0);
+        await taskpool.execute(new taskpool.Task(stateUpdateTask, rwlock, data, counter));
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(stateQueryTask, rwlock, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(6);
+        expect(data.updateCount).assertEqual(1);
+        expect(data.stateValue).assertEqual(1);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1500 failed: ${error}`);
         expect(false).assertFail();
@@ -862,16 +862,16 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new StateMachineData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(stateMachineTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(5);
-      expect(data.transitions).assertEqual(5);
+        const mutex = new Mutex();
+        const data = new StateMachineData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(stateMachineTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(5);
+        expect(data.transitions).assertEqual(5);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1600 failed: ${error}`);
         expect(false).assertFail();
@@ -889,18 +889,18 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new StatePersistData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(statePersistTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(3);
-      expect(data.persisted).assertTrue();
-      expect(data.persistCount).assertEqual(3);
-      expect(data.value).assertEqual(3);
+        const mutex = new Mutex();
+        const data = new StatePersistData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(statePersistTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(3);
+        expect(data.persisted).assertTrue();
+        expect(data.persistCount).assertEqual(3);
+        expect(data.value).assertEqual(3);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1700 failed: ${error}`);
         expect(false).assertFail();
@@ -918,18 +918,18 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new StateRecoveryData();
-      const counter = new AtomicInt(0);
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(stateRecoveryTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(3);
-      expect(data.recovered).assertTrue();
-      expect(data.value).assertEqual(100);
-      expect(data.recoveryCount).assertEqual(3);
+        const mutex = new Mutex();
+        const data = new StateRecoveryData();
+        const counter = new AtomicInt(0);
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(stateRecoveryTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(3);
+        expect(data.recovered).assertTrue();
+        expect(data.value).assertEqual(100);
+        expect(data.recoveryCount).assertEqual(3);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1800 failed: ${error}`);
         expect(false).assertFail();
@@ -947,25 +947,25 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-      const rwlock = new RWLock();
-      const data = new FileRWData();
-      const counter = new AtomicInt(0);
-      const readCounter = new AtomicInt(0);
-      // Writers and readers are submitted together: writes are mutually exclusive,
-      // reads share access, and no read overlaps with a write
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 2; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(fileWriteTask, rwlock, data, counter)));
-        promises.push(taskpool.execute(new taskpool.Task(fileReadTask, rwlock, data, counter, readCounter)));
-      }
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(fileReadTask, rwlock, data, counter, readCounter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(7);
-      expect(data.writeCount).assertEqual(2);
-      expect(readCounter.load()).assertEqual(5);
-      expect(data.content).assertEqual('updated_content');
+        const rwlock = new RWLock();
+        const data = new FileRWData();
+        const counter = new AtomicInt(0);
+        const readCounter = new AtomicInt(0);
+        // Writers and readers are submitted together: writes are mutually exclusive,
+        // reads share access, and no read overlaps with a write
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 2; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(fileWriteTask, rwlock, data, counter)));
+          promises.push(taskpool.execute(new taskpool.Task(fileReadTask, rwlock, data, counter, readCounter)));
+        }
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(fileReadTask, rwlock, data, counter, readCounter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(7);
+        expect(data.writeCount).assertEqual(2);
+        expect(readCounter.load()).assertEqual(5);
+        expect(data.content).assertEqual('updated_content');
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest1900 failed: ${error}`);
         expect(false).assertFail();
@@ -983,30 +983,30 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-      const rwlock = new RWLock();
-      const data = new StateVersionData();
-      const counter = new AtomicInt(0);
-      const readCounter = new AtomicInt(0);
-      // Updates and reads are submitted together: updates increment the version under
-      // write lock mutual exclusion while reads validate versions under read lock
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 3; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(stateVersionUpdateTask, rwlock, data, counter)));
-        promises.push(taskpool.execute(new taskpool.Task(stateVersionReadTask, rwlock, data, counter, readCounter)));
-      }
-      for (let i: number = 0; i < 2; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(stateVersionReadTask, rwlock, data, counter, readCounter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(8);
-      expect(data.currentVersion).assertEqual(4);
-      expect(data.versions.length).assertEqual(4);
-      expect(readCounter.load()).assertEqual(5);
-      // Version sequence is strictly increasing under write lock mutual exclusion
-      expect(data.versions[0]).assertEqual(1);
-      expect(data.versions[1]).assertEqual(2);
-      expect(data.versions[2]).assertEqual(3);
-      expect(data.versions[3]).assertEqual(4);
+        const rwlock = new RWLock();
+        const data = new StateVersionData();
+        const counter = new AtomicInt(0);
+        const readCounter = new AtomicInt(0);
+        // Updates and reads are submitted together: updates increment the version under
+        // write lock mutual exclusion while reads validate versions under read lock
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 3; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(stateVersionUpdateTask, rwlock, data, counter)));
+          promises.push(taskpool.execute(new taskpool.Task(stateVersionReadTask, rwlock, data, counter, readCounter)));
+        }
+        for (let i: number = 0; i < 2; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(stateVersionReadTask, rwlock, data, counter, readCounter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(8);
+        expect(data.currentVersion).assertEqual(4);
+        expect(data.versions.length).assertEqual(4);
+        expect(readCounter.load()).assertEqual(5);
+        // Version sequence is strictly increasing under write lock mutual exclusion
+        expect(data.versions[0]).assertEqual(1);
+        expect(data.versions[1]).assertEqual(2);
+        expect(data.versions[2]).assertEqual(3);
+        expect(data.versions[3]).assertEqual(4);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest2000 failed: ${error}`);
         expect(false).assertFail();
@@ -1024,20 +1024,20 @@ export default function LockDesignAsyncOperationTest(): void {
      */
     it('LockDesignAsyncOperationTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const data = new FileAccessData();
-      const counter = new AtomicInt(0);
-      // 5 tasks record file accesses concurrently: Mutex serializes the
-      // read-modify-write on accessCount so no update is lost and
-      // lastAccess always equals the final access count
-      let promises: Promise<Any>[] = [];
-      for (let i: number = 0; i < 5; i++) {
-        promises.push(taskpool.execute(new taskpool.Task(fileAccessTask, mutex, data, counter)));
-      }
-      await Promise.all(promises);
-      expect(counter.load()).assertEqual(5);
-      expect(data.accessCount).assertEqual(5);
-      expect(data.lastAccess).assertEqual(5);
+        const mutex = new Mutex();
+        const data = new FileAccessData();
+        const counter = new AtomicInt(0);
+        // 5 tasks record file accesses concurrently: Mutex serializes the
+        // read-modify-write on accessCount so no update is lost and
+        // lastAccess always equals the final access count
+        let promises: Promise<Any>[] = [];
+        for (let i: number = 0; i < 5; i++) {
+          promises.push(taskpool.execute(new taskpool.Task(fileAccessTask, mutex, data, counter)));
+        }
+        await Promise.all(promises);
+        expect(counter.load()).assertEqual(5);
+        expect(data.accessCount).assertEqual(5);
+        expect(data.lastAccess).assertEqual(5);
       } catch (error) {
         console.error(`LockDesignAsyncOperationTest2100 failed: ${error}`);
         expect(false).assertFail();

@@ -170,15 +170,17 @@ export default function RWLockConstructorTest(): void {
      */
     it('RWLockConstructorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let successCount: number = 0;
+      let failureCount: number = 0;
       for (let i = 0; i < 1000; i++) {
         try {
           const rwlock = new RWLock();
           successCount++;
         } catch (error) {
-          // Construction failed
+          failureCount++;
         }
       }
       expect(successCount).assertEqual(1000);
+      expect(failureCount).assertEqual(0);
     })
 
     /**

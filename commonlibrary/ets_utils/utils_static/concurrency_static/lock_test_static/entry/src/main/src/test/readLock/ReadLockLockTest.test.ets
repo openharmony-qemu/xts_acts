@@ -210,10 +210,19 @@ export default function ReadLockLockTest(): void {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
       let criticalSectionEntered: number = 0;
+      let writeLockAcquired: boolean = false;
       rl.lock();
       criticalSectionEntered = 42;
       expect(criticalSectionEntered).assertEqual(42);
       rl.unlock();
+      const wl = rwlock.writeLock();
+      try {
+        wl.lock();
+        writeLockAcquired = true;
+      } finally {
+        wl.unlock();
+      }
+      expect(writeLockAcquired).assertTrue();
     })
 
     /**

@@ -27,70 +27,6 @@ class NestingTimeData {
   outerUnlockTime: number = 0;
 }
 
-// TC-014: Mutex outer + ReadLock inner task
-function mutexNestReadLockTask(mutex: Mutex, rwlock: RWLock, counter: AtomicInt): void {
-  mutex.lock();
-  try {
-    const readLock = rwlock.readLock();
-    readLock.lock();
-    try {
-      counter.fetchAdd(1);
-    } finally {
-      readLock.unlock();
-    }
-  } finally {
-    mutex.unlock();
-  }
-}
-
-// TC-015: Mutex outer + WriteLock inner task
-function mutexNestWriteLockTask(mutex: Mutex, rwlock: RWLock, counter: AtomicInt): void {
-  mutex.lock();
-  try {
-    const writeLock = rwlock.writeLock();
-    writeLock.lock();
-    try {
-      counter.fetchAdd(1);
-    } finally {
-      writeLock.unlock();
-    }
-  } finally {
-    mutex.unlock();
-  }
-}
-
-// TC-016: ReadLock outer + Mutex inner task
-function readLockNestMutexTask(rwlock: RWLock, mutex: Mutex, counter: AtomicInt): void {
-  const readLock = rwlock.readLock();
-  readLock.lock();
-  try {
-    mutex.lock();
-    try {
-      counter.fetchAdd(1);
-    } finally {
-      mutex.unlock();
-    }
-  } finally {
-    readLock.unlock();
-  }
-}
-
-// TC-017: WriteLock outer + Mutex inner task
-function writeLockNestMutexTask(rwlock: RWLock, mutex: Mutex, counter: AtomicInt): void {
-  const writeLock = rwlock.writeLock();
-  writeLock.lock();
-  try {
-    mutex.lock();
-    try {
-      counter.fetchAdd(1);
-    } finally {
-      mutex.unlock();
-    }
-  } finally {
-    writeLock.unlock();
-  }
-}
-
 // TC-018: Cross-thread nesting - waiter task acquires the Mutex after the main thread releases it
 function crossThreadWaiterTask(mutex: Mutex): number {
   mutex.lock();
@@ -128,22 +64,6 @@ function multiWorkerNestTask2(mutex: Mutex): number {
     return 1;
   } finally {
     mutex.unlock();
-  }
-}
-
-// TC-021: Nested lock exception propagation task
-function nestedExceptionTask(mutexA: Mutex, mutexB: Mutex, counter: AtomicInt): void {
-  mutexA.lock();
-  try {
-    mutexB.lock();
-    try {
-      counter.fetchAdd(1);
-      throw new Error('Inner exception');
-    } finally {
-      mutexB.unlock();
-    }
-  } finally {
-    mutexA.unlock();
   }
 }
 
@@ -519,8 +439,8 @@ export default function LockFactorNestingTest(): void {
       try {
       const mutex = new Mutex();
       const worker = new EAWorker('lockFactorNestCT1');
-      worker.start();
       try {
+        worker.start();
         mutex.lock();
         const workerJob = worker.run<number>(crossThreadWaiterTask, mutex);
         try {
@@ -534,7 +454,11 @@ export default function LockFactorNestingTest(): void {
         }
         expect(workerJob.Await()).assertEqual(1);
       } finally {
-        worker.quit();
+        try {
+          worker.quit();
+        } catch (err) {
+          console.error(`LockFactorNestingTest0800 worker quit failed: ${err}`);
+        }
       }
       } catch (error) {
         console.error(`LockFactorNestingTest0800 failed: ${error}`);
@@ -556,11 +480,15 @@ export default function LockFactorNestingTest(): void {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorNest01');
-      worker.start();
       try {
+        worker.start();
         await worker.run<void>(workerNestMainTask, mutex, counter);
       } finally {
-        worker.quit();
+        try {
+          worker.quit();
+        } catch (err) {
+          console.error(`LockFactorNestingTest0900 worker quit failed: ${err}`);
+        }
       }
       mutex.lock();
       try {
@@ -589,16 +517,24 @@ export default function LockFactorNestingTest(): void {
       const mutex = new Mutex();
       const worker1 = new EAWorker('lockFactorNest02');
       const worker2 = new EAWorker('lockFactorNest03');
-      worker1.start();
-      worker2.start();
       try {
+        worker1.start();
+        worker2.start();
         const job1 = worker1.run<number>(multiWorkerNestTask1, mutex);
         const job2 = worker2.run<number>(multiWorkerNestTask2, mutex);
         expect(job1.Await()).assertEqual(1);
         expect(job2.Await()).assertEqual(1);
       } finally {
-        worker1.quit();
-        worker2.quit();
+        try {
+          worker1.quit();
+        } catch (err) {
+          console.error(`LockFactorNestingTest1000 worker1 quit failed: ${err}`);
+        }
+        try {
+          worker2.quit();
+        } catch (err) {
+          console.error(`LockFactorNestingTest1000 worker2 quit failed: ${err}`);
+        }
       }
       } catch (error) {
         console.error(`LockFactorNestingTest1000 failed: ${error}`);

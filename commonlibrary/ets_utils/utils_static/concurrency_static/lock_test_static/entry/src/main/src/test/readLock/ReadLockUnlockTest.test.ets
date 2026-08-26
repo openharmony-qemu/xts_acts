@@ -186,10 +186,19 @@ export default function ReadLockUnlockTest(): void {
       const rwlock = new RWLock();
       const rl = rwlock.readLock();
       let state: number = 0;
+      let writeLockAcquired: boolean = false;
       rl.lock();
       state = 42;
       rl.unlock();
       expect(state).assertEqual(42);
+      const wl = rwlock.writeLock();
+      try {
+        wl.lock();
+        writeLockAcquired = true;
+      } finally {
+        wl.unlock();
+      }
+      expect(writeLockAcquired).assertTrue();
     })
 
     /**
@@ -623,6 +632,32 @@ export default function ReadLockUnlockTest(): void {
       }
       expect(quickUnlockOk).assertTrue();
       // After the immediate lock/unlock the count is 0: write lock can be acquired
+      const wl = rwlock.writeLock();
+      let writerAcquired: boolean = false;
+      try {
+        wl.lock();
+        writerAcquired = true;
+        wl.unlock();
+      } catch (e) {
+        writerAcquired = false;
+      }
+      expect(writerAcquired).assertTrue();
+    })
+
+    /**
+     * @tc.name    ReadLockUnlockTest1900
+     * @tc.number  SUB_READ_LOCK_UNLOCK_TEST_1900
+     * @tc.desc    Verify ReadLock.unlock() call completes and fully releases the read lock for writers
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('ReadLockUnlockTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const rwlock = new RWLock();
+      const rl = rwlock.readLock();
+      rl.lock();
+      rl.unlock();
+      // Write lock can be acquired after read lock is fully released
       const wl = rwlock.writeLock();
       let writerAcquired: boolean = false;
       try {

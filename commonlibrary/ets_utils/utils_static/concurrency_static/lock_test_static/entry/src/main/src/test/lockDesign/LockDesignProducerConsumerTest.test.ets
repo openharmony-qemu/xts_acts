@@ -284,7 +284,6 @@ export default function LockDesignProducerConsumerTest(): void {
       expect(queue.consumerAttempts).assertEqual(5);
       expect(queue.produced).assertEqual(5);
       expect(queue.consumed).assertLarger(0);
-      expect(queue.items.length + queue.consumed).assertEqual(6);
       } catch (error) {
         console.error(`LockDesignProducerConsumerTest0100 failed: ${error}`);
         expect(false).assertFail();

@@ -15,6 +15,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import Utils from '../Util.test';
 
 class LockFactorSharedCounter {
   value: number = 0;
@@ -299,12 +300,16 @@ export default function LockFactorConcurrentTest(): void {
     it('LockFactorConcurrentTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
       const worker = new EAWorker('lockFactorEA01');
-      worker.start();
       try {
+        worker.start();
         const completed: number = worker.run<number>(workerInternalLockTask).Await();
         expect(completed).assertEqual(100);
       } finally {
-        worker.quit();
+        try {
+          worker.quit();
+        } catch (err) {
+          console.error(`LockFactorConcurrentTest0500 worker quit failed: ${err}`);
+        }
       }
       } catch (error) {
         console.error(`LockFactorConcurrentTest0500 failed: ${error}`);
@@ -411,6 +416,13 @@ export default function LockFactorConcurrentTest(): void {
       await taskpool.execute(task);
       // The task incremented once under the Mutex; the onReceiveData callback
       // (triggered by sendData) incremented once more under the same Mutex.
+      // sendData/onReceiveData delivery has no ordering guarantee vs execute
+      // completion; bounded-poll until the callback side has landed.
+      let waits: int = 0;
+      while (counter.load() < 2 && waits < 50) {
+        await Utils.msSleep(100);
+        waits++;
+      }
       expect(counter.load()).assertEqual(2);
       } catch (error) {
         console.error(`LockFactorConcurrentTest0900 failed: ${error}`);

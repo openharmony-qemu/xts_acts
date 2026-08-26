@@ -634,17 +634,19 @@ export default function MutexLockTest(): void {
      */
     it('MutexLockTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-      const mutex = new Mutex();
-      const counter = new MutexLockSharedCounter();
-      try {
-        await taskpool.execute(new taskpool.Task(exceptionLockTask, mutex, counter));
-      } catch (e) {
-        // Expected exception
-      }
-      expect(counter.value).assertEqual(1);
-      // Verify lock is usable after exception
-      await taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
-      expect(counter.value).assertEqual(2);
+        const mutex = new Mutex();
+        const counter = new MutexLockSharedCounter();
+        let exceptionCaught: boolean = false;
+        try {
+          await taskpool.execute(new taskpool.Task(exceptionLockTask, mutex, counter));
+        } catch (e) {
+          exceptionCaught = true;
+        }
+        expect(exceptionCaught).assertTrue();
+        expect(counter.value).assertEqual(1);
+        // Verify lock is usable after exception
+        await taskpool.execute(new taskpool.Task(multiThreadIncTask, mutex, counter));
+        expect(counter.value).assertEqual(2);
       } catch (error) {
         console.error(`MutexLockTest1400 failed: ${error}`);
         expect(false).assertFail();
@@ -712,7 +714,7 @@ export default function MutexLockTest(): void {
     /**
      * @tc.name    MutexLockTest1700
      * @tc.number  SUB_MUTEX_LOCK_TEST_1700
-     * @tc.desc    TC-EAWorker: Verify concurrent lock usage across multiple EAWorker threads
+     * @tc.desc    TC-EAWorker: Verify sequential lock usage across multiple EAWorker threads
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1

@@ -15,6 +15,7 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+import Utils from '../Util.test';
 
 class StressSharedData {
   buffer: number[] = [];
@@ -332,6 +333,13 @@ export default function LockFactorStressTest(): void {
         promises.push(taskpool.execute(task));
       }
       await Promise.all(promises);
+      // onReceiveData delivery has no ordering guarantee vs execute
+      // completion; bounded-poll until all callback increments have landed.
+      let waits: int = 0;
+      while (counter.load() < 20 && waits < 50) {
+        await Utils.msSleep(100);
+        waits++;
+      }
       expect(counter.load()).assertEqual(20);
       } catch (error) {
         console.error(`LockFactorStressTest0400 failed: ${error}`);
@@ -489,6 +497,13 @@ export default function LockFactorStressTest(): void {
         promises.push(taskpool.execute(task));
       }
       await Promise.all(promises);
+      // onReceiveData delivery has no ordering guarantee vs execute
+      // completion; bounded-poll until all callback increments have landed.
+      let waits: int = 0;
+      while (counter.load() < 6 && waits < 50) {
+        await Utils.msSleep(100);
+        waits++;
+      }
       expect(counter.load()).assertEqual(6);
       } catch (error) {
         console.error(`LockFactorStressTest1000 failed: ${error}`);
@@ -569,8 +584,8 @@ export default function LockFactorStressTest(): void {
       const mutex = new Mutex();
       const counter = new AtomicInt(0);
       const worker = new EAWorker('lockFactorStress01');
-      worker.start();
       try {
+        worker.start();
         let exceptionCaught: boolean = false;
         try {
           worker.run<void>(mutexExceptionRecoveryTask, mutex, counter).Await();
@@ -588,7 +603,11 @@ export default function LockFactorStressTest(): void {
         }
         expect(counter.load()).assertEqual(2);
       } finally {
-        worker.quit();
+        try {
+          worker.quit();
+        } catch (err) {
+          console.error(`LockFactorStressTest1300 worker quit failed: ${err}`);
+        }
       }
       } catch (error) {
         console.error(`LockFactorStressTest1300 failed: ${error}`);
@@ -628,6 +647,13 @@ export default function LockFactorStressTest(): void {
       }
       expect(executeFailed).assertTrue();
       // The task incremented once before throwing; the failure callback incremented once more.
+      // onExecutionFailed delivery has no ordering guarantee vs rejection
+      // observation; bounded-poll until the callback side has landed.
+      let waits: int = 0;
+      while (counter.load() < 2 && waits < 50) {
+        await Utils.msSleep(100);
+        waits++;
+      }
       expect(counter.load()).assertEqual(2);
       // Verify lock is usable
       mutex.lock();
@@ -794,21 +820,28 @@ export default function LockFactorStressTest(): void {
     /**
      * @tc.name    LockFactorStressTest2000
      * @tc.number  SUB_LOCK_FACTOR_STRESS_TEST_2000
-     * @tc.desc    TC-073: Verify Mutex boundary test - creating Mutex without any usage consumes no active resources
+     * @tc.desc    TC-073: Verify Mutex basic lock/unlock boundary
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
     it('LockFactorStressTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const mutex = new Mutex();
-      let active: boolean = false;
+      let lockCycleCount: number = 0;
       mutex.lock();
       try {
-        active = true;
+        lockCycleCount++;
       } finally {
         mutex.unlock();
       }
-      expect(active).assertTrue();
+      // Verify the Mutex is reusable: a second full lock/unlock cycle must succeed
+      mutex.lock();
+      try {
+        lockCycleCount++;
+      } finally {
+        mutex.unlock();
+      }
+      expect(lockCycleCount).assertEqual(2);
     })
 
     /**
@@ -845,7 +878,7 @@ export default function LockFactorStressTest(): void {
     /**
      * @tc.name    LockFactorStressTest2200
      * @tc.number  SUB_LOCK_FACTOR_STRESS_TEST_2200
-     * @tc.desc    TC-075: Verify empty lock boundary - lock object created and immediately checked without operations
+     * @tc.desc    TC-075: Verify Mutex/RWLock basic operations
      * @tc.type    FUNCTION
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
