@@ -24,7 +24,7 @@ import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 
 let testAbilityContext:common.UIAbilityContext;
-export default function webViewControllerPart2() {
+export default function webViewControllerPart2(): void {
 
   describe('WebViewControllerPart2TestSuite', () => {
 
