@@ -39,6 +39,7 @@ let curPhotoName: string = "";
 // 拍照相关
 let isFrameStart: boolean = false  // 预览是否开始
 globalThis.isCaptureReady = true; //是否可拍下一张回调函数
+globalThis.isPhotoSave = false; //是否保存拍照照片
 globalThis.isSupportMovingPhoto = false
 
 /**
@@ -1081,20 +1082,33 @@ cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumber: number, photoName: 
   console.info('captureNumber is ' + captureNumber);
   //使用当前拍照设置进行拍照。
   let iCapture = 0;
-  console.info('before capture, globalThis.isCaptureReady ' + globalThis.isCaptureReady);
   curPhotoName = photoName;
   while (iCapture < captureNumber) {
-    if (globalThis.isCaptureReady) {
-      iCapture++;
-      globalThis.isCaptureReady = false;
-      console.info('iCapture is ' + iCapture);
-      await photoOutput.capture(photoCaptureSetting, (err: BusinessError) => {
-        if (err) {
-          console.error(`Failed to capture the photo ${err.message}`);
-          expect().assertFail()
-          return;
-        }
-      });
+    globalThis.isCaptureReady = false;  //拍照前先将是否可拍下一张回调置为false
+    console.info('before capture, globalThis.isCaptureReady ' + globalThis.isCaptureReady);
+    await photoOutput.capture(photoCaptureSetting, (err: BusinessError) => {
+      if (err) {
+        console.error(`Failed to capture the photo ${err.message}`);
+        expect().assertFail()
+        return;
+      }
+    });
+    iCapture++;
+    console.info('iCapture is ' + iCapture);
+    console.info('wait capture finish, globalThis.isCaptureReady: ' + globalThis.isCaptureReady);
+    let time: number = 0;
+    while (time < 20) {
+      await sleep(200)
+      if (globalThis.isCaptureReady && globalThis.isPhotoSave) {
+        console.info('capture finish ' + time);
+        break;  //照片保存和可拍下一张都完成再退出
+      }
+      time++;
+    }
+    if (time == 20 && (!globalThis.isCaptureReady || !globalThis.isPhotoSave)) {
+      console.error('can not wait isCaptureReady or isPhotoSave');
+      expect().assertFail()
+      return;
     }
     await sleep(10)
   }
@@ -1221,6 +1235,7 @@ export async function photoAssetAvailableCallback(err: BusinessError, photoAsset
   }).catch((err: BusinessError) => {
     console.error(`apply setTitle fail with error: ${err.code}, ${err.message}`);
   });
+  globalThis.isPhotoSave = true;  //拍照图片保存完成，回调值置为true
 }
 
 /**
@@ -1233,6 +1248,7 @@ export async function photoAssetAvailableCallback(err: BusinessError, photoAsset
  */
 export async function offPhotoOutputPhotoAssetAvailable(photoOutput: camera.PhotoOutput): Promise<void> {
   photoOutput.off('photoAssetAvailable', photoAssetAvailableCallback);
+  globalThis.isPhotoSave = false;  //关闭拍照后，回调值重新置为false
 }
 
 /**

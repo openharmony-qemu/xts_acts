@@ -129,7 +129,7 @@ async function cameraCapturePhotosTest(testNum: string, testCameraId: number,
           await cameraCaptureRelyOnNum(photoOutput, capturePhotoNum, newTitle);
           capturePhotoTotalNum++;
           console.info(`${testNum} capturePhotoNum is ${capturePhotoTotalNum}`);
-          await sleep(3000);
+          await sleep(500);
           offPhotoOutputPhotoAssetAvailable(photoOutput);
           
           //恢复过程
