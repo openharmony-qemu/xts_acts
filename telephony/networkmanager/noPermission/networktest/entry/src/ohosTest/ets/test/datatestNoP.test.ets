@@ -35,9 +35,10 @@ export default function datatestNoPTest() {
       let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0100';
       console.info(`${caseName} test start `);
       let maxSimCount: number = await sim.getMaxSimCount();
+      console.log(`${caseName} get maxSimCount success `, maxSimCount)
       try {
         let isEnabled: boolean = await data.isCellularDataRoamingEnabledSync(0);
-        console.log(`${caseName} get result success `,isEnabled)
+        console.log(`${caseName} get result success `, isEnabled)
         ExpectTrue(false);
         done();
       } catch (error) {
