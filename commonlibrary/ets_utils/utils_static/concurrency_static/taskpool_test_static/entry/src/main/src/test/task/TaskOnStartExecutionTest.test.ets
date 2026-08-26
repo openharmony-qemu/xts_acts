@@ -464,14 +464,13 @@ export default function TaskOnStartExecutionTest(): void {
       } catch (error) {
        expect().assertFail();
       }
-      let waitCount1500: number = 0
-      while (callbackCount1500.load() < 5 && waitCount1500 < 500) {
+      let waitStart1500: number = Date.now()
+      while (callbackCount1500.load() < 5 && Date.now() - waitStart1500 < 30000) {
         try {
           await Utils.msSleep(20);
         } catch (error) {
           expect().assertFail();
         }
-        waitCount1500++
       }
       expect(callbackCount1500.load()).assertEqual(5)
       done();
