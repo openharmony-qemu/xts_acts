@@ -1027,7 +1027,7 @@ export default function ActsCommonEventManagerSupportTest() {
     /**
      * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000
      * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000
-     * @tc.desc   specific volumes on the device have been decrypted common event
+     * @tc.desc   specific data volume status has been reported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1036,7 +1036,7 @@ export default function ActsCommonEventManagerSupportTest() {
       async (done: () => void): Promise<void> => {
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 START`)
       expect(commonEventManager.Support.COMMON_EVENT_DATA_VOLUME_STATUS_REPORT)
-        .assertEqual('usual.event.VOLUME_DECRYPTED')
+        .assertEqual('usual.event.DATA_VOLUME_STATUS_REPORT')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 END`)
       done()
     })
