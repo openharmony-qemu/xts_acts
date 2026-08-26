@@ -700,15 +700,18 @@ export default function StreamReadableResumeTest(): void {
       async (done: () => void): Promise<void> => {
         let rs: ReadableThrowDoRead = new ReadableThrowDoRead();
         let errorCount: int = 0;
+        let errorMessage: string = '';
         await new Promise<void>((resolve: (value: void) => void): void => {
           rs.on("error", (err: Object): void => {
             errorCount++;
+            errorMessage = (err as Error).message;
             resolve(undefined as void);
           });
           rs.pause();
           rs.resume();
         });
         expect(errorCount).assertEqual(1);
+        expect(errorMessage).assertEqual("test error");
         done();
       });
 

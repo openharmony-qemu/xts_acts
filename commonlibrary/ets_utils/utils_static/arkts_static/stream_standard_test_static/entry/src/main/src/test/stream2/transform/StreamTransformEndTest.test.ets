@@ -27,6 +27,7 @@ import {
   TestType
 } from '../../../../../hypium/index';
 import { stream } from '@kit.ArkTS';
+import Utils from '../../Util.test';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 class EndTransformBase extends stream.Transform {
@@ -175,13 +176,19 @@ export default function StreamTransformEndTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamTransformEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new EndTransformBase();
-      let result = ws.end("完成", "gbk", (err?: Error): void => {
+    it('testStreamTransformEnd001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new EndTransformBase();
+        let result = ws.end("完成", "gbk", (err?: Error): void => {
+          if (err !== undefined) {
+            return;
+          }
+        });
+        await Utils.msSleep(50);
+        expect(ws.writableEnded).assertTrue();
+        expect(result.writableEnded).assertTrue();
+        done();
       });
-      expect(ws.writableEnded).assertTrue();
-      expect(result.writableEnded).assertTrue();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_TRANSFORM_END_0200
@@ -512,15 +519,31 @@ export default function StreamTransformEndTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamTransformEnd018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new EndTransformBase();
-      let cbCalled: boolean = false;
-      ws.end('final', 'utf8', (err?: Error): void => {
-        cbCalled = true;
+    it('testStreamTransformEnd018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new EndTransformBase();
+        let cbCalled: boolean = false;
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            ws.end('final', 'utf8', (err?: Error): void => {
+              cbCalled = true;
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              setTimeout((): void => {
+                resolve(undefined as void);
+              }, 50);
+            });
+          });
+          expect(ws.writableEnded).assertTrue();
+          expect(cbCalled).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(ws.writableEnded).assertTrue();
-      expect(cbCalled).assertTrue();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_TRANSFORM_END_1900

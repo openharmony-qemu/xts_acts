@@ -549,45 +549,49 @@ export default function StreamReadableUnpipeTest(): void {
         let wcAfter: int = 0;
         let unpipedRes: boolean = false;
         let wcOnEnd: int = 0;
-        await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
-          let r = new ReadableTestBase();
-          let w = new WritableTestBase();
-          let unpiped: boolean = false;
-          let handled: boolean = false;
-          r.pipe(w);
-          r.on('data', (): void => {
-            if (handled) {
-              return;
-            }
-            handled = true;
-            wcBefore = w.writeCount;
-            r.unpipe(w);
-            unpiped = true;
-            r.resume();
-            r.push("second");
-            wcAfter = w.writeCount;
-            r.push(null);
-            w.end(undefined, undefined, (err?: Error): void => {
-              if (err !== undefined) {
-                reject(err);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
+            let r = new ReadableTestBase();
+            let w = new WritableTestBase();
+            let unpiped: boolean = false;
+            let handled: boolean = false;
+            r.pipe(w);
+            r.on('data', (): void => {
+              if (handled) {
                 return;
               }
-              unpipedRes = unpiped;
-              wcOnEnd = w.writeCount;
+              handled = true;
+              wcBefore = w.writeCount;
+              r.unpipe(w);
+              unpiped = true;
+              r.resume();
+              r.push("second");
+              wcAfter = w.writeCount;
+              r.push(null);
+              w.end(undefined, undefined, (err?: Error): void => {
+                if (err !== undefined) {
+                  reject(err);
+                  return;
+                }
+                unpipedRes = unpiped;
+                wcOnEnd = w.writeCount;
+              });
+              setTimeout((): void => {
+                unpipedRes = unpiped;
+                wcOnEnd = w.writeCount;
+                resolve(undefined as void);
+              }, 0);
             });
-            setTimeout((): void => {
-              unpipedRes = unpiped;
-              wcOnEnd = w.writeCount;
-              resolve(undefined as void);
-            }, 0);
+            r.resume();
+            r.push("onlyOne");
           });
-          r.resume();
-          r.push("onlyOne");
-        });
-        expect(wcBefore).assertEqual(1);
-        expect(wcAfter).assertEqual(1);
-        expect(unpipedRes).assertTrue();
-        expect(wcOnEnd).assertEqual(1);
+          expect(wcBefore).assertEqual(1);
+          expect(wcAfter).assertEqual(1);
+          expect(unpipedRes).assertTrue();
+          expect(wcOnEnd).assertEqual(1);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -695,50 +699,54 @@ export default function StreamReadableUnpipeTest(): void {
         let wcAfter: int = 0;
         let unpipedRes: boolean = false;
         let wcOnEnd: int = 0;
-        await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
-          let r = new ReadableTestBase();
-          let w = new WritableTestBase();
-          let unpiped: boolean = false;
-          w.on('finish', (): void => {
-            unpipedRes = unpiped;
-            wcOnEnd = w.writeCount;
-            resolve(undefined as void);
-          });
-          let handled: boolean = false;
-          r.pipe(w);
-          r.on('data', (): void => {
-            if (handled) {
-              return;
-            }
-            handled = true;
-            wcBefore = w.writeCount;
-            r.unpipe(w);
-            unpiped = true;
-            r.resume();
-            r.push("chunk3");
-            wcAfter = w.writeCount;
-            r.push(null);
-            w.end(undefined, undefined, (err?: Error): void => {
-              if (err !== undefined) {
-                reject(err);
-                return;
-              }
-              unpipedRes = unpiped;
-              wcOnEnd = w.writeCount;
-            });
-            setTimeout((): void => {
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
+            let r = new ReadableTestBase();
+            let w = new WritableTestBase();
+            let unpiped: boolean = false;
+            w.on('finish', (): void => {
               unpipedRes = unpiped;
               wcOnEnd = w.writeCount;
               resolve(undefined as void);
-            }, 0);
+            });
+            let handled: boolean = false;
+            r.pipe(w);
+            r.on('data', (): void => {
+              if (handled) {
+                return;
+              }
+              handled = true;
+              wcBefore = w.writeCount;
+              r.unpipe(w);
+              unpiped = true;
+              r.resume();
+              r.push("chunk3");
+              wcAfter = w.writeCount;
+              r.push(null);
+              w.end(undefined, undefined, (err?: Error): void => {
+                if (err !== undefined) {
+                  reject(err);
+                  return;
+                }
+                unpipedRes = unpiped;
+                wcOnEnd = w.writeCount;
+              });
+              setTimeout((): void => {
+                unpipedRes = unpiped;
+                wcOnEnd = w.writeCount;
+                resolve(undefined as void);
+              }, 0);
+            });
+            r.resume();
+            r.push("chunk1");
           });
-          r.resume();
-          r.push("chunk1");
-        });
-        expect(wcBefore).assertEqual(1);
-        expect(wcAfter).assertEqual(1);
-        expect(unpipedRes).assertTrue();
-        expect(wcOnEnd).assertEqual(1);
+          expect(wcBefore).assertEqual(1);
+          expect(wcAfter).assertEqual(1);
+          expect(unpipedRes).assertTrue();
+          expect(wcOnEnd).assertEqual(1);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 

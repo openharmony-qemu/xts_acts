@@ -212,21 +212,25 @@ export default function StreamTransformWriteTest(): void {
         let ws = new WriteTransformBase();
         let output: string = '';
         let result: boolean = false;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          ws.on('data', (chunk: Object): void => {
-            output = chunk.toString();
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            ws.on('data', (chunk: Object): void => {
+              output = chunk.toString();
+              resolve(undefined as void);
+            });
+            ws.resume();
+            result = ws.write("data", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+            });
           });
-          ws.resume();
-          result = ws.write("data", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-          });
-        });
-        expect(result).assertTrue();
-        expect(output).assertEqual("data");
+          expect(result).assertTrue();
+          expect(output).assertEqual("data");
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -650,6 +654,9 @@ export default function StreamTransformWriteTest(): void {
       let ws1 = new stream.Transform();
       try {
         ws1.write("data", "utf8", (err?: Error): void => {
+          if (err !== undefined) {
+            return;
+          }
         });
         expect().assertFail();
       } catch (e) {

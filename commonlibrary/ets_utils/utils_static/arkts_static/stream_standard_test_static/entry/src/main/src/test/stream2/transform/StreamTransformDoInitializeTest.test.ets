@@ -183,14 +183,25 @@ export default function StreamTransformDoInitializeTest(): void {
         let callbackFired: boolean = false;
         transform.on('data', (): void => {
         });
-        transform.write('data', 'utf8', (err?: Error): void => {
-          callbackFired = true;
-        });
-        await new Promise<void>((resolve: (value: void) => void): void => {
-          setTimeout((): void => resolve(undefined as void), 50);
-        });
-        expect(transform.doInitializeCalled).assertTrue();
-        expect(callbackFired).assertFalse();
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            transform.write('data', 'utf8', (err?: Error): void => {
+              callbackFired = true;
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+            });
+            setTimeout((): void => {
+              resolve(undefined as void);
+            }, 50);
+          });
+          expect(transform.doInitializeCalled).assertTrue();
+          expect(callbackFired).assertFalse();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 

@@ -330,17 +330,21 @@ export default function StreamTransformOffTest(): void {
         });
         transform.off('data');
         transform.resume();
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          transform.write('x', 'utf8');
-          transform.end('end', 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            transform.write('x', 'utf8');
+            transform.end('end', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(dataCalled).assertFalse();
+          expect(dataCalled).assertFalse();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 

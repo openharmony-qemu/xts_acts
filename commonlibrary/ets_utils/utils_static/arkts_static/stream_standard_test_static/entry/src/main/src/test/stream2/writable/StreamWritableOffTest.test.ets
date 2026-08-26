@@ -27,6 +27,7 @@ import {
   TestType
 } from '../../../../../hypium/index';
 import { stream, util } from '@kit.ArkTS';
+import Utils from '../../Util.test';
 
 class WritableTestBase extends stream.Writable {
   public dataChunk: string | Uint8Array = '';
@@ -759,22 +760,33 @@ export default function StreamWritableOffTest(): void {
       async (done: () => void): Promise<void> => {
         let ws = new WritableErrorDoWrite();
         let errorCount: number = 0;
+        let errorMessage: string = '';
         let fnError = (): void => {
           errorCount++;
         };
         let errorPromise = new Promise<void>((resolve: (value: void) => void): void => {
-          ws.on('error', (err: Object): void => {
+          ws.on('error', (err: Error): void => {
+            errorMessage = err.message;
             fnError();
             resolve(undefined as void);
           });
         });
-        ws.write("data");
-        await errorPromise;
-        expect(errorCount).assertEqual(1);
-        ws.off('error', fnError);
-        expect(errorCount).assertEqual(1);
+
+        try {
+          ws.write("data");
+          await errorPromise;
+          expect(errorCount).assertEqual(1);
+          expect(errorMessage).assertEqual("test error");
+          ws.off('error', fnError);
+          ws.write("data");
+          await Utils.msSleep(50);
+          expect(errorCount).assertEqual(1);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
-      });
+      }
+    );
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_WRITABLE_OFF_2600
@@ -1032,6 +1044,9 @@ export default function StreamWritableOffTest(): void {
       let ws = new WritableTestBase();
       let offFn: Function = ws.off;
       offFn('finish', (err?: Error): void => {
+        if (err !== undefined) {
+          return;
+        }
       });
       expect(ws.writable).assertTrue();
     });
@@ -1045,11 +1060,16 @@ export default function StreamWritableOffTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableOff036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WritableTestBase();
       let offFn: Function = ws.off;
       let other: Object = {};
       try {
         offFn.unsafeCall(other, 'finish', (err?: Error): void => {
+          if (err !== undefined) {
+            capturedCallbackError = err;
+            return;
+          }
         });
         expect().assertFail();
       } catch (e) {
@@ -1066,14 +1086,20 @@ export default function StreamWritableOffTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableOff037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WritableTestBase();
       try {
         ws.off.unsafeCall(null, 'finish', (err?: Error): void => {
+          if (err !== undefined) {
+            capturedCallbackError = err;
+            return;
+          }
         });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
+      expect(capturedCallbackError).assertUndefined();
     });
 
     /**

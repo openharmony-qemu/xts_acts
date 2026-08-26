@@ -616,14 +616,28 @@ export default function StreamDuplexEndTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamDuplexEnd024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d = new DuplexEndTestBase();
-      d.end("test", "utf8", (err?: Error): void => {
+    it('testStreamDuplexEnd024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let d = new DuplexEndTestBase();
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            d.end("test", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+            });
+            setTimeout((): void => resolve(undefined as void), 50);
+          });
+          expect(d.dataChunk).assertEqual("test");
+          expect(d.dataEncoding).assertEqual("utf8");
+          expect(d.writableEnded).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(d.dataChunk).assertEqual("test");
-      expect(d.dataEncoding).assertEqual("utf8");
-      expect(d.writableEnded).assertTrue();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_DUPLEX_END_2500
@@ -633,14 +647,28 @@ export default function StreamDuplexEndTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamDuplexEnd025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d = new DuplexEndTestBase();
-      d.end("test", "utf8", (err?: Error, b?: int, c?: int, d?: int, e?: int): void => {
+    it('testStreamDuplexEnd025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        try {
+          let d = new DuplexEndTestBase();
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            d.end("test", "utf8", (err?: Error, b?: int, c?: int, dd?: int, e?: int): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+            });
+            setTimeout((): void => resolve(undefined as void), 50);
+          });
+          expect(d.dataChunk).assertEqual("test");
+          expect(d.dataEncoding).assertEqual("utf8");
+          expect(d.writableEnded).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(d.dataChunk).assertEqual("test");
-      expect(d.dataEncoding).assertEqual("utf8");
-      expect(d.writableEnded).assertTrue();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_DUPLEX_END_2600
@@ -650,14 +678,28 @@ export default function StreamDuplexEndTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamDuplexEnd026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let d = new DuplexEndTestBase();
-      d.end("test", "utf8", async (err?: Error): Promise<void> => {
+    it('testStreamDuplexEnd026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let d = new DuplexEndTestBase();
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            d.end("test", "utf8", async (err?: Error): Promise<void> => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+            });
+            setTimeout((): void => resolve(undefined as void), 50);
+          });
+          expect(d.dataChunk).assertEqual("test");
+          expect(d.dataEncoding).assertEqual("utf8");
+          expect(d.writableEnded).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(d.dataChunk).assertEqual("test");
-      expect(d.dataEncoding).assertEqual("utf8");
-      expect(d.writableEnded).assertTrue();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_DUPLEX_END_2700

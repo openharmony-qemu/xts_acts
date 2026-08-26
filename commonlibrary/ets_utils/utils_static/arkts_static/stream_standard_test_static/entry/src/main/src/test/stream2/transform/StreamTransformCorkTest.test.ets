@@ -142,15 +142,29 @@ export default function StreamTransformCorkTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamTransformCork005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let transform = new CorkTestTransform();
-      let cbCalled: boolean = false;
-      transform.cork();
-      transform.write('x', 'utf8', (err?: Error): void => {
-        cbCalled = true;
+    it('testStreamTransformCork005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let transform = new CorkTestTransform();
+        let cbCalled: boolean = false;
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            transform.cork();
+            transform.write('x', 'utf8', (err?: Error): void => {
+              cbCalled = true;
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+            });
+            setTimeout((): void => resolve(undefined as void), 50);
+          });
+          expect(cbCalled).assertFalse();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(cbCalled).assertFalse();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_TRANSFORM_CORK_0600
@@ -228,34 +242,35 @@ export default function StreamTransformCorkTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamTransformCork010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let syncTransform = new CorkTestTransform();
-      syncTransform.cork();
-      syncTransform.cork();
-      syncTransform.write("data", "utf8");
-      syncTransform.end();
-      expect(syncTransform.writableCorked).assertEqual(0);
-      expect(syncTransform.doTransformCalled).assertEqual(1);
-      let transform = new CorkTestTransform();
-      let dataAtData: string = "";
-      let corkedAtData: int = 0;
-      let endedAtData: boolean = false;
-      await new Promise<void>((resolve: (value: void) => void): void => {
-        transform.on("data", (data: Object): void => {
-          dataAtData = data.toString();
-          corkedAtData = transform.writableCorked;
-          endedAtData = transform.writableEnded;
-          resolve(undefined as void);
+    it('testStreamTransformCork010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let syncTransform = new CorkTestTransform();
+        syncTransform.cork();
+        syncTransform.cork();
+        syncTransform.write("data", "utf8");
+        syncTransform.end();
+        expect(syncTransform.writableCorked).assertEqual(0);
+        expect(syncTransform.doTransformCalled).assertEqual(1);
+        let transform = new CorkTestTransform();
+        let dataAtData: string = "";
+        let corkedAtData: int = 0;
+        let endedAtData: boolean = false;
+        await new Promise<void>((resolve: (value: void) => void): void => {
+          transform.on("data", (data: Object): void => {
+            dataAtData = data.toString();
+            corkedAtData = transform.writableCorked;
+            endedAtData = transform.writableEnded;
+            resolve(undefined as void);
+          });
+          transform.resume();
+          transform.cork();
+          transform.end("final", "utf8");
         });
-        transform.resume();
-        transform.cork();
-        transform.end("final", "utf8");
+        expect(dataAtData).assertEqual("final");
+        expect(corkedAtData).assertEqual(0);
+        expect(endedAtData).assertTrue();
+        done();
       });
-      expect(dataAtData).assertEqual("final");
-      expect(corkedAtData).assertEqual(0);
-      expect(endedAtData).assertTrue();
-      done();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_TRANSFORM_CORK_1100
@@ -305,28 +320,29 @@ export default function StreamTransformCorkTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamTransformCork013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let transform = new CorkTestTransform();
-      transform.resume();
-      let dataAtData: string = '';
-      let doTransformAtData: int = 0;
-      let corkedAtData: int = 0;
-      await new Promise<void>((resolve: (value: void) => void): void => {
-        transform.on('data', (data: Object): void => {
-          dataAtData = data.toString();
-          doTransformAtData = transform.doTransformCalled;
-          corkedAtData = transform.writableCorked;
-          resolve(undefined as void);
+    it('testStreamTransformCork013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let transform = new CorkTestTransform();
+        transform.resume();
+        let dataAtData: string = '';
+        let doTransformAtData: int = 0;
+        let corkedAtData: int = 0;
+        await new Promise<void>((resolve: (value: void) => void): void => {
+          transform.on('data', (data: Object): void => {
+            dataAtData = data.toString();
+            doTransformAtData = transform.doTransformCalled;
+            corkedAtData = transform.writableCorked;
+            resolve(undefined as void);
+          });
+          transform.cork();
+          transform.write('callback', 'utf8');
+          transform.uncork();
         });
-        transform.cork();
-        transform.write('callback', 'utf8');
-        transform.uncork();
+        expect(dataAtData).assertEqual('callback');
+        expect(doTransformAtData).assertEqual(1);
+        expect(corkedAtData).assertEqual(0);
+        done();
       });
-      expect(dataAtData).assertEqual('callback');
-      expect(doTransformAtData).assertEqual(1);
-      expect(corkedAtData).assertEqual(0);
-      done();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_TRANSFORM_CORK_1400
@@ -388,29 +404,36 @@ export default function StreamTransformCorkTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamTransformCork017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let transform = new CorkTestTransform();
-      transform.pause();
-      transform.cork();
-      transform.write(new Uint8Array([65, 66]), 'utf8');
-      expect(transform.doTransformCalled).assertEqual(0);
-      transform.uncork();
-      expect(transform.writableCorked).assertEqual(0);
-      let doTransformAtEnd: int = 0;
-      let corkedAtEnd: int = 0;
-      await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-        transform.end('', 'utf8', (err?: Error): void => {
-          if (err !== undefined) { reject(err); return; }
-          doTransformAtEnd = transform.doTransformCalled;
-          corkedAtEnd = transform.writableCorked;
-          resolve(undefined as void);
-        });
+    it('testStreamTransformCork017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let transform = new CorkTestTransform();
+        transform.pause();
+        transform.cork();
+        transform.write(new Uint8Array([65, 66]), 'utf8');
+        expect(transform.doTransformCalled).assertEqual(0);
+        transform.uncork();
+        expect(transform.writableCorked).assertEqual(0);
+        let doTransformAtEnd: int = 0;
+        let corkedAtEnd: int = 0;
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            transform.end('', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              doTransformAtEnd = transform.doTransformCalled;
+              corkedAtEnd = transform.writableCorked;
+              resolve(undefined as void);
+            });
+          });
+          expect(doTransformAtEnd).assertEqual(1);
+          expect(corkedAtEnd).assertEqual(0);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(doTransformAtEnd).assertEqual(1);
-      expect(corkedAtEnd).assertEqual(0);
-
-      done();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_TRANSFORM_CORK_1800

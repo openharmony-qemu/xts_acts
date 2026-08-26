@@ -289,12 +289,17 @@ export default function StreamWritableEndTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableEnd009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WritableTestBase();
       let errorCaught: boolean = false;
       let callbackFired: boolean = false;
       try {
         ws.end(undefined as String, undefined as String, (err?: Error): void => {
           callbackFired = true;
+          if (err !== undefined) {
+            capturedCallbackError = err;
+            return;
+          }
         });
       } catch (e) {
         errorCaught = true;
@@ -302,6 +307,7 @@ export default function StreamWritableEndTest(): void {
       }
       expect(errorCaught).assertTrue();
       expect(callbackFired).assertFalse();
+      expect(capturedCallbackError).assertUndefined();
     });
 
     /**
@@ -740,18 +746,27 @@ export default function StreamWritableEndTest(): void {
         let ws = new WritableCallbackTwice();
         let errName: string = '';
         let errCode: int = 0;
-        let errorPromise = new Promise<void>((resolve: (value: void) => void): void => {
+        let errorPromise = new Promise<void>((resolve: (value: void) => void,
+          reject: (reason: Error) => void): void => {
           ws.on('error', (err: Error): void => {
             errName = err.name;
             errCode = (err as BusinessError).code;
             resolve(undefined as void);
           });
+          ws.end("data", "utf8", (err?: Error): void => {
+            if (err !== undefined) {
+              reject(err);
+              return;
+            }
+          });
         });
-        ws.end("data", "utf8", (err?: Error): void => {
-        });
-        await errorPromise;
-        expect(errName).assertEqual("BusinessError");
-        expect(errCode).assertEqual(10200037);
+        try {
+          await errorPromise;
+          expect(errName).assertEqual("BusinessError");
+          expect(errCode).assertEqual(10200037);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 

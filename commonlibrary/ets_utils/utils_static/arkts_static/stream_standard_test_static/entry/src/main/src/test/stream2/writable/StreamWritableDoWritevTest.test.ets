@@ -463,15 +463,21 @@ export default function StreamWritableDoWritevTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableDoWritev018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WritevTestBase();
       ws.cork();
       ws.write("a");
       let errCaught: boolean = false;
       ws.on('error', (err: Error): void => {
+        if (err !== undefined) {
+          capturedCallbackError = err;
+          return;
+        }
         errCaught = true;
       });
       expect(errCaught).assertFalse();
       expect(ws.writevCalled).assertFalse();
+      expect(capturedCallbackError).assertUndefined();
     });
 
     /**
@@ -582,14 +588,20 @@ export default function StreamWritableDoWritevTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableDoWritev024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WritevTestBase();
       try {
         (((ws as Record<string, Function>)["doWritev"]) as Function).unsafeCall("not_array", (err?: Error): void => {
+          if (err !== undefined) {
+            capturedCallbackError = err;
+            return;
+          }
         });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("ClassCastError");
       }
+      expect(capturedCallbackError).assertUndefined();
     });
 
     /**

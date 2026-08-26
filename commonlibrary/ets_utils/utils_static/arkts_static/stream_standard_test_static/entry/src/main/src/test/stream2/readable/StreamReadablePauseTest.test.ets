@@ -580,11 +580,14 @@ export default function StreamReadablePauseTest(): void {
     it('testStreamReadablePause023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r = new ErrorDoRead();
       let pausedInError: boolean = false;
-      r.on("error", (err: Object): void => {
+      let errorMessage: string = '';
+      r.on("error", (err: Error): void => {
+        errorMessage = err.message;
         r.pause();
         pausedInError = r.isPaused();
       });
       r.read();
+      expect(errorMessage).assertEqual("test error");
       expect(pausedInError).assertTrue();
     });
 

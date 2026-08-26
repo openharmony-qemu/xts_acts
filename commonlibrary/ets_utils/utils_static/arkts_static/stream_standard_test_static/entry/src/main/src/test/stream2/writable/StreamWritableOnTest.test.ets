@@ -1189,11 +1189,17 @@ export default function StreamWritableOnTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableOn044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WritableTestBase();
       let onFn: Function = ws.on;
       onFn('finish', (err?: Error): void => {
+        if (err !== undefined) {
+          capturedCallbackError = err;
+          return;
+        }
       });
       expect(ws.writable).assertTrue();
+      expect(capturedCallbackError).assertUndefined();
     });
 
     /**

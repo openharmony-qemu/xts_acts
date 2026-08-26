@@ -734,7 +734,9 @@ export default function StreamDuplexPropertiesTest(): void {
      */
     it('testStreamDuplexProperties035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d = new DuplexWriteError();
+      let errorMessage: string = '';
       d.on("error", (e: Error): void => {
+        errorMessage = e.message;
       });
       d.write("x");
       expect(d.writable).assertFalse();

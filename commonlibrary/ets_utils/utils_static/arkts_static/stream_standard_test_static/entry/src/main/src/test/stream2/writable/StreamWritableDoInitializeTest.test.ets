@@ -348,31 +348,35 @@ export default function StreamWritableDoInitializeTest(): void {
         let chunk1: string = '';
         let flag2: string = '';
         let chunk2: string = '';
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          ws1.write("test", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            flag1 = MultiFlagInit.flag;
-            ws1.dataChunk = 'a';
-            chunk1 = ws1.dataChunk as string;
-            ws2.write("test", "utf8", (err?: Error): void => {
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            ws1.write("test", "utf8", (err?: Error): void => {
               if (err !== undefined) {
                 reject(err);
                 return;
               }
-              flag2 = MultiFlagInit.flag;
-              ws2.dataChunk = 'b';
-              chunk2 = ws2.dataChunk as string;
-              resolve(undefined as void);
+              flag1 = MultiFlagInit.flag;
+              ws1.dataChunk = 'a';
+              chunk1 = ws1.dataChunk as string;
+              ws2.write("test", "utf8", (err?: Error): void => {
+                if (err !== undefined) {
+                  reject(err);
+                  return;
+                }
+                flag2 = MultiFlagInit.flag;
+                ws2.dataChunk = 'b';
+                chunk2 = ws2.dataChunk as string;
+                resolve(undefined as void);
+              });
             });
           });
-        });
-        expect(flag1).assertEqual('init');
-        expect(chunk1).assertEqual('a');
-        expect(flag2).assertEqual('init');
-        expect(chunk2).assertEqual('b');
+          expect(flag1).assertEqual('init');
+          expect(chunk1).assertEqual('a');
+          expect(flag2).assertEqual('init');
+          expect(chunk2).assertEqual('b');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -388,17 +392,21 @@ export default function StreamWritableDoInitializeTest(): void {
       async (done: () => void): Promise<void> => {
         let ws = new DelayedInit();
         let dataChunk: string = '';
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          ws.write("test", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            dataChunk = ws.dataChunk as string;
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            ws.write("test", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              dataChunk = ws.dataChunk as string;
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(dataChunk).assertEqual('test');
+          expect(dataChunk).assertEqual('test');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -449,19 +457,23 @@ export default function StreamWritableDoInitializeTest(): void {
         let ws = new InitTracker();
         let initCalled: boolean = false;
         let dataChunk: string = '';
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          ws.write("test", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            initCalled = InitTracker.initCalled;
-            dataChunk = ws.dataChunk as string;
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            ws.write("test", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              initCalled = InitTracker.initCalled;
+              dataChunk = ws.dataChunk as string;
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(initCalled).assertTrue();
-        expect(dataChunk).assertEqual('test');
+          expect(initCalled).assertTrue();
+          expect(dataChunk).assertEqual('test');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -479,19 +491,23 @@ export default function StreamWritableDoInitializeTest(): void {
         let ws = new HeavyInit();
         let heavyDone: boolean = false;
         let dataChunk: string = '';
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          ws.write("test", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            heavyDone = HeavyInit.heavyDone;
-            dataChunk = ws.dataChunk as string;
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            ws.write("test", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              heavyDone = HeavyInit.heavyDone;
+              dataChunk = ws.dataChunk as string;
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(heavyDone).assertTrue();
-        expect(dataChunk).assertEqual('test');
+          expect(heavyDone).assertTrue();
+          expect(dataChunk).assertEqual('test');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -633,20 +649,32 @@ export default function StreamWritableDoInitializeTest(): void {
         let writeFinished: boolean = false;
         let capturedFinished: boolean = false;
         let capturedWriteFinished: boolean = false;
-        let finishPromise = new Promise<void>((resolve: (value: void) => void): void => {
+        let writeReject: (reason: Error) => void = (reason: Error): void => {
+        };
+        let finishPromise = new Promise<void>((resolve: (value: void) => void,
+          reject: (reason: Error) => void): void => {
+          writeReject = reject;
           ws.on('finish', (): void => {
             capturedFinished = ws.writableFinished;
             capturedWriteFinished = writeFinished;
             resolve(undefined as void);
           });
-        });
-        ws.write('delayed', 'utf8', (err?: Error): void => {
-          writeFinished = true;
+          ws.write('delayed', 'utf8', (err?: Error): void => {
+            writeFinished = true;
+            if (err !== undefined) {
+              writeReject(err);
+              return;
+            }
+          });
         });
         ws.end();
-        await finishPromise;
-        expect(capturedFinished).assertTrue();
-        expect(capturedWriteFinished).assertTrue();
+        try {
+          await finishPromise;
+          expect(capturedFinished).assertTrue();
+          expect(capturedWriteFinished).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
   });

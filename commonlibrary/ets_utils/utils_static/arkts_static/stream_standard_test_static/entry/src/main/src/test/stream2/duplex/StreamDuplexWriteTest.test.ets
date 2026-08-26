@@ -171,16 +171,31 @@ export default function StreamDuplexWriteTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamDuplexWrite003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new DuplexTestBase();
-      let callbackCalled: boolean = false;
-      let result = ws.write("data", "utf8", (err?: Error): void => {
-        callbackCalled = true;
+    it('testStreamDuplexWrite003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new DuplexTestBase();
+        let callbackCalled: boolean = false;
+        let result: boolean = false;
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            result = ws.write("data", "utf8", (err?: Error): void => {
+              callbackCalled = true;
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
+          });
+          expect(result).assertTrue();
+          expect(callbackCalled).assertTrue();
+          expect(ws.dataChunk).assertEqual("data");
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(result).assertTrue();
-      expect(callbackCalled).assertTrue();
-      expect(ws.dataChunk).assertEqual("data");
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_DUPLEX_WRITE_0400
@@ -243,17 +258,29 @@ export default function StreamDuplexWriteTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamDuplexWrite007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new DuplexTestBase();
-      let errorFired: boolean = false;
-      ws.on("error", (err: Error): void => {
-        errorFired = true;
+    it('testStreamDuplexWrite007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new DuplexTestBase();
+        let errorFired: boolean = false;
+        let result: boolean = false;
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            ws.on("error", (err: Error): void => {
+              errorFired = true;
+              reject(err);
+            });
+            result = ws.write("valid");
+            setTimeout((): void => resolve(undefined as void), 50);
+          });
+          expect(result).assertTrue();
+          expect(ws.dataChunk).assertEqual("valid");
+          expect(errorFired).assertFalse();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      let result = ws.write("valid");
-      expect(result).assertTrue();
-      expect(ws.dataChunk).assertEqual("valid");
-      expect(errorFired).assertFalse();
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_DUPLEX_WRITE_0800
@@ -994,19 +1021,34 @@ export default function StreamDuplexWriteTest(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testStreamDuplexWrite047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ws = new DuplexTestBase();
-      let callbackCalled: boolean = false;
-      let result = ws.write(new Uint8Array([7, 8]), "utf8", (err?: Error): void => {
-        callbackCalled = true;
+    it('testStreamDuplexWrite047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let ws = new DuplexTestBase();
+        let callbackCalled: boolean = false;
+        let result: boolean = false;
+        try {
+          await new Promise<void>((resolve: (value: void) => void,
+            reject: (reason: Error) => void): void => {
+            result = ws.write(new Uint8Array([7, 8]), "utf8", (err?: Error): void => {
+              callbackCalled = true;
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
+          });
+          expect(result).assertTrue();
+          expect(callbackCalled).assertTrue();
+          let received = ws.dataChunk as Uint8Array;
+          expect(received.length).assertEqual(2);
+          expect(received[0]).assertEqual(7);
+          expect(received[1]).assertEqual(8);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
+        done();
       });
-      expect(result).assertTrue();
-      expect(callbackCalled).assertTrue();
-      let received = ws.dataChunk as Uint8Array;
-      expect(received.length).assertEqual(2);
-      expect(received[0]).assertEqual(7);
-      expect(received[1]).assertEqual(8);
-    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM_DUPLEX_WRITE_4800

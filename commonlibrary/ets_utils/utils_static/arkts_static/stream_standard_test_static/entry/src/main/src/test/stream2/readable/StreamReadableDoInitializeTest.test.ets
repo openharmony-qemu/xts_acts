@@ -652,21 +652,23 @@ export default function StreamReadableDoInitializeTest(): void {
      */
     it('testStreamReadableDoInitialize019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let errorReceived: boolean = false;
-        await new Promise<void>((resolve: (value: void) => void): void => {
-          let rs = new TestDI022();
-          rs.on("error", (e: Error): void => {
-            errorReceived = true;
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void): void => {
+            let rs = new TestDI022();
+            rs.on("error", (e: Error): void => {
+              reject(e);
+            });
+            rs.on("data", (): void => {
+            });
+            rs.on("end", (): void => {
+              resolve(undefined as void);
+            });
+            rs.push(null);
+            rs.read();
           });
-          rs.on("data", (): void => {
-          });
-          rs.on("end", (): void => {
-            resolve(undefined as void);
-          });
-          rs.push(null);
-          rs.read();
-        });
-        expect(errorReceived).assertFalse();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -829,13 +831,17 @@ export default function StreamReadableDoInitializeTest(): void {
     it('testStreamReadableDoInitialize027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let rs = new TestDI031();
       let errorReceived: boolean = false;
+      let errorText: string = '';
       rs.on("error", (e: Object): void => {
         errorReceived = true;
+        errorText = e.toString();
       });
       rs.on("data", (): void => {
       });
       rs.push("test");
       expect(errorReceived).assertFalse();
+      expect(errorText).assertEqual('');
+      expect(rs.readable).assertTrue();
     });
 
     /**

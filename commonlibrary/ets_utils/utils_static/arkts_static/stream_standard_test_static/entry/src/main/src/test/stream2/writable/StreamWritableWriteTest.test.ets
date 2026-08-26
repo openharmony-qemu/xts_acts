@@ -958,20 +958,24 @@ export default function StreamWritableWriteTest(): void {
         let ws = new WriteTestBase();
         let chunk = new Uint8Array([0, 255]);
         let result: boolean = false;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          result = ws.write(chunk, 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            result = ws.write(chunk, 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(result).assertTrue();
-        expect((ws.dataChunk as Uint8Array).length).assertEqual(2);
-        expect((ws.dataChunk as Uint8Array)[0]).assertEqual(0);
-        expect((ws.dataChunk as Uint8Array)[1]).assertEqual(255);
-        expect(ws.writable).assertTrue();
+          expect(result).assertTrue();
+          expect((ws.dataChunk as Uint8Array).length).assertEqual(2);
+          expect((ws.dataChunk as Uint8Array)[0]).assertEqual(0);
+          expect((ws.dataChunk as Uint8Array)[1]).assertEqual(255);
+          expect(ws.writable).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
   });

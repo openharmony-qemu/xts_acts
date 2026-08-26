@@ -453,10 +453,16 @@ export default function StreamWritableDoWriteTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamWritableDoWrite018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let ws = new WriteCountBase();
       ws.write("data", "utf8", (err?: Error): void => {
+        if (err !== undefined) {
+          capturedCallbackError = err;
+          return;
+        }
       });
       expect(ws.writeCount).assertEqual(1);
+      expect(capturedCallbackError).assertUndefined();
     });
 
     /**
@@ -471,17 +477,21 @@ export default function StreamWritableDoWriteTest(): void {
       async (done: () => void): Promise<void> => {
         let ws = new WriteCountBase();
         let writeCount: int = 0;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          ws.write("data", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            writeCount = ws.writeCount;
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            ws.write("data", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              writeCount = ws.writeCount;
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(writeCount).assertEqual(1);
+          expect(writeCount).assertEqual(1);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -607,8 +617,10 @@ export default function StreamWritableDoWriteTest(): void {
     it('testStreamWritableDoWrite025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ws = new WriteThrowBase();
       let errCaught: boolean = false;
+      let eventErrorName: string = '';
       ws.on('error', (err: Error): void => {
         errCaught = true;
+        eventErrorName = err.name;
       });
       try {
         ws.write("test");
@@ -616,6 +628,7 @@ export default function StreamWritableDoWriteTest(): void {
         errCaught = true;
         expect(e.name).assertEqual("Error");
       }
+      expect(eventErrorName).assertEqual('');
       expect(errCaught).assertTrue();
     });
 
@@ -748,22 +761,26 @@ export default function StreamWritableDoWriteTest(): void {
         let ws = new WritableTestBase();
         let dataChunk: Uint8Array = new Uint8Array(0);
         let dataEncoding: string = '';
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          let chunk = new Uint8Array([0, 1, 254, 255]);
-          ws.write(chunk, 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            dataChunk = ws.dataChunk as Uint8Array;
-            dataEncoding = ws.dataEncoding;
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            let chunk = new Uint8Array([0, 1, 254, 255]);
+            ws.write(chunk, 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              dataChunk = ws.dataChunk as Uint8Array;
+              dataEncoding = ws.dataEncoding;
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(dataChunk.length).assertEqual(4);
-        expect(dataChunk[0]).assertEqual(0);
-        expect(dataChunk[3]).assertEqual(255);
-        expect(dataEncoding).assertEqual('utf8');
+          expect(dataChunk.length).assertEqual(4);
+          expect(dataChunk[0]).assertEqual(0);
+          expect(dataChunk[3]).assertEqual(255);
+          expect(dataEncoding).assertEqual('utf8');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
   });

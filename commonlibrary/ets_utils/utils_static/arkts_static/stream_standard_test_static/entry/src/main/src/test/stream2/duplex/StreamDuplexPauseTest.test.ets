@@ -533,16 +533,19 @@ export default function StreamDuplexPauseTest(): void {
      */
     it('testStreamDuplexPause024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let errorCount: int = 0;
+      let errorMessage: string = '';
       await new Promise<void>((resolve: (value: void) => void): void => {
         let ds: DuplexThrowDoRead = new DuplexThrowDoRead();
         ds.on("error", (err: Object): void => {
           errorCount++;
+          errorMessage = (err as Error).message;
           resolve(undefined as void);
         });
         ds.pause();
         ds.resume();
       });
       expect(errorCount).assertEqual(1);
+      expect(errorMessage).assertEqual("test error");
       done();
     });
 

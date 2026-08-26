@@ -425,15 +425,15 @@ export default function StreamTransformDoTransformTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamTransformDoTransform008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedEventError: Object | undefined = undefined;
       let ws = new TransformTestBase();
-      let errorFired: boolean = false;
       ws.on("error", (err: Error): void => {
-        errorFired = true;
+        capturedEventError = err;
       });
       ws.write("valid");
       let data = ws.read();
       expect(data?.toString()).assertEqual("valid");
-      expect(errorFired).assertFalse();
+      expect(capturedEventError).assertUndefined();
     });
 
     /**

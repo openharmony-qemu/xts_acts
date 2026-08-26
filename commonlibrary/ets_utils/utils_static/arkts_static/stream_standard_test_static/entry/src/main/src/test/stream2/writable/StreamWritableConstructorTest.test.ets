@@ -159,19 +159,23 @@ export default function StreamWritableConstructorTest(): void {
         let ws = new WritableTestBase();
         let chunk = new Uint8Array([0, 255]);
         let result: boolean = false;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          result = ws.write(chunk, 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            result = ws.write(chunk, 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(result).assertTrue();
-        expect((ws.dataChunk as Uint8Array)[0]).assertEqual(0);
-        expect((ws.dataChunk as Uint8Array)[1]).assertEqual(255);
-        expect(ws.writable).assertTrue();
+          expect(result).assertTrue();
+          expect((ws.dataChunk as Uint8Array)[0]).assertEqual(0);
+          expect((ws.dataChunk as Uint8Array)[1]).assertEqual(255);
+          expect(ws.writable).assertTrue();
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -305,18 +309,22 @@ export default function StreamWritableConstructorTest(): void {
       async (done: () => void): Promise<void> => {
         let ws = new WritableTestBase();
         let result: boolean = false;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          result = ws.write('constructor-payload', 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            result = ws.write('constructor-payload', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(result).assertTrue();
-        expect(ws.dataChunk).assertEqual('constructor-payload');
-        expect(ws.dataEncoding).assertEqual('utf8');
+          expect(result).assertTrue();
+          expect(ws.dataChunk).assertEqual('constructor-payload');
+          expect(ws.dataEncoding).assertEqual('utf8');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -563,17 +571,21 @@ export default function StreamWritableConstructorTest(): void {
         expect(ws.writableLength).assertEqual(39);
         ws.uncork();
         expect(ws.writableLength).assertEqual(0);
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          ws.write('async-length-data', 'utf8', (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            ws.write('async-length-data', 'utf8', (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(ws.writableLength).assertEqual(0);
-        expect(ws.dataChunk).assertEqual('async-length-data');
+          expect(ws.writableLength).assertEqual(0);
+          expect(ws.dataChunk).assertEqual('async-length-data');
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 

@@ -612,9 +612,11 @@ export default function StreamDuplexResumeTest(): void {
     it('testStreamDuplexResume025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let ds: DuplexThrowDoRead = new DuplexThrowDoRead();
       let errorCount: int = 0;
+      let errorMessage: string = '';
       let errorPromise = new Promise<void>((resolve: (value: void) => void): void => {
         ds.on("error", (err: Object): void => {
           errorCount++;
+          errorMessage = (err as Error).message;
           resolve(undefined as void);
         });
       });
@@ -622,6 +624,7 @@ export default function StreamDuplexResumeTest(): void {
       ds.resume();
       await errorPromise;
       expect(errorCount).assertEqual(1);
+      expect(errorMessage).assertEqual("test error");
       done();
     });
 

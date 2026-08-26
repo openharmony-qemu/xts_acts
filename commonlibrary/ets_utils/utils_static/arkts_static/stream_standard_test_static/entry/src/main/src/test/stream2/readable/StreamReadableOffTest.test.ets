@@ -1117,7 +1117,7 @@ export default function StreamReadableOffTest(): void {
       async (done: () => void): Promise<void> => {
         let rs = new ReadableTestBase();
         let offFn: Function = rs.off;
-        offFn("data", (err?: Error): void => {
+        offFn("data", (): void => {
         });
         expect(rs.readable).assertTrue();
         done();
@@ -1136,7 +1136,7 @@ export default function StreamReadableOffTest(): void {
         let rs = new ReadableTestBase();
         try {
           let offFn: Function = rs.off;
-          offFn.unsafeCall({} as Object, "data", (err?: Error): void => {
+          offFn.unsafeCall({} as Object, "data", (): void => {
           });
           expect().assertFail();
         } catch (e) {
@@ -1158,7 +1158,7 @@ export default function StreamReadableOffTest(): void {
         let rs = new ReadableTestBase();
         try {
           let offFn: Function = rs.off;
-          offFn.unsafeCall(null, "data", (err?: Error): void => {
+          offFn.unsafeCall(null, "data", (): void => {
           });
           expect().assertFail();
         } catch (e) {

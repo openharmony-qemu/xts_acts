@@ -654,10 +654,16 @@ export default function StreamDuplexDoWriteTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamDuplexDoWrite025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let d = new DuplexWriteCountBase();
       d.write("data", "utf8", (err?: Error): void => {
+        if (err !== undefined) {
+          capturedCallbackError = err;
+          return;
+        }
       });
       expect(d.writeCount).assertEqual(1);
+      expect(capturedCallbackError).assertUndefined();
     });
 
     /**
@@ -671,16 +677,20 @@ export default function StreamDuplexDoWriteTest(): void {
     it('testStreamDuplexDoWrite026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let d = new DuplexWriteCountBase();
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          d.write("data", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            d.write("data", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+              resolve(undefined as void);
+            });
           });
-        });
-        expect(d.writeCount).assertEqual(1);
+          expect(d.writeCount).assertEqual(1);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -695,6 +705,9 @@ export default function StreamDuplexDoWriteTest(): void {
     it('testStreamDuplexDoWrite027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let d = new DuplexWriteCountBase();
       d.write("测试", "gbk", (err?: Error): void => {
+        if (err !== undefined) {
+          return;
+        }
         expect(d.writeCount).assertEqual(1);
       });
       expect(d.writeCount).assertEqual(1);
@@ -934,14 +947,20 @@ export default function StreamDuplexDoWriteTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamDuplexDoWrite039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let d = new DuplexWriteThrowBase();
       try {
         d.write("test", "utf8", (err?: Error): void => {
+          if (err !== undefined) {
+            capturedCallbackError = err;
+            return;
+          }
         });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual("Error");
       }
+      expect(capturedCallbackError).assertUndefined();
     });
 
     /**
@@ -1038,21 +1057,25 @@ export default function StreamDuplexDoWriteTest(): void {
         let d = new DuplexWriteDualCbBase();
         let errName: string = '';
         let errCode: int = 0;
-        await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
-          d.on('error', (err: BusinessError): void => {
-            errName = err.name;
-            errCode = err.code;
-            resolve(undefined as void);
+        try {
+          await new Promise<void>((resolve: (value: void) => void, reject: (err: Error) => void): void => {
+            d.on('error', (err: BusinessError): void => {
+              errName = err.name;
+              errCode = err.code;
+              resolve(undefined as void);
+            });
+            d.write("test", "utf8", (err?: Error): void => {
+              if (err !== undefined) {
+                reject(err);
+                return;
+              }
+            });
           });
-          d.write("test", "utf8", (err?: Error): void => {
-            if (err !== undefined) {
-              reject(err);
-              return;
-            }
-          });
-        });
-        expect(errName).assertEqual('BusinessError');
-        expect(errCode).assertEqual(10200037);
+          expect(errName).assertEqual('BusinessError');
+          expect(errCode).assertEqual(10200037);
+        } catch (e) {
+          expect(false).assertTrue();
+        }
         done();
       });
 
@@ -1461,6 +1484,9 @@ export default function StreamDuplexDoWriteTest(): void {
       let callbackCalled: boolean = false;
       d.cork();
       d.write("x", "utf8", (err?: Error): void => {
+        if (err !== undefined) {
+          return;
+        }
         callbackCalled = true;
       });
       d.uncork();
@@ -1662,9 +1688,14 @@ export default function StreamDuplexDoWriteTest(): void {
      * @tc.level LEVEL2
      */
     it('testStreamDuplexDoWrite076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let capturedCallbackError: Error | undefined = undefined;
       let d = new DuplexWritevThrowBase();
       let errCaught: boolean = false;
       d.on('error', (err: Error): void => {
+        if (err !== undefined) {
+          capturedCallbackError = err;
+          return;
+        }
         errCaught = true;
       });
       d.cork();
@@ -1677,6 +1708,7 @@ export default function StreamDuplexDoWriteTest(): void {
         expect(e.name).assertEqual("Error");
       }
       expect(errCaught).assertTrue();
+      expect(capturedCallbackError).assertUndefined();
     });
 
     /**
