@@ -1,4 +1,3 @@
-
 'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
@@ -14,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import Utils from '../../src/test/Utils.test';
 import webview from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
@@ -205,5 +205,3 @@ struct webOnVerifyPinCallback {
     }
   }
 }
-
-
