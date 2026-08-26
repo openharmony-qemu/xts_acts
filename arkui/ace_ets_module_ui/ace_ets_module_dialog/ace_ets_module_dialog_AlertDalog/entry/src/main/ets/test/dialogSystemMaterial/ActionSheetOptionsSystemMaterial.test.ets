@@ -234,11 +234,12 @@ export default function ActionSheetOptionsSystemMaterialTest() {
       try {
         let scrollBar2: Component = await driver.findComponent(ON.type('Scroll'))
         let btn2 = await scrollBar2.scrollSearch(ON.text('Confirm'));
+        let closeButton = await driver.findComponent(ON.text('Confirm'));
+        await closeButton.click();
       } catch (error) {
         console.info('====error======='+error)
       }
-      let closeButton = await driver.findComponent(ON.text('Confirm'));
-      await closeButton.click();
+      
       await CommonFunc.sleep(1000);
       console.info('ActionSheetOptionsSystemMaterial_0500 END');
       done();
