@@ -75,12 +75,12 @@ export default function EtherNetTest() {
       console.info(`${caseName} test end `)
     });
     /**
-     * @tc.number: SUB_Network_Ethernet_Httpproxy_0100
-     * @tc.name: testNetworkEthernetHttpproxy0100
-     * @tc.desc: Verify that ethernet.HttpProxy type is consistent with connection.HttpProxy structure
-     * @tc.type: Type
-     * @tc.size: MediumTest
-     * @tc.level: Level1
+     * @tc.name   testNetworkEthernetHttpproxy0100
+     * @tc.number SUB_NetworkMgr_Ethernet_Httpproxy_0100
+     * @tc.desc   Verify that ethernet.HttpProxy type is consistent with connection.HttpProxy structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkEthernetHttpproxy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName: string = 'testNetworkEthernetHttpproxy0100';
@@ -112,12 +112,12 @@ export default function EtherNetTest() {
     });
 
     /**
-     * @tc.number: SUB_Network_Ethernet_Httpproxy_0200
-     * @tc.name: testNetworkEthernetHttpproxy0200
-     * @tc.desc: Verify ethernet.HttpProxy is type-equivalent to connection.HttpProxy by cross-assignment
-     * @tc.type: Type
-     * @tc.size: MediumTest
-     * @tc.level: Level1
+     * @tc.name   testNetworkEthernetHttpproxy0200
+     * @tc.number SUB_NetworkMgr_Ethernet_Httpproxy_0200
+     * @tc.desc   Verify ethernet.HttpProxy is type-equivalent to connection.HttpProxy by cross-assignment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkEthernetHttpproxy0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName: string = 'testNetworkEthernetHttpproxy0200';
@@ -150,12 +150,12 @@ export default function EtherNetTest() {
     });
 
     /**
-     * @tc.number: SUB_Network_Ethernet_Httpproxy_0300
-     * @tc.name: testNetworkEthernetHttpproxy0300
-     * @tc.desc: Verify HttpProxy works with an empty exclusion list
-     * @tc.type: Type
-     * @tc.size: MediumTest
-     * @tc.level: Level2
+     * @tc.name   testNetworkEthernetHttpproxy0300
+     * @tc.number SUB_NetworkMgr_Ethernet_Httpproxy_0300
+     * @tc.desc   Verify HttpProxy works with an empty exclusion list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkEthernetHttpproxy0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const caseName: string = 'testNetworkEthernetHttpproxy0300';
