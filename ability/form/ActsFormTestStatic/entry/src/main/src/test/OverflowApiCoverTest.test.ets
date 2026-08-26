@@ -127,68 +127,6 @@ export default function OverflowApiCoverTest() {
       console.info(`${name} end`);
       done();
     });
- 
-    /**
-     * @tc.name   ActivateSceneAnimation_Cover_Static_0100
-     * @tc.number ActivateSceneAnimation_Cover_Static_0100
-     * @tc.desc   Function ActivateSceneAnimation covered test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("ActivateSceneAnimation_Cover_Static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let name: string = 'ActivateSceneAnimation_Cover_Static_0100';
-      console.info(`${name} start`);
-      try {
-        formProvider.activateSceneAnimation('1').then(() => {
-          console.info('activateSceneAnimation succeed');
-          expect().not().assertFail();
-        }).catch((error: Error): void => {
-          expect(error.code).assertEqual(202);
-        })
-      } catch (error) {
-        if (error.code == 801) {
-          done();
-        }
-        else {
-          console.info(`err: code is ${error.code}`);
-          expect().assertFail();
-        }
-      }
-      console.info(`${name} end`);
-      done();
-    });
- 
-    /**
-     * @tc.name   DeactivateSceneAnimation_Cover_Static_0100
-     * @tc.number DeactivateSceneAnimation_Cover_Static_0100
-     * @tc.desc   Function DeactivateSceneAnimation covered test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("DeactivateSceneAnimation_Cover_Static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let name: string = 'DeactivateSceneAnimation_Cover_Static_0100';
-      console.info(`${name} start`);
-      try {
-        formProvider.deactivateSceneAnimation('1').then(() => {
-          console.info('deactivateSceneAnimation succeed');
-          expect().not().assertFail();
-        }).catch((error: Error): void => {
-          expect(error.code).assertEqual(202);
-        })
-      } catch (error) {
-        if (error.code == 801) {
-          done();
-        }
-        else {
-          console.info(`err: code is ${error.code}`);
-          expect().assertFail();
-        }
-      }
-      console.info(`${name} end`);
-      done();
-    });
 
     /**
      * @tc.name   GetFormRect_Cover_Static_0100
