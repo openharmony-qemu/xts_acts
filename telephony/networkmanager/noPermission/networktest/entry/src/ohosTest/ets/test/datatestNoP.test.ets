@@ -44,9 +44,9 @@ export default function datatestNoPTest() {
       } catch (error) {
         console.info(`${caseName} fail`,JSON.stringify(error));
         if (maxSimCount > 0) {
-          ExpectTrue(error.code == 201);
+          ExpectTrue(error.code === 201);
         } else if (maxSimCount === 0) {
-          ExpectTrue(error.code == 401);
+          ExpectTrue(error.code === 401);
         } else {
           ExpectTrue(false);
         }
