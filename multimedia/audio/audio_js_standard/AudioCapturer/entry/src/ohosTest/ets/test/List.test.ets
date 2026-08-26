@@ -19,6 +19,7 @@ import AudioCapturerInterruptUnitTest from './AudioCapturerInterrupt.test'
 import AudioRenderCapturerInterruptUnitTest from './AudioRenderCapturerInterrupt.test'
 import AudioVoiceMessageCapturer from './AudioVoiceMessageCapturer.test'
 import audioGetCapturerInfoTest from './AudioGetCapturerInfoTest.test'
+import audioCapturerSpecErrorTest from './AudioCapturerSpecErrorTest.test'
 import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
@@ -59,6 +60,7 @@ async function permissionClick() {
    getPermission();
    permissionClick();
    audioInterrupterTest();
+   audioCapturerSpecErrorTest();
    audioCapturer();
    audioGetCapturerInfoTest();
    //注释具体焦点策略相关用例，上架焦点策略相关接口用例
