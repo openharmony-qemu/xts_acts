@@ -3022,6 +3022,7 @@ export default function UDPSocketTest() {
         done();
       }
     });
+
     /**
      * @tc.name   testConnectionUDPSocketType0100
      * @tc.number SUB_NetworkMgr_Connection_UDPSocket_Type_0100
@@ -3039,6 +3040,12 @@ export default function UDPSocketTest() {
         expectTrue(udpSocket !== undefined);
         expectTrue(udpSocket !== null);
         connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
+          if (error) {
+            console.info(`${caseName} getDefaultNet error: ${JSON.stringify(error)}`);
+            expectFail();
+            done();
+            return;
+          }
           if (data.netId == 0) {
             console.info(`${caseName} Please connect to the network`);
             expectTrue(false);
@@ -3067,5 +3074,6 @@ export default function UDPSocketTest() {
         done();
       }
     });
+
   });
 }
