@@ -3,9 +3,9 @@
     "pages/webviewNetworkProxy",
     "pages/webCookieManager",
     "pages/webViewController",
-	"pages/proxyConfigEnableReverseBypass",
-	"pages/proxyConfigInsertDirectRuleParam",
-	"pages/userAgentMetadataSetWow64"
-	"pages/webOnVerifyPinCallback"
+    "pages/proxyConfigEnableReverseBypass",
+    "pages/proxyConfigInsertDirectRuleParam",
+    "pages/userAgentMetadataSetWow64",
+    "pages/webOnVerifyPinCallback"
   ]
 }
