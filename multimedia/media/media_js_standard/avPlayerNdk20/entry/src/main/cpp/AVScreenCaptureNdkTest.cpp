@@ -1701,9 +1701,13 @@ static napi_value OH_AudioCaptureSourceTypeEnum(napi_env env, napi_callback_info
     napi_value result = nullptr;
     int32_t mic = 1;
     int32_t playback = 2;
+    int32_t invalid  = -1;
+    int32_t appPlayback  = 3;
     int32_t res = 1;
     if (OH_AudioCaptureSourceType::OH_MIC == mic &&
-        OH_AudioCaptureSourceType::OH_ALL_PLAYBACK == playback) {
+        OH_AudioCaptureSourceType::OH_ALL_PLAYBACK == playback &&
+        OH_AudioCaptureSourceType::OH_SOURCE_INVALID == invalid &&
+        OH_AudioCaptureSourceType::OH_APP_PLAYBACK == appPlayback) {
         res = 0;
     }
     napi_create_int32(env, res, &result);
