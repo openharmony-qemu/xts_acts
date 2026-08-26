@@ -892,12 +892,10 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-   it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000', Level.LEVEL0, async function () {
-    console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 START`)
-    expect(commonEventManager.Support.COMMON_EVENT_DATA_VOLUME_STATUS_REPORT)
-      .assertEqual('usual.event.DATA_VOLUME_STATUS_REPORT')
-    console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 END`)
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_DATA_VOLUME_STATUS_REPORT)
+        .assertEqual('usual.event.DATA_VOLUME_STATUS_REPORT')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 END`)
   })
-  
-  
 }
