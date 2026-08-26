@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
+import { describe, expect } from '../../../../hypium/index'
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { ClickEffectLevel } from '@ohos.arkui.component'
 /**
  * Test of common attribute: clickEffect
@@ -65,11 +63,6 @@ export default function clickEffectTest() {
    * Create test suite.
    */
   describe('clickEffectTest', () => {
-   beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
        console.info('[' + data.caseTag + ']' + 'clickEffect is:' + data.viewObj!.getElement('$attrs').getElement('clickEffect').getString('level'));
       console.info('[' + data.caseTag + ']' + 'clickEffect is:' + data.viewObj!.getElement('$attrs').getElement('clickEffect').getString('scale'));

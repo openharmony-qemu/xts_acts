@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect } from '../../../../hypium/index'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function BackdropBlurTest() {
   //A list of components that support the backdropBlur attribute, which is required.
@@ -47,11 +46,6 @@ export default function BackdropBlurTest() {
    * Create test suite.
    */
   describe('backdropBlurTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("backdropBlurTest beforeAll start");
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
 
