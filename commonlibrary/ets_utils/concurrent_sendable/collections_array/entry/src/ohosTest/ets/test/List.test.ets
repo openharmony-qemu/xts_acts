@@ -19,6 +19,8 @@ import CollectionsArrayCombinationThirdTest from './CollectionsArrayCombinationT
 import CollectionsArrayCombinationFourthTest from './CollectionsArrayCombinationFourthTest.test';
 import CollectionsArraySupplementTest from './CollectionsArraySupplementTest.test';
 import CollectionsArrayApisTest from './CollectionsArrayApisTest.test';
+import CollectionsArrayExpand1024Test from './CollectionsArrayExpand1024Test.test';
+import TypedArrayExpand1024Test from './TypedArrayExpand1024Test.test';
 
 import arrayConstructorSuite from './CollectionsArrayBaseTest/ArrayConstructor.test';
 import arrayTraversalSuite from './CollectionsArrayBaseTest/ArrayTraversal.test';
@@ -55,6 +57,8 @@ export default function testsuite() {
   CollectionsArrayCombinationFourthTest();
   CollectionsArraySupplementTest();
   CollectionsArrayApisTest();
+  CollectionsArrayExpand1024Test();
+  TypedArrayExpand1024Test();
   
   arrayConstructorSuite();
   arrayTraversalSuite();

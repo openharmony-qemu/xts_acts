@@ -30,6 +30,7 @@ import collectionsMapNonOrthogonalTest from './CollectionsMapNonOrthogonal.test'
 import collectionsMapForEachEntriesTest from './CollectionsMapForEachEntries.test';
 import collectionsMapSetGet from './CollectionsMapSetGet.test';
 import collectionsMapConcurrentTest from './CollectionsMapConcurrent.test';
+import CollectionsMapExpand1024Test from './CollectionsMapExpand1024Test.test';
 
 
 export default function testsuite() {
@@ -50,4 +51,5 @@ export default function testsuite() {
   collectionsMapNonOrthogonalTest();
   collectionsMapSetGet();
   collectionsMapConcurrentTest();
+  CollectionsMapExpand1024Test();
 };

@@ -21,4 +21,15 @@ export default class Utils{
       }, count)
     })
   }
+  
+  static fillNumberMap(map: collections.Map<number, number>, start: number, end: number): boolean {
+    try {
+      for (let index = start; index < end; index++) {
+        map.set(index, index * 2);
+      }
+      return true;
+    } catch (_error) {
+      return false;
+    }
+  }
 }

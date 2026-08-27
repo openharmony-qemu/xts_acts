@@ -46,6 +46,9 @@ import sendableLruCacheBatch2Test from './SendableLruCacheBase/SendableLruCacheS
 import sendableLruCacheBatch3Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch3.test';
 import sendableLruCacheBatch4Test from './SendableLruCacheBase/SendableLruCacheSendableSpecial/Batch4.test';
 import sendableLruCacheConcurrentTest from './SendableLruCacheConcurrent/SendableLruCacheConcurrent.test';
+import CollectionsConcatArrayExpand1024Test from './concatArray/CollectionsConcatArrayExpand1024Test.test';
+import SendableLruCacheExpand1024Test from './SendableLruCacheConcurrent/SendableLruCacheExpand1024Test.test';
+import SendableExpand1024Test from './SendableLruCacheConcurrent/SendableExpand1024Test.test';
 export default function testsuite(): void {
   StressStabilityComboTest()
   BitVectorTest()
@@ -81,4 +84,8 @@ export default function testsuite(): void {
   sendableLruCacheBatch4Test();
   sendableLruCacheConcurrentTest();
   collectionsConcatArrayTest();
+  
+  CollectionsConcatArrayExpand1024Test();
+  SendableLruCacheExpand1024Test();
+  SendableExpand1024Test();
 }
