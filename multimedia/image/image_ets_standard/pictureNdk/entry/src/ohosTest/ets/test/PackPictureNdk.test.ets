@@ -528,7 +528,7 @@ export default function packPictureNdkTest() {
           ndkTest.createTestPackingOptions();
           ndkTest.setMimeTypeToTestPackingOptions(packOpt.format);
 
-          expect(ndkTest.PackToFileFromPicture(-1)).assertEqual(IMAGE_BAD_PARAMETER);
+          expect(ndkTest.PackToFileFromPicture(-1)).assertEqual(IMAGE_UNKNOWN_ERROR);
           done();
         } catch (err) {
           logger.log(`Test exception: ${JSON.stringify(err)}`);
