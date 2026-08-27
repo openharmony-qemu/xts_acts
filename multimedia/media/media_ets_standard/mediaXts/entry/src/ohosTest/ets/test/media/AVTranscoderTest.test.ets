@@ -1207,6 +1207,7 @@ export default function AVTranscoderTest() {
             firstCallbackCount++;
           });
           mTranscoder.on('error', async (error: BusinessError) => {
+            console.error(TAG, testName + ' second error listen: err: ' + error.code + ', msg: ' + error.message);
             secondCallbackCount++;
           });
           mTranscoder.fdSrc = await globalThis.abilityContext.resourceManager.getRawFd('watermark.png');
