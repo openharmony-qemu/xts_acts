@@ -36,8 +36,8 @@ struct IOTSendCmd {
   private tipsBLE: string = '操作步骤：\n1、请打开设备的蓝牙';
   private tipsText: string = '\n2、点击<重新扫描设备>按钮开始扫描' +
     '\n3、可用设备列表显示设备信息后，点击设备项开始连接' +
-    '\n4、设备连接成功后，点击<发送指令>按钮，接收到设备上报数据并打印则判定用例成功，点击Pass按钮' +
-    '\n5、设备连接失败或未接收到设备上报数据则判定用例失败，点击Fail按钮';
+    '\n4、设备连接成功后，点击<发送指令>按钮，弹出"发送成功"且接收到设备上报数据并打印则判定用例成功，点击Pass按钮' +
+    '\n5、弹出"发送失败"且未接收到设备上报数据则判定用例失败，点击Fail按钮';
   @State name: string = '';
   @State stepTips: string = '';
   @State isVue: boolean = false;
@@ -132,7 +132,15 @@ struct IOTSendCmd {
       this.executeScan();
     }, 500);
     IotHelper.getInstance().registerMessageReceivers('IOTSendCmd', (list: InfDeviceState[]) => {
-      this.commandResult = JSON.stringify(list);
+      if (list && list.length > 0 && !this.isVue) {
+        this.isVue = true;
+        AlertDialog.show({
+          title: '发送成功',
+          message: '指令发送成功，已收到设备上报数据',
+          confirm: { value: '确定', action: () => {} }
+        });
+        this.commandResult = JSON.stringify(list);
+      }
     });
   }
 
@@ -143,18 +151,14 @@ struct IOTSendCmd {
 
   private async sendCommand(sid: string, data: string) {
     this.isSending = true;
+    this.isVue = false;
+    this.commandResult = '';
     try {
       let result = await IotHelper.getInstance().sendDeviceCommand(sid, data);
-      this.isVue = true;
-      AlertDialog.show({
-        title: '指令发送成功',
-        message: '指令发送成功，已收到设备上报数据',
-        confirm: { value: '确定', action: () => {} }
-      });
     } catch (error) {
       Logger.info(TAG, `sendCommand error ${JSON.stringify(error)}`);
       AlertDialog.show({
-        title: '指令发送失败',
+        title: '发送失败',
         message: '指令发送失败或设备未响应',
         confirm: { value: '确定', action: () => {} }
       });
@@ -279,6 +283,8 @@ struct IOTSendCmd {
                 if (connectDevice != undefined) {
                   this.deviceDataResource.pushData(connectDevice);
                 }
+                this.isVue = false;
+                this.commandResult = '';
               });
 
             Button('发送指令')

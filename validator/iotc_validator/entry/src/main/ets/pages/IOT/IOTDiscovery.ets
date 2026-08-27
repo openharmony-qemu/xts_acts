@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,8 +33,8 @@ struct IOTDiscovery {
   private tipsWIFI: string = '操作步骤：\n1、请打开设备的wifi'
   private tipsBLE: string = '操作步骤：\n1、请打开设备的蓝牙'
   private tipsText: string = '\n2、点击<重新扫描设备>按钮开始扫描' +
-    '\n3、发现设备后，可用设备列表会显示设备信息，判定通过并点击Pass按钮'+
-    '\n4、若未发现设备，请点击<重新扫描设备>按钮重试，可用设备列表无显示判定失败并点击Fail按钮'
+    '\n3、发现符合过滤条件的设备后，可用设备列表会显示设备信息，此时判定用例通过，点击Pass按钮'+
+    '\n4、若未发现设备，请点击<重新扫描设备>按钮重试，可用设备列表无显示则判定用例失败，点击Fail按钮'
   ;
   @State name: string = '';
   @State stepTips: string = '';
