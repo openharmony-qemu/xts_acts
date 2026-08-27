@@ -44,6 +44,7 @@ static constexpr uint32_t VALID_STATISTICS_INTERVAL_ZERO = 0;
 static constexpr uint32_t VALID_STACK_DEPTH_ZERO = 0;
 static constexpr uint32_t BELOW_MIN_DURATION_SEC = 0;
 static constexpr uint32_t VALID_ASYNC_TASK_STACK_DEPTH = 16;
+static constexpr uint32_t NUMBER = 2;
 
 std::vector<uint32_t> tids;
 
@@ -270,7 +271,7 @@ static napi_value TestStartProfilerWithOptions(napi_env env, napi_callback_info 
     size_t argc = 2;
     napi_value args[2] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (argc < 2) {
+    if (argc < NUMBER) {
         napi_throw_error(env, nullptr, "need 2 params");
         return nullptr;
     }
@@ -302,7 +303,7 @@ static napi_value TestStartProfilerWithOptionsNullOpts(napi_env env, napi_callba
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (argc < 1) {
+    if (argc < MIN_DURATION_SEC) {
         napi_throw_error(env, nullptr, "need 1 param");
         return nullptr;
     }
@@ -393,7 +394,7 @@ static napi_value TestStartProfilerWithOptionsNullCallback(napi_env env, napi_ca
     size_t argc = 2;
     napi_value args[2] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    if (argc < 2) {
+    if (argc < NUMBER) {
         napi_throw_error(env, nullptr, "need 2 params");
         return nullptr;
     }
