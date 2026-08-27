@@ -3777,7 +3777,7 @@ export default function ActsUIExtensionContextMethodTest() {
             console.error(tag + `startAbilityForResult failed: ${JSON.stringify(err)}`);
           }
           console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] ' +
-startAbility result ' +
+            'startAbility result ' +
           JSON.stringify(data));
         })
         });
@@ -3848,7 +3848,7 @@ startAbility result ' +
             console.error(tag + `startAbilityForResult failed: ${JSON.stringify(err)}`);
           }
           console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] ' +
-startAbility result ' +
+            'startAbility result ' +
           JSON.stringify(data));
         })
         });
