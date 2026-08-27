@@ -40,12 +40,14 @@ static bool g_surfaceReady = false;
 static napi_threadsafe_function g_tsfn2 = nullptr;
 static std::mutex g_surfaceMutex2;
 static std::condition_variable g_surfaceCV2;
-static bool g_surfaceReady2 =false;
+static bool g_surfaceReady2 = false;
 
 static int g_xcomponentCounter = 0;
 static std::string g_currentXComponentName = "AutoEffectTest001";
 static std::string g_currentXComponentName2 = "AutoEffectTest002";
 static std::mutex g_nameMutex;
+const int32_t FIVE_THOUSAND = 5000;
+const int32_t ONE_HUNDRED = 100;
 
 static void CallJsCallback(napi_env env, napi_value jsCb, void* context, void* data)
 {
@@ -163,7 +165,7 @@ napi_value SetXComponentReadyCallback(napi_env env, napi_callback_info info)
     napi_value name;
     napi_create_string_utf8(env, "XComponentReadyCallback", NAPI_AUTO_LENGTH, &name);
     napi_create_threadsafe_function(env, arg, nullptr, name, 1, 1, nullptr,
-                                     nullptr, nullptr, CallJsCallback, &g_tsfn);
+        nullptr, nullptr, CallJsCallback, &g_tsfn);
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
                         "SetXComponentReadyCallback tsfn created=%{public}d", g_tsfn != nullptr));
     napi_value result;
@@ -192,7 +194,7 @@ void WaitForSurfaceReady(uint32_t timeoutMs)
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
                         "WaitForSurfaceReady waiting timeout=%{public}u ms", timeoutMs));
     bool ready = g_surfaceCV.wait_for(lock, std::chrono::milliseconds(timeoutMs),
-                                        [] { return g_surfaceReady; });
+        [] { return g_surfaceReady; });
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
                         "WaitForSurfaceReady done ready=%{public}d", ready));
 }
@@ -234,7 +236,7 @@ napi_value SetXComponentReadyCallback2(napi_env env, napi_callback_info info)
     napi_value name;
     napi_create_string_utf8(env, "XComponentReadyCallback2", NAPI_AUTO_LENGTH, &name);
     napi_create_threadsafe_function(env, arg, nullptr, name, 1, 1, nullptr,
-                                     nullptr, nullptr, CallJsCallback, &g_tsfn2);
+        nullptr, nullptr, CallJsCallback, &g_tsfn2);
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
                         "SetXComponentReadyCallback2 tsfn created=%{public}d", g_tsfn2 != nullptr));
     napi_value result;
@@ -263,7 +265,7 @@ void WaitForSurfaceReady2(uint32_t timeoutMs)
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
                         "WaitForSurfaceReady2 waiting timeout=%{public}u ms", timeoutMs));
     bool ready = g_surfaceCV2.wait_for(lock, std::chrono::milliseconds(timeoutMs),
-                                        [] { return g_surfaceReady2; });
+        [] { return g_surfaceReady2; });
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
                         "WaitForSurfaceReady2 done ready=%{public}d", ready));
 }
@@ -342,9 +344,9 @@ void PrepareXComponent()
         g_surfaceReady = false;
     }
     NotifyXComponentReady(false);
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(ONE_HUNDRED));
     NotifyXComponentReady(true);
-    WaitForSurfaceReady(5000);
+    WaitForSurfaceReady(FIVE_THOUSAND);
 }
 
 void PrepareXComponent2()
@@ -356,9 +358,9 @@ void PrepareXComponent2()
         g_surfaceReady2 = false;
     }
     NotifyXComponentReady2(false);
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(ONE_HUNDRED));
     NotifyXComponentReady2(true);
-    WaitForSurfaceReady2(5000);
+    WaitForSurfaceReady2(FIVE_THOUSAND);
 }
 
 static void InitPush1(std::vector<napi_property_descriptor> &desc)
