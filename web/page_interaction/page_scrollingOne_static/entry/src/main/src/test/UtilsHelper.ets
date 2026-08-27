@@ -196,9 +196,26 @@ export default class UtilsHelpers {
     return rectInfo;
   }
 
+
   static getComponentRect(rawJson: string): RectInfo {
-    let strJson: string = inspector.getInspectorByKey(rawJson);
-    console.info('getInspectorByKey(key) = ' + strJson);
-    return UtilsHelpers.jsonToRectInfo(strJson);
+    let strJson: string | null = null;
+    try {
+      strJson = inspector.getInspectorByKey(rawJson);
+    } catch (e) {
+      console.error('Exception in getInspectorByKey: ' + e);
+      // 注意：根据之前的报错，RectInfo 可能是无参构造函数
+      return new RectInfo();
+    }
+
+    if (strJson === null || strJson === undefined) {
+      console.error('getInspectorByKey returned null for key: ' + rawJson);
+      return new RectInfo();
+    }
+
+    // 关键修改：使用非空断言 ! 来告诉编译器此时 strJson 一定是 string 类型
+    // 这样 jsonToRectInfo 就能接受它了
+    console.info('getInspectorByKey(key) = ' + strJson!);
+
+    return UtilsHelpers.jsonToRectInfo(strJson!);
   }
 }
