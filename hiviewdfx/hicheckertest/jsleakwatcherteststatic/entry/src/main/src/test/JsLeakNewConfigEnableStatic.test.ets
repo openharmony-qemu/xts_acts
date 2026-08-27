@@ -80,7 +80,7 @@ export default function JsLeakNewConfigEnableStatic():void {
         if (leakFilePath.length > 0) {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_0700 leakListFileName: ' + leakFilePath[0]);
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_0700 heapDumpFileName: ' + leakFilePath[1]);
-          expect(true).assertTrue();
+          expect(leakFilePath.length > 0).assertTrue();
         } else {
           console.log('SUB_DFX_DFR_jsLeakWatcherNew_Interface_0700 leakFilePath is empty, check result: ' + checkstr);
           expect(checkstr.length > 0).assertTrue();
