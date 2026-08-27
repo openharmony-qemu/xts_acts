@@ -647,5 +647,65 @@ export default function bluetoothAccessTest() {
             }
             done();
         })
+        /**
+         * @tc.number  testconvertUuid_001
+         * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
+         * @tc.desc    Test deletePersistentDeviceId API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testconvertUuid_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let uuid = '1801';
+                let converuuid = access.convertUuid(uuid);
+                hilog.info(domain, tag, "convertUuid success" + converuuid);
+                expect(converuuid).assertEqual('00001801-0000-1000-8000-00805f9b34fb');
+            } catch (err) {
+                hilog.info(domain, tag, "convertUuid get errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        });
+        /**
+         * @tc.number  testconvertUuid_002
+         * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200
+         * @tc.desc    Test deletePersistentDeviceId API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testconvertUuid_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let uuid = '12341801';
+                let converuuid = access.convertUuid(uuid);
+                hilog.info(domain, tag, "convertUuid success" + converuuid);
+                expect(converuuid).assertEqual('12341801-0000-1000-8000-00805f9b34fb');
+            } catch (err) {
+                hilog.info(domain, tag, "convertUuid get errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        });
+        /**
+         * @tc.number  testconvertUuid_003
+         * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300
+         * @tc.desc    Test deletePersistentDeviceId API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("testconvertUuid_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let uuid = '11112222-3333-4444-5555-666677778888';
+                let converuuid = access.convertUuid(uuid);
+                hilog.info(domain, tag, "convertUuid success" + converuuid);
+                expect(converuuid).assertEqual('11112222-3333-4444-5555-666677778888');
+            } catch (err) {
+                hilog.info(domain, tag, "convertUuid get errCode:" + err.code + ",errMessage:" + err.message);
+                expect().assertFail();
+            }
+            done();
+        });
     })
 }
