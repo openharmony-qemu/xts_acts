@@ -112,22 +112,154 @@ export default function AVRecorderNdkTest() {
       })
 
     /**
-     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100
-     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0100
      * @tc.desc   test OH_AVRecorder
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          console.info("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100 start====");
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0100 start====");
           let result: number = avrecorder.OH_AVRecorder_UpdateRotation0100();
           expect(0).assertEqual(result);
           done()
         } catch (err) {
-          console.error("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation0100 catch err: " + err);
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0100 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+    
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0200
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0200
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0200 start====");
+          let result: number = avrecorder.OH_AVRecorder_UpdateRotation0200();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0200 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0300
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0300
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0300 start====");
+          let result: number = avrecorder.OH_AVRecorder_UpdateRotation0200();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0300 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0400
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0400
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0400 start====");
+          let result: number = avrecorder.OH_AVRecorder_UpdateRotation0400();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0400 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0500
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0500
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0500 start====");
+          let result: number = avrecorder.OH_AVRecorder_UpdateRotation0500();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0500 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0600
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0600
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0600 start====");
+          let result: number = avrecorder.OH_AVRecorder_UpdateRotation0600();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0600 catch err: " + err);
+          expect(false).assertEqual(true);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0700
+     * @tc.number SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0700
+     * @tc.desc   test OH_AVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0700 start====");
+          let result: number = avrecorder.OH_AVRecorder_UpdateRotation0700();
+          expect(0).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>SUB_MULTIMEIDA_OH_AVRecorder_UpdateRotation_0700 catch err: " + err);
           expect(false).assertEqual(true);
           done()
         }
