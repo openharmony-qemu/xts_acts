@@ -507,7 +507,7 @@ export default function cameraPreconfigTest() {
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0500 ERRORCODE: " + err.code);
-        expect(err.code).assertEqual('7400101');
+        expect(err.code === '7400101').assertTrue();
         done();
       }
       done();
@@ -531,7 +531,7 @@ export default function cameraPreconfigTest() {
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0300 ERRORCODE: " + err.code);
-        expect(err.code).assertEqual('7400101');
+        expect(err.code === '7400101').assertTrue();
         done();
       }
       done();
@@ -555,7 +555,7 @@ export default function cameraPreconfigTest() {
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0400 ERRORCODE: " + err.code);
-        expect(err.code).assertEqual('7400101');
+        expect(err.code === '7400101').assertTrue();
         done();
       }
       done();
@@ -578,7 +578,7 @@ export default function cameraPreconfigTest() {
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0500 ERRORCODE: " + err.code);
-        expect(err.code).assertEqual('7400101');
+        expect(err.code === '7400101').assertTrue();
       } finally {
         if (mVideoSession) {
           await mVideoSession.release();
@@ -605,7 +605,7 @@ export default function cameraPreconfigTest() {
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0200 ERRORCODE: " + err.code);
-        expect(err.code).assertEqual('7400101');
+        expect(err.code === '7400101').assertTrue();
       } finally {
         if (mVideoSession) {
           await mVideoSession.release();
@@ -632,7 +632,7 @@ export default function cameraPreconfigTest() {
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0300 ERRORCODE: " + err.code);
-        expect(err.code).assertEqual('7400101');
+        expect(err.code === '7400101').assertTrue();
       } finally {
         if (mVideoSession) {
           await mVideoSession.release();
@@ -659,7 +659,7 @@ export default function cameraPreconfigTest() {
       } catch (error) {
         let err = error as BusinessError;
         console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0400 ERRORCODE: " + err.code);
-        expect(err.code).assertEqual('7400101');
+        expect(err.code === '7400101').assertTrue();
       } finally {
         if (mVideoSession) {
           await mVideoSession.release();

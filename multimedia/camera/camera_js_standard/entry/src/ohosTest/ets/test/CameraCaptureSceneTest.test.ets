@@ -555,7 +555,7 @@ export default function cameraCaptureSceneTest() {
           expect().assertFail()
         } catch (err) {
           console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
-          expect(err.code).assertEqual("7400101")
+          expect(err.code === "7400101").assertTrue()
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -605,7 +605,7 @@ export default function cameraCaptureSceneTest() {
           expect().assertFail()
         } catch (err) {
           console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
-          expect(err.code).assertEqual("7400101")
+          expect(err.code === "7400101").assertTrue()
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -661,7 +661,7 @@ export default function cameraCaptureSceneTest() {
           expect().assertFail()
         } catch (err) {
           console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
-          expect(err.code).assertEqual("7400101")
+          expect(err.code === "7400101").assertTrue()
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -717,7 +717,7 @@ export default function cameraCaptureSceneTest() {
           expect().assertFail()
         } catch (err) {
           console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
-          expect(err.code).assertEqual("7400101")
+          expect(err.code === "7400101").assertTrue()
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
