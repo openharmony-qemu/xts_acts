@@ -22,6 +22,14 @@ import inspector from '@ohos.arkui.inspector';
 export default function EmbeddedComponentOptionTest(){
 
   describe('EmbeddedComponentOptionTest', () => {
+
+
+    /**
+     * @tc.number   testEmbeddedComponentOption001
+     * @tc.name     testEmbeddedComponentOption001
+     * @tc.desc     testEmbeddedComponentOption001
+     * @tc.level    Level.LEVEL1
+     */
     it('testEmbeddedComponentOption001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let PAGE_TAG = 'TestEmbeddedComponentOption';

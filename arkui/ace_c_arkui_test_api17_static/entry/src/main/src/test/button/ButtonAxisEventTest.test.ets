@@ -32,6 +32,14 @@ async function mouseScrollCommonEvent(id: string) {
 export default function buttonAxisEventTest() {
 
   describe('ButtonAxisEventTest', () => {
+
+
+    /**
+     * @tc.number   testButtonAxis001
+     * @tc.name     testButtonAxis001
+     * @tc.desc     testButtonAxis001
+     * @tc.level    Level.LEVEL1
+     */
     it('testButtonAxis001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await mouseScrollCommonEvent('OnAxisTestButton')

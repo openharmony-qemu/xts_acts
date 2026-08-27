@@ -24,6 +24,14 @@ export default function uiStatesTest() {
   describe('UiStatesTest', (): void => {
 
     let PAGE_TAG = 'UiStatesTest';
+
+
+    /**
+     * @tc.number   uiStatesTest_001
+     * @tc.name     uiStatesTest_001
+     * @tc.desc     uiStatesTest_001
+     * @tc.level    Level.LEVEL1
+     */
     it('uiStatesTest_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
@@ -43,6 +51,13 @@ export default function uiStatesTest() {
       }
     })
 
+
+    /**
+     * @tc.number   uiStatesTest_002
+     * @tc.name     uiStatesTest_002
+     * @tc.desc     uiStatesTest_002
+     * @tc.level    Level.LEVEL1
+     */
     it('uiStatesTest_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();

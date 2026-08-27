@@ -24,6 +24,13 @@ export default function customComponentOnDrawFrontTest() {
 
     let PAGE_TAG = 'CustomComponentOnDrawFrontTest';
 
+
+    /**
+     * @tc.number   testCustomComponentOnDrawFrontStatic001
+     * @tc.name     testCustomComponentOnDrawFrontStatic001
+     * @tc.desc     testCustomComponentOnDrawFrontStatic001
+     * @tc.level    Level.LEVEL0
+     */
     it('testCustomComponentOnDrawFrontStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info("[ui] pushPage start");

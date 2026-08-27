@@ -39,6 +39,14 @@ async function penClickEvent(id: string) {
 export default function buttonRollAngleTest() {
 
   describe('ButtonRollAngleTest', () => {
+
+
+    /**
+     * @tc.number   buttonRollAngleTest001
+     * @tc.name     buttonRollAngleTest001
+     * @tc.desc     buttonRollAngleTest001
+     * @tc.level    Level.LEVEL1
+     */
     it('buttonRollAngleTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         console.log('[ui]RollAngleTestButton start');

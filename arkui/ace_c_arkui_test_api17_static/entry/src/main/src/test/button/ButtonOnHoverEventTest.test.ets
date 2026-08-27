@@ -32,6 +32,14 @@ async function mouseMoveToCommonEvent(id: string) {
 export default function buttonOnClickEventTest() {
 
   describe('ButtonOnHoverTest', () => {
+
+
+    /**
+     * @tc.number   testButtonOnHover001
+     * @tc.name     testButtonOnHover001
+     * @tc.desc     testButtonOnHover001
+     * @tc.level    Level.LEVEL1
+     */
     it('testButtonOnHover001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         await mouseMoveToCommonEvent('OnHoverTestButton')

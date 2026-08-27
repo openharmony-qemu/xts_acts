@@ -22,6 +22,14 @@ import inspector from '@ohos.arkui.inspector';
 export default function PostOnIdleTest(){
 
   describe('PostOnIdleTest', (): void  => {
+
+
+    /**
+     * @tc.number   testPostOnIdle001
+     * @tc.name     testPostOnIdle001
+     * @tc.desc     testPostOnIdle001
+     * @tc.level    Level.LEVEL1
+     */
     it('testPostOnIdle001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let PAGE_TAG = 'TestPostOnIdle';
