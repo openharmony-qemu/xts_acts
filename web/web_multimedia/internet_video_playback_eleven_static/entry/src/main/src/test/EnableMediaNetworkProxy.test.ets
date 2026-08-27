@@ -144,7 +144,7 @@ export default function enableMediaNetworkProxyTestJsunit(): void {
 	  
 		/**
 		 * @tc.name   testOnSwitchNextPageChangeParamTest
-		 * @tc.number SUB_WEB_NEXT_PAGE_0200
+		 * @tc.number SUB_WEB_CHANGE_PARAMTEST_0200
 		 * @tc.desc   PAGE_REDIRECT.
 		 * @tc.size   MEDIUMTEST
 		 * @tc.type   FUNCTION
