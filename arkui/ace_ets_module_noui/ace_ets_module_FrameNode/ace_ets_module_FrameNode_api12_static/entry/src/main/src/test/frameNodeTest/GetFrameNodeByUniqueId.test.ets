@@ -59,7 +59,7 @@ export default function GetFrameNodeByUniqueIdTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('GetFrameNodeByUniqueIdTest_0100', Level.LEVEL0, async () => {
+    it('GetFrameNodeByUniqueIdTest_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('[GetFrameNodeByUniqueIdTest_0100] START');
         let driver = await Driver.create()
@@ -89,12 +89,11 @@ export default function GetFrameNodeByUniqueIdTest() {
         expect(objAfter.getElement('$attrs').getString('height')).assertEqual('60.00vp');
 
         console.info('[GetFrameNodeByUniqueIdTest_0100] END');
-        done();
       } catch (error) {
         console.error('[GetFrameNodeByUniqueIdTest_0100] error: ' + JSON.stringify(error));
         expect(false).assertTrue();
-        done();
       }
+      done();
     })
 
     /**
@@ -105,7 +104,7 @@ export default function GetFrameNodeByUniqueIdTest() {
       * @tc.size   SMALLTEST
       * @tc.level  LEVEL0
       */
-    it('GetFrameNodeByUniqueIdTest_0200', Level.LEVEL0, async () => {
+    it('GetFrameNodeByUniqueIdTest_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         console.info('[GetFrameNodeByUniqueIdTest_0200] START');
         let driver = await Driver.create()
@@ -120,12 +119,11 @@ export default function GetFrameNodeByUniqueIdTest() {
         AppStorage.delete('getFrameNodeByUniqueIdNonExistentResult');
 
         console.info('[GetFrameNodeByUniqueIdTest_0200] END');
-        done();
       } catch (error) {
         console.error('[GetFrameNodeByUniqueIdTest_0200] error: ' + JSON.stringify(error));
         expect(false).assertTrue();
-        done();
       }
+      done();
     })
   })
 }
