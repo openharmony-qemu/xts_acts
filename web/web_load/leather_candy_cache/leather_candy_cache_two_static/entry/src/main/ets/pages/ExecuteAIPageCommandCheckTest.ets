@@ -134,10 +134,8 @@ struct ExecuteAIPageCommandCheckTest {
       if (i < 4) { await this.sleep(500); }
     }
     if (res && res.includes('code')) {
-      // let json: CommandResult = JSON.parse(res);
-      // Utils.emitEvent(json.code, eventId);
-      let res_code = res.split(":")[1].trim().toInt();
-      Utils.emitEvent(res_code, eventId);
+      let resCode = res.split(":")[1].trim().toInt();
+      Utils.emitEvent(resCode, eventId);
     } else if (errorCode !== -1) {
       Utils.emitEvent(errorCode, eventId);
     } else {
@@ -164,10 +162,8 @@ struct ExecuteAIPageCommandCheckTest {
     if (res && res.includes('data:image/png;base64')) {
       Utils.emitEvent(0, eventId);
     } else if (res && res.includes('code')) {
-      // let json: CommandResult = JSON.parse(res);
-      // Utils.emitEvent(json.code, eventId);
-      let res_code = res.split(":")[1].trim().toInt();
-      Utils.emitEvent(res_code, eventId);
+      let resCode = res.split(":")[1].trim().toInt();
+      Utils.emitEvent(resCode, eventId);
     } else if (errorCode !== -1) {
       Utils.emitEvent(errorCode, eventId);
     } else {
