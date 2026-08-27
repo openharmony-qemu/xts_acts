@@ -1090,15 +1090,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   progressUpdate_listen_002
-     * @tc.number AV_TRANSCODER_TEST_028
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_ON_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_ON_0800
      * @tc.desc   Test repeated setting of progressUpdate callback, only the last one takes effect.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('progressUpdate_listen_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'progressUpdate_listen_002';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_ON_0800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_ON_0800';
       await createAVTranscoder(done, testContext, testName);
       if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
         done();
@@ -1134,15 +1134,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   complete_listen_002
-     * @tc.number AV_TRANSCODER_TEST_029
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_ON_0801
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_ON_0801
      * @tc.desc   Test repeated setting of complete callback, only the last one takes effect.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('complete_listen_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'complete_listen_002';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_ON_0801', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_ON_0801';
       await createAVTranscoder(done, testContext, testName);
       if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
         done();
@@ -1183,15 +1183,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   error_listen_001
-     * @tc.number AV_TRANSCODER_TEST_030
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_ON_0802
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_ON_0802
      * @tc.desc   Test repeated setting of error callback, only the last one takes effect.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('error_listen_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'error_listen_001';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_ON_0802', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_ON_0802';
       if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
         done();
         return;
@@ -1229,15 +1229,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   progressUpdate_off_callback_001
-     * @tc.number AV_TRANSCODER_TEST_031
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_OFF_0803
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_OFF_0803
      * @tc.desc   Test off progressUpdate with callback parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('progressUpdate_off_callback_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'progressUpdate_off_callback_001';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_OFF_0803', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_PROGRESSUPDATE_OFF_0803';
       await createAVTranscoder(done, testContext, testName);
       if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
         done();
@@ -1270,15 +1270,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   complete_off_callback_001
-     * @tc.number AV_TRANSCODER_TEST_032
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_OFF_0804
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_OFF_0804
      * @tc.desc   Test off complete with callback parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('complete_off_callback_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'complete_off_callback_001';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_OFF_0804', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_COMPLETE_OFF_0804';
       await createAVTranscoder(done, testContext, testName);
       if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
         done();
@@ -1318,15 +1318,15 @@ export default function AVTranscoderTest() {
     })
 
     /**
-     * @tc.name   error_off_callback_001
-     * @tc.number AV_TRANSCODER_TEST_033
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_OFF_0805
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_OFF_0805
      * @tc.desc   Test off error with callback parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level   LEVEL0
      */
-    it('error_off_callback_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'error_off_callback_001';
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_OFF_0805', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_ERROR_OFF_0805';
       if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
         done();
         return;
