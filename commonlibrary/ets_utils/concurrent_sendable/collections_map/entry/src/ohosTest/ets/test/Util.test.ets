@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 
+import { collections } from '@kit.ArkTS';
+
 export default class Utils{
   static async msSleep(count:number) : Promise<number> {
     return new Promise<number>((resolve, reject) => {

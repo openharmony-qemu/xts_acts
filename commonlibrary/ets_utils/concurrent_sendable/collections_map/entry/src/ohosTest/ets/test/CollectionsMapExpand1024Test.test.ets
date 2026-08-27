@@ -16,7 +16,7 @@
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { ArkTSUtils, collections, taskpool } from '@kit.ArkTS';
 import { MAP_CFG } from './MapExpandCfg';
-import Utils from './Util';
+import Utils from './Util.test';
 
 const MAP_BOUNDARY_CAPACITY: number = MAP_CFG.BOUND;
 
