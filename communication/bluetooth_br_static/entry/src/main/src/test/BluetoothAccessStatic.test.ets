@@ -650,7 +650,7 @@ export default function bluetoothAccessTest() {
         /**
          * @tc.number  SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
          * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
-         * @tc.desc    Test deletePersistentDeviceId API functionality
+         * @tc.desc    Test convertUuid API 入参 '1801'
          * @tc.level   Level 0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
@@ -668,14 +668,14 @@ export default function bluetoothAccessTest() {
             done();
         });
         /**
-         * @tc.number  SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200
          * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200
-         * @tc.desc    Test deletePersistentDeviceId API functionality
+         * @tc.desc    Test convertUuid API 入参 '12341801'
          * @tc.level   Level 0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
-        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let uuid = '12341801';
                 let converuuid = access.convertUuid(uuid);
@@ -688,14 +688,14 @@ export default function bluetoothAccessTest() {
             done();
         });
         /**
-         * @tc.number  SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300
          * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300
-         * @tc.desc    Test deletePersistentDeviceId API functionality
+         * @tc.desc    Test convertUuid API 入参 '11112222-3333-4444-5555-666677778888'
          * @tc.level   Level 0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
-        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let uuid = '11112222-3333-4444-5555-666677778888';
                 let converuuid = access.convertUuid(uuid);
