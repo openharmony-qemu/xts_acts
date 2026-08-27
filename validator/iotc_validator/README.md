@@ -45,11 +45,11 @@ pip install setuptools==50.0.0
     ├── tools                          # 测试框架工具目录
     ├── run.bat                        # window平台测试套启动执行文件
     ├── reports                         # 测试报告生成目录
-    ├── resource						# 测试资源文件目录（新建）
+    ├── resource			    # 测试资源文件目录（新建）
 
 用例执行
 
-1.  测试资源获取，[在OpenHarmony-SIG中获取xts-validator资源 ](https://gitcode.com/openharmony-sig/compatibility/tree/master/test_suite/resource/master/standard%20system/acts/resource )，在测试执行目录新建resource文件夹，把资源文件拷贝到本目录中。
+1.  测试资源获取，[在OpenHarmony-SIG中获取iotc_validator资源 ](https://gitcode.com/openharmony-sig/compatibility/tree/master/test_suite/resource/master/standard%20system/acts/resource )，在测试执行目录新建resource文件夹，把资源文件拷贝到本目录中。
 2.  在Windows工作台上，找到从Linux服务器上拷贝下来的测试套件用例目录，在Windows命令窗口进入对应目录，直接执行run.bat。
 3.  控制台界面启动后，执行：```run validator -ta update:true``` 启动测试应用，控制台输出“Is test finished? Y/N”时，表示可以开始进行测试。
 
