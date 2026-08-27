@@ -227,7 +227,7 @@ group("multimedia") {
       "videoProcess/ActsVideoProcessTestStatic:ActsVideoProcessStaticTest",
       "videoProcess/moduletest/ActsVpeVideoNativeHapTest:ActsVpeVideoNativeHapTest",
       "videoProcess/moduletest/ActsImageTest:ActsImageHapTest",
-	  "videoProcess/moduletest/ActsAutoEffectNdkTest:ActsAutoEffectHapTest",
+      "videoProcess/moduletest/ActsAutoEffectNdkTest:ActsAutoEffectHapTest",
 
     ]
   } else {
