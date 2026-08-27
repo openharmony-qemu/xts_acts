@@ -577,7 +577,7 @@ export default function ListTest05() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEST05_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_0100
      * @tc.name      testList05Chapter0001
      * @tc.desc      Verify get() for normal Uint8Array and multi-zero arrays (by index)
      * @tc.size      MediumTest
@@ -610,7 +610,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_0200
      * @tc.name      testList05Chapter0002
      * @tc.desc      Verify the processing logic of arrays with negative numbers and non-numeric index arrays
      * @tc.size      MediumTest
@@ -654,7 +654,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_0300
      * @tc.name      testList05Chapter0003
      * @tc.desc      Verify the processing logic of arrays with NaN/Infinity and non-numeric type arrays
      * @tc.size      MediumTest
@@ -690,7 +690,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_0400
      * @tc.name      testList05Chapter0004
      * @tc.desc      Verify get() for empty/overflow/deleted element arrays (by index)
      * @tc.size      MediumTest
@@ -729,7 +729,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_0500
      * @tc.name      testList05Chapter0005
      * @tc.desc      Verify the processing of nested arrays, arrays with TypedArray sub-elements, and ultra-long arrays
      * @tc.size      LargeTest
@@ -778,7 +778,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_0600
      * @tc.name      testList05Chapter0006
      * @tc.desc      Verify the processing logic of arrays containing functions/keywords
      * @tc.size      MediumTest
@@ -807,7 +807,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_0700
      * @tc.name      testList05Chapter0007
      * @tc.desc      Test get interface with basic string values
      * @tc.size      MediumTest
@@ -842,7 +842,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_0800
      * @tc.name      testList05Chapter0008
      * @tc.desc      Test get interface with special character strings
      * @tc.size      MediumTest
@@ -879,7 +879,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_0900
      * @tc.name      testList05Chapter0009
      * @tc.desc      Test get interface with escape character strings
      * @tc.size      MediumTest
@@ -912,7 +912,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1000
      * @tc.name      testList05Chapter0010
      * @tc.desc      Test get interface with more escape character strings
      * @tc.size      MediumTest
@@ -945,7 +945,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1100
      * @tc.name      testList05Chapter0011
      * @tc.desc      Test get interface with hex/octal escape strings
      * @tc.size      MediumTest
@@ -978,7 +978,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1200
      * @tc.name      testList05Chapter0012
      * @tc.desc      Test get interface with emoji strings
      * @tc.size      MediumTest
@@ -1016,7 +1016,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1300
      * @tc.name      testList05Chapter0013
      * @tc.desc      Test get interface with special unicode strings
      * @tc.size      MediumTest
@@ -1065,7 +1065,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1400
      * @tc.name      testList05Chapter0014
      * @tc.desc      Test get interface with large strings
      * @tc.size      MediumTest
@@ -1096,7 +1096,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1500
      * @tc.name      testList05Chapter0015
      * @tc.desc      Test get interface with special number values
      * @tc.size      MediumTest
@@ -1119,7 +1119,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1600
      * @tc.name      testList05Chapter0016
      * @tc.desc      Test get interface with extreme number values
      * @tc.size      MediumTest
@@ -1145,7 +1145,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1700
      * @tc.name      testList05Chapter0017
      * @tc.desc      Test get interface with precision number values
      * @tc.size      MediumTest
@@ -1182,7 +1182,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1800
      * @tc.name      testList05Chapter0018
      * @tc.desc      Test get interface with base expression number values
      * @tc.size      MediumTest
@@ -1219,7 +1219,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_1900
      * @tc.name      testList05Chapter0019
      * @tc.desc      Test get interface with bigint values
      * @tc.size      MediumTest
@@ -1246,7 +1246,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2000
      * @tc.name      testList05Chapter0020
      * @tc.desc      Test get interface with basic boolean values
      * @tc.size      MediumTest
@@ -1265,7 +1265,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2100
      * @tc.name      testList05Chapter0021
      * @tc.desc      Test get interface with false-like values
      * @tc.size      MediumTest
@@ -1288,7 +1288,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2200
      * @tc.name      testList05Chapter0022
      * @tc.desc      Test get interface with true-like values
      * @tc.size      MediumTest
@@ -1311,7 +1311,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2300
      * @tc.name      testList05Chapter0023
      * @tc.desc      Test get interface with mixed boolean/number/string values
      * @tc.size      MediumTest
@@ -1339,7 +1339,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2400
      * @tc.name      testList05Chapter0024
      * @tc.desc      Test get interface with basic objects
      * @tc.size      MediumTest
@@ -1369,7 +1369,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2500
      * @tc.name      testList05Chapter0025
      * @tc.desc      Test get interface with special key/inherit/non-enum objects
      * @tc.size      MediumTest
@@ -1398,7 +1398,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2600
      * @tc.name      testList05Chapter0026
      * @tc.desc      Test get interface with buffer/dataview/typed array objects
      * @tc.size      MediumTest
@@ -1426,7 +1426,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2700
      * @tc.name      testList05Chapter0027
      * @tc.desc      Test get interface with map/set/func/regex/promise objects
      * @tc.size      MediumTest
@@ -1466,7 +1466,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2800
      * @tc.name      testList05Chapter0028
      * @tc.desc      Test get interface with special value objects
      * @tc.size      MediumTest
@@ -1496,7 +1496,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_2900
      * @tc.name      testList05Chapter0029
      * @tc.desc      Test get interface with large/mixed/empty/small/newkey objects
      * @tc.size      MediumTest
@@ -1535,7 +1535,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3000
      * @tc.name      testList05Chapter0031
      * @tc.desc      Test has interface (TypedArray: Int8/Uint8/Uint8Clamped etc.) & verify overflow handling
      * @tc.size      LargeTest
@@ -1572,7 +1572,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3100
      * @tc.name      testList05Chapter0032
      * @tc.desc      Test has interface with native Map/Set and rejected Promise
      * @tc.size      MediumTest
@@ -1603,7 +1603,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3200
      * @tc.name      testList05Chapter0033
      * @tc.desc      Test has interface with BigInt in different bases and ultra-large values (ref: arbitrary precision)
      * @tc.size      LargeTest
@@ -1633,7 +1633,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3300
      * @tc.name      testList05Chapter0034
      * @tc.desc      Test has interface with IEEE 754 special values (positive zero/negative zero/NaN/Infinity)
      * @tc.size      MediumTest
@@ -1667,7 +1667,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3400
      * @tc.name      testList05Chapter0035
      * @tc.desc      Test has interface with empty List and dynamic data modification
      * @tc.size      MediumTest
@@ -1698,7 +1698,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3500
      * @tc.name      testList05Chapter0036
      * @tc.desc      Test has interface with circular reference objects
      * @tc.size      MediumTest
@@ -1726,7 +1726,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3600
      * @tc.name      testList05Chapter0037
      * @tc.desc      Test has interface with Symbol type values (unique symbol/registered symbol)
      * @tc.size      MediumTest
@@ -1756,7 +1756,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3700
      * @tc.name      testList05Chapter0038
      * @tc.desc      Test has interface with cross-type value matching (number/string/boolean type conversion)
      * @tc.size      MediumTest
@@ -1788,7 +1788,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3800
      * @tc.name      testList05Chapter0039
      * @tc.desc      Test has interface with large-scale data (performance and accuracy verification)
      * @tc.size      LargeTest
@@ -1830,7 +1830,7 @@ export default function ListTest05() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST05_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST5_3900
      * @tc.name      testList05Chapter0040
      * @tc.desc      Test has interface with nested collection objects (Map/Set inside custom objects)
      * @tc.size      MediumTest

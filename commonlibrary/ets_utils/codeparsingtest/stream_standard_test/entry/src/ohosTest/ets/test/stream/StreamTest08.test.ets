@@ -448,7 +448,7 @@ export default function StreamTest_08() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_0100
      * @tc.name      testDuplexWriteUint8ArrayUtf80002
      * @tc.desc      Verify writing Uint8Array data with utf8 encoding to Duplex stream.
      * @tc.size      MediumTest
@@ -472,7 +472,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_0200
      * @tc.name      testDuplexWriteMultiChunk0003
      * @tc.desc      Verify writing multiple chunks to Duplex stream.
      * @tc.size      MediumTest
@@ -511,7 +511,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_0300
      * @tc.name      testDuplexWriteEmptyChunk0004
      * @tc.desc      Verify error when writing empty chunk to Duplex stream.
      * @tc.size      MediumTest
@@ -530,7 +530,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_0400
      * @tc.name      testDuplexWriteUnsupportedEncoding0005
      * @tc.desc      Verify error when writing with unsupported encoding to Duplex stream.
      * @tc.size      MediumTest
@@ -547,7 +547,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_0500
      * @tc.name      testDuplexWriteMixedData0006
      * @tc.desc      Verify alternating writing string and binary data to Duplex stream.
      * @tc.size      MediumTest
@@ -583,7 +583,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_0600
      * @tc.name      testDuplexWriteCallbackError0007
      * @tc.desc      Verify callback error handling in Duplex write operation
      * @tc.size      MediumTest
@@ -607,7 +607,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_0700
      * @tc.name      testDuplexEnd0001
      * @tc.desc      Verify Duplex end callback trigger after cork operation (Positive Test)
      * @tc.size      MediumTest
@@ -626,7 +626,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_0800
      * @tc.name      testDuplexEnd0002
      * @tc.desc      Verify Uint8Array data write in Duplex end operation (Positive Test)
      * @tc.size      MediumTest
@@ -645,7 +645,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_0900
      * @tc.name      testDuplexEnd0003
      * @tc.desc      Verify utf-16le encoding processing in Duplex end operation (Positive Test)
      * @tc.size      MediumTest
@@ -660,7 +660,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1000
      * @tc.name      testDuplexEnd0004
      * @tc.desc      Verify binary data processing in Duplex end operation (Positive Test)
      * @tc.size      MediumTest
@@ -677,7 +677,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1100
      * @tc.name      DuplexWriteTest0005
      * @tc.desc      Verify Duplex throws error when processing unsupported encoding (Negative Test)
      * @tc.size      MediumTest
@@ -692,7 +692,7 @@ export default function StreamTest_08() {
 
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1200
      * @tc.name      testDuplexEnd0006
      * @tc.desc      Verify non-string chunk conversion in Duplex end operation (Positive Test)
      * @tc.size      MediumTest
@@ -708,7 +708,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1300
      * @tc.name      testDuplexEnd0007
      * @tc.desc      Verify type error handling for Uint8Array in Duplex end (Negative Test)
      * @tc.size      MediumTest
@@ -727,7 +727,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1400
      * @tc.name      testDuplexEnd0008
      * @tc.desc      Verify write count after empty Duplex end operation (Positive Test)
      * @tc.size      MediumTest
@@ -743,7 +743,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1500
      * @tc.name      testDuplexEnd0009
      * @tc.desc      Verify no error event for normal Duplex end operation (Positive Test)
      * @tc.size      MediumTest
@@ -760,7 +760,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1600
      * @tc.name      testDuplexSetDefaultEncoding0001
      * @tc.desc      Verify setDefaultEncoding for gbk and gb18030 encodings
      * @tc.size      MediumTest
@@ -778,7 +778,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1700
      * @tc.name      testDuplexSetDefaultEncoding0002
      * @tc.desc      Verify setDefaultEncoding for unsupported encoding
      * @tc.size      MediumTest
@@ -795,7 +795,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1800
      * @tc.name      testDuplexSetDefaultEncoding0003
      * @tc.desc      Verify setDefaultEncoding with cork/uncork operation
      * @tc.size      MediumTest
@@ -816,7 +816,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_1900
      * @tc.name      testDuplexSetDefaultEncoding0004
      * @tc.desc      Verify dynamic encoding switch in setDefaultEncoding
      * @tc.size      MediumTest
@@ -841,7 +841,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2000
      * @tc.name      testDuplexSetDefaultEncoding0005
      * @tc.desc      Verify basic write operation with custom Duplex
      * @tc.size      MediumTest
@@ -863,7 +863,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2100
      * @tc.name      testDuplexSetDefaultEncoding0006
      * @tc.desc      Verify setDefaultEncoding with cork/uncork and custom Duplex
      * @tc.size      MediumTest
@@ -882,7 +882,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2200
      * @tc.name      testDuplexSetDefaultEncoding0007
      * @tc.desc      Verify error handling for unsupported encoding in custom setDefaultEncoding
      * @tc.size      MediumTest
@@ -905,7 +905,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2300
      * @tc.name      testDuplexSetDefaultEncoding0008
      * @tc.desc      Verify writable status of custom Duplex without setDefaultEncoding
      * @tc.size      MediumTest
@@ -921,7 +921,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2400
      * @tc.name      testDuplexSetDefaultEncoding0009
      * @tc.desc      Verify initialization of CustomDuplex class
      * @tc.size      MediumTest
@@ -936,7 +936,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2500
      * @tc.name      testDuplexSetDefaultEncoding0010
      * @tc.desc      Verify data read after setDefaultEncoding in CustomDuplex
      * @tc.size      MediumTest
@@ -956,7 +956,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2600
      * @tc.name      testDuplexCork0001
      * @tc.desc      Verify basic cork operation on Duplex stream
      * @tc.size      MediumTest
@@ -971,7 +971,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2700
      * @tc.name      testDuplexCork0002
      * @tc.desc      Verify writableCorked status after single cork operation
      * @tc.size      MediumTest
@@ -986,7 +986,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2800
      * @tc.name      testDuplexCork0003
      * @tc.desc      Verify error handling for empty chunk write with corked Duplex
      * @tc.size      MediumTest
@@ -1007,7 +1007,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_2900
      * @tc.name      testDuplexCork0004
      * @tc.desc      Verify nested cork/uncork operations on Duplex stream
      * @tc.size      MediumTest
@@ -1028,7 +1028,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_3000
      * @tc.name      testDuplexCork0005
      * @tc.desc      Verify error handling for uncork without active cork
      * @tc.size      MediumTest
@@ -1051,7 +1051,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_3100
      * @tc.name      testDuplexCork0006
      * @tc.desc      Verify error handling for uncork on ended Duplex stream
      * @tc.size      MediumTest
@@ -1075,7 +1075,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_3200
      * @tc.name      testDuplexCork0007
      * @tc.desc      Verify error handling for uncork on non-writable Duplex stream
      * @tc.size      MediumTest
@@ -1097,7 +1097,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_3300
      * @tc.name      testDuplexCork0008
      * @tc.desc      Verify write count after nested cork/uncork with invalid chunk
      * @tc.size      MediumTest
@@ -1122,7 +1122,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_3400
      * @tc.name      testDuplexCork0009
      * @tc.desc      Verify writableCorked status after nested cork/uncork
      * @tc.size      MediumTest
@@ -1141,7 +1141,7 @@ export default function StreamTest_08() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTEIGHT_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM10_3500
      * @tc.name      testDuplexCork0010
      * @tc.desc      Verify callback execution after cork/uncork operation
      * @tc.size      MediumTest

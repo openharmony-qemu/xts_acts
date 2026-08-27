@@ -573,7 +573,7 @@ export default function ListTest07() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    SUB_LIST_TEXT07_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_0100
      * @tc.name      testList07Chapter0001
      * @tc.desc      List.removeByIndex: remove by index, check length/element correctness
      * @tc.size      MediumTest
@@ -613,7 +613,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_0200
      * @tc.name      testList07Chapter0002
      * @tc.desc      List.removeByIndex: arrays with negative numbers/non-numeric indexes
      * @tc.size      MediumTest
@@ -659,7 +659,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_0300
      * @tc.name      testList07Chapter0003
      * @tc.desc      List.removeByIndex: arrays with NaN/Infinity/non-numeric types
      * @tc.size      MediumTest
@@ -688,7 +688,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_0400
      * @tc.name      testList07Chapter0004
      * @tc.desc      List.removeByIndex: empty arrays/arrays with extreme numeric overflow values
      * @tc.size      MediumTest
@@ -722,7 +722,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_0500
      * @tc.name      testList07Chapter0005
      * @tc.desc      List.removeByIndex: nested arrays/TypedArray sub-elements/ultra-long arrays
      * @tc.size      LargeTest
@@ -775,7 +775,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_0600
      * @tc.name      testList07Chapter0006
      * @tc.desc      List.removeByIndex: arrays with functions/keywords (Symbol removed)
      * @tc.size      MediumTest
@@ -802,7 +802,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_0700
      * @tc.name      testList07Chapter0007
      * @tc.desc      List.removeByIndex: remove string elements (basic/special/ASCII)
      * @tc.size      MediumTest
@@ -839,7 +839,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_0800
      * @tc.name      testList07Chapter0008
      * @tc.desc      List.removeByIndex: remove strings (special/escape/emoji)
      * @tc.size      MediumTest
@@ -871,7 +871,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_0900
      * @tc.name      testList07Chapter0009
      * @tc.desc      List.removeByIndex: remove number elements (basic/extreme/precision)
      * @tc.size      MediumTest
@@ -915,7 +915,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1000
      * @tc.name      testList07Chapter0010
      * @tc.desc      List.removeByIndex: remove BigInt elements
      * @tc.size      MediumTest
@@ -945,7 +945,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1100
      * @tc.name      testList07Chapter0011
      * @tc.desc      Test getIndexOf with base number values
      * @tc.size      MediumTest
@@ -982,7 +982,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1200
      * @tc.name      testList07Chapter0012
      * @tc.desc      Test getIndexOf with bigint values
      * @tc.size      MediumTest
@@ -1009,7 +1009,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1300
      * @tc.name      testList07Chapter0013
      * @tc.desc      Test getIndexOf with basic boolean values
      * @tc.size      MediumTest
@@ -1028,7 +1028,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1400
      * @tc.name      testList07Chapter0014
      * @tc.desc      Test getIndexOf with false-like values
      * @tc.size      MediumTest
@@ -1051,7 +1051,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1500
      * @tc.name      testList07Chapter0015
      * @tc.desc      Test getIndexOf with true-like values
      * @tc.size      MediumTest
@@ -1076,7 +1076,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1600
      * @tc.name      testList07Chapter0016
      * @tc.desc      Test getIndexOf with mixed boolean/number/string values
      * @tc.size      MediumTest
@@ -1104,7 +1104,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1700
      * @tc.name      testList07Chapter0017
      * @tc.desc      Test getIndexOf with basic objects
      * @tc.size      MediumTest
@@ -1132,7 +1132,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1800
      * @tc.name      testList07Chapter0018
      * @tc.desc      Test getIndexOf with special key/inherit/non-enum objects
      * @tc.size      MediumTest
@@ -1160,7 +1160,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_1900
      * @tc.name      testList07Chapter0019
      * @tc.desc      Test getIndexOf with buffer/dataview/typed array objects
      * @tc.size      MediumTest
@@ -1188,7 +1188,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2000
      * @tc.name      testList07Chapter0020
      * @tc.desc      Test getIndexOf with map/set/func/regex/promise objects
      * @tc.size      MediumTest
@@ -1227,7 +1227,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2100
      * @tc.name      testList07Chapter0021
      * @tc.desc      Test getIndexOf with special value objects
      * @tc.size      MediumTest
@@ -1252,7 +1252,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2200
      * @tc.name      testList07Chapter0022
      * @tc.desc      Test getIndexOf with large/mixed/empty/small/newkey objects
      * @tc.size      MediumTest
@@ -1288,7 +1288,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2300
      * @tc.name      testList07Chapter0023
      * @tc.desc      Test getIndexOf with boundary values & empty list & repeat add
      * @tc.size      MediumTest
@@ -1323,7 +1323,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2400
      * @tc.name      testList07Chapter0024
      * @tc.desc      Test getIndexOf with nested List & multi-type nested data
      * @tc.size      MediumTest
@@ -1354,7 +1354,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2500
      * @tc.name      testList07Chapter0025
      * @tc.desc      Verify List.equal: equality of Lists with normal/special values (NaN/Infinity/-0)
      * @tc.size      MediumTest
@@ -1406,7 +1406,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2600
      * @tc.name      testList07Chapter0026
      * @tc.desc      List.equal: equality of strings (special chars/emoji)
      * @tc.size      MediumTest
@@ -1449,7 +1449,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2700
      * @tc.name      testList07Chapter0027
      * @tc.desc      List.equal: equality of boolean types
      * @tc.size      MediumTest
@@ -1481,7 +1481,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2800
      * @tc.name      testList07Chapter0028
      * @tc.desc      List.equal: equality of regular/empty objects
      * @tc.size      MediumTest
@@ -1517,7 +1517,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_2900
      * @tc.name      testList07Chapter0029
      * @tc.desc      List.equal: equality of nested objects
      * @tc.size      MediumTest
@@ -1544,7 +1544,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_3000
      * @tc.name      testList07Chapter0030
      * @tc.desc      List.equal: equality of Map and Set types
      * @tc.size      MediumTest
@@ -1586,7 +1586,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_3100
      * @tc.name      testList07Chapter0031
      * @tc.desc      List.equal: equality of objects with undefined/null/NaN
      * @tc.size      MediumTest
@@ -1622,7 +1622,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_3200
      * @tc.name      testList07Chapter0032
      * @tc.desc      List.equal: equality of mixed types (numbers/strings/objects/arrays)
      * @tc.size      MediumTest
@@ -1697,7 +1697,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_3300
      * @tc.name      testList07Chapter0033
      * @tc.desc      List.equal: equality of large objects
      * @tc.size      MediumTest
@@ -1724,7 +1724,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_3400
      * @tc.name      testList07Chapter0034
      * @tc.desc      List.equal: equality of regex/function/Promise objects
      * @tc.size      MediumTest
@@ -1785,7 +1785,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_3500
      * @tc.name      testList07Chapter0035
      * @tc.desc      List.equal: equality of List with nested objects
      * @tc.size      MediumTest
@@ -1838,7 +1838,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_3600
      * @tc.name      testList07Chapter0036
      * @tc.desc      List.equal: equality of multi-element lists
      * @tc.size      MediumTest
@@ -1915,7 +1915,7 @@ export default function ListTest07() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT07_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST7_3700
      * @tc.name      testList07Chapter0037
      * @tc.desc      List.equal: equality in boundary scenarios
      * @tc.size      MediumTest

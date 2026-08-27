@@ -71,7 +71,7 @@ export default function StreamReadable03Test() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_0100
      * @tc.name      testStreamReadable03Chapter0001
      * @tc.desc      setEncoding with default parameter should return true
      * @tc.size      MediumTest
@@ -95,7 +95,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_0200
      * @tc.name      testStreamReadable03Chapter0002
      * @tc.desc      setEncoding with 'utf8' should return true
      * @tc.size      MediumTest
@@ -119,7 +119,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_0300
      * @tc.name      testStreamReadable03Chapter0003
      * @tc.desc      setEncoding with 'gb18030' should return true
      * @tc.size      MediumTest
@@ -143,7 +143,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_0400
      * @tc.name      testStreamReadable03Chapter0004
      * @tc.desc      setEncoding with 'gbk' should return true
      * @tc.size      MediumTest
@@ -167,7 +167,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_0500
      * @tc.name      testStreamReadable03Chapter0005
      * @tc.desc      setEncoding with 'gb2312' should return true
      * @tc.size      MediumTest
@@ -191,7 +191,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_0600
      * @tc.name      testStreamReadable03Chapter0006
      * @tc.desc      setEncoding when buffer has data should return false
      * @tc.size      MediumTest
@@ -216,7 +216,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_0700
      * @tc.name      testStreamReadable03Chapter0007
      * @tc.desc      setEncoding with unsupported encoding should return false
      * @tc.size      MediumTest
@@ -245,7 +245,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_0800
      * @tc.name      testStreamReadable03Chapter0008
      * @tc.desc      setEncoding with empty string should return false
      * @tc.size      MediumTest
@@ -269,7 +269,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_0900
      * @tc.name      testStreamReadable03Chapter0009
      * @tc.desc      setEncoding with 'utf-8' (alias) should return true
      * @tc.size      MediumTest
@@ -293,7 +293,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1000
      * @tc.name      testStreamReadable03Chapter0010
      * @tc.desc      setEncoding with undefined should use default encoding and return true
      * @tc.size      MediumTest
@@ -317,7 +317,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1100
      * @tc.name      testStreamReadable03Chapter0011
      * @tc.desc      setEncoding with special characters string should return false
      * @tc.size      MediumTest
@@ -346,7 +346,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1200
      * @tc.name      testStreamReadable03Chapter0012
      * @tc.desc      setEncoding with ASCII characters string should return false
      * @tc.size      MediumTest
@@ -375,7 +375,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1300
      * @tc.name      testStreamReadable03Chapter0013
      * @tc.desc      setEncoding with escape characters string should return false
      * @tc.size      MediumTest
@@ -404,7 +404,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1400
      * @tc.name      testStreamReadable03Chapter0014
      * @tc.desc      setEncoding with emoji string should return false
      * @tc.size      MediumTest
@@ -433,7 +433,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1500
      * @tc.name      testStreamReadable03Chapter0015
      * @tc.desc      setEncoding with very long string should return false
      * @tc.size      MediumTest
@@ -463,7 +463,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1600
      * @tc.name      testStreamReadable03Chapter0016
      * @tc.desc      setEncoding multiple times should work correctly
      * @tc.size      MediumTest
@@ -494,7 +494,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1700
      * @tc.name      testStreamReadable03Chapter0017
      * @tc.desc      setEncoding after clearing buffer should return true
      * @tc.size      MediumTest
@@ -521,7 +521,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1800
      * @tc.name      testStreamReadable03Chapter0018
      * @tc.desc      setEncoding with uppercase encoding string should return true
      * @tc.size      MediumTest
@@ -545,7 +545,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_1900
      * @tc.name      testStreamReadable03Chapter0019
      * @tc.desc      setEncoding with mixed case encoding string should return true
      * @tc.size      MediumTest
@@ -569,7 +569,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2000
      * @tc.name      testStreamReadable03Chapter0020
      * @tc.desc      setEncoding with leading/trailing spaces string should return false
      * @tc.size      MediumTest
@@ -598,7 +598,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2100
      * @tc.name      testStreamReadable03Chapter0021
      * @tc.desc      setEncoding with 'null' string should return false
      * @tc.size      MediumTest
@@ -627,7 +627,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2200
      * @tc.name      testStreamReadable03Chapter0022
      * @tc.desc      setEncoding with 'NaN' string should return false
      * @tc.size      MediumTest
@@ -656,7 +656,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2300
      * @tc.name      testStreamReadable03Chapter0023
      * @tc.desc      Test isPaused returns false when stream is not paused initially
      * @tc.size      MediumTest
@@ -676,7 +676,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2400
      * @tc.name      testStreamReadable03Chapter0024
      * @tc.desc      Test isPaused returns true after pause is called
      * @tc.size      MediumTest
@@ -697,7 +697,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2500
      * @tc.name      testStreamReadable03Chapter0025
      * @tc.desc      Test isPaused returns false after resume is called following pause
      * @tc.size      MediumTest
@@ -719,7 +719,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2600
      * @tc.name      testStreamReadable03Chapter0026
      * @tc.desc      Test multiple pause calls keep isPaused returning true
      * @tc.size      MediumTest
@@ -742,7 +742,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2700
      * @tc.name      testStreamReadable03Chapter0027
      * @tc.desc      Test multiple resume calls keep isPaused returning false when not paused
      * @tc.size      MediumTest
@@ -765,7 +765,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2800
      * @tc.name      testStreamReadable03Chapter0028
      * @tc.desc      Test isPaused returns false for newly created stream with custom implementation
      * @tc.size      MediumTest
@@ -792,7 +792,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_2900
      * @tc.name      testStreamReadable03Chapter0029
      * @tc.desc      Test isPaused returns true after pause on stream with data
      * @tc.size      MediumTest
@@ -820,7 +820,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3000
      * @tc.name      testStreamReadable03Chapter0030
      * @tc.desc      Test isPaused returns false after resume on stream with data
      * @tc.size      MediumTest
@@ -849,7 +849,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3100
      * @tc.name      testStreamReadable03Chapter0031
      * @tc.desc      Test pipe method with valid Writable destination
      * @tc.size      MediumTest
@@ -894,7 +894,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3200
      * @tc.name      testStreamReadable03Chapter0032
      * @tc.desc      Test pipe method with options parameter
      * @tc.size      MediumTest
@@ -933,7 +933,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3300
      * @tc.name      testStreamReadable03Chapter0033
      * @tc.desc      Test pipe method with multiple chunks of data
      * @tc.size      MediumTest
@@ -980,7 +980,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3400
      * @tc.name      testStreamReadable03Chapter0034
      * @tc.desc      Test pipe method with Uint8Array data
      * @tc.size      MediumTest
@@ -1025,7 +1025,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3500
      * @tc.name      testStreamReadable03Chapter0035
      * @tc.desc      Test pipe method with different types of options objects
      * @tc.size      MediumTest
@@ -1071,7 +1071,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3600
      * @tc.name      testStreamReadable03Chapter0036
      * @tc.desc      Test pipe method with empty options object
      * @tc.size      MediumTest
@@ -1111,7 +1111,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3700
      * @tc.name      testStreamReadable03Chapter0037
      * @tc.desc      Negative test: Test pipe with invalid destination parameter using incomplete implementation
      * @tc.size      MediumTest
@@ -1142,7 +1142,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3800
      * @tc.name      testStreamReadable03Chapter0038
      * @tc.desc      Test pipe method with valid Writable and check data flow
      * @tc.size      MediumTest
@@ -1192,7 +1192,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_3900
      * @tc.name      testStreamReadable03Chapter0039
      * @tc.desc      Test pipe method with two different Writable destinations
      * @tc.size      MediumTest
@@ -1253,7 +1253,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_4000
      * @tc.name      testStreamReadable03Chapter0040
      * @tc.desc      Test pipe method with string data and verify content
      * @tc.size      MediumTest
@@ -1300,7 +1300,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_4100
      * @tc.name      testStreamReadable03Chapter0041
      * @tc.desc      Test pipe method with boolean-like string data
      * @tc.size      MediumTest
@@ -1344,7 +1344,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_4200
      * @tc.name      testStreamReadable03Chapter0042
      * @tc.desc      Test pipe method with array data converted to string
      * @tc.size      MediumTest
@@ -1391,7 +1391,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_4300
      * @tc.name      testStreamReadable03Chapter0043
      * @tc.desc      Test pipe method with Int8Array data converted to Uint8Array
      * @tc.size      MediumTest
@@ -1441,7 +1441,7 @@ export default function StreamReadable03Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTTHREE_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE3_4400
      * @tc.name      testStreamReadable03Chapter0044
      * @tc.desc      Test unpipe method with valid Writable destination
      * @tc.size      MediumTest

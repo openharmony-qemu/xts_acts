@@ -44,7 +44,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferAllocEscape0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_0100
      * @tc.desc   Testing the Buffer interface Alloc with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferAllocEscape0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_0200
      * @tc.desc   Testing the Buffer interface Alloc with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -82,7 +82,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferAllocEscape0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_0300
      * @tc.desc   Testing the Buffer interface Alloc with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +101,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferAllocEscape0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_0400
      * @tc.desc   Testing the Buffer interface Alloc with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,7 +120,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferAllocEscape0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_0500
      * @tc.desc   Testing the Buffer interface Alloc with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferAllocEscape0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_0600
      * @tc.desc   Testing the Buffer interface Alloc with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferAllocEscape0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_0700
      * @tc.desc   Testing the Buffer interface Alloc with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferAllocEscape0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_0800
      * @tc.desc   Testing the Buffer interface Alloc with input escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferAllocEscape0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_0900
      * @tc.desc   Testing the Buffer interface Alloc with input escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBufferAllocEscape0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1000
      * @tc.desc   Testing the Buffer interface Alloc with input escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -235,7 +235,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferAllocEscape0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1100
      * @tc.desc   Testing the Buffer interface Alloc with input escape \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -254,7 +254,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1200
      * @tc.desc   Testing the Buffer interface byteLength with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -274,7 +274,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBufferbyteLengthEscape0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1300
      * @tc.desc   Testing the Buffer interface byteLength with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -293,7 +293,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1400
      * @tc.desc   Testing the Buffer interface byteLength with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -312,7 +312,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1500
      * @tc.desc   Testing the Buffer interface byteLength with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -331,7 +331,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1600
      * @tc.desc   Testing the Buffer interface byteLength with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1700
      * @tc.desc   Testing the Buffer interface byteLength with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -369,7 +369,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1800
      * @tc.desc   Testing the Buffer interface byteLength with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -388,7 +388,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_1900
      * @tc.desc   Testing the Buffer interface byteLength with input escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -407,7 +407,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2000
      * @tc.desc   Testing the Buffer interface byteLength with input escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -426,7 +426,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2100
      * @tc.desc   Testing the Buffer interface byteLength with input escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -445,7 +445,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferbyteLengthEscape0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2200
      * @tc.desc   Testing the Buffer interface byteLength with input escape \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -464,7 +464,7 @@ export default function EscapeFastBufferTest() {
     })
     /**
      * @tc.name   testBufferCompareEscape0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2300
      * @tc.desc   Testing the Buffer interface Compare with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -486,7 +486,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferCompareEscape0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2400
      * @tc.desc   Testing the Buffer interface Compare with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -508,7 +508,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferCompareEscape0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2500
      * @tc.desc   Testing the Buffer interface Compare with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -530,7 +530,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferCompareEscape0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2600
      * @tc.desc   Testing the Buffer interface Compare with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -552,7 +552,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferCompareEscape0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2700
      * @tc.desc   Testing the Buffer interface Compare with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -574,7 +574,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferCompareEscape0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2800
      * @tc.desc   Testing the Buffer interface Compare with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -597,7 +597,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBufferCompareEscape0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_2900
      * @tc.desc   Testing the Buffer interface Compare with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -619,7 +619,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferCompareEscape0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3000
      * @tc.desc   Testing the Buffer interface Compare with input escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -641,7 +641,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferCompareEscape0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3100
      * @tc.desc   Testing the Buffer interface Compare with input escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -663,7 +663,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferCompareEscape0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3200
      * @tc.desc   Testing the Buffer interface Compare with input escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -685,7 +685,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferCompareEscape0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3300
      * @tc.desc   Testing the Buffer interface Compare with input escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -707,7 +707,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3400
      * @tc.desc   Testing the Buffer interface From with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -726,7 +726,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3500
      * @tc.desc   Testing the Buffer interface From with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -745,7 +745,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3600
      * @tc.desc   Testing the Buffer interface From with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -764,7 +764,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3700
      * @tc.desc   Testing the Buffer interface From with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -783,7 +783,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3800
      * @tc.desc   Testing the Buffer interface From with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -802,7 +802,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_3900
      * @tc.desc   Testing the Buffer interface From with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -821,7 +821,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4000
      * @tc.desc   Testing the Buffer interface From with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -840,7 +840,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4100
      * @tc.desc   Testing the Buffer interface From with input escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -859,7 +859,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4200
      * @tc.desc   Testing the Buffer interface From with input escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -878,7 +878,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4300
      * @tc.desc   Testing the Buffer interface Alloc with input escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -897,7 +897,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferFromEscape0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4400
      * @tc.desc   Testing the Buffer interface From with input escape \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -916,7 +916,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4500
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -935,7 +935,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4600
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -954,7 +954,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4700
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -973,7 +973,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4800
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -992,7 +992,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_4900
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1011,7 +1011,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5000
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1030,7 +1030,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5100
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1049,7 +1049,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5200
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1068,7 +1068,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5300
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1087,7 +1087,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5400
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1106,7 +1106,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferIsEncodingEscape0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5500
      * @tc.desc   Testing the Buffer interface IsEncoding with input escape \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1125,7 +1125,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5600
      * @tc.desc   Testing the Buffer interface fill with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1145,7 +1145,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5700
      * @tc.desc   Testing the Buffer interface fill with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1165,7 +1165,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5800
      * @tc.desc   Testing the Buffer interface fill with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1185,7 +1185,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_5900
      * @tc.desc   Testing the Buffer interface fill with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1205,7 +1205,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6000
      * @tc.desc   Testing the Buffer interface fill with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1225,7 +1225,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6100
      * @tc.desc   Testing the Buffer interface fill with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1245,7 +1245,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6200
      * @tc.desc   Testing the Buffer interface fill with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1265,7 +1265,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6300
      * @tc.desc   Testing the Buffer interface fill with input escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1285,7 +1285,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6400
      * @tc.desc   Testing the Buffer interface fill with input escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1305,7 +1305,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6500
      * @tc.desc   Testing the Buffer interface fill with input escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1325,7 +1325,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testfillEscape0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6600
      * @tc.desc   Testing the Buffer interface fill with input escape \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1345,7 +1345,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6700
      * @tc.desc   Testing the Buffer interface fill with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1366,7 +1366,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6800
      * @tc.desc   Testing the Buffer interface fill with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1387,7 +1387,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_6900
      * @tc.desc   Testing the Buffer interface fill with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1408,7 +1408,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7000
      * @tc.desc   Testing the Buffer interface fill with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1429,7 +1429,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7100
      * @tc.desc   Testing the Buffer interface fill with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1450,7 +1450,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7200
      * @tc.desc   Testing the Buffer interface fill with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1471,7 +1471,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7300
      * @tc.desc   Testing the Buffer interface fill with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1492,7 +1492,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7400
      * @tc.desc   Testing the Buffer interface fill with input escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1513,7 +1513,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7500
      * @tc.desc   Testing the Buffer interface fill with input escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1534,7 +1534,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7600
      * @tc.desc   Testing the Buffer interface fill with input escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1555,7 +1555,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testincludesEscape0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7700
      * @tc.desc   Testing the Buffer interface fill with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1577,7 +1577,7 @@ export default function EscapeFastBufferTest() {
     
     /**
      * @tc.name   testBuffertoStringEscape0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7800
      * @tc.desc   Testing the Buffer interface toString with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1597,7 +1597,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_7900
      * @tc.desc   Testing the Buffer interface toString with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1616,7 +1616,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8000
      * @tc.desc   Testing the Buffer interface toString with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1635,7 +1635,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8100
      * @tc.desc   Testing the Buffer interface toString with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1654,7 +1654,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_104000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8200
      * @tc.desc   Testing the Buffer interface toString with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1673,7 +1673,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8300
      * @tc.desc   Testing the Buffer interface toString with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1692,7 +1692,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8400
      * @tc.desc   Testing the Buffer interface toString with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1711,7 +1711,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8500
      * @tc.desc   Testing the Buffer interface toString with input escape \开 == 开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1730,7 +1730,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8600
      * @tc.desc   Testing the Buffer interface toString with input escape \😊 == 😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1749,7 +1749,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_10900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8700
      * @tc.desc   Testing the Buffer interface toString with input escape \0 == null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1768,7 +1768,7 @@ export default function EscapeFastBufferTest() {
 
     /**
      * @tc.name   testBuffertoStringEscape0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_ESCAPE_11000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8800
      * @tc.desc   Testing the Buffer interface toString with input escape \\b == \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1786,7 +1786,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_8900
      * @tc.desc   Testing the Buffer interface write with input ESCAPE \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1806,7 +1806,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9000
      * @tc.desc   Testing the Buffer interface write with input ESCAPE \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1826,7 +1826,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9100
      * @tc.desc   Testing the Buffer interface write with input ESCAPE 换行
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1846,7 +1846,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9200
      * @tc.desc   Testing the Buffer interface write with input ESCAPE \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1866,7 +1866,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9300
      * @tc.desc   Testing the Buffer interface write with input ESCAPE \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1886,7 +1886,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9400
      * @tc.desc   Testing the Buffer interface write with input ESCAPE \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1906,7 +1906,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9500
      * @tc.desc   Testing the Buffer interface write with input ESCAPE \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1926,7 +1926,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9600
      * @tc.desc   Testing the Buffer interface write with input ESCAPE \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1946,7 +1946,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_11900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9700
      * @tc.desc   Testing the Buffer interface write with input ESCAPE \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1966,7 +1966,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_12000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9800
      * @tc.desc   Testing the Buffer interface write with input ESCAPE null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1986,7 +1986,7 @@ export default function EscapeFastBufferTest() {
     });
     /**
      * @tc.name   testBufferwriteESCAPE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_E_BUFFER_ESCAPE_12100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER2_9900
      * @tc.desc   Testing the Buffer interface write with input ESCAPE \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

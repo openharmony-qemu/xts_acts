@@ -23,7 +23,7 @@ export default function ActsFastBufferTest() {
   describe("ActsFastBufferTest", () => {
     /**
      * @tc.name   testFastBufferAlloc0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1010
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -42,7 +42,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1020
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,7 +61,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferAlloc0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1030
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferAlloc0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1040
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferAlloc0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1050
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferAlloc0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1060
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -140,7 +140,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferAlloc0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1070
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -159,7 +159,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1080
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1090
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -201,7 +201,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1100
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -222,7 +222,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1110
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1120
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -262,7 +262,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1130
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -280,7 +280,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1140
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -298,7 +298,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1150
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -316,7 +316,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1160
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -334,7 +334,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1170
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -352,7 +352,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferAlloc0018
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_ALLOC_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1180
      * @tc.desc   Test the function of the interface Alloc.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -370,7 +370,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1190
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -389,7 +389,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1200
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -408,7 +408,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1210
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -427,7 +427,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1220
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -447,7 +447,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1230
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -465,7 +465,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1240
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -483,7 +483,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1250
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -502,7 +502,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1260
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -521,7 +521,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1270
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -546,7 +546,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1280
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -571,7 +571,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferByteLength0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BYTE_LENGTH_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1290
      * @tc.desc   Test the function of the interface ByteLength.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -596,7 +596,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1300
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -617,7 +617,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1310
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -639,7 +639,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1320
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -661,7 +661,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1330
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -681,7 +681,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1340
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -703,7 +703,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1350
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -726,7 +726,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1360
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -748,7 +748,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1370
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -768,7 +768,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1380
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -792,7 +792,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferConcat0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_CONCAT_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1390
      * @tc.desc   Test the function of the interface Concat.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -814,7 +814,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1400
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -833,7 +833,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1410
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -852,7 +852,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1420
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -871,7 +871,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1430
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -890,7 +890,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1440
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -911,7 +911,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1450
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -932,7 +932,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1460
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -952,7 +952,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1470
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -971,7 +971,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1480
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -991,7 +991,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1490
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1012,7 +1012,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1500
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1032,7 +1032,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1510
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1052,7 +1052,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1520
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1074,7 +1074,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom10014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM1_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1530
      * @tc.desc   Test the function of the interface From1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1096,7 +1096,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom20001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1540
      * @tc.desc   Test the function of the interface From2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1117,7 +1117,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom20002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM2_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1550
      * @tc.desc   Test the function of the interface From2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1141,7 +1141,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom20003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM2_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1560
      * @tc.desc   Test the function of the interface From2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1159,7 +1159,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom20004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM2_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1570
      * @tc.desc   Test the function of the interface From2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1178,7 +1178,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFrom20005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM2_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1580
      * @tc.desc   Test the function of the interface From2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1196,7 +1196,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom20006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM2_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1590
      * @tc.desc   Test the function of the interface From2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1217,7 +1217,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom20007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM2_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1600
      * @tc.desc   Test the function of the interface From2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1238,7 +1238,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFrom20008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM2_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1610
      * @tc.desc   Test the function of the interface From2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1260,7 +1260,7 @@ export default function ActsFastBufferTest() {
     
     /**
      * @tc.name   testFastBufferFrom40001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM4_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1620
      * @tc.desc   Test the function of the interface From4.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1279,7 +1279,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFrom40002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM4_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1630
      * @tc.desc   Test the function of the interface From4.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1299,7 +1299,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFrom40003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FROM4_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1640
      * @tc.desc   Test the function of the interface From4.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1318,7 +1318,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCompare0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COMPARE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1650
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1338,7 +1338,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferCompare0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COMPARE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1660
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1359,7 +1359,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferCompare0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COMPARE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1670
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1380,7 +1380,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferCompare0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COMPARE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1680
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1403,7 +1403,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferTranscode0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TRANSCODE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1690
      * @tc.desc   Test the function of the interface Transcode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1423,7 +1423,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferTranscode0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TRANSCODE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1700
      * @tc.desc   Test the function of the interface Transcode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1443,7 +1443,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferTranscode0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TRANSCODE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1710
      * @tc.desc   Test the function of the interface Transcode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1463,7 +1463,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferTranscode0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TRANSCODE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1720
      * @tc.desc   Test the function of the interface Transcode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1483,7 +1483,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferTranscode0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TRANSCODE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1730
      * @tc.desc   Test the function of the interface Transcode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1502,7 +1502,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferTranscode0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TRANSCODE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1740
      * @tc.desc   Test the function of the interface Transcode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1522,7 +1522,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferTranscode0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TRANSCODE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1750
      * @tc.desc   Test the function of the interface Transcode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1541,7 +1541,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferTranscode0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TRANSCODE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1760
      * @tc.desc   Test the function of the interface Transcode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1561,7 +1561,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1770
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1581,7 +1581,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1780
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1600,7 +1600,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1790
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1624,7 +1624,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1800
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1645,7 +1645,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1810
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1665,7 +1665,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1820
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1684,7 +1684,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1830
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1705,7 +1705,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1840
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1726,7 +1726,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1850
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1747,7 +1747,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1860
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1768,7 +1768,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1870
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1787,7 +1787,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1880
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1808,7 +1808,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1890
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1829,7 +1829,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1900
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1850,7 +1850,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1910
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1869,7 +1869,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1920
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1888,7 +1888,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFill0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FILL_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1930
      * @tc.desc   Test the function of the interface Fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1907,7 +1907,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1940
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1926,7 +1926,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1950
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1945,7 +1945,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1960
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1965,7 +1965,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1970
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1987,7 +1987,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1980
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2009,7 +2009,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_1990
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2031,7 +2031,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2000
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2051,7 +2051,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2010
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2071,7 +2071,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2020
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2093,7 +2093,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2030
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2114,7 +2114,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2040
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2136,7 +2136,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2050
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2158,7 +2158,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2060
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2178,7 +2178,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferFastBufferCompare0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2070
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2198,7 +2198,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2080
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2218,7 +2218,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2090
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2240,7 +2240,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2100
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2262,7 +2262,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0018
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2110
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2284,7 +2284,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0019
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2120
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2304,7 +2304,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0020
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2130
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2324,7 +2324,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0021
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2140
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2344,7 +2344,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0022
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2150
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2365,7 +2365,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0023
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2160
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2387,7 +2387,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0024
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2170
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2409,7 +2409,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferFastBufferCompare0025
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_FASTBUFFERCOMPARE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2180
      * @tc.desc   Test the function of the interface Compare.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2429,7 +2429,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2190
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2452,7 +2452,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2200
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2477,7 +2477,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferCopy0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2210
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2500,7 +2500,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2220
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2522,7 +2522,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2230
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2546,7 +2546,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2240
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2571,7 +2571,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2250
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2594,7 +2594,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2260
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2617,7 +2617,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2270
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2640,7 +2640,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2280
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2665,7 +2665,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2290
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2690,7 +2690,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2300
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2715,7 +2715,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2310
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2738,7 +2738,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2320
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2761,7 +2761,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2330
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2784,7 +2784,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2340
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2809,7 +2809,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2350
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2834,7 +2834,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0018
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2360
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2859,7 +2859,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0019
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2370
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2882,7 +2882,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferCopy0020
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_COPY_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2380
      * @tc.desc   Test the function of the interface Copy.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2905,7 +2905,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferEquals0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_EQUALS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2390
      * @tc.desc   Test the function of the interface Equals.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2925,7 +2925,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferEquals0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_EQUALS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2400
      * @tc.desc   Test the function of the interface Equals.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2945,7 +2945,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferEquals0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_EQUALS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2410
      * @tc.desc   Test the function of the interface Equals.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2966,7 +2966,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferEquals0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_EQUALS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2420
      * @tc.desc   Test the function of the interface Equals.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2987,7 +2987,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2430
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3006,7 +3006,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2440
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3025,7 +3025,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2450
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3045,7 +3045,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2460
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3065,7 +3065,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2470
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3084,7 +3084,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2480
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3103,7 +3103,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2490
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3121,7 +3121,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2500
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3139,7 +3139,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2510
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3157,7 +3157,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2520
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3175,7 +3175,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2530
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3195,7 +3195,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2540
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3214,7 +3214,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2550
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3234,7 +3234,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2560
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3254,7 +3254,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2570
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3274,7 +3274,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2580
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3295,7 +3295,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2590
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3315,7 +3315,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0018
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2600
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3335,7 +3335,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0019
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2610
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3356,7 +3356,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0020
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2620
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3376,7 +3376,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIncludes0021
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INCLUDES_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2630
      * @tc.desc   Test the function of the interface Includes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3396,7 +3396,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2640
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3418,7 +3418,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2650
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3440,7 +3440,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2660
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3460,7 +3460,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2670
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3480,7 +3480,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2680
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3499,7 +3499,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2690
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3518,7 +3518,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2700
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3539,7 +3539,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2710
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3560,7 +3560,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2720
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3581,7 +3581,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2730
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3601,7 +3601,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2740
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3622,7 +3622,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2750
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3641,7 +3641,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2760
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3661,7 +3661,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2770
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3680,7 +3680,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2780
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3700,7 +3700,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2790
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3720,7 +3720,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2800
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3740,7 +3740,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0018
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2810
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3760,7 +3760,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0019
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2820
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3780,7 +3780,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0020
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2830
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3800,7 +3800,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0021
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2840
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3820,7 +3820,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0022
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2850
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3840,7 +3840,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0023
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2860
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3860,7 +3860,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0024
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2870
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3880,7 +3880,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0025
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2880
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3900,7 +3900,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0026
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2890
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3920,7 +3920,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0027
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2900
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3940,7 +3940,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0028
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2910
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3960,7 +3960,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0029
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2920
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3980,7 +3980,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0030
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2930
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4000,7 +4000,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0031
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2940
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4020,7 +4020,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferIndexOf0032
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2950
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4040,7 +4040,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0033
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2960
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4060,7 +4060,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0034
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2970
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4080,7 +4080,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferIndexOf0035
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2980
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4100,7 +4100,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0036
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_2990
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4120,7 +4120,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0037
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3000
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4140,7 +4140,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0038
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3010
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4160,7 +4160,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0039
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3020
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4180,7 +4180,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0040
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3030
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4200,7 +4200,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0041
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3040
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4220,7 +4220,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0042
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3050
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4240,7 +4240,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0043
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3060
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4260,7 +4260,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferIndexOf0044
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_INDEX_OF_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3070
      * @tc.desc   Test the function of the interface IndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4280,7 +4280,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3080
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4298,7 +4298,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3090
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4316,7 +4316,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3100
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4337,7 +4337,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3110
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4358,7 +4358,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3120
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4376,7 +4376,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3130
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4394,7 +4394,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3140
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4412,7 +4412,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3150
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4430,7 +4430,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3160
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4448,7 +4448,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3170
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4466,7 +4466,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3180
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4485,7 +4485,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3190
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4503,7 +4503,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3200
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4523,7 +4523,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3210
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4543,7 +4543,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3220
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4563,7 +4563,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3230
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4584,7 +4584,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3240
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4604,7 +4604,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0018
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3250
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4624,7 +4624,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0019
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3260
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4644,7 +4644,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0020
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3270
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4664,7 +4664,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferLastIndexOf0021
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_LAST_INDEX_OF_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3280
      * @tc.desc   Test the function of the interface LastIndexOf.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4684,7 +4684,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3290
      * @tc.desc   Test the function of the interface readBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4703,7 +4703,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigInt64BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3300
      * @tc.desc   Test the function of the interface readBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4722,7 +4722,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigInt64BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3310
      * @tc.desc   Test the function of the interface readBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4742,7 +4742,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigInt64BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3320
      * @tc.desc   Test the function of the interface readBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4784,7 +4784,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3330
      * @tc.desc   Test the function of the interface ReadBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4803,7 +4803,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3340
      * @tc.desc   Test the function of the interface ReadBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4823,7 +4823,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3350
      * @tc.desc   Test the function of the interface ReadBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4844,7 +4844,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigUInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3360
      * @tc.desc   Test the function of the interface ReadBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4864,7 +4864,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigUInt64BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3370
      * @tc.desc   Test the function of the interface ReadBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4883,7 +4883,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigUInt64BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3380
      * @tc.desc   Test the function of the interface ReadBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4903,7 +4903,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigUInt64BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3390
      * @tc.desc   Test the function of the interface ReadBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4924,7 +4924,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigUInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3400
      * @tc.desc   Test the function of the interface ReadBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4944,7 +4944,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigUInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3410
      * @tc.desc   Test the function of the interface ReadBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4963,7 +4963,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigUInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3420
      * @tc.desc   Test the function of the interface ReadBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4983,7 +4983,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadBigUInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3430
      * @tc.desc   Test the function of the interface ReadBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5004,7 +5004,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadDoubleBE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3440
      * @tc.desc   Test the function of the interface readDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5024,7 +5024,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadDoubleBE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3450
      * @tc.desc   Test the function of the interface readDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5044,7 +5044,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadDoubleBE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3460
      * @tc.desc   Test the function of the interface readDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5065,7 +5065,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadDoubleBE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3470
      * @tc.desc   Test the function of the interface readDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5086,7 +5086,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadDoubleLE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3480
      * @tc.desc   Test the function of the interface readDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5105,7 +5105,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadDoubleLE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3490
      * @tc.desc   Test the function of the interface readDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5125,7 +5125,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadDoubleLE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3500
      * @tc.desc   Test the function of the interface readDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5144,7 +5144,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadDoubleLE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3510
      * @tc.desc   Test the function of the interface readDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5165,7 +5165,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadFloatBE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3520
      * @tc.desc   Test the function of the interface readFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5185,7 +5185,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadFloatBE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3530
      * @tc.desc   Test the function of the interface readFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5204,7 +5204,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadFloatBE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3540
      * @tc.desc   Test the function of the interface readFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5225,7 +5225,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadFloatBE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3550
      * @tc.desc   Test the function of the interface readFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5246,7 +5246,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadFloatLE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3560
      * @tc.desc   Test the function of the interface readFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5266,7 +5266,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadFloatLE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3570
      * @tc.desc   Test the function of the interface readFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5285,7 +5285,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadFloatLE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3580
      * @tc.desc   Test the function of the interface readFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5306,7 +5306,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadFloatLE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3590
      * @tc.desc   Test the function of the interface readFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5327,7 +5327,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt80001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3600
      * @tc.desc   Test the function of the interface readInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5348,7 +5348,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt80002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3610
      * @tc.desc   Test the function of the interface readInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5366,7 +5366,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt80003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3620
      * @tc.desc   Test the function of the interface readInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5384,7 +5384,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt80004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3630
      * @tc.desc   Test the function of the interface readInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5404,7 +5404,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt16BE001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3640
      * @tc.desc   Test the function of the interface readInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5422,7 +5422,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt16BE002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3650
      * @tc.desc   Test the function of the interface readInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5440,7 +5440,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt16BE003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3660
      * @tc.desc   Test the function of the interface readInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5458,7 +5458,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt16BE004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3670
      * @tc.desc   Test the function of the interface readInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5479,7 +5479,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt16LE001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3680
      * @tc.desc   Test the function of the interface readInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5498,7 +5498,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt16LE002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3690
      * @tc.desc   Test the function of the interface readInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5516,7 +5516,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt16LE003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3700
      * @tc.desc   Test the function of the interface readInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5535,7 +5535,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt16LE004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3710
      * @tc.desc   Test the function of the interface readInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5556,7 +5556,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt32BE001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3720
      * @tc.desc   Test the function of the interface readInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5575,7 +5575,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt32BE002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3730
      * @tc.desc   Test the function of the interface readInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5595,7 +5595,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt32BE003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3740
      * @tc.desc   Test the function of the interface readInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5614,7 +5614,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt32BE004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3750
      * @tc.desc   Test the function of the interface readInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5635,7 +5635,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt32LE001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3760
      * @tc.desc   Test the function of the interface readInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5655,7 +5655,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt32LE002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3770
      * @tc.desc   Test the function of the interface readInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5675,7 +5675,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt32LE003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3780
      * @tc.desc   Test the function of the interface readInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5695,7 +5695,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadInt32LE004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3790
      * @tc.desc   Test the function of the interface readInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5716,7 +5716,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt8001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3800
      * @tc.desc   Test the function of the interface readIntBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5735,7 +5735,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt8002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3810
      * @tc.desc   Test the function of the interface ReadUInt8002.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5754,7 +5754,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt8003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3820
      * @tc.desc   Test the function of the interface ReadUInt8003.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5773,7 +5773,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt8004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3830
      * @tc.desc   Test the function of the interface ReadUInt8004.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5794,7 +5794,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt16BE001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3840
      * @tc.desc   Test the function of the interface ReadUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5813,7 +5813,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt16BE002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3850
      * @tc.desc   Test the function of the interface ReadUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5832,7 +5832,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt16BE003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3860
      * @tc.desc   Test the function of the interface ReadUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5851,7 +5851,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt16BE004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3870
      * @tc.desc   Test the function of the interface ReadUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5872,7 +5872,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3880
      * @tc.desc   Test the function of the interface ReadUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5891,7 +5891,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3890
      * @tc.desc   Test the function of the interface ReadUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5910,7 +5910,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt16LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3900
      * @tc.desc   Test the function of the interface ReadUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5929,7 +5929,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt16LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3910
      * @tc.desc   Test the function of the interface ReadUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5950,7 +5950,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt32BE001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3920
      * @tc.desc   Test the function of the interface ReadUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5969,7 +5969,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt32BE002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3930
      * @tc.desc   Test the function of the interface ReadUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5988,7 +5988,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt32BE003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3940
      * @tc.desc   Test the function of the interface ReadUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6009,7 +6009,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferReadUInt32BE004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3950
      * @tc.desc   Test the function of the interface ReadUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6030,7 +6030,7 @@ export default function ActsFastBufferTest() {
     });
     /**
      * @tc.name   testFastBufferReadUInt32LE001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3960
      * @tc.desc   Test the function of the interface ReadUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6049,7 +6049,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt32LE002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3970
      * @tc.desc   Test the function of the interface ReadUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6070,7 +6070,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt32LE003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3980
      * @tc.desc   Test the function of the interface ReadUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6091,7 +6091,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferReadUInt32LE004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READ_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_3990
      * @tc.desc   Test the function of the interface ReadUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6112,7 +6112,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4000
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6136,7 +6136,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4010
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6159,7 +6159,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4020
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6183,7 +6183,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4030
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6207,7 +6207,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4040
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6231,7 +6231,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4050
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6256,7 +6256,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4060
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6280,7 +6280,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4070
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6304,7 +6304,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4080
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6329,7 +6329,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4090
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6354,7 +6354,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4100
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6379,7 +6379,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4110
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6399,7 +6399,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4120
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6419,7 +6419,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4130
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6439,7 +6439,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4140
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6459,7 +6459,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4150
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6479,7 +6479,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4160
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6499,7 +6499,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0018
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4170
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6519,7 +6519,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0019
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4180
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6539,7 +6539,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0020
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4190
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6559,7 +6559,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0021
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4200
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6579,7 +6579,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0022
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4210
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6599,7 +6599,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0023
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4220
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6619,7 +6619,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0024
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4230
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6639,7 +6639,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferSubarray0025
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_SUBARRAY_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4240
      * @tc.desc   Test the function of the interface Subarray.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6659,7 +6659,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4250
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6680,7 +6680,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4260
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6701,7 +6701,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4270
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6723,7 +6723,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4280
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6745,7 +6745,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4290
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6767,7 +6767,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4300
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6790,7 +6790,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4310
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6812,7 +6812,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4320
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6834,7 +6834,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4330
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6856,7 +6856,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4340
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6878,7 +6878,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4350
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6900,7 +6900,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4360
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6922,7 +6922,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4370
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6944,7 +6944,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4380
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6967,7 +6967,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4390
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6989,7 +6989,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4400
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7012,7 +7012,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4410
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7032,7 +7032,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0018
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4420
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7052,7 +7052,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0019
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4430
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7072,7 +7072,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0020
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4440
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7092,7 +7092,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0021
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4450
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7112,7 +7112,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0022
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4460
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7132,7 +7132,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0023
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4470
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7152,7 +7152,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0024
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4480
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7172,7 +7172,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0025
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4490
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7192,7 +7192,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0026
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4500
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7212,7 +7212,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0027
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4510
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7232,7 +7232,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0028
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4520
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7252,7 +7252,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0029
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4530
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7272,7 +7272,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0030
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4540
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7292,7 +7292,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0031
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4550
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7312,7 +7312,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0032
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4560
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7332,7 +7332,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0033
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4570
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7352,7 +7352,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0034
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4580
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7372,7 +7372,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0035
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4590
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7392,7 +7392,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0036
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4600
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7412,7 +7412,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0037
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4610
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7432,7 +7432,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0038
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4620
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7452,7 +7452,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0039
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4630
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7472,7 +7472,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0040
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4640
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7492,7 +7492,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0041
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4650
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7512,7 +7512,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0042
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4660
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7532,7 +7532,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0043
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4670
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7552,7 +7552,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0044
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4680
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7572,7 +7572,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0045
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4690
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7592,7 +7592,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0046
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4700
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7612,7 +7612,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0047
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4710
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7632,7 +7632,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0048
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4720
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7652,7 +7652,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0049
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4730
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7672,7 +7672,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0050
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4740
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7692,7 +7692,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0051
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4750
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7712,7 +7712,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0052
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4760
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7732,7 +7732,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0053
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4770
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7752,7 +7752,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0054
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4780
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7772,7 +7772,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0055
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4790
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7792,7 +7792,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0056
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4800
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7812,7 +7812,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0057
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4810
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7832,7 +7832,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0058
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4820
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7852,7 +7852,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0059
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4830
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7872,7 +7872,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0060
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4840
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7892,7 +7892,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0061
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4850
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7912,7 +7912,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0062
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4860
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7932,7 +7932,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0063
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4870
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7952,7 +7952,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0064
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4880
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7972,7 +7972,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0065
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4890
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7992,7 +7992,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0066
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4900
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8012,7 +8012,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0067
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4910
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8032,7 +8032,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0068
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4920
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8052,7 +8052,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0069
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4930
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8072,7 +8072,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0070
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4940
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8092,7 +8092,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0071
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4950
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8112,7 +8112,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0072
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4960
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8132,7 +8132,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0073
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4970
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8152,7 +8152,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0074
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4980
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8172,7 +8172,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0075
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_4990
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8192,7 +8192,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0076
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5000
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8212,7 +8212,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0077
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5010
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8232,7 +8232,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0078
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5020
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8252,7 +8252,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0079
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5030
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8272,7 +8272,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferToString0080
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_TO_STRING_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5040
      * @tc.desc   Test the function of the interface toString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8292,7 +8292,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5050
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8311,7 +8311,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5060
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8329,7 +8329,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5070
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8348,7 +8348,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5080
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8368,7 +8368,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5090
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8390,7 +8390,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5100
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8412,7 +8412,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5110
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8432,7 +8432,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5120
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8452,7 +8452,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5130
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8472,7 +8472,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5140
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8494,7 +8494,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5150
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8516,7 +8516,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5160
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8538,7 +8538,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0013
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5170
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8558,7 +8558,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0014
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5180
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8578,7 +8578,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0015
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5190
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8598,7 +8598,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0016
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5200
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8618,7 +8618,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0017
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5210
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8638,7 +8638,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0018
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5220
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8658,7 +8658,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0019
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5230
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8678,7 +8678,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0020
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5240
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8698,7 +8698,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0021
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5250
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8720,7 +8720,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0022
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5260
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8741,7 +8741,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0023
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5270
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8761,7 +8761,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0024
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5280
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8782,7 +8782,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0025
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5290
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8802,7 +8802,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWrite0026
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5300
      * @tc.desc   Test the function of the interface write.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8823,7 +8823,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5310
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8843,7 +8843,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5320
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8863,7 +8863,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5330
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8883,7 +8883,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5340
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8903,7 +8903,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5350
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8923,7 +8923,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5360
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8947,7 +8947,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5370
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8967,7 +8967,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5380
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8987,7 +8987,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5390
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9007,7 +9007,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5400
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9026,7 +9026,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5410
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9048,7 +9048,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64BE0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5420
      * @tc.desc   Test the function of the interface writeBigInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9068,7 +9068,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5430
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9088,7 +9088,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5440
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9108,7 +9108,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5450
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9128,7 +9128,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5460
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9148,7 +9148,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5470
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9168,7 +9168,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5480
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9188,7 +9188,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5490
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9208,7 +9208,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5500
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9228,7 +9228,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5510
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9248,7 +9248,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5520
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9268,7 +9268,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5530
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9289,7 +9289,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigInt64LE0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5540
      * @tc.desc   Test the function of the interface writeBigInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9308,7 +9308,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5550
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9328,7 +9328,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5560
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9348,7 +9348,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5570
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9368,7 +9368,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5580
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9388,7 +9388,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5590
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9408,7 +9408,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5600
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9429,7 +9429,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5610
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9449,7 +9449,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5620
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9469,7 +9469,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5630
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9488,7 +9488,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5640
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9508,7 +9508,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64BE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5650
      * @tc.desc   Test the function of the interface writeBigUInt64BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9528,7 +9528,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5660
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9548,7 +9548,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5670
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9568,7 +9568,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5680
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9588,7 +9588,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5690
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9609,7 +9609,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64L0E005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5700
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9629,7 +9629,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64L0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5710
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9650,7 +9650,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5720
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9670,7 +9670,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5730
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9690,7 +9690,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5740
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9709,7 +9709,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5750
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9729,7 +9729,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5760
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9749,7 +9749,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteBigUInt64LE0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5770
      * @tc.desc   Test the function of the interface writeBigUInt64LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9769,7 +9769,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5780
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9791,7 +9791,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5790
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9812,7 +9812,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5800
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9831,7 +9831,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5810
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9849,7 +9849,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5820
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9868,7 +9868,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5830
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9888,7 +9888,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5840
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9907,7 +9907,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5850
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9926,7 +9926,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5860
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9945,7 +9945,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5870
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9964,7 +9964,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleBE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5880
      * @tc.desc   Test the function of the interface writeDoubleBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9984,7 +9984,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5890
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10006,7 +10006,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5900
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10025,7 +10025,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5910
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10044,7 +10044,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5920
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10065,7 +10065,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5930
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10084,7 +10084,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5940
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10103,7 +10103,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5950
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10122,7 +10122,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5960
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10141,7 +10141,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5970
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10161,7 +10161,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5980
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10182,7 +10182,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteDoubleLE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_5990
      * @tc.desc   Test the function of the interface writeDoubleLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10203,7 +10203,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6000
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10222,7 +10222,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6010
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10241,7 +10241,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6020
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10260,7 +10260,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6030
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10279,7 +10279,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6040
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10298,7 +10298,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6050
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10317,7 +10317,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6060
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10336,7 +10336,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6070
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10355,7 +10355,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6080
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10374,7 +10374,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6090
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10393,7 +10393,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatBE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6100
      * @tc.desc   Test the function of the interface WriteFloatBE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10411,7 +10411,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6110
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10430,7 +10430,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6120
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10449,7 +10449,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_10900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6130
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10468,7 +10468,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6140
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10487,7 +10487,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6150
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10506,7 +10506,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6160
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10525,7 +10525,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6170
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10544,7 +10544,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6180
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10563,7 +10563,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6190
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10582,7 +10582,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6200
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10601,7 +10601,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteFloatLE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6210
      * @tc.desc   Test the function of the interface WriteFloatLE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10620,7 +10620,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6220
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10640,7 +10640,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_11900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6230
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10659,7 +10659,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6240
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10678,7 +10678,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6250
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10700,7 +10700,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6260
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10720,7 +10720,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6270
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10739,7 +10739,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6280
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10760,7 +10760,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6290
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10780,7 +10780,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6300
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10800,7 +10800,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6310
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10819,7 +10819,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt80011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6320
      * @tc.desc   Test the function of the interface WriteInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10839,7 +10839,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_12900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6330
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10858,7 +10858,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6340
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10879,7 +10879,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6350
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10899,7 +10899,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6360
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10918,7 +10918,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6370
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10938,7 +10938,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6380
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10956,7 +10956,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6390
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10975,7 +10975,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6400
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -10995,7 +10995,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6410
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11014,7 +11014,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6420
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11035,7 +11035,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16BE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_13900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6430
      * @tc.desc   Test the function of the interface WriteInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11056,7 +11056,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6440
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11075,7 +11075,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6450
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11095,7 +11095,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6460
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11115,7 +11115,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6470
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11134,7 +11134,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6480
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11154,7 +11154,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6490
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11173,7 +11173,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6500
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11192,7 +11192,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6510
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11212,7 +11212,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6520
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11231,7 +11231,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_14900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6530
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11252,7 +11252,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt16LE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6540
      * @tc.desc   Test the function of the interface WriteInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11273,7 +11273,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6550
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11293,7 +11293,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6560
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11313,7 +11313,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6570
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11333,7 +11333,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6580
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11353,7 +11353,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6590
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11373,7 +11373,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6600
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11394,7 +11394,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6610
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11414,7 +11414,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6620
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11434,7 +11434,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_15900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6630
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11455,7 +11455,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6640
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11475,7 +11475,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6650
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11497,7 +11497,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32BE0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6660
      * @tc.desc   Test the function of the interface writeInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11517,7 +11517,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6670
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11537,7 +11537,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6680
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11557,7 +11557,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6690
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11577,7 +11577,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6700
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11597,7 +11597,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6710
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11619,7 +11619,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6720
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11639,7 +11639,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_16900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6730
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11659,7 +11659,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6740
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11680,7 +11680,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6750
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11700,7 +11700,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6760
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11722,7 +11722,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteInt32LE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6770
      * @tc.desc   Test the function of the interface writeInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11743,7 +11743,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6780
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11772,7 +11772,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6790
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11793,7 +11793,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6800
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11814,7 +11814,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6810
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11835,7 +11835,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6820
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11856,7 +11856,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_17900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6830
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11876,7 +11876,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6840
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11897,7 +11897,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6850
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11918,7 +11918,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6860
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11941,7 +11941,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6870
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11962,7 +11962,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6880
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -11984,7 +11984,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt80012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6890
      * @tc.desc   Test the function of the interface writeUInt8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12004,7 +12004,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6900
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12027,7 +12027,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6910
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12048,7 +12048,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt16BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6920
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12068,7 +12068,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_18900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6930
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12088,7 +12088,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6940
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12108,7 +12108,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6950
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12128,7 +12128,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6960
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12148,7 +12148,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6970
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12168,7 +12168,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6980
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12188,7 +12188,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_6990
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12212,7 +12212,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt16BE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7000
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12232,7 +12232,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16BE0012
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7010
      * @tc.desc   Test the function of the interface writeUInt16BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12254,7 +12254,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7020
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12274,7 +12274,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_19900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7030
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12295,7 +12295,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7040
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12314,7 +12314,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7050
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12333,7 +12333,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16LE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7060
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12355,7 +12355,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt16LE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7070
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12375,7 +12375,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16LE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7080
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12394,7 +12394,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16LE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7090
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12415,7 +12415,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt16LE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7100
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12434,7 +12434,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16LE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7110
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12455,7 +12455,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt16LE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7120
      * @tc.desc   Test the function of the interface writeUInt16LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12476,7 +12476,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_20900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7130
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12495,7 +12495,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7140
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12514,7 +12514,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7150
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12534,7 +12534,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7160
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12554,7 +12554,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32BE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7170
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12574,7 +12574,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32BE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7180
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12595,7 +12595,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32BE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7190
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12615,7 +12615,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32BE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7200
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12635,7 +12635,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32BE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7210
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12654,7 +12654,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32BE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7220
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12676,7 +12676,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32BE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_21900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7230
      * @tc.desc   Test the function of the interface writeUInt32BE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12697,7 +12697,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7240
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12715,7 +12715,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7250
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12735,7 +12735,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7260
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12755,7 +12755,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7270
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12775,7 +12775,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferWriteUInt32LE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7280
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12794,7 +12794,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32LE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7290
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12816,7 +12816,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32LE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7300
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12835,7 +12835,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32LE0008
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7310
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12854,7 +12854,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32LE0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7320
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12873,7 +12873,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32LE0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_22900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7330
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12894,7 +12894,7 @@ export default function ActsFastBufferTest() {
     })
     /**
      * @tc.name   testFastBufferWriteUInt32LE0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_WRITE_23000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7340
      * @tc.desc   Test the function of the interface writeUInt32LE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -12916,7 +12916,7 @@ export default function ActsFastBufferTest() {
 
     /**
      * @tc.name   testFastBufferReadUIntLE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_READUINTLE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER4_7350
      * @tc.desc   testFastBufferReadUIntLE0005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

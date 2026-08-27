@@ -34,7 +34,7 @@ export default function XmlTest_01() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_CONSTRUCTOR_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_0100
      * @tc.name      ConstructorTest0001
      * @tc.desc      Test valid basic configuration input parameters
      * @tc.size      MediumTest
@@ -54,7 +54,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_CONSTRUCTOR_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_0200
      * @tc.name      ConstructorTest0002
      * @tc.desc      Test single valid parameter initialization
      * @tc.size      MediumTest
@@ -74,7 +74,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_CONSTRUCTOR_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_0300
      * @tc.name      ConstructorTest0003
      * @tc.desc      Test invalid parameter value input
      * @tc.size      MediumTest
@@ -102,7 +102,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_CONSTRUCTOR_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_0400
      * @tc.name      ConstructorTest0004
      * @tc.desc      Test passing an overly large ArrayBuffer
      * @tc.size      MediumTest
@@ -130,7 +130,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_CONSTRUCTOR_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_0500
      * @tc.name      ConstructorTest0005
      * @tc.desc      Combined test: passing an overly large ArrayBuffer and an illegal encoding format
      * @tc.size      MediumTest
@@ -157,7 +157,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_0600
      * @tc.name      SetAttributesTest0001
      * @tc.desc      Test adding a single valid parameter
      * @tc.size      MediumTest
@@ -184,7 +184,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_0700
      * @tc.name      SetAttributesTest0002
      * @tc.desc      Test adding multiple valid parameters
      * @tc.size      MediumTest
@@ -215,7 +215,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_0800
      * @tc.name      SetAttributesTest0003
      * @tc.desc      Test adding valid XML special characters
      * @tc.size      MediumTest
@@ -247,7 +247,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_0900
      * @tc.name      SetAttributesTest0004
      * @tc.desc      Test passing empty string values
      * @tc.size      MediumTest
@@ -278,7 +278,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1000
      * @tc.name      SetAttributesTest0005
      * @tc.desc      Test passing XML illegal characters
      * @tc.size      MediumTest
@@ -311,7 +311,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1100
      * @tc.name      SetAttributesTest0006
      * @tc.desc      Test passing null/undefined
      * @tc.size      MediumTest
@@ -344,7 +344,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1200
      * @tc.name      SetAttributesTest0007
      * @tc.desc      Test passing overly long parameters, verify length limit handling
      * @tc.size      MediumTest
@@ -375,7 +375,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1300
      * @tc.name      SetAttributesTest0008
      * @tc.desc      Test repeatedly adding valid key-value pairs
      * @tc.size      MediumTest
@@ -414,7 +414,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1400
      * @tc.name      SetAttributesTest0009
      * @tc.desc      Test mixing valid attributes with XML illegal characters
      * @tc.size      MediumTest
@@ -445,7 +445,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETATTRIBUTES_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1500
      * @tc.name      SetAttributesTest0010
      * @tc.desc      Test adding attributes to the same tag multiple times
      * @tc.size      MediumTest
@@ -485,7 +485,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1600
      * @tc.name      addEmptyElementTest0001
      * @tc.desc      Positive scenario: Basic function test for adding a single empty element using ArrayBuffer method
      * @tc.size      MediumTest
@@ -509,7 +509,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1700
      * @tc.name     addEmptyElementTest0002
      * @tc.desc      Positive scenario: Continuously add multiple empty elements using ArrayBuffer
      * @tc.size      MediumTest
@@ -536,7 +536,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1800
      * @tc.name      addEmptyElementTest0003
      * @tc.desc      Negative scenario: Pass empty string as tag name
      * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_1900
      * @tc.name      addEmptyElementTest0004
      * @tc.desc      Negative scenario: Tag name contains XML illegal characters
      * @tc.size      MediumTest
@@ -588,7 +588,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2000
      * @tc.name      addEmptyElementTest0005
      * @tc.desc      Positive scenario: Test ArrayBuffer of different sizes
      * @tc.size      MediumTest
@@ -620,7 +620,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2100
      * @tc.name      addEmptyElementTest0006
      * @tc.desc      Combination scenario: Only use addEmptyElement method
      * @tc.size      MediumTest
@@ -661,7 +661,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2200
      * @tc.name      addEmptyElementTest0007
      * @tc.desc      Combination scenario: Multiple XmlSerializer instances working simultaneously
      * @tc.size      MediumTest
@@ -684,7 +684,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2300
      * @tc.name     addEmptyElementTest0008
      * @tc.desc      Combination scenario: Verify the order of empty elements
      * @tc.size      MediumTest
@@ -716,7 +716,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENTSUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2400
      * @tc.name      addEmptyElementTest0009
      * @tc.desc      Performance scenario: Adding a large number of empty elements
      * @tc.size      MediumTest
@@ -748,7 +748,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETDECLARATION_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2500
      * @tc.name      SetDeclarationTest0001
      * @tc.desc      Test creating an instance with default parameters
      * @tc.size      MediumTest
@@ -772,7 +772,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETDECLARATION_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2600
      * @tc.name      SetDeclarationTest0002
      * @tc.desc      Test calling other methods first and then setDeclaration
      * @tc.size      MediumTest
@@ -800,7 +800,7 @@ export default function XmlTest_01() {
       })
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETDECLARATION_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2700
      * @tc.name      SetDeclarationTest0003
      * @tc.desc      Test calling setDeclaration first and then other methods
      * @tc.size      MediumTest
@@ -828,7 +828,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2800
      * @tc.name      StartElementTest0001
      * @tc.desc      Create a basic XML structure
      * @tc.size      MediumTest
@@ -852,7 +852,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_2900
      * @tc.name      StartElementTest0002
      * @tc.desc      Nested Element Structure Validation
      * @tc.size      MediumTest
@@ -879,7 +879,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3000
      * @tc.name      StartElementTest0003
      * @tc.desc      Multi-attribute setting scenario
      * @tc.size      MediumTest
@@ -905,7 +905,7 @@ export default function XmlTest_01() {
       });
 
      /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3100
      * @tc.name      StartElementTest0004
      * @tc.desc      Empty Tag Name Exception Test
      * @tc.size      MediumTest
@@ -929,7 +929,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3200
      * @tc.name      StartElementTest0005
      * @tc.desc      Illegal character tag test
      * @tc.size      MediumTest
@@ -952,7 +952,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3300
      * @tc.name      StartElementTest0006
      * @tc.desc      Unclosed element exception
      * @tc.size      MediumTest
@@ -975,7 +975,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3400
      * @tc.name      StartElementTest0007
      * @tc.desc      Mixed elements and text content
      * @tc.size      MediumTest
@@ -1005,7 +1005,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3500
      * @tc.name      StartElementTest0008
      * @tc.desc      Continuous Operation Exception Recovery
      * @tc.size      MediumTest
@@ -1029,7 +1029,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3600
      * @tc.name      StartElementTest0009
      * @tc.desc      The parameter 'name' is an empty string
      * @tc.size      MediumTest
@@ -1054,7 +1054,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3700
      * @tc.name      StartElementTest0010
      * @tc.desc      The parameter 'name' is undefined
      * @tc.size      MediumTest
@@ -1078,7 +1078,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3800
      * @tc.name      StartElementTest0011
      * @tc.desc      The parameter 'name' is null
      * @tc.size      MediumTest
@@ -1102,7 +1102,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_3900
      * @tc.name      StartElementTest0012
      * @tc.desc      The parameter name contains spaces
      * @tc.size      MediumTest
@@ -1126,7 +1126,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4000
      * @tc.name      StartElementTest0013
      * @tc.desc      The parameter 'name' contains special characters (&, <, >)
      * @tc.size      MediumTest
@@ -1150,7 +1150,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4100
      * @tc.name      StartElementTest0014
      * @tc.desc      The parameter name starts with a number
      * @tc.size      MediumTest
@@ -1174,7 +1174,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4200
      * @tc.name      StartElementTest0015
      * @tc.desc      Ended directly without calling endElement
      * @tc.size      MediumTest
@@ -1197,7 +1197,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4300
      * @tc.name      StartElementTest0016
      * @tc.desc      Repeatedly calling startElement without closing
      * @tc.size      MediumTest
@@ -1223,7 +1223,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_STARTELEMENT_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4400
      * @tc.name      StartElementTest0017
      * @tc.desc      The parameter 'name' is a reserved keyword (starting with xml)
      * @tc.size      MediumTest
@@ -1247,7 +1247,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4500
      * @tc.name      EndElementTest0001
      * @tc.desc      Create a basic XML structure
      * @tc.size      MediumTest
@@ -1270,7 +1270,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4600
      * @tc.name      EndElementTest0002
      * @tc.desc      Nested Element Structure Validation
      * @tc.size      MediumTest
@@ -1297,7 +1297,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4700
      * @tc.name      EndElementTest0003
      * @tc.desc      Multi-attribute setting scenario
      * @tc.size      MediumTest
@@ -1324,7 +1324,7 @@ export default function XmlTest_01() {
 
     /**
      /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4800
      * @tc.name      EndElementTest0004
      * @tc.desc      Empty Tag Name Exception Test
      * @tc.size      MediumTest
@@ -1348,7 +1348,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_4900
      * @tc.name      EndElementTest0005
      * @tc.desc      Illegal character tag test
      * @tc.size      MediumTest
@@ -1371,7 +1371,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_5000
      * @tc.name      EndElementTest0006
      * @tc.desc      Unclosed element exception
      * @tc.size      MediumTest
@@ -1395,7 +1395,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_5100
      * @tc.name      EndElementTest0007
      * @tc.desc      Mixed elements and text content
      * @tc.size      MediumTest
@@ -1426,7 +1426,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_5200
      * @tc.name      EndElementTest0008
      * @tc.desc      Continuous Operation Exception Recovery
      * @tc.size      MediumTest
@@ -1450,7 +1450,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_5300
      * @tc.name      EndElementTest0009
      * @tc.desc      The parameter 'name' is an empty string
      * @tc.size      MediumTest
@@ -1474,7 +1474,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_5400
      * @tc.name      EndElementTest0010
      * @tc.desc      The parameter 'name' is undefined
      * @tc.size      MediumTest
@@ -1499,7 +1499,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_5500
      * @tc.name      EndElementTest0011
      * @tc.desc      The parameter 'name' is null
      * @tc.size      MediumTest
@@ -1524,7 +1524,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML2_5600
      * @tc.name      EndElementTest0012
      * @tc.desc      The parameter name contains spaces
      * @tc.size      MediumTest

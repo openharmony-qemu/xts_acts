@@ -29,7 +29,7 @@ export default function StreamWritable06Test() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE6_0100
      * @tc.name      testStreamWritable06Chapter0001
      * @tc.desc      Test off method with keyword event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -59,7 +59,7 @@ export default function StreamWritable06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE6_0200
      * @tc.name      testStreamWritable06Chapter0002
      * @tc.desc      Test off method with number 0 keyword event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -93,7 +93,7 @@ export default function StreamWritable06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE6_0300
      * @tc.name      testStreamWritable06Chapter0003
      * @tc.desc      Test off method removing non-existent callback, should not throw error
      * @tc.size      MediumTest
@@ -126,7 +126,7 @@ export default function StreamWritable06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE6_0400
      * @tc.name      testStreamWritable06Chapter0004
      * @tc.desc      Test off method with event parameter that is not allowed (invalid event name), expect parameter error
      * @tc.size      MediumTest
@@ -159,7 +159,7 @@ export default function StreamWritable06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE6_0500
      * @tc.name      testStreamWritable06Chapter0005
      * @tc.desc      Test off method with treeString type event parameter (long structured string)
      * @tc.size      MediumTest
@@ -203,7 +203,7 @@ export default function StreamWritable06Test() {
       expect(offSucceeded).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE6_0600
      * @tc.name      testStreamWritable06Chapter0006
      * @tc.desc      Test off method with sliceString type event parameter (string slice)
      * @tc.size      MediumTest
@@ -241,7 +241,7 @@ export default function StreamWritable06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE6_0700
      * @tc.name      testStreamWritable06Chapter0007
      * @tc.desc      Test off method with large string for memory usage check
      * @tc.size      MediumTest
@@ -277,7 +277,7 @@ export default function StreamWritable06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE6_0800
      * @tc.name      testStreamWritable06Chapter0008
      * @tc.desc      Test GC behavior after using large string with off method
      * @tc.size      MediumTest

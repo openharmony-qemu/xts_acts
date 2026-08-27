@@ -44,7 +44,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1010
      * @tc.desc   Test the function of the constructor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -67,7 +67,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1020
      * @tc.desc   Test the function of the constructor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -93,7 +93,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1030
      * @tc.desc   Test the function of the constructor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1040
      * @tc.desc   Test the function of the constructor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testIsEmpty0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1050
      * @tc.desc   Test the function of the interface IsEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -178,7 +178,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testIsEmpty0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1060
      * @tc.desc   Test the function of the interface IsEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -199,7 +199,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testIsEmpty0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1070
      * @tc.desc   Test the function of the interface IsEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -223,7 +223,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1080
      * @tc.desc   Test the function of the interface HasKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1090
      * @tc.desc   Test the function of the interface HasKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -262,7 +262,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1100
      * @tc.desc   Test the function of the interface HasKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -282,7 +282,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1110
      * @tc.desc   Test the function of the interface HasKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -302,7 +302,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1120
      * @tc.desc   Test the function of the interface HasKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasKey0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1130
      * @tc.desc   Test the function of the interface HasKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -344,7 +344,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasKey0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1140
      * @tc.desc   Test the function of the interface HasKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -365,7 +365,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasValue0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1150
      * @tc.desc   Test the function of the interface HasValue.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -385,7 +385,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasValue0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1160
      * @tc.desc   Test the function of the interface HasValue.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -405,7 +405,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasValue0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1170
      * @tc.desc   Test the function of the interface HasValue.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -425,7 +425,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasValue0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1180
      * @tc.desc   Test the function of the interface HasValue.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -445,7 +445,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasValue0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1190
      * @tc.desc   Test the function of the interface HasValue.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -466,7 +466,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasValue0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1200
      * @tc.desc   Test the function of the interface HasValue.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -487,7 +487,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testHasValue0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1210
      * @tc.desc   Test the function of the interface HasValue.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -509,7 +509,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1220
      * @tc.desc   Test the function of the interface treeMap.get.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -529,7 +529,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1230
      * @tc.desc   Test the function of the interface treeMap.get.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -549,7 +549,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1240
      * @tc.desc   Test the function of the interface treeMap.get.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -569,7 +569,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1250
      * @tc.desc   Test the function of the interface treeMap.get.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -589,7 +589,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGet0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1260
      * @tc.desc   Test the function of the interface treeMap.get.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -610,7 +610,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGet0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1270
      * @tc.desc   Test the function of the interface treeMap.get.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -631,7 +631,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetFirstKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1280
      * @tc.desc   Test the function of the interface getFirstKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -651,7 +651,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetFirstKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1290
      * @tc.desc   Test the function of the interface getFirstKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -672,7 +672,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetFirstKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1300
      * @tc.desc   Test the function of the interface getFirstKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -694,7 +694,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetFirstKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1310
      * @tc.desc   Test the function of the interface getFirstKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -721,7 +721,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetFirstKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1320
      * @tc.desc   Test the function of the interface getFirstKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -748,7 +748,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLastKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1330
      * @tc.desc   Test the function of the interface GetLastKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -768,7 +768,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLastKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1340
      * @tc.desc   Test the function of the interface GetLastKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -789,7 +789,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLastKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1350
      * @tc.desc   Test the function of the interface GetLastKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -811,7 +811,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLastKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1360
      * @tc.desc   Test the function of the interface GetLastKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -839,7 +839,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLastKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1370
      * @tc.desc   Test the function of the interface GetLastKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -874,7 +874,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSetAll0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1380
      * @tc.desc   Test the function of the interface SetAll.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -894,7 +894,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSetAll0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1390
      * @tc.desc   Test the function of the interface SetAll.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -915,7 +915,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSetAll0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1400
      * @tc.desc   Test the function of the interface SetAll.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -940,7 +940,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSetAll0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1410
      * @tc.desc   Test the function of the interface SetAll.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -970,7 +970,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSetAll0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1420
      * @tc.desc   Test the function of the interface SetAll.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1001,7 +1001,7 @@ export default function TreemapTest() {
     });
     /**
      * @tc.name   testTreeMapSetAll0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1430
      * @tc.desc   Test the function of the interface SetAll.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1034,7 +1034,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1440
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1057,7 +1057,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1450
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1080,7 +1080,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1460
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1103,7 +1103,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1470
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1126,7 +1126,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSet0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1480
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1149,7 +1149,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSet0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1490
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1172,7 +1172,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSet0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1500
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1195,7 +1195,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSet0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1510
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1223,7 +1223,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapRemove0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1520
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1245,7 +1245,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapRemove0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1530
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1265,7 +1265,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapRemove0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1540
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1285,7 +1285,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapRemove0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1550
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1305,7 +1305,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapRemove0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1560
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1327,7 +1327,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapRemove0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1570
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1349,7 +1349,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLowerKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1580
      * @tc.desc   Test the function of the interface getLowerKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1369,7 +1369,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLowerKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1590
      * @tc.desc   Test the function of the interface getLowerKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1389,7 +1389,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLowerKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1600
      * @tc.desc   Test the function of the interface getLowerKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1409,7 +1409,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLowerKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1610
      * @tc.desc   Test the function of the interface getLowerKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1429,7 +1429,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLowerKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1620
      * @tc.desc   Test the function of the interface getLowerKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1450,7 +1450,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLowerKey0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1630
      * @tc.desc   Test the function of the interface getLowerKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1473,7 +1473,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetLowerKey0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1640
      * @tc.desc   Test the function of the interface getLowerKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1496,7 +1496,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetHigherKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1650
      * @tc.desc   Test the function of the interface getHigherKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1516,7 +1516,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetHigherKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1660
      * @tc.desc   Test the function of the interface getHigherKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1536,7 +1536,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetHigherKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1670
      * @tc.desc   Test the function of the interface getHigherKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1556,7 +1556,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetHigherKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1680
      * @tc.desc   Test the function of the interface getHigherKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1576,7 +1576,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetHigherKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1690
      * @tc.desc   Test the function of the interface getHigherKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1597,7 +1597,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetHigherKey0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1700
      * @tc.desc   Test the function of the interface getHigherKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1620,7 +1620,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapGetHigherKey0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1710
      * @tc.desc   Test the function of the interface getHigherKey.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1643,7 +1643,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapReplaceKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1720
      * @tc.desc   Test the function of the interface replace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1663,7 +1663,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapReplaceKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1730
      * @tc.desc   Test the function of the interface replace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1683,7 +1683,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapReplaceKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1740
      * @tc.desc   Test the function of the interface replace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1703,7 +1703,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapReplaceKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1750
      * @tc.desc   Test the function of the interface replace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1723,7 +1723,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapReplaceKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1760
      * @tc.desc   Test the function of the interface replace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1744,7 +1744,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapReplaceKey0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1770
      * @tc.desc   Test the function of the interface replace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1765,7 +1765,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapReplaceKey0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1780
      * @tc.desc   Test the function of the interface replace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1786,7 +1786,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapClear0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1790
      * @tc.desc   Test the function of the interface clear.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1810,7 +1810,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapClear0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1800
      * @tc.desc   Test the function of the interface clear.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1841,7 +1841,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapClear0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1810
      * @tc.desc   Test the function of the interface clear.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1877,7 +1877,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapClear0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1820
      * @tc.desc   Test the function of the interface clear.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1912,7 +1912,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapKeys0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1830
      * @tc.desc   Test the testTreeMap of the interface keys.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1932,7 +1932,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapKeys0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1840
      * @tc.desc   Test the testTreeMap of the interface keys.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1960,7 +1960,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapKeys0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1850
      * @tc.desc   Test the testTreeMap of the interface keys.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1990,7 +1990,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapValues0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1860
      * @tc.desc   Test the testTreeMap of the interface values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2010,7 +2010,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapValues0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1870
      * @tc.desc   Test the testTreeMap of the interface values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2037,7 +2037,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapValues0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1880
      * @tc.desc   Test the testTreeMap of the interface values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2067,7 +2067,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1890
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2089,7 +2089,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1900
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2120,7 +2120,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1910
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2154,7 +2154,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1920
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2185,7 +2185,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1930
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2217,7 +2217,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1940
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2244,7 +2244,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapEntries0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1950
      * @tc.desc   Test the testTreeMap of the interface entries.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2264,7 +2264,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapEntries0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1960
      * @tc.desc   Test the testTreeMapForEach of the interface entries.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2294,7 +2294,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapEntries0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1970
      * @tc.desc   Test the testTreeMap of the interface entries.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2326,7 +2326,7 @@ export default function TreemapTest() {
     });
     /**
      * @tc.name   testTreeMapEntries0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1980
      * @tc.desc   Test the testTreeMap of the interface entries.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2356,7 +2356,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapEntries0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_1990
      * @tc.desc   Test the testTreeMap of the interface entryies.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2387,7 +2387,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapEntries0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2000
      * @tc.desc   Test the testTreeMap of the interface entryies.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2413,7 +2413,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2010
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2440,7 +2440,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2020
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2465,7 +2465,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2030
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2490,7 +2490,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapForEach0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_100000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2040
      * @tc.desc   Test the testTreeMap of the interface forEach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2513,7 +2513,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapComparatorConstruct0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_101000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2050
      * @tc.desc   Test the comparator of construct.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2557,7 +2557,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapComparatorConstruct0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREESET_102000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2060
      * @tc.desc   Test the comparator of construct.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2601,7 +2601,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapComparatorConstruct0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_103000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2070
      * @tc.desc   Test the comparator of construct.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2668,7 +2668,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapSetAll001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREE_MAP_CASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2080
      * @tc.desc   Testing TreeMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2703,7 +2703,7 @@ export default function TreemapTest() {
 
     /**
      * @tc.name   testTreeMapReplace001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREE_MAP_CASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2090
      * @tc.desc   Testing TreeMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2725,7 +2725,7 @@ export default function TreemapTest() {
     });
     /**
      * @tc.name   testTreeMapForEach001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREE_MAP_CASE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP10_2100
      * @tc.desc   Testing TreeMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

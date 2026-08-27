@@ -54,7 +54,7 @@ export default function SpecialCharTest() {
     })
     /**
      * @tc.name   testBufferAllocSpecial0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_0100
      * @tc.desc   Testing the Buffer interface Alloc with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -74,7 +74,7 @@ export default function SpecialCharTest() {
     })
     /**
      * @tc.name   testBufferByteLengthSpecial0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_0200
      * @tc.desc   Testing the Buffer interface ByteLength with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +94,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferIsBufferSpecial0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_0300
      * @tc.desc   Testing the Buffer interface IsBuffer with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -114,7 +114,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferIsEncodingSpecial0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_0400
      * @tc.desc   Testing the Buffer interface IsEncoding with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -134,7 +134,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferFillSpecial0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_0500
      * @tc.desc   Testing the Buffer interface Fill with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferIncludesSpecial0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_0600
      * @tc.desc   Testing the Buffer interface Includes with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferIndexOfSpecial0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_0700
      * @tc.desc   Testing the Buffer interface IndexOf with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -198,7 +198,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferlastIndexOfSpecial0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_0800
      * @tc.desc   Testing the Buffer interface lastIndexOf with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -220,7 +220,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferToJSONSpecial0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_0900
      * @tc.desc   Testing the Buffer interface ToJSON with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferToStringSpecial0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1000
      * @tc.desc   Testing the Buffer interface ToString with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -263,7 +263,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferWriteSpecial0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1100
      * @tc.desc   Testing the Buffer interface Write with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -284,7 +284,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBufferTextSpecial0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_SPECIAL_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1200
      * @tc.desc   Testing the Buffer interface text with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -305,7 +305,7 @@ export default function SpecialCharTest() {
     })
     /**
      * @tc.name   testBuilintsStringConstructorSpecial0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1300
      * @tc.desc   Testing the Buffer interface String with String
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -327,7 +327,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringRawSpecial0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1400
      * @tc.desc   Testing the Buffer interface String with Raw
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeCharAtSpecial0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1500
      * @tc.desc   Testing the Buffer interface String with PrototypeCharAt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -370,7 +370,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeCharCodeAtSpecial0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1600
      * @tc.desc   Testing the Buffer interface String with PrototypeCharAt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -390,7 +390,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeCharCodeAtSpecial0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1700
      * @tc.desc   Testing the Buffer interface String with PrototypeCharAt
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -410,7 +410,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeConcatSpecial0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1800
      * @tc.desc   Testing the Buffer interface String with PrototypeConcat
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -430,7 +430,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeEndsWithSpecial0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_1900
      * @tc.desc   Testing the Buffer interface String with PrototypeEndsWith
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -449,7 +449,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeIncludesSpecial0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2000
      * @tc.desc   Testing the Buffer interface String with PrototypeIncludes
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -468,7 +468,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeIndexOfSpecial0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2100
      * @tc.desc   Testing the Buffer interface String with PrototypeIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -486,7 +486,7 @@ export default function SpecialCharTest() {
     })
     /**
      * @tc.name   testBuilintsStringLastIndexOfSpecial0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2200
      * @tc.desc   Testing the Buffer interface String with LastIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -505,7 +505,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringMatchSpecial0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2300
      * @tc.desc   Testing the Buffer interface String with Match
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -525,7 +525,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeNormalizeSpecial0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2400
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -544,7 +544,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypePadEndSpecial0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2500
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -564,7 +564,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypePadStartSpecial0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2600
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -584,7 +584,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeRepeatSpecial0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2700
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -603,7 +603,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeReplaceSpecial0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2800
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -623,7 +623,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeSearchSpecial0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_2900
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -643,7 +643,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeSliceSpecial0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3000
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -662,7 +662,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeStartsWithSpecial0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3100
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -681,7 +681,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeSubstringSpecial0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3200
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -700,7 +700,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeToLocaleLowerCaseSpecial0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3300
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -721,7 +721,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeToLocaleUpperCaseSpecial0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3400
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -742,7 +742,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeToLowerCaseSpecial0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3500
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -762,7 +762,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeToStringSpecial0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3600
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -781,7 +781,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeToUpperCaseSpecial0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3700
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -801,7 +801,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeTrimSpecial0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3800
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -821,7 +821,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeTrimEndSpecial0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_3900
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -841,7 +841,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeTrimStartSpecial0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4000
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -862,7 +862,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testBuilintsStringPrototypeValueOfSpecial0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_SPECIAL_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4100
      * @tc.desc   Testing the Buffer interface String with Normalize
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -880,7 +880,7 @@ export default function SpecialCharTest() {
     })
     /**
      * @tc.name   testUtilJsonParseSpecial0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4200
      * @tc.desc   Testing the Buffer interface parse with input special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -902,7 +902,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testUtilJsonStringifySpecial0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4300
      * @tc.desc   Testing the Buffer interface Stringify with input special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -924,7 +924,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testUtilJsonStringifySpecial0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4400
      * @tc.desc   Testing the Buffer interface Stringify with input special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -946,7 +946,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testUtilJsonHasSpecial0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4500
      * @tc.desc   Testing the Buffer interface Has with input special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -970,7 +970,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testUtilJsonRemoveSpecial0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILJSON_SPECIAL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4600
      * @tc.desc   Testing the Buffer interface Remove with input special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -993,7 +993,7 @@ export default function SpecialCharTest() {
     })
     /**
      * @tc.name   testUtilsRequestSpecial0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_SPECIAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4700
      * @tc.desc   Testing the Utils interface Request with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1013,7 +1013,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testUtilsQuerySpecial0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_SPECIAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4800
      * @tc.desc   Testing the Utils interface Query with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1036,7 +1036,7 @@ export default function SpecialCharTest() {
     })
     /**
      * @tc.name   testXmlXmlSerializerConstructorSpecial0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_4900
      * @tc.desc   Test the function of the interface constructor() with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1058,7 +1058,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testXmlSetAttributesSpecial0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_5000
      * @tc.desc   Test the function of the interface setAttributes() with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1086,7 +1086,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElementSpecial0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_5100
      * @tc.desc   Test the function of the interface addEmptyElement() with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1112,7 +1112,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testXmlStartElementSpecial0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_5200
      * @tc.desc   Test the function of the interface startElement() with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1141,7 +1141,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testXmlSetCommentSpecial0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_5300
      * @tc.desc   Test the function of the interface setComment() with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1167,7 +1167,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testXmlSetCDATASpecial0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_5400
      * @tc.desc   Test the function of the interface setCDATA() with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1193,7 +1193,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testXmlSetTextSpecial0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_5500
      * @tc.desc   Test the function of the interface setText() with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1222,7 +1222,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testXmlSetDocTypeSpecial0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_5600
      * @tc.desc   Test the function of the interface setDocType() with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1248,7 +1248,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testXmlXmlPullParserConstructorSpecial0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SPECIAL_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SPECIALCHAR1_5700
      * @tc.desc   Test the function of the interface constructor() with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

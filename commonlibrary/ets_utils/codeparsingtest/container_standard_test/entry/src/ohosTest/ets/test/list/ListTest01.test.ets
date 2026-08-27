@@ -315,7 +315,7 @@ export default function ListTest01() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT01_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_0100
      * @tc.name      testList01Chapter0001
      * @tc.desc      Verify constructor() for floating-point/BigInt TypedArray List
      * @tc.size      MediumTest
@@ -349,7 +349,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_0200
      * @tc.name      testList01Chapter0002
      * @tc.desc      Verify constructor() for floating-point/BigInt TypedArray List
      * @tc.size      MediumTest
@@ -382,7 +382,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_0300
      * @tc.name      testList01Chapter0003
      * @tc.desc      Verify constructor() for mixed TypedArray List and re-use after operation
      * @tc.size      MediumTest
@@ -415,7 +415,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_0400
      * @tc.name      testList01Chapter0004
      * @tc.desc      Verify List constructor for normal Uint8Array and arrays with multiple zeros
      * @tc.size      MediumTest
@@ -444,7 +444,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_0500
      * @tc.name      testList01Chapter0005
      * @tc.desc      Verify List constructor for arrays with negatives and non-numeric indices
      * @tc.size      MediumTest
@@ -476,7 +476,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_0600
      * @tc.name      testList01Chapter0006
      * @tc.desc      Verify List constructor for arrays with NaN/Infinity and non-numeric types
      * @tc.size      MediumTest
@@ -505,7 +505,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_0700
      * @tc.name      testList01Chapter0007
      * @tc.desc      Verify List constructor for empty, overflow, and element-removed arrays
      * @tc.size      MediumTest
@@ -539,7 +539,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_0800
      * @tc.name      testList01Chapter0008
      * @tc.desc      Verify List constructor for nested, TypedArray-containing, extra-long arrays
      * @tc.size      LargeTest
@@ -587,7 +587,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_0900
      * @tc.name      testList01Chapter0009
      * @tc.desc      Verify the processing logic of the array List constructor that contains functions/keywords
      * @tc.size      MediumTest
@@ -613,7 +613,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1000
      * @tc.name      testList01Chapter0010
      * @tc.desc      test constructor with no parameters
      * @tc.size      MediumTest
@@ -631,7 +631,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1100
      * @tc.name      testList01Chapter0011
      * @tc.desc      test constructor with null parameter
      * @tc.size      MediumTest
@@ -649,7 +649,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1200
      * @tc.name      testList01Chapter0012
      * @tc.desc      test constructor with undefined parameter
      * @tc.size      MediumTest
@@ -668,7 +668,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1300
      * @tc.name      testList01Chapter0013
      * @tc.desc      test constructor with single string parameter
      * @tc.size      MediumTest
@@ -701,7 +701,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1400
      * @tc.name      testList01Chapter0014
      * @tc.desc      test constructor with single number parameter
      * @tc.size      MediumTest
@@ -742,7 +742,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1500
      * @tc.name      testList01Chapter0015
      * @tc.desc      test constructor with single boolean parameter
      * @tc.size      MediumTest
@@ -762,7 +762,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1600
      * @tc.name      testList01Chapter0016
      * @tc.desc      test constructor with single normal object parameter
      * @tc.size      MediumTest
@@ -796,7 +796,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1700
      * @tc.name      testList01Chapter0017
      * @tc.desc      test constructor with basic type array parameter
      * @tc.size      MediumTest
@@ -835,7 +835,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_0180
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1800
      * @tc.name      testList01Chapter0018
      * @tc.desc      test constructor with object type array parameter
      * @tc.size      MediumTest
@@ -874,7 +874,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_1900
      * @tc.name      testList01Chapter0019
      * @tc.desc      test constructor with array-like object parameter
      * @tc.size      MediumTest
@@ -906,7 +906,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2000
      * @tc.name      testList01Chapter0020
      * @tc.desc      test constructor with non-array-like normal object parameter
      * @tc.size      MediumTest
@@ -934,7 +934,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2100
      * @tc.name      testList01Chapter0021
      * @tc.desc      test constructor with mixed type array parameter
      * @tc.size      MediumTest
@@ -963,7 +963,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2200
      * @tc.name      testList01Chapter0022
      * @tc.desc      test constructor with nested array parameter
      * @tc.size      MediumTest
@@ -994,7 +994,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2300
      * @tc.name      testList01Chapter0023
      * @tc.desc      test constructor with large array parameter
      * @tc.size      LargeTest
@@ -1017,7 +1017,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2400
      * @tc.name      testList01Chapter0024
      * @tc.desc      test constructor with nested generic List parameter
      * @tc.size      MediumTest
@@ -1043,7 +1043,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2500
      * @tc.name      testList01Chapter0025
      * @tc.desc      test constructor with special object (Buffer/Map/Set) parameter
      * @tc.size      MediumTest
@@ -1076,7 +1076,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2600
      * @tc.name      testList01Chapter0026
      * @tc.desc      test constructor with special value object parameter
      * @tc.size      MediumTest
@@ -1102,7 +1102,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2700
      * @tc.name      testList01Chapter0027
      * @tc.desc      test constructor with large object parameter
      * @tc.size      LargeTest
@@ -1134,7 +1134,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2800
      * @tc.name      testList01Chapter0028
      * @tc.desc      test data independence after constructor (deep copy)
      * @tc.size      MediumTest
@@ -1158,7 +1158,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_2900
      * @tc.name      testList01Chapter0029
      * @tc.desc      test generic constraint in constructor
      * @tc.size      MediumTest
@@ -1183,7 +1183,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3000
      * @tc.name      testList01Chapter0030
      * @tc.desc      test constructor with circular reference object parameter
      * @tc.size      MediumTest
@@ -1208,7 +1208,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3100
      * @tc.name      testList01Chapter0031
      * @tc.desc      test constructor with Symbol/undefined special primitive type
      * @tc.size      MediumTest
@@ -1232,7 +1232,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3200
      * @tc.name      testList01Chapter0032
      * @tc.desc      test constructor with function/arrow function
      * @tc.size      MediumTest
@@ -1254,7 +1254,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3300
      * @tc.name      testList01Chapter0033
      * @tc.desc      test constructor with readonly array/frozen object
      * @tc.size      MediumTest
@@ -1273,7 +1273,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3400
      * @tc.name      testList01Chapter0034
      * @tc.desc      test constructor with ultra-large length array-like object
      * @tc.size      LargeTest
@@ -1291,7 +1291,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3500
      * @tc.name      testList01Chapter0035
      * @tc.desc      test constructor with null/undefined mixed array
      * @tc.size      MediumTest
@@ -1321,7 +1321,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3600
      * @tc.name      testList01Chapter0036
      * @tc.desc      test constructor with DataView/TypedArray special type
      * @tc.size      MediumTest
@@ -1353,7 +1353,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3700
      * @tc.name      testList01Chapter0037
      * @tc.desc      test constructor with custom array-like (length but discontinuous index)
      * @tc.size      MediumTest
@@ -1380,7 +1380,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3800
      * @tc.name      testList01Chapter0038
      * @tc.desc      test constructor with multiple instantiation (repeated construction)
      * @tc.size      MediumTest
@@ -1412,7 +1412,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_3900
      * @tc.name      testList01Chapter0039
      * @tc.desc      test Constructor initializes huge strings, memory placeholders, and GC recovery verification
      * @tc.size      MediumTest
@@ -1452,7 +1452,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT01_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_4000
      * @tc.name      testList01Chapter0040
      * @tc.desc      Verify Int8Array/Uint8Array valid boundary and out-of-bounds values
      * @tc.size      MediumTest
@@ -1530,7 +1530,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_4100
      * @tc.name      testList01Chapter0041
      * @tc.desc      Verify Int16Array/Uint16Array valid boundary and out-of-bounds values
      * @tc.size      MediumTest
@@ -1586,7 +1586,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_4200
      * @tc.name      testList01Chapter0042
      * @tc.desc      Verify Int32Array/Uint32Array valid boundary and out-of-bounds values
      * @tc.size      MediumTest
@@ -1642,7 +1642,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_4300
      * @tc.name      testList01Chapter0043
      * @tc.desc      Verify Float32Array/Float64Array boundary/out-of-bounds/special values
      * @tc.size      MediumTest
@@ -1714,7 +1714,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST1_4400
      * @tc.name      testList01Chapter0044
      * @tc.desc      Verify BigInt64Array/BigUint64Array boundary/out-of-bounds values
      * @tc.size      MediumTest

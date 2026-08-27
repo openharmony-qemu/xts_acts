@@ -33,7 +33,7 @@ export default function TextDecoderTest() {
 
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_0100
      * @tc.name      Test_decode_ascii_basic_alpha_0001
      * @tc.desc      Decode ASCII letter combinations (uppercase and lowercase)
      * @tc.size      MediumTest
@@ -52,7 +52,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_0200
      * @tc.name      Test_decode_ascii_number_0002
      * @tc.desc      Decode ASCII number combinations
      * @tc.size      MediumTest
@@ -71,7 +71,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_0300
      * @tc.name      Test_decode_ascii_punctuation_0003
      * @tc.desc      Decode ASCII punctuation symbols
      * @tc.size      MediumTest
@@ -90,7 +90,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_0400
      * @tc.name      Test_decode_ascii_space_0004
      * @tc.desc      Decode ASCII space, tab, newline characters
      * @tc.size      MediumTest
@@ -109,7 +109,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_0500
      * @tc.name      Test_decode_ascii_short_str_0005
      * @tc.desc      Decode 1-byte ASCII short string
      * @tc.size      MediumTest
@@ -128,7 +128,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_0600
      * @tc.name      Test_decode_ascii_long_str_0006
      * @tc.desc      Decode long ASCII string (50 characters)
      * @tc.size      MediumTest
@@ -147,7 +147,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_0700
      * @tc.name      Test_decode_ascii_special_control_0007
      * @tc.desc      Decode ASCII control characters (non-printable)
      * @tc.size      MediumTest
@@ -166,7 +166,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_0800
      * @tc.name      Test_decode_ascii_url_char_0008
      * @tc.desc      Decode URL common characters
      * @tc.size      MediumTest
@@ -185,7 +185,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_0900
      * @tc.name      Test_decode_ascii_program_char_0009
      * @tc.desc      Decode programming common symbols
      * @tc.size      MediumTest
@@ -205,7 +205,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1000
      * @tc.name      Test_decode_ascii_mixed_alpha_num_0010
      * @tc.desc      Decode mixed letter+number ASCII string
      * @tc.size      MediumTest
@@ -225,7 +225,7 @@ export default function TextDecoderTest() {
 
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1100
      * @tc.name      Test_decode_unicode_latin1_0011
      * @tc.desc      Decode Latin-1 supplementary characters (single-byte Unicode)
      * @tc.size      MediumTest
@@ -244,7 +244,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1200
      * @tc.name      Test_decode_unicode_currency_0012
      * @tc.desc      Decode currency symbols (single-byte Unicode)
      * @tc.size      MediumTest
@@ -263,7 +263,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1300
      * @tc.name      Test_decode_unicode_symbol_0013
      * @tc.desc      Decode mathematical symbols (single-byte Unicode)
      * @tc.size      MediumTest
@@ -282,7 +282,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1400
      * @tc.name      Test_decode_unicode_greek_0014
      * @tc.desc      Decode Greek letters (single-byte Unicode)
      * @tc.size      MediumTest
@@ -301,7 +301,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1500
      * @tc.name      Test_decode_unicode_cyrillic_0015
      * @tc.desc      Decode Cyrillic letters (single-byte Unicode)
      * @tc.size      MediumTest
@@ -320,7 +320,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1600
      * @tc.name      Test_decode_unicode_arabic_0016
      * @tc.desc      Decode Arabic letters (single-byte Unicode)
      * @tc.size      MediumTest
@@ -339,7 +339,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1700
      * @tc.name      Test_decode_unicode_hebrew_0017
      * @tc.desc      Decode Hebrew letters (single-byte Unicode)
      * @tc.size      MediumTest
@@ -358,7 +358,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1800
      * @tc.name      Test_decode_unicode_thai_0018
      * @tc.desc      Decode Thai letters (single-byte Unicode)
      * @tc.size      MediumTest
@@ -377,7 +377,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_1900
      * @tc.name      Test_decode_unicode_hindi_0019
      * @tc.desc      Decode Hindi letters (single-byte Unicode)
      * @tc.size      MediumTest
@@ -396,7 +396,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2000
      * @tc.name      Test_decode_unicode_tamil_0020
      * @tc.desc      Decode Tamil letters (single-byte Unicode)
      * @tc.size      MediumTest
@@ -416,7 +416,7 @@ export default function TextDecoderTest() {
 
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2100
      * @tc.name      Test_decode_unicode_chinese_basic_0021
      * @tc.desc      Decode basic Chinese characters (3-byte UTF-8)
      * @tc.size      MediumTest
@@ -435,7 +435,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2200
      * @tc.name      Test_decode_unicode_chinese_classical_0022
      * @tc.desc      Decode rare Chinese characters (3-byte UTF-8)
      * @tc.size      MediumTest
@@ -454,7 +454,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2300
      * @tc.name      Test_decode_unicode_japanese_0023
      * @tc.desc      Decode Japanese hiragana and katakana (3-byte UTF-8)
      * @tc.size      MediumTest
@@ -473,7 +473,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2400
      * @tc.name      Test_decode_unicode_korean_0024
      * @tc.desc      Decode Korean Hangul (3-byte UTF-8)
      * @tc.size      MediumTest
@@ -492,7 +492,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2500
      * @tc.name      Test_decode_unicode_emoji_basic_0025
      * @tc.desc      Decode basic emoji (4-byte UTF-8)
      * @tc.size      MediumTest
@@ -511,7 +511,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2600
      * @tc.name      Test_decode_unicode_emoji_flag_0026
      * @tc.desc      Decode flag emoji (regional indicator symbol pairs)
      * @tc.size      MediumTest
@@ -530,7 +530,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2700
      * @tc.name      Test_decode_unicode_emoji_modifier_0027
      * @tc.desc      Decode emoji with skin tone modifiers
      * @tc.size      MediumTest
@@ -549,7 +549,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2800
      * @tc.name      Test_decode_unicode_math_symbol_0028
      * @tc.desc      Decode complex mathematical symbols (multi-byte Unicode)
      * @tc.size      MediumTest
@@ -568,7 +568,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_2900
      * @tc.name      Test_decode_unicode_arrow_0029
      * @tc.desc      Decode arrow symbols (multi-byte Unicode)
      * @tc.size      MediumTest
@@ -587,7 +587,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3000
      * @tc.name      Test_decode_unicode_symbols_mixed_0030
      * @tc.desc      Decode mixed multi-byte symbols (stars, hearts, etc.)
      * @tc.size      MediumTest
@@ -607,7 +607,7 @@ export default function TextDecoderTest() {
 
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3100
      * @tc.name      Test_decode_mix_ascii_chinese_0031
      * @tc.desc      Mixed scenario: ASCII + Chinese
      * @tc.size      MediumTest
@@ -626,7 +626,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3200
      * @tc.name      Test_decode_mix_chinese_emoji_0032
      * @tc.desc      Mixed scenario: Chinese + emoji
      * @tc.size      MediumTest
@@ -645,7 +645,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3300
      * @tc.name      Test_decode_mix_ascii_japanese_korean_0033
      * @tc.desc      Mixed scenario: ASCII + Japanese + Korean
      * @tc.size      MediumTest
@@ -664,7 +664,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3400
      * @tc.name      Test_decode_mix_multi_lang_0034
      * @tc.desc      Mixed scenario: Chinese + English + French + German
      * @tc.size      MediumTest
@@ -683,7 +683,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3500
      * @tc.name      Test_decode_mix_ascii_symbol_currency_0035
      * @tc.desc      Mixed scenario: ASCII + symbols + currency
      * @tc.size      MediumTest
@@ -702,7 +702,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3600
      * @tc.name      Test_decode_mix_chinese_number_punctuation_0036
      * @tc.desc      Mixed scenario: Chinese + numbers + punctuation
      * @tc.size      MediumTest
@@ -722,7 +722,7 @@ export default function TextDecoderTest() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3700
      * @tc.name      Test_decode_mix_emoji_flag_lang_0037
      * @tc.desc      Mixed scenario: Emoji + flags + multiple languages
      * @tc.size      MediumTest
@@ -741,7 +741,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3800
      * @tc.name      Test_decode_mix_ascii_control_chinese_0038
      * @tc.desc      Mixed scenario: ASCII control characters + Chinese
      * @tc.size      MediumTest
@@ -761,7 +761,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_3900
      * @tc.name      Test_decode_mix_math_symbol_chinese_0039
      * @tc.desc      Mixed scenario: Mathematical symbols + Chinese
      * @tc.size      MediumTest
@@ -783,7 +783,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4000
      * @tc.name      Test_decode_mix_url_char_chinese_0040
      * @tc.desc      Mixed scenario: URL characters + Chinese
      * @tc.size      MediumTest
@@ -802,7 +802,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4100
      * @tc.name      Test_decode_mix_program_char_chinese_0041
      * @tc.desc      Mixed scenario: Programming symbols + Chinese
      * @tc.size      MediumTest
@@ -824,7 +824,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4200
      * @tc.name      Test_decode_mix_long_multi_lang_0042
      * @tc.desc      Mixed scenario: Long string (ASCII + Chinese + Japanese + emoji) mix
      * @tc.size      MediumTest
@@ -843,7 +843,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4300
      * @tc.name      Test_decode_mix_cyrillic_arabic_chinese_0043
      * @tc.desc      Mixed scenario: Cyrillic + Arabic + Chinese
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4400
      * @tc.name      Test_decode_mix_emoji_modifier_chinese_0044
      * @tc.desc      Mixed scenario: Emoji with modifiers + Chinese
      * @tc.size      MediumTest
@@ -885,7 +885,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4500
      * @tc.name      Test_decode_mix_latin1_chinese_number_0045
      * @tc.desc      Mixed scenario: Latin-1 characters + Chinese + numbers
      * @tc.size      MediumTest
@@ -904,7 +904,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4600
      * @tc.name      Test_decode_mix_arrow_chinese_punctuation_0046
      * @tc.desc      Mixed scenario: Arrow symbols + Chinese + punctuation
      * @tc.size      MediumTest
@@ -924,7 +924,7 @@ export default function TextDecoderTest() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4700
      * @tc.name      Test_decode_mix_hebrew_thai_chinese_0047
      * @tc.desc      Mixed scenario: Hebrew + Thai + Chinese
      * @tc.size      MediumTest
@@ -943,7 +943,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4800
      * @tc.name      Test_decode_mix_hindi_tamil_chinese_0048
      * @tc.desc      Mixed scenario: Hindi + Tamil + Chinese
      * @tc.size      MediumTest
@@ -962,7 +962,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_4900
      * @tc.name      Test_decode_mix_symbols_emoji_ascii_0049
      * @tc.desc      Mixed scenario: Special symbols + emoji + ASCII
      * @tc.size      MediumTest
@@ -981,7 +981,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_5000
      * @tc.name      Test_decode_mix_all_scenario_0050
      * @tc.desc      Mixed scenario: ASCII + Chinese + Japanese + emoji + currency + mathematical symbols (full scenario coverage)
      * @tc.size      MediumTest
@@ -998,7 +998,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_5100
      * @tc.name      Test_decode_mix_all_scenario_0051
      * @tc.desc      Mixed scenario: ASCII + Chinese + Japanese + emoji + currency + mathematical symbols (full scenario coverage)
      * @tc.size      MediumTest
@@ -1015,7 +1015,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_5200
      * @tc.name      Test_decode_mix_all_scenario_0052
      * @tc.desc      Mixed scenario: ASCII + Chinese + Japanese + emoji + currency + mathematical symbols (full scenario coverage)
      * @tc.size      MediumTest
@@ -1032,7 +1032,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_5300
      * @tc.name      Test_decode_mix_all_scenario_0053
      * @tc.desc      Mixed scenario: ASCII + Chinese + Japanese + emoji + currency + mathematical symbols (full scenario coverage)
      * @tc.size      MediumTest
@@ -1051,7 +1051,7 @@ export default function TextDecoderTest() {
 
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_5400
      * @tc.name      Test_decode_mix_all_scenario_0054
      * @tc.desc      Mixed scenario: ASCII + Chinese + Japanese + emoji + currency + mathematical symbols (full scenario coverage)
      * @tc.size      MediumTest
@@ -1071,7 +1071,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_5500
      * @tc.name      Test_decode_mix_all_scenario_0055
      * @tc.desc      Mixed scenario: ASCII + Chinese + Japanese + emoji + currency + mathematical symbols (full scenario coverage)
      * @tc.size      MediumTest
@@ -1088,7 +1088,7 @@ export default function TextDecoderTest() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTDECODER_DECODETOSTRING_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTDECODER1_5600
      * @tc.name      Test_decode_mix_all_scenario_0056
      * @tc.desc      Mixed scenario: ASCII + Chinese + Japanese + emoji + currency + mathematical symbols (full scenario coverage)
      * @tc.size      MediumTest

@@ -277,7 +277,7 @@ export default function Json06Test() {
     })
 
     /**
-     * @tc.number    SUB_JSON_TEST06_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_0100
      * @tc.name      testJson06Chapter0001
      * @tc.desc      Test remove normal property from object
      * @tc.size      MediumTest
@@ -296,7 +296,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_0200
      * @tc.name      testJson06Chapter0002
      * @tc.desc      Test remove property with undefined value
      * @tc.size      MediumTest
@@ -314,7 +314,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_0300
      * @tc.name      testJson06Chapter0003
      * @tc.desc      Test remove property with null value
      * @tc.size      MediumTest
@@ -333,7 +333,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_0400
      * @tc.name      testJson06Chapter0004
      * @tc.desc      Test remove property with empty string value
      * @tc.size      MediumTest
@@ -352,7 +352,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_0500
      * @tc.name      testJson06Chapter0005
      * @tc.desc      Test remove property with special characters in name
      * @tc.size      MediumTest
@@ -371,7 +371,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_0600
      * @tc.name      testJson06Chapter0006
      * @tc.desc      Test remove property with unicode characters in name
      * @tc.size      MediumTest
@@ -390,7 +390,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_0700
      * @tc.name      testJson06Chapter0007
      * @tc.desc      Test remove property from nested object
      * @tc.size      MediumTest
@@ -409,7 +409,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_0800
      * @tc.name      testJson06Chapter0008
      * @tc.desc      Test remove non-existent property should not throw error
      * @tc.size      MediumTest
@@ -442,7 +442,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_0900
      * @tc.name      testJson06Chapter0009
      * @tc.desc      Test remove property from empty object
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1000
      * @tc.name      testJson06Chapter0010
      * @tc.desc      Test remove property with number value
      * @tc.size      MediumTest
@@ -493,7 +493,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1100
      * @tc.name      testJson06Chapter0011
      * @tc.desc      Test remove property with boolean value
      * @tc.size      MediumTest
@@ -512,7 +512,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1200
      * @tc.name      testJson06Chapter0012
      * @tc.desc      Test remove property with array value
      * @tc.size      MediumTest
@@ -532,7 +532,7 @@ export default function Json06Test() {
 
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1300
      * @tc.name      testJson06Chapter0013
      * @tc.desc      Test remove with invalid first parameter (array instead of object)
      * @tc.size      MediumTest
@@ -555,7 +555,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1400
      * @tc.name      testJson06Chapter0014
      * @tc.desc      Test remove with missing first parameter
      * @tc.size      MediumTest
@@ -576,7 +576,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1500
      * @tc.name      testJson06Chapter0015
      * @tc.desc      Test remove with missing second parameter
      * @tc.size      MediumTest
@@ -599,7 +599,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1600
      * @tc.name      testJson06Chapter0016
      * @tc.desc      Test remove with non-string second parameter
      * @tc.size      MediumTest
@@ -622,7 +622,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1700
      * @tc.name      testJson06Chapter0017
      * @tc.desc      Test remove with null as first parameter
      * @tc.size      MediumTest
@@ -643,7 +643,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1800
      * @tc.name      testJson06Chapter0018
      * @tc.desc      Test remove with number as first parameter
      * @tc.size      MediumTest
@@ -664,7 +664,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_1900
      * @tc.name      testJson06Chapter0019
      * @tc.desc      Test remove with boolean as first parameter
      * @tc.size      MediumTest
@@ -685,7 +685,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2000
      * @tc.name      testJson06Chapter0020
      * @tc.desc      Test remove with object as property name
      * @tc.size      MediumTest
@@ -709,7 +709,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2100
      * @tc.name      testJson06Chapter0021
      * @tc.desc      Test remove property with NaN value
      * @tc.size      MediumTest
@@ -727,7 +727,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2200
      * @tc.name      testJson06Chapter0022
      * @tc.desc      Test remove property with Infinity value
      * @tc.size      MediumTest
@@ -745,7 +745,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2300
      * @tc.name      testJson06Chapter0023
      * @tc.desc      Test remove property with -Infinity value
      * @tc.size      MediumTest
@@ -763,7 +763,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2400
      * @tc.name      testJson06Chapter0024
      * @tc.desc      Test remove property with escape characters in name
      * @tc.size      MediumTest
@@ -782,7 +782,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2500
      * @tc.name      testJson06Chapter0025
      * @tc.desc      Test remove multiple properties sequentially
      * @tc.size      MediumTest
@@ -811,7 +811,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2600
      * @tc.name      testJson06Chapter0026
      * @tc.desc      Test remove property with zero value
      * @tc.size      MediumTest
@@ -830,7 +830,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2700
      * @tc.name      testJson06Chapter0027
      * @tc.desc      Test remove property with maximum number value
      * @tc.size      MediumTest
@@ -849,7 +849,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2800
      * @tc.name      testJson06Chapter0028
      * @tc.desc      Test remove property with minimum positive number value
      * @tc.size      MediumTest
@@ -868,7 +868,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_2900
      * @tc.name      testJson06Chapter0029
      * @tc.desc      Test remove property from large object
      * @tc.size      MediumTest
@@ -891,7 +891,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3000
      * @tc.name      testJson06Chapter0030
      * @tc.desc      Test remove property with all special characters in name
      * @tc.size      MediumTest
@@ -911,7 +911,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3100
      * @tc.name      testJson06Chapter0031
      * @tc.desc      Test remove property when same property exists multiple times
      * @tc.size      MediumTest
@@ -929,7 +929,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3200
      * @tc.name      testJson06Chapter0032
      * @tc.desc      Test remove property with scientific notation value
      * @tc.size      MediumTest
@@ -948,7 +948,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3300
      * @tc.name      testJson06Chapter0033
      * @tc.desc      Test property removal after multiple JSON operations
      * @tc.size      MediumTest
@@ -984,7 +984,7 @@ export default function Json06Test() {
         expect(resultD).assertEqual(true);
       });
     /**
-     * @tc.number    SUB_JSON_TEST06_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3400
      * @tc.name      testJson06Chapter0034
      * @tc.desc      Test remove property with TypedArray value (Int8Array)
      * @tc.size      MediumTest
@@ -1002,7 +1002,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3500
      * @tc.name      testJson06Chapter0035
      * @tc.desc      Test remove property with Uint8Array value
      * @tc.size      MediumTest
@@ -1020,7 +1020,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3600
      * @tc.name      testJson06Chapter0036
      * @tc.desc      Test remove property with Float32Array value (including Infinity/NaN)
      * @tc.size      MediumTest
@@ -1038,7 +1038,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3700
      * @tc.name      testJson06Chapter0037
      * @tc.desc      Test remove property with BigInt64Array value
      * @tc.size      MediumTest
@@ -1057,7 +1057,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3800
      * @tc.name      testJson06Chapter0038
      * @tc.desc      Test remove property with all ASCII characters in value
      * @tc.size      MediumTest
@@ -1077,7 +1077,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_3900
      * @tc.name      testJson06Chapter0039
      * @tc.desc      Test remove property with escape characters in value
      * @tc.size      MediumTest
@@ -1097,7 +1097,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4000
      * @tc.name      testJson06Chapter0040
      * @tc.desc      Test remove property with emoji characters in value
      * @tc.size      MediumTest
@@ -1117,7 +1117,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4100
      * @tc.name      testJson06Chapter0041
      * @tc.desc      Test remove property with Number.MAX_SAFE_INTEGER value
      * @tc.size      MediumTest
@@ -1135,7 +1135,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4200
      * @tc.name      testJson06Chapter0042
      * @tc.desc      Test remove property with BigInt value
      * @tc.size      MediumTest
@@ -1153,7 +1153,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4300
      * @tc.name      testJson06Chapter0043
      * @tc.desc      Test remove property with hexadecimal number value
      * @tc.size      MediumTest
@@ -1171,7 +1171,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4400
      * @tc.name      testJson06Chapter0044
      * @tc.desc      Test remove property with scientific notation value
      * @tc.size      MediumTest
@@ -1189,7 +1189,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4500
      * @tc.name      testJson06Chapter0045
      * @tc.desc      Test remove property with false boolean value
      * @tc.size      MediumTest
@@ -1207,7 +1207,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4600
      * @tc.name      testJson06Chapter0046
      * @tc.desc      Test remove property with 0 value (often used as false)
      * @tc.size      MediumTest
@@ -1225,7 +1225,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4700
      * @tc.name      testJson06Chapter0047
      * @tc.desc      Test remove property with empty string value (often used as false)
      * @tc.size      MediumTest
@@ -1243,7 +1243,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4800
      * @tc.name      testJson06Chapter0048
      * @tc.desc      Test remove property with array containing multiple zeros
      * @tc.size      MediumTest
@@ -1262,7 +1262,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_4900
      * @tc.name      testJson06Chapter0049
      * @tc.desc      Test remove property with array containing negative numbers
      * @tc.size      MediumTest
@@ -1280,7 +1280,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5000
      * @tc.name      testJson06Chapter0050
      * @tc.desc      Test remove property with array containing NaN and Infinity
      * @tc.size      MediumTest
@@ -1298,7 +1298,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5100
      * @tc.name      testJson06Chapter0051
      * @tc.desc      Test remove property with array containing mixed types
      * @tc.size      MediumTest
@@ -1316,7 +1316,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5200
      * @tc.name      testJson06Chapter0052
      * @tc.desc      Test remove property with empty array value
      * @tc.size      MediumTest
@@ -1334,7 +1334,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5300
      * @tc.name      testJson06Chapter0053
      * @tc.desc      Test remove property from nested object structure
      * @tc.size      MediumTest
@@ -1353,7 +1353,7 @@ export default function Json06Test() {
 
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5400
      * @tc.name      testJson06Chapter0054
      * @tc.desc      Test remove object with function property
      * @tc.size      MediumTest
@@ -1375,7 +1375,7 @@ export default function Json06Test() {
 
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5500
      * @tc.name      testJson06Chapter0055
      * @tc.desc      Test remove property with ArrayBuffer value
      * @tc.size      MediumTest
@@ -1393,7 +1393,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5600
      * @tc.name      testJson06Chapter0056
      * @tc.desc      Test remove property with DataView value
      * @tc.size      MediumTest
@@ -1411,7 +1411,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5700
      * @tc.name      testJson06Chapter0057
      * @tc.desc      Test remove property with Map value
      * @tc.size      MediumTest
@@ -1431,7 +1431,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5800
      * @tc.name      testJson06Chapter0058
      * @tc.desc      Test remove property with Set value
      * @tc.size      MediumTest
@@ -1449,7 +1449,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_5900
      * @tc.name      testJson06Chapter0059
      * @tc.desc      Test remove property with Promise value
      * @tc.size      MediumTest
@@ -1467,7 +1467,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6000
      * @tc.name      testJson06Chapter0060
      * @tc.desc      Test remove property with RegExp value
      * @tc.size      MediumTest
@@ -1485,7 +1485,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6100
      * @tc.name      testJson06Chapter0061
      * @tc.desc      Test remove property from large object
      * @tc.size      MediumTest
@@ -1508,7 +1508,7 @@ export default function Json06Test() {
 
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6200
      * @tc.name      testJson06Chapter0062
      * @tc.desc      Test remove property with tree string value (large JSON string)
      * @tc.size      MediumTest
@@ -1527,7 +1527,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6300
      * @tc.name      testJson06Chapter0063
      * @tc.desc      Test remove property with slice string value
      * @tc.size      MediumTest
@@ -1547,7 +1547,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6400
      * @tc.name      testJson06Chapter0064
      * @tc.desc      Test remove property with very large string value
      * @tc.size      MediumTest
@@ -1566,7 +1566,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6500
      * @tc.name      testJson06Chapter0065
      * @tc.desc      Test remove property with Number.EPSILON value
      * @tc.size      MediumTest
@@ -1584,7 +1584,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6600
      * @tc.name      testJson06Chapter0066
      * @tc.desc      Test remove property with double precision float value
      * @tc.size      MediumTest
@@ -1602,7 +1602,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6700
      * @tc.name      testJson06Chapter0067
      * @tc.desc      Test remove property with exponent operator value
      * @tc.size      MediumTest
@@ -1620,7 +1620,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6800
      * @tc.name      testJson06Chapter0068
      * @tc.desc      Test remove property with octal value
      * @tc.size      MediumTest
@@ -1638,7 +1638,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_6900
      * @tc.name      testJson06Chapter0069
      * @tc.desc      Test remove property with Uint8ClampedArray value
      * @tc.size      MediumTest
@@ -1656,7 +1656,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7000
      * @tc.name      testJson06Chapter0070
      * @tc.desc      Test remove property with Int16Array value
      * @tc.size      MediumTest
@@ -1674,7 +1674,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7100
      * @tc.name      testJson06Chapter0071
      * @tc.desc      Test remove property with Uint16Array value
      * @tc.size      MediumTest
@@ -1692,7 +1692,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7200
      * @tc.name      testJson06Chapter0072
      * @tc.desc      Test remove property with Int32Array value
      * @tc.size      MediumTest
@@ -1710,7 +1710,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7300
      * @tc.name      testJson06Chapter0073
      * @tc.desc      Test remove property with Uint32Array value
      * @tc.size      MediumTest
@@ -1728,7 +1728,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7400
      * @tc.name      testJson06Chapter0074
      * @tc.desc      Test remove property with Float64Array value
      * @tc.size      MediumTest
@@ -1747,7 +1747,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7500
      * @tc.name      testJson06Chapter0075
      * @tc.desc      Test remove property with BigUint64Array value
      * @tc.size      MediumTest
@@ -1765,7 +1765,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7600
      * @tc.name      testJson06Chapter0076
      * @tc.desc      Test remove property with special array index
      * @tc.size      MediumTest
@@ -1791,7 +1791,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7700
      * @tc.name      testJson06Chapter0077
      * @tc.desc      Test remove property with array containing overflow values
      * @tc.size      MediumTest
@@ -1809,7 +1809,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7800
      * @tc.name      testJson06Chapter0078
      * @tc.desc      Test remove property with invalid Unicode string
      * @tc.size      MediumTest
@@ -1827,7 +1827,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_7900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_7900
      * @tc.name      testJson06Chapter0079
      * @tc.desc      Test remove property with keyword string value
      * @tc.size      MediumTest
@@ -1845,7 +1845,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_8000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_8000
      * @tc.name      testJson06Chapter0080
      * @tc.desc      Test remove property with repeated special characters string
      * @tc.size      MediumTest
@@ -1864,7 +1864,7 @@ export default function Json06Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST06_8100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON7_8100
      * @tc.name      testJson06Chapter0081
      * @tc.desc      Test remove property after potential garbage collection
      * @tc.size      MediumTest

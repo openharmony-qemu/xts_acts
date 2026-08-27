@@ -48,7 +48,7 @@ export default function LinkedListTest() {
     })
     /**
      * @tc.name   testLinkedListAdd0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_0100
      * @tc.desc   Testing LinkedList add different dataType data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -80,7 +80,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListAdd0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_0200
      * @tc.desc   Testing LinkedList add special string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -104,7 +104,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListAddFirst0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_FIRST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_0300
      * @tc.desc   Testing LinkedList addFirst different dataType data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -136,7 +136,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListAddFirst0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_ADD_FIRST_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_0400
      * @tc.desc   Testing LinkedList addFirst special string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -160,7 +160,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListInsert0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_INSERT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_0500
      * @tc.desc   Testing LinkedList insert->addFirst->getIndexOf->removeByIndex->has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -188,7 +188,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListInsert0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_INSERT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_0600
      * @tc.desc   Testing LinkedList insert->add->getLastIndexOf->removeByIndex->has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListHas0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_HAS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_0700
      * @tc.desc   Testing LinkedList has different dataType data check has result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_0800
      * @tc.desc   Testing LinkedList has different dataType data check get result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGetIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_0900
      * @tc.desc   Testing LinkedList getIndexOf add same data check index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -318,7 +318,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGetIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1000
      * @tc.desc   Testing LinkedList getIndexOf add->getIndexOf->removeByIndex same data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -347,7 +347,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGetIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1100
      * @tc.desc   Testing LinkedList getIndexOf add->removeFirst->add->getIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -373,7 +373,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGetIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETINDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1200
      * @tc.desc   Testing LinkedList getIndexOf add->removeLast->add->getIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -399,7 +399,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGetLastIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1300
      * @tc.desc   Testing LinkedList getIndexOf add same data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -425,7 +425,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGetLastIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1400
      * @tc.desc   Testing LinkedList getIndexOf add->getLastIndexOf->removeByIndex same data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -454,7 +454,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGetLastIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1500
      * @tc.desc   Testing LinkedList getIndexOf add->removeFirst->add->getLastIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -480,7 +480,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGetLastIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1600
      * @tc.desc   Testing LinkedList getIndexOf add->removeLast->add->getLastIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -506,7 +506,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListGetLastIndexOf0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_GETLASTINDEXOF_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1700
      * @tc.desc   Testing LinkedList getIndexOf add->get->removeFirstFound
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -532,7 +532,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListRemoveLastFound0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVELASTFOUND_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1800
      * @tc.desc   Testing LinkedList removeLastFound add->getLastIndexOf->removeLastFound check is deleted success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -560,7 +560,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListClone0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_1900
      * @tc.desc   Testing LinkedList clone linkList to newLinkList and check linkList.value == newLinkList.value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -585,7 +585,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListClone0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2000
      * @tc.desc   Testing LinkedList clone linkList to newLinkList and insert newLinkList check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -612,7 +612,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListClone0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2100
      * @tc.desc   Testing LinkedList clone linkList to newLinkList and removeFirstFound newLinkList check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -639,7 +639,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListClone0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2200
      * @tc.desc   Testing LinkedList clone linkList to newLinkList and addFirst newLinkList check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -666,7 +666,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListClone0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLONE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2300
      * @tc.desc   Testing LinkedList clone linkList to newLinkList and forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -691,7 +691,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListClear0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLEAR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2400
      * @tc.desc   Testing LinkedList clear newLinkList and add
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -717,7 +717,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListClear0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_CLEAR_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2500
      * @tc.desc   Testing LinkedList clear linkList and add
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -743,7 +743,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListSet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2600
      * @tc.desc   Testing LinkedList set linkList and update data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -778,7 +778,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListSet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2700
      * @tc.desc   Testing LinkedList set getIndexOf->set->removeByIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -812,7 +812,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListSet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2800
      * @tc.desc   Testing LinkedList set get->set->has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -845,7 +845,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListSet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_2900
      * @tc.desc   Testing LinkedList set set->convertToArray->instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -890,7 +890,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListSet0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3000
      * @tc.desc   Testing LinkedList set set->getFirst
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -931,7 +931,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListSet0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SET_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3100
      * @tc.desc   Testing LinkedList set set->getLast
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -972,7 +972,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListSymbolIterator0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SYMBOL_ITERATOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3200
      * @tc.desc   Testing LinkedList Symbol.iterator for of
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -998,7 +998,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListSymbolIterator0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_SYMBOL_ITERATOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3300
      * @tc.desc   Testing LinkedList Symbol.iterator next
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1028,7 +1028,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListForEach0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3400
      * @tc.desc   Testing LinkedList forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1054,7 +1054,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListForEach0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3500
      * @tc.desc   Testing LinkedList forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1083,7 +1083,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListForEach0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3600
      * @tc.desc   Testing LinkedList forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1110,7 +1110,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListForEach0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_FOREACH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3700
      * @tc.desc   Testing LinkedList forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1135,7 +1135,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListRemoveLastFound0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKED_LIST_REMOVELASTFOUND_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3800
      * @tc.desc   Testing LinkedList removeLastFound add->getLastIndexOf->removeLastFound check is deleted success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1153,7 +1153,7 @@ export default function LinkedListTest() {
     });
     /**
      * @tc.name   testLinkedListCase001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_3900
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1181,7 +1181,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4000
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1199,7 +1199,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4100
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1231,7 +1231,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4200
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1254,7 +1254,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4300
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1286,7 +1286,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4400
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1309,7 +1309,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4500
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1331,7 +1331,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4600
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1353,7 +1353,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4700
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1375,7 +1375,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4800
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1407,7 +1407,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_4900
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1429,7 +1429,7 @@ export default function LinkedListTest() {
 
     /**
      * @tc.name   testLinkedListCase012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LINKEDLIST_CASE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LINKEDLIST1_5000
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

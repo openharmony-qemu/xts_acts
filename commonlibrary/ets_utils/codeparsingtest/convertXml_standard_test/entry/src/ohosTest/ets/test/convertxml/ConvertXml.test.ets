@@ -51,7 +51,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_0100
      * @tc.desc   Testing the convertxml convertToJSObject with trim is true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -92,7 +92,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_0200
      * @tc.desc   Testing the convertxml convertToJSObject with trim is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -133,7 +133,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_0300
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreDeclaration is true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -180,7 +180,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_0400
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreDeclaration is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -222,7 +222,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_0500
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreAttributes is true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -269,7 +269,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_0600
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreAttributes is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -312,7 +312,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_0700
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreComment is true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -362,7 +362,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_0800
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreComment is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -413,7 +413,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_0900
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreCDATA is true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -463,7 +463,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_1000
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreCDATA is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -513,7 +513,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_1100
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreDoctype is true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -565,7 +565,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_1200
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreDoctype is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -618,7 +618,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_1300
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreText is true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -669,7 +669,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_1400
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreText is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -721,7 +721,7 @@ export default function ConvertXmlTest() {
 
     /**
      * @tc.name   testConvertXmlConstructor0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONVERTXML_CONSTRUCTOR_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_1500
      * @tc.desc   Testing the convertxml convertToJSObject with ignoreText is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -758,7 +758,7 @@ export default function ConvertXmlTest() {
     });
     /**
      * @tc.name   testFastConvertToJSObject0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_1600
      * @tc.desc   Test the function of the interface fastConvertToJSObject.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -800,7 +800,7 @@ export default function ConvertXmlTest() {
     });
     /**
      * @tc.name   testLargeConvertToJSObject0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_0101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONVERTXML1_1700
      * @tc.desc   Test the function of the interface largeConvertToJSObject.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -30,7 +30,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_0100
      * @tc.name      testLinkedList15Chapter0001
      * @tc.desc      Test adding float precision loss scenario of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -55,7 +55,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_0200
      * @tc.name      testLinkedList15Chapter0002
      * @tc.desc      Test adding double of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -79,7 +79,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_0300
      * @tc.name      testLinkedList15Chapter0003
      * @tc.desc      Test adding out-of-bounds double of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -100,7 +100,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_0400
      * @tc.name      testLinkedList15Chapter0004
      * @tc.desc      Test adding char of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -123,7 +123,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_0500
      * @tc.name      testLinkedList15Chapter0005
      * @tc.desc      Test adding char of number class stored as character and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -144,7 +144,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_0600
      * @tc.name      testLinkedList15Chapter0006
      * @tc.desc      Test adding out-of-bounds char value of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -165,7 +165,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_0700
      * @tc.name      testLinkedList15Chapter0007
      * @tc.desc      Test adding bigint value of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -186,7 +186,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_0800
      * @tc.name      testLinkedList15Chapter0008
      * @tc.desc      Test adding double value of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -207,7 +207,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_0900
      * @tc.name      testLinkedList15Chapter0009
      * @tc.desc      Test adding float of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -228,7 +228,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1000
      * @tc.name      testLinkedList15Chapter0010
      * @tc.desc      Test adding hexadecimal (16-bit) of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1100
      * @tc.name      testLinkedList15Chapter0011
      * @tc.desc      Test adding 32-bit hexadecimal of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -270,7 +270,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1200
      * @tc.name      testLinkedList15Chapter0012
      * @tc.desc      Test adding octal of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -291,7 +291,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1300
      * @tc.name      testLinkedList15Chapter0013
      * @tc.desc      Test adding exponent operator result of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -312,7 +312,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1400
      * @tc.name      testLinkedList15Chapter0014
      * @tc.desc      Test adding scientific notation of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -338,7 +338,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1500
      * @tc.name      testLinkedList15Chapter0015
      * @tc.desc      Test adding large integer of number class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -359,7 +359,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1600
      * @tc.name      testLinkedList15Chapter0016
      * @tc.desc      Test adding true of boolean class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -380,7 +380,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1700
      * @tc.name      testLinkedList15Chapter0017
      * @tc.desc      Test adding false of boolean class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -401,7 +401,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1800
      * @tc.name      testLinkedList15Chapter0018
      * @tc.desc      Test adding values often treated as false of boolean class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -436,7 +436,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_1900
      * @tc.name      testLinkedList15Chapter0019
      * @tc.desc      Test adding ! + other data types of boolean class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -462,7 +462,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2000
      * @tc.name      testLinkedList15Chapter0020
      * @tc.desc      Test adding ordinary object of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -489,7 +489,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2100
      * @tc.name      testLinkedList15Chapter0021
      * @tc.desc      Test adding nested object of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -520,7 +520,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2200
      * @tc.name      testLinkedList15Chapter0022
      * @tc.desc      Test adding object with function property (no parameters) of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -546,7 +546,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2300
      * @tc.name      testLinkedList15Chapter0023
      * @tc.desc      Test adding object with function property (with parameters) of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -572,7 +572,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2400
      * @tc.name      testLinkedList15Chapter0024
      * @tc.desc      Test adding object with ArrayBuffer property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -602,7 +602,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2500
      * @tc.name      testLinkedList15Chapter0025
      * @tc.desc      Test adding object with DataView property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -627,7 +627,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2600
      * @tc.name      testLinkedList15Chapter0026
      * @tc.desc      Test adding empty object of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -653,7 +653,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2700
      * @tc.name      testLinkedList15Chapter0027
      * @tc.desc      Test adding extremely large object of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -687,7 +687,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2800
      * @tc.name      testLinkedList15Chapter0028
      * @tc.desc      Test adding object containing null property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -713,7 +713,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_2900
      * @tc.name      testLinkedList15Chapter0029
      * @tc.desc      Test adding object containing NaN property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -739,7 +739,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3000
      * @tc.name      testLinkedList15Chapter0030
      * @tc.desc      Test adding object containing Infinity property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -765,7 +765,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3100
      * @tc.name      testLinkedList15Chapter0031
      * @tc.desc      Test adding object with TypedArray property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -791,7 +791,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3200
      * @tc.name      testLinkedList15Chapter0032
      * @tc.desc      Test adding object with Map property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -817,7 +817,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3300
      * @tc.name      testLinkedList15Chapter0033
      * @tc.desc      Test adding object with Set property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -843,7 +843,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3400
      * @tc.name      testLinkedList15Chapter0034
      * @tc.desc      Test adding object with Promise property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -881,7 +881,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3500
      * @tc.name      testLinkedList15Chapter0035
      * @tc.desc      Test adding object with regular expression property of object class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -912,7 +912,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3600
      * @tc.name      testLinkedList15Chapter0036
      * @tc.desc      Test adding normal Uint8Array array of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -933,7 +933,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3700
      * @tc.name      testLinkedList15Chapter0037
      * @tc.desc      Test adding array containing multiple zeros of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -954,7 +954,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3800
      * @tc.name      testLinkedList15Chapter0038
      * @tc.desc      Test adding Array (with negative numbers) converted to Uint8Array of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -975,7 +975,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_3900
      * @tc.name      testLinkedList15Chapter0039
      * @tc.desc      Test adding Array (with negative numbers) converted to Uint8Array/Uint16Array of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1001,7 +1001,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4000
      * @tc.name      testLinkedList15Chapter0040
      * @tc.desc      Test adding special array of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1023,7 +1023,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4100
      * @tc.name      testLinkedList15Chapter0041
      * @tc.desc      Test adding array containing NaN/Infinity of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1043,7 +1043,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4200
      * @tc.name      testLinkedList15Chapter0042
      * @tc.desc      Test adding array containing non-numeric types of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1063,7 +1063,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4300
      * @tc.name      testLinkedList15Chapter0043
      * @tc.desc      Test adding empty array of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1083,7 +1083,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4400
      * @tc.name      testLinkedList15Chapter0044
      * @tc.desc      Test adding array with extremely large numeric overflow of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1103,7 +1103,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4500
      * @tc.name      testLinkedList15Chapter0045
      * @tc.desc      Test adding Int8Array, Uint8Array, Uint8ClampedArray of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1130,7 +1130,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4600
      * @tc.name      testLinkedList15Chapter0046
      * @tc.desc      Test adding Int16Array, Uint16Array, Int32Array, Uint32Array of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1159,7 +1159,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4700
      * @tc.name      testLinkedList15Chapter0047
      * @tc.desc      Test adding Float32Array, Float64Array, BigInt64Array, BigUint64Array of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1196,7 +1196,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4800
      * @tc.name      testLinkedList15Chapter0048
      * @tc.desc      Test adding TypedArray special value storage rules of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1237,7 +1237,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_4900
      * @tc.name      testLinkedList15Chapter0049
      * @tc.desc      Test adding array containing non-numeric types of array class and clone, verify that the cloned instance is the same.
      * @tc.size      MediumTest
@@ -1257,7 +1257,7 @@ export default function LinkedListTest15() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5000
      * @tc.name      testLinkedList15Chapter0050
      * @tc.desc      Test callback function to traverse complete basic characters of String class, ensuring indices match the actual added elements.
      * @tc.size      MediumTest
@@ -1290,7 +1290,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5100
      * @tc.name      testLinkedList15Chapter0051
      * @tc.desc      Test callback function to traverse complete special escape characters of String class, ensuring indices match the actual added elements.
      * @tc.size      MediumTest
@@ -1315,7 +1315,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5200
      * @tc.name      testLinkedList15Chapter0052
      * @tc.desc      Test callback function to traverse complete emoji symbols and their Unicode encodings of String class, ensuring indices match the actual added elements.
      * @tc.size      MediumTest
@@ -1343,7 +1343,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5300
      * @tc.name      testLinkedList15Chapter0053
      * @tc.desc      Test callback function to traverse complete invalid Unicode encodings and keywords of String class, ensuring indices match the actual added elements.
      * @tc.size      MediumTest
@@ -1368,7 +1368,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5400
      * @tc.name      testLinkedList15Chapter0054
      * @tc.desc      Test callback function to traverse all elements of number class, ensuring indices match the actual added elements.
      * @tc.size      MediumTest
@@ -1405,7 +1405,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5500
      * @tc.name      testLinkedList15Chapter0055
      * @tc.desc      Test callback function to traverse all elements of Boolean class, ensuring indices match the actual added elements.
      * @tc.size      MediumTest
@@ -1430,7 +1430,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5600
      * @tc.name      testLinkedList15Chapter0056
      * @tc.desc      Test callback function to traverse all elements of object class, ensuring indices match the actual added elements.
      * @tc.size      MediumTest
@@ -1548,7 +1548,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5700
      * @tc.name      testLinkedList15Chapter0057
      * @tc.desc      Test whether undefined of String class can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1567,7 +1567,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5800
      * @tc.name      testLinkedList15Chapter0058
      * @tc.desc      Test whether null of String class can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1586,7 +1586,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_5900
      * @tc.name      testLinkedList15Chapter0059
      * @tc.desc      Test whether empty string of String class can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1606,7 +1606,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_6000
      * @tc.name      testLinkedList15Chapter0060
      * @tc.desc      Test whether full coverage of special characters of String class can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1625,7 +1625,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_6100
      * @tc.name      testLinkedList15Chapter0061
      * @tc.desc      Test whether full coverage of ASCII codes of String class can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1644,7 +1644,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_6200
      * @tc.name      testLinkedList15Chapter0062
      * @tc.desc      Test whether full coverage of special characters of String class (twice) can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1663,7 +1663,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_6300
      * @tc.name      testLinkedList15Chapter0063
      * @tc.desc      Test whether special escape characters of String class can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1709,7 +1709,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_6400
      * @tc.name      testLinkedList15Chapter0064
      * @tc.desc      Test: Verify correct clearing of String-class emoji symbols & their Unicode encodings post addition
      * @tc.size      MediumTest
@@ -1775,7 +1775,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_6500
      * @tc.name      testLinkedList15Chapter0065
      * @tc.desc      Test whether invalid Unicode encodings of String class can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1799,7 +1799,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_6600
      * @tc.name      testLinkedList15Chapter0066
      * @tc.desc      Test whether keywords of String class can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1823,7 +1823,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_6700
      * @tc.name      testLinkedList15Chapter0067
      * @tc.desc      Test whether treeString type of String class can be correctly cleared after addition.
      * @tc.size      MediumTest
@@ -1860,7 +1860,7 @@ export default function LinkedListTest15() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT15_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST16_6800
      * @tc.name      testLinkedList15Chapter0068
      * @tc.desc      Test whether sliceString type of String class can be correctly cleared after addition.
      * @tc.size      MediumTest

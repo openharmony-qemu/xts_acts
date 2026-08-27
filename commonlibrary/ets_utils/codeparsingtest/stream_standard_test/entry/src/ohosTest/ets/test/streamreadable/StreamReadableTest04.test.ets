@@ -63,7 +63,7 @@ export default function StreamReadable04Test() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_0100
      * @tc.name      testStreamReadable04Chapter0001
      * @tc.desc      Test 'close' event triggered when readable push null
      * @tc.size      MediumTest
@@ -96,7 +96,7 @@ export default function StreamReadable04Test() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_0200
      * @tc.name      testStreamReadable04Chapter0002
      * @tc.desc      Test 'end' event triggered when readable push null
      * @tc.size      MediumTest
@@ -129,7 +129,7 @@ export default function StreamReadable04Test() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_0300
      * @tc.name      testStreamReadable04Chapter0003
      * @tc.desc      Test 'error' event triggered when doRead throws error
      * @tc.size      MediumTest
@@ -174,7 +174,7 @@ export default function StreamReadable04Test() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_0400
      * @tc.name      testStreamReadable04Chapter0004
      * @tc.desc      Test 'off' method removes readable event listener
      * @tc.size      MediumTest
@@ -209,7 +209,7 @@ export default function StreamReadable04Test() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_0500
      * @tc.name      testStreamReadable04Chapter0005
      * @tc.desc      Remove a specific callback for 'readable' event using off
      * @tc.size      MediumTest
@@ -244,7 +244,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_0600
      * @tc.name      testStreamReadable04Chapter0006
      * @tc.desc      Remove a specific callback for 'data' event using off
      * @tc.size      MediumTest
@@ -280,7 +280,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_0700
      * @tc.name      testStreamReadable04Chapter0007
      * @tc.desc      Remove a specific callback for 'close' event using off
      * @tc.size      MediumTest
@@ -316,7 +316,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_0800
      * @tc.name      testStreamReadable04Chapter0008
      * @tc.desc      Remove a specific callback for 'end' event using off
      * @tc.size      MediumTest
@@ -352,7 +352,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_0900
      * @tc.name      testStreamReadable04Chapter0009
      * @tc.desc      Remove a specific callback for 'error' event using off
      * @tc.size      MediumTest
@@ -386,7 +386,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1000
      * @tc.name      testStreamReadable04Chapter0010
      * @tc.desc      Remove all callbacks for an event when callback parameter is omitted
      * @tc.size      MediumTest
@@ -434,7 +434,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1100
      * @tc.name      testStreamReadable04Chapter0011
      * @tc.desc      Call off for an event that has no registered callbacks (should not throw)
      * @tc.size      MediumTest
@@ -472,7 +472,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1200
      * @tc.name      testStreamReadable04Chapter0012
      * @tc.desc      Call off with empty string event parameter (should throw error 401)
      * @tc.size      MediumTest
@@ -507,7 +507,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1300
      * @tc.name      testStreamReadable04Chapter0013
      * @tc.desc      Call off with unsupported event string
      * @tc.size      MediumTest
@@ -541,7 +541,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1400
      * @tc.name      testStreamReadable04Chapter0014
      * @tc.desc      Test off method with pause event
      * @tc.size      MediumTest
@@ -577,7 +577,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1500
      * @tc.name      testStreamReadable04Chapter0015
      * @tc.desc      Test off method with resume event
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1600
      * @tc.name      testStreamReadable04Chapter0016
      * @tc.desc      Remove multiple callbacks for same event with different off calls
      * @tc.size      MediumTest
@@ -664,7 +664,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1700
      * @tc.name      testStreamReadable04Chapter0017
      * @tc.desc      Test doInitialize with valid callback function
      * @tc.size      MediumTest
@@ -699,7 +699,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1800
      * @tc.name      testStreamReadable04Chapter0018
      * @tc.desc      Test doInitialize callback with undefined parameter
      * @tc.size      MediumTest
@@ -736,7 +736,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_1900
      * @tc.name      testStreamReadable04Chapter0019
      * @tc.desc      Test doInitialize callback with null parameter
      * @tc.size      MediumTest
@@ -772,7 +772,7 @@ export default function StreamReadable04Test() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2000
      * @tc.name      testStreamReadable04Chapter0020
      * @tc.desc      Test doInitialize callback with NaN parameter
      * @tc.size      MediumTest
@@ -806,7 +806,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2100
      * @tc.name      testStreamReadable04Chapter0021
      * @tc.desc      Test doInitialize callback with Infinity parameter
      * @tc.size      MediumTest
@@ -840,7 +840,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2200
      * @tc.name      testStreamReadable04Chapter0022
      * @tc.desc      Test doInitialize callback with -Infinity parameter
      * @tc.size      MediumTest
@@ -873,7 +873,7 @@ export default function StreamReadable04Test() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2300
      * @tc.name      testStreamReadable04Chapter0023
      * @tc.desc      Test doInitialize callback with number.MAX_VALUE parameter
      * @tc.size      MediumTest
@@ -906,7 +906,7 @@ export default function StreamReadable04Test() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2400
      * @tc.name      testStreamReadable04Chapter0024
      * @tc.desc      Test doInitialize callback with Number.MIN_VALUE parameter
      * @tc.size      MediumTest
@@ -940,7 +940,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2500
      * @tc.name      testStreamReadable04Chapter0025
      * @tc.desc      Test doInitialize callback with bigint parameter
      * @tc.size      MediumTest
@@ -973,7 +973,7 @@ export default function StreamReadable04Test() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2600
      * @tc.name      testStreamReadable04Chapter0026
      * @tc.desc      Test doInitialize callback with typed array parameter
      * @tc.size      MediumTest
@@ -1009,7 +1009,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2700
      * @tc.name      testStreamReadable04Chapter0027
      * @tc.desc      Test doInitialize with empty string parameter in callback
      * @tc.size      MediumTest
@@ -1043,7 +1043,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2800
      * @tc.name      testStreamReadable04Chapter0028
      * @tc.desc      Test doInitialize with special characters in callback parameter
      * @tc.size      MediumTest
@@ -1079,7 +1079,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_2900
      * @tc.name      testStreamReadable04Chapter0029
      * @tc.desc      Test doInitialize with array parameter in callback
      * @tc.size      MediumTest
@@ -1113,7 +1113,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3000
      * @tc.name      testStreamReadable04Chapter0030
      * @tc.desc      Test doInitialize with object parameter in callback
      * @tc.size      MediumTest
@@ -1149,7 +1149,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3100
      * @tc.name      testStreamReadable04Chapter0031
      * @tc.desc      Test doInitialize callback not called (negative test)
      * @tc.size      MediumTest
@@ -1187,7 +1187,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3200
      * @tc.name      testStreamReadable04Chapter0032
      * @tc.desc      Test doInitialize with callback throwing error
      * @tc.size      MediumTest
@@ -1226,7 +1226,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3300
      * @tc.name      testStreamReadable04Chapter0033
      * @tc.desc      Test doInitialize with multiple on listeners
      * @tc.size      MediumTest
@@ -1265,7 +1265,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3400
      * @tc.name      testStreamReadable04Chapter0034
      * @tc.desc      Test doInitialize with boolean parameter in callback
      * @tc.size      MediumTest
@@ -1298,7 +1298,7 @@ export default function StreamReadable04Test() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3500
      * @tc.name      testStreamReadable04Chapter0035
      * @tc.desc      Test doInitialize with different event types
      * @tc.size      MediumTest
@@ -1337,7 +1337,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3600
      * @tc.name      testStreamReadable04Chapter0036
      * @tc.desc      Test doInitialize with callback returning value
      * @tc.size      MediumTest
@@ -1370,7 +1370,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3700
      * @tc.name      testStreamReadable04Chapter0037
      * @tc.desc      Test read method with NaN parameter throws error
      * @tc.size      MediumTest
@@ -1397,7 +1397,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3800
      * @tc.name      testStreamReadable04Chapter0038
      * @tc.desc      Test read method with Infinity parameter throws error
      * @tc.size      MediumTest
@@ -1424,7 +1424,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_3900
      * @tc.name      testStreamReadable04Chapter0039
      * @tc.desc      Test read method with negative parameter throws error
      * @tc.size      MediumTest
@@ -1451,7 +1451,7 @@ export default function StreamReadable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLETESTFOUR_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMREADABLE4_4000
      * @tc.name      testStreamReadable04Chapter0040
      * @tc.desc      Test read method with valid 65535 size parameter calls doRead
      * @tc.size      MediumTest

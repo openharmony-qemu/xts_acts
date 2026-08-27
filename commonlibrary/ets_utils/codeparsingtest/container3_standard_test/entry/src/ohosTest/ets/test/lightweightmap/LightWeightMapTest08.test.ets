@@ -43,7 +43,7 @@ export default function localUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_0100
      * @tc.name      testLightWeightMapTest08Chapter0001
      * @tc.desc      Use for..of (Symbol.iterator) to iterate and verify order and key/value pairs
      * @tc.size      MediumTest
@@ -86,7 +86,7 @@ export default function localUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_0200
      * @tc.name      testLightWeightMapTest08Chapter0002
      * @tc.desc      Use explicit iterator = map[Symbol.iterator]() to iterate entries and verify order
      * @tc.size      MediumTest
@@ -131,7 +131,7 @@ export default function localUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_0300
      * @tc.name      testLightWeightMapTest08Chapter0003
      * @tc.desc      Call Symbol.iterator on empty map, iterator should yield no elements
      * @tc.size      MediumTest
@@ -158,7 +158,7 @@ export default function localUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_0400
      * @tc.name      testLightWeightMapTest08Chapter0004
      * @tc.desc      Iterate class instances and modify their fields inside loop, verify changes take effect
      * @tc.size      MediumTest
@@ -187,7 +187,7 @@ export default function localUnitTest() {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_0500
      * @tc.name      testLightWeightMapTest08Chapter0005
      * @tc.desc      Insert new key during for..of iteration, iterator should not crash and visits initial items
      * @tc.size      MediumTest
@@ -216,7 +216,7 @@ export default function localUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_0600
      * @tc.name      testLightWeightMapTest08Chapter0006
      * @tc.desc      Iterate with Symbol.iterator when value is Uint8Array and verify contents
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function localUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_0700
      * @tc.name      testLightWeightMapTest08Chapter0007
      * @tc.desc      Iterate with Symbol.iterator when value is simple object and verify fields
      * @tc.size      MediumTest
@@ -283,7 +283,7 @@ export default function localUnitTest() {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_0800
      * @tc.name      testLightWeightMapTest08Chapter0008
      * @tc.desc      Use Uint8Array as key and verify iterated key reference equals original key
      * @tc.size      MediumTest
@@ -316,7 +316,7 @@ export default function localUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_0900
      * @tc.name      testLightWeightMapTest08Chapter0009
      * @tc.desc      Iterate many elements with Symbol.iterator and check that sum of values is correct
      * @tc.size      MediumTest
@@ -348,7 +348,7 @@ export default function localUnitTest() {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST08_0010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP9_1000
      * @tc.name      testLightWeightMapTest08Chapter0010
      * @tc.desc      Compare first element from entries() and Symbol.iterator() and ensure they match
      * @tc.size      MediumTest

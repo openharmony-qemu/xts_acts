@@ -41,7 +41,7 @@ export default function testLightWeightSetTest02() {
     })
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_0100
      * @tc.name      testLightWeightSetTest02Chapter0001
      * @tc.desc      Verify LightWeightSet's has method with NaN
      * @tc.size      MediumTest
@@ -61,7 +61,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_0200
      * @tc.name      testLightWeightSetTest02Chapter0002
      * @tc.desc      Verify LightWeightSet's has method with Infinity and -Infinity
      * @tc.size      MediumTest
@@ -81,7 +81,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_0300
      * @tc.name      testLightWeightSetTest02Chapter0003
      * @tc.desc      Verify LightWeightSet's has method with boolean values
      * @tc.size      MediumTest
@@ -101,7 +101,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_0400
      * @tc.name      testLightWeightSetTest02Chapter0004
      * @tc.desc      Verify LightWeightSet's has method with array with normal values
      * @tc.size      MediumTest
@@ -123,7 +123,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_0500
      * @tc.name      testLightWeightSetTest02Chapter0005
      * @tc.desc      Verify LightWeightSet's has method with array with negative numbers
      * @tc.size      MediumTest
@@ -144,7 +144,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_0600
      * @tc.name      testLightWeightSetTest02Chapter0006
      * @tc.desc      Verify LightWeightSet's has method with special array object
      * @tc.size      MediumTest
@@ -167,7 +167,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_0700
      * @tc.name      testLightWeightSetTest02Chapter0007
      * @tc.desc      Verify LightWeightSet's has method with array with mixed types
      * @tc.size      MediumTest
@@ -188,7 +188,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_0800
      * @tc.name      testLightWeightSetTest02Chapter0008
      * @tc.desc      Verify LightWeightSet's has method with normal object
      * @tc.size      MediumTest
@@ -215,7 +215,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_0900
      * @tc.name      testLightWeightSetTest02Chapter0009
      * @tc.desc      Verify LightWeightSet's has method with object with Symbol key
      * @tc.size      MediumTest
@@ -235,7 +235,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1000
      * @tc.name      testLightWeightSetTest02Chapter0010
      * @tc.desc      Verify LightWeightSet's has method with object with function property
      * @tc.size      MediumTest
@@ -255,7 +255,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1100
      * @tc.name      testLightWeightSetTest02Chapter0011
      * @tc.desc      Verify LightWeightSet's has method with object with ArrayBuffer
      * @tc.size      MediumTest
@@ -275,7 +275,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1200
      * @tc.name      testLightWeightSetTest02Chapter0012
      * @tc.desc      Verify LightWeightSet's has method with object with TypedArray
      * @tc.size      MediumTest
@@ -295,7 +295,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1300
      * @tc.name      testLightWeightSetTest02Chapter0013
      * @tc.desc      Verify LightWeightSet's has method with object with Map
      * @tc.size      MediumTest
@@ -315,7 +315,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1400
      * @tc.name      testLightWeightSetTest02Chapter0014
      * @tc.desc      Verify LightWeightSet's has method with class instances
      * @tc.size      MediumTest
@@ -337,7 +337,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1500
      * @tc.name      testLightWeightSetTest02Chapter0015
      * @tc.desc      Verify LightWeightSet's has method with object with undefined property
      * @tc.size      MediumTest
@@ -357,7 +357,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1600
      * @tc.name      testLightWeightSetTest02Chapter0016
      * @tc.desc      Verify LightWeightSet's has method with object with NaN and Infinity
      * @tc.size      MediumTest
@@ -377,7 +377,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1700
      * @tc.name      testLightWeightSetTest02Chapter0017
      * @tc.desc      Verify LightWeightSet's has method with object with NaN and Infinity
      * @tc.size      MediumTest
@@ -398,7 +398,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1800
      * @tc.name      testLightWeightSetTest02Chapter0018
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with byte boundary lower value
      * @tc.size      MediumTest
@@ -420,7 +420,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_1900
      * @tc.name      testLightWeightSetTest02Chapter0019
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with byte boundary upper value
      * @tc.size      MediumTest
@@ -441,7 +441,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2000
      * @tc.name      testLightWeightSetTest02Chapter0020
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with byte below lower boundary value
      * @tc.size      MediumTest
@@ -463,7 +463,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2100
      * @tc.name      testLightWeightSetTest02Chapter0021
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with byte above upper boundary value
      * @tc.size      MediumTest
@@ -484,7 +484,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2200
      * @tc.name      testLightWeightSetTest02Chapter0022
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with short boundary lower value
      * @tc.size      MediumTest
@@ -506,7 +506,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2300
      * @tc.name      testLightWeightSetTest02Chapter0023
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with short boundary upper value
      * @tc.size      MediumTest
@@ -527,7 +527,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2400
      * @tc.name      testLightWeightSetTest02Chapter0024
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with short below lower boundary value
      * @tc.size      MediumTest
@@ -549,7 +549,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2500
      * @tc.name      testLightWeightSetTest02Chapter0025
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with short above upper boundary value
      * @tc.size      MediumTest
@@ -570,7 +570,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2600
      * @tc.name      testLightWeightSetTest02Chapter0026
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with int boundary lower value
      * @tc.size      MediumTest
@@ -593,7 +593,7 @@ export default function testLightWeightSetTest02() {
 
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2700
      * @tc.name      testLightWeightSetTest02Chapter0028
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with int below lower boundary value
      * @tc.size      MediumTest
@@ -615,7 +615,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2800
      * @tc.name      testLightWeightSetTest02Chapter0029
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with int above upper boundary value
      * @tc.size      MediumTest
@@ -637,7 +637,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_2900
      * @tc.name      testLightWeightSetTest02Chapter0030
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with long boundary lower value
      * @tc.size      MediumTest
@@ -659,7 +659,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3000
      * @tc.name      testLightWeightSetTest02Chapter0031
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with long boundary upper value
      * @tc.size      MediumTest
@@ -681,7 +681,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3100
      * @tc.name      testLightWeightSetTest02Chapter0032
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with long below lower boundary value
      * @tc.size      MediumTest
@@ -703,7 +703,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3200
      * @tc.name      testLightWeightSetTest02Chapter0033
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with long above upper boundary value
      * @tc.size      MediumTest
@@ -725,7 +725,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3300
      * @tc.name      testLightWeightSetTest02Chapter0034
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with char boundary lower value
      * @tc.size      MediumTest
@@ -747,7 +747,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3400
      * @tc.name      testLightWeightSetTest02Chapter0036
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with char below lower boundary value
      * @tc.size      MediumTest
@@ -769,7 +769,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3500
      * @tc.name      testLightWeightSetTest02Chapter0038
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with float boundary positive lower value
      * @tc.size      MediumTest
@@ -791,7 +791,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3600
      * @tc.name      testLightWeightSetTest02Chapter0039
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with float boundary positive upper value
      * @tc.size      MediumTest
@@ -813,7 +813,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3700
      * @tc.name      testLightWeightSetTest02Chapter0040
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with float below positive lower boundary value
      * @tc.size      MediumTest
@@ -835,7 +835,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3800
      * @tc.name      testLightWeightSetTest02Chapter0041
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with float above positive upper boundary value
      * @tc.size      MediumTest
@@ -857,7 +857,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_3900
      * @tc.name      testLightWeightSetTest02Chapter0042
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with double boundary positive lower value
      * @tc.size      MediumTest
@@ -879,7 +879,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4000
      * @tc.name      testLightWeightSetTest02Chapter0043
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with double boundary positive upper value
      * @tc.size      MediumTest
@@ -901,7 +901,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4100
      * @tc.name      testLightWeightSetTest02Chapter0044
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with double below positive lower boundary value
      * @tc.size      MediumTest
@@ -923,7 +923,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4200
      * @tc.name      testLightWeightSetTest02Chapter0045
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with double above positive upper boundary value
      * @tc.size      MediumTest
@@ -945,7 +945,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4300
      * @tc.name      testLightWeightSetTest02Chapter0046
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with -Infinity value
      * @tc.size      MediumTest
@@ -967,7 +967,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4400
      * @tc.name      testLightWeightSetTest02Chapter0047
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with undefined value
      * @tc.size      MediumTest
@@ -989,7 +989,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4500
      * @tc.name      testLightWeightSetTest02Chapter0048
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with NaN value
      * @tc.size      MediumTest
@@ -1011,7 +1011,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4600
      * @tc.name      testLightWeightSetTest02Chapter0049
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with -0 value
      * @tc.size      MediumTest
@@ -1033,7 +1033,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4700
      * @tc.name      testLightWeightSetTest02Chapter0050
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with Infinity value
      * @tc.size      MediumTest
@@ -1055,7 +1055,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4800
      * @tc.name      testLightWeightSetTest02Chapter0051
      * @tc.desc      Verify LightWeightSet's increaseCapacityTo method with -Infinity value
      * @tc.size      MediumTest
@@ -1077,7 +1077,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_4900
      * @tc.name      testLightWeightSetTest02Chapter0052
      * @tc.desc      Verify LightWeightSet's getIndexOf method with string elements
      * @tc.size      MediumTest
@@ -1099,7 +1099,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5000
      * @tc.name      testLightWeightSetTest02Chapter0053
      * @tc.desc      Verify LightWeightSet's getIndexOf method with string elements
      * @tc.size      MediumTest
@@ -1121,7 +1121,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5100
      * @tc.name      testLightWeightSetTest02Chapter0054
      * @tc.desc      Verify LightWeightSet's getIndexOf method with Int8Array boundary values
      * @tc.size      MediumTest
@@ -1144,7 +1144,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5200
      * @tc.name      testLightWeightSetTest02Chapter0055
      * @tc.desc      Verify LightWeightSet's getIndexOf method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1167,7 +1167,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5300
      * @tc.name      testLightWeightSetTest02Chapter0056
      * @tc.desc      Verify LightWeightSet's getIndexOf method with special strings
      * @tc.size      MediumTest
@@ -1188,7 +1188,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5400
      * @tc.name      testLightWeightSetTest02Chapter0057
      * @tc.desc      Verify LightWeightSet's getIndexOf method with ASCII characters
      * @tc.size      MediumTest
@@ -1210,7 +1210,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5500
      * @tc.name      testLightWeightSetTest02Chapter0058
      * @tc.desc      Verify LightWeightSet's getIndexOf method with emoji characters
      * @tc.size      MediumTest
@@ -1233,7 +1233,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5600
      * @tc.name      testLightWeightSetTest02Chapter0059
      * @tc.desc      Verify LightWeightSet's getIndexOf method with number 0
      * @tc.size      MediumTest
@@ -1254,7 +1254,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5700
      * @tc.name      testLightWeightSetTest02Chapter0060
      * @tc.desc      Verify LightWeightSet's getIndexOf method with NaN
      * @tc.size      MediumTest
@@ -1275,7 +1275,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5800
      * @tc.name      testLightWeightSetTest02Chapter0061
      * @tc.desc      Verify LightWeightSet's getIndexOf method with Infinity and -Infinity
      * @tc.size      MediumTest
@@ -1296,7 +1296,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_5900
      * @tc.name      testLightWeightSetTest02Chapter0062
      * @tc.desc      Verify LightWeightSet's getIndexOf method with boolean values
      * @tc.size      MediumTest
@@ -1317,7 +1317,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6000
      * @tc.name      testLightWeightSetTest02Chapter0063
      * @tc.desc      Verify LightWeightSet's getIndexOf method with array with normal values
      * @tc.size      MediumTest
@@ -1340,7 +1340,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6100
      * @tc.name      testLightWeightSetTest02Chapter0064
      * @tc.desc      Verify LightWeightSet's getIndexOf method with array with negative numbers
      * @tc.size      MediumTest
@@ -1362,7 +1362,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6200
      * @tc.name      testLightWeightSetTest02Chapter0065
      * @tc.desc      Verify LightWeightSet's getIndexOf method with special array object
      * @tc.size      MediumTest
@@ -1386,7 +1386,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6300
      * @tc.name      testLightWeightSetTest02Chapter0066
      * @tc.desc      Verify LightWeightSet's getIndexOf method with array with mixed types
      * @tc.size      MediumTest
@@ -1408,7 +1408,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6400
      * @tc.name      testLightWeightSetTest02Chapter0067
      * @tc.desc      Verify LightWeightSet's getIndexOf method with normal object
      * @tc.size      MediumTest
@@ -1429,7 +1429,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6500
      * @tc.name      testLightWeightSetTest02Chapter0068
      * @tc.desc      Verify LightWeightSet's getIndexOf method with object with Symbol key
      * @tc.size      MediumTest
@@ -1450,7 +1450,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6600
      * @tc.name      testLightWeightSetTest02Chapter0069
      * @tc.desc      Verify LightWeightSet's getIndexOf method with object with function property
      * @tc.size      MediumTest
@@ -1471,7 +1471,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6700
      * @tc.name      testLightWeightSetTest02Chapter0070
      * @tc.desc      Verify LightWeightSet's getIndexOf method with object with ArrayBuffer
      * @tc.size      MediumTest
@@ -1492,7 +1492,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6800
      * @tc.name      testLightWeightSetTest02Chapter0071
      * @tc.desc      Verify LightWeightSet's getIndexOf method with object with TypedArray
      * @tc.size      MediumTest
@@ -1513,7 +1513,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_6900
      * @tc.name      testLightWeightSetTest02Chapter0072
      * @tc.desc      Verify LightWeightSet's getIndexOf method with object with Map
      * @tc.size      MediumTest
@@ -1534,7 +1534,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7000
      * @tc.name      testLightWeightSetTest02Chapter0073
      * @tc.desc      Verify LightWeightSet's getIndexOf method with class instances
      * @tc.size      MediumTest
@@ -1557,7 +1557,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7100
      * @tc.name      testLightWeightSetTest02Chapter0074
      * @tc.desc      Verify LightWeightSet's getIndexOf method with object with undefined property
      * @tc.size      MediumTest
@@ -1578,7 +1578,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7200
      * @tc.name      testLightWeightSetTest02Chapter0075
      * @tc.desc      Verify LightWeightSet's getIndexOf method with object with NaN and Infinity
      * @tc.size      MediumTest
@@ -1599,7 +1599,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7300
      * @tc.name      testLightWeightSetTest02Chapter0076
      * @tc.desc      Verify LightWeightSet's remove method with string elements
      * @tc.size      MediumTest
@@ -1621,7 +1621,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7400
      * @tc.name      testLightWeightSetTest02Chapter0077
      * @tc.desc      Verify LightWeightSet's remove method with Int8Array boundary values
      * @tc.size      MediumTest
@@ -1642,7 +1642,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7500
      * @tc.name      testLightWeightSetTest02Chapter0078
      * @tc.desc      Verify LightWeightSet's remove method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1663,7 +1663,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7600
      * @tc.name      testLightWeightSetTest02Chapter0079
      * @tc.desc      Verify LightWeightSet's remove method with special strings
      * @tc.size      MediumTest
@@ -1684,7 +1684,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7700
      * @tc.name      testLightWeightSetTest02Chapter0080
      * @tc.desc      Verify LightWeightSet's remove method with ASCII characters
      * @tc.size      MediumTest
@@ -1705,7 +1705,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7800
      * @tc.name      testLightWeightSetTest02Chapter0081
      * @tc.desc      Verify LightWeightSet's remove method with emoji characters
      * @tc.size      MediumTest
@@ -1728,7 +1728,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_7900
      * @tc.name      testLightWeightSetTest02Chapter0082
      * @tc.desc      Verify LightWeightSet's remove method with number 0
      * @tc.size      MediumTest
@@ -1749,7 +1749,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_8000
      * @tc.name      testLightWeightSetTest02Chapter0083
      * @tc.desc      Verify LightWeightSet's remove method with NaN
      * @tc.size      MediumTest
@@ -1770,7 +1770,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_8100
      * @tc.name      testLightWeightSetTest02Chapter0084
      * @tc.desc      Verify LightWeightSet's remove method with Infinity and -Infinity
      * @tc.size      MediumTest
@@ -1791,7 +1791,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_8200
      * @tc.name      testLightWeightSetTest02Chapter0085
      * @tc.desc      Verify LightWeightSet's remove method with boolean values
      * @tc.size      MediumTest
@@ -1812,7 +1812,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0086
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_8300
      * @tc.name      testLightWeightSetTest02Chapter0086
      * @tc.desc      Verify LightWeightSet's remove method with array with normal values
      * @tc.size      MediumTest
@@ -1833,7 +1833,7 @@ export default function testLightWeightSetTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTSET_TEST02_0087
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET3_8400
      * @tc.name      testLightWeightSetTest02Chapter0087
      * @tc.desc      Verify LightWeightSet's remove method with array with negative numbers
      * @tc.size      MediumTest

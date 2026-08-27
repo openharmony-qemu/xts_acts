@@ -43,7 +43,7 @@ export default function HashMapTest() {
     })
     /**
      * @tc.name   testHashMapLength0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_LENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_0100
      * @tc.desc   Testing HashMap length is 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -62,7 +62,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapLength0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_LENGTH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_0200
      * @tc.desc   Testing HashMap has data check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -82,7 +82,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapLength0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_LENGTH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_0300
      * @tc.desc   Testing HashMap remove->set->clear check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -104,7 +104,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CONSTRUCTOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_0400
      * @tc.desc   Testing HashMap constructor add sample data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -124,7 +124,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CONSTRUCTOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_0500
      * @tc.desc   Testing HashMap constructor add custom type data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -152,7 +152,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapIsEmpty0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_IS_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_0600
      * @tc.desc   Testing HashMap empty data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,7 +171,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapIsEmpty0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_IS_EMPTY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_0700
      * @tc.desc   Testing HashMap has data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -191,7 +191,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapIsEmpty0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_IS_EMPTY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_0800
      * @tc.desc   Testing HashMap has data and remove
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -212,7 +212,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapIsEmpty0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_IS_EMPTY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_0900
      * @tc.desc   Testing HashMap has data and clear
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -233,7 +233,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1000
      * @tc.desc   Testing HashMap is empty and check if "" has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -252,7 +252,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1100
      * @tc.desc   Testing HashMap is empty and check if null has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -271,7 +271,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1200
      * @tc.desc   Testing HashMap is empty and check if undefined has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -290,7 +290,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1300
      * @tc.desc   Testing HashMap is empty and check if key has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -309,7 +309,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1400
      * @tc.desc   Testing HashMap has data and check if key has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -329,7 +329,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasKey0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1500
      * @tc.desc   Testing HashMap has data and check if not this key has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasKey0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1600
      * @tc.desc   Testing HashMap has data and check if value has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -369,7 +369,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasKey0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_KEY_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1700
      * @tc.desc   Testing HashMap remove->set->clear
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -391,7 +391,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasValue0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1800
      * @tc.desc   Testing HashMap is empty and check if "" has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -410,7 +410,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasValue0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_1900
      * @tc.desc   Testing HashMap is empty and check if null has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasValue0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2000
      * @tc.desc   Testing HashMap is empty and check if undefined has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -448,7 +448,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasValue0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2100
      * @tc.desc   Testing HashMap is empty and check if key has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -467,7 +467,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasValue0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2200
      * @tc.desc   Testing HashMap has data and check if value has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -487,7 +487,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasValue0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2300
      * @tc.desc   Testing HashMap has data and check if not this value has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -507,7 +507,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapHasValue0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_HAS_VALUE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2400
      * @tc.desc   Testing HashMap remove->set->clear
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -529,7 +529,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapGet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2500
      * @tc.desc   Testing HashMap is empty and check if get ""
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -548,7 +548,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapGet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_GET_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2600
      * @tc.desc   Testing HashMap is empty and check if get null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -567,7 +567,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapGet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_GET_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2700
      * @tc.desc   Testing HashMap is empty and check if get undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -586,7 +586,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapGet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_GET_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2800
      * @tc.desc   Testing HashMap is empty and check if get key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -605,7 +605,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapGet0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_GET_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_2900
      * @tc.desc   Testing HashMap has data and check if get this key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -625,7 +625,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapGet0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_GET_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3000
      * @tc.desc   Testing HashMap has data and check if get not this key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -645,7 +645,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapGet0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_GET_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3100
      * @tc.desc   Testing HashMap remove->set->clear
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -667,7 +667,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSetAll0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_ALL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3200
      * @tc.desc   Testing HashMap is empty check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -686,7 +686,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSetAll0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_ALL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3300
      * @tc.desc   Testing HashMap has data check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -710,7 +710,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSetAll0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_ALL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3400
      * @tc.desc   Testing HashMap has data check data is change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -734,7 +734,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSetAll0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_ALL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3500
      * @tc.desc   Testing HashMap has data check same key diff value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -758,7 +758,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSetAll0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_ALL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3600
      * @tc.desc   Testing HashMap remove->set->clear->replace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -781,7 +781,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSetAll0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_ALL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3700
      * @tc.desc   Testing HashMap has data and setAll same data check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -804,7 +804,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3800
      * @tc.desc   Testing HashMap set "" check length and get ""
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -825,7 +825,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_3900
      * @tc.desc   Testing HashMap set "a" check length and get "a"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -846,7 +846,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4000
      * @tc.desc   Testing HashMap set null check length and get null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -867,7 +867,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4100
      * @tc.desc   Testing HashMap set key is undefined and not support key is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -887,7 +887,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4200
      * @tc.desc   Testing HashMap set key length 1024 check hashMap length and get key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -909,7 +909,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4300
      * @tc.desc   Testing HashMap set value is null check hashMap length and get value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -930,7 +930,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4400
      * @tc.desc   Testing HashMap set value is 1 check hashMap length and get value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -951,7 +951,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4500
      * @tc.desc   Testing HashMap set value is undefined check hashMap length and get value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -972,7 +972,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4600
      * @tc.desc   Testing HashMap data has 1000 check length =1 and has 1000 data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -997,7 +997,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSet0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SET_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4700
      * @tc.desc   Testing HashMap remove->set->clear->replace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1020,7 +1020,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapRemove0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REMOVE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4800
      * @tc.desc   Testing HashMap is empty and check if remove ""
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1039,7 +1039,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapRemove0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REMOVE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_4900
      * @tc.desc   Testing HashMap is empty and check if remove null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1058,7 +1058,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapRemove0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REMOVE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5000
      * @tc.desc   Testing HashMap is empty and check if remove undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1077,7 +1077,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapRemove0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REMOVE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5100
      * @tc.desc   Testing HashMap is empty and check if remove key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1096,7 +1096,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapRemove0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REMOVE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5200
      * @tc.desc   Testing HashMap has data and check if remove this key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1116,7 +1116,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapRemove0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REMOVE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5300
      * @tc.desc   Testing HashMap has data and check if not remove this key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1136,7 +1136,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapRemove0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REMOVE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5400
      * @tc.desc   Testing HashMap remove->set->clear
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1158,7 +1158,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapClear0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5500
      * @tc.desc   Testing HashMap is empty clear and check length get hasKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1180,7 +1180,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapClear0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CLEAR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5600
      * @tc.desc   Testing HashMap has data clear and check length get hasKey
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1203,7 +1203,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapClear0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CLEAR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5700
      * @tc.desc   Testing HashMap has data clear and set data check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1225,7 +1225,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapKeys0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_KEYS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5800
      * @tc.desc   Testing HashMap is empty check keys
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1245,7 +1245,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapKeys0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_KEYS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_5900
      * @tc.desc   Testing HashMap has data check everyOne key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1276,7 +1276,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapValues0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_VALUES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6000
      * @tc.desc   Testing HashMap is empty check values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1296,7 +1296,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapValues0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_VALUES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6100
      * @tc.desc   Testing HashMap has data check everyOne value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1327,7 +1327,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapReplace0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REPLACE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6200
      * @tc.desc   Testing HashMap is empty and check if key is ""
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1346,7 +1346,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapReplace0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REPLACE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6300
      * @tc.desc   Testing HashMap is empty and check if key is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1365,7 +1365,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapReplace0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REPLACE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6400
      * @tc.desc   Testing HashMap is empty and check if ke is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1384,7 +1384,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapReplace0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REPLACE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6500
      * @tc.desc   Testing HashMap is empty and check if key is key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1403,7 +1403,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapReplace0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REPLACE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6600
      * @tc.desc   Testing HashMap has data and check if key and value not change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1423,7 +1423,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapReplace0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REPLACE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6700
      * @tc.desc   Testing HashMap has data and check if value change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1443,7 +1443,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapReplace0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_REPLACE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6800
      * @tc.desc   Testing HashMap has data and check if key is 1 and value is change
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1463,7 +1463,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapForeach0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_FOREACH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_6900
      * @tc.desc   Testing HashMap is empty foreach check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1484,7 +1484,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapForeach0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_FOREACH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7000
      * @tc.desc   Testing HashMap has foreach check value and allLength
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1512,7 +1512,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapForeach0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_FOREACH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7100
      * @tc.desc   Testing HashMap has foreach check remove
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1536,7 +1536,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapForeach0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_FOREACH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7200
      * @tc.desc   Testing HashMap has foreach check replace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1560,7 +1560,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapForeach0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_FOREACH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7300
      * @tc.desc   Testing HashMap has foreach if clear check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1585,7 +1585,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapForeach0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_FOREACH_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7400
      * @tc.desc   Testing HashMap has foreach if no params check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1609,7 +1609,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapForeach0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_FOREACH_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7500
      * @tc.desc   Testing HashMap has foreach if one param check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1632,7 +1632,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapForeach0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_FOREACH_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7600
      * @tc.desc   Testing HashMap has foreach ArgThis
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1659,7 +1659,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapForeach0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_FOREACH_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7700
      * @tc.desc   Testing HashMap has foreach ArgThis
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1682,7 +1682,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapEntries0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_ENTRIES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7800
      * @tc.desc   Testing HashMap is empty check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1706,7 +1706,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapEntries0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_ENTRIES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_7900
      * @tc.desc   Testing HashMap has check everyOne and allLength
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1739,7 +1739,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapEntries0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_ENTRIES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_8000
      * @tc.desc   Testing HashMap has entries check remove
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1768,7 +1768,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapEntries0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_ENTRIES_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_8100
      * @tc.desc   Testing HashMap has entries check replace
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1799,7 +1799,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapEntries0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_ENTRIES_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_8200
      * @tc.desc   Testing HashMap has entries if clear check length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1829,7 +1829,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSymbolIterator0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SYMBOL_ITERATOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_8300
      * @tc.desc   Testing HashMap is empty while loop check
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1853,7 +1853,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapSymbolIterator0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_SYMBOL_ITERATOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_8400
      * @tc.desc   Testing HashMap has data while loop check value and length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1886,7 +1886,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapCustom0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CUSTOM_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_8500
      * @tc.desc   Testing HashMap has data while loop check value and length
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1937,7 +1937,7 @@ export default function HashMapTest() {
     });
     /**
      * @tc.name   testHashMapCase001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_8600
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1967,7 +1967,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapCase002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_8700
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1987,7 +1987,7 @@ export default function HashMapTest() {
 
     /**
      * @tc.name   testHashMapCase003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASHMAP_CASE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP1_8800
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

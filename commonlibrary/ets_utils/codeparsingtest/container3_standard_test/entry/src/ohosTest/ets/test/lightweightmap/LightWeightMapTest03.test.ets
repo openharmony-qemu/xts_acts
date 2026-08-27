@@ -52,7 +52,7 @@ export default function testLightWeightMapTest03() {
     })
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0001
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_0100
      * @tc.name      testLightWeightMapTest03Chapter0001
      * @tc.desc      Verify get with String type key
      * @tc.size      MediumTest
@@ -72,7 +72,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0002
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_0200
      * @tc.name      testLightWeightMapTest03Chapter0002
      * @tc.desc      Verify get with String type key containing special characters
      * @tc.size      MediumTest
@@ -93,7 +93,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0003
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_0300
      * @tc.name      testLightWeightMapTest03Chapter0003
      * @tc.desc      Verify get with Number type key
      * @tc.size      MediumTest
@@ -114,7 +114,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0004
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_0400
      * @tc.name      testLightWeightMapTest03Chapter0004
      * @tc.desc      Verify get with Number type special values as key
      * @tc.size      MediumTest
@@ -135,7 +135,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0005
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_0500
      * @tc.name      testLightWeightMapTest03Chapter0005
      * @tc.desc      Verify get with Boolean type key
      * @tc.size      MediumTest
@@ -154,7 +154,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0006
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_0600
      * @tc.name      testLightWeightMapTest03Chapter0006
      * @tc.desc      Verify get with Array type key
      * @tc.size      MediumTest
@@ -175,7 +175,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0007
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_0700
      * @tc.name      testLightWeightMapTest03Chapter0007
      * @tc.desc      Verify get with nested Array type key
      * @tc.size      MediumTest
@@ -196,7 +196,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0008
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_0800
      * @tc.name      testLightWeightMapTest03Chapter0008
      * @tc.desc      Verify get with Object type key
      * @tc.size      MediumTest
@@ -218,7 +218,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0009
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_0900
      * @tc.name      testLightWeightMapTest03Chapter0009
      * @tc.desc      Verify get with nested Object type key
      * @tc.size      MediumTest
@@ -239,7 +239,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0010
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1000
      * @tc.name      testLightWeightMapTest03Chapter0010
      * @tc.desc      Verify get with Class type key
      * @tc.size      MediumTest
@@ -260,7 +260,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1100
      * @tc.name      testLightWeightMapTest03Chapter0011
      * @tc.desc      Verify get with TypedArray type key (Int8Array)
      * @tc.size      MediumTest
@@ -281,7 +281,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1200
      * @tc.name      testLightWeightMapTest03Chapter0012
      * @tc.desc      Verify get with TypedArray special values (Float64Array)
      * @tc.size      MediumTest
@@ -302,7 +302,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1300
      * @tc.name      testLightWeightMapTest03Chapter0013
      * @tc.desc      Verify get returns undefined for non-existent key
      * @tc.size      MediumTest
@@ -320,7 +320,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0014
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1400
      * @tc.name      testLightWeightMapTest03Chapter0014
      * @tc.desc      Verify get with boolean values
      * @tc.size      MediumTest
@@ -340,7 +340,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0015
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1500
      * @tc.name      testLightWeightMapTest03Chapter0015
      * @tc.desc      Verify get with same key overwrites previous value
      * @tc.size      MediumTest
@@ -359,7 +359,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0016
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1600
      * @tc.name      testLightWeightMapTest03Chapter0016
      * @tc.desc      Verify get with large number of elements
      * @tc.size      LargeTest
@@ -384,7 +384,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1700
      * @tc.name      testLightWeightMapTest03Chapter0017
      * @tc.desc      Verify getIndexOfKey with String type key
      * @tc.size      MediumTest
@@ -404,7 +404,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0018
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1800
      * @tc.name      testLightWeightMapTest03Chapter0018
      * @tc.desc      Verify getIndexOfKey with String type key containing special characters
      * @tc.size      MediumTest
@@ -424,7 +424,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0019
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_1900
      * @tc.name      testLightWeightMapTest03Chapter0019
      * @tc.desc      Verify getIndexOfKey with Number type key
      * @tc.size      MediumTest
@@ -444,7 +444,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2000
      * @tc.name      testLightWeightMapTest03Chapter0020
      * @tc.desc      Verify getIndexOfKey with Number type special values as key
      * @tc.size      MediumTest
@@ -466,7 +466,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2100
      * @tc.name      testLightWeightMapTest03Chapter0021
      * @tc.desc      Verify getIndexOfKey with Boolean type key
      * @tc.size      MediumTest
@@ -485,7 +485,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2200
      * @tc.name      testLightWeightMapTest03Chapter0022
      * @tc.desc      Verify getIndexOfKey with Array type key
      * @tc.size      MediumTest
@@ -506,7 +506,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2300
      * @tc.name      testLightWeightMapTest03Chapter0023
      * @tc.desc      Verify getIndexOfKey with nested Array type key
      * @tc.size      MediumTest
@@ -527,7 +527,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2400
      * @tc.name      testLightWeightMapTest03Chapter0024
      * @tc.desc      Verify getIndexOfKey with Object type key
      * @tc.size      MediumTest
@@ -549,7 +549,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2500
      * @tc.name      testLightWeightMapTest03Chapter0025
      * @tc.desc      Verify getIndexOfKey with nested Object type key
      * @tc.size      MediumTest
@@ -570,7 +570,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2600
      * @tc.name      testLightWeightMapTest03Chapter0026
      * @tc.desc      Verify getIndexOfKey with Class type key
      * @tc.size      MediumTest
@@ -591,7 +591,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2700
      * @tc.name      testLightWeightMapTest03Chapter0027
      * @tc.desc      Verify getIndexOfKey with TypedArray type key (Int8Array)
      * @tc.size      MediumTest
@@ -612,7 +612,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2800
      * @tc.name      testLightWeightMapTest03Chapter0028
      * @tc.desc      Verify getIndexOfKey with TypedArray special values (Float64Array)
      * @tc.size      MediumTest
@@ -633,7 +633,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_2900
      * @tc.name      testLightWeightMapTest03Chapter0029
      * @tc.desc      Verify getIndexOfKey returns -1 for non-existent key
      * @tc.size      MediumTest
@@ -652,7 +652,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3000
      * @tc.name      testLightWeightMapTest03Chapter0030
      * @tc.desc      Verify getIndexOfKey returns first occurrence for duplicate keys
      * @tc.size      MediumTest
@@ -675,7 +675,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3100
      * @tc.name      testLightWeightMapTest03Chapter0031
      * @tc.desc      Verify getIndexOfKey with boolean values
      * @tc.size      MediumTest
@@ -693,7 +693,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3200
      * @tc.name      testLightWeightMapTest03Chapter0032
      * @tc.desc      Verify getIndexOfKey with empty map
      * @tc.size      MediumTest
@@ -710,7 +710,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3300
      * @tc.name      testLightWeightMapTest03Chapter0033
      * @tc.desc      Verify getIndexOfKey with large number of elements
      * @tc.size      LargeTest
@@ -737,7 +737,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0034
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3400
      * @tc.name      testLightWeightMapTest03Chapter0034
      * @tc.desc      Verify getIndexOfValue with String type value
      * @tc.size      MediumTest
@@ -757,7 +757,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0035
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3500
      * @tc.name      testLightWeightMapTest03Chapter0035
      * @tc.desc      Verify getIndexOfValue with String type value containing special characters
      * @tc.size      MediumTest
@@ -777,7 +777,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0036
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3600
      * @tc.name      testLightWeightMapTest03Chapter0036
      * @tc.desc      Verify getIndexOfValue with Number type value
      * @tc.size      MediumTest
@@ -797,7 +797,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0037
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3700
      * @tc.name      testLightWeightMapTest03Chapter0037
      * @tc.desc      Verify getIndexOfValue with Number type special values
      * @tc.size      MediumTest
@@ -817,7 +817,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0038
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3800
      * @tc.name      testLightWeightMapTest03Chapter0038
      * @tc.desc      Verify getIndexOfValue with Boolean type value
      * @tc.size      MediumTest
@@ -837,7 +837,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0039
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_3900
      * @tc.name      testLightWeightMapTest03Chapter0039
      * @tc.desc      Verify getIndexOfValue with Array type value
      * @tc.size      MediumTest
@@ -857,7 +857,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0040
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4000
      * @tc.name      testLightWeightMapTest03Chapter0040
      * @tc.desc      Verify getIndexOfValue with nested Array type value
      * @tc.size      MediumTest
@@ -876,7 +876,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0041
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4100
      * @tc.name      testLightWeightMapTest03Chapter0041
      * @tc.desc      Verify getIndexOfValue with Object type value
      * @tc.size      MediumTest
@@ -896,7 +896,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0042
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4200
      * @tc.name      testLightWeightMapTest03Chapter0042
      * @tc.desc      Verify getIndexOfValue with nested Object type value
      * @tc.size      MediumTest
@@ -939,7 +939,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0043
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4300
      * @tc.name      testLightWeightMapTest03Chapter0043
      * @tc.desc      Verify getIndexOfValue with Class type value
      * @tc.size      MediumTest
@@ -962,7 +962,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0044
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4400
      * @tc.name      testLightWeightMapTest03Chapter0044
      * @tc.desc      Verify getIndexOfValue with TypedArray type value (Int8Array)
      * @tc.size      MediumTest
@@ -982,7 +982,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0045
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4500
      * @tc.name      testLightWeightMapTest03Chapter0045
      * @tc.desc      Verify getIndexOfValue with TypedArray special values (Float64Array)
      * @tc.size      MediumTest
@@ -1001,7 +1001,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0046
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4600
      * @tc.name      testLightWeightMapTest03Chapter0046
      * @tc.desc      Verify getIndexOfValue returns -1 for non-existent value
      * @tc.size      MediumTest
@@ -1020,7 +1020,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0047
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4700
      * @tc.name      testLightWeightMapTest03Chapter0047
      * @tc.desc      Verify getIndexOfValue returns first occurrence for duplicate values
      * @tc.size      MediumTest
@@ -1040,7 +1040,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0048
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4800
      * @tc.name      testLightWeightMapTest03Chapter0048
      * @tc.desc      Verify getIndexOfValue with boolean values
      * @tc.size      MediumTest
@@ -1058,7 +1058,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0049
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_4900
      * @tc.name      testLightWeightMapTest03Chapter0049
      * @tc.desc      Verify getIndexOfValue with empty map
      * @tc.size      MediumTest
@@ -1075,7 +1075,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0050
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5000
      * @tc.name      testLightWeightMapTest03Chapter0050
      * @tc.desc      Verify getIndexOfValue with null  values
      * @tc.size      MediumTest
@@ -1093,7 +1093,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0051
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5100
      * @tc.name      testLightWeightMapTest03Chapter0051
      * @tc.desc      Verify getIndexOfValue with large number of elements
      * @tc.size      LargeTest
@@ -1120,7 +1120,7 @@ export default function testLightWeightMapTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0052
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5200
      * @tc.name      testLightWeightMapTest03Chapter0052
      * @tc.desc      Verify LightWeightMap supports number value 0
      * @tc.size      MediumTest
@@ -1140,7 +1140,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0053
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5300
      * @tc.name      testLightWeightMapTest03Chapter0053
      * @tc.desc      Verify LightWeightMap supports undefined value
      * @tc.size      MediumTest
@@ -1161,7 +1161,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0054
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5400
      * @tc.name      testLightWeightMapTest03Chapter0054
      * @tc.desc      Verify LightWeightMap supports NaN value
      * @tc.size      MediumTest
@@ -1182,7 +1182,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0055
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5500
      * @tc.name      testLightWeightMapTest03Chapter0055
      * @tc.desc      Verify LightWeightMap supports -0 value
      * @tc.size      MediumTest
@@ -1206,7 +1206,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0056
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5600
      * @tc.name      testLightWeightMapTest03Chapter0056
      * @tc.desc      Verify LightWeightMap supports Infinity
      * @tc.size      MediumTest
@@ -1227,7 +1227,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0057
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5700
      * @tc.name      testLightWeightMapTest03Chapter0057
      * @tc.desc      Verify LightWeightMap supports -Infinity
      * @tc.size      MediumTest
@@ -1248,7 +1248,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0058
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5800
      * @tc.name      testLightWeightMapTest03Chapter0058
      * @tc.desc      Verify LightWeightMap supports Math.floor result
      * @tc.size      MediumTest
@@ -1270,7 +1270,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0059
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_5900
      * @tc.name      testLightWeightMapTest03Chapter0059
      * @tc.desc      Verify LightWeightMap supports Number.MAX_VALUE
      * @tc.size      MediumTest
@@ -1291,7 +1291,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0060
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6000
      * @tc.name      testLightWeightMapTest03Chapter0060
      * @tc.desc      Verify LightWeightMap supports Number.MIN_VALUE
      * @tc.size      MediumTest
@@ -1312,7 +1312,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0061
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6100
      * @tc.name      testLightWeightMapTest03Chapter0061
      * @tc.desc      Verify LightWeightMap supports Number.EPSILON
      * @tc.size      MediumTest
@@ -1331,7 +1331,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0062
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6200
      * @tc.name      testLightWeightMapTest03Chapter0062
      * @tc.desc      Verify LightWeightMap supports Number.MAX_SAFE_INTEGER
      * @tc.size      MediumTest
@@ -1351,7 +1351,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0063
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6300
      * @tc.name      testLightWeightMapTest03Chapter0063
      * @tc.desc      Verify LightWeightMap supports byte range
      * @tc.size      MediumTest
@@ -1372,7 +1372,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0064
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6400
      * @tc.name      testLightWeightMapTest03Chapter0064
      * @tc.desc      Verify LightWeightMap supports short range
      * @tc.size      MediumTest
@@ -1391,7 +1391,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0065
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6500
      * @tc.name      testLightWeightMapTest03Chapter0065
      * @tc.desc      Verify LightWeightMap supports int range
      * @tc.size      MediumTest
@@ -1410,7 +1410,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0066
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6600
      * @tc.name      testLightWeightMapTest03Chapter0066
      * @tc.desc      Verify LightWeightMap supports long range
      * @tc.size      MediumTest
@@ -1429,7 +1429,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0067
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6700
      * @tc.name      testLightWeightMapTest03Chapter0067
      * @tc.desc      Verify LightWeightMap supports float range
      * @tc.size      MediumTest
@@ -1447,7 +1447,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0068
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6800
      * @tc.name      testLightWeightMapTest03Chapter0068
      * @tc.desc      Verify LightWeightMap supports double range
      * @tc.size      MediumTest
@@ -1466,7 +1466,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0069
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_6900
      * @tc.name      testLightWeightMapTest03Chapter0069
      * @tc.desc      Verify LightWeightMap supports char range
      * @tc.size      MediumTest
@@ -1485,7 +1485,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0070
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7000
      * @tc.name      testLightWeightMapTest03Chapter0070
      * @tc.desc      Verify LightWeightMap supports BigInt hex value
      * @tc.size      MediumTest
@@ -1507,7 +1507,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0071
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7100
      * @tc.name      testLightWeightMapTest03Chapter0071
      * @tc.desc      Verify LightWeightMap supports double value
      * @tc.size      MediumTest
@@ -1527,7 +1527,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0072
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7200
      * @tc.name      testLightWeightMapTest03Chapter0072
      * @tc.desc      Verify LightWeightMap supports hex number
      * @tc.size      MediumTest
@@ -1547,7 +1547,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0073
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7300
      * @tc.name      testLightWeightMapTest03Chapter0073
      * @tc.desc      Verify LightWeightMap supports hex literal
      * @tc.size      MediumTest
@@ -1567,7 +1567,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0074
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7400
      * @tc.name      testLightWeightMapTest03Chapter0074
      * @tc.desc      Verify LightWeightMap supports 32-bit integer
      * @tc.size      MediumTest
@@ -1589,7 +1589,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0075
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7500
      * @tc.name      testLightWeightMapTest03Chapter0075
      * @tc.desc      Verify LightWeightMap supports octal literal
      * @tc.size      MediumTest
@@ -1611,7 +1611,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0076
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7600
      * @tc.name      testLightWeightMapTest03Chapter0076
      * @tc.desc      Verify LightWeightMap supports exponent operator
      * @tc.size      MediumTest
@@ -1633,7 +1633,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0077
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7700
      * @tc.name      testLightWeightMapTest03Chapter0077
      * @tc.desc      Verify LightWeightMap supports scientific notation
      * @tc.size      MediumTest
@@ -1657,7 +1657,7 @@ export default function testLightWeightMapTest03() {
         console.log(TAG + ' end');
       });
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0078
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7800
      * @tc.name      testLightWeightMapTest03Chapter0078
      * @tc.desc      Verify LightWeightMap supports BigInt value
      * @tc.size      MediumTest
@@ -1681,7 +1681,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0079
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_7900
      * @tc.name      testLightWeightMapTest03Chapter0079
      * @tc.desc      Verify LightWeightMap supports byte range
      * @tc.size      MediumTest
@@ -1701,7 +1701,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0080
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_8000
      * @tc.name      testLightWeightMapTest03Chapter0080
      * @tc.desc      Verify LightWeightMap supports short range
      * @tc.size      MediumTest
@@ -1720,7 +1720,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0081
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_8100
      * @tc.name      testLightWeightMapTest03Chapter0081
      * @tc.desc      Verify LightWeightMap supports int range
      * @tc.size      MediumTest
@@ -1739,7 +1739,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0082
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_8200
      * @tc.name      testLightWeightMapTest03Chapter0082
      * @tc.desc      Verify LightWeightMap supports long range
      * @tc.size      MediumTest
@@ -1758,7 +1758,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0083
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_8300
      * @tc.name      testLightWeightMapTest03Chapter0083
      * @tc.desc      Verify LightWeightMap supports float range
      * @tc.size      MediumTest
@@ -1777,7 +1777,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0084
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_8400
      * @tc.name      testLightWeightMapTest03Chapter0084
      * @tc.desc      Verify LightWeightMap supports double range
      * @tc.size      MediumTest
@@ -1795,7 +1795,7 @@ export default function testLightWeightMapTest03() {
       });
 
     /**
-     * @tc.number    SUB_LIGHTWEIGHTMAP_TEST03_0085
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP4_8500
      * @tc.name      testLightWeightMapTest03Chapter0085
      * @tc.desc      Verify LightWeightMap supports char range
      * @tc.size      MediumTest

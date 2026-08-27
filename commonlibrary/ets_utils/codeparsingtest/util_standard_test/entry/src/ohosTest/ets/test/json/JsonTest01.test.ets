@@ -35,7 +35,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1010
      * @tc.name      testJson01Chapter0001
      * @tc.desc      Test parsing valid JSON string with basic structure
      * @tc.size      MediumTest
@@ -51,7 +51,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1020
      * @tc.name      testJson01Chapter0002
      * @tc.desc      Test parsing null input string
      * @tc.size      MediumTest
@@ -67,7 +67,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1030
      * @tc.name      testJson01Chapter0003
      * @tc.desc      Test parsing empty object
      * @tc.size      MediumTest
@@ -83,7 +83,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1040
      * @tc.name      testJson01Chapter0004
      * @tc.desc      Test parsing array with TypedArray like values
      * @tc.size      MediumTest
@@ -99,7 +99,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1050
      * @tc.name      testJson01Chapter0005
      * @tc.desc      Test parsing number boundary values
      * @tc.size      MediumTest
@@ -115,7 +115,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1060
      * @tc.name      testJson01Chapter0006
      * @tc.desc      Test parsing Uint8Array boundary values
      * @tc.size      MediumTest
@@ -131,7 +131,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1070
      * @tc.name      testJson01Chapter0007
      * @tc.desc      Test parsing Int16Array boundary values
      * @tc.size      MediumTest
@@ -147,7 +147,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1080
      * @tc.name      testJson01Chapter0008
      * @tc.desc      Test parsing Uint16Array boundary values
      * @tc.size      MediumTest
@@ -163,7 +163,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1090
      * @tc.name      testJson01Chapter0009
      * @tc.desc      Test parsing Int32Array boundary values
      * @tc.size      MediumTest
@@ -179,7 +179,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1100
      * @tc.name      testJson01Chapter0010
      * @tc.desc      Test parsing Uint32Array boundary values
      * @tc.size      MediumTest
@@ -195,7 +195,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1110
      * @tc.name      testJson01Chapter0011
      * @tc.desc      Test parsing Float32Array boundary values
      * @tc.size      MediumTest
@@ -211,7 +211,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1120
      * @tc.name      testJson01Chapter0012
      * @tc.desc      Test parsing Float64Array boundary values
      * @tc.size      MediumTest
@@ -227,7 +227,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1130
      * @tc.name      testJson01Chapter0013
      * @tc.desc      Test parsing special number values: Infinity, -Infinity, NaN
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1140
      * @tc.name      testJson01Chapter0014
      * @tc.desc      Test parsing string with special characters
      * @tc.size      MediumTest
@@ -265,7 +265,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1150
      * @tc.name      testJson01Chapter0015
      * @tc.desc      Test parsing string with escape characters
      * @tc.size      MediumTest
@@ -281,7 +281,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1160
      * @tc.name      testJson01Chapter0016
      * @tc.desc      Test parsing string with emoji Unicode characters
      * @tc.size      MediumTest
@@ -297,7 +297,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1170
      * @tc.name      testJson01Chapter0017
      * @tc.desc      Test parsing boolean values
      * @tc.size      MediumTest
@@ -314,7 +314,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1180
      * @tc.name      testJson01Chapter0018
      * @tc.desc      Test parsing array with mixed types
      * @tc.size      MediumTest
@@ -344,7 +344,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1190
      * @tc.name      testJson01Chapter0019
      * @tc.desc      Test parsing nested object
      * @tc.size      MediumTest
@@ -365,7 +365,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1200
      * @tc.name      testJson01Chapter0020
      * @tc.desc      Test parsing object with undefined and null values
      * @tc.size      MediumTest
@@ -386,7 +386,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1210
      * @tc.name      testJson01Chapter0021
      * @tc.desc      Test parsing with reviver function
      * @tc.size      MediumTest
@@ -413,7 +413,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1220
      * @tc.name      testJson01Chapter0022
      * @tc.desc      Test parsing with bigIntMode option
      * @tc.size      MediumTest
@@ -430,7 +430,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1230
      * @tc.name      testJson01Chapter0023
      * @tc.desc      Test parsing empty string (should fail)
      * @tc.size      MediumTest
@@ -452,7 +452,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1240
      * @tc.name      testJson01Chapter0024
      * @tc.desc      Test parsing invalid JSON string
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1250
      * @tc.name      testJson01Chapter0025
      * @tc.desc      Test parsing string with invalid Unicode escape
      * @tc.size      MediumTest
@@ -494,7 +494,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1260
      * @tc.name      testJson01Chapter0026
      * @tc.desc      Test parsing number with scientific notation
      * @tc.size      MediumTest
@@ -510,7 +510,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1270
      * @tc.name      testJson01Chapter0027
      * @tc.desc      Test parsing hex and octal numbers (invalid in JSON)
      * @tc.size      MediumTest
@@ -532,7 +532,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1280
      * @tc.name      testJson01Chapter0028
      * @tc.desc      Test parsing array with overflow values
      * @tc.size      MediumTest
@@ -552,7 +552,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1290
      * @tc.name      testJson01Chapter0029
      * @tc.desc      Test parsing object with Symbol-like keys (not valid JSON)
      * @tc.size      MediumTest
@@ -576,7 +576,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1300
      * @tc.name      testJson01Chapter0030
      * @tc.desc      Test parsing large JSON string
      * @tc.size      MediumTest
@@ -597,7 +597,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1310
      * @tc.name      testJson01Chapter0031
      * @tc.desc      Test parsing with reviver returning undefined (should delete property)
      * @tc.size      MediumTest
@@ -620,7 +620,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1320
      * @tc.name      testJson01Chapter0032
      * @tc.desc      Test parsing Number.MAX_SAFE_INTEGER
      * @tc.size      MediumTest
@@ -637,7 +637,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1330
      * @tc.name      testJson01Chapter0033
      * @tc.desc      Test parsing Number.MIN_SAFE_INTEGER
      * @tc.size      MediumTest
@@ -658,7 +658,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1340
      * @tc.name      testJson01Chapter0034
      * @tc.desc      Test parsing with duplicate keys (last wins in JSON)
      * @tc.size      MediumTest
@@ -678,7 +678,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1350
      * @tc.name      testJson01Chapter0035
      * @tc.desc      Test parsing deeply nested object
      * @tc.size      MediumTest
@@ -698,7 +698,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1360
      * @tc.name      testJson01Chapter0036
      * @tc.desc      Test parsing array with trailing comma (invalid JSON)
      * @tc.size      MediumTest
@@ -720,7 +720,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1370
      * @tc.name      testJson01Chapter0037
      * @tc.desc      Test parsing object with trailing comma (invalid JSON)
      * @tc.size      MediumTest
@@ -742,7 +742,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1380
      * @tc.name      testJson01Chapter0038
      * @tc.desc      Test parsing special string values "0", "NaN", "Infinity"
      * @tc.size      MediumTest
@@ -762,7 +762,7 @@ export default function Json01Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST01_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1390
      * @tc.name      testJson01Chapter0039
      * @tc.desc      Test parsing with all ASCII characters in string
      * @tc.size      MediumTest
@@ -785,7 +785,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1400
      * @tc.name      testJson01Chapter0040
      * @tc.desc      Test parsing with multiple consecutive special characters
      * @tc.size      MediumTest
@@ -800,7 +800,7 @@ export default function Json01Test() {
       expect(typeof (obj as Record<string, string>)?.["special"]).assertEqual("string");
     });
     /**
-     * @tc.number    SUB_JSON_TEST01_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1410
      * @tc.name      testJson01Chapter0041
      * @tc.desc      Test parsing Int8Array boundary and out-of-range values
      * @tc.size      MediumTest
@@ -817,7 +817,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1420
      * @tc.name      testJson01Chapter0042
      * @tc.desc      Test parsing Uint8Array boundary and out-of-range values
      * @tc.size      MediumTest
@@ -834,7 +834,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1430
      * @tc.name      testJson01Chapter0043
      * @tc.desc      Test parsing Uint8ClampedArray behavior with out-of-range values
      * @tc.size      MediumTest
@@ -850,7 +850,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1440
      * @tc.name      testJson01Chapter0044
      * @tc.desc      Test parsing Float32Array out-of-range values
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1450
      * @tc.name      testJson01Chapter0045
      * @tc.desc      Test parsing Float64Array out-of-range values
      * @tc.size      MediumTest
@@ -882,7 +882,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1460
      * @tc.name      testJson01Chapter0046
      * @tc.desc      Test parsing BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -899,7 +899,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1470
      * @tc.name      testJson01Chapter0047
      * @tc.desc      Test parsing BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -916,7 +916,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1480
      * @tc.name      testJson01Chapter0048
      * @tc.desc      Test parsing TypedArray special values (Infinity, -Infinity, NaN)
      * @tc.size      MediumTest
@@ -932,7 +932,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1490
      * @tc.name      testJson01Chapter0049
      * @tc.desc      Test parsing string with undefined, null, empty string
      * @tc.size      MediumTest
@@ -948,7 +948,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1500
      * @tc.name      testJson01Chapter0050
      * @tc.desc      Test parsing all escape characters
      * @tc.size      MediumTest
@@ -964,7 +964,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1510
      * @tc.name      testJson01Chapter0051
      * @tc.desc      Test parsing byte type number range
      * @tc.size      MediumTest
@@ -980,7 +980,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1520
      * @tc.name      testJson01Chapter0052
      * @tc.desc      Test parsing short type number range
      * @tc.size      MediumTest
@@ -996,7 +996,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1530
      * @tc.name      testJson01Chapter0053
      * @tc.desc      Test parsing int type number range
      * @tc.size      MediumTest
@@ -1012,7 +1012,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1540
      * @tc.name      testJson01Chapter0054
      * @tc.desc      Test parsing long type number range
      * @tc.size      MediumTest
@@ -1028,7 +1028,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1550
      * @tc.name      testJson01Chapter0055
      * @tc.desc      Test parsing float type number range
      * @tc.size      MediumTest
@@ -1044,7 +1044,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1560
      * @tc.name      testJson01Chapter0056
      * @tc.desc      Test parsing double type number range
      * @tc.size      MediumTest
@@ -1060,7 +1060,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1570
      * @tc.name      testJson01Chapter0057
      * @tc.desc      Test parsing char type number range
      * @tc.size      MediumTest
@@ -1076,7 +1076,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1580
      * @tc.name      testJson01Chapter0058
      * @tc.desc      Test parsing hex numbers (invalid in JSON)
      * @tc.size      MediumTest
@@ -1092,7 +1092,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1590
      * @tc.name      testJson01Chapter0059
      * @tc.desc      Test parsing octal numbers (invalid in JSON)
      * @tc.size      MediumTest
@@ -1108,7 +1108,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1600
      * @tc.name      testJson01Chapter0060
      * @tc.desc      Test parsing exponent operator expression
      * @tc.size      MediumTest
@@ -1124,7 +1124,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1610
      * @tc.name      testJson01Chapter0061
      * @tc.desc      Test parsing array with multiple zeros
      * @tc.size      MediumTest
@@ -1140,7 +1140,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1620
      * @tc.name      testJson01Chapter0062
      * @tc.desc      Test parsing array with negative numbers
      * @tc.size      MediumTest
@@ -1156,7 +1156,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1630
      * @tc.name      testJson01Chapter0063
      * @tc.desc      Test parsing array with NaN and Infinity
      * @tc.size      MediumTest
@@ -1172,7 +1172,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1640
      * @tc.name      testJson01Chapter0064
      * @tc.desc      Test parsing array with non-numeric types
      * @tc.size      MediumTest
@@ -1188,7 +1188,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1650
      * @tc.name      testJson01Chapter0065
      * @tc.desc      Test parsing empty array
      * @tc.size      MediumTest
@@ -1204,7 +1204,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1660
      * @tc.name      testJson01Chapter0066
      * @tc.desc      Test parsing array with overflow values
      * @tc.size      MediumTest
@@ -1220,7 +1220,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1670
      * @tc.name      testJson01Chapter0067
      * @tc.desc      Test parsing object with function property (as string)
      * @tc.size      MediumTest
@@ -1236,7 +1236,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1680
      * @tc.name      testJson01Chapter0068
      * @tc.desc      Test parsing object with inherited properties
      * @tc.size      MediumTest
@@ -1253,7 +1253,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1690
      * @tc.name      testJson01Chapter0069
      * @tc.desc      Test parsing object with non-enumerable property (as normal property)
      * @tc.size      MediumTest
@@ -1272,7 +1272,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1700
      * @tc.name      testJson01Chapter0070
      * @tc.desc      Test parsing object with mixed Symbol and string keys (Symbol as string)
      * @tc.size      MediumTest
@@ -1290,7 +1290,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1710
      * @tc.name      testJson01Chapter0071
      * @tc.desc      Test parsing object with ArrayBuffer property (as object)
      * @tc.size      MediumTest
@@ -1306,7 +1306,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1720
      * @tc.name      testJson01Chapter0072
      * @tc.desc      Test parsing object with DataView property (as object)
      * @tc.size      MediumTest
@@ -1322,7 +1322,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1730
      * @tc.name      testJson01Chapter0073
      * @tc.desc      Test parsing object with undefined property value
      * @tc.size      MediumTest
@@ -1338,7 +1338,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1740
      * @tc.name      testJson01Chapter0074
      * @tc.desc      Test parsing object with NaN property (as string)
      * @tc.size      MediumTest
@@ -1354,7 +1354,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1750
      * @tc.name      testJson01Chapter0075
      * @tc.desc      Test parsing object with Infinity property (as string)
      * @tc.size      MediumTest
@@ -1370,7 +1370,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1760
      * @tc.name      testJson01Chapter0076
      * @tc.desc      Test parsing object with TypedArray property (as array)
      * @tc.size      MediumTest
@@ -1386,7 +1386,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1770
      * @tc.name      testJson01Chapter0077
      * @tc.desc      Test parsing object with Map property (as array of entries)
      * @tc.size      MediumTest
@@ -1405,7 +1405,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1780
      * @tc.name      testJson01Chapter0078
      * @tc.desc      Test parsing object with Set property (as array)
      * @tc.size      MediumTest
@@ -1421,7 +1421,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_7900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1790
      * @tc.name      testJson01Chapter0079
      * @tc.desc      Test parsing object with Promise property (as object)
      * @tc.size      MediumTest
@@ -1437,7 +1437,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1800
      * @tc.name      testJson01Chapter0080
      * @tc.desc      Test parsing object with RegExp property (as object)
      * @tc.size      MediumTest
@@ -1453,7 +1453,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1810
      * @tc.name      testJson01Chapter0081
      * @tc.desc      Test parsing very large object
      * @tc.size      MediumTest
@@ -1473,7 +1473,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1820
      * @tc.name      testJson01Chapter0082
      * @tc.desc      Test parsing treeString type (deeply nested JSON)
      * @tc.size      MediumTest
@@ -1489,7 +1489,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1830
      * @tc.name      testJson01Chapter0083
      * @tc.desc      Test parsing sliceString type (substring manipulation)
      * @tc.size      MediumTest
@@ -1512,7 +1512,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1840
      * @tc.name      testJson01Chapter0084
      * @tc.desc      Test parsing with delete keyword simulation (remove property via reviver)
      * @tc.size      MediumTest
@@ -1535,7 +1535,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1850
      * @tc.name      testJson01Chapter0085
      * @tc.desc      Test parsing with delete non-existent property simulation
      * @tc.size      MediumTest
@@ -1557,7 +1557,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1860
      * @tc.name      testJson01Chapter0086
      * @tc.desc      Test parsing with delete non-configurable property simulation
      * @tc.size      MediumTest
@@ -1577,7 +1577,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1870
      * @tc.name      testJson01Chapter0087
      * @tc.desc      Test parsing with all special characters twice
      * @tc.size      MediumTest
@@ -1597,7 +1597,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1880
      * @tc.name      testJson01Chapter0088
      * @tc.desc      Test parsing with all ASCII characters
      * @tc.size      MediumTest
@@ -1622,7 +1622,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_8900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1890
      * @tc.name      testJson01Chapter0089
      * @tc.desc      Test parsing with emoji Unicode encoding
      * @tc.size      MediumTest
@@ -1638,7 +1638,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1900
      * @tc.name      testJson01Chapter0090
      * @tc.desc      Test parsing with invalid Unicode encoding
      * @tc.size      MediumTest
@@ -1654,7 +1654,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1910
      * @tc.name      testJson01Chapter0091
      * @tc.desc      Test parsing with boolean-like values
      * @tc.size      MediumTest
@@ -1670,7 +1670,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1920
      * @tc.name      testJson01Chapter0092
      * @tc.desc      Test parsing with Number.MAX_VALUE and Number.MIN_VALUE
      * @tc.size      MediumTest
@@ -1686,7 +1686,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1930
      * @tc.name      testJson01Chapter0093
      * @tc.desc      Test parsing with Number.EPSILON
      * @tc.size      MediumTest
@@ -1702,7 +1702,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1940
      * @tc.name      testJson01Chapter0094
      * @tc.desc      Test parsing with -0
      * @tc.size      MediumTest
@@ -1718,7 +1718,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1950
      * @tc.name      testJson01Chapter0095
      * @tc.desc      Test parsing with double type value
      * @tc.size      MediumTest
@@ -1734,7 +1734,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1960
      * @tc.name      testJson01Chapter0096
      * @tc.desc      Test parsing with float type value
      * @tc.size      MediumTest
@@ -1751,7 +1751,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1970
      * @tc.name      testJson01Chapter0097
      * @tc.desc      Test parsing with scientific notation
      * @tc.size      MediumTest
@@ -1767,7 +1767,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1980
      * @tc.name      testJson01Chapter0098
      * @tc.desc      Test parsing with very large BigInt
      * @tc.size      MediumTest
@@ -1784,7 +1784,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_9900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_1990
      * @tc.name      testJson01Chapter0099
      * @tc.desc      Test parsing with ! operator simulation
      * @tc.size      MediumTest
@@ -1809,7 +1809,7 @@ export default function Json01Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST01_10000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON2_2000
      * @tc.name      testJson01Chapter0100
      * @tc.desc      Test parsing with complex mixed types
      * @tc.size      MediumTest

@@ -86,7 +86,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1010
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -105,7 +105,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1020
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -124,7 +124,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1030
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -143,7 +143,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1040
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -162,7 +162,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1050
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -181,7 +181,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1060
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1070
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -223,7 +223,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1080
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -242,7 +242,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1090
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -261,7 +261,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1100
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -280,7 +280,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1110
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -299,7 +299,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1120
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -318,7 +318,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1130
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -337,7 +337,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1140
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -356,7 +356,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1150
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -375,7 +375,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1160
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -394,7 +394,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1170
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -415,7 +415,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1180
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -436,7 +436,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1190
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -457,7 +457,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1200
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -478,7 +478,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1210
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -497,7 +497,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1220
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -516,7 +516,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1230
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -535,7 +535,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1240
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -554,7 +554,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1250
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -573,7 +573,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1260
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -592,7 +592,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1270
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -611,7 +611,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1280
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -630,7 +630,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritable0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1290
      * @tc.desc   Test the function of the interface In the Stream_Writable
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -650,7 +650,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1300
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -670,7 +670,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1310
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -690,7 +690,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1320
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -710,7 +710,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1330
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -730,7 +730,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1340
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -750,7 +750,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1350
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -770,7 +770,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1360
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -790,7 +790,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1370
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -810,7 +810,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1380
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -834,7 +834,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1390
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -854,7 +854,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1400
      * @tc.desc   Test the function of the interface In the Stream_Writable_End 'utf-8'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -874,7 +874,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1410
      * @tc.desc   Test the function of the interface In the Stream_Writable_End 'gb18030'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -894,7 +894,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1420
      * @tc.desc   Test the function of the interface In the Stream_Writable_End 'gbk'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -914,7 +914,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1430
      * @tc.desc   Test the function of the interface In the Stream_Writable_End 'gb2312'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -934,7 +934,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1440
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -954,7 +954,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1450
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -974,7 +974,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1460
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -994,7 +994,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1470
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1014,7 +1014,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1480
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1036,7 +1036,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1490
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1058,7 +1058,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1500
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1080,7 +1080,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1510
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1102,7 +1102,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1520
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1122,7 +1122,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1530
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1142,7 +1142,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1540
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1162,7 +1162,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1550
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1182,7 +1182,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1560
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1202,7 +1202,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1570
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1222,7 +1222,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1580
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1242,7 +1242,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1590
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1262,7 +1262,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testStreamWritableEnd0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1600
      * @tc.desc   Test the function of the interface In the Stream_Writable_End
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1283,7 +1283,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetDefaultEncoding0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1610
      * @tc.desc   Test the function of the interface testSetDefaultEncoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1301,7 +1301,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetDefaultEncoding0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1620
      * @tc.desc   Test the function of the interface testSetDefaultEncoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1319,7 +1319,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetDefaultEncoding0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1630
      * @tc.desc   Test the function of the interface testSetDefaultEncoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1338,7 +1338,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetDefaultEncoding0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1640
      * @tc.desc   Test the function of the interface testSetDefaultEncoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1358,7 +1358,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetDefaultEncoding0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1650
      * @tc.desc   Test the function of the interface testSetDefaultEncoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1379,7 +1379,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testCork0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1660
      * @tc.desc   Test the function of the interface testCork.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1397,7 +1397,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testUnCork0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1670
      * @tc.desc   Test the function of the interface test UnCork.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1415,7 +1415,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOn0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1680
      * @tc.desc   Test the function of the interface testOn.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1450,7 +1450,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOn0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1690
      * @tc.desc   Test the function of the interface testOn.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1479,7 +1479,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOn0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1700
      * @tc.desc   Test the function of the interface testOn.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1508,7 +1508,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOn0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1710
      * @tc.desc   Test the function of the interface testOn drain.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1528,7 +1528,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testWritableDoInitialize0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1720
      * @tc.desc   Test the function of the interface testDoInitialize.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1561,7 +1561,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDoWrite0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1730
      * @tc.desc   Test the function of the interface testDoWrite.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1580,7 +1580,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDoWritev0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1740
      * @tc.desc   Test the function of the interface testDoWritev.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1602,7 +1602,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testReadableOptions0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1750
      * @tc.desc   Test the function of the interface ReadableOptions.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1621,7 +1621,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testAttribute0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1760
      * @tc.desc   Test the function of the interface Attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1640,7 +1640,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testAttribute0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1770
      * @tc.desc   Test the function of the interface Attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1659,7 +1659,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testAttribute0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1780
      * @tc.desc   Test the function of the interface Attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1678,7 +1678,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testAttribute0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1790
      * @tc.desc   Test the function of the interface Attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1697,7 +1697,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testAttribute0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1800
      * @tc.desc   Test the function of the interface Attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1716,7 +1716,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testAttribute0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1810
      * @tc.desc   Test the function of the interface Attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1735,7 +1735,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testAttribute0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1820
      * @tc.desc   Test the function of the interface Attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1754,7 +1754,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1830
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1772,7 +1772,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1840
      * @tc.desc   Test the function of the interface Constructor.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1792,7 +1792,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1850
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1811,7 +1811,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1860
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1830,7 +1830,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1870
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1849,7 +1849,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1880
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1868,7 +1868,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1890
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1887,7 +1887,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1900
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1906,7 +1906,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1910
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1925,7 +1925,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1920
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1944,7 +1944,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1930
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1963,7 +1963,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1940
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1984,7 +1984,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1950
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2005,7 +2005,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1960
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2026,7 +2026,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1970
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2047,7 +2047,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1980
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2068,7 +2068,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_1990
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2089,7 +2089,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2000
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2110,7 +2110,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2010
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2131,7 +2131,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2020
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2152,7 +2152,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testRead0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2030
      * @tc.desc   Test the function of the interface Read.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2173,7 +2173,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testResume0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2040
      * @tc.desc   Switch the read mode of the stream from pause to flow mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2192,7 +2192,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPause0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2050
      * @tc.desc   Switch the read mode of the stream from flow to pause mode.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2211,7 +2211,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetEncoding0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2060
      * @tc.desc   Sets the character encoding for the readable stream.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2230,7 +2230,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetEncoding0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2070
      * @tc.desc   Sets the character encoding for the readable stream.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2249,7 +2249,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetEncoding0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2080
      * @tc.desc   Sets the character encoding for the readable stream.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2268,7 +2268,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetEncoding0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_10900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2090
      * @tc.desc   Sets the character encoding for the readable stream.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2287,7 +2287,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testSetEncoding0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2100
      * @tc.desc   Sets the character encoding for the readable stream.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2312,7 +2312,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testIsPaused0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2110
      * @tc.desc   Check if the stream is in pause mode, true when calling pause () and false when calling resume ().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2334,7 +2334,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPipe0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2120
      * @tc.desc   Connect a readable stream with a writable stream to achieve automatic data transmission.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2376,7 +2376,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testUnpipe0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2130
      * @tc.desc   Removes all or specified connected readable streams from the writable stream.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2429,7 +2429,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOnClose0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2140
      * @tc.desc   Register event handling functions to listen for different events on readable streams.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2465,7 +2465,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOnData0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2150
      * @tc.desc   Register event handling functions to listen for different events on readable streams.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2501,7 +2501,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOnEnd0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2160
      * @tc.desc   Register event handling functions to listen for different events on readable streams.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2537,7 +2537,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOnError0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2170
      * @tc.desc   Register event handling functions to listen for different events on readable streams.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2574,7 +2574,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOnReadable0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2180
      * @tc.desc   Register event handling functions to listen for different events on readable streams.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2601,7 +2601,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOffClose0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_11900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2190
      * @tc.desc   Register event handling functions to listen for different events on readable streams.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2638,7 +2638,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOffData0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2200
      * @tc.desc   Cancels event handlers registered with on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2675,7 +2675,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOffEnd0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2210
      * @tc.desc   Cancels event handlers registered with on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2712,7 +2712,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOffError0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2220
      * @tc.desc   Cancels event handlers registered with on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2749,7 +2749,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testOffReadable0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2230
      * @tc.desc   Cancels event handlers registered with on.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2786,7 +2786,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testReadableDoInitialize0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2240
      * @tc.desc   The consumer implements this function, which is writeSuccess the first time the on listener is used on
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2820,7 +2820,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDoRead0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2250
      * @tc.desc   The data reading interface needs to be implemented in a subclass.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2855,7 +2855,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2260
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2875,7 +2875,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2270
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2895,7 +2895,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2280
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2915,7 +2915,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_12900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2290
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2935,7 +2935,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2300
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2955,7 +2955,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2310
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2979,7 +2979,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2320
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2999,7 +2999,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2330
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3019,7 +3019,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2340
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3038,7 +3038,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2350
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3057,7 +3057,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2360
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3076,7 +3076,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2370
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3095,7 +3095,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2380
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3114,7 +3114,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_13900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2390
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3133,7 +3133,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2400
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3152,7 +3152,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2410
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3171,7 +3171,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testPush0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2420
      * @tc.desc   Push data into the readable stream buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3191,7 +3191,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDuplexConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2430
      * @tc.desc   The constructor of Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3210,7 +3210,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDuplexConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2440
      * @tc.desc   The constructor of Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3229,7 +3229,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDuplexConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2450
      * @tc.desc   The constructor of Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3248,7 +3248,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDuplexConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2460
      * @tc.desc   The constructor of Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3267,7 +3267,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDuplexConstructor0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2470
      * @tc.desc   The constructor of Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3286,7 +3286,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDuplexConstructor0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2480
      * @tc.desc   The constructor of Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3305,7 +3305,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDuplexConstructor0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_14900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2490
      * @tc.desc   The constructor of Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3324,7 +3324,7 @@ export default function StreamTest() {
     })
     /**
      * @tc.name   testDuplex0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2500
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3346,7 +3346,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2510
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3368,7 +3368,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2520
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3390,7 +3390,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2530
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3412,7 +3412,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2540
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3434,7 +3434,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2550
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3456,7 +3456,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2560
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3481,7 +3481,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2570
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3503,7 +3503,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2580
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3525,7 +3525,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_15900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2590
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3552,7 +3552,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2600
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3573,7 +3573,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2610
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3594,7 +3594,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2620
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3615,7 +3615,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2630
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3636,7 +3636,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2640
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3671,7 +3671,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2650
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3698,7 +3698,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2660
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3725,7 +3725,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2670
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3747,7 +3747,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2680
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3767,7 +3767,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_16900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2690
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3787,7 +3787,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2700
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3807,7 +3807,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2710
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3827,7 +3827,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2720
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3847,7 +3847,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2730
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3867,7 +3867,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2740
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3887,7 +3887,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2750
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3911,7 +3911,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2760
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3931,7 +3931,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2770
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3951,7 +3951,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2780
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3971,7 +3971,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_17900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2790
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3991,7 +3991,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2800
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4011,7 +4011,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2810
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4031,7 +4031,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2820
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4051,7 +4051,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2830
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4071,7 +4071,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2840
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4091,7 +4091,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2850
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4113,7 +4113,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2860
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4135,7 +4135,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2870
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4157,7 +4157,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2880
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4179,7 +4179,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_18900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2890
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4199,7 +4199,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2900
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4219,7 +4219,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2910
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4239,7 +4239,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2920
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4259,7 +4259,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2930
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4279,7 +4279,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2940
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4299,7 +4299,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2950
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4319,7 +4319,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2960
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4339,7 +4339,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2970
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4360,7 +4360,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2980
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4380,7 +4380,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_19900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_2990
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4400,7 +4400,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3000
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4420,7 +4420,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3010
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4440,7 +4440,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3020
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4460,7 +4460,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3030
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4480,7 +4480,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3040
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4500,7 +4500,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3050
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4520,7 +4520,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3060
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4540,7 +4540,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3070
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4578,7 +4578,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3080
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4601,7 +4601,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_20900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3090
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4648,7 +4648,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3100
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4682,7 +4682,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testDuplex0062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3110
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4718,7 +4718,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testWrite0063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3120
      * @tc.desc   Test the function of the interface Duplex.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4757,7 +4757,7 @@ export default function StreamTest() {
 
     /**
      * @tc.name   testUnpipe0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM1_3130
      * @tc.desc   Removes all or specified connected readable streams from the writable stream.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

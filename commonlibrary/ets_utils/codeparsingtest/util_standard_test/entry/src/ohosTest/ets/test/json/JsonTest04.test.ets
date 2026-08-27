@@ -131,7 +131,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_0100
      * @tc.name      testJson04Chapter0001
      * @tc.desc      Test JSON.stringify with 0 as boolean false context
      * @tc.size      MediumTest
@@ -156,7 +156,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_0200
      * @tc.name      testJson04Chapter0002
      * @tc.desc      Test JSON.stringify with NaN as boolean false context
      * @tc.size      MediumTest
@@ -181,7 +181,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_0300
      * @tc.name      testJson04Chapter0003
      * @tc.desc      Test JSON.stringify with empty string as boolean false context
      * @tc.size      MediumTest
@@ -206,7 +206,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_0400
      * @tc.name      testJson04Chapter0004
      * @tc.desc      Test JSON.stringify with null as boolean false context
      * @tc.size      MediumTest
@@ -231,7 +231,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_0500
      * @tc.name      testJson04Chapter0005
      * @tc.desc      Test JSON.stringify with undefined as boolean false context
      * @tc.size      MediumTest
@@ -251,7 +251,7 @@ export default function Json04Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_0600
      * @tc.name      testJson04Chapter0006
      * @tc.desc      Test JSON.stringify with array containing huge values
      * @tc.size      MediumTest
@@ -268,7 +268,7 @@ export default function Json04Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_0700
      * @tc.name      testJson04Chapter0007
      * @tc.desc      Test JSON.stringify with empty TypedArray
      * @tc.size      MediumTest
@@ -289,7 +289,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_0800
      * @tc.name      testJson04Chapter0008
      * @tc.desc      Test JSON.stringify with DataView object
      * @tc.size      MediumTest
@@ -310,7 +310,7 @@ export default function Json04Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_0900
      * @tc.name      testJson04Chapter0009
      * @tc.desc      Test JSON.stringify with very large string
      * @tc.size      MediumTest
@@ -333,7 +333,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1000
      * @tc.name      testJson04Chapter0010
      * @tc.desc      Test JSON.stringify with nested TypedArrays in object
      * @tc.size      MediumTest
@@ -372,7 +372,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1100
      * @tc.name      testJson04Chapter0011
      * @tc.desc      Test JSON.stringify with complex nested structure
      * @tc.size      MediumTest
@@ -407,7 +407,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1200
      * @tc.name      testJson04Chapter0012
      * @tc.desc      Test JSON.stringify with array as replacer parameter
      * @tc.size      MediumTest
@@ -446,7 +446,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1300
      * @tc.name      testJson04Chapter0013
      * @tc.desc      Test JSON.stringify with array replacer for nested properties
      * @tc.size      MediumTest
@@ -480,7 +480,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1400
      * @tc.name      testJson04Chapter0014
      * @tc.desc      Test JSON.stringify with tab character as space
      * @tc.size      MediumTest
@@ -497,7 +497,7 @@ export default function Json04Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1500
      * @tc.name      testJson04Chapter0015
      * @tc.desc      Test JSON.stringify with 0 as space parameter
      * @tc.size      MediumTest
@@ -526,7 +526,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1600
      * @tc.name      testJson04Chapter0016
      * @tc.desc      Test JSON.stringify with object having toJSON method
      * @tc.size      MediumTest
@@ -568,7 +568,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1700
      * @tc.name      testJson04Chapter0017
      * @tc.desc      Test JSON.stringify with toJSON method returning string
      * @tc.size      MediumTest
@@ -607,7 +607,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1800
      * @tc.name      testJson04Chapter0018
      * @tc.desc      Test JSON.stringify with toJSON method returning null
      * @tc.size      MediumTest
@@ -646,7 +646,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_1900
      * @tc.name      testJson04Chapter0019
      * @tc.desc      Test JSON.stringify with toJSON method returning undefined
      * @tc.size      MediumTest
@@ -722,7 +722,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2000
      * @tc.name      testJson04Chapter0020
      * @tc.desc      Test JSON.stringify with very deep nested object
      * @tc.size      MediumTest
@@ -763,7 +763,7 @@ export default function Json04Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2100
      * @tc.name      testJson04Chapter0021
      * @tc.desc      Test JSON.stringify with ArrayBuffer containing data
      * @tc.size      MediumTest
@@ -799,7 +799,7 @@ export default function Json04Test() {
     type Transformer = (key: string, value: Object) => Object | undefined;
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2200
      * @tc.name      testJson04Chapter0022
      * @tc.desc      Test JSON.stringify with complex replacer function
      * @tc.size      MediumTest
@@ -841,7 +841,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2300
      * @tc.name      testJson04Chapter0023
      * @tc.desc      Test JSON.stringify with replacer function filtering specific keys
      * @tc.size      MediumTest
@@ -887,7 +887,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2400
      * @tc.name      testJson04Chapter0024
      * @tc.desc      Test JSON.stringify with replacer function tracking depth
      * @tc.size      MediumTest
@@ -924,7 +924,7 @@ export default function Json04Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2500
      * @tc.name      testJson04Chapter0025
      * @tc.desc      Test JSON.stringify with circular reference and replacer function
      * @tc.size      MediumTest
@@ -960,7 +960,7 @@ export default function Json04Test() {
       });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2600
      * @tc.name      testJson04Chapter0026
      * @tc.desc      Test JSON.has with normal object and existing property.
      * @tc.size      MediumTest
@@ -976,7 +976,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2700
      * @tc.name      testJson04Chapter0027
      * @tc.desc      Test JSON.has with normal object and non-existing property.
      * @tc.size      MediumTest
@@ -992,7 +992,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2800
      * @tc.name      testJson04Chapter0028
      * @tc.desc      Test JSON.has with nested object and property in nested level.
      * @tc.size      MediumTest
@@ -1008,7 +1008,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_2900
      * @tc.name      testJson04Chapter0029
      * @tc.desc      Test JSON.has with object containing undefined property value.
      * @tc.size      MediumTest
@@ -1024,7 +1024,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3000
      * @tc.name      testJson04Chapter0030
      * @tc.desc      Test JSON.has with object containing null property value.
      * @tc.size      MediumTest
@@ -1040,7 +1040,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3100
      * @tc.name      testJson04Chapter0031
      * @tc.desc      Test JSON.has with object containing NaN property value.
      * @tc.size      MediumTest
@@ -1056,7 +1056,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3200
      * @tc.name      testJson04Chapter0032
      * @tc.desc      Test JSON.has with object containing Infinity property value.
      * @tc.size      MediumTest
@@ -1072,7 +1072,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3300
      * @tc.name      testJson04Chapter0033
      * @tc.desc      Test JSON.has with empty object.
      * @tc.size      MediumTest
@@ -1088,7 +1088,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3400
      * @tc.name      testJson04Chapter0034
      * @tc.desc      Test JSON.has with object created from JSON.parse.
      * @tc.size      MediumTest
@@ -1105,7 +1105,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3500
      * @tc.name      testJson04Chapter0035
      * @tc.desc      Test JSON.has with object containing TypedArray property.
      * @tc.size      MediumTest
@@ -1122,7 +1122,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3600
      * @tc.name      testJson04Chapter0036
      * @tc.desc      Test JSON.has with property name as empty string.
      * @tc.size      MediumTest
@@ -1144,7 +1144,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3700
      * @tc.name      testJson04Chapter0037
      * @tc.desc      Test JSON.has with property name containing special characters.
      * @tc.size      MediumTest
@@ -1160,7 +1160,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3800
      * @tc.name      testJson04Chapter0038
      * @tc.desc      Test JSON.has with property name as number string.
      * @tc.size      MediumTest
@@ -1176,7 +1176,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_3900
      * @tc.name      testJson04Chapter0039
      * @tc.desc      Test JSON.has with property name "0".
      * @tc.size      MediumTest
@@ -1192,7 +1192,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4000
      * @tc.name      testJson04Chapter0040
      * @tc.desc      Test JSON.has with property name "NaN".
      * @tc.size      MediumTest
@@ -1208,7 +1208,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4100
      * @tc.name      testJson04Chapter0041
      * @tc.desc      Test JSON.has with property name containing emoji.
      * @tc.size      MediumTest
@@ -1224,7 +1224,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4200
      * @tc.name      testJson04Chapter0042
      * @tc.desc      Test JSON.has with large object.
      * @tc.size      MediumTest
@@ -1243,7 +1243,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4300
      * @tc.name      testJson04Chapter0043
      * @tc.desc      Test JSON.has with object containing Map property.
      * @tc.size      MediumTest
@@ -1262,7 +1262,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4400
      * @tc.name      testJson04Chapter0044
      * @tc.desc      Test JSON.has with object containing Set property.
      * @tc.size      MediumTest
@@ -1279,7 +1279,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4500
      * @tc.name      testJson04Chapter0045
      * @tc.desc      Test JSON.has with object containing Promise property.
      * @tc.size      MediumTest
@@ -1296,7 +1296,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4600
      * @tc.name      testJson04Chapter0046
      * @tc.desc      Test JSON.has with object containing regex property.
      * @tc.size      MediumTest
@@ -1312,7 +1312,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4700
      * @tc.name      testJson04Chapter0047
      * @tc.desc      Test JSON.has with object containing ArrayBuffer property.
      * @tc.size      MediumTest
@@ -1333,7 +1333,7 @@ export default function Json04Test() {
     }
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4800
      * @tc.name      testJson04Chapter0048
      * @tc.desc      Test JSON.has with object containing DataView property.
      * @tc.size      MediumTest
@@ -1349,7 +1349,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_4900
      * @tc.name      testJson04Chapter0049
      * @tc.desc      Test JSON.has with property name as long string.
      * @tc.size      MediumTest
@@ -1367,7 +1367,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5000
      * @tc.name      testJson04Chapter0050
      * @tc.desc      Test JSON.has with property name containing escape characters.
      * @tc.size      MediumTest
@@ -1383,7 +1383,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5100
      * @tc.name      testJson04Chapter0051
      * @tc.desc      Test JSON.has with null object parameter (reverse test).
      * @tc.size      MediumTest
@@ -1404,7 +1404,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5200
      * @tc.name      testJson04Chapter0052
      * @tc.desc      Test JSON.has with undefined object parameter (reverse test).
      * @tc.size      MediumTest
@@ -1425,7 +1425,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5300
      * @tc.name      testJson04Chapter0053
      * @tc.desc      Test JSON.has with number as object parameter (reverse test).
      * @tc.size      MediumTest
@@ -1446,7 +1446,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5400
      * @tc.name      testJson04Chapter0054
      * @tc.desc      Test JSON.has with string as object parameter (reverse test).
      * @tc.size      MediumTest
@@ -1467,7 +1467,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5500
      * @tc.name      testJson04Chapter0055
      * @tc.desc      Test JSON.has with boolean as object parameter (reverse test).
      * @tc.size      MediumTest
@@ -1488,7 +1488,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5600
      * @tc.name      testJson04Chapter0056
      * @tc.desc      Test JSON.has with null property parameter (reverse test).
      * @tc.size      MediumTest
@@ -1510,7 +1510,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5700
      * @tc.name      testJson04Chapter0057
      * @tc.desc      Test JSON.has with undefined property parameter (reverse test).
      * @tc.size      MediumTest
@@ -1532,7 +1532,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5800
      * @tc.name      testJson04Chapter0058
      * @tc.desc      Test JSON.has with number as property parameter (reverse test).
      * @tc.size      MediumTest
@@ -1554,7 +1554,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_5900
      * @tc.name      testJson04Chapter0059
      * @tc.desc      Test JSON.has with object as property parameter (reverse test).
      * @tc.size      MediumTest
@@ -1577,7 +1577,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6000
      * @tc.name      testJson04Chapter0060
      * @tc.desc      Test JSON.has with array as property parameter (reverse test).
      * @tc.size      MediumTest
@@ -1600,7 +1600,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6100
      * @tc.name      testJson04Chapter0061
      * @tc.desc      Test JSON.has with missing property parameter (reverse test).
      * @tc.size      MediumTest
@@ -1619,7 +1619,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6200
      * @tc.name      testJson04Chapter0062
      * @tc.desc      Test JSON.has with missing all parameters (reverse test).
      * @tc.size      MediumTest
@@ -1641,7 +1641,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6300
      * @tc.name      testJson04Chapter0063
      * @tc.desc      Test JSON.has with array instead of object (reverse test).
      * @tc.size      MediumTest
@@ -1663,7 +1663,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6400
      * @tc.name      testJson04Chapter0064
      * @tc.desc      Test JSON.has with object containing function property.
      * @tc.size      MediumTest
@@ -1682,7 +1682,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6500
      * @tc.name      testJson04Chapter0065
      * @tc.desc      Test JSON.has with object created using Object.create (prototype chain).
      * @tc.size      MediumTest
@@ -1698,7 +1698,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6600
      * @tc.name      testJson04Chapter0066
      * @tc.desc      Test JSON.has with object containing non-enumerable property.
      * @tc.size      MediumTest
@@ -1714,7 +1714,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6700
      * @tc.name      testJson04Chapter0067
      * @tc.desc      Test JSON.has with property name as all ASCII characters.
      * @tc.size      MediumTest
@@ -1732,7 +1732,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6800
      * @tc.name      testJson04Chapter0068
      * @tc.desc      Test JSON.has with property name as repeated special characters.
      * @tc.size      MediumTest
@@ -1750,7 +1750,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_6900
      * @tc.name      testJson04Chapter0069
      * @tc.desc      Test JSON.has with object containing property with value -0.
      * @tc.size      MediumTest
@@ -1766,7 +1766,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_7000
      * @tc.name      testJson04Chapter0070
      * @tc.desc      Test JSON.has with object containing property with value Number.MAX_VALUE.
      * @tc.size      MediumTest
@@ -1782,7 +1782,7 @@ export default function Json04Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST04_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON5_7100
      * @tc.name      testJson04Chapter0071
      * @tc.desc      Test JSON.has with object containing property with value Number.MIN_VALUE.
      * @tc.size      MediumTest

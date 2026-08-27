@@ -31,7 +31,7 @@ export default function LRUCache02Test() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_0100
      * @tc.name      testLRUCacheUpdateCapacity02_0001
      * @tc.desc      Test updateCapacity method increases the cache capacity successfully.
      * @tc.size      MediumTest
@@ -76,7 +76,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_0200
      * @tc.name      testLRUCacheUpdateCapacity02_0002
      * @tc.desc      Test updateCapacity method decreases the cache capacity successfully, removing excess items.
      * @tc.size      MediumTest
@@ -118,7 +118,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_0300
      * @tc.name      testLRUCacheUpdateCapacity02_0003
      * @tc.desc      Test updateCapacity method with the same capacity (no change).
      * @tc.size      MediumTest
@@ -155,7 +155,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_0400
      * @tc.name      testLRUCacheUpdateCapacity02_0004
      * @tc.desc      Test updateCapacity method with capacity 0 (edge case).
      * @tc.size      MediumTest
@@ -192,7 +192,7 @@ export default function LRUCache02Test() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_0500
      * @tc.name      testLRUCacheUpdateCapacity02_0005
      * @tc.desc      Test updateCapacity method with a negative capacity (should handle gracefully or throw).
      * @tc.size      MediumTest
@@ -233,7 +233,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_0600
      * @tc.name      testLRUCacheUpdateCapacity02_0006
      * @tc.desc      Test updateCapacity method with non-numeric input (should handle gracefully or throw).
      * @tc.size      MediumTest
@@ -274,7 +274,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_0700
      * @tc.name      testLRUCacheUpdateCapacity02_0007
      * @tc.desc      Test updateCapacity method with NaN input (should handle gracefully or throw).
      * @tc.size      MediumTest
@@ -314,7 +314,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_0800
      * @tc.name      testLRUCacheUpdateCapacity02_0008
      * @tc.desc      Test updateCapacity method with Infinity input (should handle gracefully or throw).
      * @tc.size      MediumTest
@@ -354,7 +354,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_0900
      * @tc.name      testLRUCacheUpdateCapacity02_0009
      * @tc.desc      Test updateCapacity method in combination with get and put operations to ensure LRU behavior is preserved.
      * @tc.size      MediumTest
@@ -410,7 +410,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1000
      * @tc.name      testLRUCacheUpdateCapacity02_0010
      * @tc.desc      Test updateCapacity method called multiple times in sequence to ensure state is maintained correctly.
      * @tc.size      MediumTest
@@ -462,7 +462,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1100
      * @tc.name      testLRUCacheToString02_0011
      * @tc.desc      Test toString method on an empty LRUCache.
      * @tc.size      MediumTest
@@ -491,7 +491,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1200
      * @tc.name      testLRUCacheToString02_0012
      * @tc.desc      Test toString method on an LRUCache with some items added.
      * @tc.size      MediumTest
@@ -525,7 +525,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1300
      * @tc.name      testLRUCacheToString02_0013
      * @tc.desc      Test toString method on an LRUCache after items have been evicted due to capacity limits.
      * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1400
      * @tc.name      testLRUCacheToString02_0014
      * @tc.desc      Test toString method on an LRUCache with different key and value types.
      * @tc.size      MediumTest
@@ -593,7 +593,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1500
      * @tc.name      testLRUCacheToString02_0015
      * @tc.desc      Test toString method on an LRUCache with a null key (if supported).
      * @tc.size      MediumTest
@@ -633,7 +633,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1600
      * @tc.name      testLRUCacheToString02_0016
      * @tc.desc      Test toString method on an LRUCache with an undefined value.
      * @tc.size      MediumTest
@@ -662,7 +662,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1700
      * @tc.name      testLRUCacheToString02_0017
      * @tc.desc      Test toString method on an LRUCache with keys/values containing special characters.
      * @tc.size      MediumTest
@@ -695,7 +695,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1800
      * @tc.name      testLRUCacheToString02_0018
      * @tc.desc      Test toString method on a very large LRUCache (stress test for string representation).
      * @tc.size      MediumTest
@@ -727,7 +727,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_1900
      * @tc.name      testLRUCacheToString02_0019
      * @tc.desc      Test that calling toString does not alter the internal state of the LRUCache.
      * @tc.size      MediumTest
@@ -771,7 +771,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2000
      * @tc.name      testLRUCacheToString02_0020
      * @tc.desc      Test toString method after various operations like get, put, remove, clear.
      * @tc.size      MediumTest
@@ -822,7 +822,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2100
      * @tc.name      testLRUCacheGetCapacity02_0021
      * @tc.desc      Test getCapacity method returns the initial capacity set during construction.
      * @tc.size      MediumTest
@@ -844,7 +844,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2200
      * @tc.name      testLRUCacheGetCapacity02_0022
      * @tc.desc      Test getCapacity method returns the updated capacity after calling updateCapacity.
      * @tc.size      MediumTest
@@ -867,7 +867,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2300
      * @tc.name      testLRUCacheGetCapacity02_0023
      * @tc.desc      Test getCapacity method on empty LRUCache.
      * @tc.size      MediumTest
@@ -889,7 +889,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2400
      * @tc.name      testLRUCacheGetCapacity02_0024
      * @tc.desc      Test getCapacity method returns correct capacity even when items are present.
      * @tc.size      MediumTest
@@ -913,7 +913,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2500
      * @tc.name      testLRUCacheGetCapacity02_0025
      * @tc.desc      Test getCapacity method with initial capacity set to 0.
      * @tc.size      MediumTest
@@ -934,7 +934,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2600
      * @tc.name      testLRUCacheGetCapacity02_0026
      * @tc.desc      Test getCapacity method behavior with negative initial capacity (should handle gracefully).
      * @tc.size      MediumTest
@@ -956,7 +956,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2700
      * @tc.name      testLRUCacheGetCapacity02_0027
      * @tc.desc      Test getCapacity method with invalid capacity type (should handle gracefully).
      * @tc.size      MediumTest
@@ -978,7 +978,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2800
      * @tc.name      testLRUCacheGetCapacity02_0028
      * @tc.desc      Test getCapacity method with NaN initial capacity (should handle gracefully).
      * @tc.size      MediumTest
@@ -1000,7 +1000,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_2900
      * @tc.name      testLRUCacheGetCapacity02_0029
      * @tc.desc      Test getCapacity method returns consistent values across multiple calls.
      * @tc.size      MediumTest
@@ -1026,7 +1026,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3000
      * @tc.name      testLRUCacheGetCapacity02_0030
      * @tc.desc      Test getCapacity method returns correct capacity after eviction due to size limits.
      * @tc.size      MediumTest
@@ -1051,7 +1051,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3100
      * @tc.name      testLRUCacheGetCapacity02_0031
      * @tc.desc      Test getCapacity method on LRUCache with different key and value types.
      * @tc.size      MediumTest
@@ -1073,7 +1073,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3200
      * @tc.name      testLRUCacheGetCapacity02_0032
      * @tc.desc      Test that getCapacity method doesn't alter the internal state of the LRUCache.
      * @tc.size      MediumTest
@@ -1110,7 +1110,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3300
      * @tc.name      testLRUCacheClear02_0033
      * @tc.desc      Verify clear method works on non-empty LRUCache
      * @tc.size      MediumTest
@@ -1140,7 +1140,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3400
      * @tc.name      testLRUCacheClear02_0034
      * @tc.desc      Verify clear method works on empty LRUCache
      * @tc.size      MediumTest
@@ -1163,7 +1163,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3500
      * @tc.name      testLRUCacheClear02_0035
      * @tc.desc      Verify clear method works after put and get operations
      * @tc.size      MediumTest
@@ -1190,7 +1190,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3600
      * @tc.name      testLRUCacheClear02_0036
      * @tc.desc      Verify clear method works with capacity limit reached
      * @tc.size      MediumTest
@@ -1222,7 +1222,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3700
      * @tc.name      testLRUCacheClear02_0037
      * @tc.desc      Verify clear method with different value types
      * @tc.size      MediumTest
@@ -1257,7 +1257,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3800
      * @tc.name      testLRUCacheClear02_0038
      * @tc.desc      Verify clear method followed by new operations
      * @tc.size      MediumTest
@@ -1283,7 +1283,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_3900
      * @tc.name      testLRUCacheClear02_0039
      * @tc.desc      Verify multiple consecutive clear calls
      * @tc.size      MediumTest
@@ -1314,7 +1314,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4000
      * @tc.name      testLRUCacheClear02_0040
      * @tc.desc      Verify clear method with eviction policy interaction
      * @tc.size      MediumTest
@@ -1346,7 +1346,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4100
      * @tc.name      testLRUCacheClear02_0041
      * @tc.desc      Verify clear method with large capacity cache
      * @tc.size      MediumTest
@@ -1376,7 +1376,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4200
      * @tc.name      testLRUCacheClear02_0042
      * @tc.desc      Verify clear method with capacity 1 cache
      * @tc.size      MediumTest
@@ -1402,7 +1402,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4300
      * @tc.name      testLRUCacheClear02_0043
      * @tc.desc      Verify clear method with custom key types
      * @tc.size      MediumTest
@@ -1429,7 +1429,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4400
      * @tc.name      testLRUCacheClear02_0044
      * @tc.desc      Verify clear method in concurrent-like scenario
      * @tc.size      MediumTest
@@ -1460,7 +1460,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4500
      * @tc.name      testLRUCacheClear02_0045
      * @tc.desc      Verify clear method with error handling (Sequence check)
      * @tc.size      MediumTest
@@ -1488,7 +1488,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4600
      * @tc.name      testLRUCacheClear02_0046
      * @tc.desc      Verify clear method integration with other LRUCache methods
      * @tc.size      MediumTest
@@ -1514,7 +1514,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4700
      * @tc.name      testLRUCacheGetCreateCount02_0047
      * @tc.desc      Verify initial create count is 0 for new LRUCache
      * @tc.size      MediumTest
@@ -1528,7 +1528,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4800
      * @tc.name      testLRUCacheGetCreateCount02_0048
      * @tc.desc      Verify put operation does not change create count (remains 0)
      * @tc.size      MediumTest
@@ -1547,7 +1547,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_4900
      * @tc.name      testLRUCacheGetCreateCount02_0049
      * @tc.desc      Verify updating existing key does not increment create count
      * @tc.size      MediumTest
@@ -1565,7 +1565,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5000
      * @tc.name      testLRUCacheGetCreateCount02_0050
      * @tc.desc      Verify get operations do not affect create count
      * @tc.size      MediumTest
@@ -1584,7 +1584,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5100
      * @tc.name      testLRUCacheGetCreateCount02_0051
      * @tc.desc      Verify eviction does not affect create count
      * @tc.size      MediumTest
@@ -1602,7 +1602,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5200
      * @tc.name      testLRUCacheGetCreateCount02_0052
      * @tc.desc      Verify clear operation does not reset create count
      * @tc.size      MediumTest
@@ -1621,7 +1621,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5300
      * @tc.name      testLRUCacheGetCreateCount02_0053
      * @tc.desc      Verify operations after clear do not increment create count
      * @tc.size      MediumTest
@@ -1641,7 +1641,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5400
      * @tc.name      testLRUCacheGetCreateCount02_0054
      * @tc.desc      Verify create count behavior on empty cache operations
      * @tc.size      MediumTest
@@ -1661,7 +1661,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5500
      * @tc.name      testLRUCacheGetCreateCount02_0055
      * @tc.desc      Verify create count remains 0 with different supported value types
      * @tc.size      MediumTest
@@ -1680,7 +1680,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5600
      * @tc.name      testLRUCacheGetCreateCount02_0056
      * @tc.desc      Verify create count remains 0 with different key types
      * @tc.size      MediumTest
@@ -1697,7 +1697,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5700
      * @tc.name      testLRUCacheGetCreateCount02_0057
      * @tc.desc      Verify re-adding evicted key does not increment create count
      * @tc.size      MediumTest
@@ -1716,7 +1716,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5800
      * @tc.name      testLRUCacheGetCreateCount02_0058
      * @tc.desc      Verify create count with capacity 1 cache remains 0
      * @tc.size      MediumTest
@@ -1734,7 +1734,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_5900
      * @tc.name      testLRUCacheGetCreateCount02_0059
      * @tc.desc      Verify create counts are independent (and 0) across cache instances
      * @tc.size      MediumTest
@@ -1755,7 +1755,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_6000
      * @tc.name      testLRUCacheGetCreateCount02_0060
      * @tc.desc      Verify create count accuracy under stress operations (remains 0)
      * @tc.size      MediumTest
@@ -1775,7 +1775,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_6100
      * @tc.name      testLRUCacheGetCreateCount02_0061
      * @tc.desc      Verify create count in complex cache workflow (remains 0)
      * @tc.size      MediumTest
@@ -1800,7 +1800,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_6200
      * @tc.name      testLRUCacheGetMissCount02_0062
      * @tc.desc      Verify initial miss count is 0 for new LRUCache
      * @tc.size      MediumTest
@@ -1819,7 +1819,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_6300
      * @tc.name      testLRUCacheGetMissCount02_0063
      * @tc.desc      Verify get operation for non-existent key increments miss count
      * @tc.size      MediumTest
@@ -1843,7 +1843,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_6400
      * @tc.name      testLRUCacheGetMissCount02_0064
      * @tc.desc      Verify get operation for existing key does not increment miss count
      * @tc.size      MediumTest
@@ -1873,7 +1873,7 @@ export default function LRUCache02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE02_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE3_6500
      * @tc.name      testLRUCacheGetMissCount02_0065
      * @tc.desc      Verify put operations do not affect miss count
      * @tc.size      MediumTest

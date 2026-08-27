@@ -60,7 +60,7 @@ export default function XmlTest() {
     })
     /**
      * @tc.name   testXmlConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1010
      * @tc.desc   Testing the XML constructor with a invalid ArrayBuffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1020
      * @tc.desc   Testing the XML constructor with a zero ArrayBuffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1030
      * @tc.desc   Testing the XML constructor with ArrayBuffer < 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1040
      * @tc.desc   Testing the XML constructor with a valid ArrayBuffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -163,7 +163,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlConstructor0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1050
      * @tc.desc   Testing the XML constructor using the an ArrayBuffer value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -187,7 +187,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlConstructor0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1060
      * @tc.desc   Testing the XML constructor with a valid DataView.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -212,7 +212,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlConstructor0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1070
      * @tc.desc   Testing the XML constructor with a valid DataView and without encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -236,7 +236,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlConstructor0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1080
      * @tc.desc   Testing the XML constructor with a valid DataView and encoding "utf-8".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -260,7 +260,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlConstructor0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1090
      * @tc.desc   Testing the XML constructor with a valid DataView and encoding 'gbk'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,7 +281,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetAttributes0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1100
      * @tc.desc   Testing the XML serializer's setAttributes method with undefined parameters,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -303,7 +303,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetAttributes0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1110
      * @tc.desc   Testing the XML serializer's setAttributes method with null parameters,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -325,7 +325,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetAttributes0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1120
      * @tc.desc   Testing the XML serializer's setAttributes method with "",
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -347,7 +347,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetAttributes0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1130
      * @tc.desc   Testing the XML serializer's setAttributes method with "",
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -377,7 +377,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetAttributes0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1140
      * @tc.desc   Testing the XML serializer's setAttributes method with a 10K size string,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -409,7 +409,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetAttributes0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1150
      * @tc.desc   Testing the XML serializer's setAttributes method expecting a correct result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -440,7 +440,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1160
      * @tc.desc   Test the XML serializer's addEmptyElement with undefined,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -462,7 +462,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1170
      * @tc.desc   Test the XML serializer's addEmptyElement with null,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -484,7 +484,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1180
      * @tc.desc   Test the XML serializer's addEmptyElement with null and undefined,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -507,7 +507,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1190
      * @tc.desc   Testing the XML serializer's addEmptyElement with an empty string,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -529,7 +529,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1200
      * @tc.desc   Testing the XML serializer's addEmptyElement method by adding 2560 "note" elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -561,7 +561,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1210
      * @tc.desc   Testing the XML serializer's addEmptyElement method by adding two "aaaaa" elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -589,7 +589,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1220
      * @tc.desc   Testing the XML serializer's addEmptyElement method by adding any elements
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -618,7 +618,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1230
      * @tc.desc   Testing the XML serializer's addEmptyElement method by adding an empty element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -646,7 +646,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1240
      * @tc.desc   Testing the XML serializer's addEmptyElement method by adding an empty element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -674,7 +674,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlAddEmptyElement0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1250
      * @tc.desc   Testing the XML serializer's addEmptyElement method by adding an empty element
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -702,7 +702,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetDeclaration0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDECLARATION_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1260
      * @tc.desc   Testing the XML serializer's setDeclaration method by setting
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -730,7 +730,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlStartElement0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1270
      * @tc.desc   Testing the XML serializer's startElement method with null as the element name
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -752,7 +752,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlStartElement0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1280
      * @tc.desc   Testing the XML serializer's startElement method with undefined as the element name
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -774,7 +774,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlStartElement0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1290
      * @tc.desc   Testing the XML serializer's startElement method with an empty string as the element name
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -796,7 +796,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlStartElement0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1300
      * @tc.desc   Testing the XML serializer's startElement method by adding a
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -827,7 +827,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlStartElement0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1310
      * @tc.desc   Testing the XML serializer's startElement method by adding duplicate element names
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -858,7 +858,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlStartElement0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1320
      * @tc.desc   Testing the XML serializer's startElement method with a 10K size string,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -890,7 +890,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlStartElement0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1330
      * @tc.desc   Testing the XML serializer's startElement method with nest,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -921,7 +921,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlEndElement0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ENDELEMENT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1340
      * @tc.desc   Testing the XML serializer's endElement , expecting a correct result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -946,7 +946,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlEndElement0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ENDELEMENT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1350
      * @tc.desc   Testing the XML serializer's endElement , expecting a correct result.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -973,7 +973,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetNamespace0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1360
      * @tc.desc   Testing the XML serializer's setNamespace method with valid namespace and uri.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -999,7 +999,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetNamespace0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1370
      * @tc.desc   Testing the XML serializer's setNamespace method with empty string namespace parameter,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1021,7 +1021,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetNamespace0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1380
      * @tc.desc   Testing the XML serializer's setNamespace method with empty string prefix parameter,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1043,7 +1043,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetNamespace0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1390
      * @tc.desc   Testing the XML serializer's setNamespace method with null for namespace and uri.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1065,7 +1065,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetNamespace0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1400
      * @tc.desc   Testing the XML serializer's setNamespace method with undefined as parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1087,7 +1087,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetNamespace0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1410
      * @tc.desc   Testing the XML serializer's setNamespace method with empty string parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1109,7 +1109,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetNamespace0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1420
      * @tc.desc   Testing the XML serializer's setNamespace method with special characters in namespace and uri.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1135,7 +1135,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetNamespace0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1430
      * @tc.desc   Testing the XML serializer's setNamespace method with set namespace twice,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1164,7 +1164,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetNamespace0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1440
      * @tc.desc   Testing the XML serializer's setNamespace method with a 10k string as namespace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1194,7 +1194,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetComment0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1450
      * @tc.desc   Testing the XML serializer's setComment with undefined as parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1216,7 +1216,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetComment0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1460
      * @tc.desc   Testing the XML serializer's setComment with null as parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1238,7 +1238,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetComment0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1470
      * @tc.desc   Testing the XML serializer's setComment with an empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1260,7 +1260,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetComment0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1480
      * @tc.desc   Testing the XML serializer's setComment with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1284,7 +1284,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetComment0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1490
      * @tc.desc   Testing the XML serializer's setComment called multiple times.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1310,7 +1310,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetComment0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1500
      * @tc.desc   Testing the XML serializer's setComment in combination with other methods.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1341,7 +1341,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetComment0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1510
      * @tc.desc   Testing the XML serializer's setComment with a large data input (10k characters).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1366,7 +1366,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetCData0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1520
      * @tc.desc   Testing the XML serializer's setCDATA with undefined as parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1388,7 +1388,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetCData0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1530
      * @tc.desc   Testing the XML serializer's setCDATA with null as parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1410,7 +1410,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetCData0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1540
      * @tc.desc   Testing the XML serializer's setCDATA with an empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1432,7 +1432,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetCData0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1550
      * @tc.desc   Testing the XML serializer's setCDATA with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1456,7 +1456,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetCData0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1560
      * @tc.desc   Testing the XML serializer's setCDATA with escaped characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1481,7 +1481,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetCData0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1570
      * @tc.desc   Testing the XML serializer's setCDATA with repeated calls.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1508,7 +1508,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetCData0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1580
      * @tc.desc   Testing the XML serializer's setCDATA with a large input (10k characters).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1533,7 +1533,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetText0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1590
      * @tc.desc   Testing the XML serializer's setText with undefined as parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1555,7 +1555,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetText0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1600
      * @tc.desc   Testing the XML serializer's setText with null as parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1577,7 +1577,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetText0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1610
      * @tc.desc   Testing the XML serializer's setText with an empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1600,7 +1600,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetText0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1620
      * @tc.desc   Testing the XML serializer's setText with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1626,7 +1626,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetText0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1630
      * @tc.desc   Testing setText called multiple times.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1653,7 +1653,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetText0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1640
      * @tc.desc   Testing the XML serializer's setText with large data input.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1680,7 +1680,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetDocType0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1650
      * @tc.desc   Testing the XML serializer's setDocType with undefined as parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1702,7 +1702,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetDocType0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1660
      * @tc.desc   Testing the XML serializer's setDocType with null as parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1724,7 +1724,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetDocType0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1670
      * @tc.desc   Testing the XML serializer's setDocType with an empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1746,7 +1746,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetDocType0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1680
      * @tc.desc   Testing the XML serializer's setDocType with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1770,7 +1770,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetDocType0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1690
      * @tc.desc   Testing setDocType called multiple times.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1796,7 +1796,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlSetDocType0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1700
      * @tc.desc   Testing the XML serializer's setDocType with large data input.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1821,7 +1821,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1710
      * @tc.desc   Testing the XML PullParser's Constructor with the attribute value is not within ''.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1867,7 +1867,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1720
      * @tc.desc   Testing the XML PullParser's constructor with a single tag.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1898,7 +1898,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1730
      * @tc.desc   Testing the XML PullParser's constructor with a double tag.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1935,7 +1935,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1740
      * @tc.desc   Testing the XML PullParser's constructor with incorrect nested tags.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1966,7 +1966,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1750
      * @tc.desc   Testing the XML PullParser's constructor with comments.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2000,7 +2000,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1760
      * @tc.desc   Testing the XML PullParser's constructor with element names starting with a number.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2033,7 +2033,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1770
      * @tc.desc   Testing the XML PullParser with tag names that contain spaces.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2068,7 +2068,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1780
      * @tc.desc   Testing the XML PullParser with names containing special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2102,7 +2102,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1790
      * @tc.desc   Testing the XML PullParser constructor with an empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2130,7 +2130,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1800
      * @tc.desc   Testing the XML PullParser's constructor with long character input.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2165,7 +2165,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1810
      * @tc.desc   Testing the XML PullParser's constructor with namespaces.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2207,7 +2207,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1820
      * @tc.desc   Testing the XML PullParser with a malformed CDATA section.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2247,7 +2247,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1830
      * @tc.desc   Testing the XML PullParser with nested CDATA sections.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2287,7 +2287,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1840
      * @tc.desc   Testing the XML PullParser with content containing "]]>" within CDATA.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2327,7 +2327,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1850
      * @tc.desc   Testing the XML PullParser with special characters inside elements.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2369,7 +2369,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1860
      * @tc.desc   Testing the XML PullParser with introduced declaration, parsed correctly.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2411,7 +2411,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1870
      * @tc.desc   Testing the XML PullParser with escaped characters in content.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2445,7 +2445,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1880
      * @tc.desc   Testing the XML PullParser with special characters in content.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2476,7 +2476,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserConstructor0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1890
      * @tc.desc   Testing the XML PullParser without <>.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2510,7 +2510,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1900
      * @tc.desc   Testing the XML PullParser with supportDoctype set to true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2545,7 +2545,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1910
      * @tc.desc   Testing the XML PullParser with supportDoctype set to false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2579,7 +2579,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1920
      * @tc.desc   Testing XML PullParser with ignoreNameSpace set to true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2613,7 +2613,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1930
      * @tc.desc   Testing XML PullParser with ignoreNameSpace set to false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2647,7 +2647,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1940
      * @tc.desc   Testing XML PullParser with tagValueCallbackFunction as undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2681,7 +2681,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1950
      * @tc.desc   Testing XML PullParser with tagValueCallbackFunction as function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2715,7 +2715,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1960
      * @tc.desc   Testing XML PullParser with attributeValueCallbackFunction as function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2750,7 +2750,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1970
      * @tc.desc   Testing XML PullParser with tokenValueCallbackFunction as function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2787,7 +2787,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1980
      * @tc.desc   Testing XML PullParser with tokenValueCallbackFunction as undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2822,7 +2822,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlPullParserParseOptions0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_1990
      * @tc.desc   Testing XML PullParser with attributeValueCallbackFunction as undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2857,7 +2857,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2000
      * @tc.desc   Testing XML ParseInfo getColumnNumber with START_DOCUMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2890,7 +2890,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2010
      * @tc.desc   Testing XML ParseInfo getColumnNumber with END_DOCUMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2923,7 +2923,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2020
      * @tc.desc   Testing XML ParseInfo getColumnNumber with start tag event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2956,7 +2956,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2030
      * @tc.desc   Testing XML ParseInfo getColumnNumber with end tag event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2989,7 +2989,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2040
      * @tc.desc   Testing XML ParseInfo getColumnNumber with TEXT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3022,7 +3022,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2050
      * @tc.desc   Testing XML ParseInfo getColumnNumber with CDSECT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3055,7 +3055,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2060
      * @tc.desc   Testing XML ParseInfo getColumnNumber with COMMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3088,7 +3088,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2070
      * @tc.desc   Testing XML ParseInfo getColumnNumber with DOCDECL event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3121,7 +3121,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2080
      * @tc.desc   Testing XML ParseInfo getColumnNumber with INSTRUCTION event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3154,7 +3154,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2090
      * @tc.desc   Testing XML ParseInfo getColumnNumber with ENTITY_REFERENCE event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3187,7 +3187,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetColumnNumber0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2100
      * @tc.desc   Testing XML ParseInfo getColumnNumber with WHITESPACE event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3220,7 +3220,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2110
      * @tc.desc   Testing XML ParseInfo getDepth with START_DOCUMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3253,7 +3253,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2120
      * @tc.desc   Testing XML ParseInfo getDepth with END_DOCUMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3286,7 +3286,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2130
      * @tc.desc   Testing XML ParseInfo getDepth with start tag event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3319,7 +3319,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2140
      * @tc.desc   Testing XML ParseInfo getDepth with end tag event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3352,7 +3352,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2150
      * @tc.desc   Testing XML ParseInfo getDepth with TEXT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3385,7 +3385,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2160
      * @tc.desc   Testing XML ParseInfo getDepth with CDSECT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3418,7 +3418,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2170
      * @tc.desc   Testing XML ParseInfo getDepth with COMMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3451,7 +3451,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2180
      * @tc.desc   Testing XML ParseInfo getDepth with DOCDECL event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3484,7 +3484,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2190
      * @tc.desc   Testing XML ParseInfo getDepth with INSTRUCTION event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3517,7 +3517,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2200
      * @tc.desc   Testing XML ParseInfo getDepth with ENTITY_REFERENCE event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3550,7 +3550,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetDepth0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2210
      * @tc.desc   Testing XML ParseInfo getDepth with WHITESPACE event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3583,7 +3583,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2220
      * @tc.desc   Testing XML ParseInfo getLineNumber with START_DOCUMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3616,7 +3616,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2230
      * @tc.desc   Testing XML ParseInfo getLineNumber with END_DOCUMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3649,7 +3649,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2240
      * @tc.desc   Testing XML ParseInfo getLineNumber with start tag event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3682,7 +3682,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2250
      * @tc.desc   Testing XML ParseInfo getLineNumber with end tag event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3715,7 +3715,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2260
      * @tc.desc   Testing XML ParseInfo getLineNumber with TEXT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3748,7 +3748,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2270
      * @tc.desc   Testing XML ParseInfo getLineNumber with CDSECT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3781,7 +3781,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2280
      * @tc.desc   Testing XML ParseInfo getLineNumber with COMMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3814,7 +3814,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2290
      * @tc.desc   Testing XML ParseInfo getLineNumber with DOCDECL event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3847,7 +3847,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2300
      * @tc.desc   Testing XML ParseInfo getLineNumber with INSTRUCTION event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3880,7 +3880,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2310
      * @tc.desc   Testing XML ParseInfo getLineNumber with ENTITY_REFERENCE event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3913,7 +3913,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetLineNumber0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2320
      * @tc.desc   Testing XML ParseInfo getLineNumber with WHITESPACE event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3946,7 +3946,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2330
      * @tc.desc   Testing XML ParseInfo getName with START_DOCUMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3979,7 +3979,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2340
      * @tc.desc   Testing XML ParseInfo getName with END_DOCUMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4012,7 +4012,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2350
      * @tc.desc   Testing XML ParseInfo getName with start tag event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4045,7 +4045,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2360
      * @tc.desc   Testing XML ParseInfo getName with end tag event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4078,7 +4078,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2370
      * @tc.desc   Testing XML ParseInfo getName with TEXT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4111,7 +4111,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2380
      * @tc.desc   Testing XML ParseInfo getName with CDSECT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4144,7 +4144,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2390
      * @tc.desc   Testing XML ParseInfo getName with COMMENT event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4177,7 +4177,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2400
      * @tc.desc   Testing XML ParseInfo getName with DOCDECL event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4210,7 +4210,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2410
      * @tc.desc   Testing XML ParseInfo getName with INSTRUCTION event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4243,7 +4243,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2420
      * @tc.desc   Testing XML ParseInfo getName with ENTITY_REFERENCE event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4276,7 +4276,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2430
      * @tc.desc   Testing XML ParseInfo getName with WHITESPACE event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4309,7 +4309,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2440
      * @tc.desc   Testing XML ParseInfo getName with invalid testXml.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4347,7 +4347,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetName0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2450
      * @tc.desc   Testing XML ParseInfo getName with single testXml.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4382,7 +4382,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetNamespace0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAMESPACE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2460
      * @tc.desc   Testing XML ParseInfo getNamespace with namespace is existent.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4417,7 +4417,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetNamespace0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAMESPACE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2470
      * @tc.desc   Testing XML ParseInfo getNamespace with namespace is not existent.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4452,7 +4452,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetPrefix0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETPREFIX_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2480
      * @tc.desc   Testing XML ParseInfo Prefix.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4487,7 +4487,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetText0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETTEXT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2490
      * @tc.desc   Testing XML ParseInfo GetText with legal content.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4518,7 +4518,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlParseInfoGetText0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETTEXT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2500
      * @tc.desc   Testing XML ParseInfo GetText with illegal content.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4549,7 +4549,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlIsEmptyElementTag0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ISEMPTYELEMENTTAG_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2510
      * @tc.desc   Testing XML isEmptyElementTag with valid empty element.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4584,7 +4584,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlIsEmptyElementTag0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ISEMPTYELEMENTTAG_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2520
      * @tc.desc   Testing XML isEmptyElementTag with valid non-empty element.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4615,7 +4615,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlIsEmptyElementTag0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ISEMPTYELEMENTTAG_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2530
      * @tc.desc   Testing XML isEmptyElementTag with illegal XML structure.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4650,7 +4650,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlIsWhitespace0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ISWHITESPACE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2540
      * @tc.desc   Testing XML isWhitespace with valid whitespace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4685,7 +4685,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlGetAttributeCount0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_GETATTRIBUTESCOUNT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2550
      * @tc.desc   Testing XML getAttributeCount with one valid attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4717,7 +4717,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlGetAttributeCount0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_GETATTRIBUTESCOUNT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2560
      * @tc.desc   Testing XML getAttributeCount with multiple valid attributes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4749,7 +4749,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlGetAttributeCount0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_GETATTRIBUTESCOUNT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2570
      * @tc.desc   Testing XML getAttributeCount with illegal attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4781,7 +4781,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlCase001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2580
      * @tc.desc   Testing XML getAttributeCount with illegal attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4806,7 +4806,7 @@ export default function XmlTest() {
 
     /**
      * @tc.name   testXmlCase002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML1_2590
      * @tc.desc   Testing XML getAttributeCount with illegal attribute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

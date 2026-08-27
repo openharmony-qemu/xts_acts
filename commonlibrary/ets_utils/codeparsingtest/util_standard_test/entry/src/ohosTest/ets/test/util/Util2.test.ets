@@ -67,7 +67,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_0100
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_0200
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -112,7 +112,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_0300
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -133,7 +133,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_0400
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_0500
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -175,7 +175,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_0600
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_0700
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,7 +217,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_0800
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -238,7 +238,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_0900
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1000
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -280,7 +280,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1100
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -301,7 +301,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1200
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -322,7 +322,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1300
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -344,7 +344,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1400
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -365,7 +365,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1500
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -386,7 +386,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1600
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -407,7 +407,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1700
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -428,7 +428,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1800
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -450,7 +450,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_1900
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -473,7 +473,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2000
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -495,7 +495,7 @@ export default function util2Test() {
     });
     /**
      * @tc.name   testGetHash_021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2100
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -520,7 +520,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2200
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -545,7 +545,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2300
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -570,7 +570,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2400
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -595,7 +595,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2500
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -620,7 +620,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2600
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -645,7 +645,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2700
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -670,7 +670,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2800
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -695,7 +695,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_2900
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -720,7 +720,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3000
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -745,7 +745,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3100
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -770,7 +770,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3200
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -795,7 +795,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3300
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -820,7 +820,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3400
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -837,7 +837,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3500
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -853,7 +853,7 @@ export default function util2Test() {
     });
     /**
      * @tc.name   testGetHash_036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3501
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3600
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -868,7 +868,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3502
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3700
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -883,7 +883,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3503
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3800
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -897,7 +897,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3504
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_3900
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -912,7 +912,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3505
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4000
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -926,7 +926,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3506
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4100
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -942,7 +942,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3507
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4200
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -956,7 +956,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3508
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4300
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -971,7 +971,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3509
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4400
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -985,7 +985,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4500
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1000,7 +1000,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3511
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4600
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1014,7 +1014,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3512
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4700
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1029,7 +1029,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3513
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4800
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1049,7 +1049,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3514
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_4900
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1063,7 +1063,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3515
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5000
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1082,7 +1082,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3516
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5100
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1099,7 +1099,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3517
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5200
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1118,7 +1118,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3518
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5300
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1137,7 +1137,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3519
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5400
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1151,7 +1151,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5500
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1165,7 +1165,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3521
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5600
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1179,7 +1179,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3522
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5700
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1196,7 +1196,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3523
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5800
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1212,7 +1212,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3524
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_5900
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1226,7 +1226,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3525
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_6000
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1240,7 +1240,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3526
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_6100
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1254,7 +1254,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3527
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_6200
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1268,7 +1268,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3528
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_6300
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1282,7 +1282,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_064
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3529
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_6400
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1297,7 +1297,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_6500
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1311,7 +1311,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_066
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3531
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_6600
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1331,7 +1331,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_067
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_6700
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1424,7 +1424,7 @@ export default function util2Test() {
 
     /**
      * @tc.name   testGetHash_068
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL2_6800
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

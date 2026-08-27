@@ -33,7 +33,7 @@ export default function vmHeapMemoryPressureTest() {
 
     /**
      * @tc.name   testVMHeapMemoryPressureRegister001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_VM_HEAP_MEMORY_PRESSURE_0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_VMHEAPMEMORYPRESSURE1_0100
      * @tc.desc   Test duplicate callback registration should fail
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -61,7 +61,7 @@ export default function vmHeapMemoryPressureTest() {
 
     /**
      * @tc.name   testVMHeapMemoryPressureThresholdClamp001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_VM_HEAP_MEMORY_PRESSURE_0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_VMHEAPMEMORYPRESSURE1_0200
      * @tc.desc   Test threshold clamping with low and high values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,7 +95,7 @@ export default function vmHeapMemoryPressureTest() {
 
     /**
      * @tc.name   testVMHeapMemoryPressureThresholdClamp002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_VM_HEAP_MEMORY_PRESSURE_0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_VMHEAPMEMORYPRESSURE1_0300
      * @tc.desc   Test threshold clamping with zero value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,7 +120,7 @@ export default function vmHeapMemoryPressureTest() {
 
     /**
      * @tc.name   testVMHeapMemoryPressureParameterValidation001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_VM_HEAP_MEMORY_PRESSURE_0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_VMHEAPMEMORYPRESSURE1_0400
      * @tc.desc   Test parameter validation with null values
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -149,7 +149,7 @@ export default function vmHeapMemoryPressureTest() {
 
     /**
      * @tc.name   testVMHeapMemoryPressureMultiThreshold001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_VM_HEAP_MEMORY_PRESSURE_0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_VMHEAPMEMORYPRESSURE1_0500
      * @tc.desc   Test multiple threshold configuration with all heap types
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -176,7 +176,7 @@ export default function vmHeapMemoryPressureTest() {
 
     /**
      * @tc.name   testVMHeapMemoryPressureUnregister001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_VM_HEAP_MEMORY_PRESSURE_0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_VMHEAPMEMORYPRESSURE1_0600
      * @tc.desc   Test multiple unregister calls safety
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function vmHeapMemoryPressureTest() {
 
     /**
      * @tc.name   testVMHeapMemoryPressureUnregister002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_VM_HEAP_MEMORY_PRESSURE_0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_VMHEAPMEMORYPRESSURE1_0700
      * @tc.desc   Test register after unregister cycle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

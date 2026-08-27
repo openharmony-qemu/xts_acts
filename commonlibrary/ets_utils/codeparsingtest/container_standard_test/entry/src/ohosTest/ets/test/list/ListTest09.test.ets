@@ -306,7 +306,7 @@ export default function ListTest09() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_0100
      * @tc.name      testList09Chapter0001
      * @tc.desc      List.remove: remove inherited/non-enumerable object combinations
      * @tc.size      MediumTest
@@ -339,7 +339,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_0200
      * @tc.name      testList09Chapter0002
      * @tc.desc      List.remove: remove mixed-type buffer objects (ArrayBuffer/Uint8Array/Int16Array)
      * @tc.size      MediumTest
@@ -369,7 +369,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_0300
      * @tc.name      testList09Chapter0003
      * @tc.desc      List.remove: remove special-value inserted objects (undefined/null/NaN/Infinity)
      * @tc.size      MediumTest
@@ -399,7 +399,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_0400
      * @tc.name      testList09Chapter0004
      * @tc.desc      List.replaceAllElements: normal Uint8Array and zero-filled number array
      * @tc.size      MediumTest
@@ -443,7 +443,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_0500
      * @tc.name      testList09Chapter0005
      * @tc.desc      List.replaceAllElements: arrays with negative numbers and non-numeric index arrays
      * @tc.size      MediumTest
@@ -505,7 +505,7 @@ export default function ListTest09() {
       });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_0600
      * @tc.name      testList09Chapter0006
      * @tc.desc      List.replaceAllElements: arrays with NaN/Infinity and non-numeric type elements
      * @tc.size      MediumTest
@@ -554,7 +554,7 @@ export default function ListTest09() {
       });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_0700
      * @tc.name      testList09Chapter0007
      * @tc.desc      List.replaceAllElements: empty arrays, overflow arrays, arrays after element removal
      * @tc.size      MediumTest
@@ -610,7 +610,7 @@ export default function ListTest09() {
       });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_0800
      * @tc.name      testList09Chapter0008
      * @tc.desc      List.replaceAllElements: nested arrays, TypedArray sub-elements, ultra-long arrays
      * @tc.size      LargeTest
@@ -688,7 +688,7 @@ export default function ListTest09() {
       });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_0900
      * @tc.name      testList09Chapter0009
      * @tc.desc      List.replaceAllElements: arrays with functions and keyword strings (Symbol removed)
      * @tc.size      MediumTest
@@ -727,7 +727,7 @@ export default function ListTest09() {
       });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1000
      * @tc.name      testList09Chapter0010
      * @tc.desc      List.replaceAllElements: basic string values (undefined/null/empty/special chars/ASCII)
      * @tc.size      MediumTest
@@ -767,7 +767,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1100
      * @tc.name      testList09Chapter0011
      * @tc.desc      List.replaceAllElements: special character strings (&'()/*+,-./:;<=>?@[]^_`{|}~)
      * @tc.size      MediumTest
@@ -810,7 +810,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1200
      * @tc.name      testList09Chapter0012
      * @tc.desc      List.replaceAllElements: escape character strings (BEL/BS/FF/Newline and double special chars)
      * @tc.size      MediumTest
@@ -848,7 +848,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1300
      * @tc.name      testList09Chapter0013
      * @tc.desc      List.replaceAllElements: more escape character strings (CR/Tab/VT/Backslash/Single quote)
      * @tc.size      MediumTest
@@ -886,7 +886,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1400
      * @tc.name      testList09Chapter0014
      * @tc.desc      List.replaceAllElements: hex/octal escape strings and special single chars
      * @tc.size      MediumTest
@@ -924,7 +924,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1500
      * @tc.name      testList09Chapter0015
      * @tc.desc      List.replaceAllElements: emoji strings and their unicode representations
      * @tc.size      MediumTest
@@ -967,7 +967,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1600
      * @tc.name      testList09Chapter0016
      * @tc.desc      List.replaceAllElements: special unicode strings (emoji/invalid unicode/keyword/tree structure)
      * @tc.size      MediumTest
@@ -1023,7 +1023,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1700
      * @tc.name      testList09Chapter0017
      * @tc.desc      List.replaceAllElements: large strings (logic verification without actual large string)
      * @tc.size      MediumTest
@@ -1059,7 +1059,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1800
      * @tc.name      testList09Chapter0018
      * @tc.desc      List.replaceAllElements: special number values (0/NaN/-0/Infinity/-Infinity/undefined)
      * @tc.size      MediumTest
@@ -1111,7 +1111,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_1900
      * @tc.name      testList09Chapter0019
      * @tc.desc      List.replaceAllElements: extreme number values (MAX_VALUE/MIN_VALUE/EPSILON/MAX_SAFE_INTEGER)
      * @tc.size      MediumTest
@@ -1158,7 +1158,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2000
      * @tc.name      testList09Chapter0020
      * @tc.desc      List.replaceAllElements: precision number values (byte/short/int/long/float/double/char)
      * @tc.size      MediumTest
@@ -1235,7 +1235,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2100
      * @tc.name      testList09Chapter0021
      * @tc.desc      List.replaceAllElements: base expression number values (hex/octal/scientific/exponent)
      * @tc.size      MediumTest
@@ -1296,7 +1296,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2200
      * @tc.name      testList09Chapter0022
      * @tc.desc      List.replaceAllElements: bigint values (fixed redundant wrapping)
      * @tc.size      MediumTest
@@ -1348,7 +1348,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2300
      * @tc.name      testList09Chapter0023
      * @tc.desc      List.replaceAllElements: basic boolean values (true/false)
      * @tc.size      MediumTest
@@ -1390,7 +1390,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2400
      * @tc.name      testList09Chapter0024
      * @tc.desc      List.replaceAllElements: false-like values (0/NaN/"" /null/undefined/!\'s\')
      * @tc.size      MediumTest
@@ -1441,7 +1441,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2500
      * @tc.name      testList09Chapter0025
      * @tc.desc      List.replaceAllElements: true-like values (fixed EmptyObject initialization)
      * @tc.size      MediumTest
@@ -1487,7 +1487,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2600
      * @tc.name      testList09Chapter0026
      * @tc.desc      List.replaceAllElements: mixed boolean/number/string values
      * @tc.size      MediumTest
@@ -1549,7 +1549,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2700
      * @tc.name      testList09Chapter0027
      * @tc.desc      List.replaceAllElements: basic objects (normal/nested/empty)
      * @tc.size      MediumTest
@@ -1607,7 +1607,7 @@ export default function ListTest09() {
       expect((listInsert.get(3) as NormalObject).a).assertEqual(4);
     });
     /**
-     * @tc.number    SUB_LIST_TEXT09_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2800
      * @tc.name      testList09Chapter0028
      * @tc.desc      List.replaceAllElements: special key/inherit/non-enum objects
      * @tc.size      MediumTest
@@ -1664,7 +1664,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_2900
      * @tc.name      testList09Chapter0029
      * @tc.desc      List.replaceAllElements: buffer/dataview/typed array objects
      * @tc.size      MediumTest
@@ -1719,7 +1719,7 @@ export default function ListTest09() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT09_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST9_3000
      * @tc.name      testList09Chapter0030
      * @tc.desc      List.replaceAllElements: map/set/func/regex/promise objects (improved promise test)
      * @tc.size      MediumTest

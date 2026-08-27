@@ -163,7 +163,7 @@ export default function ListTest06() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_0100
      * @tc.name      testList06Chapter0001
      * @tc.desc      Test get interface with boundary values & empty list & repeat add
      * @tc.size      MediumTest
@@ -198,7 +198,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_0200
      * @tc.name      testList06Chapter0002
      * @tc.desc      Test get interface with nested List object & multi-type nested data
      * @tc.size      MediumTest
@@ -229,7 +229,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_0300
      * @tc.name      testList06Chapter0003
      * @tc.desc      Verify the functional correctness of the getLastIndexOf interface of the List container in array
      * @tc.type      Function
@@ -273,7 +273,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_0400
      * @tc.name      testList06Chapter0004
      * @tc.desc      Verify getLastIndexOf() for negative/non-numeric index arrays
      * @tc.size      MediumTest
@@ -326,7 +326,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_0500
      * @tc.name      testList06Chapter0005
      * @tc.desc      Verify getLastIndexOf() for NaN/Infinity/non-numeric type arrays
      * @tc.size      MediumTest
@@ -366,7 +366,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_0600
      * @tc.name      testList06Chapter0006
      * @tc.desc      Verify getLastIndexOf() for empty/overflow/deleted element arrays
      * @tc.size      MediumTest
@@ -412,7 +412,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_0700
      * @tc.name      testList06Chapter0007
      * @tc.desc      Verify getLastIndexOf() for nested/TypedArray/ultra-long arrays
      * @tc.size      LargeTest
@@ -471,7 +471,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_0800
      * @tc.name      testList06Chapter0008
      * @tc.desc      Verify getLastIndexOf() for function/keyword arrays (no Symbol)
      * @tc.size      MediumTest
@@ -503,7 +503,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_0900
      * @tc.name      testList06Chapter0009
      * @tc.desc      Test getLastIndexOf with basic string values (undefined/null/empty/special chars/ASCII)
      * @tc.size      MediumTest
@@ -554,7 +554,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1000
      * @tc.name      testList06Chapter0010
      * @tc.desc      Test getLastIndexOf with extended special character strings
      * @tc.size      MediumTest
@@ -595,7 +595,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1100
      * @tc.name      testList06Chapter0011
      * @tc.desc      Test getLastIndexOf with escape characters and null element
      * @tc.size      MediumTest
@@ -653,7 +653,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1200
      * @tc.name      testList06Chapter0012
      * @tc.desc      Test getLastIndexOf with emoji strings and their Unicode values
      * @tc.size      MediumTest
@@ -690,7 +690,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1300
      * @tc.name      testList06Chapter0013
      * @tc.desc      Test getLastIndexOf with basic number values (positive/negative/decimal)
      * @tc.size      MediumTest
@@ -731,7 +731,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1400
      * @tc.name      testList06Chapter0014
      * @tc.desc      Test getLastIndexOf with special number values (NaN/Infinity/-0)
      * @tc.size      MediumTest
@@ -772,7 +772,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1500
      * @tc.name      testList06Chapter0015
      * @tc.desc      Test getLastIndexOf with extreme number values (MAX/MIN/SAFE_INTEGER)
      * @tc.size      MediumTest
@@ -806,7 +806,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1600
      * @tc.name      testList06Chapter0016
      * @tc.desc      Test getLastIndexOf with bigint values
      * @tc.size      MediumTest
@@ -840,7 +840,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1700
      * @tc.name      testList06Chapter0017
      * @tc.desc      Test getLastIndexOf with boolean values (true/false)
      * @tc.size      MediumTest
@@ -867,7 +867,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1800
      * @tc.name      testList06Chapter0018
      * @tc.desc      Test getLastIndexOf with false-like values (null/undefined/empty string)
      * @tc.size      MediumTest
@@ -901,7 +901,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_1900
      * @tc.name      testList06Chapter0019
      * @tc.desc      Test getLastIndexOf with normal and empty objects
      * @tc.size      MediumTest
@@ -937,7 +937,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2000
      * @tc.name      testList06Chapter0020
      * @tc.desc      Test getLastIndexOf with objects containing special values (null/undefined/NaN)
      * @tc.size      MediumTest
@@ -971,7 +971,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2100
      * @tc.name      testList06Chapter0021
      * @tc.desc      Test getLastIndexOf with repeated elements (string/number)
      * @tc.size      MediumTest
@@ -1004,7 +1004,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2200
      * @tc.name      testList06Chapter0022
      * @tc.desc      Verify getIndexOf() for Uint8Array/multi-zero arrays (return -1 if not exist)
      * @tc.size      MediumTest
@@ -1047,7 +1047,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2300
      * @tc.name      testList06Chapter0023
      * @tc.desc      Verify getIndexOf() for negative/non-numeric index arrays
      * @tc.size      MediumTest
@@ -1098,7 +1098,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2400
      * @tc.name      testList06Chapter0024
      * @tc.desc      Verify getIndexOf() for NaN/Infinity/non-numeric type arrays
      * @tc.size      MediumTest
@@ -1140,7 +1140,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2500
      * @tc.name      testList06Chapter0025
      * @tc.desc      Verify getIndexOf() for empty/overflow/deleted element arrays
      * @tc.size      MediumTest
@@ -1185,7 +1185,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2600
      * @tc.name      testList06Chapter0026
      * @tc.desc      Verify getIndexOf() for nested/TypedArray/ultra-long arrays
      * @tc.size      LargeTest
@@ -1248,7 +1248,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2700
      * @tc.name      testList06Chapter0027
      * @tc.desc      Verify getIndexOf() for function/keyword arrays (no Symbol)
      * @tc.size      MediumTest
@@ -1282,7 +1282,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2800
      * @tc.name      testList06Chapter0028
      * @tc.desc      Test getIndexOf interface with basic string values
      * @tc.size      MediumTest
@@ -1318,7 +1318,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_2900
      * @tc.name      testList06Chapter0029
      * @tc.desc      Test getIndexOf interface with special character strings
      * @tc.size      MediumTest
@@ -1355,7 +1355,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_3000
      * @tc.name      testList06Chapter0030
      * @tc.desc      Test getIndexOf interface with escape character strings
      * @tc.size      MediumTest
@@ -1389,7 +1389,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_3100
      * @tc.name      testList06Chapter0031
      * @tc.desc      Test getIndexOf interface with more escape character strings
      * @tc.size      MediumTest
@@ -1422,7 +1422,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_3200
      * @tc.name      testList06Chapter0032
      * @tc.desc      Test getIndexOf interface with hex/octal escape strings
      * @tc.size      MediumTest
@@ -1455,7 +1455,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_3300
      * @tc.name      testList06Chapter0033
      * @tc.desc      Test getIndexOf interface with emoji strings
      * @tc.size      MediumTest
@@ -1493,7 +1493,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_3400
      * @tc.name      testList06Chapter0034
      * @tc.desc      Test getIndexOf interface with special unicode strings
      * @tc.size      MediumTest
@@ -1542,7 +1542,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_3500
      * @tc.name      testList06Chapter0035
      * @tc.desc      Test getIndexOf interface with large strings
      * @tc.size      MediumTest
@@ -1573,7 +1573,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_3600
      * @tc.name      testList06Chapter0036
      * @tc.desc      Test getIndexOf interface with special number values
      * @tc.size      MediumTest
@@ -1597,7 +1597,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_3700
      * @tc.name      testList06Chapter0037
      * @tc.desc      Test getIndexOf interface with extreme number values
      * @tc.size      MediumTest
@@ -1623,7 +1623,7 @@ export default function ListTest06() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT06_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST6_3800
      * @tc.name      testList06Chapter0038
      * @tc.desc      Test getIndexOf interface with precision number values
      * @tc.size      MediumTest

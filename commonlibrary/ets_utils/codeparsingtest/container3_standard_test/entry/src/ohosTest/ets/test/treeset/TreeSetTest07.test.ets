@@ -29,7 +29,7 @@ export default function TreeSet07Test() {
     })
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_0100
      * @tc.name      testTreeSet07Chapter0001
      * @tc.desc      Test basic iteration over TreeSet with string elements using for...of loop
      * @tc.size      MediumTest
@@ -54,7 +54,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_0200
      * @tc.name      testTreeSet07Chapter0002
      * @tc.desc      Test iteration over empty TreeSet using for...of loop
      * @tc.size      MediumTest
@@ -73,7 +73,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_0300
      * @tc.name      testTreeSet07Chapter0003
      * @tc.desc      Test manual iteration using Symbol.iterator and next() method
      * @tc.size      MediumTest
@@ -101,7 +101,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_0400
      * @tc.name      testTreeSet07Chapter0004
      * @tc.desc      Test iteration with mixed types including undefined and null values
      * @tc.size      MediumTest
@@ -123,7 +123,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_0500
      * @tc.name      testTreeSet07Chapter0005
      * @tc.desc      Test iteration with special number values including Infinity, -Infinity and NaN
      * @tc.size      MediumTest
@@ -146,7 +146,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_0600
      * @tc.name      testTreeSet07Chapter0006
      * @tc.desc      Test iteration with maximum safe integer values
      * @tc.size      MediumTest
@@ -169,7 +169,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_0700
      * @tc.name      testTreeSet07Chapter0007
      * @tc.desc      Test iteration with boolean values
      * @tc.size      MediumTest
@@ -190,7 +190,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_0800
      * @tc.name      testTreeSet07Chapter0008
      * @tc.desc      Test iteration with large number of elements (performance test)
      * @tc.size      MediumTest
@@ -213,7 +213,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_0900
      * @tc.name      testTreeSet07Chapter0009
      * @tc.desc      Test iteration order with reverse sorted elements
      * @tc.size      MediumTest
@@ -235,7 +235,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_1000
      * @tc.name      testTreeSet07Chapter0010
      * @tc.desc      Test iteration with duplicate elements (should not appear multiple times)
      * @tc.size      MediumTest
@@ -263,7 +263,7 @@ export default function TreeSet07Test() {
 
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_1100
      * @tc.name      testTreeSet07Chapter0011
      * @tc.desc      Test iteration while modifying TreeSet (add operation during iteration)
      * @tc.size      MediumTest
@@ -288,7 +288,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_1200
      * @tc.name      testTreeSet07Chapter0012
      * @tc.desc      Test iteration while modifying TreeSet (remove operation during iteration)
      * @tc.size      MediumTest
@@ -313,7 +313,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_1300
      * @tc.name      testTreeSet07Chapter0013
      * @tc.desc      Test multiple independent iterators on same TreeSet
      * @tc.size      MediumTest
@@ -348,7 +348,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_1400
      * @tc.name      testTreeSet07Chapter0014
      * @tc.desc      Test iteration with complex objects in TreeSet
      * @tc.size      MediumTest
@@ -389,7 +389,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_1500
      * @tc.name      testTreeSet07Chapter0015
      * @tc.desc      Test iteration after clearing TreeSet
      * @tc.size      MediumTest
@@ -412,7 +412,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_1600
      * @tc.name      testTreeSet07Chapter0016
      * @tc.desc      Test iteration with string containing special characters
      * @tc.size      MediumTest
@@ -434,7 +434,7 @@ export default function TreeSet07Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST07_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET8_1700
      * @tc.name      testTreeSet07Chapter0017
      * @tc.desc      Test iteration with emoji and unicode characters
      * @tc.size      MediumTest

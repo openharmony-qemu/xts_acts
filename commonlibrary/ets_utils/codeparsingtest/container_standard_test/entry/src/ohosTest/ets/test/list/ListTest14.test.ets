@@ -364,7 +364,7 @@ export default function ListTest14() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_0100
      * @tc.name      testList14Chapter0001
      * @tc.desc      Test add interface with basic objects
      * @tc.size      MediumTest
@@ -408,7 +408,7 @@ export default function ListTest14() {
       expect((listInsert.get(3) as NormalObject).a).assertEqual(4);
     });
     /**
-     * @tc.number    SUB_LIST_TEXT14_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_0200
      * @tc.name      testList14Chapter0002
      * @tc.desc      Test add interface with special key/inherit/non-enum objects
      * @tc.size      MediumTest
@@ -452,7 +452,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_0300
      * @tc.name      testList14Chapter0003
      * @tc.desc      Test add interface with buffer/dataview/typed array objects
      * @tc.size      MediumTest
@@ -494,7 +494,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_0400
      * @tc.name      testList14Chapter0004
      * @tc.desc      Test add interface with map/set/func/regex/promise objects (improved promise test)
      * @tc.size      MediumTest
@@ -547,7 +547,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_0500
      * @tc.name      testList14Chapter0005
      * @tc.desc      Test add interface with special value objects
      * @tc.size      MediumTest
@@ -588,7 +588,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_0600
      * @tc.name      testList14Chapter0006
      * @tc.desc      Test add interface with large/mixed/small/newKey objects
      * @tc.size      MediumTest
@@ -637,7 +637,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_0700
      * @tc.name      testList14Chapter0007
      * @tc.desc      Verify List convertToArray() with Int8/Uint8/Uint8Clamped arrays
      * @tc.size      MediumTest
@@ -680,7 +680,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_0800
      * @tc.name      testList14Chapter0008
      * @tc.desc      Verify convertToArray() for floating-point/BigInt TypedArray List
      * @tc.size      MediumTest
@@ -718,7 +718,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_0900
      * @tc.name      testList14Chapter0009
      * @tc.desc      Verify convertToArray() for mixed TypedArray List and re-convert after operation
      * @tc.size      MediumTest
@@ -756,7 +756,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1000
      * @tc.name      testList14Chapter0010
      * @tc.desc      Verify convertToArray() with normal Uint8Array and multi-zero arrays
      * @tc.size      MediumTest
@@ -786,7 +786,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1100
      * @tc.name      testList14Chapter0011
      * @tc.desc      Verify convertToArray() with negative/typed/non-numeric index arrays
      * @tc.size      MediumTest
@@ -824,7 +824,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1200
      * @tc.name      testList14Chapter0012
      * @tc.desc      Verify convertToArray() with NaN/Infinity/mixed type value arrays
      * @tc.size      MediumTest
@@ -857,7 +857,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1300
      * @tc.name      testList14Chapter0013
      * @tc.desc      Verify convertToArray() with empty/overflow/deleted element arrays
      * @tc.size      MediumTest
@@ -897,7 +897,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1400
      * @tc.name      testList14Chapter0014
      * @tc.desc      Verify convertToArray() with nested/typed/large length arrays
      * @tc.size      LargeTest
@@ -946,7 +946,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1500
      * @tc.name      testList14Chapter0015
      * @tc.desc      Verify convertToArray() with function/keyword string mixed arrays
      * @tc.size      MediumTest
@@ -977,7 +977,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1600
      * @tc.name      testList14Chapter0016
      * @tc.desc      Test the convertToArray method to convert a basic string type List
      * @tc.size      MediumTest
@@ -1003,7 +1003,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1700
      * @tc.name      testList14Chapter0017
      * @tc.desc      Verify convertToArray() for special/escape chars & emoji string lists
      * @tc.size      MediumTest
@@ -1027,7 +1027,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1800
      * @tc.name      testList14Chapter0018
      * @tc.desc      Test the convertToArray method to convert a basic numeric type List
      * @tc.size      MediumTest
@@ -1055,7 +1055,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_1900
      * @tc.name      testList14Chapter0019
      * @tc.desc      Verify convertToArray() for numeric extremes/different base number lists
      * @tc.size      MediumTest
@@ -1083,7 +1083,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2000
      * @tc.name      testList14Chapter0020
      * @tc.desc      Verify convertToArray() for Boolean/true/false value scenarios in List
      * @tc.size      MediumTest
@@ -1113,7 +1113,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2100
      * @tc.name      testList14Chapter0021
      * @tc.desc      Verify convertToArray() for regular/nested/empty object lists
      * @tc.size      MediumTest
@@ -1140,7 +1140,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2200
      * @tc.name      testList14Chapter0022
      * @tc.desc      Verify convertToArray() for Buffer/Map/Set/Function special object lists
      * @tc.size      MediumTest
@@ -1171,7 +1171,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2300
      * @tc.name      testList14Chapter0023
      * @tc.desc      Test the convertToArray method with an empty List
      * @tc.size      MediumTest
@@ -1192,7 +1192,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2400
      * @tc.name      testList14Chapter0024
      * @tc.desc      Test the convertToArray method to convert a large data List
      * @tc.size      MediumTest
@@ -1218,7 +1218,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2500
      * @tc.name      testList14Chapter0025
      * @tc.desc      Test the convertToArray method to convert a mixed-type List
      * @tc.size      MediumTest
@@ -1245,7 +1245,7 @@ export default function ListTest14() {
       expect(result12[5]).assertEqual(undefined);
     });
     /**
-     * @tc.number    SUB_LIST_TEXT14_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2600
      * @tc.name      testList14Chapter0026
      * @tc.desc      Test the convertToArray method to convert a List initialized by a constructor
      * @tc.size      MediumTest
@@ -1267,7 +1267,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2700
      * @tc.name      testList14Chapter0027
      * @tc.desc      Test the convertToArray method to convert the List after the insert operation
      * @tc.size      MediumTest
@@ -1290,7 +1290,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2800
      * @tc.name      testList14Chapter0028
      * @tc.desc      Test the convertToArray method to convert a List containing NaN, Infinity, and -0
      * @tc.size      MediumTest
@@ -1316,7 +1316,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_2900
      * @tc.name      testList14Chapter0029
      * @tc.desc      Test the convertToArray method to convert a list containing Promises and AsyncFunctions
      * @tc.size      MediumTest
@@ -1343,7 +1343,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3000
      * @tc.name      testList14Chapter0030
      * @tc.desc      Verify convertToArray() for List with nested Lists & multi-dimensional arrays
      * @tc.size      MediumTest
@@ -1389,7 +1389,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3100
      * @tc.name      testList14Chapter0031
      * @tc.desc      Test the convertToArray method to convert a List with mixed initialization types
      * @tc.size      MediumTest
@@ -1413,7 +1413,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3200
      * @tc.name      testList14Chapter0032
      * @tc.desc      Test the convertToArray method to convert a List containing very large strings and binary data
      * @tc.size      MediumTest
@@ -1439,7 +1439,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3300
      * @tc.name      testList14Chapter0033
      * @tc.desc      Verify convertToArray() for List with duplicate elements/same object references
      * @tc.size      MediumTest
@@ -1471,7 +1471,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3400
      * @tc.name      testList14Chapter0034
      * @tc.desc      Verify convertToArray() for List with inherited objects/prototype chain props
      * @tc.size      MediumTest
@@ -1507,7 +1507,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3500
      * @tc.name      testList14Chapter0035
      * @tc.desc      Test the consistency and independence of multiple calls to the convertToArray method
      * @tc.size      MediumTest
@@ -1539,7 +1539,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3600
      * @tc.name      testList14Chapter0036
      * @tc.desc      Test the convertToArray method to convert a List containing undefined, null, and optional types
      * @tc.size      MediumTest
@@ -1574,7 +1574,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3700
      * @tc.name      testList14Chapter0037
      * @tc.desc      Test the convertToArray method with an extremely long list (memory boundary test)
      * @tc.size      LargeTest
@@ -1602,7 +1602,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3800
      * @tc.name      testList14Chapter0038
      * @tc.desc      Test the convertToArray method to convert a List initialized from a read-only array/ArrayLike
      * @tc.size      MediumTest
@@ -1629,7 +1629,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_3900
      * @tc.name      testList14Chapter0039
      * @tc.desc      Test the convertToArray method to convert a List containing unique Symbol and BigInt values
      * @tc.size      MediumTest
@@ -1654,7 +1654,7 @@ export default function ListTest14() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT14_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST14_4000
      * @tc.name      testList14Chapter0040
      * @tc.desc      Test the convertToArray method to convert a List containing circular reference objects
      * @tc.size      MediumTest

@@ -325,7 +325,7 @@ export default function ListTest08() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    SUB_LIST_TEXT08_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_0100
      * @tc.name      testList08Chapter0001
      * @tc.desc      List.removeByIndex: remove boolean/boolean-like elements
      * @tc.size      MediumTest
@@ -357,7 +357,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_0200
      * @tc.name      testList08Chapter0002
      * @tc.desc      List.removeByIndex: remove basic objects (normal/nested/empty)
      * @tc.size      MediumTest
@@ -382,7 +382,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_0300
      * @tc.name      testList08Chapter0003
      * @tc.desc      List.removeByIndex: remove special objects (special-key/inherited/non-enumerable)
      * @tc.size      MediumTest
@@ -406,7 +406,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_0400
      * @tc.name      testList08Chapter0004
      * @tc.desc      List.removeByIndex: remove buffer objects (ArrayBuffer/DataView/TypedArray)
      * @tc.size      MediumTest
@@ -434,7 +434,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_0500
      * @tc.name      testList08Chapter0005
      * @tc.desc      List.removeByIndex: remove complex objects (Map/Set/Function/RegExp/Promise)
      * @tc.size      MediumTest
@@ -464,7 +464,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_0600
      * @tc.name      testList08Chapter0006
      * @tc.desc      List.removeByIndex: remove special-value/large/mixed objects
      * @tc.size      MediumTest
@@ -502,7 +502,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_0700
      * @tc.name      testList08Chapter0007
      * @tc.desc      List.removeByIndex: edge cases (empty/single-element/continuous removal/invalid index)
      * @tc.size      MediumTest
@@ -536,7 +536,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_0800
      * @tc.name      testList08Chapter0008
      * @tc.desc      List.removeByIndex: remove mixed-type element lists
      * @tc.size      MediumTest
@@ -571,7 +571,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_0900
      * @tc.name      testList08Chapter0009
      * @tc.desc      List.removeByIndex: remove special-value-inserted/small/new-key objects
      * @tc.size      MediumTest
@@ -603,7 +603,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1000
      * @tc.name      testList08Chapter0010
      * @tc.desc      List.removeByIndex: remove numeric expressions (hex/octal/scientific)
      * @tc.size      MediumTest
@@ -643,7 +643,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1100
      * @tc.name      testList08Chapter0011
      * @tc.desc      List.removeByIndex: remove boolean-like elements (falsy/truthy)
      * @tc.size      MediumTest
@@ -673,7 +673,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1200
      * @tc.name      testList08Chapter0012
      * @tc.desc      List.removeByIndex: edge cases (max index/continuous head-tail removal)
      * @tc.size      MediumTest
@@ -708,7 +708,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1300
      * @tc.name      testList08Chapter0013
      * @tc.desc      List.removeByIndex: remove complex mixed-type elements
      * @tc.size      MediumTest
@@ -755,7 +755,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1400
      * @tc.name      testList08Chapter0014
      * @tc.desc      List.removeByIndex: remove inherited/non-enumerable/special-key objects
      * @tc.size      MediumTest
@@ -781,7 +781,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1500
      * @tc.name      testList08Chapter0015
      * @tc.desc      List.removeByIndex: extreme cases (ultra-large/duplicate/cyclic removal)
      * @tc.size      MediumTest
@@ -818,7 +818,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT080_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1600
      * @tc.name      testList08Chapter0016
      * @tc.desc      List.remove: remove normal/zero-filled Uint8Array/number arrays
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1700
      * @tc.name      testList08Chapter0017
      * @tc.desc      List.remove: remove negative-number/non-numeric-index arrays
      * @tc.size      MediumTest
@@ -919,7 +919,7 @@ export default function ListTest08() {
       });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1800
      * @tc.name      testList08Chapter0018
      * @tc.desc      List.remove: remove NaN/Infinity/non-numeric type arrays
      * @tc.size      MediumTest
@@ -953,7 +953,7 @@ export default function ListTest08() {
       });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_1900
      * @tc.name      testList08Chapter0019
      * @tc.desc      List.remove: remove empty/overflow-value arrays
      * @tc.size      MediumTest
@@ -996,7 +996,7 @@ export default function ListTest08() {
       });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2000
      * @tc.name      testList08Chapter0020
      * @tc.desc      List.remove: remove nested/TypedArray-sub/ultra-long arrays
      * @tc.size      LargeTest
@@ -1047,7 +1047,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2100
      * @tc.name      testList08Chapter0021
      * @tc.desc      List.remove: remove function/keyword/Symbol-included arrays
      * @tc.size      MediumTest
@@ -1078,7 +1078,7 @@ export default function ListTest08() {
       });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2200
      * @tc.name      testList08Chapter0022
      * @tc.desc      List.remove: remove normal/special-char/empty strings
      * @tc.size      MediumTest
@@ -1108,7 +1108,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2300
      * @tc.name      testList08Chapter0023
      * @tc.desc      List.remove: remove escape-char/emoji/ultra-long strings
      * @tc.size      MediumTest
@@ -1140,7 +1140,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2400
      * @tc.name      testList08Chapter0024
      * @tc.desc      List.remove: remove basic/extreme/special numeric values
      * @tc.size      MediumTest
@@ -1173,7 +1173,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2500
      * @tc.name      testList08Chapter0025
      * @tc.desc      List.remove: remove boolean/boolean-like values
      * @tc.size      MediumTest
@@ -1201,7 +1201,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT5_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2600
      * @tc.name      testList08Chapter0026
      * @tc.desc      List.remove: remove normal/nested/empty objects
      * @tc.size      MediumTest
@@ -1230,7 +1230,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2700
      * @tc.name      testList08Chapter0027
      * @tc.desc      List.remove: remove special-key/inherited/buffer objects
      * @tc.size      MediumTest
@@ -1261,7 +1261,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2800
      * @tc.name      testList08Chapter0028
      * @tc.desc      List.remove: remove Map/Set/Function/RegExp/Promise complex objects
      * @tc.size      MediumTest
@@ -1296,7 +1296,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT6_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_2900
      * @tc.name      testList08Chapter0029
      * @tc.desc      List.remove: remove special-value/large/mixed objects
      * @tc.size      MediumTest
@@ -1341,7 +1341,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3000
      * @tc.name      testList08Chapter0030
      * @tc.desc      List.remove: remove boundary-index/empty/single-element lists
      * @tc.size      MediumTest
@@ -1372,7 +1372,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3100
      * @tc.name      testList08Chapter0031
      * @tc.desc      List.remove: remove mixed-data-type elements
      * @tc.size      MediumTest
@@ -1405,7 +1405,7 @@ export default function ListTest08() {
       expect(list3.get(1)).assertEqual(999n);
     });
     /**
-     * @tc.number    SUB_LIST_TEXT08_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3200
      * @tc.name      testList08Chapter0032
      * @tc.desc      List.remove: performance/correctness of removing massive elements
      * @tc.size      MediumTest
@@ -1439,7 +1439,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3300
      * @tc.name      testList08Chapter0033
      * @tc.desc      List.remove: remove Buffer+DataView+Map+Set special object combinations
      * @tc.size      MediumTest
@@ -1471,7 +1471,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3400
      * @tc.name      testList08Chapter0034
      * @tc.desc      List.remove: deep property correctness after removing nested objects
      * @tc.size      MediumTest
@@ -1504,7 +1504,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3500
      * @tc.name      testList08Chapter0035
      * @tc.desc      List.remove: remove undefined/null/NaN/Infinity special-value object combinations
      * @tc.size      MediumTest
@@ -1538,7 +1538,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3600
      * @tc.name      testList08Chapter0036
      * @tc.desc      List.remove: remove Function and Promise objects
      * @tc.size      MediumTest
@@ -1567,7 +1567,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3700
      * @tc.name      testList08Chapter0037
      * @tc.desc      List.remove: remove large/small object combinations
      * @tc.size      MediumTest
@@ -1600,7 +1600,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3800
      * @tc.name      testList08Chapter0038
      * @tc.desc      List.remove: continuous removal + boundary index combinations
      * @tc.size      MediumTest
@@ -1634,7 +1634,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_3900
      * @tc.name      testList08Chapter0039
      * @tc.desc      List.remove: remove duplicate elements in lists
      * @tc.size      MediumTest
@@ -1665,7 +1665,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_4000
      * @tc.name      testList08Chapter0040
      * @tc.desc      List.remove: correctness of cyclic element removal
      * @tc.size      MediumTest
@@ -1709,7 +1709,7 @@ export default function ListTest08() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT08_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST8_4100
      * @tc.name      testList08Chapter0041
      * @tc.desc      List.remove: remove empty/special-key object combinations
      * @tc.size      MediumTest

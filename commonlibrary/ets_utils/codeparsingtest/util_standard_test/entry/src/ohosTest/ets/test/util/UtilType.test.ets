@@ -113,7 +113,7 @@ export default function UtilTypeTest() {
     })
 
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1010
      * @tc.name Util1Test001
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -126,7 +126,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(ab1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1020
      * @tc.name Util1Test002
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -139,7 +139,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(sab1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1030
      * @tc.name Util1Test003
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -152,7 +152,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(obj1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1040
      * @tc.name Util1Test004
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -165,7 +165,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(arr1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1050
      * @tc.name Util1Test005
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -178,7 +178,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(dv1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1060
      * @tc.name Util1Test006
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -191,7 +191,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(num1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1070
      * @tc.name Util1Test007
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(str1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1080
      * @tc.name Util1Test008
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -217,7 +217,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(bool1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1090
      * @tc.name Util1Test009
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -230,7 +230,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(map1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1100
      * @tc.name Util1Test010
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -243,7 +243,7 @@ export default function UtilTypeTest() {
       expect(type.isAnyArrayBuffer(ab2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1110
      * @tc.name Util1Test011
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -256,7 +256,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(int8Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1120
      * @tc.name Util1Test012
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -269,7 +269,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(uint8Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1130
      * @tc.name Util1Test013
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -283,7 +283,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(dv2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1140
      * @tc.name Util1Test014
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -296,7 +296,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(float32Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1150
      * @tc.name Util1Test015
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -309,7 +309,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(ab3)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1160
      * @tc.name Util1Test016
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -322,7 +322,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(obj2)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1170
      * @tc.name Util1Test017
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -335,7 +335,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(str2)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1180
      * @tc.name Util1Test018
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -348,7 +348,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(set1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1190
      * @tc.name Util1Test019
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -361,7 +361,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(uint32Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1200
      * @tc.name Util1Test020
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function UtilTypeTest() {
       expect(type.isArrayBufferView(num2)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1210
      * @tc.name Util1Test021
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -387,7 +387,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(asyncFunc1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1220
      * @tc.name Util1Test022
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -400,7 +400,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(normalFunc1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1230
      * @tc.name Util1Test023
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -414,7 +414,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(asyncFunc2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1240
      * @tc.name Util1Test024
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -427,7 +427,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(genFunc1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1250
      * @tc.name Util1Test025
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -440,7 +440,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(obj3)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1260
      * @tc.name Util1Test026
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -453,7 +453,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(str3)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1270
      * @tc.name Util1Test027
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -466,7 +466,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(num3)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1280
      * @tc.name Util1Test028
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -479,7 +479,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(promise1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1290
      * @tc.name Util1Test029
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -492,7 +492,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(asyncFunc3)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1300
      * @tc.name Util1Test030
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -505,7 +505,7 @@ export default function UtilTypeTest() {
       expect(type.isAsyncFunction(arr2[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1310
      * @tc.name Util1Test031
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -518,7 +518,7 @@ export default function UtilTypeTest() {
       expect(type.isMap(map2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1320
      * @tc.name Util1Test032
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -531,7 +531,7 @@ export default function UtilTypeTest() {
       expect(type.isMap(obj4)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1330
      * @tc.name Util1Test033
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -544,7 +544,7 @@ export default function UtilTypeTest() {
       expect(type.isMap(map3)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1340
      * @tc.name Util1Test034
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -557,7 +557,7 @@ export default function UtilTypeTest() {
       expect(type.isMap(weakMap1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1350
      * @tc.name Util1Test035
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -570,7 +570,7 @@ export default function UtilTypeTest() {
       expect(type.isMap(str4)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1360
      * @tc.name Util1Test036
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -583,7 +583,7 @@ export default function UtilTypeTest() {
       expect(type.isMap(num4)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1370
      * @tc.name Util1Test037
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -596,7 +596,7 @@ export default function UtilTypeTest() {
       expect(type.isMap(arr3)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1380
      * @tc.name Util1Test038
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -611,7 +611,7 @@ export default function UtilTypeTest() {
 
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1390
      * @tc.name Util1Test039
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -624,7 +624,7 @@ export default function UtilTypeTest() {
       expect(type.isMap(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1400
      * @tc.name Util1Test040
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -637,7 +637,7 @@ export default function UtilTypeTest() {
       expect(type.isMap(set2)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1410
      * @tc.name Util1Test041
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -650,7 +650,7 @@ export default function UtilTypeTest() {
       expect(type.isPromise(promise2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1420
      * @tc.name Util1Test042
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -663,7 +663,7 @@ export default function UtilTypeTest() {
       expect(type.isPromise(promise3)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1430
      * @tc.name Util1Test043
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -678,7 +678,7 @@ export default function UtilTypeTest() {
 
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1440
      * @tc.name Util1Test044
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -691,7 +691,7 @@ export default function UtilTypeTest() {
       expect(type.isPromise(normalFunc2)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1450
      * @tc.name Util1Test045
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -704,7 +704,7 @@ export default function UtilTypeTest() {
       expect(type.isPromise(obj5)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1460
      * @tc.name Util1Test046
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -717,7 +717,7 @@ export default function UtilTypeTest() {
       expect(type.isPromise(str5)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1470
      * @tc.name Util1Test047
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -730,7 +730,7 @@ export default function UtilTypeTest() {
       expect(type.isPromise(arr4[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1480
      * @tc.name Util1Test048
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -744,7 +744,7 @@ export default function UtilTypeTest() {
 
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1490
      * @tc.name Util1Test049
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -757,7 +757,7 @@ export default function UtilTypeTest() {
       expect(type.isPromise(asyncFunc4())).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1500
      * @tc.name Util1Test050
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -770,7 +770,7 @@ export default function UtilTypeTest() {
       expect(type.isPromise(num5)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1510
      * @tc.name Util1Test051
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -783,7 +783,7 @@ export default function UtilTypeTest() {
       expect(type.isDate(date1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1520
      * @tc.name Util1Test052
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -796,7 +796,7 @@ export default function UtilTypeTest() {
       expect(type.isDate(date2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1530
      * @tc.name Util1Test053
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -809,7 +809,7 @@ export default function UtilTypeTest() {
       expect(type.isDate(str6)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1540
      * @tc.name Util1Test054
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -822,7 +822,7 @@ export default function UtilTypeTest() {
       expect(type.isDate(num6)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1550
      * @tc.name Util1Test055
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -836,7 +836,7 @@ export default function UtilTypeTest() {
 
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1560
      * @tc.name Util1Test056
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -849,7 +849,7 @@ export default function UtilTypeTest() {
       expect(type.isDate(date3)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1570
      * @tc.name Util1Test057
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -862,7 +862,7 @@ export default function UtilTypeTest() {
       expect(type.isDate(arr5[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1580
      * @tc.name Util1Test058
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -875,7 +875,7 @@ export default function UtilTypeTest() {
       expect(type.isDate(map6)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1590
      * @tc.name Util1Test059
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -888,7 +888,7 @@ export default function UtilTypeTest() {
       expect(type.isDate(nullDate)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1600
      * @tc.name Util1Test060
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -901,7 +901,7 @@ export default function UtilTypeTest() {
       expect(type.isDate(undefinedDate)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1610
      * @tc.name Util1Test061
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -914,7 +914,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(reg1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1620
      * @tc.name Util1Test062
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -927,7 +927,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(reg2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1630
      * @tc.name Util1Test063
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -940,7 +940,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(str7)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1640
      * @tc.name Util1Test064
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -953,7 +953,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(obj7)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1650
      * @tc.name Util1Test065
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -966,7 +966,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(reg3)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1660
      * @tc.name Util1Test066
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -979,7 +979,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(num7)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1670
      * @tc.name Util1Test067
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -992,7 +992,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(arr6[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1680
      * @tc.name Util1Test068
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1005,7 +1005,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(set3)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1690
      * @tc.name Util1Test069
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1018,7 +1018,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(reg4)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1700
      * @tc.name Util1Test070
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1031,7 +1031,7 @@ export default function UtilTypeTest() {
       expect(type.isRegExp(bool2)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1710
      * @tc.name Util1Test071
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1044,7 +1044,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(int16Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1720
      * @tc.name Util1Test072
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1057,7 +1057,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(uint8ClampedArr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1730
      * @tc.name Util1Test073
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1070,7 +1070,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(float64Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1740
      * @tc.name Util1Test074
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1083,7 +1083,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(bigInt64Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1750
      * @tc.name Util1Test075
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1096,7 +1096,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(ab4)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1760
      * @tc.name Util1Test076
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1110,7 +1110,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(dv3)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1770
      * @tc.name Util1Test077
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1123,7 +1123,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(str8)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1780
      * @tc.name Util1Test078
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1136,7 +1136,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(bigUint64Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1790
      * @tc.name Util1Test079
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1149,7 +1149,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(obj8)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1800
      * @tc.name Util1Test080
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1162,7 +1162,7 @@ export default function UtilTypeTest() {
       expect(type.isTypedArray(arr7[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1810
      * @tc.name Util1Test081
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1176,7 +1176,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(proxy1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1820
      * @tc.name Util1Test082
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1189,7 +1189,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(nestedObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1830
      * @tc.name Util1Test083
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1203,7 +1203,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(nonProxy1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1840
      * @tc.name Util1Test084
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1218,7 +1218,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(obj9)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1850
      * @tc.name Util1Test085
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1232,7 +1232,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(proxy3)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1860
      * @tc.name Util1Test086
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1245,7 +1245,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(str9)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1870
      * @tc.name Util1Test087
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1258,7 +1258,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(num8)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1880
      * @tc.name Util1Test088
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1272,7 +1272,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(proxy4)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1890
      * @tc.name Util1Test089
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1285,7 +1285,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(nullProxy)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1900
      * @tc.name Util1Test090
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1299,7 +1299,7 @@ export default function UtilTypeTest() {
       expect(type.isProxy(proxy5)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1910
      * @tc.name Util1Test091
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1312,7 +1312,7 @@ export default function UtilTypeTest() {
       expect(type.isNativeError(error1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1920
      * @tc.name Util1Test092
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1325,7 +1325,7 @@ export default function UtilTypeTest() {
       expect(type.isNativeError(typeError1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1930
      * @tc.name Util1Test093
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1338,7 +1338,7 @@ export default function UtilTypeTest() {
       expect(type.isNativeError(referenceError1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1940
      * @tc.name Util1Test094
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1351,7 +1351,7 @@ export default function UtilTypeTest() {
       expect(type.isNativeError(str10)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1950
      * @tc.name Util1Test095
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1364,7 +1364,7 @@ export default function UtilTypeTest() {
       expect(type.isNativeError(obj10)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1960
      * @tc.name Util1Test096
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1377,7 +1377,7 @@ export default function UtilTypeTest() {
       expect(type.isNativeError(rangeError1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1970
      * @tc.name Util1Test097
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1390,7 +1390,7 @@ export default function UtilTypeTest() {
       expect(type.isNativeError(num9)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1980
      * @tc.name Util1Test098
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1405,7 +1405,7 @@ export default function UtilTypeTest() {
 
     });
     /**
-     * @tc.number SUB_BUILTINS_UTIL1_TEST_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_1990
      * @tc.name Util1Test099
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1418,7 +1418,7 @@ export default function UtilTypeTest() {
       expect(type.isNativeError(set4)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2000
      * @tc.name Util1Test100
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1431,7 +1431,7 @@ export default function UtilTypeTest() {
       expect(type.isNativeError(syntaxError1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2010
      * @tc.name Util1Test101
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1444,7 +1444,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(numVa)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2020
      * @tc.name Util1Test102
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1457,7 +1457,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorFunction(asyncFu)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2030
      * @tc.name Util1Test103
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1470,7 +1470,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorFunction(normalFunc3)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2040
      * @tc.name Util1Test104
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1483,7 +1483,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorFunction(asyncFunc5)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2050
      * @tc.name Util1Test105
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1496,7 +1496,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorFunction(obj11)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2060
      * @tc.name Util1Test106
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1509,7 +1509,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorFunction(str11)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2070
      * @tc.name Util1Test107
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1522,7 +1522,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorFunction(num10)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2080
      * @tc.name Util1Test108
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1535,7 +1535,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(map001)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_10900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2090
      * @tc.name Util1Test109
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1548,7 +1548,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorFunction(map8)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2100
      * @tc.name Util1Test110
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1562,7 +1562,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorFunction(genObj1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2110
      * @tc.name Util1Test111
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1575,7 +1575,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(weakMap2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2120
      * @tc.name Util1Test112
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1589,7 +1589,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(weakMap3)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2130
      * @tc.name Util1Test113
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1602,7 +1602,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(map9)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2140
      * @tc.name Util1Test114
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1615,7 +1615,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(obj12)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2150
      * @tc.name Util1Test115
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1628,7 +1628,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(str12)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2160
      * @tc.name Util1Test116
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1641,7 +1641,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(num11)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2170
      * @tc.name Util1Test117
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1655,7 +1655,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(weakMap4)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2180
      * @tc.name Util1Test118
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1669,7 +1669,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(arr10[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_11900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2190
      * @tc.name Util1Test119
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1682,7 +1682,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(set5)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2200
      * @tc.name Util1Test120
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1695,7 +1695,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(weakSet1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2210
      * @tc.name Util1Test121
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1708,7 +1708,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(nullSab)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2220
      * @tc.name Util1Test122
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1721,7 +1721,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(sab2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2230
      * @tc.name Util1Test123
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1734,7 +1734,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(ab5)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2240
      * @tc.name Util1Test124
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1747,7 +1747,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(sab3)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2250
      * @tc.name Util1Test125
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1760,7 +1760,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(str16)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2260
      * @tc.name Util1Test126
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1774,7 +1774,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(obj17)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2270
      * @tc.name Util1Test127
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1787,7 +1787,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(num15)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2280
      * @tc.name Util1Test128
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1801,7 +1801,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(arr15[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_12900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2290
      * @tc.name Util1Test129
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1815,7 +1815,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(dv4)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2300
      * @tc.name Util1Test130
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1828,7 +1828,7 @@ export default function UtilTypeTest() {
       expect(type.isSharedArrayBuffer(map13)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2310
      * @tc.name Util1Test131
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1841,7 +1841,7 @@ export default function UtilTypeTest() {
       expect(type.isModuleNamespaceObject(emptyObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2320
      * @tc.name Util1Test132
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1854,7 +1854,7 @@ export default function UtilTypeTest() {
       expect(type.isModuleNamespaceObject(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2330
      * @tc.name Util1Test133
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1868,7 +1868,7 @@ export default function UtilTypeTest() {
 
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2340
      * @tc.name Util1Test134
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1881,7 +1881,7 @@ export default function UtilTypeTest() {
       expect(type.isModuleNamespaceObject(boolVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2350
      * @tc.name Util1Test135
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1894,7 +1894,7 @@ export default function UtilTypeTest() {
       expect(type.isModuleNamespaceObject(arrVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2360
      * @tc.name Util1Test136
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1907,7 +1907,7 @@ export default function UtilTypeTest() {
       expect(type.isModuleNamespaceObject(mapVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2370
      * @tc.name Util1Test137
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1920,7 +1920,7 @@ export default function UtilTypeTest() {
       expect(type.isModuleNamespaceObject(dateVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2380
      * @tc.name Util1Test138
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1933,7 +1933,7 @@ export default function UtilTypeTest() {
       expect(type.isModuleNamespaceObject(regVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_13900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2390
      * @tc.name Util1Test139
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1946,7 +1946,7 @@ export default function UtilTypeTest() {
       expect(type.isModuleNamespaceObject(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2400
      * @tc.name Util1Test140
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1959,7 +1959,7 @@ export default function UtilTypeTest() {
       expect(type.isModuleNamespaceObject(undefinedVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2410
      * @tc.name Util1Test141
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1972,7 +1972,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(argsObj1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2420
      * @tc.name Util1Test142
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1985,7 +1985,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(emptyArr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2430
      * @tc.name Util1Test143
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -1998,7 +1998,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2440
      * @tc.name Util1Test144
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2011,7 +2011,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2450
      * @tc.name Util1Test145
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2024,7 +2024,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2460
      * @tc.name Util1Test146
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2037,7 +2037,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(mapVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2470
      * @tc.name Util1Test147
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2050,7 +2050,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(arrWithArgs[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2480
      * @tc.name Util1Test148
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2063,7 +2063,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_14900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2490
      * @tc.name Util1Test149
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2076,7 +2076,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(promiseVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2500
      * @tc.name Util1Test150
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2089,7 +2089,7 @@ export default function UtilTypeTest() {
       expect(type.isArgumentsObject(argsObj1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2510
      * @tc.name Util1Test151
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2102,7 +2102,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(ab)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2520
      * @tc.name Util1Test152
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2115,7 +2115,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2530
      * @tc.name Util1Test153
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2128,7 +2128,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2540
      * @tc.name Util1Test154
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2141,7 +2141,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(mapVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2550
      * @tc.name Util1Test155
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2154,7 +2154,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(promiseVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2560
      * @tc.name Util1Test156
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2167,7 +2167,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2570
      * @tc.name Util1Test157
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2180,7 +2180,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(undefinedVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2580
      * @tc.name Util1Test158
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2193,7 +2193,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(dateVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_15900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2590
      * @tc.name Util1Test159
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2206,7 +2206,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(regVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2600
      * @tc.name Util1Test160
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2219,7 +2219,7 @@ export default function UtilTypeTest() {
       expect(type.isExternal(boolObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2610
      * @tc.name Util1Test161
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2233,7 +2233,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(dv1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2620
      * @tc.name Util1Test162
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2247,7 +2247,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(dv2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2630
      * @tc.name Util1Test163
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2261,7 +2261,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2640
      * @tc.name Util1Test164
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2274,7 +2274,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2650
      * @tc.name Util1Test165
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2287,7 +2287,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2660
      * @tc.name Util1Test166
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2302,7 +2302,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(arrWithDv[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2670
      * @tc.name Util1Test167
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2316,7 +2316,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(int8Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2680
      * @tc.name Util1Test168
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2329,7 +2329,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_16900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2690
      * @tc.name Util1Test169
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2342,7 +2342,7 @@ export default function UtilTypeTest() {
       expect(type.isDataView(promiseVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2700
      * @tc.name Util1Test170
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2356,7 +2356,7 @@ export default function UtilTypeTest() {
 
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2710
      * @tc.name Util1Test171
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2369,7 +2369,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(float32Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2720
      * @tc.name Util1Test172
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2382,7 +2382,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(float64Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2730
      * @tc.name Util1Test173
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2395,7 +2395,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(ab)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2740
      * @tc.name Util1Test174
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2408,7 +2408,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2750
      * @tc.name Util1Test175
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2421,7 +2421,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2760
      * @tc.name Util1Test176
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2435,7 +2435,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(arrWithFloat32[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2770
      * @tc.name Util1Test177
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2448,7 +2448,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2780
      * @tc.name Util1Test178
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2461,7 +2461,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_17900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2790
      * @tc.name Util1Test179
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2474,7 +2474,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(int32Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2800
      * @tc.name Util1Test180
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2487,7 +2487,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat32Array(float32Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2810
      * @tc.name Util1Test181
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2500,7 +2500,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(normalFunc)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2820
      * @tc.name Util1Test182
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2513,7 +2513,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2830
      * @tc.name Util1Test183
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2526,7 +2526,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(arrVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2840
      * @tc.name Util1Test184
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2539,7 +2539,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2850
      * @tc.name Util1Test185
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2552,7 +2552,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2860
      * @tc.name Util1Test186
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2565,7 +2565,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(promiseVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2870
      * @tc.name Util1Test187
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2578,7 +2578,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(nullMap)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2880
      * @tc.name Util1Test188
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2591,7 +2591,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(nullObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_18900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2890
      * @tc.name Util1Test189
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2604,7 +2604,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(set1)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2900
      * @tc.name Util1Test190
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2617,7 +2617,7 @@ export default function UtilTypeTest() {
       expect(type.isGeneratorObject(func)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2910
      * @tc.name Util1Test191
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2630,7 +2630,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(set1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2920
      * @tc.name Util1Test192
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2643,7 +2643,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(set2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2930
      * @tc.name Util1Test193
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2656,7 +2656,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(mapVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2940
      * @tc.name Util1Test194
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2669,7 +2669,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(arrVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2950
      * @tc.name Util1Test195
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2682,7 +2682,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2960
      * @tc.name Util1Test196
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2695,7 +2695,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2970
      * @tc.name Util1Test197
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2709,7 +2709,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(arrWithSet[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2980
      * @tc.name Util1Test198
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2722,7 +2722,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_19900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_2990
      * @tc.name Util1Test199
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2735,7 +2735,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3000
      * @tc.name Util1Test200
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2748,7 +2748,7 @@ export default function UtilTypeTest() {
       expect(type.isSet(weakSetVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3010
      * @tc.name Util1Test201
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2761,7 +2761,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(float64Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3020
      * @tc.name Util1Test202
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2774,7 +2774,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(float64Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3030
      * @tc.name Util1Test203
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2787,7 +2787,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(float32Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3040
      * @tc.name Util1Test204
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2800,7 +2800,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(ab)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3050
      * @tc.name Util1Test205
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2813,7 +2813,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3060
      * @tc.name Util1Test206
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2826,7 +2826,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3070
      * @tc.name Util1Test207
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2840,7 +2840,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(arrWithFloat64[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3080
      * @tc.name Util1Test208
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2853,7 +2853,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(bigInt64Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_20900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3090
      * @tc.name Util1Test209
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2866,7 +2866,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3100
      * @tc.name Util1Test210
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2879,7 +2879,7 @@ export default function UtilTypeTest() {
       expect(type.isFloat64Array(dateVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3110
      * @tc.name Util1Test211
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2892,7 +2892,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(int8Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3120
      * @tc.name Util1Test212
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2906,7 +2906,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(int8Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3130
      * @tc.name Util1Test213
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2919,7 +2919,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(uint8Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3140
      * @tc.name Util1Test214
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2932,7 +2932,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(int16Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3150
      * @tc.name Util1Test215
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2945,7 +2945,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(plainArr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3160
      * @tc.name Util1Test216
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2958,7 +2958,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3170
      * @tc.name Util1Test217
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2973,7 +2973,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(arrWithInt8[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3180
      * @tc.name Util1Test218
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2986,7 +2986,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_21900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3190
      * @tc.name Util1Test219
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -2999,7 +2999,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(undefinedVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3200
      * @tc.name Util1Test220
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3012,7 +3012,7 @@ export default function UtilTypeTest() {
       expect(type.isInt8Array(mapVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3210
      * @tc.name Util1Test221
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3025,7 +3025,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(int16Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3220
      * @tc.name Util1Test222
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3038,7 +3038,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(int16Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3230
      * @tc.name Util1Test223
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3051,7 +3051,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(int8Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3240
      * @tc.name Util1Test224
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3064,7 +3064,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(int32Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3250
      * @tc.name Util1Test225
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3077,7 +3077,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3260
      * @tc.name Util1Test226
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3090,7 +3090,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(boolVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3270
      * @tc.name Util1Test227
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3104,7 +3104,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(arrWithInt16[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3280
      * @tc.name Util1Test228
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3117,7 +3117,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(promiseVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_22900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3290
      * @tc.name Util1Test229
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3130,7 +3130,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3300
      * @tc.name Util1Test230
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3144,7 +3144,7 @@ export default function UtilTypeTest() {
       expect(type.isInt16Array(dv)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3310
      * @tc.name Util1Test231
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3157,7 +3157,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(int32Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3320
      * @tc.name Util1Test232
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3170,7 +3170,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(int32Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3330
      * @tc.name Util1Test233
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3183,7 +3183,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(uint32Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3340
      * @tc.name Util1Test234
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3196,7 +3196,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(int16Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3350
      * @tc.name Util1Test235
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3209,7 +3209,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3360
      * @tc.name Util1Test236
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3222,7 +3222,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3370
      * @tc.name Util1Test237
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3236,7 +3236,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(arrWithInt32[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3380
      * @tc.name Util1Test238
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3249,7 +3249,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(setVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_23900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3390
      * @tc.name Util1Test239
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3262,7 +3262,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(undefinedVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3400
      * @tc.name Util1Test240
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3275,7 +3275,7 @@ export default function UtilTypeTest() {
       expect(type.isInt32Array(errorVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3410
      * @tc.name Util1Test241
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3289,7 +3289,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(mapKeysIter)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3420
      * @tc.name Util1Test242
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3303,7 +3303,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(mapValsIter)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3430
      * @tc.name Util1Test243
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3317,7 +3317,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(mapEntriesIter)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3440
      * @tc.name Util1Test244
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3331,7 +3331,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(setIter)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3450
      * @tc.name Util1Test245
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3345,7 +3345,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(arrIter)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3460
      * @tc.name Util1Test246
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3358,7 +3358,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(map)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3470
      * @tc.name Util1Test247
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3371,7 +3371,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3480
      * @tc.name Util1Test248
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3386,7 +3386,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(arrWithMapIter[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_24900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3490
      * @tc.name Util1Test249
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3399,7 +3399,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3500
      * @tc.name Util1Test250
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3412,7 +3412,7 @@ export default function UtilTypeTest() {
       expect(type.isMapIterator(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3510
      * @tc.name Util1Test251
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3426,7 +3426,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(setKeysIter)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3520
      * @tc.name Util1Test252
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3440,7 +3440,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(setValsIter)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3530
      * @tc.name Util1Test253
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3454,7 +3454,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(setEntriesIter)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3540
      * @tc.name Util1Test254
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3468,7 +3468,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(mapIter)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3550
      * @tc.name Util1Test255
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3482,7 +3482,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(arrIter)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3560
      * @tc.name Util1Test256
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3495,7 +3495,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(set)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3570
      * @tc.name Util1Test257
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3508,7 +3508,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3580
      * @tc.name Util1Test258
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3523,7 +3523,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(arrWithSetIter[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_25900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3590
      * @tc.name Util1Test259
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3536,7 +3536,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3600
      * @tc.name Util1Test260
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3549,7 +3549,7 @@ export default function UtilTypeTest() {
       expect(type.isSetIterator(boolVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3610
      * @tc.name Util1Test261
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3562,7 +3562,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(uint8Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3620
      * @tc.name Util1Test262
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3576,7 +3576,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(uint8Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3630
      * @tc.name Util1Test263
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3589,7 +3589,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(uint8ClampedArr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3640
      * @tc.name Util1Test264
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3602,7 +3602,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(int8Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3650
      * @tc.name Util1Test265
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3615,7 +3615,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3660
      * @tc.name Util1Test266
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3628,7 +3628,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3670
      * @tc.name Util1Test267
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3643,7 +3643,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(arrWithUint8[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3680
      * @tc.name Util1Test268
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3656,7 +3656,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_26900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3690
      * @tc.name Util1Test269
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3669,7 +3669,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3700
      * @tc.name Util1Test270
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3682,7 +3682,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8Array(weakMapVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3710
      * @tc.name Util1Test271
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3695,7 +3695,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(uint8ClampedArr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3720
      * @tc.name Util1Test272
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3709,7 +3709,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(uint8ClampedArr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3730
      * @tc.name Util1Test273
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3722,7 +3722,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(uint8Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3740
      * @tc.name Util1Test274
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3735,7 +3735,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(uint16Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3750
      * @tc.name Util1Test275
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3748,7 +3748,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(plainArr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3760
      * @tc.name Util1Test276
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3761,7 +3761,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3770
      * @tc.name Util1Test277
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3776,7 +3776,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(arrWithUint8Clamped[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3780
      * @tc.name Util1Test278
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3789,7 +3789,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_27900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3790
      * @tc.name Util1Test279
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3802,7 +3802,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3800
      * @tc.name Util1Test280
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3815,7 +3815,7 @@ export default function UtilTypeTest() {
       expect(type.isUint8ClampedArray(promiseVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3810
      * @tc.name Util1Test281
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3828,7 +3828,7 @@ export default function UtilTypeTest() {
       expect(type.isUint16Array(uint16Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3820
      * @tc.name Util1Test282
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3841,7 +3841,7 @@ export default function UtilTypeTest() {
       expect(type.isUint16Array(uint16Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3830
      * @tc.name Util1Test283
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3854,7 +3854,7 @@ export default function UtilTypeTest() {
       expect(type.isUint16Array(uint32Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3840
      * @tc.name Util1Test284
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3868,7 +3868,7 @@ export default function UtilTypeTest() {
 
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3850
      * @tc.name Util1Test285
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3881,7 +3881,7 @@ export default function UtilTypeTest() {
       expect(type.isUint16Array(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3860
      * @tc.name Util1Test286
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3894,7 +3894,7 @@ export default function UtilTypeTest() {
       expect(type.isUint16Array(boolVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3870
      * @tc.name Util1Test287
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3908,7 +3908,7 @@ export default function UtilTypeTest() {
       expect(type.isUint16Array(arrWithUint16[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3880
      * @tc.name Util1Test288
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3921,7 +3921,7 @@ export default function UtilTypeTest() {
       expect(type.isUint16Array(mapVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_28900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3890
      * @tc.name Util1Test289
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3934,7 +3934,7 @@ export default function UtilTypeTest() {
       expect(type.isUint16Array(undefinedVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3900
      * @tc.name Util1Test290
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3948,7 +3948,7 @@ export default function UtilTypeTest() {
       expect(type.isUint16Array(dv)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3910
      * @tc.name Util1Test291
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3961,7 +3961,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(errorVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3920
      * @tc.name Util1Test292
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3974,7 +3974,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(uint32Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3930
      * @tc.name Util1Test293
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -3987,7 +3987,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(uint32Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3940
      * @tc.name Util1Test294
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4000,7 +4000,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(int32Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3950
      * @tc.name Util1Test295
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4013,7 +4013,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(uint16Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3960
      * @tc.name Util1Test296
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4026,7 +4026,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3970
      * @tc.name Util1Test297
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4039,7 +4039,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3980
      * @tc.name Util1Test298
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4053,7 +4053,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(arrWithUint32[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_29900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_3990
      * @tc.name Util1Test299
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4066,7 +4066,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(setVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4000
      * @tc.name Util1Test300
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4079,7 +4079,7 @@ export default function UtilTypeTest() {
       expect(type.isUint32Array(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4010
      * @tc.name Util1Test301
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4092,7 +4092,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(weakMap1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4020
      * @tc.name Util1Test302
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4106,7 +4106,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(weakMap2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4030
      * @tc.name Util1Test303
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4119,7 +4119,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(mapVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4040
      * @tc.name Util1Test304
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4132,7 +4132,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(weakSetVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4050
      * @tc.name Util1Test305
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4145,7 +4145,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4060
      * @tc.name Util1Test306
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4158,7 +4158,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4070
      * @tc.name Util1Test307
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4173,7 +4173,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(arrWithWeakMap[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4080
      * @tc.name Util1Test308
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4186,7 +4186,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_30900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4090
      * @tc.name Util1Test309
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4199,7 +4199,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4100
      * @tc.name Util1Test310
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4212,7 +4212,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakMap(arrVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4110
      * @tc.name Util1Test311
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4225,7 +4225,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(weakSet1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4120
      * @tc.name Util1Test312
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4239,7 +4239,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(weakSet2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4130
      * @tc.name Util1Test313
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4252,7 +4252,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(setVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4140
      * @tc.name Util1Test314
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4265,7 +4265,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(weakMapVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4150
      * @tc.name Util1Test315
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4278,7 +4278,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(plainArr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4160
      * @tc.name Util1Test316
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4291,7 +4291,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4170
      * @tc.name Util1Test317
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4306,7 +4306,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(arrWithWeakSet[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4180
      * @tc.name Util1Test318
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4319,7 +4319,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(numVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_31900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4190
      * @tc.name Util1Test319
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4332,7 +4332,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4200
      * @tc.name Util1Test320
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4345,7 +4345,7 @@ export default function UtilTypeTest() {
       expect(type.isWeakSet(dateVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4210
      * @tc.name Util1Test321
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4358,7 +4358,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(bigInt64Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4220
      * @tc.name Util1Test322
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4372,7 +4372,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(bigInt64Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4230
      * @tc.name Util1Test323
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4385,7 +4385,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(bigUint64Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4240
      * @tc.name Util1Test324
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4398,7 +4398,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(int32Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4250
      * @tc.name Util1Test325
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4411,7 +4411,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4260
      * @tc.name Util1Test326
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4424,7 +4424,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(bigIntVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4270
      * @tc.name Util1Test327
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4439,7 +4439,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(arrWithBigInt64[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4280
      * @tc.name Util1Test328
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4452,7 +4452,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_32900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4290
      * @tc.name Util1Test329
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4465,7 +4465,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4300
      * @tc.name Util1Test330
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4478,7 +4478,7 @@ export default function UtilTypeTest() {
       expect(type.isBigInt64Array(promiseVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4310
      * @tc.name Util1Test331
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4491,7 +4491,7 @@ export default function UtilTypeTest() {
       expect(type.isBigUint64Array(bigUint64Arr1)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4320
      * @tc.name Util1Test332
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4504,7 +4504,7 @@ export default function UtilTypeTest() {
       expect(type.isBigUint64Array(bigUint64Arr2)).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4330
      * @tc.name Util1Test333
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4517,7 +4517,7 @@ export default function UtilTypeTest() {
       expect(type.isBigUint64Array(bigInt64Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4340
      * @tc.name Util1Test334
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4530,7 +4530,7 @@ export default function UtilTypeTest() {
       expect(type.isBigUint64Array(uint32Arr)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4350
      * @tc.name Util1Test335
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4543,7 +4543,7 @@ export default function UtilTypeTest() {
       expect(type.isBigUint64Array(plainObj)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4360
      * @tc.name Util1Test336
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4556,7 +4556,7 @@ export default function UtilTypeTest() {
       expect(type.isBigUint64Array(bigIntVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4370
      * @tc.name Util1Test337
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4570,7 +4570,7 @@ export default function UtilTypeTest() {
       expect(type.isBigUint64Array(arrWithBigUint64[0])).assertEqual(true);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4380
      * @tc.name Util1Test338
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4583,7 +4583,7 @@ export default function UtilTypeTest() {
       expect(type.isBigUint64Array(strVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_33900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4390
      * @tc.name Util1Test339
      * @tc.desc test Util types
      * @tc.size MediumTest
@@ -4596,7 +4596,7 @@ export default function UtilTypeTest() {
       expect(type.isBigUint64Array(nullVal)).assertEqual(false);
     });
     /**
-     * @tc.number SUB_BUILTINS_Util1_TEST_34000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTILTYPE1_4400
      * @tc.name Util1Test340
      * @tc.desc test Util types
      * @tc.size MediumTest

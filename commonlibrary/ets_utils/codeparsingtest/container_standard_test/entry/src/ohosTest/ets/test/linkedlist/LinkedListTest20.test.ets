@@ -30,7 +30,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_0100
      * @tc.name      testLinkedList20Chapter0001
      * @tc.desc      Test adding an object containing function properties: with parameters
      * @tc.size      MediumTest
@@ -54,7 +54,7 @@ export default function LinkedListTest20() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_0200
      * @tc.name      testLinkedList20Chapter0002
      * @tc.desc      Test adding an object containing ArrayBuffer
      * @tc.size      MediumTest
@@ -82,7 +82,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_0300
      * @tc.name      testLinkedList20Chapter0003
      * @tc.desc      Test adding an object containing DataView
      * @tc.size      MediumTest
@@ -105,7 +105,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_0400
      * @tc.name      testLinkedList20Chapter0004
      * @tc.desc      Test adding an empty object
      * @tc.size      MediumTest
@@ -129,7 +129,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_0500
      * @tc.name      testLinkedList20Chapter0005
      * @tc.desc      Test adding a huge object
      * @tc.size      MediumTest
@@ -160,7 +160,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_0600
      * @tc.name      testLinkedList20Chapter0006
      * @tc.desc      Test adding an object containing null property
      * @tc.size      MediumTest
@@ -184,7 +184,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_0700
      * @tc.name      testLinkedList20Chapter0007
      * @tc.desc      Test adding an object containing NaN property
      * @tc.size      MediumTest
@@ -208,7 +208,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_0800
      * @tc.name      testLinkedList20Chapter0008
      * @tc.desc      Test adding an object containing Infinity property
      * @tc.size      MediumTest
@@ -232,7 +232,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_0900
      * @tc.name      testLinkedList20Chapter0009
      * @tc.desc      Test adding an object containing TypedArray property
      * @tc.size      MediumTest
@@ -256,7 +256,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1000
      * @tc.name      testLinkedList20Chapter0010
      * @tc.desc      Test adding an object containing Map property
      * @tc.size      MediumTest
@@ -280,7 +280,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1100
      * @tc.name      testLinkedList20Chapter0011
      * @tc.desc      Test adding an object containing Set property
      * @tc.size      MediumTest
@@ -304,7 +304,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1200
      * @tc.name      testLinkedList20Chapter0012
      * @tc.desc      Test adding an object containing Promise property
      * @tc.size      MediumTest
@@ -340,7 +340,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1300
      * @tc.name      testLinkedList20Chapter0013
      * @tc.desc      Test adding an object containing RegExp property
      * @tc.size      MediumTest
@@ -369,7 +369,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1400
      * @tc.name      testLinkedList20Chapter0014
      * @tc.desc      Test adding a normal Uint8Array array
      * @tc.size      MediumTest
@@ -388,7 +388,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1500
      * @tc.name      testLinkedList20Chapter0015
      * @tc.desc      Test adding an array containing multiple zeros
      * @tc.size      MediumTest
@@ -408,7 +408,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1600
      * @tc.name      testLinkedList20Chapter0016
      * @tc.desc      Test adding an array containing negative numbers converted to Uint8Array
      * @tc.size      MediumTest
@@ -427,7 +427,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1700
      * @tc.name      testLinkedList20Chapter0017
      * @tc.desc      Test adding arrays containing negative numbers converted to Uint8Array/Uint16Array
      * @tc.size      MediumTest
@@ -450,7 +450,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1800
      * @tc.name      testLinkedList20Chapter0018
      * @tc.desc      Test adding a special array
      * @tc.size      MediumTest
@@ -470,7 +470,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_1900
      * @tc.name      testLinkedList20Chapter0019
      * @tc.desc      Test adding an array containing NaN/Infinity
      * @tc.size      MediumTest
@@ -488,7 +488,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_2000
      * @tc.name      testLinkedList20Chapter0020
      * @tc.desc      Test adding an array containing non-numeric types
      * @tc.size      MediumTest
@@ -506,7 +506,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_2100
      * @tc.name      testLinkedList20Chapter0021
      * @tc.desc      Test adding an array containing non-numeric types
      * @tc.size      MediumTest
@@ -524,7 +524,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_2200
      * @tc.name      testLinkedList20Chapter0022
      * @tc.desc      Test adding an empty array
      * @tc.size      MediumTest
@@ -542,7 +542,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_2300
      * @tc.name      testLinkedList20Chapter0023
      * @tc.desc      Test adding array with overflow of huge values
      * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_2400
      * @tc.name      testLinkedList20Chapter0024
      * @tc.desc      Test adding Int8Array | Uint8Array | Uint8ClampedArray arrays
      * @tc.size      MediumTest
@@ -585,7 +585,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_2500
      * @tc.name      testLinkedList20Chapter0025
      * @tc.desc      Test adding Int16Array | Uint16Array | Int32Array | Uint32Array arrays
      * @tc.size      MediumTest
@@ -613,7 +613,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_2600
      * @tc.name      testLinkedList20Chapter0026
      * @tc.desc      Test adding Float32Array | Float64Array | BigInt64Array | BigUint64Array arrays
      * @tc.size      MediumTest
@@ -649,7 +649,7 @@ export default function LinkedListTest20() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT20_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST21_2700
      * @tc.name      testLinkedList20Chapter0027
      * @tc.desc      Test special value storage rules for TypedArray
      * @tc.size      MediumTest

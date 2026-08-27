@@ -29,7 +29,7 @@ export default function TreeSet05Test() {
     })
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_0100
      * @tc.name      testTreeSet05Chapter0001
      * @tc.desc      Test popFirst method with non-empty TreeSet containing string elements
      * @tc.size      MediumTest
@@ -51,7 +51,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_0200
      * @tc.name      testTreeSet05Chapter0002
      * @tc.desc      Test popFirst method with empty TreeSet
      * @tc.size      MediumTest
@@ -68,7 +68,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_0300
      * @tc.name      testTreeSet05Chapter0003
      * @tc.desc      Test popFirst method with single element TreeSet
      * @tc.size      MediumTest
@@ -88,7 +88,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_0400
      * @tc.name      testTreeSet05Chapter0004
      * @tc.desc      Test popFirst method with multiple pop operations on string TreeSet
      * @tc.size      MediumTest
@@ -126,7 +126,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_0500
      * @tc.name      testTreeSet05Chapter0005
      * @tc.desc      Test popFirst method with number TreeSet containing negative values
      * @tc.size      MediumTest
@@ -151,7 +151,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_0600
      * @tc.name      testTreeSet05Chapter0006
      * @tc.desc      Test popFirst method with TreeSet containing special number values
      * @tc.size      MediumTest
@@ -176,7 +176,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_0700
      * @tc.name      testTreeSet05Chapter0007
      * @tc.desc      Test popFirst method with TreeSet containing large number values
      * @tc.size      MediumTest
@@ -201,7 +201,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_0800
      * @tc.name      testTreeSet05Chapter0008
      * @tc.desc      Test popFirst method with custom comparator function for descending order
      * @tc.size      MediumTest
@@ -228,7 +228,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_0900
      * @tc.name      testTreeSet05Chapter0009
      * @tc.desc      Test popFirst method after clearing TreeSet
      * @tc.size      MediumTest
@@ -250,7 +250,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1000
      * @tc.name      testTreeSet05Chapter0010
      * @tc.desc      Test popFirst method with TreeSet containing duplicate values (should not have duplicates)
      * @tc.size      MediumTest
@@ -275,7 +275,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1100
      * @tc.name      testTreeSet05Chapter0011
      * @tc.desc      Test popFirst method with TreeSet containing boolean values
      * @tc.size      MediumTest
@@ -296,7 +296,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1200
      * @tc.name      testTreeSet05Chapter0012
      * @tc.desc      Test popFirst method with TreeSet containing special string values
      * @tc.size      MediumTest
@@ -322,7 +322,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1300
      * @tc.name      testTreeSet05Chapter0013
      * @tc.desc      Test popFirst method with TreeSet containing emoji and special characters
      * @tc.size      MediumTest
@@ -350,7 +350,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1400
      * @tc.name      testTreeSet05Chapter0014
      * @tc.desc      Test popFirst method error scenario - binding error (reverse test)
      * @tc.size      MediumTest
@@ -372,7 +372,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1500
      * @tc.name      testTreeSet05Chapter0015
      * @tc.desc      Test popLast method with non-empty TreeSet containing string elements
      * @tc.size      MediumTest
@@ -393,7 +393,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1600
      * @tc.name      testTreeSet05Chapter0016
      * @tc.desc      Test popLast method with empty TreeSet
      * @tc.size      MediumTest
@@ -410,7 +410,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1700
      * @tc.name      testTreeSet05Chapter0017
      * @tc.desc      Test popLast method with single element TreeSet
      * @tc.size      MediumTest
@@ -429,7 +429,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1800
      * @tc.name      testTreeSet05Chapter0018
      * @tc.desc      Test popLast method with multiple pop operations on string TreeSet
      * @tc.size      MediumTest
@@ -466,7 +466,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_1900
      * @tc.name      testTreeSet05Chapter0019
      * @tc.desc      Test popLast method with number TreeSet containing negative values
      * @tc.size      MediumTest
@@ -490,7 +490,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2000
      * @tc.name      testTreeSet05Chapter0020
      * @tc.desc      Test popLast method with TreeSet containing special number values
      * @tc.size      MediumTest
@@ -514,7 +514,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2100
      * @tc.name      testTreeSet05Chapter0021
      * @tc.desc      Test popLast method with TreeSet containing large number values
      * @tc.size      MediumTest
@@ -538,7 +538,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2200
      * @tc.name      testTreeSet05Chapter0022
      * @tc.desc      Test popLast method with custom comparator function for descending order
      * @tc.size      MediumTest
@@ -563,7 +563,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2300
      * @tc.name      testTreeSet05Chapter0023
      * @tc.desc      Test popLast method after clearing TreeSet
      * @tc.size      MediumTest
@@ -584,7 +584,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2400
      * @tc.name      testTreeSet05Chapter0024
      * @tc.desc      Test popLast method with TreeSet containing duplicate values
      * @tc.size      MediumTest
@@ -608,7 +608,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2500
      * @tc.name      testTreeSet05Chapter0025
      * @tc.desc      Test popLast method with TreeSet containing boolean values
      * @tc.size      MediumTest
@@ -628,7 +628,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2600
      * @tc.name      testTreeSet05Chapter0026
      * @tc.desc      Test popLast method with TreeSet containing special string values
      * @tc.size      MediumTest
@@ -653,7 +653,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2700
      * @tc.name      testTreeSet05Chapter0027
      * @tc.desc      Test popLast method with TreeSet containing emoji and special characters
      * @tc.size      MediumTest
@@ -680,7 +680,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2800
      * @tc.name      testTreeSet05Chapter0028
      * @tc.desc      Test popLast method with TreeSet containing ASCII special characters
      * @tc.size      MediumTest
@@ -709,7 +709,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_2900
      * @tc.name      testTreeSet05Chapter0029
      * @tc.desc      Test popLast method with TreeSet containing numeric string values
      * @tc.size      MediumTest
@@ -734,7 +734,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3000
      * @tc.name      testTreeSet05Chapter0030
      * @tc.desc      Test popLast method error scenario - binding error (reverse test)
      * @tc.size      MediumTest
@@ -755,7 +755,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3100
      * @tc.name      testTreeSet05Chapter0031
      * @tc.desc      Test clear method with TreeSet containing string elements
      * @tc.size      MediumTest
@@ -781,7 +781,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3200
      * @tc.name      testTreeSet05Chapter0032
      * @tc.desc      Test clear method with empty TreeSet
      * @tc.size      MediumTest
@@ -801,7 +801,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3300
      * @tc.name      testTreeSet05Chapter0033
      * @tc.desc      Test clear method with TreeSet containing single element
      * @tc.size      MediumTest
@@ -823,7 +823,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3400
      * @tc.name      testTreeSet05Chapter0034
      * @tc.desc      Test clear method with TreeSet containing number elements
      * @tc.size      MediumTest
@@ -850,7 +850,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3500
      * @tc.name      testTreeSet05Chapter0035
      * @tc.desc      Test clear method with TreeSet containing special number values
      * @tc.size      MediumTest
@@ -877,7 +877,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3600
      * @tc.name      testTreeSet05Chapter0036
      * @tc.desc      Test clear method with TreeSet containing boolean values
      * @tc.size      MediumTest
@@ -900,7 +900,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3700
      * @tc.name      testTreeSet05Chapter0037
      * @tc.desc      Test clear method with TreeSet containing custom comparator
      * @tc.size      MediumTest
@@ -927,7 +927,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3800
      * @tc.name      testTreeSet05Chapter0038
      * @tc.desc      Test clear method with TreeSet containing duplicate values
      * @tc.size      MediumTest
@@ -953,7 +953,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_3900
      * @tc.name      testTreeSet05Chapter0039
      * @tc.desc      Test clear method with TreeSet containing special string values
      * @tc.size      MediumTest
@@ -980,7 +980,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4000
      * @tc.name      testTreeSet05Chapter0040
      * @tc.desc      Test clear method with TreeSet containing emoji and special characters
      * @tc.size      MediumTest
@@ -1006,7 +1006,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4100
      * @tc.name      testTreeSet05Chapter0041
      * @tc.desc      Test clear method with TreeSet containing ASCII special characters
      * @tc.size      MediumTest
@@ -1033,7 +1033,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4200
      * @tc.name      testTreeSet05Chapter0042
      * @tc.desc      Test clear method and then add new elements
      * @tc.size      MediumTest
@@ -1063,7 +1063,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4300
      * @tc.name      testTreeSet05Chapter0043
      * @tc.desc      Test clear method on large TreeSet
      * @tc.size      MediumTest
@@ -1089,7 +1089,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4400
      * @tc.name      testTreeSet05Chapter0044
      * @tc.desc      Test clear method multiple times
      * @tc.size      MediumTest
@@ -1117,7 +1117,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4500
      * @tc.name      testTreeSet05Chapter0045
      * @tc.desc      Test clear method after pop operations
      * @tc.size      MediumTest
@@ -1142,7 +1142,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4600
      * @tc.name      testTreeSet05Chapter0046
      * @tc.desc      Test clear method error scenario - binding error (reverse test)
      * @tc.size      MediumTest
@@ -1164,7 +1164,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4700
      * @tc.name      testTreeSet05Chapter0047
      * @tc.desc      Test values method returns correct iterator for empty TreeSet
      * @tc.size      MediumTest
@@ -1181,7 +1181,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4800
      * @tc.name      testTreeSet05Chapter0048
      * @tc.desc      Test values method returns iterator with correct string values
      * @tc.size      MediumTest
@@ -1202,7 +1202,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_4900
      * @tc.name      testTreeSet05Chapter0049
      * @tc.desc      Test values method with number type data including boundary values
      * @tc.size      MediumTest
@@ -1225,7 +1225,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5000
      * @tc.name      testTreeSet05Chapter0050
      * @tc.desc      Test values method with boolean type data
      * @tc.size      MediumTest
@@ -1246,7 +1246,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5100
      * @tc.name      testTreeSet05Chapter0051
      * @tc.desc      Test values method with special number values (Infinity, -Infinity, NaN)
      * @tc.size      MediumTest
@@ -1266,7 +1266,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5200
      * @tc.name      testTreeSet05Chapter0052
      * @tc.desc      Test values method with large dataset
      * @tc.size      MediumTest
@@ -1289,7 +1289,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5300
      * @tc.name      testTreeSet05Chapter0053
      * @tc.desc      Test multiple calls to values method return independent iterators
      * @tc.size      MediumTest
@@ -1317,7 +1317,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5400
      * @tc.name      testTreeSet05Chapter0054
      * @tc.desc      Test values method with custom comparator
      * @tc.size      MediumTest
@@ -1343,7 +1343,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5500
      * @tc.name      testTreeSet05Chapter0055
      * @tc.desc      Test values method after removing elements
      * @tc.size      MediumTest
@@ -1366,7 +1366,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5600
      * @tc.name      testTreeSet05Chapter0056
      * @tc.desc      Test values method returns iterator that can be used in for-of loop
      * @tc.size      MediumTest
@@ -1389,7 +1389,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5700
      * @tc.name      testTreeSet05Chapter0057
      * @tc.desc      Test values method with object type data using custom comparator
      * @tc.size      MediumTest
@@ -1425,7 +1425,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5800
      * @tc.name      testTreeSet05Chapter0058
      * @tc.desc      Test values method after clearing the TreeSet
      * @tc.size      MediumTest
@@ -1446,7 +1446,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_5900
      * @tc.name      testTreeSet05Chapter0059
      * @tc.desc      Test values method with duplicate values (should not appear in iterator)
      * @tc.size      MediumTest
@@ -1471,7 +1471,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_6000
      * @tc.name      testTreeSet05Chapter0060
      * @tc.desc      Test values method returns iterator that respects insertion order with same values
      * @tc.size      MediumTest
@@ -1493,7 +1493,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_6100
      * @tc.name      testTreeSet05Chapter0061
      * @tc.desc      Test values method with negative numbers
      * @tc.size      MediumTest
@@ -1519,7 +1519,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_6200
      * @tc.name      testTreeSet05Chapter0062
      * @tc.desc      Test values method with floating point numbers
      * @tc.size      MediumTest
@@ -1543,7 +1543,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_6300
      * @tc.name      testTreeSet05Chapter0063
      * @tc.desc      Test values method returns new iterator each time called
      * @tc.size      MediumTest
@@ -1565,7 +1565,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_6400
      * @tc.name      testTreeSet05Chapter0064
      * @tc.desc      Test values method with very large TreeSet
      * @tc.size      MediumTest
@@ -1589,7 +1589,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_6500
      * @tc.name      testTreeSet05Chapter0065
      * @tc.desc      Test values method with mixed data types using union type
      * @tc.size      MediumTest
@@ -1610,7 +1610,7 @@ export default function TreeSet05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST05_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET6_6600
      * @tc.name      testTreeSet05Chapter0066
      * @tc.desc      Test values method error scenario - trying to bind values method
      * @tc.size      MediumTest

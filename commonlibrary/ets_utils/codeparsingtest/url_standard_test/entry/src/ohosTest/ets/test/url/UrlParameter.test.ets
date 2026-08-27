@@ -45,7 +45,7 @@ export default function ActsUrlParameterTest() {
     })
     /**
      * @tc.name   testUrlParameter001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_0100
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -64,7 +64,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_0200
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -83,7 +83,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_0300
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_0400
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_0500
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -140,7 +140,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_0600
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -159,7 +159,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_0700
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -178,7 +178,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_0800
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_0900
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1000
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -235,7 +235,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1100
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -254,7 +254,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1200
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -273,7 +273,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1300
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1400
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1500
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -330,7 +330,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1600
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -349,7 +349,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter017
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1700
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -368,7 +368,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1800
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -387,7 +387,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_1900
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -406,7 +406,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2000
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -425,7 +425,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter021
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2100
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -445,7 +445,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter022
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2200
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -464,7 +464,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter023
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2300
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -483,7 +483,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter024
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2400
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -502,7 +502,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter025
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2500
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -522,7 +522,7 @@ export default function ActsUrlParameterTest() {
 
     /**
      * @tc.name   testUrlParameter026
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2600
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -549,7 +549,7 @@ export default function ActsUrlParameterTest() {
 
     /**
      * @tc.name   testUrlParameter027
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2700
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -574,7 +574,7 @@ export default function ActsUrlParameterTest() {
 
     /**
      * @tc.name   testUrlParameter028
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2800
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -595,7 +595,7 @@ export default function ActsUrlParameterTest() {
 
     /**
      * @tc.name   testUrlParameter029
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_2900
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -614,7 +614,7 @@ export default function ActsUrlParameterTest() {
 
     /**
      * @tc.name   testUrlParameter030
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_3000
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -638,7 +638,7 @@ export default function ActsUrlParameterTest() {
     });
     /**
      * @tc.name   testUrlParameter031
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_PARAMETER_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLPARAMETER1_3100
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

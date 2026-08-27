@@ -49,7 +49,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackPush0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_0100
      * @tc.desc   Testing Stack push by number.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -69,7 +69,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackPush0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_0200
      * @tc.desc   Testing Stack push by string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -89,7 +89,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackPush0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_0300
      * @tc.desc   Testing Stack push by object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -112,7 +112,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackPush0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_0400
      * @tc.desc   Testing Stack push by object or string or number.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -141,7 +141,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackpop0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_0500
      * @tc.desc   Testing Stack pop by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -162,7 +162,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackpop0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_0600
      * @tc.desc   Testing Stack pop by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -191,7 +191,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackpop0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_0700
      * @tc.desc   Testing Stack pop by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -211,7 +211,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackpop0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_0800
      * @tc.desc   Testing Stack pop by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -231,7 +231,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackPeek0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PEEK_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_0900
      * @tc.desc   Testing Stack pop by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -260,7 +260,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackPeek0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PEEK_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1000
      * @tc.desc   Testing Stack pop by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -280,7 +280,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackLocate0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_01100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1100
      * @tc.desc   Testing Stack locate by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -309,7 +309,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackLocate0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1200
      * @tc.desc   Testing Stack locate by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -332,7 +332,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackLocate0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_LOCATE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1300
      * @tc.desc   Testing Stack locate by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -356,7 +356,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackForEach0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1400
      * @tc.desc   Testing Stack forEach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -384,7 +384,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackIsEmpty0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_ISEMPTY_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1500
      * @tc.desc   Testing isEmpty forEach by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -408,7 +408,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackLength0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_PUSH_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1600
      * @tc.desc   Testing isEmpty push by without.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -432,7 +432,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackForEach0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1700
      * @tc.desc   Testing Stack forEach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -456,7 +456,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackForEach0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1800
      * @tc.desc   Testing Stack forEach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -478,7 +478,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackForEach0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_1900
      * @tc.desc   Testing Stack forEach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -500,7 +500,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStackForEach0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_FOREACH_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_2000
      * @tc.desc   Testing Stack forEach by array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -522,7 +522,7 @@ export default function StackTest() {
     });
     /**
      * @tc.name   testStaticLocate001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATIC_CASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_2100
      * @tc.desc   Testing Static
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -548,7 +548,7 @@ export default function StackTest() {
 
     /**
      * @tc.name   testStaticForEach001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATIC_CASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STACK1_2200
      * @tc.desc   Testing Static
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -28,7 +28,7 @@ export default function StreamWritable04Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_0100
      * @tc.name      testStreamWritable04Chapter0001
      * @tc.desc      Set default encoding with invalid Unicode encoding \\udc04
      * @tc.size      MediumTest
@@ -57,7 +57,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_0200
      * @tc.name      testStreamWritable04Chapter0002
      * @tc.desc      Set default encoding with keyword "0"
      * @tc.size      MediumTest
@@ -86,7 +86,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_0300
      * @tc.name      testStreamWritable04Chapter0003
      * @tc.desc      Set default encoding with keyword "NaN"
      * @tc.size      MediumTest
@@ -115,7 +115,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_0400
      * @tc.name      testStreamWritable04Chapter0004
      * @tc.desc      Set default encoding with treestring type (large JSON-like string)
      * @tc.size      MediumTest
@@ -154,7 +154,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_0500
      * @tc.name      testStreamWritable04Chapter0005
      * @tc.desc      Set default encoding with slicestring type
      * @tc.size      MediumTest
@@ -187,7 +187,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_0600
      * @tc.name      testStreamWritable04Chapter0006
      * @tc.desc      Set default encoding with huge repeated string (memory test)
      * @tc.size      MediumTest
@@ -218,7 +218,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_0700
      * @tc.name      testStreamWritable04Chapter0007
      * @tc.desc      Set default encoding with valid encoding after multiple invalid attempts
      * @tc.size      MediumTest
@@ -258,7 +258,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_0800
      * @tc.name      testStreamWritable04Chapter0008
      * @tc.desc      Test cork method returns true when called on a writable stream
      * @tc.size      MediumTest
@@ -283,7 +283,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_0900
      * @tc.name      testStreamWritable04Chapter0009
      * @tc.desc      Test cork method increments writableCorked property by 1
      * @tc.size      MediumTest
@@ -310,7 +310,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1000
      * @tc.name      testStreamWritable04Chapter0010
      * @tc.desc      Test multiple cork calls increment writableCorked property accordingly
      * @tc.size      MediumTest
@@ -339,7 +339,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1100
      * @tc.name      testStreamWritable04Chapter0011
      * @tc.desc      Test cork method can be paired with uncork method
      * @tc.size      MediumTest
@@ -367,7 +367,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1200
      * @tc.name      testStreamWritable04Chapter0012
      * @tc.desc      Test cork method returns true and data is buffered when stream is corked
      * @tc.size      MediumTest
@@ -405,7 +405,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1300
      * @tc.name      testStreamWritable04Chapter0013
      * @tc.desc      Test cork method called after stream is destroyed
      * @tc.size      MediumTest
@@ -459,7 +459,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1400
      * @tc.name      testStreamWritable04Chapter0014
      * @tc.desc      Test cork method called after stream is ended
      * @tc.size      MediumTest
@@ -485,7 +485,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1500
      * @tc.name      testStreamWritable04Chapter0015
      * @tc.desc      Test cork method returns true on different writable stream instances
      * @tc.size      MediumTest
@@ -513,7 +513,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1600
      * @tc.name      testStreamWritable04Chapter0016
      * @tc.desc      Test cork method returns true when writableCorked is already non-zero
      * @tc.size      MediumTest
@@ -543,7 +543,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1700
      * @tc.name      testStreamWritable04Chapter0017
      * @tc.desc      Test cork method after writing data without corking
      * @tc.size      MediumTest
@@ -580,7 +580,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1800
      * @tc.name      testStreamWritable04Chapter0018
      * @tc.desc      Test cork method with Uint8Array data buffer
      * @tc.size      MediumTest
@@ -618,7 +618,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_1900
      * @tc.name      testStreamWritable04Chapter0019
      * @tc.desc      Test cork method with string data in different encodings
      * @tc.size      MediumTest
@@ -651,7 +651,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2000
      * @tc.name      testStreamWritable04Chapter0020
      * @tc.desc      Test cork method multiple times with uncork in between
      * @tc.size      MediumTest
@@ -693,7 +693,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2100
      * @tc.name      testStreamWritable04Chapter0021
      * @tc.desc      Test cork method on stream with error state
      * @tc.size      MediumTest
@@ -722,7 +722,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2200
      * @tc.name      testStreamWritable04Chapter0022
      * @tc.desc      Test cork method on stream with custom internal buffer implementation
      * @tc.size      MediumTest
@@ -759,7 +759,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2300
      * @tc.name      testStreamWritable04Chapter0023
      * @tc.desc      Test cork method returns false when stream is already destroyed with error
      * @tc.size      MediumTest
@@ -801,7 +801,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2400
      * @tc.name      testStreamWritable04Chapter0024
      * @tc.desc      Test cork method with concurrent writes from multiple cork states
      * @tc.size      MediumTest
@@ -843,7 +843,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2500
      * @tc.name      testStreamWritable04Chapter0025
      * @tc.desc      Test cork method after uncork when writableCorked is zero should not go negative
      * @tc.size      MediumTest
@@ -874,7 +874,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2600
      * @tc.name      testStreamWritable04Chapter0026
      * @tc.desc      Test uncork method returns true after cork is called once
      * @tc.size      MediumTest
@@ -900,7 +900,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2700
      * @tc.name      testStreamWritable04Chapter0027
      * @tc.desc      Test uncork method returns false when no cork is called
      * @tc.size      MediumTest
@@ -926,7 +926,7 @@ export default function StreamWritable04Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2800
      * @tc.name      testStreamWritable04Chapter0028
      * @tc.desc      Test multiple uncork calls after multiple cork calls
      * @tc.size      MediumTest
@@ -955,7 +955,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_2900
      * @tc.name      testStreamWritable04Chapter0029
      * @tc.desc      Test uncork method flushes buffered data correctly
      * @tc.size      MediumTest
@@ -986,7 +986,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3000
      * @tc.name      testStreamWritable04Chapter0030
      * @tc.desc      Test uncork method after stream is destroyed
      * @tc.size      MediumTest
@@ -1024,7 +1024,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3100
      * @tc.name      testStreamWritable04Chapter0031
      * @tc.desc      Test uncork method returns false when called more times than cork
      * @tc.size      MediumTest
@@ -1052,7 +1052,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3200
      * @tc.name      testStreamWritable04Chapter0032
      * @tc.desc      Test uncork method with TypedArray data in buffer
      * @tc.size      MediumTest
@@ -1089,7 +1089,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3300
      * @tc.name      testStreamWritable04Chapter0033
      * @tc.desc      Test uncork method with large amount of buffered data
      * @tc.size      MediumTest
@@ -1126,7 +1126,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3400
      * @tc.name      testStreamWritable04Chapter0034
      * @tc.desc      Test uncork method when stream is in flowing mode
      * @tc.size      MediumTest
@@ -1158,7 +1158,7 @@ export default function StreamWritable04Test() {
       expect(result).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3500
      * @tc.name      testStreamWritable04Chapter0035
      * @tc.desc      Test uncork method after end is called
      * @tc.size      MediumTest
@@ -1189,7 +1189,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3600
      * @tc.name      testStreamWritable04Chapter0036
      * @tc.desc      Test uncork method returns true when corked multiple times and uncorked multiple times
      * @tc.size      MediumTest
@@ -1221,7 +1221,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3700
      * @tc.name      testStreamWritable04Chapter0037
      * @tc.desc      Test uncork method after stream is corked
      * @tc.size      MediumTest
@@ -1252,7 +1252,7 @@ export default function StreamWritable04Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3800
      * @tc.name      testStreamWritable04Chapter0038
      * @tc.desc      Test uncork method with writableCorked property checking
      * @tc.size      MediumTest
@@ -1280,7 +1280,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_3900
      * @tc.name      testStreamWritable04Chapter0039
      * @tc.desc      Test uncork method when writableCorked is 0
      * @tc.size      MediumTest
@@ -1306,7 +1306,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4000
      * @tc.name      testStreamWritable04Chapter0040
      * @tc.desc      Test uncork method with TypedArray containing boundary values
      * @tc.size      MediumTest
@@ -1341,7 +1341,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4100
      * @tc.name      testStreamWritable04Chapter0041
      * @tc.desc      Test uncork method with string containing special characters
      * @tc.size      MediumTest
@@ -1374,7 +1374,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4200
      * @tc.name      testStreamWritable04Chapter0042
      * @tc.desc      Test uncork method with empty data
      * @tc.size      MediumTest
@@ -1411,7 +1411,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4300
      * @tc.name      testStreamWritable04Chapter0043
      * @tc.desc      Test uncork method with null and undefined data
      * @tc.size      MediumTest
@@ -1441,7 +1441,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4400
      * @tc.name      testStreamWritable04Chapter0045
      * @tc.desc      Test uncork method with different encodings
      * @tc.size      MediumTest
@@ -1475,7 +1475,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4500
      * @tc.name      testStreamWritable04Chapter0046
      * @tc.desc      Test uncork method with chunk as both string and Uint8Array mixed
      * @tc.size      MediumTest
@@ -1511,7 +1511,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4600
      * @tc.name      testStreamWritable04Chapter0047
      * @tc.desc      Test uncork method when stream is already uncorked but with pending writes
      * @tc.size      MediumTest
@@ -1542,7 +1542,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4700
      * @tc.name      testStreamWritable04Chapter0048
      * @tc.desc      Test uncork method with maximum cork depth
      * @tc.size      MediumTest
@@ -1574,7 +1574,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4800
      * @tc.name      testStreamWritable04Chapter0049
      * @tc.desc      Test uncork method with finish event after uncork
      * @tc.size      MediumTest
@@ -1609,7 +1609,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_4900
      * @tc.name      testStreamWritable04Chapter0050
      * @tc.desc      Test registering valid close event with correct callback function
      * @tc.size      MediumTest
@@ -1640,7 +1640,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_5000
      * @tc.name      testStreamWritable04Chapter0051
      * @tc.desc      Test registering valid drain event with correct callback function
      * @tc.size      MediumTest
@@ -1680,7 +1680,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_5100
      * @tc.name      testStreamWritable04Chapter0052
      * @tc.desc      Test registering valid error event with correct callback function
      * @tc.size      MediumTest
@@ -1712,7 +1712,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_5200
      * @tc.name      testStreamWritable04Chapter0053
      * @tc.desc      Test registering valid finish event with correct callback function
      * @tc.size      MediumTest
@@ -1743,7 +1743,7 @@ export default function StreamWritable04Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFOUR_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE4_5300
      * @tc.name      testStreamWritable04Chapter0054
      * @tc.desc      Test registering multiple events on same writable stream
      * @tc.size      MediumTest

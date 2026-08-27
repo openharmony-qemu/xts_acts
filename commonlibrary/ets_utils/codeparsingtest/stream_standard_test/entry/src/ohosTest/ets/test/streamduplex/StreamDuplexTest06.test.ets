@@ -29,7 +29,7 @@ export default function StreamDuplex06Test() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_0100
      * @tc.name      testStreamDuplex06Chapter0001
      * @tc.desc      Test doWrite with valid gbk string chunk
      * @tc.type      Function
@@ -67,7 +67,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_0200
      * @tc.name      testStreamDuplex06Chapter0002
      * @tc.desc      Test doWrite with valid gb18030 string chunk
      * @tc.type      Function
@@ -105,7 +105,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_0300
      * @tc.name      testStreamDuplex06Chapter0003
      * @tc.desc      Test doWrite with valid gb2312 string chunk
      * @tc.type      Function
@@ -143,7 +143,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_0400
      * @tc.name      testStreamDuplex06Chapter0004
      * @tc.desc      Test doWrite with Uint8Array chunk
      * @tc.type      Function
@@ -182,7 +182,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_0500
      * @tc.name      testStreamDuplex06Chapter0005
      * @tc.desc      Test doWrite with empty string chunk
      * @tc.type      Function
@@ -221,7 +221,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_0600
      * @tc.name      testStreamDuplex06Chapter0006
      * @tc.desc      Test doWrite with special characters string chunk
      * @tc.type      Function
@@ -257,7 +257,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_0700
      * @tc.name      testStreamDuplex06Chapter0007
      * @tc.desc      Test doWrite with emoji string chunk
      * @tc.type      Function
@@ -293,7 +293,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_0800
      * @tc.name      testStreamDuplex06Chapter0008
      * @tc.desc      Test doWrite with escape characters string chunk
      * @tc.type      Function
@@ -329,7 +329,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_0900
      * @tc.name      testStreamDuplex06Chapter0009
      * @tc.desc      Test doWrite with large string chunk
      * @tc.type      Function
@@ -372,7 +372,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1000
      * @tc.name      testStreamDuplex06Chapter0010
      * @tc.desc      Test doWrite with Uint8Array containing boundary values
      * @tc.type      Function
@@ -416,7 +416,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1100
      * @tc.name      testStreamDuplex06Chapter0011
      * @tc.desc      Test doWrite with Uint8Array containing multiple zeros
      * @tc.type      Function
@@ -458,7 +458,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1200
      * @tc.name      testStreamDuplex06Chapter0012
      * @tc.desc      Test doWrite with empty Uint8Array
      * @tc.type      Function
@@ -498,7 +498,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1300
      * @tc.name      testStreamDuplex06Chapter0013
      * @tc.desc      Test doWrite with invalid encoding parameter (negative test)
      * @tc.type      Function
@@ -532,7 +532,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1400
      * @tc.name      testStreamDuplex06Chapter0014
      * @tc.desc      Test doWrite with null chunk (negative test)
      * @tc.type      Function
@@ -565,7 +565,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1500
      * @tc.name      testStreamDuplex06Chapter0015
      * @tc.desc      Test doWrite with undefined chunk (negative test)
      * @tc.type      Function
@@ -599,7 +599,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1600
      * @tc.name      testStreamDuplex06Chapter0016
      * @tc.desc      Test doWrite with number chunk (negative test)
      * @tc.type      Function
@@ -627,7 +627,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1700
      * @tc.name      testStreamDuplex06Chapter0017
      * @tc.desc      Test doWrite with boolean chunk (negative test)
      * @tc.type      Function
@@ -655,7 +655,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1800
      * @tc.name      testStreamDuplex06Chapter0018
      * @tc.desc      Test doWrite with object chunk (negative test)
      * @tc.type      Function
@@ -683,7 +683,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_1900
      * @tc.name      testStreamDuplex06Chapter0019
      * @tc.desc      Test doWrite with array chunk (negative test)
      * @tc.type      Function
@@ -711,7 +711,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2000
      * @tc.name      testStreamDuplex06Chapter0020
      * @tc.desc      Test doWrite with number encoding (negative test)
      * @tc.type      Function
@@ -747,7 +747,7 @@ export default function StreamDuplex06Test() {
 
 
     /** 
-  * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2100 
+  * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2100 
   * @tc.name      testStreamDuplex06Chapter0021 
   * @tc.desc      Test doWrite with undefined encoding (negative test) 
   * @tc.type      Function 
@@ -783,7 +783,7 @@ export default function StreamDuplex06Test() {
  });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2200
      * @tc.name      testStreamDuplex06Chapter0022
      * @tc.desc      Test doWrite with number encoding (negative test)
      * @tc.type      Function
@@ -818,7 +818,7 @@ export default function StreamDuplex06Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2300
      * @tc.name      testStreamDuplex06Chapter0023
      * @tc.desc      Test doWrite without callback parameter (negative test)
      * @tc.type      Function
@@ -858,7 +858,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2400
      * @tc.name      testStreamDuplex06Chapter0024
      * @tc.desc      Test doWrite with ASCII characters string chunk
      * @tc.type      Function
@@ -895,7 +895,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2500
      * @tc.name      testStreamDuplex06Chapter0025
      * @tc.desc      Test doWrite with Uint8Array from other TypedArray conversion
      * @tc.type      Function
@@ -934,7 +934,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2600
      * @tc.name      testStreamDuplex06Chapter0026
      * @tc.desc      Test doWrite callback error handling
      * @tc.type      Function
@@ -980,7 +980,7 @@ export default function StreamDuplex06Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2700
      * @tc.name      testStreamDuplex06Chapter0027
      * @tc.desc      Test doWrite with repeated special characters string chunk
      * @tc.type      Function
@@ -1016,7 +1016,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2800
      * @tc.name      testStreamDuplex06Chapter0028
      * @tc.desc      Test doWrite with keyword string chunk
      * @tc.type      Function
@@ -1052,7 +1052,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_2900
      * @tc.name      testStreamDuplex06Chapter0029
      * @tc.desc      Test doWrite with ASCII encoding
      * @tc.type      Function
@@ -1090,7 +1090,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3000
      * @tc.name      testStreamDuplex06Chapter0030
      * @tc.desc      Test doWrite with base64 encoded data
      * @tc.type      Function
@@ -1133,7 +1133,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3100
      * @tc.name      testStreamDuplex06Chapter0031
      * @tc.desc      Test doWrite with hex encoded data
      * @tc.type      Function
@@ -1176,7 +1176,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3200
      * @tc.name      testStreamDuplex06Chapter0032
      * @tc.desc      Test doWrite with latin1 encoding
      * @tc.type      Function
@@ -1220,7 +1220,7 @@ export default function StreamDuplex06Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3300
      * @tc.name      testStreamDuplex06Chapter0033
      * @tc.desc      Test doWrite with Int8Array converted to Uint8Array
      * @tc.type      Function
@@ -1262,7 +1262,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3400
      * @tc.name      testStreamDuplex06Chapter0034
      * @tc.desc      Test doWrite with multiple consecutive writes
      * @tc.type      Function
@@ -1313,7 +1313,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3500
      * @tc.name      testStreamDuplex06Chapter0035
      * @tc.desc      Test doWrite with mixed string and Uint8Array writes
      * @tc.type      Function
@@ -1364,7 +1364,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3600
      * @tc.name      testStreamDuplex06Chapter0036
      * @tc.desc      Test doWrite with very large Uint8Array (1MB)
      * @tc.type      Function
@@ -1408,7 +1408,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3700
      * @tc.name      testStreamDuplex06Chapter0037
      * @tc.desc      Test doWrite with encoding parameter omitted (should default to utf8)
      * @tc.type      Function
@@ -1453,7 +1453,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3800
      * @tc.name      testStreamDuplex06Chapter0038
      * @tc.desc      Test doWrite with callback parameter omitted
      * @tc.type      Function
@@ -1493,7 +1493,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_3900
      * @tc.name      testStreamDuplex06Chapter0039
      * @tc.desc      Test doWrite with both encoding and callback omitted
      * @tc.type      Function
@@ -1531,7 +1531,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4000
      * @tc.name      testStreamDuplex06Chapter0040
      * @tc.desc      Test doWrite with synchronous error thrown in doWrite
      * @tc.type      Function
@@ -1569,7 +1569,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4100
      * @tc.name      testStreamDuplex06Chapter0041
      * @tc.desc      Test doWrite with callback called multiple times (should handle gracefully)
      * @tc.type      Function
@@ -1620,7 +1620,7 @@ export default function StreamDuplex06Test() {
       expect(duplexStream.callbackCount).assertLargerOrEqual(1);
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4200
      * @tc.name      testStreamDuplex06Chapter0042
      * @tc.desc      Test doWrite with async callback execution
      * @tc.type      Function
@@ -1658,7 +1658,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4300
      * @tc.name      testStreamDuplex06Chapter0043
      * @tc.desc      Test doWrite when stream is in closed state
      * @tc.type      Function
@@ -1716,7 +1716,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4400
      * @tc.name      testStreamDuplex06Chapter0044
      * @tc.desc      Test doWrite with backpressure (write returns false when buffer full)
      * @tc.type      Function
@@ -1764,7 +1764,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4500
      * @tc.name      testStreamDuplex06Chapter0045
      * @tc.desc      Test doWrite with zero-length Uint8Array but with buffer
      * @tc.type      Function
@@ -1808,7 +1808,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4600
      * @tc.name      testStreamDuplex06Chapter0046
      * @tc.desc      Test doWrite with Uint8Array created from ArrayBuffer with offset
      * @tc.type      Function
@@ -1857,7 +1857,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4700
      * @tc.name      testStreamDuplex06Chapter0047
      * @tc.desc      Test doWrite with empty string and Uint8Array in sequence
      * @tc.type      Function
@@ -1914,7 +1914,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4800
      * @tc.name      testStreamDuplex06Chapter0048
      * @tc.desc      Test doWrite with all control characters (0x00-0x1F, 0x7F)
      * @tc.type      Function
@@ -1956,7 +1956,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_4900
      * @tc.name      testStreamDuplex06Chapter0049
      * @tc.desc      Test doWrite with string containing only whitespace characters
      * @tc.type      Function
@@ -1993,7 +1993,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_5000
      * @tc.name      testStreamDuplex06Chapter0050
      * @tc.desc      Test doWrite with string containing Unicode supplementary characters
      * @tc.type      Function
@@ -2031,7 +2031,7 @@ export default function StreamDuplex06Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSIX_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX6_5100
      * @tc.name      testStreamDuplex06Chapter0051
      * @tc.desc      Test doWrite performance with multiple small writes
      * @tc.type      Function

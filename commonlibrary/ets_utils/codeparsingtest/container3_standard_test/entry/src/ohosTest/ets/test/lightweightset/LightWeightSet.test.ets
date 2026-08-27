@@ -53,7 +53,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_0100
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_0200
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -96,7 +96,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_0300
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -118,7 +118,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_0400
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -142,7 +142,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_0500
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -163,7 +163,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_0600
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -183,7 +183,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_0700
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -206,7 +206,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_0800
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -230,7 +230,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_0900
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -253,7 +253,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1000
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -274,7 +274,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1100
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -295,7 +295,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1200
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -320,7 +320,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1300
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -343,7 +343,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1400
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -365,7 +365,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1500
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -387,7 +387,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1600
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -410,7 +410,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1700
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -433,7 +433,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1800
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -456,7 +456,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_1900
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -478,7 +478,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2000
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -497,7 +497,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2100
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -519,7 +519,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2200
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -543,7 +543,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2300
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -565,7 +565,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2400
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -586,7 +586,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2500
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -607,7 +607,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2600
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -632,7 +632,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2700
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -654,7 +654,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2800
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -675,7 +675,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_2900
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -696,7 +696,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3000
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -716,7 +716,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3100
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -738,7 +738,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3200
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -760,7 +760,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3300
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -782,7 +782,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3400
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -804,7 +804,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3500
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -826,7 +826,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3600
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -848,7 +848,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3700
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -872,7 +872,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3800
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -895,7 +895,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_3900
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -918,7 +918,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4000
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -940,7 +940,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4100
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -963,7 +963,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4200
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -983,7 +983,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4300
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1003,7 +1003,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4400
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1023,7 +1023,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4500
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1045,7 +1045,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4600
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1070,7 +1070,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4700
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1093,7 +1093,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4800
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1115,7 +1115,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_4900
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1135,7 +1135,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5000
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1157,7 +1157,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5100
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1182,7 +1182,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5200
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1207,7 +1207,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5300
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1233,7 +1233,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5400
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1253,7 +1253,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5500
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1283,7 +1283,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5600
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1311,7 +1311,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5700
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1335,7 +1335,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5800
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1359,7 +1359,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_5900
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1381,7 +1381,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6000
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1407,7 +1407,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6100
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1433,7 +1433,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6200
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1458,7 +1458,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0064
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6300
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1484,7 +1484,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6400
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1512,7 +1512,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0066
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6500
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1538,7 +1538,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0067
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6600
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1562,7 +1562,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0068
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6700
      * @tc.desc   Test the function foreach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1586,7 +1586,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0069
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6800
      * @tc.desc   Test the function foreach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1610,7 +1610,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0070
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_6900
      * @tc.desc   Test the function foreach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1634,7 +1634,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0071
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7000
      * @tc.desc   Test the function foreach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1658,7 +1658,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSet0072
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7100
      * @tc.desc   Test the function foreach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1683,7 +1683,7 @@ export default function LightWeightSetTest() {
     })
     /**
      * @tc.name   testLightWeightSetCase001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7200
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1713,7 +1713,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSetCase002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7300
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1743,7 +1743,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSetCase003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7400
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1765,7 +1765,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSetCase004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7500
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1786,7 +1786,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSetCase005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7600
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1815,7 +1815,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSetCase006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7700
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1845,7 +1845,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSetCase007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7800
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1871,7 +1871,7 @@ export default function LightWeightSetTest() {
 
     /**
      * @tc.name   testLightWeightSetCase008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTSET_CASE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET1_7900
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

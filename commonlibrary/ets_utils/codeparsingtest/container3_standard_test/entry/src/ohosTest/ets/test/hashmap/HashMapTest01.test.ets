@@ -44,7 +44,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number   SUB_HASHMAP_TEST_0100
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_HASHMAP2_0100
      * @tc.name     testHashMap0001
      * @tc.desc     Testing HashMap length is 0
      * @tc.type     FUNCTION
@@ -62,7 +62,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0101
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_0200
      * @tc.name      testHashMap0002
      * @tc.desc      Verify the boundary values of Int8Array
      * @tc.size      MediumTest
@@ -82,7 +82,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0102
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_0300
      * @tc.name      testHashMap0003
      * @tc.desc      Verify the boundary values of Int8Array
      * @tc.size      MediumTest
@@ -104,7 +104,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0103
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_0400
      * @tc.name      testHashMap0004
      * @tc.desc      Verify the out-of-bounds values of Int8Array
      * @tc.size      MediumTest
@@ -125,7 +125,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0104
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_0500
      * @tc.name      testHashMap0005
      * @tc.desc      Verify the out-of-bounds values of Int8Array
      * @tc.size      MediumTest
@@ -146,7 +146,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0105
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_0600
      * @tc.name      testHashMap0006
      * @tc.desc      Verify the boundary values of Uint8Array
      * @tc.size      MediumTest
@@ -168,7 +168,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0106
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_0700
      * @tc.name      testHashMap0007
      * @tc.desc      Verify the boundary values of Uint8Array
      * @tc.size      MediumTest
@@ -190,7 +190,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0107
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_0800
      * @tc.name      testHashMap0008
      * @tc.desc      Verify the out-of-bounds values of Uint8Array
      * @tc.size      MediumTest
@@ -212,7 +212,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0108
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_0900
      * @tc.name      testHashMap0009
      * @tc.desc      Verify the out-of-bounds values of Uint8Array
      * @tc.size      MediumTest
@@ -236,7 +236,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0109
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1000
      * @tc.name      testHashMap0010
      * @tc.desc      Verify the boundary values of Uint8ClampedArray
      * @tc.size      MediumTest
@@ -257,7 +257,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0110
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1100
      * @tc.name      testHashMap0011
      * @tc.desc      Verify the boundary values of Uint8ClampedArray
      * @tc.size      MediumTest
@@ -278,7 +278,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0111
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1200
      * @tc.name      testHashMap0012
      * @tc.desc      Verify the out-of-bounds values of Uint8ClampedArray
      * @tc.size      MediumTest
@@ -301,7 +301,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0112
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1300
      * @tc.name      testHashMap0013
      * @tc.desc      Verify the out-of-bounds values of Uint8ClampedArray
      * @tc.size      MediumTest
@@ -322,7 +322,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0113
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1400
      * @tc.name      testHashMap0014
      * @tc.desc      Verify the boundary values of Int16Array
      * @tc.size      MediumTest
@@ -342,7 +342,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0114
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1500
      * @tc.name      testHashMap0015
      * @tc.desc      Verify the boundary values of Int16Array
      * @tc.size      MediumTest
@@ -363,7 +363,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0115
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1600
      * @tc.name      testHashMap0016
      * @tc.desc      Verify the out-of-bounds values of Int16Array
      * @tc.size      MediumTest
@@ -384,7 +384,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0116
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1700
      * @tc.name      testHashMap0017
      * @tc.desc      Verify the out-of-bounds values of Int16Array
      * @tc.size      MediumTest
@@ -404,7 +404,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0117
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1800
      * @tc.name      testHashMap0018
      * @tc.desc      Verify the boundary values of Uint16Array
      * @tc.size      MediumTest
@@ -424,7 +424,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0118
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_1900
      * @tc.name      testHashMap0019
      * @tc.desc      Verify the boundary values of Uint16Array
      * @tc.size      MediumTest
@@ -445,7 +445,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0119
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2000
      * @tc.name      testHashMap0020
      * @tc.desc      Verify the out-of-bounds values of Uint16Array
      * @tc.size      MediumTest
@@ -466,7 +466,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0120
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2100
      * @tc.name      testHashMap0021
      * @tc.desc      Verify the out-of-bounds values of Uint16Array
      * @tc.size      MediumTest
@@ -487,7 +487,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0121
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2200
      * @tc.name      testHashMap0022
      * @tc.desc      Verify the boundary values of Int32Array
      * @tc.size      MediumTest
@@ -509,7 +509,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0122
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2300
      * @tc.name      testHashMap0023
      * @tc.desc      Verify the boundary values of Uint16Array
      * @tc.size      MediumTest
@@ -530,7 +530,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0123
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2400
      * @tc.name      testHashMap0024
      * @tc.desc      Verify the out-of-bounds values of Uint16Array
      * @tc.size      MediumTest
@@ -551,7 +551,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0124
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2500
      * @tc.name      testHashMap0025
      * @tc.desc      Verify the out-of-bounds values of Uint16Array
      * @tc.size      MediumTest
@@ -572,7 +572,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0125
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2600
      * @tc.name      testHashMap0026
      * @tc.desc      Verify the boundary values of Uint32Array
      * @tc.size      MediumTest
@@ -592,7 +592,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0126
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2700
      * @tc.name      testHashMap0027
      * @tc.desc      Verify the boundary values of Uint32Array
      * @tc.size      MediumTest
@@ -613,7 +613,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0127
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2800
      * @tc.name      testHashMap0028
      * @tc.desc      Verify the out-of-bounds values of Uint32Array
      * @tc.size      MediumTest
@@ -634,7 +634,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0128
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_2900
      * @tc.name      testHashMap0029
      * @tc.desc      Verify the out-of-bounds values of Uint32Array
      * @tc.size      MediumTest
@@ -655,7 +655,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0129
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3000
      * @tc.name      testHashMap0030
      * @tc.desc      Verify the boundary values of Float32Array
      * @tc.size      MediumTest
@@ -674,7 +674,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0130
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3100
      * @tc.name      testHashMap0031
      * @tc.desc      Verify the boundary values of Float32Array
      * @tc.size      MediumTest
@@ -695,7 +695,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0131
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3200
      * @tc.name      testHashMap0032
      * @tc.desc      Verify the out-of-bounds values of Float32Array
      * @tc.size      MediumTest
@@ -716,7 +716,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0132
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3300
      * @tc.name      testHashMap0033
      * @tc.desc      Verify the out-of-bounds values of Float32Array
      * @tc.size      MediumTest
@@ -737,7 +737,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0133
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3400
      * @tc.name      testHashMap0034
      * @tc.desc      Verify the boundary values of Float64Array
      * @tc.size      MediumTest
@@ -757,7 +757,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0134
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3500
      * @tc.name      testHashMap0035
      * @tc.desc      Verify the boundary values of Float64Array
      * @tc.size      MediumTest
@@ -779,7 +779,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0135
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3600
      * @tc.name      testHashMap0036
      * @tc.desc      Verify the out-of-bounds values of Float64Array
      * @tc.size      MediumTest
@@ -801,7 +801,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0136
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3700
      * @tc.name      testHashMap0037
      * @tc.desc      Verify the out-of-bounds values of Float64Array
      * @tc.size      MediumTest
@@ -822,7 +822,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0137
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3800
      * @tc.name      testHashMap0038
      * @tc.desc      Verify the boundary values of BigInt64Array
      * @tc.size      MediumTest
@@ -842,7 +842,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0138
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_3900
      * @tc.name      testHashMap0039
      * @tc.desc      Verify the boundary values of BigInt64Array
      * @tc.size      MediumTest
@@ -864,7 +864,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0139
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4000
      * @tc.name      testHashMap0040
      * @tc.desc      Verify the out-of-bounds values of BigInt64Array
      * @tc.size      MediumTest
@@ -886,7 +886,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0140
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4100
      * @tc.name      testHashMap0041
      * @tc.desc      Verify the out-of-bounds values of BigInt64Array
      * @tc.size      MediumTest
@@ -906,7 +906,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0141
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4200
      * @tc.name      testHashMap0042
      * @tc.desc      Verify the boundary values of BigInt64Array
      * @tc.size      MediumTest
@@ -926,7 +926,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0142
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4300
      * @tc.name      testHashMap0043
      * @tc.desc      Verify the boundary values of BigUint64Array
      * @tc.size      MediumTest
@@ -947,7 +947,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0143
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4400
      * @tc.name      testHashMap0044
      * @tc.desc      Verify the out-of-bounds values of BigUint64Array
      * @tc.size      MediumTest
@@ -969,7 +969,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0144
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4500
      * @tc.name      testHashMap0045
      * @tc.desc      Passing in the special value Infinity to Float32Array
      * @tc.size      MediumTest
@@ -990,7 +990,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0145
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4600
      * @tc.name      testHashMap0046
      * @tc.desc      Passing in the special value -Infinity to Float32Array
      * @tc.size      MediumTest
@@ -1012,7 +1012,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0146
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4700
      * @tc.name      testHashMap0047
      * @tc.desc      Passing in the special value NaN to Float32Array
      * @tc.size      MediumTest
@@ -1032,7 +1032,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0147
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4800
      * @tc.name      testHashMap0048
      * @tc.desc      Passing in the special value Infinity to Float64Array
      * @tc.size      MediumTest
@@ -1052,7 +1052,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0148
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_4900
      * @tc.name      testHashMap0049
      * @tc.desc      Passing in the special value -Infinity to Float64Array
      * @tc.size      MediumTest
@@ -1073,7 +1073,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0149
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5000
      * @tc.name      testHashMap0050
      * @tc.desc      Passing in the special value NaN to Float64Array
      * @tc.size      MediumTest
@@ -1094,7 +1094,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0150
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5100
      * @tc.name      testHashMap0051
      * @tc.desc      Passing in the special value Infinity to Int8Array
      * @tc.size      MediumTest
@@ -1114,7 +1114,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0151
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5200
      * @tc.name      testHashMap0052
      * @tc.desc      Passing in the special value -Infinity to Int8Array
      * @tc.size      MediumTest
@@ -1135,7 +1135,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0152
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5300
      * @tc.name      testHashMap0053
      * @tc.desc      Passing in the special value NaN to Int8Array
      * @tc.size      MediumTest
@@ -1156,7 +1156,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0153
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5400
      * @tc.name      testHashMap0054
      * @tc.desc      Passing in the special value Infinity to Uint8Array
      * @tc.size      MediumTest
@@ -1176,7 +1176,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0154
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5500
      * @tc.name      testHashMap0055
      * @tc.desc      Passing in the special value -Infinity to Uint8Array
      * @tc.size      MediumTest
@@ -1197,7 +1197,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0155
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5600
      * @tc.name      testHashMap0056
      * @tc.desc      Passing in the special value NaN to Uint8Array
      * @tc.size      MediumTest
@@ -1218,7 +1218,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0156
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5700
      * @tc.name      testHashMap0057
      * @tc.desc      Passing in the special value Infinity to Int16Array
      * @tc.size      MediumTest
@@ -1238,7 +1238,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0157
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5800
      * @tc.name      testHashMap0058
      * @tc.desc      Passing in the special value -Infinity to Int16Array
      * @tc.size      MediumTest
@@ -1258,7 +1258,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0158
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_5900
      * @tc.name      testHashMap0059
      * @tc.desc      Passing in the special value NaN to Int16Array
      * @tc.size      MediumTest
@@ -1278,7 +1278,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0159
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6000
      * @tc.name      testHashMap0060
      * @tc.desc      Passing in the special value Infinity to Uint16Array
      * @tc.size      MediumTest
@@ -1298,7 +1298,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0160
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6100
      * @tc.name      testHashMap0061
      * @tc.desc      Passing in the special value -Infinity to Uint16Array
      * @tc.size      MediumTest
@@ -1319,7 +1319,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0161
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6200
      * @tc.name      testHashMap0062
      * @tc.desc      Passing in the special value NaN to Uint16Array
      * @tc.size      MediumTest
@@ -1340,7 +1340,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0162
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6300
      * @tc.name      testHashMap0063
      * @tc.desc      Passing in the special value Infinity to Int32Array
      * @tc.size      MediumTest
@@ -1360,7 +1360,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0163
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6400
      * @tc.name      testHashMap0064
      * @tc.desc      Passing in the special value -Infinity to Int32Array
      * @tc.size      MediumTest
@@ -1381,7 +1381,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0164
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6500
      * @tc.name      testHashMap0065
      * @tc.desc      Passing in the special value NaN to Int32Array
      * @tc.size      MediumTest
@@ -1401,7 +1401,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0165
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6600
      * @tc.name      testHashMap0066
      * @tc.desc      Passing in the special value Infinity to Uint32Array
      * @tc.size      MediumTest
@@ -1421,7 +1421,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0166
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6700
      * @tc.name      testHashMap0067
      * @tc.desc      Passing in the special value -Infinity to Uint32Array
      * @tc.size      MediumTest
@@ -1442,7 +1442,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0167
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6800
      * @tc.name      testHashMap0068
      * @tc.desc      Passing in the special value NaN to Uint32Array
      * @tc.size      MediumTest
@@ -1463,7 +1463,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0168
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_6900
      * @tc.name      testHashMap0069
      * @tc.desc      Passing in the special value Infinity to Uint8ClampedArray
      * @tc.size      MediumTest
@@ -1483,7 +1483,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0169
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7000
      * @tc.name      testHashMap0070
      * @tc.desc      Passing in the special value -Infinity to Uint8ClampedArray
      * @tc.size      MediumTest
@@ -1504,7 +1504,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0170
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7100
      * @tc.name      testHashMap0071
      * @tc.desc      Passing in the special value NaN to Uint8ClampedArray
      * @tc.size      MediumTest
@@ -1525,7 +1525,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0174
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7200
      * @tc.name      testHashMap0075
      * @tc.desc      String type data is passed into  undefined check item
      * @tc.size      MediumTest
@@ -1543,7 +1543,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0175
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7300
      * @tc.name      testHashMap0076
      * @tc.desc      String type data is passed into  undefined check item
      * @tc.size      MediumTest
@@ -1561,7 +1561,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0176
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7400
      * @tc.name      testHashMap0077
      * @tc.desc      String type data is passed into  empty string check item
      * @tc.size      MediumTest
@@ -1579,7 +1579,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0177
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7500
      * @tc.name      testHashMap0078
      * @tc.desc      String type data is passed into '!' check item
      * @tc.size      MediumTest
@@ -1597,7 +1597,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0178
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7600
      * @tc.name      testHashMap0079
      * @tc.desc      String type data is passed into '"' check item
      * @tc.size      MediumTest
@@ -1616,7 +1616,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0179
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7700
      * @tc.name      testHashMap0080
      * @tc.desc      String type data is passed into '#' check item
      * @tc.size      MediumTest
@@ -1633,7 +1633,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0180
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7800
      * @tc.name      testHashMap0081
      * @tc.desc      String type data is passed into '$' check item
      * @tc.size      MediumTest
@@ -1651,7 +1651,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0181
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_7900
      * @tc.name      testHashMap0082
      * @tc.desc      String type data is passed into '%' check item
      * @tc.size      MediumTest
@@ -1669,7 +1669,7 @@ export default function HashMapTest01Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0182
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_8000
      * @tc.name      testHashMap0083
      * @tc.desc      String type data is passed into '&' check item
      * @tc.size      MediumTest
@@ -1686,7 +1686,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0183
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_8100
      * @tc.name      testHashMap0084
      * @tc.desc      String type data is passed into  "'" check item
      * @tc.size      MediumTest
@@ -1703,7 +1703,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0184
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_8200
      * @tc.name      testHashMap0085
      * @tc.desc      String type data is passed into  '(' check item
      * @tc.size      MediumTest
@@ -1720,7 +1720,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0185
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_8300
      * @tc.name      testHashMap0086
      * @tc.desc      String type data is passed into  ')' check item
      * @tc.size      MediumTest
@@ -1737,7 +1737,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0186
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_8400
      * @tc.name      testHashMap0087
      * @tc.desc      String type data is passed into  '*' check item
      * @tc.size      MediumTest
@@ -1754,7 +1754,7 @@ export default function HashMapTest01Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0187
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_8500
      * @tc.name      testHashMap0088
      * @tc.desc      String type data is passed into  '+' check item
      * @tc.size      MediumTest
@@ -1770,7 +1770,7 @@ export default function HashMapTest01Test() {
       console.log(TAG + ' end');
     });
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0188
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP2_8600
      * @tc.name      testHashMap0089
      * @tc.desc      String type data is passed into  ',' check item
      * @tc.size      MediumTest

@@ -41,7 +41,7 @@ export default function StreamWritable02Test() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_0100
      * @tc.name      testStreamWritable02Chapter0001
      * @tc.desc      Test write method with TypedArray boundary values
      * @tc.size      MediumTest
@@ -74,7 +74,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_0200
      * @tc.name      testStreamWritable02Chapter0002
      * @tc.desc      Test write method with TypedArray containing special values like Infinity
      * @tc.size      MediumTest
@@ -109,7 +109,7 @@ export default function StreamWritable02Test() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_0300
      * @tc.name      testStreamWritable02Chapter0003
      * @tc.desc      Test write method with large string to verify memory usage
      * @tc.size      MediumTest
@@ -135,7 +135,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_0400
      * @tc.name      testStreamWritable02Chapter0004
      * @tc.desc      Test write method with invalid Unicode encoding
      * @tc.size      MediumTest
@@ -168,7 +168,7 @@ export default function StreamWritable02Test() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_0500
      * @tc.name      testStreamWritable02Chapter0005
      * @tc.desc      Test write method with encoding error recovery
      * @tc.size      MediumTest
@@ -201,7 +201,7 @@ export default function StreamWritable02Test() {
       expect(writeCount).assertEqual(3);
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_0600
      * @tc.name      testStreamWritable02Chapter0007
      * @tc.desc      Test write method backpressure control
      * @tc.size      MediumTest
@@ -235,7 +235,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_0700
      * @tc.name      testStreamWritable02Chapter0008
      * @tc.desc      Test writing empty string as chunk parameter (reverse test, interface explicitly not supported)
      * @tc.size      MediumTest
@@ -264,7 +264,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_0800
      * @tc.name      testStreamWritable02Chapter0009
      * @tc.desc      Test writing other TypedArray types after converting to Uint8Array
      * @tc.size      MediumTest
@@ -318,7 +318,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_0900
      * @tc.name      testStreamWritable02Chapter0010
      * @tc.desc      Test writing TypedArray special values (Infinity, NaN) after converting to Uint8Array
      * @tc.size      MediumTest
@@ -363,7 +363,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1000
      * @tc.name      testStreamWritable02Chapter0011
      * @tc.desc      Test writing array containing non-numeric types after converting to Uint8Array
      * @tc.size      MediumTest
@@ -407,7 +407,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1100
      * @tc.name      testStreamWritable02Chapter0012
      * @tc.desc      Test writing large numeric values that overflow in Uint8Array conversion
      * @tc.size      MediumTest
@@ -453,7 +453,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1200
      * @tc.name      testStreamWritable02Chapter0013
      * @tc.desc      Test writing special arrays (non-numeric indices) after converting to Uint8Array
      * @tc.size      MediumTest
@@ -502,7 +502,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1300
      * @tc.name      testStreamWritable02Chapter0014
      * @tc.desc      Test end method without parameters
      * @tc.size      MediumTest
@@ -528,7 +528,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1400
      * @tc.name      testStreamWritable02Chapter0015
      * @tc.desc      Test end method with string chunk and utf8 encoding
      * @tc.size      MediumTest
@@ -554,7 +554,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1500
      * @tc.name      testStreamWritable02Chapter0016
      * @tc.desc      Test end method with undefined string chunk
      * @tc.size      MediumTest
@@ -580,7 +580,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1600
      * @tc.name      testStreamWritable02Chapter0017
      * @tc.desc      Test end method with null string chunk (should error)
      * @tc.size      MediumTest
@@ -608,7 +608,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1700
      * @tc.name      testStreamWritable02Chapter0018
      * @tc.desc      Test end method with empty string
      * @tc.size      MediumTest
@@ -634,7 +634,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1800
      * @tc.name      testStreamWritable02Chapter0019
      * @tc.desc      Test end method with special characters string
      * @tc.size      MediumTest
@@ -662,7 +662,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_1900
      * @tc.name      testStreamWritable02Chapter0020
      * @tc.desc      Test end method with double special characters
      * @tc.size      MediumTest
@@ -690,7 +690,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2000
      * @tc.name      testStreamWritable02Chapter0021
      * @tc.desc      Test end method with full ASCII characters
      * @tc.size      MediumTest
@@ -719,7 +719,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2100
      * @tc.name      testStreamWritable02Chapter0022
      * @tc.desc      Test end method with escape characters
      * @tc.size      MediumTest
@@ -747,7 +747,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2200
      * @tc.name      testStreamWritable02Chapter0023
      * @tc.desc      Test end method with emoji characters
      * @tc.size      MediumTest
@@ -775,7 +775,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2300
      * @tc.name      testStreamWritable02Chapter0024
      * @tc.desc      Test end method with keyword strings
      * @tc.size      MediumTest
@@ -801,7 +801,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2400
      * @tc.name      testStreamWritable02Chapter0025
      * @tc.desc      Test end method with large string for memory test
      * @tc.size      MediumTest
@@ -829,7 +829,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2500
      * @tc.name      testStreamWritable02Chapter0026
      * @tc.desc      Test end method with gb18030 encoding
      * @tc.size      MediumTest
@@ -855,7 +855,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2600
      * @tc.name      testStreamWritable02Chapter0027
      * @tc.desc      Test end method with gbk encoding
      * @tc.size      MediumTest
@@ -881,7 +881,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2700
      * @tc.name      testStreamWritable02Chapter0028
      * @tc.desc      Test end method with gb2312 encoding
      * @tc.size      MediumTest
@@ -908,7 +908,7 @@ export default function StreamWritable02Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2800
      * @tc.name      testStreamWritable02Chapter0029
      * @tc.desc      Test end method with gb2312 encoding
      * @tc.size      MediumTest
@@ -934,7 +934,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_2900
      * @tc.name      testStreamWritable02Chapter0030
      * @tc.desc      Test end method with Uint8Array chunk
      * @tc.size      MediumTest
@@ -962,7 +962,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3000
      * @tc.name      testStreamWritable02Chapter0031
      * @tc.desc      Test end method with Uint8Array boundary values 0 and 255
      * @tc.size      MediumTest
@@ -992,7 +992,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3100
      * @tc.name      testStreamWritable02Chapter0032
      * @tc.desc      Test end method with Uint8ClampedArray converted to Uint8Array
      * @tc.size      MediumTest
@@ -1022,7 +1022,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3200
      * @tc.name      testStreamWritable02Chapter0033
      * @tc.desc      Test end method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1052,7 +1052,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3300
      * @tc.name      testStreamWritable02Chapter0034
      * @tc.desc      Test end method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1080,7 +1080,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3400
      * @tc.name      testStreamWritable02Chapter0035
      * @tc.desc      Test end method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1108,7 +1108,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3500
      * @tc.name      testStreamWritable02Chapter0036
      * @tc.desc      Test end method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1136,7 +1136,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3600
      * @tc.name      testStreamWritable02Chapter0037
      * @tc.desc      Test end method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1169,7 +1169,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3700
      * @tc.name      testStreamWritable02Chapter0038
      * @tc.desc      Test end method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1202,7 +1202,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3800
      * @tc.name      testStreamWritable02Chapter0039
      * @tc.desc      Test end method with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1234,7 +1234,7 @@ export default function StreamWritable02Test() {
       writableStream.end(uint8Array, 'utf8');
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_3900
      * @tc.name      testStreamWritable02Chapter0040
      * @tc.desc      Test end method with Uint8Array
      * @tc.size      MediumTest
@@ -1267,7 +1267,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4000
      * @tc.name      testStreamWritable02Chapter0041
      * @tc.desc      Test end method with Uint8Array
      * @tc.size      MediumTest
@@ -1300,7 +1300,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4100
      * @tc.name      testStreamWritable02Chapter0042
      * @tc.desc      Test end method with Uint8Array
      * @tc.size      MediumTest
@@ -1329,7 +1329,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4200
      * @tc.name      testStreamWritable02Chapter0043
      * @tc.desc      Test end method with wrong type parameter (should error)
      * @tc.size      MediumTest
@@ -1372,7 +1372,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4300
      * @tc.name      testStreamWritable02Chapter0044
      * @tc.desc      Test end method with wrong type parameter (should error)
      * @tc.size      MediumTest
@@ -1415,7 +1415,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4400
      * @tc.name      testStreamWritable02Chapter0045
      * @tc.desc      Verify end callback is invoked when end method is called
      * @tc.size      MediumTest
@@ -1445,7 +1445,7 @@ export default function StreamWritable02Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4500
      * @tc.name      testStreamWritable02Chapter0046
      * @tc.desc      Test end method with write and then end
      * @tc.size      MediumTest
@@ -1474,7 +1474,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4600
      * @tc.name      testStreamWritable02Chapter0047
      * @tc.desc      Test end method with corked stream
      * @tc.size      MediumTest
@@ -1505,7 +1505,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4700
      * @tc.name      testStreamWritable02Chapter0048
      * @tc.desc      Test end method without implementing doWrite (should error)
      * @tc.size      MediumTest
@@ -1529,7 +1529,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4800
      * @tc.name      testStreamWritable02Chapter0049
      * @tc.desc      Test end method with number chunk (should error)
      * @tc.size      MediumTest
@@ -1574,7 +1574,7 @@ export default function StreamWritable02Test() {
       expect(streamCreated).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_4900
      * @tc.name      testStreamWritable02Chapter0050
      * @tc.desc      Test end method with boolean chunk (should error)
      * @tc.size      MediumTest
@@ -1609,7 +1609,7 @@ export default function StreamWritable02Test() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_5000
      * @tc.name      testStreamWritable02Chapter0051
      * @tc.desc      Test end method with object chunk (should error)
      * @tc.size      MediumTest
@@ -1644,7 +1644,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_5100
      * @tc.name      testStreamWritable02Chapter0052
      * @tc.desc      Test end method with array chunk (should error)
      * @tc.size      MediumTest
@@ -1679,7 +1679,7 @@ export default function StreamWritable02Test() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_5200
      * @tc.name      testStreamWritable02Chapter0053
      * @tc.desc      Test end method with empty Uint8Array
      * @tc.size      MediumTest
@@ -1707,7 +1707,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_5300
      * @tc.name      testStreamWritable02Chapter0054
      * @tc.desc      Test end method with Uint8Array containing multiple zeros
      * @tc.size      MediumTest
@@ -1735,7 +1735,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_5400
      * @tc.name      testStreamWritable02Chapter0055
      * @tc.desc      Test end method with invalid callback (should error)
      * @tc.size      MediumTest
@@ -1774,7 +1774,7 @@ export default function StreamWritable02Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTTWO_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE2_5500
      * @tc.name      testStreamWritable02Chapter0058
      * @tc.desc      Test end method with Uint8Array
      * @tc.size      MediumTest

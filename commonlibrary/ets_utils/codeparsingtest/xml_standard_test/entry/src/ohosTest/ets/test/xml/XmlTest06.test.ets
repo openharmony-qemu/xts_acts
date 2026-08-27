@@ -94,7 +94,7 @@ export default function XmlTest_06() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_0100
      * @tc.name      GetLineNumberTest0001
      * @tc.desc      Verify that column numbers start at 1 and increment correctly during simple XML parsing
      * @tc.size      MediumTest
@@ -135,7 +135,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_0200
      * @tc.name      GetLineNumberTest0002
      * @tc.desc      Verify that the column number calculation is correct when the XML contains whitespace characters
      * @tc.size      MediumTest
@@ -179,7 +179,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_0300
      * @tc.name      GetLineNumberTest0003
      * @tc.desc      Verify that the column number is calculated correctly when XML contains escaped characters and Unicode characters
      * @tc.size      MediumTest
@@ -218,7 +218,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_0400
      * @tc.name      GetLineNumberTest0004
      * @tc.desc      Verify the return value of getLineNumber when the XML input is empty
      * @tc.size      MediumTest
@@ -246,7 +246,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_0500
      * @tc.name      GetLineNumberTest0005
      * @tc.desc      Verify that the column numbers are calculated correctly when parsing incomplete XML
      * @tc.size      MediumTest
@@ -296,7 +296,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_0600
      * @tc.name      GetLineNumberTest0006
      * @tc.desc      Verify the behavior of getLineNumber when input is invalid
      * @tc.size      MediumTest
@@ -350,7 +350,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_0700
      * @tc.name      GetLineNumberTest0007
      * @tc.desc      Verify the independence of column number calculation when multiple parsing instances run simultaneously
      * @tc.size      MediumTest
@@ -400,7 +400,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_0800
      * @tc.name      GetLineNumberTest0008
      * @tc.desc      Verify the independence of column number calculation when multiple parsing instances run simultaneously
      * @tc.size      MediumTest
@@ -458,7 +458,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_0900
      * @tc.name      GetLineNumberTest0009
      * @tc.desc      Verify that the column number results are consistent when the same XML document is parsed repeatedly
      * @tc.size      MediumTest
@@ -504,7 +504,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETLINENUMBER_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1000
      * @tc.name      GetLineNumberTest00010
      * @tc.desc      Verify that the column number accurately locates the error when an XML parsing error occurs
      * @tc.size      MediumTest
@@ -544,7 +544,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAME_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1100
      * @tc.name      getNameTest0001
      * @tc.desc      [Positive Scenario] Test the basic element node name retrieval function, verify the basic support of getName method for standard XML element nodes
      * @tc.size      MediumTest
@@ -576,7 +576,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAME_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1200
      * @tc.name      getNameTest0002
      * @tc.desc      [Positive Scenario] Test the attribute node name retrieval function, verify the correct application of getName method in attribute callbacks
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAME_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1300
      * @tc.name      getNameTest0003
      * @tc.desc      [Positive Boundary Scenario] Test the retrieval function of node names with special characters, verify boundary cases such as underscores, hyphens, and namespaces
      * @tc.size      MediumTest
@@ -651,7 +651,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAME_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1400
      * @tc.name      getNameTest0004
      * @tc.desc      [Positive Combination Scenario] Test the retrieval function of nested element node names, verify the parsing capability of multi-layer complex structures
      * @tc.size      MediumTest
@@ -701,7 +701,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAME_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1500
      * @tc.name      getNameTest0005
      * @tc.desc      [Positive Boundary Scenario] Test the processing capability of empty nodes and self-closing tags, verify compatibility with special node types
      * @tc.size      MediumTest
@@ -737,7 +737,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAME_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1600
      * @tc.name      getNameTest0006
      * @tc.desc      [Negative Scenario] Test the fault tolerance capability under abnormal input conditions, verify the stability of getName method in cases such as invalid XML, unclosed tags, and empty input
      * @tc.size      MediumTest
@@ -795,7 +795,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAME_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1700
      * @tc.name      getNameTest0007
      * @tc.desc      [Performance Combination Scenario] Test large document parsing capability, verify stability and performance under high-frequency calls
      * @tc.size      MediumTest
@@ -837,7 +837,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAME_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1800
      * @tc.name      getNameTest0008
      * @tc.desc      [Complex Combination Scenario] Test complex XML structure parsing, verify the integrity of multi-type node combination scenarios
      * @tc.size      MediumTest
@@ -893,7 +893,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_1900
      * @tc.name      getNamespaceTest0002
      * @tc.desc      Test to verify returning the correct namespace URI
      * @tc.size      MediumTest
@@ -921,7 +921,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2000
      * @tc.name      getNamespaceTest0003
      * @tc.desc      Test child node inherits parent node's prefix binding, verify returning parent node's bound URI
      * @tc.size      MediumTest
@@ -952,7 +952,7 @@ export default function XmlTest_06() {
 
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2100
      * @tc.name      getNamespaceTest0005
      * @tc.desc      Test defining default namespace (without prefix), return URI
      * @tc.size      MediumTest
@@ -982,7 +982,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2200
      * @tc.name      getNamespaceTest0006
      * @tc.desc      Test child node inherits parent node's default namespace, return parent node's default URI
      * @tc.size      MediumTest
@@ -1013,7 +1013,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2300
      * @tc.name      getNamespaceTest0007
      * @tc.desc      Test node redefines prefix already bound by parent node, return child node's redefined URI
      * @tc.size      MediumTest
@@ -1045,7 +1045,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2400
      * @tc.name      getNamespaceTest0008
      * @tc.desc      Test child node defines new prefix with no such prefix binding in parent node
      * @tc.size      MediumTest
@@ -1075,7 +1075,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2500
      * @tc.name      getNamespaceTest0009
      * @tc.desc      Test node with no explicit namespace binding
      * @tc.size      MediumTest
@@ -1105,7 +1105,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2600
      * @tc.name      getNamespaceTest0010
      * @tc.desc      Test passing null as prefix parameter
      * @tc.size      MediumTest
@@ -1133,7 +1133,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2700
      * @tc.name      getNamespaceTest0011
      * @tc.desc      Test passing undefined as prefix parameter
      * @tc.size      MediumTest
@@ -1161,7 +1161,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2800
      * @tc.name      getNamespaceTest0012
      * @tc.desc      Test passing numeric prefix
      * @tc.size      MediumTest
@@ -1195,7 +1195,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_2900
      * @tc.name      getNamespaceTest0013
      * @tc.desc      Test passing object prefix
      * @tc.size      MediumTest
@@ -1229,7 +1229,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_3000
      * @tc.name      getNamespaceTest0014
      * @tc.desc      Test passing array prefix
      * @tc.size      MediumTest
@@ -1263,7 +1263,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_3100
      * @tc.name      getNamespaceTest0015
      * @tc.desc      Test passing prefix with illegal characters
      * @tc.size      MediumTest
@@ -1296,7 +1296,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_3200
      * @tc.name      getNamespaceTest0016
      * @tc.desc      Test passing prefix not bound in current node and ancestor nodes
      * @tc.size      MediumTest
@@ -1324,7 +1324,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_3300
      * @tc.name      getNamespaceTest0017
      * @tc.desc      Test parsing incomplete XML
      * @tc.size      MediumTest
@@ -1360,7 +1360,7 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML7_3400
      * @tc.name      getNamespaceTest0019
      * @tc.desc      Test combination of grandparent node binding and parent node redefinition
      * @tc.size      MediumTest

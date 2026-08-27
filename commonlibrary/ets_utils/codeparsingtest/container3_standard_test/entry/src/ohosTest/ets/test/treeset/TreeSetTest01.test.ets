@@ -29,7 +29,7 @@ export default function TreeSet01Test() {
     })
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_0100
      * @tc.name      testTreeSet01Chapter0001
      * @tc.desc      Default constructor creates empty set and length equals zero
      * @tc.size      MediumTest
@@ -46,7 +46,7 @@ export default function TreeSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_0200
      * @tc.name      testTreeSet01Chapter0002
      * @tc.desc      Constructor with ascending string comparator yields a,b,c,d order on iteration
      * @tc.size      MediumTest
@@ -77,7 +77,7 @@ export default function TreeSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_0300
      * @tc.name      testTreeSet01Chapter0003
      * @tc.desc      Constructor with descending string comparator yields d,c,b,a order on iteration
      * @tc.size      MediumTest
@@ -108,7 +108,7 @@ export default function TreeSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_0400
      * @tc.name      testTreeSet01Chapter0004
      * @tc.desc      Constructor with ascending number comparator handles negatives and zero in order -2,-1,0,2,5
      * @tc.size      MediumTest
@@ -141,7 +141,7 @@ export default function TreeSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_0500
      * @tc.name      testTreeSet01Chapter0005
      * @tc.desc      Constructor with descending number comparator orders values 9,3,1,-1,-4 on iteration
      * @tc.size      MediumTest
@@ -174,7 +174,7 @@ export default function TreeSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_0600
      * @tc.name      testTreeSet01Chapter0006
      * @tc.desc      Custom type requires comparator and ascending by id yields 1,2,3 order on iteration and correct length
      * @tc.size      MediumTest
@@ -210,7 +210,7 @@ export default function TreeSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_0700
      * @tc.name      testTreeSet01Chapter0007
      * @tc.desc      Custom type comparator descending by id yields 3,2,1 order on iteration and correct length
      * @tc.size      MediumTest
@@ -246,7 +246,7 @@ export default function TreeSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_0800
      * @tc.name      testTreeSet01Chapter0008
      * @tc.desc      Boolean comparator orders false,true and iteration preserves order with correct uniqueness
      * @tc.size      MediumTest
@@ -275,7 +275,7 @@ export default function TreeSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_0900
      * @tc.name      testTreeSet01Chapter0009
      * @tc.desc      Duplicate insertion does not increase length and iteration shows unique element only once
      * @tc.size      MediumTest
@@ -302,7 +302,7 @@ export default function TreeSet01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREESET_TEST01_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREESET2_1000
      * @tc.name      testTreeSet01Chapter0010
      * @tc.desc      Test TreeSet with custom comparator that handles edge cases
      * @tc.size      MediumTest

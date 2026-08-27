@@ -380,7 +380,7 @@ export default function StreamTest_07() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_0100
      * @tc.name      Readableontest0009
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -408,7 +408,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_0200
      * @tc.name      Readableontest0010
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -434,7 +434,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_0300
      * @tc.name      Readableontest0011
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -457,7 +457,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_0400
      * @tc.name      Readableontest0012
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -489,7 +489,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_0500
      * @tc.name      Readableontest0013
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -514,7 +514,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_0600
      * @tc.name      Readableontest0014
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -543,7 +543,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_0700
      * @tc.name      Readableofftest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -564,7 +564,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_0800
      * @tc.name      Readableofftest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -590,7 +590,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_0900
      * @tc.name      Readableofftest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -617,7 +617,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1000
      * @tc.name      Readableofftest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -643,7 +643,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1100
      * @tc.name      Readableofftest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -665,7 +665,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1200
      * @tc.name      Readableofftest0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -686,7 +686,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1300
      * @tc.name      Readableofftest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -707,7 +707,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1400
      * @tc.name      Readableofftest0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -730,7 +730,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1500
      * @tc.name      Readableofftest0009
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -752,7 +752,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1600
      * @tc.name      Readableofftest0010
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -771,7 +771,7 @@ export default function StreamTest_07() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1700
      * @tc.name      Readableofftest0011
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -792,7 +792,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1800
      * @tc.name      Readableofftest0012
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -819,7 +819,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_1900
      * @tc.name      Readableofftest0013
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -841,7 +841,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2000
      * @tc.name      Readabledolnitializetest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -857,7 +857,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2100
      * @tc.name      Readabledolnitializetest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -873,7 +873,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2200
      * @tc.name      Readabledolnitializetest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -892,7 +892,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2300
      * @tc.name      Readabledolnitializetest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -919,7 +919,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2400
      * @tc.name      Readabledolnitializetest0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -939,7 +939,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2500
      * @tc.name      Readabledolnitializetest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -957,7 +957,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2600
      * @tc.name      Readabledolnitializetest0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -975,7 +975,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2700
      * @tc.name      ReadabledoReadtest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -991,7 +991,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2800
      * @tc.name      ReadabledoReadtest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1011,7 +1011,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_2900
      * @tc.name      ReadabledoReadtest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1035,7 +1035,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3000
      * @tc.name      ReadabledoReadtest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1054,7 +1054,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3100
      * @tc.name      ReadabledoReadtest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1072,7 +1072,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3200
      * @tc.name      ReadabledoReadtest0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1091,7 +1091,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3300
      * @tc.name      ReadabledoReadtest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1112,7 +1112,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3400
      * @tc.name      ReadabledoReadtest0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1128,7 +1128,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3500
      * @tc.name      ReadabledoReadtest0009
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1149,7 +1149,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3600
      * @tc.name      Readablepushtest0001
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1174,7 +1174,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3700
      * @tc.name      Readablepushtest0002
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1193,7 +1193,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3800
      * @tc.name      Readablepushtest0003
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1223,7 +1223,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_3900
      * @tc.name      Readablepushtest0004
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1247,7 +1247,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4000
      * @tc.name      Readablepushtest0005
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1265,7 +1265,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4100
      * @tc.name      Readablepushtest0006
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1285,7 +1285,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4200
      * @tc.name      Readablepushtest0007
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1302,7 +1302,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4300
      * @tc.name      Readablepushtest0008
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1325,7 +1325,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4400
      * @tc.name      Readablepushtest0009
      * @tc.desc      Array Unshift index 0.
      * @tc.size      MediumTest
@@ -1347,7 +1347,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4500
      * @tc.name      testDuplexConstructor0001
      * @tc.desc      Validate read/write state with default constructor.
      * @tc.size      MediumTest
@@ -1373,7 +1373,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4600
      * @tc.name      testDuplexConstructor0002
      * @tc.desc      Validate writable state after writing empty data in cork state.
      * @tc.size      MediumTest
@@ -1390,7 +1390,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4700
      * @tc.name      testDuplexConstructor0003
      * @tc.desc      Verify error when accessing unimplemented doRead method.
      * @tc.size      MediumTest
@@ -1405,7 +1405,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4800
      * @tc.name      testDuplexConstructor0004
      * @tc.desc      Validate error when writing to ended stream.
      * @tc.size      MediumTest
@@ -1419,7 +1419,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_4900
      * @tc.name      testDuplexConstructor0005
      * @tc.desc      Prevent multiple end method invocations.
      * @tc.size      MediumTest
@@ -1436,7 +1436,7 @@ export default function StreamTest_07() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTSEVEN_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM9_5000
      * @tc.name      testDuplexWriteStringUtf80001
      * @tc.desc      Verify writing string data with utf8 encoding to Duplex stream.
      * @tc.size      MediumTest

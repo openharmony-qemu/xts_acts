@@ -419,7 +419,7 @@ export default function ListTest17() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_0100
      * @tc.name      testList17Chapter0001
      * @tc.desc      Verify iterator logic for empty arrays, extreme numeric overflow arrays & post-removal arrays
      * @tc.size      MediumTest
@@ -466,7 +466,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_0200
      * @tc.name      testList17Chapter0002
      * @tc.desc      Verify iterator logic for nested arrays, TypedArray-subelement arrays & ultra-long arrays
      * @tc.size      LargeTest
@@ -520,7 +520,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_0300
      * @tc.name      testList17Chapter0003
      * @tc.desc      Verify the iterator processing logic for arrays containing functions/keywords (Symbol removed)
      * @tc.size      MediumTest
@@ -554,7 +554,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_0400
      * @tc.name      testList17Chapter0004
      * @tc.desc      Test add interface with basic string values
      * @tc.size      MediumTest
@@ -594,7 +594,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_0500
      * @tc.name      testList17Chapter0005
      * @tc.desc      Test add interface with special character strings
      * @tc.size      MediumTest
@@ -637,7 +637,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_0600
      * @tc.name      testList17Chapter0006
      * @tc.desc      Test add interface with escape character strings
      * @tc.size      MediumTest
@@ -675,7 +675,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_0700
      * @tc.name      testList17Chapter0007
      * @tc.desc      Test add interface with more escape character strings
      * @tc.size      MediumTest
@@ -713,7 +713,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_0800
      * @tc.name      testList17Chapter0008
      * @tc.desc      Test add interface with hex/octal escape strings
      * @tc.size      MediumTest
@@ -751,7 +751,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_0900
      * @tc.name      testList17Chapter0009
      * @tc.desc      Test add interface with emoji strings
      * @tc.size      MediumTest
@@ -794,7 +794,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1000
      * @tc.name      testList17Chapter0010
      * @tc.desc      Test add interface with special unicode strings
      * @tc.size      MediumTest
@@ -850,7 +850,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1100
      * @tc.name      testList17Chapter0011
      * @tc.desc      Test add interface with large strings (logic verification without actual large string)
      * @tc.size      MediumTest
@@ -886,7 +886,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1200
      * @tc.name      testList17Chapter0012
      * @tc.desc      Test add interface with special number values
      * @tc.size      MediumTest
@@ -929,7 +929,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1300
      * @tc.name      testList17Chapter0013
      * @tc.desc      Test add interface with extreme number values
      * @tc.size      MediumTest
@@ -967,7 +967,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1400
      * @tc.name      testList17Chapter0014
      * @tc.desc      Test add interface with precision number values
      * @tc.size      MediumTest
@@ -1023,7 +1023,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1500
      * @tc.name      testList17Chapter0015
      * @tc.desc      Test add interface with base expression number values
      * @tc.size      MediumTest
@@ -1073,7 +1073,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1600
      * @tc.name      testList17Chapter0016
      * @tc.desc      Test add interface with bigint values (fixed redundant wrapping)
      * @tc.size      MediumTest
@@ -1116,7 +1116,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1700
      * @tc.name      testList17Chapter0017
      * @tc.desc      Test add interface with basic boolean values
      * @tc.size      MediumTest
@@ -1149,7 +1149,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1800
      * @tc.name      testList17Chapter0018
      * @tc.desc      Test add interface with false-like values
      * @tc.size      MediumTest
@@ -1191,7 +1191,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_1900
      * @tc.name      testList17Chapter0019
      * @tc.desc      Test add interface with true-like values (fixed EmptyObject initialization)
      * @tc.size      MediumTest
@@ -1229,7 +1229,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_2000
      * @tc.name      testList17Chapter0020
      * @tc.desc      Test add interface with mixed boolean/number/string values
      * @tc.size      MediumTest
@@ -1282,7 +1282,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_2100
      * @tc.name      testList17Chapter0021
      * @tc.desc      Test add interface with basic objects
      * @tc.size      MediumTest
@@ -1323,7 +1323,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_2200
      * @tc.name      testList17Chapter0022
      * @tc.desc      Test add interface with special key/inherit/non-enum objects
      * @tc.size      MediumTest
@@ -1363,7 +1363,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_2300
      * @tc.name      testList17Chapter0023
      * @tc.desc      Test add interface with buffer/dataview/typed array objects
      * @tc.size      MediumTest
@@ -1401,7 +1401,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_2400
      * @tc.name      testList17Chapter0024
      * @tc.desc      Test add interface with map/set/func/regex/promise objects (improved promise test)
      * @tc.size      MediumTest
@@ -1449,7 +1449,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_2500
      * @tc.name      testList17Chapter0025
      * @tc.desc      Test add interface with special value objects
      * @tc.size      MediumTest
@@ -1488,7 +1488,7 @@ export default function ListTest17() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT17_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST17_2600
      * @tc.name      testList17Chapter0026
      * @tc.desc      Test add interface with large/mixed/small/newKey objects
      * @tc.size      MediumTest

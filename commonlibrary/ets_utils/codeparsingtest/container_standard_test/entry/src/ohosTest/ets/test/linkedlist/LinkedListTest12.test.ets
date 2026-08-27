@@ -30,7 +30,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_0100
      * @tc.name      testLinkedList12Chapter0001
      * @tc.desc      Test removing false of Boolean type
      * @tc.size      MediumTest
@@ -50,7 +50,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_0200
      * @tc.name      testLinkedList12Chapter0002
      * @tc.desc      Test removing values that are usually treated as false of Boolean type
      * @tc.size      MediumTest
@@ -91,7 +91,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_0300
      * @tc.name      testLinkedList12Chapter0003
      * @tc.desc      Test removing ! + other data types of Boolean type
      * @tc.size      MediumTest
@@ -117,7 +117,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_0400
      * @tc.name      testLinkedList12Chapter0004
      * @tc.desc      Test removing ordinary object of Object type
      * @tc.size      MediumTest
@@ -142,7 +142,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_0500
      * @tc.name      testLinkedList12Chapter0005
      * @tc.desc      Test removing nested object of Object type
      * @tc.size      MediumTest
@@ -172,7 +172,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_0600
      * @tc.name      testLinkedList12Chapter0006
      * @tc.desc      Test removing object with function property (no parameters) of Object type
      * @tc.size      MediumTest
@@ -200,7 +200,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_0700
      * @tc.name      testLinkedList12Chapter0007
      * @tc.desc      Test removing object with function property (with parameters) of Object type
      * @tc.size      MediumTest
@@ -228,7 +228,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_0800
      * @tc.name      testLinkedList12Chapter0008
      * @tc.desc      Test removing object containing ArrayBuffer of Object type
      * @tc.size      MediumTest
@@ -256,7 +256,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_0900
      * @tc.name      testLinkedList12Chapter0009
      * @tc.desc      Test removing object containing DataView of Object type
      * @tc.size      MediumTest
@@ -280,7 +280,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1000
      * @tc.name      testLinkedList12Chapter0010
      * @tc.desc      Test removing empty object of Object type
      * @tc.size      MediumTest
@@ -306,7 +306,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1100
      * @tc.name      testLinkedList12Chapter0011
      * @tc.desc      Test removing huge object of Object type
      * @tc.size      MediumTest
@@ -338,7 +338,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1200
      * @tc.name      testLinkedList12Chapter0012
      * @tc.desc      Test removing object containing null property of Object type
      * @tc.size      MediumTest
@@ -362,7 +362,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1300
      * @tc.name      testLinkedList12Chapter0013
      * @tc.desc      Test removing object containing NaN property of Object type
      * @tc.size      MediumTest
@@ -386,7 +386,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1400
      * @tc.name      testLinkedList12Chapter0014
      * @tc.desc      Test removing object containing Infinity property of Object type
      * @tc.size      MediumTest
@@ -410,7 +410,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1500
      * @tc.name      testLinkedList12Chapter0015
      * @tc.desc      Test removing object containing TypedArray property of Object type
      * @tc.size      MediumTest
@@ -434,7 +434,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1600
      * @tc.name      testLinkedList12Chapter0016
      * @tc.desc      Test removing object containing Map property of Object type
      * @tc.size      MediumTest
@@ -458,7 +458,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1700
      * @tc.name      testLinkedList12Chapter0017
      * @tc.desc      Test removing object containing Set property of Object type
      * @tc.size      MediumTest
@@ -482,7 +482,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1800
      * @tc.name      testLinkedList12Chapter0018
      * @tc.desc      Test removing object containing Promise property of Object type
      * @tc.size      MediumTest
@@ -519,7 +519,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_1900
      * @tc.name      testLinkedList12Chapter0019
      * @tc.desc      Test removing object containing regular expression property of Object type
      * @tc.size      MediumTest
@@ -548,7 +548,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2000
      * @tc.name      testLinkedList12Chapter0020
      * @tc.desc      Test removing normal Uint8Array of Array type
      * @tc.size      MediumTest
@@ -567,7 +567,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2100
      * @tc.name      testLinkedList12Chapter0021
      * @tc.desc      Test removing array containing multiple 0s of Array type
      * @tc.size      MediumTest
@@ -586,7 +586,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2200
      * @tc.name      testLinkedList12Chapter0022
      * @tc.desc      Test removing Array converted to Uint8Array containing negative numbers of Array type
      * @tc.size      MediumTest
@@ -605,7 +605,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2300
      * @tc.name      testLinkedList12Chapter0023
      * @tc.desc      Test removing Array converted to Uint8Array/Uint16Array containing negative numbers of Array type
      * @tc.size      MediumTest
@@ -627,7 +627,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2400
      * @tc.name      testLinkedList12Chapter0024
      * @tc.desc      Test removing special array of Array type
      * @tc.size      MediumTest
@@ -648,7 +648,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2500
      * @tc.name      testLinkedList12Chapter0025
      * @tc.desc      Test removing array containing NaN/Infinity of Array type
      * @tc.size      MediumTest
@@ -667,7 +667,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2600
      * @tc.name      testLinkedList12Chapter0026
      * @tc.desc      Test removing array containing non-numeric types of Array type
      * @tc.size      MediumTest
@@ -686,7 +686,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2700
      * @tc.name      testLinkedList12Chapter0027
      * @tc.desc      Test removing empty array of Array type
      * @tc.size      MediumTest
@@ -705,7 +705,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2800
      * @tc.name      testLinkedList12Chapter0028
      * @tc.desc      Test removing array with huge numeric overflow of Array type
      * @tc.size      MediumTest
@@ -724,7 +724,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_2900
      * @tc.name      testLinkedList12Chapter0029
      * @tc.desc      Test removing Int8Array | Uint8Array | Uint8ClampedArray of Array type
      * @tc.size      MediumTest
@@ -749,7 +749,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3000
      * @tc.name      testLinkedList12Chapter0030
      * @tc.desc      Test removing Int16Array | Uint16Array | Int32Array | Uint32Array of Array type
      * @tc.size      MediumTest
@@ -777,7 +777,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3100
      * @tc.name      testLinkedList12Chapter0031
      * @tc.desc      Test removing Float32Array | Float64Array | BigInt64Array | BigUint64Array of Array type
      * @tc.size      MediumTest
@@ -813,7 +813,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3200
      * @tc.name      testLinkedList12Chapter0032
      * @tc.desc      Test removing TypedArray special value storage rules of Array type
      * @tc.size      MediumTest
@@ -855,7 +855,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3300
      * @tc.name      testLinkedList12Chapter0033
      * @tc.desc      测试查找并不存在的元素是否返回False
      * @tc.size      MediumTest
@@ -871,7 +871,7 @@ export default function LinkedListTest12() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3400
      * @tc.name      testLinkedList12Chapter0034
      * @tc.desc      Test removing undefined of String type
      * @tc.size      MediumTest
@@ -890,7 +890,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3500
      * @tc.name      testLinkedList12Chapter0035
      * @tc.desc      Test removing null of String type
      * @tc.size      MediumTest
@@ -909,7 +909,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3600
      * @tc.name      testLinkedList12Chapter0036
      * @tc.desc      Test removing empty string of String type
      * @tc.size      MediumTest
@@ -928,7 +928,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3700
      * @tc.name      testLinkedList12Chapter0037
      * @tc.desc      Test removing full coverage of special characters of String type
      * @tc.size      MediumTest
@@ -947,7 +947,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3800
      * @tc.name      testLinkedList12Chapter0038
      * @tc.desc      Test removing full coverage of ASCII characters of String type
      * @tc.size      MediumTest
@@ -966,7 +966,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_3900
      * @tc.name      testLinkedList12Chapter0039
      * @tc.desc      Test removing full coverage of special characters of String type (twice)
      * @tc.size      MediumTest
@@ -985,7 +985,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4000
      * @tc.name      testLinkedList12Chapter0040
      * @tc.desc      Test removing special escape characters of String type
      * @tc.size      MediumTest
@@ -1029,7 +1029,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4100
      * @tc.name      testLinkedList12Chapter0041
      * @tc.desc      Test removing emoji symbols and their Unicode encodings of String type
      * @tc.size      MediumTest
@@ -1093,7 +1093,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4200
      * @tc.name      testLinkedList12Chapter0042
      * @tc.desc      Test removing invalid Unicode encodings of String type
      * @tc.size      MediumTest
@@ -1115,7 +1115,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4300
      * @tc.name      testLinkedList12Chapter0043
      * @tc.desc      Test removing keywords of String type
      * @tc.size      MediumTest
@@ -1137,7 +1137,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4400
      * @tc.name      testLinkedList12Chapter0044
      * @tc.desc      Test removing tree string type of String type
      * @tc.size      MediumTest
@@ -1172,7 +1172,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4500
      * @tc.name      testLinkedList12Chapter0045
      * @tc.desc      Test removing slice string type of String type
      * @tc.size      MediumTest
@@ -1205,7 +1205,7 @@ export default function LinkedListTest12() {
 
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4600
      * @tc.name      testLinkedList12Chapter0046
      * @tc.desc      Test String GC for removeFirstFound: works after adding & releasing an extra-long string
      * @tc.size      MediumTest
@@ -1231,7 +1231,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4700
      * @tc.name      testLinkedList12Chapter0047
      * @tc.desc      Test removing 0 of Number type
      * @tc.size      MediumTest
@@ -1250,7 +1250,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4800
      * @tc.name      testLinkedList12Chapter0048
      * @tc.desc      Test removing undefined of Number type
      * @tc.size      MediumTest
@@ -1269,7 +1269,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_4900
      * @tc.name      testLinkedList12Chapter0049
      * @tc.desc      Test removing NaN of Number type
      * @tc.size      MediumTest
@@ -1288,7 +1288,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5000
      * @tc.name      testLinkedList12Chapter0050
      * @tc.desc      Test removing -0 of Number type
      * @tc.size      MediumTest
@@ -1307,7 +1307,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5100
      * @tc.name      testLinkedList12Chapter0051
      * @tc.desc      Test removing positive infinity of Number type
      * @tc.size      MediumTest
@@ -1326,7 +1326,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5200
      * @tc.name      testLinkedList12Chapter0052
      * @tc.desc      Test removing negative infinity of Number type
      * @tc.size      MediumTest
@@ -1345,7 +1345,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5300
      * @tc.name      testLinkedList12Chapter0053
      * @tc.desc      Test removing double type of Number type
      * @tc.size      MediumTest
@@ -1365,7 +1365,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5400
      * @tc.name      testLinkedList12Chapter0054
      * @tc.desc      Test removing Number.MAX_VALUE of Number type
      * @tc.size      MediumTest
@@ -1384,7 +1384,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5500
      * @tc.name      testLinkedList12Chapter0055
      * @tc.desc      Test removing Number.MIN_VALUE of Number type
      * @tc.size      MediumTest
@@ -1403,7 +1403,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5600
      * @tc.name      testLinkedList12Chapter0056
      * @tc.desc      Test removing Number.EPSILON of Number type
      * @tc.size      MediumTest
@@ -1422,7 +1422,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5700
      * @tc.name      testLinkedList12Chapter0057
      * @tc.desc      Test removing Number.EPSILON of Number type
      * @tc.size      MediumTest
@@ -1441,7 +1441,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5800
      * @tc.name      testLinkedList12Chapter0058
      * @tc.desc      Test removing byte of Number type
      * @tc.size      MediumTest
@@ -1476,7 +1476,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_5900
      * @tc.name      testLinkedList12Chapter0059
      * @tc.desc      Test removing out-of-bounds byte of Number type
      * @tc.size      MediumTest
@@ -1496,7 +1496,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6000
      * @tc.name      testLinkedList12Chapter0060
      * @tc.desc      Test removing short of Number type
      * @tc.size      MediumTest
@@ -1526,7 +1526,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6100
      * @tc.name      testLinkedList12Chapter0061
      * @tc.desc      Test removing out-of-bounds short of Number type
      * @tc.size      MediumTest
@@ -1546,7 +1546,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6200
      * @tc.name      testLinkedList12Chapter0062
      * @tc.desc      Test removing int of Number type
      * @tc.size      MediumTest
@@ -1577,7 +1577,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6300
      * @tc.name      testLinkedList12Chapter0063
      * @tc.desc      Test removing out-of-bounds int of Number type
      * @tc.size      MediumTest
@@ -1597,7 +1597,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6400
      * @tc.name      testLinkedList12Chapter0064
      * @tc.desc      Test removing long of Number type
      * @tc.size      MediumTest
@@ -1627,7 +1627,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6500
      * @tc.name      testLinkedList12Chapter0065
      * @tc.desc      Test removing out-of-bounds long of Number type
      * @tc.size      MediumTest
@@ -1647,7 +1647,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6600
      * @tc.name      testLinkedList12Chapter0066
      * @tc.desc      Test removing float of Number type
      * @tc.size      MediumTest
@@ -1677,7 +1677,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6700
      * @tc.name      testLinkedList12Chapter0067
      * @tc.desc      Test removing double of Number type
      * @tc.size      MediumTest
@@ -1707,7 +1707,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6800
      * @tc.name      testLinkedList12Chapter0068
      * @tc.desc      Test removing out-of-bounds double of Number type
      * @tc.size      MediumTest
@@ -1727,7 +1727,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_6900
      * @tc.name      testLinkedList12Chapter0069
      * @tc.desc      Test removing char of Number type
      * @tc.size      MediumTest
@@ -1752,7 +1752,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_7000
      * @tc.name      testLinkedList12Chapter0070
      * @tc.desc      Test removing char stored as character of Number type
      * @tc.size      MediumTest
@@ -1772,7 +1772,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_7100
      * @tc.name      testLinkedList12Chapter0071
      * @tc.desc      Test removing out-of-bounds char value of Number type
      * @tc.size      MediumTest
@@ -1792,7 +1792,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_7200
      * @tc.name      testLinkedList12Chapter0072
      * @tc.desc      Test removing bigint value of Number type
      * @tc.size      MediumTest
@@ -1812,7 +1812,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_7300
      * @tc.name      testLinkedList12Chapter0073
      * @tc.desc      Test removing double value of Number type
      * @tc.size      MediumTest
@@ -1832,7 +1832,7 @@ export default function LinkedListTest12() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT12_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST13_7400
      * @tc.name      testLinkedList12Chapter0074
      * @tc.desc      Test removing float of Number type
      * @tc.size      MediumTest

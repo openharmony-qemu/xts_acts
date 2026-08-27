@@ -81,7 +81,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableWrite0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_0100
      * @tc.desc   Test Writable write method with empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -100,7 +100,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testSetDefaultEncoding0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_0200
      * @tc.desc   Test setDefaultEncoding with no parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testSetDefaultEncoding0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_0300
      * @tc.desc   Test setDefaultEncoding with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -130,7 +130,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testSetDefaultEncoding0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_0400
      * @tc.desc   Test setDefaultEncoding with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testOn0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_21900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_0500
      * @tc.desc   Test on method with empty string event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -162,7 +162,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testOn0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_0600
      * @tc.desc   Test on method with null event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -179,7 +179,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testOn0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_0700
      * @tc.desc   Test on method with undefined event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -197,7 +197,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testOff0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_0800
      * @tc.desc   Test off method with empty string event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,7 +217,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testOff0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_0900
      * @tc.desc   Test off method with null event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -237,7 +237,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testOff0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1000
      * @tc.desc   Test off method with undefined event.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableDoInitialize0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1100
      * @tc.desc   Test doInitialize with null callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -285,7 +285,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableDoInitialize0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1200
      * @tc.desc   Test doInitialize with undefined callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -313,7 +313,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWrite0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1300
      * @tc.desc   Test doWrite with null chunk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -344,7 +344,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWrite0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1400
      * @tc.desc   Test doWrite with undefined chunk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -375,7 +375,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWrite0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_22900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1500
      * @tc.desc   Test doWrite with empty string chunk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -407,7 +407,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWrite0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1600
      * @tc.desc   Test doWrite with null encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -438,7 +438,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWrite0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1700
      * @tc.desc   Test doWrite with undefined encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -467,7 +467,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWrite0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1800
      * @tc.desc   Test doWrite with empty string encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -496,7 +496,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWrite0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_1900
      * @tc.desc   Test doWrite with null callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -526,7 +526,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWrite0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2000
      * @tc.desc   Test doWrite with undefined callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -556,7 +556,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWritev0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2100
      * @tc.desc   Test doWritev with null chunks.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -587,7 +587,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoWritev0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2200
      * @tc.desc   Test doWritev with undefined chunks.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -618,7 +618,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableObjectMode0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2300
      * @tc.desc   Test writableObjectMode property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -634,7 +634,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableHighWatermark0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2400
      * @tc.desc   Test writableHighWatermark property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -650,7 +650,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableState0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_23900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2500
      * @tc.desc   Test writable property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -666,7 +666,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableLength0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2600
      * @tc.desc   Test writableLength property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -682,7 +682,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableCorked0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2700
      * @tc.desc   Test writableCorked property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -698,7 +698,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableEnded0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2800
      * @tc.desc   Test writableEnded property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -714,7 +714,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableFinished0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_2900
      * @tc.desc   Test writableFinished property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -730,7 +730,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testSetEncoding0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3000
      * @tc.desc   Test setEncoding with no parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -747,7 +747,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testSetEncoding0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3100
      * @tc.desc   Test setEncoding with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -764,7 +764,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testSetEncoding0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3200
      * @tc.desc   Test setEncoding with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -781,7 +781,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testSetEncoding0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3300
      * @tc.desc   Test setEncoding with empty string parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -798,7 +798,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testPipe0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3400
      * @tc.desc   Test pipe with null destination.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -828,7 +828,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testPipe0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_24900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3500
      * @tc.desc   Test pipe with undefined destination.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -856,7 +856,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testPipe0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3600
      * @tc.desc   Test pipe with null options.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -894,7 +894,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testPipe0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3700
      * @tc.desc   Test pipe with undefined options.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -933,7 +933,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testUnpipe0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3800
      * @tc.desc   Test unpipe with null destination.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -973,7 +973,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testUnpipe0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_3900
      * @tc.desc   Test unpipe with undefined destination.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1013,7 +1013,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testReadableDoInitialize0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4000
      * @tc.desc   Test doInitialize with null callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1042,7 +1042,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testReadableDoInitialize0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4100
      * @tc.desc   Test doInitialize with undefined callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1071,7 +1071,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoRead0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4200
      * @tc.desc   Test doRead with null size.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1100,7 +1100,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoRead0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4300
      * @tc.desc   Test doRead with undefined size.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1130,7 +1130,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDuplexDoWrite0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4400
      * @tc.desc   Test Duplex doWrite with null chunk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1164,7 +1164,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDuplexDoWrite0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_25900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4500
      * @tc.desc   Test Duplex doWrite with undefined chunk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1198,7 +1198,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDuplexDoWrite0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4600
      * @tc.desc   Test Duplex doWrite with empty string chunk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1232,7 +1232,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDuplexDoWrite0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4700
      * @tc.desc   Test Duplex doWrite with null encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1266,7 +1266,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDuplexDoWrite0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4800
      * @tc.desc   Test Duplex doWrite with undefined encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1298,7 +1298,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDuplexDoWrite0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_4900
      * @tc.desc   Test Duplex doWrite with empty string encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1330,7 +1330,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDuplexDoWritev0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5000
      * @tc.desc   Test Duplex doWritev with null chunks.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1364,7 +1364,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDuplexDoWritev0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5100
      * @tc.desc   Test Duplex doWritev with undefined chunks.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1396,7 +1396,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoTransform0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5200
      * @tc.desc   Test doTransform with null chunk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1431,7 +1431,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoTransform0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5300
      * @tc.desc   Test doTransform with undefined chunk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1466,7 +1466,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoTransform0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5400
      * @tc.desc   Test doTransform with empty string chunk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1502,7 +1502,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoTransform0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_26900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5500
      * @tc.desc   Test doTransform with null encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1538,7 +1538,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoTransform0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5600
      * @tc.desc   Test doTransform with undefined encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1572,7 +1572,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoTransform0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5700
      * @tc.desc   Test doTransform with empty string encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1606,7 +1606,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoTransform0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5800
      * @tc.desc   Test doTransform with null callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1640,7 +1640,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoTransform0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_5900
      * @tc.desc   Test doTransform with undefined callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1674,7 +1674,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoFlush0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_6000
      * @tc.desc   Test doFlush with null callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1713,7 +1713,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDoFlush0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_6100
      * @tc.desc   Test doFlush with undefined callback.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1752,7 +1752,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testWritableProperty0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_6200
      * @tc.desc   Test Writable writableObjectMode property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1774,7 +1774,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testDuplexProperty0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_6300
      * @tc.desc   Test Duplex writableObjectMode property.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1796,7 +1796,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testTransformProperty0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_6400
      * @tc.desc   Test Transform inherits Duplex properties.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1836,7 +1836,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testResume0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_27900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_6500
      * @tc.desc   Test resume method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1865,7 +1865,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testPause0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_28000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_6600
      * @tc.desc   Test pause method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1883,7 +1883,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testPipe0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_28100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_6700
      * @tc.desc   Test pipe basic functionality.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1923,7 +1923,7 @@ export default function Stream2Test() {
 
     /**
      * @tc.name   testUnpipe0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STREAM_28200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STREAM2_6800
      * @tc.desc   Test unpipe basic functionality.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

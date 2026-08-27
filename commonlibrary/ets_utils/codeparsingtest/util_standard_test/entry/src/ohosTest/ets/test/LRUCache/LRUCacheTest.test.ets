@@ -41,7 +41,7 @@ export default function LRUCacheTest() {
     })
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_0100
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_0100
      * @tc.name     testLRUCacheConstructorPositive0001
      * @tc.desc     Constructor accepts positive integer capacity (5)
      * @tc.size     MediumTest
@@ -54,7 +54,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_0200
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_0200
      * @tc.name     testLRUCacheConstructorPositive0002
      * @tc.desc     Positive verification: Constructor accepts minimum positive integer capacity (1)
      * @tc.size     MediumTest
@@ -72,7 +72,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_0300
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_0300
      * @tc.name     testLRUCacheConstructorPositive0003
      * @tc.desc     Positive verification: Constructor accepts large positive integer capacity (1000)
      * @tc.size     MediumTest
@@ -90,7 +90,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_0400
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_0400
      * @tc.name     testLRUCacheConstructorPositive0004
      * @tc.desc     Positive verification: Normal execution of updateCapacity after constructor creation
      * @tc.size     MediumTest
@@ -122,7 +122,7 @@ export default function LRUCacheTest() {
     });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_0500
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_0500
      * @tc.name     testLRUCacheConstructorPositive0005
      * @tc.desc     Positive verification: Constructor accepts common capacity value (10)
      * @tc.size     MediumTest
@@ -140,7 +140,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_0600
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_0600
      * @tc.name     testLRUCacheConstructorPositive0006
      * @tc.desc     Positive verification: Normal execution of put operation after constructor creation
      * @tc.size     MediumTest
@@ -159,7 +159,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_0700
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_0700
      * @tc.name     testLRUCacheConstructorPositive0007
      * @tc.desc     Positive verification: Normal execution of get operation after constructor creation
      * @tc.size     MediumTest
@@ -179,7 +179,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_0800
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_0800
      * @tc.name     testLRUCacheConstructorPositive0008
      * @tc.desc     Positive verification: Normal execution of remove operation after constructor creation
      * @tc.size     MediumTest
@@ -199,7 +199,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_0900
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_0900
      * @tc.name     testLRUCacheConstructorPositive0009
      * @tc.desc     Positive verification: Verify normal operation of LRU eviction mechanism after constructor creation
      * @tc.size     MediumTest
@@ -243,7 +243,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1000
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1000
      * @tc.name     testLRUCacheConstructorPositive0010
      * @tc.desc     Positive verification: Constructor supports different key-value types (number, boolean)
      * @tc.size     MediumTest
@@ -264,7 +264,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1100
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1100
      * @tc.name     testLRUCacheConstructorPositive0011
      * @tc.desc     Positive verification: Constructor supports different key-value types (string, object)
      * @tc.size     MediumTest
@@ -294,7 +294,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1200
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1200
      * @tc.name     testLRUCacheConstructorPositive0012
      * @tc.desc     Positive verification: Normal execution of updateCapacity after constructor creation
      * @tc.size     MediumTest
@@ -320,7 +320,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1300
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1300
      * @tc.name     testLRUCacheConstructorPositive0013
      * @tc.desc     Positive verification: Normal execution of clear operation after constructor creation
      * @tc.size     MediumTest
@@ -342,7 +342,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1400
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1400
      * @tc.name     testLRUCacheConstructorPositive0014
      * @tc.desc     Positive verification: Normal execution of toString operation after constructor creation
      * @tc.size     MediumTest
@@ -362,7 +362,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1500
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1500
      * @tc.name     testLRUCacheConstructorPositive0015
      * @tc.desc     Positive verification: Normal execution of values operation after constructor creation
      * @tc.size     MediumTest
@@ -385,7 +385,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1600
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1600
      * @tc.name     testLRUCacheConstructorPositive0016
      * @tc.desc     Positive verification: Normal execution of keys operation after constructor creation
      * @tc.size     MediumTest
@@ -408,7 +408,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1700
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1700
      * @tc.name     testLRUCacheConstructorPositive0017
      * @tc.desc     Positive verification: Normal execution of getAfterPut operation after constructor creation
      * @tc.size     MediumTest
@@ -429,7 +429,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1800
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1800
      * @tc.name     testLRUCacheConstructorPositive0018
      * @tc.desc     Positive verification: Normal execution of LRU eviction policy after constructor creation
      * @tc.size     MediumTest
@@ -452,7 +452,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_1900
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_1900
      * @tc.name     testLRUCacheConstructorPositive0019
      * @tc.desc     Positive verification: isEmpty check after creating empty cache via constructor
      * @tc.size     MediumTest
@@ -471,7 +471,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_2000
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_2000
      * @tc.name     testLRUCacheConstructorPositive0020
      * @tc.desc     Positive verification: Verify correct capacity property after constructor creation
      * @tc.size     MediumTest
@@ -493,7 +493,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_2100
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_2100
      * @tc.name     testLRUCacheConstructorPositive0021
      * @tc.desc     Positive verification: Verify access order affects eviction policy after constructor creation
      * @tc.size     MediumTest
@@ -523,7 +523,7 @@ export default function LRUCacheTest() {
     });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_2200
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_2200
      * @tc.name     testLRUCacheConstructorPositive0022
      * @tc.desc     Positive verification: Normal execution of updateCapacity after constructor creation
      * @tc.size     MediumTest
@@ -555,7 +555,7 @@ export default function LRUCacheTest() {
     });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_2300
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_2300
      * @tc.name     testLRUCacheConstructorPositive0023
      * @tc.desc     Positive verification: Normal execution of values operation after constructor creation
      * @tc.size     MediumTest
@@ -581,7 +581,7 @@ export default function LRUCacheTest() {
     });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_2400
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_2400
      * @tc.name     testLRUCacheConstructorPositive0024
      * @tc.desc     Positive verification: Normal execution of keys operation after constructor creation
      * @tc.size     MediumTest
@@ -607,7 +607,7 @@ export default function LRUCacheTest() {
     });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_POSITIVE_2500
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_2500
      * @tc.name     testLRUCacheConstructorPositive0025
      * @tc.desc     Positive verification: Normal execution of toString operation after constructor creation
      * @tc.size     MediumTest
@@ -628,7 +628,7 @@ export default function LRUCacheTest() {
     });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_NEGATIVE_2600
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_2600
      * @tc.name     testLRUCacheConstructorNegative0026
      * @tc.desc     Negative verification: Constructor accepts 0 capacity, verify exception handling for invalid parameters
      * @tc.size     MediumTest
@@ -653,7 +653,7 @@ export default function LRUCacheTest() {
       });
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_NEGATIVE_2700
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_2700
      * @tc.name     testLRUCacheConstructorNegative0027
      * @tc.desc     Negative verification: Constructor accepts negative capacity (-1)
      * @tc.size     MediumTest
@@ -679,7 +679,7 @@ export default function LRUCacheTest() {
 
 
     /**
-     * @tc.number   SUB_UTIL_LRUCACHE_CONSTRUCTOR_NEGATIVE_4700
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_LRUCACHE2_2800
      * @tc.name     testLRUCacheConstructorNegative0047
      * @tc.desc     Negative verification: Test invalid capacity from array operation
      * @tc.size     MediumTest

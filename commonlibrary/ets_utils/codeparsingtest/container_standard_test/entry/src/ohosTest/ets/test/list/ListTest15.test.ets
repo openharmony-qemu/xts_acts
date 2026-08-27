@@ -189,7 +189,7 @@ export default function ListTest15() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_0100
      * @tc.name      testList15Chapter0001
      * @tc.desc      Verify isEmpty() with negative/typed/non-numeric index arrays
      * @tc.size      MediumTest
@@ -231,7 +231,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_0200
      * @tc.name      testList15Chapter0002
      * @tc.desc      Verify isEmpty() with NaN/Infinity/mixed type value arrays
      * @tc.size      MediumTest
@@ -268,7 +268,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_0300
      * @tc.name      testList15Chapter0003
      * @tc.desc      Verify isEmpty() with empty/overflow/deleted element arrays
      * @tc.size      MediumTest
@@ -307,7 +307,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_0400
      * @tc.name      testList15Chapter0004
      * @tc.desc      Verify isEmpty() with nested/typed/large length arrays
      * @tc.size      LargeTest
@@ -363,7 +363,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_0500
      * @tc.name      testList15Chapter0005
      * @tc.desc      Verify isEmpty() with function/keyword string mixed arrays
      * @tc.size      MediumTest
@@ -392,7 +392,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_0600
      * @tc.name      testList15Chapter0006
      * @tc.desc      Verify isEmpty() for empty constructed List of basic types
      * @tc.size      MediumTest
@@ -415,7 +415,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_0700
      * @tc.name      testList15Chapter0007
      * @tc.desc      Verify isEmpty() after adding normal/empty/undefined strings
      * @tc.size      MediumTest
@@ -444,7 +444,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_0800
      * @tc.name      testList15Chapter0008
      * @tc.desc      Verify isEmpty() after adding special/escape/emoji characters
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_0900
      * @tc.name      testList15Chapter0009
      * @tc.desc      Verify isEmpty() after adding basic numeric values (0/NaN/Infinity)
      * @tc.size      MediumTest
@@ -502,7 +502,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1000
      * @tc.name      testList15Chapter0010
      * @tc.desc      Verify isEmpty() after adding extreme/precision numeric values
      * @tc.size      MediumTest
@@ -545,7 +545,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1100
      * @tc.name      testList15Chapter0011
      * @tc.desc      Verify isEmpty() after adding numeric expressions/BigInt values
      * @tc.size      MediumTest
@@ -586,7 +586,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1200
      * @tc.name      testList15Chapter0012
      * @tc.desc      Verify isEmpty() after adding boolean values (true/false)
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1300
      * @tc.name      testList15Chapter0013
      * @tc.desc      Verify isEmpty() after adding falsy values (0/"" null/undefined)
      * @tc.size      MediumTest
@@ -646,7 +646,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1400
      * @tc.name      testList15Chapter0014
      * @tc.desc      Verify isEmpty() after adding truthy values (1/"non-empty"/object)
      * @tc.size      MediumTest
@@ -680,7 +680,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1500
      * @tc.name      testList15Chapter0015
      * @tc.desc      Verify isEmpty() after adding mixed basic type values
      * @tc.size      MediumTest
@@ -710,7 +710,7 @@ export default function ListTest15() {
       expect(list2.size()).assertEqual(5);
     });
     /**
-     * @tc.number    SUB_LIST_TEXT15_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1600
      * @tc.name      testList15Chapter0016
      * @tc.desc      Verify isEmpty() after adding normal/nested/empty objects
      * @tc.size      MediumTest
@@ -774,7 +774,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1700
      * @tc.name      testList15Chapter0017
      * @tc.desc      Verify isEmpty() after adding special key/inherited/non-enum objects
      * @tc.size      MediumTest
@@ -827,7 +827,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1800
      * @tc.name      testList15Chapter0018
      * @tc.desc      Verify isEmpty() after adding Buffer/DataView/TypedArray objects
      * @tc.size      MediumTest
@@ -879,7 +879,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_1900
      * @tc.name      testList15Chapter0019
      * @tc.desc      Verify isEmpty() after adding complex objects (Map/Set/Regex/Promise)
      * @tc.size      MediumTest
@@ -968,7 +968,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2000
      * @tc.name      testList15Chapter0020
      * @tc.desc         Test if the List is non-empty after adding objects with special values (undefined, null, NaN, etc.)
      * @tc.size      MediumTest
@@ -1034,7 +1034,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2100
      * @tc.name      testList15Chapter0021
      * @tc.desc      Verify isEmpty() after adding objects with undefined/null/NaN values
      * @tc.size      MediumTest
@@ -1140,7 +1140,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2200
      * @tc.name      testList15Chapter0022
      * @tc.desc      Verify isEmpty() after adding large/mixed/small/new key objects
      * @tc.size      MediumTest
@@ -1180,7 +1180,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2300
      * @tc.name      testList15Chapter0023
      * @tc.desc      Verify isEmpty() after adding elements then calling clear()
      * @tc.size      MediumTest
@@ -1210,7 +1210,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2400
      * @tc.name      testList15Chapter0024
      * @tc.desc      Verify isEmpty() after adding single element then clear()
      * @tc.size      MediumTest
@@ -1249,7 +1249,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2500
      * @tc.name      testList15Chapter0025
      * @tc.desc      Verify List getFirst() with Uint8Array and multi-zero number arrays
      * @tc.size      MediumTest
@@ -1281,7 +1281,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2600
      * @tc.name      testList15Chapter0026
      * @tc.desc      Verify getFirst logic for negative-number arrays & non-numeric index arrays
      * @tc.size      MediumTest
@@ -1322,7 +1322,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2700
      * @tc.name      testList15Chapter0027
      * @tc.desc      Verify getFirst logic for NaN/Infinity arrays & non-numeric type arrays
      * @tc.size      MediumTest
@@ -1355,7 +1355,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2800
      * @tc.name      testList15Chapter0028
      * @tc.desc      Verify getFirst logic for empty arrays, extreme numeric overflow arrays & post-removal arrays
      * @tc.size      MediumTest
@@ -1390,7 +1390,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_2900
      * @tc.name      testList15Chapter0029
      * @tc.desc      Verify the processing of nested arrays, arrays with TypedArray sub-elements,and ultra-long arrays (getFirst to get the first element)
      * @tc.size      LargeTest
@@ -1432,7 +1432,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_3000
      * @tc.name      testList15Chapter0030
      * @tc.desc      Verify the processing logic of arrays containing functions/keywords (remove Symbol, getFirst to get the first element)
      * @tc.size      MediumTest
@@ -1458,7 +1458,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_3100
      * @tc.name      testList15Chapter0031
      * @tc.desc      Test getFirst interface with basic string values (replace constructor test)
      * @tc.size      MediumTest
@@ -1483,7 +1483,7 @@ export default function ListTest15() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT15_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST15_3200
      * @tc.name      testList15Chapter0032
      * @tc.desc      Test getFirst interface with special character strings (replace constructor test)
      * @tc.size      MediumTest

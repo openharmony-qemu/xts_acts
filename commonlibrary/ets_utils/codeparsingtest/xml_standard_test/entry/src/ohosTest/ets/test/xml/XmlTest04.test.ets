@@ -57,7 +57,7 @@ export default function XmlTest_04() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_0100
      * @tc.name      ConstructorTest0015
      * @tc.desc      Handling multi-level XML structures
      * @tc.size      MediumTest
@@ -95,7 +95,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_0200
      * @tc.name      ConstructorTest0016
      * @tc.desc      Construct input using DataView
      * @tc.size      MediumTest
@@ -113,7 +113,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_0300
      * @tc.name      ConstructorTest0017
      * @tc.desc      Basic XML Parsing
      * @tc.size      MediumTest
@@ -137,7 +137,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_0400
      * @tc.name      ConstructorTest0018
      * @tc.desc      Parse attribute value
      * @tc.size      MediumTest
@@ -166,7 +166,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_0500
      * @tc.name      ConstructorTest0019
      * @tc.desc      In-depth Analysis of the Event
      * @tc.size      MediumTest
@@ -192,7 +192,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_0600
      * @tc.name      ConstructorTest0020
      * @tc.desc      Ignore namespace
      * @tc.size      MediumTest
@@ -220,7 +220,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_0700
      * @tc.name      ConstructorTest0021
      * @tc.desc      Support document type declaration
      * @tc.size      MediumTest
@@ -241,7 +241,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_0800
      * @tc.name      ConstructorTest0022
      * @tc.desc      Combine Parsing Tags and Attributes
      * @tc.size      MediumTest
@@ -273,7 +273,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_0900
      * @tc.name      ConstructorTest0023
      * @tc.desc      Parse content containing CDATA
      * @tc.size      MediumTest
@@ -298,7 +298,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1000
      * @tc.name      ParseXmlTest0001
      * @tc.desc      Basic XML Structure Parsing
      * @tc.size      MediumTest
@@ -328,7 +328,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1100
      * @tc.name      ParseXmlTest0002
      * @tc.desc      Parsing with attribute nodes
      * @tc.size      MediumTest
@@ -358,7 +358,7 @@ export default function XmlTest_04() {
     );
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1200
      * @tc.name      ParseXmlTest0003
      * @tc.desc      CDATA block parsing
      * @tc.size      MediumTest
@@ -389,7 +389,7 @@ export default function XmlTest_04() {
     );
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1300
      * @tc.name      ParseXmlTest0004
      * @tc.desc      Parsing tags with namespaces
      * @tc.size      MediumTest
@@ -414,7 +414,7 @@ export default function XmlTest_04() {
     );
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1400
      * @tc.name      ParseXmlTest0005
      * @tc.desc      Mixed content (text child elements)
      * @tc.size      MediumTest
@@ -439,7 +439,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1500
      * @tc.name      ParseXmlTest0006
      * @tc.desc      Annotation Analysis
      * @tc.size      MediumTest
@@ -462,7 +462,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1600
      * @tc.name      ParseXmlTest0007
      * @tc.desc      Entity Reference Parsing
      * @tc.size      MediumTest
@@ -488,7 +488,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1700
      * @tc.name      ParseXmlTest0008
      * @tc.desc      Multi-level Nested Structure Validation
      * @tc.size      MediumTest
@@ -526,7 +526,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1800
      * @tc.name      ParseXmlTest0009
      * @tc.desc      Special Character Handling
      * @tc.size      MediumTest
@@ -549,7 +549,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_1900
      * @tc.name      ParseXmlTest0010
      * @tc.desc      Empty Input Detection
      * @tc.size      MediumTest
@@ -578,7 +578,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2000
      * @tc.name      ParseXmlTest0011
      * @tc.desc      Large file parsing interrupted
      * @tc.size      MediumTest
@@ -603,7 +603,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2100
      * @tc.name      ParseXmlTest0012
      * @tc.desc      Duplicate attribute definition
      * @tc.size      MediumTest
@@ -627,7 +627,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2200
      * @tc.name      ParseXmlTest0013
      * @tc.desc      Illegal namespace definition
      * @tc.size      MediumTest
@@ -652,7 +652,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2300
      * @tc.name      ParseXmlTest0014
      * @tc.desc      Invalid XML declaration
      * @tc.size      MediumTest
@@ -676,7 +676,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2400
      * @tc.name      ParseXmlTest0015
      * @tc.desc      Invalid attribute value format
      * @tc.size      MediumTest
@@ -708,7 +708,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2500
      * @tc.name      ParseXmlTest0016
      * @tc.desc      Unescaped reserved character
      * @tc.size      MediumTest
@@ -735,7 +735,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2600
      * @tc.name      ParseXmlTest0017
      * @tc.desc      Undefined namespace
      * @tc.size      MediumTest
@@ -758,7 +758,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2700
      * @tc.name      ParseXmlTest0018
      * @tc.desc      Mixed content error
      * @tc.size      MediumTest
@@ -782,7 +782,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2800
      * @tc.name      ParseXmlTest0019
      * @tc.desc      Incorrect CDATA structure
      * @tc.size      MediumTest
@@ -805,7 +805,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_2900
      * @tc.name      ParseXmlTest0020
      * @tc.desc      Unclosed comments mixed with tags
      * @tc.size      MediumTest
@@ -829,7 +829,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3000
      * @tc.name      ParseXmlTest0021
      * @tc.desc      Attribute Namespace Combination
      * @tc.size      MediumTest
@@ -856,7 +856,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3100
      * @tc.name      ParseXmlTest0022
      * @tc.desc      Undefined namespace
      * @tc.size      MediumTest
@@ -882,7 +882,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3200
      * @tc.name      ParseXmlTest0023
      * @tc.desc      Mixed entity references and CDATA
      * @tc.size      MediumTest
@@ -907,7 +907,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3300
      * @tc.name      ParseXmlTest0024
      * @tc.desc      Deeply nested mixed content
      * @tc.size      MediumTest
@@ -932,7 +932,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3400
      * @tc.name      ParseXmlTest0025
      * @tc.desc      Comments and processing instructions coexist
      * @tc.size      MediumTest
@@ -956,7 +956,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3500
      * @tc.name      ParseXmlTest0026
      * @tc.desc      Mixed Namespaces and Attribute Inheritance
      * @tc.size      MediumTest
@@ -981,7 +981,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3600
      * @tc.name      ParseXmlTest0027
      * @tc.desc      Handling commands and namespace combinations
      * @tc.size      MediumTest
@@ -1006,7 +1006,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSEXML_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3700
      * @tc.name      ParseXmlTest0028
      * @tc.desc      Multi-Event Type Combination Verification
      * @tc.size      MediumTest
@@ -1029,7 +1029,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3800
      * @tc.name      ParseTest0002
      * @tc.desc      Test standard format XML string (single root node, no nesting, text content only)
      * @tc.size      MediumTest
@@ -1056,7 +1056,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_3900
      * @tc.name      ParseTest0003
      * @tc.desc      Test XML string with attributes (root node contains multiple attributes)
      * @tc.size      MediumTest
@@ -1089,7 +1089,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4000
      * @tc.name      ParseTest0004
      * @tc.desc      Test nested structure XML input (root node contains child nodes and grandchild nodes)
      * @tc.size      MediumTest
@@ -1124,7 +1124,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4100
      * @tc.name      ParseTest0005
      * @tc.desc      Test configuration <supportDoctype: true> to parse document type
      * @tc.size      MediumTest
@@ -1168,7 +1168,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4200
      * @tc.name      ParseTest0006
      * @tc.desc      Test configuration <supportDoctype: false> to not parse document type
      * @tc.size      MediumTest
@@ -1212,7 +1212,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4300
      * @tc.name      ParseTest0007
      * @tc.desc      Test configuration <ignoreNameSpace: false> to ignore namespaces
      * @tc.size      MediumTest
@@ -1251,7 +1251,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4400
      * @tc.name      ParseTest0008
      * @tc.desc      Test configuration <ignoreNameSpace: true> to not ignore namespaces
      * @tc.size      MediumTest
@@ -1290,7 +1290,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4500
      * @tc.name      ParseTest0009
      * @tc.desc      Test XML input containing CDATA sections to correctly parse raw text in CDATA
      * @tc.size      MediumTest
@@ -1334,7 +1334,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4600
      * @tc.name      ParseTest0010
      * @tc.desc      Test XML input with empty text nodes to correctly identify empty nodes without error
      * @tc.size      MediumTest
@@ -1360,7 +1360,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4700
      * @tc.name      ParseTest0011
      * @tc.desc      Test passing null as XML input to verify if a reasonable exception is thrown
      * @tc.size      MediumTest
@@ -1392,7 +1392,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4800
      * @tc.name      ParseTest0012
      * @tc.desc      Test passing undefined as XML input to verify if a reasonable exception is thrown
      * @tc.size      MediumTest
@@ -1424,7 +1424,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_4900
      * @tc.name      ParseTest0013
      * @tc.desc      Test passing empty string input to verify exception type and prompt information
      * @tc.size      MediumTest
@@ -1456,7 +1456,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_5000
      * @tc.name      ParseTest0014
      * @tc.desc      Test XML input with unclosed tags
      * @tc.size      MediumTest
@@ -1491,7 +1491,7 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML5_5100
      * @tc.name      ParseTest0015
      * @tc.desc      Test XML input with multiple root nodes
      * @tc.size      MediumTest

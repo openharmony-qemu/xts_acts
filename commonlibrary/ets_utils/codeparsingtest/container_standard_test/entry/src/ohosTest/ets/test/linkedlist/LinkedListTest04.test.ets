@@ -30,7 +30,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_0100
      * @tc.name      testLinkedList04Chapter0001
      * @tc.desc      Test inserting empty arrays of the array class
      * @tc.size      MediumTest
@@ -48,7 +48,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_0200
      * @tc.name      testLinkedList04Chapter0002
      * @tc.desc      Test inserting extremely large numeric overflow values of the array class
      * @tc.size      MediumTest
@@ -66,7 +66,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_0300
      * @tc.name      testLinkedList04Chapter0003
      * @tc.desc      Test inserting Int8Array | Uint8Array | Uint8ClampedArray of the array class
      * @tc.size      MediumTest
@@ -91,7 +91,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_0400
      * @tc.name      testLinkedList04Chapter0004
      * @tc.desc      Test inserting Int16Array | Uint16Array | Int32Array | Uint32Array of the array class
      * @tc.size      MediumTest
@@ -119,7 +119,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_0500
      * @tc.name      testLinkedList04Chapter0005
      * @tc.desc      Test inserting Float32Array | Float64Array | BigInt64Array | BigUint64Array of the array class
      * @tc.size      MediumTest
@@ -155,7 +155,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_0600
      * @tc.name      testLinkedList04Chapter0006
      * @tc.desc      Test the storage rules of special values in TypedArray of the array class
      * @tc.size      MediumTest
@@ -199,7 +199,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_0700
      * @tc.name      testLinkedList04Chapter0008
      * @tc.desc      Test adding and checking if the String class contains undefined
      * @tc.size      MediumTest
@@ -217,7 +217,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_0800
      * @tc.name      testLinkedList04Chapter0009
      * @tc.desc      Test adding and checking if the String class contains null
      * @tc.size      MediumTest
@@ -235,7 +235,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_0900
      * @tc.name      testLinkedList04Chapter0010
      * @tc.desc      Test adding and checking if the String class contains empty string
      * @tc.size      MediumTest
@@ -254,7 +254,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1000
      * @tc.name      testLinkedList04Chapter0011
      * @tc.desc      Test adding and checking full coverage of special characters in the String class
      * @tc.size      MediumTest
@@ -272,7 +272,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1100
      * @tc.name      testLinkedList04Chapter0012
      * @tc.desc      Test adding and checking full coverage of ASCII codes in the String class
      * @tc.size      MediumTest
@@ -290,7 +290,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1200
      * @tc.name      testLinkedList04Chapter0013
      * @tc.desc      Test adding and checking full coverage of special characters in the String class (twice)
      * @tc.size      MediumTest
@@ -308,7 +308,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1300
      * @tc.name      testLinkedList04Chapter0014
      * @tc.desc      Test adding and checking special escape characters in the String class
      * @tc.size      MediumTest
@@ -353,7 +353,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1400
      * @tc.name      testLinkedList04Chapter0015
      * @tc.desc      Test adding and checking emoji symbols and their Unicode encodings in the String class
      * @tc.size      MediumTest
@@ -418,7 +418,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1500
      * @tc.name      testLinkedList04Chapter0016
      * @tc.desc      Test adding and checking invalid unicode encodings in the String class
      * @tc.size      MediumTest
@@ -441,7 +441,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1600
      * @tc.name      testLinkedList04Chapter0017
      * @tc.desc      Test adding and checking keywords in the String class
      * @tc.size      MediumTest
@@ -464,7 +464,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1700
      * @tc.name      testLinkedList04Chapter0018
      * @tc.desc      Test adding and checking treeString type in the String class
      * @tc.size      MediumTest
@@ -499,7 +499,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1800
      * @tc.name      testLinkedList04Chapter0019
      * @tc.desc      Test adding and checking sliceString type in the String class
      * @tc.size      MediumTest
@@ -523,7 +523,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_1900
      * @tc.name      testLinkedList04Chapter0020
      * @tc.desc      Test String class GC behavior: ultra-long strings work normally after addition and release
      * @tc.size      MediumTest
@@ -548,7 +548,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2000
      * @tc.name      testLinkedList04Chapter0021
      * @tc.desc      Test adding and checking if the number class contains 0
      * @tc.size      MediumTest
@@ -567,7 +567,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2100
      * @tc.name      testLinkedList04Chapter0022
      * @tc.desc      Test adding and checking if the number class contains undefined
      * @tc.size      MediumTest
@@ -586,7 +586,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2200
      * @tc.name      testLinkedList04Chapter0023
      * @tc.desc      Test adding and checking if the number class contains NaN
      * @tc.size      MediumTest
@@ -605,7 +605,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2300
      * @tc.name      testLinkedList04Chapter0024
      * @tc.desc      Test adding and checking if the number class contains -0
      * @tc.size      MediumTest
@@ -624,7 +624,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2400
      * @tc.name      testLinkedList04Chapter0025
      * @tc.desc      Test adding and checking if the number class contains positive infinity
      * @tc.size      MediumTest
@@ -643,7 +643,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2500
      * @tc.name      testLinkedList04Chapter0026
      * @tc.desc      Test adding and checking if the number class contains negative infinity
      * @tc.size      MediumTest
@@ -662,7 +662,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2600
      * @tc.name      testLinkedList04Chapter0027
      * @tc.desc      Test adding and checking if the number class contains double type
      * @tc.size      MediumTest
@@ -682,7 +682,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2700
      * @tc.name      testLinkedList04Chapter0028
      * @tc.desc      Test adding and checking if the number class contains Number.MAX_VALUE
      * @tc.size      MediumTest
@@ -701,7 +701,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2800
      * @tc.name      testLinkedList04Chapter0029
      * @tc.desc      Test adding and checking if the number class contains Number.MIN_VALUE
      * @tc.size      MediumTest
@@ -720,7 +720,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_2900
      * @tc.name      testLinkedList04Chapter0030
      * @tc.desc      Test adding and checking if the number class contains Number.EPSILON
      * @tc.size      MediumTest
@@ -739,7 +739,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3000
      * @tc.name      testLinkedList04Chapter0031
      * @tc.desc      Test adding and checking if the number class contains Number.EPSILON
      * @tc.size      MediumTest
@@ -758,7 +758,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3100
      * @tc.name      testLinkedList04Chapter0032
      * @tc.desc      Test adding and checking if the number class contains byte
      * @tc.size      MediumTest
@@ -789,7 +789,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3200
      * @tc.name      testLinkedList04Chapter0033
      * @tc.desc      Test adding and checking byte overflow in the number class
      * @tc.size      MediumTest
@@ -808,7 +808,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3300
      * @tc.name      testLinkedList04Chapter0034
      * @tc.desc      Test adding and checking if the number class contains short
      * @tc.size      MediumTest
@@ -835,7 +835,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3400
      * @tc.name      testLinkedList04Chapter0035
      * @tc.desc      Test adding and checking short overflow in the number class
      * @tc.size      MediumTest
@@ -854,7 +854,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3500
      * @tc.name      testLinkedList04Chapter0036
      * @tc.desc      Test adding and checking if the number class contains int
      * @tc.size      MediumTest
@@ -882,7 +882,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3600
      * @tc.name      testLinkedList04Chapter0037
      * @tc.desc      Test adding and checking int overflow in the number class
      * @tc.size      MediumTest
@@ -901,7 +901,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3700
      * @tc.name      testLinkedList04Chapter0038
      * @tc.desc      Test adding and checking if the number class contains long
      * @tc.size      MediumTest
@@ -928,7 +928,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3800
      * @tc.name      testLinkedList04Chapter0039
      * @tc.desc      Test adding and checking long overflow in the number class
      * @tc.size      MediumTest
@@ -947,7 +947,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_3900
      * @tc.name      testLinkedList04Chapter0040
      * @tc.desc      Test adding and checking if the number class contains float
      * @tc.size      MediumTest
@@ -974,7 +974,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4000
      * @tc.name      testLinkedList04Chapter0041
      * @tc.desc      Test adding and checking float precision loss scenarios in the number class
      * @tc.size      MediumTest
@@ -998,7 +998,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4100
      * @tc.name      testLinkedList04Chapter0042
      * @tc.desc      Test adding and checking if the number class contains double
      * @tc.size      MediumTest
@@ -1025,7 +1025,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4200
      * @tc.name      testLinkedList04Chapter0043
      * @tc.desc      Test adding and checking double overflow in the number class
      * @tc.size      MediumTest
@@ -1044,7 +1044,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4300
      * @tc.name      testLinkedList04Chapter0044
      * @tc.desc      Test adding and checking if the number class contains char
      * @tc.size      MediumTest
@@ -1067,7 +1067,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4400
      * @tc.name      testLinkedList04Chapter0045
      * @tc.desc      Test adding and checking char stored as characters in the number class
      * @tc.size      MediumTest
@@ -1086,7 +1086,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4500
      * @tc.name      testLinkedList04Chapter0046
      * @tc.desc      Test adding and checking char out-of-bounds values in the number class
      * @tc.size      MediumTest
@@ -1105,7 +1105,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4600
      * @tc.name      testLinkedList04Chapter0047
      * @tc.desc      Test adding and checking bigint values in the number class
      * @tc.size      MediumTest
@@ -1124,7 +1124,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4700
      * @tc.name      testLinkedList04Chapter0048
      * @tc.desc      Test adding and checking double values in the number class
      * @tc.size      MediumTest
@@ -1143,7 +1143,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4800
      * @tc.name      testLinkedList04Chapter0049
      * @tc.desc      Test adding and checking float in the number class
      * @tc.size      MediumTest
@@ -1162,7 +1162,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_4900
      * @tc.name      testLinkedList04Chapter0050
      * @tc.desc      Test adding and checking hexadecimal (16-bit) values in the number class
      * @tc.size      MediumTest
@@ -1181,7 +1181,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5000
      * @tc.name      testLinkedList04Chapter0051
      * @tc.desc      Test adding and checking hexadecimal (32-bit) values in the number class
      * @tc.size      MediumTest
@@ -1200,7 +1200,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5100
      * @tc.name      testLinkedList04Chapter0052
      * @tc.desc      Test adding and checking octal (8-bit) values in the number class
      * @tc.size      MediumTest
@@ -1219,7 +1219,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5200
      * @tc.name      testLinkedList04Chapter0053
      * @tc.desc      Test adding and checking exponent operators in the number class
      * @tc.size      MediumTest
@@ -1238,7 +1238,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5300
      * @tc.name      testLinkedList04Chapter0054
      * @tc.desc      Test adding and checking scientific notation in the number class
      * @tc.size      MediumTest
@@ -1261,7 +1261,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5400
      * @tc.name      testLinkedList04Chapter0055
      * @tc.desc      Test adding and checking large integers in the number class
      * @tc.size      MediumTest
@@ -1280,7 +1280,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5500
      * @tc.name      testLinkedList04Chapter0056
      * @tc.desc      Test adding and checking if the boolean class contains true
      * @tc.size      MediumTest
@@ -1299,7 +1299,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5600
      * @tc.name      testLinkedList04Chapter0057
      * @tc.desc      Test adding and checking if the boolean class contains false
      * @tc.size      MediumTest
@@ -1318,7 +1318,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5700
      * @tc.name      testLinkedList04Chapter0058
      * @tc.desc      Test adding and checking values that are usually treated as false in the boolean class
      * @tc.size      MediumTest
@@ -1354,7 +1354,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5800
      * @tc.name      testLinkedList04Chapter0059
      * @tc.desc      Test adding and checking ! + other data types in the boolean class
      * @tc.size      MediumTest
@@ -1377,7 +1377,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_5900
      * @tc.name      testLinkedList04Chapter0060
      * @tc.desc      Test adding and checking if the object class contains ordinary objects
      * @tc.size      MediumTest
@@ -1402,7 +1402,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6000
      * @tc.name      testLinkedList04Chapter0061
      * @tc.desc      Test adding and checking if the LinkedList contains nested objects of the Object class
      * @tc.size      MediumTest
@@ -1431,7 +1431,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6100
      * @tc.name      testLinkedList04Chapter0062
      * @tc.desc      Test LinkedList: contains Object (with parameterless function properties) after addition
      * @tc.size      MediumTest
@@ -1455,7 +1455,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6200
      * @tc.name      testLinkedList04Chapter0063
      * @tc.desc      Test LinkedList: contains Object (with parameterized function properties) after addition
      * @tc.size      MediumTest
@@ -1479,7 +1479,7 @@ export default function LinkedListTest04() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6300
      * @tc.name      testLinkedList04Chapter0064
      * @tc.desc      Test adding and checking if the LinkedList contains Object class objects that include ArrayBuffer
      * @tc.size      MediumTest
@@ -1507,7 +1507,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6400
      * @tc.name      testLinkedList04Chapter0065
      * @tc.desc      Test adding and checking if the LinkedList contains Object class objects that include DataView
      * @tc.size      MediumTest
@@ -1530,7 +1530,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6500
      * @tc.name      testLinkedList04Chapter0066
      * @tc.desc      Test adding and checking if the LinkedList contains empty objects of the Object class
      * @tc.size      MediumTest
@@ -1555,7 +1555,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6600
      * @tc.name      testLinkedList04Chapter0067
      * @tc.desc      Test adding and checking if the LinkedList contains extremely large objects of the Object class
      * @tc.size      MediumTest
@@ -1587,7 +1587,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6700
      * @tc.name      testLinkedList04Chapter0068
      * @tc.desc      Test adding and checking if the LinkedList contains Object class objects with null properties
      * @tc.size      MediumTest
@@ -1611,7 +1611,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6800
      * @tc.name      testLinkedList04Chapter0069
      * @tc.desc      Test adding and checking if the LinkedList contains Object class objects with NaN properties
      * @tc.size      MediumTest
@@ -1635,7 +1635,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_6900
      * @tc.name      testLinkedList04Chapter0070
      * @tc.desc      Test adding and checking if the LinkedList contains Object class objects with Infinity properties
      * @tc.size      MediumTest
@@ -1659,7 +1659,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_7000
      * @tc.name      testLinkedList04Chapter0071
      * @tc.desc      Test adding and checking if the LinkedList contains Object class objects with TypedArray properties
      * @tc.size      MediumTest
@@ -1683,7 +1683,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_7100
      * @tc.name      testLinkedList04Chapter0072
      * @tc.desc      Test adding and checking if the LinkedList contains Object class objects with Map properties
      * @tc.size      MediumTest
@@ -1707,7 +1707,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_7200
      * @tc.name      testLinkedList04Chapter0073
      * @tc.desc      Test adding and checking if the LinkedList contains Object class objects with Set properties
      * @tc.size      MediumTest
@@ -1731,7 +1731,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_7300
      * @tc.name      testLinkedList04Chapter0074
      * @tc.desc      Test adding and checking if the LinkedList contains Object class objects with Promise properties
      * @tc.size      MediumTest
@@ -1767,7 +1767,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_7400
      * @tc.name      testLinkedList04Chapter0075
      * @tc.desc      Test LinkedList: contains Object (with regex properties) after addition
      * @tc.size      MediumTest
@@ -1796,7 +1796,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_7500
      * @tc.name      testLinkedList04Chapter0076
      * @tc.desc      Test adding and checking if the LinkedList contains normal Uint8Array arrays of the Array class
      * @tc.size      MediumTest
@@ -1815,7 +1815,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_7600
      * @tc.name      testLinkedList04Chapter0077
      * @tc.desc      Test adding and checking if the LinkedList contains Array class arrays with multiple zeros
      * @tc.size      MediumTest
@@ -1835,7 +1835,7 @@ export default function LinkedListTest04() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT04_7800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST5_7700
      * @tc.name      testLinkedList04Chapter0078
      * @tc.desc      Test LinkedList: contains Uint8Array-converted Array (with negative numbers) after addition
      * @tc.size      MediumTest

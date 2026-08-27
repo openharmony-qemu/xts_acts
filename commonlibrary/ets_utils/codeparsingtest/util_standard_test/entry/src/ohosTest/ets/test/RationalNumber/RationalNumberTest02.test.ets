@@ -31,7 +31,7 @@ export default function RationalNumber02Test() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_0100
      * @tc.name      testRationalNumberConstruct02_0001
      * @tc.desc      Verify constructor with Positive Numerator and Positive Denominator.
      * @tc.size      MediumTest
@@ -53,7 +53,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_0200
      * @tc.name      testRationalNumberConstruct02_0002
      * @tc.desc      Verify constructor with Positive Numerator and Negative Denominator (Sign moves to top).
      * @tc.size      MediumTest
@@ -75,7 +75,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_0300
      * @tc.name      testRationalNumberConstruct02_0003
      * @tc.desc      Verify constructor with Negative Numerator and Negative Denominator (Becomes positive).
      * @tc.size      MediumTest
@@ -97,7 +97,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_0400
      * @tc.name      testRationalNumberConstruct02_0004
      * @tc.desc      Verify constructor with 0 Numerator and Positive Denominator.
      * @tc.size      MediumTest
@@ -119,7 +119,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_0500
      * @tc.name      testRationalNumberConstruct02_0005
      * @tc.desc      Verify constructor with 0 Numerator and Negative Denominator (Should result in 0/1).
      * @tc.size      MediumTest
@@ -141,7 +141,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_0600
      * @tc.name      testRationalNumberConstruct02_0006
      * @tc.desc      Verify constructor with coprime numbers (cannot simplify).
      * @tc.size      MediumTest
@@ -163,7 +163,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_0700
      * @tc.name      testRationalNumberConstruct02_0007
      * @tc.desc      Verify constructor simplifies fraction with common factors.
      * @tc.size      MediumTest
@@ -185,7 +185,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_0800
      * @tc.name      testRationalNumberConstruct02_0008
      * @tc.desc      Verify constructor when denominator is a multiple of numerator.
      * @tc.size      MediumTest
@@ -207,7 +207,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_0900
      * @tc.name      testRationalNumberConstruct02_0009
      * @tc.desc      Verify constructor when numerator is a multiple of denominator.
      * @tc.size      MediumTest
@@ -229,7 +229,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1000
      * @tc.name      testRationalNumberConstruct02_0010
      * @tc.desc      Verify constructor handles large integer values.
      * @tc.size      MediumTest
@@ -251,7 +251,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1100
      * @tc.name      testRationalNumberConstruct02_0011
      * @tc.desc      Verify constructor with a large prime denominator.
      * @tc.size      MediumTest
@@ -273,7 +273,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1200
      * @tc.name      testRationalNumberConstruct02_0012
      * @tc.desc      Verify constructor with Min/Max integer limits.
      * @tc.size      MediumTest
@@ -297,7 +297,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1300
      * @tc.name      testRationalNumberConstruct02_0013
      * @tc.desc      Verify x/x equals 1.
      * @tc.size      MediumTest
@@ -319,7 +319,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1400
      * @tc.name      testRationalNumberConstruct02_0014
      * @tc.desc      Verify x/1 equals x.
      * @tc.size      MediumTest
@@ -341,7 +341,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1500
      * @tc.name      testRationalNumberConstruct02_0015
      * @tc.desc      Verify that two different constructions result in equivalent RationalNumbers via compare().
      * @tc.size      MediumTest
@@ -365,7 +365,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1600
      * @tc.name      testRationalNumberParseRationalNumber02_0016
      * @tc.desc      [Consolidated] Verify parsing basic positive and negative integers.
      * @tc.size      MediumTest
@@ -391,7 +391,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1700
      * @tc.name      testRationalNumberParseRationalNumber02_0017
      * @tc.desc      [Consolidated] Verify parsing large integers with simplification.
      * @tc.size      LargeTest
@@ -417,7 +417,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1800
      * @tc.name      testRationalNumberParseRationalNumber02_0018
      * @tc.desc      [Consolidated] Verify parsing zero numerator with various denominators.
      * @tc.size      MediumTest
@@ -443,7 +443,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_1900
      * @tc.name      testRationalNumberParseRationalNumber02_0019
      * @tc.desc      [New] Verify parsing combination of integer and float.
      * @tc.size      MediumTest
@@ -471,7 +471,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2000
      * @tc.name      testRationalNumberParseRationalNumber02_0020
      * @tc.desc      Verify parsing precision edge cases (0.125, etc.).
      * @tc.size      MediumTest
@@ -494,7 +494,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2100
      * @tc.name      testRationalNumberParseRationalNumber02_0021
      * @tc.desc      Verify parsed result equals constructed result.
      * @tc.size      MediumTest
@@ -516,7 +516,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2200
      * @tc.name      testRationalNumberParseRationalNumber02_0022
      * @tc.desc      Verify parsing same values multiple times produces identical objects.
      * @tc.size      MediumTest
@@ -540,7 +540,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2300
      * @tc.name      testRationalNumberParseRationalNumber02_0023
      * @tc.desc      Verify different input forms (4/8 vs 0.5/1.0) result in equal objects.
      * @tc.size      MediumTest
@@ -564,7 +564,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2400
      * @tc.name      testRationalNumberParseRationalNumber02_0024
      * @tc.desc      Verify comparison logic on parsed objects (3/4 > 1/2).
      * @tc.size      MediumTest
@@ -587,7 +587,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2500
      * @tc.name      testRationalNumberParseRationalNumber02_0025
      * @tc.desc      [New] Verify parsing with Number.MAX_SAFE_INTEGER.
      * @tc.size      MediumTest
@@ -610,7 +610,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2600
      * @tc.name      testRationalNumberParseRationalNumber02_0026
      * @tc.desc      [New] Verify parsing with Number.MIN_SAFE_INTEGER.
      * @tc.size      MediumTest
@@ -633,7 +633,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2700
      * @tc.name      testRationalNumberParseRationalNumber02_0027
      * @tc.desc      [New] Verify x/x equals 1/1 for parsed floats.
      * @tc.size      MediumTest
@@ -655,7 +655,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2800
      * @tc.name      testRationalNumberParseRationalNumber02_0028
      * @tc.desc      [New] Verify common factor simplification works for scaled floats (0.4/0.2 = 2/1).
      * @tc.size      MediumTest
@@ -677,7 +677,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_2900
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0029
      * @tc.desc      Verify parsing a standard positive fraction "1/2".
      * @tc.size      MediumTest
@@ -699,7 +699,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3000
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0030
      * @tc.desc      Verify parsing a fraction with a negative numerator "-3/4".
      * @tc.size      MediumTest
@@ -721,7 +721,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3100
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0031
      * @tc.desc      Verify parsing "5/-6" results in sign normalization to "-5/6".
      * @tc.size      MediumTest
@@ -743,7 +743,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3200
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0032
      * @tc.desc      Verify parsing "-7/-8" results in a positive fraction "7/8".
      * @tc.size      MediumTest
@@ -765,7 +765,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3300
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0033
      * @tc.desc      Verify parsing "0/10" normalizes to "0/1".
      * @tc.size      MediumTest
@@ -787,7 +787,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3400
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0034
      * @tc.desc      Verify parsing "-0/5" handles signed zero correctly (should be 0/1).
      * @tc.size      MediumTest
@@ -810,7 +810,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3500
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0035
      * @tc.desc      Verify automatic reduction of "12/4" to "3/1" (GCD logic).
      * @tc.size      MediumTest
@@ -832,7 +832,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3600
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0036
      * @tc.desc      Verify parsing of large integer strings "100000/1".
      * @tc.size      MediumTest
@@ -854,7 +854,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3700
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0037
      * @tc.desc      Verify parsing strings with leading zeros "05/02" handles them as integers.
      * @tc.size      MediumTest
@@ -876,7 +876,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3800
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0038
      * @tc.desc      Verify parsing JS Number.MAX_SAFE_INTEGER in string format.
      * @tc.size      MediumTest
@@ -899,7 +899,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_3900
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0039
      * @tc.desc      Verify parsing JS Number.MIN_SAFE_INTEGER in string format.
      * @tc.size      MediumTest
@@ -922,7 +922,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4000
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0040
      * @tc.desc      Verify "2/4" from string is equal to "1/2" from string via compare().
      * @tc.size      MediumTest
@@ -944,7 +944,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4100
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0041
      * @tc.desc      [Exception] Verify parsing an empty string "" throws an Error.
      * @tc.size      MediumTest
@@ -964,7 +964,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4200
      * @tc.name      testRationalNumberCreateRationalFromNumber02_0042
      * @tc.desc      [Exception] Verify parsing garbage string "abc" throws an Error.
      * @tc.size      MediumTest
@@ -984,7 +984,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4300
      * @tc.name      testRationalNumberCompare02_0043
      * @tc.desc      Test compare method returns 0 when two RationalNumbers are equal.
      * @tc.size      MediumTest
@@ -1008,7 +1008,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4400
      * @tc.name      testRationalNumberCompare02_0044
      * @tc.desc      Test compare method returns 1 when first RationalNumber is less than second.
      * @tc.size      MediumTest
@@ -1032,7 +1032,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4500
      * @tc.name      testRationalNumberCompare02_0045
      * @tc.desc      Test compare method returns -1 when first RationalNumber is greater than second.
      * @tc.size      MediumTest
@@ -1056,7 +1056,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4600
      * @tc.name      testRationalNumberCompare02_0046
      * @tc.desc      Test compare method with zero RationalNumber.
      * @tc.size      MediumTest
@@ -1083,7 +1083,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4700
      * @tc.name      testRationalNumberCompare02_0047
      * @tc.desc      Test compare method with negative RationalNumbers.
      * @tc.size      MediumTest
@@ -1108,7 +1108,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4800
      * @tc.name      testRationalNumberCompare02_0048
      * @tc.desc      Test compare method resilience against prototype manipulation.
      * @tc.size      MediumTest
@@ -1134,7 +1134,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_4900
      * @tc.name      testRationalNumberCompare02_0049
      * @tc.desc      Test compare method when comparing a RationalNumber to itself.
      * @tc.size      MediumTest
@@ -1158,7 +1158,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5000
      * @tc.name      testRationalNumberCompare02_0050
      * @tc.desc      Test compare method with RationalNumbers that might have special internal representations.
      * @tc.size      MediumTest
@@ -1187,7 +1187,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5100
      * @tc.name      testRationalNumberCompare02_0051
      * @tc.desc      Test compare method behavior when comparing with an object that has zero denominator.
      * This tests for robustness against invalid inputs without crashing or throwing unexpected errors.
@@ -1218,7 +1218,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5200
      * @tc.name      testRationalNumberCompare02_0052
      * @tc.desc      Test compare method in a scenario involving multiple RationalNumber operations.
      * @tc.size      MediumTest
@@ -1255,7 +1255,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5300
      * @tc.name      testRationalNumberCompare02_0053
      * @tc.desc      Test compare method with fractions that simplify to the same value.
      * @tc.size      MediumTest
@@ -1288,7 +1288,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5400
      * @tc.name      testRationalNumberCompare02_0054
      * @tc.desc      Test compare method with large numerator and denominator values.
      * @tc.size      MediumTest
@@ -1316,7 +1316,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5500
      * @tc.name      testRationalNumberCompare02_0055
      * @tc.desc      Test compare method with RationalNumbers created from strings and integers.
      * @tc.size      MediumTest
@@ -1342,7 +1342,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5600
      * @tc.name      testRationalNumberCompare02_0056
      * @tc.desc      Test compare method in a sorting context (simulated).
      * @tc.size      MediumTest
@@ -1382,7 +1382,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5700
      * @tc.name      testRationalNumberValueOf02_0057
      * @tc.desc      Test valueOf method returns correct decimal value for a simple fraction (1/2).
      * @tc.size      MediumTest
@@ -1405,7 +1405,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5800
      * @tc.name      testRationalNumberValueOf02_0058
      * @tc.desc      Test valueOf method returns correct decimal value for a whole number (4/2 = 2).
      * @tc.size      MediumTest
@@ -1429,7 +1429,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_5900
      * @tc.name      testRationalNumberValueOf02_0059
      * @tc.desc      Test valueOf method returns correct decimal value for a negative fraction (-3/4).
      * @tc.size      MediumTest
@@ -1453,7 +1453,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6000
      * @tc.name      testRationalNumberValueOf02_0060
      * @tc.desc      Test valueOf method returns correct decimal value for zero (0/5).
      * @tc.size      MediumTest
@@ -1477,7 +1477,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6100
      * @tc.name      testRationalNumberValueOf02_0061
      * @tc.desc      Test valueOf method returns correct decimal value for a fraction that results in a repeating decimal (1/3).
      * @tc.size      MediumTest
@@ -1501,7 +1501,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6200
      * @tc.name      testRationalNumberValueOf02_0062
      * @tc.desc      Test valueOf method with a RationalNumber that represents NaN (both numerator and denominator are 0).
      * @tc.size      MediumTest
@@ -1525,7 +1525,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6300
      * @tc.name      testRationalNumberValueOf02_0063
      * @tc.desc      Test valueOf method with a RationalNumber that represents Infinity (numerator non-zero, denominator 0).
      * @tc.size      MediumTest
@@ -1549,7 +1549,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6400
      * @tc.name      testRationalNumberValueOf02_0064
      * @tc.desc      Test calling valueOf on an object that is not a RationalNumber instance (if possible).
      * @tc.size      MediumTest
@@ -1572,7 +1572,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6500
      * @tc.name      testRationalNumberValueOf02_0065
      * @tc.desc      Test calling valueOf on a RationalNumber that might have been modified to an invalid state (simulated).
      * @tc.size      MediumTest
@@ -1597,7 +1597,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6600
      * @tc.name      testRationalNumberValueOf02_0066
      * @tc.desc      Test valueOf method with very large numerator or denominator (within JS Number limits).
      * @tc.size      MediumTest
@@ -1621,7 +1621,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6700
      * @tc.name      testRationalNumberValueOf02_0067
      * @tc.desc      Test valueOf method in combination with compare method to validate ordering.
      * @tc.size      MediumTest
@@ -1657,7 +1657,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6800
      * @tc.name      testRationalNumberValueOf02_0068
      * @tc.desc      Test valueOf method in combination with toString method to validate consistency.
      * @tc.size      MediumTest
@@ -1686,7 +1686,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_6900
      * @tc.name      testRationalNumberValueOf02_0069
      * @tc.desc      Test valueOf method with fractions that simplify to the same decimal value.
      * @tc.size      MediumTest
@@ -1722,7 +1722,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_7000
      * @tc.name      testRationalNumberValueOf02_0070
      * @tc.desc      Test valueOf method in a scenario involving mathematical operations on RationalNumbers.
      * @tc.size      MediumTest
@@ -1756,7 +1756,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_7100
      * @tc.name      testRationalNumberValueOf02_0071
      * @tc.desc      Test that calling valueOf multiple times on the same RationalNumber instance returns consistent results.
      * @tc.size      MediumTest
@@ -1788,7 +1788,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_7200
      * @tc.name      testRationalNumberEquals02_0072
      * @tc.desc      Test equals method returns true when comparing a RationalNumber to itself.
      * @tc.size      MediumTest
@@ -1813,7 +1813,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_7300
      * @tc.name      testRationalNumberEquals02_0073
      * @tc.desc      Test equals method returns true when comparing two RationalNumbers with the same value (1/2 == 2/4).
      * @tc.size      MediumTest
@@ -1839,7 +1839,7 @@ export default function RationalNumber02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_RATIONALNUMBER02_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER2_7400
      * @tc.name      testRationalNumberEquals02_0074
      * @tc.desc      Test equals method returns false when comparing two RationalNumbers with different values (1/2 != 1/3).
      * @tc.size      MediumTest

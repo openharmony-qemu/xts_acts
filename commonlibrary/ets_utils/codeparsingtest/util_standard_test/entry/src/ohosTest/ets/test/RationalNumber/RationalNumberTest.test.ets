@@ -122,7 +122,7 @@ export default function RationalNumberTest() {
     
 
     /**
-     * @tc.number    SUB_RATIONAL_CONSTRUCTOR_NUM_STRING_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_0100
      * @tc.name      testRationalConstructorNumeratorString0001
      * @tc.desc      Constructor throws error when numerator is string.
      * @tc.size      MediumTest
@@ -143,7 +143,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_CONSTRUCTOR_NUM_FLOAT_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_0200
      * @tc.name      testRationalConstructorNumeratorFloat0002
      * @tc.desc      Constructor throws error when numerator is float.
      * @tc.size      MediumTest
@@ -164,7 +164,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_CONSTRUCTOR_NUM_NULL_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_0300
      * @tc.name      testRationalConstructorNumeratorNull0004
      * @tc.desc      Constructor throws error when numerator is non-integer (null converted to NaN).
      * @tc.size      MediumTest
@@ -185,7 +185,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_CONSTRUCTOR_DENOM_OBJ_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_0400
      * @tc.name      testRationalConstructorDenominatorObject0007
      * @tc.desc      Constructor throws error when denominator is object (converted to NaN).
      * @tc.size      MediumTest
@@ -207,7 +207,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_CONSTRUCTOR_DENOM_ARRAY_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_0500
      * @tc.name      testRationalConstructorDenominatorArray0008
      * @tc.desc      Constructor throws error when denominator is array (converted to NaN).
      * @tc.size      MediumTest
@@ -228,7 +228,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_CONSTRUCTOR_NUM_BIGINT_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_0600
      * @tc.name      testRationalConstructorNumeratorBigInt0009
      * @tc.desc      Constructor throws error when numerator is BigInt (converted to float).
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_ADD_STRING_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_0700
      * @tc.name      testRationalAddString0011
      * @tc.desc      Add method throws error when parameter is string type.
      * @tc.size      MediumTest
@@ -271,7 +271,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_ADD_NULL_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_0800
      * @tc.name      testRationalAddNull0012
      * @tc.desc      Add method throws error when parameter is null (converted to NaN).
      * @tc.size      MediumTest
@@ -293,7 +293,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_ADD_ARRAY_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_0900
      * @tc.name      testRationalAddArray0013
      * @tc.desc      Add method throws error when parameter is array (converted to NaN).
      * @tc.size      MediumTest
@@ -315,7 +315,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_SUB_UNDEF_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1000
      * @tc.name      testRationalSubtractUndefined0015
      * @tc.desc      Subtract method throws error when parameter is undefined (converted to NaN).
      * @tc.size      MediumTest
@@ -337,7 +337,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_SUB_OBJ_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1100
      * @tc.name      testRationalSubtractObject0016
      * @tc.desc      Subtract method throws error when parameter is object (converted to NaN).
      * @tc.size      MediumTest
@@ -360,7 +360,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_MUL_BOOLEAN_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1200
      * @tc.name      testRationalMultiplyBoolean0017
      * @tc.desc      Multiply method throws error when parameter is boolean (converted to float).
      * @tc.size      MediumTest
@@ -382,7 +382,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_MUL_BIGINT_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1300
      * @tc.name      testRationalMultiplyBigInt0018
      * @tc.desc      Multiply method throws error when parameter is BigInt (converted to float).
      * @tc.size      MediumTest
@@ -404,7 +404,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_DIV_NULL_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1400
      * @tc.name      testRationalDivideNull0020
      * @tc.desc      Divide method throws error when parameter is null (converted to NaN).
      * @tc.size      MediumTest
@@ -426,7 +426,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_DIV_ZERO_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1500
      * @tc.name      testRationalDivideZero0021
      * @tc.desc      Divide method throws error when parameter is zero.
      * @tc.size      MediumTest
@@ -449,7 +449,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_DIV_STRING_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1600
      * @tc.name      testRationalDivideString0022
      * @tc.desc      Divide method throws error when parameter is string (converted to NaN).
      * @tc.size      MediumTest
@@ -471,7 +471,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_DIV_ARRAY_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1700
      * @tc.name      testRationalDivideArray0023
      * @tc.desc      Divide method throws error when parameter is array (converted to NaN).
      * @tc.size      MediumTest
@@ -493,7 +493,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_EQUALS_OBJ_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1800
      * @tc.name      testRationalEqualsObject0024
      * @tc.desc      Equals method returns true when parameter has same numerator and denominator.
      * @tc.size      MediumTest
@@ -516,7 +516,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONAL_EQUALS_ARRAY_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_1900
      * @tc.name      testRationalEqualsArray0025
      * @tc.desc      Equals method throws error when parameter is array (converted to NaN).
      * @tc.size      MediumTest
@@ -538,7 +538,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_DIVIDEONE_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2000
      * @tc.name      testRationalNumberDivideOne0026
      * @tc.desc      Divide 3/2 by 1/1 to get 3/2.
      * @tc.size      MediumTest
@@ -558,7 +558,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_EQUALSREDUCE_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2100
      * @tc.name      testRationalNumberEqualsReduce0027
      * @tc.desc      Check 6/8 equals 3/4.
      * @tc.size      MediumTest
@@ -576,7 +576,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_COMPLEXOP_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2200
      * @tc.name      testRationalNumberComplexOp0028
      * @tc.desc      Complex operation (1/2 + 1/3) * 2/5 = 1/3.
      * @tc.size      MediumTest
@@ -597,7 +597,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_TOSTRINGINTEGER_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2300
      * @tc.name      testRationalNumberToStringInteger0029
      * @tc.desc      ToString returns "5" for 5/1.
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_TOSTRINGZERO_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2400
      * @tc.name      testRationalNumberToStringZero0030
      * @tc.desc      ToString returns "0" for 0/5.
      * @tc.size      MediumTest
@@ -631,7 +631,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_NOTEQUALS_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2500
      * @tc.name      testRationalNumberNotEquals0031
      * @tc.desc      Check 1/2 not equals 1/3.
      * @tc.size      MediumTest
@@ -649,7 +649,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_DIVIDENEGATIVE_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2600
      * @tc.name      testRationalNumberDivideNegative0032
      * @tc.desc      Divide 1/2 by -2/3 to get -3/4.
      * @tc.size      MediumTest
@@ -669,7 +669,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_MULTIPLYNEGATIVE_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2700
      * @tc.name      testRationalNumberMultiplyNegative0033
      * @tc.desc      Multiply 1/2 and -2/3 to get -1/3.
      * @tc.size      MediumTest
@@ -689,7 +689,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_SUBTRACTNEGATIVE_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2800
      * @tc.name      testRationalNumberSubtractNegative0034
      * @tc.desc      Subtract -1/3 from 1/2 to get 5/6.
      * @tc.size      MediumTest
@@ -709,7 +709,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_ADDNEGATIVE_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_2900
      * @tc.name      testRationalNumberAddNegative0035
      * @tc.desc      Add 1/2 and -1/3 to get 1/6.
      * @tc.size      MediumTest
@@ -729,7 +729,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_BOTHNEGATIVE_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3000
      * @tc.name      testRationalNumberBothNegative0036
      * @tc.desc      Constructor converts -3/-4 to 3/4.
      * @tc.size      MediumTest
@@ -747,7 +747,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_NEGATIVEDENOMINATOR_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3100
      * @tc.name      testRationalNumberNegativeDenominator0037
      * @tc.desc      Constructor converts 3/-4 to -3/4.
      * @tc.size      MediumTest
@@ -765,7 +765,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_NEGATIVENUMERATOR_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3200
      * @tc.name      testRationalNumberNegativeNumerator0038
      * @tc.desc      Create RationalNumber with -3/4.
      * @tc.size      MediumTest
@@ -783,7 +783,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_DENOMINATORONE_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3300
      * @tc.name      testRationalNumberDenominatorOne0039
      * @tc.desc      Create RationalNumber with 5/1.
      * @tc.size      MediumTest
@@ -801,7 +801,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_EQUALS_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3400
      * @tc.name      testRationalNumberEquals0043
      * @tc.desc      Check 1/2 equals 2/4.
      * @tc.size      MediumTest
@@ -819,7 +819,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_DIVIDE_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3500
      * @tc.name      testRationalNumberDivide0044
      * @tc.desc      Divide 1/2 by 2/3 to get 3/4.
      * @tc.size      MediumTest
@@ -839,7 +839,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_MULTIPLY_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3600
      * @tc.name      testRationalNumberMultiply0045
      * @tc.desc      Multiply 1/2 and 2/3 to get 1/3.
      * @tc.size      MediumTest
@@ -859,7 +859,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_SUBTRACT_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3700
      * @tc.name      testRationalNumberSubtract0046
      * @tc.desc      Subtract 1/3 from 1/2 to get 1/6.
      * @tc.size      MediumTest
@@ -879,7 +879,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_ADD_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3800
      * @tc.name      testRationalNumberAdd0047
      * @tc.desc      Add 1/2 and 1/3 to get 5/6.
      * @tc.size      MediumTest
@@ -899,7 +899,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_GETDENOMINATOR_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_3900
      * @tc.name      testRationalNumberGetDenominator0048
      * @tc.desc      Get correct denominator from 1/2.
      * @tc.size      MediumTest
@@ -916,7 +916,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_GETNUMERATOR_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_4000
      * @tc.name      testRationalNumberGetNumerator0049
      * @tc.desc      Get correct numerator from 1/2.
      * @tc.size      MediumTest
@@ -933,7 +933,7 @@ export default function RationalNumberTest() {
       });
 
     /**
-     * @tc.number    SUB_RATIONALNUMBER_CONSTRUCTOR_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_RATIONALNUMBER1_4100
      * @tc.name      testRationalNumberConstructor0050
      * @tc.desc      Create normal RationalNumber with 1/2.
      * @tc.size      MediumTest

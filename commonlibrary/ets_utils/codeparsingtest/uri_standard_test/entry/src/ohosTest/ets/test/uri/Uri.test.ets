@@ -50,7 +50,7 @@ export default function uriTest() {
     })
     /**
      * @tc.name   testEqualsToSpecialSymbolsHostStr2vsStr30001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALSTOSPECIALSYMBOLSHOSTSTR2VSSTR3_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1010
      * @tc.desc   Testing if URIs with different special symbols in the host part are not considered equal.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -73,7 +73,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsHostStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSHOSTSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1020
      * @tc.desc   Testing if a URI with special characters in the host part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -94,7 +94,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsHostStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSHOSTSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1030
      * @tc.desc   Testing if a URI with encoded special characters in the host part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -115,7 +115,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsFragmentStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSFRAGMENTSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1040
      * @tc.desc   Testing if a URI with special characters in the fragment part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -136,7 +136,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsFragmentStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSFRAGMENTSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1050
      * @tc.desc   Testing if a URI with encoded special characters in the fragment part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -157,7 +157,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsPathStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSPATHSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1060
      * @tc.desc   Testing if a URI with special characters in the path part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -178,7 +178,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsPathStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSPATHSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1070
      * @tc.desc   Testing if a URI with encoded special characters in the path part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -199,7 +199,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsSchemeStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSSCHEMESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1080
      * @tc.desc   Testing the URI creation with special characters in the scheme which should produce a BusinessError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -217,7 +217,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsScheme0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSSCHEME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1090
      * @tc.desc   Testing the URI creation with valid special characters in the scheme to check if it is considered absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -238,7 +238,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsPortStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSPORTSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1100
      * @tc.desc   Testing the URI creation with special characters in the port which should produce a BusinessError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -258,7 +258,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsPort0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSPORT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1110
      * @tc.desc   Testing the URI creation with only number in the port to check if it is considered absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -279,7 +279,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsUsernameStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSUSERNAMESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1120
      * @tc.desc   Testing if a URI with special characters in the username part is recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -300,7 +300,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsUsernameStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSUSERNAMESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1130
      * @tc.desc   Testing if a URI with special characters in the username part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -321,7 +321,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsPasswordStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSPASSWORDSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1140
      * @tc.desc   Testing if a URI with special characters in the password part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -342,7 +342,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsPasswordStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSPASSWORDSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1150
      * @tc.desc   Testing if a URI with encoded special characters in the password part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -363,7 +363,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1160
      * @tc.desc   Testing if a URI with special characters in the key part is recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -384,7 +384,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSKEYSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1170
      * @tc.desc   Testing if a URI with special characters in the query key part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -405,7 +405,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1180
      * @tc.desc   Testing if a URI with special characters in the query value part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -426,7 +426,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1190
      * @tc.desc   Testing if a URI with encoded special characters in the query value part is correctly recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -447,7 +447,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsNotScheme0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSNOTSCHEME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1200
      * @tc.desc   Testing if a URI without a scheme is correctly not recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -468,7 +468,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsNotUserInfo0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSNOTUSERINFO_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1210
      * @tc.desc   Testing if a URI without user info is correctly not recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -489,7 +489,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteSpecialSymbolsNotHostPort0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTESPECIALSYMBOLSNOTHOSTPORT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1220
      * @tc.desc   Testing if a URI without a host and port is correctly not recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -510,7 +510,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteFalseSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTEFALSESPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1230
      * @tc.desc   Testing if a URI with special characters in the key part is correctly not recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -531,7 +531,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteFalseSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTEFALSESPECIALSYMBOLSKEYSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1240
      * @tc.desc   Testing if a URI with special characters in the key part is correctly not recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -552,7 +552,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteFalseSpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTEFALSESPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1250
      * @tc.desc   Testing if a URI with special characters in the value part is correctly not recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -574,7 +574,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckIsAbsoluteFalseSpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKISABSOLUTEFALSESPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1260
      * @tc.desc   Testing if a URI with special characters in the value part is correctly not recognized as absolute.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -596,7 +596,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testNormalizeSpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NORMALIZESPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1270
      * @tc.desc   Testing if a URI with special characters in the value part is correctly normalized.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -617,7 +617,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testNormalizeSpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NORMALIZESPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1280
      * @tc.desc   Testing if a URI with special characters in the value part is correctly normalized.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -638,7 +638,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testNormalizeSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NORMALIZESPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1290
      * @tc.desc   Testing if a URI with special characters in the key part is correctly normalized.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -659,7 +659,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testNormalizeSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_NORMALIZESPECIALSYMBOLSKEYSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1300
      * @tc.desc   Testing if a URI with special characters in the key part is correctly normalized.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -680,7 +680,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1310
      * @tc.desc   Testing if a URI with special characters in the key part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -701,7 +701,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSKEYSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1320
      * @tc.desc   Testing if a URI with special characters in the key part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -722,7 +722,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1330
      * @tc.desc   Testing if a URI with special characters in the value part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -743,7 +743,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1340
      * @tc.desc   Testing if a URI with special characters in the value part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -764,7 +764,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsHostStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSHOSTSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1350
      * @tc.desc   Testing if a URI with special characters in the host part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -785,7 +785,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsHostStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSHOSTSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1360
      * @tc.desc   Testing if a URI with special characters in the host part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -806,7 +806,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsFragmentStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSFRAGMENTSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1370
      * @tc.desc   Testing if a URI with special characters in the fragment part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -827,7 +827,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsFragmentStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSFRAGMENTSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1380
      * @tc.desc   Testing if a URI with special characters in the fragment part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -848,7 +848,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsPathStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSPATHSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1390
      * @tc.desc   Testing if a URI with special characters in the path part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -869,7 +869,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsPathStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSPATHSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1400
      * @tc.desc   Testing if a URI with special characters in the path part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -890,7 +890,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsSchemeStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSSCHEMESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1410
      * @tc.desc   Testing if creating a URI with invalid special characters in the scheme part throws a specific error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -910,7 +910,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsScheme0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSSCHEME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1420
      * @tc.desc   Testing if a URI with valid special characters in the scheme part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -931,7 +931,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsUsernameStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSUSERNAMESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1430
      * @tc.desc   Testing if a URI with special characters in the username part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -952,7 +952,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsUsernameStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSUSERNAMESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1440
      * @tc.desc   Testing if a URI with special characters in the username part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -973,7 +973,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsPasswordStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSPASSWORDSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1450
      * @tc.desc   Testing if a URI with special characters in the password part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -994,7 +994,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsPasswordStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSPASSWORDSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1460
      * @tc.desc   Testing if a URI with special characters in the password part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1015,7 +1015,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsPortStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSPORTSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1470
      * @tc.desc   Testing if creating a URI with invalid special characters in the port part throws a specific error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1035,7 +1035,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testToStringSpecialSymbolsPort0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRINGSPECIALSYMBOLSPORT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1480
      * @tc.desc   Testing if a URI with valid special characters in the port part is correctly represented as a string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1056,7 +1056,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckRelativeSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKRELATIVESPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1490
      * @tc.desc   Testing if a URI with special characters in the query key part is correctly identified as relative.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1077,7 +1077,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckRelativeSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKRELATIVESPECIALSYMBOLSKEYSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1500
      * @tc.desc   Testing if a URI with special characters in the query key part is correctly identified as relative.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1098,7 +1098,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckRelativeSpecialSymbolsValuesStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKRELATIVESPECIALSYMBOLSVALUESSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1510
      * @tc.desc   Testing if a URI with special characters in the query value part is correctly identified as relative.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1119,7 +1119,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckRelativeSpecialSymbolsValuesStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKRELATIVESPECIALSYMBOLSVALUESSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1520
      * @tc.desc   Testing if a URI with special characters in the query value part is correctly identified as relative.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1140,7 +1140,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckRelativeFalseSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKRELATIVEFALSESPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1530
      * @tc.desc   Testing if a URI with special characters in the query key part is correctly identified as not relative.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1161,7 +1161,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckRelativeFalseSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKRELATIVEFALSESPECIALSYMBOLSKEYSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1540
      * @tc.desc   Testing if a URI with special characters in the query key part is correctly identified as not relative.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1182,7 +1182,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckRelativeFalseSpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKRELATIVEFALSESPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1550
      * @tc.desc   Testing if a URI with special characters in the query value part is correctly identified as not relative.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1203,7 +1203,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCheckRelativeFalseSpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CHECKRELATIVEFALSESPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1560
      * @tc.desc   Testing if a URI with special characters in the query value part is correctly identified as not relative.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1224,7 +1224,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAddQueryValueSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ADDQUERYVALUESPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1570
      * @tc.desc   Testing if a query parameter with special characters in the key is correctly added to the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1245,7 +1245,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAddQueryValueSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ADDQUERYVALUESPECIALSYMBOLSKEYSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1580
      * @tc.desc   Testing if a query parameter with special characters in the key is correctly added to the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1266,7 +1266,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAddQueryValueSpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ADDQUERYVALUESPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1590
      * @tc.desc   Testing if a query parameter with special characters in the value is correctly added to the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1287,7 +1287,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAddQueryValueSpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ADDQUERYVALUESPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1600
      * @tc.desc   Testing if a query parameter with special characters in the value is correctly added to the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1308,7 +1308,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAddsegmentsSpecialsymbolsstr2Decode0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ADDSEGMENTSSPECIALSYMBOLSSTR2DECODE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1610
      * @tc.desc   Testing if a segment with special characters in the value is correctly added to the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1332,7 +1332,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAddEncodedSegmentSpecialSymbolsStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ADDENCODEDSEGMENTSPECIALSYMBOLSSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1620
      * @tc.desc   Testing if a URI segment with special characters is correctly encoded and added to the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1355,7 +1355,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAddEncodedSegmentSpecialSymbolsStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ADDENCODEDSEGMENTSPECIALSYMBOLSSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1630
      * @tc.desc   Testing if a URI segment with special characters is correctly encoded and added to the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1378,7 +1378,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryNamesSpecialSymbolsStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYNAMESSPECIALSYMBOLSSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1640
      * @tc.desc   Testing if query names with special characters in their values are correctly retrieved from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1401,7 +1401,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryNamesSpecialSymbolsStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYNAMESSPECIALSYMBOLSSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1650
      * @tc.desc   Testing if query names with special characters in their values are correctly retrieved from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1423,7 +1423,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetBooleanQueryValueSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETBOOLEANQUERYVALUESPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1660
      * @tc.desc   Testing if Boolean query value with special characters in their keys are correctly evaluated from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1444,7 +1444,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetBooleanQueryValueSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETBOOLEANQUERYVALUESPECIALSYMBOLSKEYSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1670
      * @tc.desc   Testing if Boolean query value with special characters in their keys are correctly evaluated from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1465,7 +1465,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetBooleanQueryValueSpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETBOOLEANQUERYVALUESPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1680
      * @tc.desc   Testing if Boolean query values with special characters in their values are correctly evaluated from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1487,7 +1487,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetBooleanQueryValueSpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETBOOLEANQUERYVALUESPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1690
      * @tc.desc   Testing if Boolean query values with special characters in their values are correctly evaluated from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1509,7 +1509,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testClearQuerySpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CLEARQUERYSPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1700
      * @tc.desc   Testing if query parameters with special characters in their keys are correctly cleared from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1530,7 +1530,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testClearQuerySpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CLEARQUERYSPECIALSYMBOLSKEYSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1710
      * @tc.desc   Testing if query parameters with special characters in their keys are correctly cleared from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1551,7 +1551,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testClearQuerySpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CLEARQUERYSPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1720
      * @tc.desc   Testing if query parameters with special characters in their values are correctly cleared from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1572,7 +1572,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testClearQuerySpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CLEARQUERYSPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1730
      * @tc.desc   Testing if query parameters with special characters in their values are correctly cleared from the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1593,7 +1593,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetLastSegmentSpecialSymbolsStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETLASTSEGMENTSPECIALSYMBOLSSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1740
      * @tc.desc   Testing if the last segment of the URI path with special characters is correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1614,7 +1614,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetLastSegmentSpecialSymbolsStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETLASTSEGMENTSPECIALSYMBOLSSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1750
      * @tc.desc   Testing if the last segment of the URI path with special characters is correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1635,7 +1635,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetSegmentSpecialSymbolsStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSEGMENTSPECIALSYMBOLSSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1760
      * @tc.desc   Testing if a specific segment of the URI path with special characters is correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1658,7 +1658,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetSegmentSpecialSymbolsStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSEGMENTSPECIALSYMBOLSSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1770
      * @tc.desc   Testing if a specific segment of the URI path with special characters is correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1681,7 +1681,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCreateFromPartsSpecialSymbolsSchemeStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CREATEFROMPARTSSPECIALSYMBOLSSCHEMESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1780
      * @tc.desc   Testing if a URI instance is correctly created from parts with invalid special symbols in the scheme.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1701,7 +1701,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCreateFromPartsSpecialSymbolsScheme0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CREATEFROMPARTSSPECIALSYMBOLSSCHEME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1790
      * @tc.desc   Testing if a URI instance is correctly created from parts with valid special symbols in the scheme.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1721,7 +1721,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCreateFromPartsSpecialSymbolsSspStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CREATEFROMPARTSSPECIALSYMBOLSSSPSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1800
      * @tc.desc   Testing if a URI instance is correctly created from parts with special symbols in the ssp.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1743,7 +1743,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCreateFromPartsSpecialSymbolsSspStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CREATEFROMPARTSSPECIALSYMBOLSSSPSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1810
      * @tc.desc   Testing if a URI instance is correctly created from parts with special symbols in the ssp.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1766,7 +1766,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCreateFromPartsSpecialSymbolsFragmentStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CREATEFROMPARTSSPECIALSYMBOLSFRAGMENTSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1820
      * @tc.desc   Testing if a URI instance is correctly created from parts with special symbols in the ssp.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1789,7 +1789,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testCreateFromPartsSpecialSymbolsFragmentStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CREATEFROMPARTSSPECIALSYMBOLSFRAGMENTSTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1830
      * @tc.desc   Testing if a URI instance is correctly created from parts with special symbols in the ssp.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1812,7 +1812,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryValueSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYVALUESPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1840
      * @tc.desc   Testing if the correct value is retrieved from a URI's query when the key contains special symbols.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1833,7 +1833,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryValueSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYVALUESPECIALSYMBOLSKEYSTR3_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1850
      * @tc.desc   Testing if the correct value is retrieved from a URI's query when the key contains special symbols (different case).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1854,7 +1854,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryValueSpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYVALUESPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1860
      * @tc.desc   Testing if the correct value is retrieved from a URI's query when the value contains special symbols.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1875,7 +1875,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryValueSpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYVALUESPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1870
      * @tc.desc   Testing if the correct value is retrieved from a URI's query when the value contains special symbols.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1896,7 +1896,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryValuesSpecialSymbolsKeyStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYVALUESSPECIALSYMBOLSKEYSTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1880
      * @tc.desc   Testing if the correct value is retrieved from a URI's query when the key contains special symbols.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1921,7 +1921,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryValuesSpecialSymbolsKeyStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYVALUESSPECIALSYMBOLSKEYSTR3_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1890
      * @tc.desc   Testing if the correct value is retrieved from a URI's query when the key contains special symbols (different case).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1946,7 +1946,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryValuesSpecialSymbolsValueStr20001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYVALUESSPECIALSYMBOLSVALUESTR2_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1900
      * @tc.desc   Testing if the correct value is retrieved from a URI's query when the value contains special symbols.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1971,7 +1971,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testGetQueryValuesSpecialSymbolsValueStr30002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETQUERYVALUESSPECIALSYMBOLSVALUESTR3_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1910
      * @tc.desc   Testing if the correct value is retrieved from a URI's query when the value contains special symbols.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1998,7 +1998,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testScheme0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_SCHEME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1920
      * @tc.desc   Testing if the correct scheme is retrieved from a URI when the scheme is FTP.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2018,7 +2018,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testScheme0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_SCHEME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1930
      * @tc.desc   Testing if the correct handling occurs when an incorrect scheme is retrieved from a URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2038,7 +2038,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testScheme0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_SCHEME_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1940
      * @tc.desc   Testing if the correct handling occurs when an invalid scheme is prefixed with a colon in a URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2058,7 +2058,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testScheme0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_SCHEME_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1950
      * @tc.desc   Testing if the correct handling occurs when an invalid scheme is malformed in a URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2078,7 +2078,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1960
      * @tc.desc   Testing if null is returned for a URI with malformed user info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2098,7 +2098,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1970
      * @tc.desc   Testing if null is returned for a URI with malformed user info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2118,7 +2118,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1980
      * @tc.desc   Testing if null is returned for a URI with malformed user info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2138,7 +2138,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_1990
      * @tc.desc   Testing if null is returned for a URI with malformed user info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2158,7 +2158,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2000
      * @tc.desc   Testing if null is returned for a URI with malformed user info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2178,7 +2178,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2010
      * @tc.desc   Testing if userInfo is correctly retrieved when format is valid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2198,7 +2198,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2020
      * @tc.desc   Testing if userInfo is correctly retrieved when format is valid.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2218,7 +2218,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2030
      * @tc.desc   Testing if null is returned for a URI with an invalid scheme.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2238,7 +2238,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2040
      * @tc.desc   Testing if userInfo is correctly retrieved when percent-encoded.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2258,7 +2258,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testUserInfo0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_USERINFO_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2050
      * @tc.desc   Testing if null is returned for a URI with malformed percent-encoded user info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2278,7 +2278,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testHost0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_HOST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2060
      * @tc.desc   Testing if null is returned for a URI with malformed host info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2298,7 +2298,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testHost0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_HOST_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2070
      * @tc.desc   Testing if null is returned for a URI with malformed host info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2318,7 +2318,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testHost0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_HOST_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2080
      * @tc.desc   Testing if null is returned for a URI with malformed host info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2338,7 +2338,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testHost0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_HOST_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2090
      * @tc.desc   Testing if null is returned for a URI with malformed host info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2358,7 +2358,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testHost0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_HOST_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2100
      * @tc.desc   Testing if null is returned for a URI with malformed host info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2378,7 +2378,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testHost0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_HOST_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2110
      * @tc.desc   Testing if null is returned for a URI with malformed host info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2398,7 +2398,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testHost0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_HOST_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2120
      * @tc.desc   Testing if null is returned for a URI with malformed host info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2418,7 +2418,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testPort0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_PORT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2130
      * @tc.desc   Testing if -1 is returned for a URI with malformed port info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2438,7 +2438,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testPort0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_PORT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2140
      * @tc.desc   Testing if -1 is returned for a URI with malformed port info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2458,7 +2458,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testPort0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_PORT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2150
      * @tc.desc   Testing if -1 is returned for a URI with malformed port info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2478,7 +2478,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testPort0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_PORT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2160
      * @tc.desc   Testing if -1 is returned for a URI with malformed port info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2498,7 +2498,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testPath0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_PATH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2170
      * @tc.desc   Testing if the correct path is retrieved from a URI with leading slashes in the path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2518,7 +2518,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testPath0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_PATH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2180
      * @tc.desc   Testing if the correct path is retrieved from a URI with multiple directory segments.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2538,7 +2538,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testPath0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_PATH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2190
      * @tc.desc   Testing if the correct path is retrieved from a URI with double slashes in the path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2558,7 +2558,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testPath0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_PATH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2200
      * @tc.desc   Testing if the correct path is retrieved from a URI with percent-encoded spaces.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2578,7 +2578,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testPath0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_PATH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2210
      * @tc.desc   Testing if the correct path is retrieved from a URI with complex percent-encoded segments.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2598,7 +2598,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2220
      * @tc.desc   Testing if the correct query is retrieved from a URI with double question marks.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2618,7 +2618,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2230
      * @tc.desc   Testing if the correct query is retrieved from a URI with complex query parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2638,7 +2638,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2240
      * @tc.desc   Testing if the correct query is retrieved from a URI with multiple equal signs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2658,7 +2658,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2250
      * @tc.desc   Testing if the correct query is retrieved from a URI with an equals sign within a parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2678,7 +2678,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2260
      * @tc.desc   Testing if the correct query is retrieved from a URI with malformed query.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2698,7 +2698,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2270
      * @tc.desc   Testing if the correct query is retrieved from a URI with consecutive ampersands.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2718,7 +2718,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2280
      * @tc.desc   Testing if the correct query is retrieved from a URI with a malformed parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2738,7 +2738,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2290
      * @tc.desc   Testing if the correct query is retrieved from a URI with parameters without equalign sign.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2758,7 +2758,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2300
      * @tc.desc   Testing if null is returned for a URI when the query is part of the path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2778,7 +2778,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testQuery0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_QUERY_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2310
      * @tc.desc   Testing if the correct query is retrieved from percent-encoded parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2798,7 +2798,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testFragment0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_FRAGMENT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2320
      * @tc.desc   Testing if a Syntax Error is returned for a URI with double hashes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2818,7 +2818,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testFragment0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_FRAGMENT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2330
      * @tc.desc   Testing if a Syntax Error is returned for a URI with multiple fragments.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2838,7 +2838,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testFragment0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_FRAGMENT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2340
      * @tc.desc   Testing if a Syntax Error is returned for a URI with trailing hash.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2858,7 +2858,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testFragment0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_FRAGMENT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2350
      * @tc.desc   Testing if a Syntax Error is returned for a URI with malformed fragment.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2878,7 +2878,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testFragment0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_FRAGMENT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2360
      * @tc.desc   Testing if null is returned for a URI with a percent-encoded fragment indicator.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2898,7 +2898,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testFragment0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_FRAGMENT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2370
      * @tc.desc   Testing if the correct fragment is retrieved from a percent-encoded fragment.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2918,7 +2918,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAuthority0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_AUTHORITY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2380
      * @tc.desc   Testing if the correct authority is retrieved from a URI with double @ symbols.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2938,7 +2938,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAuthority0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_AUTHORITY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2390
      * @tc.desc   Testing if the correct authority is retrieved from a URI with a username followed by a colon.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2958,7 +2958,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAuthority0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_AUTHORITY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2400
      * @tc.desc   Testing if the correct authority is retrieved from a URI with username and password followed by an @ symbol.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2978,7 +2978,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAuthority0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_AUTHORITY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2410
      * @tc.desc   Testing if the correct authority is retrieved from a URI with user info and malformed host.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2998,7 +2998,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAuthority0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_AUTHORITY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2420
      * @tc.desc   Testing if null is returned for a percent-encoded URI without proper authority.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3018,7 +3018,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAuthority0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_AUTHORITY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2430
      * @tc.desc   Testing if the correct authority is retrieved from a percent-encoded authority.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3038,7 +3038,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testSsp0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_SSP_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2440
      * @tc.desc   Testing if the correct ssp is retrieved from a URI with leading colons.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3058,7 +3058,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testSsp0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_SSP_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2450
      * @tc.desc   Testing if a Syntax Error is returned for a URI with invalid structure.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3078,7 +3078,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testSsp0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_SSP_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2460
      * @tc.desc   Testing if the correct ssp is retrieved from a percent-encoded URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3098,7 +3098,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedUserInfo0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDUSERINFO_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2470
      * @tc.desc   Testing if the correct encoded user info is retrieved from a URI with doubles colons.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3118,7 +3118,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedUserInfo0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDUSERINFO_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2480
      * @tc.desc   Testing if null is returned for a URI with malformed user info (leading slash).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3138,7 +3138,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedUserInfo0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDUSERINFO_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2490
      * @tc.desc   Testing if null is returned for a URI with invalid user info (double @).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3158,7 +3158,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedUserInfo0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDUSERINFO_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2500
      * @tc.desc   Testing if null is returned for a URI with incomplete user info.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3178,7 +3178,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedUserInfo0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDUSERINFO_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2510
      * @tc.desc   Testing if null is returned for a URI with malformed user info (host).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3198,7 +3198,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedUserInfo0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDUSERINFO_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2520
      * @tc.desc   Testing if the correct encoded user info is retrieved from a percent-encoded username and password.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3218,7 +3218,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedUserInfo0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDUSERINFO_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2530
      * @tc.desc   Testing if null is returned for a percent-encoded URI with an encoded host character.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3238,7 +3238,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedPath0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDPATH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2540
      * @tc.desc   Testing if the correct encoded path is retrieved from a URI with leading slashes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3258,7 +3258,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedPath0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDPATH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2550
      * @tc.desc   Testing if the correct encoded path is retrieved from a URI with multiple slashes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3278,7 +3278,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedPath0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDPATH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2560
      * @tc.desc   Testing if the correct encoded path is retrieved from a URI with complex path segments.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3298,7 +3298,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedPath0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDPATH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2570
      * @tc.desc   Testing if a Syntax Error is returned for a URI with percent encoding in the path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3318,7 +3318,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedPath0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDPATH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2580
      * @tc.desc   Testing if the correct encoded path is retrieved from a URI with encoded characters in path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3338,7 +3338,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedPath0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDPATH_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2590
      * @tc.desc   Testing if the correct encoded path is retrieved from a URI with complex encoded path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3358,7 +3358,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedQuery0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDQUERY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2600
      * @tc.desc   Testing if the correct encoded query is retrieved from a URI with double question marks.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3378,7 +3378,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedQuery0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDQUERY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2610
      * @tc.desc   Testing if the correct encoded query is retrieved from a URI with path ending with a slash followed by a double slash.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3398,7 +3398,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedQuery0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDQUERY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2620
      * @tc.desc   Testing if the correct encoded query is retrieved from a URI with unusual query structure.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3418,7 +3418,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedQuery0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDQUERY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2630
      * @tc.desc   Testing if the correct encoded query is retrieved from a URI with complex query parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3438,7 +3438,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedQuery0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDQUERY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2640
      * @tc.desc   Testing if the correct encoded query is retrieved from a URI with mixed query parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3458,7 +3458,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedQuery0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDQUERY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2650
      * @tc.desc   Testing if null is returned for a URI with percent-encoded question mark in path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3478,7 +3478,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedQuery0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDQUERY_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2660
      * @tc.desc   Testing if the correct encoded query is retrieved from a URI with encoded query parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3498,7 +3498,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedFragment0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDFRAGMENT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2670
      * @tc.desc   Testing if a Syntax Error is returned for a URI with double hash marks.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3518,7 +3518,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedFragment0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDFRAGMENT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2680
      * @tc.desc   Testing if a Syntax Error is returned for a URI with multiple fragment sections.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3538,7 +3538,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedFragment0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDFRAGMENT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2690
      * @tc.desc   Testing if a Syntax Error is returned for a URI with trailing hash.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3558,7 +3558,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedFragment0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDFRAGMENT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2700
      * @tc.desc   Testing if a Syntax Error is returned for a URI with malformed fragment.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3578,7 +3578,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedFragment0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDFRAGMENT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2710
      * @tc.desc   Testing if null is returned for a URI with percent-encoded fragment character in the path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3598,7 +3598,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedFragment0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDFRAGMENT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2720
      * @tc.desc   Testing if the correct encoded fragment is retrieved from a URI with encoded fragment characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3618,7 +3618,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedAuthority0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDAUTHORITY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2730
      * @tc.desc   Testing if the correct encoded authority is retrieved from a URI with double '@' symbols.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3638,7 +3638,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedAuthority0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDAUTHORITY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2740
      * @tc.desc   Testing if the correct encoded authority is retrieved from a URI with a colon followed by an invalid character.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3658,7 +3658,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedAuthority0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDAUTHORITY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2750
      * @tc.desc   Testing if the correct encoded authority is retrieved from a URI with an '@' in the username.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3678,7 +3678,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedAuthority0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDAUTHORITY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2760
      * @tc.desc   Testing if the correct encoded authority is retrieved from a URI with invalid format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3698,7 +3698,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedAuthority0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDAUTHORITY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2770
      * @tc.desc   Testing if null is returned for a URI with percent-encoded authority character.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3718,7 +3718,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedAuthority0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDAUTHORITY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2780
      * @tc.desc   Testing if the correct encoded authority is retrieved from a URI with
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3738,7 +3738,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedSSP0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDSSP_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2790
      * @tc.desc   Testing if the correct encoded SSP is retrieved from a URI with multiple leading slashes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3758,7 +3758,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedSSP0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDSSP_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2800
      * @tc.desc   Testing if a Syntax Error is returned for a URI with double hashes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3778,7 +3778,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedSSP0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDSSP_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2810
      * @tc.desc   Testing if the correct encoded SSP is retrieved from a URI with a different scheme.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3798,7 +3798,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testEncodedSSP0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_ENCODEDSSP_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI6_2820
      * @tc.desc   Testing if null is returned for a URI with percent-encoded characters in the scheme.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

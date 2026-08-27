@@ -30,7 +30,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_0100
      * @tc.name      testLinkedList16Chapter0001
      * @tc.desc      Test GC (String):Verify LinkedList operability&proper cleanup of extra-long string post add/release
      * @tc.size      MediumTest
@@ -56,7 +56,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_0200
      * @tc.name      testLinkedList16Chapter0002
      * @tc.desc      Test whether 0 of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -76,7 +76,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_0300
      * @tc.name      testLinkedList16Chapter0003
      * @tc.desc      Test whether undefined of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -96,7 +96,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_0400
      * @tc.name      testLinkedList16Chapter0004
      * @tc.desc      Test whether NaN of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -116,7 +116,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_0500
      * @tc.name      testLinkedList16Chapter0005
      * @tc.desc      Test whether -0 of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -136,7 +136,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_0600
      * @tc.name      testLinkedList16Chapter0006
      * @tc.desc      Test whether positive infinity of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -156,7 +156,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_0700
      * @tc.name      testLinkedList16Chapter0007
      * @tc.desc      Test whether negative infinity of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -176,7 +176,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_0800
      * @tc.name      testLinkedList16Chapter0008
      * @tc.desc      Test whether double type of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -197,7 +197,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_0900
      * @tc.name      testLinkedList16Chapter0009
      * @tc.desc      Test whether Number.MAX_VALUE of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -217,7 +217,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1000
      * @tc.name      testLinkedList16Chapter0010
      * @tc.desc      Test whether Number.MIN_VALUE of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -237,7 +237,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1100
      * @tc.name      testLinkedList16Chapter0011
      * @tc.desc      Test whether Number.EPSILON of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -257,7 +257,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1200
      * @tc.name      testLinkedList16Chapter0012
      * @tc.desc      Test whether 2^53 - 1 of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -277,7 +277,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1300
      * @tc.name      testLinkedList16Chapter0013
      * @tc.desc      Test whether byte values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -312,7 +312,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1400
      * @tc.name      testLinkedList16Chapter0014
      * @tc.desc      Test whether out-of-range byte values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -332,7 +332,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1500
      * @tc.name      testLinkedList16Chapter0015
      * @tc.desc      Test whether short values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -362,7 +362,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1600
      * @tc.name      testLinkedList16Chapter0016
      * @tc.desc      Test whether out-of-range short values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -382,7 +382,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1700
      * @tc.name      testLinkedList16Chapter0017
      * @tc.desc      Test whether int values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -413,7 +413,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1800
      * @tc.name      testLinkedList16Chapter0018
      * @tc.desc      Test whether out-of-range int values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -433,7 +433,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_1900
      * @tc.name      testLinkedList16Chapter0019
      * @tc.desc      Test whether long values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -463,7 +463,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2000
      * @tc.name      testLinkedList16Chapter0020
      * @tc.desc      Test whether out-of-range long values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -483,7 +483,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2100
      * @tc.name      testLinkedList16Chapter0021
      * @tc.desc      Test whether float values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -513,7 +513,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2200
      * @tc.name      testLinkedList16Chapter0022
      * @tc.desc      Test whether double values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -543,7 +543,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2300
      * @tc.name      testLinkedList16Chapter0023
      * @tc.desc      Test whether out-of-range double values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -563,7 +563,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2400
      * @tc.name      testLinkedList16Chapter0024
      * @tc.desc      Test whether char values (as number type) can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -588,7 +588,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2500
      * @tc.name      testLinkedList16Chapter0025
      * @tc.desc      Test: Verify correct clearing of char values (stored as chars → number type) post addition
      * @tc.size      MediumTest
@@ -608,7 +608,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2600
      * @tc.name      testLinkedList16Chapter0026
      * @tc.desc      Test whether out-of-range char values (as number type) can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -628,7 +628,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2700
      * @tc.name      testLinkedList16Chapter0027
      * @tc.desc      Test whether bigint values (converted to number type) can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -648,7 +648,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2800
      * @tc.name      testLinkedList16Chapter0028
      * @tc.desc      Test whether double values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -668,7 +668,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_2900
      * @tc.name      testLinkedList16Chapter0029
      * @tc.desc      Test: Verify correct clearing of number-type values (float, hex 0xcafebabe) post addition
      * @tc.size      MediumTest
@@ -688,7 +688,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3000
      * @tc.name      testLinkedList16Chapter0030
      * @tc.desc      Test whether hexadecimal (16-bit) values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -708,7 +708,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3100
      * @tc.name      testLinkedList16Chapter0031
      * @tc.desc      Test whether hexadecimal (32-bit) values of number type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -728,7 +728,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3200
      * @tc.name      testLinkedList16Chapter0032
      * @tc.desc      Test: Verify correct clearing of number-type values (octal/hex 0x3) post addition
      * @tc.size      MediumTest
@@ -748,7 +748,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3300
      * @tc.name      testLinkedList16Chapter0033
      * @tc.desc      Test: Verify correct clearing of number-type values (2 ** 3, exponent operator) post addition
      * @tc.size      MediumTest
@@ -768,7 +768,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3400
      * @tc.name      testLinkedList16Chapter0034
      * @tc.desc      Test: Verify correct clearing of number-type values (scientific notation) post addition
      * @tc.size      MediumTest
@@ -793,7 +793,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3500
      * @tc.name      testLinkedList16Chapter0035
      * @tc.desc      Test: Verify correct clearing of bigint values (9007199254740991n → number) post addition
      * @tc.size      MediumTest
@@ -813,7 +813,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3600
      * @tc.name      testLinkedList16Chapter0036
      * @tc.desc      Test whether true of boolean type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -833,7 +833,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3700
      * @tc.name      testLinkedList16Chapter0037
      * @tc.desc      Test whether false of boolean type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -853,7 +853,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3800
      * @tc.name      testLinkedList16Chapter0038
      * @tc.desc      Test: Verify correct clearing of always-false values (→ boolean) post addition
      * @tc.size      MediumTest
@@ -894,7 +894,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_3900
      * @tc.name      testLinkedList16Chapter0039
      * @tc.desc      Test: Verify correct clearing of values (! + other data types → boolean) post addition
      * @tc.size      MediumTest
@@ -920,7 +920,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4000
      * @tc.name      testLinkedList16Chapter0040
      * @tc.desc      Test whether ordinary objects of object type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -946,7 +946,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4100
      * @tc.name      testLinkedList16Chapter0041
      * @tc.desc      Test whether nested objects of object type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -976,7 +976,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4200
      * @tc.name      testLinkedList16Chapter0042
      * @tc.desc      Test: Verify correct clearing of object-type objects (function props w/o params) post addition
      * @tc.size      MediumTest
@@ -1001,7 +1001,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4300
      * @tc.name      testLinkedList16Chapter0043
      * @tc.desc      Test: Verify correct clearing of object-type objects (function props w/ params) post addition
      * @tc.size      MediumTest
@@ -1026,7 +1026,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4400
      * @tc.name      testLinkedList16Chapter0044
      * @tc.desc      Test: Verify correct clearing of object-type objects (ArrayBuffer) post addition
      * @tc.size      MediumTest
@@ -1055,7 +1055,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4500
      * @tc.name      testLinkedList16Chapter0045
      * @tc.desc      Test whether objects containing DataView of object type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -1079,7 +1079,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4600
      * @tc.name      testLinkedList16Chapter0046
      * @tc.desc      Test whether empty objects of object type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -1102,7 +1102,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4700
      * @tc.name      testLinkedList16Chapter0047
      * @tc.desc      Test whether extremely large objects of object type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -1136,7 +1136,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4800
      * @tc.name      testLinkedList16Chapter0048
      * @tc.desc      Test: Verify correct clearing of object-type objects (null props) post addition
      * @tc.size      MediumTest
@@ -1161,7 +1161,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_4900
      * @tc.name      testLinkedList16Chapter0049
      * @tc.desc      Test: Verify correct clearing of object-type objects (NaN props) post addition
      * @tc.size      MediumTest
@@ -1186,7 +1186,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5000
      * @tc.name      testLinkedList16Chapter0050
      * @tc.desc      Test: Verify correct clearing of object-type objects (Infinity props) post addition
      * @tc.size      MediumTest
@@ -1211,7 +1211,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5100
      * @tc.name      testLinkedList16Chapter0051
      * @tc.desc      Test: Verify correct clearing of object-type objects (TypedArray props) post addition
      * @tc.size      MediumTest
@@ -1236,7 +1236,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5200
      * @tc.name      testLinkedList16Chapter0052
      * @tc.desc      Test: Verify correct clearing of object-type objects (Map props) post addition
      * @tc.size      MediumTest
@@ -1261,7 +1261,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5300
      * @tc.name      testLinkedList16Chapter0053
      * @tc.desc      Test: Verify correct clearing of object-type objects (Set props) post addition
      * @tc.size      MediumTest
@@ -1286,7 +1286,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5400
      * @tc.name      testLinkedList16Chapter0054
      * @tc.desc      Test: Verify correct clearing of object-type objects (Promise props) post addition
      * @tc.size      MediumTest
@@ -1323,7 +1323,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5500
      * @tc.name      testLinkedList16Chapter0055
      * @tc.desc      Test: Verify correct clearing of object-type objects (RegExp props) post addition
      * @tc.size      MediumTest
@@ -1353,7 +1353,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5600
      * @tc.name      testLinkedList16Chapter0056
      * @tc.desc      Test whether normal Uint8Array arrays of array type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -1373,7 +1373,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5700
      * @tc.name      testLinkedList16Chapter0057
      * @tc.desc      Test whether arrays containing multiple 0s of array type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -1396,7 +1396,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5800
      * @tc.name      testLinkedList16Chapter0058
      * @tc.desc      Test: Verify correct clearing of array-type Array (neg nums → Uint8Array) post addition
      * @tc.size      MediumTest
@@ -1416,7 +1416,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_5900
      * @tc.name      testLinkedList16Chapter0059
      * @tc.desc      Test: Verify correct clearing of array-type Array (neg nums → Uint8/Uint16Array) post addition
      * @tc.size      MediumTest
@@ -1441,7 +1441,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6000
      * @tc.name      testLinkedList16Chapter0060
      * @tc.desc      Test: Verify correct clearing of array-type special arrays (non-numeric keys) post addition
      * @tc.size      MediumTest
@@ -1462,7 +1462,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6100
      * @tc.name      testLinkedList16Chapter0061
      * @tc.desc      Test: Verify correct clearing of array-type arrays (NaN/Infinity) post addition
      * @tc.size      MediumTest
@@ -1481,7 +1481,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6200
      * @tc.name      testLinkedList16Chapter0062
      * @tc.desc      Test: Verify correct clearing of array-type arrays (non-numeric) post addition
      * @tc.size      MediumTest
@@ -1500,7 +1500,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6300
      * @tc.name      testLinkedList16Chapter0063
      * @tc.desc      Test: Verify correct clearing of array-type arrays (non-numeric types) post addition
      * @tc.size      MediumTest
@@ -1519,7 +1519,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6400
      * @tc.name      testLinkedList16Chapter0064
      * @tc.desc      Test whether empty arrays of array type can be correctly cleared after being added
      * @tc.size      MediumTest
@@ -1538,7 +1538,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6500
      * @tc.name      testLinkedList16Chapter0065
      * @tc.desc      Test: Verify correct clearing of array-class elements (extreme value overflow) post addition
      * @tc.size      MediumTest
@@ -1557,7 +1557,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6600
      * @tc.name      testLinkedList16Chapter0066
      * @tc.desc      Test: Verify correct clearing of array-class Int8/Uint8/Uint8ClampedArray post addition
      * @tc.size      MediumTest
@@ -1585,7 +1585,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6700
      * @tc.name      testLinkedList16Chapter0067
      * @tc.desc      Test: Verify correct clearing of array-class Int16/Uint16/Int32/Uint32Array post addition
      * @tc.size      MediumTest
@@ -1617,7 +1617,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6800
      * @tc.name      testLinkedList16Chapter0068
      * @tc.desc      Test: Verify correct clearing of array-class Float32/Float64/BigInt64/BigUint64Array post addition
      * @tc.size      MediumTest
@@ -1657,7 +1657,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_6900
      * @tc.name      testLinkedList16Chapter0069
      * @tc.desc      Test: Verify correct clearing of TypedArray elements (special value storage rules) post addition
      * @tc.size      MediumTest
@@ -1709,7 +1709,7 @@ export default function LinkedListTest16() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_7000
      * @tc.name      testLinkedList16Chapter0070
      * @tc.desc      Test replacing the added element with undefined of String type
      * @tc.size      MediumTest
@@ -1728,7 +1728,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_7100
      * @tc.name      testLinkedList16Chapter0071
      * @tc.desc      Test replacing the added element with null of String type
      * @tc.size      MediumTest
@@ -1747,7 +1747,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_7200
      * @tc.name      testLinkedList16Chapter0072
      * @tc.desc      Test replacing the added element with empty string of String type
      * @tc.size      MediumTest
@@ -1767,7 +1767,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_7300
      * @tc.name      testLinkedList16Chapter0073
      * @tc.desc      Test replacing the added element with full coverage of special characters of String type
      * @tc.size      MediumTest
@@ -1786,7 +1786,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_7400
      * @tc.name      testLinkedList16Chapter0074
      * @tc.desc      Test replacing the added element with full coverage of ASCII codes of String type
      * @tc.size      MediumTest
@@ -1805,7 +1805,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_7500
      * @tc.name      testLinkedList16Chapter0075
      * @tc.desc      Test replacing the added element with full coverage of special characters of String type (twice)
      * @tc.size      MediumTest
@@ -1824,7 +1824,7 @@ export default function LinkedListTest16() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT16_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST17_7600
      * @tc.name      testLinkedList16Chapter0076
      * @tc.desc      Test replacing the added element with special escape characters of String type at specified index
      * @tc.size      MediumTest

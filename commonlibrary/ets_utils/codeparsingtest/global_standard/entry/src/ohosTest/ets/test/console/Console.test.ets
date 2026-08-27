@@ -28,7 +28,7 @@ export default function ConsoleTest() {
   describe('ConsoleTest', () => {
     /**
      * @tc.name   testLoadNativeModule001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1010
      * @tc.desc   Test LoadNativeModule.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -47,7 +47,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1020
      * @tc.desc   Test LoadNativeModule.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,7 +66,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1030
      * @tc.desc   Test LoadNativeModule.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -85,7 +85,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule004
-     * @tc.number testLoadNativeModule004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1040
      * @tc.desc   testLoadNativeModule004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1050
      * @tc.desc   Test LoadNativeModule.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -119,7 +119,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1060
      * @tc.desc   Test LoadNativeModule.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -137,7 +137,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1070
      * @tc.desc   Test LoadNativeModule with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1080
      * @tc.desc   Test LoadNativeModule with bell character.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -172,7 +172,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1090
      * @tc.desc   Test LoadNativeModule with backspace.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1100
      * @tc.desc   Test LoadNativeModule with form feed.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -208,7 +208,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1110
      * @tc.desc   Test LoadNativeModule with newline.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -226,7 +226,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1120
      * @tc.desc   Test LoadNativeModule with carriage return.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -244,7 +244,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1130
      * @tc.desc   Test LoadNativeModule with horizontal tab.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -262,7 +262,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1140
      * @tc.desc   Test LoadNativeModule with vertical tab.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -280,7 +280,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1150
      * @tc.desc   Test LoadNativeModule with backslash.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -298,7 +298,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1160
      * @tc.desc   Test LoadNativeModule with single quote.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -316,7 +316,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1170
      * @tc.desc   Test LoadNativeModule with double quote.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -334,7 +334,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1180
      * @tc.desc   Test LoadNativeModule with question mark.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -352,7 +352,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1190
      * @tc.desc   Test LoadNativeModule with null character.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -370,7 +370,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1200
      * @tc.desc   Test LoadNativeModule with octal number.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -388,7 +388,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1210
      * @tc.desc   Test LoadNativeModule with hexadecimal number.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -406,7 +406,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1220
      * @tc.desc   Test LoadNativeModule with pointing up emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -424,7 +424,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1230
      * @tc.desc   Test LoadNativeModule with angry face emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -442,7 +442,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1240
      * @tc.desc   Test LoadNativeModule with eyes emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -460,7 +460,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1250
      * @tc.desc   Test LoadNativeModule with 100 points emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -478,7 +478,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1260
      * @tc.desc   Test LoadNativeModule with Santa Claus emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -496,7 +496,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1270
      * @tc.desc   Test LoadNativeModule with cat face with wry smile emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -514,7 +514,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1280
      * @tc.desc   Test LoadNativeModule with wrench emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -532,7 +532,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1290
      * @tc.desc   Test LoadNativeModule with haircut emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -550,7 +550,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1300
      * @tc.desc   Test LoadNativeModule with men wrestling emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -568,7 +568,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1310
      * @tc.desc   Test LoadNativeModule with oil drum emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -586,7 +586,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1320
      * @tc.desc   Test LoadNativeModule with mahjong tile red dragon emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -604,7 +604,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1330
      * @tc.desc   Test LoadNativeModule with black flag emoji.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -622,7 +622,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1340
      * @tc.desc   Test LoadNativeModule with custom initialization.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -639,7 +639,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1350
      * @tc.desc   Test LoadNativeModule with object string manipulation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -658,7 +658,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1360
      * @tc.desc   Test LoadNativeModule with \ud83c.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -675,7 +675,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testLoadNativeModule037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LOAD_NATIVE_MODULE_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1370
      * @tc.desc   Test LoadNativeModule with \u200d\u2642.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -692,7 +692,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1380
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -715,7 +715,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1390
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -738,7 +738,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1400
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -761,7 +761,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1410
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -784,7 +784,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1420
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -807,7 +807,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1430
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -831,7 +831,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1440
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -852,7 +852,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1450
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -873,7 +873,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1460
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -894,7 +894,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1470
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -915,7 +915,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1480
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -936,7 +936,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1490
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -958,7 +958,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1500
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -974,7 +974,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1510
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -995,7 +995,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1520
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1016,7 +1016,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1530
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1037,7 +1037,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1540
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1058,7 +1058,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1550
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1079,7 +1079,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1560
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1100,7 +1100,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1570
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1116,7 +1116,7 @@ export default function ConsoleTest() {
 
     /**
      * @tc.name   testConsole058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1580
      * @tc.desc   Test Console.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1132,7 +1132,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testAssert0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1590
      * @tc.desc   Test the function of the interface Assert.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1150,7 +1150,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testAssert0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1600
      * @tc.desc   Test the function of the interface Assert.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1168,7 +1168,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testAssert0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1610
      * @tc.desc   Test the function of the interface Assert.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1186,7 +1186,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testAssert0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1620
      * @tc.desc   Test the function of the interface Assert.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1204,7 +1204,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testAssert0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1630
      * @tc.desc   Test the function of the interface Assert.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1222,7 +1222,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testAssert0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1640
      * @tc.desc   Test the function of the interface Assert.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1240,7 +1240,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testAssert0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1650
      * @tc.desc   Test the function of the interface Assert.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1259,7 +1259,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testAssert0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1660
      * @tc.desc   Test the function of the interface Assert.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1277,7 +1277,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testAssert0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1670
      * @tc.desc   Test the function of the interface Assert.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1295,7 +1295,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testCount0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1680
      * @tc.desc   Test the function of the interface Count.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1313,7 +1313,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testCount0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1690
      * @tc.desc   Test the function of the interface Count.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1331,7 +1331,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testCount0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1700
      * @tc.desc   Test the function of the interface Count.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1352,7 +1352,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testCount0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1710
      * @tc.desc   Test the function of the interface Count.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1372,7 +1372,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testCountReset0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1720
      * @tc.desc   Test the function of the interface CountReset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1392,7 +1392,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testCountReset0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1730
      * @tc.desc   Test the function of the interface CountReset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1412,7 +1412,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testCountReset0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1740
      * @tc.desc   Test the function of the interface CountReset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1437,7 +1437,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testDir0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1750
      * @tc.desc   Test the function of the interface Dir.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1460,7 +1460,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testDir0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1760
      * @tc.desc   Test the function of the interface Dir.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1479,7 +1479,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testDir0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1770
      * @tc.desc   Test the function of the interface Dir.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1498,7 +1498,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testDir0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1780
      * @tc.desc   Test the function of the interface Dir.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1520,7 +1520,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testDir0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1790
      * @tc.desc   Test the function of the interface Dir.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1539,7 +1539,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testDir0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1800
      * @tc.desc   Test the function of the interface Dir.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1558,7 +1558,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTable0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1810
      * @tc.desc   Test the function of the interface Table.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1576,7 +1576,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTable0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1820
      * @tc.desc   Test the function of the interface Table.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1598,7 +1598,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTable0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1830
      * @tc.desc   Test the function of the interface Table.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1622,7 +1622,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTable0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1840
      * @tc.desc   Test the function of the interface Table.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1646,7 +1646,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1850
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1664,7 +1664,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1860
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1682,7 +1682,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1870
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1700,7 +1700,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1880
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1718,7 +1718,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1890
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1736,7 +1736,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1900
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1754,7 +1754,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1910
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1772,7 +1772,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1920
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1791,7 +1791,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1930
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1810,7 +1810,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1940
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1829,7 +1829,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1950
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1848,7 +1848,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1960
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1867,7 +1867,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1970
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1886,7 +1886,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1980
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1905,7 +1905,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_1990
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1924,7 +1924,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2000
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1943,7 +1943,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2010
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1962,7 +1962,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2020
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1981,7 +1981,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2030
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2000,7 +2000,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2040
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2019,7 +2019,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2050
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2038,7 +2038,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2060
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2058,7 +2058,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2070
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2077,7 +2077,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2080
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2096,7 +2096,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTime0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2090
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2115,7 +2115,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2100
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2134,7 +2134,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTTimeEnd0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2110
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2153,7 +2153,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2120
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2172,7 +2172,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2130
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2191,7 +2191,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2140
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2210,7 +2210,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2150
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2229,7 +2229,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2160
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2248,7 +2248,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2170
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2268,7 +2268,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2180
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2288,7 +2288,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2190
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2308,7 +2308,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2200
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2328,7 +2328,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2210
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2348,7 +2348,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2220
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2368,7 +2368,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2230
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2388,7 +2388,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2240
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2408,7 +2408,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2250
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2428,7 +2428,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2260
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2448,7 +2448,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2270
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2468,7 +2468,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2280
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2488,7 +2488,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2290
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2508,7 +2508,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2300
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2528,7 +2528,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2310
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2549,7 +2549,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2320
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2569,7 +2569,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2330
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2589,7 +2589,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeEnd0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2340
      * @tc.desc   Test the function of the interface TimeEnd.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2609,7 +2609,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2350
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2630,7 +2630,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2360
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2650,7 +2650,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2370
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2671,7 +2671,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2380
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2692,7 +2692,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2390
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2713,7 +2713,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2400
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2734,7 +2734,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2410
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2755,7 +2755,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2420
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2776,7 +2776,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2430
      * @tc.desc   Test the function of the interface Time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2797,7 +2797,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2440
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2818,7 +2818,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2450
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2839,7 +2839,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2460
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2860,7 +2860,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2470
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2881,7 +2881,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2480
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2902,7 +2902,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2490
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2923,7 +2923,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2500
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2944,7 +2944,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2510
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2965,7 +2965,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2520
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2986,7 +2986,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2530
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3007,7 +3007,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2540
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3028,7 +3028,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2550
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3049,7 +3049,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2560
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3071,7 +3071,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2570
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3092,7 +3092,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2580
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3113,7 +3113,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2590
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3134,7 +3134,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2600
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3161,7 +3161,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2610
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3183,7 +3183,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2620
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3206,7 +3206,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2630
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3228,7 +3228,7 @@ export default function ConsoleTest() {
     });
     /**
      * @tc.name   testTimeLog0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE1_2640
      * @tc.desc   Test the function of the interface TimeLog.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -214,7 +214,7 @@ export default function ListTest02() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEST02_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_0100
      * @tc.name      testList02Chapter0001
      * @tc.desc      Verify mixed TypedArray types add operation
      * @tc.size      MediumTest
@@ -259,7 +259,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_0200
      * @tc.name      testList02Chapter0002
      * @tc.desc      Verify storage/length of normal Uint8Array and multi-zero arrays
      * @tc.size      MediumTest
@@ -292,7 +292,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_0300
      * @tc.name      testList02Chapter0003
      * @tc.desc      Verify processing of negative number/non-numeric index arrays
      * @tc.size      MediumTest
@@ -333,7 +333,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_ARRAY_TEST02_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_0400
      * @tc.name      testList02Chapter0004
      * @tc.desc      Verify the processing logic for arrays containing NaN/Infinity and arrays of non-numeric types
      * @tc.size      MediumTest
@@ -370,7 +370,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_0500
      * @tc.name      testList02Chapter0005
      * @tc.desc      Verify processing of empty/overflow/deleted element arrays
      * @tc.size      MediumTest
@@ -409,7 +409,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_0600
      * @tc.name      testList02Chapter0006
      * @tc.desc      Verify handling of nested/TypedArray/large length arrays
      * @tc.size      LargeTest
@@ -461,7 +461,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_0700
      * @tc.name      testList02Chapter0007
      * @tc.desc      Verify the array processing logic that includes functions/keywords (removing Symbol)
      * @tc.size      MediumTest
@@ -492,7 +492,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_0800
      * @tc.name      testList02Chapter0008
      * @tc.desc      test add string elements, verify return value
      * @tc.size      MediumTest
@@ -543,7 +543,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_0900
      * @tc.name      testList02Chapter0009
      * @tc.desc      test add special char string elements, verify return value
      * @tc.size      MediumTest
@@ -600,7 +600,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1000
      * @tc.name      testList02Chapter0010
      * @tc.desc      test add escape char string elements, verify return value
      * @tc.size      MediumTest
@@ -650,7 +650,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1100
      * @tc.name      testList02Chapter0011
      * @tc.desc      test add backslash/quote string elements, verify return value
      * @tc.size      MediumTest
@@ -700,7 +700,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1200
      * @tc.name      testList02Chapter0012
      * @tc.desc      test add hex/octal string elements, verify return value
      * @tc.size      MediumTest
@@ -750,7 +750,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1300
      * @tc.name      testList02Chapter0013
      * @tc.desc      test add emoji string elements, verify return value
      * @tc.size      MediumTest
@@ -805,7 +805,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1400
      * @tc.name      testList02Chapter0014
      * @tc.desc      test add invalid unicode/large string elements, verify return value
      * @tc.size      MediumTest
@@ -873,7 +873,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1500
      * @tc.name      testList02Chapter0015
      * @tc.desc      test add gc/large string elements, verify return value
      * @tc.size      MediumTest
@@ -913,7 +913,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1600
      * @tc.name      testList02Chapter0016
      * @tc.desc      test add basic number elements, verify return value
      * @tc.size      MediumTest
@@ -968,7 +968,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1700
      * @tc.name      testList02Chapter0017
      * @tc.desc      test add extreme number elements, verify return value
      * @tc.size      MediumTest
@@ -1013,7 +1013,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1800
      * @tc.name      testList02Chapter0018
      * @tc.desc      test add precision number elements, verify return value
      * @tc.size      MediumTest
@@ -1084,7 +1084,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_1900
      * @tc.name      testList02Chapter0019
      * @tc.desc      test add base expr number elements, verify return value
      * @tc.size      MediumTest
@@ -1143,7 +1143,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2000
      * @tc.name      testList02Chapter0020
      * @tc.desc      test add bigint elements, verify return value
      * @tc.size      MediumTest
@@ -1196,7 +1196,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2100
      * @tc.name      testList02Chapter0021
      * @tc.desc      test add basic boolean elements, verify return value
      * @tc.size      MediumTest
@@ -1237,7 +1237,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2200
      * @tc.name      testList02Chapter0022
      * @tc.desc      test add false-like elements, verify return value
      * @tc.size      MediumTest
@@ -1287,7 +1287,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2300
      * @tc.name      testList02Chapter0023
      * @tc.desc      test add true-like elements, verify return value
      * @tc.size      MediumTest
@@ -1336,7 +1336,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2400
      * @tc.name      testList02Chapter0024
      * @tc.desc      test add normal object elements, verify return value
      * @tc.size      MediumTest
@@ -1380,7 +1380,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2500
      * @tc.name      testList02Chapter0025
      * @tc.desc      test add nested object elements, verify return value
      * @tc.size      MediumTest
@@ -1421,7 +1421,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2600
      * @tc.name      testList02Chapter0026
      * @tc.desc      test add empty object elements, verify return value
      * @tc.size      MediumTest
@@ -1463,7 +1463,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2700
      * @tc.name      testList02Chapter0027
      * @tc.desc      test add special key object elements, verify return value
      * @tc.size      MediumTest
@@ -1506,7 +1506,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2800
      * @tc.name      testList02Chapter0028
      * @tc.desc      test add inherit object elements, verify return value
      * @tc.size      MediumTest
@@ -1549,7 +1549,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_2900
      * @tc.name      testList02Chapter0029
      * @tc.desc      test add new key object elements, verify return value
      * @tc.size      MediumTest
@@ -1597,7 +1597,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_3000
      * @tc.name      testList02Chapter0030
      * @tc.desc      test add buffer object elements, verify return value
      * @tc.size      MediumTest
@@ -1650,7 +1650,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_3100
      * @tc.name      testList02Chapter0031
      * @tc.desc      test add data view object elements, verify return value
      * @tc.size      MediumTest
@@ -1702,7 +1702,7 @@ export default function ListTest02() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST02_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST2_3200
      * @tc.name      testList02Chapter0032
      * @tc.desc      test add map object elements, verify return value
      * @tc.size      MediumTest

@@ -31,7 +31,7 @@ export default function LRUCache04Test() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_0100
      * @tc.name      testLRUCacheIsEmpty04_0001
      * @tc.desc      Verify isEmpty behavior with Minimum Valid Capacity (1).
      * @tc.size      MediumTest
@@ -58,7 +58,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_0200
      * @tc.name      testLRUCacheIsEmpty04_0002
      * @tc.desc      Verify isEmpty correctness under large volume operations (Fill and Clear).
      * @tc.size      MediumTest
@@ -83,7 +83,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_0300
      * @tc.name      testLRUCacheGet04_0003
      * @tc.desc      Verify get existing key.
      * @tc.size      MediumTest
@@ -98,7 +98,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_0400
      * @tc.name      testLRUCacheGet04_0004
      * @tc.desc      Verify get non-existing key.
      * @tc.size      MediumTest
@@ -112,7 +112,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_0500
      * @tc.name      testLRUCacheGet04_0005
      * @tc.desc      Verify get updates LRU order.
      * @tc.size      MediumTest
@@ -131,7 +131,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_0600
      * @tc.name      testLRUCacheGet04_0006
      * @tc.desc      Verify get after clear.
      * @tc.size      MediumTest
@@ -147,7 +147,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_0700
      * @tc.name      testLRUCacheGet04_0007
      * @tc.desc      Verify get after eviction.
      * @tc.size      MediumTest
@@ -163,7 +163,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_0800
      * @tc.name      testLRUCacheGet04_0008
      * @tc.desc      Verify get with string key.
      * @tc.size      MediumTest
@@ -178,7 +178,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_0900
      * @tc.name      testLRUCacheGet04_0009
      * @tc.desc      Verify get same key multiple times.
      * @tc.size      MediumTest
@@ -194,7 +194,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1000
      * @tc.name      testLRUCacheGet04_0010
      * @tc.desc      Verify get after updateCapacity.
      * @tc.size      MediumTest
@@ -210,7 +210,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1100
      * @tc.name      testLRUCacheGet04_0011
      * @tc.desc      Verify get after put same key.
      * @tc.size      MediumTest
@@ -226,7 +226,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1200
      * @tc.name      testLRUCacheGet04_0012
      * @tc.desc      Verify get after keys call.
      * @tc.size      MediumTest
@@ -242,7 +242,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1300
      * @tc.name      testLRUCacheGet04_0013
      * @tc.desc      Verify get after values call.
      * @tc.size      MediumTest
@@ -258,7 +258,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1400
      * @tc.name      testLRUCacheGet04_0014
      * @tc.desc      Verify get with large capacity.
      * @tc.size      MediumTest
@@ -273,7 +273,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1500
      * @tc.name      testLRUCacheGet04_0015
      * @tc.desc      Verify get after multiple operations.
      * @tc.size      MediumTest
@@ -290,7 +290,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1600
      * @tc.name      testLRUCachePut04_0016
      * @tc.desc      [Consolidated] Verify basic put functionality: Insert new key, Update existing key.
      * @tc.size      MediumTest
@@ -315,7 +315,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1700
      * @tc.name      testLRUCachePut04_0017
      * @tc.desc      [Consolidated] Verify eviction logic
      * @tc.size      MediumTest
@@ -345,7 +345,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1800
      * @tc.name      testLRUCachePut04_0018
      * @tc.desc      [Consolidated] Verify put behavior with Edge Capacities (0 and 1).
      * @tc.size      MediumTest
@@ -373,7 +373,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_1900
      * @tc.name      testLRUCachePut04_0019
      * @tc.desc      Verify put with various Key types (String, Object).
      * @tc.size      MediumTest
@@ -398,7 +398,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2000
      * @tc.name      testLRUCachePut04_0020
      * @tc.desc      Verify put with various Value types (Interface Object, Union of primitives).
      * @tc.size      MediumTest
@@ -428,7 +428,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2100
      * @tc.name      testLRUCachePut04_0021
      * @tc.desc      [Consolidated] Verify interactions: Put after UpdateCapacity, Clear, Get, Keys, Values.
      * @tc.size      MediumTest
@@ -463,7 +463,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2200
      * @tc.name      testLRUCachePut04_0022
      * @tc.desc      Verify batch insertion (multiple keys).
      * @tc.size      MediumTest
@@ -488,7 +488,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2300
      * @tc.name      testLRUCachePut04_0023
      * @tc.desc      Verify stress test: Put large number of items causing massive eviction.
      * @tc.size      MediumTest
@@ -515,7 +515,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2400
      * @tc.name      testLRUCachePut04_0024
      * @tc.desc      Verify put return value consistency (always returns the value being put).
      * @tc.size      MediumTest
@@ -538,7 +538,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2500
      * @tc.name      testLRUCachePut04_0025
      * @tc.desc      Verify put operation when cache is exactly at capacity boundary.
      * @tc.size      MediumTest
@@ -565,7 +565,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2600
      * @tc.name      testLRUCachePut04_0026
      * @tc.desc      Verify put operation with Array object values.
      * @tc.size      MediumTest
@@ -599,7 +599,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2700
      * @tc.name      testLRUCachePut04_0027
      * @tc.desc      Verify put maintains insertion order for iteration (keys/values/entries).
      * @tc.size      MediumTest
@@ -632,7 +632,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2800
      * @tc.name      testLRUCachePut04_0028
      * @tc.desc      Verify put after removing all items manually.
      * @tc.size      MediumTest
@@ -655,7 +655,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_2900
      * @tc.name      testLRUCachePut04_0029
      * @tc.desc      Verify put works correctly after shrinking capacity destroys previous entries.
      * @tc.size      MediumTest
@@ -682,7 +682,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3000
      * @tc.name      testLRUCachePut04_0030
      * @tc.desc      Verify put consistency with mixed key types in same cache.
      * @tc.size      MediumTest
@@ -706,7 +706,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3100
      * @tc.name      testLRUCacheValues04_0031
      * @tc.desc      Verify values method returns correct array for multiple entries.
      * @tc.size      MediumTest
@@ -733,7 +733,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3200
      * @tc.name      testLRUCacheValues04_0032
      * @tc.desc      Verify values method returns empty array for empty cache.
      * @tc.size      MediumTest
@@ -752,7 +752,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3300
      * @tc.name      testLRUCacheValues04_0033
      * @tc.desc      Verify values method returns correct values at full capacity.
      * @tc.size      MediumTest
@@ -780,7 +780,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3400
      * @tc.name      testLRUCacheValues04_0034
      * @tc.desc      Verify values method excludes evicted entries when exceeding capacity.
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3500
      * @tc.name      testLRUCacheValues04_0035
      * @tc.desc      Verify values method with diverse types (Primitives, Arrays, Objects).
      * @tc.size      MediumTest
@@ -851,7 +851,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3600
      * @tc.name      testLRUCacheValues04_0036
      * @tc.desc      Verify values method returns updated value when key is overwritten.
      * @tc.size      MediumTest
@@ -874,7 +874,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3700
      * @tc.name      testLRUCacheValues04_0037
      * @tc.desc      Verify values method order reflects LRU updates (get operation moves item to end).
      * @tc.size      MediumTest
@@ -901,7 +901,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3800
      * @tc.name      testLRUCacheValues04_0038
      * @tc.desc      Verify values method returns independent snapshots on multiple calls.
      * @tc.size      MediumTest
@@ -930,7 +930,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_3900
      * @tc.name      testLRUCacheValues04_0039
      * @tc.desc      Verify values method reflects cache state after remove operation.
      * @tc.size      MediumTest
@@ -954,7 +954,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4000
      * @tc.name      testLRUCacheValues04_0040
      * @tc.desc      Verify values method after clear operation returns empty array.
      * @tc.size      MediumTest
@@ -978,7 +978,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4100
      * @tc.name      testLRUCacheValues04_0041
      * @tc.desc      Verify values method with capacity 1 works correctly.
      * @tc.size      MediumTest
@@ -1002,7 +1002,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4200
      * @tc.name      testLRUCacheValues04_0042
      * @tc.desc      Verify values method correctness after mixed operations (contains, put, remove).
      * @tc.size      MediumTest
@@ -1031,7 +1031,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4300
      * @tc.name      testLRUCacheValues04_0043
      * @tc.desc      Verify values method handles large capacity cache correctly.
      * @tc.size      MediumTest
@@ -1056,7 +1056,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4400
      * @tc.name      testLRUCacheValues04_0044
      * @tc.desc      Verify values method after updateCapacity resizing.
      * @tc.size      MediumTest
@@ -1082,7 +1082,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4500
      * @tc.name      testLRUCacheValues04_0045
      * @tc.desc      Verify values after overwriting with same values (idempotent updates).
      * @tc.size      MediumTest
@@ -1108,7 +1108,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4600
      * @tc.name      testLRUCacheKeys04_0046
      * @tc.desc      [Consolidated] Verify keys() basic behavior: Empty, Single, Multiple elements (LRU -> MRU order).
      * @tc.size      MediumTest
@@ -1141,7 +1141,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4700
      * @tc.name      testLRUCacheKeys04_0047
      * @tc.desc      [Consolidated] Verify keys() order updates after Access and Update (Item moves to end).
      * @tc.size      MediumTest
@@ -1173,7 +1173,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4800
      * @tc.name      testLRUCacheKeys04_0048
      * @tc.desc      [Consolidated] Verify keys() behavior with Eviction (Exceed Capacity).
      * @tc.size      MediumTest
@@ -1208,7 +1208,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_4900
      * @tc.name      testLRUCacheKeys04_0049
      * @tc.desc      [Consolidated] Verify keys() state after Removal and Clear.
      * @tc.size      MediumTest
@@ -1237,7 +1237,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5000
      * @tc.name      testLRUCacheKeys04_0051
      * @tc.desc      Verify keys() works with String keys.
      * @tc.size      MediumTest
@@ -1263,7 +1263,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5100
      * @tc.name      testLRUCacheKeys04_0052
      * @tc.desc      Verify keys() works with Object keys.
      * @tc.size      MediumTest
@@ -1292,7 +1292,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5200
      * @tc.name      testLRUCacheKeys04_0053
      * @tc.desc      Verify keys() with Edge Capacities (Capacity 1).
      * @tc.size      MediumTest
@@ -1320,7 +1320,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5300
      * @tc.name      testLRUCacheKeys04_0054
      * @tc.desc      Verify keys() consistency after get() on non-existent key (Should not change order).
      * @tc.size      MediumTest
@@ -1346,7 +1346,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5400
      * @tc.name      testLRUCacheKeys04_0056
      * @tc.desc      Verify keys() with large volume of data (Stress, LRU at start).
      * @tc.size      MediumTest
@@ -1372,7 +1372,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5500
      * @tc.name      testLRUCacheKeys04_0057
      * @tc.desc      Verify keys() after re-adding evicted key (Resurrect).
      * @tc.size      MediumTest
@@ -1400,7 +1400,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5600
      * @tc.name      testLRUCacheKeys04_0059
      * @tc.desc      Verify keys() with complex alternating Put/Get sequence.
      * @tc.size      MediumTest
@@ -1434,7 +1434,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5700
      * @tc.name      testLRUCacheRemove04_0060
      * @tc.desc      [Consolidated] Verify basic removal: Existing key (returns value/true), Non-existent key (returns undefined/false).
      * @tc.size      MediumTest
@@ -1462,7 +1462,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5800
      * @tc.name      testLRUCacheRemove04_0061
      * @tc.desc      [Consolidated] Verify removal affects LRU order and capacity (Eviction Interaction).
      * @tc.size      MediumTest
@@ -1501,7 +1501,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_5900
      * @tc.name      testLRUCacheRemove04_0062
      * @tc.desc      Verify removal of the most recently used (MRU) item.
      * @tc.size      MediumTest
@@ -1531,7 +1531,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6000
      * @tc.name      testLRUCacheRemove04_0063
      * @tc.desc      Verify removal of the least recently used (LRU) item manually.
      * @tc.size      MediumTest
@@ -1561,7 +1561,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6100
      * @tc.name      testLRUCacheRemove04_0064
      * @tc.desc      Verify removing the only item in Capacity 1 cache.
      * @tc.size      MediumTest
@@ -1583,7 +1583,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6200
      * @tc.name      testLRUCacheRemove04_0065
      * @tc.desc      Verify remove with mismatched key types (String vs Number).
      * @tc.size      MediumTest
@@ -1609,7 +1609,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6300
      * @tc.name      testLRUCacheRemove04_0066
      * @tc.desc      Verify remove works with Object keys (Reference equality).
      * @tc.size      MediumTest
@@ -1636,7 +1636,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6400
      * @tc.name      testLRUCacheRemove04_0067
      * @tc.desc      Verify remove works with various Value types (Object, Null, Array).
      * @tc.size      MediumTest
@@ -1667,7 +1667,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6500
      * @tc.name      testLRUCacheRemove04_0068
      * @tc.desc      Verify remove after update (overwritten key).
      * @tc.size      MediumTest
@@ -1690,7 +1690,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6600
      * @tc.name      testLRUCacheRemove04_0069
      * @tc.desc      Verify remove sequence interspersed with gets (complex interaction).
      * @tc.size      MediumTest
@@ -1726,7 +1726,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6700
      * @tc.name      testLRUCacheRemove04_0070
      * @tc.desc      Verify remove after clear (Should return undefined).
      * @tc.size      MediumTest
@@ -1748,7 +1748,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6800
      * @tc.name      testLRUCacheRemove04_0071
      * @tc.desc      Verify remove after capacity update (Shrink causing eviction vs Manual remove).
      * @tc.size      MediumTest
@@ -1774,7 +1774,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_6900
      * @tc.name      testLRUCacheRemove04_0072
      * @tc.desc      Verify batched/loop removal logic.
      * @tc.size      MediumTest
@@ -1802,7 +1802,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_7000
      * @tc.name      testLRUCacheRemove04_0073
      * @tc.desc      Verify remove and then re-put same key.
      * @tc.size      MediumTest
@@ -1827,7 +1827,7 @@ export default function LRUCache04Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LRU_CACHE04_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LRUCACHE5_7100
      * @tc.name      testLRUCacheRemove04_0074
      * @tc.desc      Verify removing undefined/null keys (if put allows them, remove should handle).
      * @tc.size      MediumTest

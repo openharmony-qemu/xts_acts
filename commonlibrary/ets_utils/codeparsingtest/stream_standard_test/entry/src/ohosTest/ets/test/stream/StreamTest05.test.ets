@@ -43,7 +43,7 @@ export default function StreamTest_05() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_0100
      * @tc.name      ReadableResumeTest0001
      * @tc.desc      Verify resume() switches paused stream to flowing mode (string chunk).
      * @tc.size      MediumTest
@@ -71,7 +71,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_0200
      * @tc.name      ReadableResumeTest0002
      * @tc.desc      Verify resume() switches paused stream to flowing mode (Uint8Array chunk).
      * @tc.size      MediumTest
@@ -114,7 +114,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_0300
      * @tc.name      ReadableResumeTest0003
      * @tc.desc      Verify resume() takes effect repeatedly (flowing mode remains after multiple calls).
      * @tc.size      MediumTest
@@ -145,7 +145,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_0400
      * @tc.name      ReadableResumeTest0004
      * @tc.desc      Verify resume() works with empty string chunk.
      * @tc.size      MediumTest
@@ -173,7 +173,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_0500
      * @tc.name      ReadableResumeTest0005
      * @tc.desc      Verify resume() works with empty Uint8Array chunk.
      * @tc.size      MediumTest
@@ -199,7 +199,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_0600
      * @tc.name      ReadableResumeTest0006
      * @tc.desc      Verify resume() switches mode before pushing chunk (string type).
      * @tc.size      MediumTest
@@ -225,7 +225,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_0700
      * @tc.name      ReadableResumeTest0007
      * @tc.desc      Verify resume() switches mode before pushing chunk (Uint8Array type).
      * @tc.size      MediumTest
@@ -257,7 +257,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_0800
      * @tc.name      ReadableResumeTest0008
      * @tc.desc      Verify resume() has no effect on already flowing stream.
      * @tc.size      MediumTest
@@ -284,7 +284,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_0900
      * @tc.name      ReadableResumeTest0009
      * @tc.desc      Verify resume() after pushing null (stream ended) has no effect.
      * @tc.size      MediumTest
@@ -314,7 +314,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1000
      * @tc.name      ReadableResumeTest0010
      * @tc.desc      Verify resume() with invalid chunk (undefined) pushed to stream.
      * @tc.size      MediumTest
@@ -333,7 +333,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1100
      * @tc.name      ReadableResumeTest0011
      * @tc.desc      Verify resume() cannot recover stream after pushing invalid non-string/Uint8Array chunk.
      * @tc.size      MediumTest
@@ -351,7 +351,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1200
      * @tc.name      ReadableResumeTest0012
      * @tc.desc      Mixed scenario: resume() + pause() + resume() to switch mode repeatedly.
      * @tc.size      MediumTest
@@ -393,7 +393,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1300
      * @tc.name      ReadableResumeTest0013
      * @tc.desc      Mixed scenario: resume() + mixed string/Uint8Array chunk reading.
      * @tc.size      MediumTest
@@ -435,7 +435,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1400
      * @tc.name      ReadableResumeTest0014
      * @tc.desc      Mixed scenario: resume() + partial read + full read of large chunk.
      * @tc.size      MediumTest
@@ -466,7 +466,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1500
      * @tc.name      ReadableResumeTest0015
      * @tc.desc      Mixed scenario: resume() with empty and non-empty chunk mixed.
      * @tc.size      MediumTest
@@ -511,7 +511,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1600
      * @tc.name      ReadablePauseTest0001
      * @tc.desc      Verify pause() switches flowing stream to paused mode (string chunk).
      * @tc.size      MediumTest
@@ -539,7 +539,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1700
      * @tc.name      ReadablePauseTest0002
      * @tc.desc      Verify pause() switches flowing stream to paused mode (Uint8Array chunk).
      * @tc.size      MediumTest
@@ -573,7 +573,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1800
      * @tc.name      ReadablePauseTest0003
      * @tc.desc      Verify pause() takes effect repeatedly (paused mode remains after multiple calls).
      * @tc.size      MediumTest
@@ -605,7 +605,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_1900
      * @tc.name      ReadablePauseTest0004
      * @tc.desc      Verify pause() works with empty string chunk.
      * @tc.size      MediumTest
@@ -633,7 +633,7 @@ export default function StreamTest_05() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2000
      * @tc.name      ReadablePauseTest0005
      * @tc.desc      Verify pause() works with empty Uint8Array chunk.
      * @tc.size      MediumTest
@@ -660,7 +660,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2100
      * @tc.name      ReadablePauseTest0006
      * @tc.desc      Verify pause() switches mode before pushing chunk (string type).
      * @tc.size      MediumTest
@@ -687,7 +687,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2200
      * @tc.name      ReadablePauseTest0007
      * @tc.desc      Verify pause() switches mode before pushing chunk (Uint8Array type).
      * @tc.size      MediumTest
@@ -720,7 +720,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2300
      * @tc.name      ReadablePauseTest0008
      * @tc.desc      Verify pause() has no effect on already paused stream.
      * @tc.size      MediumTest
@@ -749,7 +749,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2400
      * @tc.name      ReadablePauseTest0009
      * @tc.desc      Verify pause() after pushing null (stream ended) has no effect.
      * @tc.size      MediumTest
@@ -783,7 +783,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2500
      * @tc.name      ReadablePauseTest0010
      * @tc.desc      Verify pause() with invalid chunk (undefined) pushed to stream.
      * @tc.size      MediumTest
@@ -803,7 +803,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2600
      * @tc.name      ReadablePauseTest0011
      * @tc.desc      Verify pause() cannot recover stream after pushing invalid non-string/Uint8Array chunk.
      * @tc.size      MediumTest
@@ -822,7 +822,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2700
      * @tc.name      ReadablePauseTest0012
      * @tc.desc      Mixed scenario: pause() + mixed string/Uint8Array chunk reading.
      * @tc.size      MediumTest
@@ -871,7 +871,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2800
      * @tc.name      ReadablePauseTest0013
      * @tc.desc      Mixed scenario: pause() + partial read + full read of large chunk.
      * @tc.size      MediumTest
@@ -906,7 +906,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_2900
      * @tc.name      ReadablePauseTest0014
      * @tc.desc      Mixed scenario: pause() with empty and non-empty chunk mixed.
      * @tc.size      MediumTest
@@ -960,7 +960,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3000
      * @tc.name      ReadableSetEncodingTest0001
      * @tc.desc      Verify setEncoding() returns true when setting valid utf-8 encoding (no buffer data).
      * @tc.size      MediumTest
@@ -994,7 +994,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3100
      * @tc.name      ReadableSetEncodingTest0002
      * @tc.desc      Verify setEncoding() returns true when setting valid ascii encoding (no buffer data).
      * @tc.size      MediumTest
@@ -1027,7 +1027,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3200
      * @tc.name      ReadableSetEncodingTest0003
      * @tc.desc      Verify setEncoding() returns true when setting undefined encoding (default encoding, no buffer data).
      * @tc.size      MediumTest
@@ -1065,7 +1065,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3300
      * @tc.name      ReadableSetEncodingTest0004
      * @tc.desc      Verify setEncoding() works with empty string chunk after setting valid encoding (no buffer data initially).
      * @tc.size      MediumTest
@@ -1092,7 +1092,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3400
      * @tc.name      ReadableSetEncodingTest0005
      * @tc.desc      Verify setEncoding() works with empty Uint8Array chunk after setting valid encoding (no buffer data initially).
      * @tc.size      MediumTest
@@ -1119,7 +1119,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3500
      * @tc.name      ReadableSetEncodingTest0006
      * @tc.desc      Verify setEncoding() can reset valid encoding (no buffer data between resets).
      * @tc.size      MediumTest
@@ -1156,7 +1156,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3600
      * @tc.name      ReadableSetEncodingTest0007
      * @tc.desc      Verify setEncoding() returns false when setting encoding with string chunk in buffer.
      * @tc.size      MediumTest
@@ -1182,7 +1182,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3700
      * @tc.name      ReadableSetEncodingTest0008
      * @tc.desc      Verify setEncoding() returns false when setting encoding with Uint8Array chunk in buffer.
      * @tc.size      MediumTest
@@ -1214,7 +1214,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3800
      * @tc.name      ReadableSetEncodingTest0009
      * @tc.desc      Verify setEncoding() returns false when setting encoding with mixed chunks in buffer.
      * @tc.size      MediumTest
@@ -1249,7 +1249,7 @@ export default function StreamTest_05() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFIVE_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM7_3900
      * @tc.name      ReadableSetEncodingTest0010
      * @tc.desc      Verify setEncoding() returns false when setting invalid encoding with empty buffer.
      * @tc.size      MediumTest

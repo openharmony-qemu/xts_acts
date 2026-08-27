@@ -21,7 +21,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyScheme001
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_SCHEME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_0100
      * @tc.desc   equals 401 error test with empty scheme property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -43,7 +43,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyUserInfo002
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_USERINFO_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_0200
      * @tc.desc   equals test with empty userInfo property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -64,7 +64,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyHost003
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_HOST_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_0300
      * @tc.desc   equals test with empty host property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -85,7 +85,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyPort004
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_PORT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_0400
      * @tc.desc   equals test with empty port property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -106,7 +106,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyPath005
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_PATH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_0500
      * @tc.desc   equals test with empty path property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -127,7 +127,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyQuery006
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_QUERY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_0600
      * @tc.desc   equals test with empty query property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -148,7 +148,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyFragment007
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_FRAGMENT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_0700
      * @tc.desc   equals test with empty fragment property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -169,7 +169,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyAuthority008
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_AUTHORITY_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_0800
      * @tc.desc   equals test with empty authority property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -190,7 +190,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptySsp009
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_SSP_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_0900
      * @tc.desc   equals test with empty ssp property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -211,7 +211,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyEncodedUserInfo010
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_ENCODEDUSERINFO_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1000
      * @tc.desc   equals test with empty encodedUserInfo property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -232,7 +232,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyEncodedPath011
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_ENCODEDPATH_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1100
      * @tc.desc   equals test with empty encodedPath property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -253,7 +253,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyEncodedQuery012
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_ENCODEDQUERY_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1200
      * @tc.desc   equals test with empty encodedQuery property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -274,7 +274,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyEncodedFragment013
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_ENCODEDFRAGMENT_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1300
      * @tc.desc   equals test with empty encodedFragment property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -295,7 +295,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyEncodedAuthority014
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_ENCODEDAUTHORITY_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1400
      * @tc.desc   equals test with empty encodedAuthority property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -316,7 +316,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithEmptyEncodedSSP015
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_EMPTY_ENCODEDSSP_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1500
      * @tc.desc   equals test with empty encodedSSP property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -337,7 +337,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithNullParam016
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_NULL_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1600
      * @tc.desc   equals 401 error test with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -357,7 +357,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testequalsWithUndefinedParam017
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALS_PARAM_UNDEFINED_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1700
      * @tc.desc   equals 401 error test with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -376,7 +376,7 @@ export default function uri2Test() {
     });
     /**
      * @tc.name   testEqualsToWithEmptyScheme001
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_SCHEME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1800
      * @tc.desc   equalsTo 401 error test with empty scheme property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -398,7 +398,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyUserInfo002
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_USERINFO_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_1900
      * @tc.desc   equalsTo test with empty userInfo property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -419,7 +419,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyHost003
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_HOST_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2000
      * @tc.desc   equalsTo test with empty host property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -440,7 +440,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyPort004
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_PORT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2100
      * @tc.desc   equalsTo test with empty port property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -461,7 +461,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyPath005
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_PATH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2200
      * @tc.desc   equalsTo test with empty path property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -482,7 +482,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyQuery006
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_QUERY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2300
      * @tc.desc   equalsTo test with empty query property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -503,7 +503,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyFragment007
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_FRAGMENT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2400
      * @tc.desc   equalsTo test with empty fragment property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -524,7 +524,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyAuthority008
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_AUTHORITY_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2500
      * @tc.desc   equalsTo test with empty authority property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -545,7 +545,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptySsp009
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_SSP_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2600
      * @tc.desc   equalsTo test with empty ssp property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -566,7 +566,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyEncodedUserInfo010
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_ENCODEDUSERINFO_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2700
      * @tc.desc   equalsTo test with empty encodedUserInfo property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -587,7 +587,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyEncodedPath011
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_ENCODEDPATH_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2800
      * @tc.desc   equalsTo test with empty encodedPath property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -608,7 +608,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyEncodedQuery012
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_ENCODEDQUERY_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_2900
      * @tc.desc   equalsTo test with empty encodedQuery property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -629,7 +629,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyEncodedFragment013
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_ENCODEDFRAGMENT_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3000
      * @tc.desc   equalsTo test with empty encodedFragment property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -650,7 +650,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyEncodedAuthority014
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_ENCODEDAUTHORITY_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3100
      * @tc.desc   equalsTo test with empty encodedAuthority property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -671,7 +671,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithEmptyEncodedSSP015
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_EMPTY_ENCODEDSSP_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3200
      * @tc.desc   equalsTo test with empty encodedSSP property.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -692,7 +692,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithNullParam016
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_NULL_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3300
      * @tc.desc   equalsTo 401 error test with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -712,7 +712,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testEqualsToWithUndefinedParam017
-     * @tc.number SUB_COMMONLIBRARY_URI_EQUALSTO_PARAM_UNDEFINED_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3400
      * @tc.desc   equalsTo 401 error test with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -732,7 +732,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testGetQueryValueWithEmptyString001
-     * @tc.number SUB_COMMONLIBRARY_URI_GETQUERYVALUE_PARAM_EMPTY_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3500
      * @tc.desc   getQueryValue test with empty string parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -752,7 +752,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testGetQueryValueWithNullParam002
-     * @tc.number SUB_COMMONLIBRARY_URI_GETQUERYVALUE_PARAM_NULL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3600
      * @tc.desc   getQueryValue 401 error test with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -772,7 +772,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testGetQueryValueWithUndefinedParam003
-     * @tc.number SUB_COMMONLIBRARY_URI_GETQUERYVALUE_PARAM_UNDEFINED_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3700
      * @tc.desc   getQueryValue 401 error test with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -792,7 +792,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddQueryValueWithEmptyKey001
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDQUERYVALUE_PARAM_EMPTY_KEY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3800
      * @tc.desc   addQueryValue test with empty key parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -812,7 +812,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddQueryValueWithNullKey002
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDQUERYVALUE_PARAM_NULL_KEY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_3900
      * @tc.desc   addQueryValue 401 error test with null key parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -832,7 +832,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddQueryValueWithUndefinedKey003
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDQUERYVALUE_PARAM_UNDEFINED_KEY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4000
      * @tc.desc   addQueryValue 401 error test with undefined key parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -852,7 +852,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddQueryValueWithEmptyValue004
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDQUERYVALUE_PARAM_EMPTY_VALUE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4100
      * @tc.desc   addQueryValue test with empty value parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -872,7 +872,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddQueryValueWithNullValue005
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDQUERYVALUE_PARAM_NULL_VALUE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4200
      * @tc.desc   addQueryValue 401 error test with null value parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -892,7 +892,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddQueryValueWithUndefinedValue006
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDQUERYVALUE_PARAM_UNDEFINED_VALUE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4300
      * @tc.desc   addQueryValue 401 error test with undefined value parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -912,7 +912,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testGetQueryValuesWithEmptyString001
-     * @tc.number SUB_COMMONLIBRARY_URI_GETQUERYVALUES_PARAM_EMPTY_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4400
      * @tc.desc   getQueryValues test with empty string parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -932,7 +932,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testGetQueryValuesWithNullParam002
-     * @tc.number SUB_COMMONLIBRARY_URI_GETQUERYVALUES_PARAM_NULL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4500
      * @tc.desc   getQueryValues 401 error test with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -952,7 +952,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testGetQueryValuesWithUndefinedParam003
-     * @tc.number SUB_COMMONLIBRARY_URI_GETQUERYVALUES_PARAM_UNDEFINED_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4600
      * @tc.desc   getQueryValues 401 error test with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -972,7 +972,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testGetBooleanQueryValueWithEmptyString001
-     * @tc.number SUB_COMMONLIBRARY_URI_GETBOOLEANQUERYVALUE_PARAM_EMPTY_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4700
      * @tc.desc   getBooleanQueryValue test with empty string parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -992,7 +992,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testGetBooleanQueryValueWithNullParam002
-     * @tc.number SUB_COMMONLIBRARY_URI_GETBOOLEANQUERYVALUE_PARAM_NULL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4800
      * @tc.desc   getBooleanQueryValue 401 error test with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1012,7 +1012,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testGetBooleanQueryValueWithUndefinedParam003
-     * @tc.number SUB_COMMONLIBRARY_URI_GETBOOLEANQUERYVALUE_PARAM_UNDEFINED_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_4900
      * @tc.desc   getBooleanQueryValue 401 error test with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1032,7 +1032,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddSegmentWithEmptyString001
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDSEGMENT_PARAM_EMPTY_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5000
      * @tc.desc   addSegment test with empty string parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1052,7 +1052,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddSegmentWithNullParam002
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDSEGMENT_PARAM_NULL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5100
      * @tc.desc   addSegment 401 error test with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1072,7 +1072,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddSegmentWithUndefinedParam003
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDSEGMENT_PARAM_UNDEFINED_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5200
      * @tc.desc   addSegment 401 error test with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1092,7 +1092,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddEncodedSegmentWithEmptyString001
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDENCODEDSEGMENT_PARAM_EMPTY_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5300
      * @tc.desc   addEncodedSegment test with empty string parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1112,7 +1112,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddEncodedSegmentWithNullParam002
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDENCODEDSEGMENT_PARAM_NULL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5400
      * @tc.desc   addEncodedSegment 401 error test with null parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1132,7 +1132,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testAddEncodedSegmentWithUndefinedParam003
-     * @tc.number SUB_COMMONLIBRARY_URI_ADDENCODEDSEGMENT_PARAM_UNDEFINED_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5500
      * @tc.desc   addEncodedSegment 401 error test with undefined parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1152,7 +1152,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testCreateFromPartsWithEmptyScheme001
-     * @tc.number SUB_COMMONLIBRARY_URI_CREATEFROMPARTS_PARAM_EMPTY_SCHEME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5600
      * @tc.desc   createFromParts test with empty scheme parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1171,7 +1171,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testCreateFromPartsWithNullScheme002
-     * @tc.number SUB_COMMONLIBRARY_URI_CREATEFROMPARTS_PARAM_NULL_SCHEME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5700
      * @tc.desc   createFromParts 401 error test with null scheme parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1190,7 +1190,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testCreateFromPartsWithUndefinedScheme003
-     * @tc.number SUB_COMMONLIBRARY_URI_CREATEFROMPARTS_PARAM_UNDEFINED_SCHEME_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5800
      * @tc.desc   createFromParts 401 error test with undefined scheme parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1209,7 +1209,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testCreateFromPartsWithEmptySsp004
-     * @tc.number SUB_COMMONLIBRARY_URI_CREATEFROMPARTS_PARAM_EMPTY_SSP_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_5900
      * @tc.desc   createFromParts test with empty ssp parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1228,7 +1228,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testCreateFromPartsWithNullSsp005
-     * @tc.number SUB_COMMONLIBRARY_URI_CREATEFROMPARTS_PARAM_NULL_SSP_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_6000
      * @tc.desc   createFromParts 401 error test with null ssp parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1247,7 +1247,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testCreateFromPartsWithUndefinedSsp006
-     * @tc.number SUB_COMMONLIBRARY_URI_CREATEFROMPARTS_PARAM_UNDEFINED_SSP_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_6100
      * @tc.desc   createFromParts 401 error test with undefined ssp parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1266,7 +1266,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testCreateFromPartsWithEmptyFragment007
-     * @tc.number SUB_COMMONLIBRARY_URI_CREATEFROMPARTS_PARAM_EMPTY_FRAGMENT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_6200
      * @tc.desc   createFromParts test with empty fragment parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1285,7 +1285,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testCreateFromPartsWithNullFragment008
-     * @tc.number SUB_COMMONLIBRARY_URI_CREATEFROMPARTS_PARAM_NULL_FRAGMENT_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_6300
      * @tc.desc   createFromParts 401 error test with null fragment parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1304,7 +1304,7 @@ export default function uri2Test() {
 
     /**
      * @tc.name   testCreateFromPartsWithUndefinedFragment009
-     * @tc.number SUB_COMMONLIBRARY_URI_CREATEFROMPARTS_PARAM_UNDEFINED_FRAGMENT_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI7_6400
      * @tc.desc   createFromParts 401 error test with undefined fragment parameter.
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

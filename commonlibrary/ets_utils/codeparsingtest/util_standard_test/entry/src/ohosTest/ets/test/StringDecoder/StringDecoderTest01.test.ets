@@ -31,7 +31,7 @@ export default function StringDecoder01Test() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_0100
      * @tc.name      test_Stringdecoder_Constructor_Invalid_Encoding_0001
      * @tc.desc      StringDecoder constructor with invalid encoding should handle gracefully.
      * @tc.size      MediumTest
@@ -52,7 +52,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTO_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_0200
      * @tc.name      test_Stringdecoder_Constructor_Empty_String_0002
      * @tc.desc      StringDecoder constructor with empty string encoding.
      * @tc.size      MediumTest
@@ -73,7 +73,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_0300
      * @tc.name      test_Stringdecoder_Write_Null_Buffer_0003
      * @tc.desc      StringDecoder write with null buffer should handle gracefully.
      * @tc.size      MediumTest
@@ -95,7 +95,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_0400
      * @tc.name      test_Stringdecoder_Write_Invalid_Buffer_Ttype_0004
      * @tc.desc      StringDecoder write with invalid parameter should handle gracefully.
      * @tc.size      MediumTest
@@ -118,7 +118,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_0500
      * @tc.name      test_Stringdecoder_Write_Overflow_Values_0005
      * @tc.desc      StringDecoder write with overflow byte values should handle correctly.
      * @tc.size      MediumTest
@@ -142,7 +142,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_0600
      * @tc.name      test_Stringdecoder_Write_Invalid_Utf8_0007
      * @tc.desc      StringDecoder write with invalid UTF-8 sequence.
      * @tc.size      MediumTest
@@ -161,7 +161,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_0700
      * @tc.name      test_Stringdecoder_Write_Zero_Buffer_0008
      * @tc.desc      StringDecoder write with zero-filled buffer.
      * @tc.size      MediumTest
@@ -180,7 +180,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_0800
      * @tc.name      test_Stringdecoder_End_Empty_After_Write_0009
      * @tc.desc      StringDecoder end after write operations.
      * @tc.size      MediumTest
@@ -200,7 +200,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_0900
      * @tc.name      test_Stringdecoder_End_Overflow_Values_0010
      * @tc.desc      StringDecoder end with overflow byte values should handle correctly.
      * @tc.size      MediumTest
@@ -223,7 +223,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1000
      * @tc.name      test_Stringdecoder_End_Incomplete_Utf8_0011
      * @tc.desc      StringDecoder end with incomplete UTF-8 sequence should return replacement.
      * @tc.size      MediumTest
@@ -242,7 +242,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1100
      * @tc.name      test_Stringdecoder_End_Invalid_Utf8_0012
      * @tc.desc      StringDecoder end with invalid UTF-8 sequence.
      * @tc.size      MediumTest
@@ -261,7 +261,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1200
      * @tc.name      test_Stringdecoder_End_Zero_Buffer_0013
      * @tc.desc      StringDecoder end with zero-filled buffer.
      * @tc.size      MediumTest
@@ -280,7 +280,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_COMBINED_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1300
      * @tc.name      test_Stringdecoder_Multiple_Writes_Then_End_0014
      * @tc.desc      StringDecoder multiple writes followed by end.
      * @tc.size      MediumTest
@@ -303,7 +303,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_COMBINED_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1400
      * @tc.name      test_Stringdecoder_Write_After_End_0015
      * @tc.desc      StringDecoder write after end should work with new instance.
      * @tc.size      MediumTest
@@ -325,7 +325,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_COMBINED_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1500
      * @tc.name      test_Stringdecoder_Chunked_Utf8_0016
      * @tc.desc      StringDecoder with chunked UTF-8 characters.
      * @tc.size      MediumTest
@@ -348,7 +348,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_BOUNDARY_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1600
      * @tc.name      test_Stringdecoder_Boundary_Min_Value_0017
      * @tc.desc      StringDecoder with minimum byte values.
      * @tc.size      MediumTest
@@ -367,7 +367,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_BOUNDARY_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1700
      * @tc.name      test_Stringdecoder_Boundary_Max_Value_0018
      * @tc.desc      StringDecoder with maximum byte values.
      * @tc.size      MediumTest
@@ -386,7 +386,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_BOUNDARY_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1800
      * @tc.name      test_Stringdecoder_Boundary_Single_Byte_0019
      * @tc.desc      StringDecoder with single byte buffer.
      * @tc.size      MediumTest
@@ -405,7 +405,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_BOUNDARY_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_1900
      * @tc.name      test_Stringdecoder_Boundary_Max_Single_Char_0020
      * @tc.desc      StringDecoder with maximum single character bytes.
      * @tc.size      MediumTest
@@ -424,7 +424,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_BOUNDARY_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2000
      * @tc.name      test_Stringdecoder_Boundary_Control_Chars_0021
      * @tc.desc      StringDecoder with control characters.
      * @tc.size      MediumTest
@@ -443,7 +443,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_PERFORMANCE_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2100
      * @tc.name      test_Stringdecoder_Performance_Repeated_Calls_0022
      * @tc.desc      StringDecoder performance with repeated write calls.
      * @tc.size      MediumTest
@@ -466,7 +466,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_PERFORMANCE_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2200
      * @tc.name      test_Stringdecoder_Performance_Large_Data_0023
      * @tc.desc      StringDecoder performance with large data set.
      * @tc.size      MediumTest
@@ -489,7 +489,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_ERROR_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2300
      * @tc.name      test_Stringdecoder_Error_Invalid_Sequence_0024
      * @tc.desc      StringDecoder with intentionally invalid byte sequence.
      * @tc.size      MediumTest
@@ -508,7 +508,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_ERROR_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2400
      * @tc.name      test_Stringdecoder_ErrorIsolated_Continuation_0026
      * @tc.desc      StringDecoder with isolated continuation byte.
      * @tc.size      MediumTest
@@ -527,7 +527,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_ERROR_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2500
      * @tc.name      test_Stringdecoder_ErrorOverlong_Sequence_0027
      * @tc.desc      StringDecoder with overlong encoding sequence.
      * @tc.size      MediumTest
@@ -546,7 +546,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_SPECIAL_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2600
      * @tc.name      test_Stringdecoder_Special_Unicode_Chars_0028
      * @tc.desc      StringDecoder with special Unicode characters.
      * @tc.size      MediumTest
@@ -565,7 +565,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2700
      * @tc.name      test_Stringdecoder_End_Long_Text_0029
      * @tc.desc      StringDecoder end with longer text.
      * @tc.size      MediumTest
@@ -584,7 +584,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_SPECIAL_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2800
      * @tc.name      test_Stringdecoder_Special_Surrogate_Pairs_0030
      * @tc.desc      StringDecoder with Unicode surrogate pairs.
      * @tc.size      MediumTest
@@ -603,7 +603,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_SPECIAL_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_2900
      * @tc.name      test_Stringdecoder_Special_Bidirectional_Text_0031
      * @tc.desc      StringDecoder with bidirectional text.
      * @tc.size      MediumTest
@@ -622,7 +622,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3000
      * @tc.name      test_Stringdecoder_Constructor_Default_0032
      * @tc.desc      StringDecoder constructor with no parameters.
      * @tc.size      MediumTest
@@ -640,7 +640,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3100
      * @tc.name      test_Stringdecoder_Constructor_Utf8_0033
      * @tc.desc      StringDecoder constructor with 'utf-8' encoding.
      * @tc.size      MediumTest
@@ -658,7 +658,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3200
      * @tc.name      test_Stringdecoder_Constructor_Utf8_Ascii_Scenario_0035
      * @tc.desc      StringDecoder constructor with 'utf-16le' encoding.
      * @tc.size      MediumTest
@@ -676,7 +676,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3300
      * @tc.name      test_Stringdecoder_Constructor_Utf8_Latin1_Scenario_0036
      * @tc.desc      StringDecoder constructor with 'utf-16be' encoding.
      * @tc.size      MediumTest
@@ -694,7 +694,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3400
      * @tc.name      test_Stringdecoder_Constructor_Iso88591_0037
      * @tc.desc      StringDecoder constructor with 'iso-8859-1' encoding.
      * @tc.size      MediumTest
@@ -711,7 +711,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3500
      * @tc.name      test_Stringdecoder_Constructor_Gb18030_0038
      * @tc.desc      StringDecoder constructor with 'gb18030' encoding.
      * @tc.size      MediumTest
@@ -728,7 +728,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_CONSTRUCTOR_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3600
      * @tc.name      test_Stringdecoder_Constructor_Gbk_0039
      * @tc.desc      StringDecoder constructor with 'gbk' encoding.
      * @tc.size      MediumTest
@@ -745,7 +745,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3700
      * @tc.name      test_Stringdecoder_Write_Utf8_Hello_0042
      * @tc.desc      StringDecoder write with UTF-8 encoded "Hello".
      * @tc.size      MediumTest
@@ -765,7 +765,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3800
      * @tc.name      test_Stringdecoder_Write_Utf8_Non_Empty_0043
      * @tc.desc      StringDecoder write with empty buffer.
      * @tc.size      MediumTest
@@ -784,7 +784,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_3900
      * @tc.name      test_Stringdecoder_Write_Utf8_Single_Char_0044
      * @tc.desc      StringDecoder write with single character.
      * @tc.size      MediumTest
@@ -802,7 +802,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4000
      * @tc.name      test_Stringdecoder_Write_Utf8_Numbers_0045
      * @tc.desc      StringDecoder write with numbers.
      * @tc.size      MediumTest
@@ -820,7 +820,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4100
      * @tc.name      test_Stringdecoder_Write_Utf8_Special_Chars_0046
      * @tc.desc      StringDecoder write with special characters.
      * @tc.size      MediumTest
@@ -838,7 +838,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4200
      * @tc.name      test_Stringdecoder_Write_Utf8_Chinese_0047
      * @tc.desc      StringDecoder write with Chinese characters.
      * @tc.size      MediumTest
@@ -856,7 +856,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4300
      * @tc.name      test_Stringdecoder_Write_Utf8_Emoji_0048
      * @tc.desc      StringDecoder write with emoji.
      * @tc.size      MediumTest
@@ -874,7 +874,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4400
      * @tc.name      test_Stringdecoder_Write_Utf8_Hello_0049
      * @tc.desc      StringDecoder write with UTF-16 encoded "Hello".
      * @tc.size      MediumTest
@@ -893,7 +893,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4500
      * @tc.name      test_Stringdecoder_Write_Utf16Le_Hello_0050
      * @tc.desc      StringDecoder write with UTF-16LE encoded "Hello".
      * @tc.size      MediumTest
@@ -911,7 +911,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4600
      * @tc.name      test_Stringdecoder_Write_Utf16Be_Hello_0051
      * @tc.desc      StringDecoder write with UTF-16BE encoded "Hello".
      * @tc.size      MediumTest
@@ -929,7 +929,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4700
      * @tc.name      test_Stringdecoder_Write_Utf8_Text_0052
      * @tc.desc      StringDecoder write with ASCII encoded text.
      * @tc.size      MediumTest
@@ -948,7 +948,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4800
      * @tc.name      test_Stringdecoder_Write_Utf8_Latin_Text_0053
      * @tc.desc      StringDecoder write with Latin1 encoded text.
      * @tc.size      MediumTest
@@ -967,7 +967,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_4900
      * @tc.name      test_Stringdecoder_Write_Gbk_Chinese_0054
      * @tc.desc      StringDecoder write with GBK encoded Chinese.
      * @tc.size      MediumTest
@@ -985,7 +985,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5000
      * @tc.name      test_Stringdecoder_Write_Gb18030_Chinese_0055
      * @tc.desc      StringDecoder write with GB18030 encoded Chinese.
      * @tc.size      MediumTest
@@ -1003,7 +1003,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5100
      * @tc.name      test_Stringdecoder_Write_Iso88591_Text_0056
      * @tc.desc      StringDecoder write with ISO-8859-1 encoded text.
      * @tc.size      MediumTest
@@ -1021,7 +1021,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5200
      * @tc.name      test_Stringdecoder_Write_Whitespace_0057
      * @tc.desc      StringDecoder write with whitespace characters.
      * @tc.size      MediumTest
@@ -1039,7 +1039,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5300
      * @tc.name      test_Stringdecoder_End_No_Buffer_0062
      * @tc.desc      StringDecoder end with no buffer parameter.
      * @tc.size      MediumTest
@@ -1057,7 +1057,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5400
      * @tc.name      test_Stringdecoder_End_Non_Empty_Buffer_0063
      * @tc.desc      StringDecoder end with empty buffer.
      * @tc.size      MediumTest
@@ -1077,7 +1077,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5500
      * @tc.name      test_Stringdecoder_End_Utf8_Hello_0064
      * @tc.desc      StringDecoder end with UTF-8 encoded "Hello".
      * @tc.size      MediumTest
@@ -1097,7 +1097,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5600
      * @tc.name      test_Stringdecoder_End_Utf8_Single_Char_0065
      * @tc.desc      StringDecoder end with single character.
      * @tc.size      MediumTest
@@ -1116,7 +1116,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5700
      * @tc.name      test_Stringdecoder_End_Utf16Le_Hello_0070
      * @tc.desc      StringDecoder end with UTF-16LE encoded "Hello".
      * @tc.size      MediumTest
@@ -1135,7 +1135,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5800
      * @tc.name      test_Stringdecoder_End_Gbk_Chinese_0073
      * @tc.desc      StringDecoder end with GBK encoded Chinese.
      * @tc.size      MediumTest
@@ -1154,7 +1154,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_5900
      * @tc.name      test_Stringdecoder_End_Gb18030_Chinese_0074
      * @tc.desc      StringDecoder end with GB18030 encoded Chinese.
      * @tc.size      MediumTest
@@ -1173,7 +1173,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_6000
      * @tc.name      test_Stringdecoder_End_Iso88591_Text_0075
      * @tc.desc      StringDecoder end with ISO-8859-1 encoded text.
      * @tc.size      MediumTest
@@ -1192,7 +1192,7 @@ export default function StringDecoder01Test() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_END_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER2_6100
      * @tc.name      test_Stringdecoder_End_Whitespace_0076
      * @tc.desc      StringDecoder end with whitespace characters.
      * @tc.size      MediumTest

@@ -79,7 +79,7 @@ export default function Deque03Test() {
     })
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_0100
      * @tc.name      testDeque01GetFirst0001
      * @tc.desc      test Deque getFirst with Int8Array boundary values
      * @tc.size      MediumTest
@@ -102,7 +102,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_0200
      * @tc.name      testDeque01GetFirst0002
      * @tc.desc      test Deque getFirst with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -125,7 +125,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_0300
      * @tc.name      testDeque01GetFirst0003
      * @tc.desc      test Deque getFirst with Uint8ClampedArray clamped behavior
      * @tc.size      MediumTest
@@ -148,7 +148,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_0400
      * @tc.name      testDeque01GetFirst0004
      * @tc.desc      test Deque getFirst with Int16Array boundary values
      * @tc.size      MediumTest
@@ -171,7 +171,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_0500
      * @tc.name      testDeque01GetFirst0005
      * @tc.desc      test Deque getFirst with Uint16Array boundary values
      * @tc.size      MediumTest
@@ -194,7 +194,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_0600
      * @tc.name      testDeque01GetFirst0006
      * @tc.desc      test Deque getFirst with Int32Array boundary values
      * @tc.size      MediumTest
@@ -217,7 +217,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_0700
      * @tc.name      testDeque01GetFirst0007
      * @tc.desc      test Deque getFirst with Uint32Array boundary values
      * @tc.size      MediumTest
@@ -240,7 +240,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_0800
      * @tc.name      testDeque01GetFirst0008
      * @tc.desc      test Deque getFirst with Float32Array boundary and special values
      * @tc.size      MediumTest
@@ -268,7 +268,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_0900
      * @tc.name      testDeque01GetFirst0009
      * @tc.desc      test Deque getFirst with Float64Array boundary values
      * @tc.size      MediumTest
@@ -291,7 +291,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1000
      * @tc.name      testDeque01GetFirst0010
      * @tc.desc      test Deque getFirst with BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -314,7 +314,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1100
      * @tc.name      testDeque01GetFirst0011
      * @tc.desc      test Deque getFirst with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -337,7 +337,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1200
      * @tc.name      testDeque01GetFirst0012
      * @tc.desc      test Deque getFirst with TypedArray special value storage rules (Float types)
      * @tc.size      MediumTest
@@ -360,7 +360,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1300
      * @tc.name      testDeque01GetFirst0013
      * @tc.desc      test Deque getFirst with TypedArray special value storage rules (Int types)
      * @tc.size      MediumTest
@@ -383,7 +383,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1400
      * @tc.name      testDeque01GetFirst0014
      * @tc.desc      test Deque getFirst with String type - undefined/null/empty
      * @tc.size      MediumTest
@@ -407,7 +407,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1500
      * @tc.name      testDeque01GetFirst0015
      * @tc.desc      test Deque getFirst with String type - special characters
      * @tc.size      MediumTest
@@ -431,7 +431,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1600
      * @tc.name      testDeque01GetFirst0016
      * @tc.desc      test Deque getFirst with String type - escape sequences
      * @tc.size      MediumTest
@@ -456,7 +456,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1700
      * @tc.name      testDeque01GetFirst0017
      * @tc.desc      test Deque getFirst with String type - emojis and Unicode
      * @tc.size      MediumTest
@@ -485,7 +485,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1800
      * @tc.name      testDeque01GetFirst0018
      * @tc.desc      test Deque getFirst with String type - keywords
      * @tc.size      MediumTest
@@ -511,7 +511,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_1900
      * @tc.name      testDeque01GetFirst0019
      * @tc.desc      test Deque getFirst with Number type - basic values
      * @tc.size      MediumTest
@@ -537,7 +537,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2000
      * @tc.name      testDeque01GetFirst0020
      * @tc.desc      test Deque getFirst with Number type - boundary values
      * @tc.size      MediumTest
@@ -563,7 +563,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2100
      * @tc.name      testDeque01GetFirst0021
      * @tc.desc      test Deque getFirst with Number type - different numeric representations
      * @tc.size      MediumTest
@@ -591,7 +591,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2200
      * @tc.name      testDeque01GetFirst0022
      * @tc.desc      test Deque getFirst with BigInt type
      * @tc.size      MediumTest
@@ -616,7 +616,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2300
      * @tc.name      testDeque01GetFirst0023
      * @tc.desc      test Deque getFirst with Boolean type
      * @tc.size      MediumTest
@@ -646,7 +646,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2400
      * @tc.name      testDeque01GetFirst0024
      * @tc.desc      test Deque getFirst with Array type - normal arrays
      * @tc.size      MediumTest
@@ -670,7 +670,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2500
      * @tc.name      testDeque01GetFirst0025
      * @tc.desc      test Deque getFirst with custom object type
      * @tc.size      MediumTest
@@ -698,7 +698,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2600
      * @tc.name      testDeque01GetFirst0026
      * @tc.desc      test Deque getFirst with TestObject type - basic objects
      * @tc.size      MediumTest
@@ -726,7 +726,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2700
      * @tc.name      testDeque01GetFirst0027
      * @tc.desc      test Deque getFirst with ComplexObject type
      * @tc.size      MediumTest
@@ -755,7 +755,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2800
      * @tc.name      testDeque01GetFirst0028
      * @tc.desc      test Deque getFirst with ObjectWithBuiltins type
      * @tc.size      MediumTest
@@ -780,7 +780,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_2900
      * @tc.name      testDeque01GetFirst0029
      * @tc.desc      test Deque getFirst with DeleteTestObject type
      * @tc.size      MediumTest
@@ -812,7 +812,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3000
      * @tc.name      testDeque01GetFirst0030
      * @tc.desc      test Deque getFirst with union type
      * @tc.size      MediumTest
@@ -844,7 +844,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3100
      * @tc.name      testDeque01GetFirst0031
      * @tc.desc      test Deque getFirst with large objects
      * @tc.size      MediumTest
@@ -877,7 +877,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3200
      * @tc.name      testDeque01GetFirst0032
      * @tc.desc      test Deque getFirst with treeString type
      * @tc.size      MediumTest
@@ -910,7 +910,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3300
      * @tc.name      testDeque01GetFirst0033
      * @tc.desc      test Deque getFirst with sliceString type
      * @tc.size      MediumTest
@@ -937,7 +937,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3400
      * @tc.name      testDeque01GetFirst0034
      * @tc.desc      test Deque getFirst with non-empty deque
      * @tc.size      MediumTest
@@ -958,7 +958,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3500
      * @tc.name      testDeque01GetFirst0035
      * @tc.desc      test Deque getFirst with Unicode strings
      * @tc.size      MediumTest
@@ -983,7 +983,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETFIRST01_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3600
      * @tc.name      testDeque01GetFirst0036
      * @tc.desc      test Deque getFirst with moderate size strings
      * @tc.size      MediumTest
@@ -1007,7 +1007,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3700
      * @tc.name      testDeque02GetLast0001
      * @tc.desc      test Deque getLast with Int8Array boundary values
      * @tc.size      MediumTest
@@ -1030,7 +1030,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3800
      * @tc.name      testDeque02GetLast0002
      * @tc.desc      test Deque getLast with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1053,7 +1053,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_3900
      * @tc.name      testDeque02GetLast0003
      * @tc.desc      test Deque getLast with Uint8ClampedArray clamped behavior
      * @tc.size      MediumTest
@@ -1076,7 +1076,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4000
      * @tc.name      testDeque02GetLast0004
      * @tc.desc      test Deque getLast with Int16Array boundary values
      * @tc.size      MediumTest
@@ -1099,7 +1099,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4100
      * @tc.name      testDeque02GetLast0005
      * @tc.desc      test Deque getLast with Uint16Array boundary values
      * @tc.size      MediumTest
@@ -1122,7 +1122,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4200
      * @tc.name      testDeque02GetLast0006
      * @tc.desc      test Deque getLast with Int32Array boundary values
      * @tc.size      MediumTest
@@ -1145,7 +1145,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4300
      * @tc.name      testDeque02GetLast0007
      * @tc.desc      test Deque getLast with Uint32Array boundary values
      * @tc.size      MediumTest
@@ -1168,7 +1168,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4400
      * @tc.name      testDeque02GetLast0008
      * @tc.desc      test Deque getLast with Float32Array boundary and special values
      * @tc.size      MediumTest
@@ -1196,7 +1196,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4500
      * @tc.name      testDeque02GetLast0009
      * @tc.desc      test Deque getLast with Float64Array boundary values
      * @tc.size      MediumTest
@@ -1219,7 +1219,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4600
      * @tc.name      testDeque02GetLast0010
      * @tc.desc      test Deque getLast with BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -1242,7 +1242,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4700
      * @tc.name      testDeque02GetLast0011
      * @tc.desc      test Deque getLast with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -1265,7 +1265,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4800
      * @tc.name      testDeque02GetLast0012
      * @tc.desc      test Deque getLast with TypedArray special value storage rules (Float types)
      * @tc.size      MediumTest
@@ -1288,7 +1288,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_4900
      * @tc.name      testDeque02GetLast0013
      * @tc.desc      test Deque getLast with TypedArray special value storage rules (Int types)
      * @tc.size      MediumTest
@@ -1311,7 +1311,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5000
      * @tc.name      testDeque02GetLast0014
      * @tc.desc      test Deque getLast with String type - undefined/null/empty
      * @tc.size      MediumTest
@@ -1335,7 +1335,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5100
      * @tc.name      testDeque02GetLast0015
      * @tc.desc      test Deque getLast with String type - special characters
      * @tc.size      MediumTest
@@ -1359,7 +1359,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5200
      * @tc.name      testDeque02GetLast0016
      * @tc.desc      test Deque getLast with String type - escape sequences
      * @tc.size      MediumTest
@@ -1384,7 +1384,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5300
      * @tc.name      testDeque02GetLast0017
      * @tc.desc      test Deque getLast with String type - emojis and Unicode
      * @tc.size      MediumTest
@@ -1413,7 +1413,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5400
      * @tc.name      testDeque02GetLast0018
      * @tc.desc      test Deque getLast with String type - keywords
      * @tc.size      MediumTest
@@ -1439,7 +1439,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5500
      * @tc.name      testDeque02GetLast0019
      * @tc.desc      test Deque getLast with Number type - basic values
      * @tc.size      MediumTest
@@ -1465,7 +1465,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5600
      * @tc.name      testDeque02GetLast0020
      * @tc.desc      test Deque getLast with Number type - boundary values
      * @tc.size      MediumTest
@@ -1491,7 +1491,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5700
      * @tc.name      testDeque02GetLast0021
      * @tc.desc      test Deque getLast with Number type - different numeric representations
      * @tc.size      MediumTest
@@ -1519,7 +1519,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5800
      * @tc.name      testDeque02GetLast0022
      * @tc.desc      test Deque getLast with BigInt type
      * @tc.size      MediumTest
@@ -1544,7 +1544,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_5900
      * @tc.name      testDeque02GetLast0023
      * @tc.desc      test Deque getLast with Boolean type
      * @tc.size      MediumTest
@@ -1574,7 +1574,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_6000
      * @tc.name      testDeque02GetLast0024
      * @tc.desc      test Deque getLast with Array type - normal arrays
      * @tc.size      MediumTest
@@ -1598,7 +1598,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_6100
      * @tc.name      testDeque02GetLast0025
      * @tc.desc      test Deque getLast with custom object type
      * @tc.size      MediumTest
@@ -1626,7 +1626,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_6200
      * @tc.name      testDeque02GetLast0026
      * @tc.desc      test Deque getLast with TestObject type - basic objects
      * @tc.size      MediumTest
@@ -1654,7 +1654,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_6300
      * @tc.name      testDeque02GetLast0027
      * @tc.desc      test Deque getLast with ComplexObject type
      * @tc.size      MediumTest
@@ -1683,7 +1683,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_6400
      * @tc.name      testDeque02GetLast0028
      * @tc.desc      test Deque getLast with ObjectWithBuiltins type
      * @tc.size      MediumTest
@@ -1708,7 +1708,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_6500
      * @tc.name      testDeque02GetLast0029
      * @tc.desc      test Deque getLast with DeleteTestObject type
      * @tc.size      MediumTest
@@ -1740,7 +1740,7 @@ export default function Deque03Test() {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE4_6600
      * @tc.name      testDeque02GetLast0030
      * @tc.desc      test Deque getLast with union type
      * @tc.size      MediumTest

@@ -30,7 +30,7 @@ export default function Deque06Test() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_0100
      * @tc.name      testDeque06PopFirst0001
      * @tc.desc      Test popFirst normal case: remove and return first element with number type
      * @tc.size      MediumTest
@@ -52,7 +52,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_0200
      * @tc.name      testDeque06PopFirst0002
      * @tc.desc      Test popFirst with string type elements
      * @tc.size      MediumTest
@@ -72,7 +72,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_0300
      * @tc.name      testDeque06PopFirst0003
      * @tc.desc      Test popFirst with boolean type elements
      * @tc.size      MediumTest
@@ -92,7 +92,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_0400
      * @tc.name      testDeque06PopFirst0004
      * @tc.desc      Test popFirst with object type elements
      * @tc.size      MediumTest
@@ -119,7 +119,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_0500
      * @tc.name      testDeque06PopFirst0005
      * @tc.desc      Test popFirst with array type elements
      * @tc.size      MediumTest
@@ -142,7 +142,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_0600
      * @tc.name      testDeque06PopFirst0006
      * @tc.desc      Test popFirst with mixed type elements (string | number | boolean)
      * @tc.size      MediumTest
@@ -162,7 +162,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_0700
      * @tc.name      testDeque06PopFirst0007
      * @tc.desc      Test popFirst with special number values (NaN, Infinity, -Infinity)
      * @tc.size      MediumTest
@@ -182,7 +182,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_0800
      * @tc.name      testDeque06PopFirst0008
      * @tc.desc      Test popFirst with number boundary values (MAX_SAFE_INTEGER, MIN_VALUE)
      * @tc.size      MediumTest
@@ -202,7 +202,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_0900
      * @tc.name      testDeque06PopFirst0009
      * @tc.desc      Test popFirst with bigint values
      * @tc.size      MediumTest
@@ -222,7 +222,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1000
      * @tc.name      testDeque06PopFirst0010
      * @tc.desc      Test popFirst with special string values (empty, special characters)
      * @tc.size      MediumTest
@@ -242,7 +242,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1100
      * @tc.name      testDeque06PopFirst0011
      * @tc.desc      Test popFirst with Unicode and emoji strings
      * @tc.size      MediumTest
@@ -262,7 +262,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1200
      * @tc.name      testDeque06PopFirst0012
      * @tc.desc      Test popFirst with TypedArray as elements
      * @tc.size      MediumTest
@@ -285,7 +285,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1300
      * @tc.name      testDeque06PopFirst0013
      * @tc.desc      Test popFirst with ArrayBuffer as elements
      * @tc.size      MediumTest
@@ -308,7 +308,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1400
      * @tc.name      testDeque06PopFirst0014
      * @tc.desc      Test popFirst with Map and Set as elements
      * @tc.size      MediumTest
@@ -339,7 +339,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1500
      * @tc.name      testDeque06PopFirst0015
      * @tc.desc      Test popFirst with Promise and RegExp as elements
      * @tc.size      MediumTest
@@ -362,7 +362,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1600
      * @tc.name      testDeque06PopFirst0016
      * @tc.desc      Test popFirst with object type elements (modified for ArkTS compatibility)
      * @tc.size      MediumTest
@@ -391,7 +391,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1700
      * @tc.name      testDeque06PopFirst0017
      * @tc.desc      Test popFirst with function properties objects
      * @tc.size      MediumTest
@@ -426,7 +426,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1800
      * @tc.name      testDeque06PopFirst0018
      * @tc.desc      Test popFirst with nested objects
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_1900
      * @tc.name      testDeque06PopFirst0019
      * @tc.desc      Test popFirst with prototype chain objects
      * @tc.size      MediumTest
@@ -507,7 +507,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2000
      * @tc.name      testDeque06PopFirst0020
      * @tc.desc      Test popFirst with objects containing undefined/null properties
      * @tc.size      MediumTest
@@ -543,7 +543,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2100
      * @tc.name      testDeque06PopFirst0021
      * @tc.desc      Test popFirst with single element deque
      * @tc.size      MediumTest
@@ -561,7 +561,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2200
      * @tc.name      testDeque06PopFirst0022
      * @tc.desc      Test popFirst with large number of elements (performance)
      * @tc.size      MediumTest
@@ -588,7 +588,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2300
      * @tc.name      testDeque06PopFirst0023
      * @tc.desc      Test popFirst repeatedly until deque is empty
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2400
      * @tc.name      testDeque06PopFirst0024
      * @tc.desc      Test popFirst with number boundary values (byte range: -128~127)
      * @tc.size      MediumTest
@@ -634,7 +634,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2500
      * @tc.name      testDeque06PopFirst0025
      * @tc.desc      Test popFirst with scientific notation numbers
      * @tc.size      MediumTest
@@ -654,7 +654,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPFIRST06_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2600
      * @tc.name      testDeque06PopFirst0026
      * @tc.desc      Test popFirst with different numeric bases (hex, octal)
      * @tc.size      MediumTest
@@ -674,7 +674,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2700
      * @tc.name      testDeque06PopLast0001
      * @tc.desc      Test popLast normal case: remove and return last element with number type
      * @tc.size      MediumTest
@@ -696,7 +696,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2800
      * @tc.name      testDeque06PopLast0002
      * @tc.desc      Test popLast with Int8Array boundary values
      * @tc.size      MediumTest
@@ -716,7 +716,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_2900
      * @tc.name      testDeque06PopLast0003
      * @tc.desc      Test popLast with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -736,7 +736,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3000
      * @tc.name      testDeque06PopLast0004
      * @tc.desc      Test popLast with Uint8ClampedArray clamping behavior
      * @tc.size      MediumTest
@@ -756,7 +756,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3100
      * @tc.name      testDeque06PopLast0005
      * @tc.desc      Test popLast with Int16Array boundary values
      * @tc.size      MediumTest
@@ -776,7 +776,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3200
      * @tc.name      testDeque06PopLast0006
      * @tc.desc      Test popLast with Uint16Array boundary values
      * @tc.size      MediumTest
@@ -795,7 +795,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3300
      * @tc.name      testDeque06PopLast0007
      * @tc.desc      Test popLast with Int32Array boundary values
      * @tc.size      MediumTest
@@ -814,7 +814,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3400
      * @tc.name      testDeque06PopLast0008
      * @tc.desc      Test popLast with Uint32Array boundary values
      * @tc.size      MediumTest
@@ -833,7 +833,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3500
      * @tc.name      testDeque06PopLast0009
      * @tc.desc      Test popLast with Float32Array boundary and special values
      * @tc.size      MediumTest
@@ -853,7 +853,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3600
      * @tc.name      testDeque06PopLast0010
      * @tc.desc      Test popLast with Float64Array boundary and special values
      * @tc.size      MediumTest
@@ -873,7 +873,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3700
      * @tc.name      testDeque06PopLast0011
      * @tc.desc      Test popLast with BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -892,7 +892,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3800
      * @tc.name      testDeque06PopLast0012
      * @tc.desc      Test popLast with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -911,7 +911,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_3900
      * @tc.name      testDeque06PopLast0013
      * @tc.desc      Test popLast with string special characters
      * @tc.size      MediumTest
@@ -938,7 +938,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_4000
      * @tc.name      testDeque06PopLast0014
      * @tc.desc      Test popLast with string escape characters and emojis
      * @tc.size      MediumTest
@@ -959,7 +959,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_4100
      * @tc.name      testDeque06PopLast0015
      * @tc.desc      Test popLast with number special values
      * @tc.size      MediumTest
@@ -983,7 +983,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_4200
      * @tc.name      testDeque06PopLast0016
      * @tc.desc      Test popLast with different number formats
      * @tc.size      MediumTest
@@ -1006,7 +1006,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_4300
      * @tc.name      testDeque06PopLast0017
      * @tc.desc      Test popLast with boolean and falsy values
      * @tc.size      MediumTest
@@ -1036,7 +1036,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_4400
      * @tc.name      testDeque06PopLast0018
      * @tc.desc      Test popLast with array type data
      * @tc.size      MediumTest
@@ -1076,7 +1076,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_4500
      * @tc.name      testDeque06PopLast0019
      * @tc.desc      Test popLast with object type data
      * @tc.size      MediumTest
@@ -1102,7 +1102,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_4600
      * @tc.name      testDeque06PopLast0020
      * @tc.desc      Test popLast with mixed types in deque
      * @tc.size      MediumTest
@@ -1134,7 +1134,7 @@ export default function Deque06Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_DEQUE_POPLAST06_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_DEQUE7_4700
      * @tc.name      testDeque06PopLast0021
      * @tc.desc      Test popLast with large strings and memory behavior
      * @tc.size      LargeTest

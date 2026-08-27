@@ -58,7 +58,7 @@ export default function XmlTest_07() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_0100
      * @tc.name      getNamespaceTest0020
      * @tc.desc      Test combination of default namespace and prefixed namespace on the same node
      * @tc.size      MediumTest
@@ -88,7 +88,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_0200
      * @tc.name      getNamespaceTest0021
      * @tc.desc      Test namespace URI as relative path (e.g., ./local-ns)
      * @tc.size      MediumTest
@@ -117,7 +117,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETPREFIX_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_0300
      * @tc.name      getPrefixTest0001
      * @tc.desc      Positive scenario: Basic function verification - Verify that the getPrefix method can correctly return the prefix of the current element
      * @tc.size      MediumTest
@@ -157,7 +157,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETPREFIX_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_0400
      * @tc.name      getPrefixTest0002
      * @tc.desc      Positive scenario: Multiple namespace verification - Verify the correctness of getPrefix when multiple namespaces exist
      * @tc.size      MediumTest
@@ -208,7 +208,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETPREFIX_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_0500
      * @tc.name      getPrefixTest0003
      * @tc.desc      Negative scenario: Element without prefix verification - Verify the behavior of getPrefix when the element has no prefix
      * @tc.size      MediumTest
@@ -248,7 +248,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETPREFIX_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_0600
      * @tc.name      getPrefixTest0004
      * @tc.desc      Negative scenario: Error handling verification - Verify the behavior of getPrefix when the XML format is incorrect
      * @tc.size      MediumTest
@@ -287,7 +287,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETPREFIX_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_0700
      * @tc.name      getPrefixTest0005
      * @tc.desc      Combined scenario: Nested element prefix verification - Verify the correctness of getPrefix in nested element structures
      * @tc.size      MediumTest
@@ -336,7 +336,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETPREFIX_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_0800
      * @tc.name      getPrefixTest0006
      * @tc.desc      Combined scenario: Dynamically generated XML parsing verification - Verify getPrefix using dynamically generated XML
      * @tc.size      MediumTest
@@ -378,7 +378,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETPREFIX_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_0900
      * @tc.name      getPrefixTest0007
      * @tc.desc      Combined scenario: Mixed content test - Verify mixed XML containing prefixed and non-prefixed elements
      * @tc.size      MediumTest
@@ -430,7 +430,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1000
      * @tc.name      testgetText0001
      * @tc.desc      Positive scenario: Get text content of normal node
      * @tc.size      MediumTest
@@ -466,7 +466,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1100
      * @tc.name      testgetText0002
      * @tc.desc      Positive scenario: Get text of multi-level nodes
      * @tc.size      MediumTest
@@ -499,7 +499,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1200
      * @tc.name      testgetText0003
      * @tc.desc      Positive scenario: Get empty text content of node
      * @tc.size      MediumTest
@@ -533,7 +533,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1300
      * @tc.name      testgetText0004
      * @tc.desc      Positive scenario: Node has both text and attributes, get text
      * @tc.size      MediumTest
@@ -567,7 +567,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1400
      * @tc.name      testgetText0005
      * @tc.desc      Negative scenario: Parse illegal XML (unclosed tag), verify interface does not crash and returns empty
      * @tc.size      MediumTest
@@ -610,7 +610,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1500
      * @tc.name      testgetText0006
      * @tc.desc      Negative scenario: Parse empty XML, verify getText() returns empty string
      * @tc.size      MediumTest
@@ -650,7 +650,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1600
      * @tc.name      testgetText0007
      * @tc.desc      Negative scenario: Pass illegal parameter (empty string), verify return empty
      * @tc.size      MediumTest
@@ -687,7 +687,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1700
      * @tc.name      testgetText0008
      * @tc.desc      Combination scenario: Call getText() multiple times with the same parsing instance (different nodes), verify no data contamination
      * @tc.size      MediumTest
@@ -752,7 +752,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETTEXT_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1800
      * @tc.name      testgetText0009
      * @tc.desc      Combination scenario: Parse XML containing special characters (spaces, symbols, Chinese), verify complete text acquisition
      * @tc.size      MediumTest
@@ -816,7 +816,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLPARSEINFO_ISEMPTYELEMENTTAG_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_1900
      * @tc.name      isEmptyElementTagTest0001
      * @tc.desc      Test the sample code in the sample document
      * @tc.size      MediumTest
@@ -844,7 +844,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2000
      * @tc.name      isEmptyElementTagTest0002
      * @tc.desc      Test parsing node as standard empty tag
      * @tc.size      MediumTest
@@ -871,7 +871,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2100
      * @tc.name      isEmptyElementTagTest0003
      * @tc.desc      Test parsing node as empty tag with attributes
      * @tc.size      MediumTest
@@ -900,7 +900,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2200
      * @tc.name      isEmptyElementTagTest0004
      * @tc.desc      Test empty tag with namespace prefix
      * @tc.size      MediumTest
@@ -926,7 +926,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2300
      * @tc.name      isEmptyElementTagTest0005
      * @tc.desc      Test parsing node as closed tag
      * @tc.size      MediumTest
@@ -955,7 +955,7 @@ export default function XmlTest_07() {
 
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2400
      * @tc.name      isEmptyElementTagTest0009
      * @tc.desc      Test empty tag with spaces
      * @tc.size      MediumTest
@@ -983,7 +983,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2500
      * @tc.name      isEmptyElementTagTest0010
      * @tc.desc      Test parent node of nested empty tags
      * @tc.size      MediumTest
@@ -1013,7 +1013,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2600
      * @tc.name      isEmptyElementTagTest0011
      * @tc.desc      Test empty tag adjacent to non-empty tag
      * @tc.size      MediumTest
@@ -1041,7 +1041,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2700
      * @tc.name      isEmptyElementTagTest0012
      * @tc.desc      Test parsing context as document node
      * @tc.size      MediumTest
@@ -1078,7 +1078,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2800
      * @tc.name      isEmptyElementTagTest0013
      * @tc.desc      Test parsing context as text node
      * @tc.size      MediumTest
@@ -1120,7 +1120,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_2900
      * @tc.name      isEmptyElementTagTest0014
      * @tc.desc      Test parsing context as attribute node
      * @tc.size      MediumTest
@@ -1147,7 +1147,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3000
      * @tc.name      isEmptyElementTagTest0015
      * @tc.desc      Test parsing empty text
      * @tc.size      MediumTest
@@ -1178,7 +1178,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3100
      * @tc.name      isEmptyElementTagTest0016
      * @tc.desc      Test parsing illegal XML structure
      * @tc.size      MediumTest
@@ -1213,7 +1213,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3200
      * @tc.name      isEmptyElementTagTest0017
      * @tc.desc      Test tag format error, determined as legal empty tag according to XML specification
      * @tc.size      MediumTest
@@ -1245,7 +1245,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3300
      * @tc.name      isEmptyElementTagTest0018
      * @tc.desc      Test pseudo-empty tag
      * @tc.size      MediumTest
@@ -1288,7 +1288,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3400
      * @tc.name      isEmptyElementTagTest0019
      * @tc.desc      Test empty tag with multiple attributes + namespace
      * @tc.size      MediumTest
@@ -1312,7 +1312,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3500
      * @tc.name      isEmptyElementTagTest0020
      * @tc.desc      Test closed tag with comment
      * @tc.size      MediumTest
@@ -1336,7 +1336,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3600
      * @tc.name      isEmptyElementTagTest0021
      * @tc.desc      Test closed tag with whitespace characters + newline
      * @tc.size      MediumTest
@@ -1366,7 +1366,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3700
      * @tc.name      isEmptyElementTagTest0022
      * @tc.desc      Test incomplete parsing but current node is legal empty tag
      * @tc.size      MediumTest
@@ -1399,7 +1399,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3800
      * @tc.name      isEmptyElementTagTest0023
      * @tc.desc      Test empty tag with ultra-short tag name
      * @tc.size      MediumTest
@@ -1424,7 +1424,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISEMPTYELEMENTTAG_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_3900
      * @tc.name      isEmptyElementTagTest0024
      * @tc.desc      Test empty tag with ultra-long tag name
      * @tc.size      MediumTest
@@ -1450,7 +1450,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_4000
      * @tc.name      IsWhitespaceTest0001
      * @tc.desc      Detection of pure blank text nodes
      * @tc.size      MediumTest
@@ -1478,7 +1478,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_4100
      * @tc.name      IsWhitespaceTest0002
      * @tc.desc      Unicode Special Character Boundary Validation
      * @tc.size      MediumTest
@@ -1513,7 +1513,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_4200
      * @tc.name      IsWhitespaceTest0003
      * @tc.desc      CDATA Section Whitespace Validation
      * @tc.size      MediumTest
@@ -1542,7 +1542,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_4300
      * @tc.name      IsWhitespaceTest0004
      * @tc.desc      Mixed content between tags
      * @tc.size      MediumTest
@@ -1570,7 +1570,7 @@ export default function XmlTest_07() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML8_4400
      * @tc.name      IsWhitespaceTest0005
      * @tc.desc      Whitespace Detection in Comments
      * @tc.size      MediumTest

@@ -36,7 +36,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteBigInt64LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEBIGINT64LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1010
      * @tc.desc   Testing Buffer.prototype.writeBigInt64LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -57,7 +57,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteBigInt64LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEBIGINT64LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1020
      * @tc.desc   Testing Buffer.prototype.writeBigInt64LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -78,7 +78,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteBigUInt64BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEBIGUINT64BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1030
      * @tc.desc   Testing Buffer.prototype.writeBigUInt64BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -99,7 +99,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteBigUInt64BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEBIGUINT64BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1040
      * @tc.desc   Testing Buffer.prototype.writeBigUInt64BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -120,7 +120,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteBigUInt64LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEBIGUINT64LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1050
      * @tc.desc   Testing Buffer.prototype.writeBigUInt64LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -141,7 +141,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteBigUInt64LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEBIGUINT64LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1060
      * @tc.desc   Testing Buffer.prototype.writeBigUInt64LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -162,7 +162,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteDoubleBEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEDOUBLEBE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1070
      * @tc.desc   Testing Buffer.prototype.writeDoubleBE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -183,7 +183,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteDoubleBEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEDOUBLEBE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1080
      * @tc.desc   Testing Buffer.prototype.writeDoubleBE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -204,7 +204,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteDoubleLEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEDOUBLELE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1090
      * @tc.desc   Testing Buffer.prototype.writeDoubleLE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -225,7 +225,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteDoubleLEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEDOUBLELE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1100
      * @tc.desc   Testing Buffer.prototype.writeDoubleLE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -246,7 +246,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteFloatBEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEFLOATBE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1110
      * @tc.desc   Testing Buffer.prototype.writeFloatBE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -267,7 +267,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteFloatBEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEFLOATBE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1120
      * @tc.desc   Testing Buffer.prototype.writeFloatBE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -288,7 +288,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteFloatLEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEFLOATLE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1130
      * @tc.desc   Testing Buffer.prototype.writeFloatLE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -309,7 +309,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteFloatLEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEFLOATLE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1140
      * @tc.desc   Testing Buffer.prototype.writeFloatLE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -330,7 +330,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt8OffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT8_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1150
      * @tc.desc   Testing Buffer.prototype.writeInt8 with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -351,7 +351,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt8OffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT8_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1160
      * @tc.desc   Testing Buffer.prototype.writeInt8 with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -372,7 +372,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt16BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT16BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1170
      * @tc.desc   Testing Buffer.prototype.writeInt16BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -393,7 +393,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt16BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT16BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1180
      * @tc.desc   Testing Buffer.prototype.writeInt16BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -414,7 +414,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt16LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT16LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1190
      * @tc.desc   Testing Buffer.prototype.writeInt16LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -435,7 +435,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt16LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT16LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1200
      * @tc.desc   Testing Buffer.prototype.writeInt16LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -456,7 +456,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt32BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT32BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1210
      * @tc.desc   Testing Buffer.prototype.writeInt32BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -477,7 +477,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt32BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT32BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1220
      * @tc.desc   Testing Buffer.prototype.writeInt32BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -498,7 +498,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt32LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT32LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1230
      * @tc.desc   Testing Buffer.prototype.writeInt32LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -519,7 +519,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteInt32LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT32LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1240
      * @tc.desc   Testing Buffer.prototype.writeInt32LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -540,7 +540,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteIntBEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINTBE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1250
      * @tc.desc   Testing Buffer.prototype.writeIntBE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -561,7 +561,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteIntBEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINTBE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1260
      * @tc.desc   Testing Buffer.prototype.writeIntBE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -582,7 +582,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteIntBEByteLengthNull
-     * @tc.number SUB_BUFFER_WRITEINTBE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1270
      * @tc.desc   Testing Buffer.prototype.writeIntBE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -603,7 +603,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteIntBEByteLengthUndefined
-     * @tc.number SUB_BUFFER_WRITEINTBE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1280
      * @tc.desc   Testing Buffer.prototype.writeIntBE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -624,7 +624,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteIntLEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINTLE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1290
      * @tc.desc   Testing Buffer.prototype.writeIntLE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -645,7 +645,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteIntLEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINTLE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1300
      * @tc.desc   Testing Buffer.prototype.writeIntLE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -666,7 +666,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteIntLEByteLengthNull
-     * @tc.number SUB_BUFFER_WRITEINTLE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1310
      * @tc.desc   Testing Buffer.prototype.writeIntLE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -687,7 +687,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteIntLEByteLengthUndefined
-     * @tc.number SUB_BUFFER_WRITEINTLE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1320
      * @tc.desc   Testing Buffer.prototype.writeIntLE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -708,7 +708,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt8OffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT8_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1330
      * @tc.desc   Testing Buffer.prototype.writeUInt8 with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -729,7 +729,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt8OffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT8_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1340
      * @tc.desc   Testing Buffer.prototype.writeUInt8 with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -750,7 +750,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt16BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT16BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1350
      * @tc.desc   Testing Buffer.prototype.writeUInt16BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -771,7 +771,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt16BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT16BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1360
      * @tc.desc   Testing Buffer.prototype.writeUInt16BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -792,7 +792,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt16LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT16LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1370
      * @tc.desc   Testing Buffer.prototype.writeUInt16LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -813,7 +813,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt16LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT16LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1380
      * @tc.desc   Testing Buffer.prototype.writeUInt16LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -834,7 +834,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt32BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT32BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1390
      * @tc.desc   Testing Buffer.prototype.writeUInt32BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -855,7 +855,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt32BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT32BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1400
      * @tc.desc   Testing Buffer.prototype.writeUInt32BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -876,7 +876,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt32LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT32LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1410
      * @tc.desc   Testing Buffer.prototype.writeUInt32LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -897,7 +897,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUInt32LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT32LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1420
      * @tc.desc   Testing Buffer.prototype.writeUInt32LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -918,7 +918,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUIntBEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINTBE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1430
      * @tc.desc   Testing Buffer.prototype.writeUIntBE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -939,7 +939,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUIntBEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINTBE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1440
      * @tc.desc   Testing Buffer.prototype.writeUIntBE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -960,7 +960,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUIntBEByteLengthNull
-     * @tc.number SUB_BUFFER_WRITEUINTBE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1450
      * @tc.desc   Testing Buffer.prototype.writeUIntBE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -981,7 +981,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUIntBEByteLengthUndefined
-     * @tc.number SUB_BUFFER_WRITEUINTBE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1460
      * @tc.desc   Testing Buffer.prototype.writeUIntBE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1002,7 +1002,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUIntLEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINTLE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1470
      * @tc.desc   Testing Buffer.prototype.writeUIntLE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1023,7 +1023,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUIntLEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINTLE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1480
      * @tc.desc   Testing Buffer.prototype.writeUIntLE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1044,7 +1044,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUIntLEByteLengthNull
-     * @tc.number SUB_BUFFER_WRITEUINTLE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1490
      * @tc.desc   Testing Buffer.prototype.writeUIntLE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1065,7 +1065,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteUIntLEByteLengthUndefined
-     * @tc.number SUB_BUFFER_WRITEUINTLE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1500
      * @tc.desc   Testing Buffer.prototype.writeUIntLE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1086,7 +1086,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testLastIndexOfByteOffsetNull
-     * @tc.number SUB_BUFFER_LASTINDEXOF_BYTEOFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1510
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with byteOffset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1107,7 +1107,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testLastIndexOfByteOffsetUndefined
-     * @tc.number SUB_BUFFER_LASTINDEXOF_BYTEOFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1520
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with byteOffset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1128,7 +1128,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testSwap16ReturnLength
-     * @tc.number SUB_BUFFER_SWAP16_RETURN_LENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1530
      * @tc.desc   Testing Buffer.prototype.swap16 return value length property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1148,7 +1148,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testSwap16ReturnBuffer
-     * @tc.number SUB_BUFFER_SWAP16_RETURN_BUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1540
      * @tc.desc   Testing Buffer.prototype.swap16 return value buffer property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1169,7 +1169,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testSwap32ReturnLength
-     * @tc.number SUB_BUFFER_SWAP32_RETURN_LENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1550
      * @tc.desc   Testing Buffer.prototype.swap32 return value length property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1189,7 +1189,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testSwap32ReturnBuffer
-     * @tc.number SUB_BUFFER_SWAP32_RETURN_BUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1560
      * @tc.desc   Testing Buffer.prototype.swap32 return value buffer property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1205,7 +1205,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testSwap64ReturnLength
-     * @tc.number SUB_BUFFER_SWAP64_RETURN_LENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1570
      * @tc.desc   Testing Buffer.prototype.swap64 return value length property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1225,7 +1225,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testBlobSizeFromBuffer
-     * @tc.number SUB_BUFFER_BLOB_SIZE_FROM_BUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1580
      * @tc.desc   Testing Blob.size property created from buffer
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1246,7 +1246,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testBlobSizeWithSpecialChars
-     * @tc.number SUB_BUFFER_BLOB_SIZE_SPECIAL_CHARS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1590
      * @tc.desc   Testing Blob.size property with special characters
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1266,7 +1266,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testBlobSizeLargeData
-     * @tc.number SUB_BUFFER_BLOB_SIZE_LARGE_DATA_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1600
      * @tc.desc   Testing Blob.size property with large data
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1287,7 +1287,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testBlobSizeMultipleSources
-     * @tc.number SUB_BUFFER_BLOB_SIZE_MULTIPLE_SOURCES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1610
      * @tc.desc   Testing Blob.size property with multiple sources
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1307,7 +1307,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testBlobTypeTextPlain
-     * @tc.number SUB_BUFFER_BLOB_TYPE_TEXT_PLAIN_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1620
      * @tc.desc   Testing Blob.type property with text/plain
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1331,7 +1331,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testBlobTypeApplicationJson
-     * @tc.number SUB_BUFFER_BLOB_TYPE_APP_JSON_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1630
      * @tc.desc   Testing Blob.type property with application/json
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1355,7 +1355,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testBlobTypeImagePng
-     * @tc.number SUB_BUFFER_BLOB_TYPE_IMAGE_PNG_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1640
      * @tc.desc   Testing Blob.type property with image/png
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1379,7 +1379,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testBlobTypeCustomMime
-     * @tc.number SUB_BUFFER_BLOB_TYPE_CUSTOM_MIME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1650
      * @tc.desc   Testing Blob.type property with custom MIME type
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1403,7 +1403,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testBlobTypeWithNative
-     * @tc.number SUB_BUFFER_BLOB_TYPE_WITH_NATIVE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1660
      * @tc.desc   Testing Blob.type property with native endings
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1427,7 +1427,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testAllocEncodingNull
-     * @tc.number SUB_BUFFER_ALLOC_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1670
      * @tc.desc   Testing Buffer.alloc with encoding parameter as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1448,7 +1448,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testAllocEncodingUndefined
-     * @tc.number SUB_BUFFER_ALLOC_ENCODING_UNDEFINED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1680
      * @tc.desc   Testing Buffer.alloc with encoding parameter as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1469,7 +1469,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testAllocFillNullEncodingNull
-     * @tc.number SUB_BUFFER_ALLOC_FILL_NULL_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1690
      * @tc.desc   Testing Buffer.alloc with fill as null and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1489,7 +1489,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testAllocFillUndefinedEncodingUndefined
-     * @tc.number SUB_BUFFER_ALLOC_FILL_UNDEF_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1700
      * @tc.desc   Testing Buffer.alloc with fill as undefined and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1509,7 +1509,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testAllocFillNullWithEncoding
-     * @tc.number SUB_BUFFER_ALLOC_FILL_NULL_WITH_ENCODING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1710
      * @tc.desc   Testing Buffer.alloc with fill as null and encoding as utf8
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1529,7 +1529,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testByteLengthEncodingNull
-     * @tc.number SUB_BUFFER_BYTELENGTH_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1720
      * @tc.desc   Testing Buffer.byteLength with encoding parameter as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1549,7 +1549,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testByteLengthEncodingUndefined
-     * @tc.number SUB_BUFFER_BYTELENGTH_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1730
      * @tc.desc   Testing Buffer.byteLength with encoding parameter as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1569,7 +1569,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testByteLengthStringNullEncodingNull
-     * @tc.number SUB_BUFFER_BYTELENGTH_STR_NULL_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1740
      * @tc.desc   Testing Buffer.byteLength with string as null and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1589,7 +1589,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testByteLengthStringUndefinedEncodingUndefined
-     * @tc.number SUB_BUFFER_BYTELENGTH_STR_UNDEF_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1750
      * @tc.desc   Testing Buffer.byteLength with string as undefined and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1609,7 +1609,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testByteLengthBufferEncodingNull
-     * @tc.number SUB_BUFFER_BYTELENGTH_BUFFER_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1760
      * @tc.desc   Testing Buffer.byteLength with Buffer and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1630,7 +1630,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testByteLengthBufferEncodingUndefined
-     * @tc.number SUB_BUFFER_BYTELENGTH_BUFFER_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1770
      * @tc.desc   Testing Buffer.byteLength with Buffer and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1651,7 +1651,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testConcatListNull
-     * @tc.number SUB_BUFFER_CONCAT_LIST_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1780
      * @tc.desc   Testing Buffer.concat with list parameter as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1671,7 +1671,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testConcatListUndefined
-     * @tc.number SUB_BUFFER_CONCAT_LIST_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1790
      * @tc.desc   Testing Buffer.concat with list parameter as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1691,7 +1691,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testConcatTotalLengthNull
-     * @tc.number SUB_BUFFER_CONCAT_TOTALLEN_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1800
      * @tc.desc   Testing Buffer.concat with totalLength parameter as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1713,7 +1713,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testConcatTotalLengthUndefined
-     * @tc.number SUB_BUFFER_CONCAT_TOTALLEN_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1810
      * @tc.desc   Testing Buffer.concat with totalLength parameter as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1735,7 +1735,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testConcatListNullTotalLengthNull
-     * @tc.number SUB_BUFFER_CONCAT_LIST_NULL_TL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1820
      * @tc.desc   Testing Buffer.concat with list as null and totalLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1755,7 +1755,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testConcatListUndefinedTotalLengthUndefined
-     * @tc.number SUB_BUFFER_CONCAT_LIST_UNDEF_TL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1830
      * @tc.desc   Testing Buffer.concat with list as undefined and totalLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1775,7 +1775,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testConcatListEmptyTotalLengthNull
-     * @tc.number SUB_BUFFER_CONCAT_LIST_EMPTY_TL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1840
      * @tc.desc   Testing Buffer.concat with empty list and totalLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1795,7 +1795,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testConcatListEmptyTotalLengthUndefined
-     * @tc.number SUB_BUFFER_CONCAT_LIST_EMPTY_TL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1850
      * @tc.desc   Testing Buffer.concat with empty list and totalLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1815,7 +1815,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromArrayEmpty
-     * @tc.number SUB_BUFFER_FROM_ARRAY_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1860
      * @tc.desc   Testing Buffer.from with empty array parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1836,7 +1836,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromArrayBufferByteOffsetNull
-     * @tc.number SUB_BUFFER_FROM_ARRAYBUF_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1870
      * @tc.desc   Testing Buffer.from with ArrayBuffer and byteOffset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1858,7 +1858,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromArrayBufferByteOffsetUndefined
-     * @tc.number SUB_BUFFER_FROM_ARRAYBUF_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1880
      * @tc.desc   Testing Buffer.from with ArrayBuffer and byteOffset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1880,7 +1880,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromArrayBufferLengthUndefined
-     * @tc.number SUB_BUFFER_FROM_ARRAYBUF_LENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1890
      * @tc.desc   Testing Buffer.from with ArrayBuffer and length as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1902,7 +1902,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromObjectNull
-     * @tc.number SUB_BUFFER_FROM_OBJECT_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1900
      * @tc.desc   Testing Buffer.from with object as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1922,7 +1922,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromObjectUndefined
-     * @tc.number SUB_BUFFER_FROM_OBJECT_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1910
      * @tc.desc   Testing Buffer.from with object as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1942,7 +1942,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromObjectOffsetNull
-     * @tc.number SUB_BUFFER_FROM_OBJECT_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1920
      * @tc.desc   Testing Buffer.from with object and offsetOrEncoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1961,7 +1961,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromObjectOffsetUndefined
-     * @tc.number SUB_BUFFER_FROM_OBJECT_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1930
      * @tc.desc   Testing Buffer.from with object and offsetOrEncoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1981,7 +1981,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromObjectLengthNull
-     * @tc.number SUB_BUFFER_FROM_OBJECT_LENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1940
      * @tc.desc   Testing Buffer.from with object and length as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2001,7 +2001,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromObjectLengthUndefined
-     * @tc.number SUB_BUFFER_FROM_OBJECT_LENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1950
      * @tc.desc   Testing Buffer.from with object and length as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2021,7 +2021,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromStringEncodingNull
-     * @tc.number SUB_BUFFER_FROM_STRING_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1960
      * @tc.desc   Testing Buffer.from with string and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2042,7 +2042,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFromStringEncodingUndefined
-     * @tc.number SUB_BUFFER_FROM_STRING_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1970
      * @tc.desc   Testing Buffer.from with string and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2063,7 +2063,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testTranscodeFromEncEmptyString
-     * @tc.number SUB_BUFFER_TRANSCODE_FROMENC_EMPTYSTR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1980
      * @tc.desc   Testing Buffer.transcode with fromEnc as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2084,7 +2084,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testTranscodeFromEncNull
-     * @tc.number SUB_BUFFER_TRANSCODE_FROMENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_1990
      * @tc.desc   Testing Buffer.transcode with fromEnc as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2105,7 +2105,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testTranscodeFromEncUndefined
-     * @tc.number SUB_BUFFER_TRANSCODE_FROMENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2000
      * @tc.desc   Testing Buffer.transcode with fromEnc as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2126,7 +2126,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testTranscodeToEncEmptyString
-     * @tc.number SUB_BUFFER_TRANSCODE_TOENC_EMPTYSTR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2010
      * @tc.desc   Testing Buffer.transcode with toEnc as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2147,7 +2147,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testTranscodeToEncNull
-     * @tc.number SUB_BUFFER_TRANSCODE_TOENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2020
      * @tc.desc   Testing Buffer.transcode with toEnc as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2168,7 +2168,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testTranscodeToEncUndefined
-     * @tc.number SUB_BUFFER_TRANSCODE_TOENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2030
      * @tc.desc   Testing Buffer.transcode with toEnc as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2189,7 +2189,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFillValueNull
-     * @tc.number SUB_BUFFER_FILL_VALUE_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2040
      * @tc.desc   Testing Buffer.prototype.fill with value as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2211,7 +2211,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFillValueUndefined
-     * @tc.number SUB_BUFFER_FILL_VALUE_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2050
      * @tc.desc   Testing Buffer.prototype.fill with value as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2233,7 +2233,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFillOffsetNull
-     * @tc.number SUB_BUFFER_FILL_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2060
      * @tc.desc   Testing Buffer.prototype.fill with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2255,7 +2255,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFillOffsetUndefined
-     * @tc.number SUB_BUFFER_FILL_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2070
      * @tc.desc   Testing Buffer.prototype.fill with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2277,7 +2277,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFillEndNull
-     * @tc.number SUB_BUFFER_FILL_END_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2080
      * @tc.desc   Testing Buffer.prototype.fill with end as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2299,7 +2299,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFillEndUndefined
-     * @tc.number SUB_BUFFER_FILL_END_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2090
      * @tc.desc   Testing Buffer.prototype.fill with end as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2321,7 +2321,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFillEncodingNull
-     * @tc.number SUB_BUFFER_FILL_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2100
      * @tc.desc   Testing Buffer.prototype.fill with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2343,7 +2343,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testFillEncodingUndefined
-     * @tc.number SUB_BUFFER_FILL_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2110
      * @tc.desc   Testing Buffer.prototype.fill with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2365,7 +2365,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCompareTargetEndNull
-     * @tc.number SUB_BUFFER_COMPARE_TARGETEND_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2120
      * @tc.desc   Testing Buffer.prototype.compare with targetEnd as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2387,7 +2387,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCompareTargetEndUndefined
-     * @tc.number SUB_BUFFER_COMPARE_TARGETEND_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2130
      * @tc.desc   Testing Buffer.prototype.compare with targetEnd as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2409,7 +2409,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCompareSourceStartNull
-     * @tc.number SUB_BUFFER_COMPARE_SOURCESTART_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2140
      * @tc.desc   Testing Buffer.prototype.compare with sourceStart as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2431,7 +2431,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCompareSourceStartUndefined
-     * @tc.number SUB_BUFFER_COMPARE_SOURCESTART_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2150
      * @tc.desc   Testing Buffer.prototype.compare with sourceStart as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2453,7 +2453,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCompareSourceEndNull
-     * @tc.number SUB_BUFFER_COMPARE_SOURCEEND_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2160
      * @tc.desc   Testing Buffer.prototype.compare with sourceEnd as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2475,7 +2475,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCompareSourceEndUndefined
-     * @tc.number SUB_BUFFER_COMPARE_SOURCEEND_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2170
      * @tc.desc   Testing Buffer.prototype.compare with sourceEnd as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2497,7 +2497,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCopyTargetStartNull
-     * @tc.number SUB_BUFFER_COPY_TARGETSTART_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2180
      * @tc.desc   Testing Buffer.prototype.copy with targetStart as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2519,7 +2519,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCopyTargetStartUndefined
-     * @tc.number SUB_BUFFER_COPY_TARGETSTART_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2190
      * @tc.desc   Testing Buffer.prototype.copy with targetStart as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2541,7 +2541,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCopySourceStartNull
-     * @tc.number SUB_BUFFER_COPY_SOURCESTART_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2200
      * @tc.desc   Testing Buffer.prototype.copy with sourceStart as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2563,7 +2563,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCopySourceStartUndefined
-     * @tc.number SUB_BUFFER_COPY_SOURCESTART_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2210
      * @tc.desc   Testing Buffer.prototype.copy with sourceStart as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2585,7 +2585,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCopySourceEndNull
-     * @tc.number SUB_BUFFER_COPY_SOURCEEND_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2220
      * @tc.desc   Testing Buffer.prototype.copy with sourceEnd as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2607,7 +2607,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testCopySourceEndUndefined
-     * @tc.number SUB_BUFFER_COPY_SOURCEEND_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2230
      * @tc.desc   Testing Buffer.prototype.copy with sourceEnd as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2629,7 +2629,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testIndexOfByteOffsetNull
-     * @tc.number SUB_BUFFER_INDEXOF_BYTEOFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2240
      * @tc.desc   Testing Buffer.prototype.indexOf with byteOffset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2650,7 +2650,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testIndexOfByteOffsetUndefined
-     * @tc.number SUB_BUFFER_INDEXOF_BYTEOFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2250
      * @tc.desc   Testing Buffer.prototype.indexOf with byteOffset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2671,7 +2671,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testIndexOfEncodingNull
-     * @tc.number SUB_BUFFER_INDEXOF_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2260
      * @tc.desc   Testing Buffer.prototype.indexOf with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2692,7 +2692,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testIndexOfEncodingUndefined
-     * @tc.number SUB_BUFFER_INDEXOF_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2270
      * @tc.desc   Testing Buffer.prototype.indexOf with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2713,7 +2713,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testIndexOfByteOffsetNullEncodingNull
-     * @tc.number SUB_BUFFER_INDEXOF_OFFSET_NULL_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2280
      * @tc.desc   Testing Buffer.prototype.indexOf with byteOffset as null and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2734,7 +2734,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testIndexOfByteOffsetUndefinedEncodingUndefined
-     * @tc.number SUB_BUFFER_INDEXOF_OFFSET_UNDEF_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2290
      * @tc.desc   Testing Buffer.prototype.indexOf with byteOffset as undefined and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2755,7 +2755,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testLastIndexOfEncodingNull
-     * @tc.number SUB_BUFFER_LASTINDEXOF_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2300
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2776,7 +2776,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testLastIndexOfEncodingUndefined
-     * @tc.number SUB_BUFFER_LASTINDEXOF_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2310
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2797,7 +2797,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testLastIndexOfByteOffsetNullEncodingNull
-     * @tc.number SUB_BUFFER_LASTINDEXOF_OFFSET_NULL_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2320
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with byteOffset as null and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2818,7 +2818,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testLastIndexOfByteOffsetUndefinedEncodingUndefined
-     * @tc.number SUB_BUFFER_LASTINDEXOF_OFFSET_UNDEF_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2330
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with byteOffset as undefined and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2839,7 +2839,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadIntBEByteLengthNull
-     * @tc.number SUB_BUFFER_READINTBE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2340
      * @tc.desc   Testing Buffer.prototype.readIntBE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2860,7 +2860,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadIntBEByteLengthUndefined
-     * @tc.number SUB_BUFFER_READINTBE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2350
      * @tc.desc   Testing Buffer.prototype.readIntBE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2881,7 +2881,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadIntBEOffsetNullByteLengthNull
-     * @tc.number SUB_BUFFER_READINTBE_OFFSET_NULL_BL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2360
      * @tc.desc   Testing Buffer.prototype.readIntBE with offset as null and byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2902,7 +2902,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadIntBEOffsetUndefinedByteLengthUndefined
-     * @tc.number SUB_BUFFER_READINTBE_OFFSET_UNDEF_BL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2370
      * @tc.desc   Testing Buffer.prototype.readIntBE with offset as undefined and byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2923,7 +2923,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadIntLEByteLengthNull
-     * @tc.number SUB_BUFFER_READINTLE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2380
      * @tc.desc   Testing Buffer.prototype.readIntLE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2944,7 +2944,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadIntLEByteLengthUndefined
-     * @tc.number SUB_BUFFER_READINTLE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2390
      * @tc.desc   Testing Buffer.prototype.readIntLE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2965,7 +2965,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadIntLEOffsetNullByteLengthNull
-     * @tc.number SUB_BUFFER_READINTLE_OFFSET_NULL_BL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2400
      * @tc.desc   Testing Buffer.prototype.readIntLE with offset as null and byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2986,7 +2986,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadIntLEOffsetUndefinedByteLengthUndefined
-     * @tc.number SUB_BUFFER_READINTLE_OFFSET_UNDEF_BL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2410
      * @tc.desc   Testing Buffer.prototype.readIntLE with offset as undefined and byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3007,7 +3007,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadUIntBEByteLengthNull
-     * @tc.number SUB_BUFFER_READUINTBE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2420
      * @tc.desc   Testing Buffer.prototype.readUIntBE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3028,7 +3028,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadUIntBEByteLengthUndefined
-     * @tc.number SUB_BUFFER_READUINTBE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2430
      * @tc.desc   Testing Buffer.prototype.readUIntBE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3049,7 +3049,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadUIntBEOffsetNullByteLengthNull
-     * @tc.number SUB_BUFFER_READUINTBE_OFFSET_NULL_BL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2440
      * @tc.desc   Testing Buffer.prototype.readUIntBE with offset as null and byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3070,7 +3070,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadUIntBEOffsetUndefinedByteLengthUndefined
-     * @tc.number SUB_BUFFER_READUINTBE_OFFSET_UNDEF_BL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2450
      * @tc.desc   Testing Buffer.prototype.readUIntBE with offset as undefined and byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3091,7 +3091,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadUIntLEByteLengthNull
-     * @tc.number SUB_BUFFER_READUINTLE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2460
      * @tc.desc   Testing Buffer.prototype.readUIntLE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3112,7 +3112,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadUIntLEByteLengthUndefined
-     * @tc.number SUB_BUFFER_READUINTLE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2470
      * @tc.desc   Testing Buffer.prototype.readUIntLE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3133,7 +3133,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadUIntLEOffsetNullByteLengthNull
-     * @tc.number SUB_BUFFER_READUINTLE_OFFSET_NULL_BL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2480
      * @tc.desc   Testing Buffer.prototype.readUIntLE with offset as null and byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3154,7 +3154,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testReadUIntLEOffsetUndefinedByteLengthUndefined
-     * @tc.number SUB_BUFFER_READUINTLE_OFFSET_UNDEF_BL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2490
      * @tc.desc   Testing Buffer.prototype.readUIntLE with offset as undefined and byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3175,7 +3175,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testSubarrayEndUndefined
-     * @tc.number SUB_BUFFER_SUBARRAY_END_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2500
      * @tc.desc   Testing Buffer.prototype.subarray with end as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3197,7 +3197,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testToStringStartNull
-     * @tc.number SUB_BUFFER_TOSTRING_START_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2510
      * @tc.desc   Testing Buffer.prototype.toString with start as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3218,7 +3218,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testToStringStartUndefined
-     * @tc.number SUB_BUFFER_TOSTRING_START_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2520
      * @tc.desc   Testing Buffer.prototype.toString with start as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3239,7 +3239,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testToStringEndNull
-     * @tc.number SUB_BUFFER_TOSTRING_END_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2530
      * @tc.desc   Testing Buffer.prototype.toString with end as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3260,7 +3260,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testToStringEndUndefined
-     * @tc.number SUB_BUFFER_TOSTRING_END_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2540
      * @tc.desc   Testing Buffer.prototype.toString with end as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3281,7 +3281,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteEncodingEmptyString
-     * @tc.number SUB_BUFFER_WRITE_ENCODING_EMPTYSTR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2550
      * @tc.desc   Testing Buffer.prototype.write with encoding as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3302,7 +3302,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteEncodingNull
-     * @tc.number SUB_BUFFER_WRITE_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2560
      * @tc.desc   Testing Buffer.prototype.write with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3323,7 +3323,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteEncodingUndefined
-     * @tc.number SUB_BUFFER_WRITE_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2570
      * @tc.desc   Testing Buffer.prototype.write with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3344,7 +3344,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteBigInt64BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEBIGINT64BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2580
      * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3365,7 +3365,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testWriteBigInt64BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEBIGINT64BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2590
      * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3386,7 +3386,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testbuffer001
-     * @tc.number SUB_BUFFER_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2600
      * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3402,7 +3402,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testbuffer002
-     * @tc.number SUB_BUFFER_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2610
      * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3432,7 +3432,7 @@ export default function ActsBuffer3Test() {
 
     /**
      * @tc.name   testbuffer003
-     * @tc.number SUB_BUFFER_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER3_2620
      * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

@@ -34,7 +34,7 @@ export default function XmlTest_02() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_0100
      * @tc.name      EndElementTest0013
      * @tc.desc      The parameter 'name' contains special characters (&, <, >)
      * @tc.size      MediumTest
@@ -58,7 +58,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_0200
      * @tc.name      EndElementTest0014
      * @tc.desc      The parameter name starts with a number
      * @tc.size      MediumTest
@@ -82,7 +82,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_0300
      * @tc.name      EndElementTest0015
      * @tc.desc      Ended directly without calling endElement
      * @tc.size      MediumTest
@@ -105,7 +105,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_0400
      * @tc.name      EndElementTest0017
      * @tc.desc      The parameter 'name' is a reserved keyword (starting with xml)
      * @tc.size      MediumTest
@@ -129,7 +129,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_0500
      * @tc.name      SetNamespacetest0001
      * @tc.desc      Root element with the namespace 'app' and its child element app:item
      * @tc.size      MediumTest
@@ -164,7 +164,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_0600
      * @tc.name      SetNamespacetest0002
      * @tc.desc      The 'note' XML element in the 'def' namespace
      * @tc.size      MediumTest
@@ -190,7 +190,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_0700
      * @tc.name      SetNamespacetest0003
      * @tc.desc      Create a root element with both 'h' and 'app' namespaces and an app:data child element
      * @tc.size      MediumTest
@@ -219,7 +219,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_0800
      * @tc.name      SetNamespacetest0004
      * @tc.desc      The parent element of the namespace and the child element that overrides a namespace with the same name
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_0900
      * @tc.name      SetNamespacetest0005
      * @tc.desc      Namespace 'h', then create a prefixed 'h:book' element and set a prefixed attribute
      * @tc.size      MediumTest
@@ -277,7 +277,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1000
      * @tc.name      SetNamespacetest0006
      * @tc.desc      Add an empty element 'h:br' and set its namespace 'h'
      * @tc.size      MediumTest
@@ -303,7 +303,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1100
      * @tc.name      SetNamespacetest0007
      * @tc.desc      Name the 'app:message' element in the 'app' namespace and set its text content
      * @tc.size      MediumTest
@@ -331,7 +331,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1200
      * @tc.name      SetNamespacetest0008
      * @tc.desc      The 'a:root' element with the 'a' namespace and the 'b:child' subelement with the 'b' namespace
      * @tc.size      MediumTest
@@ -362,7 +362,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1300
      * @tc.name      SetNamespacetest0009
      * @tc.desc      Root element with the 'demo' namespace
      * @tc.size      MediumTest
@@ -390,7 +390,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1400
      * @tc.name      SetNamespacetest0010
      * @tc.desc      The prefix 'h' is not declared
      * @tc.size      MediumTest
@@ -413,7 +413,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1500
      * @tc.name      SetNamespacetest0011
      * @tc.desc      Out of element scope
      * @tc.size      MediumTest
@@ -439,7 +439,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1600
      * @tc.name      SetNamespacetest0012
      * @tc.desc      URI cannot be empty
      * @tc.size      MediumTest
@@ -464,7 +464,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1700
      * @tc.name      SetNamespacetest0013
      * @tc.desc      Repeated declaration of the same prefix
      * @tc.size      MediumTest
@@ -488,7 +488,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1800
      * @tc.name      SetNamespacetest0014
      * @tc.desc      Call within element scope
      * @tc.size      MediumTest
@@ -515,7 +515,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_1900
      * @tc.name      SetNamespacetest0015
      * @tc.desc      Attribute uses an undeclared prefix
      * @tc.size      MediumTest
@@ -542,7 +542,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2000
      * @tc.name      SetNamespacetest0016
      * @tc.desc      The child element prefix is not declared in the parent scope
      * @tc.size      MediumTest
@@ -570,7 +570,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2100
      * @tc.name      SetNamespacetest0017
      * @tc.desc      Keep prefix
      * @tc.size      MediumTest
@@ -593,7 +593,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2200
      * @tc.name      SetNamespacetest0018
      * @tc.desc      Buffer capacity insufficient
      * @tc.size      MediumTest
@@ -616,7 +616,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2300
      * @tc.name      SetNamespacetest0019
      * @tc.desc      Root element with 'ns' namespace
      * @tc.size      MediumTest
@@ -640,7 +640,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2400
      * @tc.name      SetNamespacetest0020
      * @tc.desc      Nest a and b elements and set the ns1 and ns2 namespaces separately
      * @tc.size      MediumTest
@@ -670,7 +670,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2500
      * @tc.name      SetNamespacetest0021
      * @tc.desc      Set the default namespace with an empty prefix for the book element
      * @tc.size      MediumTest
@@ -697,7 +697,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2600
      * @tc.name      SetNamespacetest0022
      * @tc.desc      Data elements with the 'myns' namespace and id attribute
      * @tc.size      MediumTest
@@ -724,7 +724,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2700
      * @tc.name      SetNamespacetest0023
      * @tc.desc      Root element and child elements with dual namespaces ns1 and ns2
      * @tc.size      MediumTest
@@ -754,7 +754,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2800
      * @tc.name      SetNamespacetest0024
      * @tc.desc      Content elements with the 'app' namespace and add CDATA content
      * @tc.size      MediumTest
@@ -782,7 +782,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_2900
      * @tc.name      SetNamespacetest0025
      * @tc.desc      Create a parent element with the nsA namespace, and a child element that overrides the nsA namespace with the same name
      * @tc.size      MediumTest
@@ -812,7 +812,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETNAMESPACE8_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_3000
      * @tc.name      SetNamespacetest0026
      * @tc.desc      The 'config' XML element with the namespace 'sys' and the comment 'System configuration'
      * @tc.size      MediumTest
@@ -840,7 +840,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_3100
      * @tc.name      SetCommentTest0001
      * @tc.desc      Set comment directly without calling startElement
      * @tc.size      MediumTest
@@ -867,7 +867,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_3200
      * @tc.name      SetCommentTest0002
      * @tc.desc      The comment contains illegal characters
      * @tc.size      MediumTest
@@ -893,7 +893,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number   SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_0300
+     * @tc.number   SUB_COMMONLIBRARY_UTIL_XML3_3300
      * @tc.name      SetCommentTest0003
      * @tc.desc      An empty string may cause a formatting error
      * @tc.size      MediumTest
@@ -921,7 +921,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_3400
      * @tc.name      SetCommentTest0004
      * @tc.desc      Illegal character
      * @tc.size      MediumTest
@@ -948,7 +948,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_3500
      * @tc.name      SetCommentTest0005
      * @tc.desc      startElement was not called; the comment has no parent element
      * @tc.size      MediumTest
@@ -970,7 +970,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_3600
      * @tc.name      SetCommentTest0006
      * @tc.desc      Are multiple comments allowed for the same element
      * @tc.size      MediumTest
@@ -998,7 +998,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_3700
      * @tc.name      SetCommentTest0007
      * @tc.desc      "]]> is prohibited in XML comments
      * @tc.size      MediumTest
@@ -1023,7 +1023,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_3800
      * @tc.name      SetCommentTest0008
      * @tc.desc      The XML structure is incomplete
      * @tc.size      MediumTest
@@ -1048,7 +1048,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_3900
      * @tc.name      SetCommentTest0009
      * @tc.desc      Overlength comment text
      * @tc.size      MediumTest
@@ -1070,7 +1070,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4000
      * @tc.name      SetCommentTest0010
      * @tc.desc      Root XML element with comments
      * @tc.size      MediumTest
@@ -1096,7 +1096,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4100
      * @tc.name      SetCommentTest0011
      * @tc.desc      Comment with namespace
      * @tc.size      MediumTest
@@ -1124,7 +1124,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4200
      * @tc.name      SetCommentTest0012
      * @tc.desc      Annotations and Attributes Combination
      * @tc.size      MediumTest
@@ -1152,7 +1152,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4300
      * @tc.name      SetCommentTest0013
      * @tc.desc      Multilevel element annotation
      * @tc.size      MediumTest
@@ -1184,7 +1184,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4400
      * @tc.name      SetCommentTest0014
      * @tc.desc      Empty element comment
      * @tc.size      MediumTest
@@ -1212,7 +1212,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4500
      * @tc.name      SetCommentTest0015
      * @tc.desc      Special Character Handling
      * @tc.size      MediumTest
@@ -1238,7 +1238,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4600
      * @tc.name      SetCommentTest0016
      * @tc.desc      Document declaration comment
      * @tc.size      MediumTest
@@ -1266,7 +1266,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4700
      * @tc.name      SetCommentTest0017
      * @tc.desc      Mixed text annotation
      * @tc.size      MediumTest
@@ -1294,7 +1294,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4800
      * @tc.name      SetCommentTest0018
      * @tc.desc      Wrong position
      * @tc.size      MediumTest
@@ -1317,7 +1317,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_4900
      * @tc.name      SetCommentTest0019
      * @tc.desc      Add Basic Annotation
      * @tc.size      MediumTest
@@ -1343,7 +1343,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_5000
      * @tc.name      SetCommentTest0020
      * @tc.desc      Comment with namespace
      * @tc.size      MediumTest
@@ -1369,7 +1369,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_5100
      * @tc.name      SetCommentTest0021
      * @tc.desc      Combination of Annotations and Attributes
      * @tc.size      MediumTest
@@ -1397,7 +1397,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_5200
      * @tc.name      SetCommentTest0022
      * @tc.desc      Multilevel element annotation
      * @tc.size      MediumTest
@@ -1429,7 +1429,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_5300
      * @tc.name      SetCommentTest0023
      * @tc.desc      Mixing CDATA and comments
      * @tc.size      MediumTest
@@ -1455,7 +1455,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_5400
      * @tc.name      SetCommentTest0024
      * @tc.desc      Empty element comment
      * @tc.size      MediumTest
@@ -1483,7 +1483,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_5500
      * @tc.name      SetCommentTest0025
      * @tc.desc      Special Character Handling
      * @tc.size      MediumTest
@@ -1509,7 +1509,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_5600
      * @tc.name      SetCommentTest0026
      * @tc.desc      Document declaration comment
      * @tc.size      MediumTest
@@ -1537,7 +1537,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_5700
      * @tc.name      SetCommentTest0027
      * @tc.desc      Mixed text annotation
      * @tc.size      MediumTest
@@ -1565,7 +1565,7 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML3_5800
      * @tc.name      SetCommentTest0029
      * @tc.desc      "data" specified in the annotation
      * @tc.size      MediumTest

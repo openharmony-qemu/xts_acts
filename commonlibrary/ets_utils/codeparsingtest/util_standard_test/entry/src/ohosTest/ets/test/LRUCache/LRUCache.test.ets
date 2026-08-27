@@ -29,7 +29,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_0100
      * @tc.desc   Test the functionality of the put method in the LRU Cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -50,7 +50,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_0200
      * @tc.desc   Test the functionality of the put method in the LRU Cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -71,7 +71,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_0300
      * @tc.desc   Test the functionality of the put method in the LRU Cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -92,7 +92,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_0400
      * @tc.desc   Test the functionality of the put method in the LRU Cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -113,7 +113,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_0500
      * @tc.desc   Test the functionality of the put method in the LRU Cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -134,7 +134,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_0600
      * @tc.desc   Test the functionality of the put method in the LRU Cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -159,7 +159,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_0700
      * @tc.desc   Test the functionality of the put method in the LRU Cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_0800
      * @tc.desc   Test the functionality of the put method in the LRU Cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -222,7 +222,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_0900
      * @tc.desc   Test the function of the constructor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -243,7 +243,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutConstructor0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1000
      * @tc.desc   Test the function of the constructor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -263,7 +263,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutConstructor0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1100
      * @tc.desc   Test put method with key=NaN.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -283,7 +283,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutConstructor0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1200
      * @tc.desc   Test the function of the constructor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -303,7 +303,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutConstructor0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1300
      * @tc.desc   Test the function of the constructor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachePutConstructor0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1400
      * @tc.desc   Test the function of the constructor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -342,7 +342,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1500
      * @tc.desc   Test the functionality of the LRUCache() interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -360,7 +360,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1600
      * @tc.desc   Test the functionality of the LRUCache() interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -378,7 +378,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1700
      * @tc.desc   Test the functionality of the LRUCache() interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -396,7 +396,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1800
      * @tc.desc   Test the functionality of the LRUCache() interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -415,7 +415,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testConstructor0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_1900
      * @tc.desc   Test the functionality of the LRUCache() interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -433,7 +433,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testConstructor0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2000
      * @tc.desc   Test the functionality of the LRUCache() interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -451,7 +451,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2100
      * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -470,7 +470,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2200
      * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -489,7 +489,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2300
      * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -508,7 +508,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2400
      * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -527,7 +527,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2500
      * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -546,7 +546,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2600
      * @tc.desc   Test the function of the updateCapacity method with invalid capacity.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -565,7 +565,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2700
      * @tc.desc   Test the function of the UpdateCapacity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -584,7 +584,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2800
      * @tc.desc   Test the function of the updateCapacity method with invalid capacity (100.11).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -603,7 +603,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_2900
      * @tc.desc   Test the function of the  UpdateCapacity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -622,7 +622,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TREEMAP_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3000
      * @tc.desc   Test the function of the UpdateCapacity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -641,7 +641,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3100
      * @tc.desc   Test the function of the updateCapacity method with invalid capacity (100.11).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -660,7 +660,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheUpdateCapacity0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3200
      * @tc.desc   Verify updateCapacity with NaN triggers 401 error
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -679,7 +679,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testToString0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3300
      * @tc.desc   Test the toString method of LRUCache with custom maxSize.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -701,7 +701,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testGetCapacity0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3400
      * @tc.desc   Verify maximum capacity with constructor parameter 2147483647
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -722,7 +722,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetCapacity0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3500
      * @tc.desc   Test the function of the interface GetCapacity.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -744,7 +744,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetCapacity0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3600
      * @tc.desc   Test the function of the interface getCapacity.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -766,7 +766,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetCreateCount0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3700
      * @tc.desc   Test the function of the interface getCreateCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -799,7 +799,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3800
      * @tc.desc   Test the function of the interface GetMissCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -822,7 +822,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_3900
      * @tc.desc   Test the function of the interface GetMissCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -850,7 +850,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4000
      * @tc.desc   Test the function of the LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -876,7 +876,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4100
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -901,7 +901,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4200
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -926,7 +926,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4300
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -957,7 +957,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4400
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -981,7 +981,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4500
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1003,7 +1003,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4600
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1025,7 +1025,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4700
      * @tc.desc   Test the functionality of the LRUCache constructor and basic put operations.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1049,7 +1049,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4800
      * @tc.desc   Test the functionality of iterating over cache entries using entries method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1089,7 +1089,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_4900
      * @tc.desc   Test LRU cache capacity modification
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1117,7 +1117,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5000
      * @tc.desc   Test the functionality of getting all existing keys using get method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1142,7 +1142,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheConstructor0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5100
      * @tc.desc   Test the functionality of removing all existing keys using remove method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1169,7 +1169,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheConstructor0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5200
      * @tc.desc   Test the functionality of putting the same key multiple times and verify that only the latest value is retained.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1193,7 +1193,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheConstructor0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5300
      * @tc.desc   Test the function of the constrctor function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1223,7 +1223,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheConstructor0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5400
      * @tc.desc   Test getting all keys from LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1273,7 +1273,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMatchCount0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5500
      * @tc.desc   Test the function of the interface getMatchCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1296,7 +1296,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMatchCount0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5600
      * @tc.desc   Test the function of the interface getMatchCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1322,7 +1322,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMatchCount0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5700
      * @tc.desc   Test the function of the interface getMatchCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1349,7 +1349,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMatchCount0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5800
      * @tc.desc   Test the function of the interface getMatchCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1375,7 +1375,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMatchCount0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_5900
      * @tc.desc   Test the function of the interface getMatchCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1401,7 +1401,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMatchCount0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6000
      * @tc.desc   Test the function of the interface getMatchCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1427,7 +1427,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMatchCount0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6100
      * @tc.desc   Test the function of the interface getMatchCount.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1450,7 +1450,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMatchCount0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6200
      * @tc.desc   Test the function of the getMatchCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1472,7 +1472,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMatchCount0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6300
      * @tc.desc   Test the function of the Interface LRUCache.getMatchCount().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1498,7 +1498,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetPutCount0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6400
      * @tc.desc   Test the function of the Interface LRUCache.getPutCount().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1521,7 +1521,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetPutCount0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6500
      * @tc.desc   Test the function of the Interface LRUCache.getPutCount().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1544,7 +1544,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetPutCount0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6600
      * @tc.desc   Test the function of the Interface LRUCache.getPutCount() without constructor parameters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1570,7 +1570,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetPutCount0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6700
      * @tc.desc   testLRUCacheGetPutCount0004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1598,7 +1598,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6800
      * @tc.desc   Test the function of the Interface LRUCache.get().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1618,7 +1618,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_6900
      * @tc.desc   Test the function of the Interface LRUCache.get().
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1638,7 +1638,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheRemove0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7000
      * @tc.desc   Test the function of the interface Remove.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1658,7 +1658,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheRemove0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7100
      * @tc.desc   Test the function of the interface Set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1681,7 +1681,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachecontains0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7200
      * @tc.desc   Test the function of the interface contains.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1701,7 +1701,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCachecontains0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7300
      * @tc.desc   Test the function of the interface contains.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1721,7 +1721,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheCreateDefault0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CREATEDEFAULT_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7400
      * @tc.desc   Test the behavior of createDefault interface when input is NaN.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1741,7 +1741,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheCreateDefault0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7500
      * @tc.desc   Test createDefault function with NaN input parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1761,7 +1761,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7600
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1797,7 +1797,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7700
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1840,7 +1840,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7800
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1878,7 +1878,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_7900
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1910,7 +1910,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8000
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1937,7 +1937,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8100
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1973,7 +1973,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8200
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2003,7 +2003,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8300
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2030,7 +2030,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8400
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2058,7 +2058,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8500
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2087,7 +2087,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8600
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2119,7 +2119,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8700
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2156,7 +2156,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8800
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2194,7 +2194,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheAfterRemoval0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_AFTERREMOVAL_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LRUCACHE1_8900
      * @tc.desc   Test the AfterRemoval callback method for LRUCache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

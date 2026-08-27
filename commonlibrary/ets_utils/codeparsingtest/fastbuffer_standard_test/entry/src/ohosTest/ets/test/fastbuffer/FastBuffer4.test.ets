@@ -31,7 +31,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferAllocEncodingNull
-     * @tc.number SUB_FASTBUFFER_ALLOC_ENCODING_NULLA_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1010
      * @tc.desc   Testing fastbuffer.alloc with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -50,7 +50,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferAllocEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_ALLOC_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1020
      * @tc.desc   Testing fastbuffer.alloc with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -69,7 +69,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferAllocFillNull
-     * @tc.number SUB_FASTBUFFER_ALLOC_FILL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1030
      * @tc.desc   Testing fastbuffer.alloc with fill as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -88,7 +88,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferAllocFillUndefined
-     * @tc.number SUB_FASTBUFFER_ALLOC_FILL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1040
      * @tc.desc   Testing fastbuffer.alloc with fill as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -107,7 +107,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferByteLengthEncodingNull
-     * @tc.number SUB_FASTBUFFER_BYTELENGTH_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1050
      * @tc.desc   Testing fastbuffer.byteLength with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -126,7 +126,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferByteLengthEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_BYTELENGTH_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1060
      * @tc.desc   Testing fastbuffer.byteLength with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -145,7 +145,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferByteLengthValueEmpty
-     * @tc.number SUB_FASTBUFFER_BYTELENGTH_VALUE_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1070
      * @tc.desc   Testing fastbuffer.byteLength with value as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -164,7 +164,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferConcatListNull
-     * @tc.number SUB_FASTBUFFER_CONCAT_LIST_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1080
      * @tc.desc   Testing fastbuffer.concat with list as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -183,7 +183,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferConcatTotalLengthNull
-     * @tc.number SUB_FASTBUFFER_CONCAT_TOTAL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1090
      * @tc.desc   Testing fastbuffer.concat with totalLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -204,7 +204,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferConcatTotalLengthUndefined
-     * @tc.number SUB_FASTBUFFER_CONCAT_TOTAL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1100
      * @tc.desc   Testing fastbuffer.concat with totalLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -225,7 +225,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferConcatEmptyArray
-     * @tc.number SUB_FASTBUFFER_CONCAT_EMPTY_ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1110
      * @tc.desc   Testing fastbuffer.concat with empty array
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -244,7 +244,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferTranscodeFromEncNull
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_FROM_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1120
      * @tc.desc   Testing fastbuffer.transcode with fromEnc as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -264,7 +264,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferTranscodeFromEncUndefined
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_FROM_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1130
      * @tc.desc   Testing fastbuffer.transcode with fromEnc as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -284,7 +284,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferTranscodeFromEncEmpty
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_FROM_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1140
      * @tc.desc   Testing fastbuffer.transcode with fromEnc as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -305,7 +305,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferTranscodeToEncNull
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_TO_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1150
      * @tc.desc   Testing fastbuffer.transcode with toEnc as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -325,7 +325,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferTranscodeToEncUndefined
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_TO_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1160
      * @tc.desc   Testing fastbuffer.transcode with toEnc as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -345,7 +345,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferTranscodeToEncEmpty
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_TO_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1170
      * @tc.desc   Testing fastbuffer.transcode with toEnc as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -365,7 +365,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferFillValueNull
-     * @tc.number SUB_FASTBUFFER_FILL_VALUE_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1180
      * @tc.desc   Testing FastBuffer.prototype.fill with value as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -385,7 +385,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferFillValueUndefined
-     * @tc.number SUB_FASTBUFFER_FILL_VALUE_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1190
      * @tc.desc   Testing FastBuffer.prototype.fill with value as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -405,7 +405,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferFillOffsetNull
-     * @tc.number SUB_FASTBUFFER_FILL_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1200
      * @tc.desc   Testing FastBuffer.prototype.fill with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -425,7 +425,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferFillEndNull
-     * @tc.number SUB_FASTBUFFER_FILL_END_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1210
      * @tc.desc   Testing FastBuffer.prototype.fill with end as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -445,7 +445,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferFillEndUndefined
-     * @tc.number SUB_FASTBUFFER_FILL_END_UNDEFINED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1220
      * @tc.desc   Testing FastBuffer.prototype.fill with end as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -465,7 +465,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferFillEncodingNull
-     * @tc.number SUB_FASTBUFFER_FILL_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1230
      * @tc.desc   Testing FastBuffer.prototype.fill with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -485,7 +485,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCompareTargetEndNull
-     * @tc.number SUB_FASTBUFFER_COMPARE_TEND_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1240
      * @tc.desc   Testing FastBuffer.prototype.compare with targetEnd as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -506,7 +506,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCompareTargetEndUndefined
-     * @tc.number SUB_FASTBUFFER_COMPARE_TEND_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1250
      * @tc.desc   Testing FastBuffer.prototype.compare with targetEnd as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -527,7 +527,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCompareSourceEndNull
-     * @tc.number SUB_FASTBUFFER_COMPARE_SEND_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1260
      * @tc.desc   Testing FastBuffer.prototype.compare with sourceEnd as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -548,7 +548,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCompareSourceEndUndefined
-     * @tc.number SUB_FASTBUFFER_COMPARE_SEND_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1270
      * @tc.desc   Testing FastBuffer.prototype.compare with sourceEnd as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -569,7 +569,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCopyTargetStartNull
-     * @tc.number SUB_FASTBUFFER_COPY_TSTART_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1280
      * @tc.desc   Testing FastBuffer.prototype.copy with targetStart as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -590,7 +590,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCopyTargetStartUndefined
-     * @tc.number SUB_FASTBUFFER_COPY_TSTART_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1290
      * @tc.desc   Testing FastBuffer.prototype.copy with targetStart as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -611,7 +611,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCopySourceStartNull
-     * @tc.number SUB_FASTBUFFER_COPY_SSTART_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1300
      * @tc.desc   Testing FastBuffer.prototype.copy with sourceStart as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -632,7 +632,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCopySourceStartUndefined
-     * @tc.number SUB_FASTBUFFER_COPY_SSTART_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1310
      * @tc.desc   Testing FastBuffer.prototype.copy with sourceStart as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -653,7 +653,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCopySourceEndNull
-     * @tc.number SUB_FASTBUFFER_COPY_SEND_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1320
      * @tc.desc   Testing FastBuffer.prototype.copy with sourceEnd as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -674,7 +674,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferCopySourceEndUndefined
-     * @tc.number SUB_FASTBUFFER_COPY_SEND_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1330
      * @tc.desc   Testing FastBuffer.prototype.copy with sourceEnd as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -695,7 +695,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferToStringEncodingNull
-     * @tc.number SUB_FASTBUFFER_TOSTRING_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1340
      * @tc.desc   Testing FastBuffer.prototype.toString with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -715,7 +715,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferToStringEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_TOSTRING_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1350
      * @tc.desc   Testing FastBuffer.prototype.toString with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -735,7 +735,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferToStringEncodingEmpty
-     * @tc.number SUB_FASTBUFFER_TOSTRING_ENC_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1360
      * @tc.desc   Testing FastBuffer.prototype.toString with encoding as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -755,7 +755,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferToStringStartNull
-     * @tc.number SUB_FASTBUFFER_TOSTRING_START_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1370
      * @tc.desc   Testing FastBuffer.prototype.toString with start as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -775,7 +775,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferToStringStartUndefined
-     * @tc.number SUB_FASTBUFFER_TOSTRING_START_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1380
      * @tc.desc   Testing FastBuffer.prototype.toString with start as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -795,7 +795,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferToStringEndNull
-     * @tc.number SUB_FASTBUFFER_TOSTRING_END_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1390
      * @tc.desc   Testing FastBuffer.prototype.toString with end as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -815,7 +815,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferToStringEndUndefined
-     * @tc.number SUB_FASTBUFFER_TOSTRING_END_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1400
      * @tc.desc   Testing FastBuffer.prototype.toString with end as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -835,7 +835,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferWriteOffsetNull
-     * @tc.number SUB_FASTBUFFER_WRITE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1410
      * @tc.desc   Testing FastBuffer.prototype.write with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -855,7 +855,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferWriteOffsetUndefined
-     * @tc.number SUB_FASTBUFFER_WRITE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1420
      * @tc.desc   Testing FastBuffer.prototype.write with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -875,7 +875,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferWriteLengthNull
-     * @tc.number SUB_FASTBUFFER_WRITE_LENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1430
      * @tc.desc   Testing FastBuffer.prototype.write with length as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -895,7 +895,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferWriteLengthUndefined
-     * @tc.number SUB_FASTBUFFER_WRITE_LENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1440
      * @tc.desc   Testing FastBuffer.prototype.write with length as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -915,7 +915,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferWriteEncodingNull
-     * @tc.number SUB_FASTBUFFER_WRITE_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1450
      * @tc.desc   Testing FastBuffer.prototype.write with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -935,7 +935,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferWriteEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_WRITE_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1460
      * @tc.desc   Testing FastBuffer.prototype.write with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -955,7 +955,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFastBufferWriteEncodingEmpty
-     * @tc.number SUB_FASTBUFFER_WRITE_ENC_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1470
      * @tc.desc   Testing FastBuffer.prototype.write with encoding as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -975,7 +975,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testAllocEncodingNull
-     * @tc.number SUB_FASTBUFFER_ALLOC_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1480
      * @tc.desc   Testing Buffer.alloc with encoding parameter as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -996,7 +996,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testAllocEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_ALLOC_ENCODING_UNDEFINED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1490
      * @tc.desc   Testing Buffer.alloc with encoding parameter as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1017,7 +1017,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testAllocFillNullEncodingNull
-     * @tc.number SUB_FASTBUFFER_ALLOC_FILL_NULL_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1500
      * @tc.desc   Testing Buffer.alloc with fill as null and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1037,7 +1037,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testAllocFillUndefinedEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_ALLOC_FILL_UNDEF_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1510
      * @tc.desc   Testing Buffer.alloc with fill as undefined and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1057,7 +1057,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testAllocFillNullWithEncoding
-     * @tc.number SUB_FASTBUFFER_ALLOC_FILL_NULL_WITH_ENCODING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1520
      * @tc.desc   Testing Buffer.alloc with fill as null and encoding as utf8
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1077,7 +1077,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testByteLengthEncodingNull
-     * @tc.number SUB_FASTBUFFER_BYTELENGTH_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1530
      * @tc.desc   Testing Buffer.byteLength with encoding parameter as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1097,7 +1097,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testByteLengthEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_BYTELENGTH_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1540
      * @tc.desc   Testing Buffer.byteLength with encoding parameter as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1117,7 +1117,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testByteLengthStringNullEncodingNull
-     * @tc.number SUB_FASTBUFFER_BYTELENGTH_STR_NULL_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1550
      * @tc.desc   Testing Buffer.byteLength with string as null and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1137,7 +1137,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testByteLengthStringUndefinedEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_BYTELENGTH_STR_UNDEF_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1560
      * @tc.desc   Testing Buffer.byteLength with string as undefined and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1157,7 +1157,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testByteLengthBufferEncodingNull
-     * @tc.number SUB_FASTBUFFER_BYTELENGTH_BUFFER_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1570
      * @tc.desc   Testing Buffer.byteLength with Buffer and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1178,7 +1178,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testByteLengthBufferEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_BYTELENGTH_BUFFER_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1580
      * @tc.desc   Testing Buffer.byteLength with Buffer and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1199,7 +1199,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testConcatListNull
-     * @tc.number SUB_FASTBUFFER_CONCAT_LIST_NULLA_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1590
      * @tc.desc   Testing Buffer.concat with list parameter as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1219,7 +1219,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testConcatListUndefined
-     * @tc.number SUB_FASTBUFFER_CONCAT_LIST_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1600
      * @tc.desc   Testing Buffer.concat with list parameter as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1239,7 +1239,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testConcatTotalLengthNull
-     * @tc.number SUB_FASTBUFFER_CONCAT_TOTALLEN_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1610
      * @tc.desc   Testing Buffer.concat with totalLength parameter as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1261,7 +1261,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testConcatTotalLengthUndefined
-     * @tc.number SUB_FASTBUFFER_CONCAT_TOTALLEN_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1620
      * @tc.desc   Testing Buffer.concat with totalLength parameter as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1283,7 +1283,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testConcatListNullTotalLengthNull
-     * @tc.number SUB_FASTBUFFER_CONCAT_LIST_NULL_TL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1630
      * @tc.desc   Testing Buffer.concat with list as null and totalLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1303,7 +1303,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testConcatListUndefinedTotalLengthUndefined
-     * @tc.number SUB_FASTBUFFER_CONCAT_LIST_UNDEF_TL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1640
      * @tc.desc   Testing Buffer.concat with list as undefined and totalLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1323,7 +1323,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testConcatListEmptyTotalLengthNull
-     * @tc.number SUB_FASTBUFFER_CONCAT_LIST_EMPTY_TL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1650
      * @tc.desc   Testing Buffer.concat with empty list and totalLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1343,7 +1343,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testConcatListEmptyTotalLengthUndefined
-     * @tc.number SUB_FASTBUFFER_CONCAT_LIST_EMPTY_TL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1660
      * @tc.desc   Testing Buffer.concat with empty list and totalLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1363,7 +1363,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFromArrayEmpty
-     * @tc.number SUB_FASTBUFFER_FROM_ARRAY_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1670
      * @tc.desc   Testing Buffer.from with empty array parameter
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1384,7 +1384,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFromArrayBufferByteOffsetNull
-     * @tc.number SUB_FASTBUFFER_FROM_ARRAYBUF_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1680
      * @tc.desc   Testing Buffer.from with ArrayBuffer and byteOffset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1406,7 +1406,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFromArrayBufferByteOffsetUndefined
-     * @tc.number SUB_FASTBUFFER_FROM_ARRAYBUF_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1690
      * @tc.desc   Testing Buffer.from with ArrayBuffer and byteOffset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1428,7 +1428,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFromArrayBufferLengthNull
-     * @tc.number SUB_FASTBUFFER_FROM_ARRAYBUF_LENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1700
      * @tc.desc   Testing Buffer.from with ArrayBuffer and length as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1450,7 +1450,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFromArrayBufferLengthUndefined
-     * @tc.number SUB_FASTBUFFER_FROM_ARRAYBUF_LENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1710
      * @tc.desc   Testing Buffer.from with ArrayBuffer and length as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1472,7 +1472,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFromObjectNull
-     * @tc.number SUB_FASTBUFFER_FROM_OBJECT_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1720
      * @tc.desc   Testing Buffer.from with object as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1492,7 +1492,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFromObjectUndefined
-     * @tc.number SUB_FASTBUFFER_FROM_OBJECT_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1730
      * @tc.desc   Testing Buffer.from with object as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1513,7 +1513,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFromStringEncodingNull
-     * @tc.number SUB_FASTBUFFER_FROM_STRING_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1740
      * @tc.desc   Testing Buffer.from with string and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1534,7 +1534,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFromStringEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_FROM_STRING_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1750
      * @tc.desc   Testing Buffer.from with string and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1555,7 +1555,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testTranscodeFromEncNull
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_FROMENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1760
      * @tc.desc   Testing Buffer.transcode with fromEnc as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1576,7 +1576,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testTranscodeFromEncUndefined
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_FROMENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1770
      * @tc.desc   Testing Buffer.transcode with fromEnc as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1597,7 +1597,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testTranscodeToEncEmptyString
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_TOENC_EMPTYSTR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1780
      * @tc.desc   Testing Buffer.transcode with toEnc as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1618,7 +1618,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testTranscodeToEncNull
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_TOENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1790
      * @tc.desc   Testing Buffer.transcode with toEnc as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1639,7 +1639,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testTranscodeToEncUndefined
-     * @tc.number SUB_FASTBUFFER_TRANSCODE_TOENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1800
      * @tc.desc   Testing Buffer.transcode with toEnc as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1660,7 +1660,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFillValueNull
-     * @tc.number SUB_FASTBUFFER_FILL_VALUE_NULLA_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1810
      * @tc.desc   Testing Buffer.prototype.fill with value as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1682,7 +1682,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFillValueUndefined
-     * @tc.number SUB_FASTBUFFER_FILL_VALUE_UNDEFINED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1820
      * @tc.desc   Testing Buffer.prototype.fill with value as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1704,7 +1704,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFillOffsetNull
-     * @tc.number SUB_FASTBUFFER_FILL_OFFSET_NULLA_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1830
      * @tc.desc   Testing Buffer.prototype.fill with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1725,7 +1725,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFillOffsetUndefined
-     * @tc.number SUB_FASTBUFFER_FILL_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1840
      * @tc.desc   Testing Buffer.prototype.fill with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1747,7 +1747,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFillEndUndefined
-     * @tc.number SUB_FASTBUFFER_FILL_END_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1850
      * @tc.desc   Testing Buffer.prototype.fill with end as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1769,7 +1769,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFillEncodingNull
-     * @tc.number SUB_FASTBUFFER_FILL_ENCODING_NULLA_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1860
      * @tc.desc   Testing Buffer.prototype.fill with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1791,7 +1791,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testFillEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_FILL_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1870
      * @tc.desc   Testing Buffer.prototype.fill with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1813,7 +1813,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCompareTargetEndNull
-     * @tc.number SUB_FASTBUFFER_COMPARE_TARGETEND_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1880
      * @tc.desc   Testing Buffer.prototype.compare with targetEnd as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1835,7 +1835,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCompareTargetEndUndefined
-     * @tc.number SUB_FASTBUFFER_COMPARE_TARGETEND_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1890
      * @tc.desc   Testing Buffer.prototype.compare with targetEnd as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1857,7 +1857,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCompareSourceStartNull
-     * @tc.number SUB_FASTBUFFER_COMPARE_SOURCESTART_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1900
      * @tc.desc   Testing Buffer.prototype.compare with sourceStart as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1879,7 +1879,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCompareSourceStartUndefined
-     * @tc.number SUB_FASTBUFFER_COMPARE_SOURCESTART_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1910
      * @tc.desc   Testing Buffer.prototype.compare with sourceStart as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1901,7 +1901,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCompareSourceEndNull
-     * @tc.number SUB_FASTBUFFER_COMPARE_SOURCEEND_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1920
      * @tc.desc   Testing Buffer.prototype.compare with sourceEnd as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1923,7 +1923,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCompareSourceEndUndefined
-     * @tc.number SUB_FASTBUFFER_COMPARE_SOURCEEND_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1930
      * @tc.desc   Testing Buffer.prototype.compare with sourceEnd as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1945,7 +1945,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCopyTargetStartNull
-     * @tc.number SUB_FASTBUFFER_COPY_TARGETSTART_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1940
      * @tc.desc   Testing Buffer.prototype.copy with targetStart as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1967,7 +1967,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCopyTargetStartUndefined
-     * @tc.number SUB_FASTBUFFER_COPY_TARGETSTART_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1950
      * @tc.desc   Testing Buffer.prototype.copy with targetStart as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -1989,7 +1989,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCopySourceStartNull
-     * @tc.number SUB_FASTBUFFER_COPY_SOURCESTART_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1960
      * @tc.desc   Testing Buffer.prototype.copy with sourceStart as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2011,7 +2011,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCopySourceStartUndefined
-     * @tc.number SUB_FASTBUFFER_COPY_SOURCESTART_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1970
      * @tc.desc   Testing Buffer.prototype.copy with sourceStart as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2033,7 +2033,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCopySourceEndNull
-     * @tc.number SUB_FASTBUFFER_COPY_SOURCEEND_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1980
      * @tc.desc   Testing Buffer.prototype.copy with sourceEnd as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2055,7 +2055,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testCopySourceEndUndefined
-     * @tc.number SUB_FASTBUFFER_COPY_SOURCEEND_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_1990
      * @tc.desc   Testing Buffer.prototype.copy with sourceEnd as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2077,7 +2077,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testIndexOfByteOffsetNull
-     * @tc.number SUB_FASTBUFFER_INDEXOF_BYTEOFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2000
      * @tc.desc   Testing Buffer.prototype.indexOf with byteOffset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2098,7 +2098,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testIndexOfByteOffsetUndefined
-     * @tc.number SUB_FASTBUFFER_INDEXOF_BYTEOFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2010
      * @tc.desc   Testing Buffer.prototype.indexOf with byteOffset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2119,7 +2119,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testIndexOfEncodingNull
-     * @tc.number SUB_FASTBUFFER_INDEXOF_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2020
      * @tc.desc   Testing Buffer.prototype.indexOf with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2140,7 +2140,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testIndexOfEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_INDEXOF_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2030
      * @tc.desc   Testing Buffer.prototype.indexOf with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2161,7 +2161,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testIndexOfByteOffsetNullEncodingNull
-     * @tc.number SUB_FASTBUFFER_INDEXOF_OFFSET_NULL_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2040
      * @tc.desc   Testing Buffer.prototype.indexOf with byteOffset as null and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2182,7 +2182,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testIndexOfByteOffsetUndefinedEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_INDEXOF_OFFSET_UNDEF_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2050
      * @tc.desc   Testing Buffer.prototype.indexOf with byteOffset as undefined and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2203,7 +2203,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testLastIndexOfEncodingNull
-     * @tc.number SUB_FASTBUFFER_LASTINDEXOF_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2060
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2224,7 +2224,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testLastIndexOfEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_LASTINDEXOF_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2070
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2245,7 +2245,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testLastIndexOfByteOffsetNullEncodingNull
-     * @tc.number SUB_FASTBUFFER_LASTINDEXOF_OFFSET_NULL_ENC_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2080
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with byteOffset as null and encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2266,7 +2266,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testLastIndexOfByteOffsetUndefinedEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_LASTINDEXOF_OFFSET_UNDEF_ENC_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2090
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with byteOffset as undefined and encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2287,7 +2287,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadIntBEByteLengthNull
-     * @tc.number SUB_FASTBUFFER_READINTBE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2100
      * @tc.desc   Testing Buffer.prototype.readIntBE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2308,7 +2308,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadIntBEByteLengthUndefined
-     * @tc.number SUB_FASTBUFFER_READINTBE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2110
      * @tc.desc   Testing Buffer.prototype.readIntBE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2329,7 +2329,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadIntBEOffsetNullByteLengthNull
-     * @tc.number SUB_FASTBUFFER_READINTBE_OFFSET_NULL_BL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2120
      * @tc.desc   Testing Buffer.prototype.readIntBE with offset as null and byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2350,7 +2350,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadIntBEOffsetUndefinedByteLengthUndefined
-     * @tc.number SUB_FASTBUFFER_READINTBE_OFFSET_UNDEF_BL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2130
      * @tc.desc   Testing Buffer.prototype.readIntBE with offset as undefined and byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2371,7 +2371,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadIntLEByteLengthNull
-     * @tc.number SUB_FASTBUFFER_READINTLE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2140
      * @tc.desc   Testing Buffer.prototype.readIntLE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2392,7 +2392,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadIntLEByteLengthUndefined
-     * @tc.number SUB_FASTBUFFER_READINTLE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2150
      * @tc.desc   Testing Buffer.prototype.readIntLE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2413,7 +2413,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadIntLEOffsetNullByteLengthNull
-     * @tc.number SUB_FASTBUFFER_READINTLE_OFFSET_NULL_BL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2160
      * @tc.desc   Testing Buffer.prototype.readIntLE with offset as null and byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2434,7 +2434,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadIntLEOffsetUndefinedByteLengthUndefined
-     * @tc.number SUB_FASTBUFFER_READINTLE_OFFSET_UNDEF_BL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2170
      * @tc.desc   Testing Buffer.prototype.readIntLE with offset as undefined and byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2455,7 +2455,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadUIntBEByteLengthNull
-     * @tc.number SUB_FASTBUFFER_READUINTBE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2180
      * @tc.desc   Testing Buffer.prototype.readUIntBE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2476,7 +2476,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadUIntBEByteLengthUndefined
-     * @tc.number SUB_FASTBUFFER_READUINTBE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2190
      * @tc.desc   Testing Buffer.prototype.readUIntBE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2497,7 +2497,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadUIntBEOffsetNullByteLengthNull
-     * @tc.number SUB_FASTBUFFER_READUINTBE_OFFSET_NULL_BL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2200
      * @tc.desc   Testing Buffer.prototype.readUIntBE with offset as null and byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2518,7 +2518,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadUIntBEOffsetUndefinedByteLengthUndefined
-     * @tc.number SUB_FASTBUFFER_READUINTBE_OFFSET_UNDEF_BL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2210
      * @tc.desc   Testing Buffer.prototype.readUIntBE with offset as undefined and byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2539,7 +2539,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadUIntLEByteLengthNull
-     * @tc.number SUB_FASTBUFFER_READUINTLE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2220
      * @tc.desc   Testing Buffer.prototype.readUIntLE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2560,7 +2560,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadUIntLEByteLengthUndefined
-     * @tc.number SUB_FASTBUFFER_READUINTLE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2230
      * @tc.desc   Testing Buffer.prototype.readUIntLE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2581,7 +2581,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadUIntLEOffsetNullByteLengthNull
-     * @tc.number SUB_FASTBUFFER_READUINTLE_OFFSET_NULL_BL_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2240
      * @tc.desc   Testing Buffer.prototype.readUIntLE with offset as null and byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2602,7 +2602,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testReadUIntLEOffsetUndefinedByteLengthUndefined
-     * @tc.number SUB_FASTBUFFER_READUINTLE_OFFSET_UNDEF_BL_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2250
      * @tc.desc   Testing Buffer.prototype.readUIntLE with offset as undefined and byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2623,7 +2623,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSubarrayEndNull
-     * @tc.number SUB_FASTBUFFER_SUBARRAY_END_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2260
      * @tc.desc   Testing Buffer.prototype.subarray with end as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2645,7 +2645,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSubarrayEndUndefined
-     * @tc.number SUB_FASTBUFFER_SUBARRAY_END_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2270
      * @tc.desc   Testing Buffer.prototype.subarray with end as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2667,7 +2667,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testToStringStartNull
-     * @tc.number SUB_FASTBUFFER_TOSTRING_START_NULLA_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2280
      * @tc.desc   Testing Buffer.prototype.toString with start as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2688,7 +2688,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testToStringStartUndefined
-     * @tc.number SUB_FASTBUFFER_TOSTRING_START_UNDEFINED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2290
      * @tc.desc   Testing Buffer.prototype.toString with start as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2709,7 +2709,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testToStringEndNull
-     * @tc.number SUB_FASTBUFFER_TOSTRING_END_NULLA_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2300
      * @tc.desc   Testing Buffer.prototype.toString with end as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2730,7 +2730,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testToStringEndUndefined
-     * @tc.number SUB_FASTBUFFER_TOSTRING_END_UNDEFINED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2310
      * @tc.desc   Testing Buffer.prototype.toString with end as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2751,7 +2751,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteEncodingEmptyString
-     * @tc.number SUB_FASTBUFFER_WRITE_ENCODING_EMPTYSTR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2320
      * @tc.desc   Testing Buffer.prototype.write with encoding as empty string
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2772,7 +2772,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteEncodingNull
-     * @tc.number SUB_FASTBUFFER_WRITE_ENCODING_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2330
      * @tc.desc   Testing Buffer.prototype.write with encoding as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2793,7 +2793,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteEncodingUndefined
-     * @tc.number SUB_FASTBUFFER_WRITE_ENCODING_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2340
      * @tc.desc   Testing Buffer.prototype.write with encoding as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2814,7 +2814,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteBigInt64BEOffsetNull
-     * @tc.number SUB_FASTBUFFER_WRITEBIGINT64BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2350
      * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2835,7 +2835,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteBigInt64BEOffsetUndefined
-     * @tc.number SUB_FASTBUFFER_WRITEBIGINT64BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2360
      * @tc.desc   Testing Buffer.prototype.writeBigInt64BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2856,7 +2856,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteBigInt64LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEBIGINT64LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2370
      * @tc.desc   Testing Buffer.prototype.writeBigInt64LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2877,7 +2877,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteBigInt64LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEBIGINT64LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2380
      * @tc.desc   Testing Buffer.prototype.writeBigInt64LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2898,7 +2898,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteBigUInt64BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEBIGUINT64BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2390
      * @tc.desc   Testing Buffer.prototype.writeBigUInt64BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2919,7 +2919,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteBigUInt64BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEBIGUINT64BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2400
      * @tc.desc   Testing Buffer.prototype.writeBigUInt64BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2940,7 +2940,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteBigUInt64LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEBIGUINT64LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2410
      * @tc.desc   Testing Buffer.prototype.writeBigUInt64LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2961,7 +2961,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteBigUInt64LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEBIGUINT64LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2420
      * @tc.desc   Testing Buffer.prototype.writeBigUInt64LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -2982,7 +2982,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteDoubleBEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEDOUBLEBE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2430
      * @tc.desc   Testing Buffer.prototype.writeDoubleBE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3003,7 +3003,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteDoubleBEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEDOUBLEBE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2440
      * @tc.desc   Testing Buffer.prototype.writeDoubleBE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3024,7 +3024,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteDoubleLEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEDOUBLELE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2450
      * @tc.desc   Testing Buffer.prototype.writeDoubleLE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3045,7 +3045,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteDoubleLEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEDOUBLELE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2460
      * @tc.desc   Testing Buffer.prototype.writeDoubleLE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3066,7 +3066,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteFloatBEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEFLOATBE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2470
      * @tc.desc   Testing Buffer.prototype.writeFloatBE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3087,7 +3087,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteFloatBEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEFLOATBE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2480
      * @tc.desc   Testing Buffer.prototype.writeFloatBE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3108,7 +3108,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteFloatLEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEFLOATLE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2490
      * @tc.desc   Testing Buffer.prototype.writeFloatLE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3129,7 +3129,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteFloatLEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEFLOATLE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2500
      * @tc.desc   Testing Buffer.prototype.writeFloatLE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3150,7 +3150,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt8OffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT8_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2510
      * @tc.desc   Testing Buffer.prototype.writeInt8 with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3171,7 +3171,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt8OffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT8_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2520
      * @tc.desc   Testing Buffer.prototype.writeInt8 with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3192,7 +3192,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt16BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT16BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2530
      * @tc.desc   Testing Buffer.prototype.writeInt16BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3213,7 +3213,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt16BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT16BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2540
      * @tc.desc   Testing Buffer.prototype.writeInt16BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3234,7 +3234,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt16LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT16LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2550
      * @tc.desc   Testing Buffer.prototype.writeInt16LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3255,7 +3255,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt16LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT16LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2560
      * @tc.desc   Testing Buffer.prototype.writeInt16LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3276,7 +3276,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt32BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT32BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2570
      * @tc.desc   Testing Buffer.prototype.writeInt32BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3297,7 +3297,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt32BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT32BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2580
      * @tc.desc   Testing Buffer.prototype.writeInt32BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3318,7 +3318,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt32LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEINT32LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2590
      * @tc.desc   Testing Buffer.prototype.writeInt32LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3339,7 +3339,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteInt32LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEINT32LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2600
      * @tc.desc   Testing Buffer.prototype.writeInt32LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3360,7 +3360,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteIntBEByteLengthNull
-     * @tc.number SUB_BUFFER_WRITEINTBE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2610
      * @tc.desc   Testing Buffer.prototype.writeIntBE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3381,7 +3381,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteIntBEByteLengthUndefined
-     * @tc.number SUB_BUFFER_WRITEINTBE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2620
      * @tc.desc   Testing Buffer.prototype.writeIntBE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3402,7 +3402,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteIntLEByteLengthNull
-     * @tc.number SUB_BUFFER_WRITEINTLE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2630
      * @tc.desc   Testing Buffer.prototype.writeIntLE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3423,7 +3423,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteIntLEByteLengthUndefined
-     * @tc.number SUB_BUFFER_WRITEINTLE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2640
      * @tc.desc   Testing Buffer.prototype.writeIntLE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3444,7 +3444,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt8OffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT8_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2650
      * @tc.desc   Testing Buffer.prototype.writeUInt8 with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3465,7 +3465,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt8OffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT8_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2660
      * @tc.desc   Testing Buffer.prototype.writeUInt8 with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3486,7 +3486,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt16BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT16BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2670
      * @tc.desc   Testing Buffer.prototype.writeUInt16BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3507,7 +3507,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt16BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT16BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2680
      * @tc.desc   Testing Buffer.prototype.writeUInt16BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3528,7 +3528,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt16LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT16LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2690
      * @tc.desc   Testing Buffer.prototype.writeUInt16LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3549,7 +3549,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt16LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT16LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2700
      * @tc.desc   Testing Buffer.prototype.writeUInt16LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3570,7 +3570,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt32BEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT32BE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2710
      * @tc.desc   Testing Buffer.prototype.writeUInt32BE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3591,7 +3591,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt32BEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT32BE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2720
      * @tc.desc   Testing Buffer.prototype.writeUInt32BE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3612,7 +3612,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt32LEOffsetNull
-     * @tc.number SUB_BUFFER_WRITEUINT32LE_OFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2730
      * @tc.desc   Testing Buffer.prototype.writeUInt32LE with offset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3633,7 +3633,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUInt32LEOffsetUndefined
-     * @tc.number SUB_BUFFER_WRITEUINT32LE_OFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2740
      * @tc.desc   Testing Buffer.prototype.writeUInt32LE with offset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3654,7 +3654,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUIntBEByteLengthNull
-     * @tc.number SUB_BUFFER_WRITEUINTBE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2750
      * @tc.desc   Testing Buffer.prototype.writeUIntBE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3675,7 +3675,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUIntBEByteLengthUndefined
-     * @tc.number SUB_BUFFER_WRITEUINTBE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2760
      * @tc.desc   Testing Buffer.prototype.writeUIntBE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3696,7 +3696,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUIntLEByteLengthNull
-     * @tc.number SUB_BUFFER_WRITEUINTLE_BYTELENGTH_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2770
      * @tc.desc   Testing Buffer.prototype.writeUIntLE with byteLength as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3717,7 +3717,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testWriteUIntLEByteLengthUndefined
-     * @tc.number SUB_BUFFER_WRITEUINTLE_BYTELENGTH_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2780
      * @tc.desc   Testing Buffer.prototype.writeUIntLE with byteLength as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3738,7 +3738,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testLastIndexOfByteOffsetNull
-     * @tc.number SUB_BUFFER_LASTINDEXOF_BYTEOFFSET_NULL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2790
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with byteOffset as null
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3759,7 +3759,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testLastIndexOfByteOffsetUndefined
-     * @tc.number SUB_BUFFER_LASTINDEXOF_BYTEOFFSET_UNDEF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2800
      * @tc.desc   Testing Buffer.prototype.lastIndexOf with byteOffset as undefined
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3780,7 +3780,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSwap16ReturnLength
-     * @tc.number SUB_BUFFER_SWAP16_RETURN_LENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2810
      * @tc.desc   Testing Buffer.prototype.swap16 return value length property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3800,7 +3800,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSwap16ReturnBuffer
-     * @tc.number SUB_BUFFER_SWAP16_RETURN_BUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2820
      * @tc.desc   Testing Buffer.prototype.swap16 return value fastbuffer property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3821,7 +3821,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSwap16ReturnByteOffset
-     * @tc.number SUB_BUFFER_SWAP16_RETURN_BYTEOFFSET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2830
      * @tc.desc   Testing Buffer.prototype.swap16 return value byteOffset property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3840,7 +3840,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSwap32ReturnLength
-     * @tc.number SUB_BUFFER_SWAP32_RETURN_LENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2840
      * @tc.desc   Testing Buffer.prototype.swap32 return value length property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3860,7 +3860,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSwap32ReturnBuffer
-     * @tc.number SUB_BUFFER_SWAP32_RETURN_BUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2850
      * @tc.desc   Testing Buffer.prototype.swap32 return value fastbuffer property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3876,7 +3876,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSwap32ReturnByteOffset
-     * @tc.number SUB_BUFFER_SWAP32_RETURN_BYTEOFFSET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2860
      * @tc.desc   Testing Buffer.prototype.swap32 return value byteOffset property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3894,7 +3894,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSwap64ReturnLength
-     * @tc.number SUB_BUFFER_SWAP64_RETURN_LENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2870
      * @tc.desc   Testing Buffer.prototype.swap64 return value length property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3914,7 +3914,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSwap64ReturnBuffer
-     * @tc.number SUB_BUFFER_SWAP64_RETURN_BUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2880
      * @tc.desc   Testing Buffer.prototype.swap64 return value fastbuffer property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3932,7 +3932,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testSwap64ReturnByteOffset
-     * @tc.number SUB_BUFFER_SWAP64_RETURN_BYTEOFFSET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2890
      * @tc.desc   Testing Buffer.prototype.swap64 return value byteOffset property
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3948,7 +3948,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testfastBuffer0001
-     * @tc.number SUB_BUFFER_FASTBUFFER_TEST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2900
      * @tc.desc   Testing Buffer.prototyp
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3965,7 +3965,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testfastBuffer0002
-     * @tc.number SUB_BUFFER_FASTBUFFER_TEST_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2910
      * @tc.desc   Testing Buffer.prototyp
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -3985,7 +3985,7 @@ export default function FastBuffer4() {
 
     /**
      * @tc.name   testfastBuffer0003
-     * @tc.number SUB_BUFFER_FASTBUFFER_TEST_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFER6_2920
      * @tc.desc   Testing Buffer.prototyp
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST

@@ -41,7 +41,7 @@ export default function TreeMap05Test() {
     })
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_0100
      * @tc.name      testTreeMap05Chapter0001
      * @tc.desc      Test getLastKey method with string keys
      * @tc.size      MediumTest
@@ -61,7 +61,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_0200
      * @tc.name      testTreeMap05Chapter0002
      * @tc.desc      Test getLastKey method with empty TreeMap returns undefined
      * @tc.size      MediumTest
@@ -79,7 +79,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_0300
      * @tc.name      testTreeMap05Chapter0003
      * @tc.desc      Test getLastKey method with number keys
      * @tc.size      MediumTest
@@ -100,7 +100,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_0400
      * @tc.name      testTreeMap05Chapter0004
      * @tc.desc      Test getLastKey method with number boundary values
      * @tc.size      MediumTest
@@ -121,7 +121,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_0500
      * @tc.name      testTreeMap05Chapter0005
      * @tc.desc      Test getLastKey method with Infinity and -Infinity
      * @tc.size      MediumTest
@@ -142,7 +142,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_0600
      * @tc.name      testTreeMap05Chapter0006
      * @tc.desc      Test getLastKey method with NaN keys
      * @tc.size      MediumTest
@@ -163,7 +163,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_0700
      * @tc.name      testTreeMap05Chapter0007
      * @tc.desc      Test getLastKey method with special string characters
      * @tc.size      MediumTest
@@ -184,7 +184,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_0800
      * @tc.name      testTreeMap05Chapter0008
      * @tc.desc      Test getLastKey method with emoji string keys
      * @tc.size      MediumTest
@@ -206,7 +206,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_0900
      * @tc.name      testTreeMap05Chapter0009
      * @tc.desc      Test getLastKey method with empty string key
      * @tc.size      MediumTest
@@ -227,7 +227,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1000
      * @tc.name      testTreeMap05Chapter0010
      * @tc.desc      Test getLastKey method with boolean keys
      * @tc.size      MediumTest
@@ -247,7 +247,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1100
      * @tc.name      testTreeMap05Chapter0011
      * @tc.desc      Test getLastKey method with single element TreeMap
      * @tc.size      MediumTest
@@ -266,7 +266,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1200
      * @tc.name      testTreeMap05Chapter0012
      * @tc.desc      Test getLastKey method with bigint keys
      * @tc.size      MediumTest
@@ -287,7 +287,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1300
      * @tc.name      testTreeMap05Chapter0013
      * @tc.desc      Test getLastKey method with negative number keys
      * @tc.size      MediumTest
@@ -309,7 +309,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1400
      * @tc.name      testTreeMap05Chapter0014
      * @tc.desc      Test getLastKey method with scientific notation numbers
      * @tc.size      MediumTest
@@ -330,7 +330,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1500
      * @tc.name      testTreeMap05Chapter0015
      * @tc.desc      Test getLastKey method with hex and octal numbers
      * @tc.size      MediumTest
@@ -351,7 +351,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1600
      * @tc.name      testTreeMap05Chapter0016
      * @tc.desc      Test getLastKey method with Number.MAX_SAFE_INTEGER
      * @tc.size      MediumTest
@@ -372,7 +372,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1700
      * @tc.name      testTreeMap05Chapter0017
      * @tc.desc      Test getLastKey method with Number.EPSILON
      * @tc.size      MediumTest
@@ -393,7 +393,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1800
      * @tc.name      testTreeMap05Chapter0018
      * @tc.desc      Test getLastKey method after clearing TreeMap
      * @tc.size      MediumTest
@@ -414,7 +414,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_1900
      * @tc.name      testTreeMap05Chapter0019
      * @tc.desc      Test getLastKey method with many elements
      * @tc.size      MediumTest
@@ -435,7 +435,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2000
      * @tc.name      testTreeMap05Chapter0020
      * @tc.desc      Test getLastKey method with mixed case string keys
      * @tc.size      MediumTest
@@ -456,7 +456,7 @@ export default function TreeMap05Test() {
       expect(result).assertEqual("banana");
     });
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2100
      * @tc.name      testTreeMap05Chapter0021
      * @tc.desc      Test getLastKey method with escape character string keys
      * @tc.size      MediumTest
@@ -478,7 +478,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2200
      * @tc.name      testTreeMap05Chapter0022
      * @tc.desc      Test getLastKey method with null and undefined string keys
      * @tc.size      MediumTest
@@ -501,7 +501,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2300
      * @tc.name      testTreeMap05Chapter0023
      * @tc.desc      Test getLastKey method with byte range number keys (-128 to 127)
      * @tc.size      MediumTest
@@ -524,7 +524,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2400
      * @tc.name      testTreeMap05Chapter0024
      * @tc.desc      Test getLastKey method with short range number keys (-32768 to 32767)
      * @tc.size      MediumTest
@@ -547,7 +547,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2500
      * @tc.name      testTreeMap05Chapter0025
      * @tc.desc      Test getLastKey method with int range number keys (-2147483648 to 2147483647)
      * @tc.size      MediumTest
@@ -570,7 +570,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2600
      * @tc.name      testTreeMap05Chapter0026
      * @tc.desc      Test getLastKey method with char range number keys (0 to 65535)
      * @tc.size      MediumTest
@@ -593,7 +593,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2700
      * @tc.name      testTreeMap05Chapter0027
      * @tc.desc      Test getLastKey method with Float32 range boundary values
      * @tc.size      MediumTest
@@ -616,7 +616,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2800
      * @tc.name      testTreeMap05Chapter0028
      * @tc.desc      Test getLastKey method with Float64 range boundary values
      * @tc.size      MediumTest
@@ -639,7 +639,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_2900
      * @tc.name      testTreeMap05Chapter0029
      * @tc.desc      Test getLastKey method with BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -662,7 +662,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3000
      * @tc.name      testTreeMap05Chapter0030
      * @tc.desc      Test getLastKey method with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -684,7 +684,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3100
      * @tc.name      testTreeMap05Chapter0031
      * @tc.desc      Test getLastKey method with keyword string keys
      * @tc.size      MediumTest
@@ -708,7 +708,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3200
      * @tc.name      testTreeMap05Chapter0032
      * @tc.desc      Test getLastKey method with special repeated characters string keys
      * @tc.size      MediumTest
@@ -731,7 +731,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3300
      * @tc.name      testTreeMap05Chapter0033
      * @tc.desc      Test getLastKey method with Unicode encoding string keys
      * @tc.size      MediumTest
@@ -754,7 +754,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3400
      * @tc.name      testTreeMap05Chapter0034
      * @tc.desc      Test getLastKey method with invalid Unicode string keys
      * @tc.size      MediumTest
@@ -776,7 +776,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3500
      * @tc.name      testTreeMap05Chapter0035
      * @tc.desc      Test getLastKey method with exponential operator and scientific notation keys
      * @tc.size      MediumTest
@@ -798,7 +798,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3600
      * @tc.name      testTreeMap05Chapter0036
      * @tc.desc      Test getLastKey method with Uint8Array converted values as keys
      * @tc.size      MediumTest
@@ -822,7 +822,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3700
      * @tc.name      testTreeMap05Chapter0037
      * @tc.desc      Test getLastKey method with array containing zero values as keys
      * @tc.size      MediumTest
@@ -844,7 +844,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3800
      * @tc.name      testTreeMap05Chapter0038
      * @tc.desc      Test getLastKey method with negative array values as keys
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_3900
      * @tc.name      testTreeMap05Chapter0039
      * @tc.desc      Test getLastKey method with array containing NaN and Infinity as keys
      * @tc.size      MediumTest
@@ -890,7 +890,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4000
      * @tc.name      testTreeMap05Chapter0040
      * @tc.desc      Test getLastKey method with overflow array values as keys
      * @tc.size      MediumTest
@@ -912,7 +912,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4100
      * @tc.name      testTreeMap05Chapter0041
      * @tc.desc      Test getLastKey method with 32-bit hex number keys
      * @tc.size      MediumTest
@@ -934,7 +934,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4200
      * @tc.name      testTreeMap05Chapter0042
      * @tc.desc      Test getLastKey method with TypedArray special value storage behavior simulation
      * @tc.size      MediumTest
@@ -963,7 +963,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4300
      * @tc.name      testTreeMap05Chapter0043
      * @tc.desc      Test getLastKey method with ASCII full range string keys
      * @tc.size      MediumTest
@@ -989,7 +989,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4400
      * @tc.name      testTreeMap05Chapter0044
      * @tc.desc      Test setAll with normal TreeMap containing number keys and values
      * @tc.size      MediumTest
@@ -1014,7 +1014,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4500
      * @tc.name      testTreeMap05Chapter0045
      * @tc.desc      Test setAll with empty source TreeMap
      * @tc.size      MediumTest
@@ -1035,7 +1035,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4600
      * @tc.name      testTreeMap05Chapter0046
      * @tc.desc      Test setAll with empty target TreeMap
      * @tc.size      MediumTest
@@ -1056,7 +1056,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4700
      * @tc.name      testTreeMap05Chapter0047
      * @tc.desc      Test setAll with overlapping keys (should override)
      * @tc.size      MediumTest
@@ -1080,7 +1080,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4800
      * @tc.name      testTreeMap05Chapter0048
      * @tc.desc      Test setAll with string keys and boolean values
      * @tc.size      MediumTest
@@ -1103,7 +1103,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_4900
      * @tc.name      testTreeMap05Chapter0049
      * @tc.desc      Test setAll with number keys and string values
      * @tc.size      MediumTest
@@ -1126,7 +1126,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5000
      * @tc.name      testTreeMap05Chapter0050
      * @tc.desc      Test setAll with large TreeMap (performance test)
      * @tc.size      MediumTest
@@ -1151,7 +1151,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5100
      * @tc.name      testTreeMap05Chapter0051
      * @tc.desc      Test setAll with null parameter (should throw error)
      * @tc.size      MediumTest
@@ -1184,7 +1184,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5200
      * @tc.name      testTreeMap05Chapter0052
      * @tc.desc      Test setAll with undefined parameter (should throw error)
      * @tc.size      MediumTest
@@ -1217,7 +1217,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5300
      * @tc.name      testTreeMap05Chapter0053
      * @tc.desc      Test setAll with TreeMap containing NaN as value
      * @tc.size      MediumTest
@@ -1242,7 +1242,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5400
      * @tc.name      testTreeMap05Chapter0054
      * @tc.desc      Test setAll with TreeMap containing number boundary values
      * @tc.size      MediumTest
@@ -1268,7 +1268,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5500
      * @tc.name      testTreeMap05Chapter0055
      * @tc.desc      Test setAll with TreeMap containing array values
      * @tc.size      MediumTest
@@ -1291,7 +1291,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5600
      * @tc.name      testTreeMap05Chapter0056
      * @tc.desc      Test setAll with TreeMap containing object values
      * @tc.size      MediumTest
@@ -1320,7 +1320,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5700
      * @tc.name      testTreeMap05Chapter0057
      * @tc.desc      Test setAll with TreeMap containing special string keys
      * @tc.size      MediumTest
@@ -1346,7 +1346,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5800
      * @tc.name      testTreeMap05Chapter0058
      * @tc.desc      Test setAll with TreeMap containing special characters in keys
      * @tc.size      MediumTest
@@ -1372,7 +1372,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_5900
      * @tc.name      testTreeMap05Chapter0059
      * @tc.desc      Test setAll with TreeMap containing boolean keys
      * @tc.size      MediumTest
@@ -1394,7 +1394,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6000
      * @tc.name      testTreeMap05Chapter0060
      * @tc.desc      Test setAll with TreeMap containing TypedArray as values
      * @tc.size      MediumTest
@@ -1417,7 +1417,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6100
      * @tc.name      testTreeMap05Chapter0061
      * @tc.desc      Test setAll with TreeMap containing boundary number keys
      * @tc.size      MediumTest
@@ -1447,7 +1447,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6200
      * @tc.name      testTreeMap05Chapter0062
      * @tc.desc      Test setAll with TreeMap containing 32-bit integer boundary keys
      * @tc.size      MediumTest
@@ -1474,7 +1474,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6300
      * @tc.name      testTreeMap05Chapter0063
      * @tc.desc      Test setAll with TreeMap containing Float32 boundary values
      * @tc.size      MediumTest
@@ -1501,7 +1501,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6400
      * @tc.name      testTreeMap05Chapter0064
      * @tc.desc      Test setAll with TreeMap containing BigInt values
      * @tc.size      MediumTest
@@ -1526,7 +1526,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6500
      * @tc.name      testTreeMap05Chapter0065
      * @tc.desc      Test setAll with TreeMap containing Int8Array boundary values
      * @tc.size      MediumTest
@@ -1550,7 +1550,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6600
      * @tc.name      testTreeMap05Chapter0066
      * @tc.desc      Test setAll with TreeMap containing Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1573,7 +1573,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6700
      * @tc.name      testTreeMap05Chapter0067
      * @tc.desc      Test setAll with TreeMap containing Uint8ClampedArray values
      * @tc.size      MediumTest
@@ -1596,7 +1596,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6800
      * @tc.name      testTreeMap05Chapter0068
      * @tc.desc      Test setAll with TreeMap containing Int16Array boundary values
      * @tc.size      MediumTest
@@ -1619,7 +1619,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_6900
      * @tc.name      testTreeMap05Chapter0069
      * @tc.desc      Test setAll with TreeMap containing Uint16Array boundary values
      * @tc.size      MediumTest
@@ -1642,7 +1642,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_7000
      * @tc.name      testTreeMap05Chapter0070
      * @tc.desc      Test setAll with TreeMap containing Float32Array special values
      * @tc.size      MediumTest
@@ -1666,7 +1666,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_7100
      * @tc.name      testTreeMap05Chapter0071
      * @tc.desc      Test setAll with TreeMap containing Float64Array special values
      * @tc.size      MediumTest
@@ -1689,7 +1689,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_7200
      * @tc.name      testTreeMap05Chapter0072
      * @tc.desc      Test setAll with TreeMap containing BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -1710,7 +1710,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_7300
      * @tc.name      testTreeMap05Chapter0073
      * @tc.desc      Test setAll with TreeMap containing BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -1731,7 +1731,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_7400
      * @tc.name      testTreeMap05Chapter0074
      * @tc.desc      Test setAll with TreeMap containing string values with escape characters
      * @tc.size      MediumTest
@@ -1764,7 +1764,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_7500
      * @tc.name      testTreeMap05Chapter0075
      * @tc.desc      Test setAll with TreeMap containing string values with emoji unicode
      * @tc.size      MediumTest
@@ -1796,7 +1796,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_7600
      * @tc.name      testTreeMap05Chapter0076
      * @tc.desc      Test setAll with TreeMap containing array with NaN and Infinity values
      * @tc.size      MediumTest
@@ -1818,7 +1818,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_7700
      * @tc.name      testTreeMap05Chapter0077
      * @tc.desc      Test setAll with TreeMap containing array with non-number types
      * @tc.size      MediumTest
@@ -1864,7 +1864,7 @@ export default function TreeMap05Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST05_7800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP5_7800
      * @tc.name      testTreeMap05Chapter0078
      * @tc.desc      Test setAll with TreeMap containing empty array
      * @tc.size      MediumTest

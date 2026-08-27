@@ -49,7 +49,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testInsertFront0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_0100
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -72,7 +72,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testInsertFront0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_0200
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -95,7 +95,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testInsertFront0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_0300
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -127,7 +127,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testInsertFront0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_0400
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function DequeTest() {
     });
     /**
      * @tc.name   testInsertEnd0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_0500
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testInsertEnd0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_0600
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -200,7 +200,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testInsertEnd0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_0700
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -232,7 +232,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testInsertEnd0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_0800
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -260,7 +260,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testHas0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_0900
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -281,7 +281,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testHas0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1000
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -302,7 +302,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testHas0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1100
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -326,7 +326,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   tesPopFirst0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1200
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -351,7 +351,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   tesPopFirst0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1300
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -372,7 +372,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   tesPopLast0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1400
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -397,7 +397,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   tesGetFirst0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1500
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -418,7 +418,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   tesGetLast0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1600
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -442,7 +442,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   tesGetLast0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1700
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -462,7 +462,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   tesGetLast0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1800
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -494,7 +494,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   tesForeach0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_1900
      * @tc.desc   Test the function of the interface isEmpty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -528,7 +528,7 @@ export default function DequeTest() {
     });
     /**
      * @tc.name   testDequeCase001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_CASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_2000
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -555,7 +555,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testDequeCase002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_CASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_2100
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -580,7 +580,7 @@ export default function DequeTest() {
 
     /**
      * @tc.name   testDequeCase003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DEQUE_CASE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_DEQUE1_2200
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -34,7 +34,7 @@ export default function XmlTest_03() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_0100
      * @tc.name      SetCDATATest0001
      * @tc.desc      Test normal text content input
      * @tc.size      MediumTest
@@ -60,7 +60,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_0200
      * @tc.name      SetCDATATest0002
      * @tc.desc      Test input containing XML special characters
      * @tc.size      MediumTest
@@ -86,7 +86,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_0300
      * @tc.name      SetCDATATest0003
      * @tc.desc      Test empty string input
      * @tc.size      MediumTest
@@ -117,7 +117,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_0400
      * @tc.name      SetCDATATest0004
      * @tc.desc      Test multi-language and emoji input
      * @tc.size      MediumTest
@@ -143,7 +143,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_0500
      * @tc.name      SetCDATATest0005
      * @tc.desc      Test whitespace character input
      * @tc.size      MediumTest
@@ -169,7 +169,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_0600
      * @tc.name      SetCDATATest0006
      * @tc.desc      Test multiple calls within the same element
      * @tc.size      MediumTest
@@ -197,7 +197,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_0700
      * @tc.name      SetCDATATest0007
      * @tc.desc      Test calls within nested elements
      * @tc.size      MediumTest
@@ -227,7 +227,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_0800
      * @tc.name      SetCDATATest0008
      * @tc.desc      Test content containing CDATA termination identifier
      * @tc.size      MediumTest
@@ -254,7 +254,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_0900
      * @tc.name      SetCDATATest0009
      * @tc.desc      Test calling before document declaration
      * @tc.size      MediumTest
@@ -281,7 +281,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1000
      * @tc.name      SetCDATATest0010
      * @tc.desc      Test calling outside root element
      * @tc.size      MediumTest
@@ -306,7 +306,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1100
      * @tc.name      SetCDATATest0011
      * @tc.desc      Test containing XML prohibited control characters
      * @tc.size      MediumTest
@@ -334,7 +334,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1200
      * @tc.name      SetCDATATest0012
      * @tc.desc      Test extra-long string input
      * @tc.size      MediumTest
@@ -360,7 +360,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1300
      * @tc.name      SetCDATATest0013
      * @tc.desc      Test mix of legal characters and illegal control characters
      * @tc.size      MediumTest
@@ -387,7 +387,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1400
      * @tc.name      SetCDATATest0014
      * @tc.desc      Test mixed calls of CDATA and plain text
      * @tc.size      MediumTest
@@ -417,7 +417,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1500
      * @tc.name      SetCDATATest0015
      * @tc.desc      Test recovery call after error
      * @tc.size      MediumTest
@@ -452,7 +452,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1600
      * @tc.name      SetCDATATest0016
      * @tc.desc      Test combination of whitespace and special characters
      * @tc.size      MediumTest
@@ -478,7 +478,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1700
      * @tc.name      SetCDATATest0017
      * @tc.desc      Test cross-encoding character combination
      * @tc.size      MediumTest
@@ -504,7 +504,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_SETCDATA_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1800
      * @tc.name      SetCDATATest0018
      * @tc.desc      Test multiple calls of cross-encoding character combinations in parent/child elements
      * @tc.size      MediumTest
@@ -538,7 +538,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_1900
      * @tc.name      testSetText0001
      * @tc.desc      Positive scenario: Verification of basic text setting function (consistent with original code API)
      * @tc.size      MediumTest
@@ -567,7 +567,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2000
      * @tc.name      testSetText0002
      * @tc.desc      Combination scenario: Combination of text and attributes
      * @tc.size      MediumTest
@@ -596,7 +596,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2100
      * @tc.name      testSetText0003
      * @tc.desc      Positive scenario: Setting text content with minimum length
      * @tc.size      MediumTest
@@ -623,7 +623,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2200
      * @tc.name      testSetText0004
      * @tc.desc      Positive scenario: Setting text containing special characters
      * @tc.size      MediumTest
@@ -650,7 +650,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2300
      * @tc.name      testSetText0005
      * @tc.desc      Combination scenario: Text setting for multi-level nested elements
      * @tc.size      MediumTest
@@ -682,7 +682,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2400
      * @tc.name      testSetText0006
      * @tc.desc      Combination scenario: Combination of text and namespace
      * @tc.size      MediumTest
@@ -710,7 +710,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2500
      * @tc.name      testSetText0007
      * @tc.desc      Positive scenario: Setting numeric text content
      * @tc.size      MediumTest
@@ -738,7 +738,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2600
      * @tc.name      testSetText0008
      * @tc.desc      Combination scenario: Calling setText multiple times on the same element
      * @tc.size      MediumTest
@@ -766,7 +766,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2700
      * @tc.name      testSetText0009
      * @tc.desc      Combination scenario: Combination of text and comments
      * @tc.size      MediumTest
@@ -794,7 +794,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2800
      * @tc.name      testSetText0010
      * @tc.desc      Combination scenario: Combination of text and CDATA
      * @tc.size      MediumTest
@@ -822,7 +822,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_2900
      * @tc.name      testSetText0011
      * @tc.desc      Positive scenario: Setting long text content
      * @tc.size      MediumTest
@@ -850,7 +850,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3000
      * @tc.name      testSetText0012
      * @tc.desc      Combination scenario: Combination of text and XML declaration
      * @tc.size      MediumTest
@@ -878,7 +878,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3100
      * @tc.name      testSetText0013
      * @tc.desc      Negative scenario: Setting text in empty element
      * @tc.size      MediumTest
@@ -903,7 +903,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_01400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3200
      * @tc.name      testSetText00014
      * @tc.desc      Negative scenario: Buffer overflow test
      * @tc.size      MediumTest
@@ -930,7 +930,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSET_01500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3300
      * @tc.name      testSetText00015
      * @tc.desc      Combination scenario: Text setting in complex XML structure
      * @tc.size      MediumTest
@@ -976,7 +976,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3400
      * @tc.name      testSetDocTypeTest0001
      * @tc.desc      Test the basic function of setDocType - Set valid SYSTEM DOCTYPE (positive case)
      * @tc.size      MediumTest
@@ -999,7 +999,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3500
      * @tc.name      testSetDocTypeTest0002
      * @tc.desc      Test setDocType PUBLIC identifier - Use PUBLIC DOCTYPE
      * @tc.size      MediumTest
@@ -1022,7 +1022,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3600
      * @tc.name      testSetDocTypeTest0003
      * @tc.desc      Test setDocType internal subset - DOCTYPE containing internal subset
      * @tc.size      MediumTest
@@ -1045,7 +1045,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3700
      * @tc.name      testSetDocTypeTest0004
      * @tc.desc      Test setDocType minimum length root element name - Boundary case test
      * @tc.size      MediumTest
@@ -1068,7 +1068,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3800
      * @tc.name      testSetDocTypeTest0005
      * @tc.desc      Test setDocType invalid format - Negative test
      * @tc.size      MediumTest
@@ -1091,7 +1091,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_3900
      * @tc.name      testSetDocTypeTest0006
      * @tc.desc      Test setDocType special characters - Containing XML special characters
      * @tc.size      MediumTest
@@ -1114,7 +1114,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4000
      * @tc.name      testSetDocTypeTest0007
      * @tc.desc      Test setDocType ultra-long string - Buffer boundary test
      * @tc.size      MediumTest
@@ -1139,7 +1139,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4100
      * @tc.name      testSetDocTypeTest0008
      * @tc.desc      Test setDocType called before startElement - Combination test
      * @tc.size      MediumTest
@@ -1173,7 +1173,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4200
      * @tc.name      testSetDocTypeTest0009
      * @tc.desc      Test setDocType called after startElement - Combination test
      * @tc.size      MediumTest
@@ -1199,7 +1199,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_01000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4300
      * @tc.name      testSetDocTypeTest00010
      * @tc.desc      Test multiple calls to setDocType - Combination test
      * @tc.size      MediumTest
@@ -1227,7 +1227,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_TESTSETDOCTYPE_01100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4400
      * @tc.name      testSetDocTypeTest00011
      * @tc.desc      Test setDocType complete document generation - Combination test
      * @tc.size      MediumTest
@@ -1269,7 +1269,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4500
      * @tc.name      ConstructorTest0001
      * @tc.desc      Test XmlPullParser constructor and parsing functionality
      * @tc.size      MediumTest
@@ -1311,7 +1311,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4600
      * @tc.name      ConstructorTest0002
      * @tc.desc      Attribute Parsing Scenario
      * @tc.size      MediumTest
@@ -1338,7 +1338,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4700
      * @tc.name      ConstructorTest0003
      * @tc.desc      In-depth Scene Analysis
      * @tc.size      MediumTest
@@ -1369,7 +1369,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4800
      * @tc.name      ConstructorTest0004
      * @tc.desc      Event Type Analysis
      * @tc.size      MediumTest
@@ -1398,7 +1398,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_4900
      * @tc.name      ConstructorTest0005
      * @tc.desc      Namespace resolution
      * @tc.size      MediumTest
@@ -1428,7 +1428,7 @@ export default function XmlTest_03() {
 
       });
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_5000
      * @tc.name      ConstructorTest0006
      * @tc.desc      Composite Parsing Scenario
      * @tc.size      MediumTest
@@ -1470,7 +1470,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_5100
      * @tc.name      ConstructorTest0007
      * @tc.desc      Large file parsing interrupted
      * @tc.size      MediumTest
@@ -1490,7 +1490,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_5200
      * @tc.name      ConstructorTest0008
      * @tc.desc      Document type declaration missing
      * @tc.size      MediumTest
@@ -1512,7 +1512,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_5300
      * @tc.name      ConstructorTest0009
      * @tc.desc      Illegal Character Handling
      * @tc.size      MediumTest
@@ -1533,7 +1533,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_5400
      * @tc.name      ConstructorTest0010
      * @tc.desc      Duplicate attribute definition
      * @tc.size      MediumTest
@@ -1554,7 +1554,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_5500
      * @tc.name      ConstructorTest0011
      * @tc.desc      Illegal namespace definition
      * @tc.size      MediumTest
@@ -1574,7 +1574,7 @@ export default function XmlTest_03() {
 
       });
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_5600
      * @tc.name      ConstructorTest0012
      * @tc.desc      Nesting level exceeded
      * @tc.size      MediumTest
@@ -1602,7 +1602,7 @@ export default function XmlTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_CONSTRUCTOR_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML4_5700
      * @tc.name      ConstructorTest0013
      * @tc.desc      Format error in XML structure
      * @tc.size      MediumTest

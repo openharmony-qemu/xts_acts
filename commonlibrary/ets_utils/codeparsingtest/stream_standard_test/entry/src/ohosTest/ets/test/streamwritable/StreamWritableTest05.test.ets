@@ -34,7 +34,7 @@ export default function StreamWritable05Test() {
     }
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_0100
      * @tc.name      testStreamWritable05Chapter0001
      * @tc.desc      Test event callback with special characters in event name negative case
      * @tc.size      MediumTest
@@ -72,7 +72,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_0200
      * @tc.name      testStreamWritable05Chapter0002
      * @tc.desc      Test event callback with numeric string event name negative case
      * @tc.size      MediumTest
@@ -110,7 +110,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_0300
      * @tc.name      testStreamWritable05Chapter0003
      * @tc.desc      Test event callback with space in event name negative case
      * @tc.size      MediumTest
@@ -148,7 +148,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_0400
      * @tc.name      testStreamWritable05Chapter0004
      * @tc.desc      Test event callback with uppercase event name negative case
      * @tc.size      MediumTest
@@ -186,7 +186,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_0500
      * @tc.name      testStreamWritable05Chapter0005
      * @tc.desc      Test registering same event multiple times last callback should work
      * @tc.size      MediumTest
@@ -237,7 +237,7 @@ export default function StreamWritable05Test() {
     }
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_0600
      * @tc.name      testStreamWritable05Chapter0007
      * @tc.desc      Test event callback with method reference
      * @tc.size      MediumTest
@@ -267,7 +267,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_0700
      * @tc.name      testStreamWritable05Chapter0008
      * @tc.desc      Test event registration after stream operations
      * @tc.size      MediumTest
@@ -301,7 +301,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_0800
      * @tc.name      testStreamWritable05Chapter0009
      * @tc.desc      Test event registration with callback that returns value
      * @tc.size      MediumTest
@@ -335,7 +335,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_0900
      * @tc.name      testStreamWritable05Chapter0010
      * @tc.desc      Test event name with unicode characters negative case
      * @tc.size      MediumTest
@@ -368,7 +368,7 @@ export default function StreamWritable05Test() {
       expect(eventRegistered !== undefined).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1000
      * @tc.name      testStreamWritable05Chapter0011
      * @tc.desc      Test event name with escape characters negative case
      * @tc.size      MediumTest
@@ -402,7 +402,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1100
      * @tc.name      testStreamWritable05Chapter0013
      * @tc.desc      Test event callback with nested function calls
      * @tc.size      MediumTest
@@ -447,7 +447,7 @@ export default function StreamWritable05Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1200
      * @tc.name      testStreamWritable05Chapter0014
      * @tc.desc      Test registering all four valid events simultaneously
      * @tc.size      MediumTest
@@ -498,7 +498,7 @@ export default function StreamWritable05Test() {
       expect(finishCalled).assertFalse();
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1300
      * @tc.name      testStreamWritable05Chapter0015
      * @tc.desc      Test event name with undefined value negative case
      * @tc.size      MediumTest
@@ -534,7 +534,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1400
      * @tc.name      testStreamWritable05Chapter0016
      * @tc.desc      Test event name with null value negative case
      * @tc.size      MediumTest
@@ -569,7 +569,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1500
      * @tc.name      testStreamWritable05Chapter0017
      * @tc.desc      Test event name with empty string negative case
      * @tc.size      MediumTest
@@ -603,7 +603,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1600
      * @tc.name      testStreamWritable05Chapter0018
      * @tc.desc      Test event name with all special characters negative case
      * @tc.size      MediumTest
@@ -640,7 +640,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1700
      * @tc.name      testStreamWritable05Chapter0019
      * @tc.desc      Test event name with all ASCII characters negative case
      * @tc.size      MediumTest
@@ -678,7 +678,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1800
      * @tc.name      testStreamWritable05Chapter0020
      * @tc.desc      Test event name with concatenated special characters negative case
      * @tc.size      MediumTest
@@ -713,7 +713,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_1900
      * @tc.name      testStreamWritable05Chapter0021
      * @tc.desc      Test event name with emoji and unicode characters negative case
      * @tc.size      MediumTest
@@ -753,7 +753,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2000
      * @tc.name      testStreamWritable05Chapter0022
      * @tc.desc      Test event name with illegal unicode encoding negative case
      * @tc.size      MediumTest
@@ -792,7 +792,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2100
      * @tc.name      testStreamWritable05Chapter0023
      * @tc.desc      Test event name with keyword strings negative case
      * @tc.size      MediumTest
@@ -829,7 +829,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2200
      * @tc.name      testStreamWritable05Chapter0024
      * @tc.desc      Test event name with long treeString type negative case
      * @tc.size      MediumTest
@@ -873,7 +873,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2300
      * @tc.name      testStreamWritable05Chapter0025
      * @tc.desc      Test event name with sliced string negative case
      * @tc.size      MediumTest
@@ -909,7 +909,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2400
      * @tc.name      testStreamWritable05Chapter0026
      * @tc.desc      Test event name with large repeated string negative case
      * @tc.size      MediumTest
@@ -944,7 +944,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2500
      * @tc.name      testStreamWritable05Chapter0027
      * @tc.desc      Test callback function memory management
      * @tc.size      MediumTest
@@ -989,7 +989,7 @@ export default function StreamWritable05Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2600
      * @tc.name      testStreamWritable05Chapter0028
      * @tc.desc      Test event name with whitespace variations negative case
      * @tc.size      MediumTest
@@ -1027,7 +1027,7 @@ export default function StreamWritable05Test() {
       expect(allEventsRegistered !== undefined).assertEqual(true);
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2700
      * @tc.name      testStreamWritable05Chapter0029
      * @tc.desc      Test callback with arrow function and lexical scope
      * @tc.size      MediumTest
@@ -1062,7 +1062,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2800
      * @tc.name      testStreamWritable05Chapter0030
      * @tc.desc      Test callback function with this context
      * @tc.size      MediumTest
@@ -1102,7 +1102,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_2900
      * @tc.name      testStreamWritable05Chapter0033
      * @tc.desc      Test off method with valid event 'drain' and specific callback, verify callback is removed
      * @tc.size      MediumTest
@@ -1139,7 +1139,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3000
      * @tc.name      testStreamWritable05Chapter0035
      * @tc.desc      Test off method with valid event 'finish' without callback parameter, verify all callbacks are removed
      * @tc.size      MediumTest
@@ -1178,7 +1178,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3100
      * @tc.name      testStreamWritable05Chapter0036
      * @tc.desc      Test off method with empty string event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1211,7 +1211,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3200
      * @tc.name      testStreamWritable05Chapter0037
      * @tc.desc      Test off method with special characters event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1240,7 +1240,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3300
      * @tc.name      testStreamWritable05Chapter0038
      * @tc.desc      Test off method with full ASCII characters event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1269,7 +1269,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3400
      * @tc.name      testStreamWritable05Chapter0039
      * @tc.desc      Test off method with special characters repeated twice event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1298,7 +1298,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3500
      * @tc.name      testStreamWritable05Chapter0040
      * @tc.desc      Test off method with bell escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1328,7 +1328,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3600
      * @tc.name      testStreamWritable05Chapter0041
      * @tc.desc      Test off method with backspace escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1357,7 +1357,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3700
      * @tc.name      testStreamWritable05Chapter0042
      * @tc.desc      Test off method with form feed escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1386,7 +1386,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3800
      * @tc.name      testStreamWritable05Chapter0043
      * @tc.desc      Test off method with newline escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1414,7 +1414,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_3900
      * @tc.name      testStreamWritable05Chapter0044
      * @tc.desc      Test off method with carriage return escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1442,7 +1442,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4000
      * @tc.name      testStreamWritable05Chapter0045
      * @tc.desc      Test off method with horizontal tab escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1470,7 +1470,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4100
      * @tc.name      testStreamWritable05Chapter0046
      * @tc.desc      Test off method with vertical tab escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1499,7 +1499,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4200
      * @tc.name      testStreamWritable05Chapter0047
      * @tc.desc      Test off method with backslash escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1527,7 +1527,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4300
      * @tc.name      testStreamWritable05Chapter0048
      * @tc.desc      Test off method with single quote escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1555,7 +1555,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4400
      * @tc.name      testStreamWritable05Chapter0049
      * @tc.desc      Test off method with double quote escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1583,7 +1583,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4500
      * @tc.name      testStreamWritable05Chapter0050
      * @tc.desc      Test off method with question mark escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1611,7 +1611,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4600
      * @tc.name      testStreamWritable05Chapter0051
      * @tc.desc      Test off method with null character escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1640,7 +1640,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4700
      * @tc.name      testStreamWritable05Chapter0052
      * @tc.desc      Test off method with octal escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1669,7 +1669,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4800
      * @tc.name      testStreamWritable05Chapter0053
      * @tc.desc      Test off method with hex escape character event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1698,7 +1698,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_4900
      * @tc.name      testStreamWritable05Chapter0054
      * @tc.desc      Test off method with unicode emoji event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1726,7 +1726,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_5000
      * @tc.name      testStreamWritable05Chapter0055
      * @tc.desc      Test off method with multiple emoji characters event parameter, expect parameter error
      * @tc.size      MediumTest
@@ -1754,7 +1754,7 @@ export default function StreamWritable05Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTFIVE_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLE5_5100
      * @tc.name      testStreamWritable05Chapter0056
      * @tc.desc      Test off method with invalid unicode event parameter, expect parameter error
      * @tc.size      MediumTest

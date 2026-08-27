@@ -72,7 +72,7 @@ export default function TextEncoder02Test() {
 
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_0100
      * @tc.name      testEncodercreate02_0001
      * @tc.desc      Verify creation and basic encoding for UTF family (utf-8, utf-16be, utf-16le).
      * @tc.size      MediumTest
@@ -98,7 +98,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_0200
      * @tc.name      testEncodercreate02_0002
      * @tc.desc      Verify encodings: gb2312, gbk, gb18030, big5.
      * @tc.size      MediumTest
@@ -119,7 +119,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_0300
      * @tc.name      testEncodercreate02_0003
      * @tc.desc      Verify encodings: shift_jis, euc-jp, iso-2022-jp, euc-kr.
      * @tc.size      MediumTest
@@ -146,7 +146,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_0400
      * @tc.name      testEncodercreate02_0004
      * @tc.desc      Verify encodings: ibm866, koi8-r, koi8-u, x-mac-cyrillic.
      * @tc.size      MediumTest
@@ -165,7 +165,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_0500
      * @tc.name      testEncodercreate02_0005
      * @tc.desc      Verify ISO-8859 1-5 (Western/European).
      * @tc.size      MediumTest
@@ -186,7 +186,7 @@ export default function TextEncoder02Test() {
 
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_0600
      * @tc.name      testEncodercreate02_0006
      * @tc.desc      Verify ISO-8859 10/13/14/15.
      * @tc.size      MediumTest
@@ -205,7 +205,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_0700
      * @tc.name      testEncodercreate02_0007
      * @tc.desc      Verify Windows-1250/1251/1252.
      * @tc.size      MediumTest
@@ -223,7 +223,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_0800
      * @tc.name      testEncodercreate02_0008
      * @tc.desc      Verify Windows-1253/1254/1255/1256.
      * @tc.size      MediumTest
@@ -242,7 +242,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_0900
      * @tc.name      testEncodercreate02_0009
      * @tc.desc      Verify macintosh encoding.
      * @tc.size      MediumTest
@@ -260,7 +260,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1000
      * @tc.name      testEncodercreate02_0010
      * @tc.desc      Verify that all supported encodings handle empty string correctly.
      * @tc.size      MediumTest
@@ -292,7 +292,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1100
      * @tc.name      testEncodercreate02_0011
      * @tc.desc      Verify that all encodings correctly encode standard ASCII (0-127).
      * @tc.size      MediumTest
@@ -315,7 +315,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1200
      * @tc.name      testEncodercreate02_0012
      * @tc.desc      Verify that creation is case-insensitive (e.g., UTF-8 vs utf-8).
      * @tc.size      MediumTest
@@ -347,7 +347,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1300
      * @tc.name      testEncodercreate02_0013
      * @tc.desc      Stress test: Loop through all encodings repeatedly to ensure stability.
      * @tc.size      MediumTest
@@ -373,7 +373,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1400
      * @tc.name      testTextEncoderConstructor02_0014
      * @tc.desc      Verify Unicode family (utf-8, utf-16be, utf-16le).
      * @tc.size      MediumTest
@@ -398,7 +398,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1500
      * @tc.name      testTextEncoderConstructor02_0015
      * @tc.desc      Verify Chinese family (gbk, gb2312, gb18030, big5).
      * @tc.size      MediumTest
@@ -423,7 +423,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1600
      * @tc.name      testTextEncoderConstructor02_0016
      * @tc.desc      Verify Japan/Korea family (shift_jis, euc-jp, etc.).
      * @tc.size      MediumTest
@@ -447,7 +447,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1700
      * @tc.name      testTextEncoderConstructor02_0017
      * @tc.desc      Verify Cyrillic & Mac family (ibm866, koi8, macintosh, etc.).
      * @tc.size      MediumTest
@@ -471,7 +471,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1800
      * @tc.name      testTextEncoderConstructor02_0018
      * @tc.desc      Verify ISO-8859 Part 1 (1-5).
      * @tc.size      MediumTest
@@ -497,7 +497,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_1900
      * @tc.name      testTextEncoderConstructor02_0019
      * @tc.desc      Verify ISO-8859 Part 2 (6-8, 8-i).
      * @tc.size      MediumTest
@@ -521,7 +521,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2000
      * @tc.name      testTextEncoderConstructor02_0020
      * @tc.desc      Verify ISO-8859 Part 3 (10, 13-15).
      * @tc.size      MediumTest
@@ -544,7 +544,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2100
      * @tc.name      testTextEncoderConstructor02_0021
      * @tc.desc      Verify Windows Part 1 (1250-1252).
      * @tc.size      MediumTest
@@ -568,7 +568,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2200
      * @tc.name      testTextEncoderConstructor02_0022
      * @tc.desc      Verify Windows Part 2 (1253-1256).
      * @tc.size      MediumTest
@@ -591,7 +591,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2300
      * @tc.name      testTextEncoderConstructor02_0023
      * @tc.desc      Verify Windows Part 3 (1257, 1258, 874).
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2400
      * @tc.name      testTextEncoderConstructor02_0024
      * @tc.desc      Verify instance independence and encodeInto functionality.
      * @tc.size      MediumTest
@@ -638,7 +638,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2500
      * @tc.name      testTextEncoderConstructor02_0025
      * @tc.desc      Verify error 401 when parameter is Number.
      * @tc.size      MediumTest
@@ -661,7 +661,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2600
      * @tc.name      testTextEncoderConstructor02_0026
      * @tc.desc      Stress test all encodings loop.
      * @tc.size      MediumTest
@@ -691,7 +691,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2700
      * @tc.name      testTextEncoderEncodeInto02_0027
      * @tc.desc      Verify basic ASCII encoding, buffer fitting, and empty string handling.
      * @tc.size      MediumTest
@@ -725,7 +725,7 @@ export default function TextEncoder02Test() {
 
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2800
      * @tc.name      testTextEncoderEncodeInto02_0028
      * @tc.desc      Verify critical atomic truncation logic (Destination too small).
      * @tc.size      MediumTest
@@ -761,7 +761,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_2900
      * @tc.name      testTextEncoderEncodeInto02_0029
      * @tc.desc      Verify control chars, surrogates, and constructor params.
      * @tc.size      MediumTest
@@ -798,7 +798,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3000
      * @tc.name      testTextEncoderEncodeInto02_0030
      * @tc.desc      Stress test with long string fitting and truncating.
      * @tc.size      MediumTest
@@ -825,7 +825,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3100
      * @tc.name      testTextEncoderEncodeInto02_0031
      * @tc.desc      Verify encoding into a subarray (view) of a larger buffer.
      * @tc.size      MediumTest
@@ -856,7 +856,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3200
      * @tc.name      testTextEncoderEncodeInto02_0032
      * @tc.desc      Verify that encoding overwrites existing data but leaves remaining buffer untouched.
      * @tc.size      MediumTest
@@ -879,7 +879,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3300
      * @tc.name      testTextEncoderEncodeInto02_0033
      * @tc.desc      Verify 2-byte characters (Range U+0080 to U+07FF).
      * @tc.size      MediumTest
@@ -906,7 +906,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3400
      * @tc.name      testTextEncoderEncodeInto02_0034
      * @tc.desc      Verify non-string input handling (Expect strict rejection).
      * @tc.size      MediumTest
@@ -933,7 +933,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3500
      * @tc.name      testTextEncoderEncodeInto02_0035
      * @tc.desc      Verify atomic truncation specifically for Replacement Character.
      * @tc.size      MediumTest
@@ -954,7 +954,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3600
      * @tc.name      testTextEncoderEncodeInto02_0036
      * @tc.desc      Verify mixing valid ASCII with invalid surrogates.
      * @tc.size      MediumTest
@@ -980,7 +980,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3700
      * @tc.name      testTextEncoderEncodeInto02_0037
      * @tc.desc      Verify the integrity of the returned object keys.
      * @tc.size      MediumTest
@@ -999,7 +999,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3800
      * @tc.name      testTextEncoderEncodeInto02_0038
      * @tc.desc      Verify that encoder maintains no state between calls (Truncation doesn't break next call).
      * @tc.size      MediumTest
@@ -1024,7 +1024,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_3900
      * @tc.name      testTextEncoderEncodeInto02_0039
      * @tc.desc      Verify encoding a small string into a very large buffer.
      * @tc.size      MediumTest
@@ -1048,7 +1048,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4000
      * @tc.name      testTextEncoderEncodeInto02_0040
      * @tc.desc      Verify offsets when writing a stream of identical multi-byte chars.
      * @tc.size      MediumTest
@@ -1073,7 +1073,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4100
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0041
      * @tc.desc      Verify encoding an empty string.
      * @tc.size      MediumTest
@@ -1093,7 +1093,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4200
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0042
      * @tc.desc      Verify encoding standard ASCII string "abcd".
      * @tc.size      MediumTest
@@ -1116,7 +1116,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4300
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0043
      * @tc.desc      Verify encoding 3-byte Chinese characters .
      * @tc.size      MediumTest
@@ -1136,7 +1136,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4400
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0044
      * @tc.desc      Verify encoding 4-byte Emoji .
      * @tc.size      MediumTest
@@ -1156,7 +1156,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4500
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0045
      * @tc.desc      Verify encoding mixed content (ASCII + Chinese + Emoji).
      * @tc.size      MediumTest
@@ -1177,7 +1177,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4600
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0046
      * @tc.desc      Verify encoding control characters (\n, \t, \r).
      * @tc.size      MediumTest
@@ -1199,7 +1199,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4700
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0047
      * @tc.desc      Verify Exact Fit: Buffer length equals encoded length.
      * @tc.size      MediumTest
@@ -1220,7 +1220,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4800
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0048
      * @tc.desc      Verify Oversized Buffer: Ensure extra space remains untouched.
      * @tc.size      MediumTest
@@ -1240,7 +1240,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_4900
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0049
      * @tc.desc      Verify Offset Writing using subarray.
      * @tc.size      MediumTest
@@ -1261,7 +1261,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5000
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0050
      * @tc.desc      Verify instance reuse for multiple calls.
      * @tc.size      MediumTest
@@ -1284,7 +1284,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5100
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0051
      * @tc.desc      Verify encoding into a zero-length buffer.
      * @tc.size      MediumTest
@@ -1303,7 +1303,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5200
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0052
      * @tc.desc      Verify partial write logic (ASCII truncation).
      * @tc.size      MediumTest
@@ -1325,7 +1325,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5300
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0053
      * @tc.desc      Verify atomic truncation: 3-byte char into insufficient buffers (1, 2 bytes).
      * @tc.size      MediumTest
@@ -1353,7 +1353,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5400
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0054
      * @tc.desc      Verify atomic truncation: 4-byte char into insufficient buffers (1, 2, 3 bytes).
      * @tc.size      MediumTest
@@ -1381,7 +1381,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5500
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0055
      * @tc.desc      Verify partial write logic (Mixed chars).
      * @tc.size      MediumTest
@@ -1404,7 +1404,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5600
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0056
      * @tc.desc      Verify Lone High Surrogate (Replacement Char).
      * @tc.size      MediumTest
@@ -1424,7 +1424,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5700
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0057
      * @tc.desc      Verify Lone Low Surrogate (Replacement Char).
      * @tc.size      MediumTest
@@ -1444,7 +1444,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5800
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0058
      * @tc.desc      Verify Reversed Surrogates (Two Replacements).
      * @tc.size      MediumTest
@@ -1463,7 +1463,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_5900
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0059
      * @tc.desc      Verify numeric input handling (Runtime Check).
      * @tc.size      MediumTest
@@ -1486,7 +1486,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_6000
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0060
      * @tc.desc      Verify boolean input throws error (Strict Type Check).
      * @tc.size      MediumTest
@@ -1514,7 +1514,7 @@ export default function TextEncoder02Test() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER02_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER2_6100
      * @tc.name      testTextEncoderEncodeIntoUint8Array02_0061
      * @tc.desc      Verify encoding a small string into a large buffer.
      * @tc.size      MediumTest

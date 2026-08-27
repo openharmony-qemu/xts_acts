@@ -135,7 +135,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilFormat001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILFORMAT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1010
      * @tc.desc   Testing the format interface with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -155,7 +155,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilFormat002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILFORMAT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1020
      * @tc.desc   Testing the format interface with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -175,7 +175,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilFormat003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILFORMAT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1030
      * @tc.desc   Testing the format interface with value 'string+number'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1040
      * @tc.desc   Testing the errnoToString interface with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -216,7 +216,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1050
      * @tc.desc   Testing the errnoToString interface with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -236,7 +236,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1060
      * @tc.desc   Testing the errnoToString interface with value -401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -255,7 +255,7 @@ export default function utilTest() {
     });
     /**
      * @tc.name   testUtilErrnoToString007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1070
      * @tc.desc   Testing the errnoToString interface with value -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -275,7 +275,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1080
      * @tc.desc   Testing the errnoToString interface with value 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -295,7 +295,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1090
      * @tc.desc   Testing the errnoToString interface with value 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -315,7 +315,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1100
      * @tc.desc   Testing the errnoToString interface with value 401.6895487.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -335,7 +335,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1110
      * @tc.desc   Testing the errnoToString interface with value Number.MAX_SAFE_INTEGER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -355,7 +355,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1120
      * @tc.desc   Testing the errnoToString interface with value Number.MIN_SAFE_INTEGER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -375,7 +375,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1130
      * @tc.desc   Testing the errnoToString interface with value Number.MAX_VALUE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -395,7 +395,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilErrnoToString014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1140
      * @tc.desc   Testing the errnoToString interface with value Number.MIN_VALUE.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -414,7 +414,7 @@ export default function utilTest() {
     });
     /**
      * @tc.name   testUtilCallbackWrapper001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILCALLBACKWRAPPER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1150
      * @tc.desc   Testing the callbackWrapper interface with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -433,7 +433,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilCallbackWrapper002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILCALLBACKWRAPPER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1160
      * @tc.desc   Testing the callbackWrapper interface with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -452,7 +452,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilPromisify001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPROMISIFY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1170
      * @tc.desc   Testing the promisify interface with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -471,7 +471,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilPromisify002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPROMISIFY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1180
      * @tc.desc   Testing the promisify interface with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -490,7 +490,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomUUID001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1190
      * @tc.desc   Testing the generateRandomUUID interface with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -510,7 +510,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomUUID002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1200
      * @tc.desc   Testing the generateRandomUUID interface with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -530,7 +530,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomUUID005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1210
      * @tc.desc   Testing the generateRandomUUID interface with no para.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -549,7 +549,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomUUID006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1220
      * @tc.desc   Testing the generateRandomUUID interface with value false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -569,7 +569,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomUUID007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1230
      * @tc.desc   Testing the generateRandomUUID interface with value true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -589,7 +589,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomUUID008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1240
      * @tc.desc   Testing the generateRandomUUID interface with value true several times.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -611,7 +611,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomBinaryUUID001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1250
      * @tc.desc   Testing the generateRandomBinaryUUID interface with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -631,7 +631,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomBinaryUUID002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1260
      * @tc.desc   Testing the generateRandomBinaryUUID interface with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -651,7 +651,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomBinaryUUID005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1270
      * @tc.desc   Testing the generateRandomBinaryUUID interface with no para.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -670,7 +670,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomBinaryUUID006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1280
      * @tc.desc   Testing the generateRandomBinaryUUID interface with value false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -690,7 +690,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGenerateRandomBinaryUUID007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1290
      * @tc.desc   Testing the generateRandomBinaryUUID interface with value true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -710,7 +710,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1300
      * @tc.desc   Testing the parseUUID interface with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -730,7 +730,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1310
      * @tc.desc   Testing the parseUUID interface with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -750,7 +750,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1320
      * @tc.desc   Testing the parseUUID interface with value '84df796-66cc-4655-9b89-d6218d100f9c'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -770,7 +770,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1330
      * @tc.desc   Testing the parseUUID interface with value '84Wdf796-66cc-4655-9b89-d6218d100f9c'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -790,7 +790,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1340
      * @tc.desc   Testing the parseUUID interface with UUID string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -810,7 +810,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1350
      * @tc.desc   Testing the parseUUID interface with 'Nil UUID 00000000-0000-0000-0000-000000000000'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -830,7 +830,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1360
      * @tc.desc   Testing the parseUUID interface with 'Namespace UUID 6ba7b810-9dad-11d1-80b4-00c04fd430c8'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -850,7 +850,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1370
      * @tc.desc   Testing the parseUUID interface with 'URL UUID 6ba7b810-9dad-11d1-80b4-00c04fd430c8'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -870,7 +870,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1380
      * @tc.desc   Testing the parseUUID interface with 'OID UUID 6ba7b812-9dad-11d1-80b4-00c04fd430c8'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -890,7 +890,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1390
      * @tc.desc   Testing the parseUUID interface with 'X.500 UUID 6ba7b814-9dad-11d1-80b4-00c04fd430c8'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -910,7 +910,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilParseUUID014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1400
      * @tc.desc   Testing the parseUUID interface with 'UUID FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -930,7 +930,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1410
      * @tc.desc   Testing the getHash interface with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -950,7 +950,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1420
      * @tc.desc   Testing the getHash interface with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -970,7 +970,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1430
      * @tc.desc   Testing the getHash interface with json value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -994,7 +994,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1440
      * @tc.desc   Testing the getHash interface with array value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1015,7 +1015,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1450
      * @tc.desc   Testing the getHash interface with class value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1046,7 +1046,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1460
      * @tc.desc   Testing the getHash interface with date value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1068,7 +1068,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1470
      * @tc.desc   Testing the getHash interface with regular expression.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1089,7 +1089,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1480
      * @tc.desc   Testing the getHash interface with math value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1110,7 +1110,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1490
      * @tc.desc   Testing the getHash interface with math nested json.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1138,7 +1138,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1500
      * @tc.desc   Testing the getHash interface with value {}.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1159,7 +1159,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1510
      * @tc.desc   Testing the getHash interface with value {}.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1180,7 +1180,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testUtilGetHash016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1520
      * @tc.desc   Testing the getHash interface with special json.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1205,7 +1205,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1530
      * @tc.desc   Testing the Constructor of TextDecoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1225,7 +1225,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1540
      * @tc.desc   Testing the textdecoder create interface with utf-8 value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1247,7 +1247,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1550
      * @tc.desc   Testing the textdecoder.create interface with no para.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1267,7 +1267,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1560
      * @tc.desc   Testing the textdecoder create interface with Illegal coding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1289,7 +1289,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1570
      * @tc.desc   Testing the textdecoder create while TextDecoderOptions with no paras.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1310,7 +1310,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1580
      * @tc.desc   Testing the textdecoder create while ignoreBOM values true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1333,7 +1333,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1590
      * @tc.desc   Testing the textdecoder create while ignoreBOM values false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1356,7 +1356,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1600
      * @tc.desc   Testing the textdecoder create while fatal values true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1379,7 +1379,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1610
      * @tc.desc   Testing the textdecoder create while fatal values false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1402,7 +1402,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1620
      * @tc.desc   Testing the textdecoder create while TextDecoderOptions with no paras.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1423,7 +1423,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1630
      * @tc.desc   Testing the textdecoder create while ignoreBOM values true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1446,7 +1446,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1640
      * @tc.desc   Testing the textdecoder create while ignoreBOM values false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1469,7 +1469,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1650
      * @tc.desc   Testing the textdecoder create while fatal values true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1492,7 +1492,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1660
      * @tc.desc   Testing the textdecoder create while fatal values false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1515,7 +1515,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1670
      * @tc.desc   Testing the textdecoder create interface with iso-8859-15 value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1537,7 +1537,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1680
      * @tc.desc   Testing the textdecoder create interface with UTF-16 value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1559,7 +1559,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1690
      * @tc.desc   Testing the textdecoder create interface with UTF-32 value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1581,7 +1581,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1700
      * @tc.desc   Testing the textdecoder create interface while textDecoderOptions no paras.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1601,7 +1601,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1710
      * @tc.desc   Testing the textdecoder create interface while textDecoderOptions values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1621,7 +1621,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1720
      * @tc.desc   Testing the textdecoder create interface while fatal values true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1643,7 +1643,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1730
      * @tc.desc   Testing the textdecoder create interface while fatal values false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1665,7 +1665,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1740
      * @tc.desc   Testing the textdecoder create interface while ignoreBOM values true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1687,7 +1687,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextDecoderCreate023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1750
      * @tc.desc   Testing the textdecoder create interface while ignoreBOM values false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1709,7 +1709,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1760
      * @tc.desc   Testing the decodeWithStream interface while input values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1733,7 +1733,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1770
      * @tc.desc   Testing the decodeWithStream interface while input values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1757,7 +1757,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1780
      * @tc.desc   Testing the decodeWithStream interface while input special value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1781,7 +1781,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1790
      * @tc.desc   Testing the decodeWithStream interface while input blank value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1805,7 +1805,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1800
      * @tc.desc   Testing the decodeWithStream interface while input values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1829,7 +1829,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1810
      * @tc.desc   Testing the decodeWithStream interface while input values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1853,7 +1853,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1820
      * @tc.desc   Testing the decodeWithStream interface while stream values true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1877,7 +1877,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1830
      * @tc.desc   Testing the decodeWithStream interface while stream values false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1901,7 +1901,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1840
      * @tc.desc   Testing the decodeWithStream interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1925,7 +1925,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1850
      * @tc.desc   Testing the decodeWithStream interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1949,7 +1949,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1860
      * @tc.desc   Testing the decodeWithStream interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1973,7 +1973,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeWithStream012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1870
      * @tc.desc   Testing the decodeWithStream interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1997,7 +1997,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoder001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1880
      * @tc.desc   Testing the Constructor of TextEncoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2017,7 +2017,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoder002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1890
      * @tc.desc   Testing the Constructor of TextEncoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2037,7 +2037,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoder003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1900
      * @tc.desc   Testing the Constructor of TextEncoder values utf-9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2057,7 +2057,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoder004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1910
      * @tc.desc   Testing the Constructor of TextEncoder values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2077,7 +2077,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoderCreate001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1920
      * @tc.desc   Testing the Constructor of TextEncoderCreate values iso-8859-14.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2097,7 +2097,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoderCreate002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1930
      * @tc.desc   Testing the Constructor of TextEncoderCreate values no paras.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2117,7 +2117,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoderCreate003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1940
      * @tc.desc   Testing the Constructor of TextEncoderCreate values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2137,7 +2137,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoderCreate004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1950
      * @tc.desc   Testing the Constructor of TextEncoderCreate values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2157,7 +2157,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoderCreate005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1960
      * @tc.desc   Testing the Constructor of TextEncoderCreate values 'windows-1250'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2177,7 +2177,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoderCreate006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1970
      * @tc.desc   Testing the Constructor of TextEncoderCreate values 'utf-16'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2197,7 +2197,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoderCreate007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1980
      * @tc.desc   Testing the Constructor of TextEncoderCreate values 'utf-32'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2217,7 +2217,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoderInfo001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERINFO_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_1990
      * @tc.desc   Testing the Constructor of testTextEncoderInfo values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2237,7 +2237,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testTextEncoderInfo002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERINFO_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2000
      * @tc.desc   Testing the Constructor of testTextEncoderInfo values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2257,7 +2257,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncodeIntoUint8Array001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILENCODEINTOUINT8ARRAY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2010
      * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array input values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2279,7 +2279,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncodeIntoUint8Array002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILENCODEINTOUINT8ARRAY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2020
      * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array input values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2301,7 +2301,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncodeIntoUint8Array003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILENCODEINTOUINT8ARRAY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2030
      * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array desc values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2322,7 +2322,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncodeIntoUint8Array004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILENCODEINTOUINT8ARRAY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2040
      * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array desc values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2343,7 +2343,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2050
      * @tc.desc   Testing the decodeWithSting interface while input values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2366,7 +2366,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2060
      * @tc.desc   Testing the decodeToString interface while input values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2387,7 +2387,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2070
      * @tc.desc   Testing the decodeToString interface while input special value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2403,7 +2403,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2080
      * @tc.desc   Testing the decodeToString interface while input blank value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2422,7 +2422,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2090
      * @tc.desc   Testing the decodeToString interface while input values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2440,7 +2440,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2100
      * @tc.desc   Testing the decodeToString interface while input values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2457,7 +2457,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2110
      * @tc.desc   Testing the decodeToString interface while stream values true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2478,7 +2478,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2120
      * @tc.desc   Testing the decodeToString interface while stream values false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2499,7 +2499,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2130
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2521,7 +2521,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2140
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2542,7 +2542,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2150
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2564,7 +2564,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testDecodeToString012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2160
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2584,7 +2584,7 @@ export default function utilTest() {
     });
     /**
      * @tc.name   testEncode001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2170
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2599,7 +2599,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncode002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2180
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2614,7 +2614,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncode003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2190
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2642,7 +2642,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncode004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2200
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2658,7 +2658,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncode005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2210
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2683,7 +2683,7 @@ export default function utilTest() {
     });
     /**
      * @tc.name   testEncode006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2220
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2705,7 +2705,7 @@ export default function utilTest() {
     });
     /**
      * @tc.name   testEncode007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2230
      * @tc.desc   Testing the decodeToString interface while different code format.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2726,7 +2726,7 @@ export default function utilTest() {
     });
     /**
      * @tc.name   testPromisify0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2240
      * @tc.desc   Test the function of the interface promisify.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2745,7 +2745,7 @@ export default function utilTest() {
     });
     /**
      * @tc.name   testGenerateRandomBinaryUUID0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2250
      * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2764,7 +2764,7 @@ export default function utilTest() {
     });
     /**
      * @tc.name   testGenerateRandomBinaryUUID0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2260
      * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2786,7 +2786,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomBinaryUUID0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2270
      * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2808,7 +2808,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomBinaryUUID0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2280
      * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2829,7 +2829,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomBinaryUUID0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2290
      * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2850,7 +2850,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomBinaryUUID0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2300
      * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2871,7 +2871,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomBinaryUUID0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2310
      * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2892,7 +2892,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomBinaryUUID0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2320
      * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2913,7 +2913,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomUUID90001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2330
      * @tc.desc   Test the function of the interface generateRandomUUID9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2934,7 +2934,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomUUID90002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2340
      * @tc.desc   Test the function of the interface generateRandomUUID9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2955,7 +2955,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomUUID90003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2350
      * @tc.desc   Test the function of the interface generateRandomUUID9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2976,7 +2976,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomUUID90004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2360
      * @tc.desc   Test the function of the interface generateRandomUUID9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2997,7 +2997,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomUUID90005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2370
      * @tc.desc   Test the function of the interface generateRandomUUID9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3018,7 +3018,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomUUID90006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2380
      * @tc.desc   Test the function of the interface generateRandomUUID9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3039,7 +3039,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testGenerateRandomUUID90007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2390
      * @tc.desc   Test the function of the interface generateRandomUUID9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3068,7 +3068,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2400
      * @tc.desc   Test the function of the interface TextDecoderCreate.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3088,7 +3088,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2410
      * @tc.desc   Test the function of the interface TextDecoderCreate.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3113,7 +3113,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2420
      * @tc.desc   Test the function of the interface TextDecoderCreate.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3133,7 +3133,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2430
      * @tc.desc   Test the function of the interface TextDecoderCreate.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3155,7 +3155,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2440
      * @tc.desc   Test the function of the interface TextDecoderCreate.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3175,7 +3175,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2450
      * @tc.desc   Test the function of the interface TextDecoderCreate.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3198,7 +3198,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2460
      * @tc.desc   Test the function of the interface TextDecoderCreate.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3219,7 +3219,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2470
      * @tc.desc   Test the function of the interface TextDecoderCreate.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3241,7 +3241,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2480
      * @tc.desc   Test the function of the interface TextDecoderDecodeToString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3270,7 +3270,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextDecoder00010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2490
      * @tc.desc   Test the function of the interface TextDecoderDecodeToString.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3306,7 +3306,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextEncoder0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2500
      * @tc.desc   Test the function of the interface TextEncoder-TextEncoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3326,7 +3326,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextEncoder0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2510
      * @tc.desc   Test the function of the interface TextEncoder-TextEncoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3347,7 +3347,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextEncoder0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2520
      * @tc.desc   Test the function of the interface TextEncoder-TextEncoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3367,7 +3367,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextEncoder0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2530
      * @tc.desc   Test the function of the interface TextEncoder-TextEncoder.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3387,7 +3387,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextEncoder0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2540
      * @tc.desc   Test the function of the interface TextEncoder-encodeInto.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3409,7 +3409,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextEncoder0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2550
      * @tc.desc   Test the function of the interface TextEncoder-encodeInto.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3430,7 +3430,7 @@ export default function utilTest() {
     })
     /**
      * @tc.name   testTextEncoder0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2560
      * @tc.desc   Test the function of the interface TextEncoder-encodeInto.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3452,7 +3452,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testGetMainThreadStackTrace001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2570
      * @tc.desc   Testing the getMainThreadStackTrace interface in main thread.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3471,7 +3471,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testGetMainThreadStackTrace002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2580
      * @tc.desc   Testing the getMainThreadStackTrace interface in worker thread.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3506,7 +3506,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testGetMainThreadStackTrace003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2590
      * @tc.desc   Testing the getMainThreadStackTrace interface in taskpool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3534,7 +3534,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2600
      * @tc.desc   Set multithreading detection to on and off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3564,7 +3564,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2610
      * @tc.desc   Set multithreading detection with abort=false, use subEnv on main thread
      *             to trigger VM cross-thread access, verify faultlog is generated and
      *             process does not crash.
@@ -3586,7 +3586,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2620
      * @tc.desc   Set multithreading detection with custom frequency and interval.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3609,7 +3609,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2630
      * @tc.desc   Set multithreading detection with no options (default values).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3627,7 +3627,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2640
      * @tc.desc   Set multithreading detection with empty options object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3646,7 +3646,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2650
      * @tc.desc   Set multithreading detection with boundary interval value 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3667,7 +3667,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2660
      * @tc.desc   Set multithreading detection with invalid frequency (below minimum 100),
      *             invalid value is ignored and original config is preserved, no exception thrown.
      * @tc.type   FUNCTION
@@ -3691,7 +3691,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2670
      * @tc.desc   Set multithreading detection with invalid interval (exceeds max 1440),
      *             invalid value is ignored and original config is preserved, no exception thrown.
      * @tc.type   FUNCTION
@@ -3715,7 +3715,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2680
      * @tc.desc   Set multithreading detection enabled=false with options, options should not be applied.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3737,7 +3737,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testGetAllVMHeapMemoryInfo001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_ALL_VM_HEAP_MEMORY_INFO_0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2690
      * @tc.desc   Test getAllVMHeapMemoryInfo to get heap memory info of all VM threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3785,7 +3785,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEnableLocalHandleDetection001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ENABLE_LOCAL_HANDLE_DETECTION_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL1_2700
      * @tc.desc   Enable local handle detection with no parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

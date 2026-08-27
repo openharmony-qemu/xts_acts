@@ -46,7 +46,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLSpecialChars001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_SPECIAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_0100
      * @tc.desc   Test URL with special characters in path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -66,7 +66,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLSpecialChars002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_SPECIAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_0200
      * @tc.desc   Test URL with encoded characters in username.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -86,7 +86,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLSpecialChars003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_SPECIAL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_0300
      * @tc.desc   Test URL with @ symbol in hostname.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -106,7 +106,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLQueryComplex001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_QUERY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_0400
      * @tc.desc   Test URL with complex query string containing ?.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -126,7 +126,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLQueryComplex002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_QUERY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_0500
      * @tc.desc   Test URL with query but no value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLFragmentComplex001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_FRAGMENT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_0600
      * @tc.desc   Test URL with complex fragment containing special chars.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -166,7 +166,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLFragmentComplex002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_FRAGMENT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_0700
      * @tc.desc   Test URL with fragment containing ! character.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -186,7 +186,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLAuthentication001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_AUTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_0800
      * @tc.desc   Test URL with empty password.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -207,7 +207,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLAuthentication002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_AUTH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_0900
      * @tc.desc   Test URL with no username but password.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -228,7 +228,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLDefaultPorts001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_PORT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1000
      * @tc.desc   Test URL with HTTP default port 80.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -249,7 +249,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLDefaultPorts002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_PORT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1100
      * @tc.desc   Test URL with HTTPS default port 443.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -270,7 +270,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLDefaultPorts003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_PORT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1200
      * @tc.desc   Test URL with FTP default port 21.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -291,7 +291,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLDefaultPorts004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_PORT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1300
      * @tc.desc   Test URL with WS default port 80.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -312,7 +312,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLDefaultPorts005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_PORT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1400
      * @tc.desc   Test URL with WSS default port 443.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -333,7 +333,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLPathEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_PATH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1500
      * @tc.desc   Test URL with empty path.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -353,7 +353,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_PARAMS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1600
      * @tc.desc   Test URL with empty params.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -375,7 +375,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsMultiple001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EDGE_PARAMS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1700
      * @tc.desc   Test URLParams with multiple values for same key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -397,7 +397,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testInvalidURLEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ERROR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1800
      * @tc.desc   Test parseURL with empty string - should throw error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -417,7 +417,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testInvalidURLRelative001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ERROR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_1900
      * @tc.desc   Test parseURL with relative URL without base - should throw error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -437,7 +437,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testInvalidURLProtocol001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ERROR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2000
      * @tc.desc   Test parseURL with invalid protocol - should throw error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -457,7 +457,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testInvalidURLHost001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ERROR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2100
      * @tc.desc   Test parseURL with missing host - should throw error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -477,7 +477,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testInvalidURLHost002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ERROR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2200
      * @tc.desc   Test parseURL with empty host - should throw error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -497,7 +497,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testInvalidURLPort001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ERROR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2300
      * @tc.desc   Test parseURL with invalid port - should throw error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -517,7 +517,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testInvalidURLBase001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ERROR_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2400
      * @tc.desc   Test parseURL with invalid base URL - should throw error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -537,7 +537,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsGetNull001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2500
      * @tc.desc   Test URLParams.get() returns null for non-existent key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -558,7 +558,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsGetNull002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2600
      * @tc.desc   Test URLParams.get() with empty params returns null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -579,7 +579,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsGetAllNull001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2700
      * @tc.desc   Test URLParams.getAll() returns empty array for non-existent key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -600,7 +600,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsHasNull001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2800
      * @tc.desc   Test URLParams.has() returns false for non-existent key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -621,7 +621,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsDeleteNull001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_2900
      * @tc.desc   Test URLParams.delete() with non-existent key should not throw.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -644,7 +644,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLPropertyEmptyString001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3000
      * @tc.desc   Test URL properties with empty values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -667,7 +667,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsConstructorEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3100
      * @tc.desc   Test URLParams constructor with empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -687,7 +687,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsAppendNull001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3200
      * @tc.desc   Test URLParams.append() with empty string values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -708,7 +708,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsSetNull001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3300
      * @tc.desc   Test URLParams.set() with empty string value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -729,7 +729,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLHashEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3400
      * @tc.desc   Test URL hash property with empty and set to empty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -751,7 +751,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLSearchEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3500
      * @tc.desc   Test URL search property with empty and set to empty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -773,7 +773,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsEntriesEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3600
      * @tc.desc   Test URLParams.entries() with empty params.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -797,7 +797,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsKeysEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3700
      * @tc.desc   Test URLParams.keys() with empty params.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -821,7 +821,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsValuesEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3800
      * @tc.desc   Test URLParams.values() with empty params.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -845,7 +845,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsToStringEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_3900
      * @tc.desc   Test URLParams.toString() with empty params.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -866,7 +866,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsForEachEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4000
      * @tc.desc   Test URLParams.forEach() with empty params.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -891,7 +891,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsAppendEmptyKey001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4100
      * @tc.desc   Test URLParams.append() with empty key name.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -913,7 +913,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testURLParamsSetEmptyKey001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_NULL_UNDEFINED_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4200
      * @tc.desc   Test URLParams.set() with empty key name.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -935,7 +935,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4300
      * @tc.desc   Test parseURL with relative URL and base string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -955,7 +955,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4400
      * @tc.desc   Test parseURL with relative path and base URL object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -976,7 +976,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4500
      * @tc.desc   Test parseURL with absolute path and base URL object.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -997,7 +997,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4600
      * @tc.desc   Test parseURL with absolute URL ignores base.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1018,7 +1018,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4700
      * @tc.desc   Test parseURL with different protocols (https).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1040,7 +1040,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4800
      * @tc.desc   Test parseURL with ftp protocol.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1062,7 +1062,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_4900
      * @tc.desc   Test parseURL with file protocol.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1083,7 +1083,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5000
      * @tc.desc   Test parseURL with ws protocol.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1105,7 +1105,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5100
      * @tc.desc   Test parseURL with relative URL containing query and fragment.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1127,7 +1127,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testParseURLWithBase010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_CONSTRUCTOR_BASE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5200
      * @tc.desc   Test parseURL with complex relative path resolution.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1146,7 +1146,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter001
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5300
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1165,7 +1165,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter002
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5400
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1184,7 +1184,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter003
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5500
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1203,7 +1203,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter004
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5600
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1222,7 +1222,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter005
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5700
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1241,7 +1241,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter006
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5800
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1260,7 +1260,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter007
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_5900
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1279,7 +1279,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter008
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6000
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1298,7 +1298,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter009
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6100
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1316,7 +1316,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6200
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1335,7 +1335,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter011
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6300
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1354,7 +1354,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6400
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1373,7 +1373,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6500
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1392,7 +1392,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter014
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6600
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1411,7 +1411,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6700
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1430,7 +1430,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6800
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1449,7 +1449,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter017
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_6900
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1468,7 +1468,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter018
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7000
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1487,7 +1487,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7100
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1506,7 +1506,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7200
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1525,7 +1525,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter021
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7300
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1545,7 +1545,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter022
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7400
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1564,7 +1564,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter023
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7500
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1583,7 +1583,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter024
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL2_PARAMETER_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7600
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1602,7 +1602,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlParameter025
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL1_PARAMETER_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7700
      * @tc.desc   The test parameter is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1621,7 +1621,7 @@ export default function url2Test() {
     });
     /**
      * @tc.name   testUrlHash001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_HASH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7800
      * @tc.desc   Test URL hash property getter and setter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1643,7 +1643,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlHash002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_HASH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_7900
      * @tc.desc   Test URL hash property with empty value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1665,7 +1665,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlHost001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_HOST_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8000
      * @tc.desc   Test URL host property getter and setter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1687,7 +1687,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlHostname001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_HOSTNAME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8100
      * @tc.desc   Test URL hostname property getter and setter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1709,7 +1709,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlHref001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_HREF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8200
      * @tc.desc   Test URL href property getter and setter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1731,7 +1731,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlOrigin001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_ORIGIN_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8300
      * @tc.desc   Test URL origin property getter (readonly).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1751,7 +1751,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlPassword001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_PASSWORD_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8400
      * @tc.desc   Test URL password property getter and setter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1773,7 +1773,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlPathname001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_PATHNAME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8500
      * @tc.desc   Test URL pathname property getter and setter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1795,7 +1795,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlPort001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_PORT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8600
      * @tc.desc   Test URL port property getter and setter with non-default port.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1817,7 +1817,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlPort002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_PORT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8700
      * @tc.desc   Test URL port property with default port (should be empty).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1838,7 +1838,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlProtocol001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_PROTOCOL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8800
      * @tc.desc   Test URL protocol property getter and setter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1860,7 +1860,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlSearch001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_SEARCH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_8900
      * @tc.desc   Test URL search property getter and setter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1882,7 +1882,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlParams001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_PARAMS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_9000
      * @tc.desc   Test URL params property getter (readonly URLParams object).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1903,7 +1903,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlUsername001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_PROPERTY_USERNAME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_9100
      * @tc.desc   Test URL username property getter and setter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1925,7 +1925,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlToJSON001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_TOJSON_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_9200
      * @tc.desc   Test URL.toJSON() method.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1946,7 +1946,7 @@ export default function url2Test() {
 
     /**
      * @tc.name   testUrlToString002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_TOSTRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL4_9300
      * @tc.desc   Test URL.toString() method with complex URL.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

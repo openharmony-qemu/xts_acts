@@ -24,7 +24,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_0100
      * @tc.name testURI04Chapter0001
      * @tc.desc Test encodedFragment with fragment containing Unicode characters beyond BMP
      * @tc.size MediumTest
@@ -39,7 +39,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_0200
      * @tc.name testURI04Chapter0002
      * @tc.desc Test encodedFragment when URI has both query and fragment
      * @tc.size MediumTest
@@ -53,7 +53,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_0300
      * @tc.name testURI04Chapter0003
      * @tc.desc Test encodedFragment when URI has fragment containing reserved characters that are allowed (/, ?, @)
      * @tc.size MediumTest
@@ -68,7 +68,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_0400
      * @tc.name testURI04Chapter0004
      * @tc.desc Test encodedFragment when fragment contains colon and semicolon (allowed)
      * @tc.size MediumTest
@@ -83,7 +83,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_0500
      * @tc.name testURI04Chapter0005
      * @tc.desc Test encodedFragment when fragment contains plus sign (allowed)
      * @tc.size MediumTest
@@ -98,7 +98,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_0600
      * @tc.name testURI04Chapter0006
      * @tc.desc Test encodedFragment when fragment contains hyphen and underscore (allowed)
      * @tc.size MediumTest
@@ -113,7 +113,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_0700
      * @tc.name testURI04Chapter0007
      * @tc.desc Test encodedFragment with fragment containing pipe character (needs encoding)
      * @tc.size MediumTest
@@ -128,7 +128,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_0800
      * @tc.name testURI04Chapter0008
      * @tc.desc Test encodedFragment with fragment containing backtick (needs encoding)
      * @tc.size MediumTest
@@ -142,7 +142,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_0900
      * @tc.name testURI04Chapter0009
      * @tc.desc Test encodedFragment with fragment containing caret (needs encoding)
      * @tc.size MediumTest
@@ -156,7 +156,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1000
      * @tc.name testURI04Chapter0010
      * @tc.desc Test encodedFragment with fragment containing curly braces (need encoding)
      * @tc.size MediumTest
@@ -171,7 +171,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1100
      * @tc.name testURI04Chapter0011
      * @tc.desc Test encodedFragment with fragment containing square brackets (need encoding)
      * @tc.size MediumTest
@@ -186,7 +186,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1200
      * @tc.name testURI04Chapter0012
      * @tc.desc Test encodedFragment with fragment containing backslash (need encoding)
      * @tc.size MediumTest
@@ -200,7 +200,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1300
      * @tc.name testURI04Chapter0013
      * @tc.desc Test encodedFragment with fragment containing less-than and greater-than (need encoding)
      * @tc.size MediumTest
@@ -214,7 +214,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1400
      * @tc.name testURI04Chapter0014
      * @tc.desc Test encodedFragment with fragment containing double quote (need encoding)
      * @tc.size MediumTest
@@ -229,7 +229,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1500
      * @tc.name testURI04Chapter0015
      * @tc.desc Test encodedFragment with fragment containing hash character (need encoding, provided as %23)
      * @tc.size MediumTest
@@ -244,7 +244,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1600
      * @tc.name testURI04Chapter0016
      * @tc.desc Test encodedFragment with fragment containing question mark (allowed)
      * @tc.size MediumTest
@@ -259,7 +259,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1700
      * @tc.name testURI04Chapter0017
      * @tc.desc Test encodedFragment with fragment containing slash (allowed)
      * @tc.size MediumTest
@@ -274,7 +274,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1800
      * @tc.name testURI04Chapter0018
      * @tc.desc Test encodedFragment with fragment containing at sign (allowed)
      * @tc.size MediumTest
@@ -289,7 +289,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_1900
      * @tc.name testURI04Chapter0019
      * @tc.desc Verify encodedAuthority returns correct value for URI with host and port
      * @tc.size MediumTest
@@ -302,7 +302,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2000
      * @tc.name testURI04Chapter0020
      * @tc.desc Verify encodedAuthority returns correct value for URI with userInfo and host (no port)
      * @tc.size MediumTest
@@ -315,7 +315,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2100
      * @tc.name testURI04Chapter0021
      * @tc.desc Verify encodedAuthority returns correct value for full authority (userInfo, host, port)
      * @tc.size MediumTest
@@ -328,7 +328,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2200
      * @tc.name testURI04Chapter0022
      * @tc.desc Verify encodedAuthority retains percent-encoded characters in userInfo
      * @tc.size MediumTest
@@ -341,7 +341,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2300
      * @tc.name testURI04Chapter0023
      * @tc.desc Verify encodedAuthority returns null for URI without authority
      * @tc.size MediumTest
@@ -354,7 +354,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2400
      * @tc.name testURI04Chapter0024
      * @tc.desc Verify encodedAuthority handles IPv6 address with port correctly
      * @tc.size MediumTest
@@ -367,7 +367,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2500
      * @tc.name testURI04Chapter0025
      * @tc.desc Verify encodedAuthority handles empty userInfo (leading '@')
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2600
      * @tc.name testURI04Chapter0026
      * @tc.desc Verify encodedAuthority for simple host without port
      * @tc.size MediumTest
@@ -393,7 +393,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2700
      * @tc.name testURI04Chapter0027
      * @tc.desc Verify encodedAuthority preserves allowed sub-delimiters in userInfo
      * @tc.size MediumTest
@@ -406,7 +406,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2800
      * @tc.name testURI04Chapter0028
      * @tc.desc Verify encodedAuthority handles percent-encoded non-ASCII userInfo and punycode host
      * @tc.size MediumTest
@@ -419,7 +419,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_2900
      * @tc.name testURI04Chapter0029
      * @tc.desc Verify encodedAuthority returns null for scheme-only URI
      * @tc.size MediumTest
@@ -432,7 +432,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3000
      * @tc.name testURI04Chapter0030
      * @tc.desc Verify encodedAuthority handles URI with empty authority (double slash) as null
      * @tc.size MediumTest
@@ -445,7 +445,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3100
      * @tc.name testURI04Chapter0031
      * @tc.desc Verify constructor throws for empty string
      * @tc.size MediumTest
@@ -462,7 +462,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3200
      * @tc.name testURI04Chapter0032
      * @tc.desc Verify constructor throws for URI containing space
      * @tc.size MediumTest
@@ -475,7 +475,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3300
      * @tc.name testURI04Chapter0033
      * @tc.desc Verify constructor throws for unencoded '@' in userInfo causing ambiguity
      * @tc.size MediumTest
@@ -488,7 +488,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3400
      * @tc.name testURI04Chapter0034
      * @tc.desc Verify constructor throws for control characters in URI
      * @tc.size MediumTest
@@ -505,7 +505,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3500
      * @tc.name testURI04Chapter0035
      * @tc.desc Verify constructor throws for invalid percent encoding
      * @tc.size MediumTest
@@ -518,7 +518,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3600
      * @tc.name testURI04Chapter0036
      * @tc.desc Verify constructor throws for port number out of range
      * @tc.size MediumTest
@@ -531,7 +531,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3700
      * @tc.name testURI04Chapter0037
      * @tc.desc Verify constructor throws for missing host but with port
      * @tc.size MediumTest
@@ -544,7 +544,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3800
      * @tc.name testURI04Chapter0038
      * @tc.desc Verify constructor handles very long URI (stress test, should not throw)
      * @tc.size MediumTest
@@ -559,7 +559,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_3900
      * @tc.name testURI04Chapter0039
      * @tc.desc Verify encodedSSP for a standard URI with all components
      * @tc.size MediumTest
@@ -574,7 +574,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4000
      * @tc.name testURI04Chapter0040
      * @tc.desc Verify encodedSSP for URI without userInfo and port
      * @tc.size MediumTest
@@ -589,7 +589,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4100
      * @tc.name testURI04Chapter0041
      * @tc.desc Verify encodedSSP for URI without authority (scheme:path)
      * @tc.size MediumTest
@@ -604,7 +604,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4200
      * @tc.name testURI04Chapter0042
      * @tc.desc Verify encodedSSP for URI with scheme and authority only
      * @tc.size MediumTest
@@ -619,7 +619,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4300
      * @tc.name testURI04Chapter0043
      * @tc.desc Verify encodedSSP for URI with scheme and path (empty authority)
      * @tc.size MediumTest
@@ -634,7 +634,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4400
      * @tc.name testURI04Chapter0044
      * @tc.desc Verify encodedSSP encodes special characters in path
      * @tc.size MediumTest
@@ -649,7 +649,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4500
      * @tc.name testURI04Chapter0045
      * @tc.desc Verify encodedSSP encodes special characters in query
      * @tc.size MediumTest
@@ -664,7 +664,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4600
      * @tc.name testURI04Chapter0046
      * @tc.desc Verify encodedSSP encodes special characters in userInfo
      * @tc.size MediumTest
@@ -679,7 +679,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4700
      * @tc.name testURI04Chapter0047
      * @tc.desc Verify encodedSSP encodes escape characters like newline and tab
      * @tc.size MediumTest
@@ -694,7 +694,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4800
      * @tc.name testURI04Chapter0048
      * @tc.desc Verify encodedSSP encodes Unicode emoji correctly
      * @tc.size MediumTest
@@ -709,7 +709,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_4900
      * @tc.name testURI04Chapter0049
      * @tc.desc Verify encodedSSP for URIs with port boundary values 0 and 65535
      * @tc.size MediumTest
@@ -724,7 +724,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5000
      * @tc.name testURI04Chapter0050
      * @tc.desc Reverse test: port out of range (65536) should throw error
      * @tc.size MediumTest
@@ -737,7 +737,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5100
      * @tc.name testURI04Chapter0051
      * @tc.desc Reverse test: invalid port string should throw error
      * @tc.size MediumTest
@@ -750,7 +750,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5200
      * @tc.name testURI04Chapter0052
      * @tc.desc Reverse test: host containing space should throw error
      * @tc.size MediumTest
@@ -763,7 +763,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5300
      * @tc.name testURI04Chapter0053
      * @tc.desc Reverse test: incomplete percent encoding should throw error
      * @tc.size MediumTest
@@ -775,7 +775,7 @@ export default function URI04Test() {
         expect(uriObj.toString().length > 0).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5400
      * @tc.name testURI04Chapter0054
      * @tc.desc Reverse test: empty string URI should throw error
      * @tc.size MediumTest
@@ -792,7 +792,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5500
      * @tc.name testURI04Chapter0055
      * @tc.desc Reverse test: null as URI string should throw error
      * @tc.size MediumTest
@@ -810,7 +810,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5600
      * @tc.name testURI04Chapter0056
      * @tc.desc Reverse test: undefined as URI string should throw error
      * @tc.size MediumTest
@@ -828,7 +828,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5700
      * @tc.name testURI04Chapter0057
      * @tc.desc Reverse test: port = Infinity should throw error
      * @tc.size MediumTest
@@ -841,7 +841,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5800
      * @tc.name testURI04Chapter0058
      * @tc.desc Reverse test: port = NaN should throw error
      * @tc.size MediumTest
@@ -854,7 +854,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_5900
      * @tc.name testURI04Chapter0059
      * @tc.desc Verify encodedSSP for URI with very long path (stress test)
      * @tc.size MediumTest
@@ -869,7 +869,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6000
      * @tc.name testURI04Chapter0060
      * @tc.desc Verify encodedSSP when URI string contains array converted to string
      * @tc.size MediumTest
@@ -885,7 +885,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6100
      * @tc.name testURI04Chapter0061
      * @tc.desc Verify encodedSSP when URI string contains object converted to string
      * @tc.size MediumTest
@@ -899,7 +899,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6200
      * @tc.name testURI04Chapter0062
      * @tc.desc Verify encodedSSP when URI string contains boolean value
      * @tc.size MediumTest
@@ -914,7 +914,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6300
      * @tc.name testURI04Chapter0063
      * @tc.desc Verify encodedSSP for URI with multiple slashes in path
      * @tc.size MediumTest
@@ -929,7 +929,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6400
      * @tc.name testURI04Chapter0064
      * @tc.desc Verify encodedSSP for URI with IPv6 host
      * @tc.size MediumTest
@@ -944,7 +944,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6500
      * @tc.name testURI04Chapter0065
      * @tc.desc Verify encodedSSP for URI with plus sign in userInfo (should not be encoded)
      * @tc.size MediumTest
@@ -959,7 +959,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6600
      * @tc.name testURI04Chapter0066
      * @tc.desc Reverse test: URI with null character should throw error
      * @tc.size MediumTest
@@ -976,7 +976,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6700
      * @tc.name testURI04Chapter0067
      * @tc.desc Reverse test: URI with lone surrogate should throw error
      * @tc.size MediumTest
@@ -990,7 +990,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6800
      * @tc.name testURI04Chapter0068
      * @tc.desc Verify encodedSSP does not double-encode already percent-encoded characters
      * @tc.size MediumTest
@@ -1005,7 +1005,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_6900
      * @tc.name testURI04Chapter0069
      * @tc.desc Verify encodedSSP handles URI with full ASCII printable characters in path
      * @tc.size MediumTest
@@ -1021,7 +1021,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7000
      * @tc.name testURI04Chapter0070
      * @tc.desc Reverse test: URI with unencoded space in path should throw error (if no auto-encode)
      * @tc.size MediumTest
@@ -1034,7 +1034,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7100
      * @tc.name testURI04Chapter0071
      * @tc.desc Positive test: Create URI object with a standard valid URI string (document example)
      * @tc.size MediumTest
@@ -1053,7 +1053,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7200
      * @tc.name testURI04Chapter0072
      * @tc.desc Positive test: URI with percent-encoded special characters in query parameter
      * @tc.size MediumTest
@@ -1071,7 +1071,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7300
      * @tc.name testURI04Chapter0073
      * @tc.desc Positive test: URI with allowed ASCII printable characters in path (letters, digits, -._~)
      * @tc.size MediumTest
@@ -1086,7 +1086,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7400
      * @tc.name testURI04Chapter0074
      * @tc.desc Positive test: URI with numeric values as query parameters
      * @tc.size MediumTest
@@ -1102,7 +1102,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7500
      * @tc.name testURI04Chapter0075
      * @tc.desc Positive test: URI with boolean and special numeric keywords as query values
      * @tc.size MediumTest
@@ -1119,7 +1119,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7600
      * @tc.name testURI04Chapter0076
      * @tc.desc Positive test: URI with very long query value (treeString style) to verify no crash
      * @tc.size MediumTest
@@ -1136,7 +1136,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7700
      * @tc.name testURI04Chapter0077
      * @tc.desc Positive test: URI with percent-encoded emoji in query parameter
      * @tc.size MediumTest
@@ -1151,7 +1151,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7800
      * @tc.name testURI04Chapter0078
      * @tc.desc Empty string should throw 10200002
      * @tc.size MediumTest
@@ -1168,7 +1168,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_7900
      * @tc.name testURI04Chapter0079
      * @tc.desc Undefined parameter should throw 401
      * @tc.size MediumTest
@@ -1185,7 +1185,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8000
      * @tc.name testURI04Chapter0080
      * @tc.desc Null parameter should throw 401
      * @tc.size MediumTest
@@ -1202,7 +1202,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8100
      * @tc.name testURI04Chapter0083
      * @tc.desc Array parameter should throw 401
      * @tc.size MediumTest
@@ -1220,7 +1220,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8200
      * @tc.name testURI04Chapter0084
      * @tc.desc Object parameter should throw 10200002
      * @tc.size MediumTest
@@ -1238,7 +1238,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8300
      * @tc.name testURI04Chapter0086
      * @tc.desc URI string containing space should throw 10200002
      * @tc.size MediumTest
@@ -1251,7 +1251,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8400
      * @tc.name testURI04Chapter0087
      * @tc.desc URI string containing newline character should throw 10200002
      * @tc.size MediumTest
@@ -1268,7 +1268,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8500
      * @tc.name testURI04Chapter0088
      * @tc.desc URI string containing raw emoji should not throw 10200002
      * @tc.size MediumTest
@@ -1281,7 +1281,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8600
      * @tc.name testURI04Chapter0090
      * @tc.desc Malformed URI missing protocol
      * @tc.size MediumTest
@@ -1294,7 +1294,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8700
      * @tc.name testURI04Chapter0091
      * @tc.desc Malformed URI with multiple at symbols
      * @tc.size MediumTest
@@ -1307,7 +1307,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8800
      * @tc.name testURI04Chapter0092
      * @tc.desc Reverse test: URI string that is just a number "0" should throw 10200002
      * @tc.size MediumTest
@@ -1320,7 +1320,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_8900
      * @tc.name testURI04Chapter0093
      * @tc.desc Reverse test: URI string that is just "NaN" should throw 10200002
      * @tc.size MediumTest
@@ -1333,7 +1333,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_9000
      * @tc.name testURI04Chapter0094
      * @tc.desc Reverse test: URI string that is just "Infinity" should throw 10200002
      * @tc.size MediumTest
@@ -1346,7 +1346,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_9100
      * @tc.name testURI04Chapter0095
      * @tc.desc Reverse test: URI string containing backslash should throw 10200002
      * @tc.size MediumTest
@@ -1359,7 +1359,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_9200
      * @tc.name testURI04Chapter0096
      * @tc.desc URI string containing tab character should throw 10200002
      * @tc.size MediumTest
@@ -1376,7 +1376,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_9300
      * @tc.name testURI04Chapter0097
      * @tc.desc URI with multiple hash fragments should throw 10200002
      * @tc.size MediumTest
@@ -1393,7 +1393,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_9400
      * @tc.name testURI04Chapter0098
      * @tc.desc Positive test: URI with percent-encoded full set of special characters (single) in query value
      * @tc.size MediumTest
@@ -1410,7 +1410,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOUR_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_9500
      * @tc.name testURI04Chapter0099
      * @tc.desc Positive test: URI with percent-encoded full ASCII printable characters (excluding tab) in query value
      * @tc.size MediumTest
@@ -1427,7 +1427,7 @@ export default function URI04Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFOURONE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI4_9600
      * @tc.name testURI04Chapter0100
      * @tc.desc Positive test: URI with percent-encoded double special characters in query value
      * @tc.size MediumTest

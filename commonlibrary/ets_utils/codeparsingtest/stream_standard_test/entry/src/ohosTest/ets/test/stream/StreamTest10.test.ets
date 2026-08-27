@@ -350,7 +350,7 @@ export default function StreamTest_10() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_0100
      * @tc.name      constructorTest0002
      * @tc.desc      Verify UpperCaseTransform can convert string to uppercase
      * @tc.size      MediumTest
@@ -370,7 +370,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_0200
      * @tc.name      constructorTest0003
      * @tc.desc      Verify UpperCaseTransform can convert string to uppercase
      * @tc.size      MediumTest
@@ -389,7 +389,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_0300
      * @tc.name      constructorTest0004
      * @tc.desc      Verify UpperCaseTransform can convert string to uppercase
      * @tc.size      MediumTest
@@ -409,7 +409,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_0400
      * @tc.name      constructorTest0005
      * @tc.desc      Verify UpperCaseTransform can convert string to uppercase
      * @tc.size      MediumTest
@@ -427,7 +427,7 @@ export default function StreamTest_10() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_0500
      * @tc.name      constructorTest0006
      * @tc.desc      Verify UpperCaseTransform can convert string to uppercase
      * @tc.size      MediumTest
@@ -442,7 +442,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_0600
      * @tc.name      constructorTest0007
      * @tc.desc      Verify UpperCaseTransform can convert string to uppercase
      * @tc.size      MediumTest
@@ -464,7 +464,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_0700
      * @tc.name      DoTransformTest0001
      * @tc.desc      Verify doTransform with valid string chunk, utf8 encoding and normal callback.
      * @tc.size      MediumTest
@@ -483,7 +483,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_0800
      * @tc.name      DoTransformTest0002
      * @tc.desc      Verify doTransform with empty string chunk and valid callback.
      * @tc.size      MediumTest
@@ -502,7 +502,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_0900
      * @tc.name      DoTransformTest0003
      * @tc.desc      Verify doTransform with callback returns processed data.
      * @tc.size      MediumTest
@@ -520,7 +520,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1000
      * @tc.name      DoTransformTest0004
      * @tc.desc      Verify doTransform with multi-byte string chunk.
      * @tc.size      MediumTest
@@ -539,7 +539,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1100
      * @tc.name      DoTransformTest0005
      * @tc.desc      Verify doTransform with callback executed only once.
      * @tc.size      MediumTest
@@ -557,7 +557,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1200
      * @tc.name      DoTransformTest0006
      * @tc.desc      Verify doTransform with non-string chunk type (number).
      * @tc.size      MediumTest
@@ -579,7 +579,7 @@ export default function StreamTest_10() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1300
      * @tc.name      DoTransformTest0007
      * @tc.desc      Verify doTransform with non-string encoding type (boolean).
      * @tc.size      MediumTest
@@ -601,7 +601,7 @@ export default function StreamTest_10() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1400
      * @tc.name      DoTransformTest0008
      * @tc.desc      Verify doTransform with non-function callback type (string).
      * @tc.size      MediumTest
@@ -618,7 +618,7 @@ export default function StreamTest_10() {
       }
     });
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1500
      * @tc.name      DoTransformTest0009
      * @tc.desc      Verify doTransform with undefined chunk parameter.
      * @tc.size      MediumTest
@@ -636,7 +636,7 @@ export default function StreamTest_10() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1600
      * @tc.name      DoTransformTest0010
      * @tc.desc      Verify doTransform with missing callback parameter.
      * @tc.size      MediumTest
@@ -654,7 +654,7 @@ export default function StreamTest_10() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1700
      * @tc.name      DoTransformTest0011
      * @tc.desc      Verify doTransform with valid chunk + invalid encoding + valid callback.
      * @tc.size      MediumTest
@@ -673,7 +673,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1800
      * @tc.name      DoTransformTest0012
      * @tc.desc      Verify doTransform with empty chunk + valid encoding + callback returns error.
      * @tc.size      MediumTest
@@ -692,7 +692,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_1900
      * @tc.name      DoTransformTest0013
      * @tc.desc      Verify doTransform with multi-chunk + callback accumulates data.
      * @tc.size      MediumTest
@@ -714,7 +714,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_2000
      * @tc.name      DoTransformTest0014
      * @tc.desc      Verify doTransform with valid params + callback throws error.
      * @tc.size      MediumTest
@@ -735,7 +735,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_2100
      * @tc.name      DoTransformTest0015
      * @tc.desc      Verify doTransform with valid chunk + encoding alias + callback returns processed data.
      * @tc.size      MediumTest
@@ -754,7 +754,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_2200
      * @tc.name      DoFlushTest0005
      * @tc.desc      Array Unshift index
      * @tc.size      MediumTest
@@ -774,7 +774,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_2300
      * @tc.name      DoFlushTest0007
      * @tc.desc      Array Unshift index
      * @tc.size      MediumTest
@@ -796,7 +796,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_2400
      * @tc.name      DoFlushTest0008
      * @tc.desc      Array Unshift index
      * @tc.size      MediumTest
@@ -816,7 +816,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_2500
      * @tc.name      DoFlushTest0009
      * @tc.desc      Array Unshift index
      * @tc.size      MediumTest
@@ -838,7 +838,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_2600
      * @tc.name      DoFlushTest0010
      * @tc.desc      Array Unshift index
      * @tc.size      MediumTest
@@ -858,7 +858,7 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTTEN_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAM12_2700
      * @tc.name      DoFlushTest0011
      * @tc.desc      Array Unshift index
      * @tc.size      MediumTest

@@ -44,7 +44,7 @@ export default function HashMapTest04Test() {
     })
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0387
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_0100
      * @tc.name      testHashMap0288
      * @tc.desc      Verify the correctness of storing and reading a normal Uint8Array array
      *               (corresponding to HelloWorld123?) in a HashMap
@@ -77,7 +77,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0388
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_0200
      * @tc.name      testHashMap0289
      * @tc.desc      Verify whether the length of the array is correct after reading
      *               when storing an array containing multiple 0s in a HashMap
@@ -97,7 +97,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0389
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_0300
      * @tc.name      testHashMap0290
      * @tc.desc      Verify that after converting an array containing negative numbers stored in a HashMap
      *               to a Uint8Array, the read result is consistent with the conversion rule
@@ -135,7 +135,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0390
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_0400
      * @tc.name      testHashMap0291
      * @tc.desc      Verify that after converting an array containing negative numbers stored in a HashMap
      *               to a Uint16Array, the read result is consistent with the conversion rule
@@ -170,7 +170,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0391
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_0500
      * @tc.name      testHashMap0292
      * @tc.desc      Verify that after converting an array containing negative numbers stored in a HashMap
      *               to a Uint32Array, the read result is consistent with the conversion rule
@@ -208,7 +208,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0392
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_0600
      * @tc.name      testHashMap0293
      * @tc.desc      Verify that the storage and retrieval in HashMap do not follow the array of numerical coordinates
      * @tc.size      MediumTest
@@ -231,7 +231,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0393
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_0700
      * @tc.name      testHashMap0294
      * @tc.desc      Verify that storing and reading numbers contained in an array in HashMap can be
      *               converted to Int8Array
@@ -255,7 +255,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0394
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_0800
      * @tc.name      testHashMap0295
      * @tc.desc      Verify that storing and reading numbers contained in an array in HashMap can be
      *               converted to Uint8Array
@@ -280,7 +280,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0395
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_0900
      * @tc.name      testHashMap0296
      * @tc.desc      Verify that storing and reading numbers contained in an array in HashMap can be
      *               converted to Int16Array
@@ -305,7 +305,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0396
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1000
      * @tc.name      testHashMap0297
      * @tc.desc      Verify that storing and reading numbers contained in an array in HashMap can be
      *               converted to Uint16Array
@@ -330,7 +330,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0397
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1100
      * @tc.name      testHashMap0298
      * @tc.desc      Verify that storing and reading numbers contained in an array in HashMap can be
      *               converted to Int32Array
@@ -355,7 +355,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0398
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1200
      * @tc.name      testHashMap0299
      * @tc.desc      Verify that storing and reading numbers contained in an array in HashMap can be
      *               converted to Uint32Array
@@ -380,7 +380,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0399
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1300
      * @tc.name      testHashMap0300
      * @tc.desc      Verify that storing and reading numbers contained in an array in HashMap can be
      *               converted to Float32Array
@@ -404,7 +404,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1400
      * @tc.name      testHashMap0301
      * @tc.desc      Verify the handling rules and correctness of storage and reading for non-numeric values
      *               when converting arrays containing NaN/Infinity stored in HashMap to TypedArray
@@ -429,7 +429,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0401
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1500
      * @tc.name      testHashMap0302
      * @tc.desc      Verify the handling rules and correctness of storage and reading for non-numeric values
      *               when converting arrays containing NaN/Infinity stored in HashMap to TypedArray
@@ -454,7 +454,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0402
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1600
      * @tc.name      testHashMap0303
      * @tc.desc      Verify the handling rules and correctness of storage and reading for non-numeric values
      *               when converting arrays containing NaN/Infinity stored in HashMap to TypedArray
@@ -481,7 +481,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0403
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1700
      * @tc.name      testHashMap0304
      * @tc.desc      Verify the type handling rules when converting arrays containing non-numeric
      *               types (string, boolean, null, undefined) stored in HashMap to TypedArray
@@ -501,7 +501,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0404
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1800
      * @tc.name      testHashMap0305
      * @tc.desc      Verify the correctness of handling a length of 0 when storing a regular empty array ([])
      *               in a HashMap
@@ -521,7 +521,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0405
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_1900
      * @tc.name      testHashMap0306
      * @tc.desc      Verify the correctness of handling a length of 0 when storing a regular empty Uint8Array
      *               in a HashMap
@@ -542,7 +542,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0406
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2000
      * @tc.name      testHashMap0307
      * @tc.desc      Verify the correctness of handling a length of 0 when storing a regular empty Int16Array
      *               in a HashMap
@@ -563,7 +563,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0407
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2100
      * @tc.name      testHashMap0308
      * @tc.desc      Verify the overflow handling rules for arrays containing extremely large values (256/65536/32768)
      *               stored in HashMap when converting them to Uint8Array, which exceed the type range
@@ -588,7 +588,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0408
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2200
      * @tc.name      testHashMap0309
      * @tc.desc      Verify the overflow handling rules for arrays containing extremely large values (256/65536/32768)
      *               stored in HashMap when converting them to Uint16Array, which exceed the type range
@@ -613,7 +613,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0409
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2300
      * @tc.name      testHashMap0310
      * @tc.desc      Verify the overflow handling rules for arrays containing extremely large values (256/65536/32768)
      *               stored in HashMap when converting them to Int16Array, which exceed the type range
@@ -637,7 +637,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0410
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2400
      * @tc.name      testHashMap0311
      * @tc.desc      Verify that after deleting the element at a specified index from the array stored in the HashMap,
      *               the data in the HashMap changes accordingly
@@ -663,7 +663,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0411
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2500
      * @tc.name      testHashMap0312
      * @tc.desc      Verify that after deleting an object stored in a HashMap, the state of the HashMap
      *               can be correctly reflected after the attribute is deleted
@@ -692,7 +692,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0412
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2600
      * @tc.name      testHashMap0313
      * @tc.desc      Verify that after deleting non-existent attributes of objects stored in HashMap, the state after
      *               attribute deletion can be correctly reflected
@@ -721,7 +721,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0417
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2700
      * @tc.name      testHashMap0318
      * @tc.desc      Verify the basic property traversal and value processing of common objects stored in HashMap
      * @tc.size      MediumTest
@@ -756,7 +756,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0418
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2800
      * @tc.name      testHashMap0319
      * @tc.desc      Verify the basic property traversal and value processing of common objects stored in HashMap
      * @tc.size      MediumTest
@@ -793,7 +793,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0419
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_2900
      * @tc.name      testHashMap0320
      * @tc.desc      Verify the recursive processing capability of nested object structures stored in HashMap
      * @tc.size      MediumTest
@@ -838,7 +838,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0420
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3000
      * @tc.name      testHashMap0321
      * @tc.desc      Verify the recursive processing capability of nested object structures stored in HashMap
      * @tc.size      MediumTest
@@ -884,7 +884,7 @@ export default function HashMapTest04Test() {
 
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0422
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3100
      * @tc.name      testHashMap0323
      * @tc.desc      Verify whether function properties of objects stored in HashMap are excluded
      *               or specially processed
@@ -915,7 +915,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0423
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3200
      * @tc.name      testHashMap0324
      * @tc.desc      Verify whether function properties of objects stored in HashMap are excluded
      *               or specially processed
@@ -951,7 +951,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0424
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3300
      * @tc.name      testHashMap0325
      * @tc.desc      Verify whether function properties of objects stored in HashMap are excluded
      *               or specially processed
@@ -985,7 +985,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0425
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3400
      * @tc.name      testHashMap0326
      * @tc.desc      Verify the integrity of the ArrayBuffer instances contained within the objects stored
      *               in the HashMap
@@ -1011,7 +1011,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0426
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3500
      * @tc.name      testHashMap0327
      * @tc.desc      Verify that the ArrayBuffer data in the object containing ArrayBuffer stored in HashMap
      *               can be read and written
@@ -1042,7 +1042,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0427
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3600
      * @tc.name      testHashMap0328
      * @tc.desc      Verify the uniqueness of ArrayBuffer references within objects containing ArrayBuffer
      *               stored in HashMap
@@ -1069,7 +1069,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0428
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3700
      * @tc.name      testHashMap0329
      * @tc.desc      Verify the integrity of instances of objects containing DataView in HashMap
      * @tc.size      MediumTest
@@ -1096,7 +1096,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0429
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3800
      * @tc.name      testHashMap0330
      * @tc.desc      Verify the binary data read and write capability of objects containing DataView in HashMap
      * @tc.size      MediumTest
@@ -1123,7 +1123,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0430
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_3900
      * @tc.name      testHashMap0331
      * @tc.desc      Verify the synchronization of data modification involving DataView in HashMap
      * @tc.size      MediumTest
@@ -1148,7 +1148,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0431
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4000
      * @tc.name      testHashMap0332
      * @tc.desc      Verify the uniqueness of references to DataView contained in HashMap
      * @tc.size      MediumTest
@@ -1174,7 +1174,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0432
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4100
      * @tc.name      testHashMap0333
      * @tc.desc      Verify the consistency of reference counting for null objects stored in a HashMap
      * @tc.size      MediumTest
@@ -1195,7 +1195,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0433
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4200
      * @tc.name      testHashMap0334
      * @tc.desc      Verify that the initial empty object stored in HashMap has no inherent properties
      * @tc.size      MediumTest
@@ -1216,7 +1216,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0434
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4300
      * @tc.name      testHashMap0335
      * @tc.desc      Synchronize updates after verifying the dynamically added attributes of null objects
      *               stored in HashMap
@@ -1245,7 +1245,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0435
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4400
      * @tc.name      testHashMap0336
      * @tc.desc      The synchronization takes effect after verifying the deletion attribute of the null object
      *               stored in HashMap
@@ -1272,7 +1272,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0436
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4500
      * @tc.name      testHashMap0337
      * @tc.desc      Test the performance and data integrity of large-scale objects stored in HashMap
      * @tc.size      MediumTest
@@ -1308,7 +1308,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0437
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4600
      * @tc.name      testHashMap0338
      * @tc.desc      Testing the performance threshold verification of large-scale objects stored in HashMap
      * @tc.size      MediumTest
@@ -1345,7 +1345,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0438
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4700
      * @tc.name      testHashMap0339
      * @tc.desc      Verify the integrity of the attributes containing null values stored in HashMap
      * @tc.size      MediumTest
@@ -1373,7 +1373,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0439
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4800
      * @tc.name      testHashMap0340
      * @tc.desc      Verify the synchronization of attribute modifications involving null values stored in HashMap
      * @tc.size      MediumTest
@@ -1403,7 +1403,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0440
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_4900
      * @tc.name      testHashMap0341
      * @tc.desc      Verify the differentiated handling of null values and undefined values stored in a HashMap
      * @tc.size      MediumTest
@@ -1432,7 +1432,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0441
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5000
      * @tc.name      testHashMap0342
      * @tc.desc      Verify the traversal characteristics of HashMap containing null value attributes
      * @tc.size      MediumTest
@@ -1463,7 +1463,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0442
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5100
      * @tc.name      testHashMap0343
      * @tc.desc      Check the integrity of the attributes containing NaN values stored in the HashMap
      * @tc.size      MediumTest
@@ -1491,7 +1491,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0443
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5200
      * @tc.name      testHashMap0344
      * @tc.desc      Check the synchronization of attribute modifications involving NaN values stored in a HashMap
      * @tc.size      MediumTest
@@ -1522,7 +1522,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0444
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5300
      * @tc.name      testHashMap0345
      * @tc.desc      Check the differentiated handling of NaN values and other special values stored in HashMap
      * @tc.size      MediumTest
@@ -1553,7 +1553,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0445
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5400
      * @tc.name      testHashMap0346
      * @tc.desc      Check the traversal characteristics of the attributes containing NaN values stored in HashMap
      * @tc.size      MediumTest
@@ -1584,7 +1584,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0446
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5500
      * @tc.name      testHashMap0347
      * @tc.desc      Verify the integrity of attributes containing Infinity stored in HashMap
      * @tc.size      MediumTest
@@ -1611,7 +1611,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0447
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5600
      * @tc.name      testHashMap0348
      * @tc.desc      Verify the arithmetic property of Infinity for the Infinity attribute
      *               stored in HashMap: Infinity + any number = Infinity
@@ -1640,7 +1640,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0448
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5700
      * @tc.name      testHashMap0349
      * @tc.desc      Verify the synchronization of modifying Infinity value attributes stored in a HashMap
      *               that contain Infinity attributes
@@ -1670,7 +1670,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0449
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5800
      * @tc.name      testHashMap0350
      * @tc.desc      Verify the distinction between Infinity and other special values for attributes containing
      *               Infinity stored in HashMap
@@ -1701,7 +1701,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0450
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_5900
      * @tc.name      testHashMap0351
      * @tc.desc      Verify the traversal characteristics of attributes containing Infinity values stored in a HashMap
      * @tc.size      MediumTest
@@ -1731,7 +1731,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0451
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_6000
      * @tc.name      testHashMap0352
      * @tc.desc      Verify the integrity of TypedArray objects stored as attribute values
      *               (data access/type recognition) in HashMap
@@ -1757,7 +1757,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0452
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_6100
      * @tc.name      testHashMap0353
      * @tc.desc      Verify the type recognition of TypedArray objects stored as attribute values
      *               (data access/type recognition) in HashMap
@@ -1783,7 +1783,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0453
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_6200
      * @tc.name      testHashMap0354
      * @tc.desc      Verify the synchronization of modifications to TypedArray data stored as attribute values
      *               (data access/type recognition) in HashMap
@@ -1816,7 +1816,7 @@ export default function HashMapTest04Test() {
     });
 
     /**
-     * @tc.number    SUB_HASHMAP_TEST_0454
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_HASHMAP5_6300
      * @tc.name      testHashMap0355
      * @tc.desc      Verify the integrity of the underlying ArrayBuffer for TypedArray data stored
      *               as attribute values (data access/type recognition) in HashMap

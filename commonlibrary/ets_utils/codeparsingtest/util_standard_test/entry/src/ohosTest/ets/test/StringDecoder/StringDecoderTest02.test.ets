@@ -41,7 +41,7 @@ export default function StringDecoder02Test(): void {
     };
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_0100
      * @tc.name      testWriteUtf8BasicString0001
      * @tc.desc      Decode basic string with UTF-8 encoding
      * @tc.size      MediumTest
@@ -60,7 +60,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_0200
      * @tc.name      testWriteUtf8ChineseString0002
      * @tc.desc      Decode Chinese string with UTF-8 encoding
      * @tc.size      MediumTest
@@ -79,7 +79,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_0300
      * @tc.name      testWriteUtf16leBasicString0018
      * @tc.desc      Decode basic string with UTF-16LE encoding
      * @tc.size      MediumTest
@@ -98,7 +98,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_0400
      * @tc.name      testWriteUtf16beBasicString0019
      * @tc.desc      Decode basic string with UTF-16BE encoding
      * @tc.size      MediumTest
@@ -117,7 +117,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_0500
      * @tc.name      testWriteUtf8SplitChunks0020
      * @tc.desc      Decode split chunks with UTF-8 encoding
      * @tc.size      MediumTest
@@ -141,7 +141,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_0600
      * @tc.name      testWriteUtf8PartialChar0021
      * @tc.desc      Decode partial character with UTF-8 encoding
      * @tc.size      MediumTest
@@ -163,7 +163,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_0700
      * @tc.name      testWriteUtf8SpecialCharacters0022
      * @tc.desc      Decode special characters with UTF-8 encoding
      * @tc.size      MediumTest
@@ -182,7 +182,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_0800
      * @tc.name      testWriteUtf8EmojiCharacters0023
      * @tc.desc      Decode emoji characters with UTF-8 encoding
      * @tc.size      MediumTest
@@ -201,7 +201,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_0900
      * @tc.name      testWriteUtf8LongString0009
      * @tc.desc      Decode long string with UTF-8 encoding
      * @tc.size      MediumTest
@@ -221,7 +221,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_1000
      * @tc.name      testWriteUtf8MixedLanguage0010
      * @tc.desc      Decode mixed language string with UTF-8 encoding
      * @tc.size      MediumTest
@@ -240,7 +240,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_1100
      * @tc.name      testWriteUtf8ControlCharacters0011
      * @tc.desc      Decode control characters with UTF-8 encoding
      * @tc.size      MediumTest
@@ -259,7 +259,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_1200
      * @tc.name      testWriteUtf8InvalidBytes0012
      * @tc.desc      Decode invalid bytes with UTF-8 encoding
      * @tc.size      MediumTest
@@ -278,7 +278,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_1300
      * @tc.name      testWriteMultipleCalls0013
      * @tc.desc      Multiple calls to write method for decoding
      * @tc.size      MediumTest
@@ -303,7 +303,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_1400
      * @tc.name      testWriteUtf8WithBom0014
      * @tc.desc      Decode with BOM in UTF-8 encoding
      * @tc.size      MediumTest
@@ -325,7 +325,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_1500
      * @tc.name      testWriteUtf16leWithBom0015
      * @tc.desc      Decode with BOM in UTF-16LE encoding
      * @tc.size      MediumTest
@@ -347,7 +347,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_1600
      * @tc.name      testWriteUtf16beWithBom0016
      * @tc.desc      Decode with BOM in UTF-16BE encoding
      * @tc.size      MediumTest
@@ -369,7 +369,7 @@ export default function StringDecoder02Test(): void {
       });
 
     /**
-     * @tc.number    SUB_UTIL_STRINGDECODER_WRITE_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STRINGDECODER3_1700
      * @tc.name      testWriteReuseDecoderInstance0017
      * @tc.desc      Reuse decoder instance for multiple write operations
      * @tc.size      MediumTest

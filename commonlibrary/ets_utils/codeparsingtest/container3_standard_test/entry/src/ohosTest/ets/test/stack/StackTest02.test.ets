@@ -30,7 +30,7 @@ export default function Stack02Test() {
     })
 
     /**
-     * @tc.number    SUB_STACK_TEST02_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_0100
      * @tc.name      testStack02Chapter0001
      * @tc.desc      Test peek method with empty stack, should return undefined
      * @tc.size      MediumTest
@@ -46,7 +46,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_0200
      * @tc.name      testStack02Chapter0002
      * @tc.desc      Test peek method with number elements (document example)
      * @tc.size      MediumTest
@@ -66,7 +66,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_0300
      * @tc.name      testStack02Chapter0003
      * @tc.desc      Test peek method with string elements
      * @tc.size      MediumTest
@@ -84,7 +84,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_0400
      * @tc.name      testStack02Chapter0004
      * @tc.desc      Test peek method with boolean elements
      * @tc.size      MediumTest
@@ -102,7 +102,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_0500
      * @tc.name      testStack02Chapter0005
      * @tc.desc      Test peek method with NaN value
      * @tc.size      MediumTest
@@ -119,7 +119,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_0600
      * @tc.name      testStack02Chapter0006
      * @tc.desc      Test peek method with Infinity value
      * @tc.size      MediumTest
@@ -136,7 +136,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_0700
      * @tc.name      testStack02Chapter0007
      * @tc.desc      Test peek method with object elements
      * @tc.size      MediumTest
@@ -161,7 +161,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_0800
      * @tc.name      testStack02Chapter0008
      * @tc.desc      Test peek method after pop operation
      * @tc.size      MediumTest
@@ -181,7 +181,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_0900
      * @tc.name      testStack02Chapter0009
      * @tc.desc      Test peek method with null value (generic type includes null)
      * @tc.size      MediumTest
@@ -202,7 +202,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1000
      * @tc.name      testStack02Chapter0010
      * @tc.desc      Test peek method with undefined value (generic type includes undefined)
      * @tc.size      MediumTest
@@ -219,7 +219,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1100
      * @tc.name      testStack02Chapter0011
      * @tc.desc      Test peek method after multiple pop operations (simulating clear)
      * @tc.size      MediumTest
@@ -241,7 +241,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1200
      * @tc.name      testStack02Chapter0012
      * @tc.desc      Test peek method with negative zero value
      * @tc.size      MediumTest
@@ -258,7 +258,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1300
      * @tc.name      testStack02Chapter0013
      * @tc.desc      Test peek method with large integer value
      * @tc.size      MediumTest
@@ -275,7 +275,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1400
      * @tc.name      testStack02Chapter0014
      * @tc.desc      Test peek method multiple times without modifying stack
      * @tc.size      MediumTest
@@ -296,7 +296,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1500
      * @tc.name      testStack02Chapter0015
      * @tc.desc      Test  method with empty stack
      * @tc.size      MediumTest
@@ -312,7 +312,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1600
      * @tc.name      testStack02Chapter0016
      * @tc.desc      Test locate method with existing element (document example)
      * @tc.size      MediumTest
@@ -332,7 +332,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1700
      * @tc.name      testStack02Chapter0017
      * @tc.desc      Test locate method with non-existing element
      * @tc.size      MediumTest
@@ -351,7 +351,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1800
      * @tc.name      testStack02Chapter0018
      * @tc.desc      Test locate method with duplicate elements (should return first occurrence from top)
      * @tc.size      MediumTest
@@ -373,7 +373,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_1900
      * @tc.name      testStack02Chapter0019
      * @tc.desc      Test locate method with string elements
      * @tc.size      MediumTest
@@ -394,7 +394,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2000
      * @tc.name      testStack02Chapter0020
      * @tc.desc      Test locate method with boolean elements
      * @tc.size      MediumTest
@@ -416,7 +416,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2100
      * @tc.name      testStack02Chapter0021
      * @tc.desc      Test locate method with NaN value
      * @tc.size      MediumTest
@@ -435,7 +435,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2200
      * @tc.name      testStack02Chapter0022
      * @tc.desc      Test locate method with Infinity value
      * @tc.size      MediumTest
@@ -454,7 +454,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2300
      * @tc.name      testStack02Chapter0023
      * @tc.desc      Test locate method with -Infinity value
      * @tc.size      MediumTest
@@ -473,7 +473,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2400
      * @tc.name      testStack02Chapter0024
      * @tc.desc      Test locate method with zero values (0 and -0)
      * @tc.size      MediumTest
@@ -495,7 +495,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2500
      * @tc.name      testStack02Chapter0025
      * @tc.desc      Test locate method with null value (when generic type includes null)
      * @tc.size      MediumTest
@@ -514,7 +514,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2600
      * @tc.name      testStack02Chapter0026
      * @tc.desc      Test locate method with undefined value (when generic type includes undefined)
      * @tc.size      MediumTest
@@ -533,7 +533,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2700
      * @tc.name      testStack02Chapter0027
      * @tc.desc      Test locate method with object elements
      * @tc.size      MediumTest
@@ -559,7 +559,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2800
      * @tc.name      testStack02Chapter0028
      * @tc.desc      Test locate method with large integer values
      * @tc.size      MediumTest
@@ -580,7 +580,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_2900
      * @tc.name      testStack02Chapter0029
      * @tc.desc      Test locate method with Number.MAX_VALUE
      * @tc.size      MediumTest
@@ -599,7 +599,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3000
      * @tc.name      testStack02Chapter0030
      * @tc.desc      Test locate method with Number.MIN_VALUE
      * @tc.size      MediumTest
@@ -618,7 +618,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3100
      * @tc.name      testStack02Chapter0031
      * @tc.desc      Test locate method with Number.EPSILON
      * @tc.size      MediumTest
@@ -637,7 +637,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3200
      * @tc.name      testStack02Chapter0032
      * @tc.desc      Test locate method with byte range values
      * @tc.size      MediumTest
@@ -658,7 +658,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3300
      * @tc.name      testStack02Chapter0033
      * @tc.desc      Test locate method with short range values
      * @tc.size      MediumTest
@@ -679,7 +679,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3400
      * @tc.name      testStack02Chapter0034
      * @tc.desc      Test locate method with int range values
      * @tc.size      MediumTest
@@ -700,7 +700,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3500
      * @tc.name      testStack02Chapter0035
      * @tc.desc      Test locate method with long range values
      * @tc.size      MediumTest
@@ -721,7 +721,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3600
      * @tc.name      testStack02Chapter0036
      * @tc.desc      Test locate method with float range values
      * @tc.size      MediumTest
@@ -742,7 +742,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3700
      * @tc.name      testStack02Chapter0037
      * @tc.desc      Test locate method with double range values
      * @tc.size      MediumTest
@@ -763,7 +763,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3800
      * @tc.name      testStack02Chapter0038
      * @tc.desc      Test locate method with bigint values
      * @tc.size      MediumTest
@@ -784,7 +784,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_3900
      * @tc.name      testStack02Chapter0039
      * @tc.desc      Test locate method with hexadecimal values
      * @tc.size      MediumTest
@@ -808,7 +808,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4000
      * @tc.name      testStack02Chapter0040
      * @tc.desc      Test locate method with exponent values
      * @tc.size      MediumTest
@@ -832,7 +832,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4100
      * @tc.name      testStack02Chapter0041
      * @tc.desc      Test locate method with array elements
      * @tc.size      MediumTest
@@ -854,7 +854,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4200
      * @tc.name      testStack02Chapter0042
      * @tc.desc      Test locate method with TypedArray elements
      * @tc.size      MediumTest
@@ -876,7 +876,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4300
      * @tc.name      testStack02Chapter0043
      * @tc.desc      Test locate method with special characters in strings
      * @tc.size      MediumTest
@@ -895,7 +895,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4400
      * @tc.name      testStack02Chapter0044
      * @tc.desc      Test locate method with empty string
      * @tc.size      MediumTest
@@ -914,7 +914,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4500
      * @tc.name      testStack02Chapter0045
      * @tc.desc      Test locate method with special escape characters
      * @tc.size      MediumTest
@@ -933,7 +933,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4600
      * @tc.name      testStack02Chapter0046
      * @tc.desc      Test locate method with Map objects
      * @tc.size      MediumTest
@@ -955,7 +955,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4700
      * @tc.name      testStack02Chapter0047
      * @tc.desc      Test locate method with Set objects
      * @tc.size      MediumTest
@@ -977,7 +977,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4800
      * @tc.name      testStack02Chapter0048
      * @tc.desc      Test locate method after pop operation
      * @tc.size      MediumTest
@@ -1000,7 +1000,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_4900
      * @tc.name      testStack02Chapter0049
      * @tc.desc      Test locate method with char range values
      * @tc.size      MediumTest
@@ -1022,7 +1022,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5000
      * @tc.name      testStack02Chapter0050
      * @tc.desc      Test locate method with BigInt constructor values
      * @tc.size      MediumTest
@@ -1041,7 +1041,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5100
      * @tc.name      testStack02Chapter0051
      * @tc.desc      Test locate method with double precision values
      * @tc.size      MediumTest
@@ -1060,7 +1060,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5200
      * @tc.name      testStack02Chapter0052
      * @tc.desc      Test locate method with float hex values
      * @tc.size      MediumTest
@@ -1079,7 +1079,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5300
      * @tc.name      testStack02Chapter0053
      * @tc.desc      Test locate method with 8-bit values
      * @tc.size      MediumTest
@@ -1103,7 +1103,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5400
      * @tc.name      testStack02Chapter0054
      * @tc.desc      Test locate method with Math.floor value
      * @tc.size      MediumTest
@@ -1122,7 +1122,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5500
      * @tc.name      testStack02Chapter0055
      * @tc.desc      Test locate method with ASCII characters
      * @tc.size      MediumTest
@@ -1142,7 +1142,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5600
      * @tc.name      testStack02Chapter0056
      * @tc.desc      Test locate method with repeated special characters
      * @tc.size      MediumTest
@@ -1162,7 +1162,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5700
      * @tc.name      testStack02Chapter0057
      * @tc.desc      Test locate method with escape sequences
      * @tc.size      MediumTest
@@ -1186,7 +1186,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5800
      * @tc.name      testStack02Chapter0058
      * @tc.desc      Test locate method with emoji characters
      * @tc.size      MediumTest
@@ -1208,7 +1208,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_5900
      * @tc.name      testStack02Chapter0059
      * @tc.desc      Test locate method with more emoji characters
      * @tc.size      MediumTest
@@ -1230,7 +1230,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6000
      * @tc.name      testStack02Chapter0060
      * @tc.desc      Test locate method with complex emoji characters
      * @tc.size      MediumTest
@@ -1252,7 +1252,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6100
      * @tc.name      testStack02Chapter0061
      * @tc.desc      Test locate method with additional emoji characters
      * @tc.size      MediumTest
@@ -1274,7 +1274,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6200
      * @tc.name      testStack02Chapter0062
      * @tc.desc      Test locate method with Unicode escape sequences
      * @tc.size      MediumTest
@@ -1296,7 +1296,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6300
      * @tc.name      testStack02Chapter0063
      * @tc.desc      Test locate method with more Unicode escape sequences
      * @tc.size      MediumTest
@@ -1318,7 +1318,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6400
      * @tc.name      testStack02Chapter0064
      * @tc.desc      Test locate method with additional Unicode escape sequences
      * @tc.size      MediumTest
@@ -1340,7 +1340,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6500
      * @tc.name      testStack02Chapter0065
      * @tc.desc      Test locate method with final Unicode escape sequences
      * @tc.size      MediumTest
@@ -1362,7 +1362,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6600
      * @tc.name      testStack02Chapter0066
      * @tc.desc      Test locate method with invalid Unicode sequences
      * @tc.size      MediumTest
@@ -1384,7 +1384,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6700
      * @tc.name      testStack02Chapter0067
      * @tc.desc      Test locate method with keyword strings
      * @tc.size      MediumTest
@@ -1408,7 +1408,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6800
      * @tc.name      testStack02Chapter0068
      * @tc.desc      Test locate method with normal Uint8Array array
      * @tc.size      MediumTest
@@ -1430,7 +1430,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_6900
      * @tc.name      testStack02Chapter0069
      * @tc.desc      Test locate method with array containing multiple zeros
      * @tc.size      MediumTest
@@ -1450,7 +1450,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7000
      * @tc.name      testStack02Chapter0070
      * @tc.desc      Test locate method with array containing negative numbers
      * @tc.size      MediumTest
@@ -1473,7 +1473,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7100
      * @tc.name      testStack02Chapter0071
      * @tc.desc      Test locate method with array containing NaN/Infinity
      * @tc.size      MediumTest
@@ -1496,7 +1496,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7200
      * @tc.name      testStack02Chapter0072
      * @tc.desc      Test locate method with array containing non-numeric types
      * @tc.size      MediumTest
@@ -1519,7 +1519,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7300
      * @tc.name      testStack02Chapter0073
      * @tc.desc      Test locate method with empty array
      * @tc.size      MediumTest
@@ -1542,7 +1542,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7400
      * @tc.name      testStack02Chapter0074
      * @tc.desc      Test locate method with array containing overflow values
      * @tc.size      MediumTest
@@ -1565,7 +1565,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7500
      * @tc.name      testStack02Chapter0075
      * @tc.desc      Test locate method with ordinary object
      * @tc.size      MediumTest
@@ -1590,7 +1590,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7600
      * @tc.name      testStack02Chapter0076
      * @tc.desc      Test locate method with nested object
      * @tc.size      MediumTest
@@ -1625,7 +1625,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7700
      * @tc.name      testStack02Chapter0077
      * @tc.desc      Test locate method with object containing function property
      * @tc.size      MediumTest
@@ -1651,7 +1651,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7800
      * @tc.name      testStack02Chapter0078
      * @tc.desc      Test locate method with object with prototype chain
      * @tc.size      MediumTest
@@ -1684,7 +1684,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_7900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_7900
      * @tc.name      testStack02Chapter0079
      * @tc.desc      Test locate method with object containing non-enumerable property
      * @tc.size      MediumTest
@@ -1707,7 +1707,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_8000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_8000
      * @tc.name      testStack02Chapter0080
      * @tc.desc      Test locate method with object containing ArrayBuffer
      * @tc.size      MediumTest
@@ -1730,7 +1730,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_8100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_8100
      * @tc.name      testStack02Chapter0081
      * @tc.desc      Test locate method with object containing DataView
      * @tc.size      MediumTest
@@ -1754,7 +1754,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_8200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_8200
      * @tc.name      testStack02Chapter0082
      * @tc.desc      Test locate method with empty object
      * @tc.size      MediumTest
@@ -1775,7 +1775,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_8300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_8300
      * @tc.name      testStack02Chapter0083
      * @tc.desc      Test locate method with object containing undefined property
      * @tc.size      MediumTest
@@ -1799,7 +1799,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_8400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_8400
      * @tc.name      testStack02Chapter0084
      * @tc.desc      Test locate method with object containing null property
      * @tc.size      MediumTest
@@ -1823,7 +1823,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_8500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_8500
      * @tc.name      testStack02Chapter0085
      * @tc.desc      Test locate method with object containing NaN property
      * @tc.size      MediumTest
@@ -1847,7 +1847,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_8600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_8600
      * @tc.name      testStack02Chapter0086
      * @tc.desc      Test locate method with object containing Infinity property
      * @tc.size      MediumTest
@@ -1871,7 +1871,7 @@ export default function Stack02Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST02_8700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK3_8700
      * @tc.name      testStack02Chapter0087
      * @tc.desc      Test locate method with object containing TypedArray property
      * @tc.size      MediumTest

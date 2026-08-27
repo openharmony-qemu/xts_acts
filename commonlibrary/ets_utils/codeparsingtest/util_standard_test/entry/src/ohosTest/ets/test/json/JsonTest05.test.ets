@@ -177,7 +177,7 @@ export default function Json05Test() {
     })
 
     /**
-     * @tc.number    SUB_JSON_TEST05_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_0100
      * @tc.name      testJson05Chapter0001
      * @tc.desc      Test JSON.has with object containing property with value Number.EPSILON.
      * @tc.size      MediumTest
@@ -193,7 +193,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_0200
      * @tc.name      testJson05Chapter0002
      * @tc.desc      Test JSON.has with object containing property with value Number.MAX_SAFE_INTEGER.
      * @tc.size      MediumTest
@@ -209,7 +209,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_0300
      * @tc.name      testJson05Chapter0003
      * @tc.desc      Test JSON.has with object containing property with bigint value.
      * @tc.size      MediumTest
@@ -225,7 +225,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_0400
      * @tc.name      testJson05Chapter0004
      * @tc.desc      Test JSON.has with object containing property with hexadecimal value.
      * @tc.size      MediumTest
@@ -241,7 +241,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_0500
      * @tc.name      testJson05Chapter0005
      * @tc.desc      Test JSON.has with property name as unicode escape sequence.
      * @tc.size      MediumTest
@@ -257,7 +257,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_0600
      * @tc.name      testJson05Chapter0006
      * @tc.desc      Test JSON.has with object from array-like object with string keys.
      * @tc.size      MediumTest
@@ -275,7 +275,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_0700
      * @tc.name      testJson05Chapter0007
      * @tc.desc      Test JSON.has with object containing TypedArray property with special values.
      * @tc.size      MediumTest
@@ -296,7 +296,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_0800
      * @tc.name      testJson05Chapter0008
      * @tc.desc      Test JSON.has with property name containing illegal unicode.
      * @tc.size      MediumTest
@@ -316,7 +316,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_0900
      * @tc.name      testJson05Chapter0009
      * @tc.desc      Test JSON.has with property name as treeString type (large JSON string pattern).
      * @tc.size      MediumTest
@@ -336,7 +336,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1000
      * @tc.name      testJson05Chapter0010
      * @tc.desc      Test JSON.has with property name from sliceString type.
      * @tc.size      MediumTest
@@ -356,7 +356,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1100
      * @tc.name      testJson05Chapter0011
      * @tc.desc      Test JSON.has with property name as very large string (memory test).
      * @tc.size      MediumTest
@@ -375,7 +375,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1200
      * @tc.name      testJson05Chapter0012
      * @tc.desc      Test JSON.has with object containing array of various typed values.
      * @tc.size      MediumTest
@@ -398,7 +398,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1300
      * @tc.name      testJson05Chapter0013
      * @tc.desc      Test JSON.has with object containing array with out-of-range values.
      * @tc.size      MediumTest
@@ -424,7 +424,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1400
      * @tc.name      testJson05Chapter0014
      * @tc.desc      Test JSON.has with object after delete operation.
      * @tc.size      MediumTest
@@ -447,7 +447,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1500
      * @tc.name      testJson05Chapter0015
      * @tc.desc      Test JSON.has with object containing various numeric boundary values.
      * @tc.size      MediumTest
@@ -481,7 +481,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1600
      * @tc.name      testJson05Chapter0016
      * @tc.desc      Test JSON.has with object containing numeric values in different formats.
      * @tc.size      MediumTest
@@ -508,7 +508,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1700
      * @tc.name      testJson05Chapter0017
      * @tc.desc      Test JSON.has with object containing boolean-like values.
      * @tc.size      MediumTest
@@ -533,7 +533,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1800
      * @tc.name      testJson05Chapter0018
      * @tc.desc      Test JSON.has with object containing all ASCII characters as separate properties.
      * @tc.size      MediumTest
@@ -554,7 +554,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_1900
      * @tc.name      testJson05Chapter0019
      * @tc.desc      Test JSON.has with object containing escape sequence property names.
      * @tc.size      MediumTest
@@ -584,7 +584,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2000
      * @tc.name      testJson05Chapter0020
      * @tc.desc      Test JSON.has with object containing emoji unicode property names.
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2100
      * @tc.name      testJson05Chapter0021
      * @tc.desc      Test JSON.has with object containing typed arrays of all types.
      * @tc.size      MediumTest
@@ -643,7 +643,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2200
      * @tc.name      testJson05Chapter0022
      * @tc.desc      Test JSON.has with object containing complex nested structures.
      * @tc.size      MediumTest
@@ -679,7 +679,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2300
      * @tc.name      testJson05Chapter0023
      * @tc.desc      Test JSON.has with property name that changes dynamically.
      * @tc.size      MediumTest
@@ -698,7 +698,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2400
      * @tc.name      testJson05Chapter0024
      * @tc.desc      Test JSON.has with property name containing repeated special characters.
      * @tc.size      MediumTest
@@ -717,7 +717,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2500
      * @tc.name      testJson05Chapter0025
      * @tc.desc      Test JSON.has with property name containing tab and newline characters.
      * @tc.size      MediumTest
@@ -738,7 +738,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2600
      * @tc.name      testJson05Chapter0026
      * @tc.desc      Test JSON.has with property name containing octal and hex escape sequences.
      * @tc.size      MediumTest
@@ -758,7 +758,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2700
      * @tc.name      testJson05Chapter0027
      * @tc.desc      Test JSON.has with property name as various number string representations.
      * @tc.size      MediumTest
@@ -782,7 +782,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2800
      * @tc.name      testJson05Chapter0028
      * @tc.desc      Test JSON.has with property name that looks like boolean.
      * @tc.size      MediumTest
@@ -804,7 +804,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_2900
      * @tc.name      testJson05Chapter0029
      * @tc.desc      Test JSON.has with extremely large object (performance test).
      * @tc.size      MediumTest
@@ -824,7 +824,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3000
      * @tc.name      testJson05Chapter0030
      * @tc.desc      Test JSON.has with property name containing surrogate pairs.
      * @tc.size      MediumTest
@@ -854,7 +854,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3100
      * @tc.name      testJson05Chapter0031
      * @tc.desc      Test JSON.has with property name containing control characters.
      * @tc.size      MediumTest
@@ -877,7 +877,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3200
      * @tc.name      testJson05Chapter0032
      * @tc.desc      Test JSON.has with property name containing extended ASCII characters.
      * @tc.size      MediumTest
@@ -898,7 +898,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3300
      * @tc.name      testJson05Chapter0033
      * @tc.desc      Test JSON.has with property name containing zero-width characters.
      * @tc.size      MediumTest
@@ -920,7 +920,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3400
      * @tc.name      testJson05Chapter0034
      * @tc.desc      Test JSON.has with property name containing combining characters.
      * @tc.size      MediumTest
@@ -941,7 +941,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3500
      * @tc.name      testJson05Chapter0035
      * @tc.desc      Test JSON.has with property name containing right-to-left characters.
      * @tc.size      MediumTest
@@ -963,7 +963,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3600
      * @tc.name      testJson05Chapter0036
      * @tc.desc      Test JSON.has with property name containing mathematical symbols.
      * @tc.size      MediumTest
@@ -992,7 +992,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3700
      * @tc.name      testJson05Chapter0037
      * @tc.desc      Test JSON.has with property name containing currency symbols.
      * @tc.size      MediumTest
@@ -1019,7 +1019,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3800
      * @tc.name      testJson05Chapter0038
      * @tc.desc      Test JSON.has with property name containing punctuation from different languages.
      * @tc.size      MediumTest
@@ -1047,7 +1047,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_3900
      * @tc.name      testJson05Chapter0039
      * @tc.desc      Test JSON.has with property name containing line separators.
      * @tc.size      MediumTest
@@ -1068,7 +1068,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4000
      * @tc.name      testJson05Chapter0040
      * @tc.desc      Test JSON.has with property name containing variation selectors.
      * @tc.size      MediumTest
@@ -1090,7 +1090,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4100
      * @tc.name      testJson05Chapter0041
      * @tc.desc      Test JSON.has with property name containing tag characters.
      * @tc.size      MediumTest
@@ -1112,7 +1112,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4200
      * @tc.name      testJson05Chapter0042
      * @tc.desc      Test JSON.has with property name containing BOM (Byte Order Mark).
      * @tc.size      MediumTest
@@ -1132,7 +1132,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4300
      * @tc.name      testJson05Chapter0043
      * @tc.desc      Test JSON.has with property name containing musical symbols.
      * @tc.size      MediumTest
@@ -1160,7 +1160,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4400
      * @tc.name      testJson05Chapter0044
      * @tc.desc      Test JSON.has with property name containing chess symbols.
      * @tc.size      MediumTest
@@ -1190,7 +1190,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4500
      * @tc.name      testJson05Chapter0045
      * @tc.desc      Test JSON.has with property name containing weather symbols.
      * @tc.size      MediumTest
@@ -1226,7 +1226,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4600
      * @tc.name      testJson05Chapter0046
      * @tc.desc      Test JSON.has with property name containing zodiac symbols.
      * @tc.size      MediumTest
@@ -1256,7 +1256,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4700
      * @tc.name      testJson05Chapter0047
      * @tc.desc      Test JSON.has with property name containing playing card symbols.
      * @tc.size      MediumTest
@@ -1282,7 +1282,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4800
      * @tc.name      testJson05Chapter0048
      * @tc.desc      Test JSON.has with property name containing recycling symbols.
      * @tc.size      MediumTest
@@ -1312,7 +1312,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_4900
      * @tc.name      testJson05Chapter0049
      * @tc.desc      Test JSON.has with property name containing warning symbols.
      * @tc.size      MediumTest
@@ -1338,7 +1338,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5000
      * @tc.name      testJson05Chapter0050
      * @tc.desc      Test JSON.has with property name containing geometric shapes.
      * @tc.size      MediumTest
@@ -1368,7 +1368,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5100
      * @tc.name      testJson05Chapter0051
      * @tc.desc      Test JSON.has with property name containing box drawing characters.
      * @tc.size      MediumTest
@@ -1399,7 +1399,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5200
      * @tc.name      testJson05Chapter0052
      * @tc.desc      Test JSON.has with property name containing braille patterns.
      * @tc.size      MediumTest
@@ -1420,7 +1420,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5300
      * @tc.name      testJson05Chapter0053
      * @tc.desc      Test JSON.has with property name containing cuneiform symbols.
      * @tc.size      MediumTest
@@ -1452,7 +1452,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5400
      * @tc.name      testJson05Chapter0054
      * @tc.desc      Test JSON.has with property name containing Egyptian hieroglyphs.
      * @tc.size      MediumTest
@@ -1484,7 +1484,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5500
      * @tc.name      testJson05Chapter0055
      * @tc.desc      Test JSON.has with property name containing mathematical alphanumeric symbols.
      * @tc.size      MediumTest
@@ -1516,7 +1516,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5600
      * @tc.name      testJson05Chapter0056
      * @tc.desc      Test JSON.has with property name containing emoji modifiers.
      * @tc.size      MediumTest
@@ -1544,7 +1544,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5700
      * @tc.name      testJson05Chapter0057
      * @tc.desc      Test JSON.has with property name containing flag sequences.
      * @tc.size      MediumTest
@@ -1570,7 +1570,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5800
      * @tc.name      testJson05Chapter0058
      * @tc.desc      Test JSON.has with property name containing ZWJ sequences.
      * @tc.size      MediumTest
@@ -1596,7 +1596,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_5900
      * @tc.name      testJson05Chapter0059
      * @tc.desc      Test JSON.has with property name containing keycap sequences.
      * @tc.size      MediumTest
@@ -1626,7 +1626,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_6000
      * @tc.name      testJson05Chapter0060
      * @tc.desc      Test JSON.has with property name containing regional indicator symbols.
      * @tc.size      MediumTest
@@ -1647,7 +1647,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_6100
      * @tc.name      testJson05Chapter0061
      * @tc.desc      Test JSON.has with property name containing tag sequences.
      * @tc.size      MediumTest
@@ -1668,7 +1668,7 @@ export default function Json05Test() {
     });
 
     /**
-     * @tc.number    SUB_JSON_TEST05_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_JSON6_6200
      * @tc.name      testJson05Chapter0062
      * @tc.desc      Test JSON.has with property name containing variation selector sequences.
      * @tc.size      MediumTest

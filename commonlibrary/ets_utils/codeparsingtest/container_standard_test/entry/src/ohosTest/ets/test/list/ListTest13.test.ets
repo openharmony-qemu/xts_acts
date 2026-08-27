@@ -297,7 +297,7 @@ export default function ListTest13() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_0100
      * @tc.name      testList13Chapter0001
      * @tc.desc      test clear list with normal object elements, verify result
      * @tc.size      MediumTest
@@ -327,7 +327,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_0200
      * @tc.name      testList13Chapter0002
      * @tc.desc      test clear list with nested object elements, verify result
      * @tc.size      MediumTest
@@ -354,7 +354,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_0300
      * @tc.name      testList13Chapter0003
      * @tc.desc      test clear list with empty object elements, verify result
      * @tc.size      MediumTest
@@ -378,7 +378,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_0400
      * @tc.name      testList13Chapter0004
      * @tc.desc      test clear list with buffer object elements, verify result
      * @tc.size      MediumTest
@@ -408,7 +408,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_0500
      * @tc.name      testList13Chapter0005
      * @tc.desc      test clear list with dataview object elements, verify result
      * @tc.size      MediumTest
@@ -444,7 +444,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_0600
      * @tc.name      testList13Chapter0006
      * @tc.desc      test clear list with map object elements, verify result
      * @tc.size      MediumTest
@@ -478,7 +478,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_0700
      * @tc.name      testList13Chapter0007
      * @tc.desc      test clear list with set object elements, verify result
      * @tc.size      MediumTest
@@ -505,7 +505,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_0800
      * @tc.name      testList13Chapter0008
      * @tc.desc      test clear list with function object elements, verify result
      * @tc.size      MediumTest
@@ -532,7 +532,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_0900
      * @tc.name      testList13Chapter0009
      * @tc.desc      test clear list with regex object elements, verify result
      * @tc.size      MediumTest
@@ -559,7 +559,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1000
      * @tc.name      testList13Chapter0010
      * @tc.desc      test clear list with promise object elements, verify result
      * @tc.size      MediumTest
@@ -587,7 +587,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1100
      * @tc.name      testList13Chapter0011
      * @tc.desc      test clear list with large object elements, verify result
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1200
      * @tc.name      testList13Chapter0012
      * @tc.desc      test clear list with mixed object elements, verify result
      * @tc.size      MediumTest
@@ -652,7 +652,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1300
      * @tc.name      testList13Chapter0013
      * @tc.desc      test clear list with special value object elements, verify result
      * @tc.size      MediumTest
@@ -681,7 +681,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1400
      * @tc.name      testList13Chapter0014
      * @tc.desc      test clear list initialized with data, verify result
      * @tc.size      MediumTest
@@ -710,7 +710,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1500
      * @tc.name      testList13Chapter0015
      * @tc.desc      test clear list multiple times, verify result
      * @tc.size      MediumTest
@@ -737,7 +737,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1600
      * @tc.name      testList13Chapter0016
      * @tc.desc      test clear list after insert operation, verify result
      * @tc.size      MediumTest
@@ -762,7 +762,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1700
      * @tc.name      testList13Chapter0017
      * @tc.desc      test clear list with bigint elements, verify result
      * @tc.size      MediumTest
@@ -785,7 +785,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1800
      * @tc.name      testList13Chapter0018
      * @tc.desc      test clear list with large amount of elements, verify result
      * @tc.size      MediumTest
@@ -808,7 +808,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_1900
      * @tc.name      testList13Chapter0019
      * @tc.desc      test clear list with mixed basic types, verify result
      * @tc.size      MediumTest
@@ -837,7 +837,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2000
      * @tc.name      testList13Chapter0020
      * @tc.desc      Verify List set() with Uint8Array and multi-zero number arrays
      * @tc.size      MediumTest
@@ -870,7 +870,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2100
      * @tc.name      testList13Chapter0021
      * @tc.desc      Verify the processing logic for arrays with negative numbers and non-numeric index arrays
      * @tc.size      MediumTest
@@ -911,7 +911,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2200
      * @tc.name      testList13Chapter0022
      * @tc.desc      Verify the processing logic for arrays containing NaN/Infinity and non-numeric type arrays
      * @tc.size      MediumTest
@@ -947,7 +947,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2300
      * @tc.name      testList13Chapter0023
      * @tc.desc      Verify set() for empty/overflow/deleted element arrays
      * @tc.size      MediumTest
@@ -984,7 +984,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2400
      * @tc.name      testList13Chapter0024
      * @tc.desc      Verify set() for nested/TypedArray/ultra-long length arrays
      * @tc.size      LargeTest
@@ -1031,7 +1031,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2500
      * @tc.name      testList13Chapter0025
      * @tc.desc      Verify the processing logic for arrays containing functions/keywords (Symbol removed)
      * @tc.size      MediumTest
@@ -1058,7 +1058,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2600
      * @tc.name      testList13Chapter0026
      * @tc.desc      Test add interface with basic string values
      * @tc.size      MediumTest
@@ -1098,7 +1098,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2700
      * @tc.name      testList13Chapter0027
      * @tc.desc      Test add interface with special character strings
      * @tc.size      MediumTest
@@ -1141,7 +1141,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2800
      * @tc.name      testList13Chapter0028
      * @tc.desc      Test add interface with escape character strings
      * @tc.size      MediumTest
@@ -1179,7 +1179,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_2900
      * @tc.name      testList13Chapter0029
      * @tc.desc      Test add interface with more escape character strings
      * @tc.size      MediumTest
@@ -1217,7 +1217,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3000
      * @tc.name      testList13Chapter0030
      * @tc.desc      Test add interface with hex/octal escape strings
      * @tc.size      MediumTest
@@ -1255,7 +1255,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3100
      * @tc.name      testList13Chapter0031
      * @tc.desc      Test add interface with emoji strings
      * @tc.size      MediumTest
@@ -1298,7 +1298,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3200
      * @tc.name      testList13Chapter0032
      * @tc.desc      Test add interface with special unicode strings
      * @tc.size      MediumTest
@@ -1354,7 +1354,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3300
      * @tc.name      testList13Chapter0033
      * @tc.desc      Test add interface with large strings (logic verification without actual large string)
      * @tc.size      MediumTest
@@ -1390,7 +1390,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3400
      * @tc.name      testList13Chapter0034
      * @tc.desc      Test add interface with special number values
      * @tc.size      MediumTest
@@ -1435,7 +1435,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3500
      * @tc.name      testList13Chapter0035
      * @tc.desc      Test add interface with extreme number values
      * @tc.size      MediumTest
@@ -1475,7 +1475,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3600
      * @tc.name      testList13Chapter0036
      * @tc.desc      Test add interface with precision number values
      * @tc.size      MediumTest
@@ -1536,7 +1536,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3700
      * @tc.name      testList13Chapter0037
      * @tc.desc      Test add interface with base expression number values
      * @tc.size      MediumTest
@@ -1589,7 +1589,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3800
      * @tc.name      testList13Chapter0038
      * @tc.desc      Test add interface with bigint values (fixed redundant wrapping)
      * @tc.size      MediumTest
@@ -1634,7 +1634,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_3900
      * @tc.name      testList13Chapter0039
      * @tc.desc      Test add interface with basic boolean values
      * @tc.size      MediumTest
@@ -1669,7 +1669,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_4000
      * @tc.name      testList13Chapter0040
      * @tc.desc      Test add interface with false-like values
      * @tc.size      MediumTest
@@ -1713,7 +1713,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_4100
      * @tc.name      testList13Chapter0041
      * @tc.desc      Test add interface with true-like values (fixed EmptyObject initialization)
      * @tc.size      MediumTest
@@ -1753,7 +1753,7 @@ export default function ListTest13() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT13_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST13_4200
      * @tc.name      testList13Chapter0042
      * @tc.desc      Test add interface with mixed boolean/number/string values
      * @tc.size      MediumTest

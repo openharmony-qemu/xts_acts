@@ -60,7 +60,7 @@ export default function XmlTest_08() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_0100
      * @tc.name      IsWhitespaceTest0006
      * @tc.desc      Check if attribute value is blank
      * @tc.size      MediumTest
@@ -89,7 +89,7 @@ export default function XmlTest_08() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_0200
      * @tc.name      IsWhitespaceTest0007
      * @tc.desc      Whitespace between self-closing tags
      * @tc.size      MediumTest
@@ -118,7 +118,7 @@ export default function XmlTest_08() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_0300
      * @tc.name      IsWhitespaceTest0008
      * @tc.desc      Pure visible character verification
      * @tc.size      MediumTest
@@ -146,7 +146,7 @@ export default function XmlTest_08() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_0400
      * @tc.name      IsWhitespaceTest0009
      * @tc.desc      Mixed whitespace and visible characters
      * @tc.size      MediumTest
@@ -174,7 +174,7 @@ export default function XmlTest_08() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_0500
      * @tc.name      IsWhitespaceTest0010
      * @tc.desc      Text node containing visible characters
      * @tc.size      MediumTest
@@ -203,7 +203,7 @@ export default function XmlTest_08() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_0600
      * @tc.name      IsWhitespaceTest0011
      * @tc.desc      The processing command contains valid content
      * @tc.size      MediumTest
@@ -230,7 +230,7 @@ export default function XmlTest_08() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_0700
      * @tc.name      IsWhitespaceTest0016
      * @tc.desc      Text nodes in mixed content
      * @tc.size      MediumTest
@@ -264,7 +264,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_0800
      * @tc.name      IsWhitespaceTest0017
      * @tc.desc      Text nodes in empty elements
      * @tc.size      MediumTest
@@ -295,7 +295,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_0900
      * @tc.name      IsWhitespaceTest0018
      * @tc.desc      Pure visible character verification
      * @tc.size      MediumTest
@@ -321,7 +321,7 @@ Core business data: 10001
 
       });
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_1000
      * @tc.name      IsWhitespaceTest0019
      * @tc.desc      Empty element (self-closing)  Leading whitespace  Trailing non-whitespace text combination
      * @tc.size      MediumTest
@@ -356,7 +356,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_1100
      * @tc.name      IsWhitespaceTest0020
      * @tc.desc      Effectively process instructions
      * @tc.size      MediumTest
@@ -384,7 +384,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_1200
      * @tc.name      IsWhitespaceTest0021
      * @tc.desc      Valid comment content
      * @tc.size      MediumTest
@@ -411,7 +411,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_ISWHITESPACE_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML9_1300
      * @tc.name      IsWhitespaceTest0024
      * @tc.desc      Namespace declaration
      * @tc.size      MediumTest
@@ -437,7 +437,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_1400
      * @tc.name getAttributeCountTest0001
      * @tc.desc Element with no attributes
      * @tc.size MediumTest
@@ -461,7 +461,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_1500
      * @tc.name getAttributeCountTest0002
      * @tc.desc Single-attribute element
      * @tc.size MediumTest
@@ -485,7 +485,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_1600
      * @tc.name getAttributeCountTest0003
      * @tc.desc Multi-attribute element (3 attributes)
      * @tc.size MediumTest
@@ -512,7 +512,7 @@ Core business data: 10001
 
 
      /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_1700
      * @tc.name getAttributeCountTest0004
      * @tc.desc Attribute count of nested elements
      * @tc.size MediumTest
@@ -542,7 +542,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_1800
      * @tc.name getAttributeCountTest0005
      * @tc.desc Called in a text node
      * @tc.size MediumTest
@@ -566,7 +566,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_1900
      * @tc.name getAttributeCountTest0006
      * @tc.desc Called in the comment node
      * @tc.size MediumTest
@@ -590,7 +590,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_2000
      * @tc.name getAttributeCountTest0007
      * @tc.desc Called in DOCTYPE declaration
      * @tc.size MediumTest
@@ -614,7 +614,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number  SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_0800
+     * @tc.number  SUB_COMMONLIBRARY_UTIL_XML9_2100
      * @tc.name  getAttributeCountTest0008
      * @tc.desc  Call getAttributeCount after parsing is interrupted
      * @tc.size  MediumTest
@@ -639,7 +639,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_2200
      * @tc.name getAttributeCountTest0009
      * @tc.desc Comparison of Attribute Counts Between Parent and Child Elements
      * @tc.size MediumTest
@@ -669,7 +669,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_2300
      * @tc.name getAttributeCountTest0010
      * @tc.desc Attribute Count Attribute Value Retrieval Combination
      * @tc.size MediumTest
@@ -696,7 +696,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_2400
      * @tc.name getAttributeCountTest0011
      * @tc.desc Conditional Analysis (Count Specific Elements Only)
      * @tc.size MediumTest
@@ -731,7 +731,7 @@ Core business data: 10001
       });
 
     /**
-     * @tc.number SUB_BASEDATE_PARSEINFO_GETATTRIBUTECOUNT_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_XML9_2500
      * @tc.name getAttributeCountTest0012
      * @tc.desc Correct analysis and incorrect analysis mixed
      * @tc.size MediumTest

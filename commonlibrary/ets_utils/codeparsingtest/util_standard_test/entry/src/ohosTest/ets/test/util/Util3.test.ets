@@ -104,7 +104,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testCallbackWrapper001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CALLBACK_WRAPPER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_0100
      * @tc.desc   Test util.callbackWrapper with async function that resolves.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -132,7 +132,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testCallbackWrapper002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CALLBACK_WRAPPER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_0200
      * @tc.desc   Test util.callbackWrapper with async function that rejects.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -160,7 +160,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testCallbackWrapper003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CALLBACK_WRAPPER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_0300
      * @tc.desc   Test util.callbackWrapper with no-argument async function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -187,7 +187,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testPromisify001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_0400
      * @tc.desc   Test util.promisify with callback that succeeds.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testPromisify002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_0500
      * @tc.desc   Test util.promisify with callback that fails.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -225,7 +225,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testPromisify003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_0600
      * @tc.desc   Test util.promisify combined with util.callbackWrapper.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -241,7 +241,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_0700
      * @tc.desc   Test printf null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -270,7 +270,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_0800
      * @tc.desc   Test format null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -303,7 +303,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_0900
      * @tc.desc   Test parseUUID null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -326,7 +326,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1000
      * @tc.desc   Test parseUUID null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -355,7 +355,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1100
      * @tc.desc   Test decode null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -379,7 +379,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1200
      * @tc.desc   Test decodeToString null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -408,7 +408,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1300
      * @tc.desc   Test create null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1400
      * @tc.desc   Test encodeInto null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -467,7 +467,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1500
      * @tc.desc   Test compareTo null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -490,7 +490,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1600
      * @tc.desc   Test getCommonDivisor null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -522,7 +522,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1700
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -545,7 +545,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1800
      * @tc.desc   Test get null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -568,7 +568,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_1900
      * @tc.desc   Test put null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -601,7 +601,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2000
      * @tc.desc   Test remove null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -624,7 +624,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2100
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -644,7 +644,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_01900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2200
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -663,7 +663,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2300
      * @tc.desc   Test intersect null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -687,7 +687,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2400
      * @tc.desc   Test intersect null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -723,7 +723,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2500
      * @tc.desc   Test expand null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -747,7 +747,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2600
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -771,7 +771,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2700
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -798,7 +798,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2800
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -834,7 +834,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_2900
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -880,7 +880,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3000
      * @tc.desc   Test contains null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -905,7 +905,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3100
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -930,7 +930,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_02900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3200
      * @tc.desc   Test encodeSync null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -952,7 +952,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3300
      * @tc.desc   Test encodeToStringSync null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -974,7 +974,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3400
      * @tc.desc   Test decodeSync null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1003,7 +1003,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3500
      * @tc.desc   Test encode null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1025,7 +1025,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3600
      * @tc.desc   Test encodeToString null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1047,7 +1047,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3700
      * @tc.desc   Test decode null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1081,7 +1081,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3800
      * @tc.desc   Test encodeSync null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1105,7 +1105,7 @@ export default function Util3Test() {
     })
     /**
      * @tc.name   testUtil0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_3900
      * @tc.desc   Test decodeSync null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1138,7 +1138,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4000
      * @tc.desc   Test encode null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1161,7 +1161,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4100
      * @tc.desc   Test encodeToString null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1195,7 +1195,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_03900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4200
      * @tc.desc   Test decode null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1227,7 +1227,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_04000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4300
      * @tc.desc   Test isBoxedPrimitive null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1243,7 +1243,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_04100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4400
      * @tc.desc   Test isNumberObject null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1259,7 +1259,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_04200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4500
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1285,7 +1285,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtil0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROMISIFY_04300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4600
      * @tc.desc   Test updateCapacity null and undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1312,7 +1312,7 @@ export default function Util3Test() {
     })
     /**
      * @tc.name   testUtilFormatString001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4700
      * @tc.desc   Test util.format with %s specifier for string conversion.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1334,7 +1334,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtilFormatDecimal001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_DECIMAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4800
      * @tc.desc   Test util.format with %d specifier for decimal number formatting.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1355,7 +1355,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtilFormatInteger001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_INTEGER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_4900
      * @tc.desc   Test util.format with %i specifier for integer conversion.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1376,7 +1376,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtilFormatFloat001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_FLOAT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5000
      * @tc.desc   Test util.format with %f specifier for float conversion.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1397,7 +1397,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtilFormatJSON001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_JSON_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5100
      * @tc.desc   Test util.format with %j specifier for JSON conversion.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1418,7 +1418,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtilFormatObject001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_OBJECT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5200
      * @tc.desc   Test util.format with %O specifier for object formatting.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1440,7 +1440,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtilFormatObject002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_OBJECT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5300
      * @tc.desc   Test util.format with %o specifier for object formatting.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1462,7 +1462,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtilFormatPercent001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_PERCENT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5400
      * @tc.desc   Test util.format with %% specifier for percent escape.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1484,7 +1484,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtilFormatNestedObject001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_NESTED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5500
      * @tc.desc   Test util.format with nested object using %O.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1527,7 +1527,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUtilFormatMixed001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FORMAT_MIXED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5600
      * @tc.desc   Test util.format with mixed format specifiers.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1550,7 +1550,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheConstructor001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_CONSTRUCTOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5700
      * @tc.desc   Test LRUCache constructor with capacity.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1571,7 +1571,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCachePut001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_PUT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5800
      * @tc.desc   Test LRUCache put and get operations.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1594,7 +1594,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCachePut002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_PUT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_5900
      * @tc.desc   Test LRUCache put with same key updates value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1616,7 +1616,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheGet001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6000
      * @tc.desc   Test LRUCache get with non-existent key returns default.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1637,7 +1637,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheRemove001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_REMOVE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6100
      * @tc.desc   Test LRUCache remove operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1661,7 +1661,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheClear001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6200
      * @tc.desc   Test LRUCache clear operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1685,7 +1685,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheIsEmpty001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_IS_EMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6300
      * @tc.desc   Test LRUCache isEmpty operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1707,7 +1707,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheUpdateCapacity001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_CAPACITY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6400
      * @tc.desc   Test LRUCache updateCapacity operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1729,7 +1729,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheStats001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_STATS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6500
      * @tc.desc   Test LRUCache statistics methods.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1755,7 +1755,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheKeys001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_KEYS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6600
      * @tc.desc   Test LRUCache keys iteration.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1783,7 +1783,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheValues001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_VALUES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6700
      * @tc.desc   Test LRUCache values iteration.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1811,7 +1811,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheToString001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_TO_STRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6800
      * @tc.desc   Test LRUCache toString operation.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1834,7 +1834,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testLRUCacheEviction001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LRU_CACHE_EVICTION_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_6900
      * @tc.desc   Test LRUCache eviction policy when capacity is exceeded.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1861,7 +1861,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextEncoderCreate001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_ENCODER_CREATE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7000
      * @tc.desc   Test util.TextEncoder.create with default encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1881,7 +1881,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextEncoderCreate002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_ENCODER_CREATE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7100
      * @tc.desc   Test util.TextEncoder.create with utf-8 encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1901,7 +1901,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextEncoderEncodeInto001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_ENCODER_ENCODE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7200
      * @tc.desc   Test util.TextEncoder.encodeInto with simple string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1926,7 +1926,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextEncoderEncodeInto002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_ENCODER_ENCODE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7300
      * @tc.desc   Test util.TextEncoder.encodeInto with Unicode string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1950,7 +1950,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextEncoderEncodeIntoUint8Array001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_ENCODER_ENCODE_UINT8_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7400
      * @tc.desc   Test util.TextEncoder.encodeIntoUint8Array with simple string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1974,7 +1974,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextDecoderCreate001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_DECODER_CREATE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7500
      * @tc.desc   Test util.TextDecoder.create with default encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1994,7 +1994,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextDecoderCreate002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_DECODER_CREATE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7600
      * @tc.desc   Test util.TextDecoder.create with utf-8 encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2014,7 +2014,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextDecoderDecodeToString001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_DECODER_DECODE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7700
      * @tc.desc   Test util.TextDecoder.decodeToString with ASCII bytes.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2036,7 +2036,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextDecoderDecodeToString002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_DECODER_DECODE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7800
      * @tc.desc   Test util.TextDecoder.decodeToString with UTF-8 bytes (Chinese).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2059,7 +2059,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextDecoderDecodeToString003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_DECODER_DECODE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_7900
      * @tc.desc   Test util.TextDecoder.decodeToString with stream option.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2081,7 +2081,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testTextEncodingRoundTrip002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TEXT_ENCODING_ROUNDTRIP_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8000
      * @tc.desc   Test round-trip encoding and decoding with Unicode string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2106,7 +2106,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGenerateRandomUUID001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_GENERATE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8100
      * @tc.desc   Test util.generateRandomUUID with cache enabled (default).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2126,7 +2126,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGenerateRandomUUID002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_GENERATE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8200
      * @tc.desc   Test util.generateRandomUUID without cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2146,7 +2146,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGenerateRandomUUID003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_GENERATE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8300
      * @tc.desc   Test util.generateRandomUUID uniqueness.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2167,7 +2167,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGenerateRandomBinaryUUID001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_BINARY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8400
      * @tc.desc   Test util.generateRandomBinaryUUID with cache enabled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2187,7 +2187,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGenerateRandomBinaryUUID002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_BINARY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8500
      * @tc.desc   Test util.generateRandomBinaryUUID without cache.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2207,7 +2207,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGenerateRandomBinaryUUID003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_BINARY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8600
      * @tc.desc   Test util.generateRandomBinaryUUID uniqueness.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2235,7 +2235,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testParseUUID001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_PARSE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8700
      * @tc.desc   Test util.parseUUID with valid UUID string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2256,7 +2256,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testParseUUID002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_PARSE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8800
      * @tc.desc   Test util.parseUUID with invalid UUID string - should throw error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2277,7 +2277,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testParseUUID003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_PARSE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_8900
      * @tc.desc   Test util.parseUUID round-trip conversion.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2298,7 +2298,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testParseUUID004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_PARSE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9000
      * @tc.desc   Test util.parseUUID with empty string - should throw error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2318,7 +2318,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testUUIDVersion001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UUID_VERSION_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9100
      * @tc.desc   Test that generated UUIDs are RFC 4122 version 4.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2337,7 +2337,7 @@ export default function Util3Test() {
     });
     /**
      * @tc.name   testGetHash_067
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3532
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9200
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2359,7 +2359,7 @@ export default function Util3Test() {
     });
     /**
      * @tc.name   testGetHash_068
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3533
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9300
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2392,7 +2392,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGetHash_069
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3535
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9400
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2415,7 +2415,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGetHash_070
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3536
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9500
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2435,7 +2435,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGetHash_071
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3537
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9600
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2459,7 +2459,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGetHash_072
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3538
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9700
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2496,7 +2496,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGetHash_073
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3539
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9800
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2548,7 +2548,7 @@ export default function Util3Test() {
 
     /**
      * @tc.name   testGetHash_074
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETHASH_3540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_UTIL3_9900
      * @tc.desc   Testing the getHash interface
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

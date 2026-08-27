@@ -32,7 +32,7 @@ export default function TextEncoderTest() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_0100
      * @tc.name      testTextEncoder0001
      * @tc.desc      Verify encoding correctness for all printable ASCII characters.
      * @tc.size      MediumTest
@@ -52,7 +52,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_0200
      * @tc.name      testTextEncoder0002
      * @tc.desc      Verify preservation of control characters.
      * @tc.size      MediumTest
@@ -70,7 +70,7 @@ export default function TextEncoderTest() {
         expect(result[1] === 0x09).assertTrue();
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_0300
      * @tc.name      testTextEncoder0003
      * @tc.desc      Verify encoding logic for common Chinese characters.
      * @tc.size      MediumTest
@@ -88,7 +88,7 @@ export default function TextEncoderTest() {
         expect(result[0] === 0xE4).assertTrue();
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_0400
      * @tc.name      testTextEncoder0004
      * @tc.desc      Verify handling of 4-byte characters (Emoji).
      * @tc.size      MediumTest
@@ -107,7 +107,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_0500
      * @tc.name      testTextEncoder0005
      * @tc.desc      Verify offset calculations for mixed languages.
      * @tc.size      MediumTest
@@ -127,7 +127,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_0600
      * @tc.name      testTextEncoder0006
      * @tc.desc      Verify that BOM (U+FEFF) is correctly encoded.
      * @tc.size      MediumTest
@@ -147,7 +147,7 @@ export default function TextEncoderTest() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_0700
      * @tc.name      testTextEncoder0009
      * @tc.desc      Verify encoding integrity for a large string.
      * @tc.size      MediumTest
@@ -167,7 +167,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_0800
      * @tc.name      testTextEncoder0010
      * @tc.desc      Verify boundaries between 1-byte and 2-byte characters.
      * @tc.size      MediumTest
@@ -187,7 +187,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_0900
      * @tc.name      testTextEncoder0011
      * @tc.desc      Verify the structure of the return object {read, written}.
      * @tc.size      MediumTest
@@ -207,7 +207,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1000
      * @tc.name      testTextEncoder0012
      * @tc.desc      Verify behavior when buffer size exactly equals required length.
      * @tc.size      MediumTest
@@ -226,7 +226,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1100
      * @tc.name      testTextEncoder0013
      * @tc.desc      Verify unused buffer areas are not polluted.
      * @tc.size      MediumTest
@@ -246,7 +246,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1200
      * @tc.name      testTextEncoder0014
      * @tc.desc      Verify atomic truncation: no partial bytes written.
      * @tc.size      MediumTest
@@ -265,7 +265,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1300
      * @tc.name      testTextEncoder0015
      * @tc.desc      Verify truncation behavior when buffer is partially sufficient.
      * @tc.size      MediumTest
@@ -285,7 +285,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1400
      * @tc.name      testTextEncoder0016
      * @tc.desc      Verify read/written counts for surrogate pairs (Emoji).
      * @tc.size      MediumTest
@@ -304,7 +304,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1500
      * @tc.name      testTextEncoder0017
      * @tc.desc      Verify writing data into a subarray.
      * @tc.size      MediumTest
@@ -325,7 +325,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1600
      * @tc.name      testTextEncoder0018
      * @tc.desc      Verify encodeInto interaction with empty string.
      * @tc.size      MediumTest
@@ -343,7 +343,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1700
      * @tc.name      testTextEncoder0019
      * @tc.desc      Verify accumulated writes (streaming).
      * @tc.size      MediumTest
@@ -368,7 +368,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1800
      * @tc.name      testTextEncoder0020
      * @tc.desc      Verify truncation for 4-byte characters.
      * @tc.size      MediumTest
@@ -386,7 +386,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_1900
      * @tc.name      testTextEncoder0021
      * @tc.desc      Verify isolated high surrogate handling.
      * @tc.size      MediumTest
@@ -403,7 +403,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2000
      * @tc.name      testTextEncoder0022
      * @tc.desc      Verify isolated low surrogate handling.
      * @tc.size      MediumTest
@@ -420,7 +420,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2100
      * @tc.name      testTextEncoder0023
      * @tc.desc      Verify handling of reversed surrogate pairs.
      * @tc.size      MediumTest
@@ -437,7 +437,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2200
      * @tc.name      testTextEncoder0024
      * @tc.desc      Verify string ending with an isolated high surrogate.
      * @tc.size      MediumTest
@@ -456,7 +456,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2300
      * @tc.name      testTextEncoder0025
      * @tc.desc      Verify counting logic when encoding illegal surrogates.
      * @tc.size      MediumTest
@@ -475,7 +475,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2400
      * @tc.name      testTextEncoder0026
      * @tc.desc      Verify TextEncoder instance is stateless.
      * @tc.size      MediumTest
@@ -494,7 +494,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2500
      * @tc.name      testTextEncoder0027
      * @tc.desc      Consistency check: Verify encode() and encodeInto() produce identical results.
      * @tc.size      MediumTest
@@ -517,7 +517,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2600
      * @tc.name      testTextEncoder0028
      * @tc.desc      Verify chunked writing logic for large strings.
      * @tc.size      MediumTest
@@ -538,7 +538,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2700
      * @tc.name      testTextEncoder0029
      * @tc.desc      Verify encoding of the maximum valid Unicode code point.
      * @tc.size      MediumTest
@@ -556,7 +556,7 @@ export default function TextEncoderTest() {
 
       });
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2800
      * @tc.name      testTextEncoder0030
      * @tc.desc      Verify robustness when encodeInto target buffer has zero length.
      * @tc.size      MediumTest
@@ -577,7 +577,7 @@ export default function TextEncoderTest() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_2900
      * @tc.name      testTextEncoder0031
      * @tc.desc      Verify encoding of high-range ASCII characters (0x7F).
      * @tc.size      MediumTest
@@ -596,7 +596,7 @@ export default function TextEncoderTest() {
 
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_3000
      * @tc.name      testTextEncoder0032
      * @tc.desc      Comprehensive check mixing 1, 2, 3, and 4-byte characters.
      * @tc.size      MediumTest
@@ -618,7 +618,7 @@ export default function TextEncoderTest() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_3100
      * @tc.name      testTextEncoder0033
      * @tc.desc      Verify memory stability by looping encodeInto multiple times.
      * @tc.size      MediumTest
@@ -638,7 +638,7 @@ export default function TextEncoderTest() {
       });
 
     /**
-     * @tc.number    SUB_UTIL_TEXTENCODER_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TEXTENCODER1_3200
      * @tc.name      testTextEncoder0034
      * @tc.desc      Verify that encoding an empty string returns a valid Uint8Array instance.
      * @tc.size      MediumTest

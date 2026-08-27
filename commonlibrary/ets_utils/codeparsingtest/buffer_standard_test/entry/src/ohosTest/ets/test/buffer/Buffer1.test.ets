@@ -44,7 +44,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testAlloc0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1010
      * @tc.desc   Testing alloc interface with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -64,7 +64,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1020
      * @tc.desc   Testing alloc for buffer with value '4294967296'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1030
      * @tc.desc   Testing alloc for parameter with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1040
      * @tc.desc   Testing alloc for parameter with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -120,7 +120,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1050
      * @tc.desc   Testing alloc for buffer,the second parameter is empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1060
      * @tc.desc   Testing alloc for buffer,the second parameter is null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1070
      * @tc.desc   Testing alloc for buffer,the second parameter is buffer type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -178,7 +178,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1080
      * @tc.desc   Testing alloc,the second and third parameter is string and null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testAlloc0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1090
      * @tc.desc   Testing alloc for parameter with value 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -215,7 +215,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1100
      * @tc.desc   Testing alloc for parameter with value (0，bufferOBJ).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -236,7 +236,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1110
      * @tc.desc   Testing alloc for buffer with value -5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -254,7 +254,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAlloc0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1120
      * @tc.desc   Testing alloc for buffer with value 5.5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -273,7 +273,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitialized0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1130
      * @tc.desc   Testing allocUninitialized for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -292,7 +292,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitialized0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZED_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1140
      * @tc.desc   Testing allocUninitialized for buffer with value 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -311,7 +311,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitialized0003
-     * @tc.number testAllocUninitialized0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1150
      * @tc.desc   Testing allocUninitialized for buffer with value -5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -329,7 +329,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitialized0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZED_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1160
      * @tc.desc   Testing allocUninitialized for buffer with value 5.5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -348,7 +348,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitialized0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZED_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1170
      * @tc.desc   Testing allocUninitialized for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -367,7 +367,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitialized0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZED_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1180
      * @tc.desc   Testing allocUninitialized for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -386,7 +386,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZEDFROMPOOL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1190
      * @tc.desc   Testing allocUninitializedFromPool for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -405,7 +405,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZEDFROMPOOL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1200
      * @tc.desc   Testing allocUninitializedFromPool for buffer with value 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -424,7 +424,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZEDFROMPOOL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1210
      * @tc.desc   Testing allocUninitializedFromPool for buffer with value -5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -443,7 +443,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZEDFROMPOOL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1220
      * @tc.desc   Testing allocUninitializedFromPool for buffer with value 5.5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -462,7 +462,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZEDFROMPOOL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1230
      * @tc.desc   Testing allocUninitializedFromPool for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -481,7 +481,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOCUNINITIALIZEDFROMPOOL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1240
      * @tc.desc   Testing allocUninitializedFromPool for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -500,7 +500,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testByteLength0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1250
      * @tc.desc   Testing byteLength for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -519,7 +519,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testByteLength0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1260
      * @tc.desc   Testing byteLength for buffer with value '测试'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -538,7 +538,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testByteLength0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1270
      * @tc.desc   Testing byteLength for buffer with value '$&@*%'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -557,7 +557,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testByteLength0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1280
      * @tc.desc   Testing byteLength for buffer with uint8array objects.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -579,7 +579,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testByteLength0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1290
      * @tc.desc   Testing byteLength for buffer with buffer objects.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -599,7 +599,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testByteLength0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1300
      * @tc.desc   Testing byteLength for buffer with buffer objects.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -619,7 +619,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testByteLength0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1310
      * @tc.desc   Testing byteLength for buffer with value empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -639,7 +639,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testByteLength0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1320
      * @tc.desc   Testing byteLength for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -658,7 +658,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testByteLength0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTELENGTH_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1330
      * @tc.desc   Testing byteLength for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -677,7 +677,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsBuffer0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1340
      * @tc.desc   Testing isBuffer for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -697,7 +697,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsBuffer0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1350
      * @tc.desc   Testing isBuffer for buffer with object value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -717,7 +717,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsBuffer0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1360
      * @tc.desc   Testing isBuffer for buffer with value '[]'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -736,7 +736,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsBuffer0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1370
      * @tc.desc   Testing isBuffer for buffer with value string type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -755,7 +755,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsBuffer0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1380
      * @tc.desc   Testing isBuffer for buffer with value empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -774,7 +774,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsBuffer0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1390
      * @tc.desc   testing alloc for buffer with normal value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -793,7 +793,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsBuffer0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1400
      * @tc.desc   Testing isBuffer for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -812,7 +812,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsBuffer0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1410
      * @tc.desc   Testing isBuffer for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -831,7 +831,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsEncoding0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISCODEING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1420
      * @tc.desc   Testing isEncoding for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -854,7 +854,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsEncoding0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISCODEING_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1430
      * @tc.desc   Testing isEncoding for buffer with value gbk.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -873,7 +873,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsEncoding0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISCODEING_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1440
      * @tc.desc   Testing isEncoding for buffer with value empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -892,7 +892,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsEncoding0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISCODEING_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1450
      * @tc.desc   Testing isEncoding for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -911,7 +911,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIsEncoding0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISCODEING_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1460
      * @tc.desc   Testing isEncoding for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -930,7 +930,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testStaticCompare0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1470
      * @tc.desc   Testing compare with value '1235' and '1236'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -951,7 +951,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testStaticCompare0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1480
      * @tc.desc   Testing compare with value '1236' and '1235'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -972,7 +972,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testStaticCompare0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1490
      * @tc.desc   Testing compare with value '测试一' and '测试二'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -993,7 +993,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testStaticCompare0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1500
      * @tc.desc   Testing compare with value '测试$&*' and '测试$&*'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1014,7 +1014,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testStaticCompare0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1510
      * @tc.desc   Testing compare with value '1236' and '1236'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1035,7 +1035,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testStaticCompare0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1520
      * @tc.desc   Testing compare with value undefined and undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1054,7 +1054,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testStaticCompare0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1530
      * @tc.desc   Testing compare with value null and null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1073,7 +1073,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testStaticCompare0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1540
      * @tc.desc   Testing compare with value buffer and buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1094,7 +1094,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testStaticCompare0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STATICCOMPARE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1550
      * @tc.desc   Testing compare with value buffer and uint8array type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1118,7 +1118,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testCompare0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1560
      * @tc.desc   Testing compare with value '1236' and '1235'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1139,7 +1139,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testCompare0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1570
      * @tc.desc   Testing compare with value (1236,1235,-1).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1160,7 +1160,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testConcat0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONTACT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1580
      * @tc.desc   Testing concat with value '1236, 1235'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1182,7 +1182,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testConcat0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONTACT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1590
      * @tc.desc   Testing concat with value '测试, $&*'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1204,7 +1204,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testConcat0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONTACT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1600
      * @tc.desc   Testing concat with value 'buffer, buffer'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1227,7 +1227,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testConcat0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONTACT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1610
      * @tc.desc   Testing concat with value 'buffer,-1'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1248,7 +1248,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testConcat0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONTACT_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1620
      * @tc.desc   Testing concat with value 'undefined, undefined'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1268,7 +1268,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testTranscode0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1630
      * @tc.desc   Testing transcode with value 'buf1, "ascii", "ucs2"'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1289,7 +1289,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testTranscode0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1640
      * @tc.desc   Testing transcode with value 'buf1, "utf8", "ucs2"'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1310,7 +1310,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testTranscode0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1650
      * @tc.desc   Testing transcode with value 'undefined, "utf8", "ascii"'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1329,7 +1329,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testTranscode0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1660
      * @tc.desc   Testing transcode with value 'null, "utf8", "ascii"'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1348,7 +1348,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFill0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1670
      * @tc.desc   Testing fill with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1368,7 +1368,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFill0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1680
      * @tc.desc   Testing fill with value '('F1刘FG', 0, 10, codeType)'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1412,7 +1412,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFill0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1690
      * @tc.desc   Testing fill with value '$*$'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1432,7 +1432,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFill0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1700
      * @tc.desc   Testing fill with value '"$*$", -1'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1451,7 +1451,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFill0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1710
      * @tc.desc   Testing fill with value '"$*$", 0, 5'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1470,7 +1470,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWrite0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1720
      * @tc.desc   Testing the write interface with a normal value 'abcde' and an out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1488,7 +1488,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWrite0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1730
      * @tc.desc   Testing the write interface with a normal value 'abcde', a normal 'offset' value of 1, and an out-of-range 'length' value of 9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1506,7 +1506,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWrite0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1740
      * @tc.desc   Testing the write interface with normal value ''.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1528,7 +1528,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWrite0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1750
      * @tc.desc   Testing the write interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1546,7 +1546,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWrite0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1760
      * @tc.desc   Testing the write interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1564,7 +1564,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1770
      * @tc.desc   Testing the writeBigInt64BE interface with two parameters: 0x0102030405060708n and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1584,7 +1584,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1780
      * @tc.desc   Testing the writeBigInt64BE interface with a normal value 0x0102030405060708n and an out-of-range 'offset' value of 1, where 'offset' must be >= 0 and <= 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1602,7 +1602,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1790
      * @tc.desc   Testing the writeBigInt64BE interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1620,7 +1620,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1800
      * @tc.desc   Testing the writeBigInt64BE interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1638,7 +1638,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1810
      * @tc.desc   Testing the writeBigInt64LE interface with two parameters: 0x0102030405060708n and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1658,7 +1658,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1820
      * @tc.desc   Testing the writeBigInt64LE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1676,7 +1676,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1830
      * @tc.desc   Testing the writeBigInt64LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1694,7 +1694,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1840
      * @tc.desc   Testing the writeBigInt64LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1712,7 +1712,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1850
      * @tc.desc   Testing the writeInt16BE interface with two parameters: 0xdecafafecacefaden and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1732,7 +1732,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1860
      * @tc.desc   Testing the writeInt16BE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1750,7 +1750,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1870
      * @tc.desc   Testing the writeInt16BE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1768,7 +1768,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WriteBigInt64BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1880
      * @tc.desc   Testing the writeInt16BE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1786,7 +1786,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGUINT64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1890
      * @tc.desc   Testing the writeBigUInt64LE interface with two parameters: 0xdecafafecacefaden and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1806,7 +1806,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGUINT64LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1900
      * @tc.desc   Testing the writeBigUInt64LE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1824,7 +1824,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGUINT64LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1910
      * @tc.desc   Testing the writeBigUInt64LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1842,7 +1842,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BIGUINT64LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1920
      * @tc.desc   Testing the writeBigUInt64LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1860,7 +1860,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteDoubleBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEDOUBLEBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1930
      * @tc.desc   Testing the writeDoubleBE interface with two parameters: 123.456 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1881,7 +1881,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteDoubleBE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEDOUBLEBE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1940
      * @tc.desc   Testing the writeDoubleBE interface with a normal value of 123.456 and an out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1899,7 +1899,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteDoubleBE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEDOUBLEBE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1950
      * @tc.desc   Testing the writeDoubleBE interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1917,7 +1917,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteDoubleBE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEDOUBLEBE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1960
      * @tc.desc   Testing the writeDoubleBE interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1935,7 +1935,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteDoubleLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEDOUBLELE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1970
      * @tc.desc   Testing the writeDoubleLE interface with two parameters: 123.456 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1955,7 +1955,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteDoubleLE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEDOUBLELE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1980
      * @tc.desc   Testing the writeDoubleLE interface with a normal value of 123.456 and an out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1973,7 +1973,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteDoubleLE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEDOUBLELE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_1990
      * @tc.desc   Testing the writeDoubleLE interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1991,7 +1991,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteDoubleLE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEDOUBLELE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2000
      * @tc.desc   Testing the writeDoubleBE interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2009,7 +2009,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteFloatBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEFLOATBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2010
      * @tc.desc   Testing the writeFloatBE interface with two parameters: 0xcabcbcbc and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2029,7 +2029,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteFloatBE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEFLOATBE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2020
      * @tc.desc   Testing the writeFloatBE interface with an out-of-range 'offset' value of 5, where 'offset' must be >= 0 and <= 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2047,7 +2047,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteFloatBE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEFLOATBE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2030
      * @tc.desc   Testing the writeFloatBE interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2065,7 +2065,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteFloatBE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEFLOATBE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2040
      * @tc.desc   Testing the writeFloatBE interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2083,7 +2083,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteFloatLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEFLOATLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2050
      * @tc.desc   Testing the writeFloatLE interface with two parameters: 0xcabcbcbc and 12.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2103,7 +2103,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteFloatLE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEFLOATLE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2060
      * @tc.desc   Testing the writeFloatLE interface with a normal value of 0xcabcbcbc and an out-of-range 'offset' value of 5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2121,7 +2121,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteFloatLE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEFLOATLE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2070
      * @tc.desc   Testing the writeFloatLE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2139,7 +2139,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteFloatLE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEFLOATLE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2080
      * @tc.desc   Testing the writeFloatLE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2157,7 +2157,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt80001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT8_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2090
      * @tc.desc   Testing the writeInt8 interface with value to buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2177,7 +2177,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt80002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT8_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2100
      * @tc.desc   Testing the writeInt8 interface with value 2 and an out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2195,7 +2195,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt80003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT8_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2110
      * @tc.desc   Testing the writeInt8 interface with two parameters: 0x13245 and out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2213,7 +2213,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt80004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT8_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2120
      * @tc.desc   Testing the writeInt8 interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2231,7 +2231,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt80005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT8_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2130
      * @tc.desc   Testing the writeInt8 interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2249,7 +2249,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2140
      * @tc.desc   Testing the writeInt16BE interface with two parameters: 0x7bca and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2269,7 +2269,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2150
      * @tc.desc   Testing the writeInt16BE interface with out of range "offset" -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2287,7 +2287,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2160
      * @tc.desc   Testing the writeInt16BE interface with out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2305,7 +2305,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2170
      * @tc.desc   Testing the writeInt16BE interface with out of range "offset" 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2323,7 +2323,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16BE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2180
      * @tc.desc   Testing the writeInt16BE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2341,7 +2341,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16BE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2190
      * @tc.desc   Testing the writeInt16BE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2359,7 +2359,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2200
      * @tc.desc   Testing the writeInt16LE interface with two parameters: 0x1234 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2379,7 +2379,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2210
      * @tc.desc   Testing the writeInt16LE interface with out-of-range 'offset' value of -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2397,7 +2397,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2220
      * @tc.desc   Testing the writeInt16LE interface with out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2415,7 +2415,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2230
      * @tc.desc   Testing the writeInt16LE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2433,7 +2433,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16LE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2240
      * @tc.desc   Testing the writeInt16LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2451,7 +2451,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT16LE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2250
      * @tc.desc   Testing the writeInt16LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2469,7 +2469,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2260
      * @tc.desc   Testing the writeInt32BE interface with two parameters: 0x12345678 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2489,7 +2489,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2270
      * @tc.desc   Testing the writeInt32BE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2507,7 +2507,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2280
      * @tc.desc   Testing the writeInt32BE interface with out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2525,7 +2525,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2290
      * @tc.desc   Testing the writeInt32BE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2543,7 +2543,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32BE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2300
      * @tc.desc   Testing the writeInt32BE function with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2561,7 +2561,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32BE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2310
      * @tc.desc   Testing the writeInt32BE function with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2579,7 +2579,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2320
      * @tc.desc   Testing the writeInt32LE interface with two parameters: 0x12345678 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2599,7 +2599,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2330
      * @tc.desc   Testing the writeInt32LE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2617,7 +2617,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2340
      * @tc.desc   Testing the writeInt32LE interface with out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2635,7 +2635,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2350
      * @tc.desc   Testing the writeInt32LE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2653,7 +2653,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32LE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2360
      * @tc.desc   Testing the writeInt32LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2671,7 +2671,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINT32LE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2370
      * @tc.desc   Testing the writeInt32LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2689,7 +2689,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINTBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2380
      * @tc.desc   Testing the writeIntBE interface with three parameters: 0x1234567890ab, 0, 6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2709,7 +2709,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINTBE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2390
      * @tc.desc   Testing the writeIntBE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2727,7 +2727,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINTBE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2400
      * @tc.desc   Testing the writeIntBE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2745,7 +2745,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINTBE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2410
      * @tc.desc   Testing the writeIntBE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2763,7 +2763,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINTBE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2420
      * @tc.desc   Testing the writeIntBE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2781,7 +2781,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINTLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2430
      * @tc.desc   Testing the writeIntLE interface with three parameters: 0x1234567890ab, 0, 6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2801,7 +2801,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteIntLE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINTLE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2440
      * @tc.desc   Testing the writeIntLE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2819,7 +2819,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteIntLE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINTLE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2450
      * @tc.desc   Testing the writeIntLE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2837,7 +2837,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteIntLE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEINTLE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2460
      * @tc.desc   Testing the writeIntLE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2855,7 +2855,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt80001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT8_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2470
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 3.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2875,7 +2875,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt80002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT8_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2480
      * @tc.desc   Testing the writeUInt8 interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2893,7 +2893,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt80003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT8_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2490
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2913,7 +2913,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt80004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT8_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2500
      * @tc.desc   Testing the writeUInt8 interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2931,7 +2931,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt80005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT8_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2510
      * @tc.desc   Testing the writeUInt8 interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2949,7 +2949,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2520
      * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xdead and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2969,7 +2969,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2530
      * @tc.desc   Testing the writeUInt16BE interface with out-of-range "value"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2987,7 +2987,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2540
      * @tc.desc   Testing the writeUInt16BE interface with  out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3005,7 +3005,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2550
      * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xdead and 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3025,7 +3025,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16BE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2560
      * @tc.desc   Testing the writeInt16BE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3043,7 +3043,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16BE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2570
      * @tc.desc   Testing the writeUInt16BE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3061,7 +3061,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2580
      * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xdead and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3081,7 +3081,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2590
      * @tc.desc   Testing the writeUInt16LE interface with out-of-range "value"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3099,7 +3099,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2600
      * @tc.desc   Testing the writeUInt16LE interface with  out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3117,7 +3117,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2610
      * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xdead and 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3137,7 +3137,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16LE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2620
      * @tc.desc   Testing the writeUInt16LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3155,7 +3155,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT16LE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2630
      * @tc.desc   Testing the writeUInt16LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3173,7 +3173,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2640
      * @tc.desc   Testing the writeUInt32BE interface with two parameters: 0xfeedface and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3193,7 +3193,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2650
      * @tc.desc   Testing the writeUInt32BE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3211,7 +3211,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2660
      * @tc.desc   Testing the writeUInt32BE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3229,7 +3229,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2670
      * @tc.desc   Testing the writeUInt32BE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3247,7 +3247,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32BE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2680
      * @tc.desc   Testing the writeUInt32BE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3265,7 +3265,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2690
      * @tc.desc   Testing writeUInt32LE with value '0xfeedface, 0'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3285,7 +3285,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2700
      * @tc.desc   Testing writeUInt32LE with value '0xfeedface, -1'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3305,7 +3305,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2710
      * @tc.desc   Testing writeUInt32LE with value '0xfeedface, 1'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3325,7 +3325,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2720
      * @tc.desc   Testing writeUInt32LE with value 'undefined'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3345,7 +3345,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUInt32LE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINT32LE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2730
      * @tc.desc   Testing writeUInt32LE with value 'null'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3365,7 +3365,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2740
      * @tc.desc   Testing writeUIntBE with value '0x13141516, 0, 4'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3385,7 +3385,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntBE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTBE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2750
      * @tc.desc   Testing writeUIntBE with value '0x13141516, 0, 1'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3405,7 +3405,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntBE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTBE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2760
      * @tc.desc   Testing writeUIntBE with value '0x13141516, 1, 4'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3425,7 +3425,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntBE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTBE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2770
      * @tc.desc   Testing writeUIntBE with value '0x13141516, 1, 4'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3445,7 +3445,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntBE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTBE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2780
      * @tc.desc   Testing writeUIntBE with value 'undefined, 1, 4'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3465,7 +3465,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntBE0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTBE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2790
      * @tc.desc   Testing writeUIntBE with value 'null, 1, 4'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3485,7 +3485,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2800
      * @tc.desc   Testing writeUIntLE with value '0x13141516, 0, 4'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3505,7 +3505,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntLE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTLE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2810
      * @tc.desc   Testing writeUIntLE with value '0x13141516, 0, 1'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3524,7 +3524,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntLE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTLE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2820
      * @tc.desc   Testing writeUIntLE with value '0x13141516, 1, 4'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3543,7 +3543,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntLE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTLE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2830
      * @tc.desc   Testing writeUIntLE with value 'buffer.allocUninitializedFromPool(5),1,4'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3563,7 +3563,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntLE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTLE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2840
      * @tc.desc   Testing writeUIntLE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3583,7 +3583,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWriteUIntLE0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEUINTLE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2850
      * @tc.desc   Testing writeUIntLE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3603,7 +3603,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2860
      * @tc.desc   Testing readBigInt64BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3624,7 +3624,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigInt64BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2870
      * @tc.desc   Testing readBigInt64BE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3645,7 +3645,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigInt64BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2880
      * @tc.desc   Testing readBigInt64BE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3666,7 +3666,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigInt64BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2890
      * @tc.desc   Testing readBigInt64BE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3687,7 +3687,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2900
      * @tc.desc   Testing readBigInt64LE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3708,7 +3708,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2910
      * @tc.desc   Testing readBigInt64LE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3729,7 +3729,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2920
      * @tc.desc   Testing readBigInt64LE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3750,7 +3750,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGINT64LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2930
      * @tc.desc   Testing readBigInt64LE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3771,7 +3771,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigUInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGUINT64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2940
      * @tc.desc   Testing readBigUInt64BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3792,7 +3792,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigUInt64BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGUINT64BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2950
      * @tc.desc   Testing readBigUInt64BE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3813,7 +3813,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigUInt64BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGUINT64BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2960
      * @tc.desc   Testing readBigUInt64BE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3834,7 +3834,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigUInt64BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITEBIGUINT64BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2970
      * @tc.desc   Testing readBigUInt64BE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3855,7 +3855,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigUInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READBIGUINT64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2980
      * @tc.desc   Testing readBigUInt64LE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3876,7 +3876,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigUInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READBIGUINT64LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_2990
      * @tc.desc   Testing readBigUInt64LE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3897,7 +3897,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigUInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READBIGUINT64LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3000
      * @tc.desc   Testing readBigUInt64LE for buffer with undefined value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3918,7 +3918,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadBigUInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READBIGUINT64LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3010
      * @tc.desc   Testing readBigUInt64LE for buffer with null value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3939,7 +3939,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadDoubleBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLEBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3020
      * @tc.desc   Testing readDoubleBE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3960,7 +3960,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadDoubleBE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLEBE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3030
      * @tc.desc   Testing readDoubleBE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3981,7 +3981,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadDoubleBE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLEBE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3040
      * @tc.desc   Testing readDoubleBE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4002,7 +4002,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadDoubleBE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLEBE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3050
      * @tc.desc   Testing readDoubleBE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4023,7 +4023,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadDoubleLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLELE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3060
      * @tc.desc   Testing readDoubleLE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4044,7 +4044,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadDoubleLE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLELE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3070
      * @tc.desc   Testing readDoubleLE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4065,7 +4065,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadDoubleLE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLELE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3080
      * @tc.desc   Testing readDoubleLE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4086,7 +4086,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadDoubleLE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READDOUBLELE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3090
      * @tc.desc   Testing readDoubleLE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4107,7 +4107,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadFloatBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READFLOATBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3100
      * @tc.desc   Testing readFloatBE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4128,7 +4128,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadFloatBE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READFLOATBE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3110
      * @tc.desc   Testing readFloatBE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4149,7 +4149,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadFloatBE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READFLOATBE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3120
      * @tc.desc   Testing readFloatBE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4170,7 +4170,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadFloatBE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READFLOATBE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3130
      * @tc.desc   Testing readFloatBE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4191,7 +4191,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadFloatLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READFLOATLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3140
      * @tc.desc   Testing readFloatLE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4212,7 +4212,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadFloatLE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READFLOATLE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3150
      * @tc.desc   Testing readFloatLE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4233,7 +4233,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadFloatLE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READFLOATLE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3160
      * @tc.desc   Testing readFloatLE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4254,7 +4254,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadFloatLE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READFLOATLE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3170
      * @tc.desc   Testing readFloatLE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4275,7 +4275,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt80001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3180
      * @tc.desc   Testing readInt8 for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4296,7 +4296,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt80002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3190
      * @tc.desc   Testing readInt8 for buffer with value 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4317,7 +4317,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt80003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3200
      * @tc.desc   Testing readInt8 for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4338,7 +4338,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt80004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3210
      * @tc.desc   Testing readInt8 for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4359,7 +4359,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3220
      * @tc.desc   Testing readInt16BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4380,7 +4380,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT16BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3230
      * @tc.desc   Testing readInt16BE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4400,7 +4400,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadInt16BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT16BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3240
      * @tc.desc   Testing readInt16BE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4421,7 +4421,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt16BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT16BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3250
      * @tc.desc   Testing readInt16BE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4442,7 +4442,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3260
      * @tc.desc   Testing readInt16LE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4463,7 +4463,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT16LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3270
      * @tc.desc   Testing readInt16LE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4483,7 +4483,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadInt16LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT16LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3280
      * @tc.desc   Testing readInt16LE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4504,7 +4504,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt16LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT16LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3290
      * @tc.desc   Testing readInt16LE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4525,7 +4525,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3300
      * @tc.desc   Testing readInt32BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4546,7 +4546,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt32BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT32BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3310
      * @tc.desc   Testing readInt32BE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4567,7 +4567,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt32BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT32BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3320
      * @tc.desc   Testing readInt32BE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4588,7 +4588,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt32BE0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT32BE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3330
      * @tc.desc   Testing readInt32BE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4609,7 +4609,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3340
      * @tc.desc   Testing readInt32LE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4630,7 +4630,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt32LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT32LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3350
      * @tc.desc   Testing readInt32LE for buffer with value 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4651,7 +4651,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt32LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT32LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3360
      * @tc.desc   Testing readInt32LE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4672,7 +4672,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadInt32LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINT32LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3370
      * @tc.desc   Testing readInt32LE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4693,7 +4693,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINTBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3380
      * @tc.desc   Testing readIntBE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4714,7 +4714,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadIntBE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINTBE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3390
      * @tc.desc   Testing readIntBE for buffer with value '(2, 5)'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4735,7 +4735,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadIntBE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINTBE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3400
      * @tc.desc   Testing readIntBE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4756,7 +4756,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadIntBE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINTBE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3410
      * @tc.desc   Testing readIntBE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4777,7 +4777,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINTLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3420
      * @tc.desc   Testing readIntLE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4798,7 +4798,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadIntLE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINTLE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3430
      * @tc.desc   Testing readIntLE for buffer with value '(2, 5)'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4819,7 +4819,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadIntLE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINTLE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3440
      * @tc.desc   Testing readIntLE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4840,7 +4840,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadIntLE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READINTLE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3450
      * @tc.desc   Testing readIntLE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4861,7 +4861,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt80001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT8_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3460
      * @tc.desc   Testing readUInt8 for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4882,7 +4882,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt80002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT8_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3470
      * @tc.desc   Testing readUInt8 for buffer with value '4'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4903,7 +4903,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt80003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT8_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3480
      * @tc.desc   Testing readUInt8 for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4924,7 +4924,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt80004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT8_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3490
      * @tc.desc   Testing readUInt8 for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4945,7 +4945,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3500
      * @tc.desc   Testing readUInt16BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4966,7 +4966,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT16BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3510
      * @tc.desc   Testing readUInt16BE for buffer with value '3'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4987,7 +4987,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt16BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT16BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3520
      * @tc.desc   Testing readUInt16BE for buffer with value undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5008,7 +5008,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt16BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT16BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3530
      * @tc.desc   Testing readUInt16BE for buffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5029,7 +5029,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testEquals0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3540
      * @tc.desc   Test the equals interface by two identical buffers which content is numerical string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5050,7 +5050,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testEquals0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3550
      * @tc.desc   Test the equals interface by two identical buffers which content is include chinese string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5071,7 +5071,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testEquals0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3560
      * @tc.desc   Test the equals interface by two different buffers.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5092,7 +5092,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testEquals0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3570
      * @tc.desc   Test the equals interface by passing the parameter undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5110,7 +5110,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testEquals0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3580
      * @tc.desc   Test the equals interface by passing the parameter null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5128,7 +5128,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testEquals0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3590
      * @tc.desc   Test the equals interface by two different type buffers.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5148,7 +5148,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testSubarray0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3600
      * @tc.desc   Test the subarray interface by pass the parameter start is 0 and end is 3.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5169,7 +5169,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testSubarray0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3610
      * @tc.desc   Test the subarray interface by pass the parameter undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5190,7 +5190,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testSubarray0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3620
      * @tc.desc   Test the subarray interface by pass the parameter null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5211,7 +5211,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testSubarray0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3630
      * @tc.desc   Test the subarray interface by pass the parameter start is 3 and end is 4.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5233,7 +5233,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testSubarray0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3640
      * @tc.desc   Test the subarray interface by pass the parameter start is -3 and end is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5253,7 +5253,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testSubarray0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3650
      * @tc.desc   Test the subarray interface by pass the parameter start is 6 and end is 9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5272,7 +5272,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testCopy0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3660
      * @tc.desc   Test the copy interface by copying one buffer of numeric string type  to other buffer of numeric
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5296,7 +5296,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testCopy0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3670
      * @tc.desc   Test the copy interface by copying one buffer of chinese string type  to other buffer of numeric
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5319,7 +5319,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testCopy0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3680
      * @tc.desc   Test the copy interface by copying one buffer of special string type  to other buffer of empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5339,7 +5339,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testCopy0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3690
      * @tc.desc   Test the copy interface by copying one buffer which length is large than another to other buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5362,7 +5362,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testCopy0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3700
      * @tc.desc   Test the copy interface by copying one buffer to other buffer,and passing the parameter sourceStart
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5382,7 +5382,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testCopy0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3710
      * @tc.desc   Test the copy interface by copying one buffer which length is smaller than another to other buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5404,7 +5404,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testCopy0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3720
      * @tc.desc   Test the copy interface by passing the parameter target undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5423,7 +5423,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testCopy0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3730
      * @tc.desc   Test the copy interface by passing the parameter target null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5442,7 +5442,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testCopy0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3740
      * @tc.desc   Test the copy interface by copying one buffer of string type to other buffer of array type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5468,7 +5468,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3750
      * @tc.desc   Test the toString interface by source buffer of numerical string type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5488,7 +5488,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3760
      * @tc.desc   Test the toString interface by source buffer of chinese string type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5508,7 +5508,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3770
      * @tc.desc   Test the toString interface by passing the parameter encoding to "binary".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5528,7 +5528,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3780
      * @tc.desc   Test the toString interface by passing the parameter encoding to "ascii".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5548,7 +5548,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3790
      * @tc.desc   Test the toString interface by passing the parameter encoding to "base64".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5568,7 +5568,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3800
      * @tc.desc   Test the toString interface by passing the parameter encoding to "hex".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5588,7 +5588,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3810
      * @tc.desc   Test the toString interface by passing the parameter encoding to "latin1".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5608,7 +5608,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3820
      * @tc.desc   Test the toString interface by passing the parameter encoding to "ucs2".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5628,7 +5628,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3830
      * @tc.desc   Test the toString interface by passing the parameter encoding to "utf16le".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5648,7 +5648,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3840
      * @tc.desc   Test the toString interface by source buffer of special string type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5667,7 +5667,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testToString0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3850
      * @tc.desc   Test the toString interface by source buffer of long string type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5691,7 +5691,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testToString0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3860
      * @tc.desc   Test the toString interface by passing the parameter encoding to illegal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5710,7 +5710,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testToString0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3870
      * @tc.desc   Test the toString interface by passing the parameter encoding to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5729,7 +5729,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testToString0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3880
      * @tc.desc   Test the toString interface by passing the parameter encoding to null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5748,7 +5748,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testToString0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3890
      * @tc.desc   Test the toString interface by passing the parameter encoding to "binary", start to 1, and end to 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5767,7 +5767,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testToString0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3900
      * @tc.desc   Test the toString interface by passing the parameter encoding to "binary", start to -1, and end to 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5786,7 +5786,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testToString0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTRING_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3910
      * @tc.desc   Test the toString interface by passing the parameter encoding to "binary", start to 1, and end to 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5805,7 +5805,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testToJSON0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOJSON_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3920
      * @tc.desc   Test the toJSON interface source buffer of numerical string type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5824,7 +5824,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3930
      * @tc.desc   Test the indexOf interface by passing the parameter value to a character string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5844,7 +5844,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3940
      * @tc.desc   Test the indexOf interface by passing the parameter value to a character string, and byteOffset to 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5864,7 +5864,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3950
      * @tc.desc   Test the indexOf interface by passing the parameter value to two character string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5884,7 +5884,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3960
      * @tc.desc   Test the indexOf interface by passing the parameter value to special string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5904,7 +5904,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIndexOf0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3970
      * @tc.desc   Test the indexOf interface by passing the parameter value to two character string, and byteOffset to 3.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5924,7 +5924,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIndexOf0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3980
      * @tc.desc   Test the indexOf interface by passing the parameter value which is not in the buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5944,7 +5944,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIndexOf0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_3990
      * @tc.desc   Test the indexOf interface by passing the parameter value which is not in the buffer,and byteOffset to 0,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5968,7 +5968,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIndexOf0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4000
      * @tc.desc   Test the indexOf interface by passing the parameter value to empty string,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5987,7 +5987,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testIndexOf0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4010
      * @tc.desc   Test the indexOf interface by passing the parameter value to one space string,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6006,7 +6006,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testIndexOf0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4020
      * @tc.desc   Test the indexOf interface by passing the parameter value to undefined,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6026,7 +6026,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIndexOf0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4030
      * @tc.desc   Test the indexOf interface by passing the parameter value to null,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6046,7 +6046,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testLastIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4040
      * @tc.desc   Test the lastIndexOf interface by passing the parameter value to a character string which is in the buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6066,7 +6066,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testLastIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4050
      * @tc.desc   Test the lastIndexOf interface by passing the parameter value to a character string which is in the buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6086,7 +6086,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testLastIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4060
      * @tc.desc   Test the lastIndexOf interface by passing the parameter value to two character string which is in the buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6106,7 +6106,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testLastIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4070
      * @tc.desc   Test the lastIndexOf interface by passing the parameter value to two character string which is in the buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6126,7 +6126,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testLastIndexOf0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4080
      * @tc.desc   Test the lastIndexOf interface by passing the parameter value which is not in the buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6146,7 +6146,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testLastIndexOf0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4090
      * @tc.desc   Test the indexOf interface by passing the parameter value which is not in the buffer,and byteOffset to 0,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6170,7 +6170,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testLastIndexOf0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4100
      * @tc.desc   Test the indexOf interface by passing the parameter value to empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6189,7 +6189,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testLastIndexOf0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4110
      * @tc.desc   Test the indexOf interface by passing the parameter value to space string which is in the buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6208,7 +6208,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testLastIndexOf0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4120
      * @tc.desc   Test the indexOf interface by passing the parameter value to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6227,7 +6227,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testLastIndexOf0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4130
      * @tc.desc   Test the indexOf interface by passing the parameter value to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6247,7 +6247,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testLastIndexOf0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4140
      * @tc.desc   Test the indexOf interface by passing the parameter offset to abnormal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6266,7 +6266,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testIncludes0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4150
      * @tc.desc   Test the includes interface by passing the parameter value to a numerical string which is in the buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6286,7 +6286,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIncludes0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4160
      * @tc.desc   Test the includes interface by passing the parameter value to a numerical string which is in the buffer,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6306,7 +6306,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIncludes0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4170
      * @tc.desc   Test the includes interface by passing the parameter value to two numerical string which is in the buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6326,7 +6326,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIncludes0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4180
      * @tc.desc   Test the includes interface by passing the parameter value to two numerical string which is in the buffer,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6346,7 +6346,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIncludes0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4190
      * @tc.desc   Test the includes interface by passing the parameter value to special string which is in the buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6368,7 +6368,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIncludes0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4200
      * @tc.desc   Test the includes interface by passing the parameter value to string which is not in the buffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6388,7 +6388,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIncludes0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4210
      * @tc.desc   Test the includes interface by passing the parameter value to string which is not in the buffer,and byteOffset
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6412,7 +6412,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testIncludes0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4220
      * @tc.desc   Test the includes interface by passing the parameter value to number but source buffer of string type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6431,7 +6431,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testIncludes0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4230
      * @tc.desc   Test the includes interface by passing the parameter value to empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6450,7 +6450,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testIncludes0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4240
      * @tc.desc   Test the includes interface by passing the parameter value to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6469,7 +6469,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testIncludes0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4250
      * @tc.desc   Test the includes interface by passing the parameter value to null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6488,7 +6488,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testIncludes0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4260
      * @tc.desc   Test the includes interface by passing the parameter value which is in the source buffer and
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6507,7 +6507,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testIncludes0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4270
      * @tc.desc   Test the includes interface by passing the parameter value which is in the source buffer and
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6527,7 +6527,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testSwap160001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SWAP16_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4280
      * @tc.desc   Test the swap16 interface by source buffer which size is multiple of 16-bits.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6548,7 +6548,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testSwap160002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SWAP16_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4290
      * @tc.desc   Test the swap16 interface by source buffer which size is not multiple of 16-bits.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6567,7 +6567,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testSwap160003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SWAP16_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4300
      * @tc.desc   Test the swap16 interface by source buffer which size is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6587,7 +6587,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testSwap320001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SWAP32_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4310
      * @tc.desc   Test the swap32 interface by source buffer which size is multiple of 32-bits.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6608,7 +6608,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testSwap320002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SWAP32_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4320
      * @tc.desc   Test the swap32 interface by source buffer which size is multiple of 32-bits.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6627,7 +6627,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testSwap320003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SWAP32_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4330
      * @tc.desc   Test the swap32 interface by source buffer which size is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6647,7 +6647,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testSwap640001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SWAP64_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4340
      * @tc.desc   Test the swap64 interface by source buffer which size is multiple of 64-bits .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6668,7 +6668,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testSwap640002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SWAP64_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4350
      * @tc.desc   Test the swap64 interface by source buffer which size is not multiple of 64-bits.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6687,7 +6687,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testSwap640003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SWAP64_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4360
      * @tc.desc   Test the swap64 interface by source buffer which size is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6707,7 +6707,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testKeys0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4370
      * @tc.desc   Test the keys interface by source buffer which created from uint8Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6731,7 +6731,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testKeys0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4380
      * @tc.desc   Test the keys interface by source buffer created from uint8Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6759,7 +6759,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testKeys0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4390
      * @tc.desc   Test the keys interface by source buffer which size is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6778,7 +6778,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testValues0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4400
      * @tc.desc   Test the values interface by source buffer which created from string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6802,7 +6802,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testValues0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4410
      * @tc.desc   Test the values interface by source buffer which created from uint8Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6830,7 +6830,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testValues0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4420
      * @tc.desc   Test the values interface by source buffer which size is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6849,7 +6849,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testEntries0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENTRIES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4430
      * @tc.desc   Test the entries interface by source buffer which created from string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6874,7 +6874,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testEntries0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENTRIES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4440
      * @tc.desc   Test the entries interface by source buffer which created from Uint8Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6904,7 +6904,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testFrom0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4450
      * @tc.desc   Test the from interface by Coping the passed buffer data onto a new Buffer instance.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6928,7 +6928,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFrom0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4460
      * @tc.desc   Test the from interface by Allocatting a new Buffer using an array of bytes in the range 0 – 255.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6948,7 +6948,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFrom0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4470
      * @tc.desc   Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -6974,7 +6974,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFrom0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4480
      * @tc.desc   Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7000,7 +7000,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFrom0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4490
      * @tc.desc   Test the from interface by Copping the passed buffer data onto a new Buffer instance.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7024,7 +7024,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFrom0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4500
      * @tc.desc   Test the from interface by Creatting a new Buffer containing string. The encoding parameter identifies
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7044,7 +7044,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFrom0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4510
      * @tc.desc   Test the from interface by creatting a new Buffer containing string. The encoding parameter identifies
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7116,7 +7116,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFrom0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4520
      * @tc.desc   Test the from interface For the object whose value returned by valueof() function is strictly equal to
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7136,7 +7136,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFrom0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4530
      * @tc.desc   Test the from interface for the object whose value returned by valueof() function is strictly equal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7167,7 +7167,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testFrom0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4540
      * @tc.desc   Test the from interface by creating a new buffer containing a newline character string. Creating using
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7188,7 +7188,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testFrom0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4550
      * @tc.desc   Test the from interface by pass the parameter array to undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7206,7 +7206,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testFrom0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4560
      * @tc.desc   Test the from interface by pass the parameter array to null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7224,7 +7224,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testFrom0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4570
      * @tc.desc   Test the from interface by pass the parameter byteOffset is outside of the range.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7248,7 +7248,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testFrom0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4580
      * @tc.desc   Test the from interface by copping a buffer which is created from "Uint8Array" and pass byteOffset to -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7268,7 +7268,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testFrom0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4590
      * @tc.desc   Test the from interface by copping a buffer which is created from "Uint8Array" and pass byteOffset to -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7288,7 +7288,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testFrom0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4600
      * @tc.desc   Test the from interface by The buffer handles a uint8array and decodes it with base64 and base64url.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7345,7 +7345,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testFrom0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4610
      * @tc.desc   Test the from interface by Creating a new Buffer containing empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7365,7 +7365,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4620
      * @tc.desc   Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7395,7 +7395,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobConstructor0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4630
      * @tc.desc   Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7428,7 +7428,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobConstructor0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4640
      * @tc.desc   Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7460,7 +7460,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobConstructor0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4650
      * @tc.desc   Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7494,7 +7494,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobConstructor0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4660
      * @tc.desc   Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7524,7 +7524,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobConstructor0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4670
      * @tc.desc   Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7543,7 +7543,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobArrayBuffer0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBARRAYBUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4680
      * @tc.desc   Test the arrayBuffer interface by blob fulfills with an <ArrayBuffer> containing a copy of the Blob data.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7575,7 +7575,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobText0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBTEXT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4690
      * @tc.desc   Test the text interface by buffer fulfills with the contents of the Blob decoded as a UTF-8 string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7604,7 +7604,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobSlice0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBSLICE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4700
      * @tc.desc   Test the slice interface by passing the parameter start to 0,end to 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7634,7 +7634,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testBlobSlice0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBSLICE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4710
      * @tc.desc   Test the slice interface by passing the parameter start to -1,end to 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7664,7 +7664,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testBlobSize0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBSIZE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4720
      * @tc.desc   Test the size interface by creating buffer which length is 3.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7685,7 +7685,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobSize0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBSIZE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4730
      * @tc.desc   Test the size interface by creating buffer which length is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7705,7 +7705,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobSize0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBSIZE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4740
      * @tc.desc   Test the size interface by creating buffer which length is 3 and content include chinese string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7726,7 +7726,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobType0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBTYPE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4750
      * @tc.desc   Test the type interface by creating buffer which type is mine.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7750,7 +7750,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobType0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBTYPE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4760
      * @tc.desc   Test the type interface by creating buffer which type is empty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7770,7 +7770,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testBlobLength0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBLEGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4770
      * @tc.desc   Test the type interface by creating buffer which length is 4.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7790,7 +7790,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobLength0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBLEGTH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4780
      * @tc.desc   Test the type interface by assigning a value to length.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7809,7 +7809,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobLength0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBLEGTH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4790
      * @tc.desc   Test the type interface by creating buffer which content include chinese and special string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7829,7 +7829,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobByteOffset0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBBYTEOFFSET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4800
      * @tc.desc   Test the byteOffset interface by creating buffer by "from" interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7849,7 +7849,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobByteOffset0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBBYTEOFFSET_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4810
      * @tc.desc   Test the byteOffset interface by creating buffer by "alloc" interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7869,7 +7869,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobByteOffset0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBBYTEOFFSET_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4820
      * @tc.desc   Test the byteOffset interface by creating buffer by "allocUninitializedFromPool" interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7889,7 +7889,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobByteOffset0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBBYTEOFFSET_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4830
      * @tc.desc   Test the byteOffset interface by creating buffer by "allocUninitialized" interface.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7909,7 +7909,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBlobByteOffset0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBBYTEOFFSET_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4840
      * @tc.desc   Test the byteOffset interface by creating buffer assign a value to 'byteOffset'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7928,7 +7928,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4850
      * @tc.desc   Test the readUInt16LE interface by Reading an unsigned, little-endian 16-bit integer from buf at the
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7949,7 +7949,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT16LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4860
      * @tc.desc   Test the readUInt16LE interface by passing the parameter offset out of range.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7969,7 +7969,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUInt16LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT16LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4870
      * @tc.desc   Test the readUInt16LE interface by passing the parameter offset to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -7989,7 +7989,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUInt16LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT16LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4880
      * @tc.desc   Test the readUInt16LE interface by passing the parameter offset to null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8009,7 +8009,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4890
      * @tc.desc   Test the readUInt32BE interface by Reading an unsigned, big-endian 32-bit integer from buf at the
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8030,7 +8030,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt32BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT32BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4900
      * @tc.desc   Test the readUInt32BE interface by passing the parameter offset out of range.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8050,7 +8050,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUInt32BE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT32BE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4910
      * @tc.desc   Test the readUInt32BE interface by passing the parameter offset to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8070,7 +8070,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUInt32BE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT32BE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4920
      * @tc.desc   Test the readUInt32BE interface by passing the parameter offset to null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8090,7 +8090,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4930
      * @tc.desc   Test the readUInt32LE interface by Reading an unsigned, little-endian 32-bit integer from buf at the
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8111,7 +8111,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUInt32LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT32LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4940
      * @tc.desc   Test the readUInt32LE interface by passing the parameter offset out of range.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8130,7 +8130,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUInt32LE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT32LE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4950
      * @tc.desc   Test the readUInt32LE interface by passing the parameter offset to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8150,7 +8150,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUInt32LE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINT32LE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4960
      * @tc.desc   Test the readUInt32LE interface by passing the parameter offset to null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8170,7 +8170,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINTBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4970
      * @tc.desc   Test the readUIntBE interface by reading an unsigned 8-bit integer from buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8191,7 +8191,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUIntBE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINTBE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4980
      * @tc.desc   Test the readUIntBE interface by passing the parameter offset out of range.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8210,7 +8210,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUIntBE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINTBE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_4990
      * @tc.desc   Test the readUIntBE interface by passing the parameter offset to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8229,7 +8229,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUIntBE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINTBE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5000
      * @tc.desc   Test the readUIntBE interface by passing the parameter offset to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8248,7 +8248,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINTLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5010
      * @tc.desc   Test the readUIntLE interface by reading an unsigned 8-bit integer from buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8269,7 +8269,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testReadUIntLE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINTLE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5020
      * @tc.desc   Test the readUIntLE interface by passing the parameter offset out of range.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8289,7 +8289,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUIntLE0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINTLE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5030
      * @tc.desc   Test the readUIntLE interface by passing the parameter offset to undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8309,7 +8309,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testReadUIntLE0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READUINTLE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5040
      * @tc.desc   Test the readUIntLE interface by passing the parameter offset to null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8329,7 +8329,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testBufferCompare0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_COMPARE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5050
      * @tc.desc   Test BUFFER.COMPARE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8349,7 +8349,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testBufferCompare0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_COMPARE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5060
      * @tc.desc   Test BUFFER.COMPARE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8370,7 +8370,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBufferCompare0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_COMPARE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5070
      * @tc.desc   Test BUFFER.COMPARE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8390,7 +8390,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testBufferCompare0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_COMPARE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5080
      * @tc.desc   Test BUFFER.COMPARE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8410,7 +8410,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testBufferCompare0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_COMPARE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5090
      * @tc.desc   Test BUFFER.COMPARE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8431,7 +8431,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBufferCompare0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_COMPARE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5100
      * @tc.desc   Test BUFFER.COMPARE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8450,7 +8450,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testBufferCompare0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUFFER_COMPARE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5110
      * @tc.desc   Test BUFFER.COMPARE
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8469,7 +8469,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5120
      * @tc.desc   Testing readBigUInt64BE for null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8491,7 +8491,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5130
      * @tc.desc   Testing readBigInt64LE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8512,7 +8512,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5140
      * @tc.desc   Testing readBigUInt64BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8534,7 +8534,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5150
      * @tc.desc   Testing readBigUInt64LE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8554,7 +8554,7 @@ export default function BufferTest() {
     });
     /**
      * @tc.name   testRead0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5160
      * @tc.desc   Testing readFloatBE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8575,7 +8575,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5170
      * @tc.desc   Testing readFloatLE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8596,7 +8596,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5180
      * @tc.desc   Testing readInt8 for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8618,7 +8618,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5190
      * @tc.desc   Testing readInt16BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8639,7 +8639,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5200
      * @tc.desc   Testing readInt16LE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8660,7 +8660,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5210
      * @tc.desc   Testing readInt32BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8681,7 +8681,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5220
      * @tc.desc   Testing readInt32LE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8702,7 +8702,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5230
      * @tc.desc   Testing readUInt8 for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8723,7 +8723,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5240
      * @tc.desc   Testing readUInt16BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8745,7 +8745,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5250
      * @tc.desc   Testing readUInt16BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8765,7 +8765,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testRead0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5260
      * @tc.desc   Testing readUInt32BE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8786,7 +8786,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testRead0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5270
      * @tc.desc   Testing readUInt32LE for buffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8806,7 +8806,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testToString0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTING_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5280
      * @tc.desc   Testing toString
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8825,7 +8825,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testToString0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTING_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5290
      * @tc.desc   Testing toString
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8845,7 +8845,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testToString0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTING_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5300
      * @tc.desc   Testing toString
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8864,7 +8864,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testToString0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TOSTING_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5310
      * @tc.desc   Testing toString
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8883,7 +8883,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testWrite0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5320
      * @tc.desc   Testing write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8902,7 +8902,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testWrite0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5330
      * @tc.desc   Testing write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8921,7 +8921,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testWrite0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5340
      * @tc.desc   Testing write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8941,7 +8941,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testWrite0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5350
      * @tc.desc   Testing write
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8960,7 +8960,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testSlice0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5360
      * @tc.desc   Testing slice
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8980,7 +8980,7 @@ export default function BufferTest() {
 
     /**
      * @tc.name   testSlice0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5370
      * @tc.desc   Testing slice
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8999,7 +8999,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testSlice0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5380
      * @tc.desc   Testing slice
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -9018,7 +9018,7 @@ export default function BufferTest() {
     })
     /**
      * @tc.name   testSlice0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BUFFER1_5390
      * @tc.desc   Testing slice
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

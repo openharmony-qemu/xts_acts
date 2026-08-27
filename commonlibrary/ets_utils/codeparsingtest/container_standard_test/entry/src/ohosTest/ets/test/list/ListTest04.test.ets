@@ -418,7 +418,7 @@ export default function ListTest04() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEST04_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_0100
      * @tc.name      testList04Chapter0001
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -462,7 +462,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_0200
      * @tc.name      testList04Chapter0002
      * @tc.desc      Verify has interface logic for negative-number arrays & non-numeric index arrays
      * @tc.size      MediumTest
@@ -510,7 +510,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_0300
      * @tc.name      testList04Chapter0003
      * @tc.desc      Verify has() for NaN/Infinity/non-numeric type arrays
      * @tc.size      MediumTest
@@ -550,7 +550,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_0400
      * @tc.name      testList04Chapter0004
      * @tc.desc      Verify has() for empty/overflow/deleted element arrays (has test)
      * @tc.size      MediumTest
@@ -592,7 +592,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_0500
      * @tc.name      testList04Chapter0005
      * @tc.desc      Verify has() for nested/TypedArray/ultra-long arrays (has test)
      * @tc.size      LargeTest
@@ -646,7 +646,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_0600
      * @tc.name      testList04Chapter0006
      * @tc.desc      Verify has() for function/keyword arrays (no Symbol, has test)
      * @tc.size      MediumTest
@@ -679,7 +679,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_0700
      * @tc.name      testList04Chapter0007
      * @tc.desc      Test has interface with basic string values (undefined/null/empty/special char/ASCII)
      * @tc.size      MediumTest
@@ -711,7 +711,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_0800
      * @tc.name      testList04Chapter0008
      * @tc.desc      Test has interface with special character strings (split full special chars)
      * @tc.size      MediumTest
@@ -743,7 +743,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_0900
      * @tc.name      testList04Chapter0009
      * @tc.desc      Test has interface with escape character strings (double special chars/\a/\b/\f/\n)
      * @tc.size      MediumTest
@@ -772,7 +772,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1000
      * @tc.name      testList04Chapter0010
      * @tc.desc      Test has interface with more escape character strings (\r/\t/\v/\\/')
      * @tc.size      MediumTest
@@ -801,7 +801,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1100
      * @tc.name      testList04Chapter0011
      * @tc.desc      Test has interface with hex/octal escape strings ("/?/\0/\x61)
      * @tc.size      MediumTest
@@ -830,7 +830,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1200
      * @tc.name      testList04Chapter0012
      * @tc.desc      Test has interface with emoji strings (verify emoji vs Unicode consistency)
      * @tc.size      MediumTest
@@ -864,7 +864,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1300
      * @tc.name      testList04Chapter0013
      * @tc.desc      Test has interface with special unicode strings (invalid Unicode/keywords/treeString)
      * @tc.size      MediumTest
@@ -907,7 +907,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1400
      * @tc.name      testList04Chapter0014
      * @tc.desc      Test has interface with sliceString/large string/GC (avoid OOM with logic verification)
      * @tc.size      MediumTest
@@ -937,7 +937,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1500
      * @tc.name      testList04Chapter0015
      * @tc.desc      Test has interface with special number values (0/NaN/-0/Infinity/-Infinity/undefined)
      * @tc.size      MediumTest
@@ -977,7 +977,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1600
      * @tc.name      testList04Chapter0016
      * @tc.desc      Test has interface with extreme number values (MAX_VALUE/MIN_VALUE/EPSILON/MAX_SAFE_INTEGER)
      * @tc.size      MediumTest
@@ -1015,7 +1015,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1700
      * @tc.name      testList04Chapter0017
      * @tc.desc      Test has interface with precision number values (byte/short/int/long/float/double/char)
      * @tc.size      MediumTest
@@ -1069,7 +1069,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1800
      * @tc.name      testList04Chapter0018
      * @tc.desc      Test has interface with base expression number values (hex/octal/sci/exponent)
      * @tc.size      MediumTest
@@ -1119,7 +1119,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_1900
      * @tc.name      testList04Chapter0019
      * @tc.desc      Test has interface with bigint values (remove redundant BigInt wrapper)
      * @tc.size      MediumTest
@@ -1161,7 +1161,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2000
      * @tc.name      testList04Chapter0020
      * @tc.desc      Test has interface with basic boolean values (true/false via constructor/add/insert)
      * @tc.size      MediumTest
@@ -1190,7 +1190,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2100
      * @tc.name      testList04Chapter0021
      * @tc.desc      Test has interface with false-like values (0/NaN/""//null/undefined/!'s')
      * @tc.size      MediumTest
@@ -1227,7 +1227,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2200
      * @tc.name      testList04Chapter0022
      * @tc.desc      Test has interface with true-like values (!0/1/non-empty str/EmptyObject/array)
      * @tc.size      MediumTest
@@ -1261,7 +1261,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2300
      * @tc.name      testList04Chapter0023
      * @tc.desc      Test has interface with mixed values (boolean/number/string/null/undefined/EmptyObject/array)
      * @tc.size      MediumTest
@@ -1310,7 +1310,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2400
      * @tc.name      testList04Chapter0024
      * @tc.desc      Test has interface with basic objects (NormalObject/NestedObject/EmptyObject)
      * @tc.size      MediumTest
@@ -1348,7 +1348,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2500
      * @tc.name      testList04Chapter0025
      * @tc.desc      Test has interface with special objects (SpecialKeyObject/InheritObject/NonEnumObject)
      * @tc.size      MediumTest
@@ -1386,7 +1386,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2600
      * @tc.name      testList04Chapter0026
      * @tc.desc      Test has interface with binary objects (BufferObject/DataViewObject/TypedArray)
      * @tc.size      MediumTest
@@ -1424,7 +1424,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2700
      * @tc.name      testList04Chapter0027
      * @tc.desc      Test has interface with collection objects (map/set/func/regex/promise)
      * @tc.size      MediumTest
@@ -1477,7 +1477,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2800
      * @tc.name      testList04Chapter0028
      * @tc.desc      Test has interface with special value objects (undefined/null/NaN/Infinity)
      * @tc.size      MediumTest
@@ -1516,7 +1516,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_2900
      * @tc.name      testList04Chapter0029
      * @tc.desc      Test has interface with large object, mixed-type object, small object and new key object
      * @tc.size      MediumTest
@@ -1562,7 +1562,7 @@ export default function ListTest04() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST04_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST4_3000
      * @tc.name      testList04Chapter0030
      * @tc.desc      Test has interface with different base BigInt and IEEE 754 unsafe integers
      * @tc.size      MediumTest

@@ -44,7 +44,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CONSTRUCTOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1010
      * @tc.desc   Testing LightWeightMap constructor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIsEmpty0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1020
      * @tc.desc   Testing LightWeightMap is empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -82,7 +82,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIsEmpty0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1030
      * @tc.desc   Testing LightWeightMap has data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIsEmpty0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1040
      * @tc.desc   Testing LightWeightMap has data and remove
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -123,7 +123,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIsEmpty0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1050
      * @tc.desc   Testing LightWeightMap has large data and remove
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIsEmpty0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ISEMPTY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1060
      * @tc.desc   Testing LightWeightMap has large data and clear
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -167,7 +167,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasAll0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1070
      * @tc.desc   Testing LightWeightMap contain other LightWeightMap data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasAll0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1080
      * @tc.desc   Testing LightWeightMap contain null data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -212,7 +212,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasAll0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASALL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1090
      * @tc.desc   Testing LightWeightMap contain undefined data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -234,7 +234,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1100
      * @tc.desc   Testing LightWeightMap has key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -254,7 +254,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1110
      * @tc.desc   Testing LightWeightMap has not existed key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -274,7 +274,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1120
      * @tc.desc   Testing LightWeightMap has existed key with blank
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -294,7 +294,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASKEY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1130
      * @tc.desc   Testing LightWeightMap has null or undefined key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -315,7 +315,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasValue0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1140
      * @tc.desc   Testing LightWeightMap has value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -335,7 +335,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasValue0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1150
      * @tc.desc   Testing LightWeightMap has not existed value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -355,7 +355,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasValue0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1160
      * @tc.desc   Testing LightWeightMap has existed value with blank
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -375,7 +375,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasValue0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1170
      * @tc.desc   Testing LightWeightMap has null or undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -396,7 +396,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasValue0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1180
      * @tc.desc   Testing LightWeightMap has complex value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -428,7 +428,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapHasValue0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_HASVALUE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1190
      * @tc.desc   Testing LightWeightMap has large string value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -449,7 +449,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIncreaseCapacityTo0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1200
      * @tc.desc   Testing LightWeightMap capacity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -469,7 +469,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIncreaseCapacityTo0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1210
      * @tc.desc   Testing LightWeightMap capacity to 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -489,7 +489,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIncreaseCapacityTo0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1220
      * @tc.desc   Testing LightWeightMap capacity to negative number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -509,7 +509,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIncreaseCapacityTo0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1230
      * @tc.desc   Testing LightWeightMap capacity to large number
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -529,7 +529,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapIncreaseCapacityTo0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_INCREASECAPACITYTO_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1240
      * @tc.desc   Testing LightWeightMap capacity to null or undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -550,7 +550,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1250
      * @tc.desc   Testing LightWeightMap get value by key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -571,7 +571,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1260
      * @tc.desc   Testing LightWeightMap get value by not existed key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -591,7 +591,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1270
      * @tc.desc   Testing LightWeightMap get value by existed key with blank
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -611,7 +611,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1280
      * @tc.desc   Testing LightWeightMap get value by null or undefined key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -632,7 +632,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1290
      * @tc.desc   Testing LightWeightMap get complex value by key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -664,7 +664,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1300
      * @tc.desc   Testing LightWeightMap get large string value by key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -685,7 +685,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1310
      * @tc.desc   Testing LightWeightMap get value by complex key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -717,7 +717,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1320
      * @tc.desc   Testing LightWeightMap get value by large string key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -738,7 +738,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1330
      * @tc.desc   Testing LightWeightMap get value by special string key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -758,7 +758,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1340
      * @tc.desc   Testing LightWeightMap set difference value by same key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -779,7 +779,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGet0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GET_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1350
      * @tc.desc   Testing LightWeightMap set key with empty string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -799,7 +799,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1360
      * @tc.desc   Testing LightWeightMap set difference length string key and get index by key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -826,7 +826,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1370
      * @tc.desc   Testing LightWeightMap get index by not existed key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -846,7 +846,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1380
      * @tc.desc   Testing LightWeightMap get index by complex key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -878,7 +878,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1390
      * @tc.desc   Testing LightWeightMap get index by null or undefined key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -900,7 +900,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFKEY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1400
      * @tc.desc   Testing LightWeightMap get index by key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -921,7 +921,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfValue0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1410
      * @tc.desc   Testing LightWeightMap set difference length string key and get index by value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -948,7 +948,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfValue0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1420
      * @tc.desc   Testing LightWeightMap get index by null or undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -969,7 +969,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfValue0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1430
      * @tc.desc   Testing LightWeightMap get index by not existed value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -989,7 +989,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetIndexOfValue0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETINDEXOFVALUE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1440
      * @tc.desc   Testing LightWeightMap get index by value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1010,7 +1010,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetKeyAt0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1450
      * @tc.desc   Testing LightWeightMap get key by index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1033,7 +1033,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetKeyAt0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1460
      * @tc.desc   Testing LightWeightMap get key by null or undefined index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1055,7 +1055,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetKeyAt0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETKEYAT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1470
      * @tc.desc   Testing LightWeightMap get key by outside length index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1077,7 +1077,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSetAll0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1480
      * @tc.desc   Testing LightWeightMap set data from other LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1100,7 +1100,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSetAll0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1490
      * @tc.desc   Testing LightWeightMap set data from other empty LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1121,7 +1121,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSetAll0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETALL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1500
      * @tc.desc   Testing LightWeightMap set data from null or undefined LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1143,7 +1143,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1510
      * @tc.desc   Testing LightWeightMap set string key and larger number value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1163,7 +1163,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1520
      * @tc.desc   Testing LightWeightMap set large string key and number value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1184,7 +1184,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1530
      * @tc.desc   Testing LightWeightMap set string key and null or undefined value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1206,7 +1206,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SET_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1540
      * @tc.desc   Testing LightWeightMap set key and value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1226,7 +1226,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapRemove0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1550
      * @tc.desc   Testing LightWeightMap remove data by key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1248,7 +1248,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapRemove0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1560
      * @tc.desc   Testing LightWeightMap remove data by null or undefined key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1270,7 +1270,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapRemove0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1570
      * @tc.desc   Testing LightWeightMap remove data by not existed key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1290,7 +1290,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapRemove0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1580
      * @tc.desc   Testing LightWeightMap remove data by large string key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1312,7 +1312,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapRemove0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1590
      * @tc.desc   Testing LightWeightMap remove data by large number key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1333,7 +1333,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapRemoveAt0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVEAT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1600
      * @tc.desc   Testing LightWeightMap remove data by index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1357,7 +1357,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapRemoveAt0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVEAT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1610
      * @tc.desc   Testing LightWeightMap remove data by negative number index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1378,7 +1378,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapRemoveAt0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_REMOVEAT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1620
      * @tc.desc   Testing LightWeightMap remove data by outside length index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1399,7 +1399,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSetValueAt0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1630
      * @tc.desc   Testing LightWeightMap set value by index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1423,7 +1423,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSetValueAt0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1640
      * @tc.desc   Testing LightWeightMap set null or undefined value by index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1444,7 +1444,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSetValueAt0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1650
      * @tc.desc   Testing LightWeightMap set value by negative number index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1465,7 +1465,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSetValueAt0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1660
      * @tc.desc   Testing LightWeightMap set value by null or undefined index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1487,7 +1487,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSetValueAt0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1670
      * @tc.desc   Testing LightWeightMap set large number value by index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1508,7 +1508,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSetValueAt0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SETVALUEAT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1680
      * @tc.desc   Testing LightWeightMap set large string value by index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1530,7 +1530,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetValueAt0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1690
      * @tc.desc   Testing LightWeightMap get value by index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1553,7 +1553,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetValueAt0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1700
      * @tc.desc   Testing LightWeightMap get value by null or undefined index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1576,7 +1576,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapGetValueAt0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_GETVALUEAT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1710
      * @tc.desc   Testing LightWeightMap get value by outside length index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1598,7 +1598,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapClear0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CLEAR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1720
      * @tc.desc   Testing LightWeightMap clear data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1620,7 +1620,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapClear0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CLEAR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1730
      * @tc.desc   Testing LightWeightMap add data after clear data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1643,7 +1643,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapClear0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CLEAR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1740
      * @tc.desc   Testing LightWeightMap clear data for a empty LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1663,7 +1663,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapKeys0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_KEYS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1750
      * @tc.desc   Testing LightWeightMap get all key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1692,7 +1692,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapKeys0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_KEYS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1760
      * @tc.desc   Testing LightWeightMap get all key for an empty LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1713,7 +1713,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapKeys0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_KEYS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1770
      * @tc.desc   Testing LightWeightMap get all key for a LightWeightMap contain large string key
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1737,7 +1737,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapValues0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_VALUES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1780
      * @tc.desc   Testing LightWeightMap get all value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1766,7 +1766,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapValues0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_VALUES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1790
      * @tc.desc   Testing LightWeightMap get all value for an empty LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1787,7 +1787,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapValues0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_VALUES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1800
      * @tc.desc   Testing LightWeightMap get all value for a LightWeightMap contain large string value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1811,7 +1811,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapForeach0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1810
      * @tc.desc   Testing LightWeightMap use forEach and remove function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1839,7 +1839,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapForeach0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1820
      * @tc.desc   Testing LightWeightMap use forEach to iterate over each item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1869,7 +1869,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapForeach0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1830
      * @tc.desc   Testing LightWeightMap use forEach to iterate over each item for a LightWeightMap contain duplicate value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1895,7 +1895,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapForeach0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1840
      * @tc.desc   Testing LightWeightMap use forEach to iterate over each item for an empty LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1916,7 +1916,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapForeach0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1850
      * @tc.desc   Testing LightWeightMap use forEach to check ArgThis
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1944,7 +1944,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapForeach0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_FOREACH_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1860
      * @tc.desc   Testing LightWeightMap use forEach to check ArgThis
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1974,7 +1974,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapEntries0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1870
      * @tc.desc   Testing LightWeightMap use entries and remove function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2008,7 +2008,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapEntries0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1880
      * @tc.desc   Testing LightWeightMap use entries to iterate over each item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2041,7 +2041,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapEntries0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1890
      * @tc.desc   Testing LightWeightMap use entries to iterate over each item for a LightWeightMap contain duplicate value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2071,7 +2071,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapEntries0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_ENTRIES_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1900
      * @tc.desc   Testing LightWeightMap use entries to iterate over each item for an empty LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2092,7 +2092,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapToString0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_TOSTRING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1910
      * @tc.desc   Testing LightWeightMap convert to string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2113,7 +2113,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapToString0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_TOSTRING_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1920
      * @tc.desc   Testing LightWeightMap convert to string for an empty LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2132,7 +2132,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapToString0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_TOSTRING_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1930
      * @tc.desc   Testing LightWeightMap convert to string for a LightWeightMap contain duplicate value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2155,7 +2155,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSymbolIterator0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1940
      * @tc.desc   Testing LightWeightMap use [Symbol.iterator] and remove function
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2189,7 +2189,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSymbolIterator0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1950
      * @tc.desc   Testing LightWeightMap use [Symbol.iterator] to iterate over each item
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2222,7 +2222,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSymbolIterator0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1960
      * @tc.desc   Testing LightWeightMap use [Symbol.iterator] to iterate over each item for a LightWeightMap contain duplicate value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2251,7 +2251,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapSymbolIterator0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_SYMBOLITERATOR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1970
      * @tc.desc   Testing LightWeightMap use [Symbol.iterator] to iterate over each item for an empty LightWeightMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2271,7 +2271,7 @@ export default function LightWeightMapTest() {
     });
     /**
      * @tc.name   testLightWeightMapCase001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1980
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2290,7 +2290,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapCase002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_1990
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2321,7 +2321,7 @@ export default function LightWeightMapTest() {
 
     /**
      * @tc.name   testLightWeightMapCase003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIGHTWEIGHTMAP_CASE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTMAP1_2000
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

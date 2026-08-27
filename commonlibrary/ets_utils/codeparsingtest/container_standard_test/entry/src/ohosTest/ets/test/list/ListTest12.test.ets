@@ -223,7 +223,7 @@ export default function ListTest12() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_0100
      * @tc.name      testList12Chapter0001
      * @tc.desc      Verify getSubList interface correctness with different start/end indices
      * @tc.size      MediumTest
@@ -262,7 +262,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_0200
      * @tc.name      testList12Chapter0002
      * @tc.desc      Test getSubList with negative/non-numeric index arrays
      * @tc.size      MediumTest
@@ -306,7 +306,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_0300
      * @tc.name      testList12Chapter0003
      * @tc.desc      Test getSubList with NaN/Infinity/non-numeric type arrays
      * @tc.size      MediumTest
@@ -346,7 +346,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_0400
      * @tc.name      testList12Chapter0004
      * @tc.desc      Test getSubList with empty/overflow value arrays
      * @tc.size      MediumTest
@@ -385,7 +385,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_0500
      * @tc.name      testList12Chapter0005
      * @tc.desc      Test getSubList with nested/TypedArray/large length arrays
      * @tc.size      LargeTest
@@ -432,7 +432,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_0600
      * @tc.name      testList12Chapter0006
      * @tc.desc      Test getSubList with function/keyword-containing arrays
      * @tc.size      MediumTest
@@ -465,7 +465,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_0700
      * @tc.name      testList12Chapter0007
      * @tc.desc      Test getSubList with undefined/null/empty/special char strings
      * @tc.size      MediumTest
@@ -508,7 +508,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_0800
      * @tc.name      testList12Chapter0008
      * @tc.desc      Test getSubList with control/escape character strings
      * @tc.size      MediumTest
@@ -551,7 +551,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_0900
      * @tc.name      testList12Chapter0009
      * @tc.desc      Test getSubList with emoji character strings
      * @tc.size      MediumTest
@@ -594,7 +594,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1000
      * @tc.name      testList12Chapter0010
      * @tc.desc      Test getSubList with large/big/invalid unicode strings
      * @tc.size      LargeTest
@@ -651,7 +651,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1100
      * @tc.name      testList12Chapter0011
      * @tc.desc      Test getSubList with basic numeric values (0/NaN/Infinity)
      * @tc.size      MediumTest
@@ -694,7 +694,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1200
      * @tc.name      testList12Chapter0012
      * @tc.desc      Test getSubList with extreme/precision numeric values
      * @tc.size      MediumTest
@@ -737,7 +737,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1300
      * @tc.name      testList12Chapter0013
      * @tc.desc      Test getSubList with hex/octal/scientific numeric values
      * @tc.size      MediumTest
@@ -780,7 +780,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1400
      * @tc.name      testList12Chapter0014
      * @tc.desc      Test getSubList with BigInt values (max/min/hex)
      * @tc.size      MediumTest
@@ -823,7 +823,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1500
      * @tc.name      testList12Chapter0015
      * @tc.desc      Test getSubList with boolean values (true/false/!0/!str)
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1600
      * @tc.name      testList12Chapter0016
      * @tc.desc      Test getSubList with falsy values (0/"" null/undefined/NaN)
      * @tc.size      MediumTest
@@ -909,7 +909,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1700
      * @tc.name      testList12Chapter0017
      * @tc.desc      Test getSubList with normal/zero/negative/empty arrays
      * @tc.size      MediumTest
@@ -952,7 +952,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1800
      * @tc.name      testList12Chapter0018
      * @tc.desc      Test getSubList with modified/typed/special value arrays
      * @tc.size      MediumTest
@@ -1000,7 +1000,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_1900
      * @tc.name      testList12Chapter0019
      * @tc.desc      Test getSubList with basic TypedArray (Uint8/Int8/Uint16/Int16)
      * @tc.size      MediumTest
@@ -1043,7 +1043,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2000
      * @tc.name      testList12Chapter0020
      * @tc.desc      Test getSubList with advanced TypedArray/DataView/BigInt
      * @tc.size      MediumTest
@@ -1088,7 +1088,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2100
      * @tc.name      testList12Chapter0021
      * @tc.desc      Test getSubList with normal/empty/special/nested objects
      * @tc.size      MediumTest
@@ -1133,7 +1133,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2200
      * @tc.name      testList12Chapter0022
      * @tc.desc      Test getSubList with symbol/large/mixed collection objects
      * @tc.size      LargeTest
@@ -1182,7 +1182,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2300
      * @tc.name      testList12Chapter0023
      * @tc.desc      Test getSubList with Reflect modified objects/arrays
      * @tc.size      MediumTest
@@ -1227,7 +1227,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2400
      * @tc.name      testList12Chapter0024
      * @tc.desc      Test getSubList with valid/invalid range/empty List
      * @tc.size      MediumTest
@@ -1258,7 +1258,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2500
      * @tc.name      testList12Chapter0025
      * @tc.desc      Test clear() for List with Int8/Uint8/Uint8Clamped TypedArray
      * @tc.size      MediumTest
@@ -1303,7 +1303,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2600
      * @tc.name      testList12Chapter0026
      * @tc.desc      Test clear() for floating-point/BigInt TypedArray List
      * @tc.size      MediumTest
@@ -1350,7 +1350,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2700
      * @tc.name      testList12Chapter0027
      * @tc.desc      Test clear() for mixed TypedArray List and re-add after clear
      * @tc.size      MediumTest
@@ -1391,7 +1391,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2800
      * @tc.name      testList12Chapter0028
      * @tc.desc      Test clear() with normal Uint8Array and multi-zero number arrays
      * @tc.size      MediumTest
@@ -1420,7 +1420,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_2900
      * @tc.name      testList12Chapter0029
      * @tc.desc      Test clear() with negative/typed/non-numeric index arrays
      * @tc.size      MediumTest
@@ -1453,7 +1453,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_3000
      * @tc.name      testList12Chapter0030
      * @tc.desc      Test clear() with NaN/Infinity/mixed type value arrays
      * @tc.size      MediumTest
@@ -1480,7 +1480,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_3100
      * @tc.name      testList12Chapter0031
      * @tc.desc      Test clear() with empty/overflow/deleted element arrays
      * @tc.size      MediumTest
@@ -1509,7 +1509,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_3200
      * @tc.name      testList12Chapter0032
      * @tc.desc      Test clear() with nested/typed/large length arrays
      * @tc.size      LargeTest
@@ -1550,7 +1550,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_3300
      * @tc.name      testList12Chapter0033
      * @tc.desc      Test clear() with nested/typed/large length arrays
      * @tc.size      MediumTest
@@ -1575,7 +1575,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_3400
      * @tc.name      testList12Chapter0034
      * @tc.desc      Test clear empty list, verify length and isEmpty
      * @tc.size      MediumTest
@@ -1594,7 +1594,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_3500
      * @tc.name      testList12Chapter0035
      * @tc.desc      Test clear list with basic number elements
      * @tc.size      MediumTest
@@ -1624,7 +1624,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_3600
      * @tc.name      testList12Chapter0036
      * @tc.desc      Test clear list with string elements
      * @tc.size      MediumTest
@@ -1656,7 +1656,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_3700
      * @tc.name      testList12Chapter0037
      * @tc.desc      Test clear list with boolean elements
      * @tc.size      MediumTest
@@ -1682,7 +1682,7 @@ export default function ListTest12() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT12_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST12_3800
      * @tc.name      testList12Chapter0038
      * @tc.desc      Test clear list with special number elements (NaN/Infinity)
      * @tc.size      MediumTest

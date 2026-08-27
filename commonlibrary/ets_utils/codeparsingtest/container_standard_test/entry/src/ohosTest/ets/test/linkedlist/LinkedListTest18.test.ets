@@ -30,7 +30,7 @@ export default function LinkedListTest18() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_0100
      * @tc.name      testLinkedList18Chapter0001
      * @tc.desc      Test Array: TypedArray special value storage after add/replace at specified index
      * @tc.size      MediumTest
@@ -82,7 +82,7 @@ export default function LinkedListTest18() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_0200
      * @tc.name      testLinkedList18Chapter0002
      * @tc.desc      Test: String basic char instances → array conversion & result verification
      * @tc.size      MediumTest
@@ -117,7 +117,7 @@ export default function LinkedListTest18() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_0300
      * @tc.name      testLinkedList18Chapter0003
      * @tc.desc      Test: String special escape char instances → array conversion & result verification
      * @tc.size      MediumTest
@@ -146,7 +146,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_0400
      * @tc.name      testLinkedList18Chapter0004
      * @tc.desc      Test converting string-type emojis and their Unicode encoding instances to arrays and verify
      * @tc.size      MediumTest
@@ -178,7 +178,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_0500
      * @tc.name      testLinkedList18Chapter0005
      * @tc.desc      Test converting string-type illegal Unicode encodings and keyword instances to arrays and verify
      * @tc.size      MediumTest
@@ -207,7 +207,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_0600
      * @tc.name      testLinkedList18Chapter0006
      * @tc.desc      Test converting instances of all number-type elements to arrays and verify
      * @tc.size      MediumTest
@@ -248,7 +248,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_0700
      * @tc.name      testLinkedList18Chapter0007
      * @tc.desc      Test converting instances of all Boolean-type elements to arrays and verify
      * @tc.size      MediumTest
@@ -277,7 +277,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_0800
      * @tc.name      testLinkedList18Chapter0008
      * @tc.desc      Test converting instances of all object-type elements to arrays and verify
      * @tc.size      MediumTest
@@ -395,7 +395,7 @@ export default function LinkedListTest18() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_0900
      * @tc.name      testLinkedList18Chapter0009
      * @tc.desc      Test getting undefined of String type at the beginning
      * @tc.size      MediumTest
@@ -413,7 +413,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1000
      * @tc.name      testLinkedList18Chapter0010
      * @tc.desc      Test getting null of String type at the beginning
      * @tc.size      MediumTest
@@ -431,7 +431,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1100
      * @tc.name      testLinkedList18Chapter0011
      * @tc.desc      Test getting empty string of String type at the beginning
      * @tc.size      MediumTest
@@ -449,7 +449,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1200
      * @tc.name      testLinkedList18Chapter0012
      * @tc.desc      Test full coverage of special characters of String type at the beginning
      * @tc.size      MediumTest
@@ -467,7 +467,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1300
      * @tc.name      testLinkedList18Chapter0013
      * @tc.desc      Test full coverage of ASCII codes of String type at the beginning
      * @tc.size      MediumTest
@@ -485,7 +485,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1400
      * @tc.name      testLinkedList18Chapter0014
      * @tc.desc      Test full coverage of special characters of String type at the beginning (twice)
      * @tc.size      MediumTest
@@ -503,7 +503,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1500
      * @tc.name      testLinkedList18Chapter0015
      * @tc.desc      Test getting special escape characters of String type at the beginning
      * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1600
      * @tc.name      testLinkedList18Chapter0016
      * @tc.desc      Test getting emojis and their Unicode encodings of String type at the beginning
      * @tc.size      MediumTest
@@ -648,7 +648,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1700
      * @tc.name      testLinkedList18Chapter0017
      * @tc.desc      Test getting invalid unicode encodings of String type at the beginning
      * @tc.size      MediumTest
@@ -673,7 +673,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1800
      * @tc.name      testLinkedList18Chapter0018
      * @tc.desc      Test getting keywords of String type at the beginning
      * @tc.size      MediumTest
@@ -699,7 +699,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_1900
      * @tc.name      testLinkedList18Chapter0019
      * @tc.desc      Test getting treeString type of String type at the beginning
      * @tc.size      MediumTest
@@ -739,7 +739,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2000
      * @tc.name      testLinkedList18Chapter0020
      * @tc.desc      Test getting sliceString type of String type at the beginning
      * @tc.size      MediumTest
@@ -764,7 +764,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2100
      * @tc.name      testLinkedList18Chapter0021
      * @tc.desc      Test String GC for head operations: works after adding & releasing an ultra-long string
      * @tc.size      MediumTest
@@ -790,7 +790,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2200
      * @tc.name      testLinkedList18Chapter0022
      * @tc.desc      Test getting 0 of number type at the beginning
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2300
      * @tc.name      testLinkedList18Chapter0023
      * @tc.desc      Test getting undefined of number type at the beginning
      * @tc.size      MediumTest
@@ -828,7 +828,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2400
      * @tc.name      testLinkedList18Chapter0024
      * @tc.desc      Test getting NaN of number type at the beginning
      * @tc.size      MediumTest
@@ -847,7 +847,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2500
      * @tc.name      testLinkedList18Chapter0025
      * @tc.desc      Test getting -0 of number type at the beginning
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2600
      * @tc.name      testLinkedList18Chapter0026
      * @tc.desc      Test getting positive infinity of number type at the beginning
      * @tc.size      MediumTest
@@ -885,7 +885,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2700
      * @tc.name      testLinkedList18Chapter0027
      * @tc.desc      Test getting negative infinity of number type at the beginning
      * @tc.size      MediumTest
@@ -904,7 +904,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2800
      * @tc.name      testLinkedList18Chapter0028
      * @tc.desc      Test getting double type of number type at the beginning
      * @tc.size      MediumTest
@@ -924,7 +924,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_2900
      * @tc.name      testLinkedList18Chapter0029
      * @tc.desc      Test getting Number.MAX_VALUE of number type at the beginning
      * @tc.size      MediumTest
@@ -943,7 +943,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3000
      * @tc.name      testLinkedList18Chapter0030
      * @tc.desc      Test getting Number.MIN_VALUE of number type at the beginning
      * @tc.size      MediumTest
@@ -962,7 +962,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3100
      * @tc.name      testLinkedList18Chapter0031
      * @tc.desc      Test getting Number.EPSILON of number type at the beginning
      * @tc.size      MediumTest
@@ -981,7 +981,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3200
      * @tc.name      testLinkedList18Chapter0032
      * @tc.desc      Test getting Number.EPSILON of number type at the beginning
      * @tc.size      MediumTest
@@ -1000,7 +1000,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3300
      * @tc.name      testLinkedList18Chapter0033
      * @tc.desc      Test getting byte of number type at the beginning
      * @tc.size      MediumTest
@@ -1034,7 +1034,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3400
      * @tc.name      testLinkedList18Chapter0034
      * @tc.desc      Test getting out-of-bounds byte of number type at the beginning
      * @tc.size      MediumTest
@@ -1053,7 +1053,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3500
      * @tc.name      testLinkedList18Chapter0035
      * @tc.desc      Test getting short of number type at the beginning
      * @tc.size      MediumTest
@@ -1082,7 +1082,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3600
      * @tc.name      testLinkedList18Chapter0036
      * @tc.desc      Test getting out-of-bounds short of number type at the beginning
      * @tc.size      MediumTest
@@ -1101,7 +1101,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3700
      * @tc.name      testLinkedList18Chapter0037
      * @tc.desc      Test getting int of number type at the beginning
      * @tc.size      MediumTest
@@ -1130,7 +1130,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3800
      * @tc.name      testLinkedList18Chapter0038
      * @tc.desc      Test getting out-of-bounds int of number type at the beginning
      * @tc.size      MediumTest
@@ -1149,7 +1149,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_3900
      * @tc.name      testLinkedList18Chapter0039
      * @tc.desc      Test getting long of number type at the beginning
      * @tc.size      MediumTest
@@ -1178,7 +1178,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4000
      * @tc.name      testLinkedList18Chapter0040
      * @tc.desc      Test getting out-of-bounds long of number type at the beginning
      * @tc.size      MediumTest
@@ -1197,7 +1197,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4100
      * @tc.name      testLinkedList18Chapter0041
      * @tc.desc      Test getting float of number type at the beginning
      * @tc.size      MediumTest
@@ -1226,7 +1226,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4200
      * @tc.name      testLinkedList18Chapter0042
      * @tc.desc      Test getting double of number type at the beginning
      * @tc.size      MediumTest
@@ -1255,7 +1255,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4300
      * @tc.name      testLinkedList18Chapter0043
      * @tc.desc      Test getting out-of-bounds double of number type at the beginning
      * @tc.size      MediumTest
@@ -1274,7 +1274,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4400
      * @tc.name      testLinkedList18Chapter0044
      * @tc.desc      Test getting char of number type at the beginning
      * @tc.size      MediumTest
@@ -1298,7 +1298,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4500
      * @tc.name      testLinkedList18Chapter0045
      * @tc.desc      Test getting char stored as character of number type at the beginning
      * @tc.size      MediumTest
@@ -1317,7 +1317,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4600
      * @tc.name      testLinkedList18Chapter0046
      * @tc.desc      Test getting out-of-bounds char value of number type at the beginning
      * @tc.size      MediumTest
@@ -1336,7 +1336,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4700
      * @tc.name      testLinkedList18Chapter0047
      * @tc.desc      Test getting bigint value of number type at the beginning
      * @tc.size      MediumTest
@@ -1355,7 +1355,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4800
      * @tc.name      testLinkedList18Chapter0048
      * @tc.desc      Test getting double value of number type at the beginning
      * @tc.size      MediumTest
@@ -1374,7 +1374,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_4900
      * @tc.name      testLinkedList18Chapter0049
      * @tc.desc      Test getting float of number type at the beginning
      * @tc.size      MediumTest
@@ -1393,7 +1393,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5000
      * @tc.name      testLinkedList18Chapter0050
      * @tc.desc      Test getting hexadecimal (16-bit) of number type at the beginning
      * @tc.size      MediumTest
@@ -1412,7 +1412,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5100
      * @tc.name      testLinkedList18Chapter0051
      * @tc.desc      Test getting hexadecimal (32-bit) of number type at the beginning
      * @tc.size      MediumTest
@@ -1431,7 +1431,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5200
      * @tc.name      testLinkedList18Chapter0052
      * @tc.desc      Test getting octal of number type at the beginning
      * @tc.size      MediumTest
@@ -1450,7 +1450,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5300
      * @tc.name      testLinkedList18Chapter0053
      * @tc.desc      Test getting exponent operator of number type at the beginning
      * @tc.size      MediumTest
@@ -1469,7 +1469,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5400
      * @tc.name      testLinkedList18Chapter0054
      * @tc.desc      Test getting scientific notation of number type at the beginning
      * @tc.size      MediumTest
@@ -1493,7 +1493,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5500
      * @tc.name      testLinkedList18Chapter0055
      * @tc.desc      Test getting large integer of number type at the beginning
      * @tc.size      MediumTest
@@ -1512,7 +1512,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5600
      * @tc.name      testLinkedList18Chapter0056
      * @tc.desc      Test getting true of boolean type at the beginning
      * @tc.size      MediumTest
@@ -1531,7 +1531,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5700
      * @tc.name      testLinkedList18Chapter0057
      * @tc.desc      Test getting false of boolean type at the beginning
      * @tc.size      MediumTest
@@ -1550,7 +1550,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5800
      * @tc.name      testLinkedList18Chapter0058
      * @tc.desc      Test getting values that are usually treated as false of boolean type at the beginning
      * @tc.size      MediumTest
@@ -1590,7 +1590,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_5900
      * @tc.name      testLinkedList18Chapter0059
      * @tc.desc      Test getting ! + other data types of boolean type at the beginning
      * @tc.size      MediumTest
@@ -1614,7 +1614,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_6000
      * @tc.name      testLinkedList18Chapter0060
      * @tc.desc      Test getting ordinary object of object type at the beginning
      * @tc.size      MediumTest
@@ -1639,7 +1639,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_6100
      * @tc.name      testLinkedList18Chapter0061
      * @tc.desc      Test getting nested object of object type at the beginning
      * @tc.size      MediumTest
@@ -1669,7 +1669,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_6200
      * @tc.name      testLinkedList18Chapter0062
      * @tc.desc      Test getting object with function property (no parameters) of object type at the beginning
      * @tc.size      MediumTest
@@ -1697,7 +1697,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_6300
      * @tc.name      testLinkedList18Chapter0063
      * @tc.desc      Test getting object with function property (with parameters) of object type at the beginning
      * @tc.size      MediumTest
@@ -1725,7 +1725,7 @@ export default function LinkedListTest18() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_6400
      * @tc.name      testLinkedList18Chapter0064
      * @tc.desc      Test getting object with ArrayBuffer property of object type at the beginning
      * @tc.size      MediumTest
@@ -1753,7 +1753,7 @@ export default function LinkedListTest18() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_6500
      * @tc.name      testLinkedList18Chapter0065
      * @tc.desc      Test getting object with DataView property of object type at the beginning
      * @tc.size      MediumTest
@@ -1777,7 +1777,7 @@ export default function LinkedListTest18() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_6600
      * @tc.name      testLinkedList18Chapter0066
      * @tc.desc      Test getting empty object of object type at the beginning
      * @tc.size      MediumTest
@@ -1805,7 +1805,7 @@ export default function LinkedListTest18() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT18_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST19_6700
      * @tc.name      testLinkedList18Chapter0067
      * @tc.desc      Test getting extremely large object of object type at the beginning
      * @tc.size      MediumTest

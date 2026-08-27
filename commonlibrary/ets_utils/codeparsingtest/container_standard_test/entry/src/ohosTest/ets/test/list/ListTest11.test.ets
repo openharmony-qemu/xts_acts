@@ -394,7 +394,7 @@ export default function ListTest11() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_0100
      * @tc.name      testList11Chapter0001
      * @tc.desc      List.forEach: nested List & multi-type nested data
      * @tc.size      MediumTest
@@ -434,7 +434,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_0200
      * @tc.name      testList11Chapter0002
      * @tc.desc      List.sort: array length & first valid number
      * @tc.size      MediumTest
@@ -464,7 +464,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_0300
      * @tc.name      testList11Chapter0003
      * @tc.desc      List.sort: negative numbers & non-numeric index arrays
      * @tc.size      MediumTest
@@ -508,7 +508,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_0400
      * @tc.name      testList11Chapter0004
      * @tc.desc      List.sort: NaN/Infinity & non-numeric type arrays
      * @tc.size      MediumTest
@@ -550,7 +550,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_0500
      * @tc.name      testList11Chapter0005
      * @tc.desc      List.sort: empty arrays & extreme numeric overflow
      * @tc.size      MediumTest
@@ -587,7 +587,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_0600
      * @tc.name      testList11Chapter0006
      * @tc.desc      List.sort: nested arrays & TypedArray sub-element
      * @tc.size      LargeTest
@@ -638,7 +638,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_0700
      * @tc.name      testList11Chapter0007
      * @tc.desc      List.sort: functions/keywords (Symbol removed)
      * @tc.size      MediumTest
@@ -682,7 +682,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_0800
      * @tc.name      testList11Chapter0008
      * @tc.desc      List.sort: basic string values
      * @tc.size      MediumTest
@@ -726,7 +726,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_0900
      * @tc.name      testList11Chapter0009
      * @tc.desc      List.sort: special character strings
      * @tc.size      MediumTest
@@ -765,7 +765,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1000
      * @tc.name      testList11Chapter0010
      * @tc.desc      List.sort: escape character strings
      * @tc.size      MediumTest
@@ -798,7 +798,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1100
      * @tc.name      testList11Chapter0011
      * @tc.desc      List.sort: more escape character strings
      * @tc.size      MediumTest
@@ -826,7 +826,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1200
      * @tc.name      testList11Chapter0012
      * @tc.desc      List.sort: hex/octal escape strings
      * @tc.size      MediumTest
@@ -852,7 +852,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1300
      * @tc.name      testList11Chapter0013
      * @tc.desc      List.sort: emoji strings
      * @tc.size      MediumTest
@@ -891,7 +891,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1400
      * @tc.name      testList11Chapter0014
      * @tc.desc      List.sort: special unicode strings
      * @tc.size      MediumTest
@@ -942,7 +942,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1500
      * @tc.name      testList11Chapter0015
      * @tc.desc      List.sort: large strings
      * @tc.size      MediumTest
@@ -977,7 +977,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1600
      * @tc.name      testList11Chapter0016
      * @tc.desc      List.sort: special number values
      * @tc.size      MediumTest
@@ -1040,7 +1040,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1700
      * @tc.name      testList11Chapter0017
      * @tc.desc      List.sort: extreme number values
      * @tc.size      MediumTest
@@ -1093,7 +1093,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1800
      * @tc.name      testList11Chapter0018
      * @tc.desc      List.sort: precision number values
      * @tc.size      MediumTest
@@ -1149,7 +1149,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_1900
      * @tc.name      testList11Chapter0019
      * @tc.desc      List.sort: base expression number values
      * @tc.size      MediumTest
@@ -1193,7 +1193,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2000
      * @tc.name      testList11Chapter0020
      * @tc.desc      List.sort: bigint values
      * @tc.size      MediumTest
@@ -1236,7 +1236,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2100
      * @tc.name      testList11Chapter0021
      * @tc.desc      List.sort: basic boolean values
      * @tc.size      MediumTest
@@ -1282,7 +1282,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2200
      * @tc.name      testList11Chapter0022
      * @tc.desc      List.sort: false-like values
      * @tc.size      MediumTest
@@ -1326,7 +1326,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2300
      * @tc.name      testList11Chapter0023
      * @tc.desc      List.sort: true-like values
      * @tc.size      MediumTest
@@ -1369,7 +1369,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2400
      * @tc.name      testList11Chapter0024
      * @tc.desc      List.sort: mixed boolean/number/string values
      * @tc.size      MediumTest
@@ -1468,7 +1468,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2500
      * @tc.name      testList11Chapter0025
      * @tc.desc      List.sort: basic objects
      * @tc.size      MediumTest
@@ -1531,7 +1531,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2600
      * @tc.name      testList11Chapter0026
      * @tc.desc      List.sort: special key/inherit/non-enum objects
      * @tc.size      MediumTest
@@ -1585,7 +1585,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2700
      * @tc.name      testList11Chapter0027
      * @tc.desc      List.sort: buffer/dataview/typed array objects
      * @tc.size      MediumTest
@@ -1648,7 +1648,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2800
      * @tc.name      testList11Chapter0028
      * @tc.desc      List.sort: map/set/func/regex/promise objects
      * @tc.size      MediumTest
@@ -1726,7 +1726,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_2900
      * @tc.name      testList11Chapter0029
      * @tc.desc      List.sort: special value objects
      * @tc.size      MediumTest
@@ -1819,7 +1819,7 @@ export default function ListTest11() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT11_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST11_3000
      * @tc.name      testList11Chapter0030
      * @tc.desc      List.sort: large/mixed/small/newKey objects
      * @tc.size      MediumTest

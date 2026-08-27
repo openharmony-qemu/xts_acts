@@ -43,7 +43,7 @@ export default function FastBufferBaseTest1() {
     })
     /**
      * @tc.name   testAlloc0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1010
      * @tc.desc   Testing alloc interface with normal size.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -63,7 +63,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1020
      * @tc.desc   Testing alloc for fastbuffer with size '4294967296'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -82,7 +82,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1030
      * @tc.desc   Testing alloc for parameter with size and fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1040
      * @tc.desc   Testing alloc for parameter with size and fill.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1050
      * @tc.desc   Testing alloc for parameter with size negetive
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -139,7 +139,7 @@ export default function FastBufferBaseTest1() {
     });
     /**
      * @tc.name   testAlloc0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1060
      * @tc.desc   Testing alloc for parameter with size and string base64
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -158,7 +158,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitialized0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1070
      * @tc.desc   Testing allocUninitialized interface with normal size.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function FastBufferBaseTest1() {
     })
     /**
      * @tc.name   testAllocUninitialized0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1080
      * @tc.desc   Testing allocUninitialized for fastbuffer with size '4294967296'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -196,7 +196,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitialized0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1090
      * @tc.desc   Testing allocUninitialized for parameter with size negetive
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -214,7 +214,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_FROM_POOL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1100
      * @tc.desc   Testing allocUninitializedFromPool interface with normal size.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -234,7 +234,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_FROM_POOL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1110
      * @tc.desc   Testing allocUninitializedFromPool for fastbuffer with size '4294967296'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -253,7 +253,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_FROM_POOL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1120
      * @tc.desc   Testing allocUninitializedFromPool for parameter with size negetive
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -271,7 +271,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testByteLength0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1130
      * @tc.desc   Testing byteLength for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -290,7 +290,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testByteLength0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1140
      * @tc.desc   Testing byteLength for fastbuffer with value '测试'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -309,7 +309,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testByteLength0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1150
      * @tc.desc   Testing byteLength for fastbuffer with value '!@#$%'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -328,7 +328,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testByteLength0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1160
      * @tc.desc   Testing byteLength for fastbuffer with uint8array objects.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -350,7 +350,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testByteLength0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1170
      * @tc.desc   Testing byteLength for fastbuffer with fastbuffer objects.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -370,7 +370,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testByteLength0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1180
      * @tc.desc   Testing byteLength for fastbuffer with value '\u00bd + \u00bc = \u00be'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -389,7 +389,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsBuffer0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1190
      * @tc.desc   Testing isBuffer for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -409,7 +409,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsBuffer0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1200
      * @tc.desc   Testing isBuffer for fastbuffer with object value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsBuffer0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1210
      * @tc.desc   Testing isBuffer for fastbuffer with value '[]'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -448,7 +448,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsBuffer0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1220
      * @tc.desc   Testing isBuffer for fastbuffer with value fastbuffer.from('foo').
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -467,7 +467,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsBuffer0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1230
      * @tc.desc   Testing isBuffer for fastbuffer with value empty string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -486,7 +486,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsBuffer0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1240
      * @tc.desc   testing alloc for fastbuffer with uint8array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -505,7 +505,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsEncoding0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1250
      * @tc.desc   Testing isEncoding for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -528,7 +528,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsEncoding0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1260
      * @tc.desc   Testing isEncoding for fastbuffer with value utf-8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -547,7 +547,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsEncoding0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1270
      * @tc.desc   Testing isEncoding for fastbuffer with value 'abcd'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -566,7 +566,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsEncoding0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1280
      * @tc.desc   Testing isEncoding for fastbuffer with value 'utf/8'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -585,7 +585,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsEncoding0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1290
      * @tc.desc   Testing isEncoding for fastbuffer with value null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -604,7 +604,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1300
      * @tc.desc   Testing compare with value '1234' and '0123'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -625,7 +625,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1310
      * @tc.desc   Testing compare with value '514' and '114'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -646,7 +646,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1320
      * @tc.desc   Testing compare with value '比较一' and '比较二'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -667,7 +667,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1330
      * @tc.desc   Testing compare with value '比较$&*' and '比较$&*'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -688,7 +688,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1340
      * @tc.desc   Testing compare with value '1abc' and  and uint8array type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -711,7 +711,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0600
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1350
      * @tc.desc   Testing compare with value undefined and undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -730,7 +730,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1360
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4].
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -751,7 +751,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1370
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4].
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -772,7 +772,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1380
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4].
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -793,7 +793,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1390
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] out of bounds.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -814,7 +814,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1400
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] out of bounds.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -835,7 +835,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1410
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] out of bounds.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -856,7 +856,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1420
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] one parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -877,7 +877,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1430
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] two parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -898,7 +898,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1440
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] three parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -919,7 +919,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCompare0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1450
      * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] four parameter.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -940,7 +940,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1460
      * @tc.desc   Testing concat with value '1145, 1414'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -962,7 +962,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1470
      * @tc.desc   Testing concat with value '测测, #￥&*'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -984,7 +984,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1480
      * @tc.desc   Testing concat with value 'qwert, asdfg'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1007,7 +1007,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1490
      * @tc.desc   Testing concat with value 'qwert, asdfg' test truncate.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1029,7 +1029,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1500
      * @tc.desc   Testing concat with value 'qwert, asdfg' test out of length.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1052,7 +1052,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1510
      * @tc.desc   Testing concat with value 'ab, ab' test out of length.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1074,7 +1074,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFill0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1520
      * @tc.desc   Testing fill with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1094,7 +1094,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFill0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1530
      * @tc.desc   Testing fill with value '('F1刘FG', 0, 10, codeType)'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1138,7 +1138,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFill0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1540
      * @tc.desc   Testing fill with value '!@#'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1158,7 +1158,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFill0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1550
      * @tc.desc   Testing fill with value, offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1178,7 +1178,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFill0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1560
      * @tc.desc   Testing fill with value, offset, end.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1198,7 +1198,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFill1100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1570
      * @tc.desc   Testing the fill interface with value, offset, end, encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1217,7 +1217,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1580
      * @tc.desc   Testing the write interface with utf8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1237,7 +1237,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1590
      * @tc.desc   Testing the write interface with normal value ''.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1259,7 +1259,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1600
      * @tc.desc   Testing the write interface with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1279,7 +1279,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1610
      * @tc.desc   Testing the write interface with normal value out of bounds.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1298,7 +1298,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1620
      * @tc.desc   Testing the write interface with normal value, offset, length.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1319,7 +1319,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1630
      * @tc.desc   Testing the write interface with normal value, offset, length, encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1340,7 +1340,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteBigInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEBIGINT64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1640
      * @tc.desc   Testing the writeBigInt64BE interface with two parameters: BigInt(0x0102030405060708) and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1360,7 +1360,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteBigInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEBIGINT64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1650
      * @tc.desc   Testing the writeBigInt64LE interface with two parameters: BigInt(0x0102030405060708) and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1380,7 +1380,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteBigUInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEBIGUINT64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1660
      * @tc.desc   Testing the writeInt16BE interface with two parameters: BigInt(0xdecafafecacefade) and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1400,7 +1400,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BIGUINT64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1670
      * @tc.desc   Testing the writeBigUInt64LE interface with two parameters: BigInt(0xdecafafecacefade) and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1420,7 +1420,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteDoubleBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEDOUBLEBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1680
      * @tc.desc   Testing the writeDoubleBE interface with two parameters: 123.456 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1440,7 +1440,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteDoubleLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEDOUBLELE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1690
      * @tc.desc   Testing the writeDoubleLE interface with two parameters: 123.456 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1460,7 +1460,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteFloatBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEFLOATBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1700
      * @tc.desc   Testing the writeFloatBE interface with two parameters: 0xcafebabe and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1480,7 +1480,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteFloatLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEFLOATLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1710
      * @tc.desc   Testing the writeFloatLE interface with two parameters: 0xcafebabe and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1500,7 +1500,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt80001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT8_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1720
      * @tc.desc   Testing the writeInt8 interface with value to buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1520,7 +1520,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt80002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT8_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1730
      * @tc.desc   Testing the writeInt8 interface with value to buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1539,7 +1539,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1740
      * @tc.desc   Testing the writeInt16BE interface with two parameters: 0x0102 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1559,7 +1559,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1750
      * @tc.desc   Testing the writeInt16LE interface with two parameters: 0x0304 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1579,7 +1579,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1760
      * @tc.desc   Testing the writeInt32BE interface with two parameters: 0x01020304 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1599,7 +1599,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1770
      * @tc.desc   Testing the writeInt32LE interface with two parameters: 0x05060708 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1619,7 +1619,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINTBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1780
      * @tc.desc   Testing the writeIntBE interface with three parameters: 0x1234567890ab, 0, 6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1639,7 +1639,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINTLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1790
      * @tc.desc   Testing the writeIntLE interface with three parameters: 0x1234567890ab, 0, 6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1659,7 +1659,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt80001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT8_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1800
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1679,7 +1679,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt80002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT8_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1810
      * @tc.desc   Testing the writeUInt8 interface with 0x4 and 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1699,7 +1699,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt80003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT8_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1820
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x23 and 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1719,7 +1719,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt80004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT8_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1830
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 3.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1738,7 +1738,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1840
      * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xdead and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1758,7 +1758,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT16BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1850
      * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xbeef and 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1777,7 +1777,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1860
      * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xdead and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1797,7 +1797,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT16LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1870
      * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xbeef and 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1816,7 +1816,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt32BE0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1880
      * @tc.desc   Testing the writeUInt32BE interface with two parameters: 0xfeedface and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1836,7 +1836,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1890
      * @tc.desc   Testing writeUInt32LE with value '0xfeedface, 0'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1856,7 +1856,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINTBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1900
      * @tc.desc   Testing writeUIntBE with value '0x1234567890ab, 0, 6'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1876,7 +1876,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINTLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1910
      * @tc.desc   Testing writeUIntLE with value '0x1234567890ab, 0, 6'.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1896,7 +1896,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadBigInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READBIGINT64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1920
      * @tc.desc   Testing readBigInt64BE for fastbuffer with normal value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1917,7 +1917,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadBigInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEBIGINT64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1930
      * @tc.desc   Testing readBigInt64LE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1938,7 +1938,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadBigUInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READBIGUINT64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1940
      * @tc.desc   Testing readBigUInt64BE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1959,7 +1959,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadBigUInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READBIGUINT64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1950
      * @tc.desc   Testing readBigUInt64LE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1980,7 +1980,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadDoubleBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READDOUBLEBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1960
      * @tc.desc   Testing readDoubleBE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2000,7 +2000,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadDoubleLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READDOUBLELE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1970
      * @tc.desc   Testing readDoubleLE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2020,7 +2020,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadFloatBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READFLOATBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1980
      * @tc.desc   Testing readFloatBE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2040,7 +2040,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadFloatLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READFLOATLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_1990
      * @tc.desc   Testing readFloatLE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2060,7 +2060,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadInt80001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2000
      * @tc.desc   Testing readInt8 for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2082,7 +2082,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2010
      * @tc.desc   Testing readInt16BE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2102,7 +2102,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2020
      * @tc.desc   Testing readInt16LE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2122,7 +2122,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2030
      * @tc.desc   Testing readInt32BE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2142,7 +2142,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2040
      * @tc.desc   Testing readInt32LE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2162,7 +2162,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINTBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2050
      * @tc.desc   Testing readIntBE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2183,7 +2183,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadIntBE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINTBE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2060
      * @tc.desc   Testing readIntBE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2203,7 +2203,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINTLE_0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2070
      * @tc.desc   Testing readIntLE for fastbuffer with [0x12, 0x34, 0x56, 0x78, 0x90, 0xab].
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2223,7 +2223,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadUInt80100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT8_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2080
      * @tc.desc   Testing readUInt8 for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2245,7 +2245,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadUInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2090
      * @tc.desc   Testing readUInt16BE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2267,7 +2267,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testEquals0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_EQUALS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2100
      * @tc.desc   Test the equals interface by two identical buffers which content is string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2288,7 +2288,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testEquals0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_EQUALS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2110
      * @tc.desc   Test the equals interface by two identical buffers which content is include chinese string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2309,7 +2309,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testSubarray0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_SUBARRAR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2120
      * @tc.desc   Test the subarray interface by pass the parameter start is 0 and end is 5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2333,7 +2333,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCopy0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2130
      * @tc.desc   Test the copy interface by copying one fastbuffer of numeric string type to other fastbuffer of numeric
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2357,7 +2357,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCopy0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2140
      * @tc.desc   Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2380,7 +2380,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCopy0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2150
      * @tc.desc   Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2403,7 +2403,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCopy0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2160
      * @tc.desc   Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2426,7 +2426,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testCopy0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2170
      * @tc.desc   Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2451,7 +2451,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testToString0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2180
      * @tc.desc   Test the toString interface by source fastbuffer of chinese string type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2474,7 +2474,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testToString0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2190
      * @tc.desc   Test the toString interface by passing the parameter encoding to "binary".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2494,7 +2494,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testToString0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2200
      * @tc.desc   Test the toString interface by passing the parameter encoding to "ascii".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2514,7 +2514,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testToString0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2210
      * @tc.desc   Test the toString interface by passing the parameter encoding to "base64".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2534,7 +2534,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testToString0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2220
      * @tc.desc   Test the toString interface by passing the parameter encoding to "hex".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2554,7 +2554,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testToString0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2230
      * @tc.desc   Test the toString interface by passing the parameter encoding to "latin1".
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2574,7 +2574,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testToString0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2240
      * @tc.desc   Test the toString interface by passing the parameter encoding with encoding, start.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2594,7 +2594,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testToString0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2250
      * @tc.desc   Test the toString interface by passing the parameter encoding with encoding, start, end.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2614,7 +2614,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testToJSON0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOJSON_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2260
      * @tc.desc   Test the toJSON interface source fastbuffer of numerical string type.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2634,7 +2634,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2270
      * @tc.desc   Test the indexOf interface by passing the parameter value to a character string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2654,7 +2654,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2280
      * @tc.desc   Test the indexOf interface by passing the parameter value to a character string, and byteOffset to 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2674,7 +2674,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2290
      * @tc.desc   Test the indexOf interface by passing the parameter value, byteOffset, encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2694,7 +2694,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2300
      * @tc.desc   Test the indexOf interface base test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2716,7 +2716,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testLastIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2310
      * @tc.desc   Test the lastIndexOf interface by passing the parameter value to a character string which is in the fastbuffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2736,7 +2736,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testLastIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2320
      * @tc.desc   Test the lastIndexOf interface by passing the parameter value to a character string which is in the buffer
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2756,7 +2756,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testLastIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2330
      * @tc.desc   Test the lastIndexOf interface by passing the parameter value, offset, encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2776,7 +2776,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testLastIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2340
      * @tc.desc   Test the lastIndexOf interface base test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2798,7 +2798,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIncludes0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2350
      * @tc.desc   Test the includes interface by passing the parameter value to a numerical string which is in the fastbuffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2818,7 +2818,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIncludes0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2360
      * @tc.desc   Test the includes interface by passing the parameter value to a numerical string which is in the buffer,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2838,7 +2838,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIncludes0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2370
      * @tc.desc   Test the includes interface by passing the parameter value to two numerical string which is in the fastbuffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2858,7 +2858,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIncludes0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2380
      * @tc.desc   Test the includes interface by passing the parameter value to string which is in the fastbuffer.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2880,7 +2880,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testKeys0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_KEYS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2390
      * @tc.desc   Test the keys interface by source fastbuffer which created from uint8Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2904,7 +2904,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testKeys0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_KEYS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2400
      * @tc.desc   Test the keys interface by source fastbuffer created from uint8Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2933,7 +2933,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testKeys0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_KEYS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2410
      * @tc.desc   Test the keys interface by source fastbuffer which size is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2953,7 +2953,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testValues0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_VALUES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2420
      * @tc.desc   Test the values interface by source fastbuffer which created from string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2977,7 +2977,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testValues0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_VALUES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2430
      * @tc.desc   Test the values interface by source fastbuffer which created from uint8Array.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3006,7 +3006,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testValues0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_VALUES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2440
      * @tc.desc   Test the values interface by source fastbuffer which size is 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3026,7 +3026,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testEntries0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ENTRIES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2450
      * @tc.desc   Test the entries interface by source fastbuffer which created from string.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3052,7 +3052,7 @@ export default function FastBufferBaseTest1() {
  
     /**
      * @tc.name   testFrom0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2460
      * @tc.desc   Test the from interface by Coping the passed fastbuffer data onto a new Buffer instance.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3077,7 +3077,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFrom0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2470
      * @tc.desc   Test the from interface by Allocatting a new Buffer using an array of bytes in the range 0 – 255.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3097,7 +3097,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFrom0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2480
      * @tc.desc   Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3123,7 +3123,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFrom0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2490
      * @tc.desc   Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3149,7 +3149,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFrom0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2500
      * @tc.desc   Test the from interface by Copping the passed fastbuffer data onto a new Buffer instance.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3173,7 +3173,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFrom0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2510
      * @tc.desc   Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3201,7 +3201,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFrom0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2520
      * @tc.desc   Test the from interface by pass the parameter array to undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3220,7 +3220,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFrom0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2530
      * @tc.desc   Test the from interface by pass the parameter array to null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3239,7 +3239,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFrom0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2540
      * @tc.desc   Test the from interface create by uint8array base test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3260,7 +3260,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFrom0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2550
      * @tc.desc   Test the from interface create by hex string base test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3281,7 +3281,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadUInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2560
      * @tc.desc   Test the readUInt16LE interface by Reading an unsigned, little-endian 16-bit integer from buf at the
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3303,7 +3303,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadUInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2570
      * @tc.desc   Test the readUInt32BE interface by Reading an unsigned, big-endian 32-bit integer from buf at the
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3323,7 +3323,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadUInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2580
      * @tc.desc   Test the readUInt32LE interface by Reading an unsigned, little-endian 32-bit integer from buf at the
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3343,7 +3343,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadUIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINTBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2590
      * @tc.desc   Test the readUIntBE interface by reading an unsigned 8-bit integer from buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3363,7 +3363,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testReadUIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINTLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2600
      * @tc.desc   Test the readUIntLE interface by reading an unsigned 8-bit integer from buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3383,7 +3383,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testRead0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2610
      * @tc.desc   Testing readBigUInt64BE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3404,7 +3404,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testRead0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2620
      * @tc.desc   Testing readBigInt64LE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3425,7 +3425,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testRead0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2630
      * @tc.desc   Testing readBigInt64BE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3447,7 +3447,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testRead0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2640
      * @tc.desc   Testing readBigUInt64LE for fastbuffer with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3468,7 +3468,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0010
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2650
      * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3481,7 +3481,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0012
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2660
      * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3495,7 +3495,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0013
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2670
      * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3508,7 +3508,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0015
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2680
      * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3522,7 +3522,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0016
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2690
      * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3540,7 +3540,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAlloc0019
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2700
      * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3553,7 +3553,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0020
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2710
      * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3566,7 +3566,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0022
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2720
      * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3580,7 +3580,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0023
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2730
      * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3593,7 +3593,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0025
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2740
      * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3607,7 +3607,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0026
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2750
      * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3625,7 +3625,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testAllocUninitializedFromPool0029
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2760
      * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3638,7 +3638,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testByteLength0030
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2770
      * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3651,7 +3651,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testByteLength0031
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2780
      * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3664,7 +3664,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testByteLength0032
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2790
      * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3677,7 +3677,7 @@ export default function FastBufferBaseTest1() {
     
     /**
      * @tc.name   testByteLength0035
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2800
      * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3693,7 +3693,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsBuffer0040
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2810
      * @tc.desc   Returns true if obj is a Buffer, false otherwise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3707,7 +3707,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsBuffer0045
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2820
      * @tc.desc   Returns true if obj is a Buffer, false otherwise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3721,7 +3721,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsEncoding0050
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2830
      * @tc.desc   Returns true if encoding is the name of a supported character encoding, or false otherwise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3734,7 +3734,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsEncoding0053
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2840
      * @tc.desc   Returns true if encoding is the name of a supported character encoding, or false otherwise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3751,7 +3751,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testIsEncoding0056
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2850
      * @tc.desc   Returns true if encoding is the name of a supported character encoding, or false otherwise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3764,7 +3764,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0060
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2860
      * @tc.desc   Compares buf1 to buf2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3779,7 +3779,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0061
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2870
      * @tc.desc   Compares buf1 to buf2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3794,7 +3794,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0062
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2880
      * @tc.desc   Compares buf1 to buf2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3809,7 +3809,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0063
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2890
      * @tc.desc   Compares buf1 to buf2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3824,7 +3824,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testStaticCompare0064
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2900
      * @tc.desc   Compares buf1 to buf2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3839,7 +3839,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0070
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2910
      * @tc.desc   Returns a new `Buffer` which is the result of concatenating
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3855,7 +3855,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0071
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2920
      * @tc.desc   Returns a new `Buffer` which is the result of concatenating
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3871,7 +3871,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0073
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2930
      * @tc.desc   Returns a new `Buffer` which is the result of concatenating
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3888,7 +3888,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testConcat0074
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2940
      * @tc.desc   Returns a new `Buffer` which is the result of concatenating
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3907,7 +3907,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testTranscode0080
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2950
      * @tc.desc   Re-encodes the given Buffer or Uint8Array instance from one character encoding to another.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3922,7 +3922,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testTranscode0081
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2960
      * @tc.desc   Re-encodes the given Buffer or Uint8Array instance from one character encoding to another.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3937,7 +3937,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFill0090
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2970
      * @tc.desc   Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3951,7 +3951,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testFill0091
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FASTBUFFERBASE1_2980
      * @tc.desc   Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

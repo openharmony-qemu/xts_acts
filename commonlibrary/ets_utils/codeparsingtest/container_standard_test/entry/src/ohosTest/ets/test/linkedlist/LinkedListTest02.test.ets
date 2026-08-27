@@ -30,7 +30,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_0100
      * @tc.name      testLinkedList02Chapter0001
      * @tc.desc      Test the storage rules for special values of array-type TypedArray when adding
      * @tc.size      MediumTest
@@ -66,7 +66,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_0200
      * @tc.name      testLinkedList02Chapter0002
      * @tc.desc      Test adding undefined of String type from the head
      * @tc.size      MediumTest
@@ -84,7 +84,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_0300
      * @tc.name      testLinkedList02Chapter0003
      * @tc.desc      Test adding null of String type from the head
      * @tc.size      MediumTest
@@ -102,7 +102,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_0400
      * @tc.name      testLinkedList02Chapter0004
      * @tc.desc      Test adding empty string of String type from the head
      * @tc.size      MediumTest
@@ -121,7 +121,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_0500
      * @tc.name      testLinkedList02Chapter0005
      * @tc.desc      Test adding full coverage of special characters of String type from the head
      * @tc.size      MediumTest
@@ -139,7 +139,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_0600
      * @tc.name      testLinkedList02Chapter0006
      * @tc.desc      Test adding full coverage of ASCII codes of String type from the head
      * @tc.size      MediumTest
@@ -157,7 +157,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_0700
      * @tc.name      testLinkedList02Chapter0007
      * @tc.desc      Test adding full coverage of special characters of String type (twice) from the head
      * @tc.size      MediumTest
@@ -175,7 +175,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_0800
      * @tc.name      testLinkedList02Chapter0008
      * @tc.desc      Test adding special escape characters of String type from the head
      * @tc.size      MediumTest
@@ -219,7 +219,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_0900
      * @tc.name      testLinkedList02Chapter0009
      * @tc.desc      Test adding emojis and their Unicode encodings of String type from the head
      * @tc.size      MediumTest
@@ -271,7 +271,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1000
      * @tc.name      testLinkedList02Chapter0010
      * @tc.desc      Test adding invalid unicode encodings of String type from the head
      * @tc.size      MediumTest
@@ -295,7 +295,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1100
      * @tc.name      testLinkedList02Chapter0011
      * @tc.desc      Test adding keywords of String type from the head
      * @tc.size      MediumTest
@@ -319,7 +319,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1200
      * @tc.name      testLinkedList02Chapter0012
      * @tc.desc      Test adding treeString type of String type from the head
      * @tc.size      MediumTest
@@ -363,7 +363,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1300
      * @tc.name      testLinkedList02Chapter0013
      * @tc.desc      Test adding sliceString type of String type from the head
      * @tc.size      MediumTest
@@ -387,7 +387,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1400
      * @tc.name      testLinkedList02Chapter0014
      * @tc.desc      Test String GC for head addition: works after adding & releasing extra-long strings
      * @tc.size      MediumTest
@@ -413,7 +413,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1500
      * @tc.name      testLinkedList02Chapter0015
      * @tc.desc      Test adding 0 of number type from the head
      * @tc.size      MediumTest
@@ -432,7 +432,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1600
      * @tc.name      testLinkedList02Chapter0016
      * @tc.desc      Test adding undefined of number type from the head
      * @tc.size      MediumTest
@@ -451,7 +451,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1700
      * @tc.name      testLinkedList02Chapter0017
      * @tc.desc      Test adding NaN of number type from the head
      * @tc.size      MediumTest
@@ -470,7 +470,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1800
      * @tc.name      testLinkedList02Chapter0018
      * @tc.desc      Test adding -0 of number type from the head
      * @tc.size      MediumTest
@@ -489,7 +489,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_1900
      * @tc.name      testLinkedList02Chapter0019
      * @tc.desc      Test adding positive infinity of number type from the head
      * @tc.size      MediumTest
@@ -508,7 +508,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2000
      * @tc.name      testLinkedList02Chapter0020
      * @tc.desc      Test adding negative infinity of number type from the head
      * @tc.size      MediumTest
@@ -527,7 +527,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2100
      * @tc.name      testLinkedList02Chapter0021
      * @tc.desc      Test adding double type of number type from the head
      * @tc.size      MediumTest
@@ -547,7 +547,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2200
      * @tc.name      testLinkedList02Chapter0022
      * @tc.desc      Test adding Number.MAX_VALUE of number type from the head
      * @tc.size      MediumTest
@@ -566,7 +566,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2300
      * @tc.name      testLinkedList02Chapter0023
      * @tc.desc      Test adding Number.MIN_VALUE of number type from the head
      * @tc.size      MediumTest
@@ -585,7 +585,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2400
      * @tc.name      testLinkedList02Chapter0024
      * @tc.desc      Test adding Number.EPSILON of number type from the head
      * @tc.size      MediumTest
@@ -604,7 +604,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2500
      * @tc.name      testLinkedList02Chapter0025
      * @tc.desc      Test adding Number.EPSILON of number type from the head
      * @tc.size      MediumTest
@@ -623,7 +623,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2600
      * @tc.name      testLinkedList02Chapter0026
      * @tc.desc      Test adding byte of number type from the head
      * @tc.size      MediumTest
@@ -654,7 +654,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2700
      * @tc.name      testLinkedList02Chapter0027
      * @tc.desc      Test adding out-of-bounds byte of number type from the head
      * @tc.size      MediumTest
@@ -673,7 +673,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2800
      * @tc.name      testLinkedList02Chapter0028
      * @tc.desc      Test adding short of number type from the head
      * @tc.size      MediumTest
@@ -700,7 +700,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_2900
      * @tc.name      testLinkedList02Chapter0029
      * @tc.desc      Test adding out-of-bounds short of number type from the head
      * @tc.size      MediumTest
@@ -719,7 +719,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3000
      * @tc.name      testLinkedList02Chapter0030
      * @tc.desc      Test adding int of number type from the head
      * @tc.size      MediumTest
@@ -747,7 +747,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3100
      * @tc.name      testLinkedList02Chapter0031
      * @tc.desc      Test adding out-of-bounds int of number type from the head
      * @tc.size      MediumTest
@@ -765,7 +765,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3200
      * @tc.name      testLinkedList02Chapter0032
      * @tc.desc      Test adding long of number type from the head
      * @tc.size      MediumTest
@@ -792,7 +792,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3300
      * @tc.name      testLinkedList02Chapter0033
      * @tc.desc      Test adding out-of-bounds long of number type from the head
      * @tc.size      MediumTest
@@ -811,7 +811,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3400
      * @tc.name      testLinkedList02Chapter0034
      * @tc.desc      Test adding float of number type from the head
      * @tc.size      MediumTest
@@ -838,7 +838,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3500
      * @tc.name      testLinkedList02Chapter0035
      * @tc.desc      Test float precision loss scenario of number type when adding from the head
      * @tc.size      MediumTest
@@ -860,7 +860,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3600
      * @tc.name      testLinkedList02Chapter0036
      * @tc.desc      Test adding double of number type from the head
      * @tc.size      MediumTest
@@ -887,7 +887,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3700
      * @tc.name      testLinkedList02Chapter0037
      * @tc.desc      Test adding out-of-bounds double of number type from the head
      * @tc.size      MediumTest
@@ -906,7 +906,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3800
      * @tc.name      testLinkedList02Chapter0038
      * @tc.desc      Test adding char of number type from the head
      * @tc.size      MediumTest
@@ -929,7 +929,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_3900
      * @tc.name      testLinkedList02Chapter0039
      * @tc.desc      Test adding char of number type stored as character from the head
      * @tc.size      MediumTest
@@ -948,7 +948,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4000
      * @tc.name      testLinkedList02Chapter0040
      * @tc.desc      Test adding out-of-bounds char value of number type from the head
      * @tc.size      MediumTest
@@ -967,7 +967,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4100
      * @tc.name      testLinkedList02Chapter0041
      * @tc.desc      Test adding bigint value of number type from the head
      * @tc.size      MediumTest
@@ -986,7 +986,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4200
      * @tc.name      testLinkedList02Chapter0042
      * @tc.desc      Test adding double value of number type from the head
      * @tc.size      MediumTest
@@ -1005,7 +1005,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4300
      * @tc.name      testLinkedList02Chapter0043
      * @tc.desc      Test adding float of number type from the head
      * @tc.size      MediumTest
@@ -1024,7 +1024,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4400
      * @tc.name      testLinkedList02Chapter0044
      * @tc.desc      Test adding hexadecimal (16-bit) of number type from the head
      * @tc.size      MediumTest
@@ -1043,7 +1043,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4500
      * @tc.name      testLinkedList02Chapter0045
      * @tc.desc      Test adding hexadecimal (32-bit) of number type from the head
      * @tc.size      MediumTest
@@ -1062,7 +1062,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4600
      * @tc.name      testLinkedList02Chapter0046
      * @tc.desc      Test adding octal of number type from the head
      * @tc.size      MediumTest
@@ -1081,7 +1081,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4700
      * @tc.name      testLinkedList02Chapter0047
      * @tc.desc      Test adding exponent operator value of number type from the head
      * @tc.size      MediumTest
@@ -1100,7 +1100,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4800
      * @tc.name      testLinkedList02Chapter0048
      * @tc.desc      Test adding scientific notation value of number type from the head
      * @tc.size      MediumTest
@@ -1123,7 +1123,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_4900
      * @tc.name      testLinkedList02Chapter0049
      * @tc.desc      Test adding large integer of number type from the head
      * @tc.size      MediumTest
@@ -1142,7 +1142,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5000
      * @tc.name      testLinkedList02Chapter0050
      * @tc.desc      Test adding true of boolean type from the head
      * @tc.size      MediumTest
@@ -1161,7 +1161,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5100
      * @tc.name      testLinkedList02Chapter0051
      * @tc.desc      Test adding false of boolean type from the head
      * @tc.size      MediumTest
@@ -1180,7 +1180,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5200
      * @tc.name      testLinkedList02Chapter0052
      * @tc.desc      Test adding values that are usually treated as false of boolean type from the head
      * @tc.size      MediumTest
@@ -1216,7 +1216,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5300
      * @tc.name      testLinkedList02Chapter0053
      * @tc.desc      Test adding ! + other data types converted to boolean type from the head
      * @tc.size      MediumTest
@@ -1240,7 +1240,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5400
      * @tc.name      testLinkedList02Chapter0054
      * @tc.desc      Test adding ordinary object of object type from the head
      * @tc.size      MediumTest
@@ -1265,7 +1265,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5500
      * @tc.name      testLinkedList02Chapter0055
      * @tc.desc      Test adding nested object of object type from the head
      * @tc.size      MediumTest
@@ -1294,7 +1294,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5600
      * @tc.name      testLinkedList02Chapter0056
      * @tc.desc      Test adding object with function property (no parameters) of object type from the head
      * @tc.size      MediumTest
@@ -1318,7 +1318,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5700
      * @tc.name      testLinkedList02Chapter0057
      * @tc.desc      Test adding object with function property (with parameters) of object type from the head
      * @tc.size      MediumTest
@@ -1342,7 +1342,7 @@ export default function LinkedListTest02() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5800
      * @tc.name      testLinkedList02Chapter0058
      * @tc.desc      Test adding object with ArrayBuffer property of object type from the head
      * @tc.size      MediumTest
@@ -1370,7 +1370,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_5900
      * @tc.name      testLinkedList02Chapter0059
      * @tc.desc      Test adding object with DataView property of object type from the head
      * @tc.size      MediumTest
@@ -1393,7 +1393,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6000
      * @tc.name      testLinkedList02Chapter0060
      * @tc.desc      Test adding empty object of object type from the head
      * @tc.size      MediumTest
@@ -1417,7 +1417,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6100
      * @tc.name      testLinkedList02Chapter0061
      * @tc.desc      Test adding extremely large object of object type from the head
      * @tc.size      MediumTest
@@ -1449,7 +1449,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6200
      * @tc.name      testLinkedList02Chapter0062
      * @tc.desc      Test adding object with null property of object type from the head
      * @tc.size      MediumTest
@@ -1473,7 +1473,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6300
      * @tc.name      testLinkedList02Chapter0063
      * @tc.desc      Test adding object with NaN property of object type from the head
      * @tc.size      MediumTest
@@ -1497,7 +1497,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6400
      * @tc.name      testLinkedList02Chapter0064
      * @tc.desc      Test adding object with Infinity property of object type from the head
      * @tc.size      MediumTest
@@ -1521,7 +1521,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6500
      * @tc.name      testLinkedList02Chapter0065
      * @tc.desc      Test adding an object of Object class with TypedArray property from the head
      * @tc.size      MediumTest
@@ -1545,7 +1545,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6600
      * @tc.name      testLinkedList02Chapter0066
      * @tc.desc      Test adding an object of Object class with Map property from the head
      * @tc.size      MediumTest
@@ -1569,7 +1569,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6700
      * @tc.name      testLinkedList02Chapter0067
      * @tc.desc      Test adding an object of Object class with Set property from the head
      * @tc.size      MediumTest
@@ -1593,7 +1593,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6800
      * @tc.name      testLinkedList02Chapter0068
      * @tc.desc      Test adding an object of Object class with Promise property from the head
      * @tc.size      MediumTest
@@ -1629,7 +1629,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_6900
      * @tc.name      testLinkedList02Chapter0069
      * @tc.desc      Test adding an object of Object class with regular expression property from the head
      * @tc.size      MediumTest
@@ -1658,7 +1658,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7000
      * @tc.name      testLinkedList02Chapter0070
      * @tc.desc      Test adding a normal Uint8Array of Array class from the head
      * @tc.size      MediumTest
@@ -1677,7 +1677,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7100
      * @tc.name      testLinkedList02Chapter0071
      * @tc.desc      Test adding an array of Array class containing multiple 0s from the head
      * @tc.size      MediumTest
@@ -1697,7 +1697,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7200
      * @tc.name      testLinkedList02Chapter0072
      * @tc.desc      Test adding an Array containing negative numbers converted to Uint8Array from the head
      * @tc.size      MediumTest
@@ -1716,7 +1716,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7300
      * @tc.name      testLinkedList02Chapter0073
      * @tc.desc      Test adding an Array containing negative numbers converted to Uint8Array/Uint16Array from the head
      * @tc.size      MediumTest
@@ -1739,7 +1739,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7400
      * @tc.name      testLinkedList02Chapter0074
      * @tc.desc      Test adding a special array of Array class from the head
      * @tc.size      MediumTest
@@ -1759,7 +1759,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7500
      * @tc.name      testLinkedList02Chapter0075
      * @tc.desc      Test adding an array of Array class containing NaN/Infinity from the head
      * @tc.size      MediumTest
@@ -1777,7 +1777,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7600
      * @tc.name      testLinkedList02Chapter0076
      * @tc.desc      Test adding an array of Array class containing non-numeric types from the head
      * @tc.size      MediumTest
@@ -1795,7 +1795,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7700
      * @tc.name      testLinkedList02Chapter0077
      * @tc.desc      Test adding an array of Array class containing non-numeric types from the head
      * @tc.size      MediumTest
@@ -1813,7 +1813,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7800
      * @tc.name      testLinkedList02Chapter0078
      * @tc.desc      Test adding an empty array of Array class from the head
      * @tc.size      MediumTest
@@ -1831,7 +1831,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_7900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_7900
      * @tc.name      testLinkedList02Chapter0079
      * @tc.desc      Test adding an array of Array class with extreme numeric overflow from the head
      * @tc.size      MediumTest
@@ -1849,7 +1849,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_8000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_8000
      * @tc.name      testLinkedList02Chapter0080
      * @tc.desc      Test adding Int8Array | Uint8Array | Uint8ClampedArray of Array class from the head
      * @tc.size      MediumTest
@@ -1874,7 +1874,7 @@ export default function LinkedListTest02() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT02_8100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST3_8100
      * @tc.name      testLinkedList02Chapter0081
      * @tc.desc      Test adding Int16Array | Uint16Array | Int32Array | Uint32Array of Array class from the head
      * @tc.size      MediumTest

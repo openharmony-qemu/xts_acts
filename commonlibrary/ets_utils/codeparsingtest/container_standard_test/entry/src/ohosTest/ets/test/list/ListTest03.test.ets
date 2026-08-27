@@ -283,7 +283,7 @@ export default function ListTest03() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_0100
      * @tc.name      testList03Chapter0001
      * @tc.desc      test add set object elements, verify return value
      * @tc.size      MediumTest
@@ -329,7 +329,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_0200
      * @tc.name      testList03Chapter0002
      * @tc.desc      test add function object elements, verify return value
      * @tc.size      MediumTest
@@ -376,7 +376,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_0300
      * @tc.name      testList03Chapter0003
      * @tc.desc      test add regex object elements, verify return value
      * @tc.size      MediumTest
@@ -422,7 +422,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_0400
      * @tc.name      testList03Chapter0004
      * @tc.desc      test add promise object elements, verify return value
      * @tc.size      MediumTest
@@ -469,7 +469,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_0500
      * @tc.name      testList03Chapter0005
      * @tc.desc      test add special value object elements, verify return value
      * @tc.size      MediumTest
@@ -518,7 +518,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_0600
      * @tc.name      testList03Chapter0006
      * @tc.desc      test add special value insert object elements, verify return value
      * @tc.size      MediumTest
@@ -565,7 +565,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_0700
      * @tc.name      testList03Chapter0007
      * @tc.desc      test add large object elements, verify return value
      * @tc.size      MediumTest
@@ -610,7 +610,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_0800
      * @tc.name      testList03Chapter0008
      * @tc.desc      test add mixed object elements, verify return value
      * @tc.size      MediumTest
@@ -684,7 +684,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_0900
      * @tc.name      testList03Chapter0009
      * @tc.desc      test add small object elements, verify return value
      * @tc.size      MediumTest
@@ -732,7 +732,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1000
      * @tc.name      testList03Chapter0010
      * @tc.desc      Verify insert() for empty/overflow arrays & existence judgment
      * @tc.size      MediumTest
@@ -766,7 +766,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0011
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1100
      * @tc.name      testList03Chapter0011
      * @tc.desc      Verify insert() for negative/non-numeric index arrays (has test)
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0012
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1200
      * @tc.name      testList03Chapter0012
      * @tc.desc      Verify insert() for NaN/Infinity/non-numeric arrays (has test)
      * @tc.size      MediumTest
@@ -847,7 +847,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0013
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1300
      * @tc.name      testList03Chapter0013
      * @tc.desc      Verify insert() for empty/overflow/deleted element arrays (has test)
      * @tc.size      MediumTest
@@ -886,7 +886,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1400
      * @tc.name      testList03Chapter0014
      * @tc.desc      Verify insert() for nested/TypedArray/large arrays (has test)
      * @tc.size      LargeTest
@@ -937,7 +937,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1500
      * @tc.name      testList03Chapter0015
      * @tc.desc      Verify insert() for function/keyword arrays (no Symbol, has test)
      * @tc.size      MediumTest
@@ -963,7 +963,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1600
      * @tc.name      testList03Chapter0016
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1003,7 +1003,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0017
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1700
      * @tc.name      testList03Chapter0017
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1053,7 +1053,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1800
      * @tc.name      testList03Chapter0018
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1097,7 +1097,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_1900
      * @tc.name      testList03Chapter0019
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1141,7 +1141,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0020
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2000
      * @tc.name      testList03Chapter0020
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1185,7 +1185,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0021
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2100
      * @tc.name      testList03Chapter0021
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1234,7 +1234,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0022
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2200
      * @tc.name      testList03Chapter0022
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1294,7 +1294,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0023
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2300
      * @tc.name      testList03Chapter0023
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1332,7 +1332,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0024
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2400
      * @tc.name      testList03Chapter0024
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1380,7 +1380,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0025
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2500
      * @tc.name      testList03Chapter0025
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1422,7 +1422,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0026
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2600
      * @tc.name      testList03Chapter0026
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1489,7 +1489,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0027
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2700
      * @tc.name      testList03Chapter0027
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1547,7 +1547,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0028
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2800
      * @tc.name      testList03Chapter0028
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1598,7 +1598,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0029
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_2900
      * @tc.name      testList03Chapter0029
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1632,7 +1632,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0030
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_3000
      * @tc.name      testList03Chapter0030
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1678,7 +1678,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0031
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_3100
      * @tc.name      testList03Chapter0031
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1720,7 +1720,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0032
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_3200
      * @tc.name      testList03Chapter0032
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest
@@ -1773,7 +1773,7 @@ export default function ListTest03() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST03_0033
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST3_3300
      * @tc.name      testList03Chapter0033
      * @tc.desc      It validates that the insert method of the List class behaves correctly across multiple scenarios
      * @tc.size      MediumTest

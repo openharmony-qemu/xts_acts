@@ -29,7 +29,7 @@ export default function StreamDuplex07Test() {
     })
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_0100
      * @tc.name      testStreamDuplex07Chapter0001
      * @tc.desc      Test doWritev with two string chunks
      * @tc.type      Function
@@ -63,7 +63,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_0200
      * @tc.name      testStreamDuplex07Chapter0002
      * @tc.desc      Test doWritev with two Uint8Array chunks
      * @tc.type      Function
@@ -102,7 +102,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_0300
      * @tc.name      testStreamDuplex07Chapter0003
      * @tc.desc      Test doWritev with no data chunks
      * @tc.type      Function
@@ -141,7 +141,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_0400
      * @tc.name      testStreamDuplex07Chapter0004
      * @tc.desc      Test doWritev with empty and non-empty chunks
      * @tc.type      Function
@@ -188,7 +188,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_0500
      * @tc.name      testStreamDuplex07Chapter0005
      * @tc.desc      Test doWritev with special character string
      * @tc.type      Function
@@ -224,7 +224,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_0600
      * @tc.name      testStreamDuplex07Chapter0006
      * @tc.desc      Test doWritev with control character string
      * @tc.type      Function
@@ -268,7 +268,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_0700
      * @tc.name      testStreamDuplex07Chapter0007
      * @tc.desc      Test doWritev with emoji string chunks
      * @tc.type      Function
@@ -308,7 +308,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_0800
      * @tc.name      testStreamDuplex07Chapter0008
      * @tc.desc      Test doWritev with multiple string chunks
      * @tc.type      Function
@@ -349,7 +349,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_0900
      * @tc.name      testStreamDuplex07Chapter0009
      * @tc.desc      Test doWritev with boundary value Uint8Array chunks
      * @tc.type      Function
@@ -393,7 +393,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1000
      * @tc.name      testStreamDuplex07Chapter0010
      * @tc.desc      Test doWritev with Uint16Array buffer chunks
      * @tc.type      Function
@@ -435,7 +435,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1100
      * @tc.name      testStreamDuplex07Chapter0011
      * @tc.desc      Test doWritev with Float32Array special values
      * @tc.type      Function
@@ -475,7 +475,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1200
      * @tc.name      testStreamDuplex07Chapter0012
      * @tc.desc      Test doWritev with Float64Array extreme values
      * @tc.type      Function
@@ -513,7 +513,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1300
      * @tc.name      testStreamDuplex07Chapter0013
      * @tc.desc      Test doWritev with Int32Array and Uint32Array boundary values
      * @tc.type      Function
@@ -551,7 +551,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1400
      * @tc.name      testStreamDuplex07Chapter0014
      * @tc.desc      Test doWritev with multiple Uint8Array chunks
      * @tc.type      Function
@@ -599,7 +599,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1500
      * @tc.name      testStreamDuplex07Chapter0015
      * @tc.desc      Test doWritev with large Uint8Array chunks
      * @tc.type      Function
@@ -651,7 +651,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1600
      * @tc.name      testStreamDuplex07Chapter0016
      * @tc.desc      Test doWritev with zero values in Uint8Array chunks
      * @tc.type      Function
@@ -699,7 +699,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1700
      * @tc.name      testStreamDuplex07Chapter0017
      * @tc.desc      Test doWritev with number string representations
      * @tc.type      Function
@@ -739,7 +739,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1800
      * @tc.name      testStreamDuplex07Chapter0018
      * @tc.desc      Test doWritev with full ASCII character string
      * @tc.type      Function
@@ -779,7 +779,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_1900
      * @tc.name      testStreamDuplex07Chapter0019
      * @tc.desc      Test doWritev with escape character string
      * @tc.type      Function
@@ -817,7 +817,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2000
      * @tc.name      testStreamDuplex07Chapter0020
      * @tc.desc      Test doWritev with mixed string and Uint8Array chunks
      * @tc.type      Function
@@ -867,7 +867,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2100
      * @tc.name      testStreamDuplex07Chapter0021
      * @tc.desc      Test doWritev with Float32Array NaN values
      * @tc.type      Function
@@ -911,7 +911,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2200
      * @tc.name      testStreamDuplex07Chapter0022
      * @tc.desc      Test doWritev with 1000 string chunks
      * @tc.type      Function
@@ -952,7 +952,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2300
      * @tc.name      testStreamDuplex07Chapter0023
      * @tc.desc      Test doWritev with Unicode escape sequence strings
      * @tc.type      Function
@@ -996,7 +996,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2400
      * @tc.name      testStreamDuplex07Chapter0024
      * @tc.desc      Test doWritev with pattern Uint8Array chunks
      * @tc.type      Function
@@ -1046,7 +1046,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2500
      * @tc.name      testStreamDuplex07Chapter0025
      * @tc.desc      Test doWritev with empty and non-empty Uint8Array chunks
      * @tc.type      Function
@@ -1093,7 +1093,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2600
      * @tc.name      testStreamDuplex07Chapter0026
      * @tc.desc      Test doWritev with repeated special character string
      * @tc.type      Function
@@ -1131,7 +1131,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2700
      * @tc.name      testStreamDuplex07Chapter0027
      * @tc.desc      Test doWritev with Int8Array boundary values
      * @tc.type      Function
@@ -1180,7 +1180,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2800
      * @tc.name      testStreamDuplex07Chapter0028
      * @tc.desc      Test doWritev with boolean string representations
      * @tc.type      Function
@@ -1218,7 +1218,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_2900
      * @tc.name      testStreamDuplex07Chapter0029
      * @tc.desc      Test doWritev with JavaScript type string representations
      * @tc.type      Function
@@ -1256,7 +1256,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3000
      * @tc.name      testStreamDuplex07Chapter0030
      * @tc.desc      Test doWritev with overflow Uint8Array values
      * @tc.type      Function
@@ -1298,7 +1298,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3100
      * @tc.name      testStreamDuplex07Chapter0031
      * @tc.desc      Test doWritev with number format string representations
      * @tc.type      Function
@@ -1342,7 +1342,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3200
      * @tc.name      testStreamDuplex07Chapter0032
      * @tc.desc      Test doWritev with mixed signed/unsigned array buffers
      * @tc.type      Function
@@ -1386,7 +1386,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3300
      * @tc.name      testStreamDuplex07Chapter0033
      * @tc.desc      Test doWritev with empty Uint8Array chunk
      * @tc.type      Function
@@ -1429,7 +1429,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3400
      * @tc.name      testStreamDuplex07Chapter0034
      * @tc.desc      Test doWritev with Uint8ClampedArray values
      * @tc.type      Function
@@ -1482,7 +1482,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3500
      * @tc.name      testStreamDuplex07Chapter0035
      * @tc.desc      Test doWritev with Float32Array extreme values
      * @tc.type      Function
@@ -1526,7 +1526,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3600
      * @tc.name      testStreamDuplex07Chapter0036
      * @tc.desc      Test doWritev with special Float32Array and typed array values
      * @tc.type      Function
@@ -1572,7 +1572,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3700
      * @tc.name      testStreamDuplex07Chapter0037
      * @tc.desc      Test doWritev with Number constants
      * @tc.type      Function
@@ -1620,7 +1620,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3800
      * @tc.name      testStreamDuplex07Chapter0038
      * @tc.desc      Test doWritev with Uint16Array character values
      * @tc.type      Function
@@ -1669,7 +1669,7 @@ export default function StreamDuplex07Test() {
 
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_3900
      * @tc.name      testStreamDuplex07Chapter0039
      * @tc.desc      Test doWritev with emoji string chunks
      * @tc.type      Function
@@ -1719,7 +1719,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_4000
      * @tc.name      testStreamDuplex07Chapter0040
      * @tc.desc      Test doWritev with control character strings
      * @tc.type      Function
@@ -1767,7 +1767,7 @@ export default function StreamDuplex07Test() {
     });
 
     /**
-     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEXTESTSEVEN_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMDUPLEX7_4100
      * @tc.name      testStreamDuplex07Chapter0041
      * @tc.desc      Test doWritev with edge case values
      * @tc.type      Function

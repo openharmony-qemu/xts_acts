@@ -43,7 +43,7 @@ export default function processTest() {
     })
     /**
      * @tc.name   testGetUid0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUID_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_0100
      * @tc.desc   Returns the digital user ID of the process.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -62,7 +62,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetPid0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETPID_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_0200
      * @tc.desc   Returns the digital process ID of the process.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,7 +81,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetTid0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETTID_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_0300
      * @tc.desc   Returns the digital thread ID of the process.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testisIsolatedProcess0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISOLATEDPROCESS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_0400
      * @tc.desc   Returns a boolean whether the process is isolated.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testIs64Bit0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_IS64BIT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_0500
      * @tc.desc   Returns a boolean whether the process is running in a 64-bit environment.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -140,7 +140,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetStartRealtime0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSTARTREALTIME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_0600
      * @tc.desc   Returns the elapsed real time (in milliseconds) taken from the start of the system to the start of the process.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -165,7 +165,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetPastCpuTime0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETPASTCPUTIME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_0700
      * @tc.desc   Returns the cpu time (in milliseconds) from the time when the process starts to the current time.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -190,7 +190,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testUptime0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UPTIME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_0800
      * @tc.desc   Returns the running time of the system.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -213,7 +213,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetUidForName0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_0900
      * @tc.desc   Gets the uid of the "root" user.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -232,7 +232,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetUidForName0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1000
      * @tc.desc   Attempts to get the uid of a non-existent user and expects failure.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -253,7 +253,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetUidForName0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1100
      * @tc.desc   Attempts to get the uid with an undefined user name and expects an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -272,7 +272,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetUidForName0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1200
      * @tc.desc   Attempts to get the uid with an empty string and expects -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -291,7 +291,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetUidForName0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1300
      * @tc.desc   Attempts to get the uid with null and expects an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -310,7 +310,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKill0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1400
      * @tc.desc   Attempt to send a signal to the current process and expect success.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -331,7 +331,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKill0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1500
      * @tc.desc   Attempt to send a signal to a non-existent process and expect failure.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -351,7 +351,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKill0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGERKILL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1600
      * @tc.desc   Attempt to send a signal to the current process with an out-of-range signal and expect an err.code.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -371,7 +371,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKill0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1700
      * @tc.desc   Attempt to send a signal with null signal and expect an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -391,7 +391,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKill0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1800
      * @tc.desc   Attempt to send a signal with valid signal and null pid and expect an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -411,7 +411,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetThreadPriority0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_1900
      * @tc.desc   Get thread priority using the specified thread ID (tid) and verify the priority range is -20 to 19.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -435,7 +435,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetThreadPriority0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2000
      * @tc.desc   Attempt to get thread priority using an undefined thread ID (tid) and expect an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -455,7 +455,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetThreadPriority0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2100
      * @tc.desc   Attempt to get thread priority using null and expect an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -475,7 +475,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testIsappuid0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2200
      * @tc.desc   Given a user's UID, testing if it belongs to the current application,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -496,7 +496,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testIsappuid0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2300
      * @tc.desc   Given a user's UID, testing if it belongs to the current application,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -517,7 +517,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testIsappuid0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2400
      * @tc.desc   Given undefined input, expect a thrown exception with error code: 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -536,7 +536,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testIsappuid0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2500
      * @tc.desc   Given null input, expect a thrown exception.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -555,7 +555,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetSystemConfig0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2600
      * @tc.desc   Given system config parameter 0, expect a return value greater than 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -584,7 +584,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetSystemConfig0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2700
      * @tc.desc   Given a non-existent system config parameter 111111, expect a return value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -604,7 +604,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetSystemConfig0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2800
      * @tc.desc   Given a non-existent system config parameter 111111, expect a return value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -624,7 +624,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetSystemConfig0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_2900
      * @tc.desc   Given null input, expect a thrown exception.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -643,7 +643,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetEnvironmentVar0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3000
      * @tc.desc   testing if the PATH environment variable is set and not empty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -671,7 +671,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetEnvironmentVar0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3100
      * @tc.desc   testing if the PATH1111 environment variable is set and return undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -691,7 +691,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetEnvironmentVar0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3200
      * @tc.desc   testing if the undefined environment variable is set and return err.code is Error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -710,7 +710,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetEnvironmentVar0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3300
      * @tc.desc   testing if the empty string environment variable returns undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -729,7 +729,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetEnvironmentVar0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3400
      * @tc.desc   testing if the null environment variable returns err.code is Error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -748,7 +748,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testExit0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EXIT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3500
      * @tc.desc   testing exit(undefined) return err.code is Error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -767,7 +767,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testExit0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EXIT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3600
      * @tc.desc   testing exit(null) return err.code is Error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -785,7 +785,7 @@ export default function processTest() {
     });
     /**
      * @tc.name   testGetUidForNameProcess0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3700
      * @tc.desc   Gets the uid of the "root" user.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -805,7 +805,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetUidForNameProcess0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3800
      * @tc.desc   Attempts to get the uid of a non-existent user and expects failure.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -827,7 +827,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetUidForNameProcess0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_3900
      * @tc.desc   Attempts to get the uid with an undefined user name and expects an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -847,7 +847,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKillProcess0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4000
      * @tc.desc   Attempt to send a signal to the current process and expect success.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -868,7 +868,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKillProcess0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4100
      * @tc.desc   Attempt to send a signal to a non-existent process and expect failure.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -888,7 +888,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKillProcess0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGERKILL_PROCESS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4200
      * @tc.desc   Attempt to send a signal to the current process with an out-of-range signal and expect an err.code.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -908,7 +908,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetThreadPriorityProcess0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_PROCESS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4300
      * @tc.desc   Get thread priority using the specified thread ID (tid) and verify the priority range is -20 to 19.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -932,7 +932,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetThreadPriorityProcess0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_PROCESS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4400
      * @tc.desc   Attempt to get thread priority using an undefined thread ID (tid) and expect an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -952,7 +952,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testIsappuidProcess0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4500
      * @tc.desc   Given a user's UID, testing if it belongs to the current application,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -974,7 +974,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testIsappuidProcess0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4600
      * @tc.desc   Given a user's UID, testing if it belongs to the current application,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -996,7 +996,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testIsappuidProcess0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4700
      * @tc.desc   Given undefined input, expect a thrown exception with error code: 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1016,7 +1016,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetSystemConfigProcess0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4800
      * @tc.desc   Given system config parameter 0, expect a return value greater than 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1046,7 +1046,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetSystemConfigProcess0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_4900
      * @tc.desc   Given a non-existent system config parameter 111111, expect a return value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1067,7 +1067,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetSystemConfigProcess0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5000
      * @tc.desc   Given a non-existent system config parameter 111111, expect a return value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1088,7 +1088,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetEnvironmentVarProcess0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5100
      * @tc.desc   testing if the PATH environment variable is set and not empty.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1117,7 +1117,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetEnvironmentVarProcess0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5200
      * @tc.desc   testing if the PATH1111 environment variable is set and return undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1138,7 +1138,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetEnvironmentVarProcess0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5300
      * @tc.desc   testing if the undefined environment variable is set and return err.code is Error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1157,7 +1157,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetEnvironmentVarProcess0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5400
      * @tc.desc   testing if the empty string environment variable returns undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1177,7 +1177,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetUidForNameProcess0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5500
      * @tc.desc   Attempts to get the uid with an empty string and returns -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1197,7 +1197,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testIsappuidProcess0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5600
      * @tc.desc   Given null input, expect a thrown exception with error code: 401.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1217,7 +1217,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetThreadPriorityProcess0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_PROCESS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5700
      * @tc.desc   Attempt to get thread priority using null and expect an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1237,7 +1237,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testGetSystemConfigProcess0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5800
      * @tc.desc   Given null input, expect a thrown exception with error name: BuisnessError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1257,7 +1257,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKillProcess0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_5900
      * @tc.desc   Attempt to send a signal with null parameters and expect an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1277,7 +1277,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testProcessManagerKillProcess0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_6000
      * @tc.desc   Attempt to send a signal with valid signal and null pid and expect an error.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1297,7 +1297,7 @@ export default function processTest() {
 
     /**
      * @tc.name   testExitProcess0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EXIT_PROCESS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PROCESS1_6100
      * @tc.desc   testing exit(null) return err.code is BuisnessError.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

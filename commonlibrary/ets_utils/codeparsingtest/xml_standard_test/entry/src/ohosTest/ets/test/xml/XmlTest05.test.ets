@@ -79,7 +79,7 @@ export default function XmlTest_05() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_0100
      * @tc.name      ParseTest0016
      * @tc.desc      Test XML input with unescaped illegal characters in predefined entities (<, >, &, ", ')
      * @tc.size      MediumTest
@@ -116,7 +116,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_0200
      * @tc.name      ParseTest0017
      * @tc.desc      Test XML input containing control characters (non-printable characters like 0x00-0x08, 0x0B, 0x0C, 0x0E-0x1F)
      * @tc.size      MediumTest
@@ -149,7 +149,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_0300
      * @tc.name      ParseTest0018
      * @tc.desc      Test element/attribute names containing illegal characters (spaces, special symbols, starting with numbers)
      * @tc.size      MediumTest
@@ -186,7 +186,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_0400
      * @tc.name      ParseTest0019
      * @tc.desc      Test CDATA sections containing illegal end markers (]]>)
      * @tc.size      MediumTest
@@ -225,7 +225,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_0500
      * @tc.name      ParseTest0020
      * @tc.desc      Test passing characters with mismatched encoding (declared as UTF-8 but containing non-UTF-8 characters)
      * @tc.size      MediumTest
@@ -256,7 +256,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_0600
      * @tc.name      ParseTest0021
      * @tc.desc      Test parsing XML containing comments, extra spaces, and nested nodes
      * @tc.size      MediumTest
@@ -291,7 +291,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_0700
      * @tc.name      ParseTest0022
      * @tc.desc      Test XML input with whitespace characters but unclosed tags to verify format error exception is triggered first
      * @tc.size      MediumTest
@@ -328,7 +328,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_0800
      * @tc.name      ParseTest0023
      * @tc.desc      Test XML input with mixed case tag names
      * @tc.size      MediumTest
@@ -362,7 +362,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_0900
      * @tc.name      ParseTest0024
      * @tc.desc      Test extremely deeply nested XML
      * @tc.size      MediumTest
@@ -488,7 +488,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1000
      * @tc.name      ParseTest0025
      * @tc.desc      Test passing encoded XML strings
      * @tc.size      MediumTest
@@ -519,7 +519,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_GETCOLUMNNUMBER_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1100
      * @tc.name     getColumnNumberTest0001
      * @tc.desc     Verify that column numbers increment correctly starting from 1 during simple XML parsing
      * @tc.size      MediumTest
@@ -562,7 +562,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1200
      * @tc.name      getColumnNumberTest0002
      * @tc.desc      Verify correct column number calculation when XML contains whitespace characters
      * @tc.size      MediumTest
@@ -610,7 +610,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1300
      * @tc.name      getColumnNumberTest0003
      * @tc.desc      Verify correct column number calculation when XML contains escape characters and Unicode characters
      * @tc.size      MediumTest
@@ -653,7 +653,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1400
      * @tc.name     getColumnNumberTest0004
      * @tc.desc     Verify getColumnNumber return value when input is empty XML
      * @tc.size      MediumTest
@@ -680,7 +680,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1500
      * @tc.name      getColumnNumberTest0005
      * @tc.desc      Verify correct column number calculation when parsing incomplete XML
      * @tc.size      MediumTest
@@ -730,7 +730,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1600
      * @tc.name      getColumnNumberTest0006
      * @tc.desc      Verify getColumnNumber behavior with invalid input
      * @tc.size      MediumTest
@@ -786,7 +786,7 @@ export default function XmlTest_05() {
 
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1700
      * @tc.name     getColumnNumberTest0007
      * @tc.desc     Verify consistency between column numbers and line numbers during parsing
      * @tc.size      MediumTest
@@ -836,7 +836,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1800
      * @tc.name      getColumnNumberTest0008
      * @tc.desc      Verify independence of column number calculation when multiple parser instances run simultaneously
      * @tc.size      MediumTest
@@ -902,7 +902,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_1900
      * @tc.name      getColumnNumberTest0009
      * @tc.desc      Verify consistent column number results when parsing the same XML document repeatedly
      * @tc.size      MediumTest
@@ -956,7 +956,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETCOLUMNNUMBER_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2000
      * @tc.name      getColumnNumberTest0010
      * @tc.desc      Verify that column numbers can accurately locate error positions when XML parsing errors occur
      * @tc.size      MediumTest
@@ -999,7 +999,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2100
      * @tc.name      GetDepthtest0001
      * @tc.desc      Root Element Depth Verification
      * @tc.size      MediumTest
@@ -1026,7 +1026,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2200
      * @tc.name      GetDepthtest0002
      * @tc.desc      Depth of multi-level nested structures
      * @tc.size      MediumTest
@@ -1055,7 +1055,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2300
      * @tc.name      GetDepthtest0003
      * @tc.desc      Self-closing tag depth validation
      * @tc.size      MediumTest
@@ -1082,7 +1082,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2400
      * @tc.name      GetDepthtest0004
      * @tc.desc      Text Node Depth Validation
      * @tc.size      MediumTest
@@ -1109,7 +1109,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2500
      * @tc.name      GetDepthtest0005
      * @tc.desc      Depth calculation with namespaces
      * @tc.size      MediumTest
@@ -1138,7 +1138,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2600
      * @tc.name      GetDepthtest0006
      * @tc.desc      Deep Verification of Mixed Event Types
      * @tc.size      MediumTest
@@ -1166,7 +1166,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2700
      * @tc.name      GetDepthtest0007
      * @tc.desc      CDATA Block Depth Validation
      * @tc.size      MediumTest
@@ -1194,7 +1194,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2800
      * @tc.name      GetDepthtest0008
      * @tc.desc      Depth after the document type declaration
      * @tc.size      MediumTest
@@ -1223,7 +1223,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_2900
      * @tc.name      GetDepthtest0009
      * @tc.desc      Whitespace character node depth
      * @tc.size      MediumTest
@@ -1252,7 +1252,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3000
      * @tc.name      GetDepthtest0010
      * @tc.desc      Block-wise analysis of depth continuity
      * @tc.size      MediumTest
@@ -1279,7 +1279,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3100
      * @tc.name      GetDepthtest0011
      * @tc.desc      Illegal input
      * @tc.size      MediumTest
@@ -1301,7 +1301,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3200
      * @tc.name      GetDepthtest0012
      * @tc.desc      Test negative depth value scenario
      * @tc.size      MediumTest
@@ -1329,7 +1329,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3300
      * @tc.name      GetDepthtest0013
      * @tc.desc      Oversized Buffer XML Parsing Exception Validation
      * @tc.size      MediumTest
@@ -1359,7 +1359,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3400
      * @tc.name      GetDepthtest0014
      * @tc.desc      Test floating-point value scenario
      * @tc.size      MediumTest
@@ -1385,7 +1385,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3500
      * @tc.name      GetDepthtest0015
      * @tc.desc      Verify multiple call exception scenarios
      * @tc.size      MediumTest
@@ -1414,7 +1414,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3600
      * @tc.name      GetDepthtest0016
      * @tc.desc      Test scenario for empty string parameter
      * @tc.size      MediumTest
@@ -1445,7 +1445,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3700
      * @tc.name      GetDepthtest0017
      * @tc.desc      Verify Boolean parameter scenario
      * @tc.size      MediumTest
@@ -1473,7 +1473,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3800
      * @tc.name      GetDepthtest0018
      * @tc.desc      Basic Nested Structure Depth Detection
      * @tc.size      MediumTest
@@ -1497,7 +1497,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_3900
      * @tc.name      GetDepthtest0019
      * @tc.desc      Depth tracking with attribute elements
      * @tc.size      MediumTest
@@ -1533,7 +1533,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_4000
      * @tc.name      GetDepthtest0020
      * @tc.desc      Three-level nested tag depth validation
      * @tc.size      MediumTest
@@ -1572,7 +1572,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_4100
      * @tc.name      GetDepthtest0021
      * @tc.desc      End tag depth validation
      * @tc.size      MediumTest
@@ -1602,7 +1602,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_4200
      * @tc.name      GetDepthtest0022
      * @tc.desc      Depth of Text and CDATA Nodes
      * @tc.size      MediumTest
@@ -1632,7 +1632,7 @@ export default function XmlTest_05() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETDEPTH_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XML6_4300
      * @tc.name      GetDepthtest0023
      * @tc.desc      Deep Processing of Document Type Declaration
      * @tc.size      MediumTest

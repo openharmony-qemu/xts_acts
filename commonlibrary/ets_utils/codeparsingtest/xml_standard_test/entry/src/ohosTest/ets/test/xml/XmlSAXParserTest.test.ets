@@ -33,7 +33,7 @@ export default function XmlSAXParserTest() {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSAXPARSER_CONSTRUCTOR_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XMLSAXPARSER1_0100
      * @tc.name      XmlSAXParserConstructorTest0001
      * @tc.desc      Test creating XmlSAXParser with valid inputStream only
      * @tc.size      MediumTest
@@ -49,7 +49,7 @@ export default function XmlSAXParserTest() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSAXPARSER_CONSTRUCTOR_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XMLSAXPARSER1_0200
      * @tc.name      XmlSAXParserConstructorTest0002
      * @tc.desc      Test creating XmlSAXParser with valid inputStream and encoding
      * @tc.size      MediumTest
@@ -65,7 +65,7 @@ export default function XmlSAXParserTest() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSAXPARSER_CONSTRUCTOR_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XMLSAXPARSER1_0300
      * @tc.name      XmlSAXParserConstructorTest0003
      * @tc.desc      Test creating XmlSAXParser with unsupported encoding
      * @tc.size      MediumTest
@@ -85,7 +85,7 @@ export default function XmlSAXParserTest() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSAXPARSER_PARSE_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XMLSAXPARSER1_0400
      * @tc.name      XmlSAXParserParseTest0001
      * @tc.desc      Test parsing with valid handler
      * @tc.size      MediumTest
@@ -134,7 +134,7 @@ export default function XmlSAXParserTest() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSAXPARSER_PARSE_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XMLSAXPARSER1_0500
      * @tc.name      XmlSAXParserParseTest0002
      * @tc.desc      Test parsing with namespace
      * @tc.size      MediumTest
@@ -180,7 +180,7 @@ export default function XmlSAXParserTest() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSAXPARSER_PARSE_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XMLSAXPARSER1_0600
      * @tc.name      XmlSAXParserParseTest0004
      * @tc.desc      Test parsing with multiple elements
      * @tc.size      MediumTest
@@ -223,7 +223,7 @@ export default function XmlSAXParserTest() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSAXPARSER_PARSE_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XMLSAXPARSER1_0700
      * @tc.name      XmlSAXParserParseTest0005
      * @tc.desc      Test parsing with attributes
      * @tc.size      MediumTest
@@ -268,7 +268,7 @@ export default function XmlSAXParserTest() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSAXPARSER_PARSE_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XMLSAXPARSER1_0800
      * @tc.name      XmlSAXParserParseTest0006
      * @tc.desc      Test parsing with UTF-8 encoding parameter
      * @tc.size      MediumTest
@@ -305,7 +305,7 @@ export default function XmlSAXParserTest() {
     });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMLSAXPARSER_PARSE_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_XMLSAXPARSER1_0900
      * @tc.name      XmlSAXParserParseTest0007
      * @tc.desc      Test parsing with deep nested elements
      * @tc.size      MediumTest

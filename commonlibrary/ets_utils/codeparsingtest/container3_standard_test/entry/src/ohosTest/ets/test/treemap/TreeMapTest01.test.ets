@@ -119,7 +119,7 @@ export default function TreeMap01Test() {
     })
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_0100
      * @tc.name      testTreeMap01Chapter0001
      * @tc.desc      TreeMap default constructor without comparator
      * @tc.size      MediumTest
@@ -135,7 +135,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_0200
      * @tc.name      testTreeMap01Chapter0002
      * @tc.desc      TreeMap constructor with comparator for ascending order
      * @tc.size      MediumTest
@@ -163,7 +163,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_0300
      * @tc.name      testTreeMap01Chapter0003
      * @tc.desc      TreeMap constructor with comparator for descending order
      * @tc.size      MediumTest
@@ -191,7 +191,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_0400
      * @tc.name      testTreeMap01Chapter0004
      * @tc.desc      TreeMap constructor with string key comparator
      * @tc.size      MediumTest
@@ -217,7 +217,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_0500
      * @tc.name      testTreeMap01Chapter0005
      * @tc.desc      TreeMap constructor with custom object key and comparator
      * @tc.size      MediumTest
@@ -248,7 +248,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_0600
      * @tc.name      testTreeMap01Chapter0006
      * @tc.desc      TreeMap constructor with comparator returning always true
      * @tc.size      MediumTest
@@ -269,7 +269,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_0700
      * @tc.name      testTreeMap01Chapter0007
      * @tc.desc      TreeMap constructor with comparator returning always false
      * @tc.size      MediumTest
@@ -290,7 +290,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_0800
      * @tc.name      testTreeMap01Chapter0008
      * @tc.desc      TreeMap constructor with undefined comparator
      * @tc.size      MediumTest
@@ -307,7 +307,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_0900
      * @tc.name      testTreeMap01Chapter0009
      * @tc.desc      TreeMap constructor with null comparator
      * @tc.size      MediumTest
@@ -324,7 +324,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1000
      * @tc.name      testTreeMap01Chapter0010
      * @tc.desc      Reverse test: TreeMap constructor with non-function comparator parameter
      * @tc.size      MediumTest
@@ -344,7 +344,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1100
      * @tc.name      testTreeMap01Chapter0011
      * @tc.desc      Reverse test: TreeMap constructor with comparator that throws exception
      * @tc.size      MediumTest
@@ -364,7 +364,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1200
      * @tc.name      testTreeMap01Chapter0012
      * @tc.desc      Reverse test: TreeMap constructor with comparator returning non-boolean
      * @tc.size      MediumTest
@@ -384,7 +384,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1300
      * @tc.name      testTreeMap01Chapter0013
      * @tc.desc      Reverse test: TreeMap constructor with comparator missing parameter type
      * @tc.size      MediumTest
@@ -413,7 +413,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1400
      * @tc.name      testTreeMap01Chapter0014
      * @tc.desc      Reverse test: TreeMap constructor with custom object key without comparator
      * @tc.size      MediumTest
@@ -432,7 +432,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1500
      * @tc.name      testTreeMap01Chapter0015
      * @tc.desc      Reverse test: Direct invocation of TreeMap constructor without new
      * @tc.size      MediumTest
@@ -447,7 +447,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1600
      * @tc.name      testTreeMap01Chapter0016
      * @tc.desc      TreeMap constructor with comparator using string special characters
      * @tc.size      MediumTest
@@ -474,7 +474,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1700
      * @tc.name      testTreeMap01Chapter0017
      * @tc.desc      TreeMap constructor with comparator using emoji keys
      * @tc.size      MediumTest
@@ -500,7 +500,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1800
      * @tc.name      testTreeMap01Chapter0018
      * @tc.desc      TreeMap constructor with comparator using number boundary values
      * @tc.size      MediumTest
@@ -526,7 +526,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_1900
      * @tc.name      testTreeMap01Chapter0019
      * @tc.desc      TreeMap constructor with comparator using Infinity and -Infinity
      * @tc.size      MediumTest
@@ -552,7 +552,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2000
      * @tc.name      testTreeMap01Chapter0020
      * @tc.desc      TreeMap constructor with comparator using NaN key
      * @tc.size      MediumTest
@@ -572,7 +572,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2100
      * @tc.name      testTreeMap01Chapter0021
      * @tc.desc      TreeMap constructor with comparator using bigint keys
      * @tc.size      MediumTest
@@ -598,7 +598,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2200
      * @tc.name      testTreeMap01Chapter0022
      * @tc.desc      TreeMap constructor with comparator using boolean keys
      * @tc.size      MediumTest
@@ -623,7 +623,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2300
      * @tc.name      testTreeMap01Chapter0023
      * @tc.desc      TreeMap constructor with comparator using array keys
      * @tc.size      MediumTest
@@ -660,7 +660,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2400
      * @tc.name      testTreeMap01Chapter0024
      * @tc.desc      TreeMap constructor with comparator using object keys with nested structure
      * @tc.size      MediumTest
@@ -701,7 +701,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2500
      * @tc.name      testTreeMap01Chapter0025
      * @tc.desc      Check if the TreeMap is empty when it's newly created
      * @tc.size      MediumTest
@@ -717,7 +717,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2600
      * @tc.name      testTreeMap01Chapter0026
      * @tc.desc      Check if the TreeMap is not empty after adding elements
      * @tc.size      MediumTest
@@ -735,7 +735,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2700
      * @tc.name      testTreeMap01Chapter0027
      * @tc.desc      Check if the TreeMap becomes empty after clearing all elements
      * @tc.size      MediumTest
@@ -754,7 +754,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2800
      * @tc.name      testTreeMap01Chapter0028
      * @tc.desc      Check isEmpty after adding and removing elements
      * @tc.size      MediumTest
@@ -774,7 +774,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_2900
      * @tc.name      testTreeMap01Chapter0029
      * @tc.desc      Check isEmpty with TreeMap containing Int8Array boundary value key
      * @tc.size      MediumTest
@@ -792,7 +792,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3000
      * @tc.name      testTreeMap01Chapter0030
      * @tc.desc      Check isEmpty with TreeMap containing string special character key
      * @tc.size      MediumTest
@@ -809,7 +809,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3100
      * @tc.name      testTreeMap01Chapter0031
      * @tc.desc      Check isEmpty with TreeMap containing NaN value
      * @tc.size      MediumTest
@@ -826,7 +826,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3200
      * @tc.name      testTreeMap01Chapter0032
      * @tc.desc      Check isEmpty with TreeMap containing Infinity value
      * @tc.size      MediumTest
@@ -844,7 +844,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3300
      * @tc.name      testTreeMap01Chapter0033
      * @tc.desc      Check isEmpty with TreeMap containing boolean key
      * @tc.size      MediumTest
@@ -862,7 +862,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3400
      * @tc.name      testTreeMap01Chapter0034
      * @tc.desc      Check isEmpty with TreeMap containing array value
      * @tc.size      MediumTest
@@ -879,7 +879,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3500
      * @tc.name      testTreeMap01Chapter0035
      * @tc.desc      Check isEmpty with TreeMap containing object value
      * @tc.size      MediumTest
@@ -897,7 +897,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3600
      * @tc.name      testTreeMap01Chapter0036
      * @tc.desc      Check isEmpty with TreeMap containing null value
      * @tc.size      MediumTest
@@ -914,7 +914,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3700
      * @tc.name      testTreeMap01Chapter0037
      * @tc.desc      Check isEmpty with TreeMap containing undefined value
      * @tc.size      MediumTest
@@ -931,7 +931,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3800
      * @tc.name      testTreeMap01Chapter0038
      * @tc.desc      Check isEmpty with TreeMap containing string key
      * @tc.size      MediumTest
@@ -949,7 +949,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_3900
      * @tc.name      testTreeMap01Chapter0039
      * @tc.desc      Check isEmpty with TreeMap containing bigint key
      * @tc.size      MediumTest
@@ -965,7 +965,7 @@ export default function TreeMap01Test() {
       expect(result).assertFalse();
     });
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4000
      * @tc.name      testTreeMap01Chapter0040
      * @tc.desc      Check isEmpty with TreeMap containing Uint8Array boundary value key
      * @tc.size      MediumTest
@@ -983,7 +983,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4100
      * @tc.name      testTreeMap01Chapter0041
      * @tc.desc      Check isEmpty with TreeMap containing Int16Array boundary value key
      * @tc.size      MediumTest
@@ -1001,7 +1001,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4200
      * @tc.name      testTreeMap01Chapter0042
      * @tc.desc      Check isEmpty with TreeMap containing Uint16Array boundary value key
      * @tc.size      MediumTest
@@ -1019,7 +1019,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4300
      * @tc.name      testTreeMap01Chapter0043
      * @tc.desc      Check isEmpty with TreeMap containing Int32Array boundary value key
      * @tc.size      MediumTest
@@ -1037,7 +1037,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4400
      * @tc.name      testTreeMap01Chapter0044
      * @tc.desc      Check isEmpty with TreeMap containing Uint32Array boundary value key
      * @tc.size      MediumTest
@@ -1055,7 +1055,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4500
      * @tc.name      testTreeMap01Chapter0045
      * @tc.desc      Check isEmpty with TreeMap containing Float32Array boundary value key
      * @tc.size      MediumTest
@@ -1073,7 +1073,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4600
      * @tc.name      testTreeMap01Chapter0046
      * @tc.desc      Check isEmpty with TreeMap containing Float64Array boundary value key
      * @tc.size      MediumTest
@@ -1091,7 +1091,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4700
      * @tc.name      testTreeMap01Chapter0047
      * @tc.desc      Check isEmpty with TreeMap containing BigUint64Array boundary value key
      * @tc.size      MediumTest
@@ -1108,7 +1108,7 @@ export default function TreeMap01Test() {
       expect(result).assertFalse();
     });
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4800
      * @tc.name      testTreeMap01Chapter0048
      * @tc.desc      Check isEmpty with TreeMap containing undefined key
      * @tc.size      MediumTest
@@ -1125,7 +1125,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_4900
      * @tc.name      testTreeMap01Chapter0049
      * @tc.desc      Check isEmpty with TreeMap containing null key
      * @tc.size      MediumTest
@@ -1142,7 +1142,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5000
      * @tc.name      testTreeMap01Chapter0050
      * @tc.desc      Check isEmpty with TreeMap containing empty string key
      * @tc.size      MediumTest
@@ -1159,7 +1159,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5100
      * @tc.name      testTreeMap01Chapter0051
      * @tc.desc      Check isEmpty with TreeMap containing ASCII full coverage key
      * @tc.size      MediumTest
@@ -1177,7 +1177,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5200
      * @tc.name      testTreeMap01Chapter0052
      * @tc.desc      Check isEmpty with TreeMap containing duplicate special characters key
      * @tc.size      MediumTest
@@ -1194,7 +1194,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5300
      * @tc.name      testTreeMap01Chapter0053
      * @tc.desc      Check isEmpty with TreeMap containing escape characters key
      * @tc.size      MediumTest
@@ -1211,7 +1211,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5400
      * @tc.name      testTreeMap01Chapter0054
      * @tc.desc      Check isEmpty with TreeMap containing emoji unicode key
      * @tc.size      MediumTest
@@ -1229,7 +1229,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5500
      * @tc.name      testTreeMap01Chapter0055
      * @tc.desc      Check isEmpty with TreeMap containing illegal unicode key
      * @tc.size      MediumTest
@@ -1246,7 +1246,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5600
      * @tc.name      testTreeMap01Chapter0056
      * @tc.desc      Check isEmpty with TreeMap containing keyword key
      * @tc.size      MediumTest
@@ -1264,7 +1264,7 @@ export default function TreeMap01Test() {
       expect(result).assertFalse();
     });
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5700
      * @tc.name      testTreeMap01Chapter0057
      * @tc.desc      Check isEmpty with TreeMap containing 0 key
      * @tc.size      MediumTest
@@ -1281,7 +1281,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5800
      * @tc.name      testTreeMap01Chapter0058
      * @tc.desc      Check isEmpty with TreeMap containing -0 key
      * @tc.size      MediumTest
@@ -1298,7 +1298,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_5900
      * @tc.name      testTreeMap01Chapter0059
      * @tc.desc      Check isEmpty with TreeMap containing Number.MAX_VALUE key
      * @tc.size      MediumTest
@@ -1315,7 +1315,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6000
      * @tc.name      testTreeMap01Chapter0060
      * @tc.desc      Check isEmpty with TreeMap containing Number.MIN_VALUE key
      * @tc.size      MediumTest
@@ -1332,7 +1332,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6100
      * @tc.name      testTreeMap01Chapter0061
      * @tc.desc      Check isEmpty with TreeMap containing Number.EPSILON key
      * @tc.size      MediumTest
@@ -1349,7 +1349,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6200
      * @tc.name      testTreeMap01Chapter0062
      * @tc.desc      Check isEmpty with TreeMap containing Number.MAX_SAFE_INTEGER key
      * @tc.size      MediumTest
@@ -1366,7 +1366,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6300
      * @tc.name      testTreeMap01Chapter0063
      * @tc.desc      Check isEmpty with TreeMap containing short boundary key
      * @tc.size      MediumTest
@@ -1384,7 +1384,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6400
      * @tc.name      testTreeMap01Chapter0064
      * @tc.desc      Check isEmpty with TreeMap containing long boundary key
      * @tc.size      MediumTest
@@ -1402,7 +1402,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6500
      * @tc.name      testTreeMap01Chapter0065
      * @tc.desc      Check isEmpty with TreeMap containing float boundary key
      * @tc.size      MediumTest
@@ -1420,7 +1420,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6600
      * @tc.name      testTreeMap01Chapter0066
      * @tc.desc      Check isEmpty with TreeMap containing double boundary key
      * @tc.size      MediumTest
@@ -1438,7 +1438,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6700
      * @tc.name      testTreeMap01Chapter0067
      * @tc.desc      Check isEmpty with TreeMap containing char boundary key
      * @tc.size      MediumTest
@@ -1456,7 +1456,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6800
      * @tc.name      testTreeMap01Chapter0068
      * @tc.desc      Check isEmpty with TreeMap containing hex number key
      * @tc.size      MediumTest
@@ -1473,7 +1473,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_6900
      * @tc.name      testTreeMap01Chapter0069
      * @tc.desc      Check isEmpty with TreeMap containing octal number key
      * @tc.size      MediumTest
@@ -1490,7 +1490,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7000
      * @tc.name      testTreeMap01Chapter0070
      * @tc.desc      Check isEmpty with TreeMap containing exponent operator key
      * @tc.size      MediumTest
@@ -1507,7 +1507,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7100
      * @tc.name      testTreeMap01Chapter0071
      * @tc.desc      Check isEmpty with TreeMap containing scientific notation key
      * @tc.size      MediumTest
@@ -1524,7 +1524,7 @@ export default function TreeMap01Test() {
       expect(result).assertFalse();
     });
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7200
      * @tc.name      testTreeMap01Chapter0072
      * @tc.desc      Check isEmpty with TreeMap containing 0 as false-like key
      * @tc.size      MediumTest
@@ -1541,7 +1541,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7300
      * @tc.name      testTreeMap01Chapter0073
      * @tc.desc      Check isEmpty with TreeMap containing empty string as false-like key
      * @tc.size      MediumTest
@@ -1558,7 +1558,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7400
      * @tc.name      testTreeMap01Chapter0074
      * @tc.desc      Check isEmpty with TreeMap containing null as false-like key
      * @tc.size      MediumTest
@@ -1575,7 +1575,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7500
      * @tc.name      testTreeMap01Chapter0075
      * @tc.desc      Check isEmpty with TreeMap containing undefined as false-like key
      * @tc.size      MediumTest
@@ -1591,7 +1591,7 @@ export default function TreeMap01Test() {
       expect(result).assertFalse();
     });
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7600
      * @tc.name      testTreeMap01Chapter0076
      * @tc.desc      Check isEmpty with TreeMap containing array with multiple zeros value
      * @tc.size      MediumTest
@@ -1608,7 +1608,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7700
      * @tc.name      testTreeMap01Chapter0077
      * @tc.desc      Check isEmpty with TreeMap containing array with negative numbers value
      * @tc.size      MediumTest
@@ -1625,7 +1625,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7800
      * @tc.name      testTreeMap01Chapter0078
      * @tc.desc      Check isEmpty with TreeMap containing special array value
      * @tc.size      MediumTest
@@ -1643,7 +1643,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_7900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_7900
      * @tc.name      testTreeMap01Chapter0079
      * @tc.desc      Check isEmpty with TreeMap containing array with NaN/Infinity value
      * @tc.size      MediumTest
@@ -1660,7 +1660,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8000
      * @tc.name      testTreeMap01Chapter0080
      * @tc.desc      Check isEmpty with TreeMap containing array with non-number types value
      * @tc.size      MediumTest
@@ -1677,7 +1677,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8100
      * @tc.name      testTreeMap01Chapter0081
      * @tc.desc      Check isEmpty with TreeMap containing empty array value
      * @tc.size      MediumTest
@@ -1694,7 +1694,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8200
      * @tc.name      testTreeMap01Chapter0082
      * @tc.desc      Check isEmpty with TreeMap containing array with overflow values
      * @tc.size      MediumTest
@@ -1710,7 +1710,7 @@ export default function TreeMap01Test() {
       expect(result).assertFalse();
     });
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8300
      * @tc.name      testTreeMap01Chapter0083
      * @tc.desc      Check isEmpty with TreeMap containing nested object value
      * @tc.size      MediumTest
@@ -1728,7 +1728,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8400
      * @tc.name      testTreeMap01Chapter0084
      * @tc.desc      Check isEmpty with TreeMap containing object with pseudo Symbol key
      * @tc.size      MediumTest
@@ -1747,7 +1747,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8500
      * @tc.name      testTreeMap01Chapter0085
      * @tc.desc      Check isEmpty with TreeMap containing object with function property
      * @tc.size      MediumTest
@@ -1768,7 +1768,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8600
      * @tc.name      testTreeMap01Chapter0086
      * @tc.desc      Check isEmpty with TreeMap containing object with inheritance-like properties
      * @tc.size      MediumTest
@@ -1786,7 +1786,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8700
      * @tc.name      testTreeMap01Chapter0087
      * @tc.desc      Check isEmpty with TreeMap containing object with property
      * @tc.size      MediumTest
@@ -1804,7 +1804,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8800
      * @tc.name      testTreeMap01Chapter0088
      * @tc.desc      Check isEmpty with TreeMap containing object with mixed keys
      * @tc.size      MediumTest
@@ -1822,7 +1822,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_8900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_8900
      * @tc.name      testTreeMap01Chapter0089
      * @tc.desc      Check isEmpty with TreeMap containing ArrayBuffer object value
      * @tc.size      MediumTest
@@ -1839,7 +1839,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_9000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_9000
      * @tc.name      testTreeMap01Chapter0090
      * @tc.desc      Check isEmpty with TreeMap containing DataView object value
      * @tc.size      MediumTest
@@ -1856,7 +1856,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_9100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_9100
      * @tc.name      testTreeMap01Chapter0091
      * @tc.desc      Check isEmpty with TreeMap containing large object value
      * @tc.size      MediumTest
@@ -1877,7 +1877,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_9200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_9200
      * @tc.name      testTreeMap01Chapter0092
      * @tc.desc      Check isEmpty with TreeMap containing object with undefined property value
      * @tc.size      MediumTest
@@ -1895,7 +1895,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_9300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_9300
      * @tc.name      testTreeMap01Chapter0093
      * @tc.desc      Check isEmpty with TreeMap containing object with null property value
      * @tc.size      MediumTest
@@ -1913,7 +1913,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_9400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_9400
      * @tc.name      testTreeMap01Chapter0094
      * @tc.desc      Check isEmpty with TreeMap containing TypedArray property object value
      * @tc.size      MediumTest
@@ -1931,7 +1931,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_9500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_9500
      * @tc.name      testTreeMap01Chapter0095
      * @tc.desc      Check isEmpty with TreeMap containing Map object value
      * @tc.size      MediumTest
@@ -1951,7 +1951,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_9600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_9600
      * @tc.name      testTreeMap01Chapter0096
      * @tc.desc      Check isEmpty with TreeMap containing Set object value
      * @tc.size      MediumTest
@@ -1968,7 +1968,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_9700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_9700
      * @tc.name      testTreeMap01Chapter0097
      * @tc.desc      Check isEmpty with TreeMap containing Promise object value
      * @tc.size      MediumTest
@@ -1985,7 +1985,7 @@ export default function TreeMap01Test() {
     });
 
     /**
-     * @tc.number    SUB_TREEMAP_TEST01_9800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_TREEMAP1_9800
      * @tc.name      testTreeMap01Chapter0098
      * @tc.desc      Check isEmpty with TreeMap containing RegExp object value
      * @tc.size      MediumTest

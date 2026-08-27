@@ -48,7 +48,7 @@ export default function ArkListTest() {
     })
     /**
      * @tc.name   testListConstructor0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CONSTRUCTOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_0100
      * @tc.desc   Testing List constructor support dataType
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -68,7 +68,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListAdd0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_ADD_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_0200
      * @tc.desc   Testing List Add different dataType data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListAdd0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_ADD_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_0300
      * @tc.desc   Testing List add special string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -126,7 +126,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListInsert0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_INSERT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_0400
      * @tc.desc   Testing List insert insert->getIndexOf->removeByIndex->has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -154,7 +154,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListInsert0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_INSERT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_0500
      * @tc.desc   Testing List insert insert->add->getLastIndexOf->removeByIndex->has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -182,7 +182,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListHas0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_HAS_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_0600
      * @tc.desc   Testing List has different dataType data check has result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -224,7 +224,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListGet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_0700
      * @tc.desc   Testing List has different dataType data check get result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -259,7 +259,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListGetLastIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_0800
      * @tc.desc   Testing List getIndexOf add same data check index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -285,7 +285,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListGetLastIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_0900
      * @tc.desc   Testing List getIndexOf add->getLastIndexOf->removeByIndex same data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -314,7 +314,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListGetLastIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1000
      * @tc.desc   Testing List getIndexOf add->getLastIndexOf->removeByIndex->add->getLastIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -341,7 +341,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListGetLastIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETLASTINDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1100
      * @tc.desc   Testing List getIndexOf add->remove->add->getLastIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -368,7 +368,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListGetIndexOf0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1200
      * @tc.desc   Testing List getIndexOf add same data check index
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -394,7 +394,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListGetIndexOf0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1300
      * @tc.desc   Testing List getIndexOf add->getIndexOf->removeByIndex same data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -423,7 +423,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListGetIndexOf0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1400
      * @tc.desc   Testing List getIndexOf add->remove->add->getIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -450,7 +450,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListGetIndexOf0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_GETINDEXOF_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1500
      * @tc.desc   Testing List getIndexOf add->removeByIndex->add->getIndexOf
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -476,7 +476,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListReplaceAllElement0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_REPLACEALLELEMENT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1600
      * @tc.desc   Testing List replaceAllElement insert new string
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -522,7 +522,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSort0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1700
      * @tc.desc   Testing List getIndexOf add->clear->add->insert->sort(a-b)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -553,7 +553,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSort0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1800
      * @tc.desc   Testing List getIndexOf add->clear->add->insert->sort(b-a)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -584,7 +584,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSort0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_1900
      * @tc.desc   Testing List getIndexOf add->clear->add->insert->sort(a-b)->getSubList
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -614,7 +614,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSort0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SORT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2000
      * @tc.desc   Testing List getIndexOf add->clear->add->insert->sort(a-b)->getSubList->add
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -646,7 +646,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSet0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2100
      * @tc.desc   Testing List set list and update data
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -680,7 +680,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSet0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2200
      * @tc.desc   Testing List set getIndexOf->set->removeByIndex
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -714,7 +714,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSet0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2300
      * @tc.desc   Testing List set getIndexOf->set->has
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -747,7 +747,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSet0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2400
      * @tc.desc   Testing List set set->convertToArray->instanceof
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -792,7 +792,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSet0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2500
      * @tc.desc   Testing List set set->getFirst
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -833,7 +833,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSet0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SET_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2600
      * @tc.desc   Testing List set set->getLast
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -874,7 +874,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSymbolIterator0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SYMBOL_ITERATOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2700
      * @tc.desc   Testing List Symbol.iterator for of
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -900,7 +900,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListSymbolIterator0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_SYMBOL_ITERATOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2800
      * @tc.desc   Testing List Symbol.iterator next
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -930,7 +930,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListForEach0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_2900
      * @tc.desc   Testing List forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -967,7 +967,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListForEach0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3000
      * @tc.desc   Testing List forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1006,7 +1006,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListForEach0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3100
      * @tc.desc   Testing List forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1048,7 +1048,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListForEach0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_FOREACH_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3200
      * @tc.desc   Testing List forEach
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1085,7 +1085,7 @@ export default function ArkListTest() {
     });
     /**
      * @tc.name   testListCase001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3300
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1121,7 +1121,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3400
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1146,7 +1146,7 @@ export default function ArkListTest() {
     });
     /**
      * @tc.name   testListCase003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3500
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1164,7 +1164,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3600
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1187,7 +1187,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3700
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1204,7 +1204,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3800
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1221,7 +1221,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_3900
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1248,7 +1248,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_4000
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1267,7 +1267,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_4100
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1291,7 +1291,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_4200
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1315,7 +1315,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_4300
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1348,7 +1348,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_4400
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1371,7 +1371,7 @@ export default function ArkListTest() {
 
     /**
      * @tc.name   testListCase013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LIST_CASE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARKLIST1_4500
      * @tc.desc   Testing List
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

@@ -369,7 +369,7 @@ export default function ListTest10() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_0100
      * @tc.name      testList10Chapter0001
      * @tc.desc      List.replaceAllElements: special value objects
      * @tc.size      MediumTest
@@ -417,7 +417,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_0200
      * @tc.name      testList10Chapter0002
      * @tc.desc      List.replaceAllElements: large/mixed/small/newKey objects
      * @tc.size      MediumTest
@@ -473,7 +473,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_0300
      * @tc.name      testList10Chapter0003
      * @tc.desc      List.forEach: normal and zero-filled Uint8Array/number arrays
      * @tc.size      MediumTest
@@ -515,7 +515,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_0400
      * @tc.name      testList10Chapter0004
      * @tc.desc      List.forEach: negative number and typed arrays
      * @tc.size      MediumTest
@@ -569,7 +569,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_0500
      * @tc.name      testList10Chapter0005
      * @tc.desc      List.forEach: NaN/Infinity and non-numeric type arrays
      * @tc.size      MediumTest
@@ -614,7 +614,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_0600
      * @tc.name      testList10Chapter0006
      * @tc.desc      List.forEach: empty/overflow/deleted element arrays
      * @tc.size      MediumTest
@@ -672,7 +672,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_0700
      * @tc.name      testList10Chapter0007
      * @tc.desc      List.forEach: nested/typed/ultra-long arrays
      * @tc.size      LargeTest
@@ -735,7 +735,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_0800
      * @tc.name      testList10Chapter0008
      * @tc.desc      List.forEach: function/keyword mixed type arrays
      * @tc.size      MediumTest
@@ -771,7 +771,7 @@ export default function ListTest10() {
 
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_0900
      * @tc.name      testList10Chapter0009
      * @tc.desc      List.forEach: basic string values (undefined/null/empty/special chars)
      * @tc.size      MediumTest
@@ -811,7 +811,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1000
      * @tc.name      testList10Chapter0010
      * @tc.desc      List.forEach: special character strings
      * @tc.size      MediumTest
@@ -854,7 +854,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1100
      * @tc.name      testList10Chapter0011
      * @tc.desc      List.forEach: escape character strings
      * @tc.size      MediumTest
@@ -892,7 +892,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1200
      * @tc.name      testList10Chapter0012
      * @tc.desc      List.forEach: more escape character strings (r/t/v/backslash/single quote)
      * @tc.size      MediumTest
@@ -930,7 +930,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1300
      * @tc.name      testList10Chapter0013
      * @tc.desc      List.forEach: hex/octal escape strings
      * @tc.size      MediumTest
@@ -968,7 +968,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1400
      * @tc.name      testList10Chapter0014
      * @tc.desc      List.forEach: emoji strings
      * @tc.size      MediumTest
@@ -1011,7 +1011,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1500
      * @tc.name      testList10Chapter0015
      * @tc.desc      List.forEach: special unicode strings
      * @tc.size      MediumTest
@@ -1067,7 +1067,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1600
      * @tc.name      testList10Chapter0016
      * @tc.desc      List.forEach: large strings
      * @tc.size      MediumTest
@@ -1103,7 +1103,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1700
      * @tc.name      testList10Chapter0017
      * @tc.desc      List.forEach: special number values (0/NaN/-0/Infinity/-Infinity/undefined)
      * @tc.size      MediumTest
@@ -1150,7 +1150,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1800
      * @tc.name      testList10Chapter0018
      * @tc.desc      List.forEach: extreme number values (MAX_VALUE/MIN_VALUE/EPSILON/MAX_SAFE_INTEGER)
      * @tc.size      MediumTest
@@ -1192,7 +1192,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_1900
      * @tc.name      testList10Chapter0019
      * @tc.desc      List.forEach: precision number values (byte/short/int/long/float/double/char)
      * @tc.size      MediumTest
@@ -1258,7 +1258,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2000
      * @tc.name      testList10Chapter0020
      * @tc.desc      List.forEach: base expression number values (hex/octal/scientific/exponent)
      * @tc.size      MediumTest
@@ -1313,7 +1313,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2100
      * @tc.name      testList10Chapter0021
      * @tc.desc      List.forEach: bigint values
      * @tc.size      MediumTest
@@ -1360,7 +1360,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2200
      * @tc.name      testList10Chapter0022
      * @tc.desc      List.forEach: basic boolean values (true/false)
      * @tc.size      MediumTest
@@ -1397,7 +1397,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2300
      * @tc.name      testList10Chapter0023
      * @tc.desc      List.forEach: false-like values (0/NaN/"" /null/undefined/!\'s\')
      * @tc.size      MediumTest
@@ -1443,7 +1443,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2400
      * @tc.name      testList10Chapter0024
      * @tc.desc      List.forEach: true-like values (!0/1/"non-empty"/EmptyObject/[1])
      * @tc.size      MediumTest
@@ -1484,7 +1484,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2500
      * @tc.name      testList10Chapter0025
      * @tc.desc      List.forEach: mixed boolean/number/string/null/undefined values
      * @tc.size      MediumTest
@@ -1540,7 +1540,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2600
      * @tc.name      testList10Chapter0026
      * @tc.desc      List.forEach: basic objects (Normal/Nested/EmptyObject)
      * @tc.size      MediumTest
@@ -1589,7 +1589,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2700
      * @tc.name      testList10Chapter0027
      * @tc.desc      List.forEach: special key/inherit/non-enum objects
      * @tc.size      MediumTest
@@ -1637,7 +1637,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2800
      * @tc.name      testList10Chapter0028
      * @tc.desc      List.forEach: buffer/dataview/typed array objects
      * @tc.size      MediumTest
@@ -1684,7 +1684,7 @@ export default function ListTest10() {
 
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_2900
      * @tc.name      testList10Chapter0029
      * @tc.desc      List.forEach: map/set/func/regex/promise objects
      * @tc.size      MediumTest
@@ -1742,7 +1742,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_3000
      * @tc.name      testList10Chapter0030
      * @tc.desc      List.forEach: special value objects (NaN/Infinity/-Infinity/undefined/null)
      * @tc.size      MediumTest
@@ -1792,7 +1792,7 @@ export default function ListTest10() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_3100
      * @tc.name      testList10Chapter0031
      * @tc.desc      List.forEach: large/mixed/empty/small/newkey objects
      * @tc.size      MediumTest
@@ -1852,7 +1852,7 @@ export default function ListTest10() {
     })
 
     /**
-     * @tc.number    SUB_LIST_TEXT10_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LIST10_3200
      * @tc.name      testList10Chapter0032
      * @tc.desc      List.forEach: boundary values & empty list & repeat add
      * @tc.size      MediumTest

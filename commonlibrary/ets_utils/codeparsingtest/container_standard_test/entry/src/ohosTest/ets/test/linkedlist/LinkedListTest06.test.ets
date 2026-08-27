@@ -29,7 +29,7 @@ export default function LinkedListTest06() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_0100
      * @tc.name      testLinkedList06Chapter0001
      * @tc.desc      Test extraction of objects of object type containing regular expression properties
      * @tc.size      MediumTest
@@ -58,7 +58,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_0200
      * @tc.name      testLinkedList06Chapter0002
      * @tc.desc      Test extraction of normal Uint8Array of array type
      * @tc.size      MediumTest
@@ -77,7 +77,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_0300
      * @tc.name      testLinkedList06Chapter0003
      * @tc.desc      Test extraction of array type containing multiple zeros
      * @tc.size      MediumTest
@@ -97,7 +97,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_0400
      * @tc.name      testLinkedList06Chapter0004
      * @tc.desc      Test extraction of array type: Array with negative numbers converted to Uint8Array
      * @tc.size      MediumTest
@@ -116,7 +116,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_0500
      * @tc.name      testLinkedList06Chapter0005
      * @tc.desc      Test extraction of array type: Array with negative numbers converted to Uint8Array/Uint16Array
      * @tc.size      MediumTest
@@ -139,7 +139,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_0600
      * @tc.name      testLinkedList06Chapter0006
      * @tc.desc      Test extraction of special array of array type
      * @tc.size      MediumTest
@@ -159,7 +159,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_0700
      * @tc.name      testLinkedList06Chapter0007
      * @tc.desc      Test extraction of array type containing NaN/Infinity
      * @tc.size      MediumTest
@@ -177,7 +177,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_0800
      * @tc.name      testLinkedList06Chapter0008
      * @tc.desc      Test extraction of array type containing non-numeric types
      * @tc.size      MediumTest
@@ -195,7 +195,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_0900
      * @tc.name      testLinkedList06Chapter0009
      * @tc.desc      Test extraction of array type containing non-numeric types
      * @tc.size      MediumTest
@@ -213,7 +213,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1000
      * @tc.name      testLinkedList06Chapter0010
      * @tc.desc      Test extraction of empty array of array type
      * @tc.size      MediumTest
@@ -231,7 +231,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1100
      * @tc.name      testLinkedList06Chapter0011
      * @tc.desc      Test extraction of array type with extreme value overflow
      * @tc.size      MediumTest
@@ -249,7 +249,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1200
      * @tc.name      testLinkedList06Chapter0012
      * @tc.desc      Test extraction of array type: Int8Array | Uint8Array | Uint8ClampedArray
      * @tc.size      MediumTest
@@ -274,7 +274,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1300
      * @tc.name      testLinkedList06Chapter0013
      * @tc.desc      Test extraction of array type: Int16Array | Uint16Array | Int32Array | Uint32Array
      * @tc.size      MediumTest
@@ -302,7 +302,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1400
      * @tc.name      testLinkedList06Chapter0014
      * @tc.desc      Test extraction of array type: Float32Array | Float64Array | BigInt64Array | BigUint64Array
      * @tc.size      MediumTest
@@ -338,7 +338,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1500
      * @tc.name      testLinkedList06Chapter0015
      * @tc.desc      Test extraction of array type: TypedArray special value storage rules
      * @tc.size      MediumTest
@@ -382,7 +382,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1600
      * @tc.name      testLinkedList06Chapter0016
      * @tc.desc      Test extraction of string type elements and attempt to get out-of-bounds index
      * @tc.size      MediumTest
@@ -411,7 +411,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1700
      * @tc.name      testLinkedList06Chapter0017
      * @tc.desc      Test getLastIndexOf for undefined of String type
      * @tc.size      MediumTest
@@ -429,7 +429,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1800
      * @tc.name      testLinkedList06Chapter0018
      * @tc.desc      Test getLastIndexOf for null of String type
      * @tc.size      MediumTest
@@ -447,7 +447,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_1900
      * @tc.name      testLinkedList06Chapter0019
      * @tc.desc      Test getLastIndexOf for empty string of String type
      * @tc.size      MediumTest
@@ -468,7 +468,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2000
      * @tc.name      testLinkedList06Chapter0020
      * @tc.desc      Test getLastIndexOf for full coverage of special characters of String type
      * @tc.size      MediumTest
@@ -488,7 +488,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2100
      * @tc.name      testLinkedList06Chapter0021
      * @tc.desc      Test getLastIndexOf for full coverage of ASCII codes of String type
      * @tc.size      MediumTest
@@ -508,7 +508,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2200
      * @tc.name      testLinkedList06Chapter0022
      * @tc.desc      Test getLastIndexOf for full coverage of special characters (twice) of String type
      * @tc.size      MediumTest
@@ -528,7 +528,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2300
      * @tc.name      testLinkedList06Chapter0023
      * @tc.desc      Test getLastIndexOf for special escape characters of String type
      * @tc.size      MediumTest
@@ -571,7 +571,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2400
      * @tc.name      testLinkedList06Chapter0024
      * @tc.desc      Test getLastIndexOf for emoji symbols and their Unicode encodings of String type
      * @tc.size      MediumTest
@@ -622,7 +622,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2500
      * @tc.name      testLinkedList06Chapter0025
      * @tc.desc      Test getLastIndexOf for invalid Unicode encodings of String type
      * @tc.size      MediumTest
@@ -647,7 +647,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2600
      * @tc.name      testLinkedList06Chapter0026
      * @tc.desc      Test getLastIndexOf for keywords of String type
      * @tc.size      MediumTest
@@ -668,7 +668,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2700
      * @tc.name      testLinkedList06Chapter0027
      * @tc.desc      Test getLastIndexOf for treeString type of String type
      * @tc.size      MediumTest
@@ -700,7 +700,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2800
      * @tc.name      testLinkedList06Chapter0028
      * @tc.desc      Test getLastIndexOf for sliceString type of String type
      * @tc.size      MediumTest
@@ -724,7 +724,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_2900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_2900
      * @tc.name      testLinkedList06Chapter0029
      * @tc.desc      Test String GC behavior for getIndexOf: normal operation after releasing an extra-long string
      * @tc.size      MediumTest
@@ -749,7 +749,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3000
      * @tc.name      testLinkedList06Chapter0030
      * @tc.desc      Test getLastIndexOf for 0 of Number type
      * @tc.size      MediumTest
@@ -767,7 +767,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3100
      * @tc.name      testLinkedList06Chapter0031
      * @tc.desc      Test getLastIndexOf for undefined of Number type
      * @tc.size      MediumTest
@@ -785,7 +785,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3200
      * @tc.name      testLinkedList06Chapter0032
      * @tc.desc      Test getLastIndexOf for NaN of Number type
      * @tc.size      MediumTest
@@ -803,7 +803,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3300
      * @tc.name      testLinkedList06Chapter0033
      * @tc.desc      Test getLastIndexOf for -0 of Number type
      * @tc.size      MediumTest
@@ -821,7 +821,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3400
      * @tc.name      testLinkedList06Chapter0034
      * @tc.desc      Test getLastIndexOf for positive infinity of Number type
      * @tc.size      MediumTest
@@ -841,7 +841,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3500
      * @tc.name      testLinkedList06Chapter0035
      * @tc.desc      Test getLastIndexOf for negative infinity of Number type
      * @tc.size      MediumTest
@@ -859,7 +859,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3600
      * @tc.name      testLinkedList06Chapter0036
      * @tc.desc      Test getLastIndexOf for double type of Number type
      * @tc.size      MediumTest
@@ -879,7 +879,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3700
      * @tc.name      testLinkedList06Chapter0037
      * @tc.desc      Test getLastIndexOf for Number.MAX_VALUE of Number type
      * @tc.size      MediumTest
@@ -899,7 +899,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3800
      * @tc.name      testLinkedList06Chapter0038
      * @tc.desc      Test getLastIndexOf for Number.MIN_VALUE of Number type
      * @tc.size      MediumTest
@@ -919,7 +919,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_3900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_3900
      * @tc.name      testLinkedList06Chapter0039
      * @tc.desc      Test getLastIndexOf for Number.EPSILON of Number type
      * @tc.size      MediumTest
@@ -939,7 +939,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4000
      * @tc.name      testLinkedList06Chapter0040
      * @tc.desc      Test getLastIndexOf for 2^53 - 1 of Number type
      * @tc.size      MediumTest
@@ -959,7 +959,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4100
      * @tc.name      testLinkedList06Chapter0041
      * @tc.desc      Test getLastIndexOf for byte of Number type
      * @tc.size      MediumTest
@@ -993,7 +993,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4200
      * @tc.name      testLinkedList06Chapter0042
      * @tc.desc      Test getLastIndexOf for byte out of bounds of Number type
      * @tc.size      MediumTest
@@ -1015,7 +1015,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4300
      * @tc.name      testLinkedList06Chapter0043
      * @tc.desc      Test getLastIndexOf for short of Number type
      * @tc.size      MediumTest
@@ -1045,7 +1045,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4400
      * @tc.name      testLinkedList06Chapter0044
      * @tc.desc      Test getLastIndexOf for short out of bounds of Number type
      * @tc.size      MediumTest
@@ -1067,7 +1067,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4500
      * @tc.name      testLinkedList06Chapter0045
      * @tc.desc      Test getLastIndexOf for int of Number type
      * @tc.size      MediumTest
@@ -1097,7 +1097,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4600
      * @tc.name      testLinkedList06Chapter0046
      * @tc.desc      Test getLastIndexOf for int out of bounds of Number type
      * @tc.size      MediumTest
@@ -1119,7 +1119,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4700
      * @tc.name      testLinkedList06Chapter0047
      * @tc.desc      Test getLastIndexOf for long of Number type
      * @tc.size      MediumTest
@@ -1148,7 +1148,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4800
      * @tc.name      testLinkedList06Chapter0048
      * @tc.desc      Test getLastIndexOf for long out of bounds of Number type
      * @tc.size      MediumTest
@@ -1170,7 +1170,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_4900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_4900
      * @tc.name      testLinkedList06Chapter0049
      * @tc.desc      Test getLastIndexOf for float of Number type
      * @tc.size      MediumTest
@@ -1196,7 +1196,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5000
      * @tc.name      testLinkedList06Chapter0050
      * @tc.desc      Test getLastIndexOf for double of Number type
      * @tc.size      MediumTest
@@ -1223,7 +1223,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5100
      * @tc.name      testLinkedList06Chapter0051
      * @tc.desc      Test getLastIndexOf for double out of bounds of Number type
      * @tc.size      MediumTest
@@ -1242,7 +1242,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5200
      * @tc.name      testLinkedList06Chapter0052
      * @tc.desc      Test getLastIndexOf for char of Number type
      * @tc.size      MediumTest
@@ -1265,7 +1265,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5300
      * @tc.name      testLinkedList06Chapter0053
      * @tc.desc      Test getLastIndexOf for char stored as character of Number type
      * @tc.size      MediumTest
@@ -1284,7 +1284,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5400
      * @tc.name      testLinkedList06Chapter0054
      * @tc.desc      Test getLastIndexOf for char out of bounds value of Number type
      * @tc.size      MediumTest
@@ -1303,7 +1303,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5500
      * @tc.name      testLinkedList06Chapter0055
      * @tc.desc      Test getLastIndexOf for bigint value of Number type
      * @tc.size      MediumTest
@@ -1322,7 +1322,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5600
      * @tc.name      testLinkedList06Chapter0056
      * @tc.desc      Test getLastIndexOf for double value of Number type
      * @tc.size      MediumTest
@@ -1343,7 +1343,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5700
      * @tc.name      testLinkedList06Chapter0057
      * @tc.desc      Test getLastIndexOf for float of Number type
      * @tc.size      MediumTest
@@ -1364,7 +1364,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5800
      * @tc.name      testLinkedList06Chapter0058
      * @tc.desc      Test getLastIndexOf for hexadecimal (16-bit) of Number type
      * @tc.size      MediumTest
@@ -1385,7 +1385,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_5900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_5900
      * @tc.name      testLinkedList06Chapter0059
      * @tc.desc      Test getLastIndexOf for hexadecimal (32-bit) of Number type
      * @tc.size      MediumTest
@@ -1406,7 +1406,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6000
      * @tc.name      testLinkedList06Chapter0060
      * @tc.desc      Test getLastIndexOf for octal of Number type
      * @tc.size      MediumTest
@@ -1427,7 +1427,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6100
      * @tc.name      testLinkedList06Chapter0061
      * @tc.desc      Test getLastIndexOf for exponent operator of Number type
      * @tc.size      MediumTest
@@ -1448,7 +1448,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6200
      * @tc.name      testLinkedList06Chapter0062
      * @tc.desc      Test getLastIndexOf for scientific notation of Number type
      * @tc.size      MediumTest
@@ -1472,7 +1472,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6300
      * @tc.name      testLinkedList06Chapter0063
      * @tc.desc      Test getLastIndexOf for scientific notation of Number type
      * @tc.size      MediumTest
@@ -1493,7 +1493,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6400
      * @tc.name      testLinkedList06Chapter0064
      * @tc.desc      Test getLastIndexOf for true of Boolean type
      * @tc.size      MediumTest
@@ -1514,7 +1514,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6500
      * @tc.name      testLinkedList06Chapter0065
      * @tc.desc      Test getLastIndexOf for false of Boolean type
      * @tc.size      MediumTest
@@ -1535,7 +1535,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6600
      * @tc.name      testLinkedList06Chapter0066
      * @tc.desc      Test getLastIndexOf for values that are usually treated as false of Boolean type
      * @tc.size      MediumTest
@@ -1569,7 +1569,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6700
      * @tc.name      testLinkedList06Chapter0067
      * @tc.desc      Test getLastIndexOf for ! + other data types of Boolean type
      * @tc.size      MediumTest
@@ -1592,7 +1592,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6800
      * @tc.name      testLinkedList06Chapter0068
      * @tc.desc      Test getLastIndexOf for normal object of Object type
      * @tc.size      MediumTest
@@ -1618,7 +1618,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_6900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_6900
      * @tc.name      testLinkedList06Chapter0069
      * @tc.desc      Test getLastIndexOf for nested object of Object type
      * @tc.size      MediumTest
@@ -1648,7 +1648,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_7000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_7000
      * @tc.name      testLinkedList06Chapter0070
      * @tc.desc      Test getLastIndexOf for object containing function properties (no parameters) of Object type
      * @tc.size      MediumTest
@@ -1673,7 +1673,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_7100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_7100
      * @tc.name      testLinkedList06Chapter0071
      * @tc.desc      Test getLastIndexOf for object containing function properties (with parameters) of Object type
      * @tc.size      MediumTest
@@ -1698,7 +1698,7 @@ export default function LinkedListTest06() {
     });
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_7200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_7200
      * @tc.name      testLinkedList06Chapter0072
      * @tc.desc      Test getLastIndexOf for object containing ArrayBuffer of Object type
      * @tc.size      MediumTest
@@ -1727,7 +1727,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_7300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_7300
      * @tc.name      testLinkedList06Chapter0073
      * @tc.desc      Test getLastIndexOf for object containing DataView of Object type
      * @tc.size      MediumTest
@@ -1752,7 +1752,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_7400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_7400
      * @tc.name      testLinkedList06Chapter0074
      * @tc.desc      Test getLastIndexOf for empty object of Object type
      * @tc.size      MediumTest
@@ -1773,7 +1773,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_7500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_7500
      * @tc.name      testLinkedList06Chapter0075
      * @tc.desc      Test getLastIndexOf for huge object of Object type
      * @tc.size      MediumTest
@@ -1804,7 +1804,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_7600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_7600
      * @tc.name      testLinkedList06Chapter0076
      * @tc.desc      Test getLastIndexOf for object containing null property of Object type
      * @tc.size      MediumTest
@@ -1829,7 +1829,7 @@ export default function LinkedListTest06() {
     })
 
     /**
-     * @tc.number    SUB_UTIL_LINKEDLIST_TEXT06_7700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_LINKEDLIST7_7700
      * @tc.name      testLinkedList06Chapter0077
      * @tc.desc      Test getLastIndexOf for object containing NaN property of Object type
      * @tc.size      MediumTest

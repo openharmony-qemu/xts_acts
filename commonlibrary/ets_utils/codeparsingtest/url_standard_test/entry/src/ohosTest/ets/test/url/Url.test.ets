@@ -52,7 +52,7 @@ export default function urlTest() {
     })
     /**
      * @tc.name   testParamsEntries0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_0100
      * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value pairs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -75,7 +75,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntries0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_0200
      * @tc.desc   Testing URLParams.entries() with empty string to validate it handles absence of
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -98,7 +98,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntries0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_0300
      * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntries0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_0400
      * @tc.desc   Testing URLParams.entries() with an empty nested array to validate it handles absence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -145,7 +145,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntries0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_0500
      * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,7 +171,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntries0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_0600
      * @tc.desc   Testing URLParams.entries() with an empty object to validate it handles absence of
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -194,7 +194,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntries0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_0700
      * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -215,7 +215,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntries0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_0800
      * @tc.desc   Testing URLParams.entries() with URL having no search parameters to validate it handles
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -236,7 +236,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntries0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_0900
      * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntries0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1000
      * @tc.desc   Testing URLParams.entries() with URL having no search parameters to validate it handles
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -278,7 +278,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntriesAppend0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1100
      * @tc.desc   Testing URLParams.append() to validate it correctly adds new key-value pairs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -299,7 +299,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntriesAppend0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1200
      * @tc.desc   Testing URLParams.append() to validate it correctly handles adding a key with an empty
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -320,7 +320,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntriesAppend0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1300
      * @tc.desc   Testing URLParams.append() to validate it correctly adds new key-value pairs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -345,7 +345,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntriesAppend0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1400
      * @tc.desc   Testing URLParams.append() to validate adding a key with the same name and different values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -366,7 +366,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntriesAppend0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1500
      * @tc.desc   Testing URLParams.append() to validate adding multiple keys with the same name.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -387,7 +387,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsEntriesAppend0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1600
      * @tc.desc   Testing URLParams.append() to validate key-value pairs with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -412,7 +412,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsDelete0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1700
      * @tc.desc   Testing URLParams.delete() to validate it correctly deletes key-value pairs.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -440,7 +440,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsDelete0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1800
      * @tc.desc   Testing URLParams.delete() to validate it correctly handles deleting non-existent keys.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -461,7 +461,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsDelete0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_1900
      * @tc.desc   Testing URLParams.delete() to validate it handles deleting keys with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -485,7 +485,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsDelete0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2000
      * @tc.desc   Testing URLParams.delete() to validate it correctly deletes all instances of a key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -506,7 +506,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsDelete0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2100
      * @tc.desc   Testing URLParams.delete() to validate it correctly updates the URLParams object after deletion.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -527,7 +527,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParamsDelete0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2200
      * @tc.desc   Testing URLParams.delete() to validate it correctly handles empty URLParams.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -548,7 +548,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseAndIterateParams0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2300
      * @tc.desc   Testing URLParams parsing and iteration with an empty string to ensure correct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -568,7 +568,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseAndIterateParams0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2400
      * @tc.desc   Testing URLParams parsing and iteration for multiple identical sets of parameters to
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -588,7 +588,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseAndIterateParams0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2500
      * @tc.desc   Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -619,7 +619,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseAndForeachParams0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2600
      * @tc.desc   Testing URLParams parsing and iteration with an empty string to ensure correct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -642,7 +642,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseAndForeachParams0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2700
      * @tc.desc   Testing URLParams parsing and iteration for multiple identical sets of parameters to
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -671,7 +671,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseAndForeachParams0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2800
      * @tc.desc   Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -699,7 +699,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseAndIterateParamsSymbol0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_2900
      * @tc.desc   Testing URLParams [Symbol.iterator]() method with an empty string to ensure correct
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -720,7 +720,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseAndIterateParamsSymbol0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3000
      * @tc.desc   Testing URLParams [Symbol.iterator]() method to ensure it handles multiple identical
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -750,7 +750,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseAndIterateParamsSymbol0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3100
      * @tc.desc   Testing URLParams [Symbol.iterator]() method to ensure values are correctly appended
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -779,7 +779,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetAllValuesForKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3200
      * @tc.desc   Testing URLParams getAll() method for key "" to ensure all values are correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -803,7 +803,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetAllValuesForKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3300
      * @tc.desc   Testing URLParams getAll() method for key "b" to ensure all values are correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -827,7 +827,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetAllValuesForKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3400
      * @tc.desc   Testing URLParams getAll() method for key "c" to ensure all values are correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -851,7 +851,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetAllValuesForKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3500
      * @tc.desc   Testing URLParams getAll() method for a non-existing key "d" to ensure an empty array
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -872,7 +872,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetAllValuesForKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3600
      * @tc.desc   Testing URLParams getAll() method for a key with special characters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -897,7 +897,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetValueForKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3700
      * @tc.desc   Testing URLParams get() method for key "" to ensure the first value is correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -918,7 +918,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetValueForKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3800
      * @tc.desc   Testing URLParams get() method for key "b" to ensure the first value is correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -939,7 +939,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetValueForKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_3900
      * @tc.desc   Testing URLParams get() method for key "c" to ensure the first value is correctly retrieved.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -960,7 +960,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetValueForKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4000
      * @tc.desc   Testing URLParams get() method for a non-existing key "d" to ensure null is returned.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -980,7 +980,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetValueForKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4100
      * @tc.desc   Testing URLParams get() method for a key with special characters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1002,7 +1002,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testGetValueForKey0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4200
      * @tc.desc   Testing URLParams get() method for various special character cases,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1064,7 +1064,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testHasKey0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4300
      * @tc.desc   Testing URLParams has() method for key "" to ensure it correctly identifies existence.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1084,7 +1084,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testHasKey0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4400
      * @tc.desc   Testing URLParams has() method for key "b" to ensure it correctly identifies existence.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1104,7 +1104,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testHasKey0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4500
      * @tc.desc   Testing URLParams has() method for key "c" to ensure it correctly identifies existence.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1124,7 +1124,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testHasKey0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4600
      * @tc.desc   Testing URLParams has() method for a non-existing key "d" to ensure it correctly identifies non-existence.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1144,7 +1144,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testHasKey0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4700
      * @tc.desc   Testing URLParams has() method for special character key "耄耋鍟毗粢ASGDDest1312%#^$%"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1179,7 +1179,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testHasKey0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4800
      * @tc.desc   Testing URLParams has() method for special character keys ("%20", "%2b", "%26")
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1221,7 +1221,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSetKeyAndValue0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_4900
      * @tc.desc   Testing URLSearchParams set() method with an empty name.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1244,7 +1244,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSetKeyAndValue0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5000
      * @tc.desc   Testing URLSearchParams set() method with an empty value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1267,7 +1267,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSetKeyAndValue0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5100
      * @tc.desc   Testing URLSearchParams set() method with an empty name and empty value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1290,7 +1290,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSetKeyAndValue0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5200
      * @tc.desc   Testing URLSearchParams set() method with multiple duplicate keys.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1311,7 +1311,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSetKeyAndValue0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5300
      * @tc.desc   Testing URLSearchParams set() method with a single key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1332,7 +1332,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSetKeyAndValue0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5400
      * @tc.desc   Testing URLSearchParams set() method with a non-existent key.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1355,7 +1355,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSetKeyAndValue0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5500
      * @tc.desc   Testing URLSearchParams set() method with a key containing special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1379,7 +1379,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSetKeyAndValue0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5600
      * @tc.desc   Testing URLSearchParams set() method with encoded characters in key and value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1412,7 +1412,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSort0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5700
      * @tc.desc   Testing URLParams sort() method to ensure parameters are sorted correctly.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1443,7 +1443,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSort0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5800
      * @tc.desc   Testing URLParams sort() method to ensure parameters with same keys but different
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1478,7 +1478,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSort0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_5900
      * @tc.desc   Testing URLParams sort() method to ensure parameters with special characters are sorted correctly.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1508,7 +1508,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSort0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6000
      * @tc.desc   Testing URLParams sort() method to ensure parameters with special characters
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1538,7 +1538,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testKeysIterableIterator0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6100
      * @tc.desc   Testing URLParams keys() method with mixed string types: numbers and characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1566,7 +1566,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testKeysIterableIterator0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6200
      * @tc.desc   Testing URLParams keys() method with keys containing special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1594,7 +1594,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testKeysIterableIterator0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6300
      * @tc.desc   Testing URLParams keys() method with add, query, delete, and query operations.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1625,7 +1625,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testValuesIterableIterator0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6400
      * @tc.desc   Testing URLParams values() method with mixed key formats (numbers and characters).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1646,7 +1646,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testValuesIterableIterator0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6500
      * @tc.desc   Testing URLParams values() method with values containing special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1674,7 +1674,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testValuesIterableIterator0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6600
      * @tc.desc   Testing URLParams values() method with add, query, delete, and query operations.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1708,7 +1708,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6700
      * @tc.desc   Testing URLParams for handling special characters in query values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1734,7 +1734,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6800
      * @tc.desc   Testing append for handling special characters in query values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1759,7 +1759,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_6900
      * @tc.desc   Testing getAll for handling multiple values with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1783,7 +1783,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7000
      * @tc.desc   Testing set for handling special characters in query values.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1815,7 +1815,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7100
      * @tc.desc   Testing values for handling multiple values with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1840,7 +1840,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7200
      * @tc.desc   Testing entries for handling keys and values with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1881,7 +1881,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7300
      * @tc.desc   Testing forEach for handling keys and values with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1908,7 +1908,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7400
      * @tc.desc   Testing parseURL for handling special characters in query parameters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1930,7 +1930,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7500
      * @tc.desc   Testing delete for handling keys with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1969,7 +1969,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7600
      * @tc.desc   Testing getting values using keys with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2000,7 +2000,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7700
      * @tc.desc   Testing has method for checking existence of keys with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2021,7 +2021,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7800
      * @tc.desc   Testing sort method for URL parameters with special characters.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2065,7 +2065,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_7900
      * @tc.desc   Testing URLSearchParams for special characters extraction.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2107,7 +2107,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSpecial0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8000
      * @tc.desc   Testing URLSearchParams for additional special characters extraction.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2145,7 +2145,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSymbol0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SYMBOL_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8100
      * @tc.desc   Testing URLSearchParams for special characters extraction.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2173,7 +2173,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testSymbol0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8200
      * @tc.desc   Testing URLSearchParams for special characters extraction.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2199,7 +2199,7 @@ export default function urlTest() {
     });
     /**
      * @tc.name   testForeach0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8300
      * @tc.desc   Test the function of the interface foreach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2221,7 +2221,7 @@ export default function urlTest() {
     });
     /**
      * @tc.name   testForeach0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8400
      * @tc.desc   Test the function of the interface foreach.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2245,7 +2245,7 @@ export default function urlTest() {
     });
     /**
      * @tc.name   testSymboliterator0001Adapt001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8500
      * @tc.desc   Test the function of the interface Symbol.iterator.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2268,7 +2268,7 @@ export default function urlTest() {
     });
     /**
      * @tc.name   testParseURL90001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8600
      * @tc.desc   Test the function of the interface parseURL9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2288,7 +2288,7 @@ export default function urlTest() {
     });
     /**
      * @tc.name   testParseURL90002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8700
      * @tc.desc   Test the function of the interface parseURL9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2310,7 +2310,7 @@ export default function urlTest() {
     });
     /**
      * @tc.name   testParseURL90003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8800
      * @tc.desc   Test the function of the interface parseURL9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2331,7 +2331,7 @@ export default function urlTest() {
     });
     /**
      * @tc.name   testParseURL90004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_8900
      * @tc.desc   Test the function of the interface parseURL9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2350,7 +2350,7 @@ export default function urlTest() {
     });
     /**
      * @tc.name   testParseURL90005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_9000
      * @tc.desc   Test the function of the interface parseURL9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2370,7 +2370,7 @@ export default function urlTest() {
 
     /**
      * @tc.name   testParseURL90006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URL3_9100
      * @tc.desc   Test the function of the interface parseURL9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

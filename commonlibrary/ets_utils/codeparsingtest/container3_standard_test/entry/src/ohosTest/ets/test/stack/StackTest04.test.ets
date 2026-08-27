@@ -30,7 +30,7 @@ export default function Stack04Test() {
     })
 
     /**
-     * @tc.number    SUB_STACK_TEST04_0100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_0100
      * @tc.name      testStack04Chapter0001
      * @tc.desc      Verify that isEmpty returns true for newly created empty stack
      * @tc.size      MediumTest
@@ -46,7 +46,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_0200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_0200
      * @tc.name      testStack04Chapter0002
      * @tc.desc      Verify that isEmpty returns false for stack with elements
      * @tc.size      MediumTest
@@ -63,7 +63,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_0300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_0300
      * @tc.name      testStack04Chapter0003
      * @tc.desc      Verify that isEmpty returns true after pushing and popping all elements
      * @tc.size      MediumTest
@@ -83,7 +83,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_0400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_0400
      * @tc.name      testStack04Chapter0004
      * @tc.desc      Verify that isEmpty returns false after pushing elements
      * @tc.size      MediumTest
@@ -101,7 +101,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_0500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_0500
      * @tc.name      testStack04Chapter0005
      * @tc.desc      Verify that isEmpty returns false for stack with null and undefined values
      * @tc.size      MediumTest
@@ -123,7 +123,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_0600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_0600
      * @tc.name      testStack04Chapter0006
      * @tc.desc      Verify that Symbol.iterator works correctly with empty stack using for...of loop
      * @tc.size      MediumTest
@@ -142,7 +142,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_0700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_0700
      * @tc.name      testStack04Chapter0007
      * @tc.desc      Verify that Symbol.iterator works correctly with number stack using for...of loop
      * @tc.size      MediumTest
@@ -169,7 +169,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_0800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_0800
      * @tc.name      testStack04Chapter0008
      * @tc.desc      Verify that Symbol.iterator works correctly with string stack using for...of loop
      * @tc.size      MediumTest
@@ -195,7 +195,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_0900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_0900
      * @tc.name      testStack04Chapter0009
      * @tc.desc      Verify that Symbol.iterator works correctly with boolean stack using for...of loop
      * @tc.size      MediumTest
@@ -221,7 +221,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1000
      * @tc.name      testStack04Chapter0010
      * @tc.desc      Verify that Symbol.iterator returns correct iterator for empty stack using manual iteration
      * @tc.size      MediumTest
@@ -239,7 +239,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1100
      * @tc.name      testStack04Chapter0011
      * @tc.desc      Verify that Symbol.iterator returns correct iterator for number stack using manual iteration
      * @tc.size      MediumTest
@@ -269,7 +269,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1200
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1200
      * @tc.name      testStack04Chapter0012
      * @tc.desc      Verify that Symbol.iterator works correctly with special number values including NaN, Infinity, -Infinity
      * @tc.size      MediumTest
@@ -298,7 +298,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1300
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1300
      * @tc.name      testStack04Chapter0013
      * @tc.desc      Verify that Symbol.iterator works correctly with maximum and minimum safe integer values
      * @tc.size      MediumTest
@@ -325,7 +325,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1400
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1400
      * @tc.name      testStack04Chapter0014
      * @tc.desc      Verify that Symbol.iterator works correctly with bigint values
      * @tc.size      MediumTest
@@ -350,7 +350,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1500
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1500
      * @tc.name      testStack04Chapter0015
      * @tc.desc      Verify that Symbol.iterator works correctly with string special characters
      * @tc.size      MediumTest
@@ -379,7 +379,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1600
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1600
      * @tc.name      testStack04Chapter0016
      * @tc.desc      Verify that Symbol.iterator works correctly with array values containing various data types
      * @tc.size      MediumTest
@@ -414,7 +414,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1700
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1700
      * @tc.name      testStack04Chapter0017
      * @tc.desc      Verify that Symbol.iterator works correctly with object values
      * @tc.size      MediumTest
@@ -460,7 +460,7 @@ export default function Stack04Test() {
 
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1800
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1800
      * @tc.name      testStack04Chapter0018
      * @tc.desc      Verify that Symbol.iterator works correctly with TypedArray values
      * @tc.size      MediumTest
@@ -489,7 +489,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_1900
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_1900
      * @tc.name      testStack04Chapter0019
      * @tc.desc      Verify that Symbol.iterator works correctly with ArrayBuffer values
      * @tc.size      MediumTest
@@ -514,7 +514,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_2000
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_2000
      * @tc.name      testStack04Chapter0020
      * @tc.desc      Verify that Symbol.iterator returns correct iterator for large stack
      * @tc.size      MediumTest
@@ -538,7 +538,7 @@ export default function Stack04Test() {
     });
 
     /**
-     * @tc.number    SUB_STACK_TEST04_2100
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STACK5_2100
      * @tc.name      testStack04Chapter0021
      * @tc.desc      Verify that Symbol.iterator works correctly with null and undefined values in stack
      * @tc.size      MediumTest

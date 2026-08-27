@@ -46,7 +46,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   test_Decode_Test_001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_0100
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -84,7 +84,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   test_Decode_Test_002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_0200
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -100,7 +100,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   test_Decode_Test_003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_0300
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -116,7 +116,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   testArrayScenarios0100
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_0400
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -163,7 +163,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   testArrayScenarios0200
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_0500
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -226,7 +226,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   testArrayScenarios0300
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_0600
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -291,7 +291,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   testArrayScenarios0400
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_0700
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -344,7 +344,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   testArrayScenarios0500
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_0800
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -360,7 +360,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   testArrayScenarios0600
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_0900
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -402,7 +402,7 @@ export default function stringDecoderTest() {
 
     /**
      * @tc.name   testArrayScenarios0700
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STRINGDECODER_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STRINGDECODER1_1000
      * @tc.desc   Test ENCODER and DOCODER.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

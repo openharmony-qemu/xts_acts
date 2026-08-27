@@ -51,7 +51,7 @@ export default function URI05Test() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_0100
      * @tc.name testURI05Chapter0001
      * @tc.desc Reverse test: URI containing raw control characters (\\a, \\b, \\f, \\n, \\r, \\t, \\v, \\0) should throw 10200002
      * @tc.size MediumTest
@@ -69,7 +69,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_0200
      * @tc.name testURI05Chapter0002
      * @tc.desc Reverse test: URI containing raw backslash and quotes (without encoding) should throw 10200002
      * @tc.size MediumTest
@@ -87,7 +87,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_0300
      * @tc.name testURI05Chapter0003
      * @tc.desc Positive test: URI with percent-encoded escape sequences (e.g., %00, %07, %0A) in query
      * @tc.size MediumTest
@@ -103,7 +103,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_0400
      * @tc.name testURI05Chapter0004
      * @tc.desc Positive test: URI with percent-encoded multiple emojis in query value
      * @tc.size MediumTest
@@ -121,7 +121,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_0500
      * @tc.name testURI05Chapter0005
      * @tc.desc Reverse test: URI containing lone low surrogate (\\udc04)
      * @tc.size MediumTest
@@ -135,7 +135,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_0600
      * @tc.name testURI05Chapter0006
      * @tc.desc Reverse test: URI containing mixed lone surrogates (\\ud83d\\udc04)
      * @tc.size MediumTest
@@ -149,7 +149,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_0700
      * @tc.name testURI05Chapter0007
      * @tc.desc Positive test: Keyword "0" as path segment
      * @tc.size MediumTest
@@ -165,7 +165,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_0800
      * @tc.name testURI05Chapter0008
      * @tc.desc Positive test: Keyword "NaN" as path segment
      * @tc.size MediumTest
@@ -181,7 +181,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_0900
      * @tc.name testURI05Chapter0009
      * @tc.desc Positive test: TreeString-like long JSON array as query value (size ~10k)
      * @tc.size MediumTest
@@ -204,7 +204,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_1000
      * @tc.name testURI05Chapter0010
      * @tc.desc Positive test: SliceString derived URI (substring result)
      * @tc.size MediumTest
@@ -222,7 +222,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_1100
      * @tc.name testURI05Chapter0011
      * @tc.desc Memory test: Construct URI with very long query value (~1M chars) to verify no crash
      * @tc.size MediumTest
@@ -241,7 +241,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_1200
      * @tc.name testURI05Chapter0012
      * @tc.desc GC behavior test: Create large URI string, release reference, expect no crash
      * @tc.size MediumTest
@@ -257,7 +257,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_1300
      * @tc.name testURI05Chapter0013
      * @tc.desc Positive test: Various number strings as query values (0, NaN, -0, Infinity, -Infinity, MAX_VALUE, MIN_VALUE, EPSILON, MAX_SAFE_INTEGER, boundaries, hex, octal, scientific)
      * @tc.size MediumTest
@@ -301,7 +301,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_1400
      * @tc.name testURI05Chapter0014
      * @tc.desc Positive test: Boolean strings as query values (true, false, 0, NaN, null, undefined)
      * @tc.size MediumTest
@@ -319,7 +319,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_1500
      * @tc.name testURI05Chapter0015
      * @tc.desc Positive test: Array JSON string as query value (percent-encoded)
      * @tc.size MediumTest
@@ -338,7 +338,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_1600
      * @tc.name testURI05Chapter0016
      * @tc.desc Positive test: Object JSON string as query value (percent-encoded), including nested object, Symbol key (ignored), function, undefined, null, NaN, Infinity, TypedArray, Map, Set, Promise, RegExp
      * @tc.size MediumTest
@@ -402,7 +402,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_1700
      * @tc.name testURI05Chapter0017
      * @tc.desc Reverse test: URI with invalid percent encoding (%gg)
      * @tc.size MediumTest
@@ -417,7 +417,7 @@ export default function URI05Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URITESTFIVE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URI5_1800
      * @tc.name testURI05Chapter0018
      * @tc.desc Reverse test: URI with unencoded curly braces in query
      * @tc.size MediumTest
