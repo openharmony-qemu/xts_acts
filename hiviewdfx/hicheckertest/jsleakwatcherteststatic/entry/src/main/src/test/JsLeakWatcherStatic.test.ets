@@ -35,7 +35,7 @@ export default function JsLeakWatcherStaticTest():void {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0100 start");
       try {
         let res =  jsLeakWatcher.dump("")
-        expect(res.length==0).assertTrue();
+        expect(res.length === 0).assertTrue();
         jsLeakWatcher.enable(true);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0100 enable success')
         jsLeakWatcher.enable(false);
@@ -100,7 +100,7 @@ export default function JsLeakWatcherStaticTest():void {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcher_Interface_0600 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0600 end");
@@ -123,7 +123,7 @@ export default function JsLeakWatcherStaticTest():void {
         done();
       } catch (err) {
         console.error(`SUB_DFX_DFR_jsLeakWatcher_Interface_3700 > err code: ${err.code}, err msg: ${err.message}`)
-        expect(err.code == 401).assertTrue();
+        expect(err.code === 401).assertTrue();
         done();
       }
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_3700 end");
