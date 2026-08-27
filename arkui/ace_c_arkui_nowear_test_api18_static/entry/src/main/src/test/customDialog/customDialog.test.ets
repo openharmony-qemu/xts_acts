@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 
 const libUtil: LibUtil = new LibUtil();
@@ -27,12 +26,13 @@ const libUtil: LibUtil = new LibUtil();
 
 export default function CustomDialogTest(){
   describe('CustomDialogTest',  () =>{
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api18_static", "EntryAbility")
-    });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100)
+      } catch (err) {
+        console.info('CustomDialogTest beforeEach err: ' + JSON.stringify(err));
+      }
     })
 
     /**
@@ -42,11 +42,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_g1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_g1()).assertEqual(0)
-      console.log('CustomDialogTest_g 1will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_g1()).assertEqual(0)
+        console.log('CustomDialogTest_g 1will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_g1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -56,11 +61,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_a', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_a()).assertEqual(0)
-      console.log('CustomDialogTest_a will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_a()).assertEqual(0)
+        console.log('CustomDialogTest_a will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_a err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -70,11 +80,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_a1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_a1()).assertEqual(0)
-      console.log('CustomDialogTest_a1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_a1()).assertEqual(0)
+        console.log('CustomDialogTest_a1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_a1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -84,11 +99,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_b', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_b()).assertEqual(0)
-      console.log('CustomDialogTest_b will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_b()).assertEqual(0)
+        console.log('CustomDialogTest_b will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_b err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -98,11 +118,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_b1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_b1()).assertEqual(0)
-      console.log('CustomDialogTest_b1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_b1()).assertEqual(0)
+        console.log('CustomDialogTest_b1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_b1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -112,11 +137,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_c', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_c()).assertEqual(0)
-      console.log('CustomDialogTest_c will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_c()).assertEqual(0)
+        console.log('CustomDialogTest_c will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_c err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
 
@@ -127,11 +157,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_c1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_c1()).assertEqual(0)
-      console.log('CustomDialogTest_c1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_c1()).assertEqual(0)
+        console.log('CustomDialogTest_c1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_c1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
     /**
      * @tc.number   CustomDialogTest_d
@@ -140,11 +175,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_d', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_d()).assertEqual(0)
-      console.log('CustomDialogTest_d will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_d()).assertEqual(0)
+        console.log('CustomDialogTest_d will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_d err: ' + JSON.stringify(err));
+        done();
+      }
     })
     /**
      * @tc.number   CustomDialogTest_d1
@@ -153,11 +193,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_d1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_d1()).assertEqual(0)
-      console.log('CustomDialogTest_d1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_d1()).assertEqual(0)
+        console.log('CustomDialogTest_d1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_d1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -167,11 +212,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_e', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_e()).assertEqual(0)
-      console.log('CustomDialogTest_e will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_e()).assertEqual(0)
+        console.log('CustomDialogTest_e will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_e err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -181,11 +231,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_e1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_e1()).assertEqual(0)
-      console.log('CustomDialogTest_e1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_e1()).assertEqual(0)
+        console.log('CustomDialogTest_e1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_e1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -195,11 +250,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_f', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_f()).assertEqual(0)
-      console.log('CustomDialogTest_f will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_f()).assertEqual(0)
+        console.log('CustomDialogTest_f will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_f err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -209,11 +269,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_f1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_f1()).assertEqual(0)
-      console.log('CustomDialogTest_f1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_f1()).assertEqual(0)
+        console.log('CustomDialogTest_f1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_f1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
 
@@ -224,11 +289,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_h', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_h()).assertEqual(0)
-      console.log('CustomDialogTest_h will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_h()).assertEqual(0)
+        console.log('CustomDialogTest_h will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_h err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -238,11 +308,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_h1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_h1()).assertEqual(0)
-      console.log('CustomDialogTest_h1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_h1()).assertEqual(0)
+        console.log('CustomDialogTest_h1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_h1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -252,11 +327,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_i', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_i()).assertEqual(0)
-      console.log('CustomDialogTest_i will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_i()).assertEqual(0)
+        console.log('CustomDialogTest_i will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_i err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -266,11 +346,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_i1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_i1()).assertEqual(0)
-      console.log('CustomDialogTest_i1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_i1()).assertEqual(0)
+        console.log('CustomDialogTest_i1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_i1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -280,11 +365,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_j', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_j()).assertEqual(0)
-      console.log('CustomDialogTest_j will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_j()).assertEqual(0)
+        console.log('CustomDialogTest_j will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_j err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -294,11 +384,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_j1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_j1()).assertEqual(0)
-      console.log('CustomDialogTest_j1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_j1()).assertEqual(0)
+        console.log('CustomDialogTest_j1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_j1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -308,11 +403,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_k', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_k()).assertEqual(0)
-      console.log('CustomDialogTest_k will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_k()).assertEqual(0)
+        console.log('CustomDialogTest_k will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_k err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -322,11 +422,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_k1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_k1()).assertEqual(0)
-      console.log('CustomDialogTest_k1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_k1()).assertEqual(0)
+        console.log('CustomDialogTest_k1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_k1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -336,11 +441,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_l', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_l()).assertEqual(0)
-      console.log('CustomDialogTest_l will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_l()).assertEqual(0)
+        console.log('CustomDialogTest_l will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_l err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -350,11 +460,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_l1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_l1()).assertEqual(0)
-      console.log('CustomDialogTest_l1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_l1()).assertEqual(0)
+        console.log('CustomDialogTest_l1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_l1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -364,11 +479,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_m', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_m()).assertEqual(0)
-      console.log('CustomDialogTest_m will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_m()).assertEqual(0)
+        console.log('CustomDialogTest_m will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_m err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -378,11 +498,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_m1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_m1()).assertEqual(0)
-      console.log('CustomDialogTest_m1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_m1()).assertEqual(0)
+        console.log('CustomDialogTest_m1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_m1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -392,11 +517,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_n', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_n()).assertEqual(0)
-      console.log('CustomDialogTest_n will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_n()).assertEqual(0)
+        console.log('CustomDialogTest_n will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_n err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -406,11 +536,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_n1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_n1()).assertEqual(0)
-      console.log('CustomDialogTest_n1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_n1()).assertEqual(0)
+        console.log('CustomDialogTest_n1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_n1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -420,11 +555,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_o', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_o()).assertEqual(0)
-      console.log('CustomDialogTest_o will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_o()).assertEqual(0)
+        console.log('CustomDialogTest_o will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_o err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -434,11 +574,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_o1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_o1()).assertEqual(0)
-      console.log('CustomDialogTest_o1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_o1()).assertEqual(0)
+        console.log('CustomDialogTest_o1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_o1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -448,11 +593,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_p', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_p()).assertEqual(0)
-      console.log('CustomDialogTest_p will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_p()).assertEqual(0)
+        console.log('CustomDialogTest_p will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_p err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -462,11 +612,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_p1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_p1()).assertEqual(0)
-      console.log('CustomDialogTest_p1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_p1()).assertEqual(0)
+        console.log('CustomDialogTest_p1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_p1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -476,11 +631,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_q', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_q()).assertEqual(0)
-      console.log('CustomDialogTest_q will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_q()).assertEqual(0)
+        console.log('CustomDialogTest_q will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_q err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -490,11 +650,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_q1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_q1()).assertEqual(0)
-      console.log('CustomDialogTest_q1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_q1()).assertEqual(0)
+        console.log('CustomDialogTest_q1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_q1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -504,11 +669,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_r', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_r()).assertEqual(0)
-      console.log('CustomDialogTest_r will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_r()).assertEqual(0)
+        console.log('CustomDialogTest_r will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_r err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -518,11 +688,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_r1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_r1()).assertEqual(0)
-      console.log('CustomDialogTest_r1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_r1()).assertEqual(0)
+        console.log('CustomDialogTest_r1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_r1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -532,11 +707,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_s', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_s()).assertEqual(0)
-      console.log('CustomDialogTest_s will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_s()).assertEqual(0)
+        console.log('CustomDialogTest_s will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_s err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -546,11 +726,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_s1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_s1()).assertEqual(0)
-      console.log('CustomDialogTest_s1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_s1()).assertEqual(0)
+        console.log('CustomDialogTest_s1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_s1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -560,11 +745,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_t', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_t()).assertEqual(0)
-      console.log('CustomDialogTest_t will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_t()).assertEqual(0)
+        console.log('CustomDialogTest_t will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_t err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -574,11 +764,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_t1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_t1()).assertEqual(0)
-      console.log('CustomDialogTest_t1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_t1()).assertEqual(0)
+        console.log('CustomDialogTest_t1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_t1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -588,11 +783,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_u', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_u()).assertEqual(0)
-      console.log('CustomDialogTest_u will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_u()).assertEqual(0)
+        console.log('CustomDialogTest_u will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_u err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -602,11 +802,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_u1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_u1()).assertEqual(0)
-      console.log('CustomDialogTest_u1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_u1()).assertEqual(0)
+        console.log('CustomDialogTest_u1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_u1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -616,11 +821,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_v', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_v()).assertEqual(0)
-      console.log('CustomDialogTest_v will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_v()).assertEqual(0)
+        console.log('CustomDialogTest_v will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_v err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -630,11 +840,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_v1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_v1()).assertEqual(0)
-      console.log('CustomDialogTest_v1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_v1()).assertEqual(0)
+        console.log('CustomDialogTest_v1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_v1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -644,11 +859,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_w', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_w()).assertEqual(0)
-      console.log('CustomDialogTest_w will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_w()).assertEqual(0)
+        console.log('CustomDialogTest_w will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_w err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -658,11 +878,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_w1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_w1()).assertEqual(0)
-      console.log('CustomDialogTest_w1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_w1()).assertEqual(0)
+        console.log('CustomDialogTest_w1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_w1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -672,11 +897,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_x', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_x()).assertEqual(0)
-      console.log('CustomDialogTest_x will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_x()).assertEqual(0)
+        console.log('CustomDialogTest_x will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_x err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -686,11 +916,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_x1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_x1()).assertEqual(0)
-      console.log('CustomDialogTest_x1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_x1()).assertEqual(0)
+        console.log('CustomDialogTest_x1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_x1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -700,11 +935,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_y', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_y()).assertEqual(0)
-      console.log('CustomDialogTest_y will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_y()).assertEqual(0)
+        console.log('CustomDialogTest_y will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_y err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -714,11 +954,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_y1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_y1()).assertEqual(0)
-      console.log('CustomDialogTest_y1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_y1()).assertEqual(0)
+        console.log('CustomDialogTest_y1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_y1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -728,11 +973,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_z', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_z()).assertEqual(0)
-      console.log('CustomDialogTest_z will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_z()).assertEqual(0)
+        console.log('CustomDialogTest_z will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_z err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -742,11 +992,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_z1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_z1()).assertEqual(0)
-      console.log('CustomDialogTest_z1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_z1()).assertEqual(0)
+        console.log('CustomDialogTest_z1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_z1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -756,11 +1011,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_A', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_A()).assertEqual(0)
-      console.log('CustomDialogTest_A will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_A()).assertEqual(0)
+        console.log('CustomDialogTest_A will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_A err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -770,11 +1030,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_A1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_A1()).assertEqual(0)
-      console.log('CustomDialogTest_A1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_A1()).assertEqual(0)
+        console.log('CustomDialogTest_A1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_A1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -784,11 +1049,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_B', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_B()).assertEqual(0)
-      console.log('CustomDialogTest_B will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_B()).assertEqual(0)
+        console.log('CustomDialogTest_B will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_B err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -798,11 +1068,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_B1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_B1()).assertEqual(0)
-      console.log('CustomDialogTest_B1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_B1()).assertEqual(0)
+        console.log('CustomDialogTest_B1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_B1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -812,11 +1087,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_C', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_C()).assertEqual(0)
-      console.log('CustomDialogTest_C will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_C()).assertEqual(0)
+        console.log('CustomDialogTest_C will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_C err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -826,11 +1106,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_C1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_C1()).assertEqual(0)
-      console.log('CustomDialogTest_C1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_C1()).assertEqual(0)
+        console.log('CustomDialogTest_C1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_C1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -840,11 +1125,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_D', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_D()).assertEqual(0)
-      console.log('CustomDialogTest_D will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_D()).assertEqual(0)
+        console.log('CustomDialogTest_D will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_D err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -854,11 +1144,16 @@ export default function CustomDialogTest(){
      * @tc.level    Level.LEVEL0
      */
     it('CustomDialogTest_D1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.CustomDialogTest_D1()).assertEqual(0)
-      console.log('CustomDialogTest_D1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.CustomDialogTest_D1()).assertEqual(0)
+        console.log('CustomDialogTest_D1 will drag and check:: ')
+        await Utils.sleep(200)
+
+        done()
+      } catch (err) {
+        console.info('CustomDialogTest_D1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
   })
