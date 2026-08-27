@@ -1357,14 +1357,14 @@ export default function btManagerError003Test() {
             done();
         })
         /**
-         * @tc.number  SUB_Communication_Bluetooth_NopStatic_DisconnectAllowedProfiles_1900
-         * @tc.name    SUB_Communication_Bluetooth_NopStatic_DisconnectAllowedProfiles_1900
+         * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_Switchoff_0100
+         * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_Switchoff_0100
          * @tc.desc    test disableAdvertisingPromise2900003Test without permission
          * @tc.size    LargeTest
          * @tc.type    Function
          * @tc.level   Level0
          */
-        it("SUB_Communication_Bluetooth_NopStatic_DisconnectAllowedProfiles_1900", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("SUB_Communication_Bluetooth_DisconnectAllowedProfiles_Switchoff_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 await connection.disconnectAllowedProfiles('68:13:24:79:4C:8C');
                 hilog.info(domain, tag, 'disconnectAllowedProfiles success');
