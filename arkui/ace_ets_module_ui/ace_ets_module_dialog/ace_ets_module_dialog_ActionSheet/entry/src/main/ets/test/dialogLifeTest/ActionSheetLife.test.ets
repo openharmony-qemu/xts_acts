@@ -66,7 +66,8 @@ export default function ActionSheetLifeTest() {
       try {
         let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
         let button = await scrollBar.scrollSearch(ON.text('button'));
-        await button.click();
+        let buttonC: Component = await driver.findComponent(ON.text('button'));
+        await buttonC.click();
       } catch (error) {
         console.info('====error======='+error)
       }

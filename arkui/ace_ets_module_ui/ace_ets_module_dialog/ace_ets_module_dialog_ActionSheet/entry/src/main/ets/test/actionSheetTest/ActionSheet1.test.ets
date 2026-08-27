@@ -94,13 +94,13 @@ export default function ActionSheet1() {
       try {
         let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
         let button1 = await scrollBar.scrollSearch(ON.text('Confirm'));
-        await button1.click();
+        let buttonC = await driver.findComponent(ON.text('Confirm'));
+        await buttonC.click();
       } catch (error) {
         console.info('====error======='+error)
       }
 
-      // let button1 = await driver.findComponent(ON.text('Confirm'));
-      // await button1.click();
+      
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
