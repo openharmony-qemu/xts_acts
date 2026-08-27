@@ -87,8 +87,6 @@ static napi_value RequestSuspendDelaySVFailed(napi_env env, napi_callback_info i
             OH_BackgroundTaskManager_RequestSuspendDelay("Quota Test", OnCallbackCompleted, &delaySuspendInfo);
         if (res == ERR_TRANSIENT_TASK_OK) {
             successCount++;
-            int32_t intTime = 1;
-            sleep(intTime);
             OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "BackgroundTask",
                          "=======  RequestSuspendDelay requestId = %{public}d", delaySuspendInfo.requestId);
             napi_create_int32(env, -1, &result);
