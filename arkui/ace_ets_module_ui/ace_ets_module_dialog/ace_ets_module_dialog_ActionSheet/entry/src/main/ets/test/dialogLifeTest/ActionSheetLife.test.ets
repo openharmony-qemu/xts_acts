@@ -52,25 +52,16 @@ export default function ActionSheetLifeTest() {
      */
     it('ActionSheetLife_0001', Level.LEVEL0, async (done: Function) => {
       console.info('ActionSheetLife_0001 START');
-      await CommonFunc.sleep(1000);
-      sendEventByKey('ActionSheet',10,"")
-      await CommonFunc.sleep(1000);
-      let actionSheetFlag1 = getInspectorByKey('actionSheetFlag1');
-      expect(JSON.parse(actionSheetFlag1).$attrs.content).assertEqual('true');
-      let actionSheetFlag2 = getInspectorByKey('actionSheetFlag2');
-      expect(JSON.parse(actionSheetFlag2).$attrs.content).assertEqual('true');
-      let driver: Driver = Driver.create();
-
-      // let button: Component = await driver.findComponent(ON.text('button'));
-
-      try {
-        let scrollBar: Component = await driver.findComponent(ON.type('Scroll'))
-        let button = await scrollBar.scrollSearch(ON.text('button'));
-        let buttonC: Component = await driver.findComponent(ON.text('button'));
-        await buttonC.click();
-      } catch (error) {
-        console.info('====error======='+error)
-      }
+      await CommonFunc.sleep(1000);	 
+      sendEventByKey('ActionSheetLife' + '_ActionSheet',10,"")	 
+      await CommonFunc.sleep(1000);	 
+      let actionSheetFlag1 = getInspectorByKey('actionSheetFlag1');	 
+      expect(JSON.parse(actionSheetFlag1).$attrs.content).assertEqual('true');	 
+      let actionSheetFlag2 = getInspectorByKey('actionSheetFlag2');	 
+      expect(JSON.parse(actionSheetFlag2).$attrs.content).assertEqual('true');	 
+      let driver: Driver = Driver.create();	 
+      let button: Component = await driver.findComponent(ON.text('button'));	 
+      await button.click();
 
       await CommonFunc.sleep(2000);
       let actionSheetFlag3 = getInspectorByKey('actionSheetFlag3');
