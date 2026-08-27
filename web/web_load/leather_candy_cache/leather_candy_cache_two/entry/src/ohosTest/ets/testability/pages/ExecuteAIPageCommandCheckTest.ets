@@ -471,16 +471,16 @@ struct ExecuteAIPageCommandCheckTest {
               break;
             }
             case 'testRemovePageAnnotation004': {
-            // 1. 判断当前页面是否被标注
-            const annotated: boolean = await this.checkOverlayAnnotated(this.controllerAnnotation);
-            console.info('testRemovePageAnnotation004 overlay annotated=' + annotated);
-            // 2. 如果被标注，先清理标注（清理 #1）
-            if (annotated) {
+              // 1. 判断当前页面是否被标注
+              const annotated: boolean = await this.checkOverlayAnnotated(this.controllerAnnotation);
+              console.info('testRemovePageAnnotation004 overlay annotated=' + annotated);
+              // 2. 如果被标注，先清理标注（清理 #1）
+              if (annotated) {
                 await this.executeRaw('testRemovePageAnnotation004-clear', runnerAnnotation, removePageAnnotationCommand001);
-            }
-            // 3. 继续执行用例（清理 #2），使用 removePageAnnotationCommand002，返回 code=11
-                await this.runCommand('testRemovePageAnnotation004', runnerAnnotation, removePageAnnotationCommand002, 148525);
-                break;
+              }
+              // 3. 继续执行用例（清理 #2），使用 removePageAnnotationCommand002，返回 code=11
+              await this.runCommand('testRemovePageAnnotation004', runnerAnnotation, removePageAnnotationCommand002, 148525);
+              break;
             }
             case 'testScreenCapture001': {
               await this.runCaptureCommand('testScreenCapture001', runnerScreenCapture, screenCaptureCommand001, 148526);
