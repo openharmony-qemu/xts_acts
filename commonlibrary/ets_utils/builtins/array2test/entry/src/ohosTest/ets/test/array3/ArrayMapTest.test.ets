@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -267,17 +267,18 @@ export default function arrayMapTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<Map<string, number>> = values.slice();
-      const insertedItems: Array<Map<string, number>> = spliceInsertValues.splice(0, 0, values[0]);
+      const insertedItems: Array<Map<string, number>> = spliceInsertValues.splice(0, 0, values[1]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[0]);
-      expect(values.every((value: Map<string, number>): boolean => value === value)).assertTrue();
-      expect(values[0]).assertEqual(values[0]);
+      expect(spliceInsertValues[0]).assertEqual(values[1]);
+      expect(spliceInsertValues[1]).assertEqual(values[0]);
+      expect(values.every((value: Map<string, number>): boolean => value === MAP_A)).assertFalse();
+      expect(values[0].size).assertEqual(1);
 
       const symbolItem: IteratorResult<Map<string, number>> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(typeof localeResult).assertEqual('string');
+      expect(localeResult.indexOf(',')).assertLargerOrEqual(0);
     });
 
   });

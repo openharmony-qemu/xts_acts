@@ -252,11 +252,12 @@ export default function arrayBooleanTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<boolean> = values.slice();
-      const insertedItems: Array<boolean> = spliceInsertValues.splice(0, 0, values[0]);
+      const insertedItems: Array<boolean> = spliceInsertValues.splice(0, 0, values[1]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[0]);
-      expect(values.every((value: boolean): boolean => value === value)).assertTrue();
-      expect(values[0]).assertEqual(values[0]);
+      expect(spliceInsertValues[0]).assertEqual(values[1]);
+      expect(spliceInsertValues[1]).assertEqual(values[0]);
+      expect(values.every((value: boolean): boolean => value === true)).assertFalse();
+      expect(values[0]).assertEqual(true);
 
       const symbolItem: IteratorResult<boolean> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);

@@ -255,11 +255,12 @@ export default function arrayBigIntTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<bigint> = values.slice();
-      const insertedItems: Array<bigint> = spliceInsertValues.splice(0, 0, values[0]);
+      const insertedItems: Array<bigint> = spliceInsertValues.splice(0, 0, values[1]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[0]);
-      expect(values.every((value: bigint): boolean => value === value)).assertTrue();
-      expect(values[0]).assertEqual(values[0]);
+      expect(spliceInsertValues[0]).assertEqual(values[1]);
+      expect(spliceInsertValues[1]).assertEqual(values[0]);
+      expect(values.every((value: bigint): boolean => value > 0n)).assertFalse();
+      expect(values[0]).assertEqual(100n);
 
       const symbolItem: IteratorResult<bigint> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);

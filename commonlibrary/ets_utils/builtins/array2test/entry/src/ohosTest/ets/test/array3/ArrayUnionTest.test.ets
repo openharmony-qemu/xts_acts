@@ -130,7 +130,7 @@ export default function arrayUnionTest() {
       expect(values.some((value) => value === values[6])).assertTrue();
 
       const reduceResult = values.reduce((acc) => acc);
-      expect(Number.isNaN(reduceResult)).assertTrue();
+      expect(String(reduceResult)).assertEqual('NaN');
       const reduceRightResult = values.reduceRight((acc) => acc);
       expect(reduceRightResult === values[values.length - 1]).assertTrue();
 
@@ -156,7 +156,7 @@ export default function arrayUnionTest() {
 
       const shiftValues = values.slice();
       const shiftResult = shiftValues.shift();
-      expect(Number.isNaN(shiftResult)).assertTrue();
+      expect(String(shiftResult)).assertEqual('NaN');
       expect(shiftValues[0] === values[1]).assertTrue();
 
       const reverseValues = values.slice();

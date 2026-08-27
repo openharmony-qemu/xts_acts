@@ -142,13 +142,13 @@ export default function arrayNumberTest() {
       expect(values.some((value: number): boolean => value === values[0])).assertTrue();
 
       const reduceRightResult: number = values.reduceRight((acc: number, value: number): number => acc + value);
-      expect(typeof reduceRightResult).assertEqual('number');
+      expect(isNaN(reduceRightResult)).assertTrue();
 
       const reduceRightInitialResult: number = values.reduceRight(
         (acc: number, value: number): number => acc + value,
         values[0],
       );
-      expect(typeof reduceRightInitialResult).assertEqual('number');
+      expect(isNaN(reduceRightInitialResult)).assertTrue();
 
       const popValues: Array<number> = values.slice();
       const popLength: number = popValues.length;
@@ -158,7 +158,7 @@ export default function arrayNumberTest() {
       const pushValues: Array<number> = values.slice();
       const pushResult: number = pushValues.push(pushValues[0]);
       expect(pushResult).assertEqual(pushValues.length);
-      expect(typeof values.join('|')).assertEqual('string');
+      expect(values.join('|').indexOf('|')).assertLargerOrEqual(0);
 
       const shiftValues: Array<number> = values.slice();
       const shiftLength: number = shiftValues.length;
@@ -188,7 +188,7 @@ export default function arrayNumberTest() {
       const unshiftValues: Array<number> = values.slice();
       const unshiftResult: number = unshiftValues.unshift(unshiftValues[0]);
       expect(unshiftResult).assertEqual(unshiftValues.length);
-      expect(typeof values.toString()).assertEqual('string');
+      expect(values.toString().indexOf(',')).assertLargerOrEqual(0);
 
       const sliceResult: Array<number> = values.slice(0, Math.min(2, values.length));
       expect(sliceResult[0]).assertEqual(values[0]);
@@ -224,23 +224,23 @@ export default function arrayNumberTest() {
     it('testArrayNumberTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: Array<number> = VALID_VALUES;
       const reduceResult: number = values.reduce((acc: number, value: number): number => acc + value);
-      expect(typeof reduceResult).assertEqual('number');
+      expect(isNaN(reduceResult)).assertTrue();
 
       const reduceInitialResult: number = values.reduce(
         (acc: number, value: number): number => acc + value,
         values[0],
       );
-      expect(typeof reduceInitialResult).assertEqual('number');
+      expect(isNaN(reduceInitialResult)).assertTrue();
       expect(runArrayAtCase(values)).assertTrue();
 
       const entriesItem: IteratorResult<[number, number]> = values.entries().next();
-      expect(typeof entriesItem.done).assertEqual('boolean');
+      expect(entriesItem.done).assertFalse();
 
       const keysItem: IteratorResult<number> = values.keys().next();
-      expect(typeof keysItem.done).assertEqual('boolean');
+      expect(keysItem.done).assertFalse();
 
       const valuesItem: IteratorResult<number> = values[Symbol.iterator]().next();
-      expect(typeof valuesItem.done).assertEqual('boolean');
+      expect(valuesItem.done).assertFalse();
 
       const findResult: number | undefined = values.find((value: number): boolean => value === values[0]);
       expect(findResult).assertEqual(values[0]);
@@ -272,7 +272,7 @@ export default function arrayNumberTest() {
       expect(Array.isArray(removedItems)).assertTrue();
       expect(spliceDeleteValues.length).assertEqual(spliceDeleteLength - spliceDeleteCount);
       expect(values.every((value: number): boolean => typeof value === 'number')).assertTrue();
-      expect(typeof values.toLocaleString()).assertEqual('string');
+      expect(values.toLocaleString().indexOf(',')).assertLargerOrEqual(0);
 
       const spliceInsertValues: Array<number> = values.slice();
       const spliceInsertLength: number = spliceInsertValues.length;
@@ -281,7 +281,7 @@ export default function arrayNumberTest() {
       expect(spliceInsertValues.length).assertEqual(spliceInsertLength + 1);
 
       const symbolItem: IteratorResult<number> = values[Symbol.iterator]().next();
-      expect(typeof symbolItem.done).assertEqual('boolean');
+      expect(symbolItem.done).assertFalse();
     });
 
   });

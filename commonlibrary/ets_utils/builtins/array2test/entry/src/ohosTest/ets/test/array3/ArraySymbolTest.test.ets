@@ -143,7 +143,7 @@ function runArraySymbolTest0600(): Array<boolean> {
   const spliceDeleteValues = values.slice();
   const removedItems = spliceDeleteValues.splice(0, 1);
   const spliceInsertValues = values.slice();
-  const insertedItems = spliceInsertValues.splice(0, 0, values[0]);
+  const insertedItems = spliceInsertValues.splice(0, 0, values[1]);
   const symbolItem = values[Symbol.iterator]().next();
   const localeResult = values.toLocaleString();
 
@@ -153,8 +153,9 @@ function runArraySymbolTest0600(): Array<boolean> {
     removedItems[0] === values[0],
     spliceDeleteValues[0] === values[1],
     insertedItems.length === 0,
-    spliceInsertValues[0] === values[0],
-    values.every((value) => value === value),
+    spliceInsertValues[0] === values[1],
+    spliceInsertValues[1] === values[0],
+    values.every((value) => typeof value === 'symbol'),
     symbolItem.value === values[0],
     localeResult.indexOf(String(values[0])) >= 0,
   ];

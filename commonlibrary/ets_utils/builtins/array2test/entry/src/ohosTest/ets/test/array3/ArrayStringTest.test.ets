@@ -265,11 +265,12 @@ export default function arrayStringTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<StringDynamicItem> = values.slice();
-      const insertedItems: Array<StringDynamicItem> = spliceInsertValues.splice(0, 0, values[0]);
+      const insertedItems: Array<StringDynamicItem> = spliceInsertValues.splice(0, 0, values[1]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[0]);
-      expect(values.every((value: StringDynamicItem): boolean => value === value)).assertTrue();
-      expect(values[0]).assertEqual(values[0]);
+      expect(spliceInsertValues[0]).assertEqual(values[1]);
+      expect(spliceInsertValues[1]).assertEqual(values[0]);
+      expect(values.every((value: StringDynamicItem): boolean => value === 'test')).assertFalse();
+      expect(values[0]).assertEqual('test');
 
       const symbolItem: IteratorResult<StringDynamicItem> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);

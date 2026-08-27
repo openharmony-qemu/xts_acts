@@ -259,17 +259,18 @@ export default function arrayDateTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<Date> = values.slice();
-      const insertedItems: Array<Date> = spliceInsertValues.splice(0, 0, values[0]);
+      const insertedItems: Array<Date> = spliceInsertValues.splice(0, 0, values[1]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[0]);
-      expect(values.every((value: Date): boolean => value === value)).assertTrue();
-      expect(values[0]).assertEqual(values[0]);
+      expect(spliceInsertValues[0]).assertEqual(values[1]);
+      expect(spliceInsertValues[1]).assertEqual(values[0]);
+      expect(values.every((value: Date): boolean => value === DATE_A)).assertFalse();
+      expect(values[0]).assertEqual(DATE_A);
 
       const symbolItem: IteratorResult<Date> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(typeof localeResult).assertEqual('string');
+      expect(localeResult.indexOf(',')).assertLargerOrEqual(0);
     });
 
   });

@@ -270,17 +270,18 @@ export default function arrayObjectTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<ArrayObjectItem> = values.slice();
-      const insertedItems: Array<ArrayObjectItem> = spliceInsertValues.splice(0, 0, values[0]);
+      const insertedItems: Array<ArrayObjectItem> = spliceInsertValues.splice(0, 0, values[1]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[0]);
-      expect(values.every((value: ArrayObjectItem): boolean => value === value)).assertTrue();
-      expect(values[0]).assertEqual(values[0]);
+      expect(spliceInsertValues[0]).assertEqual(values[1]);
+      expect(spliceInsertValues[1]).assertEqual(values[0]);
+      expect(values.every((value: ArrayObjectItem): boolean => value === OBJECT_A)).assertFalse();
+      expect(values[0].id).assertEqual(1);
 
       const symbolItem: IteratorResult<ArrayObjectItem> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(typeof localeResult).assertEqual('string');
+      expect(localeResult.indexOf(',')).assertLargerOrEqual(0);
     });
 
   });
