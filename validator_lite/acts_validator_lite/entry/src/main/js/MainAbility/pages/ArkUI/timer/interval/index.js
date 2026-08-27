@@ -8,7 +8,6 @@ export default {
     },
 
     onDestroy() {
-        console.info('onDestroy');
         this.clearTimer();
     },
 
@@ -29,7 +28,6 @@ export default {
     },
 
     clearTimer() {
-        console.info('clearTimer intervalID = ' + this.intervalID);
         clearInterval(this.intervalID);
         this.statusMsg = 'cleared';
     },
@@ -42,11 +40,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.api_timer_interval.status = 'pass';
+        getApp().data.testItems['api_timer_interval'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.api_timer_interval.status = 'fail';
+        getApp().data.testItems['api_timer_interval'].status = 'fail';
         this.back();
     },
     backClicked() {

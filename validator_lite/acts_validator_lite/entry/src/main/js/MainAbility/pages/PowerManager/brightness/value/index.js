@@ -9,7 +9,6 @@ export default {
     },
 
     onInit() {
-        console.info('onInit');
     },
 
     getBrightnessValue() {
@@ -20,17 +19,15 @@ export default {
                     obj.getValue = data.value;
                     this.value = this.getValue;
                     obj.statusMsg = 'success';
-                    console.info('success get brightness value:' + data.value);
                 },
                 fail: function (data, code) {
                     obj.statusMsg = 'fail code: ' + code;
-                    console.info('get brightness fail, code: ' + code + ', data: ' + data);
-                    getApp().data.testItems.api_brightness_value.errorDetail = 'getValue fail: code=' + code + ', data=' + data;
+                    getApp().data.testItems['api_brightness_value'].errorDetail = 'getValue fail: code=' + code + ', data=' + data;
                 }
             });
         } catch (e) {
             console.error('error: ' + e);
-            getApp().data.testItems.api_brightness_value.errorDetail = 'getValue error: ' + e;
+            getApp().data.testItems['api_brightness_value'].errorDetail = 'getValue error: ' + e;
             this.statusMsg = 'error: ' + e;
         }
     },
@@ -51,23 +48,21 @@ export default {
                 value: value,
                 success: function () {
                     obj.statusMsg = 'success';
-                    console.info('set brightness success value: ' + value);
                 },
                 fail: function (data, code) {
                     obj.statusMsg = 'fail code: ' + code;
                     console.error('set brightness success value fail, code: ' + code + ', data: ' + data);
-                    getApp().data.testItems.api_brightness_value.errorDetail = 'setValue fail: code=' + code + ', data=' + data;
+                    getApp().data.testItems['api_brightness_value'].errorDetail = 'setValue fail: code=' + code + ', data=' + data;
                 }
             });
         } catch (e) {
             console.error('error: ' + e);
-            getApp().data.testItems.api_brightness_value.errorDetail = 'setValue error: ' + e;
+            getApp().data.testItems['api_brightness_value'].errorDetail = 'setValue error: ' + e;
             this.statusMsg = 'error: ' + e;
         }
     },
 
     onDestroy() {
-        console.info('onDestroy');
     },
 
     helpClicked() {
@@ -78,11 +73,11 @@ export default {
         router.replace({ uri: 'pages/PowerManager/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.api_brightness_value.status = 'pass';
+        getApp().data.testItems['api_brightness_value'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.api_brightness_value.status = 'fail';
+        getApp().data.testItems['api_brightness_value'].status = 'fail';
         this.back();
     },
     backClicked() {

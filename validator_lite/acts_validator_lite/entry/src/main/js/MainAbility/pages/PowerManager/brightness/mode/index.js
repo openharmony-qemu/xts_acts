@@ -10,7 +10,6 @@ export default {
     },
 
     onInit() {
-        console.info('onInit');
     },
 
     getBrightnessMode() {
@@ -20,17 +19,15 @@ export default {
                 success: function (data) {
                     obj.modeType = obj.modeStr[data.mode];
                     obj.statusMsg = 'success';
-                    console.info('success get brightness mode:' + data.mode);
                 },
                 fail: function (data, code) {
                     obj.statusMsg = 'fail code: ' + code;
-                    console.info('get brightness fail, code: ' + code + ', data: ' + data);
-                    getApp().data.testItems.api_brightness_mode.errorDetail = 'getMode fail: code=' + code + ', data=' + data;
+                    getApp().data.testItems['api_brightness_mode'].errorDetail = 'getMode fail: code=' + code + ', data=' + data;
                 }
             });
         } catch (e) {
             console.error('error: ' + e);
-            getApp().data.testItems.api_brightness_mode.errorDetail = 'getMode error: ' + e;
+            getApp().data.testItems['api_brightness_mode'].errorDetail = 'getMode error: ' + e;
             this.statusMsg = 'error: ' + e;
         }
     },
@@ -42,18 +39,17 @@ export default {
                 mode: mode,
                 success() {
                     obj.statusMsg = 'success';
-                    console.info('set mode success mode: ' + mode);
                     obj.getBrightnessMode();
                 },
                 fail(data, code) {
                     obj.statusMsg = 'fail code: ' + code;
                     console.error('set brightness success value fail, code: ' + code + ', data: ' + data);
-                    getApp().data.testItems.api_brightness_mode.errorDetail = 'setMode fail: code=' + code + ', data=' + data;
+                    getApp().data.testItems['api_brightness_mode'].errorDetail = 'setMode fail: code=' + code + ', data=' + data;
                 }
             });
         } catch (e) {
             console.error('error: ' + e);
-            getApp().data.testItems.api_brightness_mode.errorDetail = 'setMode error: ' + e;
+            getApp().data.testItems['api_brightness_mode'].errorDetail = 'setMode error: ' + e;
             this.statusMsg = 'error: ' + e;
         }
     },
@@ -66,23 +62,21 @@ export default {
                 keepScreenOn: obj.keepScreen,
                 success() {
                     obj.statusMsg = 'success';
-                    console.info('set keep screen on success');
                 },
                 fail(data, code) {
                     obj.statusMsg = 'fail code: ' + code;
                     console.error('set brightness success value fail, code: ' + code + ', data: ' + data);
-                    getApp().data.testItems.api_brightness_mode.errorDetail = 'setKeepScreenOn fail: code=' + code + ', data=' + data;
+                    getApp().data.testItems['api_brightness_mode'].errorDetail = 'setKeepScreenOn fail: code=' + code + ', data=' + data;
                 }
             });
         } catch (e) {
             console.error('error: ' + e);
-            getApp().data.testItems.api_brightness_mode.errorDetail = 'setKeepScreenOn error: ' + e;
+            getApp().data.testItems['api_brightness_mode'].errorDetail = 'setKeepScreenOn error: ' + e;
             this.statusMsg = 'error: ' + e;
         }
     },
 
     onDestroy() {
-        console.info('onDestroy');
     },
 
     helpClicked() {
@@ -93,11 +87,11 @@ export default {
         router.replace({ uri: 'pages/PowerManager/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.api_brightness_mode.status = 'pass';
+        getApp().data.testItems['api_brightness_mode'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.api_brightness_mode.status = 'fail';
+        getApp().data.testItems['api_brightness_mode'].status = 'fail';
         this.back();
     },
     backClicked() {

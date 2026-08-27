@@ -7,10 +7,8 @@ export default {
         qrValue: 'value',
     },
     clickAction() {
-        console.log('trigger click');
     },
     swipeAction() {
-        console.log('trigger swipe');
     },
 
     changeColor() {
@@ -28,7 +26,6 @@ export default {
         }
     },
     changeValue() {
-        console.info('change value');
         if (this.qrValue !== 'value') {
             this.qrValue = 'value';
         } else {
@@ -44,11 +41,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.qrcode.status = 'pass';
+        getApp().data.testItems['qrcode'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.qrcode.status = 'fail';
+        getApp().data.testItems['qrcode'].status = 'fail';
         this.back();
     },
     backClicked() {

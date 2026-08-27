@@ -2,7 +2,7 @@ import router from '@system.router';
 
 export default {
   data: {
-    text: 'Hello JS, we are friends.',
+    text: 'Hello JS, we are friends. This is a marquee test.',
     speed: 1,
     flag: true,
   },
@@ -24,11 +24,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.marquee.status = 'pass';
+        getApp().data.testItems['marquee'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.marquee.status = 'fail';
+        getApp().data.testItems['marquee'].status = 'fail';
         this.back();
     },
     backClicked() {
