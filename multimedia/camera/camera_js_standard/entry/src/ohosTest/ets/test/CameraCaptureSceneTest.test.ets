@@ -518,5 +518,217 @@ export default function cameraCaptureSceneTest() {
         done()
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_PARAM_0100
+     * @tc.desc   test captureSetting promise when quality = -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_PARAM_0100', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_PARAM_0100"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, caseName)
+        let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
+        let photoAssetAvailableCallback = (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
+          if (err) {
+            console.error(`photoAssetAvailable error: ${JSON.stringify(err)}.`);
+            return;
+          }
+          console.info(" get photoAsset success: " + photoAsset);
+          asset = photoAsset;
+        };
+    
+        photoOutput.on('photoAssetAvailable', photoAssetAvailableCallback);
+
+        //--------------------------------------------process------------------------------------------------------
+        let testSetting = captureSetting
+        testSetting.quality = -1
+        try {
+          await photoOutput.capture(testSetting).then(() => {
+            console.info(`${caseName} photoOutput capture success`);
+          })
+          console.error(`${caseName} photoOutput capture expect fail, but success`);
+          expect().assertFail()
+        } catch (err) {
+          console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
+          expect(Number(err.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT)
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_PARAM_0200
+     * @tc.desc   test captureSetting promise when rotation = -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_PARAM_0200', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_PARAM_0200"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, caseName)
+        let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
+        let photoAssetAvailableCallback = (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
+          if (err) {
+            console.error(`photoAssetAvailable error: ${JSON.stringify(err)}.`);
+            return;
+          }
+          console.info(" get photoAsset success: " + photoAsset);
+          asset = photoAsset;
+        };
+    
+        photoOutput.on('photoAssetAvailable', photoAssetAvailableCallback);
+
+        //--------------------------------------------process------------------------------------------------------
+        let testSetting = captureSetting
+        testSetting.rotation = -1
+        try {
+          await photoOutput.capture(testSetting).then(() => {
+            console.info(`${caseName} photoOutput capture success`);
+          })
+          console.error(`${caseName} photoOutput capture expect fail, but success`);
+          expect().assertFail()
+        } catch (err) {
+          console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
+          expect(Number(err.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT)
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_PARAM_0100
+     * @tc.desc   test captureSetting callback when quality = -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_PARAM_0100', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_PARAM_0100"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, caseName)
+        let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
+        let photoAssetAvailableCallback = (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
+          if (err) {
+            console.error(`photoAssetAvailable error: ${JSON.stringify(err)}.`);
+            return;
+          }
+          console.info(" get photoAsset success: " + photoAsset);
+          asset = photoAsset;
+        };
+    
+        photoOutput.on('photoAssetAvailable', photoAssetAvailableCallback);
+
+        //--------------------------------------------process------------------------------------------------------
+        let testSetting = captureSetting
+        testSetting.quality = -1
+        try {
+          await photoOutput.capture(testSetting, async () => {
+            for (let i = 0; i < 30; i++) {
+              await sleep(200);
+              if (asset) {
+                break;
+              }
+            }
+            expect(asset != undefined).assertTrue()
+          });
+          console.error(`${caseName} photoOutput capture expect fail, but success`);
+          expect().assertFail()
+        } catch (err) {
+          console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
+          expect(Number(err.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT)
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_PARAM_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_PARAM_0200
+     * @tc.desc   test captureSetting async callback when rotation = -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_PARAM_0200', Level.LEVEL2, async (done: Function) => {
+      let caseName = "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_PARAM_0200"
+      try {
+        //--------------------------------------------set up------------------------------------------------------
+        console.info(`Enter ${caseName}`)
+        await startCameraSession(0, cameraObj.SceneMode.NORMAL_PHOTO, caseName)
+        let asset: photoAccessHelper.PhotoAsset | undefined = undefined;
+        let photoAssetAvailableCallback = (err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset) => {
+          if (err) {
+            console.error(`photoAssetAvailable error: ${JSON.stringify(err)}.`);
+            return;
+          }
+          console.info(" get photoAsset success: " + photoAsset);
+          asset = photoAsset;
+        };
+    
+        photoOutput.on('photoAssetAvailable', photoAssetAvailableCallback);
+
+        //--------------------------------------------process------------------------------------------------------
+        let testSetting = captureSetting
+        testSetting.rotation = -1
+        try {
+          await photoOutput.capture(testSetting, async () => {
+            for (let i = 0; i < 30; i++) {
+              await sleep(200);
+              if (asset) {
+                break;
+              }
+            }
+            expect(asset != undefined).assertTrue()
+          });
+          console.error(`${caseName} photoOutput capture expect fail, but success`);
+          expect().assertFail()
+        } catch (err) {
+          console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
+          expect(Number(err.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT)
+        }
+        console.info(`${caseName} PASSED`)
+      } catch (error) {
+        console.error(`${caseName} FAILED, code: ${error.code}, message: ${error.message}`)
+        expect().assertFail()
+      } finally {
+        //--------------------------------------------tear down------------------------------------------------------
+        console.info(`Exit ${caseName}`)
+        done()
+      }
+    });
+
   })
 }

@@ -488,5 +488,186 @@ export default function cameraPreconfigTest() {
       }
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200
+     * @tc.desc   test Photo session preconfig api when first param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200--------------");
+      createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200 SUCCESS");
+        mCameraSession.preconfig(undefined);
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0200 ERRORCODE: " + err.code);
+        expect(err.code).assertEqual('7400101');
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0300
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0300
+     * @tc.desc   test Photo session preconfig api when second param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0300', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0300--------------");
+      createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0300 SUCCESS");
+        mCameraSession.preconfig(camera.PreconfigType.PRECONFIG_1080P, null);
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0300 ERRORCODE: " + err.code);
+        expect(err.code).assertEqual('7400101');
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0400
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0400
+     * @tc.desc   test Photo session preconfig api when second param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0400', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0400--------------");
+      createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0400 SUCCESS");
+        mCameraSession.preconfig(camera.PreconfigType.PRECONFIG_1080P, undefined);
+        done();
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0400 ERRORCODE: " + err.code);
+        expect(err.code).assertEqual('7400101');
+        done();
+      }
+      done();
+    })    
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100
+     * @tc.desc   test Video session preconfig api when first param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100--------------");
+      let mVideoSession: camera.VideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100 SUCCESS");
+        mVideoSession.preconfig(null);
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0100 ERRORCODE: " + err.code);
+        expect(err.code).assertEqual('7400101');
+      } finally {
+        if (mVideoSession) {
+          await mVideoSession.release();
+        }
+        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0200
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0200
+     * @tc.desc   test Video session preconfig api when first param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0200', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0200--------------");
+      let mVideoSession: camera.VideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0200 SUCCESS");
+        mVideoSession.preconfig(undefined);
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0200 ERRORCODE: " + err.code);
+        expect(err.code).assertEqual('7400101');
+      } finally {
+        if (mVideoSession) {
+          await mVideoSession.release();
+        }
+        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0300
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0300
+     * @tc.desc   test Video session preconfig api when second param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0300', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0300--------------");
+      let mVideoSession: camera.VideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0300 SUCCESS");
+        mVideoSession.preconfig(camera.PreconfigType.PRECONFIG_1080P, null);
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0300 ERRORCODE: " + err.code);
+        expect(err.code).assertEqual('7400101');
+      } finally {
+        if (mVideoSession) {
+          await mVideoSession.release();
+        }
+        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0400
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0400
+     * @tc.desc   test Video session preconfig api when second param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0400', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0400--------------");
+      let mVideoSession: camera.VideoSession = mCameraManager.createSession(camera.SceneMode.NORMAL_VIDEO);
+      try {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0400 SUCCESS");
+        mVideoSession.preconfig(camera.PreconfigType.PRECONFIG_1080P, undefined);
+      } catch (error) {
+        let err = error as BusinessError;
+        console.info(TAG + "SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_ERROR_CODE_0400 ERRORCODE: " + err.code);
+        expect(err.code).assertEqual('7400101');
+      } finally {
+        if (mVideoSession) {
+          await mVideoSession.release();
+        }
+        createCameraSessionInstance(camera.SceneMode.NORMAL_PHOTO);
+        done();
+      }
+    })
+
   })
 }
