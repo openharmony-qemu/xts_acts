@@ -28,6 +28,23 @@
 #undef LOG_DOMAIN
 #define LOG_TAG "Hiprofiler"
 #define LOG_DOMAIN 0xD002D0C
+
+static constexpr uint32_t MIN_DURATION_SEC = 1;
+static constexpr uint32_t MAX_DURATION_SEC = 3600;
+static constexpr uint32_t OVER_MAX_DURATION_SEC = 3601;
+static constexpr uint32_t MIN_FILTER_SIZE = 1;
+static constexpr uint32_t MAX_STACK_DEPTH = 30;
+static constexpr uint32_t MAX_STATISTICS_INTERVAL_SEC = 3600;
+static constexpr uint32_t MIN_SAMPLE_INTERVAL_BYTES = 384;
+static constexpr uint32_t MIN_ASYNC_NESTING_DEPTH = 1;
+static constexpr uint32_t MAX_ASYNC_NESTING_DEPTH = 16;
+static constexpr uint32_t MIN_ASYNC_STACK_DEPTH = 1;
+static constexpr uint32_t MAX_ASYNC_STACK_DEPTH = 256;
+static constexpr uint32_t VALID_STATISTICS_INTERVAL_ZERO = 0;
+static constexpr uint32_t VALID_STACK_DEPTH_ZERO = 0;
+static constexpr uint32_t BELOW_MIN_DURATION_SEC = 0;
+static constexpr uint32_t VALID_ASYNC_TASK_STACK_DEPTH = 16;
+
 std::vector<uint32_t> tids;
 
 static napi_value Add(napi_env env, napi_callback_info info)
@@ -270,8 +287,8 @@ static napi_value TestStartProfilerWithOptions(napi_env env, napi_callback_info 
         return result;
     }
     OH_HiDebug_SetMaxDurationSec(opts, maxDuration);
-    OH_HiDebug_SetFilterSize(opts, 1);
-    OH_HiDebug_SetSampleIntervalBytes(opts, 384);
+    OH_HiDebug_SetFilterSize(opts, MIN_FILTER_SIZE);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
     HiDebug_ErrorCode code = OH_HiDebug_StartProfilerWithOptions(
         static_cast<OH_HiDebug_ResourceType>(resourceType), opts, OnProfilerOptionsResult);
     OH_HiDebug_DestroyProfilerOptions(opts);
@@ -302,7 +319,7 @@ static napi_value TestStartProfilerWithOptionsNullOpts(napi_env env, napi_callba
 static napi_value TestSetMaxAsyncNestingDepthNull(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestSetMaxAsyncNestingDepthNull start");
-    HiDebug_ErrorCode code = OH_HiDebug_SetMaxAsyncNestingDepth(nullptr, 1);
+    HiDebug_ErrorCode code = OH_HiDebug_SetMaxAsyncNestingDepth(nullptr, MIN_ASYNC_NESTING_DEPTH);
     napi_value result;
     napi_create_int32(env, code, &result);
     return result;
@@ -311,7 +328,7 @@ static napi_value TestSetMaxAsyncNestingDepthNull(napi_env env, napi_callback_in
 static napi_value TestSetMaxAsyncTaskStackDepthNull(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestSetMaxAsyncTaskStackDepthNull start");
-    HiDebug_ErrorCode code = OH_HiDebug_SetMaxAsyncTaskStackDepth(nullptr, 1);
+    HiDebug_ErrorCode code = OH_HiDebug_SetMaxAsyncTaskStackDepth(nullptr, MIN_ASYNC_STACK_DEPTH);
     napi_value result;
     napi_create_int32(env, code, &result);
     return result;
@@ -320,7 +337,7 @@ static napi_value TestSetMaxAsyncTaskStackDepthNull(napi_env env, napi_callback_
 static napi_value TestSetSampleIntervalBytesNull(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestSetSampleIntervalBytesNull start");
-    HiDebug_ErrorCode code = OH_HiDebug_SetSampleIntervalBytes(nullptr, 384);
+    HiDebug_ErrorCode code = OH_HiDebug_SetSampleIntervalBytes(nullptr, MIN_SAMPLE_INTERVAL_BYTES);
     napi_value result;
     napi_create_int32(env, code, &result);
     return result;
@@ -329,7 +346,7 @@ static napi_value TestSetSampleIntervalBytesNull(napi_env env, napi_callback_inf
 static napi_value TestSetStatisticsIntervalSecNull(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestSetStatisticsIntervalSecNull start");
-    HiDebug_ErrorCode code = OH_HiDebug_SetStatisticsIntervalSec(nullptr, 0);
+    HiDebug_ErrorCode code = OH_HiDebug_SetStatisticsIntervalSec(nullptr, VALID_STATISTICS_INTERVAL_ZERO);
     napi_value result;
     napi_create_int32(env, code, &result);
     return result;
@@ -338,7 +355,7 @@ static napi_value TestSetStatisticsIntervalSecNull(napi_env env, napi_callback_i
 static napi_value TestSetMaxStackDepthNull(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestSetMaxStackDepthNull start");
-    HiDebug_ErrorCode code = OH_HiDebug_SetMaxStackDepth(nullptr, 0);
+    HiDebug_ErrorCode code = OH_HiDebug_SetMaxStackDepth(nullptr, VALID_STACK_DEPTH_ZERO);
     napi_value result;
     napi_create_int32(env, code, &result);
     return result;
@@ -347,7 +364,7 @@ static napi_value TestSetMaxStackDepthNull(napi_env env, napi_callback_info info
 static napi_value TestSetFilterSizeNull(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestSetFilterSizeNull start");
-    HiDebug_ErrorCode code = OH_HiDebug_SetFilterSize(nullptr, 1);
+    HiDebug_ErrorCode code = OH_HiDebug_SetFilterSize(nullptr, MIN_FILTER_SIZE);
     napi_value result;
     napi_create_int32(env, code, &result);
     return result;
@@ -356,7 +373,7 @@ static napi_value TestSetFilterSizeNull(napi_env env, napi_callback_info info)
 static napi_value TestSetMaxDurationSecNull(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "testTag TestSetMaxDurationSecNull start");
-    HiDebug_ErrorCode code = OH_HiDebug_SetMaxDurationSec(nullptr, 1);
+    HiDebug_ErrorCode code = OH_HiDebug_SetMaxDurationSec(nullptr, MIN_DURATION_SEC);
     napi_value result;
     napi_create_int32(env, code, &result);
     return result;
@@ -393,8 +410,8 @@ static napi_value TestStartProfilerWithOptionsNullCallback(napi_env env, napi_ca
         return result;
     }
     OH_HiDebug_SetMaxDurationSec(opts, maxDuration);
-    OH_HiDebug_SetFilterSize(opts, 1);
-    OH_HiDebug_SetSampleIntervalBytes(opts, 384);
+    OH_HiDebug_SetFilterSize(opts, MIN_FILTER_SIZE);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
     HiDebug_ErrorCode code = OH_HiDebug_StartProfilerWithOptions(
         static_cast<OH_HiDebug_ResourceType>(resourceType), opts, nullptr);
     OH_HiDebug_DestroyProfilerOptions(opts);
@@ -412,8 +429,8 @@ static napi_value TestSetMaxDurationSecInvalidReturn(napi_env env, napi_callback
         napi_create_int32(env, -1, &result);
         return result;
     }
-    HiDebug_ErrorCode code1 = OH_HiDebug_SetMaxDurationSec(opts, 0);
-    HiDebug_ErrorCode code2 = OH_HiDebug_SetMaxDurationSec(opts, 3601);
+    HiDebug_ErrorCode code1 = OH_HiDebug_SetMaxDurationSec(opts, BELOW_MIN_DURATION_SEC);
+    HiDebug_ErrorCode code2 = OH_HiDebug_SetMaxDurationSec(opts, OVER_MAX_DURATION_SEC);
     OH_HiDebug_DestroyProfilerOptions(opts);
     napi_value resultObj;
     napi_create_object(env, &resultObj);
@@ -482,13 +499,13 @@ static napi_value TestCreateAndDestroyProfilerOptions(napi_env env, napi_callbac
         napi_create_int32(env, 0, &result);
         return result;
     }
-    OH_HiDebug_SetMaxDurationSec(opts, 1);
-    OH_HiDebug_SetFilterSize(opts, 1);
-    OH_HiDebug_SetSampleIntervalBytes(opts, 384);
-    OH_HiDebug_SetStatisticsIntervalSec(opts, 0);
-    OH_HiDebug_SetMaxStackDepth(opts, 30);
-    OH_HiDebug_SetMaxAsyncNestingDepth(opts, 1);
-    OH_HiDebug_SetMaxAsyncTaskStackDepth(opts, 16);
+    OH_HiDebug_SetMaxDurationSec(opts, MIN_DURATION_SEC);
+    OH_HiDebug_SetFilterSize(opts, MIN_FILTER_SIZE);
+    OH_HiDebug_SetSampleIntervalBytes(opts, MIN_SAMPLE_INTERVAL_BYTES);
+    OH_HiDebug_SetStatisticsIntervalSec(opts, VALID_STATISTICS_INTERVAL_ZERO);
+    OH_HiDebug_SetMaxStackDepth(opts, MAX_STACK_DEPTH);
+    OH_HiDebug_SetMaxAsyncNestingDepth(opts, MIN_ASYNC_NESTING_DEPTH);
+    OH_HiDebug_SetMaxAsyncTaskStackDepth(opts, VALID_ASYNC_TASK_STACK_DEPTH);
     OH_HiDebug_DestroyProfilerOptions(opts);
     napi_value result;
     napi_create_int32(env, 1, &result);
@@ -504,13 +521,13 @@ static napi_value TestSetAllOptionsBoundary(napi_env env, napi_callback_info inf
         napi_create_int32(env, 0, &result);
         return result;
     }
-    HiDebug_ErrorCode code1 = OH_HiDebug_SetMaxAsyncNestingDepth(opts, 16);
-    HiDebug_ErrorCode code2 = OH_HiDebug_SetMaxAsyncTaskStackDepth(opts, 256);
+    HiDebug_ErrorCode code1 = OH_HiDebug_SetMaxAsyncNestingDepth(opts, MAX_ASYNC_NESTING_DEPTH);
+    HiDebug_ErrorCode code2 = OH_HiDebug_SetMaxAsyncTaskStackDepth(opts, MAX_ASYNC_STACK_DEPTH);
     HiDebug_ErrorCode code3 = OH_HiDebug_SetSampleIntervalBytes(opts, UINT32_MAX);
-    HiDebug_ErrorCode code4 = OH_HiDebug_SetStatisticsIntervalSec(opts, 3600);
-    HiDebug_ErrorCode code5 = OH_HiDebug_SetMaxStackDepth(opts, 30);
+    HiDebug_ErrorCode code4 = OH_HiDebug_SetStatisticsIntervalSec(opts, MAX_STATISTICS_INTERVAL_SEC);
+    HiDebug_ErrorCode code5 = OH_HiDebug_SetMaxStackDepth(opts, MAX_STACK_DEPTH);
     HiDebug_ErrorCode code6 = OH_HiDebug_SetFilterSize(opts, UINT32_MAX);
-    HiDebug_ErrorCode code7 = OH_HiDebug_SetMaxDurationSec(opts, 3600);
+    HiDebug_ErrorCode code7 = OH_HiDebug_SetMaxDurationSec(opts, MAX_DURATION_SEC);
     OH_HiDebug_DestroyProfilerOptions(opts);
     napi_value resultObj;
     napi_create_object(env, &resultObj);
