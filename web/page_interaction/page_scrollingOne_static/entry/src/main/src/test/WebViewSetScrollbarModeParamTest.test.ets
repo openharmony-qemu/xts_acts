@@ -90,7 +90,7 @@ export default function webViewSetScrollbarModeParamTest():void {
     it('testSetScrollbarModeParamInvalidEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testSetScrollbarModeParamInvalidEnum001", 10)
       await Utils.msSleep(1000)
-      Utils.registerEvent("testSetScrollbarModeParamInvalidEnum001", "0", 202608263, done);
+      Utils.registerEvent("testSetScrollbarModeParamInvalidEnum001", "401", 202608263, done);
       await Utils.msSleep(1000)
       inspector.sendEventByKey('SetScrollbarModeParamTestButton', 10, '');
       await Utils.msSleep(5000);
@@ -108,7 +108,7 @@ export default function webViewSetScrollbarModeParamTest():void {
     it('testSetScrollbarModeParamInvalidEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testSetScrollbarModeParamInvalidEnum002", 10)
       await Utils.msSleep(1000)
-      Utils.registerEvent("testSetScrollbarModeParamInvalidEnum002", "0", 202608264, done);
+      Utils.registerEvent("testSetScrollbarModeParamInvalidEnum002", "401", 202608264, done);
       await Utils.msSleep(1000)
       inspector.sendEventByKey('SetScrollbarModeParamTestButton', 10, '');
       await Utils.msSleep(5000);
