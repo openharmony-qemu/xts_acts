@@ -60,11 +60,7 @@ export default function RefreshAttributeTest() {
       arkuiNewLog(SUITE, 'afterEach', 'start');
 
       AppStorage.delete('refreshAttr_ready');
-      try {
-        await Utils.sleep(SLEEP_TIME);
-      } catch (err) {
-        console.info('RefreshAttributeTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(SLEEP_TIME);
       arkuiNewLog(SUITE, 'afterEach', 'end');
     });
 

@@ -55,11 +55,7 @@ export default function refreshOffsetUndefined() {
      */
     it('refreshOffsetUndefined_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[refreshOffsetUndefined_static_0100] START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('refreshOffsetUndefined_test sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('refresh_offset_undefined');
       let obj = JSON.parseJsonElement(strJson);
       let defStrJson = inspector.getInspectorByKey('refresh_offset_noSet');

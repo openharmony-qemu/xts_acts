@@ -61,11 +61,7 @@ export default function WaterFlowFuncTest() {
       arkuiNewLog(SUITE, 'afterEach', 'start');
 
       AppStorage.delete('wfAttr_wire');
-      try {
-        await Utils.sleep(SLEEP_TIME);
-      } catch (err) {
-        arkuiNewErr(SUITE, 'afterEach', 'sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(SLEEP_TIME);
       arkuiNewLog(SUITE, 'afterEach', 'end');
     });
 

@@ -49,11 +49,7 @@ export default function WaterFlowAttributeTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await Utils.sleep(200);
-      } catch (err) {
-        console.info('WaterFlowAttributeTest afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(200);
     });
 
     // ============================================================
