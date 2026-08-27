@@ -56,7 +56,7 @@ export default function BackgroundLoaderNoPermissionTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_NO_PERMISSION_0100 registerTask failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+        expect(e.code).assertEqual(PERMISSION_DENIED_CODE);
         done();
       }
     })
@@ -83,7 +83,7 @@ export default function BackgroundLoaderNoPermissionTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_NO_PERMISSION_0200 unregisterTask failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+        expect(e.code).assertEqual(PERMISSION_DENIED_CODE);
         done();
       }
     })
@@ -131,7 +131,7 @@ export default function BackgroundLoaderNoPermissionTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_NO_PERMISSION_0400 finishTask failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(PERMISSION_DENIED_CODE);
+        expect(e.code).assertEqual(PERMISSION_DENIED_CODE);
         done();
       }
     })
