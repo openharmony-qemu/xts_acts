@@ -8,7 +8,8 @@ export enum EventType {
   RECENT_PHOTO_INFO,
   VIDEO_PLAY_STATE,
   ITEM_CLICKED_NOTIFY,
-  COMPLETED_RESULT
+  COMPLETED_RESULT,
+  UNSELECTABLE_EVENT_CODE,
 }
 
 export default class CommonFunc {
