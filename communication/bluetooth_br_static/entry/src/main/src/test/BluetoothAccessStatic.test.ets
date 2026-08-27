@@ -648,14 +648,14 @@ export default function bluetoothAccessTest() {
             done();
         })
         /**
-         * @tc.number  testconvertUuid_001
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
          * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
          * @tc.desc    Test deletePersistentDeviceId API functionality
          * @tc.level   Level 0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
-        it("testconvertUuid_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let uuid = '1801';
                 let converuuid = access.convertUuid(uuid);
@@ -668,14 +668,14 @@ export default function bluetoothAccessTest() {
             done();
         });
         /**
-         * @tc.number  testconvertUuid_002
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
          * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0200
          * @tc.desc    Test deletePersistentDeviceId API functionality
          * @tc.level   Level 0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
-        it("testconvertUuid_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let uuid = '12341801';
                 let converuuid = access.convertUuid(uuid);
@@ -688,14 +688,14 @@ export default function bluetoothAccessTest() {
             done();
         });
         /**
-         * @tc.number  testconvertUuid_003
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100
          * @tc.name    SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0300
          * @tc.desc    Test deletePersistentDeviceId API functionality
          * @tc.level   Level 0
          * @tc.type    Function
          * @tc.size    MEDIUMTEST
          */
-        it("testconvertUuid_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        it("SUB_COMMUNICATION_BLUETOOTH_ACCESS_CONVERTUUID_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 let uuid = '11112222-3333-4444-5555-666677778888';
                 let converuuid = access.convertUuid(uuid);
