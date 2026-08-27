@@ -89,9 +89,11 @@ export default function GetFrameNodeByUniqueIdTest() {
         expect(objAfter.getElement('$attrs').getString('height')).assertEqual('60.00vp');
 
         console.info('[GetFrameNodeByUniqueIdTest_0100] END');
+        done();
       } catch (error) {
         console.error('[GetFrameNodeByUniqueIdTest_0100] error: ' + JSON.stringify(error));
         expect(false).assertTrue();
+        done();
       }
     })
 
@@ -118,9 +120,11 @@ export default function GetFrameNodeByUniqueIdTest() {
         AppStorage.delete('getFrameNodeByUniqueIdNonExistentResult');
 
         console.info('[GetFrameNodeByUniqueIdTest_0200] END');
+        done();
       } catch (error) {
         console.error('[GetFrameNodeByUniqueIdTest_0200] error: ' + JSON.stringify(error));
         expect(false).assertTrue();
+        done();
       }
     })
   })
