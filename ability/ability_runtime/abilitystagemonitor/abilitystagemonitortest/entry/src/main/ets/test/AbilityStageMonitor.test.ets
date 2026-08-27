@@ -73,7 +73,7 @@ export default function abilityStageMonitorTest() {
         console.info("SUB_AA_AbilityStage_0100 wait abilityStage");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "feature_assista",
-          srcEntrance: "./ets/Application/MyAbilityStage.ts",
+          srcEntrance: "./ets/Application/MyAbilityStage.ets",
         }, (err, data) => {
           console.log("SUB_AA_AbilityStage_0100 waitAbilityStageMonitor callback " +
             "err = " + err + ", data = " + JSON.stringify(data));
@@ -121,7 +121,7 @@ export default function abilityStageMonitorTest() {
 
       abilityDelegator.waitAbilityStageMonitor({
         moduleName: "feature_assistd",
-        srcEntrance: "./ets/Application/MyAbilityStage.ts",
+        srcEntrance: "./ets/Application/MyAbilityStage.ets",
       }).then((abilityStage) => {
         console.log("SUB_AA_AbilityStageMonitor_0200 waitAbilityStageMonitor promise " +
           "abilityStage: " + JSON.stringify(abilityStage));
@@ -168,7 +168,7 @@ export default function abilityStageMonitorTest() {
         console.info("SUB_AA_AbilityStageMonitor_0300 wait abilityStage");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "feature_assistf",
-          srcEntrance: "./ets/Application/MyAbilityStage.ts",
+          srcEntrance: "./ets/Application/MyAbilityStage.ets",
         }, timeout, (err, data) => {
           moduleName1 = data.context.currentHapModuleInfo.name;
           console.info("SUB_AA_AbilityStageMonitor_0300 waitAbilityStageMonitor callback, err: " +
@@ -216,7 +216,7 @@ export default function abilityStageMonitorTest() {
 
       abilityDelegator.waitAbilityStageMonitor({
         moduleName: "feature_assistc",
-        srcEntrance: "./ets/Application/MyAbilityStage.ts",
+        srcEntrance: "./ets/Application/MyAbilityStage.ets",
       }, timeout).then((abilityStage) => {
         moduleName1 = abilityStage.context.currentHapModuleInfo.name;
         console.info("stageMonitor waitAbilityStageMonitor callback, abilityStage: " +
@@ -357,7 +357,7 @@ export default function abilityStageMonitorTest() {
 
       await abilityDelegator.addAbilityStageMonitor({
         moduleName: "feature_assisth",
-        srcEntrance: "./ets/Application/MyAbilityStage.ts",
+        srcEntrance: "./ets/Application/MyAbilityStage.ets",
       }).then((data) => {
         console.info("stageMonitor addAbilityStageMonitor promise, data = " + data);
         addMonitor = true;
@@ -369,7 +369,7 @@ export default function abilityStageMonitorTest() {
 
       await abilityDelegator.waitAbilityStageMonitor({
         moduleName: "feature_assisth",
-        srcEntrance: "./ets/Application/MyAbilityStage.ts",
+        srcEntrance: "./ets/Application/MyAbilityStage.ets",
       }).then((abilityStage) => {
         console.info("stageMonitor waitAbilityStageMonitor callback, abilityStage: " + JSON.stringify(abilityStage));
       }).catch((err:BusinessError) => {
@@ -381,7 +381,7 @@ export default function abilityStageMonitorTest() {
 
       await abilityDelegator.removeAbilityStageMonitor({
         moduleName: "feature_assisth",
-        srcEntrance: "./ets/Application/MyAbilityStage.ts",
+        srcEntrance: "./ets/Application/MyAbilityStage.ets",
       }).then((data) => {
         console.info("stageMonitor addAbilityStageMonitor promise, data = " + data);
         removeMonitor = true;

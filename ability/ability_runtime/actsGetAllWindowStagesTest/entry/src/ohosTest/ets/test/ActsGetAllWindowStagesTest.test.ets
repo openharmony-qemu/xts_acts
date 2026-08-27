@@ -1106,7 +1106,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
