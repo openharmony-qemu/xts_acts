@@ -1597,5 +1597,39 @@ export default function cameraSessionFocusTest() {
       done();
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_OFF_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_OFF_ERROR_0100
+     * @tc.desc   camera session callback off error with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_OFF_ERROR_0100', Level.LEVEL1, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_OFF_ERROR_0100--------------");
+      if (isEmpty(mCameraSession)) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_OFF_ERROR_0100 previewOutput == null || undefined")
+        expect().assertFail();
+      } else {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_OFF_ERROR_0100 to operate");
+
+        let errorCallback = async (err: BusinessError) => {
+          if (!err) {
+            expect(true).assertTrue();
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_OFF_ERROR_0100 success");
+          } else {
+            expect().assertFail();
+            console.info(TAG + "Error in SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_OFF_ERROR_0100 FAILED: " + err.message);
+          }
+          done();
+        }
+        
+        mCameraSession.on('error', errorCallback)
+        mCameraSession.off('error', errorCallback)
+      }
+      done();
+    })
+
   })
 }
