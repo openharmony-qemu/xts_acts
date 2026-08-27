@@ -17,6 +17,7 @@ group("concurrency_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "asynclock_static:ActsAsynclockModuleStaticTest",
       "asynclock_test_static:ActsAsyncLockStaticTest",
       "atomics_test_static:ActsAtomicsStaticTest",
       "async_test_static:ActsAsyncStaticTest",
