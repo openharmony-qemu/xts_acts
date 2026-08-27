@@ -25,6 +25,7 @@ import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { surfaceIds } from '../testability/pages/Index';
 
 const TAG = "CameraVideoQualityPrioritizationTest: ";
+const INVALID_ARGUMENT = "401"
 
 let mCameraManager: cameraObj.CameraManager;
 let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
@@ -703,7 +704,7 @@ export default function CameraVideoQualityPrioritizationTest() {
             console.info(TAG +
               `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_0400 error: ${err}, ${err.code}, ${err.message}`);
             await stopCameraSession();
-            expect(err.code === "401").assertTrue();
+            expect(err.code).assertEqual(INVALID_ARGUMENT);
             done();
           }
         }
@@ -743,7 +744,7 @@ export default function CameraVideoQualityPrioritizationTest() {
             console.info(TAG +
               `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_0500 error: ${err}, ${err.code}, ${err.message}`);
             await stopCameraSession();
-            expect(err.code === "401").assertTrue();
+            expect(err.code).assertEqual(INVALID_ARGUMENT);
             done();
           }
         }

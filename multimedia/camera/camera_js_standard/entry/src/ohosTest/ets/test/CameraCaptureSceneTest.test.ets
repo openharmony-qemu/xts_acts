@@ -24,6 +24,7 @@ import common from '@ohos.app.ability.common';
 import image from '@ohos.multimedia.image';
 
 const TAG = "cameraCaptureSceneTest: ";
+const CAMERA_INVALID_ARGUMENT = "7400101"
 
 let context: common.UIAbilityContext;
 let testContext = getContext();
@@ -555,7 +556,7 @@ export default function cameraCaptureSceneTest() {
           expect().assertFail()
         } catch (err) {
           console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
-          expect(err.code === "7400101").assertTrue()
+          expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT)
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -605,7 +606,7 @@ export default function cameraCaptureSceneTest() {
           expect().assertFail()
         } catch (err) {
           console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
-          expect(err.code === "7400101").assertTrue()
+          expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT)
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -661,7 +662,7 @@ export default function cameraCaptureSceneTest() {
           expect().assertFail()
         } catch (err) {
           console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
-          expect(err.code === "7400101").assertTrue()
+          expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT)
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -717,7 +718,7 @@ export default function cameraCaptureSceneTest() {
           expect().assertFail()
         } catch (err) {
           console.info(`${caseName} photoOutput capture error, code: ${err.code}, message: ${err.message}`)
-          expect(err.code === "7400101").assertTrue()
+          expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT)
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {

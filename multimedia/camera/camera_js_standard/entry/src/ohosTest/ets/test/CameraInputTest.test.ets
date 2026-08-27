@@ -22,6 +22,7 @@ import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { BusinessError } from '@ohos.base';
 
 const TAG = "CameraInputTest: ";
+const CAMERA_INVALID_ARGUMENT = "7400101"
 
 // Define global variables
 let mCameraManager: cameraObj.CameraManager;
@@ -846,7 +847,7 @@ export default function CameraInputTest() {
           } catch(err) {
             console.info(TAG + " " + caseName + " open FAILED: " +
             err.code);
-            expect(err.code === "7400101").assertTrue();
+            expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT);
           }
           await cameraInput.close();
         }
@@ -882,7 +883,7 @@ export default function CameraInputTest() {
           } catch(err) {
             console.info(TAG + " " + caseName + " open FAILED: " +
             err.code);
-            expect(err.code === "7400101").assertTrue();
+            expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT);
           }
           await cameraInput.close();
         }
@@ -926,7 +927,7 @@ export default function CameraInputTest() {
           } catch (error) {
             console.info(TAG + "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200 FAILED");
             console.info(TAG + "ERRORCODE: " + error.code);
-            expect(error.code === "7400101").assertTrue()
+            expect(error.code).assertEqual(CAMERA_INVALID_ARGUMENT)
             done();
           }
         }
@@ -970,7 +971,7 @@ export default function CameraInputTest() {
           } catch (error) {
             console.info(TAG + "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300 FAILED");
             console.info(TAG + "ERRORCODE: " + error.code);
-            expect(error.code === "7400101").assertTrue()
+            expect(error.code).assertEqual(CAMERA_INVALID_ARGUMENT)
             done();
           }
         }

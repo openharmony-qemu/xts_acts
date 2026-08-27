@@ -24,6 +24,7 @@ import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const TAG = "CameraMacroTest: ";
+const CAMERA_INVALID_ARGUMENT = "7400101"
 
 let mCameraManager: camera.CameraManager;
 let mCameraDevicesArray: Array<camera.CameraDevice>;
@@ -570,7 +571,7 @@ export default function CameraPhotoSessionTest() {
           }
       } catch (err) {
           console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0400 ERROR" + err.code);
-          expect(err.code).assertEqual("7400101");
+          expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT);
       }
       done();
     })
@@ -603,7 +604,7 @@ export default function CameraPhotoSessionTest() {
           }
       } catch (err) {
           console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0500 ERROR" + err.code);
-          expect(err.code).assertEqual("7400101");
+          expect(err.code).assertEqual(CAMERA_INVALID_ARGUMENT);
       }
       done();
     })
