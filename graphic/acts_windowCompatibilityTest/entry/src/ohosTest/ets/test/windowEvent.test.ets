@@ -29,10 +29,8 @@ async function sleep(time: number) {
   clearTimeout(timeoutId)
 }
 
-
-let driver: UiDriver | null = null;
-
 async function buttonClick(buttonText: string, msgStr: string): Promise<string> {
+  let driver = await UiDriver.create()
   console.info(msgStr + `case come in buttonClick fun`)
   if (!driver) {
     throw new Error(msgStr + 'UiDriver is not initialized');
@@ -58,12 +56,6 @@ export default function windowEventTest(context: common.UIAbilityContext, window
     console.log('describe window_event_test start!!!')
     let tempWnd: window.Window | void;
     let subWin: window.Window | void;
-
-    beforeAll(async () => {
-      console.info('window_event_test beforeAll start!!!');
-      driver = await UiDriver.create();
-      console.info('window_event_test UiDriver created');
-    })
 
     beforeEach(async ()=>{
       let msg = 'window_event_test';
@@ -173,7 +165,7 @@ export default function windowEventTest(context: common.UIAbilityContext, window
           console.info(msgStr + 'touch outside');
           mainWin.off('touchOutside');
           await (tempWnd as window.Window).destroyWindow();
-          await sleep(800)
+          await sleep(5000)
           done();
         });
         console.info(msgStr + 'register touch outside listener successed');
@@ -217,7 +209,7 @@ export default function windowEventTest(context: common.UIAbilityContext, window
           console.info(msgStr + 'touch outside');
           (subWin as window.Window).off('touchOutside');
           await (subWin as window.Window).destroyWindow();
-          await sleep(800)
+          await sleep(5000)
           done();
         });
         console.info(msgStr + 'register touch outside listener successed');
@@ -261,7 +253,7 @@ export default function windowEventTest(context: common.UIAbilityContext, window
           console.info(msgStr + 'touch outside');
           mainWin.off('touchOutside');
           await (subWin as window.Window).destroyWindow();
-          await sleep(800)
+          await sleep(5000)
           done();
         });
         console.info(msgStr + 'register touch outside listener successed');
@@ -365,7 +357,7 @@ export default function windowEventTest(context: common.UIAbilityContext, window
           console.info(msgStr + 'touch dialog target');
           (tempWnd as window.Window).off('dialogTargetTouch');
           await (tempWnd as window.Window).destroyWindow();
-          await sleep(800)
+          await sleep(5000)
           done();
         });
         console.info(msgStr + 'register dialogTargetTouch listener successed');
@@ -490,7 +482,7 @@ export default function windowEventTest(context: common.UIAbilityContext, window
           (tempWnd as window.Window).off('dialogTargetTouch');
           await (subWin as window.Window).destroyWindow();
           await (tempWnd as window.Window).destroyWindow();
-          await sleep(800)
+          await sleep(5000)
           done();
         });
         console.info(msgStr + 'register dialogTargetTouch listener successed');
@@ -780,7 +772,7 @@ export default function windowEventTest(context: common.UIAbilityContext, window
               console.info(msgStr + 'touch outside');
               (subWin as window.Window).off('touchOutside');
               await (subWin as window.Window).destroyWindow();
-              await sleep(800)
+              await sleep(5000)
               done();
             });
             console.info(msgStr + 'register touch outside listener successed');
@@ -840,7 +832,7 @@ export default function windowEventTest(context: common.UIAbilityContext, window
               console.info(msgStr + 'touch outside');
               mainWin.off('touchOutside');
               await (subWin as window.Window).destroyWindow();
-              await sleep(800)
+              await sleep(5000)
               done();
             });
             console.info(msgStr + 'register touch outside listener successed');
@@ -998,7 +990,7 @@ export default function windowEventTest(context: common.UIAbilityContext, window
               (tempWnd as window.Window).off('dialogTargetTouch');
               await (subWin as window.Window).destroyWindow();
               await (tempWnd as window.Window).destroyWindow();
-              await sleep(800)
+              await sleep(5000)
               done();
             });
             console.info(msgStr + 'register dialogTargetTouch listener successed');
