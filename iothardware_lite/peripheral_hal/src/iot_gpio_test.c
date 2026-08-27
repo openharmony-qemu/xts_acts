@@ -165,14 +165,14 @@ LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio008, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.name   testIoTGpio09
+ * @tc.name   testIoTGpio009
  * @tc.number SUB_UTILS_WIFIIOT_API_2600
  * @tc.desc   [C- SOFTWARE -0200]
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
  */
-LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio09, Function | MediumTest | Level1)
+LITE_TEST_CASE(IotGpioTestSuite, testIoTGpio009, Function | MediumTest | Level1)
 {
     IoTGpioSetIsrMask(COMPILABILITY_TEST_GPIO, 0);
 };
