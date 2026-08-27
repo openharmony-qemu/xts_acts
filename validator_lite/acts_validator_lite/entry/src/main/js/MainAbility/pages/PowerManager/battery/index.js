@@ -8,11 +8,9 @@ export default {
     },
 
     onInit() {
-        console.info('onInit');
     },
 
     onDestroy() {
-        console.info('onDestroy');
     },
 
     getInfo() {
@@ -22,17 +20,15 @@ export default {
                 success: function (data) {
                     obj.level = data.level * 100;
                     obj.statusMsg = 'success';
-                    console.info('success get battery level:' + data.level);
                 },
                 fail: function (data, code) {
                     obj.statusMsg = 'fail code: ' + code;
-                    console.info('Subscription faild. code: ' + code + '; Data: ' + data);
-                    getApp().data.testItems.api_battery.errorDetail = 'getStatus fail: code=' + code + ', data=' + data;
+                    getApp().data.testItems['api_battery'].errorDetail = 'getStatus fail: code=' + code + ', data=' + data;
                 }
             });
         } catch (e) {
             console.error('error: ' + e);
-            getApp().data.testItems.api_battery.errorDetail = 'getStatus error: ' + e;
+            getApp().data.testItems['api_battery'].errorDetail = 'getStatus error: ' + e;
             this.statusMsg = 'error: ' + e;
         }
     },
@@ -45,11 +41,11 @@ export default {
         router.replace({ uri: 'pages/PowerManager/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.api_battery.status = 'pass';
+        getApp().data.testItems['api_battery'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.api_battery.status = 'fail';
+        getApp().data.testItems['api_battery'].status = 'fail';
         this.back();
     },
     backClicked() {

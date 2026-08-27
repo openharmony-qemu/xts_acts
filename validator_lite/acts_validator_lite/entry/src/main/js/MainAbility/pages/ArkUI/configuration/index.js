@@ -8,22 +8,19 @@ export default {
     },
 
     onInit() {
-        console.info('onInit');
     },
 
     onDestroy() {
-        console.info('onDestroy');
     },
 
     getInfo() {
         try {
             let info = configuration.getLocale();
-            console.log(JSON.stringify(info));
             this.resultText = '语言: ' + info.language + '\n国家: ' + info.countryOrRegion + '\n文字布局方向: ' + info.dir;
             this.statusMsg = 'success';
         } catch (e) {
             console.error('getLocale error: ' + e);
-            getApp().data.testItems.api_configuration.errorDetail = 'getLocale error: ' + e;
+            getApp().data.testItems['api_configuration'].errorDetail = 'getLocale error: ' + e;
             this.statusMsg = 'error: ' + e;
         }
     },
@@ -36,11 +33,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.api_configuration.status = 'pass';
+        getApp().data.testItems['api_configuration'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.api_configuration.status = 'fail';
+        getApp().data.testItems['api_configuration'].status = 'fail';
         this.back();
     },
     backClicked() {
