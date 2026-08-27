@@ -34,7 +34,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse001
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_0100
        * @tc.desc   test dispatchMouseEvent command with mousePressed type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -51,7 +51,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse002
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_0200
        * @tc.desc   test dispatchMouseEvent command with mouseWheel type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -68,7 +68,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse003
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_0300
        * @tc.desc   test dispatchMouseEvent command with invalid type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -85,7 +85,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse004
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3100
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_0400
        * @tc.desc   test dispatchMouseEvent command with missing type param
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -102,7 +102,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse005
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3200
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_0500
        * @tc.desc   test dispatchMouseEvent command with mouseReleased type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -119,7 +119,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse006
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3300
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_0600
        * @tc.desc   test dispatchMouseEvent command with mouseMoved type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -136,7 +136,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse007
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3400
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_0700
        * @tc.desc   test dispatchMouseEvent command with params not object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -153,7 +153,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse008
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3500
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_0800
        * @tc.desc   test dispatchMouseEvent command with browser or host is null
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -170,7 +170,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse009
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3600
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_0900
        * @tc.desc   test dispatchMouseEvent command with missing y param
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -187,7 +187,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse010
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3700
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1000
        * @tc.desc   test dispatchMouseEvent command with type not string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -204,7 +204,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse011
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1100
        * @tc.desc   test dispatchMouseEvent command with x not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -221,7 +221,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse012
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1200
        * @tc.desc   test dispatchMouseEvent command with y not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -238,7 +238,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse013
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1300
        * @tc.desc   test dispatchMouseEvent command with timestamp not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -255,7 +255,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse014
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4100
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1400
        * @tc.desc   test dispatchMouseEvent command with force not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -272,7 +272,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse015
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4200
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1500
        * @tc.desc   test dispatchMouseEvent command with tangentialPressure not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -289,7 +289,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse016
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4300
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1600
        * @tc.desc   test dispatchMouseEvent command with tiltX not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -306,7 +306,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse017
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4400
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1700
        * @tc.desc   test dispatchMouseEvent command with tiltY not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -323,7 +323,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse018
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4500
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1800
        * @tc.desc   test dispatchMouseEvent command with deltaX not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -340,7 +340,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse019
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4600
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_1900
        * @tc.desc   test dispatchMouseEvent command with deltaY not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -357,7 +357,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse020
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4700
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2000
        * @tc.desc   test dispatchMouseEvent command with modifiers not integer
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -374,7 +374,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse021
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2100
        * @tc.desc   test dispatchMouseEvent command with buttons not integer
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -391,7 +391,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse022
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2200
        * @tc.desc   test dispatchMouseEvent command with clickCount not integer
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -408,7 +408,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse023
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2300
        * @tc.desc   test dispatchMouseEvent command with twist not integer
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -425,7 +425,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse024
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5100
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2400
        * @tc.desc   test dispatchMouseEvent command with button invalid value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -442,7 +442,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse025
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5200
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2500
        * @tc.desc   test dispatchMouseEvent command with pointerType not string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -459,7 +459,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchMouse026
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5300
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2600
        * @tc.desc   test dispatchMouseEvent command with pointerType not mouse
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -476,7 +476,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey001
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5400
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2700
        * @tc.desc   test dispatchKeyEvent command with keyDown type and key A
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -493,7 +493,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey002
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5500
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2800
        * @tc.desc   test dispatchKeyEvent command with invalid type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -510,7 +510,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey003
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5600
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_2900
        * @tc.desc   test dispatchKeyEvent command with missing type param
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -527,7 +527,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey004
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5700
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3000
        * @tc.desc   test dispatchKeyEvent command with keyUp type and key A
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -544,7 +544,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey005
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3100
        * @tc.desc   test dispatchKeyEvent command with rawKeyDown type and key A
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -561,7 +561,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey006
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3200
        * @tc.desc   test dispatchKeyEvent command with char type and key A
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -578,7 +578,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey007
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3300
        * @tc.desc   test dispatchKeyEvent command with params not object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -595,7 +595,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey008
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6100
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3400
        * @tc.desc   test dispatchKeyEvent command with browser or host is null
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -612,7 +612,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey009
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6200
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3500
        * @tc.desc   test dispatchKeyEvent command with type not string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -629,7 +629,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey010
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6300
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3600
        * @tc.desc   test dispatchKeyEvent command with text not string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -646,7 +646,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey011
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6400
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3700
        * @tc.desc   test dispatchKeyEvent command with unmodifiedText not string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -663,7 +663,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey012
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6500
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3800
        * @tc.desc   test dispatchKeyEvent command with key not string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -680,7 +680,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey013
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6600
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_3900
        * @tc.desc   test dispatchKeyEvent command with code not string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -697,7 +697,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey014
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6700
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4000
        * @tc.desc   test dispatchKeyEvent command with timestamp not number
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -714,7 +714,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey015
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4100
        * @tc.desc   test dispatchKeyEvent command with modifiers not integer
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -731,7 +731,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey016
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4200
        * @tc.desc   test dispatchKeyEvent command with windowsVirtualKeyCode not integer
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -748,7 +748,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey017
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4300
        * @tc.desc   test dispatchKeyEvent command with nativeVirtualKeyCode not integer
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -765,7 +765,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey018
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7100
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4400
        * @tc.desc   test dispatchKeyEvent command with location not integer
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -782,7 +782,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey019
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7200
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4500
        * @tc.desc   test dispatchKeyEvent command with autoRepeat not boolean
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -799,7 +799,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey020
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7300
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4600
        * @tc.desc   test dispatchKeyEvent command with isKeypad not boolean
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -816,7 +816,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey021
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7400
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4700
        * @tc.desc   test dispatchKeyEvent command with isSystemKey not boolean
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -833,7 +833,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey022
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7500
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4800
        * @tc.desc   test dispatchKeyEvent command with isForwarded not boolean
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -850,7 +850,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testDispatchKey023
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7600
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_4900
        * @tc.desc   test dispatchKeyEvent command with commands not array
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -867,7 +867,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput001
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7700
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5000
        * @tc.desc   test input command with valid xpath, type text and value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -884,7 +884,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput002
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5100
        * @tc.desc   test input command with valid xpath, type number and value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -901,7 +901,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput003
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5200
        * @tc.desc   test input command with empty params (missing xpath)
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -918,7 +918,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput004
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5300
        * @tc.desc   test input command with missing xpath/id param
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -935,7 +935,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput005
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8100
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5400
        * @tc.desc   test input command with xpath field not string type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -952,7 +952,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput006
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8200
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5500
        * @tc.desc   test input command with value field not string type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -969,7 +969,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput007
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8300
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5600
        * @tc.desc   test input command with unsupported input type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -986,7 +986,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput008
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8400
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5700
        * @tc.desc   test input command with invalid value format for number type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1003,7 +1003,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput009
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8500
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5800
        * @tc.desc   test input command with input type mismatch with actual element
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1020,7 +1020,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput010
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8600
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_5900
        * @tc.desc   test input command with id and xpath both provided
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1037,7 +1037,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput011
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8700
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6000
        * @tc.desc   test input command with default type and value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1054,7 +1054,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput012
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6100
        * @tc.desc   test input command with email type and value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1071,7 +1071,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput013
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6200
        * @tc.desc   test input command with date type and value
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1088,7 +1088,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput014
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6300
        * @tc.desc   test input command with params not object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1105,7 +1105,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput015
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9100
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6400
        * @tc.desc   test input command with xpath not matching any element
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1122,7 +1122,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput016
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9200
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6500
        * @tc.desc   test input command with browser or host is null
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1139,7 +1139,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput017
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9300
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6600
        * @tc.desc   test input command with target element not input
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1156,7 +1156,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput018
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9400
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6700
        * @tc.desc   test input command with checkbox type mismatch
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1173,7 +1173,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput019
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9500
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6800
        * @tc.desc   test input command with missing type param
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1190,7 +1190,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput020
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9600
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_6900
        * @tc.desc   test input command with id not string type
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1207,7 +1207,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput021
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9700
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7000
        * @tc.desc   test input command with xpath empty string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1224,7 +1224,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testInput022
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7100
        * @tc.desc   test input command with type not string
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1241,7 +1241,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testScroll001
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7200
        * @tc.desc   test scroll command with x, y and deltaY params
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1258,7 +1258,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testScroll002
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7300
        * @tc.desc   test scroll command with empty params
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1275,7 +1275,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testScroll003
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10100
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7400
        * @tc.desc   test scroll command with partial params (only x)
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1292,7 +1292,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testScroll004
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10200
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7500
        * @tc.desc   test scroll command with params not JSON object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1309,7 +1309,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testScroll005
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10300
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7600
        * @tc.desc   test scroll command with valid-format id that does not exist
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1326,7 +1326,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testScroll006
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10400
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7700
        * @tc.desc   test scroll command with invalid-format id
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1343,7 +1343,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testScroll007
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10500
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7800
        * @tc.desc   test scroll command with browser or host is null
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1360,7 +1360,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testScroll008
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10600
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_7900
        * @tc.desc   test scroll command with valid x, y and deltaY params
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1377,7 +1377,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testScroll009
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10700
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8000
        * @tc.desc   test scroll command with speed equals 0
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1394,7 +1394,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect001
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8100
        * @tc.desc   test select command with valid xpath and indexes
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1411,7 +1411,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect002
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_10900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8200
        * @tc.desc   test select command with valid xpath and values
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1428,7 +1428,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect003
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8300
        * @tc.desc   test select command with empty params (missing xpath)
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1445,7 +1445,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect004
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11100
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8400
        * @tc.desc   test select command with params not JSON object
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1462,7 +1462,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect005
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11200
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8500
        * @tc.desc   test select command with element not found
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1479,7 +1479,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect006
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11300
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8600
        * @tc.desc   test select command with browser or host is null
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1496,7 +1496,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect007
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11400
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8700
        * @tc.desc   test select command with target element is not select
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1513,7 +1513,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect008
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11500
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8800
        * @tc.desc   test select command with indexes and values both empty
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1530,7 +1530,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect009
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11600
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_8900
        * @tc.desc   test select command with index out of bounds
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1547,7 +1547,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect010
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11700
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9000
        * @tc.desc   test select command with value not found in options
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1564,7 +1564,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect011
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11800
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9100
        * @tc.desc   test select command with single select with multiple indexes
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1581,7 +1581,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect012
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_11900
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9200
        * @tc.desc   test select command with selected option is disabled
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
@@ -1598,7 +1598,7 @@ export default function ExecuteAIPageCommandInteractionTest() {
 
       /**
        * @tc.name   testSelect013
-       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_12000
+       * @tc.number SUB_WEB_WEBVIEWCONTROLLER_EXECUTEAI_PAGECOMMAND_INTERACTION_9300
        * @tc.desc   test select command with id and xpath both provided
        * @tc.type   FUNCTION
        * @tc.size   MEDIUMTEST
