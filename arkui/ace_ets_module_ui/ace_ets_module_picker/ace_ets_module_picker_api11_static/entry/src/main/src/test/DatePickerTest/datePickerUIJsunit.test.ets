@@ -13,24 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import Utils from '../../../ets/MainAbility/common/Utils';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 function sleep(time: int):Promise<int> {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -42,10 +32,6 @@ const waitUiReadyMs = 1000;
 
 export default function  datePickerUIJsunit() {
   describe('datePickerUIJsunit', () => {
-
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("datePickerUIJsunit beforeEach start");
@@ -96,7 +82,7 @@ export default function  datePickerUIJsunit() {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('changeLunarbtn'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('datePickerUI');
       let obj = JSON.parseJsonElement(strJson);
@@ -104,7 +90,7 @@ export default function  datePickerUIJsunit() {
       expect(obj.getElement('$attrs').getString('lunar')).assertEqual('true');
 
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let strJson2 = inspector.getInspectorByKey('datePickerUI');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[datePickerUIJsunit_0200] component obj2 is: " + JSON.stringify(obj2));

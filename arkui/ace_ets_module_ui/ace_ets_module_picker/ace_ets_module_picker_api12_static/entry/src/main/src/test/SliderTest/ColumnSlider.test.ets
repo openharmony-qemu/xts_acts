@@ -16,29 +16,15 @@
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
-import hilog from '@ohos.hilog';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function ColumnSliderTest() {
   describe('ColumnSliderTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("ColumnSliderTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
-
-      console.info("ColumnSliderTest beforeAll end");
-    });
 
     const routerPush = async (target:string) => {
       let options:router.RouterOptions = {
@@ -53,7 +39,7 @@ export default function ColumnSliderTest() {
         if (!(target == pages.name)) {
           routerInstance.pushUrl(options);
           // let result = routerInstance.pushUrl(options);
-          await Utils.sleep(2000);
+          await Utils.sleep(1000);
           // console.info(`push ${target} page result:` + JSON.stringify(result));
           let pages = routerInstance.getState();
           expect(pages.name).assertContain(target)
