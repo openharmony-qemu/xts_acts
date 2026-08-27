@@ -2464,14 +2464,14 @@ export default function bluetoothConnectionTest() {
           done();
       })
     /**
-     * @tc.number  disconnectAllowedProfiles_promise_001
+     * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0100
      * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0100
      * @tc.desc    Test disconnectAllowedProfiles_promise API 入参正常
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("disconnectAllowedProfiles_promise_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await connection.disconnectAllowedProfiles(deviceId_invalid);
         hilog.info(domain, tag, 'disconnectAllowedProfiles success');
@@ -2488,14 +2488,14 @@ export default function bluetoothConnectionTest() {
       done();
     });
     /**
-     * @tc.number  disconnectAllowedProfiles_promise_002
+     * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0200
      * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0200
      * @tc.desc    Test disconnectAllowedProfiles_promise API 入参为空
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("disconnectAllowedProfiles_promise_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await connection.disconnectAllowedProfiles('');
         hilog.info(domain, tag, 'disconnectAllowedProfiles success');
@@ -2512,14 +2512,14 @@ export default function bluetoothConnectionTest() {
       done();
     });
     /**
-     * @tc.number  disconnectAllowedProfiles_promise_003
+     * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0300
      * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0300
      * @tc.desc    Test disconnectAllowedProfiles_promise API 入参长度少1位
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("disconnectAllowedProfiles_promise_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await connection.disconnectAllowedProfiles('68:13:24:79:4C:8');
         hilog.info(domain, tag, 'disconnectAllowedProfiles success');
@@ -2536,14 +2536,14 @@ export default function bluetoothConnectionTest() {
       done();
     });
     /**
-     * @tc.number  disconnectAllowedProfiles_promise_004
+     * @tc.number  SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0400
      * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0400
      * @tc.desc    Test disconnectAllowedProfiles_promise API 入参长度超1位
      * @tc.level   Level 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      */
-    it("disconnectAllowedProfiles_promise_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await connection.disconnectAllowedProfiles('68:13:24:79:4C:8C1');
         hilog.info(domain, tag, 'disconnectAllowedProfiles success');
