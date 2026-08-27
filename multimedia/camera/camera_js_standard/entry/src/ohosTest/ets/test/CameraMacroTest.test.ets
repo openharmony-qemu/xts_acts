@@ -570,7 +570,7 @@ export default function CameraPhotoSessionTest() {
           }
       } catch (err) {
           console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0400 ERROR" + err.code);
-          expect(err.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+          expect(err.code).assertEqual("7400101");
       }
       done();
     })
@@ -603,7 +603,7 @@ export default function CameraPhotoSessionTest() {
           }
       } catch (err) {
           console.info(TAG + " SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ENABLE_MACRO_ERRORCODE_0500 ERROR" + err.code);
-          expect(err.code == camera.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+          expect(err.code).assertEqual("7400101");
       }
       done();
     })

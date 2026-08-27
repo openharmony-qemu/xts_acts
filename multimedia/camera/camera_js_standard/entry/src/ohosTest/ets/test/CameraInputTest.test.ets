@@ -846,7 +846,7 @@ export default function CameraInputTest() {
           } catch(err) {
             console.info(TAG + " " + caseName + " open FAILED: " +
             err.code);
-            expect(Number(err.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT);
+            expect(err.code).assertEqual("7400101");
           }
           await cameraInput.close();
         }
@@ -882,7 +882,7 @@ export default function CameraInputTest() {
           } catch(err) {
             console.info(TAG + " " + caseName + " open FAILED: " +
             err.code);
-            expect(Number(err.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT);
+            expect(err.code).assertEqual("7400101");
           }
           await cameraInput.close();
         }
@@ -926,7 +926,7 @@ export default function CameraInputTest() {
           } catch (error) {
             console.info(TAG + "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0200 FAILED");
             console.info(TAG + "ERRORCODE: " + error.code);
-            expect(Number(error.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT)
+            expect(error.code).assertEqual("7400101")
             done();
           }
         }
@@ -970,7 +970,7 @@ export default function CameraInputTest() {
           } catch (error) {
             console.info(TAG + "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0300 FAILED");
             console.info(TAG + "ERRORCODE: " + error.code);
-            expect(Number(error.code)).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT)
+            expect(error.code).assertEqual("7400101")
             done();
           }
         }

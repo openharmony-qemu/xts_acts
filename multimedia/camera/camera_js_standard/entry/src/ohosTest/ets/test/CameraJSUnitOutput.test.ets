@@ -933,8 +933,14 @@ export default function cameraJSUnitOutput() {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_0200 metadata is not support")
       } else {
-        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_0200 to operate");
-        metadataOutput.off('error')
+        try {
+          console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_METADATA_OUTPUT_CALLBACK_OFF_ERROR_0200 to operate");
+          metadataOutput.off('error')
+        } catch (err) {
+          console.error(`metadataOutput off error, code: ${err.code}, message: ${err.message}`)
+          expect().assertFail()
+          done()
+        }
       }
       done();
     })
@@ -1791,12 +1797,9 @@ export default function cameraJSUnitOutput() {
       photoOutput.off('captureReady', async (err) => {
         console.info(`photo output stop listen on captureReady failed: ${err.code}`);
         expect(true).assertFalse()
-        await sleep(1000);
         done();
       })
       console.info(`photo output stop listen on captureReady success`);
-      expect(true).assertTrue()
-      await sleep(1000);
       photoOutput.release()
       done();
     })
