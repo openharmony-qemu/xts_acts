@@ -48,11 +48,7 @@ export default function GridTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await Utils.sleep(SLEEP_TIME);
-      } catch (err) {
-        console.error("[ARKUI_NEW] GridTest afterEach sleep err: " + JSON.stringify(err));
-      }
+      await Utils.sleep(SLEEP_TIME);
     });
 
     /**
