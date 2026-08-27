@@ -729,7 +729,7 @@ int32_t AutoEffectApiTest02600()
     if (!OH_VideoProcessing_IsAutoEffectSupported(GetAisrType())) {
         return 0;
     }
-    string longName(1024, 'a');
+    string longName(ONE_THOUSAND_AND_TWENTY_FOUR, 'a');
     VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, longName.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
