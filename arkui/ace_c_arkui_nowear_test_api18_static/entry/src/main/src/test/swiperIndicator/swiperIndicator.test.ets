@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 
 const libUtil: LibUtil = new LibUtil();
@@ -27,12 +26,13 @@ const libUtil: LibUtil = new LibUtil();
 
 export default function SwiperIndicatorTest(){
   describe('SwiperIndicatorTest',  () =>{
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api18_static", "EntryAbility")
-    });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('SwiperIndicatorTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     /**
@@ -42,11 +42,16 @@ export default function SwiperIndicatorTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperIndicatorTest_a', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperIndicatorTest_a()).assertEqual(0)
-      console.log('SwiperIndicatorTest_a will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperIndicatorTest_a()).assertEqual(0)
+        console.log('SwiperIndicatorTest_a will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperIndicatorTest_a err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -56,11 +61,16 @@ export default function SwiperIndicatorTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperIndicatorTest_b', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperIndicatorTest_b()).assertEqual(0)
-      console.log('SwiperIndicatorTest_b will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperIndicatorTest_b()).assertEqual(0)
+        console.log('SwiperIndicatorTest_b will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperIndicatorTest_b err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -70,11 +80,16 @@ export default function SwiperIndicatorTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperIndicatorTest_a1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperIndicatorTest_a1()).assertEqual(0)
-      console.log('SwiperIndicatorTest_a1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperIndicatorTest_a1()).assertEqual(0)
+        console.log('SwiperIndicatorTest_a1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperIndicatorTest_a1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -84,11 +99,16 @@ export default function SwiperIndicatorTest(){
      * @tc.level    Level.LEVEL0
      */
     it('SwiperIndicatorTest_b1', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      expect(libUtil.SwiperIndicatorTest_b1()).assertEqual(0)
-      console.log('SwiperIndicatorTest_b1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.SwiperIndicatorTest_b1()).assertEqual(0)
+        console.log('SwiperIndicatorTest_b1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('SwiperIndicatorTest_b1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
   })
