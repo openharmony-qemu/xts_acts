@@ -54,7 +54,6 @@ export default function btManagerError003Test() {
                         hilog.info(domain, tag, 'requestPermission StdProcess.tid():' + StdProcess.tid());
                     });
             } catch (err) {
-                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
             }
             await Utils.msSleep(2000);
@@ -85,7 +84,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "getRemoteDeviceName:" + name);
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceName get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -112,7 +110,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "getRemoteDeviceName alias is true:" + aliasName);
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceName alias get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -141,7 +138,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorMinorClass:" + deviceClass.majorMinorClass);
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceClass get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -167,7 +163,6 @@ export default function btManagerError003Test() {
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 0);
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setBluetoothScanMode get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -194,7 +189,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "getPairedDevices result:" + JSON.stringify(devices));
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getPairedDevices get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -221,7 +215,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, 'gattClientDevice close success');
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "gattClientDevice close get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -248,7 +241,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, 'gattServerDevice close success');
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "gattServerDevice close get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -275,7 +267,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, 'gattClientDevice connect success');
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "gattClientDevice connect get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -302,7 +293,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, 'gattClientDevice disconnect success');
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "gattClientDevice disconnect get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -329,7 +319,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, 'stopAdvertising success');
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "stopAdvertising get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -356,7 +345,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, 'stopBLEScan success');
                 expect().assertFail();
             } catch (err) {
-               
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "stopBLEScan get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -383,7 +371,6 @@ export default function btManagerError003Test() {
                 let state = a2dpProfile.getPlayingState('11:22:33:44:55:66');
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getPlayingState get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -411,7 +398,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "address of connected devices list:" + devices);
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -439,7 +425,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "the connection state:" + state);
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionState get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -467,7 +452,6 @@ export default function btManagerError003Test() {
                 });
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "addPersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -495,7 +479,6 @@ export default function btManagerError003Test() {
                 });
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "deletePersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -522,7 +505,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "getPersistentDeviceIds result:" + JSON.stringify(macs));
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getPersistentDeviceIds get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -549,7 +531,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "isValidRandomDeviceId result:" + JSON.stringify(isValidRandom));
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isValidRandomDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -576,7 +557,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "getProfileConnectionState result:" + connectionState);
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getProfileConnectionState get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -607,7 +587,6 @@ export default function btManagerError003Test() {
                     }
                 });
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "pairDevice get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -635,7 +614,6 @@ export default function btManagerError003Test() {
                 });
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "pairDevice get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -661,7 +639,6 @@ export default function btManagerError003Test() {
                 connection.setDevicePairingConfirmation("00:11:22:33:44:55", true);
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setDevicePairingConfirmation get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -692,7 +669,6 @@ export default function btManagerError003Test() {
                     }
                 });
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setDevicePinCode get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -721,7 +697,6 @@ export default function btManagerError003Test() {
                     hilog.info(domain, tag, "setDevicePinCode_promise error:" + Number(err.code));
                 });
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setDevicePinCode get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -748,7 +723,6 @@ export default function btManagerError003Test() {
                 hilog.info(domain, tag, "getBluetoothScanMode = " + JSON.stringify(scanMode));
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getBluetoothScanMode get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -774,7 +748,6 @@ export default function btManagerError003Test() {
                 connection.startBluetoothDiscovery();
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "startBluetoothDiscovery get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -800,7 +773,6 @@ export default function btManagerError003Test() {
                 connection.stopBluetoothDiscovery();
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "stopBluetoothDiscovery get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -826,7 +798,6 @@ export default function btManagerError003Test() {
                 let result = connection.isBluetoothDiscovering();
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isBluetoothDiscovering get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -857,7 +828,6 @@ export default function btManagerError003Test() {
                     }
                 });
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteProfileUuids get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -885,7 +855,6 @@ export default function btManagerError003Test() {
                 });
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteProfileUuids get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -916,7 +885,6 @@ export default function btManagerError003Test() {
                     }
                 });
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "connectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -944,7 +912,6 @@ export default function btManagerError003Test() {
                 });
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "connectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -972,7 +939,6 @@ export default function btManagerError003Test() {
                 });
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceBatteryInfo get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -1000,7 +966,6 @@ export default function btManagerError003Test() {
                 });
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setRemoteDeviceName get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -1028,7 +993,6 @@ export default function btManagerError003Test() {
                 });
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getLastConnectionTime get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -1054,7 +1018,6 @@ export default function btManagerError003Test() {
                 ble.startBLEScan([{}]);
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "startBLEScan get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
@@ -1122,7 +1085,6 @@ export default function btManagerError003Test() {
                 ble.startAdvertising(setting, advData, advResponse);
                 expect().assertFail();
             } catch (err) {
-                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "startAdvertising get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 401) {
