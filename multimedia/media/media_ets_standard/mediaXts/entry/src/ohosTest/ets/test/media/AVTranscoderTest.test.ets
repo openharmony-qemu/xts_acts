@@ -1090,6 +1090,273 @@ export default function AVTranscoderTest() {
     })
 
     /**
+     * @tc.name   progressUpdate_listen_002
+     * @tc.number AV_TRANSCODER_TEST_028
+     * @tc.desc   Test repeated setting of progressUpdate callback, only the last one takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('progressUpdate_listen_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'progressUpdate_listen_002';
+      await createAVTranscoder(done, testContext, testName);
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        if (mTranscoder !== undefined) {
+          let firstCallbackCount = 0;
+          let secondCallbackCount = 0;
+          mTranscoder.on('progressUpdate', async (progress: number) => {
+            firstCallbackCount++;
+          });
+          mTranscoder.on('progressUpdate', async (progress: number) => {
+            secondCallbackCount++;
+          });
+          mTranscoder.on('error', async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+          });
+          await prepareAVTranscoder(done, testName);
+          await startAVTranscoder(done, testName);
+          await sleep(SLEEP_TIME_500);
+          mTranscoder.off('progressUpdate');
+          mTranscoder.off('error');
+          expect(secondCallbackCount > 0).assertTrue();
+          expect(firstCallbackCount).assertEqual(0);
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   complete_listen_002
+     * @tc.number AV_TRANSCODER_TEST_029
+     * @tc.desc   Test repeated setting of complete callback, only the last one takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('complete_listen_002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'complete_listen_002';
+      await createAVTranscoder(done, testContext, testName);
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        if (mTranscoder !== undefined) {
+          let firstCallbackCount = 0;
+          let secondCallbackCount = 0;
+          currentProgress = 0;
+          mTranscoder.on('progressUpdate', async (progress: number) => {
+            currentProgress = progress;
+          });
+          mTranscoder.on('complete', async () => {
+            firstCallbackCount++;
+          });
+          mTranscoder.on('complete', async () => {
+            secondCallbackCount++;
+          });
+          mTranscoder.on('error', async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+          });
+          await prepareAVTranscoder(done, testName);
+          await startAVTranscoder(done, testName);
+          await sleep(SLEEP_TIME_5000);
+          mTranscoder.off('complete');
+          mTranscoder.off('progressUpdate');
+          mTranscoder.off('error');
+          expect(secondCallbackCount > 0).assertTrue();
+          expect(firstCallbackCount).assertEqual(0);
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   error_listen_001
+     * @tc.number AV_TRANSCODER_TEST_030
+     * @tc.desc   Test repeated setting of error callback, only the last one takes effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('error_listen_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'error_listen_001';
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        let transcoder = await media.createAVTranscoder();
+        mTranscoder = transcoder;
+        if (mTranscoder !== undefined) {
+          let firstCallbackCount = 0;
+          let secondCallbackCount = 0;
+          mTranscoder.on('error', async (error: BusinessError) => {
+            firstCallbackCount++;
+          });
+          mTranscoder.on('error', async (error: BusinessError) => {
+            secondCallbackCount++;
+          });
+          mTranscoder.fdSrc = await globalThis.abilityContext.resourceManager.getRawFd('watermark.png');
+          mTranscoder.fdDst = await getFd('output.mp4');
+          await mTranscoder.prepare(avTranscoderConfig).catch((error: BusinessError) => {
+            console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code);
+          });
+          await sleep(SLEEP_TIME_500);
+          mTranscoder.off('error');
+          expect(secondCallbackCount > 0).assertTrue();
+          expect(firstCallbackCount).assertEqual(0);
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   progressUpdate_off_callback_001
+     * @tc.number AV_TRANSCODER_TEST_031
+     * @tc.desc   Test off progressUpdate with callback parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('progressUpdate_off_callback_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'progressUpdate_off_callback_001';
+      await createAVTranscoder(done, testContext, testName);
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        if (mTranscoder !== undefined) {
+          let progressCallback = async (progress: number) => {
+            console.info(TAG, testName + ' avTranscoder progressUpdate. progress: ' + progress);
+            currentProgress = progress;
+          };
+          let errorCallback = async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+          };
+          mTranscoder.on('progressUpdate', progressCallback);
+          mTranscoder.on('error', errorCallback);
+          await prepareAVTranscoder(done, testName);
+          await startAVTranscoder(done, testName);
+          await sleep(SLEEP_TIME_500);
+          mTranscoder.off('progressUpdate', progressCallback);
+          mTranscoder.off('error', errorCallback);
+          expect(currentProgress > 0).assertTrue();
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   complete_off_callback_001
+     * @tc.number AV_TRANSCODER_TEST_032
+     * @tc.desc   Test off complete with callback parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('complete_off_callback_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'complete_off_callback_001';
+      await createAVTranscoder(done, testContext, testName);
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        if (mTranscoder !== undefined) {
+          let isCompleted = false;
+          let progressCallback = async (progress: number) => {
+            console.info(TAG, testName + ' avTranscoder progressUpdate. progress: ' + progress);
+            currentProgress = progress;
+          };
+          let completeCallback = async () => {
+            console.info(TAG, testName + ' avTranscoder complete.');
+            isCompleted = true;
+          };
+          let errorCallback = async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+          };
+          mTranscoder.on('progressUpdate', progressCallback);
+          mTranscoder.on('complete', completeCallback);
+          mTranscoder.on('error', errorCallback);
+          await prepareAVTranscoder(done, testName);
+          await startAVTranscoder(done, testName);
+          await sleep(SLEEP_TIME_5000);
+          mTranscoder.off('complete', completeCallback);
+          mTranscoder.off('progressUpdate', progressCallback);
+          mTranscoder.off('error', errorCallback);
+          expect(isCompleted).assertTrue();
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   error_off_callback_001
+     * @tc.number AV_TRANSCODER_TEST_033
+     * @tc.desc   Test off error with callback parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('error_off_callback_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'error_off_callback_001';
+      if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+        done();
+        return;
+      }
+      try {
+        let transcoder = await media.createAVTranscoder();
+        mTranscoder = transcoder;
+        if (mTranscoder !== undefined) {
+          let isError = false;
+          let errorCallback = async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
+            isError = true;
+          };
+          mTranscoder.on('error', errorCallback);
+          mTranscoder.fdSrc = await globalThis.abilityContext.resourceManager.getRawFd('watermark.png');
+          mTranscoder.fdDst = await getFd('output.mp4');
+          await mTranscoder.prepare(avTranscoderConfig).catch((error: BusinessError) => {
+            console.info(TAG, testName + ' prepare failed as expected, code: ' + error.code);
+          });
+          await sleep(SLEEP_TIME_500);
+          mTranscoder.off('error', errorCallback);
+          expect(isError).assertTrue();
+          done();
+        }
+      } catch (error) {
+        console.error(TAG, testName + ' Failed, code: ' + error.code + ', msg: ' + error.message);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   null_undefined_001
      * @tc.number AV_TRANSCODER_TEST_016
      * @tc.desc   Test normal scene of listen complete.
