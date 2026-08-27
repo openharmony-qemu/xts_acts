@@ -64,7 +64,7 @@ export default function JsLeakWatcherNewStaticTest():void {
         if (leakFilePath.length > 0) {
           console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 leakListFileName1 check: ' + leakFilePath[0]);
           console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 heapDumpFileName1 check: ' + leakFilePath[1]);
-          expect(true).assertTrue();
+          expect(leakFilePath.length > 0).assertTrue();
         }else {
           console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0700 leakFilePath is empty, check result: ' + checkstr);
           expect(checkstr.length > 0).assertTrue();
