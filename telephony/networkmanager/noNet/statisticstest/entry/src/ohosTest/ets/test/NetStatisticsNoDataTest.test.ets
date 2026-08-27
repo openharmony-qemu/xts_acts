@@ -29,6 +29,13 @@ const ExpectTrue: (n: boolean, caseName?: string) => void = (n: boolean, caseNam
   }
 }
 
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
+
 let cellularDisabledBySuite: boolean = false;
 
 async function getApplicationUid(): Promise<number> {
@@ -64,6 +71,7 @@ export default function   netStatisticsNoDataTest() {
           console.info(`NetStatisticsNoDataTest beforeAll current network is CELLULAR, disable cellular data`);
           try {
             await data.disableCellularData();
+            await sleep(2000);
             cellularDisabledBySuite = true;
             console.info(`NetStatisticsNoDataTest beforeAll disableCellularData success`);
           } catch (err) {
@@ -82,6 +90,7 @@ export default function   netStatisticsNoDataTest() {
       if (cellularDisabledBySuite) {
         try {
           await data.enableCellularData();
+          await sleep(2000);
           console.info(`NetStatisticsNoDataTest afterAll enableCellularData success`);
         } catch (err) {
           console.info(`NetStatisticsNoDataTest afterAll enableCellularData failed ${JSON.stringify(err)}`);
