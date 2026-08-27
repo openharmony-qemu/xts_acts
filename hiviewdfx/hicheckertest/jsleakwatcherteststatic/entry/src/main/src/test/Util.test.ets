@@ -1,4 +1,4 @@
-'usestatic'
+'usestatic';
 
 export default class Utils{
   static async msSleep(count:int) : Promise<int> {
