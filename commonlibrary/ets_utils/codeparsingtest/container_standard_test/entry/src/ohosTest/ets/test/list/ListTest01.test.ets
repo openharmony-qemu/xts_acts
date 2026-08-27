@@ -835,7 +835,7 @@ export default function ListTest01() {
     });
 
     /**
-     * @tc.number    SUB_LIST_TEST01_180
+     * @tc.number    SUB_LIST_TEST01_0180
      * @tc.name      testList01Chapter0018
      * @tc.desc      test constructor with object type array parameter
      * @tc.size      MediumTest

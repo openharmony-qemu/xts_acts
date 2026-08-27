@@ -2257,7 +2257,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncodeIntoUint8Array001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILENCODEINTOUINT8ARRAY_0100
      * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array input values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2279,7 +2279,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncodeIntoUint8Array002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILENCODEINTOUINT8ARRAY_0200
      * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array input values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2301,7 +2301,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncodeIntoUint8Array003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILENCODEINTOUINT8ARRAY_0300
      * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array desc values undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2322,7 +2322,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testEncodeIntoUint8Array004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILENCODEINTOUINT8ARRAY_0400
      * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array desc values null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3452,7 +3452,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testGetMainThreadStackTrace001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_0001
      * @tc.desc   Testing the getMainThreadStackTrace interface in main thread.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3471,7 +3471,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testGetMainThreadStackTrace002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_0002
      * @tc.desc   Testing the getMainThreadStackTrace interface in worker thread.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3506,7 +3506,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testGetMainThreadStackTrace003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_0003
      * @tc.desc   Testing the getMainThreadStackTrace interface in taskpool.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3534,7 +3534,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testSetMultithreadingDetectionEnabled001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_0001
      * @tc.desc   Set multithreading detection to on and off.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3737,7 +3737,7 @@ export default function utilTest() {
 
     /**
      * @tc.name   testGetAllVMHeapMemoryInfo001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_ALL_VM_HEAP_MEMORY_INFO_001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_ALL_VM_HEAP_MEMORY_INFO_0001
      * @tc.desc   Test getAllVMHeapMemoryInfo to get heap memory info of all VM threads.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

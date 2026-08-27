@@ -20,7 +20,7 @@ export default function Escape_Url() {
   describe('Escape_Url', () => {
     /**
      * @tc.name   testUrlAppend9Escape0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0100
      * @tc.desc   Testing the Urlr interface Append9 with input escape \b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -41,7 +41,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0200
      * @tc.desc   Testing the Url interface Append9 with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -62,7 +62,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0300
      * @tc.desc   Testing the Url interface Append9 with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -83,7 +83,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0400
      * @tc.desc   Testing the Url interface Append9 with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -104,7 +104,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0500
      * @tc.desc   Testing the Url interface Append9 with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -125,7 +125,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0600
      * @tc.desc   Testing the Url interface Append9 with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -146,7 +146,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0700
      * @tc.desc   Testing the Url interface Append9 with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -167,7 +167,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0800
      * @tc.desc   Testing the Url interface Append9 with input escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -188,7 +188,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0900
      * @tc.desc   Testing the Url interface Append9 with input escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -209,7 +209,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_1000
      * @tc.desc   Testing the Url interface Append9 with input escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -230,7 +230,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlAppend9Escape0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_1100
      * @tc.desc   Testing the Url interface Append9 with input escape \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -993,7 +993,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0101
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0101
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1020,7 +1020,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0102
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0102
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1047,7 +1047,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0103
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0103
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1074,7 +1074,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0104
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0104
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1101,7 +1101,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0105
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0105
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1128,7 +1128,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0106
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0106
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1155,7 +1155,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0107
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0107
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \开 (== 开)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1182,7 +1182,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0108
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0108
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \😊 (== 😊)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1209,7 +1209,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0109
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0109
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \0 (== null)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1236,7 +1236,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlParams9ForEach9Escape0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_ESCAPE_0110
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \\b (== \b)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

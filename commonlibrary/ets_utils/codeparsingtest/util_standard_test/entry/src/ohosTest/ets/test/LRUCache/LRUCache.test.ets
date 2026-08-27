@@ -876,7 +876,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4100
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -901,7 +901,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4200
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -926,7 +926,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4300
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -957,7 +957,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4400
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -981,7 +981,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4500
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1003,7 +1003,7 @@ export default function LRUCatchTest() {
     })
     /**
      * @tc.name   testLRUCacheGetMissCount0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ArkTs_LRU_CACHE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARKTS_LRU_CACHE_4600
      * @tc.desc   Test the function of the getMissCount function.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

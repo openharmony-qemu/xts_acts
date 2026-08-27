@@ -1308,7 +1308,7 @@ export default function uriTest() {
 
     /**
      * @tc.name   testAddsegmentsSpecialsymbolsstr2Decode0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ADDSEGMENTSSPECIALSYMBOLSstr2Decode_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ADDSEGMENTSSPECIALSYMBOLSSTR2DECODE_0100
      * @tc.desc   Testing if a segment with special characters in the value is correctly added to the URI.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

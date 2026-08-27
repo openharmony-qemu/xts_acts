@@ -1217,7 +1217,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0100
      * @tc.desc   Testing the write interface with utf8.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1237,7 +1237,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0200
      * @tc.desc   Testing the write interface with normal value ''.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1259,7 +1259,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0300
      * @tc.desc   Testing the write interface with normal value.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1279,7 +1279,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0400
      * @tc.desc   Testing the write interface with normal value out of bounds.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1298,7 +1298,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0500
      * @tc.desc   Testing the write interface with normal value, offset, length.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1319,7 +1319,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWrite0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITE_0600
      * @tc.desc   Testing the write interface with normal value, offset, length, encoding.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1340,7 +1340,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteBigInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteBigInt64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEBIGINT64BE_0100
      * @tc.desc   Testing the writeBigInt64BE interface with two parameters: BigInt(0x0102030405060708) and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1360,7 +1360,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteBigInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteBigInt64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEBIGINT64LE_0100
      * @tc.desc   Testing the writeBigInt64LE interface with two parameters: BigInt(0x0102030405060708) and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1380,7 +1380,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteBigUInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteBigUInt64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEBIGUINT64BE_0100
      * @tc.desc   Testing the writeInt16BE interface with two parameters: BigInt(0xdecafafecacefade) and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1400,7 +1400,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BigUInt64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BIGUINT64LE_0100
      * @tc.desc   Testing the writeBigUInt64LE interface with two parameters: BigInt(0xdecafafecacefade) and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1420,7 +1420,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteDoubleBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteDoubleBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEDOUBLEBE_0100
      * @tc.desc   Testing the writeDoubleBE interface with two parameters: 123.456 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1440,7 +1440,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteDoubleLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteDoubleLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEDOUBLELE_0100
      * @tc.desc   Testing the writeDoubleLE interface with two parameters: 123.456 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1460,7 +1460,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteFloatBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteFloatBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEFLOATBE_0100
      * @tc.desc   Testing the writeFloatBE interface with two parameters: 0xcafebabe and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1480,7 +1480,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteFloatLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteFloatLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEFLOATLE_0100
      * @tc.desc   Testing the writeFloatLE interface with two parameters: 0xcafebabe and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1500,7 +1500,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt80001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt8_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT8_0100
      * @tc.desc   Testing the writeInt8 interface with value to buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1520,7 +1520,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt80002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt8_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT8_0200
      * @tc.desc   Testing the writeInt8 interface with value to buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1539,7 +1539,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT16BE_0100
      * @tc.desc   Testing the writeInt16BE interface with two parameters: 0x0102 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1559,7 +1559,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT16LE_0100
      * @tc.desc   Testing the writeInt16LE interface with two parameters: 0x0304 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1579,7 +1579,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT32BE_0100
      * @tc.desc   Testing the writeInt32BE interface with two parameters: 0x01020304 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1599,7 +1599,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINT32LE_0100
      * @tc.desc   Testing the writeInt32LE interface with two parameters: 0x05060708 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1619,7 +1619,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteIntBE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINTBE_0100
      * @tc.desc   Testing the writeIntBE interface with three parameters: 0x1234567890ab, 0, 6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1639,7 +1639,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteIntLE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEINTLE_0100
      * @tc.desc   Testing the writeIntLE interface with three parameters: 0x1234567890ab, 0, 6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1659,7 +1659,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt80001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT8_0100
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1679,7 +1679,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt80002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT8_0200
      * @tc.desc   Testing the writeUInt8 interface with 0x4 and 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1699,7 +1699,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt80003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT8_0300
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x23 and 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1719,7 +1719,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt80004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT8_0400
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 3.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1738,7 +1738,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT16BE_0100
      * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xdead and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1758,7 +1758,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16BE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT16BE_0200
      * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xbeef and 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1777,7 +1777,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT16LE_0100
      * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xdead and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1797,7 +1797,7 @@ export default function FastBufferBaseTest1() {
 
     /**
      * @tc.name   testWriteUInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16LE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT16LE_0200
      * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xbeef and 2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

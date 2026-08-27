@@ -993,7 +993,7 @@ export default function SpecialCharTest() {
     })
     /**
      * @tc.name   testUtilsRequestSpecial0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_SPECIAL_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_SPECIAL_0100
      * @tc.desc   Testing the Utils interface Request with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1013,7 +1013,7 @@ export default function SpecialCharTest() {
 
     /**
      * @tc.name   testUtilsQuerySpecial0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Utils_SPECIAL_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILS_SPECIAL_0200
      * @tc.desc   Testing the Utils interface Query with Special
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

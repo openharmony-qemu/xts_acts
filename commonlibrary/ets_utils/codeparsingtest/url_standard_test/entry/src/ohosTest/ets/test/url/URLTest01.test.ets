@@ -26,7 +26,7 @@ export default function URL01Test() {
     })
     // =============== hash ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_0100
      * @tc.name testURL01Chapter0001
      * @tc.desc Test setting hash with empty string
      * @tc.size MediumTest
@@ -41,7 +41,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_0200
      * @tc.name testURL01Chapter0002
      * @tc.desc Test setting hash with string "undefined" and "null"
      * @tc.size MediumTest
@@ -57,7 +57,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_0300
      * @tc.name testURL01Chapter0003
      * @tc.desc Test setting hash with all ASCII special characters
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_0400
      * @tc.name testURL01Chapter0004
      * @tc.desc Test setting hash with full ASCII printable characters
      * @tc.size MediumTest
@@ -99,7 +99,7 @@ export default function URL01Test() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_0500
      * @tc.name testURL01Chapter0005
      * @tc.desc Test setting hash with repeated special characters
      * @tc.size MediumTest
@@ -118,7 +118,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_0600
      * @tc.name testURL01Chapter0006
      * @tc.desc Test setting hash with escape sequences
      * @tc.size MediumTest
@@ -137,7 +137,7 @@ export default function URL01Test() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_0700
      * @tc.name testURL01Chapter0007
      * @tc.desc Test setting hash with octal and hex escapes
      * @tc.size MediumTest
@@ -152,7 +152,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_0800
      * @tc.name testURL01Chapter0008
      * @tc.desc Test setting hash with emoji and Unicode escapes
      * @tc.size MediumTest
@@ -179,7 +179,7 @@ export default function URL01Test() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_0900
      * @tc.name testURL01Chapter0009
      * @tc.desc Test setting hash with invalid Unicode surrogates
      * @tc.size MediumTest
@@ -199,7 +199,7 @@ export default function URL01Test() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1000
      * @tc.name testURL01Chapter0010
      * @tc.desc Test setting hash with numeric strings like "0", "NaN", "Infinity"
      * @tc.size MediumTest
@@ -219,7 +219,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1100
      * @tc.name testURL01Chapter0011
      * @tc.desc Test setting hash with very large string (10k chars)
      * @tc.size MediumTest
@@ -235,7 +235,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1200
      * @tc.name testURL01Chapter0012
      * @tc.desc Test setting hash with treeString-like JSON array
      * @tc.size MediumTest
@@ -263,7 +263,7 @@ export default function URL01Test() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1300
      * @tc.name testURL01Chapter0013
      * @tc.desc Test setting hash with substring operation (sliceString)
      * @tc.size MediumTest
@@ -280,7 +280,7 @@ export default function URL01Test() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1400
      * @tc.name testURL01Chapter0014
      * @tc.desc Test setting host with empty string
      * @tc.size MediumTest
@@ -300,7 +300,7 @@ export default function URL01Test() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1500
      * @tc.name testURL01Chapter0015
      * @tc.desc Test setting host with valid domain and port
      * @tc.size MediumTest
@@ -316,7 +316,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1600
      * @tc.name testURL01Chapter0016
      * @tc.desc Test setting host with IPv4 address
      * @tc.size MediumTest
@@ -332,7 +332,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1700
      * @tc.name testURL01Chapter0017
      * @tc.desc Test setting host with IPv6 address (requires brackets)
      * @tc.size MediumTest
@@ -355,7 +355,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1800
      * @tc.name testURL01Chapter0018
      * @tc.desc Test setting host with IPv6 and port
      * @tc.size MediumTest
@@ -374,7 +374,7 @@ export default function URL01Test() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_1900
      * @tc.name testURL01Chapter0019
      * @tc.desc Test setting host with special characters (should be encoded?)
      * @tc.size MediumTest
@@ -391,7 +391,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2000
      * @tc.name testURL01Chapter0020
      * @tc.desc Test setting host with port out of range (reverse case)
      * @tc.size MediumTest
@@ -410,7 +410,7 @@ export default function URL01Test() {
 
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2100
      * @tc.name testURL01Chapter0021
      * @tc.desc Test setting host with non-numeric port (reverse case)
      * @tc.size MediumTest
@@ -431,7 +431,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2200
      * @tc.name testURL01Chapter0022
      * @tc.desc Test setting host with emoji (should be punycode encoded)
      * @tc.size MediumTest
@@ -450,7 +450,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2300
      * @tc.name testURL01Chapter0023
      * @tc.desc Test setting host with very long string (10k chars)
      * @tc.size MediumTest
@@ -466,7 +466,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2400
      * @tc.name testURL01Chapter0024
      * @tc.desc Test setting host with string containing colon but no port
      * @tc.size MediumTest
@@ -484,7 +484,7 @@ export default function URL01Test() {
     });
     // =============== host ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2500
      * @tc.name testURL01Chapter0025
      * @tc.desc Test setting host with empty string (host should remain unchanged)
      * @tc.size MediumTest
@@ -504,7 +504,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2600
      * @tc.name testURL01Chapter0026
      * @tc.desc Test setting host with valid domain and port
      * @tc.size MediumTest
@@ -520,7 +520,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2700
      * @tc.name testURL01Chapter0027
      * @tc.desc Test setting host with IPv4 address
      * @tc.size MediumTest
@@ -536,7 +536,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2800
      * @tc.name testURL01Chapter0028
      * @tc.desc Test setting host with IPv6 address (should fail gracefully)
      * @tc.size MediumTest
@@ -555,7 +555,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_2900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_2900
      * @tc.name testURL01Chapter0029
      * @tc.desc Test setting host with IPv6 and port (should fail gracefully)
      * @tc.size MediumTest
@@ -574,7 +574,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3000
      * @tc.name testURL01Chapter0030
      * @tc.desc Test setting host with special characters (should be allowed in host)
      * @tc.size MediumTest
@@ -590,7 +590,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3100
      * @tc.name testURL01Chapter0031
      * @tc.desc Test setting host with port out of range
      * @tc.size MediumTest
@@ -613,7 +613,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3200
      * @tc.name testURL01Chapter0032
      * @tc.desc Test setting host with non-numeric port (invalid port ignored)
      * @tc.size MediumTest
@@ -632,7 +632,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3300
      * @tc.name testURL01Chapter0033
      * @tc.desc Test setting host with emoji (should be encoded)
      * @tc.size MediumTest
@@ -652,7 +652,7 @@ export default function URL01Test() {
       expect(myUrl.port).assertEqual('');
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3400
      * @tc.name testURL01Chapter0034
      * @tc.desc Test setting host with very long string (10k chars)
      * @tc.size MediumTest
@@ -668,7 +668,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3500
      * @tc.name testURL01Chapter0035
      * @tc.desc Test setting host with string containing colon but no port
      * @tc.size MediumTest
@@ -689,7 +689,7 @@ export default function URL01Test() {
 
     // =============== hostname ======================
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3600
      * @tc.name testURL01Chapter0036
      * @tc.desc Test setting hostname with empty string (should remain unchanged)
      * @tc.size MediumTest
@@ -710,7 +710,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3700
      * @tc.name testURL01Chapter0037
      * @tc.desc Test setting hostname with valid domain (should update host)
      * @tc.size MediumTest
@@ -729,7 +729,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3800
      * @tc.name testURL01Chapter0038
      * @tc.desc Test setting hostname with IPv4
      * @tc.size MediumTest
@@ -747,7 +747,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_3900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_3900
      * @tc.name testURL01Chapter0039
      * @tc.desc Test setting hostname with IPv6 (without brackets) - should not change
      * @tc.size MediumTest
@@ -767,7 +767,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4000
      * @tc.name testURL01Chapter0040
      * @tc.desc Test setting hostname with special characters (should be allowed)
      * @tc.size MediumTest
@@ -782,7 +782,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4100
      * @tc.name testURL01Chapter0041
      * @tc.desc Test setting hostname with emoji (should not change)
      * @tc.size MediumTest
@@ -798,7 +798,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4200
      * @tc.name testURL01Chapter0042
      * @tc.desc Test setting hostname with very long string
      * @tc.size MediumTest
@@ -813,7 +813,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4300
      * @tc.name testURL01Chapter0043
      * @tc.desc Test setting hostname with leading dot (should be allowed)
      * @tc.size MediumTest
@@ -827,7 +827,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4400
      * @tc.name testURL01Chapter0044
      * @tc.desc Test setting hostname with trailing dot (should be removed)
      * @tc.size MediumTest
@@ -844,7 +844,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4500
      * @tc.name testURL01Chapter0045
      * @tc.desc Test setting hostname with port in string (port should be ignored)
      * @tc.size MediumTest
@@ -863,7 +863,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4600
      * @tc.name testURL01Chapter0046
      * @tc.desc Test setting href with absolute URL
      * @tc.size MediumTest
@@ -882,7 +882,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4700
      * @tc.name testURL01Chapter0047
      * @tc.desc Test setting href with relative URL (should not change)
      * @tc.size MediumTest
@@ -901,7 +901,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4800
      * @tc.name testURL01Chapter0048
      * @tc.desc Test setting href with empty string (should not change)
      * @tc.size MediumTest
@@ -918,7 +918,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_4900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_4900
      * @tc.name testURL01Chapter0049
      * @tc.desc Test setting href with invalid URL (missing protocol)
      * @tc.size MediumTest
@@ -935,7 +935,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5000
      * @tc.name testURL01Chapter0050
      * @tc.desc Test setting href with special characters in path (should be encoded)
      * @tc.size MediumTest
@@ -951,7 +951,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5100
      * @tc.name testURL01Chapter0051
      * @tc.desc Test setting href with special characters in path (should be encoded)
      * @tc.size MediumTest
@@ -967,7 +967,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5200
      * @tc.name testURL01Chapter0052
      * @tc.desc Test setting href with very long URL (10k chars)
      * @tc.size MediumTest
@@ -983,7 +983,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5300
      * @tc.name testURL01Chapter0053
      * @tc.desc Test origin getter for standard URL
      * @tc.size MediumTest
@@ -996,7 +996,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5400
      * @tc.name testURL01Chapter0054
      * @tc.desc Test origin getter for default port (should omit port)
      * @tc.size MediumTest
@@ -1009,7 +1009,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5500
      * @tc.name testURL01Chapter0055
      * @tc.desc Test origin getter for file protocol (opaque origin)
      * @tc.size MediumTest
@@ -1023,7 +1023,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5600
      * @tc.name testURL01Chapter0056
      * @tc.desc Test origin getter for blob URL
      * @tc.size MediumTest
@@ -1037,7 +1037,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5700
      * @tc.name testURL01Chapter0057
      * @tc.desc Test setting password with empty string
      * @tc.size MediumTest
@@ -1052,7 +1052,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5800
      * @tc.name testURL01Chapter0058
      * @tc.desc Test setting password with special characters (should be encoded)
      * @tc.size MediumTest
@@ -1070,7 +1070,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_5900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_5900
      * @tc.name testURL01Chapter0059
      * @tc.desc Test setting password with emoji (should be encoded)
      * @tc.size MediumTest
@@ -1088,7 +1088,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6000
      * @tc.name testURL01Chapter0060
      * @tc.desc Test setting password with very long string
      * @tc.size MediumTest
@@ -1106,7 +1106,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6100
      * @tc.name testURL01Chapter0061
      * @tc.desc Test setting password with colon (should be encoded)
      * @tc.size MediumTest
@@ -1123,7 +1123,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6200
      * @tc.name testURL01Chapter0062
      * @tc.desc Test setting pathname with empty string (should not change)
      * @tc.size MediumTest
@@ -1142,7 +1142,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6300
      * @tc.name testURL01Chapter0063
      * @tc.desc Test setting pathname with root path
      * @tc.size MediumTest
@@ -1157,7 +1157,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6400
      * @tc.name testURL01Chapter0064
      * @tc.desc Test setting pathname with multiple segments
      * @tc.size MediumTest
@@ -1171,7 +1171,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6500
      * @tc.name testURL01Chapter0065
      * @tc.desc Test setting pathname with special characters (should be percent-encoded)
      * @tc.size MediumTest
@@ -1188,7 +1188,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6600
      * @tc.name testURL01Chapter0066
      * @tc.desc Test setting pathname with emoji (should be percent-encoded)
      * @tc.size MediumTest
@@ -1205,7 +1205,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6700
      * @tc.name testURL01Chapter0067
      * @tc.desc Test setting pathname with very long string
      * @tc.size MediumTest
@@ -1220,7 +1220,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6800
      * @tc.name testURL01Chapter0068
      * @tc.desc Test setting pathname with double slash (should normalize to single?)
      * @tc.size MediumTest
@@ -1234,7 +1234,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_6900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_6900
      * @tc.name testURL01Chapter0069
      * @tc.desc Test setting port with empty string (should not remove port)
      * @tc.size MediumTest
@@ -1253,7 +1253,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7000
      * @tc.name testURL01Chapter0070
      * @tc.desc Test setting port with valid number (port changes but host may not include it)
      * @tc.size MediumTest
@@ -1270,7 +1270,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7100
      * @tc.name testURL01Chapter0071
      * @tc.desc Test setting port with 0 (valid)
      * @tc.size MediumTest
@@ -1287,7 +1287,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7200
      * @tc.name testURL01Chapter0072
      * @tc.desc Test setting port with min valid 1
      * @tc.size MediumTest
@@ -1301,7 +1301,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7300
      * @tc.name testURL01Chapter0073
      * @tc.desc Test setting port with max valid 65535
      * @tc.size MediumTest
@@ -1315,7 +1315,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7400
      * @tc.name testURL01Chapter0074
      * @tc.desc Test setting port with out of range (should be ignored or truncated)
      * @tc.size MediumTest
@@ -1333,7 +1333,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7500
      * @tc.name testURL01Chapter0075
      * @tc.desc Test setting port with negative (should be ignored)
      * @tc.size MediumTest
@@ -1351,7 +1351,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7600
      * @tc.name testURL01Chapter0076
      * @tc.desc Test setting port with non-numeric (should be ignored)
      * @tc.size MediumTest
@@ -1369,7 +1369,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7700
      * @tc.name testURL01Chapter0077
      * @tc.desc Test setting port with leading zeros (should be normalized)
      * @tc.size MediumTest
@@ -1386,7 +1386,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7800
      * @tc.name testURL01Chapter0078
      * @tc.desc Test setting protocol with valid protocol (including colon)
      * @tc.size MediumTest
@@ -1401,7 +1401,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_7900
      * @tc.name testURL01Chapter0079
      * @tc.desc Test setting protocol without colon (should not change)
      * @tc.size MediumTest
@@ -1418,7 +1418,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8000
      * @tc.name testURL01Chapter0080
      * @tc.desc Test setting protocol with invalid protocol (should not change)
      * @tc.size MediumTest
@@ -1435,7 +1435,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8100
      * @tc.name testURL01Chapter0081
      * @tc.desc Test setting protocol with special characters (should not change)
      * @tc.size MediumTest
@@ -1452,7 +1452,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8200
      * @tc.name testURL01Chapter0082
      * @tc.desc Test setting protocol with empty string (should not change)
      * @tc.size MediumTest
@@ -1469,7 +1469,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8300
      * @tc.name testURL01Chapter0083
      * @tc.desc Test setting protocol with file: (special)
      * @tc.size MediumTest
@@ -1487,7 +1487,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8400
      * @tc.name testURL01Chapter0084
      * @tc.desc Test setting search with empty string
      * @tc.size MediumTest
@@ -1502,7 +1502,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8500
      * @tc.name testURL01Chapter0085
      * @tc.desc Test setting search with query string (including ?)
      * @tc.size MediumTest
@@ -1517,7 +1517,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8600
      * @tc.name testURL01Chapter0086
      * @tc.desc Test setting search without leading ? (should auto-add)
      * @tc.size MediumTest
@@ -1531,7 +1531,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8700
      * @tc.name testURL01Chapter0087
      * @tc.desc Test setting search with special characters (should be percent-encoded? maybe not)
      * @tc.size MediumTest
@@ -1546,7 +1546,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8800
      * @tc.name testURL01Chapter0088
      * @tc.desc Test setting search with emoji (should be encoded)
      * @tc.size MediumTest
@@ -1563,7 +1563,7 @@ export default function URL01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTestONE_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_URLTESTONE_8900
      * @tc.name testURL01Chapter0089
      * @tc.desc Test setting search with very long string
      * @tc.size MediumTest

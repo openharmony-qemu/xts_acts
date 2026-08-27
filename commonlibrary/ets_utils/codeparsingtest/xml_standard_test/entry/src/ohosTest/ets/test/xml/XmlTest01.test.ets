@@ -485,7 +485,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENT_0100
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0100
      * @tc.name      addEmptyElementTest0001
      * @tc.desc      Positive scenario: Basic function test for adding a single empty element using ArrayBuffer method
      * @tc.size      MediumTest
@@ -509,7 +509,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENT_0200
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0200
      * @tc.name     addEmptyElementTest0002
      * @tc.desc      Positive scenario: Continuously add multiple empty elements using ArrayBuffer
      * @tc.size      MediumTest
@@ -536,7 +536,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENT_0300
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0300
      * @tc.name      addEmptyElementTest0003
      * @tc.desc      Negative scenario: Pass empty string as tag name
      * @tc.size      MediumTest
@@ -560,7 +560,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENT_0400
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0400
      * @tc.name      addEmptyElementTest0004
      * @tc.desc      Negative scenario: Tag name contains XML illegal characters
      * @tc.size      MediumTest
@@ -588,7 +588,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENT_0500
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0500
      * @tc.name      addEmptyElementTest0005
      * @tc.desc      Positive scenario: Test ArrayBuffer of different sizes
      * @tc.size      MediumTest
@@ -620,7 +620,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENT_0600
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0600
      * @tc.name      addEmptyElementTest0006
      * @tc.desc      Combination scenario: Only use addEmptyElement method
      * @tc.size      MediumTest
@@ -661,7 +661,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENT_0700
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0700
      * @tc.name      addEmptyElementTest0007
      * @tc.desc      Combination scenario: Multiple XmlSerializer instances working simultaneously
      * @tc.size      MediumTest
@@ -684,7 +684,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENT_0800
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0800
      * @tc.name     addEmptyElementTest0008
      * @tc.desc      Combination scenario: Verify the order of empty elements
      * @tc.size      MediumTest
@@ -716,7 +716,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENTSUB_BASEDATE_XMlSERIALIZER_ADDEMPTYELEMENT_0900
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENTSUB_BASEDATE_XMLSERIALIZER_ADDEMPTYELEMENT_0900
      * @tc.name      addEmptyElementTest0009
      * @tc.desc      Performance scenario: Adding a large number of empty elements
      * @tc.size      MediumTest
@@ -748,7 +748,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_SETDECLARATION_0100
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETDECLARATION_0100
      * @tc.name      SetDeclarationTest0001
      * @tc.desc      Test creating an instance with default parameters
      * @tc.size      MediumTest
@@ -772,7 +772,7 @@ export default function XmlTest_01() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_SETDECLARATION_0200
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETDECLARATION_0200
      * @tc.name      SetDeclarationTest0002
      * @tc.desc      Test calling other methods first and then setDeclaration
      * @tc.size      MediumTest
@@ -800,7 +800,7 @@ export default function XmlTest_01() {
       })
 
     /**
-     * @tc.number    SUB_BASEDATE_XMlSERIALIZER_SETDECLARATION_0300
+     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETDECLARATION_0300
      * @tc.name      SetDeclarationTest0003
      * @tc.desc      Test calling setDeclaration first and then other methods
      * @tc.size      MediumTest

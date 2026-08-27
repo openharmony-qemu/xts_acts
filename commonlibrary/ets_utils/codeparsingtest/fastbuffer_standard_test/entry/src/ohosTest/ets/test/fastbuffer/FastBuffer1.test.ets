@@ -1469,7 +1469,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWrite0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_Write_0600
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITE_0600
      * @tc.desc   Testing the write interface with a normal value 'abcde' and an out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1487,7 +1487,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWrite0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_Write_0700
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITE_0700
      * @tc.desc   Testing the write interface with a normal value 'abcde', a normal 'offset' value of 1, and an out-of-range 'length' value of 9.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1505,7 +1505,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWrite0009
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_Write_0900
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITE_0900
      * @tc.desc   Testing the write interface with normal value ''.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1527,7 +1527,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWrite0010
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_Write_1000
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITE_1000
      * @tc.desc   Testing the write interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1545,7 +1545,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWrite0011
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_Write_1100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITE_1100
      * @tc.desc   Testing the write interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1563,7 +1563,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteBigInt64BE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEBIGINT64BE_0100
      * @tc.desc   Testing the writeBigInt64BE interface with two parameters: 0x0102030405060708n and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1583,7 +1583,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteBigInt64BE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEBIGINT64BE_0200
      * @tc.desc   Testing the writeBigInt64BE interface with a normal value 0x0102030405060708n and an out-of-range 'offset' value of 1, where 'offset' must be >= 0 and <= 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1601,7 +1601,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteBigInt64BE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEBIGINT64BE_0300
      * @tc.desc   Testing the writeBigInt64BE interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1619,7 +1619,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteBigInt64BE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEBIGINT64BE_0400
      * @tc.desc   Testing the writeBigInt64BE interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1637,7 +1637,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteBigInt64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEBIGINT64LE_0100
      * @tc.desc   Testing the writeBigInt64LE interface with two parameters: 0x0102030405060708n and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1657,7 +1657,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteBigInt64LE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEBIGINT64LE_0200
      * @tc.desc   Testing the writeBigInt64LE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1675,7 +1675,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteBigInt64LE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEBIGINT64LE_0300
      * @tc.desc   Testing the writeBigInt64LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1693,7 +1693,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteBigInt64LE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEBIGINT64LE_0400
      * @tc.desc   Testing the writeBigInt64LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1785,7 +1785,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_BigUInt64LE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_BIGUINT64LE_0100
      * @tc.desc   Testing the writeBigUInt64LE interface with two parameters: 0xdecafafecacefaden and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1805,7 +1805,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_BigUInt64LE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_BIGUINT64LE_0200
      * @tc.desc   Testing the writeBigUInt64LE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1823,7 +1823,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_BigUInt64LE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_BIGUINT64LE_0300
      * @tc.desc   Testing the writeBigUInt64LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1841,7 +1841,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteBigUInt64LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_BigUInt64LE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_BIGUINT64LE_0400
      * @tc.desc   Testing the writeBigUInt64LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1859,7 +1859,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteDoubleBE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteDoubleBE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEDOUBLEBE_0100
      * @tc.desc   Testing the writeDoubleBE interface with two parameters: 123.456 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1880,7 +1880,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteDoubleBE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteDoubleBE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEDOUBLEBE_0200
      * @tc.desc   Testing the writeDoubleBE interface with a normal value of 123.456 and an out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1898,7 +1898,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteDoubleBE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteDoubleBE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEDOUBLEBE_0300
      * @tc.desc   Testing the writeDoubleBE interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1916,7 +1916,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteDoubleBE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteDoubleBE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEDOUBLEBE_0400
      * @tc.desc   Testing the writeDoubleBE interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1934,7 +1934,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteDoubleLE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteDoubleLE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEDOUBLELE_0100
      * @tc.desc   Testing the writeDoubleLE interface with two parameters: 123.456 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1954,7 +1954,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteDoubleLE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteDoubleLE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEDOUBLELE_0200
      * @tc.desc   Testing the writeDoubleLE interface with a normal value of 123.456 and an out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1972,7 +1972,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteDoubleLE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteDoubleLE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEDOUBLELE_0300
      * @tc.desc   Testing the writeDoubleLE interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1990,7 +1990,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteDoubleLE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteDoubleLE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEDOUBLELE_0400
      * @tc.desc   Testing the writeDoubleBE interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2008,7 +2008,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteFloatBE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteFloatBE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEFLOATBE_0100
      * @tc.desc   Testing the writeFloatBE interface with two parameters: 0xcabcbcbc and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2028,7 +2028,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteFloatBE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteFloatBE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEFLOATBE_0200
      * @tc.desc   Testing the writeFloatBE interface with an out-of-range 'offset' value of 5, where 'offset' must be >= 0 and <= 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2046,7 +2046,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteFloatBE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteFloatBE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEFLOATBE_0300
      * @tc.desc   Testing the writeFloatBE interface with undefined .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2064,7 +2064,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteFloatBE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteFloatBE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEFLOATBE_0400
      * @tc.desc   Testing the writeFloatBE interface with null .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2082,7 +2082,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteFloatLE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteFloatLE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEFLOATLE_0100
      * @tc.desc   Testing the writeFloatLE interface with two parameters: 0xcabcbcbc and 12.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2102,7 +2102,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteFloatLE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteFloatLE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEFLOATLE_0200
      * @tc.desc   Testing the writeFloatLE interface with a normal value of 0xcabcbcbc and an out-of-range 'offset' value of 5.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2120,7 +2120,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteFloatLE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteFloatLE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEFLOATLE_0300
      * @tc.desc   Testing the writeFloatLE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2138,7 +2138,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteFloatLE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteFloatLE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEFLOATLE_0400
      * @tc.desc   Testing the writeFloatLE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2156,7 +2156,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt80001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt8_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT8_0100
      * @tc.desc   Testing the writeInt8 interface with value to buf at the specified offset.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2176,7 +2176,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt80002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt8_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT8_0200
      * @tc.desc   Testing the writeInt8 interface with value 2 and an out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2194,7 +2194,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt80003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt8_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT8_0300
      * @tc.desc   Testing the writeInt8 interface with two parameters: 0x13245 and out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2212,7 +2212,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt80004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt8_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT8_0400
      * @tc.desc   Testing the writeInt8 interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2230,7 +2230,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt80005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt8_0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT8_0500
      * @tc.desc   Testing the writeInt8 interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2248,7 +2248,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16BE_0100
      * @tc.desc   Testing the writeInt16BE interface with two parameters: 0x7bca and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2268,7 +2268,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16BE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16BE_0200
      * @tc.desc   Testing the writeInt16BE interface with out of range "offset" -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2286,7 +2286,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16BE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16BE_0300
      * @tc.desc   Testing the writeInt16BE interface with out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2304,7 +2304,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16BE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16BE_0400
      * @tc.desc   Testing the writeInt16BE interface with out of range "offset" 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2322,7 +2322,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16BE_0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16BE_0500
      * @tc.desc   Testing the writeInt16BE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2340,7 +2340,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16BE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16BE_0600
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16BE_0600
      * @tc.desc   Testing the writeInt16BE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2358,7 +2358,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16LE_0100
      * @tc.desc   Testing the writeInt16LE interface with two parameters: 0x1234 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2378,7 +2378,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16LE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16LE_0200
      * @tc.desc   Testing the writeInt16LE interface with out-of-range 'offset' value of -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2396,7 +2396,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16LE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16LE_0300
      * @tc.desc   Testing the writeInt16LE interface with out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2414,7 +2414,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16LE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16LE_0400
      * @tc.desc   Testing the writeInt16LE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2432,7 +2432,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16LE_0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16LE_0500
      * @tc.desc   Testing the writeInt16LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2450,7 +2450,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt16LE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt16LE_0600
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT16LE_0600
      * @tc.desc   Testing the writeInt16LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2468,7 +2468,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32BE_0100
      * @tc.desc   Testing the writeInt32BE interface with two parameters: 0x12345678 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2488,7 +2488,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32BE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32BE_0200
      * @tc.desc   Testing the writeInt32BE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2506,7 +2506,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32BE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32BE_0300
      * @tc.desc   Testing the writeInt32BE interface with out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2524,7 +2524,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32BE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32BE_0400
      * @tc.desc   Testing the writeInt32BE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2542,7 +2542,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32BE_0600
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32BE_0600
      * @tc.desc   Testing the writeInt32BE function with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2560,7 +2560,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32BE0007
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32BE_0700
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32BE_0700
      * @tc.desc   Testing the writeInt32BE function with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2578,7 +2578,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32LE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32LE_0100
      * @tc.desc   Testing the writeInt32LE interface with two parameters: 0x12345678 and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2598,7 +2598,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32LE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32LE_0200
      * @tc.desc   Testing the writeInt32LE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2616,7 +2616,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32LE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32LE_0300
      * @tc.desc   Testing the writeInt32LE interface with out of range "value" 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2634,7 +2634,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32LE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32LE_0400
      * @tc.desc   Testing the writeInt32LE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2652,7 +2652,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32LE_0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32LE_0500
      * @tc.desc   Testing the writeInt32LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2670,7 +2670,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteInt32LE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteInt32LE_0600
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINT32LE_0600
      * @tc.desc   Testing the writeInt32LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2688,7 +2688,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteIntBE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINTBE_0100
      * @tc.desc   Testing the writeIntBE interface with three parameters: 0x1234567890ab, 0, 6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2708,7 +2708,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteIntBE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINTBE_0200
      * @tc.desc   Testing the writeIntBE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2726,7 +2726,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteIntBE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINTBE_0300
      * @tc.desc   Testing the writeIntBE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2744,7 +2744,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteIntBE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINTBE_0400
      * @tc.desc   Testing the writeIntBE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2762,7 +2762,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteIntBE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteIntBE_0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINTBE_0500
      * @tc.desc   Testing the writeIntBE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2780,7 +2780,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteIntLE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteIntLE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINTLE_0100
      * @tc.desc   Testing the writeIntLE interface with three parameters: 0x1234567890ab, 0, 6.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2800,7 +2800,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteIntLE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteIntLE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINTLE_0200
      * @tc.desc   Testing the writeIntLE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2818,7 +2818,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteIntLE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteIntLE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINTLE_0300
      * @tc.desc   Testing the writeIntLE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2836,7 +2836,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteIntLE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteIntLE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEINTLE_0400
      * @tc.desc   Testing the writeIntLE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2854,7 +2854,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt80001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt8_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT8_0100
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 3.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2874,7 +2874,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt80002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt8_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT8_0200
      * @tc.desc   Testing the writeUInt8 interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2892,7 +2892,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt80003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt8_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT8_0300
      * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2912,7 +2912,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt80004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt8_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT8_0400
      * @tc.desc   Testing the writeUInt8 interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2930,7 +2930,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt80005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt8_0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT8_0500
      * @tc.desc   Testing the writeUInt8 interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2948,7 +2948,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16BE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16BE_0100
      * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xdead and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2968,7 +2968,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16BE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16BE_0200
      * @tc.desc   Testing the writeUInt16BE interface with out-of-range "value"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2986,7 +2986,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16BE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16BE_0300
      * @tc.desc   Testing the writeUInt16BE interface with  out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3004,7 +3004,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16BE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16BE_0400
      * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xdead and 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3024,7 +3024,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16BE_0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16BE_0500
      * @tc.desc   Testing the writeInt16BE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3042,7 +3042,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16BE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16BE_0600
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16BE_0600
      * @tc.desc   Testing the writeUInt16BE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3060,7 +3060,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16LE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16LE_0100
      * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xdead and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3080,7 +3080,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16LE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16LE_0200
      * @tc.desc   Testing the writeUInt16LE interface with out-of-range "value"
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3098,7 +3098,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16LE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16LE_0300
      * @tc.desc   Testing the writeUInt16LE interface with  out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3116,7 +3116,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16LE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16LE_0400
      * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xdead and 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3136,7 +3136,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16LE_0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16LE_0500
      * @tc.desc   Testing the writeUInt16LE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3154,7 +3154,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt16LE0006
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt16LE_0600
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT16LE_0600
      * @tc.desc   Testing the writeUInt16LE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3172,7 +3172,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE001
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt32BE_0100
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT32BE_0100
      * @tc.desc   Testing the writeUInt32BE interface with two parameters: 0xfeedface and 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3192,7 +3192,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE0002
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt32BE_0200
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT32BE_0200
      * @tc.desc   Testing the writeUInt32BE interface with out-of-range 'offset' value of -1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3210,7 +3210,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE0003
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt32BE_0300
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT32BE_0300
      * @tc.desc   Testing the writeUInt32BE interface with out-of-range 'offset' value of 1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3228,7 +3228,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE0004
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt32BE_0400
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT32BE_0400
      * @tc.desc   Testing the writeUInt32BE interface with undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3246,7 +3246,7 @@ export default function FastBufferTest() {
 
     /**
      * @tc.name   testWriteUInt32BE0005
-     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WriteUInt32BE_0500
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASETEST_WRITEUINT32BE_0500
      * @tc.desc   Testing the writeUInt32BE interface with null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

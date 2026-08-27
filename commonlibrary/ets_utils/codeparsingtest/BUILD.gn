@@ -23,6 +23,8 @@ group("codeparsingtest") {
       "annotationtest:ActsAnnotationTest",
       "buffer_standard_test:ActsBufferLibTest",
       "container_standard_test:ActsContainerLibTest",
+      "container2_standard_test:ActsContainer2LibTest",
+      "container3_standard_test:ActsContainer3LibTest",
       "convertXml_standard_test:ActsConvertXmlLibTest",
       "fastbuffer_standard_test:ActsFastBufferLibTest",
       "global_standard:ActsGlobalLibTest",

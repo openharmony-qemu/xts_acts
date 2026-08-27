@@ -1,4 +1,4 @@
-﻿import { stream } from '@kit.ArkTS';
+import { stream } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 function sleep(ms: number) {
