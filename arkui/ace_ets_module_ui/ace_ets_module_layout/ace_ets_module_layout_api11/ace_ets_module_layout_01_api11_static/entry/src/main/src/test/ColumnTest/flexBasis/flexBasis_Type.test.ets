@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -23,24 +23,13 @@ import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+
+
+
 
 export default function flexBasis_Type() {
   describe('flexBasis_Type', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("flexBasis_Type beforeEach start");
 
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("flexBasis_Type beforeEach start");
       let options: router.RouterOptions = {
@@ -66,7 +55,11 @@ export default function flexBasis_Type() {
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('flexBasis_Type sleep err: ' + JSON.stringify(err));
+      }
       console.info("flexBasis_Type after each called")
     });
 
@@ -82,7 +75,11 @@ export default function flexBasis_Type() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addflexBasis1', value: 100
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('flexBasis_Type sleep err: ' + JSON.stringify(err));
+      }
       let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('Column_flexBasis_011');
       let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('Column_flexBasis_012');
       let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('Column_flexBasis_013');
@@ -121,7 +118,11 @@ export default function flexBasis_Type() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addflexBasis1', value: 0
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('flexBasis_Type sleep err: ' + JSON.stringify(err));
+      }
       let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('Column_flexBasis_011');
       let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('Column_flexBasis_012');
       let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('Column_flexBasis_013');
@@ -160,7 +161,11 @@ export default function flexBasis_Type() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addflexBasis2', value: 'auto'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('flexBasis_Type sleep err: ' + JSON.stringify(err));
+      }
       let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
       let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
       let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('Column_flexBasis_023');
@@ -199,7 +204,11 @@ export default function flexBasis_Type() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addflexBasis2', value: '200vp'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('flexBasis_Type sleep err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
       let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
@@ -239,7 +248,11 @@ export default function flexBasis_Type() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addflexBasis2', value: '200px'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('flexBasis_Type sleep err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
       let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
@@ -279,7 +292,11 @@ export default function flexBasis_Type() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addflexBasis2', value: '200fp'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('flexBasis_Type sleep err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
       let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');
@@ -319,7 +336,11 @@ export default function flexBasis_Type() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addflexBasis2', value: '200lpx'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('flexBasis_Type sleep err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('Column_flexBasis_021');
       let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('Column_flexBasis_022');

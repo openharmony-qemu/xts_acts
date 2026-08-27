@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -32,26 +32,11 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { RecordData } from '@ohos.base';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function circleJsunit() {
   describe('circleJsunit', () => {
-    beforeAll(async () => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("circle beforeEach start");
       let options: router.RouterOptions = {
@@ -74,7 +59,11 @@ export default function circleJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('circleJsunit afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("circle after each called");
     });
 
@@ -124,7 +113,11 @@ it('circleTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
         err = err as BusinessError;
         console.log("[circleTest_static_0200] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('circleJsunit sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('circle3' + '_circle');
       console.info("[circleTest_static_0200] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('500.00px');
@@ -160,7 +153,11 @@ it('circleTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
         err = err as BusinessError;
         console.log("[circleTest_030] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('circleJsunit sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('circle3' + '_circle');
       console.info("[circleTest_static_0300] component objNew is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('0.00vp');

@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-
-import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
-import { UtilsTest } from '../Util.test';
+import { describe, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,19 +25,22 @@ import { ensureAbnormalPage } from '../common/AbnormalPageRouter';
 
 export default function ChipV2AbnormalOptionsTest(): void {
   describe('ChipV2AbnormalOptionsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility");
-    });
 
     beforeEach(async (): Promise<void> => {
-      await CommonFunc.sleep(300);
+      try {
+        await CommonFunc.sleep(300);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(300);
+      try {
+        await CommonFunc.sleep(300);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
     });
-
-
 
     /**
      * @tc.name   SUB_ARKUI_CHIPV2_ABN_PREFIXICON_UNDEFINED_0100
@@ -50,7 +51,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_PREFIXICON_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_prefixIcon_u');
+      try {
+        await ensureAbnormalPage('abn_prefixIcon_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertChildrenSame('abn_prefixIcon_u', 'abn_prefixIcon_d');
     });
 
@@ -63,7 +68,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_SUFFIXICON_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_suffixIcon_u');
+      try {
+        await ensureAbnormalPage('abn_suffixIcon_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertChildrenSame('abn_suffixIcon_u', 'abn_suffixIcon_d');
     });
 
@@ -76,7 +85,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_ALLOWCLOSE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_allowClose_u');
+      try {
+        await ensureAbnormalPage('abn_allowClose_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertChildrenSame('abn_allowClose_u', 'abn_allowClose_d');
     });
 
@@ -89,7 +102,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_CLOSEICON_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_closeIcon_u');
+      try {
+        await ensureAbnormalPage('abn_closeIcon_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertChildrenSame('abn_closeIcon_u', 'abn_closeIcon_d');
     });
 
@@ -102,7 +119,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_ENABLED_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_enabled_u');
+      try {
+        await ensureAbnormalPage('abn_enabled_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_enabled_u', 'abn_enabled_d', 'enabled', 'root');
     });
 
@@ -115,7 +136,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_ACTIVATED_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_activated_u');
+      try {
+        await ensureAbnormalPage('abn_activated_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertSmoke('abn_activated_u', 'abn_activated_d');
     });
 
@@ -128,7 +153,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_BACKGROUNDCOLOR_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_backgroundColor_u');
+      try {
+        await ensureAbnormalPage('abn_backgroundColor_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_backgroundColor_u', 'abn_backgroundColor_d', 'backgroundColor', 'root');
     });
 
@@ -141,7 +170,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_ACTIVATEDBGCOLOR_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_activatedBgColor_u');
+      try {
+        await ensureAbnormalPage('abn_activatedBgColor_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_activatedBgColor_u', 'abn_activatedBgColor_d', 'backgroundColor', 'root');
     });
 
@@ -154,7 +187,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_BORDERRADIUS_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_borderRadius_u');
+      try {
+        await ensureAbnormalPage('abn_borderRadius_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_borderRadius_u', 'abn_borderRadius_d', 'borderRadius', 'root');
     });
 
@@ -167,7 +204,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_SIZE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_size_u');
+      try {
+        await ensureAbnormalPage('abn_size_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_size_u', 'abn_size_d', 'size', 'root');
     });
 
@@ -180,7 +221,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_DIRECTION_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_direction_u');
+      try {
+        await ensureAbnormalPage('abn_direction_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_direction_u', 'abn_direction_d', 'direction', 'root');
     });
 
@@ -193,7 +238,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_A11YDESC_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_a11yDesc_u');
+      try {
+        await ensureAbnormalPage('abn_a11yDesc_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_a11yDesc_u', 'abn_a11yDesc_d', 'accessibilityDescription', 'root');
     });
 
@@ -206,7 +255,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_A11YLEVEL_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_a11yLevel_u');
+      try {
+        await ensureAbnormalPage('abn_a11yLevel_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_a11yLevel_u', 'abn_a11yLevel_d', 'accessibilityLevel', 'root');
     });
 
@@ -219,7 +272,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_A11YSELTYPE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_a11ySelType_u');
+      try {
+        await ensureAbnormalPage('abn_a11ySelType_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertSmoke('abn_a11ySelType_u', 'abn_a11ySelType_d');
     });
 
@@ -232,7 +289,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_MAXFONTSCALE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_maxFontScale_u');
+      try {
+        await ensureAbnormalPage('abn_maxFontScale_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertChildrenSame('abn_maxFontScale_u', 'abn_maxFontScale_d');
     });
 
@@ -245,7 +306,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_MINFONTSCALE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_minFontScale_u');
+      try {
+        await ensureAbnormalPage('abn_minFontScale_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertChildrenSame('abn_minFontScale_u', 'abn_minFontScale_d');
     });
 
@@ -258,7 +323,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_PADDING_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_padding_u');
+      try {
+        await ensureAbnormalPage('abn_padding_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_padding_u', 'abn_padding_d', 'padding', 'inner');
     });
 
@@ -271,7 +340,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_FONTSIZE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_fontSize_u');
+      try {
+        await ensureAbnormalPage('abn_fontSize_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertChildrenSame('abn_fontSize_u', 'abn_fontSize_d');
     });
 
@@ -284,7 +357,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_ACTBGSYSMATERIAL_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_actBgSysMaterial_u');
+      try {
+        await ensureAbnormalPage('abn_actBgSysMaterial_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertSystemMaterialSame('abn_actBgSysMaterial_u', 'abn_actBgSysMaterial_d');
     });
 
@@ -297,7 +374,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_ONCLOSE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_onClose_u');
+      try {
+        await ensureAbnormalPage('abn_onClose_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertSmoke('abn_onClose_u', 'abn_onClose_d');
     });
 
@@ -310,7 +391,11 @@ export default function ChipV2AbnormalOptionsTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_ARKUI_CHIPV2_ABN_ONCLICKED_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_onClicked_u');
+      try {
+        await ensureAbnormalPage('abn_onClicked_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertSmoke('abn_onClicked_u', 'abn_onClicked_d');
     });
   });

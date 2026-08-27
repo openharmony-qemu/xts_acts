@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -31,27 +31,12 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 import { LineCapStyle, LineJoinStyle } from '@ohos.arkui.component'
 import { RecordData } from '@ohos.base';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function shapeJsunit() {
   describe('shapeJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Shape/shape3',
@@ -73,7 +58,11 @@ export default function shapeJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("shape after each called");
     });
 
@@ -86,13 +75,21 @@ export default function shapeJsunit() {
      */
 it('shapeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_0100 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('strokeDashOffset')).assertEqual('0.00vp');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -106,14 +103,22 @@ it('shapeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_0200 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_0200 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('strokeLineCap'))
         .assertEqual('LineCapStyle.Butt');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -126,14 +131,22 @@ it('shapeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_0300 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_0300 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('strokeLineJoin'))
         .assertEqual('LineJoinStyle.Miter');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -146,13 +159,21 @@ it('shapeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_0400 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_0400 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('strokeMiterLimit')).assertEqual('4.000000');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -165,13 +186,21 @@ it('shapeTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_0500 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_0500 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('strokeOpacity')).assertEqual('1.000000');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -184,13 +213,21 @@ it('shapeTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_0600 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_0600 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fillOpacity')).assertEqual('0.000000');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -203,13 +240,21 @@ it('shapeTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_0700 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_0700 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('antiAlias')).assertEqual('true');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -222,14 +267,22 @@ it('shapeTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_0800 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_0800 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('strokeDashArray')[0].asString())
         .assertEqual('20.00vp');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -242,14 +295,22 @@ it('shapeTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_0900 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_0900 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getArray('strokeDashArray')[1].asString())
         .assertEqual('20.00vp');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -262,7 +323,11 @@ it('shapeTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_1000 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -279,9 +344,17 @@ it('shapeTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_1000 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(4000);
+      try {
+        await CommonFunc.sleep(4000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("shapeTest_1000 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)
@@ -300,7 +373,11 @@ it('shapeTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -317,7 +394,11 @@ it('shapeTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_1100 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
       console.info("shapeTest_static_1100 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)
@@ -336,7 +417,11 @@ it('shapeTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1200 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -353,7 +438,11 @@ it('shapeTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_1200 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
       console.info("shapeTest_static_1200 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)
@@ -372,7 +461,11 @@ it('shapeTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1300 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -389,7 +482,11 @@ it('shapeTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_1300 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_1300 component JSON.parseJsonElement(strJson) is: " +
@@ -411,7 +508,11 @@ it('shapeTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1400 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -428,7 +529,11 @@ it('shapeTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_1400 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_1400 component JSON.parseJsonElement(strJson) is: " +
@@ -449,7 +554,11 @@ it('shapeTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1500 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -466,7 +575,11 @@ it('shapeTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_1500 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_1500 component JSON.parseJsonElement(strJson) is: " +
@@ -487,7 +600,11 @@ it('shapeTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1600 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -504,7 +621,11 @@ it('shapeTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_1600 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_1600 component JSON.parseJsonElement(strJson) is: " +
@@ -526,7 +647,11 @@ it('shapeTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1700 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -543,7 +668,11 @@ it('shapeTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_1700 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_1700 component JSON.parseJsonElement(strJson) is: " +
@@ -564,7 +693,11 @@ it('shapeTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1800 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -581,7 +714,11 @@ it('shapeTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_1800 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_1800 component JSON.parseJsonElement(strJson) is: " +
@@ -602,7 +739,11 @@ it('shapeTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_2100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -619,7 +760,11 @@ it('shapeTest_static_2100', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2100 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2100 component JSON.parseJsonElement(strJson) is: " +
@@ -640,7 +785,11 @@ it('shapeTest_static_2100', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_3200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_3200 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -657,7 +806,11 @@ it('shapeTest_static_3200', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_3200 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_3200 component JSON.parseJsonElement(strJson) is: " +
@@ -678,7 +831,11 @@ it('shapeTest_static_3200', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_3300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_3300 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -695,7 +852,11 @@ it('shapeTest_static_3300', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_3300 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_3300 component JSON.parseJsonElement(strJson) is: " +
@@ -716,7 +877,11 @@ it('shapeTest_static_3300', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1300 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -733,7 +898,11 @@ it('shapeTest_static_2200', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2200 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2200 component JSON.parseJsonElement(strJson) is: " +
@@ -754,7 +923,11 @@ it('shapeTest_static_2200', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_1900 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -771,7 +944,11 @@ it('shapeTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_1900 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_1900 component JSON.parseJsonElement(strJson) is: " +
@@ -792,7 +969,11 @@ it('shapeTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_2000 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -809,7 +990,11 @@ it('shapeTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2000 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2000 component JSON.parseJsonElement(strJson) is: " +
@@ -830,7 +1015,11 @@ it('shapeTest_static_2000', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_2300 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -847,7 +1036,11 @@ it('shapeTest_static_2300', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2300 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2300 component JSON.parseJsonElement(strJson) is: " +
@@ -868,7 +1061,11 @@ it('shapeTest_static_2300', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_2400 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -885,7 +1082,11 @@ it('shapeTest_static_2400', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2400 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2400 component JSON.parseJsonElement(strJson) is: " +
@@ -905,7 +1106,11 @@ it('shapeTest_static_2400', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_2500 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -922,7 +1127,11 @@ it('shapeTest_static_2500', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2500 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2500 component JSON.parseJsonElement(strJson) is: " +
@@ -942,7 +1151,11 @@ it('shapeTest_static_2500', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_2600 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -959,7 +1172,11 @@ it('shapeTest_static_2600', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2600 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2600 component JSON.parseJsonElement(strJson) is: " +
@@ -979,7 +1196,11 @@ it('shapeTest_static_2600', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_2700 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -996,7 +1217,11 @@ it('shapeTest_static_2700', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2700 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2700 component JSON.parseJsonElement(strJson) is: " +
@@ -1017,7 +1242,11 @@ it('shapeTest_static_2700', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_2800 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -1034,7 +1263,11 @@ it('shapeTest_static_2800', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2800 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2800 component JSON.parseJsonElement(strJson) is: " +
@@ -1055,7 +1288,11 @@ it('shapeTest_static_2800', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_2900 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -1072,7 +1309,11 @@ it('shapeTest_static_2900', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_2900 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_2900 component JSON.parseJsonElement(strJson) is: " +
@@ -1093,13 +1334,21 @@ it('shapeTest_static_2900', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_3000 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_3000 component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('stroke')).assertEqual('#FF000000');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -1112,7 +1361,11 @@ it('shapeTest_static_3000', Level.LEVEL0, async (done: () => void): Promise<void
      */
 it('shapeTest_static_3100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('shapeTest_static_3100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: emitter.EventData = {
           data: {
@@ -1129,7 +1382,11 @@ it('shapeTest_static_3100', Level.LEVEL0, async (done: () => void): Promise<void
         err = err as BusinessError;
         console.log("shapeTest_static_3100 change component color error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('shape');
 
       console.info("shapeTest_static_3100 component JSON.parseJsonElement(strJson) is: " +
@@ -1142,4 +1399,3 @@ it('shapeTest_static_3100', Level.LEVEL0, async (done: () => void): Promise<void
     });
   })
 }
-

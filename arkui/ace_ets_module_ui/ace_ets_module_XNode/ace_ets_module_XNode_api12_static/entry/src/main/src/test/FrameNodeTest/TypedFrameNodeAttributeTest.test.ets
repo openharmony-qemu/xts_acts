@@ -14,18 +14,8 @@
  * limitations under the License.
  */
 
-import {
-  describe,
-  beforeAll,
-  expect,
-  beforeEach,
-  afterEach,
-  afterAll,
-  it,
-  Level
-} from '../../../../hypium/index'
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from "../../../../hypium/index"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
@@ -34,11 +24,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 export default function TypedFrameNodeAttributeTest() {
   describe('TypedFrameNodeAttributeTest', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility('com.arkui.ace.XNode.api12.static', 'EntryAbility');
-      await UtilsTest.msSleep(1000);
-      console.info('TypedFrameNodeAttributeTest startAbility completed');
-    });
 
     beforeEach(async () => {
       console.info('frameNodeApi beforeEach start');
@@ -73,10 +58,18 @@ export default function TypedFrameNodeAttributeTest() {
     it('TypedFrameNode_attribute_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[TypedFrameNode_attribute_0100] START');
       let driver = Driver.create();
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('getAttribute');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       console.info('[TypedFrameNode_attribute_0100] content: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
 

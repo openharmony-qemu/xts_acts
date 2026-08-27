@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
 import router from '@ohos.router';
 import {Alignment} from '@ohos.arkui.component'
 import  CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -25,19 +25,11 @@ import image from '@ohos.multimedia.image';
 import window from '@ohos.window';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {  Router, UIContext } from '@ohos.arkui.UIContext';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest,startAbility } from '../../Util.test'
 import inspector from '@ohos.arkui.inspector';
 
 export default function Stack_Position_Change() {
   describe('Stack_Position_ChangeTest', () => {
-    beforeAll(async () => {
-      console.info("Stack_Position_ChangeTest beforeEach start");
 
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-
-    })
     beforeEach(async (): Promise<void> => {
       console.info("Stack_Position_ChangeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -59,7 +51,11 @@ export default function Stack_Position_Change() {
       }
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("Stack_Position_Change after each called")
     });
     
@@ -75,7 +71,11 @@ export default function Stack_Position_Change() {
      */
     it('testStackPositionChangeWithAlignmentTopStart_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackPositionChangeWithAlignmentTopStart_static] START');
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -119,7 +119,11 @@ export default function Stack_Position_Change() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Top
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -164,7 +168,11 @@ export default function Stack_Position_Change() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.TopEnd
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -208,7 +216,11 @@ export default function Stack_Position_Change() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Start
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -253,7 +265,11 @@ export default function Stack_Position_Change() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Center
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -299,7 +315,11 @@ export default function Stack_Position_Change() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.End
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -344,7 +364,11 @@ export default function Stack_Position_Change() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.BottomStart
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -388,7 +412,11 @@ export default function Stack_Position_Change() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Bottom
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -433,7 +461,11 @@ export default function Stack_Position_Change() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.BottomEnd
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_Position_ChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_Position_Change_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');

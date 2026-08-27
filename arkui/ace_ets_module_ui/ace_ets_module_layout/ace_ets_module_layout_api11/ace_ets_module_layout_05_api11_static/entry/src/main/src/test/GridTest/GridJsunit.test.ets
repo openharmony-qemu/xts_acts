@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import {
   Component,
   Driver,
@@ -31,27 +31,12 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import inspector from '@ohos.arkui.inspector'
 import { BarState, Color } from '@ohos.arkui.component'
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function GridJsunit() {
   describe('GridJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("GridJsunit beforeEach start");
@@ -90,13 +75,21 @@ it('GridJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let strJson1 = inspector.getInspectorByKey('GridPage' + '_grid1');
       let obj = JSON.parseJsonElement(strJson1);
       console.info("[GridJsunit_static_0100] component obj is: " + JSON.stringify(obj));
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       expect(obj.getElement('$attrs').getString('columnsGap')).assertEqual('10.00vp');
       expect(obj.getElement('$attrs').getString('rowsGap')).assertEqual('10.00vp');
       expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(1);
       expect(obj.getElement('$attrs').getString('multiSelectable')).assertEqual('false');
       expect(obj.getElement('$attrs').getString('supportAnimation')).assertEqual('false');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('GridPage' + '_grid2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridJsunit_static_0100] component obj2 is: " + JSON.stringify(obj2));
@@ -120,31 +113,59 @@ it('GridJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 it('GridJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridJsunit_static_0200] START');
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'columnsGap', value: 15.0
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'rowsGap', value: 20.0
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<BarState>>('messageManager')?.notify({
         name: 'scrollBar', value: BarState.On
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'scrollBarColor', value: 'Color.Blue'
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'scrollBarWidth', value: 30.0
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'cachedCount', value: 2
       })
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       
       let strJson = inspector.getInspectorByKey('GridPage' + '_grid1');
@@ -153,7 +174,11 @@ it('GridJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(obj.getElement('$attrs').getString('columnsGap')).assertEqual('15.00vp');
       expect(obj.getElement('$attrs').getString('rowsGap')).assertEqual('20.00vp');
       expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(2);
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('GridPage' + '_grid2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridJsunit_static_0200] component obj2 is: " + JSON.stringify(obj2));
@@ -177,31 +202,59 @@ it('GridJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
 it('GridJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridJsunit_static_0300] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'columnsGap', value: 0.0
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'rowsGap', value: -10.0
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<BarState>>('messageManager')?.notify({
         name: 'scrollBar', value: BarState.Auto
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'scrollBarColor', value: 'aaa'
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'scrollBarWidth', value: -10.0
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'cachedCount', value: 1
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       
       let strJson = inspector.getInspectorByKey('GridPage' + '_grid1');
@@ -210,7 +263,11 @@ it('GridJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(obj.getElement('$attrs').getString('columnsGap')).assertEqual('0.00vp');
       expect(obj.getElement('$attrs').getString('rowsGap')).assertEqual('0.00vp');
       expect(obj.getElement('$attrs').getDouble('cachedCount')).assertEqual(1);
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('GridPage' + '_grid2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridJsunit_static_0300] component obj2 is: " + JSON.stringify(obj2));
@@ -235,7 +292,11 @@ it('GridJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
 it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridJsunit_static_0400] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       
       let grid2 = CommonFunc.getComponentRect('GridPage' + '_grid2');
@@ -245,37 +306,73 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       let right = grid2.right
       let driver = Driver.create()
 
-      await driver.swipe((Math.round((right - left) / 2)).toInt(),
+            try {
+        await driver.swipe((Math.round((right - left) / 2)).toInt(),
         (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
-      await driver.swipe((Math.round((right - left) / 2)).toInt(),
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await driver.swipe((Math.round((right - left) / 2)).toInt(),
         (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
-      await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let onScrollIndex1:Component = await driver.findComponent(ON.id('GridPage' + '_onScrollIndex')) as Component;
       let text1 = await (onScrollIndex1?.getText() as Promise<string>);
       expect(text1).assertEqual('onScrollIndex:2');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
 
-      await driver.swipe((Math.round((right - left) / 2)).toInt(),
+            try {
+        await driver.swipe((Math.round((right - left) / 2)).toInt(),
         (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
-      await driver.swipe((Math.round((right - left) / 2)).toInt(),
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await driver.swipe((Math.round((right - left) / 2)).toInt(),
         (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
-      await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let onScrollIndex2:Component = await driver.findComponent(ON.id('GridPage' + '_onScrollIndex')) as Component;
       let text2 = await (onScrollIndex2?.getText() as Promise<string>);
       expect(text2).assertEqual('onScrollIndex:2');
 
 
       let button:Component = await driver.findComponent(ON.id('GridPage' + '_button')) as Component;
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+            try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('GridPage' + '_button');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('label')).assertEqual('clicked');
@@ -293,7 +390,11 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
 it('GridJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridJsunit_static_0500] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('GridPage' + '_grid_default');
       let obj = JSON.parseJsonElement(strJson1);
       console.info("[GridJsunit_static_0500] component obj is: " + JSON.stringify(obj));
@@ -332,11 +433,19 @@ it('GridJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'columnsTemplate', value: '1fr 1fr'
       })
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'rowsTemplate', value: '1fr 1fr'
       })
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let gridItem1 = CommonFunc.getComponentRect('0');
       let bottom = gridItem1.bottom
       let gridItem2 = CommonFunc.getComponentRect('2');
@@ -368,11 +477,19 @@ it('GridJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<voi
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'columnsTemplate', value: '1fr 1fr 1fr 1fr'
       })
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'rowsTemplate', value: ''
       })
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let gridItem1 = CommonFunc.getComponentRect('0');
       let left1 = gridItem1.left
       let gridItem2 = CommonFunc.getComponentRect('4');
@@ -398,11 +515,19 @@ it('GridJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<voi
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'columnsTemplate', value: ''
       })
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'rowsTemplate', value: '1fr 1fr 1fr 1fr'
       })
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create()
       let gridItem1 = CommonFunc.getComponentRect('0');
       let left1 = gridItem1.left
@@ -429,11 +554,19 @@ it('GridJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise<voi
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'columnsTemplate', value: ''
       })
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'rowsTemplate', value: ''
       })
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridJsunitTest await err: ' + JSON.stringify(err));
+      }
       
       let driver = Driver.create()
       let grid_1 = await driver.findComponent(ON.id('GridPage' + '_grid1'));

@@ -14,32 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../../hypium/index";
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
 import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function grid_RowCol_ItemPadMarTest() {
   describe('Grid_RowCol_ItemPadMarTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("grid_RowCol_ItemPadMarTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("grid_RowCol_ItemPadMarTest beforeEach start");
@@ -68,7 +53,11 @@ export default function grid_RowCol_ItemPadMarTest() {
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'secondGridItemMargin', value: 0
       });
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Grid_RowCol_ItemPadMarTestTest await err: ' + JSON.stringify(err));
+      }
       console.info("Grid_RowCol_ItemPadMarTest after each called");
     });
     
@@ -86,7 +75,11 @@ it('testGridRowColItemMargin_static_01', Level.LEVEL0, async (done: () => void):
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'secondGridItemMargin', value: 10
       });
-      await CommonFunc.sleep(3000);
+            try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Grid_RowCol_ItemPadMarTestTest await err: ' + JSON.stringify(err));
+      }
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar02');
       let secondText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar' + '_Text02');
@@ -162,7 +155,11 @@ it('testGridRowColItemPadding_static_02', Level.LEVEL0, async (done: () => void)
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'secondGridItemPadding', value: 10
       });
-      await CommonFunc.sleep(3000);
+            try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Grid_RowCol_ItemPadMarTestTest await err: ' + JSON.stringify(err));
+      }
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar02');
       let secondText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar' + '_Text02');
@@ -230,7 +227,11 @@ it('testGridRowColItemMarPad_static_03', Level.LEVEL0, async (done: () => void):
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'secondGridItemMargin', value: 10
       });
-      await CommonFunc.sleep(3000);
+            try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Grid_RowCol_ItemPadMarTestTest await err: ' + JSON.stringify(err));
+      }
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar02');
       let secondText: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemPadMar' + '_Text02');

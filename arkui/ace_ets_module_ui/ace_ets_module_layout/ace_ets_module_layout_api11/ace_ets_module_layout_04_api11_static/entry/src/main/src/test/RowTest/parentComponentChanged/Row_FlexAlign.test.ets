@@ -15,31 +15,18 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import { FlexAlign } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function Row_FlexAlign() {
   describe('Row_FlexAlign', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_FlexAlign beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_FlexAlign beforeEach start");
       let options: router.RouterOptions = {
@@ -59,12 +46,20 @@ export default function Row_FlexAlign() {
       } catch (err) {
         console.error("push Row_FlexAlign page error " + JSON.stringify(err));
       }
+      try {
       await CommonFunc.sleep(1000)
+      } catch (err) {
+      console.info('Row_FlexAlignTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_FlexAlign beforeEach end");
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000)
+      } catch (err) {
+      console.info('Row_FlexAlignTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_FlexAlign after each called");
     });
 
@@ -79,7 +74,11 @@ export default function Row_FlexAlign() {
       AppStorage.get<MessageManager<FlexAlign>>('messageManager')?.notify({
         name: 'justifyContent', value: FlexAlign.Start
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('Row_FlexAlignTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -138,7 +137,11 @@ export default function Row_FlexAlign() {
       AppStorage.get<MessageManager<FlexAlign>>('messageManager')?.notify({
         name: 'justifyContent', value: FlexAlign.Center
       });
+      try {
       await CommonFunc.sleep(3000)
+      } catch (err) {
+      console.info('Row_FlexAlignTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -194,7 +197,11 @@ export default function Row_FlexAlign() {
       AppStorage.get<MessageManager<FlexAlign>>('messageManager')?.notify({
         name: 'justifyContent', value: FlexAlign.End
       });
+      try {
       await CommonFunc.sleep(3000)
+      } catch (err) {
+      console.info('Row_FlexAlignTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -251,7 +258,11 @@ export default function Row_FlexAlign() {
       AppStorage.get<MessageManager<FlexAlign>>('messageManager')?.notify({
         name: 'justifyContent', value: FlexAlign.SpaceBetween
       });
+      try {
       await CommonFunc.sleep(3000)
+      } catch (err) {
+      console.info('Row_FlexAlignTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -310,7 +321,11 @@ export default function Row_FlexAlign() {
       AppStorage.get<MessageManager<FlexAlign>>('messageManager')?.notify({
         name: 'justifyContent', value: FlexAlign.SpaceAround
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_FlexAlignTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -372,7 +387,11 @@ export default function Row_FlexAlign() {
       AppStorage.get<MessageManager<FlexAlign>>('messageManager')?.notify({
         name: 'justifyContent', value: FlexAlign.SpaceEvenly
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_FlexAlignTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row_ParentComponentChanged_Row');
 
       console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));

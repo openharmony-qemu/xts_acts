@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
@@ -21,28 +21,12 @@ import router from '@ohos.router';
 import { LinearGradientOptions, SweepGradientOptions, RadialGradientOptions } from '@ohos.arkui.component'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { ResourceColor, GradientDirection } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test'
 import { RecordData } from '@ohos.base';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function colorGradientJsunit() {
   describe('borderTest_five_2', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("borderTest_five_2 beforeAll start");
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("colorGradientJsunit beforeEach start");
@@ -65,7 +49,11 @@ export default function colorGradientJsunit() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       console.info("colorGradient after each called");
     });
     
@@ -80,7 +68,11 @@ export default function colorGradientJsunit() {
      */
 it('testColorGradient001_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testColorGradient001_static_001] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('linearGradient');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testColorGradient001_static_001] component JSON.parse(strJson) is: " + JSON.stringify(obj.getElement('$attrs').getElement('linearGradient')));
@@ -102,7 +94,11 @@ it('testColorGradient001_static_001', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testColorGradient002_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testColorGradient002_static_02] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       let linearGradientValue: LinearGradientOptions = {
         angle: 80,
         direction: GradientDirection.Top,
@@ -124,7 +120,11 @@ it('testColorGradient002_static_02', Level.LEVEL0, async (done: () => void): Pro
       } catch (err) {
         console.log("[testColorGradient002_static_02] change component data error: " + (err as Error)?.message);
       }
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('linearGradient');
       let obj = JSON.parseJsonElement(strJsonNew);
       console.info("[testColorGradient002_static_02] component JSON.parse(strJsonNew) is: " + JSON.stringify(obj));
@@ -145,9 +145,17 @@ it('testColorGradient002_static_02', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('testColorGradient003_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await CommonFunc.sleep(1000)
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       console.info('[testColorGradient003_static_03] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('sweepGradient');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testColorGradient003_static_03] component JSON.parse(strJson) is: " + JSON.stringify(obj));
@@ -169,7 +177,11 @@ it('testColorGradient003_static_03', Level.LEVEL0, async (done: () => void): Pro
      */
 it('testColorGradient004_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testColorGradient004_static_04] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       let sweepGradientValue: SweepGradientOptions = {
         center: [50, 50],
         start: 10,
@@ -192,7 +204,11 @@ it('testColorGradient004_static_04', Level.LEVEL0, async (done: () => void): Pro
       } catch (err) {
         console.log("[testColorGradient004_static_04] change component data error: " + (err as Error)?.message);
       }
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('sweepGradient');
       let obj = JSON.parseJsonElement(strJsonNew);
       console.info("[testColorGradient004_static_04] component JSON.parse(strJsonNew) is: " + JSON.stringify(obj));
@@ -213,9 +229,17 @@ it('testColorGradient004_static_04', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('testColorGradient005_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await CommonFunc.sleep(1000)
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       console.info('[testColorGradient005_static_05] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('radialGradient');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testColorGradient005_static_05] component JSON.parse(strJson) is: " + JSON.stringify(obj));
@@ -238,7 +262,11 @@ it('testColorGradient005_static_05', Level.LEVEL0, async (done: () => void): Pro
      */
 it('testColorGradient006_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testColorGradient006_static_06] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       let radialGradientValue: RadialGradientOptions = {
         center: [60, 60],
         radius: 70,
@@ -260,7 +288,11 @@ it('testColorGradient006_static_06', Level.LEVEL0, async (done: () => void): Pro
       } catch (err) {
         console.log("[testColorGradient006_static_06] change component data error: " + (err as Error)?.message);
       }
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('borderTest_five_2Test await err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('radialGradient');
       let obj = JSON.parseJsonElement(strJsonNew);
       console.info("[testColorGradient006_static_06] component JSON.parse(strJsonNew) is: " + JSON.stringify(obj));

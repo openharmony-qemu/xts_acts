@@ -15,30 +15,17 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function Row_MarginPadding() {
 
   describe('Row_MarginPadding', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_MarginPadding beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_MarginPadding beforeEach start");
       let options: router.RouterOptions = {
@@ -58,12 +45,20 @@ export default function Row_MarginPadding() {
       } catch (err) {
         console.error("push Row_MarginPadding page error " + JSON.stringify(err));
       }
+      try {
       await CommonFunc.sleep(1000)
+      } catch (err) {
+      console.info('Row_MarginPaddingTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_MarginPadding beforeEach end");
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000)
+      } catch (err) {
+      console.info('Row_MarginPaddingTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_MarginPadding after each called");
     });
 
@@ -83,7 +78,11 @@ it('testRowMarginPaddingSatisfy_static_01', Level.LEVEL0, async (done: () => voi
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'padding', value: 15
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_MarginPaddingTest await err: ' + JSON.stringify(err));
+      }
       let Column: RectValue = CommonFunc.getComponentRect('Column_Row_MarginPadding');
       let Row: RectValue = CommonFunc.getComponentRect('Row_MarginPadding');
       let Text1: RectValue = CommonFunc.getComponentRect('Row_MarginPadding_Text1');
@@ -136,7 +135,11 @@ it('testRowMarginPaddingNoSatisfy_static_02', Level.LEVEL0, async (done: () => v
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'padding', value: 40
       });
+      try {
       await CommonFunc.sleep(3000)
+      } catch (err) {
+      console.info('Row_MarginPaddingTest await err: ' + JSON.stringify(err));
+      }
       let Column: RectValue = CommonFunc.getComponentRect('Column_Row_MarginPadding');
       let Row: RectValue = CommonFunc.getComponentRect('Row_MarginPadding');
       let Text1: RectValue = CommonFunc.getComponentRect('Row_MarginPadding_Text1');

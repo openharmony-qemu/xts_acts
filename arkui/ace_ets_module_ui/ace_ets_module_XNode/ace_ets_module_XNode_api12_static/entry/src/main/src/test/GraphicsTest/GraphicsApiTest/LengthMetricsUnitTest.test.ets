@@ -13,22 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from "@ohos.router";
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest,startAbility} from '../../Util.test';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from "@ohos.UiTest";
 export default function LengthMetricsUnitTest() {
   describe("LengthMetricsUnitTest", () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("LengthMetricsUnitTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async () : Promise<void> => {
       console.info("LengthMetricsUnitTest beforeEach start");
       let options: router.RouterOptions = {
@@ -54,7 +47,11 @@ export default function LengthMetricsUnitTest() {
     }); 
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       console.info("LengthMetricsUnitTest after each called");
     });
     
@@ -69,10 +66,18 @@ export default function LengthMetricsUnitTest() {
 it('LengthMetricsUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info("[LengthMetricsUnitTest_001] START");
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let LengthMetricsUnit = inspector.getInspectorByKey("LengthMetricsUnit");
       console.info("LengthMetricsUnit--" + JSON.stringify(JSON.parseJsonElement(LengthMetricsUnit).getElement('$attrs').getString('content')));
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       expect(JSON.parseJsonElement(LengthMetricsUnit).getElement('$attrs').getString('content')).assertEqual("1");
       console.info("[LengthMetricsUnitTest_001] END");
       done();

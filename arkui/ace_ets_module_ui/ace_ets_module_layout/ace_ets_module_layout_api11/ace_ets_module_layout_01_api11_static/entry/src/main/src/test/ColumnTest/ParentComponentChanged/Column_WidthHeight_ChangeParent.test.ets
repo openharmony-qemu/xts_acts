@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -22,26 +22,15 @@ import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+
+
+
 
 export default function column_WidthHeight_ChangeParent() {
 
   describe('Column_WidthHeight_ChangeParentTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Column_WidthHeight_ChangeParentTest beforeEach start");
 
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Column_WidthHeight_ChangeParentTest beforeEach start");
       let options: router.RouterOptions = {
@@ -57,7 +46,7 @@ export default function column_WidthHeight_ChangeParent() {
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
           // console.info("push Column_WidthHeight_ChangeParentTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
@@ -68,7 +57,11 @@ export default function column_WidthHeight_ChangeParent() {
 
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+      await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Column_WidthHeight_ChangeParentTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("Column_WidthHeight_ChangeParent afterEach called");
     });
 
@@ -84,7 +77,11 @@ export default function column_WidthHeight_ChangeParent() {
       const uiContext = AppStorage.get<UIContext>('uiContext');
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({ name: 'height', value: 400 })
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({ name: 'width', value: 350 })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Column_WidthHeight_ChangeParentTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('ColumnWidthHeightChange1');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Column');
@@ -136,7 +133,11 @@ export default function column_WidthHeight_ChangeParent() {
       const uiContext = AppStorage.get<UIContext>('uiContext');
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({ name: 'height', value: 300 })
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({ name: 'width', value: 350 })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Column_WidthHeight_ChangeParentTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('ColumnWidthHeightChange1');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Column');
@@ -188,7 +189,11 @@ export default function column_WidthHeight_ChangeParent() {
       const uiContext = AppStorage.get<UIContext>('uiContext');
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({ name: 'height', value: 400 })
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({ name: 'width', value: 200 })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Column_WidthHeight_ChangeParentTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('ColumnWidthHeightChange1');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Column');

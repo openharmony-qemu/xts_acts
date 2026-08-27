@@ -13,30 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, MouseButton,Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest,startAbility} from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function commonEventTest1() {
   describe('commonEventTest1', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("commonEventTest1 beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("commonEventTest1 beforeEach start");
       let options: router.RouterOptions = {
@@ -61,7 +46,11 @@ export default function commonEventTest1() {
       //done();
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       console.info("commonEventTest1 after each called");
     });
     
@@ -78,19 +67,43 @@ export default function commonEventTest1() {
 it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('commonEventTest1_static_0100 START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create()
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let node: Component | null = await driver.findComponent(ON.id('commonEventTest1_node'));
       let point = await (node?.getBoundsCenter() as Promise<Point>);
+      try {
       await driver.mouseClick({x:Math.round(point.x).toInt(), y:Math.round(point.y).toInt()}, MouseButton.MOUSE_BUTTON_LEFT);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let btn1 = await driver.findComponent(ON.id('commonEventTest1_getOnMouse'));
       await (btn1?.click() as Promise<void>)
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('commonEventTest1_text1');
       let obj1 = JSON.parseJsonElement(strJson1);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       console.info("[commonEventTest1_static_0100] obj1 is: " + JSON.stringify(obj1));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('setOnMouseFrameNode')
       console.info('commonEventTest1_static_0100 END');
@@ -110,20 +123,40 @@ it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promi
 it('commonEventTest1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('commonEventTest1_static_0200 START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create()
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let btn1 = await driver.findComponent(ON.id('commonEventTest1_changeSize'));
       await (btn1?.click() as Promise<void>)
       console.info("[commonEventTest1_static_0200] btn1");
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let btn2 = await driver.findComponent(ON.id('commonEventTest1_getOnSizeChange'));
       await (btn2?.click() as Promise<void>)
       console.info("[commonEventTest1_static_0200] btn2");
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('commonEventTest1_text2');
       let obj1 = JSON.parseJsonElement(strJson1);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       console.info("[commonEventTest1_static_0200] obj1 is: " + JSON.stringify(obj1));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('setOnSizeChangeFrameNode')
       console.info('commonEventTest1_static_0200 END');

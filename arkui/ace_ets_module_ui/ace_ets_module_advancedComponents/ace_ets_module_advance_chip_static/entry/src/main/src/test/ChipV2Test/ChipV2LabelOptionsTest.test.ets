@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,11 +25,6 @@ import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 
 export default function ChipV2LabelOptionsTest(): void {
   describe('ChipV2LabelOptionsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ChipV2LabelOptionsTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ChipV2LabelOptionsTest beforeEach start");
@@ -54,10 +48,13 @@ export default function ChipV2LabelOptionsTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("ChipV2LabelOptionsTest after each called");
     });
-
 
     /**
      * @tc.number   SUB_ARKUI_API_ChipV2LabelOptionsTest_static_0100
@@ -67,7 +64,11 @@ export default function ChipV2LabelOptionsTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2LabelOptionsTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2LabelOptionsTest_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
       let btnElement = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
@@ -106,7 +107,11 @@ export default function ChipV2LabelOptionsTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2LabelOptionsTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2LabelOptionsTest_static_002] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let btnElement = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]

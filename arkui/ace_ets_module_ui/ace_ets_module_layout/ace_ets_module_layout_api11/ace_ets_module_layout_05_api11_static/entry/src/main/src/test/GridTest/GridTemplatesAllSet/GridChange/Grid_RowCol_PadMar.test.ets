@@ -14,34 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
 import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_RowCol_PadMar() {
 
   describe('Grid_RowCol_PadMarTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Grid_RowCol_PadMarTest beforeAll start");
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("Grid_RowCol_PadMar beforeEach start");
@@ -64,7 +48,11 @@ export default function Grid_RowCol_PadMar() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Grid_RowCol_PadMarTestTest await err: ' + JSON.stringify(err));
+      }
       console.info("Grid_RowCol_PadMar after each called")
     });
     
@@ -79,7 +67,11 @@ export default function Grid_RowCol_PadMar() {
      */
 it('testGridRowColGridPad_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGridRowColGridPad_static_01] START');
-      await CommonFunc.sleep(3000);
+            try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Grid_RowCol_PadMarTestTest await err: ' + JSON.stringify(err));
+      }
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_PadMar' + '_01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
@@ -158,7 +150,11 @@ it('testGridRowColGridMargin_static_02', Level.LEVEL0, async (done: () => void):
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'addMargin', value: 10
       });
-      await CommonFunc.sleep(3000);
+            try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Grid_RowCol_PadMarTestTest await err: ' + JSON.stringify(err));
+      }
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_PadMar' + '_01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');
@@ -233,7 +229,11 @@ it('testGridRowColGridPadMar_static_03', Level.LEVEL0, async (done: () => void):
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'addMargin', value: 10
       });
-      await CommonFunc.sleep(3000);
+            try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Grid_RowCol_PadMarTestTest await err: ' + JSON.stringify(err));
+      }
       let gridContainerStrJson = inspector.getInspectorByKey('Grid_RowCol_PadMar' + '_01');
 
      expect(JSON.parseJsonElement(gridContainerStrJson).getString('$type')).assertEqual('Grid');

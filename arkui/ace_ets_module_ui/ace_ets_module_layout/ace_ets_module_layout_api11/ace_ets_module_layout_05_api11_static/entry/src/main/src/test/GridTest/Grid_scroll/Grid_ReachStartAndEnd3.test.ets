@@ -14,33 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_ReachStartAndEnd3() {
   describe('Grid_ReachStartAndEnd3', () => {
-    beforeAll(async (): Promise<void> => {
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("Grid_ReachStartAndEnd3 beforeEach start");
@@ -63,14 +48,30 @@ export default function Grid_ReachStartAndEnd3() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Grid_ReachStartAndEnd3Test await err: ' + JSON.stringify(err));
+      }
       
       
       let driver = Driver.create();
-      await CommonFunc.sleep(300);
+            try {
+        await CommonFunc.sleep(300);
+      } catch (err) {
+        console.info('Grid_ReachStartAndEnd3Test await err: ' + JSON.stringify(err));
+      }
       let btn = await driver.findComponent(ON.id('grid_Reset_bt'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(3000);
+            try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('Grid_ReachStartAndEnd3Test await err: ' + JSON.stringify(err));
+      }
+            try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Grid_ReachStartAndEnd3Test await err: ' + JSON.stringify(err));
+      }
 
       console.info("Grid_ReachStartAndEnd2 after each called");
     });

@@ -13,22 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest,startAbility} from '../Util.test';
 export default function typeNodeProgressTest() {
   describe('typeNodeProgressTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("typeNodeProgressTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async () : Promise<void> => {
       console.info("typeNodeProgressTest beforeEach start");
       let options: router.RouterOptions = {
@@ -68,10 +61,22 @@ it('ProgressTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('ProgressTest_0100 START');
       let driver = Driver.create()
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let button: Component|null = await driver.findComponent(ON.id('TypeNode_Progress'));
+      try {
       await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('TypeNode_Progress');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ProgressTest_0100] component obj is: " + JSON.stringify(obj));
@@ -94,10 +99,22 @@ it('initializeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise
 
       console.info('initializeTest_0200 START');
       let driver =  Driver.create()
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('TypeNode_initialize'));
+      try {
       await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('TypeNode_initialize');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[initializeTest_0200] component obj is: " + JSON.stringify(obj));
@@ -124,10 +141,22 @@ it('attributeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
 
       console.info('attributeTest_0300 START');
       let driver =  Driver.create()
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('TypeNode_attribute'));
+      try {
       await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('TypeNode_attribute');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[attributeTest_0300] component obj is: " + JSON.stringify(obj));

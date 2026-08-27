@@ -15,7 +15,7 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
 import router from '@ohos.router';
 import { Alignment } from '@ohos.arkui.component';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
@@ -24,19 +24,14 @@ import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
+
+
+
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
 import screenshot from '@ohos.screenshot';
 import inspector from '@ohos.arkui.inspector';
 import image from '@ohos.multimedia.image';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 function imageComparisonAssert(left: double, top: double) {
   let theWinTop:long = 0;
@@ -54,7 +49,7 @@ function imageComparisonAssert(left: double, top: double) {
   } catch (exception) {
     console.error('Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
   }
-  waitForCompletion(async ()=>{ await CommonFunc.sleep(3000); })
+  waitForCompletion(async ()=>{ await CommonFunc.sleep(2000); })
   let screenshotOptions: screenshot.ScreenshotOptions = {
     "screenRect": {
       "left": theWinLeft,
@@ -108,13 +103,7 @@ function imageComparisonAssert(left: double, top: double) {
 
 export default function Stack_ZIndex() {
   describe('Stack_ZIndex_Test', () => {
-    beforeAll(async () => {
-      console.info("Stack_Position_ChangeTest beforeEach start");
 
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-
-    })
 
     beforeEach(async (): Promise<void> => {
       console.info("Stack_ZIndex beforeEach start");
@@ -129,7 +118,7 @@ export default function Stack_ZIndex() {
         if (!("stack_zIndex" == pages.name)) {
           console.info("get Stack_ZIndex pages.name:" + JSON.stringify(pages.name));
           routerInstance!.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push Stack_ZIndex page error " + JSON.stringify(err));
@@ -138,7 +127,11 @@ export default function Stack_ZIndex() {
       console.info("Stack_ZIndex beforeEach end");
     });
     afterEach(async () => {
-      await CommonFunc.sleep(2000);
+      try {
+      await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_ZIndex_Test sleep err: ' + JSON.stringify(err));
+      }
       console.info("Stack_ZIndex after each called");
     });
     
@@ -154,7 +147,11 @@ export default function Stack_ZIndex() {
       AppStorage.get<MessageManager<number|Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Start
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_ZIndex_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_ZIndex_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -166,7 +163,11 @@ export default function Stack_ZIndex() {
       let Stack_ZIndex_01_height = Stack_ZIndex_01.bottom - Stack_ZIndex_01.top;
       let theTop: number = Stack_ZIndex_012.top;
       // let num = imageComparisonAssert(0, theTop);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_ZIndex_Test sleep err: ' + JSON.stringify(err));
+      }
       // console.log('[testStackZIndexWithAlignmentStart] num is', num);
       // expect(num).assertEqual(true);
       console.log('Stack_ZIndex_01.left is', Stack_ZIndex_01.left);
@@ -207,7 +208,11 @@ export default function Stack_ZIndex() {
       AppStorage.get<MessageManager<number|Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Center
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_ZIndex_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_ZIndex_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -220,7 +225,11 @@ export default function Stack_ZIndex() {
       let theTop: number = Stack_ZIndex_012.top;
       let theLeft: number = Stack_ZIndex_012.left;
       // let num = imageComparisonAssert(theLeft, theTop);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_ZIndex_Test sleep err: ' + JSON.stringify(err));
+      }
       // console.log('[testStackZIndexWithAlignmentCenter] num is', num);
       // expect(num).assertEqual(true);
       console.log('Stack_ZIndex_011.left - Stack_ZIndex_01.left is', Stack_ZIndex_011.left - Stack_ZIndex_01.left);
@@ -264,7 +273,11 @@ export default function Stack_ZIndex() {
       AppStorage.get<MessageManager<number|Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.End
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_ZIndex_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_ZIndex_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -318,7 +331,11 @@ export default function Stack_ZIndex() {
       AppStorage.get<MessageManager<number|Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.BottomStart
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_ZIndex_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_ZIndex_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -368,7 +385,11 @@ export default function Stack_ZIndex() {
       AppStorage.get<MessageManager<number|Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Bottom
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_ZIndex_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_ZIndex_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -422,7 +443,11 @@ export default function Stack_ZIndex() {
       AppStorage.get<MessageManager<number|Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.BottomEnd
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_ZIndex_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_ZIndex_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');

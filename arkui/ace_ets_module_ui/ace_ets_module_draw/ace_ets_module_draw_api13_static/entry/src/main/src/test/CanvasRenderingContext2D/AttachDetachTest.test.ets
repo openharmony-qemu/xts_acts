@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage, LocalStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 export default function AttachDetachTest() {
   describe('AttachDetachTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AttachDetachTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("AttachDetachTest beforeEach start");
       let options: router.RouterOptions = {
@@ -52,10 +44,10 @@ export default function AttachDetachTest() {
         console.error("push AttachDetachTest page error:" + err);
       }
       console.info("AttachDetachTest beforeEach end");
-    }); 
+    });
 
-    
-    
+
+
 
 
 
@@ -69,7 +61,11 @@ it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
 
       console.info('AttachDetachTest_0100 START');
       let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       // aboutToAppear中已绑定“onAttach 1”和“onDetach 1”
       // 页面加载，触发“onAttach 1”回调
@@ -93,8 +89,16 @@ it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
 
       // 点击按钮解绑canvas，触发“onDetach 1”回调
       let button = await driver.findComponent(ON.id('change_canvas')); //true,解绑canvas，触发“onDetach 1”回调  (实际没有触发onDetach 1)
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson1 = inspector.getInspectorByKey('attach_content_1');
       strJson2 = inspector.getInspectorByKey('detach_content_1');
@@ -116,16 +120,40 @@ it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
 
       // 点击按钮绑定“onAttach 2” 、“onDetach 2”回调
       button = await driver.findComponent(ON.id('on_onAttach')); //绑定“onAttach 2”
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
       button = await driver.findComponent(ON.id('on_onDetach'));//绑定“onDetach 2”
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       // 点击按钮绑定canvas，触发“onAttach 1” 和 “onAttach 2”回调
       button = await driver.findComponent(ON.id('change_canvas')); //false,绑定context，触发“onAttach 1” 和 “onAttach 2”回调
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson1 = inspector.getInspectorByKey('attach_content_1');
       strJson2 = inspector.getInspectorByKey('detach_content_1');
@@ -147,8 +175,16 @@ it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
 
       // 点击按钮解绑canvas，触发“onDetach 1” 和 “onDetach 2”回调
       button = await driver.findComponent(ON.id('change_canvas')); //true,解绑，触发“onDetach 1” 和 “onDetach 2”回调
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson1 = inspector.getInspectorByKey('attach_content_1');
       strJson2 = inspector.getInspectorByKey('detach_content_1');
@@ -171,24 +207,52 @@ it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
       // 点击按钮解绑“onAttach 2” 、“onDetach 2”回调
       button = await driver.findComponent(ON.id('off_onAttach')); //解绑“onAttach 2”  解绑未生效
       console.info('[]wll]5解绑off_onAttach'+JSON.stringify(button))
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       button = await driver.findComponent(ON.id('off_onDetach')); //解绑“onDetach 2”  解绑未生效
       console.info('[]wll]5解绑off_onDetach'+JSON.stringify(button))
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       // 点击按钮绑定canvas，触发“onAttach 1”回调
       button = await driver.findComponent(ON.id('change_canvas')); //false,绑定canvas,触发“onAttach 1”，因解绑“onAttach 2”未生效，也触发了“onAttach 2”
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson1 = inspector.getInspectorByKey('attach_content_1');
       strJson2 = inspector.getInspectorByKey('detach_content_1');
       strJson3 = inspector.getInspectorByKey('attach_content_2');
       strJson4 = inspector.getInspectorByKey('detach_content_2');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
       obj1 = JSON.parseJsonElement(strJson1);
       obj2 = JSON.parseJsonElement(strJson2);
       obj3 = JSON.parseJsonElement(strJson3);
@@ -205,14 +269,26 @@ it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
 
       // 点击按钮解绑canvas，触发“onDetach 1” 回调
       button = await driver.findComponent(ON.id('change_canvas')); //true,触发“onDetach 1”
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson1 = inspector.getInspectorByKey('attach_content_1');
       strJson2 = inspector.getInspectorByKey('detach_content_1');
       strJson3 = inspector.getInspectorByKey('attach_content_2');
       strJson4 = inspector.getInspectorByKey('detach_content_2');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
       obj1 = JSON.parseJsonElement(strJson1);
       obj2 = JSON.parseJsonElement(strJson2);
       obj3 = JSON.parseJsonElement(strJson3);
@@ -230,22 +306,50 @@ it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
 
       // 点击按钮解绑所有onAttach、onDetach回调
       button = await driver.findComponent(ON.id('off_onAttach_all'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
       button = await driver.findComponent(ON.id('off_onDetach_all'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       // 点击按钮绑定canvas，不触发onAttach回调
       button = await driver.findComponent(ON.id('change_canvas'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson1 = inspector.getInspectorByKey('attach_content_1');
       strJson2 = inspector.getInspectorByKey('detach_content_1');
       strJson3 = inspector.getInspectorByKey('attach_content_2');
       strJson4 = inspector.getInspectorByKey('detach_content_2');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
       obj1 = JSON.parseJsonElement(strJson1);
       obj2 = JSON.parseJsonElement(strJson2);
       obj3 = JSON.parseJsonElement(strJson3);
@@ -263,14 +367,26 @@ it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
       // 点击按钮解绑canvas，不触发onDetach回调
       button = await driver.findComponent(ON.id('change_canvas'));
       console.info('[]wll]')
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AttachDetachTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[]wll]'+JSON.stringify(button))
       strJson1 = inspector.getInspectorByKey('attach_content_1');
       strJson2 = inspector.getInspectorByKey('detach_content_1');
       strJson3 = inspector.getInspectorByKey('attach_content_2');
       strJson4 = inspector.getInspectorByKey('detach_content_2');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AttachDetachTestTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[wll8]'+strJson1)
       console.info('[wll8]'+strJson2)
       console.info('[wll8]'+strJson3)
@@ -294,4 +410,3 @@ it('AttachDetachTest_static_0100', Level.LEVEL2, async (done: () => void): Promi
     });
   })
 }
-

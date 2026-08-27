@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import { ColorMetrics, ColorSpace } from '@ohos.arkui.component';
@@ -21,15 +21,8 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest,startAbility} from '../Util.test';
 export default function ColorMetricsColorWithSpaceTest() {
   describe('ColorMetricsColorWithSpaceTest', () => { 
-    beforeAll(async (): Promise<void> => {
-      console.info("ColorMetricsColorWithSpaceTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(1000)
-      console.info('ColorMetricsColorWithSpaceTest startAbility completed');
-    });
     beforeEach(async () : Promise<void> => {
       console.info("ColorMetricsColorWithSpaceTest beforeEach start");
     }); 

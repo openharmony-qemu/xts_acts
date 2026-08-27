@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index"
 import {
   Component,
   Driver,
@@ -29,27 +29,11 @@ import {
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function onGetIrregular4Jsunit() {
   describe('onGetIrregular4Jsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("onGetIrregular4Jsunit beforeAll start");
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("onGetIrregular4Jsunit beforeEach start");
@@ -84,7 +68,11 @@ export default function onGetIrregular4Jsunit() {
 it('onGetIrregular4Jsunit_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[onGetIrregular4Jsunit_static_0001] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('onGetIrregular4JsunitTest await err: ' + JSON.stringify(err));
+      }
       let Grid: RectValue = CommonFunc.getComponentRect('GridItem4');
 
       let GridItem0: RectValue = CommonFunc.getComponentRect('text_Grid0');
@@ -94,7 +82,11 @@ it('onGetIrregular4Jsunit_static_0001', Level.LEVEL0, async (done: () => void): 
       let GridItem4: RectValue = CommonFunc.getComponentRect('text_Grid4');
 
 
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('onGetIrregular4JsunitTest await err: ' + JSON.stringify(err));
+      }
       expect(Math.abs(Math.round((Grid.right - Grid.left)- (GridItem0.right - GridItem0.left))) <= 1).assertTrue();
       expect(Math.abs(Math.round((Grid.right - Grid.left)- (GridItem1.right - GridItem1.left))) <= 1).assertTrue();
       expect(Math.abs(Math.round((Grid.right - Grid.left)- (GridItem2.right - GridItem2.left))) <= 1).assertTrue();

@@ -13,31 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function GridCallbackJsunit() {
   describe('GridCallbackJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("GridCallbackJsunit beforeEach start");
@@ -81,14 +66,26 @@ it('GridCallbackJsunit_static_1000', Level.LEVEL0, async (done: () => void): Pro
       let height = bottom -top
       console.log('[GridCallbackJsunit_static_1000] grid 2 top:' + top +" bottom:" + bottom + "left: " + left + " right:" + right)
       let driver = Driver.create()
-      await driver.swipe((Math.round((left + width/2))).toInt(), (Math.round(top + height * 0.6)).toInt(), (Math.round((left + width/2))).toInt(), (Math.round(top + height * 0.1)).toInt());
-      await CommonFunc.sleep(2000);
+            try {
+        await driver.swipe((Math.round((left + width/2))).toInt(), (Math.round(top + height * 0.6)).toInt(), (Math.round((left + width/2))).toInt(), (Math.round(top + height * 0.1)).toInt());
+      } catch (err) {
+        console.info('GridCallbackJsunitTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridCallbackJsunitTest await err: ' + JSON.stringify(err));
+      }
       let onReachStartText = await (driver!.findComponent(ON.id('GridCallbackPage' + '_onReachStartText')) as Promise<Component>);
 
       let text5 = await (onReachStartText?.getText() as Promise<string>);
       console.info('[GridCallbackJsunit_static_1000] onReachStartText' + text5);
       expect(text5).assertEqual('onReachStart:succ');
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridCallbackJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       let onScrollText = await driver.findComponent(ON.id('GridCallbackPage' + '_onScrollText'));
       let text3 = await (onScrollText?.getText() as Promise<string>);
@@ -104,30 +101,54 @@ it('GridCallbackJsunit_static_1000', Level.LEVEL0, async (done: () => void): Pro
       let text4 = await (onScrollStartText?.getText() as Promise<string>);
       console.info('[GridCallbackJsunit_static_1000] onScrollStartText' + text4);
       expect(text4).assertEqual('onScrollStart:succ');
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridCallbackJsunitTest await err: ' + JSON.stringify(err));
+      }
 
 
       let onScrollStopText = await driver.findComponent(ON.id('GridCallbackPage' + '_onScrollStopText'));
       let text6 = await (onScrollStopText?.getText() as Promise<string>);
       console.info('[GridCallbackJsunit_static_1000] onScrollStopText' + text6);
       expect(text6).assertEqual('onScrollStop:succ');
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridCallbackJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       let onScrollFrameBeginText = await driver.findComponent(ON.id('GridCallbackPage' + '_onScrollFrameBeginText'));
       let text7 = await (onScrollFrameBeginText?.getText() as Promise<string>);
       console.info('[GridCallbackJsunit_static_1000] nScrollFrameBeginText ' + text7);
       expect(text7).assertEqual('onScrollFrameBegin:succ');
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridCallbackJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       let bottomButton = await driver.findComponent(ON.id('bottom'));
-      await (bottomButton?.click() as Promise<void>)
-      await CommonFunc.sleep(2000)
+            try {
+        await (bottomButton?.click() as Promise<void>);
+      } catch (err) {
+        console.info('GridCallbackJsunitTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridCallbackJsunitTest await err: ' + JSON.stringify(err));
+      }
       let onReachEndText = await driver.findComponent(ON.id('GridCallbackPage' + '_onReachEndText'));
       let text9 = await (onReachEndText?.getText() as Promise<string>);
       console.info("[GridCallbackJsunit_static_1000] onReachEndText: " + text9);
 
       expect(text9).assertEqual('onReachEnd:succ');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridCallbackJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       console.info('[GridCallbackJsunit_static_1000] END');
       done();

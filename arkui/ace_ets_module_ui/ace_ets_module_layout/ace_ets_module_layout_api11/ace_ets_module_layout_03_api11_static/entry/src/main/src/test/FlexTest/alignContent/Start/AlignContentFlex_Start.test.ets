@@ -14,31 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function AlignContentFlex_Start() {
 
   describe('AlignContentFlex_Start', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AlignContentFlex_Start beforeEach start");
-      
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("AlignContentFlex_Start beforeEach start");
       let options: router.RouterOptions = {
@@ -52,7 +38,7 @@ export default function AlignContentFlex_Start() {
         if (!("AlignContentFlex_Start" == pages.name)) {
           console.info("get AlignContentFlex_Start pages.name:" + '');
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push AlignContentFlex_Start page error:" + err);
@@ -62,8 +48,12 @@ export default function AlignContentFlex_Start() {
 
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(2000)
+      try {
+      await CommonFunc.sleep(1000)
       console.info("AlignContentFlex_Start after each called");
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
     });
 
     
@@ -80,8 +70,12 @@ it('testAlignContentStartFlexHeightSatisfy_static', Level.LEVEL0, async () => {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 360
       })
-      await CommonFunc.sleep(3000)
+      try {
+      await CommonFunc.sleep(2000)
       let strJson = inspector.getInspectorByKey('AlignContentFlex_Start' + '_flex001');
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
 
 
   console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -137,8 +131,12 @@ it('testAlignContentStartFlexHeightNoSatisfy_static', Level.LEVEL0, async () => 
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 250
       })
+      try {
       await CommonFunc.sleep(3000)
       let strJson = inspector.getInspectorByKey('AlignContentFlex_Start' + '_flex001');
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
 
       let AlignContentFlexStart_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001');
       let AlignContentFlexStart_1: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_1');

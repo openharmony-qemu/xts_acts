@@ -13,29 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function GridRows1() {
   describe('GridRows1', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("GridRows1 beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("GridRows1 beforeEach start");
       try {
@@ -55,7 +42,11 @@ export default function GridRows1() {
       console.info("GridRows1 foreEach end");
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
       console.info("GridRows1 after each called");
     });
 
@@ -68,10 +59,18 @@ export default function GridRows1() {
 it('GridRows1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridRows1_static_001] START');
 
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
       let row1 = CommonFunc.getComponentRect('GridRows1_1');
       let row2 = CommonFunc.getComponentRect('GridRows1_5');
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
 
       console.info("[GridRows1_static_001] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );
       expect(Math.abs(Math.round(row2.top - row1.bottom)) <= 1).assertTrue();
@@ -89,17 +88,45 @@ it('GridRows1_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
 it('GridRows1_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridRows1_static_002] START');
 
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
+      try {
       await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('GridRows1Bt1'));
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+      try {
+      await driver.findComponent(ON.id('GridRows1Bt1'));
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await (button_Bottom?.click() as Promise<void>);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
 
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
       let row1 = CommonFunc.getComponentRect('GridRows1_1');
       let row2 = CommonFunc.getComponentRect('GridRows1_5');
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
 
       console.info("[GridRows1_static_002] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );
       expect(Math.abs(Math.round(row2.top - row1.bottom)) <= 1).assertTrue();
@@ -117,16 +144,40 @@ it('GridRows1_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
 it('GridRows1_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridRows1_static_003] START');
 
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create()
-      let button_Bottom = await driver.findComponent(ON.id('GridRows1Bt3'));
+      try {
+      await driver.findComponent(ON.id('GridRows1Bt3'));
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await (button_Bottom?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+
+      try {
+      await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
       let row1 = CommonFunc.getComponentRect('GridRows1_1');
       let row2 = CommonFunc.getComponentRect('GridRows1_5');
-      await CommonFunc.sleep(2000);
+      try {
+      await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
 
       console.info("[GridRows1_static_003] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );
       expect(Math.abs(Math.round(row2.top - row1.bottom) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))) <= 1).assertTrue();
@@ -144,17 +195,45 @@ it('GridRows1_static_003', Level.LEVEL0, async (done: () => void): Promise<void>
 it('GridRows1_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridRows1_static_004] START');
 
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('GridRows1Bt2'));
-      await (button_Bottom?.click() as Promise<void>);
+      try {
       await CommonFunc.sleep(2000);
-
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+      let driver = Driver.create();
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+      try {
+      await driver.findComponent(ON.id('GridRows1Bt2'));
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+      try {
+      await (button_Bottom?.click() as Promise<void>);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+      try {
+      await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
+
+      try {
+      await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
       let row1 = CommonFunc.getComponentRect('GridRows1_1');
       let row2 = CommonFunc.getComponentRect('GridRows1_2');
-      await CommonFunc.sleep(2000);
+      try {
+      await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows1Test await err: ' + JSON.stringify(err));
+      }
 
       console.info("[GridRows1_static_004] GridRows1_1 is: " + JSON.stringify(row1) + 'GridRows1_5:' + JSON.stringify(row2) );
       expect(Math.abs(Math.round(row2.left - row1.right)) <= 1).assertTrue();

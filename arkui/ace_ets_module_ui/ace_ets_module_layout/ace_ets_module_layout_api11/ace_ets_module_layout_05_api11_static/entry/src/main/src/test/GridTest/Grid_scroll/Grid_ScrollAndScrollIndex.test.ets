@@ -14,33 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_ScrollAndScrollIndex() {
   describe('Grid_ScrollAndScrollIndex', () => {
-    beforeAll(async (): Promise<void> => {
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("Grid_ScrollAndScrollIndex beforeEach start");
@@ -63,12 +48,28 @@ export default function Grid_ScrollAndScrollIndex() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(300);
+            try {
+        await CommonFunc.sleep(300);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      }
       let btn = await driver.findComponent(ON.id('scroll_Reset_bt'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(3000);
+            try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      }
       console.info("Grid_ScrollAndScrollIndex after each called");
     });
 
@@ -107,13 +108,21 @@ it('Grid_ScrollAndScrollIndex_static_0200', Level.LEVEL0, async (done: () => voi
       console.info('[Grid_ScrollAndScrollIndex_static_0200] START');
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollAndScrollIndex_grid')
       let driver = Driver.create()
-      await driver.swipe(
+            try {
+        await driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.2 + gridRect.top}`)).toInt(),
         1000);
-      await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      }
 
       let strJson1 = inspector.getInspectorByKey('Grid_ScrollAndScrollIndex_tex2')
 
@@ -138,13 +147,21 @@ it('Grid_ScrollAndScrollIndex_static_0300', Level.LEVEL0, async (done: () => voi
       console.info('[Grid_ScrollAndScrollIndex_static_0300] START');
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollAndScrollIndex_grid')
       let driver = Driver.create()
-      await driver.swipe(
+            try {
+        await driver.swipe(
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)).toInt(),
         (Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`)).toInt(),
         (Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)).toInt(),
-        1000); 
-      await CommonFunc.sleep(2000);
+        1000);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      } 
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      }
 
       let strJson1 = inspector.getInspectorByKey('Grid_ScrollAndScrollIndex_tex1')
 
@@ -169,13 +186,21 @@ it('Grid_ScrollAndScrollIndex_static_0400', Level.LEVEL0, async (done: () => voi
       console.info('[Grid_ScrollAndScrollIndex_static_0400] START');
       let scrollBarRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollAndScrollIndex_scrollBar')
       let driver = Driver.create()
-      await driver.swipe(
+            try {
+        await driver.swipe(
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`)).toInt(),
-        1000); 
-      await CommonFunc.sleep(2000);
+        1000);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      } 
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Grid_ScrollAndScrollIndexTest await err: ' + JSON.stringify(err));
+      }
 
       let strJson1 = inspector.getInspectorByKey('Grid_ScrollAndScrollIndex_tex1')
 

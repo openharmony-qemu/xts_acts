@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect} from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect} from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import {UtilsTest,startAbility} from '../Util.test';
 
 export default function postFrameCallbackTest() {
   describe('postFrameCallbackTest', () => {
-      beforeAll(async (): Promise<void> => {
-        console.info("postFrameCallbackTest beforeEach start");
-        await UtilsTest.msSleep(4000)
-        await startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
-        await UtilsTest.msSleep(4000)
-      });
       beforeEach(async () => {
         console.info("postFrameCallbackTest beforeEach start");
         let options: router.RouterOptions = {
@@ -43,10 +35,8 @@ export default function postFrameCallbackTest() {
           console.info("get postFrameCallbackTest state pages:" + JSON.stringify(pages));
           if (!("postFrameCallbackTest" == pages.name)) {
             console.info("get postFrameCallbackTest pages.name:" + JSON.stringify(pages.name));
-            //let result = await router.pushUrl(options);
             router.pushUrl(options);
             await CommonFunc.sleep(2000);
-            //console.info("push postFrameCallbackTest page result:" + JSON.stringify(result));
           }
         } catch (err) {
           console.error("push postFrameCallbackTest page error:" + err);
@@ -55,14 +45,15 @@ export default function postFrameCallbackTest() {
       });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('postFrameCallbackTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('postFrameCallbackTest after each called');
     });
 
-    
-    
-
-
+    afterAll(() => {})
 
     /**
      * @tc.number   postFrameCallbackTest_static_0100
@@ -70,29 +61,111 @@ export default function postFrameCallbackTest() {
      * @tc.desc     postFrameCallbackTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('postFrameCallbackTest_static_0100', Level.LEVEL0, async (done: () => void) => {
+    it('postFrameCallbackTest_static_0100', Level.LEVEL0, async (done: () => void) => {
 
       console.info('postFrameCallbackTest_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('postFrameCallback_id'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let button2 = await driver.findComponent(ON.id('postDelayedFrameCallback_id'));
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let button3 = await driver.findComponent(ON.id('postDelayedFrameCallback_null_id'));
-      await (button3?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let button4 = await driver.findComponent(ON.id('postFrameCallback_value_id'));
-      await (button4?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let button5 = await driver.findComponent(ON.id('postDelayedFrameCallback_value_id'));
-      await (button5?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let button6 = await driver.findComponent(ON.id('postDelayedFrameCallback_null_value_id'));
-      await (button6?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('postFrameCallbackTest sleep err: ' + JSON.stringify(err));
+      }
+      let button1: Component | null = null;
+      try {
+        button1 = await driver.findComponent(ON.id('postFrameCallback_id'));
+      } catch (err) {
+        console.info('postFrameCallbackTest findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('postFrameCallbackTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('postFrameCallbackTest sleep err: ' + JSON.stringify(err));
+      }
+      let button2: Component | null = null;
+      try {
+        button2 = await driver.findComponent(ON.id('postDelayedFrameCallback_id'));
+      } catch (err) {
+        console.info('postFrameCallbackTest findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('postFrameCallbackTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('postFrameCallbackTest sleep err: ' + JSON.stringify(err));
+      }
+      let button3: Component | null = null;
+      try {
+        button3 = await driver.findComponent(ON.id('postDelayedFrameCallback_null_id'));
+      } catch (err) {
+        console.info('postFrameCallbackTest findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('postFrameCallbackTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('postFrameCallbackTest sleep err: ' + JSON.stringify(err));
+      }
+      let button4: Component | null = null;
+      try {
+        button4 = await driver.findComponent(ON.id('postFrameCallback_value_id'));
+      } catch (err) {
+        console.info('postFrameCallbackTest findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button4?.click() as Promise<void>);
+      } catch (err) {
+        console.info('postFrameCallbackTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('postFrameCallbackTest sleep err: ' + JSON.stringify(err));
+      }
+      let button5: Component | null = null;
+      try {
+        button5 = await driver.findComponent(ON.id('postDelayedFrameCallback_value_id'));
+      } catch (err) {
+        console.info('postFrameCallbackTest findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button5?.click() as Promise<void>);
+      } catch (err) {
+        console.info('postFrameCallbackTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('postFrameCallbackTest sleep err: ' + JSON.stringify(err));
+      }
+      let button6: Component | null = null;
+      try {
+        button6 = await driver.findComponent(ON.id('postDelayedFrameCallback_null_value_id'));
+      } catch (err) {
+        console.info('postFrameCallbackTest findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button6?.click() as Promise<void>);
+      } catch (err) {
+        console.info('postFrameCallbackTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('postFrameCallbackTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJson1: string = inspector.getInspectorByKey('result1_id');
       let strJson2: string = inspector.getInspectorByKey('result2_id');

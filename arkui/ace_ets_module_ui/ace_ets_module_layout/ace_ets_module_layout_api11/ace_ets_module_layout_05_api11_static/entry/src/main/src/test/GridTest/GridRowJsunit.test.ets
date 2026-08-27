@@ -13,34 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import { BreakPoints, GridRowDirection, GutterOption } from '@ohos.arkui.component'
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function GridRowJsunit() {
   describe('GridRowJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("GridRowJsunit beforeAll start");
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("GridRowJsunit beforeEach start");
@@ -74,7 +58,11 @@ export default function GridRowJsunit() {
 it('GridRowJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridRowJsunit_static_0100] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('gridRow');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GridRowJsunit_static_0100] component obj is: " + JSON.stringify(obj));
@@ -115,19 +103,31 @@ it('GridRowJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
         name: 'columns',
         value: '-12'
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({
         name: 'gutter', value: {
           x: 7.5,
           y: 15
         } as GutterOption
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({
         name: 'currentBp',
         value: 'sm'
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       
       let strJson = inspector.getInspectorByKey('gridRow');
@@ -169,7 +169,11 @@ it('GridRowJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<
 it('GridRowJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridRowJsunit_static_0300] START');
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({
         name: 'gutter', value: {
           x: -10,
@@ -177,17 +181,29 @@ it('GridRowJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<
 
         } as GutterOption
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({
         name: 'columns',
         value: '-5'
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | number | GutterOption | BreakPoints | GridRowDirection>>('messageManager')?.notify({
         name: 'currentBp',
         value: '110'
       })
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('gridRow');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[GridRowJsunit_static_0300] component obj is: " + JSON.stringify(obj));

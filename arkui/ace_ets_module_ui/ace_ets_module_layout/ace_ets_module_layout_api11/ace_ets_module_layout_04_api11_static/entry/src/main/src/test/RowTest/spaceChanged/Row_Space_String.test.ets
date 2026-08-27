@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function Row_Space_String() {
   describe('Row_Space_String', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_Space_String beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_Space_String beforeEach start");
       let options: router.RouterOptions = {
@@ -58,7 +45,11 @@ export default function Row_Space_String() {
       }
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_Space_String after each called")
     });
 
@@ -77,7 +68,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_0100', Level.LEVEL0, async (done: () =>
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addSpace', value: '30vp'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -135,7 +130,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_0200', Level.LEVEL0, async (done: () =>
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addSpace', value: '30'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -192,7 +191,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_0300', Level.LEVEL0, async (done: () =>
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addSpace', value: '50px'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -248,7 +251,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_0400', Level.LEVEL0, async (done: () =>
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addSpace', value: '70fp'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -306,7 +313,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_0500', Level.LEVEL0, async (done: () =>
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addSpace', value: '70lpx'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -366,7 +377,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_0600', Level.LEVEL0, async (done: () =>
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({
         name: 'addSpace', value: Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)) + 'px'
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -425,7 +440,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_0700', Level.LEVEL0, async (done: () =>
         name: 'addSpace', value: context.px2vp(10) + 'vp'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -481,7 +500,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_0800', Level.LEVEL0, async (done: () =>
         name: 'addSpace', value: context.fp2px(10) + 'px'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -540,7 +563,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_0900', Level.LEVEL0, async (done: () =>
         name: 'addSpace', value: context.px2fp(10) + 'fp'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -596,7 +623,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_1000', Level.LEVEL0, async (done: () =>
         name: 'addSpace', value: context.lpx2px(10) + 'px'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -655,7 +686,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_1100', Level.LEVEL0, async (done: () =>
         name: 'addSpace', value: context.px2lpx(10) + 'lpx'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');
@@ -713,7 +748,11 @@ it('SUB_ACE_Row_Space_String_TEST_static_1200', Level.LEVEL0, async (done: () =>
         name: 'addSpace', value: '3' + '0'
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_Space_StringTest await err: ' + JSON.stringify(err));
+      }
       console.log('get Initial value')
       let Row_Space_String_011: RectValue = CommonFunc.getComponentRect('Row_Space_String_011');
       let Row_Space_String_012: RectValue = CommonFunc.getComponentRect('Row_Space_String_012');

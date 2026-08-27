@@ -16,36 +16,18 @@
 
 import emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-import { startAbility, stopApplication, UtilsTest } from '../Util.test'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { RecordData } from '@ohos.base';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function curvesStepsJsunit() {
   describe('curvesStepsTest', () => {
 
-    /**
-     * run before testcase
-     */
-    beforeAll(async () => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
-      
-    });
     beforeEach(async () => {
       console.info('[curvesStepsTest] before each called')
 
@@ -70,7 +52,11 @@ export default function curvesStepsJsunit() {
       } catch (err) {
         console.error("push curves page error " + JSON.stringify(err));
       }
-      await Utils.sleep(4000)
+      try {
+        await Utils.sleep(4000)
+      } catch (err) {
+        console.info('curvesStepsTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -78,7 +64,11 @@ export default function curvesStepsJsunit() {
      */
     afterAll(async () => {
       console.info('[curvesStepsTest] after each called')
-      await Utils.sleep(1000)
+      try {
+        await Utils.sleep(1000)
+      } catch (err) {
+        console.info('curvesStepsTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
 

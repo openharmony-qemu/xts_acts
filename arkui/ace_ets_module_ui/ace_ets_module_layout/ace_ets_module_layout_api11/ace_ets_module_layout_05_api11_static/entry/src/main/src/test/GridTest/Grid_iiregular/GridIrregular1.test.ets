@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index"
 import {
   Component,
   Driver,
@@ -29,27 +29,11 @@ import {
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function GridIrregular1Jsunit() {
   describe('GridIrregular1Jsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("GridIrregular1Jsunit beforeAll start");
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("GridIrregular1Jsunit beforeEach start");
@@ -86,7 +70,11 @@ it('GridIrregular1Jsunit_static_0001', Level.LEVEL0, async (done: () => void): P
       let GridItem1: RectValue = CommonFunc.getComponentRect('GridIrr1');
       let Grid: RectValue = CommonFunc.getComponentRect('gridIrregular1')
       let context = AppStorage.get<UIContext>('context') as UIContext
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridIrregular1JsunitTest await err: ' + JSON.stringify(err));
+      }
 
       expect(Math.round(context.px2vp(GridItem1.right - GridItem1.left))).assertEqual(400);
       console.info('[GridIrregular1Jsunit_static_0001] END');

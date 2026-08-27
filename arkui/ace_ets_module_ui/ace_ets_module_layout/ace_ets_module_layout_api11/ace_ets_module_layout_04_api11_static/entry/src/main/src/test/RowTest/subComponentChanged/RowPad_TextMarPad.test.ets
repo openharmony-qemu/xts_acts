@@ -14,30 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function rowPad_TextMarPadTest() {
   describe('rowPad_TextMarPadTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("rowPad_TextMarPadTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("rowPad_TextMarPadTest beforeEach start");
       let options: router.RouterOptions = {
@@ -68,7 +55,11 @@ export default function rowPad_TextMarPadTest() {
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'firstTextPadding', value: 0
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('rowPad_TextMarPadTesTest await err: ' + JSON.stringify(err));
+      }
       console.info("rowPad_TextMarPadTest after each called");
     });
     
@@ -89,7 +80,11 @@ it('testRowPadTextPad_static_01', Level.LEVEL0, async (done: () => void): Promis
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'firstTextPadding', value: 20
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('rowPad_TextMarPadTesTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad1');
       let secondText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad3');
@@ -144,7 +139,11 @@ it('testRowPadTextMar_static_02', Level.LEVEL0, async (done: () => void): Promis
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'firstTextMargin', value: 10
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('rowPad_TextMarPadTesTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad1');
       let secondText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad3');
@@ -199,7 +198,11 @@ it('testRowPadTextMarPad_static_03', Level.LEVEL0, async (done: () => void): Pro
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'firstTextPadding', value: 20
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('rowPad_TextMarPadTesTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad1');
       let secondText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad3');

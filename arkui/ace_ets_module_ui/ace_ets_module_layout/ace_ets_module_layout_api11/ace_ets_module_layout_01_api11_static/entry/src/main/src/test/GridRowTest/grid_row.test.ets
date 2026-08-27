@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {FlexAlign} from '@ohos.arkui.component'
 // import {fp2px,lpx2px} from '@ohos.arkui.UIContext'
@@ -22,48 +22,24 @@ import  RectValue from '../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 // import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+
+
+
+
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function grid_rowOnBreakpointChangeJsunit() {
   describe('grid_rowOnBreakpointChangeTest', () => {
-    beforeAll(async () => {
-      console.info("flex beforeEach start");
 
-      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/GridRow/grid_row',
-      }
-      try {
-        const routerInstance = AppStorage.get<Router>("router")
-        routerInstance?.clear();
-        let pages = routerInstance?.getState();
-        console.info("get grid_row state success " + JSON.stringify(pages));
-        if (!("grid_row" == pages?.name)) {
-          console.info("get grid_row state success " + JSON.stringify(pages?.name));
-          routerInstance?.pushUrl(options);
-          // let result = await router.push(options);
-          await CommonFunc.sleep(2000);
-          // console.info("push grid_row page success " + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error("push grid_row page error: " + err);
-      }
-    });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+      await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('grid_rowOnBreakpointChangeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("grid_rowOnBreakpointChange after each called");
     });
 
@@ -80,7 +56,11 @@ export default function grid_rowOnBreakpointChangeJsunit() {
      */
     it('testgrid_rowOnBreakpointChange001_static', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange001_static START');
-      await CommonFunc.sleep(2000);
+      try {
+      await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('grid_rowOnBreakpointChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('GridRow');
       console.info("[testgrid_rowOnBreakpointChange001_static] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -102,7 +82,11 @@ export default function grid_rowOnBreakpointChangeJsunit() {
      */
     it('testgrid_rowOnBreakpointChange002_static', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange002 START');
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('grid_rowOnBreakpointChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('GridRow');
       console.info("[testgrid_rowOnBreakpointChange002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -124,7 +108,11 @@ export default function grid_rowOnBreakpointChangeJsunit() {
      */
     it('testgrid_rowOnBreakpointChange003_static', Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange003_static START');
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('grid_rowOnBreakpointChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('GridRow');
       console.info("[testgrid_rowOnBreakpointChange003_static] component backgroundColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);

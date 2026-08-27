@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
@@ -22,23 +22,10 @@ import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function AlignContentFlexP_fixed() {
 
   describe('AlignContentFlexP_fixed', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AlignContentFlexP_fixed beforeEach start");
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("richEditorApi2 beforeEach start");
       let options: router.RouterOptions = {
@@ -52,7 +39,7 @@ export default function AlignContentFlexP_fixed() {
         if (!("AlignContentFlexP_fixed" == pages.name)) {
           console.info("get richEditorApi2 pages.name:" + '');
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push richEditorApi2 page error:" + err);
@@ -62,8 +49,12 @@ export default function AlignContentFlexP_fixed() {
 
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(2000)
+      try {
+      await CommonFunc.sleep(1000)
       console.info("AlignContentFlexP_fixed after each called");
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
     });
 
     
@@ -80,8 +71,12 @@ it('testAlignContentSpaceEvenlyFlexFixedSatisfy_static', Level.LEVEL0, async () 
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 80
       })
-      await CommonFunc.sleep(3000)
+      try {
+      await CommonFunc.sleep(2000)
       let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyP_fixed_flex');
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor')));
       let AlignContentFlexSpaceEvenly_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlexSpaceEvenlyP_fixed_flex');
@@ -146,8 +141,12 @@ it('testAlignContentSpaceEvenlyFlexFixedNOSatisfy_static', Level.LEVEL0, async (
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'height', value: 300
       })
+      try {
       await CommonFunc.sleep(3000)
       let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyP_fixed_flex');
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
 
       let AlignContentFlexSpaceEvenly_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlexSpaceEvenlyP_fixed_flex');
       let AlignContentFlexSpaceEvenly_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_fixed' + '_1');

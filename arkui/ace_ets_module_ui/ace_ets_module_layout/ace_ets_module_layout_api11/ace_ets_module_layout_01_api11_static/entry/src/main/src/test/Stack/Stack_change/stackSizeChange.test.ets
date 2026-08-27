@@ -14,35 +14,24 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
 import router from '@ohos.router';
 import { Alignment } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
-import { UtilsTest, startAbility } from '../../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
+
+
+
+
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function stackSizeChange() {
   describe('stackSizeChangeTest', () => {
-    beforeAll(async () => {
-      console.info("stackSizeChangeTest beforeEach start");
 
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-
-    })
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Stack/Stack_change/stackSizeChange',
@@ -62,7 +51,11 @@ export default function stackSizeChange() {
       }
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("stackSizeChange after each called");
     });
 
@@ -97,7 +90,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -147,7 +144,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -198,7 +199,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -248,7 +253,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -298,7 +307,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -349,7 +362,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -399,7 +416,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -449,7 +470,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -500,7 +525,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 300
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -550,7 +579,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -598,7 +631,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -646,7 +683,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -694,7 +735,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -742,7 +787,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -790,7 +839,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -838,7 +891,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -886,7 +943,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -934,7 +995,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 200
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -982,7 +1047,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 100
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -1032,7 +1101,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 100
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -1083,7 +1156,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 100
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -1133,7 +1210,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 100
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -1183,7 +1264,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 100
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -1234,7 +1319,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 100
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -1284,7 +1373,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 100
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -1334,7 +1427,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 100
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');
@@ -1385,7 +1482,11 @@ export default function stackSizeChange() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'width', value: 100
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('stackSizeChangeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('stackSizeKey');
 
       let stackSizeKey: RectValue = CommonFunc.getComponentRect('stackSizeKey');

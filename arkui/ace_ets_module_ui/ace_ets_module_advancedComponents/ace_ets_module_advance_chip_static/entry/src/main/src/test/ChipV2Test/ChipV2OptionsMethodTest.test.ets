@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -29,11 +28,6 @@ import {
 
 export default function ChipV2OptionsMethodTest(): void {
   describe('ChipV2OptionsMethodTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ChipV2OptionsMethodTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ChipV2OptionsMethodTest beforeEach start");
@@ -58,11 +52,13 @@ export default function ChipV2OptionsMethodTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("ChipV2OptionsMethodTest after each called");
     });
-
-
 
     /**
      * @tc.number   SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100
@@ -72,7 +68,11 @@ export default function ChipV2OptionsMethodTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       const treeText = JSON.stringify(inspector.getInspectorTree());
       const componentCount = treeText.split('"$type":"Image"').length - 1;
       console.info('[SUB_ARKUI_API_ChipV2OptionsMethodTest_static_0100] length '+componentCount);

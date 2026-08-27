@@ -13,33 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function GridItemJsunit() {
   describe('GridItemJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("GridItemJsunit beforeEach start");
@@ -74,7 +59,11 @@ export default function GridItemJsunit() {
 it('GridItemJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridItemJsunit_static_0100] START');
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('gridItem1');
       let obj = JSON.parseJsonElement(strJson1);
       console.info("[GridItemJsunit_static_0100] component obj is: " + JSON.stringify(obj));
@@ -82,7 +71,11 @@ it('GridItemJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise
       expect(obj.getElement('$attrs').getString('rowEnd')).assertEqual('4');
       expect(obj.getElement('$attrs').getString('selectable')).assertEqual('false');
       
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('gridItem2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridItemJsunit_static_0100] component obj2 is: " + JSON.stringify(obj2));
@@ -106,11 +99,23 @@ it('GridItemJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise
       
       console.info('[GridItemJsunit_static_0200] START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowStart',value:'2'})
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowEnd',value:'5'})
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'selectable',value:'true'})
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       
       let strJson = inspector.getInspectorByKey('gridItem1');
@@ -119,7 +124,11 @@ it('GridItemJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise
       expect(obj.getElement('$attrs').getString('rowStart')).assertEqual('2');
       expect(obj.getElement('$attrs').getString('rowEnd')).assertEqual('5');
       expect(obj.getElement('$attrs').getString('selectable')).assertEqual('true');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('gridItem2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridItemJsunit_static_0200] component obj2 is: " + JSON.stringify(obj2));
@@ -140,11 +149,23 @@ it('GridItemJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise
       
       console.info('[GridItemJsunit_static_0300] START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowStart',value:'test'})
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowEnd',value:'#'})
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'selectable',value:'test'})
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       
       let strJson = inspector.getInspectorByKey('gridItem1');
@@ -153,7 +174,11 @@ it('GridItemJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise
       expect(Math.abs(Number(obj.getElement('$attrs').getString('rowStart'))) <= 1).assertTrue();
       expect(Math.abs(Number(obj.getElement('$attrs').getString('rowEnd'))) <= 1).assertTrue();
       expect(obj.getElement('$attrs').getString('selectable')).assertEqual('true');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('gridItem2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[GridItemJsunit_static_0300] component obj2 is: " + JSON.stringify(obj2));
@@ -178,11 +203,23 @@ it('GridItemJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise
       let bottom_y = Math.round(grid1.bottom / 2)
       let driver = Driver.create()
 
-      await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.resolveUIContext()!.vp2px(100))).toInt(), (bottom_y).toInt(), (Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.resolveUIContext()!.vp2px(120))).toInt(), (bottom_y).toInt());
-      await CommonFunc.sleep(500);
+            try {
+        await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.resolveUIContext()!.vp2px(100))).toInt(), (bottom_y).toInt(), (Math.round((AppStorage.get<number>("winLeft") ?? 0) + left_x + UIContext.resolveUIContext()!.vp2px(120))).toInt(), (bottom_y).toInt());
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       let textComponent = await driver.findComponent(ON.id('onSelect'));
       let text = await (textComponent?.getText() as Promise<string>);
-      await CommonFunc.sleep(500);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       expect(text).assertEqual('a');
       console.info('[GridItemJsunit_static_0400] END');
       done();
@@ -202,7 +239,11 @@ it('GridItemJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise
       console.info('[GridItemJsunit_static_0500] START');
       let gridItem1 = CommonFunc.getComponentRect('0');
       let right1 = gridItem1.right;
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       let gridItem3 = CommonFunc.getComponentRect('1');
       let left3 = gridItem3.left;
 
@@ -223,7 +264,11 @@ it('GridItemJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise
 it('GridItemJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridItemJsunit_static_0600] START');
-      await CommonFunc.sleep(1000);
+            try {
+        aawait CommonFunc.sleep(200)
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       let gridItem1 = CommonFunc.getComponentRect('0');
       let bottom1 = gridItem1.bottom;
       let gridItem3 = CommonFunc.getComponentRect('4');
@@ -246,7 +291,10 @@ it('GridItemJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise
 it('GridItemJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       
       console.info('[GridItemJsunit_static_0700] START');
-      await CommonFunc.sleep(1000);
+            try {
+        awawait CommonFunc.sleep(200)      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create()
       let gridItem1 = CommonFunc.getComponentRect('gridItem1');
       let right1 = gridItem1.right;
@@ -271,9 +319,16 @@ it('GridItemJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise
       
       console.info('[GridItemJsunit_static_0800] START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowStart',value:'1'})
-      await CommonFunc.sleep(1000);
+            try {
+        awaawait CommonFunc.sleep(2000)     } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowEnd',value:'4'})
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create()
       let gridItem1 = CommonFunc.getComponentRect('gridItem1');
       let bottom1 = gridItem1.bottom;

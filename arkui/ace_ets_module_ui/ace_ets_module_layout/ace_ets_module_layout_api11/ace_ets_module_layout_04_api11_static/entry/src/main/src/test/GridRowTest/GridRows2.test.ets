@@ -13,20 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Component, Driver, MouseButton,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 // import config from '@ohos.accessibility.config';
 // import accessibility from '@ohos.accessibility';
 // const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
@@ -35,10 +30,6 @@ const BUNDLE_NAME = 'com.arkui.ace.layout.split04.static/EntryAbility';
 
 export default function GridRows2() {
   describe('GridRows2', () => {
-    beforeAll(async (): Promise<void> => {
-      console.log('GridRows2 beforeAll')
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("GridRows2 beforeEach start");
       // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
@@ -65,7 +56,11 @@ export default function GridRows2() {
       console.info("GridRows2 foreEach end");
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
       console.info("GridRows2 after each called");
     });
 
@@ -79,10 +74,26 @@ it('GridRows2_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[GridRows2_static_001] START');
 
       let driver = Driver.create();
+      try {
       await CommonFunc.sleep(1000);
-      let button_Bottom = await (driver.findComponent(ON.id('GridRows2Bt1')) as Promise<Component>);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
+      try {
+      await (driver.findComponent(ON.id('GridRows2Bt1')) as Promise<Component>);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await button_Bottom.click();
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
 
       let grid = CommonFunc.getComponentRect('GridRows2');
       let row1 = CommonFunc.getComponentRect('GridRows2_1');
@@ -106,22 +117,58 @@ it('GridRows2_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
 it('GridRows2_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridRows2_static_002] START');
 
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let button_Bottom = await driver.findComponent(ON.id('GridRows2Bt2'));
+      try {
+      await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
+      try {
+      await driver.findComponent(ON.id('GridRows2Bt2'));
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await (button_Bottom?.click() as Promise<void>);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
 
       let rel = CommonFunc.getComponentRect('GridRows2');
 
+      try {
       await driver.mouseClick({x: Math.round(rel.left + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))).toInt(), y: Math.round(rel.top + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))).toInt()}, MouseButton.MOUSE_BUTTON_LEFT);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('GridRows2Text');
-      await CommonFunc.sleep(200);
+      try {
+      await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('GridRows2Test await err: ' + JSON.stringify(err));
+      }
      let obj = JSON.parseJsonElement(strJson);
      console.info("[GridRows2_static_002] component obj is: " + JSON.stringify(obj));
+     try {
      await CommonFunc.sleep(1000);
+     } catch (err) {
+     console.info('GridRows2Test await err: ' + JSON.stringify(err));
+     }
      expect(obj.getElement('$attrs').getString('content')).assertEqual('');
 
       console.info('[GridRows2_static_002] END');

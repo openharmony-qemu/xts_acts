@@ -15,32 +15,16 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function Matrix2DTest() {
   describe('Matrix2DTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Matrix2DTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -62,7 +46,11 @@ export default function Matrix2DTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('Matrix2DTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("Matrix2D after each called");
     });
 
@@ -75,7 +63,11 @@ export default function Matrix2DTest() {
      */
 it('testMatrix2D_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testMatrix2D_static_0010] START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('Matrix2DTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJson: string = inspector.getInspectorByKey('Matrix2DMultiplyCanvas');
       expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Canvas');

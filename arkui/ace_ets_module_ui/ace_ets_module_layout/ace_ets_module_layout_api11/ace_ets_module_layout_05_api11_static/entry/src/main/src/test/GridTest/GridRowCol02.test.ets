@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import { GridDirection } from '@ohos.arkui.component'
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -22,27 +22,11 @@ import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageMa
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
 
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function GridRowCol02() {
   describe('GridRowCol02', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("GridRowCol02 beforeAll start");
-           
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("GridRowCol02 beforeEach start");
@@ -77,13 +61,25 @@ export default function GridRowCol02() {
 it('GridRowCol02_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[GridRowCol02_static_001] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,10%)' });
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[GridRowCol02_static_001] component obj is: " + JSON.stringify(obj1));
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('rowsTemplate')).assertEqual('repeat(auto-fit,10%)');
 
       console.info('[GridRowCol02_static_001] END');
@@ -103,13 +99,25 @@ it('GridRowCol02_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
 it('GridRowCol02_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[GridRowCol02_static_002] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[GridRowCol02_static_002] component obj is: " + JSON.stringify(obj1));
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('rowsTemplate')).assertEqual('repeat(auto-fit,90px)');
 
       console.info('[GridRowCol02_static_002] END');
@@ -129,13 +137,25 @@ it('GridRowCol02_static_002', Level.LEVEL0, async (done: () => void): Promise<vo
 it('GridRowCol02_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[GridRowCol02_static_003] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,-1)' });
-      await CommonFunc.sleep(200);
+            try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[GridRowCol02_static_003] component obj is: " + JSON.stringify(obj1));
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('rowsTemplate')).assertEqual('repeat(auto-fit,-1)');
 
       console.info('[GridRowCol02_static_003] END');
@@ -155,18 +175,34 @@ it('GridRowCol02_static_003', Level.LEVEL0, async (done: () => void): Promise<vo
 it('GridRowCol02_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[GridRowCol02_static_004] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       let Column02 = CommonFunc.getComponentRect('Column02');
       let GridRowCol02 = CommonFunc.getComponentRect('GridRowCol02');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
 
       expect(Math.abs(Math.round(GridRowCol02.top - Column02.top) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[GridRowCol02_static_004] component obj is: " + JSON.stringify(obj1));
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('rowsTemplate')).assertEqual('repeat(auto-fit,90px)');
 
       console.info('[GridRowCol02_static_004] END');
@@ -186,18 +222,34 @@ it('GridRowCol02_static_004', Level.LEVEL0, async (done: () => void): Promise<vo
 it('GridRowCol02_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[GridRowCol02_static_005] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       let GridRowCol02 = CommonFunc.getComponentRect('GridRowCol02');
       let Item00 = CommonFunc.getComponentRect('Item00');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
 
       expect(Math.abs(Math.round(Item00.top - GridRowCol02.top) - Math.round(UIContext.resolveUIContext()!.vp2px(10))) <= 1).assertTrue();
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[GridRowCol02_static_005] component obj is: " + JSON.stringify(obj1));
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('rowsTemplate')).assertEqual('repeat(auto-fit,90px)');
 
       console.info('[GridRowCol02_static_005] END');
@@ -217,18 +269,34 @@ it('GridRowCol02_static_005', Level.LEVEL0, async (done: () => void): Promise<vo
 it('GridRowCol02_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[GridRowCol02_static_006] START');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       AppStorage.get<MessageManager<string | GridDirection>>('messageManager')?.notify({name:'rowsTemplate', value: 'repeat(auto-fit,90px)' });
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       let Item00 = CommonFunc.getComponentRect('Item00');
       let Item03 = CommonFunc.getComponentRect('Item03');
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
 
       expect(Math.abs(Math.abs(Item03.top - Item00.bottom) - UIContext.resolveUIContext()!.vp2px(10)) <= 1).assertTrue();
       let strJson1 = inspector.getInspectorByKey('GridRowCol02');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[GridRowCol02_static_006] component obj is: " + JSON.stringify(obj1));
-      await CommonFunc.sleep(1000);
+            try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('GridRowCol02Test await err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('rowsTemplate')).assertEqual('repeat(auto-fit,90px)');
 
       console.info('[GridRowCol02_static_006] END');

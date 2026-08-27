@@ -14,34 +14,23 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
 import router from '@ohos.router';
 import { Alignment } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
-import { UtilsTest, startAbility } from '../../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
+
+
+
+
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function Stack_AlignContent() {
   describe('Stack_AlignContent_Test',  ()=> {
-    beforeAll(async () => {
-      console.info("Stack_AlignContent_Test beforeEach start");
 
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-
-    })
     beforeEach(async (): Promise<void> => {
       console.info("Stack_AlignContent_Test beforeEach start");
       let options: router.RouterOptions = {
@@ -63,7 +52,11 @@ export default function Stack_AlignContent() {
       }
     });
     afterEach(async  () =>{
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       console.info("stack_alignContent after each called")
     });
     
@@ -79,7 +72,11 @@ export default function Stack_AlignContent() {
      */
     it('testStackAlignContentNotConfig_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testStackAlignContentNotConfig_static] START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_01');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -120,7 +117,11 @@ export default function Stack_AlignContent() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.TopStart
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_02');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -161,7 +162,11 @@ export default function Stack_AlignContent() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Top
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_02');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -202,7 +207,11 @@ export default function Stack_AlignContent() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.TopEnd
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_02');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -243,7 +252,11 @@ export default function Stack_AlignContent() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Start
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_02');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -284,7 +297,11 @@ export default function Stack_AlignContent() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Center
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_02');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -325,7 +342,11 @@ export default function Stack_AlignContent() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.End
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_02');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -366,7 +387,11 @@ export default function Stack_AlignContent() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.BottomStart
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_02');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -407,7 +432,11 @@ export default function Stack_AlignContent() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.Bottom
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_02');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');
@@ -448,7 +477,11 @@ export default function Stack_AlignContent() {
       AppStorage.get<MessageManager<Alignment>>("messageManager")?.notify({
         name: 'addAlignContent', value: Alignment.BottomEnd
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('Stack_AlignContent_Test sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Stack_AlignContent_02');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');

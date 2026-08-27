@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 export default function RoundRectTest() {
   describe('RoundRectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("RoundRectTest beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("RoundRectTest beforeEach start");
       let options: router.RouterOptions = {
@@ -67,7 +59,11 @@ export default function RoundRectTest() {
      */
 it('RoundRectTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[RoundRectTest_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('RoundRectTestTest await err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('RoundRectPage_Canvas');
       let obj = JSON.parseJsonElement(strJson);

@@ -15,30 +15,16 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function Row_Padding() {
   describe('Row_Padding', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_Padding beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_Padding beforeEach start");
       let options: router.RouterOptions = {
@@ -60,12 +46,20 @@ export default function Row_Padding() {
       } catch (err) {
         console.error("push Row_Padding page error " + JSON.stringify(err));
       }
+      try {
       await CommonFunc.sleep(1000)
+      } catch (err) {
+      console.info('Row_PaddingTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_Padding beforeEach end");
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000)
+      } catch (err) {
+      console.info('Row_PaddingTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_Padding after each called");
     });
 
@@ -85,7 +79,11 @@ it('testRowPaddingSatisfy_static_01', Level.LEVEL0, async (done: () => void): Pr
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'padding', value: 15
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_PaddingTest await err: ' + JSON.stringify(err));
+      }
       let Row: RectValue = CommonFunc.getComponentRect('Row_Padding_Row');
       let Text1: RectValue = CommonFunc.getComponentRect('Row_Padding_Text1');
       let Text2: RectValue = CommonFunc.getComponentRect('Row_Padding_Text2');
@@ -136,7 +134,11 @@ it('testRowPaddingNOSatisfy_static_02', Level.LEVEL0, async (done: () => void): 
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'padding', value: 40
       });
+      try {
       await CommonFunc.sleep(3000)
+      } catch (err) {
+      console.info('Row_PaddingTest await err: ' + JSON.stringify(err));
+      }
       let Row: RectValue = CommonFunc.getComponentRect('Row_Padding_Row');
       let Text1: RectValue = CommonFunc.getComponentRect('Row_Padding_Text1');
       let Text2: RectValue = CommonFunc.getComponentRect('Row_Padding_Text2');

@@ -13,35 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import { Alignment } from '@ohos.arkui.component';
 import events_emitter from '@ohos.events.emitter';
-import { UtilsTest, startAbility } from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base';
 import { MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
+
+
+
+
 import RectValue from '../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function Stack_Text() {
   describe('Stack_Text', () => {
-    beforeAll(async () => {
-      console.info("Stack_Text beforeEach start");
 
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-
-    })
     beforeEach(async (): Promise<void> => {
       console.info("Stack_Text beforeEach start");
       let options: router.RouterOptions = {
@@ -76,13 +65,25 @@ export default function Stack_Text() {
     it('Stack_Text_001_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[Stack_Text_001_static] START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
 
       let strJson1 = inspector.getInspectorByKey('Stack_TextInput');
       let obj1 = JSON.parseJsonElement(strJson1);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       console.info("[Stack_Text_001_static] Stack_Text obj is: " + JSON.stringify(obj1));
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
 
       expect(obj1.getElement('$attrs').getString('type')).assertEqual('InputType.USER_NAME');
       console.info('[Stack_Text_001_static] END');
@@ -98,12 +99,24 @@ export default function Stack_Text() {
      */
     it('Stack_Text_002_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Stack_Text_002_static] START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('Stack_Text_Button1');
       let obj1 = JSON.parseJsonElement(strJson1);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       console.info("[Stack_Text_002_static] Stack_Text obj is: " + JSON.stringify(obj1));
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('controlSize')).assertEqual('ControlSize.SMALL');
       expect(obj1.getElement('$attrs').getString('buttonStyle')).assertEqual('ButtonStyleMode.EMPHASIZED');
       console.info('[Stack_Text_002_static] END');
@@ -119,12 +132,24 @@ export default function Stack_Text() {
      */
     it('Stack_Text_003_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Stack_Text_003_static] START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('Stack_Text_Button2');
       let obj1 = JSON.parseJsonElement(strJson1);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       console.info("[Stack_Text_003_static] Stack_Text obj is: " + JSON.stringify(obj1));
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('controlSize')).assertEqual('ControlSize.NORMAL');
       expect(obj1.getElement('$attrs').getString('buttonStyle')).assertEqual('ButtonStyleMode.NORMAL');
       console.info('[Stack_Text_003_static] END');
@@ -140,12 +165,24 @@ export default function Stack_Text() {
      */
     it('Stack_Text_004_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Stack_Text_004_static] START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('Stack_Text_Button3');
       let obj1 = JSON.parseJsonElement(strJson1);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       console.info("[Stack_Text_004_static] Stack_Text obj is: " + JSON.stringify(obj1));
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('buttonStyle')).assertEqual('ButtonStyleMode.TEXTUAL');
       console.info('[Stack_Text_004_static] END');
       done();
@@ -160,12 +197,24 @@ export default function Stack_Text() {
      */
     it('Stack_Text_005_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Stack_Text_005_static] START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('Stack_Text');
       let obj1 = JSON.parseJsonElement(strJson1);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       console.info("[Stack_Text_005_static] Stack_Text obj is: " + JSON.stringify(obj1));
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('15544889999');
       console.info('[Stack_Text_005_static] END');
       done();
@@ -181,13 +230,25 @@ export default function Stack_Text() {
     it('Stack_Text_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[Stack_Text_006] START');
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
 
       let strJson1 = inspector.getInspectorByKey('Stack_TextInput');
       let obj1 = JSON.parseJsonElement(strJson1);
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
       console.info("[Stack_Text_006] Stack_Text obj is: " + JSON.stringify(obj1));
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Stack_Text sleep err: ' + JSON.stringify(err));
+      }
 
       expect(obj1.getElement('$attrs').getBoolean('enableAutoFill')).assertEqual(true);
       console.info('[Stack_Text_006] END');

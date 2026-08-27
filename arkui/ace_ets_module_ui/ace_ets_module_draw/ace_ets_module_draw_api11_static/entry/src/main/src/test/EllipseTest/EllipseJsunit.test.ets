@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -31,26 +31,11 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 import { RecordData } from '@ohos.base';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function ellipseJsunit() {
   describe('ellipseTest', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("ellipse beforeEach start");
       let options: router.RouterOptions = {
@@ -75,7 +60,11 @@ export default function ellipseJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ellipseTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("ellipse after each called");
     });
 
@@ -88,7 +77,11 @@ export default function ellipseJsunit() {
      */
     it('testEllipse_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testEllipse_static_01] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ellipseTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_01] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('200.00px');
@@ -122,7 +115,11 @@ export default function ellipseJsunit() {
         err = err as BusinessError;
         console.log("[testEllipse_static_02] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ellipseTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_02] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('100.00px');
@@ -155,7 +152,11 @@ export default function ellipseJsunit() {
         err = err as BusinessError;
         console.log("[testEllipse_static_03] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ellipseTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_03] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('500.00px');
@@ -188,7 +189,11 @@ export default function ellipseJsunit() {
         err = err as BusinessError;
         console.log("[testEllipse_static_04] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ellipseTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_04] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('1111111111111.00px');
@@ -221,7 +226,11 @@ export default function ellipseJsunit() {
         err = err as BusinessError;
         console.log("[testEllipse_static_05] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ellipseTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_05] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'))
@@ -255,7 +264,11 @@ export default function ellipseJsunit() {
         err = err as BusinessError;
         console.log("[testEllipse_static_06] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ellipseTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse_static_06] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('0.00vp');
@@ -288,7 +301,11 @@ export default function ellipseJsunit() {
         err = err as BusinessError;
         console.log("[testEllipse07_static] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ellipseTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('ellipse' + '_ellipse');
       console.info("[testEllipse07_static] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('0.00vp');

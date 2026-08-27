@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,11 +25,6 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function ChipGroupV2SymbolItemOptionsTest(): void {
   describe('ChipGroupV2SymbolItemOptionsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ChipGroupV2SymbolItemOptionsTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ChipGroupV2SymbolItemOptionsTest beforeEach start");
@@ -57,7 +51,11 @@ export default function ChipGroupV2SymbolItemOptionsTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("ChipGroupV2SymbolItemOptionsTest after each called");
     });
     
@@ -69,7 +67,11 @@ export default function ChipGroupV2SymbolItemOptionsTest(): void {
      */
     it('SUB_ARKUI_API_ChipGroupV2SymbolItemOptionsTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipGroupV2SymbolItemOptionsTest_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]

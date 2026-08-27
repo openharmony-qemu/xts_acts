@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,11 +25,6 @@ import { Color, FontWeight, $r, Resource } from '@ohos.arkui.component'
 
 export default function ChipV2PrefixIconTest(): void {
   describe('ChipV2PrefixIconTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ChipV2PrefixIconTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ChipV2PrefixIconTest beforeEach start");
@@ -49,10 +43,13 @@ export default function ChipV2PrefixIconTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("ChipV2PrefixIconTest after each called");
     });
-
 
     /**
      * @tc.number   SUB_ARKUI_API_ChipV2PrefixIconTest_static_0100
@@ -62,7 +59,11 @@ export default function ChipV2PrefixIconTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -75,7 +76,11 @@ export default function ChipV2PrefixIconTest(): void {
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
       const routerInstance = AppStorage.get<Router>('router') as Router;
       routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
@@ -87,7 +92,11 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fontColor')).assertEqual("#FFFF0000");
 
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0100] END');
       done();
     });
@@ -100,7 +109,11 @@ export default function ChipV2PrefixIconTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0200] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
@@ -113,7 +126,11 @@ export default function ChipV2PrefixIconTest(): void {
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
       const routerInstance = AppStorage.get<Router>('router') as Router;
       routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
@@ -125,7 +142,11 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0200] END');
       done();
     });
@@ -138,7 +159,11 @@ export default function ChipV2PrefixIconTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0300] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[2]
@@ -151,7 +176,11 @@ export default function ChipV2PrefixIconTest(): void {
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
       const routerInstance = AppStorage.get<Router>('router') as Router;
       routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
@@ -163,7 +192,11 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0300] END');
       done();
     });
@@ -176,7 +209,11 @@ export default function ChipV2PrefixIconTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0400] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let btnElement1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[3]
@@ -189,7 +226,11 @@ export default function ChipV2PrefixIconTest(): void {
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
       const routerInstance = AppStorage.get<Router>('router') as Router;
       routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       let btnElement2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
@@ -201,7 +242,11 @@ export default function ChipV2PrefixIconTest(): void {
       expect(btnElement2.getElement('$attrs').getString('fillColor')).assertEqual("#FFFF0000");
       
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0400] END');
       done();
     });
@@ -214,7 +259,11 @@ export default function ChipV2PrefixIconTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let btnElement = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[4]
@@ -236,7 +285,11 @@ export default function ChipV2PrefixIconTest(): void {
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', true);
       const routerInstance = AppStorage.get<Router>('router') as Router;
       routerInstance.replaceUrl({ url: 'MainAbility/pages/ChipV2/ChipV2PrefixIconTest' });
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500] btnElement fillColor2 is: " +
       JSON.stringify(btnElement.getElement('$attrs').getString('fillColor')));
@@ -246,7 +299,11 @@ export default function ChipV2PrefixIconTest(): void {
         .assertEqual(btnUn.getElement('$attrs').getString('fillColor'));
       
       AppStorage.setOrCreate<boolean>('chipV2PrefixIconActivated', false);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[SUB_ARKUI_API_ChipV2PrefixIconTest_static_0500] END');
       done();
     });

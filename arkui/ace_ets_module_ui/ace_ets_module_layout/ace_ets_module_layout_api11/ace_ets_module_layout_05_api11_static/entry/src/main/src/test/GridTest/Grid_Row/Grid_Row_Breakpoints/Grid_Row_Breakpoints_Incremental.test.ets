@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
 import router from '@ohos.router';
 
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_Row_Breakpoints_Incremental() {
   describe('Grid_Row_Breakpoints_Incremental', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Grid_Row_Breakpoints_Incremental beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("Grid_Row_Breakpoints_Incremental beforeEach start");
@@ -61,7 +46,11 @@ export default function Grid_Row_Breakpoints_Incremental() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(2000);
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Grid_Row_Breakpoints_IncrementalTest await err: ' + JSON.stringify(err));
+      }
       console.info("GridRowBreakpoints_Value1 after each called")
     });
 
@@ -77,7 +66,11 @@ export default function Grid_Row_Breakpoints_Incremental() {
      */
 it('SUB_ACE_GridRowBreakpoints_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowBreakpoints_static_0100 START');
-      await CommonFunc.sleep(2000)
+            try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Grid_Row_Breakpoints_IncrementalTest await err: ' + JSON.stringify(err));
+      }
 
       let firstBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Incremental0');
       let secondBreakpoints: RectValue = CommonFunc.getComponentRect('Grid_Row_Breakpoints_Incremental1');

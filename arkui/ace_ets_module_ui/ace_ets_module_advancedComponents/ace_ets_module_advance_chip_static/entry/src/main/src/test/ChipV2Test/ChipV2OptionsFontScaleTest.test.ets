@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -29,11 +28,6 @@ import {
 
 export default function ChipV2OptionsFontScaleTest(): void {
   describe('ChipV2OptionsFontScaleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ChipV2OptionsFontScaleTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ChipV2OptionsFontScaleTest beforeEach start");
@@ -57,11 +51,13 @@ export default function ChipV2OptionsFontScaleTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("ChipV2OptionsFontScaleTest after each called");
     });
-
-
 
     /**
      * @tc.number   SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0100
@@ -71,7 +67,11 @@ export default function ChipV2OptionsFontScaleTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       const treeText = JSON.stringify(inspector.getInspectorTree());
       const componentCount = treeText.split('"$type":"Image"').length - 1;
       console.info('[SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0100] length '+componentCount);
@@ -88,7 +88,11 @@ export default function ChipV2OptionsFontScaleTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0200] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let Text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -110,7 +114,11 @@ export default function ChipV2OptionsFontScaleTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0300] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let Text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
@@ -132,7 +140,11 @@ export default function ChipV2OptionsFontScaleTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0400] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let Text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[2]
@@ -154,7 +166,11 @@ export default function ChipV2OptionsFontScaleTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0500] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let Text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[3]
@@ -175,7 +191,11 @@ export default function ChipV2OptionsFontScaleTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0600] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let Text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[4]
@@ -197,7 +217,11 @@ export default function ChipV2OptionsFontScaleTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsFontScaleTest_static_0700] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       let Text = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[5]

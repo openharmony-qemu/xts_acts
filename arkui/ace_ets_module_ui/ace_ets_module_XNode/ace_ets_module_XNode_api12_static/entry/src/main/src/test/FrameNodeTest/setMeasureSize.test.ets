@@ -13,30 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest,startAbility} from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function setMeasureSizeTest() {
   describe('setMeasureSizeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("setMeasureSizeTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("setMeasureSizeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -75,10 +60,22 @@ it('setMeasureSizeTest_static_0010', Level.LEVEL0, async (done: () => void): Pro
 
       console.info('setMeasureSizeTest_static_0010 START');
       let driver = Driver.create()
+      try {
       await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('getMeasuredSize_id'));
+      try {
       await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('getMeasuredSize_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[setMeasureSizeTest_static_0010] component obj is: " + JSON.stringify(obj));
@@ -101,10 +98,22 @@ it('setMeasureSizeTest_static_0020', Level.LEVEL0, async (done: () => void): Pro
 
       console.info('setMeasureSizeTest_static_0020 START');
       let driver = Driver.create()
+      try {
       await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('APIsetOnDraw'));
+      try {
       await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('XNodeTest await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('APIsetOnDraw');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[setMeasureSizeTest_static_0020] component obj is: " + JSON.stringify(obj));

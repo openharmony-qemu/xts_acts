@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,11 +25,6 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function ChipV2OptionsAllowCloseTest(): void {
   describe('ChipV2OptionsAllowCloseTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ChipV2OptionsAllowCloseTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ChipV2OptionsAllowCloseTest beforeEach start");
@@ -54,11 +48,13 @@ export default function ChipV2OptionsAllowCloseTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("ChipV2OptionsAllowCloseTest after each called");
     });
-
-
 
     /**
      * @tc.number   SUB_ARKUI_API_ChipV2OptionsAllowCloseTest_static_0100
@@ -68,7 +64,11 @@ export default function ChipV2OptionsAllowCloseTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsAllowCloseTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsAllowCloseTest_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       const treeText = JSON.stringify(inspector.getInspectorTree());
       const componentCount = treeText.split('"$type":"SymbolGlyph"').length - 1;
       console.info('[SUB_ARKUI_API_ChipV2OptionsAllowCloseTest_static_0100] length '+componentCount);

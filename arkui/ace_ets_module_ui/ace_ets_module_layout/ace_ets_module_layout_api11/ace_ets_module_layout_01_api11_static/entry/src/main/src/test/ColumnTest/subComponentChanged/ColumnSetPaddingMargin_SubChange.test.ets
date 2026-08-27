@@ -14,31 +14,20 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+
+
+
 
 export default function ColumnSetPaddingMargin__SubChange() {
   describe('ColumnSetPaddingMarginTest01', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ColumnSetPaddingMarginTest01 beforeEach start");
 
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ColumnSetPaddingMarginTest beforeEach start");
       let options: router.RouterOptions = {
@@ -54,7 +43,7 @@ export default function ColumnSetPaddingMargin__SubChange() {
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
           // console.info("push ColumnSetPaddingMarginTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
@@ -64,7 +53,11 @@ export default function ColumnSetPaddingMargin__SubChange() {
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('ColumnSetPaddingMarginTest01 sleep err: ' + JSON.stringify(err));
+      }
       console.info("ColumnSetPaddingMargin after each called");
     });
 
@@ -78,7 +71,11 @@ export default function ColumnSetPaddingMargin__SubChange() {
     it('testColumnParentMarPadSubMarPad_static', Level.LEVEL0, async () => {
       console.info('new testColumnParentMarPadSubMarPad_static START');
       const uiContext = AppStorage.get<UIContext>('uiContext');
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('ColumnSetPaddingMarginTest01 sleep err: ' + JSON.stringify(err));
+      }
       let setPaddingMargin01: RectValue = CommonFunc.getComponentRect('setPaddingMargin01');
       let setPaddingMargin02: RectValue = CommonFunc.getComponentRect('setPaddingMargin02');
       let setPaddingMargin03: RectValue = CommonFunc.getComponentRect('setPaddingMargin03');

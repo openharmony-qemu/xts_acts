@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-
-import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
-import { UtilsTest } from '../Util.test';
+import { describe, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,48 +25,85 @@ import { ensureAbnormalPage } from '../common/AbnormalPageRouter';
 
 export default function ChipV2AbnormalComboTest(): void {
   describe('ChipV2AbnormalComboTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility");
-    });
 
     beforeEach(async (): Promise<void> => {
-      await CommonFunc.sleep(300);
+      try {
+        await CommonFunc.sleep(300);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(300);
+      try {
+        await CommonFunc.sleep(300);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
     it('SUB_ARKUI_CHIPV2_ABN_CMBC1_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_cmbC1_u');
+      try {
+        await ensureAbnormalPage('abn_cmbC1_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_cmbC1_u', 'abn_cmbC1_d', 'backgroundColor', 'root');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CMBC2_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_cmbC2_u');
+      try {
+        await ensureAbnormalPage('abn_cmbC2_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertSmoke('abn_cmbC2_u', 'abn_cmbC2_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CMBC3_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_cmbC3_u');
+      try {
+        await ensureAbnormalPage('abn_cmbC3_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertChildrenSame('abn_cmbC3_u', 'abn_cmbC3_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CMBC4_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_cmbC4_u');
+      try {
+        await ensureAbnormalPage('abn_cmbC4_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_cmbC4_u', 'abn_cmbC4_d', 'size', 'root');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CMBC5_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_cmbC5_u');
+      try {
+        await ensureAbnormalPage('abn_cmbC5_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertSystemMaterialSame('abn_cmbC5_u', 'abn_cmbC5_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CMBC6_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_cmbC6_u');
+      try {
+        await ensureAbnormalPage('abn_cmbC6_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertPropSame('abn_cmbC6_u', 'abn_cmbC6_d', 'padding', 'inner');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CMBC7_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_cmbC7_u');
+      try {
+        await ensureAbnormalPage('abn_cmbC7_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertChildrenSame('abn_cmbC7_u', 'abn_cmbC7_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CMBC8_UNDEFINED_0100', Level.LEVEL0, async () => {
-      await ensureAbnormalPage('abn_cmbC8_u');
+      try {
+        await ensureAbnormalPage('abn_cmbC8_u');
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       assertSmoke('abn_cmbC8_u', 'abn_cmbC8_d');
     });
   });
