@@ -2105,9 +2105,9 @@ export default function btNopUiJsunit() {
                 hilog.info(domain, tag, "disconnectAllowedProfiles errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code === 801) {
                     hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code === 801);
+                    expect(err.code).assertEqual(801);
                 } else {
-                    expect(true).assertEqual(err.code === 201);
+                    expect(err.code).assertEqual(201);
                 }
             }
             done();
