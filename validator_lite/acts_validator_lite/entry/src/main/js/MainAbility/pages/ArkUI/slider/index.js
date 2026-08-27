@@ -8,17 +8,16 @@ export default {
         fail: 'false;'
     },
     onInit() {
-        console.info('slider onInit');
     },
     onSliderChange(e) {
         this.sliderValue = e.progress;
     },
     passClicked() {
-        getApp().data.testItems.slider_drag.status = 'pass';
+        getApp().data.testItems['slider_drag'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.slider_drag.status = 'fail';
+        getApp().data.testItems['slider_drag'].status = 'fail';
         this.back();
     },
     helpClicked() {

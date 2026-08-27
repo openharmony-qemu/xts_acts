@@ -12,9 +12,7 @@ export default {
     timeStamp: 0,
   },
   swipe(e) {
-      console.log('touch end start');
       swipeFunc(this, e);
-      console.log('touch end stop');
     },
 
     helpClicked() {
@@ -25,11 +23,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.event_swipe.status = 'pass';
+        getApp().data.testItems['event_swipe'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.event_swipe.status = 'fail';
+        getApp().data.testItems['event_swipe'].status = 'fail';
         this.back();
     },
     backClicked() {

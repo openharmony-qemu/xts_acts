@@ -7,14 +7,13 @@ export default {
         fail: 'false;'
     },
     onInit() {
-        console.info('text onInit');
     },
     passClicked() {
-        getApp().data.testItems.text_largeColor.status = 'pass';
+        getApp().data.testItems['text_largeColor'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.text_largeColor.status = 'fail';
+        getApp().data.testItems['text_largeColor'].status = 'fail';
         this.back();
     },
     helpClicked() {

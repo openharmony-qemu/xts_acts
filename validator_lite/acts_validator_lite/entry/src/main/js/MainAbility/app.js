@@ -31,34 +31,7 @@ export default {
       'api_brightness_mode': { cat: 'api', status: 'null', help: 'Verify brightness getMode/setMode/setKeepScreenOn' },
       'api_battery': { cat: 'api', status: 'null', help: 'Verify battery.getStatus returns level' },
       'api_nfc': { cat: 'api', status: 'null', help: 'Verify NFC HceService startHCE/on/sendResponse' }
-    },
-    catNames: {
-      'text': 'Text',
-      'button': 'Button',
-      'image': 'Image',
-      'progress': 'Progress',
-      'slider': 'Slider',
-      'switch': 'Switch',
-      'chart': 'Chart'
-    },
-    catPages: {
-      'text': 'text',
-      'button': 'button',
-      'image': 'image',
-      'progress': 'progress',
-      'slider': 'slider',
-      'switch': 'switch',
-      'chart': 'chart'
-    },
-    catList: [
-      { key: 'text', name: 'Text' },
-      { key: 'button', name: 'Button' },
-      { key: 'image', name: 'Image' },
-      { key: 'progress', name: 'Progress' },
-      { key: 'slider', name: 'Slider' },
-      { key: 'switch', name: 'Switch' },
-      { key: 'chart', name: 'Chart' }
-    ]
+    }
   },
   onCreate() {
     console.info('[start] start run suites');
