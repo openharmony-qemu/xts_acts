@@ -14,7 +14,8 @@
  */
 import hilog from '@ohos.hilog';
 import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType} from '@ohos/hypium';
-import { common, application, UIAbility, AbilityLifecycleCallback, contextConstant, StartOptions } from '@kit.AbilityKit';
+import { common, application, UIAbility, AbilityLifecycleCallback, contextConstant,
+  StartOptions } from '@kit.AbilityKit';
 
 import { window } from '@kit.ArkUI';
 import Utils from '../common/Utils';
@@ -98,7 +99,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -161,7 +162,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -224,7 +225,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -287,7 +288,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -349,7 +350,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         let onCreate_WindowStage = AppStorage.get<Array<window.WindowStage>>(
@@ -404,7 +405,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         let onWindowStageCreate_WindowStage = AppStorage.get<Array<window.WindowStage>>(
@@ -461,7 +462,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         let onForeground_WindowStage = AppStorage.get<Array<window.WindowStage>>(
@@ -517,7 +518,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(2000);
         let onBackground_WindowStage = AppStorage.get<Array<window.WindowStage>>(
@@ -573,7 +574,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
@@ -630,7 +631,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
@@ -689,7 +690,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         let TestAbility1_UIAbilityContext = AppStorage.get<common.UIAbilityContext>(
@@ -919,7 +920,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
 
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         try {
@@ -979,7 +980,7 @@ export default function ActsGetAllWindowStagesTest() {
         await context.startAbility(wantInfo).then(() => {
           hilog.info(0x0000, 'testTag', 'startAbility success.');
         }).catch((e: Error) => {
-          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+          hilog.error(0x0000, 'testTag', 'startAbility failed. err: %{public}s', JSON.stringify(e));
         });
         await Utils.sleep(1000);
         let appContext = (await application.createModuleContext(context,'entry')).getApplicationContext();

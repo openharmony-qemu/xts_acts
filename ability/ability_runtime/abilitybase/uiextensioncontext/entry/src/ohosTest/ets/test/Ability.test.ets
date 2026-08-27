@@ -3776,7 +3776,8 @@ export default function ActsUIExtensionContextMethodTest() {
           if (err) {
             console.error(tag + `startAbilityForResult failed: ${JSON.stringify(err)}`);
           }
-          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] startAbility result ' +
+          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0100] ' +
+startAbility result ' +
           JSON.stringify(data));
         })
         });
@@ -3846,7 +3847,8 @@ export default function ActsUIExtensionContextMethodTest() {
           if (err) {
             console.error(tag + `startAbilityForResult failed: ${JSON.stringify(err)}`);
           }
-          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] startAbility result ' +
+          console.info('====> [SUB_Ability_AbilityRuntime_UIAbilityContext_startAbilityForResult_0200] ' +
+startAbility result ' +
           JSON.stringify(data));
         })
         });

@@ -566,7 +566,7 @@ export default function errorCodeTest2() {
           }).then(()=>{
             console.info(TAG + 'start ability success');
           }).catch((err: BusinessError)=>{
-            console.info(TAG + 'start ability Error');
+            console.info(TAG + 'start ability Error: ' + JSON.stringify(err));
             expect().assertFail();
             done();
           })
