@@ -27,7 +27,7 @@ import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testBtConnectionTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let deviceId: string = "00:11:22:33:44:55";
-let deviceId_invalid: string = "55:45:55:45:55:45"; //此用例connectAllowedProfiles_promise专属
+let deviceId__invalid: string = "55:45:55:45:55:45"; //此用例connectAllowedProfiles_promise专属
 let g_context: common.UIAbilityContext;
 
 function onReceivePinRequiredEvent(data: connection.PinRequiredParam) { // data为配对请求的入参，配对请求参数
@@ -1263,7 +1263,7 @@ export default function bluetoothConnectionTest() {
     it("connectAllowedProfiles_promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
-          await connection.connectAllowedProfiles(deviceId_invalid);
+          await connection.connectAllowedProfiles(deviceId__invalid);
           hilog.info(domain, tag, 'connectAllowedProfiles success');
           expect().assertFail();
         } catch (err) {
@@ -2463,5 +2463,101 @@ export default function bluetoothConnectionTest() {
           hilog.info(domain, tag, `${caseName} test end`);
           done();
       })
+    /**
+     * @tc.number  disconnectAllowedProfiles_promise_001
+     * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0100
+     * @tc.desc    Test disconnectAllowedProfiles_promise API 入参正常
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("disconnectAllowedProfiles_promise_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await connection.disconnectAllowedProfiles(deviceId__invalid);
+        hilog.info(domain, tag, 'disconnectAllowedProfiles success');
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(domain, tag, "disconnectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(2900099);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.number  disconnectAllowedProfiles_promise_002
+     * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0200
+     * @tc.desc    Test disconnectAllowedProfiles_promise API 入参为空
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("disconnectAllowedProfiles_promise_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await connection.disconnectAllowedProfiles('');
+        hilog.info(domain, tag, 'disconnectAllowedProfiles success');
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(domain, tag, "disconnectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.number  disconnectAllowedProfiles_promise_003
+     * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0300
+     * @tc.desc    Test disconnectAllowedProfiles_promise API 入参长度少1位
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("disconnectAllowedProfiles_promise_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await connection.disconnectAllowedProfiles('68:13:24:79:4C:8');
+        hilog.info(domain, tag, 'disconnectAllowedProfiles success');
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(domain, tag, "disconnectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      done();
+    });
+    /**
+     * @tc.number  disconnectAllowedProfiles_promise_004
+     * @tc.name    SUB_Communication_Bluetooth_DisconnectAllowedProfiles_0400
+     * @tc.desc    Test disconnectAllowedProfiles_promise API 入参长度超1位
+     * @tc.level   Level 0
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it("disconnectAllowedProfiles_promise_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        await connection.disconnectAllowedProfiles('68:13:24:79:4C:8C1');
+        hilog.info(domain, tag, 'disconnectAllowedProfiles success');
+        expect().assertFail();
+      } catch (err) {
+        hilog.info(domain, tag, "disconnectAllowedProfiles get errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, 'api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      done();
+    });
   })
 }
