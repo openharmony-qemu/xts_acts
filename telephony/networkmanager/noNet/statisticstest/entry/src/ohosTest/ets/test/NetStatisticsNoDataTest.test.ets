@@ -49,12 +49,6 @@ export default function   netStatisticsNoDataTest() {
 
   describe('NetStatisticsNoDataTest', () => {
 
-    beforeAll(async () => {
-      hasData = await data.isCellularDataEnabled();
-      if (hasData) {
-        console.info(`hasData is ${hasData}`);
-      }
-    });
 
     /**
      * @tc.name   testNetworkMgrStatisticsGetCellularRxBytes0500
