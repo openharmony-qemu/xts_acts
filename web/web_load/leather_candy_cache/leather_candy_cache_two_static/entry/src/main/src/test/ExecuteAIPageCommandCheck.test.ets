@@ -51,7 +51,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testGetUrlHistory001", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testGetUrlHistory001", -1, 148500, done);
+        Utils.registerEvent("testGetUrlHistory001", 10, 148500, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -89,7 +89,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testNavigate001", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testNavigate001", -1, 148502, done);
+        Utils.registerEvent("testNavigate001", 391, 148502, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -108,7 +108,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testNavigate002", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testNavigate002", -1, 148503, done);
+        Utils.registerEvent("testNavigate002", 391, 148503, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -127,7 +127,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testNavigate003", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testNavigate003", -1, 148504, done);
+        Utils.registerEvent("testNavigate003", 392, 148504, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -146,7 +146,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testNavigate004", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testNavigate004", -1, 148505, done);
+        Utils.registerEvent("testNavigate004", 10, 148505, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -184,7 +184,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testGoBack001", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testGoBack001", -1, 148507, done);
+        Utils.registerEvent("testGoBack001", 10, 148507, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -203,7 +203,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testGoBack002", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testGoBack002", -1, 148508, done);
+        Utils.registerEvent("testGoBack002", 11, 148508, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -241,7 +241,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testGoForward001", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testGoForward001", -1, 148510, done);
+        Utils.registerEvent("testGoForward001", 10, 148510, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -260,7 +260,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testGoForward002", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testGoForward002", -1, 148511, done);
+        Utils.registerEvent("testGoForward002", 11, 148511, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -298,7 +298,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testAddPageAnnotation001", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testAddPageAnnotation001", -1, 148513, done);
+        Utils.registerEvent("testAddPageAnnotation001", 110, 148513, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -317,7 +317,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testAddPageAnnotation002", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testAddPageAnnotation002", -1, 148514, done);
+        Utils.registerEvent("testAddPageAnnotation002", 391, 148514, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -336,7 +336,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testAddPageAnnotation003", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testAddPageAnnotation003", -1, 148515, done);
+        Utils.registerEvent("testAddPageAnnotation003", 392, 148515, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -355,7 +355,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testAddPageAnnotation004", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testAddPageAnnotation004", -1, 148516, done);
+        Utils.registerEvent("testAddPageAnnotation004", 392, 148516, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -374,7 +374,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testAddPageAnnotation005", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testAddPageAnnotation005", -1, 148517, done);
+        Utils.registerEvent("testAddPageAnnotation005", 392, 148517, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -393,7 +393,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testAddPageAnnotation006", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testAddPageAnnotation006", -1, 148518, done);
+        Utils.registerEvent("testAddPageAnnotation006", 392, 148518, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -412,7 +412,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testAddPageAnnotation007", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testAddPageAnnotation007", -1, 148519, done);
+        Utils.registerEvent("testAddPageAnnotation007", 10, 148519, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -431,7 +431,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testAddPageAnnotation008", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testAddPageAnnotation008", -1, 148520, done);
+        Utils.registerEvent("testAddPageAnnotation008", 10, 148520, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -469,7 +469,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testRemovePageAnnotation001", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testRemovePageAnnotation001", -1, 148522, done);
+        Utils.registerEvent("testRemovePageAnnotation001", 10, 148522, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -488,7 +488,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testRemovePageAnnotation002", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testRemovePageAnnotation002", -1, 148523, done);
+        Utils.registerEvent("testRemovePageAnnotation002", 11, 148523, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -526,7 +526,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testRemovePageAnnotation004", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testRemovePageAnnotation004", -1, 148525, done);
+        Utils.registerEvent("testRemovePageAnnotation004", 11, 148525, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -545,7 +545,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testScreenCapture001", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testScreenCapture001", -1, 148526, done);
+        Utils.registerEvent("testScreenCapture001", 392, 148526, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
@@ -564,7 +564,7 @@ export default function ExecuteAIPageCommandCheckTest() : void{
         await Utils.msSleep(2000);
         Utils.emitEvent("testScreenCapture002", 148188)
         await Utils.msSleep(500);
-        Utils.registerEvent("testScreenCapture002", -1, 148527, done);
+        Utils.registerEvent("testScreenCapture002", 10, 148527, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('CheckTestButton', 148188, '');
         await Utils.msSleep(2000);
