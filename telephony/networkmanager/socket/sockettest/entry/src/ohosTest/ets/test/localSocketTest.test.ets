@@ -80,13 +80,13 @@ export default function LocalSocketTest() {
           console.info(`${caseName} err.code type: ${typeof errObj.code}, value: ${errObj.code}`);
           expectFail('bind should not fail with valid address');
         }
-        console.info(`${caseName} test end`);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
       } finally {
         if (client) {
           client.close();
         }
+        console.info(`${caseName} test end`);
         done();
       }
     });
@@ -141,7 +141,6 @@ export default function LocalSocketTest() {
             expectTrue(false, 'Error should be an object');
           }
         }
-        console.info(`${caseName} test end`);
       } catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
         const errorObj = error as BusinessError;
@@ -149,11 +148,11 @@ export default function LocalSocketTest() {
         if (errorObj.code !== undefined) {
           expectTrue(Number(errorObj.code) == 401, 'error code should be 401');
         }
-        console.info(`${caseName} test end`);
       } finally {
         if (client) {
           client.close();
         }
+        console.info(`${caseName} test end`);
         done();
       }
     });
@@ -195,7 +194,6 @@ export default function LocalSocketTest() {
         })
       }catch (err){
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
         done();
       }
@@ -240,15 +238,13 @@ export default function LocalSocketTest() {
           expectTrue(true)
         } catch (err) {
         }
-        console.info(`${caseName} test end`);
         client.close()
-        done()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
-        done();
       }
+      console.info(`${caseName} test end`);
+      done()
     });
 
     /**
@@ -292,15 +288,13 @@ export default function LocalSocketTest() {
           expectTrue(true)
         } catch (err) {
         }
-        console.info(`${caseName} test end`);
         client.close()
-        done()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
-        done();
       }
+      console.info(`${caseName} test end`);
+      done()
     });
 
     /**
@@ -345,15 +339,13 @@ export default function LocalSocketTest() {
           expectTrue(true)
         } catch (err) {
         }
-        console.info(`${caseName} test end`);
         client.close()
-        done()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
-        done();
       }
+      console.info(`${caseName} test end`);
+      done()
     });
 
     /**
@@ -395,15 +387,13 @@ export default function LocalSocketTest() {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectEqual(401, err.code)
         }
-        console.info(`${caseName} test end`);
         client.close()
-        done()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
-        done();
       }
+      console.info(`${caseName} test end`);
+      done()
     });
     /**
      * @tc.name   testNetworkMgrSocketLocalSocketGetState0100
@@ -444,13 +434,12 @@ export default function LocalSocketTest() {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()
         }
-        console.info(`${caseName} test end`);
         client.close()
-        done()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
+      } finally {
+        console.info(`${caseName} test end`);
         done();
       }
     });
@@ -493,13 +482,12 @@ export default function LocalSocketTest() {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()
         }
-        console.info(`${caseName} test end`);
         client.close()
-        done()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
+      } finally {
+        console.info(`${caseName} test end`);
         done();
       }
     });
@@ -542,13 +530,12 @@ export default function LocalSocketTest() {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()
         }
-        console.info(`${caseName} test end`);
         client.close()
-        done()
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
+      } finally {
+        console.info(`${caseName} test end`);
         done();
       }
     });
@@ -587,12 +574,11 @@ export default function LocalSocketTest() {
         await server.close().catch((err: BusinessError) => {
           console.info(`${caseName} close server err: ${err.message}`);
         });
-        console.info(`${caseName} test end`);
-        done();
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
+      } finally {
+        console.info(`${caseName} test end`);
         done();
       }
     });
@@ -621,12 +607,11 @@ export default function LocalSocketTest() {
         await server.close().catch((err: BusinessError) => {
           console.info(`${caseName} close server err: ${err.message}`);
         });
-        console.info(`${caseName} test end`);
-        done();
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
+      } finally {
+        console.info(`${caseName} test end`);
         done();
       }
     });
@@ -685,11 +670,8 @@ export default function LocalSocketTest() {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()
         }
-        done()
-        console.info(`${caseName} test end`);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
         done();
       }
@@ -749,11 +731,8 @@ export default function LocalSocketTest() {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()
         }
-        done()
-        console.info(`${caseName} test end`);
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
         done();
       }
@@ -854,29 +833,17 @@ export default function LocalSocketTest() {
           client!.connect(connectOpt).then(() => {
             console.log(`${caseName} connect success`);
             client!.on('message', callback);
-            if (!testCompleted) {
-              testCompleted = true;
-              if (server) {
-                server.off('connect');
-              }
-              if (client) {
-                client.close();
-              }
-              console.info(`${caseName} test end`);
-              done();
-            }
           }).catch((err: BusinessError) => {
             console.info(`${caseName} connect error: ${JSON.stringify(err)}`);
-            client!.on('message', callback);
             if (!testCompleted) {
               testCompleted = true;
+              console.info(`${caseName} connect failed`);
               if (server) {
                 server.off('connect');
               }
               if (client) {
                 client.close();
               }
-              console.info(`${caseName} test end`);
               done();
             }
           });
@@ -884,7 +851,7 @@ export default function LocalSocketTest() {
           setTimeout(() => {
             if (!testCompleted) {
               testCompleted = true;
-              console.info(`${caseName} timeout - test end`);
+              console.info(`${caseName} timeout`);
               if (server) {
                 server.off('connect');
               }
@@ -897,13 +864,15 @@ export default function LocalSocketTest() {
         }).catch((err: BusinessError) => {
           console.info(`${caseName} fail to listen ${err.code.toString()}`);
           expectFail();
-          console.info(`${caseName} test end`);
-          done();
+          if (!testCompleted) {
+            testCompleted = true;
+            console.info(`${caseName} test end`);
+            done();
+          }
         });
       } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
         expectFail();
-        console.info(`${caseName} test end`);
         if (!testCompleted) {
           testCompleted = true;
           if (server) {
@@ -912,6 +881,7 @@ export default function LocalSocketTest() {
           if (client) {
             client.close();
           }
+          console.info(`${caseName} test end`);
           done();
         }
       }
@@ -957,12 +927,11 @@ export default function LocalSocketTest() {
           console.info(`${caseName} err: ${JSON.stringify(err)}`)
           expectFail()
         }
-        done()
-        console.info(`${caseName} test end`);
-      }catch (err){
+      } catch (err) {
         console.info(`${caseName} err: ${JSON.stringify(err)}`);
-        console.info(`${caseName} test end`);
         expectFail();
+      } finally {
+        console.info(`${caseName} test end`);
         done();
       }
     });
@@ -1016,7 +985,6 @@ export default function LocalSocketTest() {
             expectTrue(false, 'Error should be an object');
           }
         }
-        console.info(`${caseName} test end`);
       } catch (error) {
         console.info(`${caseName} catch err: ${JSON.stringify(error)}`);
         const errorObj = error as BusinessError;
@@ -1024,8 +992,8 @@ export default function LocalSocketTest() {
         if (errorObj.code !== undefined) {
           expectTrue(Number(errorObj.code) === 401, 'error code should be 401');
         }
-        console.info(`${caseName} test end`);
       } finally {
+        console.info(`${caseName} test end`);
         if (client) {
           client.close();
         }
@@ -1103,14 +1071,13 @@ export default function LocalSocketTest() {
             expectTrue(false, `Error should be an object, but got type: ${typeof errObj}`);
           }
         }
-        console.info(`${caseName} test end`);
       } catch (error) {
         console.info(`${caseName} outer catch err: ${JSON.stringify(error)}`);
         const outerError = error as BusinessError;
         console.info(`${caseName} error.code type: ${typeof outerError?.code}, value: ${outerError?.code}`);
         console.info(`${caseName} unexpected error in outer catch`);
-        console.info(`${caseName} test end`);
       } finally {
+        console.info(`${caseName} test end`);
         if (client) {
           client.close();
         }
@@ -1189,13 +1156,12 @@ export default function LocalSocketTest() {
             expectTrue(false, `Error should be an object, but got type: ${typeof errObj}`);
           }
         }
-        console.info(`${caseName} test end`);
       } catch (error) {
         console.info(`${caseName} outer catch err: ${JSON.stringify(error)}`);
         const outerError = error as BusinessError;
         console.info(`${caseName} unexpected error in outer catch: ${outerError?.code}`);
-        console.info(`${caseName} test end`);
       } finally {
+        console.info(`${caseName} test end`);
         if (client) {
           client.close();
         }
@@ -1287,13 +1253,12 @@ export default function LocalSocketTest() {
           console.info(`${caseName}: first bind error code: ${errObj?.code}`);
           expectTrue(true, 'first bind may fail due to various reasons');
         }
-        console.info(`${caseName} test end`);
       } catch (error) {
         console.info(`${caseName} outer catch err: ${JSON.stringify(error)}`);
         const outerError = error as BusinessError;
         console.info(`${caseName} unexpected error in outer catch: ${outerError?.code}`);
-        console.info(`${caseName} test end`);
       } finally {
+        console.info(`${caseName} test end`);
         if (client1) {
           client1.close();
         }
@@ -1372,13 +1337,12 @@ export default function LocalSocketTest() {
             expectTrue(false, `Error should be an object, but got type: ${typeof errObj}`);
           }
         }
-        console.info(`${caseName} test end`);
       } catch (error) {
         console.info(`${caseName} outer catch err: ${JSON.stringify(error)}`);
         const outerError = error as BusinessError;
         console.info(`${caseName} unexpected error in outer catch: ${outerError?.code}`);
-        console.info(`${caseName} test end`);
       } finally {
+        console.info(`${caseName} test end`);
         if (client) {
           client.close();
         }
@@ -1457,13 +1421,12 @@ export default function LocalSocketTest() {
             expectTrue(false, `Error should be an object, but got type: ${typeof errObj}`);
           }
         }
-        console.info(`${caseName} test end`);
       } catch (error) {
         console.info(`${caseName} outer catch err: ${JSON.stringify(error)}`);
         const outerError = error as BusinessError;
         console.info(`${caseName} unexpected error in outer catch: ${outerError?.code}`);
-        console.info(`${caseName} test end`);
       } finally {
+        console.info(`${caseName} test end`);
         if (client) {
           client.close();
         }
@@ -1543,13 +1506,12 @@ export default function LocalSocketTest() {
             expectTrue(false, `Error should be an object, but got type: ${typeof errObj}`);
           }
         }
-        console.info(`${caseName} test end`);
       } catch (error) {
         console.info(`${caseName} outer catch err: ${JSON.stringify(error)}`);
         const outerError = error as BusinessError;
         console.info(`${caseName} unexpected error in outer catch: ${outerError?.code}`);
-        console.info(`${caseName} test end`);
       } finally {
+        console.info(`${caseName} test end`);
         if (client) {
           client.close();
         }
@@ -1631,13 +1593,12 @@ export default function LocalSocketTest() {
             expectTrue(false, `Error should be an object, but got type: ${typeof errObj}`);
           }
         }
-        console.info(`${caseName} test end`);
       } catch (error) {
         console.info(`${caseName} outer catch err: ${JSON.stringify(error)}`);
         const outerError = error as BusinessError;
         console.info(`${caseName} unexpected error in outer catch: ${outerError?.code}`);
-        console.info(`${caseName} test end`);
       } finally {
+        console.info(`${caseName} test end`);
         if (client) {
           client.close();
         }
