@@ -128,7 +128,6 @@ export default function OverflowApiCoverTest() {
       done();
     });
 
-    	
     /**
      * @tc.name   ActivateSceneAnimation_Cover_Static_0100
      * @tc.number ActivateSceneAnimation_Cover_Static_0100
