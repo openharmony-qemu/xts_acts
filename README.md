@@ -580,51 +580,174 @@ The test cases are developed with the JavaScript language and must meet the prog
 
 Use the standard syntax of Jasmine to write test cases. The ES6 specification is supported.
 
-1.  Store the test cases in the  **entry/src/main/js/test**  directory, whose structure is as follows:
+**FA Model Example:**
+
+1.  Store the test cases in the  **src/main/js/test**  directory, whose structure is as follows:
 
     ```
-    ├── BUILD.gn   
-    │ └──entry
-    │ │ └──src
-    │ │ │ └──main
-    │ │ │ │ └──js
-    │ │ │ │ │ └──default               
-    │ │ │ │ │ │ └──pages
-    │ │ │ │ │ │ │ └──index             
-    │ │ │ │ │ │ │ │ └──index.js        # Entry file
-     │ │ │ │ │ └──test                  # Test code
-    │ │ │ └── resources                # HAP resources
-    │ │ │ └── config.json              # HAP configuration file
+    ├── BUILD.gn  
+    ├── Test.json                    # Not needed if resource dependency hap
+    ├── signature
+    │   └──openharmony_sx.p7b         # Signature tool
+    └──src
+    │   └──main
+    │   │   └──js
+    │   │   │   └──MainAbility 
+    │   │   │   │   └──app.js
+    │   │   │   │   └──pages
+    │   │   │   │       └──index   
+    │   │   │   │           └──index.js                  
+    │   │   │   └──test              # Test code directory  
+    │   │   │       └──List.test.js   
+    │   │   │       └──Ability.test.js 
+    │   │   └──TestAbility           # Test framework entry template
+    │   │   │   └──app.js   
+    │   │   │   └──pages 
+    │   │   │       └──index  
+    │   │   │           └──index.js  
+    │   │   └──TestRunner             # Test framework entry template
+    │   │   │   └──OpenHarmonyTestRunner.js   
+    │   └── resources                 # HAP resources
+    │   └── config.json               # HAP configuration
     ```
 
-2.  Start the JS test framework and load test cases. The following is an example for  **index.js**.
+2.  OpenHarmonyTestRunner.js example
 
     ```
-    // Start the JS test framework and load test cases.
-    import {Core, ExpectExtend} from 'deccjsunit/index'
+    import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
     
     export default {
-        data: {
-            title: ""
-        },
-        onInit() {
-            this.title = this.$t('strings.world');
-        },
+        onRun() {
+            console.log('OpenHarmonyTestRunner onRun run')
+            var abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+            var abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+            var testAbilityName = abilityDelegatorArguments.parameters['-p'] + '.MainAbility'
+            var cmd = 'aa start -d 0 -a ' + testAbilityName + ' -b ' + abilityDelegatorArguments.bundleName
+        }
+    };
+    ```
+
+3.  app.js example
+
+    ```
+    import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
+    import { Hypium } from '@ohos/hypium'
+    import testsuite from '../test/List.test'
+    
+    export default {
+        onCreate() {
+            console.info('TestApplication onCreate');
+            var abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+            var abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+            console.info('start run testcase!!!')
+            Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+        }
+    };
+    ```
+
+**Stage Model Example:**
+
+1. Store the test cases in the **src/main/ets/test** directory, whose structure is as follows:
+
+   ```
+   ├── BUILD.gn                     # Configuration file
+   ├── Test.json                    # Not needed if resource dependency hap
+   ├── signature
+   │   └──openharmony_sx.p7b         # Signature tool
+   ├── AppScope
+   │   └──resource  
+   │   └──app.json
+   ├── entry
+   │   └──src
+   │       └──main
+   │           └──ets         
+   │               └──test                   # Test code directory  
+   │               │   └──List.test.ets   
+   │               │   └──Ability.test.ets 
+   │               └──MainAbility      
+   │               │   └──MainAbility.ts         
+   │               │   └──pages            
+   │               │       └──index 
+   │               │           └──index.ets     
+   │               └──TestAbility            # Test case entry ability    
+   │               │   └──TestAbility.ts       
+   │               │   └──pages            
+   │               │       └──index.ets                
+   │               └──Application              
+   │               │   └──AbilityStage.ts   
+   │               └──TestRunner             # Test framework entry template
+   │               │   └──OpenHarmonyTestRunner.ts  
+   │           └── resources                 # HAP resources
+   │           └── module.json               # HAP configuration
+   ```
+
+2. OpenHarmonyTestRunner.ts example
+
+   ```
+   import TestRunner from '@ohos.application.testRunner'
+   import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
+   
+   export default class OpenHarmonyTestRunner implements TestRunner {
+       async onRun() {
+           console.log('OpenHarmonyTestRunner onRun run')
+           abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+           abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+           var testAbilityName = abilityDelegatorArguments.bundleName + '.TestAbility'
+           var cmd = 'aa start -d 0 -a TestAbility' + ' -b ' + abilityDelegatorArguments.bundleName
+       }
+   };
+   ```
+
+3. TestAbility.ts example
+
+   ```
+   import Ability from '@ohos.app.ability.UIAbility'
+   import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
+   import { Hypium } from '@ohos/hypium'
+   import testsuite from '../test/List.test'
+   
+   export default class TestAbility extends Ability {
+       onCreate(want, launchParam) {
+           console.log('TestAbility onCreate')
+           var abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+           var abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+           console.info('start run testcase!!!')
+           Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+       }
+   };
+   ```
+
+2.  Start the JS test framework and load test cases. The following is an example for  **app.js**.
+
+    ```
+    // Load test cases
+    import Ability from '@ohos.app.ability.UIAbility'
+    import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry'
+    import { Hypium } from '@ohos/hypium'
+    import testsuite from '../test/List.test'
+    
+    export default class TestAbility extends Ability {
+        onCreate(want, launchParam) {
+            console.log('TestAbility onCreate')
+            var abilityDelegator: any
+            abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+            var abilityDelegatorArguments: any
+            abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+            console.info('start run testcase!!!')
+            Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+        }
+    };
+    ```
+
+    For **index.js** example:
+
+    ```
+    export default {
+        ...
         onShow() {
-            console.info('onShow finish')
-            const core = Core.getInstance()
-            const expectExtend = new ExpectExtend({
-                'id': 'extend'
-            })
-            core.addService('expect', expectExtend)
-            core.init()
-            const configService = core.getDefaultService('config')
-            configService.setConfig(this)
-            require('../../../test/List.test')
-            core.execute()
+            console.info('onShow finish!')
         },
-        onReady() {
-        },
+        ...
     }
     ```
 
@@ -641,8 +764,185 @@ Use the standard syntax of Jasmine to write test cases. The ES6 specification is
     }) 
     ```
 
-
 ### JavaScript-based Test Case Packaging \(for the Standard System\)<a name="section445519106559"></a>
 
 For details about how to build a HAP, see the JS application development guide of the standard system  [Building and Creating HAPs](https://developer.harmonyos.com/en/docs/documentation/doc-guides/build_overview-0000001055075201).
+
+### Python-based Test Case Development and Compilation<a name="section281040146993"></a>
+
+XTS currently supports executing Python test cases for system black-box testing, and provides interfaces for device operations, including executing shell commands, file transfer, application installation and uninstallation, etc.
+
+**Test Case Development Guide**
+
+Python test case development has two modes: test case mode and test suite mode.
+
+1. Test Case Mode
+
+A test case consists of a JSON configuration file and a Python test script file.
+
+Example directory:
+```
+├── BUILD.gn                     # Build configuration file
+├── TestCase.json                # Test case configuration file
+├── testcase1.py                 # Python test script
+```
+
+JSON configuration file example:
+```
+// TestCase.json
+
+{
+    "description": "Configuration for Openharmony device test case",
+    "environment": [
+        {
+            "type": "device",
+            "label": "phone"
+        }
+    ],
+    "driver": {
+        "type": "DeviceTest",
+        "py_file": ["testcase1.py"]
+    },
+    "kits": [    
+    ]
+}
+```
+
+Python test case example (inherits 'TestCase'):
+```
+// testcase1.py
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+from devicetest.core.test_case import TestCase, Step
+
+class testcase1(TestCase):
+    def __init__(self, controllers):
+        self.TAG = self.__class__.__name__
+        super().__init__(self.TAG, controllers)
+
+    def setup(self):
+        Step("Setup")
+
+    def process(self):
+        Step("Process")
+        res = self.device1.execute_shell_command("ls -l")
+        self.log.info(res)
+        assert res != ""
+
+    def teardown(self):
+        Step("Teardown")
+```
+
+2. Test Suite Mode
+
+A test suite consists of a JSON configuration file, a test suite py file, and multiple Python test script files.
+
+Example directory:
+```
+├── BUILD.gn
+├── TestSuite.json
+├── TestSuite.py
+├── testcase1.py
+├── testcase2.py
+├── testcase3.py
+```
+
+**Interface Reference**
+
+| Interface | Parameters | Return | Description |
+| ----- | ----- | ----- | ----- |
+| execute_shell_command(command, timeout) | 1. command: shell command string <br> 2. timeout: timeout in ms | Command output | Execute shell command |
+| reboot() | None | None | Reboot device |
+| install_package(package_path) | package_path: app package path | Installation output | Install app |
+| uninstall_package(package_name) | package_name: app package name | Uninstallation output | Uninstall app |
+| pull_file(remote, local) | 1. remote: device file path <br> 2. local: local file path | None | Pull file from device to local |
+| push_file(local, remote) | 1. local: local file path <br> 2. remote: device file path | None | Push file from local to device |
+
+**Build Configuration Example (BUILD.gn):**
+```
+// BUILD.gn
+
+import("//build/ohos.gni")
+
+group("ActsDemoTest") {
+  testonly = true
+  deps = [ ":PyTestCase" ]
+}
+ohos_copy("PyTestCase") {
+  subsystem_name = "..."
+  part_name = "..."
+  sources = [
+    "./TestCase.json",
+    "./testcase1.py",
+  ]
+  outputs = [ root_out_dir + "/suites/acts/acts/testcases/{{source_file_part}}" ]
+}
+```
+
+### Python Test Case Execution Guide<a name="section637497153319"></a>
+
+**Test Case Mode:**
+``` run -l TestCase ```
+
+**Test Suite Mode:**
+- Full execution: ``` run -l TestSuite ```
+- Partial execution: ``` run -l TestSuite -ta class:testcase1,testcase3 ```
+- Partial exclusion: ``` run -l TestSuite -ta notClass:testcase1,testcase3 ```
+
+### Full Build Guide \(for Standard System\)<a name="section159801435165220"></a>
+
+1.  Full build
+
+    Execute in test/xts/acts directory:
+
+    ```
+    ./build.sh product_name=rk3568 system_size=standard
+    ```
+
+2.  Single subsystem build
+
+    ```
+    ./build.sh product_name=rk3568 system_size=standard target_subsystem=××××
+    ```
+
+3.  Single module build
+
+    ```
+    ./build.sh suite=acts system_size=standard target_subsystem=××××
+    ./build.sh product_name=rk3568 system_size=standard suite=xxx
+    ```
+
+    Output directory: out/rk3568/suites/acts/testcases
+
+### Full Test Case Execution Guide \(for Small and Standard Systems\)<a name="section159801435165220"></a>
+
+Set up the test environment with Python 3.7+ installed on Windows.
+
+Test execution directory structure:
+```
+    ├── testcase                       # Test suite files
+    │   └──xxx.hap                     # Test hap file
+    │   └──xxx.json                    # Test configuration file
+    ├── tools                          # Test framework tools
+    ├── run.bat                        # Windows execution file
+    ├── report                         # Test report directory
+```
+
+**Execution Steps:**
+1.  Copy the test suite from Linux server to Windows.
+2.  Execute acts\run.bat in Windows command prompt.
+3.  Enter execution commands:
+    - Full execution: ```run acts```
+    - Module execution: ```run –l ActsSamgrTest```
+    - Single package execution: ```run -l uitestActs -ta class:UiTestCase#testChecked```
+
+4.  View test report in acts\reports\summary_report.html
+
+## Related Repositories<a name="section1371113476307"></a>
+
+**xts_acts** (this repository)
+
+[xts_tools](https://gitcode.com/openharmony/xts_tools) - Test framework and tools
 
