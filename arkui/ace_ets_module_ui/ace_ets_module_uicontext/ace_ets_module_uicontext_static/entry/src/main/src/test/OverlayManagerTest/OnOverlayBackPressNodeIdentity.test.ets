@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, beforeEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, Level } from '../../../../hypium/index';
 import { Driver, ON, MatchPattern, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import { Router, UIContext, OverlayManagerOptions } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 const SLEEP_TIME = 1000;
@@ -102,21 +101,14 @@ async function ensurePage(): Promise<void> {
 
 export default function OnOverlayBackPressNodeIdentityTest(): void {
   describe('OverlayManagerOnBackPressTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.ets.module.uicontext.static', 'EntryAbility');
-      await CommonFunc.sleep(SLEEP_TIME);
-      try {
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        await ensurePage();
-      } catch (error) {
-        console.error('OverlayManagerOnBackPressTest beforeAll router error: ' + error);
-      }
-    });
-
     beforeEach(async (): Promise<void> => {
       // 确保页面就绪（用例结束可能已退出页面，必要时重新进入）
       const driver = Driver.create();
-      await ensurePage();
+      try {
+        await ensurePage();
+      } catch (err) {
+        console.info('OverlayManagerOnBackPressTest beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -198,17 +190,6 @@ export default function OnOverlayBackPressNodeIdentityTest(): void {
 }
 
   describe('NodeIdentityTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.ets.module.uicontext.static', 'EntryAbility');
-      await CommonFunc.sleep(SLEEP_TIME);
-      try {
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        await ensurePage();
-      } catch (error) {
-        console.error('NodeIdentityTest beforeAll router error: ' + error);
-      }
-    });
-
     /**
      * @tc.name nodeRenderStateOnOff
      * @tc.desc 使用 NodeIdentity（string）注册/注销 nodeRenderState 监听，渲染变化触发回调

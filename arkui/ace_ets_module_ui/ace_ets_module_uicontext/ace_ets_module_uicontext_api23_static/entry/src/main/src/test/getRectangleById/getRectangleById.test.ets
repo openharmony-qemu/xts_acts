@@ -15,24 +15,17 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
 export default function getRectangleByIdTest() {
   describe('getRectangleByIdTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] getRectangleByIdTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.uicontext.api23.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] getRectangleByIdTest beforeEach start");
       let options: router.RouterOptions = {
@@ -62,7 +55,11 @@ export default function getRectangleByIdTest() {
       if (AppStorage.get<number>('info1') != undefined) {
         AppStorage.delete('info1');
       }
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('getRectangleByIdTest afterEach err: ' + JSON.stringify(err));
+      }
       console.info("[ARKUI_NEW] getRectangleByIdTest afterEach end");
     });
 
