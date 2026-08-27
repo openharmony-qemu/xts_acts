@@ -391,28 +391,6 @@ export default function CollectionsSetExpand1024Test(): void {
       expect(set.size).assertEqual(SET_CFG.LEN_1026);
     });
 
-    // known_issue EXP_SET_008 Symbol element: ArkTS does not support Symbol(), disabled.
-    // @tc.number SUB_COMMONLIBRARY_COLLECTIONS_SET_EXPANSION_1024_0800
-    // @tc.name collectionsSetExpand1024Test0008
-    // @tc.desc Verifies Symbol elements are compared by identity across rehash.
-    // @tc.type   FUNCTION
-    // @tc.size   MEDIUMTEST
-    // @tc.level  LEVEL1
-    // it('collectionsSetExpand1024Test0008',
-    //   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const set: collections.Set<symbol> = new collections.Set<symbol>();
-    //   const sym1: symbol = Symbol('test');
-    //   for (let i = 0; i < 1020; i++) {
-    //     set.add(Symbol(String(i)));
-    //   }
-    //   set.add(sym1);
-    //   for (let i = 1021; i <= 1025; i++) {
-    //     set.add(Symbol(String(i)));
-    //   }
-    //   expect(set.has(sym1)).assertTrue();
-    //   expect(set.has(Symbol('test'))).assertFalse();
-    // });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_COLLECTIONS_SET_EXPANSION_1024_0900
      * @tc.name collectionsSetExpand1024Test0009

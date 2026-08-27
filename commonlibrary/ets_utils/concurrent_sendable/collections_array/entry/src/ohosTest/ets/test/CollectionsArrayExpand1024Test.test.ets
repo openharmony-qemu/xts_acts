@@ -479,27 +479,6 @@ export default function CollectionsArrayExpand1024Test(): void {
       expect(arr.length).assertEqual(ARRAY_CFG.LEN_1027);
     });
 
-    // known_issue EXP_ARR_008 Symbol element: ArkTS does not support Symbol(), disabled.
-    // @tc.number SUB_COMMONLIBRARY_COLLECTIONS_ARRAY_EXPANSION_1024_0800
-    // @tc.name collectionsArrayExpand1024Test0008
-    // @tc.desc Verifies a Symbol element is retained by reference identity across expansion.
-    // @tc.size MediumTest
-    // @tc.type Function
-    // @tc.level LEVEL1
-    // it('collectionsArrayExpand1024Test0008',
-    //   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const arr: collections.Array<symbol> = new collections.Array<symbol>();
-    //   const sym1: symbol = Symbol('test');
-    //   for (let i = 0; i < 1020; i++) {
-    //     arr.push(Symbol(String(i)));
-    //   }
-    //   arr.push(sym1);
-    //   for (let i = 1021; i <= 1025; i++) {
-    //     arr.push(Symbol(String(i)));
-    //   }
-    //   expect(arr[1020]).assertEqual(sym1);
-    // });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_COLLECTIONS_ARRAY_EXPANSION_1024_0900
      * @tc.name collectionsArrayExpand1024Test0009
