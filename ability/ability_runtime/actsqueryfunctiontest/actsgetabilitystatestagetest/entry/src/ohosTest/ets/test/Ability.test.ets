@@ -291,10 +291,9 @@ export default function abilityTest() {
       let state = AbilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND;
       let stateOld = AbilityDelegatorRegistryOld.AbilityLifecycleState.BACKGROUND;
       expect(state).assertEqual(stateOld);
-      expect(state).assertGreaterThan(AbilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
-      expect(state).assertLessThan(AbilityDelegatorRegistry.AbilityLifecycleState.DESTROY);
+      expect(state).assertLarger(AbilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
+      expect(state).assertLess(AbilityDelegatorRegistry.AbilityLifecycleState.DESTROY);
       hilog.info(0x0000, 'testTag', TEST_CASE_NAME + 'it end');
       done();
     })
-  })
 }
