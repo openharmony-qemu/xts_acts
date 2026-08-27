@@ -1203,6 +1203,7 @@ export default function AVTranscoderTest() {
           let firstCallbackCount = 0;
           let secondCallbackCount = 0;
           mTranscoder.on('error', async (error: BusinessError) => {
+            console.error(TAG, testName + ' error listen: err: ' + error.code + ', msg: ' + error.message);
             firstCallbackCount++;
           });
           mTranscoder.on('error', async (error: BusinessError) => {
