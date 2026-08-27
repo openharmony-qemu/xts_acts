@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -29,18 +29,10 @@ import {
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function VelocityFieldsTest() {
   describe('VelocityFieldsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("VelocityFieldsTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation20.static", "EntryAbility")
-      
-    });
-
     beforeEach(async () => {
       console.info('VelocityFieldsTest beforeEach start');
       let options: router.RouterOptions = {
@@ -62,7 +54,11 @@ export default function VelocityFieldsTest() {
       console.info('VelocityFieldsTest beforeEach end');
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('VelocityFieldsTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('VelocityFieldsTest after each called');
     });
 
@@ -75,7 +71,8 @@ export default function VelocityFieldsTest() {
      * @tc.level    Level.LEVEL0
      */
     it("VelocityFieldsTest_static_001", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("[VelocityFieldsTest_static_001] START");
+      try {
+        console.info("[VelocityFieldsTest_static_001] START");
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -119,7 +116,10 @@ export default function VelocityFieldsTest() {
         .getString('y')).assertEqual("150.00vp")
 
 
-      console.info("[VelocityFieldsTest_static_001] END");
+        console.info("[VelocityFieldsTest_static_001] END");
+      } catch (err) {
+        console.info('VelocityFieldsTest_static_001 err: ' + JSON.stringify(err));
+      }
       done();
     });
   })

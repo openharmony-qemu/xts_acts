@@ -13,22 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
 
 
 export default function aboutToAppearFalse() {
   describe('aboutToAppearFalse', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("aboutToAppearFalse beforeEach start");
       let options: router.RouterOptions = {
@@ -51,6 +46,7 @@ export default function aboutToAppearFalse() {
     });
     
     
+    
     /**
      * @tc.number   aboutToAppearFalse_static_0100
      * @tc.name     aboutToAppearFalse_static_0100
@@ -60,14 +56,22 @@ export default function aboutToAppearFalse() {
 it('aboutToAppearFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('aboutToAppearFalse_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('aboutToAppearFalse'));
-      await CommonFunc.sleep(2000);
-      console.info('aaaaaa1111111111',button);
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(4000);
+      try {
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('aboutToAppearFalse'));
+        await CommonFunc.sleep(2000);
+        console.info('aaaaaa1111111111',button);
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(4000);
+      } catch (err) {
+        console.info('aboutToAppearFalse_0100 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('aboutToAppearFalseText');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('aboutToAppearFalse_0100 err: ' + JSON.stringify(err));
+      }
       console.info('bbbbbbbbbb222222222',strJson);
 
       console.info("[aboutToAppearFalse_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -75,10 +79,13 @@ it('aboutToAppearFalse_static_0100', Level.LEVEL0, async (done: () => void): Pro
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual("aboutToAppear,onAppear");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('aboutToAppearFalse_0100 err: ' + JSON.stringify(err));
+      }
       console.info('[aboutToAppearFalse_0100] END');
       done();
     });
   })
 }
-

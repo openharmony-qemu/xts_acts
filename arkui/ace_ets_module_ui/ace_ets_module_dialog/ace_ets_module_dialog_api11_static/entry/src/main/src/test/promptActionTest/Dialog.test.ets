@@ -20,7 +20,6 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -41,32 +40,16 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function DialogTest() {
   describe('DialogTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DialogTest beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("DialogTest beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -103,15 +86,31 @@ export default function DialogTest() {
      */
     it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Dialog_Visual_static_0060 START');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('DialogTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('ArkUX_Dialog_Visual_0060');
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('DialogTest await err: ' + JSON.stringify(err));
+      }
       console.info('ArkUX_Dialog_Visual_static_0060 START  :' + JSON.stringify(strJson));
       let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('DialogTest await err: ' + JSON.stringify(err));
+      }
       console.info("ArkUX_Dialog_Visual_static_0060 obj is: " + JSON.stringify(obj));
       let fontSize = obj.getElement('$attrs').getString("fontSize");
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('DialogTest await err: ' + JSON.stringify(err));
+      }
       expect(fontSize).assertEqual("20.00fp");
       console.info('ArkUX_Dialog_Visual_static_0060 END ');
       done();

@@ -13,22 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';
-import { startAbility, UtilsTest } from './Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function curvesJsunit() {
   describe('curvesJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("curvesJsunit beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("curvesJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -51,7 +43,11 @@ export default function curvesJsunit() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('curvesJsunit afterEach err: ' + JSON.stringify(err));
+      }
       console.info("curves after each called");
     });
   })

@@ -15,13 +15,12 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
 const ARC_BUTTON_POSITION_BOTTOM_EDGE = 1;
@@ -88,11 +87,6 @@ function inspectorJsonHasPositionBottomEdge(inspectorStr: string): boolean {
 
 export default function ArcButtonTest() {
   describe('ArcButtonTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      arkuiNewLog(SUITE, 'beforeAll', 'start');
-      await UtilsTest.startAbility('com.arkui.ace.dialog.button.static', 'EntryAbility');
-      arkuiNewLog(SUITE, 'beforeAll', 'end');
-    });
     beforeEach((): void => {
       arkuiNewLog(SUITE, 'beforeEach', 'start');
       let options: router.RouterOptions = {
@@ -123,7 +117,11 @@ export default function ArcButtonTest() {
       arkuiNewLog(SUITE, 'afterEach', 'start');
       AppStorage.delete('arcButtonOnTouchCalled');
       AppStorage.delete('arcButtonOnClickCalled');
-      await Utils.sleep(500);
+      try {
+        await Utils.sleep(500);
+      } catch (err) {
+        arkuiNewErr(SUITE, 'afterEach', 'sleep err: ' + JSON.stringify(err));
+      }
       arkuiNewLog(SUITE, 'afterEach', 'end');
     });
 
@@ -515,19 +513,24 @@ export default function ArcButtonTest() {
     it('SUB_arkui_arc_button_options_on_touch_1600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const caseName = 'SUB_arkui_arc_button_options_on_touch_1600';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
-      let driver = Driver.create();
-      await driver.delayMs(500);
-      let comp = await driver.findComponent(ON.id('arcButtonAllProperties'));
-      if (!comp) {
-        comp = await driver.findComponent(ON.text('ArcButton All Properties', MatchPattern.EQUALS));
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(500);
+        let comp = await driver.findComponent(ON.id('arcButtonAllProperties'));
+        if (!comp) {
+          comp = await driver.findComponent(ON.text('ArcButton All Properties', MatchPattern.EQUALS));
+        }
+        arkuiNewLog(SUITE, 'execute', caseName + ' | findComponent result=' + (comp ? 'found' : 'null'));
+        await (comp?.click() as Promise<void>);
+        await Utils.sleep(800);
+        const called = AppStorage.get<boolean>('arcButtonOnTouchCalled');
+        arkuiNewLog(SUITE, 'execute', caseName + ' | arcButtonOnTouchCalled=' + called);
+        // 与 arcSliderOptionsOnTouch 一致：能定位到组件或回调已触发即通过
+        expect((comp !== null && comp !== undefined) || called === true).assertTrue();
+      } catch (err) {
+        arkuiNewErr(SUITE, 'execute', caseName + ' err: ' + JSON.stringify(err));
+        expect().assertFail();
       }
-      arkuiNewLog(SUITE, 'execute', caseName + ' | findComponent result=' + (comp ? 'found' : 'null'));
-      await (comp?.click() as Promise<void>);
-      await Utils.sleep(800);
-      const called = AppStorage.get<boolean>('arcButtonOnTouchCalled');
-      arkuiNewLog(SUITE, 'execute', caseName + ' | arcButtonOnTouchCalled=' + called);
-      // 与 arcSliderOptionsOnTouch 一致：能定位到组件或回调已触发即通过
-      expect((comp !== null && comp !== undefined) || called === true).assertTrue();
       arkuiNewLog(SUITE, 'execute', caseName + ' END');
       done();
     });
@@ -543,18 +546,23 @@ export default function ArcButtonTest() {
     it('SUB_arkui_arc_button_options_on_click_1700', Level.LEVEL1, async (done: () => void) => {
       const caseName = 'SUB_arkui_arc_button_options_on_click_1700';
       arkuiNewLog(SUITE, 'execute', caseName + ' START');
-      let driver = Driver.create();
-      await driver.delayMs(500);
-      let comp = await driver.findComponent(ON.id('arcButtonAllProperties'));
-      if (!comp) {
-        comp = await driver.findComponent(ON.text('ArcButton All Properties', MatchPattern.EQUALS));
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(500);
+        let comp = await driver.findComponent(ON.id('arcButtonAllProperties'));
+        if (!comp) {
+          comp = await driver.findComponent(ON.text('ArcButton All Properties', MatchPattern.EQUALS));
+        }
+        arkuiNewLog(SUITE, 'execute', caseName + ' | findComponent result=' + (comp ? 'found' : 'null'));
+        await (comp?.click() as Promise<void>);
+        await Utils.sleep(800);
+        const called = AppStorage.get<boolean>('arcButtonOnClickCalled');
+        arkuiNewLog(SUITE, 'execute', caseName + ' | arcButtonOnClickCalled=' + called);
+        expect((comp !== null && comp !== undefined) || called === true).assertTrue();
+      } catch (err) {
+        arkuiNewErr(SUITE, 'execute', caseName + ' err: ' + JSON.stringify(err));
+        expect().assertFail();
       }
-      arkuiNewLog(SUITE, 'execute', caseName + ' | findComponent result=' + (comp ? 'found' : 'null'));
-      await (comp?.click() as Promise<void>);
-      await Utils.sleep(800);
-      const called = AppStorage.get<boolean>('arcButtonOnClickCalled');
-      arkuiNewLog(SUITE, 'execute', caseName + ' | arcButtonOnClickCalled=' + called);
-      expect((comp !== null && comp !== undefined) || called === true).assertTrue();
       arkuiNewLog(SUITE, 'execute', caseName + ' END');
       done();
     });

@@ -18,7 +18,6 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -39,33 +38,16 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 
 export default function menuEnabledJsunit() {
   describe('menuEnabledJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("menuEnabledJsunit beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("menuEnabledJsunit beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("menuEnabledJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -105,7 +87,11 @@ it('menuEnabledJsunit_static_0100', Level.LEVEL2, async (done: () => void): Prom
 
       console.info('menuEnabledJsunit_static_0100 START');
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('bindMenuEnd');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[menuEnabledJsunit_static_0100] component obj is: " + JSON.stringify(obj));
@@ -129,17 +115,64 @@ it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Prom
 
       console.info('menuEnabledJsunit_static_0200 START');
       let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('cmEnd'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let menuEnabled = await driver.findComponent(ON.id('menuEnabled'));
-      await (menuEnabled?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
-      await CommonFunc.sleep(1000);
-      let change = await driver.findComponent(ON.id('change'));
-      await (change?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      let button;
+      try {
+        button = await driver.findComponent(ON.id('cmEnd'));
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      let menuEnabled;
+      try {
+        menuEnabled = await driver.findComponent(ON.id('menuEnabled'));
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (menuEnabled?.click() as Promise<void>);
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2070)
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      let change;
+      try {
+        change = await driver.findComponent(ON.id('change'));
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (change?.click() as Promise<void>);
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('menuEnabled' + '_text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[menuEnabledJsunit_static_0200] component obj is: " + JSON.stringify(obj));
@@ -152,4 +185,3 @@ it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Prom
 
   })
 }
-

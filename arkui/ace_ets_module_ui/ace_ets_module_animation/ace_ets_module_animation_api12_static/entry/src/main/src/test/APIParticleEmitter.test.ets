@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index'
 import {
   Component,
   DisplayRotation,
@@ -28,19 +28,11 @@ import {
 import router from '@ohos.router';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
-import { startAbility, UtilsTest } from './Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function APIParticleEmitter() {
   describe('APIParticleEmitter', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("APIParticleEmitter beforeEach start");
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("APIParticleEmitter beforeEach start");
@@ -65,11 +57,15 @@ export default function APIParticleEmitter() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('APIParticleEmitter err: ' + JSON.stringify(err));
+      }
       console.info("APIParticleEmitter after each called");
     });
-    
-    
+
+
 /**
      * @tc.number   APIParticleEmitter_0100
      * @tc.name     APIParticleEmitter_0100
@@ -79,17 +75,46 @@ export default function APIParticleEmitter() {
 it('APIParticleEmitter_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('APIParticleEmitter_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('APIParticleEmitter err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('APIParticleEmitter err: ' + JSON.stringify(err));
+      }
       console.info('APIParticleEmitter_0100 START');
-      let create = await driver.findComponent(ON.id('APIParticleEmitter_Button'));
+      let create: Component | undefined;
+      try {
+        create = await driver.findComponent(ON.id('APIParticleEmitter_Button'));
+      } catch (err) {
+        console.info('APIParticleEmitter err: ' + JSON.stringify(err));
+      }
       console.info('APIParticleEmitter_0100 START ' + JSON.stringify(create));
-      await CommonFunc.sleep(1000);
-      await (create?.click() as Promise<void>);
-      await CommonFunc.sleep(3000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('APIParticleEmitter err: ' + JSON.stringify(err));
+      }
+      try {
+        await (create?.click() as Promise<void>);
+      } catch (err) {
+        console.info('APIParticleEmitter err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('APIParticleEmitter err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('APIParticleEmitter_Text01');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('APIParticleEmitter err: ' + JSON.stringify(err));
+      }
       console.info("[APIParticleEmitter_0100] component JSON.parse(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('0');

@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function BindPopupTest() {
   describe('BindPopupTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("BindPopupTest beforeEach start");
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("BindPopupTest beforeEach start");
       let options: router.RouterOptions = {
@@ -52,7 +46,11 @@ export default function BindPopupTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindPopupTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('BindPopupTest after each called');
     })
 
@@ -65,11 +63,23 @@ export default function BindPopupTest() {
      * @tc.level    Level.LEVEL0
      */
 it('bindPopupTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindPopupTest_static_001 sleep err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('bindPopup001'));
-      await (btn1?.click() as Promise<void>)
-      await CommonFunc.sleep(5000);
+      try {
+        await (btn1?.click() as Promise<void>)
+      } catch (err) {
+        console.info('bindPopupTest_static_001 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(5000);
+      } catch (err) {
+        console.info('bindPopupTest_static_001 sleep err: ' + JSON.stringify(err));
+      }
       expect(btn1 != null).assertTrue();
       done();
     });

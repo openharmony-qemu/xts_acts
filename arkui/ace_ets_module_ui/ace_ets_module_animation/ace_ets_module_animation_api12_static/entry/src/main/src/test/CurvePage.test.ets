@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -31,25 +31,9 @@ import { Callback, MessageManager } from '../../ets/MainAbility/common/MessageMa
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../test/Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function CurvePage() {
   describe('CurvePage', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CurvePage beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("CurvePage beforeEach start");
@@ -74,13 +58,17 @@ export default function CurvePage() {
 
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
       console.info("CurvePage after each called");
     });
 
 
-    
-    
+
+
 /**
      * @tc.number   CurvePage_Static_0100
      * @tc.name     CurvePage_Static_0100
@@ -91,17 +79,42 @@ it('CurvePage_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void
 
       console.info('CurvePage_0100 START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      try {
+        await driver.delayMs(1000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
       console.log('before btn1 click')
-      let btn1 = await driver.findComponent(ON.id('easeInOutId'));
-      await driver.delayMs(3000);
+      let btn1: Component | undefined;
+      try {
+        btn1 = await driver.findComponent(ON.id('easeInOutId'));
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.delayMs(3000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
       console.log('btn1 is: ' + JSON.stringify(btn1))
-      await (btn1?.click() as Promise<void>);
+      try {
+        await (btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
       console.info('[CurvePage_0100] btn1 click');
-      await CommonFunc.sleep(5000);
+      try {
+        await CommonFunc.sleep(5000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
 
       let cubeSize: Int = AppStorage.get<Int>('cube_size') as Int
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
       console.log('CurvePage_0100 on cubeSize value : ' + cubeSize)
       expect(cubeSize).assertEqual(30);
       AppStorage.delete('cube_size');
@@ -110,8 +123,8 @@ it('CurvePage_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
-    
+
+
 /**
      * @tc.number   CurvePage_Static_0200
      * @tc.name     CurvePage_Static_0200
@@ -122,12 +135,29 @@ it('CurvePage_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void
 
       console.info('CurvePage_0200 START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      try {
+        await driver.delayMs(1000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
 
-      let btn2 = await driver.findComponent(ON.id('fastOutSlowIn'));
-      await (btn2?.click() as Promise<void>);
+      let btn2: Component | undefined;
+      try {
+        btn2 = await driver.findComponent(ON.id('fastOutSlowIn'));
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
       console.info('[CurvePage_0200] btn2 click');
-      await driver.delayMs(3000);
+      try {
+        await driver.delayMs(3000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
 
       let cubeSize1 = AppStorage.get<Int>('cube_size')
       console.log('CurvePage_0200 on cubeSize1 value : ' + cubeSize1)
@@ -138,8 +168,8 @@ it('CurvePage_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
-    
+
+
 /**
      * @tc.number   CurvePage_Static_0300
      * @tc.name     CurvePage_Static_0300
@@ -150,12 +180,29 @@ it('CurvePage_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void
 
       console.info('CurvePage_0300 START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      try {
+        await driver.delayMs(1000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
 
-      let btn3 = await driver.findComponent(ON.id('springMotionId'));
-      await (btn3?.click() as Promise<void>);
+      let btn3: Component | undefined;
+      try {
+        btn3 = await driver.findComponent(ON.id('springMotionId'));
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn3?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
       console.info('[CurvePage_0300] btn3 click');
-      await driver.delayMs(3000);
+      try {
+        await driver.delayMs(3000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
 
       let cubeSize2 = AppStorage.get<Int>('cube_size')
       console.log('CurvePage_0300 on cubeSize2 value : ' + cubeSize2)
@@ -166,8 +213,8 @@ it('CurvePage_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
-    
+
+
 /**
      * @tc.number   CurvePage_Static_0400
      * @tc.name     CurvePage_Static_0400
@@ -178,12 +225,29 @@ it('CurvePage_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void
 
       console.info('CurvePage_0400 START');
       let driver = Driver.create();
-      await driver.delayMs(1000);
+      try {
+        await driver.delayMs(1000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
 
-      let btn4 = await driver.findComponent(ON.id('responsiveSpringId'));
-      await (btn4?.click() as Promise<void>);
+      let btn4: Component | undefined;
+      try {
+        btn4 = await driver.findComponent(ON.id('responsiveSpringId'));
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn4?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
       console.info('[CurvePage_0400] btn4 click');
-      await driver.delayMs(3000);
+      try {
+        await driver.delayMs(3000);
+      } catch (err) {
+        console.info('CurvePage err: ' + JSON.stringify(err));
+      }
 
       let cubeSize3 = AppStorage.get<Int>('cube_size')
       console.log('CurvePage_0400 on cubeSize3 value : ' + cubeSize3)

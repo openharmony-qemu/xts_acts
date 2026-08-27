@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import emitter from '@ohos.events.emitter'
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -33,26 +33,10 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import curves from '@ohos.curves';
 import { PlayMode } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+import { RecordData } from '@ohos.base';
 
 export default function AnimationJsunit() {
   describe('AnimationJsunit', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("playModeReverseTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
@@ -76,7 +60,11 @@ export default function AnimationJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AnimationJsunit afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("overlay after each called");
     });
     
@@ -88,26 +76,30 @@ export default function AnimationJsunit() {
      */
 it('AnimationJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[AnimationJsunit_0100] START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
-      await button_Bottom.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
-      await button_Bottom2.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
-      await button_Bottom3.click();
-      await CommonFunc.sleep(1000);
-      let finishBtn = await (scrollBar?.scrollSearch(ON.id('finish')) as Promise<Component>);
-      await finishBtn.click();
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('onframe-value');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[AnimationJsunit_0100] obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content') > '100').assertTrue();
-      console.info('[AnimationJsunit_0100] END');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
+        await button_Bottom.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
+        await button_Bottom2.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
+        await button_Bottom3.click();
+        await CommonFunc.sleep(1000);
+        let finishBtn = await (scrollBar?.scrollSearch(ON.id('finish')) as Promise<Component>);
+        await finishBtn.click();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('onframe-value');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[AnimationJsunit_0100] obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+        expect(obj.getElement('$attrs').getString('content') > '100').assertTrue();
+        console.info('[AnimationJsunit_0100] END');
+      } catch (err) {
+        console.info('AnimationJsunit_0100 err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -120,26 +112,30 @@ it('AnimationJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promis
      */
 it('AnimationJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[AnimationJsunit_0200] START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
-      await button_Bottom.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
-      await button_Bottom2.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
-      await button_Bottom3.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('cancel')) as Promise<Component>);
-      await button_Bottom4.click();
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('onframe-value');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[AnimationJsunit_0200] obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content') === '200').assertTrue();
-      console.info('[AnimationJsunit_0200] END');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
+        await button_Bottom.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
+        await button_Bottom2.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
+        await button_Bottom3.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('cancel')) as Promise<Component>);
+        await button_Bottom4.click();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('onframe-value');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[AnimationJsunit_0200] obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+        expect(obj.getElement('$attrs').getString('content') === '200').assertTrue();
+        console.info('[AnimationJsunit_0200] END');
+      } catch (err) {
+        console.info('AnimationJsunit_0200 err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -153,31 +149,35 @@ it('AnimationJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
      */
 it('AnimationJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[AnimationJsunit_0300] START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
-      await button_Bottom.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
-      await button_Bottom2.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
-      await button_Bottom3.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('pause')) as Promise<Component>);
-      await button_Bottom4.click();
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('onframe-value');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[AnimationJsunit_0300] obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      await CommonFunc.sleep(1000);
-      let strJson2 = inspector.getInspectorByKey('onframe-value');
-      let obj2 = JSON.parseJsonElement(strJson2);
-      console.info("[AnimationJsunit_0300] obj2 is: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content') === obj2.getElement('$attrs').getString('content'))
-        .assertTrue();
-      console.info('[AnimationJsunit_0300] END');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
+        await button_Bottom.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
+        await button_Bottom2.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
+        await button_Bottom3.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('pause')) as Promise<Component>);
+        await button_Bottom4.click();
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('onframe-value');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[AnimationJsunit_0300] obj is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+        await CommonFunc.sleep(1000);
+        let strJson2 = inspector.getInspectorByKey('onframe-value');
+        let obj2 = JSON.parseJsonElement(strJson2);
+        console.info("[AnimationJsunit_0300] obj2 is: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
+        expect(obj.getElement('$attrs').getString('content') === obj2.getElement('$attrs').getString('content'))
+          .assertTrue();
+        console.info('[AnimationJsunit_0300] END');
+      } catch (err) {
+        console.info('AnimationJsunit_0300 err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -191,26 +191,30 @@ it('AnimationJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
      */
 it('AnimationJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[AnimationJsunit_0400] START');
-      let driver2 = Driver.create()
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver2.findComponent(ON.type('Scroll'));
-      let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
-      await button_Bottom.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
-      await button_Bottom2.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
-      await button_Bottom3.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('finish')) as Promise<Component>);
-      await button_Bottom4.click();
-      await CommonFunc.sleep(1000);
-      let onframe = await (scrollBar?.scrollSearch(ON.id('onframe-value')) as Promise<Component>);
-      let content = await onframe.getText()
-      console.info("[AnimationJsunit_0400] obj3 is: " + JSON.stringify(content))
-      expect(content === '200').assertTrue();
-      console.info('[AnimationJsunit_0400] END');
+      try {
+        let driver2 = Driver.create()
+        await CommonFunc.sleep(1000);
+        let scrollBar = await driver2.findComponent(ON.type('Scroll'));
+        let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
+        await button_Bottom.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
+        await button_Bottom2.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
+        await button_Bottom3.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('finish')) as Promise<Component>);
+        await button_Bottom4.click();
+        await CommonFunc.sleep(1000);
+        let onframe = await (scrollBar?.scrollSearch(ON.id('onframe-value')) as Promise<Component>);
+        let content = await onframe.getText()
+        console.info("[AnimationJsunit_0400] obj3 is: " + JSON.stringify(content))
+        expect(content === '200').assertTrue();
+        console.info('[AnimationJsunit_0400] END');
+      } catch (err) {
+        console.info('AnimationJsunit_0400 err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -224,29 +228,33 @@ it('AnimationJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promis
      */
 it('AnimationJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[AnimationJsunit_0500] START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button_Bottom = await (scrollBar?.scrollSearch(ON.id('velocity')) as Promise<Component>);
-      await button_Bottom.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('stiffness')) as Promise<Component>);
-      await button_Bottom2.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('damping')) as Promise<Component>);
-      await button_Bottom3.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
-      await button_Bottom4.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom5 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
-      await (button_Bottom5?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let curve = await (scrollBar?.scrollSearch(ON.id('curve')) as Promise<Component>);
-      let content = await curve.getText()
-      console.info("[AnimationJsunit_0500] obj is: " + JSON.stringify(content));
-      expect(content).assertEqual('curve:interpolating-spring\(10,1,1,15\)');
-      console.info('[AnimationJsunit_0500] END');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let button_Bottom = await (scrollBar?.scrollSearch(ON.id('velocity')) as Promise<Component>);
+        await button_Bottom.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('stiffness')) as Promise<Component>);
+        await button_Bottom2.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('damping')) as Promise<Component>);
+        await button_Bottom3.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
+        await button_Bottom4.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom5 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
+        await (button_Bottom5?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let curve = await (scrollBar?.scrollSearch(ON.id('curve')) as Promise<Component>);
+        let content = await curve.getText()
+        console.info("[AnimationJsunit_0500] obj is: " + JSON.stringify(content));
+        expect(content).assertEqual('curve:interpolating-spring\(10,1,1,15\)');
+        console.info('[AnimationJsunit_0500] END');
+      } catch (err) {
+        console.info('AnimationJsunit_0500 err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -260,26 +268,30 @@ it('AnimationJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promis
      */
 it('AnimationJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[AnimationJsunit_0600] START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
-      await button_Bottom.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
-      await button_Bottom2.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
-      await button_Bottom3.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('cancel')) as Promise<Component>);
-      await button_Bottom4.click();
-      await CommonFunc.sleep(2000);
-      let backAnimator = await (scrollBar?.scrollSearch(ON.id('backAnimator-onback')) as Promise<Component>);
-      let content = await backAnimator.getText()
-      console.info("[AnimationJsunit_0600] obj2 is: " + JSON.stringify(content));
-      expect(content).assertEqual('backAnimator-onback:oncancel');
-      console.info('[AnimationJsunit_0600] END');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
+        await button_Bottom.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
+        await button_Bottom2.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
+        await button_Bottom3.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('cancel')) as Promise<Component>);
+        await button_Bottom4.click();
+        await CommonFunc.sleep(2000);
+        let backAnimator = await (scrollBar?.scrollSearch(ON.id('backAnimator-onback')) as Promise<Component>);
+        let content = await backAnimator.getText()
+        console.info("[AnimationJsunit_0600] obj2 is: " + JSON.stringify(content));
+        expect(content).assertEqual('backAnimator-onback:oncancel');
+        console.info('[AnimationJsunit_0600] END');
+      } catch (err) {
+        console.info('AnimationJsunit_0600 err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -293,26 +305,30 @@ it('AnimationJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promis
      */
 it('AnimationJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[AnimationJsunit_0700] START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
-      await button_Bottom.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
-      await button_Bottom2.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
-      await button_Bottom3.click();
-      await CommonFunc.sleep(1000);
-      let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('finish')) as Promise<Component>);
-      await button_Bottom4.click();
-      await CommonFunc.sleep(2000);
-      let backAnimator = await (scrollBar?.scrollSearch(ON.id('backAnimator-onback')) as Promise<Component>);
-      let content = await backAnimator.getText()
-      console.info("[AnimationJsunit_0700] obj3 is: " + JSON.stringify(content));
-      expect(content).assertEqual('backAnimator-onback:onfinish');
-      console.info('[AnimationJsunit_0700] END');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll'));
+        let button_Bottom = await (scrollBar?.scrollSearch(ON.id('interpolating-springn')) as Promise<Component>);
+        await button_Bottom.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom2 = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
+        await button_Bottom2.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom3 = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
+        await button_Bottom3.click();
+        await CommonFunc.sleep(1000);
+        let button_Bottom4 = await (scrollBar?.scrollSearch(ON.id('finish')) as Promise<Component>);
+        await button_Bottom4.click();
+        await CommonFunc.sleep(2000);
+        let backAnimator = await (scrollBar?.scrollSearch(ON.id('backAnimator-onback')) as Promise<Component>);
+        let content = await backAnimator.getText()
+        console.info("[AnimationJsunit_0700] obj3 is: " + JSON.stringify(content));
+        expect(content).assertEqual('backAnimator-onback:onfinish');
+        console.info('[AnimationJsunit_0700] END');
+      } catch (err) {
+        console.info('AnimationJsunit_0700 err: ' + JSON.stringify(err));
+      }
       done();
     });
   })

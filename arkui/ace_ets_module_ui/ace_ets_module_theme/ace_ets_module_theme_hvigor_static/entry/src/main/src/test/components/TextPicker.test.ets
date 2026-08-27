@@ -14,16 +14,12 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import {
   TextPickerKeys,
   textPickerThemeProperty,
@@ -61,10 +57,6 @@ export default function textPickerThemeTest() {
   let colorValues: Map<string, string> | undefined = new Map<string, string>();
 
   describe(SUITE, () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
-    })
     beforeEach(() => {
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router

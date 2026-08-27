@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import {
   Driver, ON
@@ -27,14 +26,6 @@ import {
 
 export default function BackgroundColorTest() {
   describe('BackgroundColorTest', () => {
-    beforeAll(async ():Promise<void> => {
-      console.info("BackgroundColorTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("BackgroundColorTest beforeEach start");
       let options: router.RouterOptions = {
@@ -64,9 +55,17 @@ export default function BackgroundColorTest() {
     it('BackgroundColorUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[BackgroundColorUndefinedTest_static_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BackgroundColorUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('backgroundColorTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BackgroundColorUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
 
       console.info("[BackgroundColorUndefinedTest_static_0100] $attrs: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -77,12 +76,24 @@ export default function BackgroundColorTest() {
         .getElement('backgroundColor')))
         .assertEqual('\"#FF0000FF\"');
       let changeBtn = await driver.findComponent(ON.id('backgroundColor'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (changeBtn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('BackgroundColorUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BackgroundColorUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       console.info("[BackgroundColorUndefinedTest_static_0100] click backgroundColor");
       strJson = inspector.getInspectorByKey('backgroundColorTest');
       let strJsonExp = inspector.getInspectorByKey('backgroundColorTestUndefined');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BackgroundColorUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       let backgroundColorExp =
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJsonExp).getElement('$attrs').getElement('backgroundColor'));
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)

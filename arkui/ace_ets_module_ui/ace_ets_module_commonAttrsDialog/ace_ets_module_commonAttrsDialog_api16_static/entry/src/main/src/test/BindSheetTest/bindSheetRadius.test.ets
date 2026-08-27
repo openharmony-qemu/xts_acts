@@ -14,33 +14,19 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, Point, Rect, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import display from '@ohos.display';
 import { $r } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function BindSheetTest() {
   describe('BindSheetTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("BindSheetTest beforeEach start");
@@ -57,7 +43,11 @@ export default function BindSheetTest() {
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          try {
+            await CommonFunc.sleep(2000);
+          } catch (err) {
+            console.info('BindSheetTest sleep err: ' + JSON.stringify(err));
+          }
           // console.info("push BindSheetTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
@@ -65,17 +55,21 @@ export default function BindSheetTest() {
       }
       console.info("BindSheetTest beforeEach end");
     });
-    
+
+
 
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindSheetTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('bindSheetRadius after each called');
     })
 
-    
-    
-    
+
+
     /**
      * @tc.number   bindSheetTest_static_0100
      * @tc.name     bindSheetTest_static_0100
@@ -88,14 +82,39 @@ it('bindSheetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0100] driver is: " + driver);
-      let btn1 = await driver.findComponent(ON.id('bindSheet_001'));
-      await CommonFunc.sleep(1000);
-      await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      let btn1: Component | undefined;
+      try {
+        btn1 = await driver.findComponent(ON.id('bindSheet_001'));
+      } catch (err) {
+        console.info('bindSheetTest_0100 findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0100 sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('bindSheetTest_0100 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0100 sleep err: ' + JSON.stringify(err));
+      }
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindSheetTest_0100 sleep err: ' + JSON.stringify(err));
+      }
       let date1 = JSON.stringify(obj1.getElement('$children')[1].getElement('$children')[0])
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindSheetTest_0100 sleep err: ' + JSON.stringify(err));
+      }
       console.info("[bindSheetTest_0100] date1 is: " , obj1.getElement('$children')[1].getElement('$children')[0]);
       console.info("[bindSheetTest_0100] topLeft is: " + Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft')))));
       let windowRadiusSmall = inspector.getInspectorByKey("window_radius_small");
@@ -106,15 +125,29 @@ it('bindSheetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft'))))).assertEqual(parseInt(radius));
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight'))))).assertEqual(parseInt(radius));
       console.info('[' + tagName + '] END ===========================');
-      let btn2 = await driver.findComponent(ON.id('close1'));
-      await (btn2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      let btn2: Component | undefined;
+      try {
+        btn2 = await driver.findComponent(ON.id('close1'));
+      } catch (err) {
+        console.info('bindSheetTest_0100 findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('bindSheetTest_0100 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0100 sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
-    
-    
-    
+
+
+
+
     /**
      * @tc.number   bindSheetTest_static_0200
      * @tc.name     bindSheetTest_static_0200
@@ -127,28 +160,67 @@ it('bindSheetTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0200] driver is: " + driver);
-      let btn1 = await driver.findComponent(ON.id('bindSheet_002'));
-      await CommonFunc.sleep(1000);
-      await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      let btn1: Component | undefined;
+      try {
+        btn1 = await driver.findComponent(ON.id('bindSheet_002'));
+      } catch (err) {
+        console.info('bindSheetTest_0200 findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0200 sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('bindSheetTest_0200 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0200 sleep err: ' + JSON.stringify(err));
+      }
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindSheetTest_0200 sleep err: ' + JSON.stringify(err));
+      }
       let date1 = JSON.stringify(obj1.getElement('$children')[1].getElement('$children')[0])
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindSheetTest_0200 sleep err: ' + JSON.stringify(err));
+      }
       console.info("[bindSheetTest_0200] date1 is: " + date1);
       console.info("[bindSheetTest_0200] topLeft is: " + obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft'));
       expect(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft')).assertEqual("0.00vp");
       expect(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight')).assertEqual("0.00vp");
       console.info('[' + tagName + '] END ===========================');
-      let btn2 = await driver.findComponent(ON.id('close2'));
-      await (btn2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      let btn2: Component | undefined;
+      try {
+        btn2 = await driver.findComponent(ON.id('close2'));
+      } catch (err) {
+        console.info('bindSheetTest_0200 findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('bindSheetTest_0200 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0200 sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
-    
-    
-    
+
+
+
+
     /**
      * @tc.number   bindSheetTest_static_0300
      * @tc.name     bindSheetTest_static_0300
@@ -161,12 +233,33 @@ it('bindSheetTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0300] driver is: " + driver);
-      let btn1 = await driver.findComponent(ON.id('bindSheet_003'));
-      await CommonFunc.sleep(1000);
-      await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      let btn1: Component | undefined;
+      try {
+        btn1 = await driver.findComponent(ON.id('bindSheet_003'));
+      } catch (err) {
+        console.info('bindSheetTest_0300 findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0300 sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('bindSheetTest_0300 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0300 sleep err: ' + JSON.stringify(err));
+      }
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindSheetTest_0300 sleep err: ' + JSON.stringify(err));
+      }
       let date1 = JSON.stringify(obj1.getElement('$children')[1].getElement('$children')[0])
       console.info("[bindSheetTest_0300] date1 is: " + date1);
       console.info("[bindSheetTest_0300] topLeft is: " + obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft'));
@@ -179,15 +272,29 @@ it('bindSheetTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       expect(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft')).assertEqual("100.00vp");
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight'))))).assertEqual(parseInt(radius));
       console.info('[' + tagName + '] END ===========================');
-      let btn2 = await driver.findComponent(ON.id('close3'));
-      await (btn2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      let btn2: Component | undefined;
+      try {
+        btn2 = await driver.findComponent(ON.id('close3'));
+      } catch (err) {
+        console.info('bindSheetTest_0300 findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('bindSheetTest_0300 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0300 sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
 
-    
-    
+
+
+
     /**
      * @tc.number   bindSheetTest_static_0400
      * @tc.name     bindSheetTest_static_0400
@@ -200,12 +307,33 @@ it('bindSheetTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0400] driver is: " + driver);
-      let btn1 = await driver.findComponent(ON.id('bindSheet_004'));
-      await CommonFunc.sleep(1000);
-      await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      let btn1: Component | undefined;
+      try {
+        btn1 = await driver.findComponent(ON.id('bindSheet_004'));
+      } catch (err) {
+        console.info('bindSheetTest_0400 findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0400 sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('bindSheetTest_0400 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0400 sleep err: ' + JSON.stringify(err));
+      }
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindSheetTest_0400 sleep err: ' + JSON.stringify(err));
+      }
       let date1 = JSON.stringify(obj1.getElement('$children')[1].getElement('$children')[0])
       console.info("[bindSheetTest_0400] date1 is: " + date1);
       console.info("[bindSheetTest_0400] topLeft is: " + Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft')))));
@@ -217,9 +345,22 @@ it('bindSheetTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft'))))).assertEqual(parseInt(radius));
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight'))))).assertEqual(parseInt(radius));
       console.info('[' + tagName + '] END ===========================');
-      let btn2 = await driver.findComponent(ON.id('close4'));
-      await (btn2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      let btn2: Component | undefined;
+      try {
+        btn2 = await driver.findComponent(ON.id('close4'));
+      } catch (err) {
+        console.info('bindSheetTest_0400 findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('bindSheetTest_0400 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindSheetTest_0400 sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
   })

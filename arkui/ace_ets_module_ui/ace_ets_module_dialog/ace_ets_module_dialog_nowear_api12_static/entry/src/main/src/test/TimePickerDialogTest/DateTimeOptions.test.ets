@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
-let tag: string = 'testTag';
 
 export default function DateTimeOptions() {
   describe('DateTimeOptions', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("DateTimeOptions beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
-
-    });
 
     beforeEach(async () => {
       console.info("DateTimeOptions beforeEach start");
@@ -71,22 +58,26 @@ export default function DateTimeOptions() {
      */
 it('DateTimeOptions_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('DateTimeOptions_static_0100 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let Column = await driver.findComponent(ON.id('DateTimeOptions')) as Component;
-      await Column!.click();
-      await CommonFunc.sleep(1000);
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let Column = await driver.findComponent(ON.id('DateTimeOptions')) as Component;
+        await Column!.click();
+        await CommonFunc.sleep(1000);
 
-      await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
+        await driver.triggerKey(2070);
+        await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('DateTimeOptionsValue');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[DateTimeOptions_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
-      console.info("[DateTimeOptions_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"hour":"numeric","minute":"2-digit"} / false');
-      console.info('[DateTimeOptions_static_0100] END');
-      done();
+        let strJson = inspector.getInspectorByKey('DateTimeOptionsValue');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[DateTimeOptions_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));
+        console.info("[DateTimeOptions_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('{"hour":"numeric","minute":"2-digit"} / false');
+        console.info('[DateTimeOptions_static_0100] END');
+        done();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
 
 

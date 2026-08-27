@@ -15,7 +15,7 @@
  */
 
 import emitter from '@ohos.events.emitter';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -35,25 +35,10 @@ import { Font, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import font from '@ohos.font'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import { RecordData } from '@ohos.base';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function common_ts_ets_apiStaticClearJsunit() {
   describe('common_ts_ets_apiStaticClearTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("common_ts_ets_apiStaticClearJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("common_ts_ets_apiStaticClearTest beforeEach start");
       let options: router.RouterOptions = {
@@ -76,7 +61,11 @@ export default function common_ts_ets_apiStaticClearJsunit() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('common_ts_ets_apiStaticClearTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("common_ts_ets_apiStaticClear after each called");
     });
 
@@ -91,7 +80,11 @@ export default function common_ts_ets_apiStaticClearJsunit() {
      */
 it('testcommon_ts_ets_apiPersistProp_static__static_0001', Level.LEVEL2, async () => {
       console.info('common_ts_ets_apiPersistProp testcommon_ts_ets_apiPersistProp0001 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('common_ts_ets_apiTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let innerEvent: emitter.InnerEvent = {
           eventId: 60230,
@@ -122,7 +115,11 @@ it('testcommon_ts_ets_apiPersistProp_static__static_0001', Level.LEVEL2, async (
      */
     it('testcommon_ts_ets_apiEnvProp_static_0001', Level.LEVEL2, async () => {
        console.info('common_ts_ets_apiEnvProp testcommon_ts_ets_apiEnvProp0001 START');
-       await Utils.sleep(2000);
+       try {
+         await Utils.sleep(2000);
+       } catch (err) {
+         console.info('common_ts_ets_apiTest sleep err: ' + JSON.stringify(err));
+       }
        try {
          let innerEvent: emitter.InnerEvent = {
            eventId: 60231,
@@ -153,7 +150,11 @@ it('testcommon_ts_ets_apiPersistProp_static__static_0001', Level.LEVEL2, async (
 it('test_font_registerFont__static_0001', Level.LEVEL2, async () => {
       console.info('test_font_registerFont_0001 Register a customized font in the FontManagerSTART');
       const uiContext = AppStorage.get<UIContext>('uiContent')!;
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('common_ts_ets_apiTest sleep err: ' + JSON.stringify(err));
+      }
 
       let fontOptions: font.FontOptions = {
         familyName: "Italy",

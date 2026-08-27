@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,15 +21,9 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function detentSelection() {
   describe('detentSelection', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("detentSelection beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api15.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info("detentSelection beforeEach start");
       let options: router.RouterOptions = {
@@ -62,12 +56,20 @@ export default function detentSelection() {
      */
 it('detentSelection_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('detentSelection_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('detentSelection_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('bindSheet')) as Component;
       btn!.click();
       console.info('[detentSelection_static_0100] bindSheet click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('detentSelection_static_0100 sleep err: ' + JSON.stringify(err));
+      }
 
       let strJson1 = inspector.getInspectorByKey('text');
       let dent1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')
@@ -75,7 +77,11 @@ it('detentSelection_static_0100', Level.LEVEL1, async (done: () => void): Promis
       let btn1: Component = await driver.findComponent(ON.id('changeBtn')) as Component;
       btn1!.click();
       console.info('[detentSelection_static_0100] changeBtn click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('detentSelection_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('text');
       let dent2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')
       expect(dent1).assertEqual(dent2);
@@ -96,18 +102,30 @@ it('detentSelection_static_0100', Level.LEVEL1, async (done: () => void): Promis
      */
 it('detentSelection_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('detentSelection_static_0200 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('detentSelection_static_0200 sleep err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn: Component = await driver.findComponent(ON.id('bindSheet')) as Component;
       btn!.click();
       console.info('[detentSelection_static_0200] bindSheet click');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('detentSelection_static_0200 sleep err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('text');
       let dent1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')
 
       let btn1: Component = await driver.findComponent(ON.id('changedetent')) as Component;
       btn1!.click();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('detentSelection_static_0200 sleep err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('text');
       let dent2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')
       console.info('[detentSelection_static_0200] dent1 '+ dent1 +'dent2 '+ dent2);

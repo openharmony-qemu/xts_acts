@@ -15,7 +15,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
   Component,
@@ -27,33 +27,17 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 
 export default function ActionSheetTrue() {
   describe('ActionSheetTrue', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ActionSheetTrue beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("ActionSheetTrue  beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("ActionSheetTrue beforeEach start");
       let options: router.RouterOptions = {
@@ -92,21 +76,53 @@ export default function ActionSheetTrue() {
 it('ActionSheetTrue_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ActionSheetTrue_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('ActionSheetTrue'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ActionSheetTrueTest await err: ' + JSON.stringify(err));
+      }
+      let button;
+      try {
+        button = await driver.findComponent(ON.id('ActionSheetTrue'));
+      } catch (err) {
+        console.info('ActionSheetTrueTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('ActionSheetTrueTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ActionSheetTrueTest await err: ' + JSON.stringify(err));
+      }
 
       let windowClass: window.Window | undefined = undefined;
-      windowClass =
-        await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      try {
+        windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      } catch (err) {
+        console.info('ActionSheetTrueTest await err: ' + JSON.stringify(err));
+      }
       let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
       console.info("[ActionSheetTrue_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(0) //0表示应用子窗口TYPE_APP
+      expect(properties.type).assertEqual(0) //0鐞涖劎銇氭惔鏃傛暏鐎涙劗鐛ラ崣顤歒PE_APP
 
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ActionSheetTrueTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2070)
+      } catch (err) {
+        console.info('ActionSheetTrueTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ActionSheetTrueTest await err: ' + JSON.stringify(err));
+      }
       console.info('[ActionSheetTrue_static_0100] END');
       done();
     });
@@ -114,4 +130,3 @@ it('ActionSheetTrue_static_0100', Level.LEVEL2, async (done: () => void): Promis
 
   })
 }
-

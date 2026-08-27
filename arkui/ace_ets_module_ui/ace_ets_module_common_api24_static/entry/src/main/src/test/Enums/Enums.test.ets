@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import Utils from '../../../../main/ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 
 const ROUTE = 'MainAbility/pages/Enums/Enums';
 const PFX = 'Enums';
@@ -93,10 +92,6 @@ function clearModuleStorage(): void {
 
 export default function EnumsTest() {
   describe('Enums', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.ets.module.common.api24.static', 'EntryAbility');
-    });
-
     beforeEach(() => {
       try {
         replaceUrlForTest(ROUTE);
@@ -107,7 +102,11 @@ export default function EnumsTest() {
 
     afterEach(async (): Promise<void> => {
       clearModuleStorage();
-      await Utils.sleep(SLEEP);
+      try {
+        await Utils.sleep(SLEEP);
+      } catch (err) {
+        console.info('EnumsTest afterEach sleep err: ' + JSON.stringify(err));
+      }
     });
 
     /**
@@ -119,12 +118,18 @@ export default function EnumsTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_START_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      await Utils.sleep(SLEEP);
-      await (await driver.findComponent(ON.id(`${PFX}_btn_MULTILINE_START`)))?.click();
-      await Utils.sleep(SLEEP);
-      expect(AppStorage.get<string>(`${PFX}_enum_MULTILINE_START`)).assertEqual('true');
-      done();
+      try {
+        const driver = Driver.create();
+        await Utils.sleep(SLEEP);
+        await (await driver.findComponent(ON.id(`${PFX}_btn_MULTILINE_START`)))?.click();
+        await Utils.sleep(SLEEP);
+        expect(AppStorage.get<string>(`${PFX}_enum_MULTILINE_START`)).assertEqual('true');
+        done();
+      } catch (e) {
+        console.error('EnumsTest MULTILINE_START error: ' + e);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -136,12 +141,18 @@ export default function EnumsTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_ArkUI_Enums_Ellipsis_Mode_MULTILINE_CENTER_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      await Utils.sleep(SLEEP);
-      await (await driver.findComponent(ON.id(`${PFX}_btn_MULTILINE_CENTER`)))?.click();
-      await Utils.sleep(SLEEP);
-      expect(AppStorage.get<string>(`${PFX}_enum_MULTILINE_CENTER`)).assertEqual('true');
-      done();
+      try {
+        const driver = Driver.create();
+        await Utils.sleep(SLEEP);
+        await (await driver.findComponent(ON.id(`${PFX}_btn_MULTILINE_CENTER`)))?.click();
+        await Utils.sleep(SLEEP);
+        expect(AppStorage.get<string>(`${PFX}_enum_MULTILINE_CENTER`)).assertEqual('true');
+        done();
+      } catch (e) {
+        console.error('EnumsTest MULTILINE_CENTER error: ' + e);
+        expect().assertFail();
+        done();
+      }
     });
   });
 }

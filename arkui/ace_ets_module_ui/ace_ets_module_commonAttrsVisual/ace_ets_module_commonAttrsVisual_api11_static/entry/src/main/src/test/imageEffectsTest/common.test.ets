@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import {
@@ -34,27 +34,10 @@ import { Callback, MessageManager } from '../../../ets/MainAbility/common/Messag
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import { RecordData } from '@ohos.base';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function commonColorModeJsunit() {
   describe('commonColorModeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("commonColorModeJsunit beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("commonColorModeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -77,7 +60,11 @@ export default function commonColorModeJsunit() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('commonColorModeTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("commonColorMode after each called");
     });
     
@@ -89,9 +76,17 @@ export default function commonColorModeJsunit() {
      */
 it('testCommonColorMode_static_0011', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonColorMode testCommonColorMode0011 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('ThinText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testCommonColorMode0011] component textAlign strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       console.info("[testCommonColorMode0011] backgroundBlurStyle value :" + JSON.parseJsonElement(strJson)
@@ -113,9 +108,17 @@ it('testCommonColorMode_static_0011', Level.LEVEL2, async (done: () => void): Pr
      */
 it('testCommonColorMode_static_0012', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonColorMode testCommonColorMode0012 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('ThickText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testCommonColorMode0012] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -139,9 +142,17 @@ it('testCommonColorMode_static_0012', Level.LEVEL2, async (done: () => void): Pr
      */
 it('testCommonMiddle_static_0013', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonMiddle testCommonMiddle0001 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('middleText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testCommonMiddle0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -160,9 +171,17 @@ it('testCommonMiddle_static_0013', Level.LEVEL2, async (done: () => void): Promi
      */
 it('testCommonOutset_static_0014', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonOutset testCommonOutset0001 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('outsetText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testCommonOutset0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -184,9 +203,17 @@ it('testCommonOutset_static_0014', Level.LEVEL2, async (done: () => void): Promi
      */
 it('testCommonRepeat_static_0015', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonRepeat testCommonRepeat0001 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('RepeatText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testCommonRepeat0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -208,9 +235,17 @@ it('testCommonRepeat_static_0015', Level.LEVEL2, async (done: () => void): Promi
      */
 it('testCommonSpace_static_0016', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonSpace testCommonSpace0001 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('SpaceText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testCommonSpace0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -232,9 +267,17 @@ it('testCommonSpace_static_0016', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testCommonSlice_static_0017', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonSlice testCommonSlice0001 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('sliceText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testCommonSlice0001] component textAlign strJson:" + strJson);
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -256,7 +299,11 @@ it('testCommonSlice_static_0017', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testCommonSlice_static_0018', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('commonSlice testCommonArea0001 START');
-      await Utils.sleep(500);
+      try {
+        await Utils.sleep(500);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let innerEvent: emitter.InnerEvent = {
           eventId: 60312,
@@ -271,7 +318,11 @@ it('testCommonSlice_static_0018', Level.LEVEL2, async (done: () => void): Promis
         emitter.on(innerEvent, callback);
         console.info("testCommonArea0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('areaText', 10, "")));
+        try {
         await Utils.sleep(2000);
+      } catch (err) {
+        console.info('commonColorModeTest sleep err: ' + JSON.stringify(err));
+      }
       } catch (err) {
         console.info("testCommonArea0001 on click err : " + JSON.stringify(err));
       }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
@@ -29,20 +29,11 @@ import {
   WindowMode
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function AnimatorResultTest() {
   describe('AnimatorResultTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AnimatorResultTest beforeEach start");
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
-      
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("AnimatorResultTest beforeEach start");
@@ -67,11 +58,15 @@ export default function AnimatorResultTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
       console.info("AnimatorResultTest after each called");
     });
-    
-    
+
+
 /**
      * @tc.number   AnimatorResultTest_static_001
      * @tc.name     AnimatorResultTest_static_001
@@ -81,24 +76,66 @@ export default function AnimatorResultTest() {
 it('AnimatorResultTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[AnimatorResultTest_static_001] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let create = await driver.findComponent(ON.id('create'));
-      await CommonFunc.sleep(2000);
-      await (create?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let play = await driver.findComponent(ON.id('play'));
-      await CommonFunc.sleep(2000);
-      await (play?.click() as Promise<void>);
-      await CommonFunc.sleep(3500);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      let create: Component | undefined;
+      try {
+        create = await driver.findComponent(ON.id('create'));
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await (create?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      let play: Component | undefined;
+      try {
+        play = await driver.findComponent(ON.id('play'));
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await (play?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(3500);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
       let onFrame = inspector.getInspectorByKey('onFrame');
       console.info('onFrame: ' + JSON.parseJsonElement(onFrame).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(onFrame).getElement('$attrs').getString('content')).assertEqual('onFrame');
       console.info('[AnimatorResultTest_static_001] END');
       done();
     });
-    
+
 /**
      * @tc.number   AnimatorResultTest_static_002
      * @tc.name     AnimatorResultTest_static_002
@@ -108,17 +145,59 @@ it('AnimatorResultTest_static_001', Level.LEVEL0, async (done: () => void): Prom
 it('AnimatorResultTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[AnimatorResultTest_static_002] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let create = await driver.findComponent(ON.id('create'));
-      await CommonFunc.sleep(2000);
-      await (create?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let play = await driver.findComponent(ON.id('play'));
-      await CommonFunc.sleep(2000);
-      await (play?.click() as Promise<void>);
-      await CommonFunc.sleep(3500);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      let create: Component | undefined;
+      try {
+        create = await driver.findComponent(ON.id('create'));
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await (create?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      let play: Component | undefined;
+      try {
+        play = await driver.findComponent(ON.id('play'));
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await (play?.click() as Promise<void>);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(3500);
+      } catch (err) {
+        console.info('AnimatorResultTest err: ' + JSON.stringify(err));
+      }
       let onRepeat = inspector.getInspectorByKey('onRepeat');
       console.info('onRepeat: ' + JSON.parseJsonElement(onRepeat).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(onRepeat).getElement('$attrs').getString('content')).assertEqual('onRepeat');

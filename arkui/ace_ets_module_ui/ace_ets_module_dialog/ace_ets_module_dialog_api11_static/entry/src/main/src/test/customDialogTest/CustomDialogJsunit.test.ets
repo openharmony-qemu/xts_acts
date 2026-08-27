@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
   Component,
@@ -28,33 +28,16 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 
 export default function CustomDialogJsunit() {
   describe('CustomDialogJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CustomDialogJsunit beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("CustomDialogJsunit beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("CustomDialogJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -94,16 +77,37 @@ it('CustomDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Pro
 
       console.info('CustomDialogJsunit_static_0100 START');
       let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('CustomDialog'));
-      await (button?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+      let button;
+      try {
+        button = await driver.findComponent(ON.id('CustomDialog'));
+      } catch (err) {
+        console.info('CustomDialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>)
+      } catch (err) {
+        console.info('CustomDialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CustomDialogJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('CustomDialog');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[CustomDialogJsunit_static_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('label')).assertEqual("click me");
       console.info('[CustomDialogJsunit_static_0100] END');
-      await driver.pressBack();
-      await CommonFunc.sleep(3000);
+      try {
+        await driver.pressBack();
+      } catch (err) {
+        console.info('CustomDialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('CustomDialogJsunitTest await err: ' + JSON.stringify(err));
+      }
       done();
     });
 

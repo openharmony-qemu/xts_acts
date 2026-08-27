@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
@@ -28,20 +28,11 @@ import {
   WindowMode
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ParticleTest() {
   describe("ParticleTest", () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ParticleTest beforeEach start");
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
-      
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ParticleTest beforeEach start");
@@ -65,7 +56,11 @@ export default function ParticleTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       console.info("ParticleTest after each called");
     });
 
@@ -77,18 +72,51 @@ export default function ParticleTest() {
      */
     it("ParticleTest_static_001", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ParticleTest_static_001] START");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       console.log('test animation  ')
-      let btn = await driver.findComponent(ON.id('btn'));
-      await CommonFunc.sleep(2000);
-      await CommonFunc.sleep(2000);
+      let btn: Component | undefined;
+      try {
+        btn = await driver.findComponent(ON.id('btn'));
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       console.log('test animation  ' + btn)
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       let noiseScale = inspector.getInspectorByKey("noiseScale");
-      await CommonFunc.sleep(1500);
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       console.log('test animation  ' + noiseScale)
       expect(JSON.parseJsonElement(noiseScale).getElement('$attrs').getString('content')).assertEqual("10");
       console.info("[ParticleTest_static_001] END");
@@ -103,15 +131,44 @@ export default function ParticleTest() {
      */
     it("ParticleTest_static_002", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ParticleTest_static_002] START");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('btn'));
-      await CommonFunc.sleep(2000);
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      let btn: Component | undefined;
+      try {
+        btn = await driver.findComponent(ON.id('btn'));
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       let noiseFrequency = inspector.getInspectorByKey("noiseFrequency");
-      await CommonFunc.sleep(1500);
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       expect(JSON.parseJsonElement(noiseFrequency).getElement('$attrs').getString('content')).assertEqual("15");
       console.info("[ParticleTest_static_002] END");
       done();
@@ -125,20 +182,49 @@ export default function ParticleTest() {
      */
     it("ParticleTest_static_003", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ParticleTest_static_003] START");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('btn'));
-      await CommonFunc.sleep(2000);
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      let btn: Component | undefined;
+      try {
+        btn = await driver.findComponent(ON.id('btn'));
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       let noiseAmplitude = inspector.getInspectorByKey("noiseAmplitude");
-      await CommonFunc.sleep(1500);
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       expect(JSON.parseJsonElement(noiseAmplitude).getElement('$attrs').getString('content')).assertEqual("5");
       console.info("[ParticleTest_static_003] END");
       done();
     });
-    
+
     /**
      * @tc.number   ParticleTest_static_004
      * @tc.name     ParticleTest_static_004
@@ -147,15 +233,44 @@ export default function ParticleTest() {
      */
     it("ParticleTest_static_004", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[ParticleTest_static_004] START");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.id('btn'));
-      await CommonFunc.sleep(2000);
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      let btn: Component | undefined;
+      try {
+        btn = await driver.findComponent(ON.id('btn'));
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       let shape = inspector.getInspectorByKey("shape");
-      await CommonFunc.sleep(1500);
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('ParticleTest err: ' + JSON.stringify(err));
+      }
       expect(JSON.parseJsonElement(shape).getElement('$attrs').getString('content')).assertEqual("RECT");
       console.info("[ParticleTest_static_004] END");
       done();

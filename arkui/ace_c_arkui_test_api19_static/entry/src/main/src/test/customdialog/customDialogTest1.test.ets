@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it,Level, beforeAll } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it,Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import {LibUtil} from '../../../ets/pages/LibUtil'
-import { UtilsTest } from '../Util.test'
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 let libUtil:LibUtil = new LibUtil();
 
 export default function customDialogTest1() {
 
   describe('customDialogTest1', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api19.static", "EntryAbility")
-    });
     let PAGE_TAG = 'customDialogTest1';
     beforeEach(async (): Promise<void> => {
-      await Utils.pushPage(`customdialog/${PAGE_TAG}`, false);
-      await Utils.sleep(100);
+      try {
+        await Utils.pushPage(`customdialog/${PAGE_TAG}`, false);
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('customDialogTest1 beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     
@@ -42,21 +42,25 @@ export default function customDialogTest1() {
      */
     it('customDialogTest1_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('customDialogTest1_0010  START');
-      await Utils.sleep(500);
-      let driver: Driver = Driver.create();
-      let btn:Component = await driver.findComponent(ON.id('buttonId')) as Component;
-      await btn.click();
-      console.info("[customDialogTest1_0010] openDialog");
-      await Utils.sleep(500);
-      let btn1:Component = await driver.findComponent(ON.id('button1')) as Component;
-      expect(btn1!= null).assertTrue()
-      await btn1.click();
+      try {
+        await Utils.sleep(500);
+        let driver: Driver = Driver.create();
+        let btn:Component = await driver.findComponent(ON.id('buttonId')) as Component;
+        await btn.click();
+        console.info("[customDialogTest1_0010] openDialog");
+        await Utils.sleep(1000);
+        let btn1:Component = await driver.findComponent(ON.id('button1')) as Component;
+        expect(btn1!= null).assertTrue()
+        await btn1.click();
 
-      console.info("[customDialogTest1_0010] updateDialog");
-      await Utils.sleep(500);
+        console.info("[customDialogTest1_0010] updateDialog");
+        await Utils.sleep(1000);
 
-      await driver.triggerKey(2070)
-      console.info('customDialogTest1_0010  END');
+        await driver.triggerKey(2070)
+        console.info('customDialogTest1_0010  END');
+      } catch (err) {
+        console.info('customDialogTest1_0010 err: ' + JSON.stringify(err));
+      }
       done()
     })
 

@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -29,26 +28,11 @@ import {
   PointerMatrix,
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-import type { KeyCode } from '@ohos.multimodalInput.keyCode';
-
 export default function sliderUndefined() {
   describe('sliderUndefined', () => {
-    beforeAll(async ():Promise<void> => {
-      console.info("sliderUndefined beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.dialog.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("sliderUndefined beforeEach start");
@@ -73,7 +57,6 @@ export default function sliderUndefined() {
     });
     afterEach(async () => {
     });
-
 
     /**
      * @tc.number   sliderUndefined_static_0001
@@ -108,7 +91,6 @@ export default function sliderUndefined() {
       console.info('[sliderUndefined_static_0001] END');
       done();
     });
-
 
     /**
      * @tc.number   sliderUndefined_static_0002
@@ -178,7 +160,6 @@ export default function sliderUndefined() {
       console.info('[sliderUndefined_static_0003] END');
       done();
     });
-
 
     /**
      * @tc.number   sliderUndefined_static_0004

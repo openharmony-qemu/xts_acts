@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
@@ -28,20 +28,11 @@ import {
   WindowMode
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function ParticleAttributeTest() {
   describe('ParticleAttributeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ParticleAttributeTest beforeEach start");
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
-      
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ParticleAttributeTest beforeEach start");
@@ -56,7 +47,7 @@ export default function ParticleAttributeTest() {
         if (!("particleAttributeTest" == pages.name)) {
           console.info("get ParticleAttributeTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(3000);
         }
       } catch (err) {
         console.error("push ParticleAttributeTest page error:" + err);
@@ -65,11 +56,15 @@ export default function ParticleAttributeTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleAttributeTest err: ' + JSON.stringify(err));
+      }
       console.info("particleAttributeTest after each called");
     });
-    
-    
+
+
 /**
      * @tc.number   ParticleAttributeTest_static_001
      * @tc.name     ParticleAttributeTest_static_001
@@ -79,15 +74,40 @@ export default function ParticleAttributeTest() {
 it('ParticleAttributeTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info("[ParticleAttributeTest_static_001] START");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleAttributeTest err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ParticleAttributeTest err: ' + JSON.stringify(err));
+      }
       console.log('test1156 ')
-      let btn = await driver.findComponent(ON.id('btn'));
-      await CommonFunc.sleep(2000);
+      let btn: Component | undefined;
+      try {
+        btn = await driver.findComponent(ON.id('btn'));
+      } catch (err) {
+        console.info('ParticleAttributeTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('ParticleAttributeTest err: ' + JSON.stringify(err));
+      }
       console.log('test1156 ' + btn)
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('ParticleAttributeTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('ParticleAttributeTest err: ' + JSON.stringify(err));
+      }
       let noiseScale = inspector.getInspectorByKey("text");
       expect(JSON.parseJsonElement(noiseScale).getElement('$attrs').getString('content')).assertEqual("1");
       console.info("[ParticleAttributeTest_static_001] END");

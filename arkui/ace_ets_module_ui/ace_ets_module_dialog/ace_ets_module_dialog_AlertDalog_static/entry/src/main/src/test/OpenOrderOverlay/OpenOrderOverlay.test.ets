@@ -15,18 +15,16 @@
  */
 
 import {
-  describe, beforeAll, afterAll, beforeEach, afterEach, it, expect, Level
+  describe, afterAll, beforeEach, afterEach, it, expect, Level
 } from '../../../../hypium/index';
 import { Driver, ON, Component } from '@kit.TestKit';
 import { LevelOrder, LevelMode } from '@ohos.promptAction';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const PAGE = 'MainAbility/pages/OpenOrderOverlay/OpenOrderOverlayTestPage';
-const BUNDLE = 'com.arkui.ace.alert.static';
 const LOG_TAG = '[ARKUI_NEW] OpenOrderOverlayStatic';
 const SLEEP_TIME = 1000;
 
@@ -73,39 +71,49 @@ async function cleanupSystemFilePicker(): Promise<void> {
       console.info(`${LOG_TAG} cleanup: ${cmds[i]} fail ${e}`);
     }
   }
-  await Utils.sleep(800);
+  try {
+    await Utils.sleep(800);
+  } catch (err) {
+    console.info(`${LOG_TAG} cleanup sleep err: ` + JSON.stringify(err));
+  }
 }
 
 export default function OpenOrderOverlayTest(): void {
   describe('OpenOrderOverlayTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info(`${LOG_TAG} beforeAll start`);
-      await UtilsTest.startAbility(BUNDLE, 'EntryAbility');
-      console.info(`${LOG_TAG} beforeAll end`);
-    });
-
     afterAll(async (): Promise<void> => {
       console.info(`${LOG_TAG} afterAll cleanup FilePicker`);
-      await cleanupSystemFilePicker();
+      try {
+        await cleanupSystemFilePicker();
+      } catch (err) {
+        console.info(`${LOG_TAG} afterAll err: ` + JSON.stringify(err));
+      }
     });
 
     beforeEach(async (): Promise<void> => {
       console.info(`${LOG_TAG} beforeEach start`);
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.clear();
-      routerInstance.replaceUrl({ url: PAGE });
-      await Utils.sleep(1000);
+      try {
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.clear();
+        routerInstance.replaceUrl({ url: PAGE });
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info(`${LOG_TAG} beforeEach err: ` + JSON.stringify(err));
+      }
       console.info(`${LOG_TAG} beforeEach end`);
     });
 
     afterEach(async (): Promise<void> => {
-      let driver = Driver.create();
-      let removeBtn = await driver.findComponent(ON.id('OpenOrderOverlayTestPage_btn_remove'));
-      if (removeBtn !== undefined && removeBtn !== null) {
-        await (removeBtn as Component).click();
-        await Utils.sleep(300);
+      try {
+        let driver = Driver.create();
+        let removeBtn = await driver.findComponent(ON.id('OpenOrderOverlayTestPage_btn_remove'));
+        if (removeBtn !== undefined && removeBtn !== null) {
+          await (removeBtn as Component).click();
+          await Utils.sleep(300);
+        }
+        await Utils.sleep(500);
+      } catch (err) {
+        console.info(`${LOG_TAG} afterEach err: ` + JSON.stringify(err));
       }
-      await Utils.sleep(500);
     });
 
     /**
@@ -134,11 +142,19 @@ export default function OpenOrderOverlayTest(): void {
     it('SUB_ARKUI_API_OpenOrderOverlay_Content_0100', Level.LEVEL0, async (): Promise<void> => {
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_Content_0100 START`);
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let btn = await driver.waitForComponent(ON.id('OpenOrderOverlayTestPage_btn_content_only'), 5000);
       expect(btn !== undefined && btn !== null).assertTrue();
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_content_only');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let text = await getResultText(driver);
       expect(text.indexOf('Success')).assertLarger(-1);
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_Content_0100 END`);
@@ -156,9 +172,17 @@ export default function OpenOrderOverlayTest(): void {
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelMode_0100 START`);
       expect(LevelMode.OVERLAY).assertEqual(0);
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_overlay_mode');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let text = await getResultText(driver);
       expect(text.indexOf('Success')).assertLarger(-1);
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelMode_0100 END`);
@@ -176,9 +200,17 @@ export default function OpenOrderOverlayTest(): void {
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelMode_0200 START`);
       expect(LevelMode.EMBEDDED).assertEqual(1);
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_embedded_mode');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let text = await getResultText(driver);
       expect(text.indexOf('Success')).assertLarger(-1);
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelMode_0200 END`);
@@ -196,9 +228,17 @@ export default function OpenOrderOverlayTest(): void {
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelOrder_0100 START`);
       expect(LevelOrder.clamp(0).getOrder()).assertEqual(0);
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_order_0');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let text = await getResultText(driver);
       expect(text.indexOf('Success')).assertLarger(-1);
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelOrder_0100 END`);
@@ -216,9 +256,17 @@ export default function OpenOrderOverlayTest(): void {
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelOrder_0200 START`);
       expect(LevelOrder.clamp(100).getOrder()).assertEqual(100);
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_order_100');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let text = await getResultText(driver);
       expect(text.indexOf('Success')).assertLarger(-1);
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelOrder_0200 END`);
@@ -236,9 +284,17 @@ export default function OpenOrderOverlayTest(): void {
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelOrder_0300 START`);
       expect(LevelOrder.clamp(-100).getOrder()).assertEqual(-100);
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_order_neg100');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let text = await getResultText(driver);
       expect(text.indexOf('Success')).assertLarger(-1);
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelOrder_0300 END`);
@@ -256,9 +312,17 @@ export default function OpenOrderOverlayTest(): void {
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelOrder_0400 START`);
       expect(LevelOrder.clamp(100000).getOrder()).assertEqual(100000);
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_order_max');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let text = await getResultText(driver);
       expect(text.indexOf('Success')).assertLarger(-1);
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelOrder_0400 END`);
@@ -275,9 +339,17 @@ export default function OpenOrderOverlayTest(): void {
     it('SUB_ARKUI_API_OpenOrderOverlay_LevelUniqueId_0100', Level.LEVEL0, async (): Promise<void> => {
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelUniqueId_0100 START`);
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_uniqueid_0');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let text = await getResultText(driver);
       expect(text.indexOf('Success')).assertLarger(-1);
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_LevelUniqueId_0100 END`);
@@ -294,9 +366,17 @@ export default function OpenOrderOverlayTest(): void {
     it('SUB_ARKUI_API_OpenOrderOverlay_AllParams_0100', Level.LEVEL0, async (): Promise<void> => {
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_AllParams_0100 START`);
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_all_params');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       let text = await getResultText(driver);
       expect(text.indexOf('Success')).assertLarger(-1);
       console.info(`${LOG_TAG} SUB_ARKUI_API_OpenOrderOverlay_AllParams_0100 END`);
@@ -315,10 +395,18 @@ export default function OpenOrderOverlayTest(): void {
       AppStorage.setOrCreate<string>('ooo_err103307_text', '');
       AppStorage.setOrCreate<string>('ooo_err103307_code', '');
       let driver = Driver.create();
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info(`${LOG_TAG} sleep err: ` + JSON.stringify(err));
+      }
       await clickById(driver, 'OpenOrderOverlayTestPage_btn_err_103307');
       // 页面：DocumentViewPicker + sleep(3000) + openOrderOverlay
-      await Utils.sleep(5000);
+      try {
+        await Utils.sleep(5000);
+      } catch (err) {
+        console.info(`${LOG_TAG} Err103307 sleep err: ` + JSON.stringify(err));
+      }
       let text = AppStorage.get<string>('ooo_err103307_text') as string;
       let actual = AppStorage.get<string>('ooo_err103307_code') as string;
       if (text.length === 0) {

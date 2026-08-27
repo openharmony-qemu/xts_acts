@@ -15,13 +15,13 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { ThemeColorMode } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
 
@@ -30,11 +30,6 @@ const SLEEP_TIME = 1000;
 
 export default function ConfirmDialogTest() {
   describe('ConfirmDialogTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] ConfirmDialogTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.api23.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] ConfirmDialogTest beforeEach start");
 

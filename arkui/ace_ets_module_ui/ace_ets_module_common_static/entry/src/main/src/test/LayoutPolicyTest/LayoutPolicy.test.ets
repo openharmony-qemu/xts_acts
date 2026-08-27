@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { LayoutPolicy } from '@ohos.arkui.component';
 import inspector from '@ohos.arkui.inspector';
 
@@ -29,12 +28,6 @@ const SLEEP_TIME = 1000;
 
 export default function LayoutPolicyTest() {
   describe('LayoutPolicyTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("LayoutPolicyTest beforeAll start");
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.ets.module.common.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("LayoutPolicyTest beforeEach start");
       let options: router.RouterOptions = {
@@ -56,7 +49,11 @@ export default function LayoutPolicyTest() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('LayoutPolicyTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("LayoutPolicyTest after each called");
     });
 

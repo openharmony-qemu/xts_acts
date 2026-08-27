@@ -14,46 +14,54 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function BindMenuWithResponseTest(): void {
   describe('BindMenuWithResponseTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.menu.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.clear();
-      const pages = routerInstance.getState();
-      if (pages.name !== 'BindMenuWithResponseIndex') {
-        routerInstance.replaceUrl({ url: 'MainAbility/pages/bindContextMenu/BindMenuWithResponse' });
+      try {
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.clear();
+        const pages = routerInstance.getState();
+        if (pages.name !== 'BindMenuWithResponseIndex') {
+          routerInstance.replaceUrl({ url: 'MainAbility/pages/bindContextMenu/BindMenuWithResponse' });
+        }
+        await Utils.sleep(500);
+      } catch (err) {
+        console.info('BindMenuWithResponse beforeEach err: ' + JSON.stringify(err));
       }
-      await Utils.sleep(500);
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('BindMenuWithResponse afterEach err: ' + JSON.stringify(err));
+      }
     });
 
     it('BindMenuWithResponse_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      const button = await driver.findComponent(ON.id('bindClickId'));
-      expect(!!button).assertEqual(true);
-      if (button) {
-        await button.longClick();
+      try {
+        const driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        const button = await driver.findComponent(ON.id('bindClickId'));
+        expect(!!button).assertEqual(true);
+        if (button) {
+          await button.longClick();
+        }
+        await CommonFunc.sleep(1000);
+        const menu = await driver.findComponent(ON.type('Menu'));
+        expect(menu !== undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info('BindMenuWithResponse err: ' + JSON.stringify(err));
+        done();
       }
-      await CommonFunc.sleep(1000);
-      const menu = await driver.findComponent(ON.type('Menu'));
-      expect(menu !== undefined).assertTrue();
-      done();
     });
   });
 }

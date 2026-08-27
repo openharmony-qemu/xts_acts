@@ -15,30 +15,17 @@
  */
 
 
-import { hilog } from '@kit.PerformanceAnalysisKit';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { UIAbility, Want } from '@kit.AbilityKit';
-import { abilityDelegatorRegistry, Driver, ON, MouseButton, MatchPattern, UiDirection } from '@kit.TestKit';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test'
 import Utils from '../../../ets/MainAbility/common/Utils';
-
-
-let want: Want;
-const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
-const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 export default function ButtonTest() {
   describe('ActsButtonTest', () => {
     //Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async (): Promise<void> => {
-      console.info('TextLineSpacingTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.dialog.button.static', 'EntryAbility');
-    })
     beforeEach(() => {
       console.info('TextLineSpacingTest beforeEach start');
       let options: router.RouterOptions = {
@@ -249,9 +236,14 @@ export default function ButtonTest() {
     it('modifier', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('uitest: modifier begin');
       let driver = Driver.create();
-      let buttonComponent = await driver.findComponent(ON.text('modifier', MatchPattern.CONTAINS));
-      await (buttonComponent?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        let buttonComponent = await driver.findComponent(ON.text('modifier', MatchPattern.CONTAINS));
+        await (buttonComponent?.click() as Promise<void>);
+        await Utils.sleep(500);
+      } catch (err) {
+        console.info('modifierTest err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       expect(JSON.parseJsonElement(JSON.parseJsonElement(inspector.getInspectorByKey('modifier1'))
         .getElement('$attrs')
         .getString('labelStyle')).getString('textAlign'))
@@ -283,10 +275,15 @@ export default function ButtonTest() {
     it('modifier1', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('uitest: modifier1 begin');
       let driver = Driver.create();
-      let buttonComponent = await driver.findComponent(ON.text('modifier', MatchPattern.CONTAINS));
-      expect(buttonComponent === null).assertFalse();
-      await (buttonComponent?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        let buttonComponent = await driver.findComponent(ON.text('modifier', MatchPattern.CONTAINS));
+        expect(buttonComponent === null).assertFalse();
+        await (buttonComponent?.click() as Promise<void>);
+        await Utils.sleep(500);
+      } catch (err) {
+        console.info('modifier1Test err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       expect(JSON.parseJsonElement(JSON.parseJsonElement(inspector.getInspectorByKey('modifier11'))
         .getElement('$attrs')
         .getString('labelStyle')).getString('textAlign'))
@@ -317,10 +314,15 @@ export default function ButtonTest() {
     it('modifierDiff', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('uitest: modifierDiff begin');
       let driver = Driver.create();
-      let buttonComponent = await driver.findComponent(ON.text('modifier', MatchPattern.CONTAINS));
-      expect(buttonComponent === null).assertFalse();
-      await (buttonComponent?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        let buttonComponent = await driver.findComponent(ON.text('modifier', MatchPattern.CONTAINS));
+        expect(buttonComponent === null).assertFalse();
+        await (buttonComponent?.click() as Promise<void>);
+        await Utils.sleep(500);
+      } catch (err) {
+        console.info('modifierDiffTest err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       expect(JSON.parseJsonElement(JSON.parseJsonElement(inspector.getInspectorByKey('modifierDiff1'))
         .getElement('$attrs')
         .getString('labelStyle')).getString('textAlign'))

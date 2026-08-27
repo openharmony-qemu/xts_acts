@@ -14,34 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector';
+import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function hitTestModeJsunit() {
   describe('hitTestModeJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("hitTestModeJsunit beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("hitTestModeJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -65,7 +49,11 @@ export default function hitTestModeJsunit() {
 
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('hitTestModeTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("hitTestModeTest after each called");
     });
 
@@ -80,7 +68,11 @@ export default function hitTestModeJsunit() {
      */
 it('testhitTestMode_static_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('hitTestMode testhitTestMode0002 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('hitTestModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('Block');
       console.info("[testhitTestMode0002] component width strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Stack');

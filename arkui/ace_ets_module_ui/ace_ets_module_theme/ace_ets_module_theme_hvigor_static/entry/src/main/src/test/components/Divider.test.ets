@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import { Driver, MouseButton, ON, Point } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import { DividerKeys, dividerThemeProperty } from '../../../ets/MainAbility/pages/components/DividerPage';
 import { colorValuesKey } from '../../../ets/MainAbility/pages/index/index';
@@ -40,9 +37,6 @@ export default function dividerThemeTest() {
   let colorValues: Map<string, string> | undefined = new Map<string, string>();
 
   describe(SUITE, () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-    })
 
     beforeEach(async (): Promise<void> => {
       try {
@@ -124,7 +118,11 @@ it('ActsDividerThemeColors_static_0200', Level.LEVEL2, async (done: () => void):
 it('ActsDividerThemeColors_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsDividerThemeColors_static_0300`;
       console.info(`${SUITE} ${CASE} START`);
-      await sleep(frameTime);
+      try {
+        await sleep(frameTime);
+      } catch (err) {
+        console.info(`${SUITE} ${CASE} sleep err: ` + JSON.stringify(err));
+      }
       const dividerJSON = inspector.getInspectorByKey(DividerKeys.dividerWithTheme);
       const indexerAttrs = JSON.parseJsonElement(dividerJSON).getElement('$attrs');
       const color: string = indexerAttrs.getString('color').toString().toUpperCase() ?? emptyAttr;
@@ -145,7 +143,11 @@ it('ActsDividerThemeColors_static_0300', Level.LEVEL0, async (done: () => void):
 it('ActsDividerThemeColors_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsDividerThemeColors_static_0400`;
       console.info(`${SUITE} ${CASE} START`);
-      await sleep(frameTime);
+      try {
+        await sleep(frameTime);
+      } catch (err) {
+        console.info(`${SUITE} ${CASE} sleep err: ` + JSON.stringify(err));
+      }
       const dividerJSON = inspector.getInspectorByKey(DividerKeys.dividerWithRedTheme);
       const indexerAttrs = JSON.parseJsonElement(dividerJSON).getElement('$attrs');
       const color: string = indexerAttrs.getString('color').toString().toUpperCase() ?? emptyAttr;
@@ -165,7 +167,11 @@ it('ActsDividerThemeColors_static_0400', Level.LEVEL0, async (done: () => void):
 it('ActsDividerThemeColors_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const CASE: string = `ActsDividerThemeColors_static_0500`;
       console.info(`${SUITE} ${CASE} START`);
-      await sleep(frameTime);
+      try {
+        await sleep(frameTime);
+      } catch (err) {
+        console.info(`${SUITE} ${CASE} sleep err: ` + JSON.stringify(err));
+      }
       const dividerJSON = inspector.getInspectorByKey(DividerKeys.dividerWithRedTheme);
       const indexerAttrs = JSON.parseJsonElement(dividerJSON).getElement('$attrs');
       const color: string = indexerAttrs.getString('color').toString().toUpperCase() ?? emptyAttr;

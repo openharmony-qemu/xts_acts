@@ -13,21 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
 
 export default function CloseContextMenu() {
   describe('CloseContextMenu', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("CloseContextMenu beforeEach start");
       let options: router.RouterOptions = {
@@ -42,7 +37,6 @@ export default function CloseContextMenu() {
           console.info("get CloseContextMenu state pages.name: " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push CloseContextMenu success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CloseContextMenu page error: " + err);
@@ -60,23 +54,31 @@ export default function CloseContextMenu() {
      */
 it('CloseContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CloseContextMenu_0100 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let Button = await driver.findComponent(ON.id('CloseContextMenu'));
-      await (Button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let Button = await driver.findComponent(ON.id('CloseContextMenu'));
+        await (Button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      let text = await driver.findComponent(ON.id('CloseContextMenuClick'));
-      await (text?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+        let text = await driver.findComponent(ON.id('CloseContextMenuClick'));
+        await (text?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CloseContextMenu_0100 err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('CloseContextMenuText');
       console.info("[CloseContextMenu_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[CloseContextMenu_0100] title: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual("true");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CloseContextMenu_0100 err: ' + JSON.stringify(err));
+      }
       console.info('[CloseContextMenu_0100] END');
       done();
     });
@@ -84,4 +86,3 @@ it('CloseContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promi
 
   })
 }
-

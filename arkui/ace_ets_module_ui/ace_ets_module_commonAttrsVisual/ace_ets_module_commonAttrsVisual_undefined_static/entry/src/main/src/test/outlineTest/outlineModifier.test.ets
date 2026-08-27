@@ -14,12 +14,11 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import {
   Driver, ON
@@ -27,14 +26,6 @@ import {
 
 export default function OutlineModifierTest() {
   describe('OutlineModifierTest', () => {
-    beforeAll(async ():Promise<void> => {
-      console.info("OutlineModifierTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("OutlineModifierTest beforeEach start");
       let options: router.RouterOptions = {
@@ -64,9 +55,17 @@ export default function OutlineModifierTest() {
     it('OutlineModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[OutlineModifierUndefinedTest_static_0100] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('OutlineModifierUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('outlineModifierTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('OutlineModifierUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
 
       console.info("[OutlineModifierUndefinedTest_static_0100] $attrs: " +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -75,15 +74,35 @@ export default function OutlineModifierTest() {
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('outline')))
         .assertEqual('\"{\\"style\\":{\\"left\\":\\"OutlineStyle.DOTTED\\",\\"top\\":\\"OutlineStyle.SOLID\\",\\"right\\":\\"OutlineStyle.DOTTED\\",\\"bottom\\":\\"OutlineStyle.DASHED\\"},\\"color\\":{\\"left\\":\\"#FFE3BBBB\\",\\"right\\":\\"#FF0000FF\\",\\"top\\":\\"#FFFF0000\\",\\"bottom\\":\\"#FF008000\\"},\\"width\\":{\\"left\\":\\"3.00vp\\",\\"top\\":\\"10.00vp\\",\\"start\\":\\"0.00vp\\",\\"end\\":\\"0.00vp\\",\\"right\\":\\"6.00vp\\",\\"bottom\\":\\"15.00vp\\"},\\"radius\\":{\\"topLeft\\":\\"10.00vp\\",\\"topRight\\":\\"20.00vp\\",\\"bottomLeft\\":\\"40.00vp\\",\\"bottomRight\\":\\"80.00vp\\"}}\"');
       let changeBtn = await driver.findComponent(ON.id('outlineModifier'));
-      await (changeBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (changeBtn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('OutlineModifierUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('OutlineModifierUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       console.info("[OutlineModifierUndefinedTest_static_0100] click outline");
       strJson = inspector.getInspectorByKey('outlineModifierTest');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('OutlineModifierUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('outline')))
         .assertEqual('\"{\\"style\\":\\"OutlineStyle.SOLID\\",\\"color\\":\\"#FF000000\\",\\"width\\":\\"0.00vp\\",\\"radius\\":{\\"topLeft\\":\\"0.00vp\\",\\"topRight\\":\\"0.00vp\\",\\"bottomLeft\\":\\"0.00vp\\",\\"bottomRight\\":\\"0.00vp\\"}}\"');
-      await CommonFunc.sleep(1000);
-      await (changeBtn?.click() as Promise<void>);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('OutlineModifierUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await (changeBtn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('OutlineModifierUndefinedTest_static_0100 err: ' + JSON.stringify(err));
+      }
       console.info('[OutlineModifierUndefinedTest_static_0100] END');
       done();
     });

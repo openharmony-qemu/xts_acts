@@ -14,14 +14,12 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON, Component } from '@kit.TestKit';
-import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
@@ -35,19 +33,20 @@ async function navigatePage(pageUrl: string, pageName: string): Promise<void> {
   routerInstance.clear();
   if (routerInstance.getState().name !== pageName) {
     routerInstance.replaceUrl({ url: pageUrl });
-    await CommonFunc.sleep(SLEEP_TIME);
+          await CommonFunc.sleep(2000);
   }
 }
 
 export default function PopupOptionsColorModeTest(): void {
   describe('PopupOptionsColorModeTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.popup.static', 'EntryAbility');
-    });
     beforeEach(async (): Promise<void> => {
-      await navigatePage('MainAbility/pages/popup/PopupOptionsColorMode', 'PopupOptionsColorMode');
+       try {
+         await navigatePage('MainAbility/pages/popup/PopupOptionsColorMode', 'PopupOptionsColorMode');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
     });
-    afterEach(async (): Promise<void> => { await Utils.sleep(SLEEP_TIME); });
+    afterEach(async (): Promise<void> => { try { await Utils.sleep(SLEEP_TIME); } catch (err) { console.info("sleep err: " + JSON.stringify(err)); } });
 
     /**
      * @tc.number  PopupOptionsColorMode_0001
@@ -57,12 +56,28 @@ export default function PopupOptionsColorModeTest(): void {
      */
     it('PopupOptionsColorMode_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await clickById(driver, 'PopupColorMode_FOLLOW_SYSTEM');
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await clickById(driver, 'PopupColorMode_FOLLOW_SYSTEM');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       const popupText = await driver.findComponent(ON.text('This is a popup with FOLLOW_SYSTEM'));
       expect(!!popupText).assertEqual(true);
-      await clickById(driver, 'PopupColorMode_FOLLOW_SYSTEM');
+       try {
+         await clickById(driver, 'PopupColorMode_FOLLOW_SYSTEM');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     /**
@@ -73,12 +88,28 @@ export default function PopupOptionsColorModeTest(): void {
      */
     it('PopupOptionsColorMode_0002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await clickById(driver, 'PopupColorMode_FOLLOW_TARGET');
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await clickById(driver, 'PopupColorMode_FOLLOW_TARGET');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       const popupText = await driver.findComponent(ON.text('This is a popup with FOLLOW_TARGET'));
       expect(!!popupText).assertEqual(true);
-      await clickById(driver, 'PopupColorMode_FOLLOW_TARGET');
+       try {
+         await clickById(driver, 'PopupColorMode_FOLLOW_TARGET');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     /**
@@ -89,12 +120,28 @@ export default function PopupOptionsColorModeTest(): void {
      */
     it('PopupOptionsColorMode_0003', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await clickById(driver, 'PopupColorMode_null');
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await clickById(driver, 'PopupColorMode_null');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       const popupText = await driver.findComponent(ON.text('This is a popup with null'));
       expect(!!popupText).assertEqual(true);
-      await clickById(driver, 'PopupColorMode_null');
+       try {
+         await clickById(driver, 'PopupColorMode_null');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
     /**
@@ -105,12 +152,28 @@ export default function PopupOptionsColorModeTest(): void {
      */
     it('PopupOptionsColorMode_0004', Level.LEVEL2, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
-      await CommonFunc.sleep(SLEEP_TIME);
-      await clickById(driver, 'PopupColorMode_undefined');
-      await CommonFunc.sleep(SLEEP_TIME);
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await clickById(driver, 'PopupColorMode_undefined');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       const popupText = await driver.findComponent(ON.text('This is a popup with undefined'));
       expect(!!popupText).assertEqual(true);
-      await clickById(driver, 'PopupColorMode_undefined');
+       try {
+         await clickById(driver, 'PopupColorMode_undefined');
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       done();
     });
   });

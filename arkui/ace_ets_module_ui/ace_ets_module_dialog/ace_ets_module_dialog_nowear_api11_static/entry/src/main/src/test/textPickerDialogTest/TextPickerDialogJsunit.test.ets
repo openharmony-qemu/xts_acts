@@ -13,21 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest } from '../Util.test';
 
 export default function TextPickerDialogJsunit() {
   describe('TextPickerDialogJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerDialogJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
-    })
 
     beforeEach(async () => {
       console.info("TextPickerDialogJsunit beforeEach start");
@@ -60,7 +55,8 @@ export default function TextPickerDialogJsunit() {
      * @tc.level    Level.LEVEL2
      */
 it('TextPickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('TextPickerDialogJsunit_0100 START');
+      try {
+        console.info('TextPickerDialogJsunit_0100 START');
 	    let driver = Driver.create()
       let button = await driver.findComponent(ON.id('TextPickerDialog'));
       await (button?.click() as Promise<void>);
@@ -73,6 +69,10 @@ it('TextPickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void):
       await driver.triggerKey(2070)
       await CommonFunc.sleep(1000);
       console.info('[TextPickerDialogJsunit_0100] END');
+      } catch (err) {
+        console.info('TextPickerDialogJsunit_0100 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done();
     });
   })

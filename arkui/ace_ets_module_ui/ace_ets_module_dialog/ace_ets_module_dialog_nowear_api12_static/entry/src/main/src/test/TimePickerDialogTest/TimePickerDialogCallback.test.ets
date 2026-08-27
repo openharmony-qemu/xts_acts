@@ -14,29 +14,17 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { RecordData } from '@ohos.base';
 
 export default function TimePickerDialogCallback() {
   describe('TimePickerDialogCallback', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("TimePickerDialogAJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
-
-    });
 
     beforeEach(async () => {
       console.info("TimePickerDialogAJsunit beforeEach start");

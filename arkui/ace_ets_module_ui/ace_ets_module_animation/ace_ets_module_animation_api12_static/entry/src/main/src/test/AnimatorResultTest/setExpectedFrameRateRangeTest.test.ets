@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,25 +21,9 @@ import { MessageManager, Callback } from '../../../ets/MainAbility/common/Messag
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+
 export default function setExpectedFrameRateRangeTest() {
   describe('setExpectedFrameRateRangeTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("setExpectedFrameRateRangeTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
-      
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("setExpectedFrameRateRangeTest beforeEach start");
@@ -64,11 +48,15 @@ export default function setExpectedFrameRateRangeTest() {
 
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
+      }
       console.info("setExpectedFrameRateRangeTest after each called");
     });
-    
-    
+
+
 /**
      * @tc.number   setExpectedFrameRateRangeTest_static_001
      * @tc.name     setExpectedFrameRateRangeTest_static_001
@@ -78,16 +66,50 @@ export default function setExpectedFrameRateRangeTest() {
 it('setExpectedFrameRateRangeTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[setExpectedFrameRateRangeTest_001] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
+      }
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let create = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
-      await (create?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let play = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
-      await (play?.click() as Promise<void>);
-      await CommonFunc.sleep(3500);
+      let create: Component | undefined;
+      try {
+        create = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
+      } catch (err) {
+        console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await (create?.click() as Promise<void>);
+      } catch (err) {
+        console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
+      }
+      let play: Component | undefined;
+      try {
+        play = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
+      } catch (err) {
+        console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await (play?.click() as Promise<void>);
+      } catch (err) {
+        console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(3500);
+      } catch (err) {
+        console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
+      }
       let min = inspector.getInspectorByKey('min');
       let max = inspector.getInspectorByKey('max');
       let strJsonMin = JSON.parseJsonElement(min)

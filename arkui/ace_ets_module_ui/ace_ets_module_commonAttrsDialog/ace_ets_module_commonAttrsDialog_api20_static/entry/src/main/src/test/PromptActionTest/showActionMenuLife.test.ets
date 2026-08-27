@@ -17,7 +17,6 @@
 import {
   afterAll,
   afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -29,7 +28,6 @@ import {
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -38,11 +36,6 @@ import inspector from '@ohos.arkui.inspector';
 export default function ShowActionMenuLife() {
   describe('ShowActionMenuLife', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(async (): Promise<void> => {
-      console.info("PromptAction beforeEach start");
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("PromptAction beforeEach start");
       let options: router.RouterOptions = {
@@ -65,7 +58,11 @@ export default function ShowActionMenuLife() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('PromptAction afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('PromptAction after each called');
     })
 
@@ -79,10 +76,22 @@ export default function ShowActionMenuLife() {
       async (done: () => void): Promise<void> => {
         console.info('[showActionMenu_static_0010] START');
         let driver = Driver.create();
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('showActionMenu_static_0010 sleep err: ' + JSON.stringify(err));
+        }
         let button = await driver.findComponent(ON.id('showActionMenu'));
-        await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await (button?.click() as Promise<void>);
+        } catch (err) {
+          console.info('showActionMenu_static_0010 click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('showActionMenu_static_0010 sleep err: ' + JSON.stringify(err));
+        }
 
         let strJson = inspector.getInspectorByKey('actionMenuText');
         let content: String = JSON.parseJsonElement(strJson).getElement('$attrs').getString('content');
@@ -94,8 +103,16 @@ export default function ShowActionMenuLife() {
         expect(disappContent).assertEqual('');
 
         let buttons = await driver.findComponent(ON.text('取消'));
-        await (buttons?.click() as Promise<void>);
-        await CommonFunc.sleep(SLEEP_TIME_1000);
+        try {
+          await (buttons?.click() as Promise<void>);
+        } catch (err) {
+          console.info('showActionMenu_static_0010 click err: ' + JSON.stringify(err));
+        }
+        try {
+          await CommonFunc.sleep(SLEEP_TIME_1000);
+        } catch (err) {
+          console.info('showActionMenu_static_0010 sleep err: ' + JSON.stringify(err));
+        }
         disappStrJson = inspector.getInspectorByKey('disappearMenuText');
         disappContent = JSON.parseJsonElement(disappStrJson).getElement('$attrs').getString('content');
         console.info('[showActionMenu_static_0010] disappContents is: ' + disappContent);

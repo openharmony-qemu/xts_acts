@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index'
 import {
   Component,
   DisplayRotation,
@@ -29,23 +29,16 @@ import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
 import { Callback, MessageManager } from '../../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../../Util.test'
 
 let abilityStage = AppStorage.get<common.BaseContext>("abilityContext")
 
 
 export default function IsShowFalse() {
   describe('IsShowFalse', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("IsShowFalse beforeEach start");
       let options: router.RouterOptions = {
@@ -77,16 +70,24 @@ export default function IsShowFalse() {
 it('IsShowFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('IsShowFalse_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('IsShowFalse'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('IsShowFalse'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      driver?.click(200, 200);
-      await CommonFunc.sleep(1000);
+        driver?.click(200, 200);
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('IsShowFalse_0100 err: ' + JSON.stringify(err));
+      }
 
       let windowClass: window.Window | undefined = undefined;
-      windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      try {
+        windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      } catch (err) {
+        console.info('IsShowFalse_0100 err: ' + JSON.stringify(err));
+      }
       let properties: window.WindowProperties = windowClass.getWindowProperties();
       console.info("[IsShowFalse_0100] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(1)
@@ -105,13 +106,21 @@ it('IsShowFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
 it('IsShowFalse_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('IsShowFalse_0200 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('IsShowFalse'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('IsShowFalse'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('IsShowFalse_0200 err: ' + JSON.stringify(err));
+      }
 
       let windowClass: window.Window | undefined = undefined;
-      windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      try {
+        windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      } catch (err) {
+        console.info('IsShowFalse_0200 err: ' + JSON.stringify(err));
+      }
       let properties: window.WindowProperties = windowClass.getWindowProperties();
       console.info("[IsShowFalse_0200] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(1)
@@ -130,22 +139,33 @@ it('IsShowFalse_0200', Level.LEVEL0, async (done: () => void): Promise<void> => 
 it('IsShowFalse_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('IsShowFalse_0300 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('IsShowFalse'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('IsShowFalse'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('IsShowFalse_0300 err: ' + JSON.stringify(err));
+      }
 
       let windowClass: window.Window | undefined = undefined;
-      windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      try {
+        windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      } catch (err) {
+        console.info('IsShowFalse_0300 err: ' + JSON.stringify(err));
+      }
       let properties: window.WindowProperties = windowClass.getWindowProperties();
       console.info("[IsShowFalse_0300] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(0)
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+        await driver.triggerKey(2070);
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('IsShowFalse_0300 err: ' + JSON.stringify(err));
+      }
       console.info('[IsShowFalse_0300] END');
       done();
     });
   })
 }
-

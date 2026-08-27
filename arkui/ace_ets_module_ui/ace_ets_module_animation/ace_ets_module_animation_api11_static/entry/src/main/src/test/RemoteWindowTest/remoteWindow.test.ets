@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { UtilsTest } from '../../test/Util.test'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -24,13 +24,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function remoteWindowJsunit() {
   describe('remoteWindowTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("remoteWindowJsunit beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("remoteWindowJsunit beforeEach start");
@@ -54,7 +47,11 @@ export default function remoteWindowJsunit() {
     });
 
     afterEach(async () => {
-      await UtilsTest.msSleep(1000);
+      try {
+        await UtilsTest.msSleep(1000);
+      } catch (err) {
+        console.info('remoteWindowTest err: ' + JSON.stringify(err));
+      }
       console.info("remoteWindow after each called");
     });
 
@@ -67,11 +64,19 @@ export default function remoteWindowJsunit() {
      */
 it('testRemoteWindow_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('remoteWindow testRemoteWindow_static_0001 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0001 err: ' + JSON.stringify(err));
+      }
       console.log('test start 011')
       let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
       console.log('test after 011')
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0001 err: ' + JSON.stringify(err));
+      }
       // console.info("[testRemoteWindow_static_0001] component width strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('100.00vp');
@@ -89,9 +94,17 @@ it('testRemoteWindow_static_0001', Level.LEVEL0, async (done: () => void): Promi
      */
 it('testRemoteWindow_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0002 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0002 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0002 err: ' + JSON.stringify(err));
+      }
       console.info("[testRemoteWindow_static_0002] component height strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('70.00vp');
@@ -109,9 +122,17 @@ it('testRemoteWindow_static_0002', Level.LEVEL0, async (done: () => void): Promi
      */
 it('testRemoteWindow_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0003 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0003 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0003 err: ' + JSON.stringify(err));
+      }
       console.info("[testRemoteWindow_static_0003] component fontSize strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize')).assertEqual('20.00fp');
@@ -129,9 +150,17 @@ it('testRemoteWindow_static_0003', Level.LEVEL0, async (done: () => void): Promi
      */
 it('testRemoteWindow_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0004 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0004 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0004 err: ' + JSON.stringify(err));
+      }
       console.info("[testRemoteWindow_static_0004] component opacity strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity')).assertEqual(1);
@@ -149,9 +178,17 @@ it('testRemoteWindow_static_0004', Level.LEVEL0, async (done: () => void): Promi
      */
 it('testRemoteWindow_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0005 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0005 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0005 err: ' + JSON.stringify(err));
+      }
       console.info("[testRemoteWindow_static_0005] component align strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual('Alignment.TopStart');
@@ -169,9 +206,17 @@ it('testRemoteWindow_static_0005', Level.LEVEL0, async (done: () => void): Promi
      */
 it('testRemoteWindow_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0006 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0006 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0006 err: ' + JSON.stringify(err));
+      }
       console.info("[testRemoteWindow_static_0006] component fontColor strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual('#FFCCCCCC');
@@ -189,9 +234,17 @@ it('testRemoteWindow_static_0006', Level.LEVEL0, async (done: () => void): Promi
      */
 it('testRemoteWindow_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0007 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0007 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0007 err: ' + JSON.stringify(err));
+      }
       console.info("[testRemoteWindow_static_0007] component lineHeight strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('lineHeight')).assertEqual('25.00fp');
@@ -209,9 +262,17 @@ it('testRemoteWindow_static_0007', Level.LEVEL0, async (done: () => void): Promi
      */
 it('testRemoteWindow_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow009 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0009 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0009 err: ' + JSON.stringify(err));
+      }
       console.info("[testRemoteWindow_static_0009] component padding strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('padding')).assertEqual('10.00vp');
@@ -229,9 +290,17 @@ it('testRemoteWindow_static_0009', Level.LEVEL0, async (done: () => void): Promi
      */
 it('testRemoteWindow_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RemoteWindow testRemoteWindow_static_0010 START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0010 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('formComponentFormDimensionWindowBoundsText');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('testRemoteWindow_static_0010 err: ' + JSON.stringify(err));
+      }
       console.info("[testRemoteWindow_static_0010] component textAlign strJson:" + JSON.stringify(strJson));
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign'))

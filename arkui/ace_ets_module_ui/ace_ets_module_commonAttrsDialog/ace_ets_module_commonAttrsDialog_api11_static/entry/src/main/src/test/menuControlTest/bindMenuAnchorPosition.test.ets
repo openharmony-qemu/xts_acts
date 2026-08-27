@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -29,18 +29,11 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function bindMenuAnchorPosition() {
   describe('bindMenuAnchorPosition', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("bindMenuAnchorPosition beforeEach start");
       let options: router.RouterOptions = {
@@ -73,13 +66,25 @@ export default function bindMenuAnchorPosition() {
 it('bindMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindMenuAnchorPosition_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0100 sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('bindMenuAnchorPosition1'));
       button?.longClick();
-      await CommonFunc.sleep(3000);
+      try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0100 sleep err: ' + JSON.stringify(err));
+      }
 
       driver.click(2, 500);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0100 sleep err: ' + JSON.stringify(err));
+      }
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
 
@@ -94,9 +99,21 @@ it('bindMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () => void):
       expect(textPositionX).assertLess(menuPositionX)
       expect(textPositionY).assertLess(menuPositionY)
 
-      await CommonFunc.sleep(1000);
-      await driver.click(2, 500);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0100 sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.click(2, 500);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0100 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0100 sleep err: ' + JSON.stringify(err));
+      }
       console.info('[bindMenuAnchorPosition_static_0100] END');
       done();
     });
@@ -112,13 +129,25 @@ it('bindMenuAnchorPosition_static_0100', Level.LEVEL0, async (done: () => void):
 it('bindMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindMenuAnchorPosition_static_0200 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0200 sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('bindMenuAnchorPosition2'));
       button?.longClick();
-      await CommonFunc.sleep(3000);
+      try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0200 sleep err: ' + JSON.stringify(err));
+      }
 
       driver.click(2, 500);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0200 sleep err: ' + JSON.stringify(err));
+      }
 
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
@@ -133,9 +162,21 @@ it('bindMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void):
       let textPositionY = Number.parseFloat(await (text4?.getText() as Promise<String>));
       expect(textPositionY).assertLess(menuPositionY)
 
-      await CommonFunc.sleep(1000);
-      await driver.click(2, 500);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0200 sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.click(2, 500);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0200 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0200 sleep err: ' + JSON.stringify(err));
+      }
       console.info('[bindMenuAnchorPosition_static_0200] END');
       done();
     });
@@ -151,13 +192,25 @@ it('bindMenuAnchorPosition_static_0200', Level.LEVEL0, async (done: () => void):
 it('bindMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindMenuAnchorPosition_static_0300 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0300 sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('bindMenuAnchorPosition3'));
       button?.longClick();
-      await CommonFunc.sleep(3000);
+      try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0300 sleep err: ' + JSON.stringify(err));
+      }
 
       driver.click(2, 500);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0300 sleep err: ' + JSON.stringify(err));
+      }
       let text1 = await driver.findComponent(ON.id('menuPositionX'));
       let menuPositionX = Number.parseFloat(await (text1?.getText() as Promise<String>));
 
@@ -172,9 +225,21 @@ it('bindMenuAnchorPosition_static_0300', Level.LEVEL0, async (done: () => void):
       expect(menuPositionX).assertLess(textPositionX)
       expect(textPositionY).assertLess(menuPositionY)
 
-      await CommonFunc.sleep(1000);
-      await driver.click(2, 500);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0300 sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.click(2, 500);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0300 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('bindMenuAnchorPosition_0300 sleep err: ' + JSON.stringify(err));
+      }
       console.info('[bindMenuAnchorPosition_static_0300] END');
       done();
     });

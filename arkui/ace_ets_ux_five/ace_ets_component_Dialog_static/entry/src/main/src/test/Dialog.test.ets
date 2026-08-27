@@ -15,20 +15,13 @@
  */
 
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll } from '../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import inspector from '@ohos.arkui.inspector'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from './Util.test'
 
 export default function DialogTest() {
   describe('DialogTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DialogTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.example.Dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -52,24 +45,24 @@ export default function DialogTest() {
 
 
     /**
-     * @tc.number   ArkUX_Dialog_Visual_static_0060
-     * @tc.name     ArkUX_Dialog_Visual_static_0060
-     * @tc.desc     ArkUX_Dialog_Visual_static_0060
+     * @tc.number   ArkUX_Dialog_Visual_0060
+     * @tc.name     ArkUX_Dialog_Visual_0060
+     * @tc.desc     ArkUX_Dialog_Visual_0060
      * @tc.level    Level.LEVEL0
      */
-it('ArkUX_Dialog_Visual_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUX_Dialog_Visual_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Dialog_Visual_0060 START');
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Dialog_Visual_0060');
-          console.info('ArkUX_Dialog_Visual_static_0060 START  :' + JSON.stringify(strJson));
+          console.info('ArkUX_Dialog_Visual_0060 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Dialog_Visual_static_0060 obj is: " + JSON.stringify(obj));
+          console.info("ArkUX_Dialog_Visual_0060 obj is: " + JSON.stringify(obj));
           let fontSize = obj.getElement('$attrs').getString('fontSize');
           expect(fontSize).assertEqual("20.00fp");
-          console.info('ArkUX_Dialog_Visual_static_0060 END ');
+          console.info('ArkUX_Dialog_Visual_0060 END ');
         } catch (err) {
-          console.info('ArkUX_Dialog_Visual_static_0060 ERR  ' + JSON.stringify(err));
+          console.info('ArkUX_Dialog_Visual_0060 ERR  ' + JSON.stringify(err));
         }
         done();
       }, 500)

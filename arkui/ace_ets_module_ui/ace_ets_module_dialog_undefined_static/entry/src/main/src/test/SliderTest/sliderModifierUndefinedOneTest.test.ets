@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -29,25 +28,11 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-
 export default function sliderModifierUndefinedTest() {
   describe('sliderModifierUndefinedTest', () => {
-    beforeAll(async ():Promise<void> => {
-      console.info("SliderModifierUndefinedTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.dialog.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("SliderModifierUndefinedTest beforeEach start");
@@ -110,7 +95,6 @@ export default function sliderModifierUndefinedTest() {
       console.info('[sliderModifierUndefined_one_static_0001] END');
       done();
     });
-
 
     /**
      * @tc.number   sliderModifierUndefined_one_static_0002

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -30,19 +30,11 @@ import {
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../ets/MainAbility/utils/MessageManager';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { startAbility, UtilsTest } from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function WorkerUseCurvesTest() {
   describe('WorkerUseCurvesTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("WorkerUseCurvesTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("WorkerUseCurvesTest beforeEach start");
@@ -66,7 +58,11 @@ export default function WorkerUseCurvesTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('WorkerUseCurvesTest err: ' + JSON.stringify(err));
+      }
       console.info('WorkerUseCurves after each called');
     });
     
@@ -79,13 +75,38 @@ export default function WorkerUseCurvesTest() {
 it('WorkerUseCurves_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('WorkerUseCurves_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.id('workClickId'));
-      await CommonFunc.sleep(2000);
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('WorkerUseCurves_static_0100 err: ' + JSON.stringify(err));
+      }
+      let button: Component | undefined;
+      try {
+        button = await driver.findComponent(ON.id('workClickId'));
+      } catch (err) {
+        console.info('WorkerUseCurves_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('WorkerUseCurves_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('WorkerUseCurves_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('WorkerUseCurves_static_0100 err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('workTextId');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('WorkerUseCurves_static_0100 err: ' + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(strJson);
       console.info('[workTextId_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[workTextId_0100] content obj is: ' +

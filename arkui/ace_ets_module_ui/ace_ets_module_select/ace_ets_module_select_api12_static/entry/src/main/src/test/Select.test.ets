@@ -14,27 +14,14 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../hypium/index';
-import { Color } from '@ohos.arkui.component';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../ets/MainAbility/common/Utils';
-import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from './Util.test';
 export default function selectOnSelectJsunit() {
   describe('selectOnSelectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("selectOnSelectTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.select.api12.static", "EntryAbility")
-      
-    });
 
     beforeEach(async () => {
       let options: router.RouterOptions = {
@@ -55,7 +42,11 @@ export default function selectOnSelectJsunit() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('selectTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("selectOnSelect after each called");
     });
 
@@ -64,20 +55,24 @@ export default function selectOnSelectJsunit() {
     
     
     /**
-     * @tc.number   testselectOnSelect_static_0001
-     * @tc.name     testselectOnSelect_static_0001
-     * @tc.desc     testselectOnSelect_static_0001
+     * @tc.number   testselectOnSelect0001
+     * @tc.name     testselectOnSelect0001
+     * @tc.desc     testselectOnSelect0001
      * @tc.level    Level.LEVEL0
      */
-it('testselectOnSelect_static_0001', Level.LEVEL0, async () => {
-      console.info('selectOnSelect testselectOnSelect_static_0001 START');
-      await Utils.sleep(2000);
+it('testselectOnSelect0001', Level.LEVEL0, async () => {
+      console.info('selectOnSelect testselectOnSelect0001 START');
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('selectTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Select');
-      console.info("[testselectOnSelect_static_0001] component width strJson:" + strJson);
+      console.info("[testselectOnSelect0001] component width strJson:" + strJson);
       let obj= JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Select');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected')).assertEqual("2");
-      console.info("[testselectOnSelect_static_0001] selected value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected'));
+      console.info("[testselectOnSelect0001] selected value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('selected'));
 
     });
 
@@ -86,20 +81,24 @@ it('testselectOnSelect_static_0001', Level.LEVEL0, async () => {
     
     
     /**
-     * @tc.number   testselectOnSelect_static_0002
-     * @tc.name     testselectOnSelect_static_0002
-     * @tc.desc     testselectOnSelect_static_0002
+     * @tc.number   testselectOnSelect0002
+     * @tc.name     testselectOnSelect0002
+     * @tc.desc     testselectOnSelect0002
      * @tc.level    Level.LEVEL0
      */
-it('testselectOnSelect_static_0002', Level.LEVEL0, async () => {
-      console.info('selectOnSelect testselectOnSelect_static_0002 START');
-      await Utils.sleep(2000);
+it('testselectOnSelect0002', Level.LEVEL0, async () => {
+      console.info('selectOnSelect testselectOnSelect0002 START');
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('selectTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Select');
-      console.info("[testselectOnSelect_static_0002] component height strJson:" + strJson);
+      console.info("[testselectOnSelect0002] component height strJson:" + strJson);
       let obj= JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Select');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('value')).assertEqual("TTT");
-      console.info("[testselectOnSelect_static_0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('value'));
+      console.info("[testselectOnSelect0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('value'));
 
     });
   })

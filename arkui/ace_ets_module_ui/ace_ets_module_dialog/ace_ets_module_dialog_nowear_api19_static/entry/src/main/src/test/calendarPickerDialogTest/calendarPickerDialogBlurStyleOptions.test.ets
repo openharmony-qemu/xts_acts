@@ -13,30 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
 
 export default function calendarPickerDialogBlurStyleOptionsTest() {
   describe('CalendarPickerDialogBlurStyleOptionsTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CalendarPickerDialogBlurStyleOptionsTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("CalendarPickerDialogBlurStyleOptionsTest beforeEach start");
@@ -50,7 +36,11 @@ export default function calendarPickerDialogBlurStyleOptionsTest() {
       if (!("calendarPickerDialogBlurStyleOptions" == pages.name)) {
         console.info("get CalendarPickerDialogBlurStyleOptionsTest state pages.name: " + JSON.stringify(pages.name));
         routerInstance.pushUrl(options);
-        await Utils.sleep(2000);
+        try {
+          await Utils.sleep(2000);
+        } catch (err) {
+          console.info('xxxTest err: ' + JSON.stringify(err));
+        }
       }
     });
 
@@ -67,11 +57,23 @@ export default function calendarPickerDialogBlurStyleOptionsTest() {
 it('calendarPickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'calendarPickerDialogBlurStyleOptions';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('CalendarPickerDialog_Options001'));
-      await (btn?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = obj1.getArray('$children')[1]
       let date1 = obj1.getArray('$children')[1].getArray('$children')[0]
@@ -91,8 +93,16 @@ it('calendarPickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.
         expect(date1.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#FFFFC0CB');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      await (btn1?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        await (btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });
@@ -110,11 +120,23 @@ it('calendarPickerDialogBlurStyleOptions_static_0100', TestType.FUNCTION | Size.
 it('calendarPickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'calendarPickerDialogBlurStyleOptions_static_0200';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('CalendarPickerDialog_Options002'));
-      await (btn?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let date = obj.getArray('$children')[1].getArray('$children')[0]
       console.info("[calendarPickerDialogBlurStyleOptions_static_0200] $attrs.options is: " + JSON.stringify(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options')));
@@ -124,8 +146,16 @@ it('calendarPickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode')).assertEqual('ThemeColorMode.System');
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      await (btn1?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        await (btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });
@@ -143,11 +173,23 @@ it('calendarPickerDialogBlurStyleOptions_static_0200', TestType.FUNCTION | Size.
 it('calendarPickerDialogBlurStyleOptions_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'calendarPickerDialogBlurStyleOptions_static_0300';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('CalendarPickerDialog_Options003'));
-      await (btn?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let date = obj.getArray('$children')[1].getArray('$children')[0]
       console.info("[calendarPickerDialogBlurStyleOptions_static_0300] $attrs.options is: " + JSON.stringify(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options')));
@@ -157,8 +199,16 @@ it('calendarPickerDialogBlurStyleOptions_static_0300', TestType.FUNCTION | Size.
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('colorMode')).assertEqual('ThemeColorMode.System');
       expect(date.getElement('$attrs').getElement('backgroundBlurStyle').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      await (btn1?.click() as Promise<void>);
-      await Utils.sleep(1000);
+      try {
+        await (btn1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });

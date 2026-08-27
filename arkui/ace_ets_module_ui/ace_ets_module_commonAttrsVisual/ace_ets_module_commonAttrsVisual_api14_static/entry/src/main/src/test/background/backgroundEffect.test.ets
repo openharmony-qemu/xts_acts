@@ -13,33 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function backgroundEffectTest() {
   describe('backgroundEffectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("backgroundBrightness beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api14.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("backgroundEffectTest beforeEach start");
       let options: router.RouterOptions = {
@@ -70,12 +53,24 @@ export default function backgroundEffectTest() {
      */
 it('backgroundEffectTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('backgroundEffectTest_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('backgroundEffectTest_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('backgroundEffectValue');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('backgroundEffectTest_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       console.log('backgroundEffectTest_static_0100',
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs')))
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('backgroundEffectTest_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       // expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundEffect').getDouble('radius'))
       //   .assertEqual(10);
       // expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundEffect').getDouble('saturation'))

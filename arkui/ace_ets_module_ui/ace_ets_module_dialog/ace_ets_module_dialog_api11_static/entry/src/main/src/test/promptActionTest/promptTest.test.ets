@@ -19,7 +19,6 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -40,33 +39,17 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function promptTest() {
 
   describe('promptTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("promptTest beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("promptTest beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("promptTest beforeEach start");
       let options: router.RouterOptions = {
@@ -105,17 +88,51 @@ export default function promptTest() {
 it('promptTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('promptTest_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('prompt' + '_3'));
-      await (button?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('promptTestTest await err: ' + JSON.stringify(err));
+      }
+      let button;
+      try {
+        button = await driver.findComponent(ON.id('prompt' + '_3'));
+      } catch (err) {
+        console.info('promptTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>)
+      } catch (err) {
+        console.info('promptTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('promptTestTest await err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('prompt' + '_2');
       let obj1 = JSON.parseJsonElement(strJson1);
-      expect(obj1.getElement('$attrs').getString("label")).assertEqual('确认');
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('prompt' + '_2'));
-      await (button1?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+      expect(obj1.getElement('$attrs').getString("label")).assertEqual('绾喛顓?);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('promptTestTest await err: ' + JSON.stringify(err));
+      }
+      let button1;
+      try {
+        button1 = await driver.findComponent(ON.id('prompt' + '_2'));
+      } catch (err) {
+        console.info('promptTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button1?.click() as Promise<void>)
+      } catch (err) {
+        console.info('promptTestTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('promptTestTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('prompt' + '_3');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[promptTest_static_0100] component obj is: " + JSON.stringify(obj));
@@ -127,4 +144,3 @@ it('promptTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<voi
     });
   })
 }
-

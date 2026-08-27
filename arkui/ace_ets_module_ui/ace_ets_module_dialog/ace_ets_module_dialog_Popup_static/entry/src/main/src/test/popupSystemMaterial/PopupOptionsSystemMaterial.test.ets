@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { uiMaterial } from '@kit.ArkUI';
 
 const SLEEP_TIME = 1000;
@@ -34,10 +33,6 @@ async function clickById(driver: Driver, id: string): Promise<void> {
 
 export default function PopupOptionsSystemMaterialTest(): void {
   describe('PopupOptionsSystemMaterial', (): void => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility('com.arkui.ace.dialog.popup.static', 'EntryAbility');
-    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = { url: PAGE_URL };
@@ -47,7 +42,7 @@ export default function PopupOptionsSystemMaterialTest(): void {
         let pages = routerInstance.getState();
         if (pages.name !== 'PopupOptionsSystemMaterial') {
           routerInstance.replaceUrl(options);
-          await CommonFunc.sleep(SLEEP_TIME);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('replace PopupOptionsSystemMaterial page error: ' + err);
@@ -56,7 +51,11 @@ export default function PopupOptionsSystemMaterialTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP_TIME);
+       try {
+         await Utils.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('sleep err: ' + JSON.stringify(err));
+       }
     });
 
     it('PopupOptionsSystemMaterial_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {

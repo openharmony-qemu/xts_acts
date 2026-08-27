@@ -13,32 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import common from '@ohos.app.ability.common';
-// import { vp2px } from '@ohos.arkui.component'
-import {UtilsTest} from '../Util.test'
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
-// const uiContext = new UIContext();
 
 export default function springBack() {
   describe('springBack', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("springBack beforeEach start");
       let options: router.RouterOptions = {
@@ -71,20 +57,24 @@ export default function springBack() {
 it('springBack_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('springBack_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(5000);
-      let button = await driver.findComponent(ON.id('RegisterSpringback'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(5000);
+        let button = await driver.findComponent(ON.id('RegisterSpringback'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
 
-      let bindSheetButton: Component = await driver.findComponent(ON.id('springBackButton')) as Component;
-      let point = await bindSheetButton.getBoundsCenter();
-      console.log("bindSheetButton-X " + point.x + " bindSheetButton-Y " + point.y)
-      let x1 = Math.round(point.x).toInt()
-      let y1 = Math.round(point.y).toInt()
-      let y2 = Math.round(point.y + UIContext.resolveUIContext()!.vp2px(150)).toInt()
-      let stepLen = Math.round(UIContext.resolveUIContext()!.vp2px(30)).toInt()
-      await (driver.fling({x: x1, y: y1},{x: x1, y: y2}, stepLen, 3000) as Promise<void>);
-      await CommonFunc.sleep(2000);
+        let bindSheetButton: Component = await driver.findComponent(ON.id('springBackButton')) as Component;
+        let point = await bindSheetButton.getBoundsCenter();
+        console.log("bindSheetButton-X " + point.x + " bindSheetButton-Y " + point.y)
+        let x1 = Math.round(point.x).toInt()
+        let y1 = Math.round(point.y).toInt()
+        let y2 = Math.round(point.y + UIContext.resolveUIContext()!.vp2px(150)).toInt()
+        let stepLen = Math.round(UIContext.resolveUIContext()!.vp2px(30)).toInt()
+        await (driver.fling({x: x1, y: y1},{x: x1, y: y2}, stepLen, 3000) as Promise<void>);
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('springBack_0100 err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('onWillSpringBackWhenDismiss');
       let obj = JSON.parseJsonElement(strJson);

@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, Level, beforeAll  } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, Level  } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import Utils from '../common/Utils';
-import { UtilsTest } from '../Util.test'
 import inspector from '@ohos.arkui.inspector';
 
 export default function textPickerEnableHapticFeedbackTest() {
 
   describe('textPickerEnableHapticFeedbackTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api19.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('textPickerEnableHapticFeedbackTest afterEach sleep err: ' + JSON.stringify(err));
+      }
     })
 
    
@@ -41,13 +41,21 @@ export default function textPickerEnableHapticFeedbackTest() {
     it('TestTextPickerEnableHapticFeedback0001', Level.LEVEL1, async (done: () => void): Promise<void> => {
     console.info('TestTextPickerEnableHapticFeedback0001 START');
     let PAGE_TAG = 'TextPickerEnableHapticFeedback';
-    await Utils.pushPage(`textPicker/textPickerEnableHapticFeedback`)
-    await Utils.sleep(3000)
-    let strJson = inspector.getInspectorByKey('enableHapticFeedback_0001');
+      try {
+        await Utils.pushPage(`textPicker/textPickerEnableHapticFeedback`)
+        await Utils.sleep(3000)
+      } catch (err) {
+        console.info('TestTextPickerEnableHapticFeedback0001 err: ' + JSON.stringify(err));
+      }
+      let strJson = inspector.getInspectorByKey('enableHapticFeedback_0001');
     let obj = JSON.parseJsonElement(strJson);
     console.info("[enableHapticFeedback_0001]:" + JSON.stringify(obj.getElement('$attr').getString('enableHapticFeedback')));
     expect(obj.getElement('$attr').getString('enableHapticFeedback')).assertEqual(true);
-    await Utils.sleep(1000)
+    try {
+      await Utils.sleep(1000)
+    } catch (err) {
+      console.info('TestTextPickerEnableHapticFeedback0001 sleep err: ' + JSON.stringify(err));
+    }
     console.info('enableHapticFeedback_0001 END');
     done();
   });
@@ -63,13 +71,21 @@ export default function textPickerEnableHapticFeedbackTest() {
     it('TestTextPickerEnableHapticFeedback002', Level.LEVEL1, async (done: () => void): Promise<void> => {
     console.info('TestTextPickerEnableHapticFeedback0002 START');
     let PAGE_TAG = 'TextPickerEnableHapticFeedback';
-    await Utils.pushPage(`textPicker/textPickerEnableHapticFeedback`)
-    await Utils.sleep(3000)
+    try {
+      await Utils.pushPage(`textPicker/textPickerEnableHapticFeedback`)
+      await Utils.sleep(3000)
+    } catch (err) {
+      console.info('TestTextPickerEnableHapticFeedback0002 err: ' + JSON.stringify(err));
+    }
     let strJson = inspector.getInspectorByKey('enableHapticFeedback_0002');
     let obj = JSON.parseJsonElement(strJson);
     console.info("[enableHapticFeedback_0002]:" + JSON.stringify(obj.getElement('$attr').getString('enableHapticFeedback')));
     expect(obj.getElement('$attr').getString('enableHapticFeedback')).assertEqual(false);
-    await Utils.sleep(1000)
+    try {
+      await Utils.sleep(1000)
+    } catch (err) {
+      console.info('TestTextPickerEnableHapticFeedback0002 sleep err: ' + JSON.stringify(err));
+    }
     console.info('enableHapticFeedback_0002 END');
     done();
   });
@@ -85,13 +101,21 @@ export default function textPickerEnableHapticFeedbackTest() {
     it('TestTextPickerEnableHapticFeedback0003', Level.LEVEL1, async (done: () => void): Promise<void> => {
     console.info('TestTextPickerEnableHapticFeedback0003 START');
     let PAGE_TAG = 'TextPickerEnableHapticFeedback';
-    await Utils.pushPage(`textPicker/textPickerEnableHapticFeedback`)
-    await Utils.sleep(3000)
+    try {
+      await Utils.pushPage(`textPicker/textPickerEnableHapticFeedback`)
+      await Utils.sleep(3000)
+    } catch (err) {
+      console.info('TestTextPickerEnableHapticFeedback0003 err: ' + JSON.stringify(err));
+    }
     let strJson = inspector.getInspectorByKey('enableHapticFeedback_0003');
     let obj = JSON.parseJsonElement(strJson);
     console.info("[enableHapticFeedback_0003]:" + JSON.stringify(obj.getElement('$attr').getString('enableHapticFeedback')));
     expect(obj.getElement('$attr').getString('enableHapticFeedback')).assertEqual(true);
-    await Utils.sleep(1000)
+    try {
+      await Utils.sleep(1000)
+    } catch (err) {
+      console.info('TestTextPickerEnableHapticFeedback0003 sleep err: ' + JSON.stringify(err));
+    }
     console.info('enableHapticFeedback_0003 END');
     done();
   });

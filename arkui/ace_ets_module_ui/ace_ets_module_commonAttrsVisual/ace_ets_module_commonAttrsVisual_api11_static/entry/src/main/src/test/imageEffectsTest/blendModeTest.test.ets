@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -31,26 +31,9 @@ import { Callback, MessageManager } from '../../../ets/MainAbility/common/Messag
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function blendModeTest() {
   describe('blendModeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("blendModeTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("blendModeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -84,9 +67,17 @@ export default function blendModeTest() {
 it('blendModeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column0');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0100] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0100] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -109,9 +100,17 @@ it('blendModeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column1');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0200] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0200] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -134,9 +133,17 @@ it('blendModeTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_static_0030 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column2');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_static_0030] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_static_0030] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -159,9 +166,17 @@ it('blendModeTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column3');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0400] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0400] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -184,9 +199,17 @@ it('blendModeTest_static_0400', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column4');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0500] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0500] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -209,9 +232,17 @@ it('blendModeTest_static_0500', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column5');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0600] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0600] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -234,9 +265,17 @@ it('blendModeTest_static_0600', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column6');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0700] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0700] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -259,9 +298,17 @@ it('blendModeTest_static_0700', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0800', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column7');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0800] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0800] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -284,9 +331,17 @@ it('blendModeTest_static_0800', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0900', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column8');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0900] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0900] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -309,9 +364,17 @@ it('blendModeTest_static_0900', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0101', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_static_0101 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column9');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_static_0101] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_static_0101] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -334,9 +397,17 @@ it('blendModeTest_static_0101', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0110', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_static_0110 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column10');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_static_0110] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_static_0110] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -359,9 +430,17 @@ it('blendModeTest_static_0110', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0120', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column11');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0120] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0120] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -384,9 +463,17 @@ it('blendModeTest_static_0120', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0130', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column12');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0130] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0130] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -409,9 +496,17 @@ it('blendModeTest_static_0130', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0140', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column13');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0140] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0140] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -434,9 +529,17 @@ it('blendModeTest_static_0140', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0150', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column14');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0150] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0150] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -459,9 +562,17 @@ it('blendModeTest_static_0150', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0160', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column15');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0160] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0160] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -484,9 +595,17 @@ it('blendModeTest_static_0160', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0170', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column16');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0170] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0170] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -509,9 +628,17 @@ it('blendModeTest_static_0170', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0180', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column17');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0180] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0180] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -534,9 +661,17 @@ it('blendModeTest_static_0180', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0190', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column18');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0190] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0190] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -559,9 +694,17 @@ it('blendModeTest_static_0190', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0201', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_static_0201 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column19');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_static_0201] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_static_0201] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -584,9 +727,17 @@ it('blendModeTest_static_0201', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0210', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column20');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0210] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0210] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -609,9 +760,17 @@ it('blendModeTest_static_0210', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0220', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column21');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0220] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0220] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -634,9 +793,17 @@ it('blendModeTest_static_0220', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0230', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column22');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0230] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0230] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -659,9 +826,17 @@ it('blendModeTest_static_0230', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0240', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column23');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0240] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0240] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -684,9 +859,17 @@ it('blendModeTest_static_0240', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0250', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column24');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0250] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0250] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -709,9 +892,17 @@ it('blendModeTest_static_0250', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0260', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column25');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0260] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0260] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -734,9 +925,17 @@ it('blendModeTest_static_0260', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0270', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column26');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0270] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0270] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -759,9 +958,17 @@ it('blendModeTest_static_0270', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0280', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column27');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0280] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0280] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -784,9 +991,17 @@ it('blendModeTest_static_0280', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0290', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column28');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0290] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0290] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +
@@ -809,9 +1024,17 @@ it('blendModeTest_static_0290', Level.LEVEL2, async (done: () => void): Promise<
 it('blendModeTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('blendModeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('blend_column29');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('blendModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[blendModeTest_0300] component JSON.parseJsonElement(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[blendModeTest_0300] component JSON.parseJsonElement(strJson).getElement('$attrs') is: " +

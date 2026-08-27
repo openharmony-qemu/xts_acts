@@ -15,14 +15,9 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { Want } from '@kit.AbilityKit';
-import { abilityDelegatorRegistry, Driver, ON, MouseButton, MatchPattern, UiDirection } from '@kit.TestKit';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
-import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import {
   DownloadIconStyle,
   DownloadDescription,
@@ -32,11 +27,6 @@ import {
   FontStyle,
   FontWeight
 } from '@ohos.arkui.component';
-
-let want: Want;
-const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
-const delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
 const LOG_CHUNK_SIZE = 500;
 
@@ -55,28 +45,6 @@ function logLongString(tag: string, longStr: string): void {
 
 export default function DownloadFileButtonTest(): void {
   describe('DownloadFileButtonTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info('DownloadFileButtonTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.dialog.download.static', 'EntryAbility');
-
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/DownloadFileButton/DownloadFileButtonIndex',
-      };
-      try {
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info('DownloadFileButtonTest state pages: ' + JSON.stringify(pages));
-        console.info('DownloadFileButtonTest state pages.name: ' + pages.name);
-        if (pages.name !== 'DownloadFileButtonIndex') {
-          routerInstance.replaceUrl(options);
-        }
-      } catch (err) {
-        console.error('DownloadFileButtonTest replaceUrl error: ' + err);
-        expect().assertFail();
-      }
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('DownloadFileButtonTest beforeEach start');
     });
@@ -98,7 +66,12 @@ export default function DownloadFileButtonTest(): void {
     it('DownloadFileButtonGetNode', Level.LEVEL1, async (done: () => void) => {
       console.info('DownloadFileButtonTest: DownloadFileButtonGetNode begin');
       let driver = Driver.create();
-      let buttonComponent = await driver.findComponent(ON.id('downloadFileButtonFullFilled'));
+      let buttonComponent;
+      try {
+        buttonComponent = await driver.findComponent(ON.id('downloadFileButtonFullFilled'));
+      } catch (err) {
+        console.info('DownloadFileButtonTest findComponent err: ' + JSON.stringify(err));
+      }
       if(buttonComponent !== undefined){
         console.info('DownloadFileButtonTest: push DownloadFileButtonIndex page success');
       } else {

@@ -13,33 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import router from '@ohos.router';
 import window from '@ohos.window';
 import inspector from '@ohos.arkui.inspector'
-import common from '@ohos.app.ability.common';
 import events_emitter from '@ohos.events.emitter';
-import hilog from '@ohos.hilog'
-import { BusinessError } from '@ohos.base';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test'
 import { RecordData } from '@ohos.base';
 
-let domain: number = 0x0000;
-let tag: string = 'testTag';
 const SUITE: string = 'BindMenu'
 const waitUiReadyMs: Int = 500;
 
 export default function BindMenuTest() {
 
   describe('BindMenuTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("BindMenuTest beforeEach start");
       let options: router.RouterOptions = {
@@ -53,7 +44,7 @@ export default function BindMenuTest() {
         if (!("BindMenu" == pages.name)) {
           console.info("get BindMenuTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(3000);
         }
       } catch (err) {
         console.error("push BindMenuTest page error:" + err);
@@ -82,13 +73,29 @@ it('ArkUI_Menu_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       }
       events_emitter.on(event, callback);
       let driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      try {
+        await driver.delayMs(waitUiReadyMs)
+      } catch (err) {
+        console.info('ArkUI_Menu_0100 delayMs err: ' + JSON.stringify(err));
+      }
       inspector.sendEventByKey('BindMenu_bindMenu1', 10, "")
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ArkUI_Menu_0100 sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.text('Menu1'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('ArkUI_Menu_0100 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ArkUI_Menu_0100 sleep err: ' + JSON.stringify(err));
+      }
       console.info(`${SUITE} ${CASE} END`);
       done()
     });
@@ -115,13 +122,29 @@ it('ArkUI_Menu_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       }
       events_emitter.on(event, callback);
       let driver: Driver = Driver.create()
-      await driver.delayMs(waitUiReadyMs)
+      try {
+        await driver.delayMs(waitUiReadyMs)
+      } catch (err) {
+        console.info('ArkUI_Menu_0200 delayMs err: ' + JSON.stringify(err));
+      }
       inspector.sendEventByKey('BindMenu_bindContextMenu1', 11, "")
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ArkUI_Menu_0200 sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.text('Menu1'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('ArkUI_Menu_0200 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ArkUI_Menu_0200 sleep err: ' + JSON.stringify(err));
+      }
 
       console.info(`${SUITE} ${CASE} END`);
       done()

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -33,17 +33,7 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import { Color, ColoringStrategy, ShadowOptions, ShadowStyle } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 import { RecordData } from '@ohos.base';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 
 interface ShadowValueInter {
@@ -55,13 +45,6 @@ interface ShadowValueInter {
 
 export default function imageEffectsJsunit() {
   describe('imageEffectsJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("hoverEffectJsunit beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("imageEffectsTest beforeEach start");
       let options: router.RouterOptions = {
@@ -84,7 +67,11 @@ export default function imageEffectsJsunit() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       const routerInstance = AppStorage.get<Router>("router") as Router
       // routerInstance.back();
       console.info("imageEffects after each called");
@@ -100,7 +87,11 @@ export default function imageEffectsJsunit() {
      */
 it('testImageEffects_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testSizeSetting001] START');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('centerRow');
       console.info("[testImageEffects001] component strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -118,7 +109,11 @@ it('testImageEffects_static_001', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_002', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects002] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -134,9 +129,17 @@ it('testImageEffects_static_002', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects002] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[testImageEffects002] component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -190,7 +193,11 @@ it('testImageEffects_static_002', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_004', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects004] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -206,9 +213,17 @@ it('testImageEffects_static_004', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects004] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[testImageEffects004] component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -226,7 +241,11 @@ it('testImageEffects_static_004', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_005', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects005] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -242,9 +261,17 @@ it('testImageEffects_static_005', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects005] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[testImageEffects005] component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -262,9 +289,17 @@ it('testImageEffects_static_005', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_006', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects006] START');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('centerRow3');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testImageEffects006] component strJson:" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getElement('shadow'));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('shadow').getString('radius'))
@@ -288,7 +323,11 @@ it('testImageEffects_static_006', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_007', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects007] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let shadowValue: ShadowOptions = {
         radius: 20.0,
         color: Color.Gray,
@@ -311,9 +350,17 @@ it('testImageEffects_static_007', Level.LEVEL2, async (done: () => void): Promis
         console.log("[testImageEffects007] change component data error: " + err.message);
       }
 
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow3');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[testImageEffects007] component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -387,7 +434,11 @@ it('testImageEffects_static_007', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_009', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects009] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let shadowValue: ShadowOptions = {
         radius: 0x7FFFFFFF,
         color: Color.White,
@@ -409,9 +460,17 @@ it('testImageEffects_static_009', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects009] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow3');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[testImageEffects009] component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -436,7 +495,11 @@ it('testImageEffects_static_009', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects010] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let shadowValue: ShadowValueInter = {
         radius: 'error',
         color: 'error',
@@ -458,7 +521,11 @@ it('testImageEffects_static_010', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects010] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow3');
 
       console.info("[testImageEffects010] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -492,9 +559,17 @@ it('testImageEffects_static_010', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_011', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testSizeSetting011] START');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('centerRow5');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testImageEffects011] component strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('brightness')).assertEqual(20);
       done()
@@ -510,7 +585,11 @@ it('testImageEffects_static_011', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_012', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects012] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -526,9 +605,17 @@ it('testImageEffects_static_012', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects012] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow5');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[testImageEffects012] component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -583,7 +670,11 @@ it('testImageEffects_static_012', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_014', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects014] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -599,9 +690,17 @@ it('testImageEffects_static_014', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects014] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow5');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[testImageEffects014] component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -619,7 +718,11 @@ it('testImageEffects_static_014', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_015', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects015] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -635,9 +738,17 @@ it('testImageEffects_static_015', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects015] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow5');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[testImageEffects015] component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -655,9 +766,17 @@ it('testImageEffects_static_015', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_016', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects016] START');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('centerRow6');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testImageEffects016] component strJson:" + strJson);
       console.info("[testImageEffects016] component strJson:" +
       JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('saturate'));
@@ -675,7 +794,11 @@ it('testImageEffects_static_016', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_017', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects017] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -691,7 +814,11 @@ it('testImageEffects_static_017', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects017] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow6');
 
       console.info("[testImageEffects017] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -710,7 +837,11 @@ it('testImageEffects_static_017', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_018', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects018] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -726,9 +857,17 @@ it('testImageEffects_static_018', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects018] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow6');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.info("[testImageEffects018] component JSON.parseJsonElement(strJsonNew) is: " +
       JSON.stringify(JSON.parseJsonElement(strJsonNew)));
@@ -746,7 +885,11 @@ it('testImageEffects_static_018', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_019', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects019] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -762,7 +905,11 @@ it('testImageEffects_static_019', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects019] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow6');
 
       console.info("[testImageEffects019] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -781,7 +928,11 @@ it('testImageEffects_static_019', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects020] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -797,7 +948,11 @@ it('testImageEffects_static_020', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects020] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow6');
 
       console.info("[testImageEffects020] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -816,9 +971,17 @@ it('testImageEffects_static_020', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_021', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testSizeSetting021] START');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('centerRow7');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testImageEffects021] component strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('contrast')).assertEqual(20);
       done()
@@ -834,7 +997,11 @@ it('testImageEffects_static_021', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_022', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects022] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -850,7 +1017,11 @@ it('testImageEffects_static_022', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects022] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow7');
 
       console.info("[testImageEffects022] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -869,7 +1040,11 @@ it('testImageEffects_static_022', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_023', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects023] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -885,7 +1060,11 @@ it('testImageEffects_static_023', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects023] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow7');
 
       console.info("[testImageEffects023] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -904,7 +1083,11 @@ it('testImageEffects_static_023', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_024', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects024] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -920,7 +1103,11 @@ it('testImageEffects_static_024', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects024] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow7');
 
       console.info("[testImageEffects024] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -939,7 +1126,11 @@ it('testImageEffects_static_024', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_025', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects025] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -955,7 +1146,11 @@ it('testImageEffects_static_025', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects025] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow7');
 
       console.info("[testImageEffects025] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -974,9 +1169,17 @@ it('testImageEffects_static_025', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_026', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testSizeSetting0026] START');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('centerRow8');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[testImageEffects026] component strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('invert')).assertEqual(1);
       done()
@@ -992,7 +1195,11 @@ it('testImageEffects_static_026', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_027', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects027] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1008,7 +1215,11 @@ it('testImageEffects_static_027', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects027] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow8');
 
       console.info("[testImageEffects027] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -1027,7 +1238,11 @@ it('testImageEffects_static_027', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_028', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects028] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1043,7 +1258,11 @@ it('testImageEffects_static_028', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects028] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow8');
 
       console.info("[testImageEffects028] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -1062,7 +1281,11 @@ it('testImageEffects_static_028', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_029', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects029] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1078,7 +1301,11 @@ it('testImageEffects_static_029', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects029] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow8');
 
       console.info("[testImageEffects029] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -1097,7 +1324,11 @@ it('testImageEffects_static_029', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects030] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1113,7 +1344,11 @@ it('testImageEffects_static_030', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects030] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow8');
 
       console.info("[testImageEffects030] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -1132,7 +1367,11 @@ it('testImageEffects_static_030', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_031', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects031] START');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('centerRow9');
       console.info("[testImageEffects031] component strJson:" + strJson);
       console.info("[testImageEffects031] component strJson:" +
@@ -1151,7 +1390,11 @@ it('testImageEffects_static_031', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_032', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects032] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1167,7 +1410,11 @@ it('testImageEffects_static_032', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects032] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow9');
 
       console.info("[testImageEffects032] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -1219,7 +1466,11 @@ it('testImageEffects_static_032', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_034', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects034] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1235,7 +1486,11 @@ it('testImageEffects_static_034', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects034] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow9');
 
       console.info("[testImageEffects034] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -1253,7 +1508,11 @@ it('testImageEffects_static_034', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_035', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects035] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1269,7 +1528,11 @@ it('testImageEffects_static_035', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects035] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow9');
 
       console.info("[testImageEffects035] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -1288,7 +1551,11 @@ it('testImageEffects_static_035', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_036', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects036] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1304,7 +1571,11 @@ it('testImageEffects_static_036', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects036] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('shadowDefaultShadow');
 
       console.info("[testImageEffects036] component JSON.parseJsonElement(strJsonNew) is: " +
@@ -1324,7 +1595,11 @@ it('testImageEffects_static_036', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_037', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects037] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1340,7 +1615,11 @@ it('testImageEffects_static_037', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects037] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJsonNew = inspector.getInspectorByKey('shadowDefaultShadow');
 
@@ -1361,7 +1640,11 @@ it('testImageEffects_static_037', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_038', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects038] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1377,7 +1660,11 @@ it('testImageEffects_static_038', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects038] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJsonNew = inspector.getInspectorByKey('shadowDefaultShadow');
 
@@ -1398,7 +1685,11 @@ it('testImageEffects_static_038', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_039', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects039] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1414,7 +1705,11 @@ it('testImageEffects_static_039', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects039] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJsonNew = inspector.getInspectorByKey('shadowDefaultShadow');
 
@@ -1435,7 +1730,11 @@ it('testImageEffects_static_039', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects040] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1451,7 +1750,11 @@ it('testImageEffects_static_040', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects040] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJsonNew = inspector.getInspectorByKey('shadowDefaultShadow');
 
@@ -1472,7 +1775,11 @@ it('testImageEffects_static_040', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_041', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects041] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -1488,7 +1795,11 @@ it('testImageEffects_static_041', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects041] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJsonNew = inspector.getInspectorByKey('shadowDefaultShadow');
 
@@ -1509,7 +1820,11 @@ it('testImageEffects_static_041', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testImageEffects_static_042', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[testImageEffects042] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let shadowValue: ShadowOptions = {
         radius: 20.0,
         color: ColoringStrategy.AVERAGE,
@@ -1531,7 +1846,11 @@ it('testImageEffects_static_042', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.log("[testImageEffects042] change component data error: " + err.message);
       }
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('imageEffectsTest sleep err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('centerRow3');
 
       console.info("[testImageEffects042] component JSON.parseJsonElement(strJsonNew) is: " +

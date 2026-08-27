@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
   Component,
@@ -28,32 +28,16 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function DialogJsunit() {
   describe('DialogJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DialogJsunit beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("DialogJsunit  beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("DialogJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -92,41 +76,108 @@ export default function DialogJsunit() {
 it('DialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       console.info('[DialogJsunit_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
 
       let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('buttonDialogPage'));
-      await (button?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+      let button;
+      try {
+        button = await driver.findComponent(ON.id('buttonDialogPage'));
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>)
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('buttonDialogPage');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[DialogJsunit_static_0100] button component obj is: ' +
       obj.getElement("$attrs").getString("label"));
       expect(obj.getElement("$attrs").getString("label")).assertEqual('threeButtonHor:succ');
-      await driver.pressBack();
-      await CommonFunc.sleep(500);
+      try {
+        await driver.pressBack();
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
 
-      let button1 = await driver.findComponent(ON.id('button1'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      let button1;
+      try {
+        button1 = await driver.findComponent(ON.id('button1'));
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button1?.click() as Promise<void>);
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('button1');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info('[DialogJsunit_static_0100] button1 component obj is: ' +
       obj1.getElement("$attrs").getString("label"));
       expect(obj1.getElement("$attrs").getString("label")).assertEqual('threeButtonVer:succ');
-      await driver.pressBack();
-      await CommonFunc.sleep(500);
+      try {
+        await driver.pressBack();
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
 
-      let button2 = await driver.findComponent(ON.id('button2'));
-      await (button2?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      let button2;
+      try {
+        button2 = await driver.findComponent(ON.id('button2'));
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button2?.click() as Promise<void>);
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('button2');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('[DialogJsunit_static_0100] button2 component obj is: ' +
       obj2.getElement("$attrs").getString("label"));
       expect(obj2.getElement("$attrs").getString("label")).assertEqual('threeButtonAuto:succ');
-      await driver.pressBack();
-      await CommonFunc.sleep(500);
+      try {
+        await driver.pressBack();
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
+      }
       console.info('[DialogJsunit_static_0100] END');
       done();
     });

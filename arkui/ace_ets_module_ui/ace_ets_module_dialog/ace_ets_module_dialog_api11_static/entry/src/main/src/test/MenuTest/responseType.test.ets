@@ -19,7 +19,6 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -40,32 +39,16 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function responseTypeJsunit() {
   describe('responseTypeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("responseTypeTest beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("responseTypeTest  beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -92,7 +75,11 @@ export default function responseTypeJsunit() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('responseTypeTest await err: ' + JSON.stringify(err));
+      }
       console.info("responseType after each called");
     });
 
@@ -107,7 +94,11 @@ export default function responseTypeJsunit() {
      */
 it('testresponseType0002_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('responseType testresponseType0002_static START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('responseTypeTest await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('RightClickText');
       console.info("[testresponseType0002_static] component bindContextMenu strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
@@ -128,7 +119,11 @@ it('testresponseType0002_static', Level.LEVEL2, async (done: () => void): Promis
      */
 it('testresponseType0003_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('responseType testresponseType0003_static START');
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('responseTypeTest await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('LongPressText');
       console.info("[testresponseType0003_static] component bindContextMenu strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');

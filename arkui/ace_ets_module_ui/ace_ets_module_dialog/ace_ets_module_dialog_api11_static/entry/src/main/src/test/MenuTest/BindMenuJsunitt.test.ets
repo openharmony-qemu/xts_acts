@@ -18,7 +18,6 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -39,33 +38,17 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { RecordData } from '@ohos.base';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function bindMenuTesttt() {
   describe('bindMenuTesttt', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("bindMenuTesttt beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("bindMenuTesttt  beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("bindMenu beforeEach start");
       let options: router.RouterOptions = {
@@ -92,7 +75,11 @@ export default function bindMenuTesttt() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindMenuJsunittTest await err: ' + JSON.stringify(err));
+      }
       console.info("bindMenu after each called");
     });
 
@@ -107,10 +94,18 @@ export default function bindMenuTesttt() {
      */
 it('bindMenuTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindMenuTest_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindMenuJsunittTest await err: ' + JSON.stringify(err));
+      }
       console.info("bindMenuTest_static_0100 text click result is: " +
       JSON.stringify(inspector.sendEventByKey('bindMenuu' + '_text', 10, "")));
-      await CommonFunc.sleep(1500);
+      try {
+        await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('BindMenuJsunittTest await err: ' + JSON.stringify(err));
+      }
       let callback = (indexEvent: emitter.EventData) => {
         console.info("bindMenuTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
         expect(((indexEvent.data) as Record<String,RecordData>)?.['ACTION']).assertEqual(true);
@@ -127,7 +122,11 @@ it('bindMenuTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       }
       console.info("bindMenuTest_static_0100 button click result is: " +
       JSON.stringify(inspector.sendEventByKey('bindMenuu' + '_button', 10, "")));
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('BindMenuJsunittTest await err: ' + JSON.stringify(err));
+      }
       console.info('bindMenuTest_static_0100 END');
       done();
     });

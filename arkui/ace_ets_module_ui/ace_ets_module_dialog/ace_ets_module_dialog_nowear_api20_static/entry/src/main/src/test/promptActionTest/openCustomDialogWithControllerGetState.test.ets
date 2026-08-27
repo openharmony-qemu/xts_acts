@@ -16,7 +16,6 @@
 import Utils from '../../../ets/MainAbility/common/Utils';
 import {
   afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -31,16 +30,11 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function OpenCustomDialogWithControllerGetStateTest() {
   describe('OpenCustomDialogWithControllerGetStateTest', () => {
     const SLEEP_TIME_1000 = 1000;
     const SLEEP_TIME_3000 = 3000;
-    beforeAll(async (): Promise<void> => {
-      console.info("OpenCustomDialogWithControllerGetStateTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("OpenCustomDialogWithControllerGetStateTest beforeEach start");
       try {
@@ -72,18 +66,34 @@ export default function OpenCustomDialogWithControllerGetStateTest() {
       let driver = Driver.create()
       let btn = await driver.findComponent(ON.id('openCustomDialogWithController001'));
       await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(SLEEP_TIME_1000);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('OpenCustomDialogWithControllerGetStateTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('openCustomDialogWithControllerFlag1');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('1');
-      await Utils.sleep(SLEEP_TIME_3000)
+      try {
+        await Utils.sleep(SLEEP_TIME_3000)
+      } catch (err) {
+        console.info('OpenCustomDialogWithControllerGetStateTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('openCustomDialogWithControllerFlag2');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('2');
       let btn2 = await driver.findComponent(ON.text('close dialog'));
       await (btn2?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME_3000)
+      try {
+        await Utils.sleep(SLEEP_TIME_3000)
+      } catch (err) {
+        console.info('OpenCustomDialogWithControllerGetStateTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson3 = inspector.getInspectorByKey('openCustomDialogWithControllerFlag3');
       expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')).assertEqual('3');
-      await Utils.sleep(SLEEP_TIME_3000)
+      try {
+        await Utils.sleep(SLEEP_TIME_3000)
+      } catch (err) {
+        console.info('OpenCustomDialogWithControllerGetStateTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson4 = inspector.getInspectorByKey('openCustomDialogWithControllerFlag4');
       expect(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content')).assertEqual('4');
       console.info('[' + tagName + '] END ===========================');

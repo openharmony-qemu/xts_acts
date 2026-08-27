@@ -15,14 +15,13 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
@@ -43,11 +42,6 @@ function logLongString(tag: string, longStr: string): void {
 
 export default function SelectTest(): void {
   describe('SelectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("SelectTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.select.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("SelectTest beforeEach start");
       let options: router.RouterOptions = {
@@ -70,7 +64,11 @@ export default function SelectTest(): void {
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info("SelectTest afterEach err: " + JSON.stringify(err));
+      }
       console.info("SelectTest after each called");
     });
 

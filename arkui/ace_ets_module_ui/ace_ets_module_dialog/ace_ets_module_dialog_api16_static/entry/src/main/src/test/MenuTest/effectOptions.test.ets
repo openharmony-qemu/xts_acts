@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -31,26 +31,10 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function effectOptions() {
   describe('effectOptions', () => {
-    beforeAll(async (): Promise<void> => {
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
-      
-    })
 
     beforeEach(async () => {
       console.info("effectOptions beforeEach start");
@@ -65,7 +49,7 @@ export default function effectOptions() {
         if (!("EffectOptions" == pages.name)) {
           console.info("get effectOptions state pages.name: " + JSON.stringify(pages.name));
           effectOptions.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(2500);
         }
       } catch (err) {
         console.error("push effectOptions page error: " + err);
@@ -81,6 +65,7 @@ export default function effectOptions() {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
 it('EffectOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('EffectOptionsTest_static_0101 START');
       const SLEEP_TIME = 1000;
       await CommonFunc.sleep(SLEEP_TIME);
@@ -115,6 +100,10 @@ it('EffectOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.
       inspector.sendEventByKey('EffectOptions_btn1', 10, '');
       await CommonFunc.sleep(SLEEP_TIME);
       console.info('EffectOptionsTest_static_0101 END');
+      } catch (err) {
+        console.info('EffectOptionsTest_static_0101 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done();
     });
 
@@ -127,6 +116,7 @@ it('EffectOptionsTest_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
 it('EffectOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('EffectOptionsTest_static_0102 START');
       const SLEEP_TIME = 2000;
       await CommonFunc.sleep(SLEEP_TIME);
@@ -147,6 +137,10 @@ it('EffectOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.
       inspector.sendEventByKey('EffectOptions_btn2', 10, '');
       await CommonFunc.sleep(SLEEP_TIME);
       console.info('EffectOptionsTest_static_0102 END');
+      } catch (err) {
+        console.info('EffectOptionsTest_static_0102 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done();
     });
 
@@ -159,6 +153,7 @@ it('EffectOptionsTest_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2
      */
 it('EffectOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
       console.info('EffectOptionsTest_static_0103 START');
       const SLEEP_TIME = 2000;
       await CommonFunc.sleep(SLEEP_TIME);
@@ -180,6 +175,10 @@ it('EffectOptionsTest_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.
       inspector.sendEventByKey('EffectOptionsc_btn3', 10, '');
       await CommonFunc.sleep(SLEEP_TIME);
       console.info('EffectOptionsTest_static_0103 END');
+      } catch (err) {
+        console.info('EffectOptionsTest_static_0103 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done();
     });
   })

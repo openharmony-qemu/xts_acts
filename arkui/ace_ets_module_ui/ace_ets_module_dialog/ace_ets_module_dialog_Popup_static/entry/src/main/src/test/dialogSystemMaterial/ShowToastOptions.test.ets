@@ -15,25 +15,19 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern, Component } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
 export default function ShowToastOptionsTest(): void {
   describe('ShowToastOptionsTest', () => {
-    beforeAll(async () => {
-
-      console.info("ShowToastOptionsTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
-    });
 
     beforeEach(async () => {
 
@@ -58,7 +52,11 @@ export default function ShowToastOptionsTest(): void {
     });
 
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+       try {
+         await Utils.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('sleep err: ' + JSON.stringify(err));
+       }
       console.info("ShowToastOptionsTest after each called");
     });
 
@@ -74,10 +72,22 @@ export default function ShowToastOptionsTest(): void {
 
       console.info('ShowToastOptionsTest_Message_0100 START');
       let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
+       try {
+         await CommonFunc.sleep(1000);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
       let button = await driver.findComponent(ON.id('btn_system_material'));
-      await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
-      await CommonFunc.sleep(1000);
+       try {
+         await ((await driver.findComponent(ON.id('PLACEHOLDER'))) as Component).click();
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
+       try {
+         await CommonFunc.sleep(1000);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
 
       let tt1 = inspector.getInspectorByKey('title_text');
       let obj = JSON.parseJsonElement(tt1);
@@ -85,7 +95,15 @@ export default function ShowToastOptionsTest(): void {
       expect(dataE).assertEqual('ShowToastOptions Test Page');
       console.info('ShowToastOptionsTest_Message_0100 Popup Undefined is visible');
 
-      await CommonFunc.sleep(500);
+       try {
+
+         await CommonFunc.sleep(500);
+
+       } catch (err) {
+
+         console.info('await err: ' + JSON.stringify(err));
+
+       }
       console.info('ShowToastOptionsTest_Message_0100 Menu title is visible');
       console.info('ShowToastOptionsTest_Message_0100 END');
     });

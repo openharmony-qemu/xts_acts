@@ -13,24 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, Component } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, Component } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 const SLEEP_TIME = 1000;
 
 export default function popupTest(): void {
   describe('popupTest', () => {
-    beforeAll(async () => {
-
-      console.info("popupTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility")
-    });
     beforeEach(async () => {
 
       console.info("popupTest beforeEach start");
@@ -53,7 +47,11 @@ export default function popupTest(): void {
       console.info("popupTest beforeEach end");
     });
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+       try {
+         await Utils.sleep(SLEEP_TIME);
+       } catch (err) {
+         console.info('sleep err: ' + JSON.stringify(err));
+       }
       console.info("popupTest after each called");
     });
     /**
@@ -76,7 +74,7 @@ export default function popupTest(): void {
         expect(obj.getElement('$attrs').getString('content')).assertEqual('message');
         const image = await driver.findComponent(ON.type('Image'));
         console.info('ArcSlider_static_001 singleTextSegmentButtonType START:' + JSON.stringify(image));
-        //验证高级组件Popup的组成组件Image非空，表示高级组件Popup成功被调用
+        //验证高级组件Popup的组成组件Image非空，表示高级组件Popup成功被调�?
         expect(!!image).assertEqual(true);
         console.info('popupTest001 END');
       }catch(error){

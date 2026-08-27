@@ -15,7 +15,7 @@
  */
 
 import CommonFunc from '../../ets/MainAbility/common/Common';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -29,17 +29,11 @@ import {
   WindowMode
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { startAbility, UtilsTest } from './Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function Blur() {
   describe('Blur', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Blur beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("Blur beforeEach start");
@@ -64,13 +58,17 @@ export default function Blur() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Blur err: ' + JSON.stringify(err));
+      }
       console.info("Blur after each called");
     });
 
 
-    
-    
+
+
 /**
      * @tc.number   Blur_static_0100
      * @tc.name     Blur_static_0100
@@ -80,13 +78,25 @@ export default function Blur() {
 it('Blur_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('Blur_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Blur err: ' + JSON.stringify(err));
+      }
 
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('Blur err: ' + JSON.stringify(err));
+      }
 
       let strJson2 = inspector.getInspectorByKey('blurId');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('Blur err: ' + JSON.stringify(err));
+      }
       console.log('test strJson2 ' + JSON.stringify(strJson2))
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('[MultiNavigation_0100] component obj is: ' + JSON.stringify(obj2));

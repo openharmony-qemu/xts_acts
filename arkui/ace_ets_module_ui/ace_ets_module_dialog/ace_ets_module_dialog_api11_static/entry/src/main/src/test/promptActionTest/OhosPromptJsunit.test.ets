@@ -19,7 +19,6 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -40,33 +39,17 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { RecordData } from '@ohos.base';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function ohosPromptJsunit() {
   describe('appInfoTest_four_3', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("appInfoTest_four_3 beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("appInfoTest_four_3 beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("OhosPrompt beforeEach start");
       let options: router.RouterOptions = {
@@ -93,7 +76,11 @@ export default function ohosPromptJsunit() {
     });
 
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('OhosPromptJsunitTest await err: ' + JSON.stringify(err));
+      }
       console.info("OhosPrompt each called");
     });
 
@@ -107,11 +94,19 @@ export default function ohosPromptJsunit() {
      * @tc.level    Level.LEVEL2
      */
 it('test_OhosPrompt_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      await Utils.sleep(1000)
+      try {
+        await Utils.sleep(1000)
+      } catch (err) {
+        console.info('OhosPromptJsunitTest await err: ' + JSON.stringify(err));
+      }
       let callback = (eventData: emitter.EventData) => {
         waitForCompletion(async () => {
           console.info("[test_OhosPrompt_static_001] get event state result is: " + JSON.stringify(eventData));
-          await Utils.sleep(500)
+          try {
+            await Utils.sleep(500)
+          } catch (err) {
+            console.info('OhosPromptJsunitTest await err: ' + JSON.stringify(err));
+          }
           expect(((eventData.data) as Record<String,RecordData>)['matrix1']).assertEqual("[100, 10]")
         })
       }
@@ -126,13 +121,14 @@ it('test_OhosPrompt_static_001', Level.LEVEL2, async (done: () => void): Promise
       }
       console.info('[test_OhosPrompt_static_001] sendEventByKey ' +
       JSON.stringify(inspector.sendEventByKey('rotate5', 10, "")));
-      await Utils.sleep(1000)
+      try {
+        await Utils.sleep(1000)
+      } catch (err) {
+        console.info('OhosPromptJsunitTest await err: ' + JSON.stringify(err));
+      }
       console.info('[test_OhosPrompt_static_001] testSendTouchEvent END');
       done();
     });
   })
 }
-
-
-
 

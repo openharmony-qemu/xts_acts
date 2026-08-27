@@ -14,23 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function tipsDialogTest() {
   describe('tipsDialogTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("tipsDialogTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.advancedDialogV2.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("tipsDialogTest beforeEach start");
@@ -57,7 +50,11 @@ export default function tipsDialogTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('tipsDialogTest after each called');
     })
     afterAll(() => {
@@ -65,7 +62,6 @@ export default function tipsDialogTest() {
       routerInstance.back();
     })
 
-    
     
     
     /**
@@ -77,17 +73,29 @@ export default function tipsDialogTest() {
 it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tipsDialogTest_static_0100] START');
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('1111222333');
 
       // 点击打开TipsDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('TipsDialogV2'))
       console.info('8889997777');
 
-      await (openAlertDialog?.click() as Promise<void>);
+      try {
+        await (openAlertDialog?.click() as Promise<void>);
+      } catch (err) {
+        console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+      }
       console.info('0025222555');
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+      }
       // 点击打开TipsDialog是否存在以下入口。
       let content = await driver.findComponent(ON.text('想要卸载这个APP嘛?'));
 
@@ -99,13 +107,20 @@ it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       expect(cancelButton !== null).assertTrue();
       expect(confirmButton !== null).assertTrue();
       // 关闭TipsDialog
-      await (cancelButton?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (cancelButton?.click() as Promise<void>);
+      } catch (err) {
+        console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[tipsDialogTest_static_0100] END');
       done();
     });
 
-    
     
     
     /**
@@ -117,11 +132,23 @@ it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 it('tipsDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tipsDialogTest_static_0200] START');
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+      }
       // 点击打开TipsDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('SecTipsDialogV2'))
-      await (openAlertDialog?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (openAlertDialog?.click() as Promise<void>);
+      } catch (err) {
+        console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+      }
       // 点击打开TipsDialog是否存在以下入口。
       let content = await driver.findComponent(ON.text('带边框图片TipsDialog'));
       let cancelButton = await driver.findComponent(ON.type('Button').text('取消'));
@@ -130,8 +157,16 @@ it('tipsDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       expect(cancelButton !== null).assertTrue();
       expect(confirmButton !== null).assertTrue();
       // 关闭TipsDialog
-      await (cancelButton?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (cancelButton?.click() as Promise<void>);
+      } catch (err) {
+        console.info('tipsDialogTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('tipsDialogTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[tipsDialogTest_static_0200] END');
       done();
     });

@@ -14,29 +14,17 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeEach, afterEach, it, expect, beforeAll, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+import { RecordData } from '@ohos.base';
 
 export default function aboutToDisappearJsunit() {
   describe('aboutToDisappearTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("aboutToDisappearTest beforeEach start");
       let options: router.RouterOptions = {
@@ -59,7 +47,11 @@ export default function aboutToDisappearJsunit() {
     });
 
        afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('aboutToDisappearTest after each sleep err: ' + JSON.stringify(err));
+      }
       console.info("aboutToDisappear after each called");
     });
 
@@ -72,7 +64,11 @@ export default function aboutToDisappearJsunit() {
      */
 it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('aboutToDisappearTest_static_0100 START');
-      await Utils.sleep(1500);
+      try {
+        await Utils.sleep(1500);
+      } catch (err) {
+        console.info('aboutToDisappearTest_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       let callback = (indexEvent: events_emitter.EventData) => {
         console.info("aboutToDisappearTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
         const data = indexEvent.data as Record<String,RecordData>
@@ -89,7 +85,11 @@ it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): P
         console.info("aboutToDisappearTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("aboutToDisappearTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('aboutToDisappearTest_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       console.info('aboutToDisappearTest_static_0100 END');
       done();
     });

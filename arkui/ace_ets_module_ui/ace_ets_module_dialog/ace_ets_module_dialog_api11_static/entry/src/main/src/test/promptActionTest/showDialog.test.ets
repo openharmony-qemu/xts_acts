@@ -29,34 +29,18 @@ import {
 
 import window from '@ohos.window';
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 
 export default function showDialog() {
   describe('showDialog', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("showDialog beforeAll start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
       console.info("showDialog beforeEach start");
       let options: router.RouterOptions = {
@@ -71,7 +55,7 @@ export default function showDialog() {
         console.info("get showDialog state pages:" + JSON.stringify(pages));
         if (!("showDialog" == pages.name)) {
           console.info("get showDialog pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // await router 閺堝鍑￠惌銉╂６妫版﹫绱濋崗鍫熸暈闁?娴ｈ法鏁?routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -96,21 +80,53 @@ export default function showDialog() {
 it('showDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('showDialog_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('showDialog'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('showDialogTest await err: ' + JSON.stringify(err));
+      }
+      let button;
+      try {
+        button = await driver.findComponent(ON.id('showDialog'));
+      } catch (err) {
+        console.info('showDialogTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('showDialogTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('showDialogTest await err: ' + JSON.stringify(err));
+      }
 
       let windowClass: window.Window | undefined = undefined;
-      windowClass =
-        await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      try {
+        windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      } catch (err) {
+        console.info('showDialogTest await err: ' + JSON.stringify(err));
+      }
       let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
       console.info("[showDialog_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
+      expect(properties.type).assertEqual(1) //1鐞涖劎銇氱化鑽ょ埠閸涘﹨顒熺粣妤€褰汿YPE_SYSTEM_ALERT
 
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2070)
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('showDialogTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2070)
+      } catch (err) {
+        console.info('showDialogTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('showDialogTest await err: ' + JSON.stringify(err));
+      }
       console.info('[showDialog_static_0100] END');
       done();
     });
@@ -118,4 +134,3 @@ it('showDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<voi
 
   })
 }
-

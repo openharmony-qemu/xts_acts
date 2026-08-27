@@ -13,23 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 const SLEEP_TIME = 1000;
 
 export default function arcButtonTest() {
   describe('arcButtonTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("arcButtonTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.arcbutton.api23.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("arcButtonTest beforeEach start");
       let options: router.RouterOptions = {
@@ -51,7 +46,11 @@ export default function arcButtonTest() {
       console.info("arcButtonTest beforeEach end");
     });
     afterEach(async () => {
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('arcButtonTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("arcButtonTest after each called");
     });
     /**
@@ -63,9 +62,13 @@ export default function arcButtonTest() {
     it('ArcButton_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArcButton_static_001 START');
       const driver = Driver.create();
-      const button = await driver.findComponent(ON.text('Test Progress'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        const button = await driver.findComponent(ON.text('Test Progress'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('ArcButton_static_001 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('arcButtonTest');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('true');

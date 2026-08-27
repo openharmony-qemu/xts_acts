@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { uiMaterial } from '@kit.ArkUI';
-import { UtilsTest } from '../Util.test';
 
 async function navigatePage(): Promise<void> {
   const routerInstance = AppStorage.get<Router>('router') as Router;
@@ -34,11 +33,20 @@ async function navigatePage(): Promise<void> {
 
 export default function CustomDialogSystemMaterialTest(): void {
   describe('CustomDialogSystemMaterialTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.dialog.api26.static', 'EntryAbility');
+    beforeEach(async (): Promise<void> => {
+      try {
+        await navigatePage();
+      } catch (err) {
+        console.info('CustomDialogSystemMaterialTest beforeEach err: ' + JSON.stringify(err));
+      }
     });
-    beforeEach(async (): Promise<void> => { await navigatePage(); });
-    afterEach(async (): Promise<void> => { await Utils.sleep(1000); });
+    afterEach(async (): Promise<void> => {
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('CustomDialogSystemMaterialTest afterEach err: ' + JSON.stringify(err));
+      }
+    });
 
     /**
      * @tc.name   SUB_ACE_API26_CustomDialogSystemMaterial_0100

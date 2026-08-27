@@ -14,31 +14,17 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
 import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../../Util.test';
 import {MessageManager,Callback} from '../../../../ets/MainAbility/common/MessageManager';
-let tag: string = 'testTag';
 
 
 export default function TextPickerDialog_Cancel_Test() {
   describe('TextPickerDialog_Cancel_Test', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerDialog_Cancel_Test beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
-
-    });
-
 
     beforeEach(async () => {
       console.info("TextPickerDialog_Cancel_Test beforeEach start");
@@ -62,7 +48,11 @@ export default function TextPickerDialog_Cancel_Test() {
       console.info("TextPickerDialog_Cancel_Test beforeEach end");
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('TextPickerDialogCancelTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("TextPickerDialog_Cancel_Test after each called");
     });
 

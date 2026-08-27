@@ -13,30 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, beforeEach, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
 
 export default function showTextPickerDialogBackgroundEffectTest() {
   describe('ShowTextPickerDialogBackgroundEffectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("showTextPickerDialogBackgroundEffectTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api19.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("showTextPickerDialogBackgroundEffectTest beforeEach start");
@@ -50,7 +36,11 @@ export default function showTextPickerDialogBackgroundEffectTest() {
       if (!("showTextPickerDialogBackgroundEffect" == pages.name)) {
         console.info("get ShowTextPickerDialogBackgroundEffectTest state pages.name: " + JSON.stringify(pages.name));
         routerInstance.pushUrl(options);
-        await Utils.sleep(2000);
+        try {
+          await Utils.sleep(2000);
+        } catch (err) {
+          console.info('xxxTest err: ' + JSON.stringify(err));
+        }
       }
     });
 
@@ -67,13 +57,29 @@ export default function showTextPickerDialogBackgroundEffectTest() {
 it('showTextPickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'showTextPickerDialogBackgroundEffectTest_static_0100';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('ShowTextPickerDialog_Effect001'))  as Component;
-      await btn!.click();
-      await Utils.sleep(1000);
+      try {
+        await btn!.click();
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let dialog = obj.getArray('$children')[1]
       let date = obj.getArray('$children')[1].getArray('$children')[0]
       let uniRenderFlag: string = dialog.getElement('$attrs').getString('uniRender');
@@ -98,8 +104,16 @@ it('showTextPickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | S
         expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('blurOption')).assertEqual('[20.000000,20.000000]');
       }
       let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
-      await btn1!.click();
-      await Utils.sleep(1000);
+      try {
+        await btn1!.click();
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });
@@ -117,13 +131,29 @@ it('showTextPickerDialogBackgroundEffectTest_static_0100', TestType.FUNCTION | S
 it('showTextPickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'showTextPickerDialogDialogBackgroundEffectTest_static_0200';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('ShowTextPickerDialog_Effect002')) as Component;
-      await btn!.click();
-      await Utils.sleep(1000);
+      try {
+        await btn!.click();
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let date = obj.getArray('$children')[1].getArray('$children')[0]
       console.info("[showTextPickerDialogBackgroundEffectTest_static_0200] $attrs.options is: " + JSON.stringifyJsonElement(date.getElement('$attrs').getElement('backgroundEffect').getElement('options')));
       expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
@@ -135,8 +165,16 @@ it('showTextPickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | S
       expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
       expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('blurOption')).assertEqual('[0,0]');
       let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
-      await btn1!.click();
-      await Utils.sleep(1000);
+      try {
+        await btn1!.click();
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });
@@ -154,13 +192,29 @@ it('showTextPickerDialogBackgroundEffectTest_static_0200', TestType.FUNCTION | S
 it('showTextPickerDialogBackgroundEffectTest_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'showTextPickerDialogBackgroundEffectTest_static_0300';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('ShowTextPickerDialog_Effect003')) as Component;
-      await btn!.click();
-      await Utils.sleep(1000);
+      try {
+        await btn!.click();
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      await Utils.sleep(2000);
+      try {
+        await Utils.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       let date = obj.getArray('$children')[1].getArray('$children')[0]
       console.info("[showTextPickerDialogBackgroundEffectTest_static_0300] $attrs.options is: " + JSON.stringifyJsonElement(date.getElement('$attrs').getElement('backgroundEffect').getElement('options')));
       expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('policy')).assertEqual('BlurStyleActivePolicy.ALWAYS_ACTIVE');
@@ -172,8 +226,16 @@ it('showTextPickerDialogBackgroundEffectTest_static_0300', TestType.FUNCTION | S
       expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('inactiveColor')).assertEqual('#00000000');
       expect(date.getElement('$attrs').getElement('backgroundEffect').getElement('options').getString('blurOption')).assertEqual('[0,0]');
       let btn1: Component = await driver.findComponent(ON.text('确定')) as Component;
-      await btn1!.click();
-      await Utils.sleep(1000);
+      try {
+        await btn1!.click();
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest err: ' + JSON.stringify(err));
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });

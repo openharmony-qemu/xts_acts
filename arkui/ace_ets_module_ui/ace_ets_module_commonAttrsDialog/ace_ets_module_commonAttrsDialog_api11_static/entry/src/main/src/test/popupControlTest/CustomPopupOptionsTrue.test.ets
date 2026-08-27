@@ -13,31 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function CustomPopupOptionsTrue() {
-  describe('CustomPopupOptionsTrue', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
-    });
-
+  describe('CustomPopupOptionsTrue',  () =>{
     beforeEach(async (): Promise<void> => {
       console.info("CustomPopupOptionsTrue beforeEach start");
       let options: router.RouterOptions = {
@@ -74,20 +62,40 @@ it('CustomPopupOptionsTrue_static_0100', Level.LEVEL0, async (done: () => void):
       console.info('CustomPopupOptionsTrue_0100 START');
       let abilityContext = AppStorage.get<common.BaseContext>("abilityContext")
       let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CustomPopupOptionsTrue_0100 sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('CustomPopupOptionsTrue'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CustomPopupOptionsTrue_0100 click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CustomPopupOptionsTrue_0100 sleep err: ' + JSON.stringify(err));
+      }
 
       let windowClass: window.Window | undefined = undefined;
       windowClass = await window.getLastWindow(abilityContext as common.BaseContext);
       let properties: window.WindowProperties = windowClass.getWindowProperties();
       console.info("[CustomPopupOptionsTrue_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(0) //0表示应用子窗口TYPE_APP
+      expect(properties.type).assertEqual(0)//0表示应用子窗口TYPE_APP
 
-      await CommonFunc.sleep(1000);
-       driver?.click(2, 2);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CustomPopupOptionsTrue_0100 sleep err: ' + JSON.stringify(err));
+      }
+       driver?.click(2,2);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CustomPopupOptionsTrue_0100 sleep err: ' + JSON.stringify(err));
+      }
       console.info('[CustomPopupOptionsTrue_0100] END');
       done();
     });

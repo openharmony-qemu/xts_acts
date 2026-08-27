@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import {
   Component,
   DisplayRotation,
@@ -28,26 +28,13 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function bindContextMenu() {
   describe('bindContextMenu', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("bindContextMenu beforeEach start");
       let options: router.RouterOptions = {
@@ -81,10 +68,18 @@ it('bindContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info('bindContextMenu_0100 START');
       let abilityContext = AppStorage.get<common.BaseContext>("abilityContext")
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindContextMenu_0100 sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('bindContextMenu'));
       button?.longClick();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindContextMenu_0100 sleep err: ' + JSON.stringify(err));
+      }
 
       let windowClass: window.Window | undefined = undefined;
       windowClass = await window.getLastWindow(abilityContext as common.BaseContext);
@@ -92,9 +87,17 @@ it('bindContextMenu_static_0100', Level.LEVEL0, async (done: () => void): Promis
       console.info("[bindContextMenu_0100] title: " + JSON.stringify(properties.type));
       expect(properties.type).assertEqual(0) //0表示应用子窗口TYPE_APP
 
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('bindContextMenu_0100 sleep err: ' + JSON.stringify(err));
+      }
       driver?.click(2, 2);
-      await CommonFunc.sleep(3000);
+      try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('bindContextMenu_0100 sleep err: ' + JSON.stringify(err));
+      }
       console.info('[bindContextMenu_0100] END');
       done();
     });

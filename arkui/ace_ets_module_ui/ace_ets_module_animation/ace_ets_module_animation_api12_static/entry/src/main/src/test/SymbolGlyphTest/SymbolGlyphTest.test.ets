@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
@@ -28,21 +28,11 @@ import {
   WindowMode
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function SymbolGlyphTest() {
   describe("SymbolGlyphTest", () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("SymbolGlyphTest beforeEach start");
-
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
-      
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("SymbolGlyphTest beforeEach start");
@@ -67,7 +57,11 @@ export default function SymbolGlyphTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SymbolGlyphTest err: ' + JSON.stringify(err));
+      }
       console.info("SymbolGlyphTest after each called");
     });
 
@@ -79,9 +73,17 @@ export default function SymbolGlyphTest() {
      */
     it("SymbolGlyphTest_static_001", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[SymbolGlyphTest_static_001] START");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SymbolGlyphTest err: ' + JSON.stringify(err));
+      }
       let AppearSymbolEffect = inspector.getInspectorByKey("AppearSymbolEffect");
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SymbolGlyphTest err: ' + JSON.stringify(err));
+      }
       console.info("AppearSymbolEffect-----" +
       JSON.parseJsonElement(AppearSymbolEffect).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(AppearSymbolEffect).getElement('$attrs').getString('content'))
@@ -98,9 +100,17 @@ export default function SymbolGlyphTest() {
      */
     it("SymbolGlyphTest_static_002", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[SymbolGlyphTest_static_002] START");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SymbolGlyphTest err: ' + JSON.stringify(err));
+      }
       let DisappearSymbolEffect = inspector.getInspectorByKey("DisappearSymbolEffect");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SymbolGlyphTest err: ' + JSON.stringify(err));
+      }
       console.info("DisappearSymbolEffect-----" +
       JSON.parseJsonElement(DisappearSymbolEffect).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(DisappearSymbolEffect).getElement('$attrs').getString('content'))
@@ -117,9 +127,17 @@ export default function SymbolGlyphTest() {
      */
     it("SymbolGlyphTest_static_003", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[SymbolGlyphTest_static_003] START");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SymbolGlyphTest err: ' + JSON.stringify(err));
+      }
       let ReplaceSymbolEffect = inspector.getInspectorByKey("ReplaceSymbolEffect");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SymbolGlyphTest err: ' + JSON.stringify(err));
+      }
       console.info("ReplaceSymbolEffect-----" +
       JSON.parseJsonElement(ReplaceSymbolEffect).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(ReplaceSymbolEffect).getElement('$attrs').getString('content'))
@@ -136,9 +154,17 @@ export default function SymbolGlyphTest() {
      */
     it("SymbolGlyphTest_static_004", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[SymbolGlyphTest_static_004] START");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SymbolGlyphTest err: ' + JSON.stringify(err));
+      }
       let BounceSymbolEffect = inspector.getInspectorByKey("BounceSymbolEffect");
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('SymbolGlyphTest err: ' + JSON.stringify(err));
+      }
       console.info("BounceSymbolEffect-----" +
       JSON.parseJsonElement(BounceSymbolEffect).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(BounceSymbolEffect).getElement('$attrs').getString('content'))

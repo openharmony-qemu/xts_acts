@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
 import { Driver, ON, MouseButton,  Component } from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../../Util.test';
 import {MessageManager,Callback} from '../../../../ets/MainAbility/common/MessageManager';
-let tag: string = 'testTag';
 
 export default function TextPickerDialog_Accept_Test() {
   describe('TextPickerDialog_Accept_Test', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerDialog_Accept_Test beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
-
-    });
 
     beforeEach(async () => {
       console.info("TextPickerDialog_Accept_Test beforeEach start");
@@ -62,7 +49,11 @@ export default function TextPickerDialog_Accept_Test() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('TextPickerDialogAcceptTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("TextPickerDialog_Accept_Test after each called");
     });
 
@@ -77,20 +68,24 @@ export default function TextPickerDialog_Accept_Test() {
      */
 it('TextPickerDialog_Accept_Test_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[TextPickerDialog_Accept_Test_static_001] START');
-      await CommonFunc.sleep(1000);
-      let driver: Driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let btn: Component = await driver.findComponent(ON.id('btn')) as Component;
-      await btn!.click();
-      await CommonFunc.sleep(1000);
-      let row: Component = await driver.findComponent(ON.text('确定')) as Component;
-      await row!.click();
-      await CommonFunc.sleep(2000);
-      let acceptButtonStyle_Text = inspector.getInspectorByKey('acceptButtonStyle_Text');
-      console.info('acceptButtonStyle_Text attrs-----' + JSON.parseJsonElement(acceptButtonStyle_Text).getElement('$attrs'));
-      expect(JSON.parseJsonElement(acceptButtonStyle_Text).getElement('$attrs').getString('content')).assertEqual('acceptButtonStyle_Text');
-      console.info('[TextPickerDialog_Accept_Test_static_001] END');
-      done();
+      try {
+        await CommonFunc.sleep(1000);
+        let driver: Driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let btn: Component = await driver.findComponent(ON.id('btn')) as Component;
+        await btn!.click();
+        await CommonFunc.sleep(1000);
+        let row: Component = await driver.findComponent(ON.text('确定')) as Component;
+        await row!.click();
+        await CommonFunc.sleep(2000);
+        let acceptButtonStyle_Text = inspector.getInspectorByKey('acceptButtonStyle_Text');
+        console.info('acceptButtonStyle_Text attrs-----' + JSON.parseJsonElement(acceptButtonStyle_Text).getElement('$attrs'));
+        expect(JSON.parseJsonElement(acceptButtonStyle_Text).getElement('$attrs').getString('content')).assertEqual('acceptButtonStyle_Text');
+        console.info('[TextPickerDialog_Accept_Test_static_001] END');
+        done();
+      } catch (error) {
+        expect().assertFail();
+      }
     });
   })
 }

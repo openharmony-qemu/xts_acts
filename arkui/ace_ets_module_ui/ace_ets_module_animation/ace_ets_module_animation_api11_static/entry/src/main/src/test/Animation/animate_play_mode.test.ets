@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -32,16 +32,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import curves from '@ohos.curves';
 import { PlayMode } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../../test/Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 interface Ani {
   duration: number
@@ -53,13 +43,6 @@ interface Ani {
 
 export default function playModeReverseJsunit() {
   describe('playModeReverseTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("playModeReverseTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("playModeReverseTest beforeEach start");
@@ -83,7 +66,11 @@ export default function playModeReverseJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('playModeReverse afterEach err: ' + JSON.stringify(err));
+      }
       console.info("playModeReverse after each called");
     });
 
@@ -96,7 +83,11 @@ export default function playModeReverseJsunit() {
      */
 it('testPlayModeReverse_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('PlayModeReverse testPlayModeReverse0001 START');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('testPlayModeReverse0001 err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('Reverse');
       console.info("[testradioGroup0001] component width strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);
@@ -122,7 +113,11 @@ it('testPlayModeReverse_static_0001', Level.LEVEL0, async (done: () => void): Pr
      */
 it('testPlayModeAlternate_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('radioGroup testPlayModeAlternate0001 START');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('testPlayModeAlternate0001 err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('Alternate');
       console.info("[testPlayModeAlternate0001] component padding strJson:" + strJson);
       let typeParam = JSON.parseJsonElement(strJson);

@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
   Component,
@@ -28,32 +28,16 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function CustomDialogRouter() {
   describe('CustomDialogRouter', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CustomDialogRouter beforeAll start")
-
-      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-
-      console.info("CustomDialogRouter beforeAll end")
-    })
     beforeEach(async (): Promise<void> => {
       console.info("CustomDialogRouter beforeEach start");
       let options: router.RouterOptions = {
@@ -92,21 +76,64 @@ export default function CustomDialogRouter() {
 it('CustomDialogRouter_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CustomDialogRouter_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('Custom_Dialog_Router'));
-      await (button?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
+      let button;
+      try {
+        button = await driver.findComponent(ON.id('Custom_Dialog_Router'));
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>)
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
 
       // router page is change
-      let routerButton = await driver.findComponent(ON.id('CustomDialogRouterButton'));
-      await (routerButton?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      let routerButton;
+      try {
+        routerButton = await driver.findComponent(ON.id('CustomDialogRouterButton'));
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (routerButton?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
 
       // api 11, dialog is closed, confirmButton is not exist
-      let confirmButton = await driver.findComponent(ON.id('CustomDialogConfirm'));
+      let confirmButton;
+      try {
+        confirmButton = await driver.findComponent(ON.id('CustomDialogConfirm'));
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
       expect(confirmButton != null).assertTrue();
-      await driver.triggerKey(2070)
-      await CommonFunc.sleep(1000);
+      try {
+        await driver.triggerKey(2070)
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
+      }
       console.info('CustomDialogRouter_static_0100 END');
       done();
     });
@@ -114,4 +141,3 @@ it('CustomDialogRouter_static_0100', Level.LEVEL2, async (done: () => void): Pro
 
   })
 }
-

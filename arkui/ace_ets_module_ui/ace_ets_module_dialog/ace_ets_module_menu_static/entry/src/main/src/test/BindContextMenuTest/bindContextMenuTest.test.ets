@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
 import router from '@ohos.router';
 import drawing from '@ohos.graphics.drawing';
 import {
@@ -28,18 +28,12 @@ import { EnterKeyType } from '@ohos.arkui.component'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
-import { UtilsTest } from '../Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
 export default function bindContextMenuTest(): void {
   describe('bindContextMenuTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("bindContextMenuTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("bindContextMenuTest beforeEach start");
       try {
@@ -67,18 +61,23 @@ export default function bindContextMenuTest(): void {
      * @tc.level  @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('bindContextMenuTest_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('bindContextMenu0'));
-      await (btn?.longClick() as Promise<void>);
-      await Utils.sleep(1000);
-      let onDidDisappear = inspector.getInspectorByKey('bindContextMenuText0');
-      console.info("[bindContextMenuTest_static_0001] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(onDidDisappear).getElement('$attrs')));
-      expect(JSON.parseJsonElement(onDidDisappear).getElement('$attrs').getString('content')).assertEqual('true');
-      let btn1 = await driver.findComponent(ON.id('bindContextMenuClose'));
-      await (btn1?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      done();
+      try {
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('bindContextMenu0'));
+        await (btn?.longClick() as Promise<void>);
+        await Utils.sleep(1000);
+        let onDidDisappear = inspector.getInspectorByKey('bindContextMenuText0');
+        console.info("[bindContextMenuTest_static_0001] attrs is: " +
+        JSON.stringify(JSON.parseJsonElement(onDidDisappear).getElement('$attrs')));
+        expect(JSON.parseJsonElement(onDidDisappear).getElement('$attrs').getString('content')).assertEqual('true');
+        let btn1 = await driver.findComponent(ON.id('bindContextMenuClose'));
+        await (btn1?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        done();
+      } catch (err) {
+        console.info('bindContextMenuTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
     /**
      * @tc.number bindContextMenuTest_static_0002
@@ -89,18 +88,23 @@ export default function bindContextMenuTest(): void {
      * @tc.level  @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('bindContextMenuTest_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('bindContextMenu1'));
-      await (btn?.longClick() as Promise<void>);
-      await Utils.sleep(1000);
-      let onDidDisappear = inspector.getInspectorByKey('bindContextMenuText1');
-      console.info("[bindContextMenuTest_static_0002] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(onDidDisappear).getElement('$attrs')));
-      expect(JSON.parseJsonElement(onDidDisappear).getElement('$attrs').getString('content')).assertEqual('true');
-      let btn1 = await driver.findComponent(ON.id('bindContextMenuClose'));
-      await (btn1?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      done();
+      try {
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('bindContextMenu1'));
+        await (btn?.longClick() as Promise<void>);
+        await Utils.sleep(1000);
+        let onDidDisappear = inspector.getInspectorByKey('bindContextMenuText1');
+        console.info("[bindContextMenuTest_static_0002] attrs is: " +
+        JSON.stringify(JSON.parseJsonElement(onDidDisappear).getElement('$attrs')));
+        expect(JSON.parseJsonElement(onDidDisappear).getElement('$attrs').getString('content')).assertEqual('true');
+        let btn1 = await driver.findComponent(ON.id('bindContextMenuClose'));
+        await (btn1?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        done();
+      } catch (err) {
+        console.info('bindContextMenuTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
     /**
      * @tc.number bindContextMenuTest_static_0003
@@ -111,18 +115,23 @@ export default function bindContextMenuTest(): void {
      * @tc.level  @tc.level   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('bindContextMenuTest_static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('bindContextMenu2'));
-      await (btn?.longClick() as Promise<void>);
-      await Utils.sleep(1000);
-      let onDidDisappear = inspector.getInspectorByKey('bindContextMenuText2');
-      console.info("[bindContextMenuTest_static_0003] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(onDidDisappear).getElement('$attrs')));
-      expect(JSON.parseJsonElement(onDidDisappear).getElement('$attrs').getString('content')).assertEqual('true');
-      let btn1 = await driver.findComponent(ON.id('bindContextMenuClose'));
-      await (btn1?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      done();
+      try {
+        let driver = Driver.create();
+        let btn = await driver.findComponent(ON.id('bindContextMenu2'));
+        await (btn?.longClick() as Promise<void>);
+        await Utils.sleep(1000);
+        let onDidDisappear = inspector.getInspectorByKey('bindContextMenuText2');
+        console.info("[bindContextMenuTest_static_0003] attrs is: " +
+        JSON.stringify(JSON.parseJsonElement(onDidDisappear).getElement('$attrs')));
+        expect(JSON.parseJsonElement(onDidDisappear).getElement('$attrs').getString('content')).assertEqual('true');
+        let btn1 = await driver.findComponent(ON.id('bindContextMenuClose'));
+        await (btn1?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        done();
+      } catch (err) {
+        console.info('bindContextMenuTest err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -32,26 +32,9 @@ import { Callback, MessageManager } from '../../../ets/MainAbility/common/Messag
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function shapeTest() {
   describe('shapeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("shapeTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("shapeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -87,10 +70,18 @@ export default function shapeTest() {
      */
 it('shapeTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('shapeTest_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('shapePage_image');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('shapeTest sleep err: ' + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(strJson);
       console.info("[shapeTest_0100] strJson:" + obj.getString('$type'));
       expect(obj.getString('$type')).assertEqual('Image');

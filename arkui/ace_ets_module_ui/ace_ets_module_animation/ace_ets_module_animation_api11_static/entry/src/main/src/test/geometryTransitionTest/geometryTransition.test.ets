@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -28,20 +28,12 @@ import {
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import emitter from '@ohos.events.emitter';
-import { UtilsTest } from '../../test/Util.test'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function geometryTransition() {
   describe('geometryTransition', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("geometryTransition beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("geometryTransition beforeEach start");
@@ -75,13 +67,38 @@ export default function geometryTransition() {
 it('geometryTransition_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('geometryTransition_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('geometry_follow_1'));
-      await CommonFunc.sleep(2000);
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('geometryTransition_static_0100 err: ' + JSON.stringify(err));
+      }
+      let button: Component | undefined;
+      try {
+        button = await driver.findComponent(ON.id('geometry_follow_1'));
+      } catch (err) {
+        console.info('geometryTransition_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('geometryTransition_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('geometryTransition_static_0100 err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('geometryTransition_static_0100 err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('geometry_follow_2');
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('geometryTransition_static_0100 err: ' + JSON.stringify(err));
+      }
 
       console.info("[geometryTransition_static_0100] component JSON.parse(strJson) is: " +
       JSON.stringify(JSON.parseJsonElement(strJson)));

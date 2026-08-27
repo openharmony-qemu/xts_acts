@@ -15,23 +15,17 @@
  */
 
 import router from '@ohos.router';
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, Component, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, Component } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { uiMaterial } from '@kit.ArkUI';
-import { UtilsTest } from '../Util.test';
 
 export default function ImmersiveOptionsMaterialColorTest(): void {
   describe('ImmersiveOptionsMaterialColorTest', () => {
-    beforeAll(async () => {
-
-      console.info("ImmersiveOptionsMaterialColorTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
-    });
     beforeEach(async () => {
 
       let options: router.RouterOptions = {

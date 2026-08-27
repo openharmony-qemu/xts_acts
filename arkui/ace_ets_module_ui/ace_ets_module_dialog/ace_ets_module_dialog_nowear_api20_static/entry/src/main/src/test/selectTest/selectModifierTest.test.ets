@@ -16,30 +16,18 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { Color,$r } from '@ohos.arkui.component'
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
 
 export default function SelectModifierTest() {
   describe('SelectModifierTest', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(async (): Promise<void> => {
-      console.info("SelectModifierTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api20.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("SelectModifierTest beforeEach start");
       try {
@@ -106,7 +94,11 @@ export default function SelectModifierTest() {
       console.info("[selectModifier_static_0200] selectedOptionMaxLines is: " + selectedOptionTextModifier2);
       expect(selectedOptionTextModifier2).assertEqual('3');
       console.info('[' + tagName + '] END============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('SelectModifierTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -132,7 +124,11 @@ export default function SelectModifierTest() {
       console.info("[selectModifier_static_0300] optionMaxLines is: " + optionTextModifier2);
       expect(optionTextModifier2).assertEqual('4');
       console.info('[' + tagName + '] END============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('SelectModifierTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -154,7 +150,11 @@ export default function SelectModifierTest() {
       console.info("[selectModifier_static_0400] symbolColorList is: " + arrowModifier1);
       expect(arrowModifier1).assertEqual('#FFFF1238, #FFFF1238, #FFFF1238');
       console.info('[' + tagName + '] END============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('SelectModifierTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -193,7 +193,11 @@ export default function SelectModifierTest() {
       console.info("[selectModifier_static_0600] selectedOptionFontSize is: " + strJson1);
       expect(JSON.parseJsonElement(selectedOptionTextModifier).getString('size')).assertEqual('41.00vp');
       console.info('[' + tagName + '] END============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('SelectModifierTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -213,7 +217,11 @@ export default function SelectModifierTest() {
       console.info("[selectModifier_static_0700] optionFontSize is: " + strJson1);
       expect(JSON.parseJsonElement(optionTextModifier).getString('size')).assertEqual('42.00vp');
       console.info('[' + tagName + '] END============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('SelectModifierTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
 
@@ -232,7 +240,11 @@ export default function SelectModifierTest() {
       console.info("[selectModifier_static_0800] symbolFontSize is: " + arrowModifier);
       expect(arrowModifier).assertEqual('');
       console.info('[' + tagName + '] END============================');
-      await Utils.sleep(SLEEP_TIME_1000);
+      try {
+        await Utils.sleep(SLEEP_TIME_1000);
+      } catch (err) {
+        console.info('SelectModifierTest sleep err: ' + JSON.stringify(err));
+      }
       done();
     });
   })

@@ -15,20 +15,13 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../hypium/index';
-import { UtilsTest, startAbility } from './Util.test.ets';
+import { describe, beforeEach, it, expect, Level } from '../../../hypium/index';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 export default function CheckboxTest() {
   describe('CheckboxTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CheckboxTest beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.example.Checkbox.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {

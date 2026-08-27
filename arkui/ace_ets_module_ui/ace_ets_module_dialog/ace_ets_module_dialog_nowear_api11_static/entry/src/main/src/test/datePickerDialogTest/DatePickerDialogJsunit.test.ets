@@ -13,21 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest } from '../Util.test';
 
 export default function DatePickerDialogJsunit() {
   describe('DatePickerDialogJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DatePickerDialogJsunit beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
-    })
 
     beforeEach(async () => {
       console.info("DatePickerDialogJsunit beforeEach start");
@@ -60,6 +55,7 @@ export default function DatePickerDialogJsunit() {
      * @tc.level    Level.LEVEL2
      */
 it('DatePickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
 
       console.info('DatePickerDialogJsunit_0100 START');
 	    let driver = Driver.create()
@@ -74,6 +70,10 @@ it('DatePickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void):
       console.info('[DatePickerDialogJsunit_0100] END');
 	    await driver.pressBack();
       await CommonFunc.sleep(1500);
+      } catch (err) {
+        console.info('DatePickerDialogJsunit_0100 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done();
     });
 

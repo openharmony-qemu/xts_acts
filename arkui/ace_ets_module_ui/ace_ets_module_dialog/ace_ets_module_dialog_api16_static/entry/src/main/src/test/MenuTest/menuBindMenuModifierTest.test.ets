@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -31,23 +31,10 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function menuBindMenuModifierTest() {
   describe('menuBindMenuModifierTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
-    })
 
     beforeEach(async () => {
       console.info("menuBindMenuModifierTest beforeEach start");
@@ -62,7 +49,7 @@ export default function menuBindMenuModifierTest() {
         if (!("menuBindMenuModifierTest" == pages.name)) {
           console.info("get menuBindMenuModifierTest state pages.name: " + JSON.stringify(pages.name));
           menuBindMenuModifierTest.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(2500);
         }
       } catch (err) {
         console.error("push menuBindMenuModifierTest page error: " + err);
@@ -79,25 +66,30 @@ export default function menuBindMenuModifierTest() {
      */
 it('MenuBindMenu_static_0001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('MenuBindMenu_static_0001 START');
-      let driver: Driver = Driver.create();
-      let btn1 = (await driver.findComponent(ON.id('btnModifier1')));
-      await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let btn22 = (await driver.findComponent(ON.id('btnModifier2')));
-      await (btn22?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      await (btn22?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let btn33 = (await driver.findComponent(ON.id('btnModifier3')));
-      await (btn33?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      await (btn33?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let btn44 = (await driver.findComponent(ON.id('btnModifier4')));
-      await (btn44?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        let driver: Driver = Driver.create();
+        let btn1 = (await driver.findComponent(ON.id('btnModifier1')));
+        await (btn1?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        await (btn1?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let btn22 = (await driver.findComponent(ON.id('btnModifier2')));
+        await (btn22?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        await (btn22?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let btn33 = (await driver.findComponent(ON.id('btnModifier3')));
+        await (btn33?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        await (btn33?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let btn44 = (await driver.findComponent(ON.id('btnModifier4')));
+        await (btn44?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('MenuBindMenu_static_0001 err: ' + JSON.stringify(err));
+        expect().assertFail();
+      }
       done();
     });
   })

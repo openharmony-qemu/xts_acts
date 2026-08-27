@@ -13,29 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Color } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function themeTokenType() {
   describe('themeTokenType', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("themeTokenType beforeAll start");
-      await UtilsTest.startAbility('com.open.harmony.acetest.static', 'EntryAbility');
-      await UtilsTest.msSleep(2000)
-    });
 
     beforeEach(async () => {
       console.info('themeTokenType beforeEach start');
@@ -50,7 +37,7 @@ export default function themeTokenType() {
         if (!('themeTokenType' == pages.name)) {
           console.info('get themeTokenType pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2500);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push themeTokenType page error:' + err);
@@ -68,7 +55,11 @@ export default function themeTokenType() {
      */
     it('themeTokenType_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[themeTokenType_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('themeTokenType_static_0100 sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('localTheme_primary');
       console.info("[themeTokenType_static_0100] type: " +
         JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));

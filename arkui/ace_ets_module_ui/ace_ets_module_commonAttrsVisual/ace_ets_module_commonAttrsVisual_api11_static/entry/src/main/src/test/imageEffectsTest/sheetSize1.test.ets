@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -32,16 +32,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import bundle from '@ohos.bundle.bundleManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 const uiContext = new UIContext()
 let winLeft: number = 0
 let winTop: number = 0
@@ -51,13 +42,6 @@ AppStorage.setOrCreate<number>("winLeft", winTop);
 
 export default function sheetSize1Jsunit() {
   describe('sheetSize1Jsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("sheetSize1Jsunit beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("sheetSize1Jsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -89,10 +73,18 @@ export default function sheetSize1Jsunit() {
      */
 it('sheetSize1Jsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       // Get the sheetSize of the bindSheet
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('sheetSize1Test sleep err: ' + JSON.stringify(err));
+      }
       console.info('[sheetSize1Jsunit_0100] START');
       let strJson = inspector.getInspectorByKey('detents');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('sheetSize1Test sleep err: ' + JSON.stringify(err));
+      }
       console.info("[sheetSize1Jsunit_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[sheetSize1Jsunit_0100] component obj is: " +
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));

@@ -15,23 +15,17 @@
  */
 
 import router from '@ohos.router';
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { uiMaterial } from '@kit.ArkUI';
-import { UtilsTest } from '../Util.test';
 
 export default function UIMaterialTest(): void {
   describe('UIMaterialTest', () => {
-    beforeAll(async () => {
-
-      console.info("UIMaterialTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
-    });
     beforeEach(async () => {
 
       let options: router.RouterOptions = {
@@ -150,7 +144,11 @@ export default function UIMaterialTest(): void {
 
       console.info('MaterialInfoStateTest_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
+       try {
+         await CommonFunc.sleep(1000);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
 
       let textState = await driver.findComponent(ON.id('text_material_info_state'));
       let stateText = await (textState?.getText() as Promise<string>);
@@ -172,7 +170,11 @@ export default function UIMaterialTest(): void {
 
       console.info('MaterialInfoTypeTest_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
+       try {
+         await CommonFunc.sleep(1000);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
 
       let textType = await driver.findComponent(ON.id('text_material_info_type'));
       let typeText = await (textType?.getText() as Promise<string>);
@@ -194,7 +196,11 @@ export default function UIMaterialTest(): void {
 
       console.info('MaterialEmptyTest_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
+       try {
+         await CommonFunc.sleep(1000);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
 
       let emptyMaterial = uiMaterial.Material.empty;
       console.info('MaterialEmptyTest_0100 Material.empty: ' + JSON.stringify(emptyMaterial));
@@ -214,7 +220,11 @@ export default function UIMaterialTest(): void {
 
       console.info('MaterialTypeDisplayTest_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
+       try {
+         await CommonFunc.sleep(1000);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
 
       let textImmersive = await driver.findComponent(ON.id('text_material_type_immersive'));
       let immersiveText = await (textImmersive?.getText() as Promise<string>);
@@ -236,7 +246,11 @@ export default function UIMaterialTest(): void {
 
       console.info('MaterialStateDisplayTest_0100 START');
       let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
+       try {
+         await CommonFunc.sleep(1000);
+       } catch (err) {
+         console.info('await err: ' + JSON.stringify(err));
+       }
 
       let textDefault = await driver.findComponent(ON.id('text_material_state_default'));
       let defaultText = await (textDefault?.getText() as Promise<string>);

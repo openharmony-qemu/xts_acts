@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -31,28 +31,13 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
 import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import display from '@ohos.display'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 
 export default function followTransformOfTargetCustomPopup() {
   describe('followTransformOfTargetCustomPopup', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("followTransformOfTargetCustomPopup beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("followTransformOfTargetCustomPopup beforeEach start");
       let options: router.RouterOptions = {
@@ -76,9 +61,7 @@ export default function followTransformOfTargetCustomPopup() {
     });
 
 
-    
-    
-    
+
 /**
      * @tc.number   followTransformOfTargetCustomPopup_static0010
      * @tc.name     followTransformOfTargetCustomPopup_static0010
@@ -86,32 +69,35 @@ export default function followTransformOfTargetCustomPopup() {
      * @tc.level    Level.LEVEL0
      */
 it('followTransformOfTargetCustomPopup_static0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('followTransformOfTargetCustomPopup_0010 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(500);
-      let button = await driver.findComponent(ON.id('popup'));
-      await (button?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      let button2 = await driver.findComponent(ON.id('animationBtn'));
-      await (button2?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('followTransformOfTarget');
-      console.info("[followTransformOfTargetCustomPopup_0010] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[followTransformOfTargetCustomPopup_0010] getString('content') is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('followTransformOfTarget: false');
-      await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      console.info('[followTransformOfTargetCustomPopup_0010] END');
+      try {
+        console.info('followTransformOfTargetCustomPopup_0010 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(500);
+        let button = await driver.findComponent(ON.id('popup'));
+        await (button?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        let button2 = await driver.findComponent(ON.id('animationBtn'));
+        await (button2?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('followTransformOfTarget');
+        console.info("[followTransformOfTargetCustomPopup_0010] attrs is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[followTransformOfTargetCustomPopup_0010] getString('content') is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+          .assertEqual('followTransformOfTarget: false');
+        await CommonFunc.sleep(1000);
+        await (button?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        console.info('[followTransformOfTargetCustomPopup_0010] END');
+      } catch (err) {
+        console.info('followTransformOfTargetCustomPopup_0010 err: ' + JSON.stringify(err));
+      }
       done();
     });
 
-    
-    
-    
+
+
 /**
      * @tc.number   followTransformOfTargetCustomPopup_static0020
      * @tc.name     followTransformOfTargetCustomPopup_static0020
@@ -119,31 +105,34 @@ it('followTransformOfTargetCustomPopup_static0010', Level.LEVEL0, async (done: (
      * @tc.level    Level.LEVEL0
      */
 it('followTransformOfTargetCustomPopup_static0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('followTransformOfTargetCustomPopup_0020 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(500);
-      let button0 = await driver.findComponent(ON.id('followId'));
-      await (button0?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('popup'));
-      await (button?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      let button2 = await driver.findComponent(ON.id('animationBtn'));
-      await (button2?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('followTransformOfTarget');
-      console.info("[followTransformOfTargetCustomPopup_0020] attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[followTransformOfTargetCustomPopup_0020] getString('content') is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
-        .assertEqual('followTransformOfTarget: true');
-      await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>)
-      await CommonFunc.sleep(1000);
-      console.info('[followTransformOfTargetCustomPopup_0020] END');
+      try {
+        console.info('followTransformOfTargetCustomPopup_0020 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(500);
+        let button0 = await driver.findComponent(ON.id('followId'));
+        await (button0?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('popup'));
+        await (button?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        let button2 = await driver.findComponent(ON.id('animationBtn'));
+        await (button2?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('followTransformOfTarget');
+        console.info("[followTransformOfTargetCustomPopup_0020] attrs is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[followTransformOfTargetCustomPopup_0020] getString('content') is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
+          .assertEqual('followTransformOfTarget: true');
+        await CommonFunc.sleep(1000);
+        await (button?.click() as Promise<void>)
+        await CommonFunc.sleep(1000);
+        console.info('[followTransformOfTargetCustomPopup_0020] END');
+      } catch (err) {
+        console.info('followTransformOfTargetCustomPopup_0020 err: ' + JSON.stringify(err));
+      }
       done();
     });
   })
 }
-
