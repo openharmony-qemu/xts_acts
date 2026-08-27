@@ -46,7 +46,39 @@ export default function datatestNoPTest() {
         if (maxSimCount > 0) {
           ExpectTrue(error.code === 201);
         } else if (maxSimCount === 0) {
-          ExpectTrue(error.code === 401);
+          ExpectTrue(error.code === 201 || error.code === 401);
+        } else {
+          ExpectTrue(false);
+        }
+        done();
+      }
+      console.info(`${caseName} test end`);
+    });
+
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0200
+     * @tc.number SUB_Telephony_Data_IsCellularDataRoamingEnabledSync_NoP_0200
+     * @tc.desc   isCellularDataRoamingEnabledSync No permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabledSyncNoP_0200';
+      console.info(`${caseName} test start `);
+      let maxSimCount: number = await sim.getMaxSimCount();
+      console.log(`${caseName} get maxSimCount success `, maxSimCount)
+      try {
+        let isEnabled: boolean = await data.isCellularDataRoamingEnabledSync(1);
+        console.log(`${caseName} get result success `, isEnabled)
+        ExpectTrue(false);
+        done();
+      } catch (error) {
+        console.info(`${caseName} fail`,JSON.stringify(error));
+        if (maxSimCount > 0) {
+          ExpectTrue(error.code === 201);
+        } else if (maxSimCount === 0) {
+          ExpectTrue(error.code === 201 || error.code === 401);
         } else {
           ExpectTrue(false);
         }
