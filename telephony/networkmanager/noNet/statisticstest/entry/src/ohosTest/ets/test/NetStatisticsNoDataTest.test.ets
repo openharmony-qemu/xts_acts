@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll,it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, beforeAll, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 import statistics from '@ohos.net.statistics';
 import connection from '@ohos.net.connection';
@@ -29,7 +29,7 @@ const ExpectTrue: (n: boolean, caseName?: string) => void = (n: boolean, caseNam
   }
 }
 
-let hasData: boolean;
+let cellularDisabledBySuite: boolean = false;
 
 async function getApplicationUid(): Promise<number> {
   try {
@@ -49,6 +49,46 @@ export default function   netStatisticsNoDataTest() {
 
   describe('NetStatisticsNoDataTest', () => {
 
+    beforeAll(async () => {
+      try {
+        let netHandle = await connection.getDefaultNet();
+        console.info(`NetStatisticsNoDataTest beforeAll netHandle is ${JSON.stringify(netHandle)}`);
+        if (netHandle.netId == 0) {
+          console.info(`NetStatisticsNoDataTest beforeAll no default network`);
+          return;
+        }
+        let netCapabilities = await connection.getNetCapabilities(netHandle);
+        if (netCapabilities.bearerTypes.includes(connection.NetBearType.BEARER_WIFI)) {
+          console.info(`NetStatisticsNoDataTest beforeAll current network is WIFI, do nothing`);
+        } else if (netCapabilities.bearerTypes.includes(connection.NetBearType.BEARER_CELLULAR)) {
+          console.info(`NetStatisticsNoDataTest beforeAll current network is CELLULAR, disable cellular data`);
+          try {
+            await data.disableCellularData();
+            cellularDisabledBySuite = true;
+            console.info(`NetStatisticsNoDataTest beforeAll disableCellularData success`);
+          } catch (err) {
+            console.info(`NetStatisticsNoDataTest beforeAll disableCellularData failed ${JSON.stringify(err)}`);
+          }
+        } else {
+          console.info(`NetStatisticsNoDataTest beforeAll current network bearerTypes is ${JSON.stringify(netCapabilities.bearerTypes)}`);
+        }
+      } catch (err) {
+        console.info(`NetStatisticsNoDataTest beforeAll getDefaultNet or getNetCapabilities failed ${JSON.stringify(err)}`);
+      }
+    });
+
+    afterAll(async () => {
+      console.info(`NetStatisticsNoDataTest afterAll cellularDisabledBySuite is ${cellularDisabledBySuite}`);
+      if (cellularDisabledBySuite) {
+        try {
+          await data.enableCellularData();
+          console.info(`NetStatisticsNoDataTest afterAll enableCellularData success`);
+        } catch (err) {
+          console.info(`NetStatisticsNoDataTest afterAll enableCellularData failed ${JSON.stringify(err)}`);
+        }
+      }
+      cellularDisabledBySuite = false;
+    });
 
     /**
      * @tc.name   testNetworkMgrStatisticsGetCellularRxBytes0500
