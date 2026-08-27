@@ -196,6 +196,7 @@ export default class UtilsHelpers {
     return rectInfo;
   }
 
+
   static getComponentRect(rawJson: string): RectInfo {
     let strJson: string = inspector.getInspectorByKey(rawJson);
     console.info('getInspectorByKey(key) = ' + strJson);
