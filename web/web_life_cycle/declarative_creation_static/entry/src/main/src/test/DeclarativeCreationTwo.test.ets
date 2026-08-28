@@ -38,13 +38,13 @@ export default function declarativeCreationTwo():void {
       console.info('declarativeCreationOne afterEach end');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SETWEBCONTROLLER_0200
-    * @tc.name       : testSetWebControllerStatic
-    * @tc.desc       : test setWebController
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
+    /**
+    * @tc.number     SUB_WEB_SETWEBCONTROLLER_0200
+    * @tc.name       testSetWebControllerStatic
+    * @tc.desc       test setWebController
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 1
     */
     it('testSetWebControllerStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
