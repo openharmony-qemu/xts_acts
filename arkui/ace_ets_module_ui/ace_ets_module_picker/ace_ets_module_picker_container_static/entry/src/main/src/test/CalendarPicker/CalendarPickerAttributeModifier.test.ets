@@ -181,7 +181,7 @@ export default function CalendarPickerAttributeModifierTest() {
       let textStyle = obj.getElement('$attrs').getElement('textStyle');
       expect(textStyle.getString('color')).assertContain('#');
       expect(textStyle.getElement('font').getString('size')).assertEqual('16.00fp');
-      expect(textStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
+      expect(textStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
       done();
     });
 
