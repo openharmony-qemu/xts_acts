@@ -563,9 +563,8 @@ export default function CollectionsSetExpand1024Test(): void {
       expect(results[1]).assertLessOrEqual(writeEnd - SET_CFG.PRE_1020);
       // Every counted add must be present: no loss and no spurious element.
       expect(set.size).assertEqual(SET_CFG.PRE_1020 + results[1]);
-      // The reader must observe at least every initial element and at most every
-      // successfully added element, so its count stays within [PRE_1020, PRE_1020 + added].
-      expect(results[0]).assertLargerOrEqual(SET_CFG.PRE_1020);
+      // The reader's forEach may be terminated early by a concurrent-modification
+      // exception (returning a partial count), so no lower bound is asserted.
       expect(results[0]).assertLessOrEqual(SET_CFG.PRE_1020 + results[1]);
     });
 

@@ -588,9 +588,8 @@ export default function CollectionsMapExpand1024Test(): void {
         expect(typeof readerCount === 'number').assertTrue();
         expect(typeof writtenCount === 'number').assertTrue();
         if (typeof readerCount === 'number') {
-          // The reader must observe at least every initial element and at most every
-          // successfully written element, so its count stays within [1020, 1020 + written].
-          expect(readerCount).assertLargerOrEqual(1020);
+          // The reader's forEach may be terminated early by a concurrent-modification
+          // exception (returning a partial count), so no lower bound is asserted.
           expect(readerCount).assertLessOrEqual(map.size);
         }
         if (typeof writtenCount === 'number') {

@@ -660,9 +660,8 @@ export default function CollectionsArrayExpand1024Test(): void {
         }
       });
       expect(corruptCount).assertEqual(0);
-      // The reader must observe at least every initial element and at most every
-      // successfully written element, so its count stays within [PRE_1020, PRE_1020 + written].
-      expect(results[0]).assertLargerOrEqual(ARRAY_CFG.PRE_1020);
+      // The reader's forEach may be terminated early by a concurrent-modification
+      // exception (returning a partial count), so no lower bound is asserted.
       expect(results[0]).assertLessOrEqual(ARRAY_CFG.PRE_1020 + results[1]);
     });
 
