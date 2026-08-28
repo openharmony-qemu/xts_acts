@@ -46,7 +46,7 @@ async function onShowProcess() {
   callBackSeq = "";
 }
 
-async function startAbilityProcess(AppDSecondAbilityContext, parameters) {
+async function startAbilityProcess(appDSecondAbilityContext, parameters) {
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
@@ -92,7 +92,7 @@ async function startAbilityProcess(AppDSecondAbilityContext, parameters) {
       break;
   }
   parameters.nextStep = ++idx;
-  AppDSecondAbilityContext.startAbility({
+  appDSecondAbilityContext.startAbility({
     bundleName: bundleName,
     abilityName: abilityName,
     parameters: parameters
