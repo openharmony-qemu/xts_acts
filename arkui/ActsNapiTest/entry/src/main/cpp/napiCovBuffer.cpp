@@ -549,7 +549,8 @@ static napi_value CreateExternalArraybufferRuntime(napi_env env, napi_callback_i
         }
         static char extAB[] = "arraybuf";
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_external_arraybuffer(newEnv, extAB, EXT_BUFFER_SIZE, nullptr, nullptr, &napiRet);
+        napi_status status = napi_create_external_arraybuffer(newEnv, extAB, EXT_BUFFER_SIZE,
+            nullptr, nullptr, &napiRet);
         int32_t ret = status != napi_ok ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);

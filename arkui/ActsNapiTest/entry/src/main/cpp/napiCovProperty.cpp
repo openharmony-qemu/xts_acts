@@ -19,6 +19,7 @@
 #include <atomic>
 
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const int32_t PROPERTY_TEST_VALUE = 42;
 
 static napi_value GetPropertyNamesStable(napi_env env, napi_callback_info info)
 {
@@ -126,7 +127,7 @@ static napi_value SetPropertyStable(napi_env env, napi_callback_info info)
         napi_value key = nullptr;
         napi_value val = nullptr;
         napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
         napi_status status = napi_set_property(env, obj, key, val);
         int32_t singleRet = status == napi_ok ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
@@ -167,7 +168,7 @@ static napi_value SetPropertyMultiCtx(napi_env env, napi_callback_info info)
     napi_value key = nullptr;
     napi_value val = nullptr;
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
     napi_status status = napi_set_property(env, obj, key, val);
     int32_t ret = status == napi_ok ? 1 : 0;
     napi_switch_ark_context(env);
@@ -190,7 +191,7 @@ static napi_value SetPropertyRuntime(napi_env env, napi_callback_info info)
         napi_value key = nullptr;
         napi_value val = nullptr;
         napi_create_string_utf8(newEnv, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, PROPERTY_TEST_VALUE, &val);
         napi_status status = napi_set_property(newEnv, obj, key, val);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);
@@ -223,7 +224,7 @@ static napi_value GetPropertyStable(napi_env env, napi_callback_info info)
         napi_value key = nullptr;
         napi_value val = nullptr;
         napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
         napi_set_property(env, obj, key, val);
         napi_value result = nullptr;
         napi_status status = napi_get_property(env, obj, key, &result);
@@ -266,7 +267,7 @@ static napi_value GetPropertyMultiCtx(napi_env env, napi_callback_info info)
     napi_value key = nullptr;
     napi_value val = nullptr;
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
     napi_set_property(env, obj, key, val);
     napi_value result = nullptr;
     napi_status status = napi_get_property(env, obj, key, &result);
@@ -291,7 +292,7 @@ static napi_value GetPropertyRuntime(napi_env env, napi_callback_info info)
         napi_value key = nullptr;
         napi_value val = nullptr;
         napi_create_string_utf8(newEnv, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, PROPERTY_TEST_VALUE, &val);
         napi_set_property(newEnv, obj, key, val);
         napi_value napiRet = nullptr;
         napi_status status = napi_get_property(newEnv, obj, key, &napiRet);
@@ -331,7 +332,7 @@ static napi_value HasPropertyRetVal(napi_env env, napi_callback_info info)
     napi_value key = nullptr;
     napi_value val = nullptr;
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
     napi_set_property(env, obj, key, val);
     bool has = false;
     napi_status status = napi_has_property(env, obj, key, &has);
@@ -351,7 +352,7 @@ static napi_value HasPropertyStable(napi_env env, napi_callback_info info)
         napi_value key = nullptr;
         napi_value val = nullptr;
         napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
         napi_set_property(env, obj, key, val);
         bool has = false;
         napi_status status = napi_has_property(env, obj, key, &has);
@@ -394,7 +395,7 @@ static napi_value HasPropertyMultiCtx(napi_env env, napi_callback_info info)
     napi_value key = nullptr;
     napi_value val = nullptr;
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
     napi_set_property(env, obj, key, val);
     bool has = false;
     napi_status status = napi_has_property(env, obj, key, &has);
@@ -419,7 +420,7 @@ static napi_value HasPropertyRuntime(napi_env env, napi_callback_info info)
         napi_value key = nullptr;
         napi_value val = nullptr;
         napi_create_string_utf8(newEnv, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, PROPERTY_TEST_VALUE, &val);
         napi_set_property(newEnv, obj, key, val);
         bool has = false;
         napi_status status = napi_has_property(newEnv, obj, key, &has);
@@ -706,7 +707,7 @@ static napi_value SetNamedPropertyRetVal(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
     napi_status status = napi_set_named_property(env, obj, "myKey", val);
     int32_t ret = status == napi_ok ? 1 : 0;
     napi_close_handle_scope(env, scope);
@@ -722,7 +723,7 @@ static napi_value SetNamedPropertyStable(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(env, &obj);
         napi_value val = nullptr;
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
         napi_status status = napi_set_named_property(env, obj, "myKey", val);
         int32_t singleRet = status == napi_ok ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
@@ -761,7 +762,7 @@ static napi_value SetNamedPropertyMultiCtx(napi_env env, napi_callback_info info
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
     napi_status status = napi_set_named_property(env, obj, "myKey", val);
     int32_t ret = status == napi_ok ? 1 : 0;
     napi_switch_ark_context(env);
@@ -782,7 +783,7 @@ static napi_value SetNamedPropertyRuntime(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(newEnv, &obj);
         napi_value val = nullptr;
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, PROPERTY_TEST_VALUE, &val);
         napi_status status = napi_set_named_property(newEnv, obj, "myKey", val);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);
@@ -813,7 +814,7 @@ static napi_value GetNamedPropertyStable(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(env, &obj);
         napi_value val = nullptr;
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
         napi_set_named_property(env, obj, "myKey", val);
         napi_value result = nullptr;
         napi_status status = napi_get_named_property(env, obj, "myKey", &result);
@@ -854,7 +855,7 @@ static napi_value GetNamedPropertyMultiCtx(napi_env env, napi_callback_info info
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
     napi_set_named_property(env, obj, "myKey", val);
     napi_value result = nullptr;
     napi_status status = napi_get_named_property(env, obj, "myKey", &result);
@@ -877,7 +878,7 @@ static napi_value GetNamedPropertyRuntime(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(newEnv, &obj);
         napi_value val = nullptr;
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, PROPERTY_TEST_VALUE, &val);
         napi_set_named_property(newEnv, obj, "myKey", val);
         napi_value napiRet = nullptr;
         napi_status status = napi_get_named_property(newEnv, obj, "myKey", &napiRet);
@@ -908,7 +909,7 @@ static napi_value HasNamedPropertyRetVal(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
     napi_set_named_property(env, obj, "myKey", val);
     bool has = false;
     napi_status status = napi_has_named_property(env, obj, "myKey", &has);
@@ -926,7 +927,7 @@ static napi_value HasNamedPropertyStable(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(env, &obj);
         napi_value val = nullptr;
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
         napi_set_named_property(env, obj, "myKey", val);
         bool has = false;
         napi_status status = napi_has_named_property(env, obj, "myKey", &has);
@@ -967,7 +968,7 @@ static napi_value HasNamedPropertyMultiCtx(napi_env env, napi_callback_info info
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &val);
     napi_set_named_property(env, obj, "myKey", val);
     bool has = false;
     napi_status status = napi_has_named_property(env, obj, "myKey", &has);
@@ -990,7 +991,7 @@ static napi_value HasNamedPropertyRuntime(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(newEnv, &obj);
         napi_value val = nullptr;
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, PROPERTY_TEST_VALUE, &val);
         napi_set_named_property(newEnv, obj, "myKey", val);
         bool has = false;
         napi_status status = napi_has_named_property(newEnv, obj, "myKey", &has);
@@ -1025,7 +1026,7 @@ static napi_value DefinePropertiesStable(napi_env env, napi_callback_info info)
         napi_value propName = nullptr;
         napi_value propVal = nullptr;
         napi_create_string_utf8(env, "prop", NAPI_AUTO_LENGTH, &propName);
-        napi_create_int32(env, 42, &propVal);
+        napi_create_int32(env, PROPERTY_TEST_VALUE, &propVal);
         napi_property_descriptor desc[] = {
             {"prop", nullptr, nullptr, nullptr, nullptr, propVal, napi_default, nullptr}
         };
@@ -1069,7 +1070,7 @@ static napi_value DefinePropertiesMultiCtx(napi_env env, napi_callback_info info
     napi_value propName = nullptr;
     napi_value propVal = nullptr;
     napi_create_string_utf8(env, "prop", NAPI_AUTO_LENGTH, &propName);
-    napi_create_int32(env, 42, &propVal);
+    napi_create_int32(env, PROPERTY_TEST_VALUE, &propVal);
     napi_property_descriptor desc[] = {{"prop", nullptr, nullptr, nullptr, nullptr, propVal, napi_default, nullptr}};
     napi_status status = napi_define_properties(env, obj, 1, desc);
     int32_t ret = status == napi_ok ? 1 : 0;
@@ -1093,7 +1094,7 @@ static napi_value DefinePropertiesRuntime(napi_env env, napi_callback_info info)
         napi_value propName = nullptr;
         napi_value propVal = nullptr;
         napi_create_string_utf8(newEnv, "prop", NAPI_AUTO_LENGTH, &propName);
-        napi_create_int32(newEnv, 42, &propVal);
+        napi_create_int32(newEnv, PROPERTY_TEST_VALUE, &propVal);
         napi_property_descriptor desc[] = {
             {"prop", nullptr, nullptr, nullptr, nullptr, propVal, napi_default, nullptr}
         };

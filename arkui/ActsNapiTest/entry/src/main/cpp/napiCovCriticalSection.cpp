@@ -295,8 +295,10 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("closeCriticalScopeRuntime", CloseCriticalScopeRuntime),
         DECLARE_NAPI_FUNCTION("closeCriticalScopeWorker", CloseCriticalScopeWorker),
         DECLARE_NAPI_FUNCTION("getBufferStringUtf16InCriticalScopeStable", GetBufferStringUtf16InCriticalScopeStable),
-        DECLARE_NAPI_FUNCTION("getBufferStringUtf16InCriticalScopeMultiThread", GetBufferStringUtf16InCriticalScopeMultiThread),
-        DECLARE_NAPI_FUNCTION("getBufferStringUtf16InCriticalScopeMultiCtx", GetBufferStringUtf16InCriticalScopeMultiCtx),
+        DECLARE_NAPI_FUNCTION("getBufferStringUtf16InCriticalScopeMultiThread",
+            GetBufferStringUtf16InCriticalScopeMultiThread),
+        DECLARE_NAPI_FUNCTION("getBufferStringUtf16InCriticalScopeMultiCtx",
+            GetBufferStringUtf16InCriticalScopeMultiCtx),
         DECLARE_NAPI_FUNCTION("getBufferStringUtf16InCriticalScopeRuntime", GetBufferStringUtf16InCriticalScopeRuntime),
         DECLARE_NAPI_FUNCTION("getBufferStringUtf16InCriticalScopeWorker", GetBufferStringUtf16InCriticalScopeWorker),
     };

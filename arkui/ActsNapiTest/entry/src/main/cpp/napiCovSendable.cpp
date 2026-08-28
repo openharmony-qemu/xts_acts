@@ -20,6 +20,9 @@
 
 static const int32_t STABLE_LOOP_COUNT = 10;
 static const int32_t NATIVE_DATA_VALUE = 42;
+static const int32_t SENDABLE_ARRAYBUFFER_LENGTH = 16;
+static const int32_t SENDABLE_TYPEDARRAY_ELEMENT_COUNT = 4;
+static const int32_t SENDABLE_TEST_VALUE = 42;
 
 static napi_value Constructor(napi_env env, napi_callback_info info)
 {
@@ -155,7 +158,8 @@ static napi_value DefineSendableClassMultiThread(napi_env env, napi_callback_inf
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_define_sendable_class(savedEnv, nullptr, 0, nullptr, nullptr, 0, nullptr, nullptr, nullptr);
+        napi_status status = napi_define_sendable_class(savedEnv, nullptr, 0, nullptr,
+            nullptr, 0, nullptr, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
@@ -188,7 +192,8 @@ static napi_value DefineSendableClassWorker(napi_env env, napi_callback_info inf
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_define_sendable_class(savedEnv, nullptr, 0, nullptr, nullptr, 0, nullptr, nullptr, nullptr);
+        napi_status status = napi_define_sendable_class(savedEnv, nullptr, 0, nullptr,
+            nullptr, 0, nullptr, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
@@ -209,7 +214,7 @@ static napi_value CreateSendableObjectWithPropertiesRetVal(napi_env env, napi_ca
     napi_value key = nullptr;
     napi_value val = nullptr;
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, SENDABLE_TEST_VALUE, &val);
     napi_property_descriptor desc[] = {{"key", nullptr, nullptr, nullptr, nullptr, val, napi_default, nullptr}};
     napi_value result = nullptr;
     napi_status status = napi_create_sendable_object_with_properties(env, 1, desc, &result);
@@ -227,7 +232,7 @@ static napi_value CreateSendableObjectWithPropertiesStable(napi_env env, napi_ca
         napi_value key = nullptr;
         napi_value val = nullptr;
         napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, SENDABLE_TEST_VALUE, &val);
         napi_property_descriptor desc[] = {{"key", nullptr, nullptr, nullptr, nullptr, val, napi_default, nullptr}};
         napi_value result = nullptr;
         napi_status status = napi_create_sendable_object_with_properties(env, 1, desc, &result);
@@ -268,7 +273,7 @@ static napi_value CreateSendableObjectWithPropertiesMultiCtx(napi_env env, napi_
     napi_value key = nullptr;
     napi_value val = nullptr;
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, SENDABLE_TEST_VALUE, &val);
     napi_property_descriptor desc[] = {{"key", nullptr, nullptr, nullptr, nullptr, val, napi_default, nullptr}};
     napi_value result = nullptr;
     napi_status status = napi_create_sendable_object_with_properties(env, 1, desc, &result);
@@ -463,7 +468,7 @@ static napi_value CreateSendableArraybufferRetVal(napi_env env, napi_callback_in
     napi_open_handle_scope(env, &scope);
     void* data = nullptr;
     napi_value result = nullptr;
-    napi_status status = napi_create_sendable_arraybuffer(env, 16, &data, &result);
+        napi_status status = napi_create_sendable_arraybuffer(env, SENDABLE_ARRAYBUFFER_LENGTH, &data, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_close_handle_scope(env, scope);
     return Ret(env, ret);
@@ -477,7 +482,7 @@ static napi_value CreateSendableArraybufferStable(napi_env env, napi_callback_in
         napi_open_handle_scope(env, &loopScope);
         void* data = nullptr;
         napi_value result = nullptr;
-        napi_status status = napi_create_sendable_arraybuffer(env, 16, &data, &result);
+    napi_status status = napi_create_sendable_arraybuffer(env, SENDABLE_ARRAYBUFFER_LENGTH, &data, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -514,7 +519,7 @@ static napi_value CreateSendableArraybufferMultiCtx(napi_env env, napi_callback_
     }
     void* data = nullptr;
     napi_value result = nullptr;
-    napi_status status = napi_create_sendable_arraybuffer(env, 16, &data, &result);
+        napi_status status = napi_create_sendable_arraybuffer(env, SENDABLE_ARRAYBUFFER_LENGTH, &data, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -546,9 +551,10 @@ static napi_value CreateSendableTypedarrayRetVal(napi_env env, napi_callback_inf
     napi_open_handle_scope(env, &scope);
     void* data = nullptr;
     napi_value ab = nullptr;
-    napi_create_sendable_arraybuffer(env, 16, &data, &ab);
+        napi_create_sendable_arraybuffer(env, SENDABLE_ARRAYBUFFER_LENGTH, &data, &ab);
     napi_value result = nullptr;
-    napi_status status = napi_create_sendable_typedarray(env, napi_int8_array, 4, ab, 0, &result);
+    napi_status status = napi_create_sendable_typedarray(env, napi_int8_array,
+        SENDABLE_TYPEDARRAY_ELEMENT_COUNT, ab, 0, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_close_handle_scope(env, scope);
     return Ret(env, ret);
@@ -562,9 +568,10 @@ static napi_value CreateSendableTypedarrayStable(napi_env env, napi_callback_inf
         napi_open_handle_scope(env, &loopScope);
         void* data = nullptr;
         napi_value ab = nullptr;
-        napi_create_sendable_arraybuffer(env, 16, &data, &ab);
+    napi_create_sendable_arraybuffer(env, SENDABLE_ARRAYBUFFER_LENGTH, &data, &ab);
         napi_value result = nullptr;
-        napi_status status = napi_create_sendable_typedarray(env, napi_int8_array, 4, ab, 0, &result);
+        napi_status status = napi_create_sendable_typedarray(env, napi_int8_array,
+            SENDABLE_TYPEDARRAY_ELEMENT_COUNT, ab, 0, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -601,9 +608,10 @@ static napi_value CreateSendableTypedarrayMultiCtx(napi_env env, napi_callback_i
     }
     void* data = nullptr;
     napi_value ab = nullptr;
-    napi_create_sendable_arraybuffer(env, 16, &data, &ab);
+        napi_create_sendable_arraybuffer(env, SENDABLE_ARRAYBUFFER_LENGTH, &data, &ab);
     napi_value result = nullptr;
-    napi_status status = napi_create_sendable_typedarray(env, napi_int8_array, 4, ab, 0, &result);
+    napi_status status = napi_create_sendable_typedarray(env, napi_int8_array,
+        SENDABLE_TYPEDARRAY_ELEMENT_COUNT, ab, 0, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -1269,7 +1277,8 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("createSendableObjectWithPropertiesAbnormal", CreateSendableObjectWithPropertiesAbnormal),
         DECLARE_NAPI_FUNCTION("createSendableObjectWithPropertiesRetVal", CreateSendableObjectWithPropertiesRetVal),
         DECLARE_NAPI_FUNCTION("createSendableObjectWithPropertiesStable", CreateSendableObjectWithPropertiesStable),
-        DECLARE_NAPI_FUNCTION("createSendableObjectWithPropertiesMultiThread", CreateSendableObjectWithPropertiesMultiThread),
+        DECLARE_NAPI_FUNCTION("createSendableObjectWithPropertiesMultiThread",
+            CreateSendableObjectWithPropertiesMultiThread),
         DECLARE_NAPI_FUNCTION("createSendableObjectWithPropertiesMultiCtx", CreateSendableObjectWithPropertiesMultiCtx),
         DECLARE_NAPI_FUNCTION("createSendableObjectWithPropertiesWorker", CreateSendableObjectWithPropertiesWorker),
         DECLARE_NAPI_FUNCTION("createSendableArrayAbnormal", CreateSendableArrayAbnormal),

@@ -22,6 +22,7 @@ static const int32_t STABLE_LOOP_COUNT = 10;
 static const int32_t ARRAY_BUFFER_BYTE_LENGTH = 16;
 static const int32_t DATAVIEW_BYTE_LENGTH = 8;
 static const int32_t ARRAY_LENGTH = 3;
+static const int32_t TYPEDARRAY_ELEMENT_COUNT = 4;
 static const int32_t ARRAY_TEST_INT_VALUE = 42;
 
 static napi_value CreateArrayRetVal(napi_env env, napi_callback_info info)
@@ -775,7 +776,7 @@ static napi_value CreateTypedarrayStable(napi_env env, napi_callback_info info)
         void* abData = nullptr;
         napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value result = nullptr;
-        napi_status status = napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &result);
+    napi_status status = napi_create_typedarray(env, napi_int8_array, TYPEDARRAY_ELEMENT_COUNT, ab, 0, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -814,7 +815,7 @@ static napi_value CreateTypedarrayMultiCtx(napi_env env, napi_callback_info info
     void* abData = nullptr;
     napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
     napi_value result = nullptr;
-    napi_status status = napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &result);
+        napi_status status = napi_create_typedarray(env, napi_int8_array, TYPEDARRAY_ELEMENT_COUNT, ab, 0, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -835,7 +836,7 @@ static napi_value CreateTypedarrayRuntime(napi_env env, napi_callback_info info)
         void* abData = nullptr;
         napi_create_arraybuffer(newEnv, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_typedarray(newEnv, napi_int8_array, 4, ab, 0, &napiRet);
+        napi_status status = napi_create_typedarray(newEnv, napi_int8_array, TYPEDARRAY_ELEMENT_COUNT, ab, 0, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -866,7 +867,7 @@ static napi_value IsTypedarrayStable(napi_env env, napi_callback_info info)
         void* abData = nullptr;
         napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value ta = nullptr;
-        napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &ta);
+        napi_create_typedarray(env, napi_int8_array, TYPEDARRAY_ELEMENT_COUNT, ab, 0, &ta);
         bool isTA = false;
         napi_status status = napi_is_typedarray(env, ta, &isTA);
         int32_t singleRet = (status == napi_ok && isTA) ? 1 : 0;
@@ -907,7 +908,7 @@ static napi_value IsTypedarrayMultiCtx(napi_env env, napi_callback_info info)
     void* abData = nullptr;
     napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
     napi_value ta = nullptr;
-    napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &ta);
+    napi_create_typedarray(env, napi_int8_array, TYPEDARRAY_ELEMENT_COUNT, ab, 0, &ta);
     bool isTA = false;
     napi_status status = napi_is_typedarray(env, ta, &isTA);
     int32_t ret = (status == napi_ok && isTA) ? 1 : 0;
@@ -938,7 +939,7 @@ static napi_value GetTypedarrayInfoStable(napi_env env, napi_callback_info info)
         void* abData = nullptr;
         napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value ta = nullptr;
-        napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &ta);
+        napi_create_typedarray(env, napi_int8_array, TYPEDARRAY_ELEMENT_COUNT, ab, 0, &ta);
         napi_typedarray_type type = napi_int8_array;
         size_t len = 0;
         void* data = nullptr;
@@ -982,7 +983,7 @@ static napi_value GetTypedarrayInfoMultiCtx(napi_env env, napi_callback_info inf
     void* abData = nullptr;
     napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
     napi_value ta = nullptr;
-    napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &ta);
+    napi_create_typedarray(env, napi_int8_array, TYPEDARRAY_ELEMENT_COUNT, ab, 0, &ta);
     napi_typedarray_type type = napi_int8_array;
     size_t len = 0;
     void* data = nullptr;

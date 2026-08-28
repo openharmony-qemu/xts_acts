@@ -41,7 +41,8 @@ static void AsyncComplete(napi_env env, napi_status status, void* data)
 
 static napi_value CreateThreadsafeFunctionAbnormal(napi_env env, napi_callback_info info)
 {
-    napi_status status = napi_create_threadsafe_function(env, nullptr, nullptr, nullptr, 0, 0, nullptr, nullptr, nullptr, nullptr, nullptr);
+    napi_status status = napi_create_threadsafe_function(env, nullptr, nullptr, nullptr, 0, 0,
+        nullptr, nullptr, nullptr, nullptr, nullptr);
     int32_t ret = status != napi_ok ? 1 : 0;
     return Ret(env, ret);
 }
@@ -53,7 +54,8 @@ static napi_value CreateThreadsafeFunctionRetVal(napi_env env, napi_callback_inf
     napi_value name = nullptr;
     napi_create_string_utf8(env, "tsfn", NAPI_AUTO_LENGTH, &name);
     napi_threadsafe_function tsfn = nullptr;
-    napi_status status = napi_create_threadsafe_function(env, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+    napi_status status = napi_create_threadsafe_function(env, nullptr, nullptr, name, 0, 1,
+        nullptr, nullptr, nullptr, CallJsCb, &tsfn);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     if (tsfn != nullptr) { napi_release_threadsafe_function(tsfn, napi_tsfn_release); }
     napi_close_handle_scope(env, scope);
@@ -69,7 +71,8 @@ static napi_value CreateThreadsafeFunctionStable(napi_env env, napi_callback_inf
         napi_value name = nullptr;
         napi_create_string_utf8(env, "tsfn", NAPI_AUTO_LENGTH, &name);
         napi_threadsafe_function tsfn = nullptr;
-        napi_status status = napi_create_threadsafe_function(env, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+        napi_status status = napi_create_threadsafe_function(env, nullptr, nullptr, name, 0, 1,
+        nullptr, nullptr, nullptr, CallJsCb, &tsfn);
         int32_t singleRet = (status == napi_ok && tsfn != nullptr) ? 1 : 0;
         if (tsfn != nullptr) { napi_release_threadsafe_function(tsfn, napi_tsfn_release); }
         napi_close_handle_scope(env, loopScope);
@@ -96,7 +99,8 @@ static napi_value CreateThreadsafeFunctionMultiCtx(napi_env env, napi_callback_i
     napi_value name = nullptr;
     napi_create_string_utf8(env, "tsfn", NAPI_AUTO_LENGTH, &name);
     napi_threadsafe_function tsfn = nullptr;
-    napi_status status = napi_create_threadsafe_function(env, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+    napi_status status = napi_create_threadsafe_function(env, nullptr, nullptr, name, 0, 1,
+        nullptr, nullptr, nullptr, CallJsCb, &tsfn);
     int32_t ret = (status == napi_ok && tsfn != nullptr) ? 1 : 0;
     if (tsfn != nullptr) { napi_release_threadsafe_function(tsfn, napi_tsfn_release); }
     napi_switch_ark_context(env);
@@ -117,7 +121,8 @@ static napi_value CreateThreadsafeFunctionRuntime(napi_env env, napi_callback_in
         napi_value name = nullptr;
         napi_create_string_utf8(newEnv, "tsfn", NAPI_AUTO_LENGTH, &name);
         napi_threadsafe_function tsfn = nullptr;
-        napi_status status = napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+        napi_status status = napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1,
+            nullptr, nullptr, nullptr, CallJsCb, &tsfn);
         int32_t ret = (status == napi_ok && tsfn != nullptr) ? 1 : 0;
         if (tsfn != nullptr) { napi_release_threadsafe_function(tsfn, napi_tsfn_release); }
         result.store(ret);
@@ -132,7 +137,8 @@ static napi_value CreateThreadsafeFunctionWorker(napi_env env, napi_callback_inf
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_create_threadsafe_function(savedEnv, nullptr, nullptr, nullptr, 0, 0, nullptr, nullptr, nullptr, nullptr, nullptr);
+        napi_status status = napi_create_threadsafe_function(savedEnv, nullptr, nullptr, nullptr, 0, 0,
+            nullptr, nullptr, nullptr, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
@@ -223,7 +229,8 @@ static napi_value GetThreadsafeFunctionContextRuntime(napi_env env, napi_callbac
         napi_value name = nullptr;
         napi_create_string_utf8(newEnv, "tsfnCtx", NAPI_AUTO_LENGTH, &name);
         napi_threadsafe_function tsfn = nullptr;
-        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1,
+            nullptr, nullptr, nullptr, CallJsCb, &tsfn);
         void* ctx = nullptr;
         napi_status status = napi_get_threadsafe_function_context(tsfn, &ctx);
         int32_t ret = status == napi_ok ? 1 : 0;
@@ -331,7 +338,8 @@ static napi_value CallThreadsafeFunctionRuntime(napi_env env, napi_callback_info
         napi_value name = nullptr;
         napi_create_string_utf8(newEnv, "tsfnCall", NAPI_AUTO_LENGTH, &name);
         napi_threadsafe_function tsfn = nullptr;
-        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1,
+            nullptr, nullptr, nullptr, CallJsCb, &tsfn);
         napi_acquire_threadsafe_function(tsfn);
         napi_status status = napi_call_threadsafe_function(tsfn, nullptr, napi_tsfn_nonblocking);
         int32_t ret = status == napi_ok ? 1 : 0;
@@ -436,7 +444,8 @@ static napi_value AcquireThreadsafeFunctionRuntime(napi_env env, napi_callback_i
         napi_value name = nullptr;
         napi_create_string_utf8(newEnv, "tsfnAcq", NAPI_AUTO_LENGTH, &name);
         napi_threadsafe_function tsfn = nullptr;
-        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1,
+            nullptr, nullptr, nullptr, CallJsCb, &tsfn);
         napi_status status = napi_acquire_threadsafe_function(tsfn);
         int32_t ret = status == napi_ok ? 1 : 0;
         napi_release_threadsafe_function(tsfn, napi_tsfn_release);
@@ -537,7 +546,8 @@ static napi_value ReleaseThreadsafeFunctionRuntime(napi_env env, napi_callback_i
         napi_value name = nullptr;
         napi_create_string_utf8(newEnv, "tsfnRel", NAPI_AUTO_LENGTH, &name);
         napi_threadsafe_function tsfn = nullptr;
-        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1,
+            nullptr, nullptr, nullptr, CallJsCb, &tsfn);
         napi_status status = napi_release_threadsafe_function(tsfn, napi_tsfn_release);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);
@@ -640,7 +650,8 @@ static napi_value RefThreadsafeFunctionRuntime(napi_env env, napi_callback_info 
         napi_value name = nullptr;
         napi_create_string_utf8(newEnv, "tsfnRef", NAPI_AUTO_LENGTH, &name);
         napi_threadsafe_function tsfn = nullptr;
-        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1,
+            nullptr, nullptr, nullptr, CallJsCb, &tsfn);
         napi_status status = napi_ref_threadsafe_function(newEnv, tsfn);
         int32_t ret = status == napi_ok ? 1 : 0;
         napi_release_threadsafe_function(tsfn, napi_tsfn_release);
@@ -747,7 +758,8 @@ static napi_value UnrefThreadsafeFunctionRuntime(napi_env env, napi_callback_inf
         napi_value name = nullptr;
         napi_create_string_utf8(newEnv, "tsfnUnref", NAPI_AUTO_LENGTH, &name);
         napi_threadsafe_function tsfn = nullptr;
-        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1,
+            nullptr, nullptr, nullptr, CallJsCb, &tsfn);
         napi_ref_threadsafe_function(newEnv, tsfn);
         napi_status status = napi_unref_threadsafe_function(newEnv, tsfn);
         int32_t ret = status == napi_ok ? 1 : 0;
@@ -939,7 +951,8 @@ static napi_value CallThreadsafeFunctionWithPriorityRuntime(napi_env env, napi_c
         napi_value name = nullptr;
         napi_create_string_utf8(newEnv, "tsfnPri", NAPI_AUTO_LENGTH, &name);
         napi_threadsafe_function tsfn = nullptr;
-        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr, CallJsCb, &tsfn);
+        napi_create_threadsafe_function(newEnv, nullptr, nullptr, name, 0, 1,
+            nullptr, nullptr, nullptr, CallJsCb, &tsfn);
         napi_acquire_threadsafe_function(tsfn);
         napi_status status = napi_call_threadsafe_function_with_priority(tsfn, nullptr, napi_priority_high, false);
         int32_t ret = status != napi_ok ? 1 : 0;

@@ -19,6 +19,7 @@
 #include <atomic>
 
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const int32_t CALLSITE_TEST_VALUE = 42;
 
 static napi_value CreateCallsiteInfoStable(napi_env env, napi_callback_info info)
 {
@@ -210,7 +211,7 @@ static napi_value GetPropertyWithCallsiteInfoStable(napi_env env, napi_callback_
         napi_value val = nullptr;
         napi_create_object(env, &obj);
         napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, CALLSITE_TEST_VALUE, &val);
         napi_set_property(env, obj, key, val);
         napi_callsite_info csi = nullptr;
         napi_create_callsite_info(env, &csi);
@@ -231,7 +232,8 @@ static napi_value GetPropertyWithCallsiteInfoMultiThread(napi_env env, napi_call
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_get_property_with_callsite_info(savedEnv, nullptr, nullptr, nullptr, nullptr, nullptr);
+        napi_status status = napi_get_property_with_callsite_info(savedEnv, nullptr, nullptr,
+            nullptr, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
@@ -255,7 +257,7 @@ static napi_value GetPropertyWithCallsiteInfoMultiCtx(napi_env env, napi_callbac
     napi_value val = nullptr;
     napi_create_object(env, &obj);
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, CALLSITE_TEST_VALUE, &val);
     napi_set_property(env, obj, key, val);
     napi_callsite_info csi = nullptr;
     napi_create_callsite_info(env, &csi);
@@ -282,7 +284,7 @@ static napi_value GetPropertyWithCallsiteInfoRuntime(napi_env env, napi_callback
         napi_value val = nullptr;
         napi_create_object(newEnv, &obj);
         napi_create_string_utf8(newEnv, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, CALLSITE_TEST_VALUE, &val);
         napi_set_property(newEnv, obj, key, val);
         napi_callsite_info csi = nullptr;
         napi_create_callsite_info(newEnv, &csi);
@@ -301,7 +303,8 @@ static napi_value GetPropertyWithCallsiteInfoWorker(napi_env env, napi_callback_
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_get_property_with_callsite_info(savedEnv, nullptr, nullptr, nullptr, nullptr, nullptr);
+        napi_status status = napi_get_property_with_callsite_info(savedEnv, nullptr, nullptr,
+            nullptr, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
@@ -317,7 +320,7 @@ static napi_value SetPropertyWithCallsiteInfoRetVal(napi_env env, napi_callback_
     napi_value val = nullptr;
     napi_create_object(env, &obj);
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, CALLSITE_TEST_VALUE, &val);
     napi_callsite_info csi = nullptr;
     napi_create_callsite_info(env, &csi);
     napi_status status = napi_set_property_with_callsite_info(env, obj, key, val, csi, nullptr);
@@ -337,7 +340,7 @@ static napi_value SetPropertyWithCallsiteInfoStable(napi_env env, napi_callback_
         napi_value val = nullptr;
         napi_create_object(env, &obj);
         napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, CALLSITE_TEST_VALUE, &val);
         napi_callsite_info csi = nullptr;
         napi_create_callsite_info(env, &csi);
         napi_status status = napi_set_property_with_callsite_info(env, obj, key, val, csi, nullptr);
@@ -356,7 +359,8 @@ static napi_value SetPropertyWithCallsiteInfoMultiThread(napi_env env, napi_call
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_set_property_with_callsite_info(savedEnv, nullptr, nullptr, nullptr, nullptr, nullptr);
+        napi_status status = napi_set_property_with_callsite_info(savedEnv, nullptr, nullptr,
+            nullptr, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
@@ -380,7 +384,7 @@ static napi_value SetPropertyWithCallsiteInfoMultiCtx(napi_env env, napi_callbac
     napi_value val = nullptr;
     napi_create_object(env, &obj);
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, CALLSITE_TEST_VALUE, &val);
     napi_callsite_info csi = nullptr;
     napi_create_callsite_info(env, &csi);
     napi_status status = napi_set_property_with_callsite_info(env, obj, key, val, csi, nullptr);
@@ -405,7 +409,7 @@ static napi_value SetPropertyWithCallsiteInfoRuntime(napi_env env, napi_callback
         napi_value val = nullptr;
         napi_create_object(newEnv, &obj);
         napi_create_string_utf8(newEnv, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, CALLSITE_TEST_VALUE, &val);
         napi_callsite_info csi = nullptr;
         napi_create_callsite_info(newEnv, &csi);
         napi_status status = napi_set_property_with_callsite_info(newEnv, obj, key, val, csi, nullptr);
@@ -422,7 +426,8 @@ static napi_value SetPropertyWithCallsiteInfoWorker(napi_env env, napi_callback_
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_set_property_with_callsite_info(savedEnv, nullptr, nullptr, nullptr, nullptr, nullptr);
+        napi_status status = napi_set_property_with_callsite_info(savedEnv, nullptr, nullptr,
+            nullptr, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();

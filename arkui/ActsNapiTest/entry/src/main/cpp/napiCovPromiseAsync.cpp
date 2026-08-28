@@ -436,7 +436,8 @@ static napi_value CreateAsyncWorkRetVal(napi_env env, napi_callback_info info)
     napi_value asyncName = nullptr;
     napi_create_string_utf8(env, "testAsync", NAPI_AUTO_LENGTH, &asyncName);
     napi_async_work work = nullptr;
-    napi_status status = napi_create_async_work(env, nullptr, asyncName, AsyncExecute, AsyncComplete, nullptr, &work);
+    napi_status status = napi_create_async_work(env, nullptr, asyncName, AsyncExecute,
+        AsyncComplete, nullptr, &work);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     if (work != nullptr) { napi_delete_async_work(env, work); }
     napi_close_handle_scope(env, scope);
@@ -452,7 +453,8 @@ static napi_value CreateAsyncWorkStable(napi_env env, napi_callback_info info)
         napi_value asyncName = nullptr;
         napi_create_string_utf8(env, "testAsync", NAPI_AUTO_LENGTH, &asyncName);
         napi_async_work work = nullptr;
-        napi_status status = napi_create_async_work(env, nullptr, asyncName, AsyncExecute, AsyncComplete, nullptr, &work);
+        napi_status status = napi_create_async_work(env, nullptr, asyncName, AsyncExecute,
+        AsyncComplete, nullptr, &work);
         int32_t singleRet = (status == napi_ok && work != nullptr) ? 1 : 0;
         if (work != nullptr) { napi_delete_async_work(env, work); }
         napi_close_handle_scope(env, loopScope);
@@ -469,7 +471,8 @@ static napi_value CreateAsyncWorkMultiThread(napi_env env, napi_callback_info in
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_create_async_work(savedEnv, nullptr, nullptr, AsyncExecute, AsyncComplete, nullptr, nullptr);
+        napi_status status = napi_create_async_work(savedEnv, nullptr, nullptr, AsyncExecute,
+            AsyncComplete, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
@@ -491,7 +494,8 @@ static napi_value CreateAsyncWorkMultiCtx(napi_env env, napi_callback_info info)
     napi_value asyncName = nullptr;
     napi_create_string_utf8(env, "testAsync", NAPI_AUTO_LENGTH, &asyncName);
     napi_async_work work = nullptr;
-    napi_status status = napi_create_async_work(env, nullptr, asyncName, AsyncExecute, AsyncComplete, nullptr, &work);
+    napi_status status = napi_create_async_work(env, nullptr, asyncName, AsyncExecute,
+        AsyncComplete, nullptr, &work);
     int32_t ret = (status == napi_ok && work != nullptr) ? 1 : 0;
     if (work != nullptr) { napi_delete_async_work(env, work); }
     napi_switch_ark_context(env);
@@ -512,7 +516,8 @@ static napi_value CreateAsyncWorkRuntime(napi_env env, napi_callback_info info)
         napi_value asyncName = nullptr;
         napi_create_string_utf8(newEnv, "testAsync", NAPI_AUTO_LENGTH, &asyncName);
         napi_async_work work = nullptr;
-        napi_status status = napi_create_async_work(newEnv, nullptr, asyncName, AsyncExecute, AsyncComplete, nullptr, &work);
+        napi_status status = napi_create_async_work(newEnv, nullptr, asyncName, AsyncExecute,
+            AsyncComplete, nullptr, &work);
         int32_t ret = (status == napi_ok && work != nullptr) ? 1 : 0;
         if (work != nullptr) { napi_delete_async_work(newEnv, work); }
         result.store(ret);
@@ -527,7 +532,8 @@ static napi_value CreateAsyncWorkWorker(napi_env env, napi_callback_info info)
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_create_async_work(savedEnv, nullptr, nullptr, AsyncExecute, AsyncComplete, nullptr, nullptr);
+        napi_status status = napi_create_async_work(savedEnv, nullptr, nullptr, AsyncExecute,
+            AsyncComplete, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();

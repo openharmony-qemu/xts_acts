@@ -265,7 +265,6 @@ static napi_value AddEnvCleanupHookMultiCtx(napi_env env, napi_callback_info inf
         napi_remove_env_cleanup_hook(env, [](void* d) {
             (void)d;
         }, nullptr);
-
     }
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -489,7 +488,10 @@ static napi_value AddAsyncCleanupHookWorker(napi_env env, napi_callback_info inf
 static napi_value RemoveAsyncCleanupHookRetVal(napi_env env, napi_callback_info info)
 {
     napi_async_cleanup_hook_handle hook = nullptr;
-    napi_add_async_cleanup_hook(env, [](napi_async_cleanup_hook_handle h, void* d) { (void)d; (void)h; }, nullptr, &hook);
+    napi_add_async_cleanup_hook(env, [](napi_async_cleanup_hook_handle h, void* d) {
+        (void)d;
+        (void)h;
+    }, nullptr, &hook);
     napi_status status = napi_remove_async_cleanup_hook(hook);
     int32_t ret = status == napi_ok ? 1 : 0;
     return Ret(env, ret);
@@ -539,7 +541,10 @@ static napi_value RemoveAsyncCleanupHookMultiCtx(napi_env env, napi_callback_inf
         return Ret(env, 0);
     }
     napi_async_cleanup_hook_handle hook = nullptr;
-    napi_add_async_cleanup_hook(env, [](napi_async_cleanup_hook_handle h, void* d) { (void)d; (void)h; }, nullptr, &hook);
+    napi_add_async_cleanup_hook(env, [](napi_async_cleanup_hook_handle h, void* d) {
+        (void)d;
+        (void)h;
+    }, nullptr, &hook);
     napi_status status = napi_remove_async_cleanup_hook(hook);
     int32_t ret = status == napi_ok ? 1 : 0;
     napi_switch_ark_context(env);
@@ -558,7 +563,10 @@ static napi_value RemoveAsyncCleanupHookRuntime(napi_env env, napi_callback_info
             return;
         }
         napi_async_cleanup_hook_handle hook = nullptr;
-        napi_add_async_cleanup_hook(newEnv, [](napi_async_cleanup_hook_handle h, void* d) { (void)d; (void)h; }, nullptr, &hook);
+        napi_add_async_cleanup_hook(newEnv, [](napi_async_cleanup_hook_handle h, void* d) {
+            (void)d;
+            (void)h;
+        }, nullptr, &hook);
         napi_status status = napi_remove_async_cleanup_hook(hook);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);

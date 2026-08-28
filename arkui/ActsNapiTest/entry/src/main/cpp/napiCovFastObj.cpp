@@ -19,6 +19,7 @@
 #include <atomic>
 static const int32_t STABLE_LOOP_COUNT = 10;
 static const int32_t SECOND_NAMED_PROP_VALUE = 2;
+static const int32_t FAST_OBJ_TEST_VALUE = 42;
 
 static void* DetachCallback(napi_env env, void* nativeObject, void* hint)
 {
@@ -44,7 +45,7 @@ static napi_value CreateObjectWithPropertiesStable(napi_env env, napi_callback_i
         napi_value key = nullptr;
         napi_value val = nullptr;
         napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, FAST_OBJ_TEST_VALUE, &val);
         napi_property_descriptor desc[] = {{"key", nullptr, nullptr, nullptr, nullptr, val, napi_default, nullptr}};
         napi_value result = nullptr;
         napi_status status = napi_create_object_with_properties(env, &result, 1, desc);
@@ -85,7 +86,7 @@ static napi_value CreateObjectWithPropertiesMultiCtx(napi_env env, napi_callback
     napi_value key = nullptr;
     napi_value val = nullptr;
     napi_create_string_utf8(env, "key", NAPI_AUTO_LENGTH, &key);
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, FAST_OBJ_TEST_VALUE, &val);
     napi_property_descriptor desc[] = {{"key", nullptr, nullptr, nullptr, nullptr, val, napi_default, nullptr}};
     napi_value result = nullptr;
     napi_status status = napi_create_object_with_properties(env, &result, 1, desc);
@@ -108,7 +109,7 @@ static napi_value CreateObjectWithPropertiesRuntime(napi_env env, napi_callback_
         napi_value key = nullptr;
         napi_value val = nullptr;
         napi_create_string_utf8(newEnv, "key", NAPI_AUTO_LENGTH, &key);
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, FAST_OBJ_TEST_VALUE, &val);
         napi_property_descriptor desc[] = {{"key", nullptr, nullptr, nullptr, nullptr, val, napi_default, nullptr}};
         napi_value napiRet = nullptr;
         napi_status status = napi_create_object_with_properties(newEnv, &napiRet, 1, desc);
@@ -262,7 +263,8 @@ static napi_value CoerceToNativeBindingObjectRetVal(napi_env env, napi_callback_
     napi_open_handle_scope(env, &scope);
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
-    napi_status status = napi_coerce_to_native_binding_object(env, obj, DetachCallback, AttachCallback, nullptr, nullptr);
+    napi_status status = napi_coerce_to_native_binding_object(env, obj, DetachCallback,
+        AttachCallback, nullptr, nullptr);
     int32_t ret = status != napi_ok ? 1 : 0;
     napi_close_handle_scope(env, scope);
     return Ret(env, ret);
@@ -276,7 +278,8 @@ static napi_value CoerceToNativeBindingObjectStable(napi_env env, napi_callback_
         napi_open_handle_scope(env, &loopScope);
         napi_value obj = nullptr;
         napi_create_object(env, &obj);
-        napi_status status = napi_coerce_to_native_binding_object(env, obj, DetachCallback, AttachCallback, nullptr, nullptr);
+        napi_status status = napi_coerce_to_native_binding_object(env, obj, DetachCallback,
+        AttachCallback, nullptr, nullptr);
         int32_t singleRet = status != napi_ok ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -292,7 +295,8 @@ static napi_value CoerceToNativeBindingObjectMultiThread(napi_env env, napi_call
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_coerce_to_native_binding_object(savedEnv, nullptr, nullptr, nullptr, nullptr, nullptr);
+        napi_status status = napi_coerce_to_native_binding_object(savedEnv, nullptr, nullptr,
+            nullptr, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
@@ -313,7 +317,8 @@ static napi_value CoerceToNativeBindingObjectMultiCtx(napi_env env, napi_callbac
     }
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
-    napi_status status = napi_coerce_to_native_binding_object(env, obj, DetachCallback, AttachCallback, nullptr, nullptr);
+    napi_status status = napi_coerce_to_native_binding_object(env, obj, DetachCallback,
+        AttachCallback, nullptr, nullptr);
     int32_t ret = status != napi_ok ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -332,7 +337,8 @@ static napi_value CoerceToNativeBindingObjectRuntime(napi_env env, napi_callback
         }
         napi_value obj = nullptr;
         napi_create_object(newEnv, &obj);
-        napi_status status = napi_coerce_to_native_binding_object(newEnv, obj, DetachCallback, AttachCallback, nullptr, nullptr);
+        napi_status status = napi_coerce_to_native_binding_object(newEnv, obj, DetachCallback,
+            AttachCallback, nullptr, nullptr);
         int32_t ret = status != napi_ok ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -346,7 +352,8 @@ static napi_value CoerceToNativeBindingObjectWorker(napi_env env, napi_callback_
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_coerce_to_native_binding_object(savedEnv, nullptr, nullptr, nullptr, nullptr, nullptr);
+        napi_status status = napi_coerce_to_native_binding_object(savedEnv, nullptr, nullptr,
+            nullptr, nullptr, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
