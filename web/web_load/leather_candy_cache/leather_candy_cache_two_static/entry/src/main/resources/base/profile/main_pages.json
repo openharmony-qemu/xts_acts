@@ -4,8 +4,6 @@
     "pages/InjectOfflineResourcesTest",
     "pages/SetBlanklessLoadingWithParamsTest",
     "pages/SetBlanklessLoadingWithKeyTest",
-    "pages/ExecuteAIPageCommandTest",
-    "pages/ExecuteAIPageCommandInteractionTest",
-    "pages/ExecuteAIPageCommandCheckTest"
+    "pages/ExecuteAIPageCommandTest"
   ]
 }
