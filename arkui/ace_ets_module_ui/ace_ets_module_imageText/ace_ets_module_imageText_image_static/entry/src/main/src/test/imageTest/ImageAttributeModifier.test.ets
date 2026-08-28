@@ -825,7 +825,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_3200] hdrBrightness: ' + obj.getElement('$attrs').getDouble('hdrBrightness'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getDouble('hdrBrightness')).assertEqual('0.5');
+        expect(obj.getElement('$attrs').getDouble('hdrBrightness')).assertEqual(0.5);
       } catch (err) {
         console.error('[static_3200] error: ' + err);
         expect(false).assertTrue();
@@ -850,7 +850,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_3300] hdrBrightness: ' + obj.getElement('$attrs').getDouble('hdrBrightness'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getDouble('hdrBrightness')).assertEqual('1');
+        expect(obj.getElement('$attrs').getDouble('hdrBrightness')).assertEqual(1);
       } catch (err) {
         console.error('[static_3300] error: ' + err);
         expect(false).assertTrue();
