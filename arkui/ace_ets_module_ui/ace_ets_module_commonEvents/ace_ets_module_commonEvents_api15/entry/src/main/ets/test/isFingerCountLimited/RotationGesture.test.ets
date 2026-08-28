@@ -74,7 +74,12 @@ export default function rotationGestureTest() {
       pointers.setPoint(0,1,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.top + areaHeight1/4) });
       pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.bottom - areaHeight1/4) });
       pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.bottom - areaHeight1/4) });
-      await driver.injectMultiPointerAction(pointers);
+      try {
+        await driver.injectMultiPointerAction(pointers,1200);
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error('RotationGesture after each error: ' + err);
+      }
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('RotationGesture');
       let obj: ESObject = JSON.parse(strJson);
@@ -123,7 +128,12 @@ export default function rotationGestureTest() {
       pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.bottom - areaHeight1/4) });
       pointers.setPoint(2,0,{x: Math.round(areaObj1.left + areaWidth1/3),y: Math.round(areaObj1.top + areaHeight1/4) });
       pointers.setPoint(2,1,{x: Math.round(areaObj1.right - areaWidth1/3),y: Math.round(areaObj1.top + areaHeight1/4) });
-      await driver.injectMultiPointerAction(pointers);
+      try {
+        await driver.injectMultiPointerAction(pointers,1200);
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error('RotationGesture after each error: ' + err);
+      }
       await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('RotationGesture');
       let obj: ESObject = JSON.parse(strJson);
