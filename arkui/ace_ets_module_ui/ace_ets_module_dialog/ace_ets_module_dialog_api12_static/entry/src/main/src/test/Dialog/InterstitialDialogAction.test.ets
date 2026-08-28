@@ -21,7 +21,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function interstitialDialogActionTest() {
 

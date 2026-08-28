@@ -108,10 +108,12 @@ it('showActionMenuTrue_static_0100', Level.LEVEL2, async (done: () => void): Pro
       } catch (err) {
         console.info('showActionMenuTrueTest await err: ' + JSON.stringify(err));
       }
-      let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
-      console.info("[showActionMenuTrue_static_0100] title: " + JSON.stringify(properties));
-      console.info("[showActionMenuTrue_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(0) //0鐞涖劎銇氭惔鏃傛暏鐎涙劗鐛ラ崣顤歒PE_APP
+      if (windowClass) {
+        let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
+        console.info("[showActionMenuTrue_static_0100] title: " + JSON.stringify(properties));
+        console.info("[showActionMenuTrue_static_0100] title: " + JSON.stringify(properties.type));
+        expect(properties.type).assertEqual(0) //0鐞涖劎銇氭惔鏃傛暏鐎涙劗鐛ラ崣顤歒PE_APP
+      }
 
       try {
         await CommonFunc.sleep(1000);

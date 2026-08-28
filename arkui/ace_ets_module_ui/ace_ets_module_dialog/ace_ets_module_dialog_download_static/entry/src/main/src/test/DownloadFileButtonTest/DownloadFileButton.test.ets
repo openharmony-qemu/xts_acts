@@ -16,7 +16,7 @@
 
 
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
-import { Driver, ON } from '@kit.TestKit';
+import { Component, Driver, ON } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
 import {
   DownloadIconStyle,
@@ -66,13 +66,13 @@ export default function DownloadFileButtonTest(): void {
     it('DownloadFileButtonGetNode', Level.LEVEL1, async (done: () => void) => {
       console.info('DownloadFileButtonTest: DownloadFileButtonGetNode begin');
       let driver = Driver.create();
-      let buttonComponent;
+      let buttonComponent: Component | null = null;
       try {
         buttonComponent = await driver.findComponent(ON.id('downloadFileButtonFullFilled'));
       } catch (err) {
         console.info('DownloadFileButtonTest findComponent err: ' + JSON.stringify(err));
       }
-      if(buttonComponent !== undefined){
+      if(buttonComponent !== null){
         console.info('DownloadFileButtonTest: push DownloadFileButtonIndex page success');
       } else {
         console.info('DownloadFileButtonTest: push DownloadFileButtonIndex page failed');

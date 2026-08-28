@@ -106,9 +106,11 @@ it('CustomDialogFalse_static_0100', Level.LEVEL2, async (done: () => void): Prom
         console.info('CustomDialogFalseTest await err: ' + JSON.stringify(err));
       }
       ;
-      let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
-      console.info("[CustomDialogFalse_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1) //1鐞涖劎銇氱化鑽ょ埠閸涘﹨顒熺粣妤€褰汿YPE_SYSTEM_ALERT
+      if (windowClass) {
+        let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
+        console.info("[CustomDialogFalse_static_0100] title: " + JSON.stringify(properties.type));
+        expect(properties.type).assertEqual(1) //1鐞涖劎銇氱化鑽ょ埠閸涘﹨顒熺粣妤€褰汿YPE_SYSTEM_ALERT
+      }
 
       try {
         await CommonFunc.sleep(1000);

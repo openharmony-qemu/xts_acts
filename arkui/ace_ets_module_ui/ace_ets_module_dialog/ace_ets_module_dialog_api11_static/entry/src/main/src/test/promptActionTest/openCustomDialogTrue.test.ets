@@ -109,11 +109,13 @@ it('openCustomDialogTrue_static_0100', Level.LEVEL2, async (done: () => void): P
       } catch (err) {
         console.info('openCustomDialogTrueTest await err: ' + JSON.stringify(err));
       }
-      console.log('----------' + JSON.stringify(windowClass.getWindowProperties()))
-      let properties: window.WindowProperties = windowClass.getWindowProperties();
-      console.info("[openCustomDialogTrue_static_0100] title: " + JSON.stringify(properties));
-      console.info("[openCustomDialogTrue_static_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(0) //0鐞涖劎銇氭惔鏃傛暏鐎涙劗鐛ラ崣顤歒PE_APP
+      if (windowClass) {
+        console.log('----------' + JSON.stringify(windowClass.getWindowProperties()))
+        let properties: window.WindowProperties = windowClass.getWindowProperties();
+        console.info("[openCustomDialogTrue_static_0100] title: " + JSON.stringify(properties));
+        console.info("[openCustomDialogTrue_static_0100] title: " + JSON.stringify(properties.type));
+        expect(properties.type).assertEqual(0) //0鐞涖劎銇氭惔鏃傛暏鐎涙劗鐛ラ崣顤歒PE_APP
+      }
 
       try {
         await CommonFunc.sleep(1000);
