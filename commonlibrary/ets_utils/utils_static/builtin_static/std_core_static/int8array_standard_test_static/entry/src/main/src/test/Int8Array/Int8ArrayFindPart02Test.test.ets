@@ -43,6 +43,7 @@ export default function int8ArrayFindPart02Test(): void {
       await Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
+    const INT8_MIN: byte = -128;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FIND_PART02_TEST_0100
@@ -279,6 +280,9 @@ export default function int8ArrayFindPart02Test(): void {
     it('int8ArrayFindPart02Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(100, 50, 25);
       let result: number | undefined = arr.find((_v: number, i: int, _a: Int8Array): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
         return i === 1;
       });
       expect(result).assertEqual(50);
@@ -400,6 +404,9 @@ export default function int8ArrayFindPart02Test(): void {
     it('int8ArrayFindPart02Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(3, 6, 9, 12);
       let result: number | undefined = arr.find((_v: number, i: int, _a: Int8Array): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
         return i === 2;
       });
       expect(result).assertEqual(9);
@@ -499,6 +506,9 @@ export default function int8ArrayFindPart02Test(): void {
     it('int8ArrayFindPart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let result: number | undefined = arr.find((_v: number, _i: int, _a: Int8Array): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
         return true;
       });
       expect(result).assertUndefined();
@@ -534,6 +544,9 @@ export default function int8ArrayFindPart02Test(): void {
     it('int8ArrayFindPart02Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let result: number | undefined = arr.find((_v: number, _i: int, _a: Int8Array): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
         throw new Error('never');
       });
       expect(result).assertUndefined();
@@ -550,6 +563,9 @@ export default function int8ArrayFindPart02Test(): void {
     it('int8ArrayFindPart02Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let result: number | undefined = arr.find((_v: number, i: int, _a: Int8Array): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
         return i === 0;
       });
       expect(result).assertUndefined();
@@ -915,6 +931,9 @@ export default function int8ArrayFindPart02Test(): void {
       let arr: Int8Array = Int8Array.of(5, 6, 7);
       try {
         let found: number | undefined = arr.find((_v: number, _i: int, _a: Int8Array): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           throw new Error('boom');
         });
         expect().assertFail();
@@ -1156,6 +1175,9 @@ export default function int8ArrayFindPart02Test(): void {
       let arr: Int8Array = Int8Array.of(7, 8, 9);
       try {
         let found: number | undefined = arr.find((_v: number, _i: int, _a: Int8Array): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           throw new TypeError('type');
         });
         expect().assertFail();
@@ -1176,6 +1198,9 @@ export default function int8ArrayFindPart02Test(): void {
       let arr: Int8Array = Int8Array.of(4, 5, 6);
       try {
         let found: number | undefined = arr.find((_v: number, _i: int, _a: Int8Array): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           throw new Error('custom-msg');
         });
         expect().assertFail();
@@ -1198,6 +1223,9 @@ export default function int8ArrayFindPart02Test(): void {
       let count: int = 0;
       try {
         let found: number | undefined = arr.find((_v: number, i: int, _a: Int8Array): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           if (i === 2) {
             throw new Error('mid');
@@ -1226,6 +1254,9 @@ export default function int8ArrayFindPart02Test(): void {
       let count: int = 0;
       try {
         let found: number | undefined = arr.find((_v: number, _i: int, _a: Int8Array): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           throw new Error('immediate');
         });
@@ -1249,6 +1280,9 @@ export default function int8ArrayFindPart02Test(): void {
       let arr: Int8Array = Int8Array.of(8, 9, 10);
       try {
         let found: number | undefined = arr.find((_v: number, _i: int, _a: Int8Array): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           throw new Error('generic');
         });
         expect().assertFail();

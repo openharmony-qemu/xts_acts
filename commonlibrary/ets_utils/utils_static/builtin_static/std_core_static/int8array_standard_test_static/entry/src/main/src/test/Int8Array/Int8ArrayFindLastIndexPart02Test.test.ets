@@ -43,6 +43,7 @@ export default function int8ArrayFindLastIndexPart02Test(): void {
       await Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
+    const INT8_MIN: byte = -128;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FIND_LAST_INDEX_PART02_0100
@@ -296,7 +297,12 @@ export default function int8ArrayFindLastIndexPart02Test(): void {
      */
     it('int8ArrayFindLastIndexPart02Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(10, 20, 30);
-      let idx: int = arr.findLastIndex((v: number, _i: int, _a: Int8Array): boolean => false);
+      let idx: int = arr.findLastIndex((v: number, _i: int, _a: Int8Array): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
+        return false;
+      });
       expect(idx).assertEqual(-1);
     });
 
@@ -826,6 +832,9 @@ export default function int8ArrayFindLastIndexPart02Test(): void {
       let arr = Int8Array.of(1, 2, 3, 4);
       let lastLen: int = 0;
       let rIdx: int = arr.findLastIndex((v: number, _i: int, a: Int8Array): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
         lastLen = a.length;
         return false;
       });

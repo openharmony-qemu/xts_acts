@@ -43,6 +43,7 @@ export default function int8ArrayForEachPart02Test(): void {
       await Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
+    const INT8_MIN: byte = -128;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FOR_EACH_PART02_TEST_0100
@@ -54,7 +55,11 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
-      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {});
+      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
+      });
       expect(forEachResult).assertUndefined();
     });
 
@@ -68,7 +73,11 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([7]);
-      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {});
+      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
+      });
       expect(forEachResult).assertUndefined();
     });
 
@@ -82,7 +91,11 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {});
+      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
+      });
       expect(forEachResult).assertUndefined();
     });
 
@@ -96,7 +109,11 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([-128, INT8_MAX, 0]);
-      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {});
+      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
+      });
       expect(forEachResult).assertUndefined();
     });
 
@@ -110,7 +127,11 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(100);
-      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {});
+      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
+      });
       expect(forEachResult).assertUndefined();
     });
 
@@ -124,7 +145,11 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([128, 255, -129]);
-      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {});
+      let forEachResult = arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
+      });
       expect(forEachResult).assertUndefined();
     });
 
@@ -138,7 +163,13 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -151,7 +182,13 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([9]);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -164,7 +201,13 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([-1, -2, -3]);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -177,7 +220,13 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([5, 5, 5]);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -190,7 +239,13 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.from([10, 20, 30]);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -203,7 +258,13 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(7, 8, 9);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -217,7 +278,13 @@ export default function int8ArrayForEachPart02Test(): void {
     it('int8ArrayForEachPart02Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parent: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       let arr: Int8Array = parent.subarray(1, 3);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -231,7 +298,13 @@ export default function int8ArrayForEachPart02Test(): void {
     it('int8ArrayForEachPart02Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(6);
       let arr: Int8Array = new Int8Array(buf, 0, 6);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -245,7 +318,13 @@ export default function int8ArrayForEachPart02Test(): void {
     it('int8ArrayForEachPart02Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let arr: Int8Array = new Int8Array(buf, 2, 4);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -258,7 +337,13 @@ export default function int8ArrayForEachPart02Test(): void {
      */
     it('int8ArrayForEachPart02Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([128, 255, -129]);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
     });
 
     /**
@@ -293,6 +378,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let lastIdx: number = -1;
       expect(
         arr.forEach((_v: number, i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
           lastIdx = i;
         }),
       ).assertUndefined();
@@ -312,6 +400,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let captured: number = 0;
       expect(
         arr.forEach((_v: number, _i: int, a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
           captured = a.length;
         }),
       ).assertUndefined();
@@ -349,8 +440,15 @@ export default function int8ArrayForEachPart02Test(): void {
       let outer: number = 0;
       expect(
         arr.forEach((_v: number, _i: int, a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
           outer = outer + 1;
-          a.forEach((vv: number, _ii: int, _aa: Int8Array): void => {});
+          a.forEach((vv: number, _ii: int, _aa: Int8Array): void => {
+            if (vv < INT8_MIN || vv > INT8_MAX) {
+              return;
+            }
+          });
         }),
       ).assertUndefined();
     });
@@ -367,6 +465,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let arr: Int8Array = new Int8Array(0);
       let count: number = 0;
       arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(0);
@@ -435,6 +536,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let arr: Int8Array = new Int8Array(100);
       let count: number = 0;
       arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(100);
@@ -501,6 +605,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let arr: Int8Array = new Int8Array(buf, 2, 4);
       let receivedLength: number = 0;
       arr.forEach((_v: number, _i: int, a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
         receivedLength = a.length;
       });
       expect(receivedLength).assertEqual(4);
@@ -560,6 +667,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let arr: Int8Array = new Int8Array(buf, 6, 0);
       let count: number = 0;
       arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(0);
@@ -580,6 +690,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let receivedBuf: ArrayBuffer = new ArrayBuffer(0);
       arr.forEach((_v: number, _i: int, a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
         receivedBuf = a.buffer;
       });
       expect(receivedBuf).assertEqual(arr.buffer);
@@ -788,7 +901,13 @@ export default function int8ArrayForEachPart02Test(): void {
       let r9: number = values[2];
       let e9: int = 3;
       expect(r9).assertEqual(e9);
-      expect(arr.forEach((_v: number, _i: int, _a: Int8Array): void => {})).assertUndefined();
+      expect(
+        arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return;
+          }
+        }),
+      ).assertUndefined();
       let r1: int = arr.length;
       let e1: int = 3;
       expect(r1).assertEqual(e1);
@@ -817,6 +936,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let receivedBpe: number = 0;
       arr.forEach((_v: number, _i: int, a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
         receivedBpe = a.BYTES_PER_ELEMENT;
       });
       expect(receivedBpe).assertEqual(1);
@@ -895,6 +1017,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let view: Int8Array = new Int8Array(buf, 2, 4);
       let count: number = 0;
       view.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(4);
@@ -917,6 +1042,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let view: Int8Array = new Int8Array(buf, 2, 4);
       let count: number = 0;
       view.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(4);
@@ -937,7 +1065,11 @@ export default function int8ArrayForEachPart02Test(): void {
       arr.forEach((v: number, _i: int, _a: Int8Array): void => {
         values.push(v);
       });
-      arr.forEach((_v: number, _i: int, _a: Int8Array): void => {});
+      arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
+      });
       let r1: number = values[0];
       let e1: int = 1;
       expect(r1).assertEqual(e1);
@@ -962,6 +1094,9 @@ export default function int8ArrayForEachPart02Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let count: number = 0;
       arr.forEach((_v: number, _i: int, _a: Int8Array): void => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(3);

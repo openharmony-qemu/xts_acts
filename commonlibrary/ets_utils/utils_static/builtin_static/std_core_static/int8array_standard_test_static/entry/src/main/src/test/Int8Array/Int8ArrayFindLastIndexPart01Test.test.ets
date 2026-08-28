@@ -43,6 +43,7 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
       await Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
+    const INT8_MIN: byte = -128;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FIND_LAST_INDEX_PART01_0100
@@ -68,7 +69,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(7, 8, 9);
-      let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => true);
+      let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result).assertEqual(2);
     });
 
@@ -200,6 +206,9 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
       let arr = Int8Array.of(2, 4, 6);
       let count: number = 0;
       let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
         count = count + 1;
         return false;
       });
@@ -234,7 +243,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(11, 22, 33);
-      let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => true);
+      let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result).assertEqual(2);
     });
 
@@ -248,7 +262,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(1, 2, 3);
-      let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => false);
+      let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return false;
+      });
       expect(result).assertEqual(-1);
     });
 
@@ -304,7 +323,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(10, 20, 30, 40, 50);
-      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => index > 2);
+      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return index > 2;
+      });
       expect(result).assertEqual(4);
     });
 
@@ -602,6 +626,9 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
       let arr = Int8Array.of(10, 20, 30);
       let hitZero: boolean = false;
       let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
         if (index === 0) {
           hitZero = true;
         }
@@ -623,6 +650,9 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
       let arr = Int8Array.of(10, 20, 30);
       let hitLast: boolean = false;
       let result = arr.findLastIndex((value: number, index: int, array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
         if (index === array.length - 1) {
           hitLast = true;
         }
@@ -644,6 +674,9 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
       let arr = Int8Array.of(1, 2, 3, 4);
       let allNonNeg: boolean = true;
       let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
         if (index < 0) {
           allNonNeg = false;
         }
@@ -668,6 +701,9 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
       let seen2: boolean = false;
       let seen3: boolean = false;
       let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
         if (index === 0) {
           seen0 = true;
         }
@@ -699,7 +735,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(10, 20, 30, 40);
-      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => index === 0);
+      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return index === 0;
+      });
       expect(result).assertEqual(0);
     });
 
@@ -713,9 +754,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(10, 20, 30, 40);
-      let result = arr.findLastIndex(
-        (value: number, index: int, array: Int8Array): boolean => index === array.length - 1,
-      );
+      let result = arr.findLastIndex((value: number, index: int, array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return index === array.length - 1;
+      });
       expect(result).assertEqual(3);
     });
 
@@ -729,7 +773,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(10, 20, 30, 40, 50);
-      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => index === 2);
+      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return index === 2;
+      });
       expect(result).assertEqual(2);
     });
 
@@ -743,7 +792,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(11, 22, 33, 44, 55);
-      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => index % 2 === 0);
+      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return index % 2 === 0;
+      });
       expect(result).assertEqual(4);
     });
 
@@ -757,7 +811,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(10, 20, 30, 40, 50);
-      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => index >= 3);
+      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return index >= 3;
+      });
       expect(result).assertEqual(4);
     });
 
@@ -786,7 +845,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
     it('int8ArrayFindLastIndexPart01Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(10, 20, 30, 40);
       let target: int = 2;
-      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => index === target);
+      let result = arr.findLastIndex((value: number, index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return index === target;
+      });
       expect(result).assertEqual(2);
     });
 
@@ -800,9 +864,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(10, 20, 30, 40);
-      let result = arr.findLastIndex(
-        (value: number, index: int, array: Int8Array): boolean => index + 1 === array.length,
-      );
+      let result = arr.findLastIndex((value: number, index: int, array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return index + 1 === array.length;
+      });
       expect(result).assertEqual(3);
     });
 
@@ -830,7 +897,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(5, 10, 15, 20);
-      let result = arr.findLastIndex((value: number, _index: int, array: Int8Array): boolean => array.length === 4);
+      let result = arr.findLastIndex((value: number, _index: int, array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return array.length === 4;
+      });
       expect(result).assertEqual(3);
     });
 
@@ -903,9 +975,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
     it('int8ArrayFindLastIndexPart01Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(3, 6, 9);
       let external: int = arr.length;
-      let result = arr.findLastIndex(
-        (value: number, index: int, array: Int8Array): boolean => array.length === external,
-      );
+      let result = arr.findLastIndex((value: number, index: int, array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return array.length === external;
+      });
       expect(result).assertEqual(2);
     });
 
@@ -933,9 +1008,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
      */
     it('int8ArrayFindLastIndexPart01Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(10, 20, 30);
-      let result = arr.findLastIndex(
-        (value: number, index: int, array: Int8Array): boolean => index === array.byteLength - 1,
-      );
+      let result = arr.findLastIndex((value: number, index: int, array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return index === array.byteLength - 1;
+      });
       expect(result).assertEqual(2);
     });
 
@@ -970,7 +1048,12 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
     it('int8ArrayFindLastIndexPart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(3);
       let arr = new Int8Array(buf);
-      let result = arr.findLastIndex((value: number, _index: int, array: Int8Array): boolean => array.buffer === buf);
+      let result = arr.findLastIndex((value: number, _index: int, array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
+        return array.buffer === buf;
+      });
       expect(result).assertEqual(2);
     });
 
@@ -1078,6 +1161,9 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
       let arr = new Int8Array(0);
       let called: boolean = false;
       let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
         called = true;
         return true;
       });
@@ -1097,6 +1183,9 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
       let arr = Int8Array.of(77);
       let count: number = 0;
       let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
         count = count + 1;
         return false;
       });
@@ -1132,6 +1221,9 @@ export default function int8ArrayFindLastIndexPart01Test(): void {
       let arr = new Int8Array(100);
       let count: number = 0;
       let result = arr.findLastIndex((value: number, _index: int, _array: Int8Array): boolean => {
+        if (value < INT8_MIN || value > INT8_MAX) {
+          return false;
+        }
         count = count + 1;
         return false;
       });

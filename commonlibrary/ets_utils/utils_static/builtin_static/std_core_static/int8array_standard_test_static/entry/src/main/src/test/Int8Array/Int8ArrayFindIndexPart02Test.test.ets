@@ -225,7 +225,12 @@ export default function int8ArrayFindIndexPart02Test(): void {
      */
     it('int8ArrayFindIndexPart02Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      let r: int = arr.findIndex((v: number, _i: int, _a: Int8Array): boolean => true);
+      let r: int = arr.findIndex((v: number, _i: int, _a: Int8Array): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(r).assertEqual(0);
     });
 
@@ -239,7 +244,12 @@ export default function int8ArrayFindIndexPart02Test(): void {
      */
     it('int8ArrayFindIndexPart02Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30]);
-      let r: int = arr.findIndex((v: number, _i: int, _a: Int8Array): boolean => false);
+      let r: int = arr.findIndex((v: number, _i: int, _a: Int8Array): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
+        return false;
+      });
       expect(r).assertEqual(-1);
     });
 
@@ -397,7 +407,12 @@ export default function int8ArrayFindIndexPart02Test(): void {
      */
     it('int8ArrayFindIndexPart02Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50]);
-      let r: int = arr.findIndex((v: number, i: int, _a: Int8Array): boolean => i === 3);
+      let r: int = arr.findIndex((v: number, i: int, _a: Int8Array): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
+        return i === 3;
+      });
       expect(r).assertEqual(3);
     });
 
