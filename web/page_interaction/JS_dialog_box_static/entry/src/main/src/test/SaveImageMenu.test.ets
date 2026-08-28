@@ -20,6 +20,7 @@ import Utils from './Util.test';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON, MouseButton } from "@kit.TestKit";
+import inspector from '@ohos.arkui.inspector';
 const EVENT_ID_SET_SUITE_KEY = 177008;
 let driver = Driver.create();
 
