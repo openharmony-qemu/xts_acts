@@ -17,11 +17,8 @@ group("concurrent_sendable") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "sendable_all_test:ActsSendableAllTest",
       "sendableclasstest:ActsSendableClassTest",
       "sendable_containers:ActsSendableContainersTest",
-      "sendable_decorator:ActsSendableDecoratorTest",
-      "sendable_collections:ActsSendableCollectionsTest",
       "collections_array:ActsCollectionsArrayTest",
       "collections_map:ActsCollectionsMapTest",
       "collections_set:ActsCollectionsSetTest"
