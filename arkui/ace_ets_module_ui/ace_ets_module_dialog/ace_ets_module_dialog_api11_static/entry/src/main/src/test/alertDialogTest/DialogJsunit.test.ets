@@ -83,7 +83,7 @@ it('DialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       }
 
       let driver = Driver.create()
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('buttonDialogPage'));
       } catch (err) {
@@ -115,7 +115,7 @@ it('DialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
         console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
       }
 
-      let button1: Component | undefined;
+      let button1: Component | null;
       try {
         button1 = await driver.findComponent(ON.id('button1'));
       } catch (err) {
@@ -147,7 +147,7 @@ it('DialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
         console.info('DialogJsunitTest await err: ' + JSON.stringify(err));
       }
 
-      let button2: Component | undefined;
+      let button2: Component | null;
       try {
         button2 = await driver.findComponent(ON.id('button2'));
       } catch (err) {

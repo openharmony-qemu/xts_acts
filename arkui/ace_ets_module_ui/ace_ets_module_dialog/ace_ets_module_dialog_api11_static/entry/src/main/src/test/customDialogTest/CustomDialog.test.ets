@@ -82,7 +82,7 @@ it('CustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       } catch (err) {
         console.info('CustomDialogTest await err: ' + JSON.stringify(err));
       }
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('CustomDialog123'));
       } catch (err) {

@@ -81,7 +81,7 @@ it('CustomDialogRouter_static_0100', Level.LEVEL2, async (done: () => void): Pro
       } catch (err) {
         console.info('CustomDialogRouterTest await err: ' + JSON.stringify(err));
       }
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('Custom_Dialog_Router'));
       } catch (err) {
@@ -99,7 +99,7 @@ it('CustomDialogRouter_static_0100', Level.LEVEL2, async (done: () => void): Pro
       }
 
       // router page is change
-      let routerButton: Component | undefined;
+      let routerButton: Component | null;
       try {
         routerButton = await driver.findComponent(ON.id('CustomDialogRouterButton'));
       } catch (err) {
@@ -117,7 +117,7 @@ it('CustomDialogRouter_static_0100', Level.LEVEL2, async (done: () => void): Pro
       }
 
       // api 11, dialog is closed, confirmButton is not exist
-      let confirmButton: Component | undefined;
+      let confirmButton: Component | null;
       try {
         confirmButton = await driver.findComponent(ON.id('CustomDialogConfirm'));
       } catch (err) {

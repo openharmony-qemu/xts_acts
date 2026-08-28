@@ -81,7 +81,7 @@ it('ActionSheetTrue_static_0100', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.info('ActionSheetTrueTest await err: ' + JSON.stringify(err));
       }
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('ActionSheetTrue'));
       } catch (err) {

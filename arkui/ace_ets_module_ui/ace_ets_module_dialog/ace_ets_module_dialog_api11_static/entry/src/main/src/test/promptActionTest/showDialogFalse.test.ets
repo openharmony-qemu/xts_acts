@@ -85,7 +85,7 @@ it('showDialogFalse_static_0100', Level.LEVEL2, async (done: () => void): Promis
       } catch (err) {
         console.info('showDialogFalseTest await err: ' + JSON.stringify(err));
       }
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('showDialogFalse'));
       } catch (err) {

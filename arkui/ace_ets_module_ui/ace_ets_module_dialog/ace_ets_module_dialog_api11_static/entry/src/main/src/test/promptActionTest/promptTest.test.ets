@@ -93,7 +93,7 @@ it('promptTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<voi
       } catch (err) {
         console.info('promptTestTest await err: ' + JSON.stringify(err));
       }
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('prompt' + '_3'));
       } catch (err) {
@@ -111,13 +111,13 @@ it('promptTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<voi
       }
       let strJson1 = inspector.getInspectorByKey('prompt' + '_2');
       let obj1 = JSON.parseJsonElement(strJson1);
-      expect(obj1.getElement('$attrs').getString("label")).assertEqual('绾喛顓?);
+      expect(obj1.getElement('$attrs').getString("label")).assertEqual('确认');
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {
         console.info('promptTestTest await err: ' + JSON.stringify(err));
       }
-      let button1: Component | undefined;
+      let button1: Component | null;
       try {
         button1 = await driver.findComponent(ON.id('prompt' + '_2'));
       } catch (err) {

@@ -100,7 +100,7 @@ it('menu_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.info('menuTest await err: ' + JSON.stringify(err));
       }
       let driver = Driver.create()
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('button_start_preview'));
       } catch (err) {
@@ -117,7 +117,7 @@ it('menu_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
         console.info('menuTest await err: ' + JSON.stringify(err));
       }
 
-      let button1: Component | undefined;
+      let button1: Component | null;
       try {
         button1 = await driver.findComponent(ON.id('button_end_preview'));
       } catch (err) {

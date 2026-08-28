@@ -92,7 +92,7 @@ it('openCustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Promi
       } catch (err) {
         console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
       }
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('CustomDialog'));
       } catch (err) {
@@ -119,9 +119,9 @@ it('openCustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Promi
       console.info("[openCustomDialog_static_0100] title: " +
       JSON.stringify(obj.getElement('$attrs').getString("content")));
       expect(obj.getElement('$attrs').getString("content")).assertEqual('Custom dialog Message');
-      let button1: Component | undefined;
+      let button1: Component | null;
       try {
-        button1 = await driver.findComponent(ON.text('绾喛顓?));
+        button1 = await driver.findComponent(ON.text('确认'));
       } catch (err) {
         console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
       }

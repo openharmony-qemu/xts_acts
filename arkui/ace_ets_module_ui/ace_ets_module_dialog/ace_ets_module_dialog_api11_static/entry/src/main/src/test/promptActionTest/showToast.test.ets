@@ -89,7 +89,7 @@ it('showToast_static_0100', Level.LEVEL2, async (done: () => void): Promise<void
       } catch (err) {
         console.info('showToastTest await err: ' + JSON.stringify(err));
       }
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('showToast'));
       } catch (err) {

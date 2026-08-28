@@ -93,7 +93,7 @@ it('openCustomDialogNew_static_0100', Level.LEVEL2, async (done: () => void): Pr
       } catch (err) {
         console.info('openCustomDialogNewTest await err: ' + JSON.stringify(err));
       }
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('openCustomDialogNew'));
       } catch (err) {

@@ -86,7 +86,7 @@ export default function SelectStatusTest() {
         let tagName = 'SelectStatusTest_static_0100';
         console.info('[' + tagName + '] START============================');
         let driver: Driver = Driver.create();
-        let btnCheckboxGroup1: Component | undefined;
+        let btnCheckboxGroup1: Component | null;
         try {
           btnCheckboxGroup1 = await driver.findComponent(ON.id('SelectAll'));
         } catch (err) {
@@ -102,7 +102,7 @@ export default function SelectStatusTest() {
         } catch (err) {
           console.info('SelectStatusTest await err: ' + JSON.stringify(err));
         }
-        let btnCheckboxGroup4: Component | undefined;
+        let btnCheckboxGroup4: Component | null;
         try {
           btnCheckboxGroup4 = await driver.findComponent(ON.id('SelectAll'));
         } catch (err) {
@@ -118,7 +118,7 @@ export default function SelectStatusTest() {
         } catch (err) {
           console.info('SelectStatusTest await err: ' + JSON.stringify(err));
         }
-        let btnCheckboxGroup5: Component | undefined;
+        let btnCheckboxGroup5: Component | null;
         try {
           btnCheckboxGroup5 = await driver.findComponent(ON.id('SelectAll'));
         } catch (err) {
@@ -155,7 +155,7 @@ export default function SelectStatusTest() {
         let tagName = 'SelectStatusTest_static_0200';
         console.info('[' + tagName + '] START============================');
         let driver: Driver = Driver.create();
-        let btnCheckboxGroup2: Component | undefined;
+        let btnCheckboxGroup2: Component | null;
         try {
           btnCheckboxGroup2 = await driver.findComponent(ON.id('SelectAll'));
         } catch (err) {
