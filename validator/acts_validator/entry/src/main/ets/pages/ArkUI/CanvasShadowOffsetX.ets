@@ -104,7 +104,10 @@ struct SetCircle {
         X: $X,
         name: $name,
         Vue: $Vue,
-      }).margin({ bottom: '20vp' })
+      })
+        .width('80%')
+        .height('80%')
+        .margin({ left:20, right:20, bottom: 30 })
     }
     .width('100%')
     .height('100%')

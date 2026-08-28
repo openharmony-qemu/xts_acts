@@ -154,7 +154,8 @@ struct TextPickerDemo {
       .justifyContent(FlexAlign.SpaceBetween)
 
       Column() {
-        Button(!this.isMilitaryTime ? '12小时制' : '24小时制').height('6%')
+        Button(!this.isMilitaryTime ? '12小时制' : '24小时制')
+          .margin({ top: 30 })
           .onClick(() => {
             this.isMilitaryTime = !this.isMilitaryTime
             this.change = !this.change
@@ -162,7 +163,6 @@ struct TextPickerDemo {
         TimePicker({
           selected: this.selectedTime,
         })
-          .height('60%').width('80%')
           .useMilitaryTime(this.isMilitaryTime)
           .onChange((value: TimePickerResult) => {
             if (value.hour) {
@@ -174,14 +174,18 @@ struct TextPickerDemo {
           .disappearTextStyle({ color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } })
           .textStyle({ color: Color.Black, font: { size: 20, weight: FontWeight.Normal } })
           .selectedTextStyle({ color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } })
+          .margin({ top: 24 })
 
         Column() {
           Text('您选择的时间为:')
-            .fontSize(12).fontColor(Color.Red)
+            .fontSize(24)
+            .margin({ left: 12, right: 12 })
 
           Text(this.time)
-            .fontSize(12).fontColor(Color.Red)
+            .fontSize(24)
+            .margin({ left: 12, right: 12, top: 18 })
         }
+        .margin({ top: 48 })
         .borderWidth(2)
         .borderRadius(24)
         .borderColor(Color.Black)
@@ -189,7 +193,6 @@ struct TextPickerDemo {
       .height('80%')
       .width('100%')
       .backgroundColor(Color.White)
-      .justifyContent(FlexAlign.Center)
 
       Row() {
         this.PassBtn($r('app.string.btn_fullscreen'), true);

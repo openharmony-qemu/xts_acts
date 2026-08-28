@@ -34,11 +34,13 @@ struct SwipeGestureTest {
     Column() {
       Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
         Image($r("app.media.img"))
-          .height('90%')
-          .width('90%')
+          .height('60%')
+          .width('60%')
       }
-      .height('25%')
+      .height('35%')
       .width('90%')
+      .padding('5%')
+      .margin('5%')
       .rotate({ x: 0, y: 0, z: 1, angle: this.X })
       .gesture(
         SwipeGesture({ fingers: 1, direction: SwipeDirection.Vertical })
@@ -49,9 +51,10 @@ struct SwipeGestureTest {
           })
       )
       Text("滑动手势速度 ： " + this.Y).fontColor(Color.Black)
-        .height('5%')
       Text("滑动手势角度 ： " + this.X).fontColor(Color.Black)
-        .height('5%')
+        .height('15%')
+        .width('100%')
+        .padding(20)
     }
     .width('100%')
     .height('80%')
