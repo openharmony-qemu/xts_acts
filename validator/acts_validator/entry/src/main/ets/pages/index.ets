@@ -93,8 +93,6 @@ class TestCase {
 struct IndexPage {
   private TestCaseList: TestCase[] = [
     { title: 'ArkUI', uri: 'pages/ArkUI/ArkUI_index' },
-    { title: 'Audio', uri: 'pages/Audio/Audio_index' },
-    { title: 'Camera', uri: 'pages/Camera/Camera_index' },
     { title: 'Player', uri: 'pages/Player/Player_index' },
     { title: 'Sensor', uri: 'pages/Sensor/Sensor_index' },
     { title: 'Screen', uri: 'pages/Screen/Screen_index' },
@@ -102,7 +100,6 @@ struct IndexPage {
     { title: 'Power', uri: 'pages/Power/Power_index' },
     { title: 'Notification', uri: 'pages/Notification/Notification_index' },
     { title: 'Wifi', uri: 'pages/Wifi/Wifi_index' },
-    { title: 'Bluetooth', uri: 'pages/Bluetooth/BlueTooth_index' },
     { title: 'PCS', uri: 'pages/PCS/PCS_index' }
   ]
   @State ColorObject: string[] = ['#ff000000', '#ff000000', '#ff000000', '#ff000000', '#ff000000']

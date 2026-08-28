@@ -53,15 +53,11 @@ struct IndexPage {
     { title: 'Gravity', uri: 'pages/Sensor/Gravity' },
     { title: 'Gyroscope', uri: 'pages/Sensor/Gyroscope' },
     { title: 'GyroscopeUncalibrated', uri: 'pages/Sensor/GyroscopeUncalibrated' },
-    { title: 'HeartRate', uri: 'pages/Sensor/HeartRate' },
-    { title: 'Humidity', uri: 'pages/Sensor/Humidity' },
     { title: 'Light', uri: 'pages/Sensor/Light' },
     { title: 'LinearAccelerometer', uri: 'pages/Sensor/LinearAccelerometer' },
     { title: 'Orientation', uri: 'pages/Sensor/Orientation' },
     { title: 'Pedometer', uri: 'pages/Sensor/Pedometer' },
-    { title: 'Proximity', uri: 'pages/Sensor/Proximity' },
-    { title: 'SignificantMotion', uri: 'pages/Sensor/SignificantMotion' },
-    { title: 'Temperature', uri: 'pages/Sensor/Temperature' }
+    { title: 'Proximity', uri: 'pages/Sensor/Proximity' }
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
