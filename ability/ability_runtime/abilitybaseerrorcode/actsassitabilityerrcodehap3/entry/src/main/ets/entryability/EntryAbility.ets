@@ -26,8 +26,8 @@ import { BusinessError } from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager';
 
 let callerRequestCode:string;
-let casezz:string = "";
-let tag:string = "";
+let casezz:string = '';
+let tag:string = '';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -36,7 +36,7 @@ export default class EntryAbility extends UIAbility {
     callerRequestCode = want?.parameters?.[wantConstant.Params.CALLER_REQUEST_CODE] as string;
     casezz = want?.parameters?.case as string;
     tag = want?.parameters?.caseName as string;
-    console.info("the callerRequestCode is " + callerRequestCode  + casezz + ".." + tag);
+    console.info('the callerRequestCode is ' + callerRequestCode  + casezz + '..' + tag);
   
   }
 
@@ -63,19 +63,19 @@ export default class EntryAbility extends UIAbility {
     console.info('Ability onForeground');
 
      if (casezz == 'start16000075') {
-      let uri = "";
+      let uri = '';
       let path = this.context!.filesDir;
       try {
-        uri = fileUri.getUriFromPath(path + "text.txt");
-        console.info("uri is " + uri);
+        uri = fileUri.getUriFromPath(path + 'text.txt');
+        console.info('uri is ' + uri);
       } catch (e) {
-        console.info("the getUriFromPath eroor" + e)
+        console.info('the getUriFromPath eroor' + e)
       }
       let resultCode = 101;
       let abilityResult :common.AbilityResult = {
         want:{
-          bundleName:"com.acts.ability.errcode",
-          abilityName:"EntryAbility",
+          bundleName:'com.acts.ability.errcode',
+          abilityName:'EntryAbility',
           uri:uri,
           flags:wantConstant.Flags.FLAG_AUTH_WRITE_URI_PERMISSION
         },
@@ -96,7 +96,7 @@ export default class EntryAbility extends UIAbility {
             }
           }
           commonEventManager.publish(tag, commonEventData, (result) => {
-            console.info("common event success " + result);
+            console.info('common event success ' + result);
           });
 
 
