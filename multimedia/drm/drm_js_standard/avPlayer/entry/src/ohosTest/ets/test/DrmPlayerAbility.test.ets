@@ -6088,103 +6088,33 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_4900
-         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_4900
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000
          * @tc.desc   Test off_keyExpired with callback parameter
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_4900', Level.LEVEL0, (done:Function) => {
+        it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000', Level.LEVEL0, (done:Function) => {
             let drmMediaKeySystem:drm.MediaKeySystem;
             try {
                 drmMediaKeySystem = drm.createMediaKeySystem(systemName);
             } catch (err) {
-                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_4900 createMediaKeySystem failed", err.code);
+                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000 createMediaKeySystem failed", err.code);
                 expect().assertFail();
                 done();
             }
             let session = drmMediaKeySystem!.createMediaKeySession();
             try {
                 let callback = (eventInfo: drm.EventInfo) => {
-                    console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_4900 off_keyExpired callback called");
+                    console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000 off_keyExpired callback called");
                 }
                 session!.off('keyExpired', callback);
                 session!.destroy();
                 drmMediaKeySystem!.destroy();
                 done();
             } catch (err) {
-                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_4900 off_keyExpired", err.message);
-                expect().assertFail();
-            }
-            session!.destroy();
-            drmMediaKeySystem!.destroy();
-            done();
-        });
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000
-         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000
-         * @tc.desc   Test off_expirationUpdate with callback parameter
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000', Level.LEVEL0, (done:Function) => {
-            let drmMediaKeySystem:drm.MediaKeySystem;
-            try {
-                drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-            } catch (err) {
-                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000 createMediaKeySystem failed", err.code);
-                expect().assertFail();
-                done();
-            }
-            let session = drmMediaKeySystem!.createMediaKeySession();
-            try {
-                let callback = (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
-                    console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000 off_expirationUpdate callback called");
-                }
-                session!.off('expirationUpdate', callback);
-                session!.destroy();
-                drmMediaKeySystem!.destroy();
-                done();
-            } catch (err) {
-                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000 off_expirationUpdate", err.message);
-                expect().assertFail();
-            }
-            session!.destroy();
-            drmMediaKeySystem!.destroy();
-            done();
-        });
-
-        /**
-         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000
-         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000
-         * @tc.desc   Test off_keysChange with callback parameter
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL0
-         */
-        it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000', Level.LEVEL0, (done:Function) => {
-            let drmMediaKeySystem:drm.MediaKeySystem;
-            try {
-                drmMediaKeySystem = drm.createMediaKeySystem(systemName);
-            } catch (err) {
-                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000 createMediaKeySystem failed", err.code);
-                expect().assertFail();
-                done();
-            }
-            let session = drmMediaKeySystem!.createMediaKeySession();
-            try {
-                let callback = (eventInfo: drm.EventInfo) => {
-                    console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000 off_keysChange callback called");
-                }
-                session!.off('keysChange', callback);
-                session!.destroy();
-                drmMediaKeySystem!.destroy();
-                done();
-            } catch (err) {
-                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000 off_keysChange", err.message);
+                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5000 off_keyExpired", err.message);
                 expect().assertFail();
             }
             session!.destroy();
@@ -6195,7 +6125,7 @@ export default function abilityTest() {
         /**
          * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5100
          * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5100
-         * @tc.desc   Test createMediaKeySession
+         * @tc.desc   Test off_expirationUpdate with callback parameter
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
@@ -6209,8 +6139,78 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
             }
+            let session = drmMediaKeySystem!.createMediaKeySession();
+            try {
+                let callback = (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
+                    console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5100 off_expirationUpdate callback called");
+                }
+                session!.off('expirationUpdate', callback);
+                session!.destroy();
+                drmMediaKeySystem!.destroy();
+                done();
+            } catch (err) {
+                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5100 off_expirationUpdate", err.message);
+                expect().assertFail();
+            }
+            session!.destroy();
+            drmMediaKeySystem!.destroy();
+            done();
+        });
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5200
+         * @tc.desc   Test off_keysChange with callback parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5200', Level.LEVEL0, (done:Function) => {
+            let drmMediaKeySystem:drm.MediaKeySystem;
+            try {
+                drmMediaKeySystem = drm.createMediaKeySystem(systemName);
+            } catch (err) {
+                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5200 createMediaKeySystem failed", err.code);
+                expect().assertFail();
+                done();
+            }
+            let session = drmMediaKeySystem!.createMediaKeySession();
+            try {
+                let callback = (eventInfo: drm.EventInfo) => {
+                    console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5200 off_keysChange callback called");
+                }
+                session!.off('keysChange', callback);
+                session!.destroy();
+                drmMediaKeySystem!.destroy();
+                done();
+            } catch (err) {
+                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5200 off_keysChange", err.message);
+                expect().assertFail();
+            }
+            session!.destroy();
+            drmMediaKeySystem!.destroy();
+            done();
+        });
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5300
+         * @tc.desc   Test createMediaKeySession
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5300', Level.LEVEL0, (done:Function) => {
+            let drmMediaKeySystem:drm.MediaKeySystem;
+            try {
+                drmMediaKeySystem = drm.createMediaKeySystem(systemName);
+            } catch (err) {
+                console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5300 createMediaKeySystem failed", err.code);
+                expect().assertFail();
+                done();
+            }
             let session = drmMediaKeySystem!.createMediaKeySession(drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-            console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5100 createMediaKeySession result", session);
+            console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5300 createMediaKeySession result", session);
             expect(session).not().assertUndefined();
             expect(session.checkMediaKeyStatus).not().assertUndefined();
             expect(session.generateMediaKeyRequest).not().assertUndefined();
