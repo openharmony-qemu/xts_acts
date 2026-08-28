@@ -6141,7 +6141,7 @@ export default function abilityTest() {
             }
             let session = drmMediaKeySystem!.createMediaKeySession();
             try {
-                let callback = (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
+                let callback = (eventInfo: drm.EventInfo) => {
                     console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5100 off_expirationUpdate callback called");
                 }
                 session!.off('expirationUpdate', callback);
@@ -6176,7 +6176,7 @@ export default function abilityTest() {
             }
             let session = drmMediaKeySystem!.createMediaKeySession();
             try {
-                let callback = (eventInfo: drm.EventInfo) => {
+                let callback = (keyInfo: drm.KeysInfo[], newKeyAvailable: boolean) => {
                     console.log("XX SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_5200 off_keysChange callback called");
                 }
                 session!.off('keysChange', callback);
