@@ -19,6 +19,7 @@
 #include <atomic>
 
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const uint32_t INITIAL_REFERENCE_COUNT = 2;
 
 static napi_value OpenHandleScopeStable(napi_env env, napi_callback_info info)
 {
@@ -888,7 +889,7 @@ static napi_value ReferenceUnrefRuntime(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(newEnv, &obj);
         napi_ref ref = nullptr;
-        napi_create_reference(newEnv, obj, 2, &ref);
+        napi_create_reference(newEnv, obj, INITIAL_REFERENCE_COUNT, &ref);
         uint32_t count = 0;
         napi_status status = napi_reference_unref(newEnv, ref, &count);
         int32_t ret = status == napi_ok ? 1 : 0;
@@ -1051,7 +1052,12 @@ static napi_value AddFinalizerMultiCtx(napi_env env, napi_callback_info info)
     }
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
-    napi_status status = napi_add_finalizer(env, obj, nullptr, [](napi_env e, void* d, void* h) { (void)e; (void)d; (void)h; }, nullptr, nullptr);
+    napi_status status = napi_add_finalizer(env, obj, nullptr,
+        [](napi_env e, void* d, void* h) {
+            (void)e;
+            (void)d;
+            (void)h;
+        }, nullptr, nullptr);
     int32_t ret = status == napi_ok ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -1070,7 +1076,12 @@ static napi_value AddFinalizerRuntime(napi_env env, napi_callback_info info)
         }
         napi_value obj = nullptr;
         napi_create_object(newEnv, &obj);
-        napi_status status = napi_add_finalizer(newEnv, obj, nullptr, [](napi_env e, void* d, void* h) { (void)e; (void)d; (void)h; }, nullptr, nullptr);
+        napi_status status = napi_add_finalizer(newEnv, obj, nullptr,
+            [](napi_env e, void* d, void* h) {
+                (void)e;
+                (void)d;
+                (void)h;
+            }, nullptr, nullptr);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);

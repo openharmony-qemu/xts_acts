@@ -20,7 +20,8 @@
 static const int32_t STABLE_LOOP_COUNT = 10;
 static const int32_t NATIVE_DATA_VALUE = 42;
 
-static napi_value Constructor(napi_env env, napi_callback_info info) {
+static napi_value Constructor(napi_env env, napi_callback_info info)
+{
     napi_value thisVar = nullptr;
     napi_get_cb_info(env, info, nullptr, nullptr, &thisVar, nullptr);
     return thisVar;

@@ -19,13 +19,17 @@
 #include <atomic>
 static const int32_t STABLE_LOOP_COUNT = 10;
 
-static void AsyncExecute(napi_env env, void* data) { (void)env;
-(void)data;
-};
-static void AsyncComplete(napi_env env, napi_status status, void* data) { (void)env;
-(void)status;
-(void)data;
-};
+static void AsyncExecute(napi_env env, void* data)
+{
+    (void)env;
+    (void)data;
+}
+static void AsyncComplete(napi_env env, napi_status status, void* data)
+{
+    (void)env;
+    (void)status;
+    (void)data;
+}
 
 static napi_value CreatePromiseStable(napi_env env, napi_callback_info info)
 {

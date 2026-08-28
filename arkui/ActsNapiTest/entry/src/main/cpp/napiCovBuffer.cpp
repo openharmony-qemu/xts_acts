@@ -19,6 +19,7 @@
 #include <atomic>
 
 static const int32_t EXT_BUFFER_SIZE = 8;
+static const int32_t BUFFER_SIZE = 16;
 static const int32_t STABLE_LOOP_COUNT = 10;
 
 static napi_value CreateBufferStable(napi_env env, napi_callback_info info)
@@ -29,7 +30,7 @@ static napi_value CreateBufferStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         void* data = nullptr;
         napi_value result = nullptr;
-        napi_status status = napi_create_buffer(env, 16, &data, &result);
+        napi_status status = napi_create_buffer(env, BUFFER_SIZE, &data, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -66,7 +67,7 @@ static napi_value CreateBufferMultiCtx(napi_env env, napi_callback_info info)
     }
     void* data = nullptr;
     napi_value result = nullptr;
-    napi_status status = napi_create_buffer(env, 16, &data, &result);
+    napi_status status = napi_create_buffer(env, BUFFER_SIZE, &data, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -85,7 +86,7 @@ static napi_value CreateBufferRuntime(napi_env env, napi_callback_info info)
         }
         void* data = nullptr;
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_buffer(newEnv, 16, &data, &napiRet);
+        napi_status status = napi_create_buffer(newEnv, BUFFER_SIZE, &data, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -307,7 +308,7 @@ static napi_value GetBufferInfoStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         void* data = nullptr;
         napi_value buf = nullptr;
-        napi_create_buffer(env, 16, &data, &buf);
+        napi_create_buffer(env, BUFFER_SIZE, &data, &buf);
         size_t len = 0;
         void* bufData = nullptr;
         napi_status status = napi_get_buffer_info(env, buf, &bufData, &len);
@@ -347,7 +348,7 @@ static napi_value GetBufferInfoMultiCtx(napi_env env, napi_callback_info info)
     }
     void* data = nullptr;
     napi_value buf = nullptr;
-    napi_create_buffer(env, 16, &data, &buf);
+    napi_create_buffer(env, BUFFER_SIZE, &data, &buf);
     size_t len = 0;
     void* bufData = nullptr;
     napi_status status = napi_get_buffer_info(env, buf, &bufData, &len);
@@ -369,7 +370,7 @@ static napi_value GetBufferInfoRuntime(napi_env env, napi_callback_info info)
         }
         void* data = nullptr;
         napi_value buf = nullptr;
-        napi_create_buffer(newEnv, 16, &data, &buf);
+        napi_create_buffer(newEnv, BUFFER_SIZE, &data, &buf);
         size_t len = 0;
         void* bufData = nullptr;
         napi_status status = napi_get_buffer_info(newEnv, buf, &bufData, &len);
@@ -401,7 +402,7 @@ static napi_value IsBufferStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         void* data = nullptr;
         napi_value buf = nullptr;
-        napi_create_buffer(env, 16, &data, &buf);
+        napi_create_buffer(env, BUFFER_SIZE, &data, &buf);
         bool isBuf = false;
         napi_status status = napi_is_buffer(env, buf, &isBuf);
         int32_t singleRet = (status == napi_ok && isBuf) ? 1 : 0;
@@ -440,7 +441,7 @@ static napi_value IsBufferMultiCtx(napi_env env, napi_callback_info info)
     }
     void* data = nullptr;
     napi_value buf = nullptr;
-    napi_create_buffer(env, 16, &data, &buf);
+    napi_create_buffer(env, BUFFER_SIZE, &data, &buf);
     bool isBuf = false;
     napi_status status = napi_is_buffer(env, buf, &isBuf);
     int32_t ret = (status == napi_ok && isBuf) ? 1 : 0;
@@ -461,7 +462,7 @@ static napi_value IsBufferRuntime(napi_env env, napi_callback_info info)
         }
         void* data = nullptr;
         napi_value buf = nullptr;
-        napi_create_buffer(newEnv, 16, &data, &buf);
+        napi_create_buffer(newEnv, BUFFER_SIZE, &data, &buf);
         bool isBuf = false;
         napi_status status = napi_is_buffer(newEnv, buf, &isBuf);
         int32_t ret = (status == napi_ok && isBuf) ? 1 : 0;

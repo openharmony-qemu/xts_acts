@@ -20,7 +20,8 @@
 
 static const int32_t STABLE_LOOP_COUNT = 10;
 
-static napi_value TestCallback(napi_env env, napi_callback_info info) {
+static napi_value TestCallback(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
     return result;

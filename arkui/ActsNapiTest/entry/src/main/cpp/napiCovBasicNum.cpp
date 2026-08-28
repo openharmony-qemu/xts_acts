@@ -19,6 +19,7 @@
 #include <atomic>
 
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const int32_t BASIC_NUM_TEST_VALUE = 42;
 
 static napi_value CreateInt32Stable(napi_env env, napi_callback_info info)
 {
@@ -27,7 +28,7 @@ static napi_value CreateInt32Stable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value result = nullptr;
-        napi_status status = napi_create_int32(env, 42, &result);
+        napi_status status = napi_create_int32(env, BASIC_NUM_TEST_VALUE, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -63,7 +64,7 @@ static napi_value CreateInt32MultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value result = nullptr;
-    napi_status status = napi_create_int32(env, 42, &result);
+    napi_status status = napi_create_int32(env, BASIC_NUM_TEST_VALUE, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -81,7 +82,7 @@ static napi_value CreateInt32Runtime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_int32(newEnv, 42, &napiRet);
+        napi_status status = napi_create_int32(newEnv, BASIC_NUM_TEST_VALUE, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -116,7 +117,7 @@ static napi_value CreateUint32Stable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value result = nullptr;
-        napi_status status = napi_create_uint32(env, 42, &result);
+        napi_status status = napi_create_uint32(env, BASIC_NUM_TEST_VALUE, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -152,7 +153,7 @@ static napi_value CreateUint32MultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value result = nullptr;
-    napi_status status = napi_create_uint32(env, 42, &result);
+    napi_status status = napi_create_uint32(env, BASIC_NUM_TEST_VALUE, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -170,7 +171,7 @@ static napi_value CreateUint32Runtime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_uint32(newEnv, 42, &napiRet);
+        napi_status status = napi_create_uint32(newEnv, BASIC_NUM_TEST_VALUE, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -394,7 +395,7 @@ static napi_value GetValueInt32Stable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value num = nullptr;
-        napi_create_int32(env, 42, &num);
+        napi_create_int32(env, BASIC_NUM_TEST_VALUE, &num);
         int32_t val = 0;
         napi_status status = napi_get_value_int32(env, num, &val);
         int32_t singleRet = (status == napi_ok && val == 42) ? 1 : 0;
@@ -432,7 +433,7 @@ static napi_value GetValueInt32MultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value num = nullptr;
-    napi_create_int32(env, 42, &num);
+    napi_create_int32(env, BASIC_NUM_TEST_VALUE, &num);
     int32_t val = 0;
     napi_status status = napi_get_value_int32(env, num, &val);
     int32_t ret = (status == napi_ok && val == 42) ? 1 : 0;
@@ -452,7 +453,7 @@ static napi_value GetValueInt32Runtime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value num = nullptr;
-        napi_create_int32(newEnv, 42, &num);
+        napi_create_int32(newEnv, BASIC_NUM_TEST_VALUE, &num);
         int32_t val = 0;
         napi_status status = napi_get_value_int32(newEnv, num, &val);
         int32_t ret = (status == napi_ok && val == 42) ? 1 : 0;
@@ -489,7 +490,7 @@ static napi_value GetValueUint32Stable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value num = nullptr;
-        napi_create_uint32(env, 42, &num);
+        napi_create_uint32(env, BASIC_NUM_TEST_VALUE, &num);
         uint32_t val = 0;
         napi_status status = napi_get_value_uint32(env, num, &val);
         int32_t singleRet = (status == napi_ok && val == 42) ? 1 : 0;
@@ -527,7 +528,7 @@ static napi_value GetValueUint32MultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value num = nullptr;
-    napi_create_uint32(env, 42, &num);
+    napi_create_uint32(env, BASIC_NUM_TEST_VALUE, &num);
     uint32_t val = 0;
     napi_status status = napi_get_value_uint32(env, num, &val);
     int32_t ret = (status == napi_ok && val == 42) ? 1 : 0;
@@ -547,7 +548,7 @@ static napi_value GetValueUint32Runtime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value num = nullptr;
-        napi_create_uint32(newEnv, 42, &num);
+        napi_create_uint32(newEnv, BASIC_NUM_TEST_VALUE, &num);
         uint32_t val = 0;
         napi_status status = napi_get_value_uint32(newEnv, num, &val);
         int32_t ret = (status == napi_ok && val == 42) ? 1 : 0;

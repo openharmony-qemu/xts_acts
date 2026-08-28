@@ -21,7 +21,10 @@
 static const int32_t STABLE_LOOP_COUNT = 10;
 static const int32_t NATIVE_DATA_VALUE = 42;
 
-static napi_value Constructor(napi_env env, napi_callback_info info) { return nullptr; }
+static napi_value Constructor(napi_env env, napi_callback_info info)
+{
+    return nullptr;
+}
 
 static napi_value IsSendableAbnormal(napi_env env, napi_callback_info info)
 {

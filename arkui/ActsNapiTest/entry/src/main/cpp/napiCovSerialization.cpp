@@ -19,6 +19,7 @@
 #include <atomic>
 
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const int32_t SERIALIZE_TEST_VALUE = 42;
 
 static napi_value SerializeRetVal(napi_env env, napi_callback_info info)
 {
@@ -27,7 +28,7 @@ static napi_value SerializeRetVal(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, SERIALIZE_TEST_VALUE, &val);
     napi_set_named_property(env, obj, "x", val);
     napi_value transferList = nullptr;
     napi_create_array(env, &transferList);
@@ -50,7 +51,7 @@ static napi_value SerializeStable(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(env, &obj);
         napi_value val = nullptr;
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, SERIALIZE_TEST_VALUE, &val);
         napi_set_named_property(env, obj, "x", val);
         napi_value transferList = nullptr;
         napi_create_array(env, &transferList);
@@ -96,7 +97,7 @@ static napi_value SerializeMultiCtx(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, SERIALIZE_TEST_VALUE, &val);
     napi_set_named_property(env, obj, "x", val);
     napi_value transferList = nullptr;
     napi_create_array(env, &transferList);
@@ -124,7 +125,7 @@ static napi_value SerializeRuntime(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(newEnv, &obj);
         napi_value val = nullptr;
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, SERIALIZE_TEST_VALUE, &val);
         napi_set_named_property(newEnv, obj, "x", val);
         napi_value transferList = nullptr;
         napi_create_array(newEnv, &transferList);
@@ -167,7 +168,7 @@ static napi_value DeserializeRetVal(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, SERIALIZE_TEST_VALUE, &val);
     napi_set_named_property(env, obj, "x", val);
     napi_value transferList = nullptr;
     napi_create_array(env, &transferList);
@@ -192,7 +193,7 @@ static napi_value DeserializeStable(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(env, &obj);
         napi_value val = nullptr;
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, SERIALIZE_TEST_VALUE, &val);
         napi_set_named_property(env, obj, "x", val);
         napi_value transferList = nullptr;
         napi_create_array(env, &transferList);
@@ -240,7 +241,7 @@ static napi_value DeserializeMultiCtx(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, SERIALIZE_TEST_VALUE, &val);
     napi_set_named_property(env, obj, "x", val);
     napi_value transferList = nullptr;
     napi_create_array(env, &transferList);
@@ -270,7 +271,7 @@ static napi_value DeserializeRuntime(napi_env env, napi_callback_info info)
         napi_value obj = nullptr;
         napi_create_object(newEnv, &obj);
         napi_value val = nullptr;
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, SERIALIZE_TEST_VALUE, &val);
         napi_set_named_property(newEnv, obj, "x", val);
         napi_value transferList = nullptr;
         napi_create_array(newEnv, &transferList);

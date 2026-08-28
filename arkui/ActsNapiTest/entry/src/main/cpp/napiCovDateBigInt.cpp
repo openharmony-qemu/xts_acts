@@ -19,6 +19,9 @@
 #include <atomic>
 
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const double DATE_TEST_VALUE = 1234567890.0;
+static const int64_t BIGINT_INT64_TEST_VALUE = 123456789012LL;
+static const uint64_t BIGINT_UINT64_TEST_VALUE = 123456789012ULL;
 
 static napi_value CreateDateStable(napi_env env, napi_callback_info info)
 {
@@ -27,7 +30,7 @@ static napi_value CreateDateStable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value result = nullptr;
-        napi_status status = napi_create_date(env, 1234567890.0, &result);
+        napi_status status = napi_create_date(env, DATE_TEST_VALUE, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -63,7 +66,7 @@ static napi_value CreateDateMultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value result = nullptr;
-    napi_status status = napi_create_date(env, 1234567890.0, &result);
+    napi_status status = napi_create_date(env, DATE_TEST_VALUE, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -81,7 +84,7 @@ static napi_value CreateDateRuntime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_date(newEnv, 1234567890.0, &napiRet);
+        napi_status status = napi_create_date(newEnv, DATE_TEST_VALUE, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -109,10 +112,10 @@ static napi_value GetDateValueStable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value date = nullptr;
-        napi_create_date(env, 1234567890.0, &date);
+        napi_create_date(env, DATE_TEST_VALUE, &date);
         double val = 0.0;
         napi_status status = napi_get_date_value(env, date, &val);
-        int32_t singleRet = (status == napi_ok && val == 1234567890.0) ? 1 : 0;
+        int32_t singleRet = (status == napi_ok && val == DATE_TEST_VALUE) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
             pass = 0;
@@ -147,10 +150,10 @@ static napi_value GetDateValueMultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value date = nullptr;
-    napi_create_date(env, 1234567890.0, &date);
+    napi_create_date(env, DATE_TEST_VALUE, &date);
     double val = 0.0;
     napi_status status = napi_get_date_value(env, date, &val);
-    int32_t ret = (status == napi_ok && val == 1234567890.0) ? 1 : 0;
+    int32_t ret = (status == napi_ok && val == DATE_TEST_VALUE) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
     return Ret(env, ret);
@@ -167,10 +170,10 @@ static napi_value GetDateValueRuntime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value date = nullptr;
-        napi_create_date(newEnv, 1234567890.0, &date);
+        napi_create_date(newEnv, DATE_TEST_VALUE, &date);
         double val = 0.0;
         napi_status status = napi_get_date_value(newEnv, date, &val);
-        int32_t ret = (status == napi_ok && val == 1234567890.0) ? 1 : 0;
+        int32_t ret = (status == napi_ok && val == DATE_TEST_VALUE) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
     });
@@ -197,7 +200,7 @@ static napi_value IsDateStable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value date = nullptr;
-        napi_create_date(env, 1234567890.0, &date);
+        napi_create_date(env, DATE_TEST_VALUE, &date);
         bool isDate = false;
         napi_status status = napi_is_date(env, date, &isDate);
         int32_t singleRet = (status == napi_ok && isDate) ? 1 : 0;
@@ -235,7 +238,7 @@ static napi_value IsDateMultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value date = nullptr;
-    napi_create_date(env, 1234567890.0, &date);
+    napi_create_date(env, DATE_TEST_VALUE, &date);
     bool isDate = false;
     napi_status status = napi_is_date(env, date, &isDate);
     int32_t ret = (status == napi_ok && isDate) ? 1 : 0;
@@ -261,7 +264,7 @@ static napi_value CreateBigintInt64RetVal(napi_env env, napi_callback_info info)
     napi_handle_scope scope = nullptr;
     napi_open_handle_scope(env, &scope);
     napi_value result = nullptr;
-    napi_status status = napi_create_bigint_int64(env, 123456789012LL, &result);
+    napi_status status = napi_create_bigint_int64(env, BIGINT_INT64_TEST_VALUE, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_close_handle_scope(env, scope);
     return Ret(env, ret);
@@ -274,7 +277,7 @@ static napi_value CreateBigintInt64Stable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value result = nullptr;
-        napi_status status = napi_create_bigint_int64(env, 123456789012LL, &result);
+        napi_status status = napi_create_bigint_int64(env, BIGINT_INT64_TEST_VALUE, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -310,7 +313,7 @@ static napi_value CreateBigintInt64MultiCtx(napi_env env, napi_callback_info inf
         return Ret(env, 0);
     }
     napi_value result = nullptr;
-    napi_status status = napi_create_bigint_int64(env, 123456789012LL, &result);
+    napi_status status = napi_create_bigint_int64(env, BIGINT_INT64_TEST_VALUE, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -328,7 +331,7 @@ static napi_value CreateBigintInt64Runtime(napi_env env, napi_callback_info info
             return;
         }
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_bigint_int64(newEnv, 123456789012LL, &napiRet);
+        napi_status status = napi_create_bigint_int64(newEnv, BIGINT_INT64_TEST_VALUE, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -363,7 +366,7 @@ static napi_value CreateBigintUint64Stable(napi_env env, napi_callback_info info
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value result = nullptr;
-        napi_status status = napi_create_bigint_uint64(env, 123456789012ULL, &result);
+        napi_status status = napi_create_bigint_uint64(env, BIGINT_UINT64_TEST_VALUE, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -399,7 +402,7 @@ static napi_value CreateBigintUint64MultiCtx(napi_env env, napi_callback_info in
         return Ret(env, 0);
     }
     napi_value result = nullptr;
-    napi_status status = napi_create_bigint_uint64(env, 123456789012ULL, &result);
+    napi_status status = napi_create_bigint_uint64(env, BIGINT_UINT64_TEST_VALUE, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -417,7 +420,7 @@ static napi_value CreateBigintUint64Runtime(napi_env env, napi_callback_info inf
             return;
         }
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_bigint_uint64(newEnv, 123456789012ULL, &napiRet);
+        napi_status status = napi_create_bigint_uint64(newEnv, BIGINT_UINT64_TEST_VALUE, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);

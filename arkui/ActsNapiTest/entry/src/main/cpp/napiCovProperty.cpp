@@ -1026,7 +1026,9 @@ static napi_value DefinePropertiesStable(napi_env env, napi_callback_info info)
         napi_value propVal = nullptr;
         napi_create_string_utf8(env, "prop", NAPI_AUTO_LENGTH, &propName);
         napi_create_int32(env, 42, &propVal);
-        napi_property_descriptor desc[] = {{"prop", nullptr, nullptr, nullptr, nullptr, propVal, napi_default, nullptr}};
+        napi_property_descriptor desc[] = {
+            {"prop", nullptr, nullptr, nullptr, nullptr, propVal, napi_default, nullptr}
+        };
         napi_status status = napi_define_properties(env, obj, 1, desc);
         int32_t singleRet = status == napi_ok ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
@@ -1092,7 +1094,9 @@ static napi_value DefinePropertiesRuntime(napi_env env, napi_callback_info info)
         napi_value propVal = nullptr;
         napi_create_string_utf8(newEnv, "prop", NAPI_AUTO_LENGTH, &propName);
         napi_create_int32(newEnv, 42, &propVal);
-        napi_property_descriptor desc[] = {{"prop", nullptr, nullptr, nullptr, nullptr, propVal, napi_default, nullptr}};
+        napi_property_descriptor desc[] = {
+            {"prop", nullptr, nullptr, nullptr, nullptr, propVal, napi_default, nullptr}
+        };
         napi_status status = napi_define_properties(newEnv, obj, 1, desc);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);
@@ -1116,7 +1120,8 @@ static napi_value DefinePropertiesWorker(napi_env env, napi_callback_info info)
 
 static napi_value GetAllPropertyNamesAbnormal(napi_env env, napi_callback_info info)
 {
-    napi_status status = napi_get_all_property_names(env, nullptr, napi_key_include_prototypes, napi_key_all_properties, napi_key_numbers_to_strings, nullptr);
+    napi_status status = napi_get_all_property_names(env, nullptr, napi_key_include_prototypes,
+        napi_key_all_properties, napi_key_numbers_to_strings, nullptr);
     int32_t ret = status != napi_ok ? 1 : 0;
     return Ret(env, ret);
 }
@@ -1131,7 +1136,8 @@ static napi_value GetAllPropertyNamesRetVal(napi_env env, napi_callback_info inf
     napi_create_int32(env, 1, &val);
     napi_set_named_property(env, obj, "a", val);
     napi_value result = nullptr;
-    napi_status status = napi_get_all_property_names(env, obj, napi_key_include_prototypes, napi_key_all_properties, napi_key_numbers_to_strings, &result);
+    napi_status status = napi_get_all_property_names(env, obj, napi_key_include_prototypes,
+        napi_key_all_properties, napi_key_numbers_to_strings, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_close_handle_scope(env, scope);
     return Ret(env, ret);
@@ -1149,7 +1155,8 @@ static napi_value GetAllPropertyNamesStable(napi_env env, napi_callback_info inf
         napi_create_int32(env, 1, &val);
         napi_set_named_property(env, obj, "a", val);
         napi_value result = nullptr;
-        napi_status status = napi_get_all_property_names(env, obj, napi_key_include_prototypes, napi_key_all_properties, napi_key_numbers_to_strings, &result);
+        napi_status status = napi_get_all_property_names(env, obj, napi_key_include_prototypes,
+            napi_key_all_properties, napi_key_numbers_to_strings, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -1165,7 +1172,8 @@ static napi_value GetAllPropertyNamesMultiThread(napi_env env, napi_callback_inf
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_get_all_property_names(savedEnv, nullptr, napi_key_include_prototypes, napi_key_all_properties, napi_key_numbers_to_strings, nullptr);
+        napi_status status = napi_get_all_property_names(savedEnv, nullptr, napi_key_include_prototypes,
+            napi_key_all_properties, napi_key_numbers_to_strings, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();
@@ -1190,7 +1198,8 @@ static napi_value GetAllPropertyNamesMultiCtx(napi_env env, napi_callback_info i
     napi_create_int32(env, 1, &val);
     napi_set_named_property(env, obj, "a", val);
     napi_value result = nullptr;
-    napi_status status = napi_get_all_property_names(env, obj, napi_key_include_prototypes, napi_key_all_properties, napi_key_numbers_to_strings, &result);
+    napi_status status = napi_get_all_property_names(env, obj, napi_key_include_prototypes,
+        napi_key_all_properties, napi_key_numbers_to_strings, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -1213,7 +1222,8 @@ static napi_value GetAllPropertyNamesRuntime(napi_env env, napi_callback_info in
         napi_create_int32(newEnv, 1, &val);
         napi_set_named_property(newEnv, obj, "a", val);
         napi_value napiRet = nullptr;
-        napi_status status = napi_get_all_property_names(newEnv, obj, napi_key_include_prototypes, napi_key_all_properties, napi_key_numbers_to_strings, &napiRet);
+        napi_status status = napi_get_all_property_names(newEnv, obj, napi_key_include_prototypes,
+            napi_key_all_properties, napi_key_numbers_to_strings, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -1227,7 +1237,8 @@ static napi_value GetAllPropertyNamesWorker(napi_env env, napi_callback_info inf
     napi_env savedEnv = env;
     std::atomic<int32_t> result(0);
     std::thread t([savedEnv, &result]() {
-        napi_status status = napi_get_all_property_names(savedEnv, nullptr, napi_key_include_prototypes, napi_key_all_properties, napi_key_numbers_to_strings, nullptr);
+        napi_status status = napi_get_all_property_names(savedEnv, nullptr, napi_key_include_prototypes,
+            napi_key_all_properties, napi_key_numbers_to_strings, nullptr);
         result.store(status != napi_ok ? 1 : 0);
     });
     t.join();

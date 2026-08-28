@@ -18,14 +18,17 @@
 #include <thread>
 #include <atomic>
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const int32_t SECOND_NAMED_PROP_VALUE = 2;
 
-static void* DetachCallback(napi_env env, void* nativeObject, void* hint) {
+static void* DetachCallback(napi_env env, void* nativeObject, void* hint)
+{
     (void)env;
     (void)nativeObject;
     (void)hint;
     return nullptr;
 }
-static napi_value AttachCallback(napi_env env, void* nativeObject, void* hint) {
+static napi_value AttachCallback(napi_env env, void* nativeObject, void* hint)
+{
     (void)env;
     (void)nativeObject;
     (void)hint;
@@ -136,7 +139,7 @@ static napi_value CreateObjectWithNamedPropertiesRetVal(napi_env env, napi_callb
     napi_value val1 = nullptr;
     napi_value val2 = nullptr;
     napi_create_int32(env, 1, &val1);
-    napi_create_int32(env, 2, &val2);
+    napi_create_int32(env, SECOND_NAMED_PROP_VALUE, &val2);
     const char* keys[] = {"a", "b"};
     napi_value values[] = {val1, val2};
     napi_value result = nullptr;
@@ -155,7 +158,7 @@ static napi_value CreateObjectWithNamedPropertiesStable(napi_env env, napi_callb
         napi_value val1 = nullptr;
         napi_value val2 = nullptr;
         napi_create_int32(env, 1, &val1);
-        napi_create_int32(env, 2, &val2);
+        napi_create_int32(env, SECOND_NAMED_PROP_VALUE, &val2);
         const char* keys[] = {"a", "b"};
         napi_value values[] = {val1, val2};
         napi_value result = nullptr;
@@ -197,7 +200,7 @@ static napi_value CreateObjectWithNamedPropertiesMultiCtx(napi_env env, napi_cal
     napi_value val1 = nullptr;
     napi_value val2 = nullptr;
     napi_create_int32(env, 1, &val1);
-    napi_create_int32(env, 2, &val2);
+    napi_create_int32(env, SECOND_NAMED_PROP_VALUE, &val2);
     const char* keys[] = {"a", "b"};
     napi_value values[] = {val1, val2};
     napi_value result = nullptr;
@@ -221,7 +224,7 @@ static napi_value CreateObjectWithNamedPropertiesRuntime(napi_env env, napi_call
         napi_value val1 = nullptr;
         napi_value val2 = nullptr;
         napi_create_int32(newEnv, 1, &val1);
-        napi_create_int32(newEnv, 2, &val2);
+        napi_create_int32(newEnv, SECOND_NAMED_PROP_VALUE, &val2);
         const char* keys[] = {"a", "b"};
         napi_value values[] = {val1, val2};
         napi_value napiRet = nullptr;

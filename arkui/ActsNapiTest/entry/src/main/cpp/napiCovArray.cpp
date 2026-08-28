@@ -19,6 +19,9 @@
 #include <atomic>
 
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const int32_t ARRAY_BUFFER_BYTE_LENGTH = 16;
+static const int32_t DATAVIEW_BYTE_LENGTH = 8;
+static const int32_t ARRAY_LENGTH = 3;
 
 static napi_value CreateArrayRetVal(napi_env env, napi_callback_info info)
 {
@@ -138,7 +141,7 @@ static napi_value CreateArrayWithLengthMultiCtx(napi_env env, napi_callback_info
         return Ret(env, 0);
     }
     napi_value result = nullptr;
-    napi_status status = napi_create_array_with_length(env, 3, &result);
+    napi_status status = napi_create_array_with_length(env, ARRAY_LENGTH, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -156,7 +159,7 @@ static napi_value CreateArrayWithLengthRuntime(napi_env env, napi_callback_info 
             return;
         }
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_array_with_length(newEnv, 3, &napiRet);
+        napi_status status = napi_create_array_with_length(newEnv, ARRAY_LENGTH, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -182,7 +185,7 @@ static napi_value GetArrayLengthRetVal(napi_env env, napi_callback_info info)
     napi_handle_scope scope = nullptr;
     napi_open_handle_scope(env, &scope);
     napi_value arr = nullptr;
-    napi_create_array_with_length(env, 3, &arr);
+        napi_create_array_with_length(env, ARRAY_LENGTH, &arr);
     uint32_t len = 0;
     napi_status status = napi_get_array_length(env, arr, &len);
     int32_t ret = (status == napi_ok) ? 1 : 0;
@@ -197,7 +200,7 @@ static napi_value GetArrayLengthStable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value arr = nullptr;
-        napi_create_array_with_length(env, 3, &arr);
+    napi_create_array_with_length(env, ARRAY_LENGTH, &arr);
         uint32_t len = 0;
         napi_status status = napi_get_array_length(env, arr, &len);
         int32_t singleRet = (status == napi_ok && len == 3) ? 1 : 0;
@@ -235,7 +238,7 @@ static napi_value GetArrayLengthMultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value arr = nullptr;
-    napi_create_array_with_length(env, 3, &arr);
+        napi_create_array_with_length(env, ARRAY_LENGTH, &arr);
     uint32_t len = 0;
     napi_status status = napi_get_array_length(env, arr, &len);
     int32_t ret = (status == napi_ok && len == 3) ? 1 : 0;
@@ -255,7 +258,7 @@ static napi_value GetArrayLengthRuntime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value arr = nullptr;
-        napi_create_array_with_length(newEnv, 3, &arr);
+        napi_create_array_with_length(newEnv, ARRAY_LENGTH, &arr);
         uint32_t len = 0;
         napi_status status = napi_get_array_length(newEnv, arr, &len);
         int32_t ret = (status == napi_ok && len == 3) ? 1 : 0;
@@ -769,7 +772,7 @@ static napi_value CreateTypedarrayStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(env, 16, &abData, &ab);
+        napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value result = nullptr;
         napi_status status = napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
@@ -808,7 +811,7 @@ static napi_value CreateTypedarrayMultiCtx(napi_env env, napi_callback_info info
     }
     napi_value ab = nullptr;
     void* abData = nullptr;
-    napi_create_arraybuffer(env, 16, &abData, &ab);
+    napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
     napi_value result = nullptr;
     napi_status status = napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
@@ -829,7 +832,7 @@ static napi_value CreateTypedarrayRuntime(napi_env env, napi_callback_info info)
         }
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(newEnv, 16, &abData, &ab);
+        napi_create_arraybuffer(newEnv, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value napiRet = nullptr;
         napi_status status = napi_create_typedarray(newEnv, napi_int8_array, 4, ab, 0, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
@@ -860,7 +863,7 @@ static napi_value IsTypedarrayStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(env, 16, &abData, &ab);
+        napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value ta = nullptr;
         napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &ta);
         bool isTA = false;
@@ -901,7 +904,7 @@ static napi_value IsTypedarrayMultiCtx(napi_env env, napi_callback_info info)
     }
     napi_value ab = nullptr;
     void* abData = nullptr;
-    napi_create_arraybuffer(env, 16, &abData, &ab);
+    napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
     napi_value ta = nullptr;
     napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &ta);
     bool isTA = false;
@@ -932,7 +935,7 @@ static napi_value GetTypedarrayInfoStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(env, 16, &abData, &ab);
+        napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value ta = nullptr;
         napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &ta);
         napi_typedarray_type type = napi_int8_array;
@@ -976,7 +979,7 @@ static napi_value GetTypedarrayInfoMultiCtx(napi_env env, napi_callback_info inf
     }
     napi_value ab = nullptr;
     void* abData = nullptr;
-    napi_create_arraybuffer(env, 16, &abData, &ab);
+    napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
     napi_value ta = nullptr;
     napi_create_typedarray(env, napi_int8_array, 4, ab, 0, &ta);
     napi_typedarray_type type = napi_int8_array;
@@ -1010,9 +1013,9 @@ static napi_value CreateDataviewStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(env, 16, &abData, &ab);
+        napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value result = nullptr;
-        napi_status status = napi_create_dataview(env, 8, ab, 0, &result);
+        napi_status status = napi_create_dataview(env, DATAVIEW_BYTE_LENGTH, ab, 0, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -1049,9 +1052,9 @@ static napi_value CreateDataviewMultiCtx(napi_env env, napi_callback_info info)
     }
     napi_value ab = nullptr;
     void* abData = nullptr;
-    napi_create_arraybuffer(env, 16, &abData, &ab);
+    napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
     napi_value result = nullptr;
-    napi_status status = napi_create_dataview(env, 8, ab, 0, &result);
+    napi_status status = napi_create_dataview(env, DATAVIEW_BYTE_LENGTH, ab, 0, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -1070,9 +1073,9 @@ static napi_value CreateDataviewRuntime(napi_env env, napi_callback_info info)
         }
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(newEnv, 16, &abData, &ab);
+        napi_create_arraybuffer(newEnv, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_dataview(newEnv, 8, ab, 0, &napiRet);
+        napi_status status = napi_create_dataview(newEnv, DATAVIEW_BYTE_LENGTH, ab, 0, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -1101,9 +1104,9 @@ static napi_value IsDataviewStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(env, 16, &abData, &ab);
+        napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value dv = nullptr;
-        napi_create_dataview(env, 8, ab, 0, &dv);
+        napi_create_dataview(env, DATAVIEW_BYTE_LENGTH, ab, 0, &dv);
         bool isDV = false;
         napi_status status = napi_is_dataview(env, dv, &isDV);
         int32_t singleRet = (status == napi_ok && isDV) ? 1 : 0;
@@ -1142,9 +1145,9 @@ static napi_value IsDataviewMultiCtx(napi_env env, napi_callback_info info)
     }
     napi_value ab = nullptr;
     void* abData = nullptr;
-    napi_create_arraybuffer(env, 16, &abData, &ab);
+    napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
     napi_value dv = nullptr;
-    napi_create_dataview(env, 8, ab, 0, &dv);
+    napi_create_dataview(env, DATAVIEW_BYTE_LENGTH, ab, 0, &dv);
     bool isDV = false;
     napi_status status = napi_is_dataview(env, dv, &isDV);
     int32_t ret = (status == napi_ok && isDV) ? 1 : 0;
@@ -1165,9 +1168,9 @@ static napi_value IsDataviewRuntime(napi_env env, napi_callback_info info)
         }
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(newEnv, 16, &abData, &ab);
+        napi_create_arraybuffer(newEnv, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value dv = nullptr;
-        napi_create_dataview(newEnv, 8, ab, 0, &dv);
+        napi_create_dataview(newEnv, DATAVIEW_BYTE_LENGTH, ab, 0, &dv);
         bool isDV = false;
         napi_status status = napi_is_dataview(newEnv, dv, &isDV);
         int32_t ret = (status == napi_ok && isDV) ? 1 : 0;
@@ -1198,9 +1201,9 @@ static napi_value GetDataviewInfoStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(env, 16, &abData, &ab);
+        napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value dv = nullptr;
-        napi_create_dataview(env, 8, ab, 0, &dv);
+        napi_create_dataview(env, DATAVIEW_BYTE_LENGTH, ab, 0, &dv);
         size_t len = 0;
         void* data = nullptr;
         napi_value buf = nullptr;
@@ -1241,9 +1244,9 @@ static napi_value GetDataviewInfoMultiCtx(napi_env env, napi_callback_info info)
     }
     napi_value ab = nullptr;
     void* abData = nullptr;
-    napi_create_arraybuffer(env, 16, &abData, &ab);
+    napi_create_arraybuffer(env, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
     napi_value dv = nullptr;
-    napi_create_dataview(env, 8, ab, 0, &dv);
+    napi_create_dataview(env, DATAVIEW_BYTE_LENGTH, ab, 0, &dv);
     size_t len = 0;
     void* data = nullptr;
     napi_value buf = nullptr;
@@ -1266,9 +1269,9 @@ static napi_value GetDataviewInfoRuntime(napi_env env, napi_callback_info info)
         }
         napi_value ab = nullptr;
         void* abData = nullptr;
-        napi_create_arraybuffer(newEnv, 16, &abData, &ab);
+        napi_create_arraybuffer(newEnv, ARRAY_BUFFER_BYTE_LENGTH, &abData, &ab);
         napi_value dv = nullptr;
-        napi_create_dataview(newEnv, 8, ab, 0, &dv);
+        napi_create_dataview(newEnv, DATAVIEW_BYTE_LENGTH, ab, 0, &dv);
         size_t len = 0;
         void* data = nullptr;
         napi_value buf = nullptr;

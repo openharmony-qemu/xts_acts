@@ -18,6 +18,8 @@
 #include <cstring>
 #include <climits>
 
+static const size_t UTF16_BUFFER_SIZE = 8;
+
 static napi_value CreateBoolean(napi_env env, bool value)
 {
     napi_value result = nullptr;
@@ -249,9 +251,9 @@ static napi_value SpecDiffV8D11(napi_env env, napi_callback_info info)
         return CreateBoolean(env, false);
     }
 
-    char16_t buf[8] = {0};
+    char16_t buf[UTF16_BUFFER_SIZE] = {0};
     size_t len = 0;
-    napi_get_value_string_utf16(env, str, buf, 8, &len);
+    napi_get_value_string_utf16(env, str, buf, UTF16_BUFFER_SIZE, &len);
 
     bool confirmed = !(len == 3 && buf[0] == 0xE9 && buf[1] == 0xE7 && buf[2] == 0xF1);
     return CreateBoolean(env, confirmed);
@@ -331,9 +333,9 @@ static napi_value SpecDiffV8D14(napi_env env, napi_callback_info info)
     napi_value nameVal = nullptr;
     napi_get_named_property(env, func, "name", &nameVal);
 
-    char16_t buf[8] = {0};
+    char16_t buf[UTF16_BUFFER_SIZE] = {0};
     size_t len = 0;
-    napi_get_value_string_utf16(env, nameVal, buf, 8, &len);
+    napi_get_value_string_utf16(env, nameVal, buf, UTF16_BUFFER_SIZE, &len);
 
     bool confirmed = (len != 5);
     return CreateBoolean(env, confirmed);
@@ -363,9 +365,9 @@ static napi_value SpecDiffV8D15(napi_env env, napi_callback_info info)
     napi_value nameVal = nullptr;
     napi_get_named_property(env, ctor, "name", &nameVal);
 
-    char16_t buf[8] = {0};
+    char16_t buf[UTF16_BUFFER_SIZE] = {0};
     size_t len = 0;
-    napi_get_value_string_utf16(env, nameVal, buf, 8, &len);
+    napi_get_value_string_utf16(env, nameVal, buf, UTF16_BUFFER_SIZE, &len);
 
     bool confirmed = (len != 5);
     return CreateBoolean(env, confirmed);
@@ -405,7 +407,9 @@ static napi_value SpecDiffV8D17(napi_env env, napi_callback_info info)
 // Node.js 18: complete 可为 nullptr
 // OH: CHECK_ARG(env, complete) 将其设为必填
 // ============================================================================
-static void SpecDiffV8D18Execute(napi_env env, void *data) {}
+static void SpecDiffV8D18Execute(napi_env env, void *data)
+{
+}
 
 static napi_value SpecDiffV8D18(napi_env env, napi_callback_info info)
 {
@@ -462,7 +466,7 @@ static napi_value SpecDiffV8D19(napi_env env, napi_callback_info info)
 // Node.js 18: 返回 napi_closing
 // OH: 所有非 OK 统一映射为 napi_generic_failure
 // ============================================================================
-// V8-D20: napi_get_version OH 返回 8（Node.js 18 返回 9）（差异已确认）
+// V8-D20: napi_get_version OH 返回的版本号为 8（Node.js 18 返回 9）（差异已确认）
 // ============================================================================
 static napi_value SpecDiffV8D20(napi_env env, napi_callback_info info)
 {

@@ -20,7 +20,10 @@
 
 static const int32_t STABLE_LOOP_COUNT = 10;
 
-static napi_value Constructor(napi_env env, napi_callback_info info) { return nullptr; }
+static napi_value Constructor(napi_env env, napi_callback_info info)
+{
+    return nullptr;
+}
 
 static napi_value CreateObjectStable(napi_env env, napi_callback_info info)
 {

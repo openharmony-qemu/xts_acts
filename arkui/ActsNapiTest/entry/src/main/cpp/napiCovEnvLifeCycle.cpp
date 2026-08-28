@@ -493,7 +493,10 @@ static napi_value RemoveAsyncCleanupHookStable(napi_env env, napi_callback_info 
     int32_t pass = 1;
     for (int32_t i = 0; i < STABLE_LOOP_COUNT; i++) {
         napi_async_cleanup_hook_handle hook = nullptr;
-        napi_add_async_cleanup_hook(env, [](napi_async_cleanup_hook_handle h, void* d) { (void)d; (void)h; }, nullptr, &hook);
+    napi_add_async_cleanup_hook(env, [](napi_async_cleanup_hook_handle h, void* d) {
+        (void)d;
+        (void)h;
+    }, nullptr, &hook);
         napi_status status = napi_remove_async_cleanup_hook(hook);
         int32_t singleRet = status == napi_ok ? 1 : 0;
         if (singleRet == 0) {
