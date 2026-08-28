@@ -40,18 +40,12 @@ export default function imagePixelMapFramework() {
         let isSupportHdr = false;
         beforeAll(async function () {
             console.info('beforeAll case');
-            isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res) => {
-                if (res) {
-                  console.info("file exists");
-                  return true;
-                } else {
-                  console.info("file not exists");
-                  return false;
-                }
-              }).catch((err) => {
-                console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-                return false;
-            });
+            try {
+                isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+                console.info('isSupportHdr is ' + isSupportHdr);
+            } catch (err) {
+                console.error('The file path does not exist');
+            }
             context = await featureAbility.getContext();
             filesDir = await context.getFilesDir();
         })
