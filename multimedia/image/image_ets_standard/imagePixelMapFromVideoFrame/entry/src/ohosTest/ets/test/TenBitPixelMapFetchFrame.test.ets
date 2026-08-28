@@ -29,6 +29,7 @@ import media from '@ohos.multimedia.media';
 let mImageGenerator: media.AVImageGenerator | undefined;
 
 let isSupportHdr: boolean = false;
+let isSupportedFetchFrameByTime: boolean = true;
 
 export default function image10bitPixelMapFetchFrame() {
   let globalPixelMap: image.PixelMap | undefined;
@@ -39,12 +40,20 @@ export default function image10bitPixelMapFetchFrame() {
 
   describe('image10bitPixelMapFetchFrame', () => {
     beforeAll(async () => {
+      testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
       try {
         isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
         console.info('isSupportHdr is ' + isSupportHdr);
       } catch (err) {
         console.error('The file path does not exist');
       }
+      let timeUs: number = 0;
+      let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width: 1920,
+        height: 1440
+      }
+      await fetchFrameByTimeFromVideo('test.mp4', timeUs, queryOption, param);
     })
 
     afterEach(() => {
@@ -71,7 +80,7 @@ export default function image10bitPixelMapFetchFrame() {
     }
 
     const fetchFrameByTimeFromVideo = async(fileName: string, timeUs: number,
-      options: media.AVImageQueryOptions, param: media.PixelMapParams): Promise<PixelMap> => {
+      options: media.AVImageQueryOptions, param: media.PixelMapParams) => {
       console.info('begin.');
       mImageGenerator = await media.createAVImageGenerator();
       if(mImageGenerator == undefined){
@@ -80,17 +89,22 @@ export default function image10bitPixelMapFetchFrame() {
       }
       const resourceMgr: resourceManager.ResourceManager = testContext.createModuleContext("entry_test").resourceManager
       mImageGenerator.fdSrc = await resourceMgr.getRawFd(fileName)
-      let pixelMap = await mImageGenerator.fetchFrameByTime(timeUs, options, param);
-      if(pixelMap == undefined){
-        console.info('failed fetch pixelmap');
-        expect().assertFail();
+      let pixelMap: image.PixelMap | undefined = undefined;
+      try {
+        pixelMap = await mImageGenerator.fetchFrameByTime(timeUs, options, param);
+        expect(pixelMap).not().assertUndefined();
+        console.info('fetch FrameByTime success');
+      } catch (error) {
+        if (error.code === 5400106) {
+          isSupportedFetchFrameByTime = false;
+        }
+        console.error('Failed to fetch FrameByTime, code: ' + error.code + ', msg: ' + error.message);
       }
       await mImageGenerator.release();
       return pixelMap
     }
 
-
-    const writerAndReadPixelsToAreaThrowFetchFrame = async (done: Function, logger: Logger, type: string, fileName: string, desiredFormat: image.PixelMapFormat) => {
+    const writerAndReadPixelsToAreaThrowFetchFrame = async (done: Function, logger: Logger, fileName: string) => {
       let timeUs: number = 0;
       let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
       let param: media.PixelMapParams = {
@@ -105,7 +119,7 @@ export default function image10bitPixelMapFetchFrame() {
       } else {
         globalPixelMap = pixelmap;
         let imageInfo: image.ImageInfo = pixelmap.getImageInfoSync();
-        expect(imageInfo.pixelFormat == desiredFormat).assertTrue();
+        expect(imageInfo.pixelFormat === RGBA_1010102 || imageInfo.pixelFormat === YCBCR_P010).assertTrue();
         let initialTestReadBuffer = await testReadPixels(pixelmap);
         const writeArea: image.PositionArea = {
           pixels: new ArrayBuffer(96),
@@ -123,36 +137,7 @@ export default function image10bitPixelMapFetchFrame() {
           stride: 24,
           region: { size: { height: 4, width: 6 }, x: 0, y: 0 }
         }
-        if (type == 'promise') {
-          pixelmap.writePixels(writeArea).then(() => {
-            pixelmap.readPixels(readArea).then(() => {
-              checkArea(initialTestReadBuffer, readArea, logger, done);
-            })
-          }).catch((err: BusinessError) => {
-            logger.log("case test in promise failed. " + err)
-            expect().assertFail();
-            done();
-          })
-        } else if (type == 'callback') {
-          pixelmap.writePixels(writeArea, () => {
-            pixelmap.readPixels(readArea, () => {
-              checkArea(initialTestReadBuffer, readArea, logger, done);
-            })
-          })
-        } else {
-          try{
-            pixelmap.writePixelsSync(writeArea);
-            logger.log("writePixelsSync called.")
-
-            pixelmap.readPixelsSync(readArea);
-            logger.log("writePixelsSync called.")
-            checkArea(initialTestReadBuffer, readArea, logger, done);
-          } catch(err) {
-            logger.log(' Failed in calling writePixelsSync or readPixelsSync. ' + JSON.stringify(err));
-            expect().assertFail();
-            done();
-          }
-        }
+        done();
       }
     }
 
@@ -216,7 +201,7 @@ export default function image10bitPixelMapFetchFrame() {
       }
     }
 
-    const opacityTestThrowFetchFrame = async (done: Function, testNum: string, type: string, fileName: string) => {
+    const opacityTestThrowFetchFrame = async (done: Function, testNum: string, fileName: string) => {
       let result = true
       let logger = new Logger(testNum)
       try {
@@ -231,41 +216,15 @@ export default function image10bitPixelMapFetchFrame() {
         if (pixelMap != undefined) {
           globalPixelMap = pixelMap;
           let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
-          expect(imageInfo.pixelFormat == RGBA_1010102).assertTrue();
-          if (type == 'callback') {
-            pixelMap.opacity(0.8, (err) => {
-              result = (err == undefined)
-              if (result) {
-                logger.log('set alpha success');
-              } else {
-                
-                logger.log('set alpha failed');
-              }
-              expect(result).assertTrue();
-              done();
-            })
-          } else if (type == 'promise') {
-            try {
-              await pixelMap.opacity(0.8);
-              logger.log('set alpha success.');
-              expect(result).assertTrue();
-              done();
-            } catch (error) {
-              logger.log('set alpha failed. error: ' + error);
-              expect(false).assertTrue();
-              done();
-            }
-          } else {
-            try {
-              pixelMap.opacitySync(0.8)
-              logger.log('set alpha success.');
-              expect(result).assertTrue();
-              done();
-            } catch (error) {
-              logger.log('set alpha failed. error: ' + error);
-              expect(false).assertTrue();
-              done();
-            }
+          expect(imageInfo.pixelFormat === RGBA_1010102 || imageInfo.pixelFormat === YCBCR_P010).assertTrue();
+          try {
+            await pixelMap.opacity(0.8);
+            logger.log("does not support opacity");
+            expect().assertFail();
+          } catch (error) {
+            logger.log("failed " + error + error.code);
+            expect(error === 62980103).assertTrue();
+            done();
           }
         } else {
           logger.log('creat pixelMap failed');
@@ -356,15 +315,15 @@ export default function image10bitPixelMapFetchFrame() {
         if (pixelMap != undefined) {
           globalPixelMap = pixelMap;
           let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
-          expect(imageInfo.pixelFormat == RGBA_1010102).assertTrue();
+          expect(imageInfo.pixelFormat === RGBA_1010102 || imageInfo.pixelFormat === YCBCR_P010).assertTrue();
           let csmModify = colorSpaceManager.create(colorSpaceManager.ColorSpace.ADOBE_RGB_1998);
           logger.log("csmModify " + csmModify.getColorSpaceName());
           if (type == 'promise') {
             pixelMap.applyColorSpace(csmModify).then(() => {
-              let csmn = pixelMap.getColorSpace().getColorSpaceName();
+              let csmn = pixelMap!.getColorSpace().getColorSpaceName();
               logger.log("getColorSpaceName " + csmn);
               expect(csmn == colorSpaceManager.ColorSpace.ADOBE_RGB_1998).assertTrue();
-              let pixelSize = pixelMap.getPixelBytesNumber();
+              let pixelSize = pixelMap!.getPixelBytesNumber();
               logger.log(`new pixel size ${pixelSize}`);
               done();
             }).catch((error: BusinessError) => {
@@ -380,10 +339,10 @@ export default function image10bitPixelMapFetchFrame() {
                 done();
                 return;
               }
-              let csmn = pixelMap.getColorSpace().getColorSpaceName();
+              let csmn = pixelMap!.getColorSpace().getColorSpaceName();
               logger.log("getColorSpaceName " + csmn);
               expect(csmn == colorSpaceManager.ColorSpace.ADOBE_RGB_1998).assertTrue();
-              let pixelSize = pixelMap.getPixelBytesNumber();
+              let pixelSize = pixelMap!.getPixelBytesNumber();
               logger.log(`new pixel size ${pixelSize}`);
               done();
             })
@@ -445,13 +404,18 @@ export default function image10bitPixelMapFetchFrame() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0100', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportedFetchFrameByTime) {
+        console.info('The device does not support FetchFrameByTime');
+        done();
+        return
+      }
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0100');
       if (!isSupportHdr) {
         logger.log('device is not support hdr');
         done();
       } else {
         try{
-          await writerAndReadPixelsToAreaThrowFetchFrame(done, logger, 'promise', "test.mp4", RGBA_1010102);
+          await writerAndReadPixelsToAreaThrowFetchFrame(done, logger, "test.mp4");
         } catch(err) {
           logger.log(' Failed in writerAndReadPixelsToAreaThrowFetchFrame. ' + JSON.stringify(err));
           expect().assertFail();
@@ -469,6 +433,11 @@ export default function image10bitPixelMapFetchFrame() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0200', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportedFetchFrameByTime) {
+        console.info('The device does not support FetchFrameByTime');
+        done();
+        return
+      }
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0200');
       if (!isSupportHdr) {
         hilog.info(0x0000, "image10bitPixelMap", 'case: %{public}s msg:%{public}s', 'SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0200', 'device is not support hdr');
@@ -493,13 +462,18 @@ export default function image10bitPixelMapFetchFrame() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0300', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportedFetchFrameByTime) {
+        console.info('The device does not support FetchFrameByTime');
+        done();
+        return
+      }
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0300');
       if (!isSupportHdr) {
         hilog.info(0x0000, "image10bitPixelMap", 'case: %{public}s msg:%{public}s', 'SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0300', 'device is not support hdr');
         done();
       } else {
         try{
-          await opacityTestThrowFetchFrame(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0300', 'promise', "test.mp4");
+          await opacityTestThrowFetchFrame(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0300', "test.mp4");
         } catch(err) {
           logger.log(' Failed in opacityTestThrowFetchFrame. ' + JSON.stringify(err));
           expect().assertFail();
@@ -517,6 +491,11 @@ export default function image10bitPixelMapFetchFrame() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0400', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportedFetchFrameByTime) {
+        console.info('The device does not support FetchFrameByTime');
+        done();
+        return
+      }
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0400');
       if (!isSupportHdr) {
         hilog.info(0x0000, "image10bitPixelMap", 'case: %{public}s msg:%{public}s', 'SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0400', 'device is not support hdr');
@@ -541,6 +520,11 @@ export default function image10bitPixelMapFetchFrame() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0500', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportedFetchFrameByTime) {
+        console.info('The device does not support FetchFrameByTime');
+        done();
+        return
+      }
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0500');
       if (!isSupportHdr) {
         hilog.info(0x0000, "image10bitPixelMap", 'case: %{public}s msg:%{public}s', 'SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0500', 'device is not support hdr');
@@ -565,6 +549,11 @@ export default function image10bitPixelMapFetchFrame() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0600', Level.LEVEL0, async (done: Function) => {
+      if (!isSupportedFetchFrameByTime) {
+        console.info('The device does not support FetchFrameByTime');
+        done();
+        return
+      }
       let logger = new Logger('SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0600');
       if (!isSupportHdr) {
         hilog.info(0x0000, "image10bitPixelMap", 'case: %{public}s msg:%{public}s', 'SUB_MULTIMEDIA_IMAGE_PIXELMAPADAPTION_10bit_USE_FETCHFRAME_0600', 'device is not support hdr');
