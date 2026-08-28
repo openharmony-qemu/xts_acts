@@ -14,25 +14,19 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router'
 import CommonFunc from '../../../ets/MainAbility/common/Common'
 import Utils from '../../../ets/MainAbility/common/Utils'
-import { Driver, ON, Component } from '@ohos.UiTest'
+import { Driver, ON } from '@ohos.UiTest'
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { AppStorage } from '@ohos.arkui.stateManagement'
-import { UtilsTest } from '../Util.test'
 
 const SLEEP_TIME = 1000
 
 export default function DatePickerComponentEnableHapticFeedbackTest() {
   describe('DatePickerComponentEnableHapticFeedbackTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('DatePickerComponentEnableHapticFeedbackTest beforeAll start')
-      await UtilsTest.startAbility('com.arkui.ace.picker.datePicker.static', 'EntryAbility')
-    })
-
     beforeEach(async (): Promise<void> => {
       console.info('DatePickerComponentEnableHapticFeedbackTest beforeEach start');
       let options: router.RouterOptions = {

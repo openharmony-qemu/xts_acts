@@ -15,23 +15,17 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
 
 export default function DataPanelTest() {
   describe('DataPanelTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('DataPanelTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.picker.datePicker.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('DataPanelTest beforeEach start');
       let options: router.RouterOptions = {
