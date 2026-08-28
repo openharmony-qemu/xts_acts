@@ -235,6 +235,36 @@ struct WebViewControllerPart3 {
               break;
             }
 
+            case 'testSetRenderProcessModeNullStatic001': {
+              try {
+                webview.WebviewController.setRenderProcessMode((null as Int) as webview.RenderProcessMode);
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41023211)
+              }
+              break;
+            }
+
+            case 'testSetRenderProcessModeInvalidStatic001': {
+              try {
+                webview.WebviewController.setRenderProcessMode(999 as webview.RenderProcessMode);
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41023212)
+              }
+              break;
+            }
+
+            case 'testSetRenderProcessModeUndefinedStatic001': {
+              try {
+                webview.WebviewController.setRenderProcessMode((undefined as Int) as webview.RenderProcessMode);
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41023213)
+              }
+              break;
+            }
+
             case 'emitWebSiteIsolationMode001': {
               try {
                 webview.WebviewController.setSiteIsolationMode(webview.SiteIsolationMode.PARTIAL);

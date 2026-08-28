@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
+import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
@@ -827,7 +828,7 @@ export default function webViewControllerJsunit() {
 
     /**
      * @tc.name   testFetchCookieIncognitoSuccessStatic
-     * @tc.number SUB_WEB_FETCHCOOKIE_INCOGNITO_SUCCESS_STATIC
+     * @tc.number SUB_WEB_FETCHCOOKIE_INCOGNITO_SUCCESS_0100
      * @tc.desc   test fetchCookie incognito success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -835,10 +836,19 @@ export default function webViewControllerJsunit() {
      */
     it('testFetchCookieIncognitoSuccessStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         await Utils.msSleep(1000);
         Utils.emitEvent('emitFetchCookieIncognitoSuccessStatic', 10)
         await Utils.msSleep(1000);
-        Utils.registerEvent('testFetchCookieIncognitoSuccessStatic', 'a=b', 2026072418, done);
+        Utils.registerBaseEvent('testFetchCookieIncognitoSuccessStatic', 'a=b', 2026072418, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieIncognitoSuccessStatic] err:' + JSON.stringify(err));
+          done();
+        }
         await Utils.msSleep(1000);
         inspector.sendEventByKey('webcomponent',10,'');
         await Utils.msSleep(6000);
@@ -847,7 +857,7 @@ export default function webViewControllerJsunit() {
 
     /**
      * @tc.name   testFetchCookieIncognitoNullStatic
-     * @tc.number SUB_WEB_FETCHCOOKIE_INCOGNITO_NULL_STATIC
+     * @tc.number SUB_WEB_FETCHCOOKIE_INCOGNITO_NULL_0100
      * @tc.desc   test fetchCookie incognito null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -855,10 +865,19 @@ export default function webViewControllerJsunit() {
      */
     it('testFetchCookieIncognitoNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         await Utils.msSleep(1000);
         Utils.emitEvent('emitFetchCookieIncognitoNullStatic', 10)
         await Utils.msSleep(1000);
-        Utils.registerEvent('testFetchCookieIncognitoNullStatic', 'a=b', 2026072419, done);
+        Utils.registerBaseEvent('testFetchCookieIncognitoNullStatic', '401', 2026072419, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieIncognitoNullStatic] err:' + JSON.stringify(err));
+          done();
+        }
         await Utils.msSleep(1000);
         inspector.sendEventByKey('webcomponent',10,'');
         await Utils.msSleep(6000);
@@ -867,7 +886,7 @@ export default function webViewControllerJsunit() {
 
     /**
      * @tc.name   testFetchCookieIncognitoUndefinedStatic
-     * @tc.number SUB_WEB_FETCHCOOKIE_INCOGNITO_UNDEFINED_STATIC
+     * @tc.number SUB_WEB_FETCHCOOKIE_INCOGNITO_UNDEFINED_0100
      * @tc.desc   test fetchCookie incognito undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -875,10 +894,19 @@ export default function webViewControllerJsunit() {
      */
     it('testFetchCookieIncognitoUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         await Utils.msSleep(1000);
         Utils.emitEvent('emitFetchCookieIncognitoUndefinedStatic', 10)
         await Utils.msSleep(1000);
-        Utils.registerEvent('testFetchCookieIncognitoUndefinedStatic', 'a=b', 2026072420, done);
+        Utils.registerBaseEvent('testFetchCookieIncognitoUndefinedStatic', '401', 2026072420, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieIncognitoUndefinedStatic] err:' + JSON.stringify(err));
+          done();
+        }
         await Utils.msSleep(1000);
         inspector.sendEventByKey('webcomponent',10,'');
         await Utils.msSleep(6000);
@@ -887,7 +915,7 @@ export default function webViewControllerJsunit() {
 
     /**
      * @tc.name   testFetchCookieSyncIncognitoNullStatic
-     * @tc.number SUB_WEB_FETCHCOOKIESYNC_INCOGNITO_NULL_STATIC
+     * @tc.number SUB_WEB_FETCHCOOKIESYNC_INCOGNITO_NULL_0100
      * @tc.desc   test fetchCookieSync incognito null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -895,10 +923,19 @@ export default function webViewControllerJsunit() {
      */
     it('testFetchCookieSyncIncognitoNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         await Utils.msSleep(1000);
         Utils.emitEvent('emitFetchCookieSyncIncognitoNullStatic', 10)
         await Utils.msSleep(1000);
-        Utils.registerEvent('testFetchCookieSyncIncognitoNullStatic', 'incog=null', 2026072421, done);
+        Utils.registerBaseEvent('testFetchCookieSyncIncognitoNullStatic', '401', 2026072421, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieSyncIncognitoNullStatic] err:' + JSON.stringify(err));
+          done();
+        }
         await Utils.msSleep(1000);
         inspector.sendEventByKey('webcomponent',10,'');
         await Utils.msSleep(6000);
@@ -907,7 +944,7 @@ export default function webViewControllerJsunit() {
 
     /**
      * @tc.name   testFetchCookieSyncIncognitoUndefinedStatic
-     * @tc.number SUB_WEB_FETCHCOOKIESYNC_INCOGNITO_UNDEFINED_STATIC
+     * @tc.number SUB_WEB_FETCHCOOKIESYNC_INCOGNITO_UNDEFINED_0100
      * @tc.desc   test fetchCookieSync incognito undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -915,10 +952,193 @@ export default function webViewControllerJsunit() {
      */
     it('testFetchCookieSyncIncognitoUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        try {
         await Utils.msSleep(1000);
         Utils.emitEvent('emitFetchCookieSyncIncognitoUndefinedStatic', 10)
         await Utils.msSleep(1000);
-        Utils.registerEvent('testFetchCookieSyncIncognitoUndefinedStatic', 'incog=undefined', 2026072422, done);
+        Utils.registerBaseEvent('testFetchCookieSyncIncognitoUndefinedStatic', 'incog=undefined', 2026072422, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieSyncIncognitoUndefinedStatic] err:' + JSON.stringify(err));
+          done();
+        }
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieUrlNullStatic
+     * @tc.number SUB_WEB_FETCHCOOKIE_URL_NULL_0100
+     * @tc.desc   test fetchCookie url null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieUrlNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieUrlNullStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerBaseEvent('testFetchCookieUrlNullStatic', '401', 2026072423, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieUrlNullStatic] err:' + JSON.stringify(err));
+          done();
+        }
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieUrlUndefinedStatic
+     * @tc.number SUB_WEB_FETCHCOOKIE_URL_UNDEFINED_0100
+     * @tc.desc   test fetchCookie url undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieUrlUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieUrlUndefinedStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerBaseEvent('testFetchCookieUrlUndefinedStatic', '401', 2026072424, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieUrlUndefinedStatic] err:' + JSON.stringify(err));
+          done();
+        }
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncUrlNullStatic
+     * @tc.number SUB_WEB_FETCHCOOKIESYNC_URL_NULL_0100
+     * @tc.desc   test fetchCookieSync url null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncUrlNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncUrlNullStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerBaseEvent('testFetchCookieSyncUrlNullStatic', '401', 2026072425, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieSyncUrlNullStatic] err:' + JSON.stringify(err));
+          done();
+        }
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncUrlUndefinedStatic
+     * @tc.number SUB_WEB_FETCHCOOKIESYNC_URL_UNDEFINED_0100
+     * @tc.desc   test fetchCookieSync url undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncUrlUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncUrlUndefinedStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerBaseEvent('testFetchCookieSyncUrlUndefinedStatic', '401', 2026072426, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieSyncUrlUndefinedStatic] err:' + JSON.stringify(err));
+          done();
+        }
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncNormalStatic
+     * @tc.number SUB_WEB_FETCHCOOKIESYNC_NORMAL_0100
+     * @tc.desc   test fetchCookieSync(url) normal return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncNormalStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerBaseEvent('testFetchCookieSyncNormalStatic', 'sync=normal', 2026072427, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieSyncNormalStatic] err:' + JSON.stringify(err));
+          done();
+        }
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoNormalStatic
+     * @tc.number SUB_WEB_FETCHCOOKIESYNC_INCOGNITO_NORMAL_0100
+     * @tc.desc   test fetchCookieSync(url, incognito) normal return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncIncognitoNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncIncognitoNormalStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerBaseEvent('testFetchCookieSyncIncognitoNormalStatic', 'sync=incog', 2026072428, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        } catch (err) {
+          console.info('[testFetchCookieSyncIncognitoNormalStatic] err:' + JSON.stringify(err));
+          done();
+        }
         await Utils.msSleep(1000);
         inspector.sendEventByKey('webcomponent',10,'');
         await Utils.msSleep(6000);

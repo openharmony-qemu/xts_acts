@@ -79,7 +79,7 @@ struct Index {
                 const actualMsg = String(error.message);
                 const actualResult = `${actualCode}${actualMsg}`;
                 console.error(`actualResult: ${actualResult}`);
-                if (error.code == 401){
+                if (error.code === 401){
                   Utils.emitEvent(actualResult, 123217);
                 } else {
                   Utils.emitEvent(actualResult, 123217);
@@ -451,7 +451,7 @@ struct Index {
                 Utils.emitEvent(0, 2026052023);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code == 801 ? 17100003 : error.code, 2026052023);
+                Utils.emitEvent(error.code === 801 ? 17100003 : error.code, 2026052023);
               }
               break;
             }
@@ -489,7 +489,7 @@ struct Index {
                 Utils.emitEvent(0, 2026052027);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code == 801 ? 17100001 : error.code, 2026052027);
+                Utils.emitEvent(error.code === 801 ? 17100001 : error.code, 2026052027);
               }
               break;
             }
@@ -501,7 +501,7 @@ struct Index {
                 Utils.emitEvent(0, 2026052029);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code == 801 ? 17100001 : error.code, 2026052029);
+                Utils.emitEvent(error.code === 801 ? 17100001 : error.code, 2026052029);
               }
               break;
             }
@@ -794,16 +794,18 @@ struct Index {
               try {
                 web_webview.WebCookieManager.clearAllCookiesSync();
                 web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b', false);
-                web_webview.WebCookieManager.fetchCookie('https://www.example.com', null)
+                web_webview.WebCookieManager.fetchCookie('https://www.example.com', null, false)
                   .then((cookie: string) => {
                     console.log('emitFetchCookieIncognitoNullStatic cookie = ' + cookie);
                     Utils.emitEvent(cookie, 2026072419);
                   })
                   .catch((error) => {
+                    error = error as BusinessError;
                     console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                     Utils.emitEvent(String(error.code), 2026072419);
                   });
               } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 2026072419);
               }
@@ -814,16 +816,18 @@ struct Index {
               try {
                 web_webview.WebCookieManager.clearAllCookiesSync();
                 web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b', false);
-                web_webview.WebCookieManager.fetchCookie('https://www.example.com', undefined)
+                web_webview.WebCookieManager.fetchCookie('https://www.example.com', undefined, false)
                   .then((cookie: string) => {
                     console.log('emitFetchCookieIncognitoUndefinedStatic cookie = ' + cookie);
                     Utils.emitEvent(cookie, 2026072420);
                   })
                   .catch((error) => {
+                    error = error as BusinessError;
                     console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                     Utils.emitEvent(String(error.code), 2026072420);
                   });
               } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 2026072420);
               }
@@ -834,10 +838,11 @@ struct Index {
               try {
                 web_webview.WebCookieManager.clearAllCookiesSync();
                 web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'incog=null', false);
-                let cookie = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', null);
+                let cookie = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', null, false);
                 console.log('emitFetchCookieSyncIncognitoNullStatic cookie = ' + cookie);
                 Utils.emitEvent(cookie, 2026072421);
               } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 2026072421);
               }
@@ -852,8 +857,95 @@ struct Index {
                 console.log('emitFetchCookieSyncIncognitoUndefinedStatic cookie = ' + cookie);
                 Utils.emitEvent(cookie, 2026072422);
               } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 2026072422);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieUrlNullStatic': {
+              try {
+                web_webview.WebCookieManager.fetchCookie(null as string)
+                  .then((cookie: string) => {
+                    Utils.emitEvent(cookie, 2026072423);
+                  })
+                  .catch((error) => {
+                    error = error as BusinessError;
+                    Utils.emitEvent(String(error.code), 2026072423);
+                  });
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 2026072423);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieUrlUndefinedStatic': {
+              try {
+                web_webview.WebCookieManager.fetchCookie(undefined as string)
+                  .then((cookie: string) => {
+                    Utils.emitEvent(cookie, 2026072424);
+                  })
+                  .catch((error) => {
+                    error = error as BusinessError;
+                    Utils.emitEvent(String(error.code), 2026072424);
+                  });
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 2026072424);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieSyncUrlNullStatic': {
+              try {
+                let cookie = web_webview.WebCookieManager.fetchCookieSync(null as string);
+                Utils.emitEvent(cookie, 2026072425);
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 2026072425);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieSyncUrlUndefinedStatic': {
+              try {
+                let cookie = web_webview.WebCookieManager.fetchCookieSync(undefined as string);
+                Utils.emitEvent(cookie, 2026072426);
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 2026072426);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieSyncNormalStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'sync=normal', false);
+                let cookie = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
+                console.log('emitFetchCookieSyncNormalStatic cookie = ' + cookie);
+                Utils.emitEvent(cookie, 2026072427);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 2026072427);
+              }
+              break;
+            }
+
+            case 'emitFetchCookieSyncIncognitoNormalStatic': {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync();
+                web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'sync=incog', false);
+                let cookie = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', false);
+                console.log('emitFetchCookieSyncIncognitoNormalStatic cookie = ' + cookie);
+                Utils.emitEvent(cookie, 2026072428);
+              } catch (error) {
+                error = error as BusinessError;
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(String(error.code), 2026072428);
               }
               break;
             }

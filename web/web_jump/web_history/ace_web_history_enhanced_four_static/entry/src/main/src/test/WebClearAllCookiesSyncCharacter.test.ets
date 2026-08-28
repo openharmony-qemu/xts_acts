@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, Level, Size, TestType } from '../../../hypium/index';
+import {beforeAll, beforeEach, describe, it, Level, Size, TestType, expect } from '../../../hypium/index';
 import Utils from './Util.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 export default function webClearAllCookiesSyncCharacter() {
@@ -47,7 +48,12 @@ export default function webClearAllCookiesSyncCharacter() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitClearAllCookiesSyncCharacter', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testClearAllCookiesSyncCharacter', 'success', 133410, done);
+      Utils.registerBaseEvent('testClearAllCookiesSyncCharacter', 'success', 133410, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webClearAllCookiesSyncCharacterButton', 10, '');
       await Utils.msSleep(2000);
@@ -65,7 +71,12 @@ export default function webClearAllCookiesSyncCharacter() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitClearAllCookiesSyncCharacterIncognito', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testClearAllCookiesSyncCharacterIncognito', 'success', 133420, done);
+      Utils.registerBaseEvent('testClearAllCookiesSyncCharacterIncognito', 'success', 133420, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webClearAllCookiesSyncCharacterButton', 10, '');
       await Utils.msSleep(2000);
@@ -73,7 +84,7 @@ export default function webClearAllCookiesSyncCharacter() {
     })
     /**
      * @tc.name   testClearAllCookiesSyncUndefinedStatic
-     * @tc.number SUB_WEB_CLEARALLCOOKIESSYNC_UNDEFINED_STATIC
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_CLEARALLCOOKIESSYNC_UNDEFINED_0100
      * @tc.desc   test clearAllCookiesSync undefined \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -83,7 +94,12 @@ export default function webClearAllCookiesSyncCharacter() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitClearAllCookiesSyncUndefined', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testClearAllCookiesSyncUndefinedStatic', 'a=b', 133421, done);
+      Utils.registerBaseEvent('testClearAllCookiesSyncUndefinedStatic', 'a=b', 133421, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webClearAllCookiesSyncCharacterButton', 10, '');
       await Utils.msSleep(2000);
@@ -91,7 +107,7 @@ export default function webClearAllCookiesSyncCharacter() {
     })
     /**
      * @tc.name   testClearAllCookiesSyncNullStatic
-     * @tc.number SUB_WEB_CLEARALLCOOKIESSYNC_NULL_STATIC
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_CLEARALLCOOKIESSYNC_NULL_0200
      * @tc.desc   test clearAllCookiesSync null \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +117,12 @@ export default function webClearAllCookiesSyncCharacter() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitClearAllCookiesSyncNull', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testClearAllCookiesSyncNullStatic', 'a=b', 133422, done);
+      Utils.registerBaseEvent('testClearAllCookiesSyncNullStatic', 'a=b', 133422, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webClearAllCookiesSyncCharacterButton', 10, '');
       await Utils.msSleep(2000);
@@ -109,7 +130,7 @@ export default function webClearAllCookiesSyncCharacter() {
     })
     /**
      * @tc.name   testClearAllCookiesSyncNoArgStatic
-     * @tc.number SUB_WEB_CLEARALLCOOKIESSYNC_NOARG_STATIC
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_CLEARALLCOOKIESSYNC_NOARG_0300
      * @tc.desc   test clearAllCookiesSync no argument \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -119,7 +140,12 @@ export default function webClearAllCookiesSyncCharacter() {
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('emitClearAllCookiesSyncNoArg', 10);
       await Utils.msSleep(2000);
-      Utils.registerEvent('testClearAllCookiesSyncNoArgStatic', 'success', 133423, done);
+      Utils.registerBaseEvent('testClearAllCookiesSyncNoArgStatic', 'success', 133423, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webClearAllCookiesSyncCharacterButton', 10, '');
       await Utils.msSleep(2000);

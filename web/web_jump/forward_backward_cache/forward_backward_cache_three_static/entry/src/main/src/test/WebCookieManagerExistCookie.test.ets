@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeAll, beforeEach, describe, it, Level, Size, TestType, afterEach } from '../../../hypium/index';
+import {beforeAll, beforeEach, describe, it, Level, Size, TestType, afterEach, expect } from '../../../hypium/index';
 import Utils from './Util.test';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import events_emitter from '@ohos.events.emitter';
@@ -77,7 +77,12 @@ export default function webCookieManagerExistCookie() {
         await Utils.msSleep(2000);
         Utils.emitEvent("testExistCookie002", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie002", true, 100302, done);
+        Utils.registerBaseEvent("testExistCookie002", true, 100302, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(4000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(6000);
@@ -96,7 +101,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie003", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie003", true, 100303, done);
+        Utils.registerBaseEvent("testExistCookie003", true, 100303, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -115,7 +125,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie004", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie004", true, 100304, done);
+        Utils.registerBaseEvent("testExistCookie004", true, 100304, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -134,7 +149,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie005", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie005", false, 100305, done);
+        Utils.registerBaseEvent("testExistCookie005", false, 100305, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -153,7 +173,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie006", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie006", false, 100306, done);
+        Utils.registerBaseEvent("testExistCookie006", false, 100306, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -172,7 +197,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie007", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie007", false, 100307, done);
+        Utils.registerBaseEvent("testExistCookie007", false, 100307, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -191,7 +221,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie008", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie008", false, 100308, done);
+        Utils.registerBaseEvent("testExistCookie008", false, 100308, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -210,7 +245,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie009", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie009", false, 100309, done);
+        Utils.registerBaseEvent("testExistCookie009", false, 100309, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -229,7 +269,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie010", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie010", false, 100310, done);
+        Utils.registerBaseEvent("testExistCookie010", false, 100310, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -248,7 +293,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie011", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie011", false, 100311, done);
+        Utils.registerBaseEvent("testExistCookie011", false, 100311, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -268,7 +318,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie012", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie012", false, 100312, done);
+        Utils.registerBaseEvent("testExistCookie012", false, 100312, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -287,7 +342,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie013", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie013", false, 100313, done);
+        Utils.registerBaseEvent("testExistCookie013", false, 100313, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -306,7 +366,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie014", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie014", false, 100314, done);
+        Utils.registerBaseEvent("testExistCookie014", false, 100314, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -325,7 +390,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie015", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie015", false, 100315, done);
+        Utils.registerBaseEvent("testExistCookie015", false, 100315, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -344,7 +414,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie016", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie016", false, 100316, done);
+        Utils.registerBaseEvent("testExistCookie016", false, 100316, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -363,7 +438,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie017", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie017", false, 100317, done);
+        Utils.registerBaseEvent("testExistCookie017", false, 100317, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -382,7 +462,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testExistCookie018", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testExistCookie018", false, 100318, done);
+        Utils.registerBaseEvent("testExistCookie018", false, 100318, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
@@ -392,7 +477,7 @@ export default function webCookieManagerExistCookie() {
 
     /**
      * @tc.name        testExistCookieIncognitoTrueStatic
-     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_INCOGNITO_TRUE_STATIC
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_INCOGNITO_TRUE_0100
      * @tc.desc        test existCookie incognito true
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -402,7 +487,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testExistCookieIncognitoTrueStatic', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('testExistCookieIncognitoTrueStatic', true, 100319, done);
+        Utils.registerBaseEvent('testExistCookieIncognitoTrueStatic', true, 100319, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
         done()
@@ -410,7 +500,7 @@ export default function webCookieManagerExistCookie() {
 
     /**
      * @tc.name        testExistCookieIncognitoFalseStatic
-     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_INCOGNITO_FALSE_STATIC
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_INCOGNITO_FALSE_0200
      * @tc.desc        test existCookie incognito false
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -420,7 +510,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testExistCookieIncognitoFalseStatic', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('testExistCookieIncognitoFalseStatic', true, 100320, done);
+        Utils.registerBaseEvent('testExistCookieIncognitoFalseStatic', true, 100320, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
         done()
@@ -428,7 +523,7 @@ export default function webCookieManagerExistCookie() {
 
     /**
      * @tc.name        testExistCookieNullStatic
-     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_NULL_STATIC
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_NULL_0300
      * @tc.desc        test existCookie null
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -438,7 +533,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testExistCookieNullStatic', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('testExistCookieNullStatic', true, 100321, done);
+        Utils.registerBaseEvent('testExistCookieNullStatic', true, 100321, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
         done()
@@ -446,7 +546,7 @@ export default function webCookieManagerExistCookie() {
 
     /**
      * @tc.name        testExistCookieUndefinedStatic
-     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_UNDEFINED_STATIC
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_UNDEFINED_0400
      * @tc.desc        test existCookie undefined
      * @tc.size        MediumTest
      * @tc.type        Function
@@ -456,7 +556,12 @@ export default function webCookieManagerExistCookie() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('testExistCookieUndefinedStatic', 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent('testExistCookieUndefinedStatic', true, 100322, done);
+        Utils.registerBaseEvent('testExistCookieUndefinedStatic', true, 100322, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
         await Utils.msSleep(4000);
         done()

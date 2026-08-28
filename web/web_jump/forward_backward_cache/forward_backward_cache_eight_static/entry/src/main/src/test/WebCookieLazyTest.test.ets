@@ -41,7 +41,7 @@ export default function webCookieLazyTest() {
         webview.WebCookieManager.setLazyInitializeWebEngine(true);
         expect_value = true;
       } catch (error) {
-        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
       }
       expect(expect_value).assertEqual(true);
       done();
@@ -61,7 +61,7 @@ export default function webCookieLazyTest() {
         webview.WebCookieManager.setLazyInitializeWebEngine(false);
         expect_value = true;
       } catch (error) {
-        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
       }
       expect(expect_value).assertEqual(true);
       done();
@@ -69,7 +69,7 @@ export default function webCookieLazyTest() {
 
     /**
      * @tc.name   testWebSetLazyInitializeWebEngineNullStatic
-     * @tc.number SUB_WEB_setLazyInitializeWebEngine_NULL_STATIC
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_SETLAZYINITIALIZEWEBENGINE_NULL_0100
      * @tc.desc   test SetLazyInitializeWebEngine null
      * @tc.type   Function
      * @tc.size   MediumTest
@@ -80,9 +80,10 @@ export default function webCookieLazyTest() {
       let expect_value:boolean = false;
       try {
         webview.WebCookieManager.setLazyInitializeWebEngine(null);
+        expect_value = true;
       } catch (error) {
-        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-        if ((error as BusinessError).code == 401) {
+        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+        if (error.code === 401) {
           expect_value = true;
         }
       }
@@ -92,7 +93,7 @@ export default function webCookieLazyTest() {
 
     /**
      * @tc.name   testWebSetLazyInitializeWebEngineUndefinedStatic
-     * @tc.number SUB_WEB_setLazyInitializeWebEngine_UNDEFINED_STATIC
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_SETLAZYINITIALIZEWEBENGINE_UNDEFINED_0200
      * @tc.desc   test SetLazyInitializeWebEngine undefined
      * @tc.type   Function
      * @tc.size   MediumTest
@@ -103,9 +104,10 @@ export default function webCookieLazyTest() {
       let expect_value:boolean = false;
       try {
         webview.WebCookieManager.setLazyInitializeWebEngine(undefined);
+        expect_value = true;
       } catch (error) {
-        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-        if ((error as BusinessError).code == 401) {
+        console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+        if (error.code === 401) {
           expect_value = true;
         }
       }

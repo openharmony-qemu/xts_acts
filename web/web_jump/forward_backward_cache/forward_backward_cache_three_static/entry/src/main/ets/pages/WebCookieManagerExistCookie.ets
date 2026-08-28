@@ -361,7 +361,8 @@ struct WebCookieManagerExistCookie {
               case 'testExistCookieNullStatic': {
                 try {
                   webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
-                  let isCookie = webview.WebCookieManager.existCookie(null)
+                  let incognito: boolean | null = null;
+                  let isCookie = webview.WebCookieManager.existCookie(incognito as boolean)
                   Utils.emitEvent(isCookie, 100321)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -372,7 +373,8 @@ struct WebCookieManagerExistCookie {
               case 'testExistCookieUndefinedStatic': {
                 try {
                   webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b');
-                  let isCookie = webview.WebCookieManager.existCookie(undefined)
+                  let incognito: boolean | undefined = undefined;
+                  let isCookie = webview.WebCookieManager.existCookie(incognito as boolean)
                   Utils.emitEvent(isCookie, 100322)
                 } catch (error) {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

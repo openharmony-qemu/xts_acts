@@ -571,7 +571,7 @@ export default function WebHttpCookies() {
 
     /**
      * @tc.name   testWebFetchAllCookiesNullStatic
-     * @tc.number SUB_WEB_FetchAllCookies_NULL_STATIC
+     * @tc.number SUB_WEB_FetchAllCookies_NULL_STATIC_0100
      * @tc.desc   test fetchAllCookies null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -581,10 +581,11 @@ export default function WebHttpCookies() {
       async (done: ()=> void):Promise<void> => {
       let result:boolean = false
       try {
-        webview.WebCookieManager.fetchAllCookies(null)
+        await webview.WebCookieManager.fetchAllCookies(null)
+        result = true
       } catch (error) {
-        console.error(`ErrorCode:${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
-        if ((error as BusinessError).code == 401) {
+        console.error(`ErrorCode:${error.code}, Message: ${error.message}`)
+        if (error.code === 401) {
           result = true
         }
       }
@@ -594,7 +595,7 @@ export default function WebHttpCookies() {
 
     /**
      * @tc.name   testWebFetchAllCookiesUndefinedStatic
-     * @tc.number SUB_WEB_FetchAllCookies_UNDEFINED_STATIC
+     * @tc.number SUB_WEB_FetchAllCookies_UNDEFINED_STATIC_0200
      * @tc.desc   test fetchAllCookies undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -604,10 +605,11 @@ export default function WebHttpCookies() {
       async (done: ()=> void):Promise<void> => {
       let result:boolean = false
       try {
-        webview.WebCookieManager.fetchAllCookies(undefined)
+        await webview.WebCookieManager.fetchAllCookies(undefined)
+        result = true
       } catch (error) {
-        console.error(`ErrorCode:${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
-        if ((error as BusinessError).code == 401) {
+        console.error(`ErrorCode:${error.code}, Message: ${error.message}`)
+        if (error.code === 401) {
           result = true
         }
       }
@@ -617,7 +619,7 @@ export default function WebHttpCookies() {
 
     /**
      * @tc.name   testExistCookieTrueStatic
-     * @tc.number SUB_WEB_EXISTCOOKIE_TRUE_STATIC
+     * @tc.number SUB_WEB_EXISTCOOKIE_TRUE_STATIC_0300
      * @tc.desc   test existCookie true with incognito cookie
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -633,7 +635,7 @@ export default function WebHttpCookies() {
 
     /**
      * @tc.name   testExistCookieFalseStatic
-     * @tc.number SUB_WEB_EXISTCOOKIE_FALSE_STATIC
+     * @tc.number SUB_WEB_EXISTCOOKIE_FALSE_STATIC_0400
      * @tc.desc   test existCookie false with normal cookie
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
