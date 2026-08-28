@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function calendarPickerStartEndTest() {
   describe('CalendarPickerStartEndTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CalendarPickerStartEndTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('CalendarPickerStartEndTest beforeEach start');
       let options: router.RouterOptions = {

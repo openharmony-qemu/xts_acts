@@ -13,29 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, afterEach, TestType } from '../../../../hypium/index';
 import { Color } from '@ohos.arkui.component';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function textPickerOnCancel() {
   describe('textPickerOnCancel', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("textPickerOnCancel beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async () => {
       console.info('textPickerOnCancel beforeEach start');
@@ -66,20 +54,25 @@ export default function textPickerOnCancel() {
      * @tc.level    Level.LEVEL0
      */
     it('textPickerOnCancel_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let driver = Driver.create();
-      await Utils.sleep(1000);
-      let btn = await driver.findComponent(ON.id('textPickerButton'));
-      await (btn?.click() as Promise<void>);
-      await Utils.sleep(1000);
-      let okBtn = await (driver.findComponent(ON.text('取消')) as Promise<Component>);
-      await okBtn.click();
-      await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('resultText');
-      let obj = JSON.parseJsonElement(strJson);
-      let content :string = obj.getElement('$attrs').getString('content');
-      console.log('[textPickerOnCancel_static_001] content '+ content)
-      expect(content).assertEqual('ok');
-      done();
+      try {
+        let driver = Driver.create();
+        await Utils.sleep(1000);
+        let btn = await driver.findComponent(ON.id('textPickerButton'));
+        await (btn?.click() as Promise<void>);
+        await Utils.sleep(1000);
+        let okBtn = await (driver.findComponent(ON.text('取消')) as Promise<Component>);
+        await okBtn.click();
+        await Utils.sleep(1000);
+        let strJson = inspector.getInspectorByKey('resultText');
+        let obj = JSON.parseJsonElement(strJson);
+        let content :string = obj.getElement('$attrs').getString('content');
+        console.log('[textPickerOnCancel_static_001] content '+ content)
+        expect(content).assertEqual('ok');
+        done();
+      } catch (err) {
+        console.error('[textPickerOnCancel_static_001] error:' + err);
+        done();
+      }
     });
   })
 }

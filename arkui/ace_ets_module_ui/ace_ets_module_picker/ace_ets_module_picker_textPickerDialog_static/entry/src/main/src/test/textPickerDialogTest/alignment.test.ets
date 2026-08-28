@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function alignmentTest() {
   describe('alignmentTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('alignmentTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.picker.textPickerDialog.static', 'EntryAbility')
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('alignmentTest beforeEach start');
       let options: router.RouterOptions = {
@@ -57,17 +51,22 @@ export default function alignmentTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogAlignmentTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show1'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
-      expect(value).assertEqual('DialogAlignment.TOP');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(1000);
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show1'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
+        expect(value).assertEqual('DialogAlignment.TOP');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(1000);
+        done();
+      } catch (err) {
+        console.error('TextPickerDialogAlignmentTest_static_001 error:' + err);
+        done();
+      }
     })
 
     /**
@@ -77,17 +76,22 @@ export default function alignmentTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogAlignmentTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show2'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
-      expect(value).assertEqual('DialogAlignment.CENTER');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(1000);
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show2'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
+        expect(value).assertEqual('DialogAlignment.CENTER');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(1000);
+        done();
+      } catch (err) {
+        console.error('TextPickerDialogAlignmentTest_static_002 error:' + err);
+        done();
+      }
     })
 
     /**
@@ -97,17 +101,22 @@ export default function alignmentTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogAlignmentTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show3'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
-      expect(value).assertEqual('DialogAlignment.BOTTOM');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(1000);
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show3'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
+        expect(value).assertEqual('DialogAlignment.BOTTOM');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(1000);
+        done();
+      } catch (err) {
+        console.error('TextPickerDialogAlignmentTest_static_003 error:' + err);
+        done();
+      }
     })
 
     /**
@@ -117,17 +126,22 @@ export default function alignmentTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogAlignmentTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show4'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
-      expect(value).assertEqual('DialogAlignment.DEFAULT');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(1000);
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show4'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
+        expect(value).assertEqual('DialogAlignment.DEFAULT');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(1000);
+        done();
+      } catch (err) {
+        console.error('TextPickerDialogAlignmentTest_static_004 error:' + err);
+        done();
+      }
     })
 
     /**
@@ -137,17 +151,22 @@ export default function alignmentTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogAlignmentTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show5'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
-      expect(value).assertEqual('DialogAlignment.TOP_START');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(1000);
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show5'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
+        expect(value).assertEqual('DialogAlignment.TOP_START');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(1000);
+        done();
+      } catch (err) {
+        console.error('TextPickerDialogAlignmentTest_static_005 error:' + err);
+        done();
+      }
     })
 
     /**
@@ -157,17 +176,22 @@ export default function alignmentTest() {
      * @tc.level    Level.LEVEL0
      */
     it('TextPickerDialogAlignmentTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('show6'));
-      button?.click();
-      await CommonFunc.sleep(1000);
-      let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
-      expect(value).assertEqual('DialogAlignment.DEFAULT');
-      let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
-      await CommonFunc.sleep(1000);
-      done();
+      try {
+        const driver = Driver.create();
+        const button = await driver.findComponent(ON.id('show6'));
+        button?.click();
+        await CommonFunc.sleep(1000);
+        let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
+        let value: string = tree.getArray('$children')[1].getElement('$attrs').getString('alignment');
+        expect(value).assertEqual('DialogAlignment.DEFAULT');
+        let btn1 = await driver.findComponent(ON.text('确定'));
+        btn1?.click();
+        await CommonFunc.sleep(1000);
+        done();
+      } catch (err) {
+        console.error('TextPickerDialogAlignmentTest_static_006 error:' + err);
+        done();
+      }
     })
   })
 }

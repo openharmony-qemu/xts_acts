@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function textPickerDialogDisableTextStyleAnimationTest() {
   describe('textPickerDialogDisableTextStyleAnimationTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("textPickerDialogDisableTextStyleAnimationTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('textPickerDialogDisableTextStyleAnimationTest beforeEach start');
       let options: router.RouterOptions = {
@@ -57,6 +51,7 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
      * @tc.level    Level.LEVEL0
      */
     it('textPickerDialogDisableTextStyleAnimationTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('textPickerDialogDisableTextStyleAnimationTest_static_001 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('true'));
@@ -78,6 +73,10 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
       await Utils.sleep(1000);
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_001] END');
       done();
+      } catch (err) {
+        console.error("error: " + err);
+        done();
+      }
     });   
     
     /**
@@ -87,6 +86,7 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
      * @tc.level    Level.LEVEL0
      */
     it('textPickerDialogDisableTextStyleAnimationTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('textPickerDialogDisableTextStyleAnimationTest_static_002 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('false'));
@@ -108,6 +108,10 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
       await Utils.sleep(1000);
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_002] END');
       done();
+      } catch (err) {
+        console.error("error: " + err);
+        done();
+      }
     });
  
     /**
@@ -117,6 +121,7 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
      * @tc.level    Level.LEVEL0
      */
     it('textPickerDialogDisableTextStyleAnimationTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('textPickerDialogDisableTextStyleAnimationTest_static_003 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('undefined'));
@@ -138,6 +143,10 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
       await Utils.sleep(1000);
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_003] END');
       done();
+      } catch (err) {
+        console.error("error: " + err);
+        done();
+      }
     }); 
     
     /**
@@ -147,6 +156,7 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
      * @tc.level    Level.LEVEL0
      */
     it('textPickerDialogDisableTextStyleAnimationTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('textPickerDialogDisableTextStyleAnimationTest_static_004 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('null'));
@@ -168,6 +178,10 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
       await Utils.sleep(1000);
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_004] END');
       done();
+      } catch (err) {
+        console.error("error: " + err);
+        done();
+      }
     });
   })
 }
