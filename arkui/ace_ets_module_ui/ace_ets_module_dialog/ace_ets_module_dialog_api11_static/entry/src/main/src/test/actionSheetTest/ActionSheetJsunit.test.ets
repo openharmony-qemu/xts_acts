@@ -77,7 +77,7 @@ it('ActionSheetJsunit_static_0100', Level.LEVEL2, async (done: () => void): Prom
 
       console.info('ActionSheetJsunit_static_0100 START');
       let driver = Driver.create()
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('ActionSheet'));
       } catch (err) {

@@ -97,7 +97,7 @@ it('ToastShowMode_static_0100', Level.LEVEL2, async (done: () => void): Promise<
       } catch (err) {
         console.info('ToastShowModeTest await err: ' + JSON.stringify(err));
       }
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('ShowMode_p1'));
       } catch (err) {
@@ -143,7 +143,7 @@ it('ToastShowMode_static_0200', Level.LEVEL2, async (done: () => void): Promise<
       } catch (err) {
         console.info('ToastShowModeTest await err: ' + JSON.stringify(err));
       }
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('ShowMode_p2'));
       } catch (err) {

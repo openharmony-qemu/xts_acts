@@ -85,7 +85,7 @@ it('showActionMenu_static_0100', Level.LEVEL2, async (done: () => void): Promise
       } catch (err) {
         console.info('showActionMenuTest await err: ' + JSON.stringify(err));
       }
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('showActionMenu'));
       } catch (err) {

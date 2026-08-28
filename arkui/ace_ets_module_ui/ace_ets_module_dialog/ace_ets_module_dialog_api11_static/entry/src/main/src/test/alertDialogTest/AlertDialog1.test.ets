@@ -82,7 +82,7 @@ it('AlertDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<vo
       } catch (err) {
         console.info('AlertDialog1Test await err: ' + JSON.stringify(err));
       }
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('AlertDialog'));
       } catch (err) {

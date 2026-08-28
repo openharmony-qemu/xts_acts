@@ -93,7 +93,7 @@ it('promptTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<voi
       } catch (err) {
         console.info('promptTestTest await err: ' + JSON.stringify(err));
       }
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('prompt' + '_3'));
       } catch (err) {
@@ -117,7 +117,7 @@ it('promptTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<voi
       } catch (err) {
         console.info('promptTestTest await err: ' + JSON.stringify(err));
       }
-      let button1;
+      let button1: Component | undefined;
       try {
         button1 = await driver.findComponent(ON.id('prompt' + '_2'));
       } catch (err) {

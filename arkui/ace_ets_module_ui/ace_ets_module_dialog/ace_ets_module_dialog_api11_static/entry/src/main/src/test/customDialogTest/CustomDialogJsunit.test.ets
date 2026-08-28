@@ -77,7 +77,7 @@ it('CustomDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Pro
 
       console.info('CustomDialogJsunit_static_0100 START');
       let driver = Driver.create()
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('CustomDialog'));
       } catch (err) {

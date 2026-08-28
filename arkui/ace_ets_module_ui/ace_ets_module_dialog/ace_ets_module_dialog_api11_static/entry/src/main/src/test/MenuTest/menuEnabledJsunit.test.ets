@@ -115,7 +115,7 @@ it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Prom
 
       console.info('menuEnabledJsunit_static_0200 START');
       let driver = Driver.create()
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('cmEnd'));
       } catch (err) {
@@ -131,7 +131,7 @@ it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Prom
       } catch (err) {
         console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
       }
-      let menuEnabled;
+      let menuEnabled: Component | undefined;
       try {
         menuEnabled = await driver.findComponent(ON.id('menuEnabled'));
       } catch (err) {
@@ -157,7 +157,7 @@ it('menuEnabledJsunit_static_0200', Level.LEVEL2, async (done: () => void): Prom
       } catch (err) {
         console.info('menuEnabledJsunitTest await err: ' + JSON.stringify(err));
       }
-      let change;
+      let change: Component | undefined;
       try {
         change = await driver.findComponent(ON.id('change'));
       } catch (err) {

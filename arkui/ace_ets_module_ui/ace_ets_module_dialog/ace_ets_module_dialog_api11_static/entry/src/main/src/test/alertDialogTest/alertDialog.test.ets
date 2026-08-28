@@ -112,7 +112,7 @@ it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => voi
       } catch (err) {
         console.info('alertDialogTest await err: ' + JSON.stringify(err));
       }
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.text('button'));
       } catch (err) {
@@ -166,7 +166,7 @@ it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise
         console.info("testMeasureText0001_static err : " + JSON.stringify(err));
         done();
       }
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.text('button'));
       } catch (err) {

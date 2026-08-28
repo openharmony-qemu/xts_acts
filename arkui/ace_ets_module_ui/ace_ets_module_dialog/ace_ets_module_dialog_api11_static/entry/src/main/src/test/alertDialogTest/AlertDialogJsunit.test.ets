@@ -76,7 +76,7 @@ export default function AlertDialogJsunit() {
 it('AlertDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('AlertDialogJsunit_static_0100 START');
       let driver = Driver.create()
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('AlertDialogJsunit_0100'));
       } catch (err) {
@@ -108,7 +108,7 @@ it('AlertDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Prom
         console.info('AlertDialogJsunitTest await err: ' + JSON.stringify(err));
       }
 
-      let button2;
+      let button2: Component | undefined;
       try {
         button2 = await driver.findComponent(ON.id('AlertDialogParam' + '_AlertDialog2'));
       } catch (err) {

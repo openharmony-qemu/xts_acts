@@ -87,7 +87,7 @@ export default function ShowDialogJsunit() {
 it('ShowDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('ShowDialogJsunit_static_0100 START');
       let driver = Driver.create()
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('ShowDialog'));
       } catch (err) {

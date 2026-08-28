@@ -82,7 +82,7 @@ it('AlertDialogFalse_static_0100', Level.LEVEL2, async (done: () => void): Promi
       } catch (err) {
         console.info('AlertDialogFalseTest await err: ' + JSON.stringify(err));
       }
-      let button;
+      let button: Component | undefined;
       try {
         button = await driver.findComponent(ON.id('AlertDialogFalse'));
       } catch (err) {
