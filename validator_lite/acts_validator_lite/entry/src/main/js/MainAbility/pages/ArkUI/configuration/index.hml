@@ -7,6 +7,7 @@
     <div class="content">
         <text class="info-text">状态: {{statusMsg}}</text>
         <text class="result-text">{{resultText}}</text>
+        <text class="content-tip">{{ tipMsg }}</text>
     </div>
 
     <div class="bottom-bt">
