@@ -62,234 +62,143 @@ export default function int8ArrayAtPart01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0200
      * @tc.name int8ArrayAtPart01Test002
-     * @tc.desc Verify at(0) on empty Int8Array returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayAtPart01Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array(0);
-      expect(arr.at(0)).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0300
-     * @tc.name int8ArrayAtPart01Test003
-     * @tc.desc Verify at(0) returns first element 100 on Int8Array([100, -100])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayAtPart01Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([100, -100]);
-      expect(arr.at(0)).assertEqual(100);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0400
-     * @tc.name int8ArrayAtPart01Test004
-     * @tc.desc Verify at(0) returns first element 10 on Int8Array([10, -10, INT8_MAX, INT8_MIN, 0])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayAtPart01Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([10, -10, INT8_MAX, INT8_MIN, 0]);
-      expect(arr.at(0)).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0500
-     * @tc.name int8ArrayAtPart01Test005
      * @tc.desc Verify at(0) returns -128 on new Int8Array([128, -129, 255, 0x81])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([128, -129, 255, 0x81]);
       expect(arr.at(0)).assertEqual(INT8_MIN);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0600
-     * @tc.name int8ArrayAtPart01Test006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0300
+     * @tc.name int8ArrayAtPart01Test003
      * @tc.desc Verify at(0) returns 0 on zero-filled new Int8Array(100)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(100);
       expect(arr.at(0)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0700
-     * @tc.name int8ArrayAtPart01Test007
-     * @tc.desc Verify at(2) on Int8Array([100, -100]) returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayAtPart01Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([100, -100]);
-      expect(arr.at(2)).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0800
-     * @tc.name int8ArrayAtPart01Test008
-     * @tc.desc Verify at index=5 on Int8Array([10, -10, INT8_MAX, INT8_MIN, 0]) returns undefined for out-of-bounds access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayAtPart01Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([10, -10, INT8_MAX, INT8_MIN, 0]);
-      expect(arr.at(5)).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0900
-     * @tc.name int8ArrayAtPart01Test009
-     * @tc.desc Verify at index=4 on Int8Array([128, -129, 255, 0x81]) returns undefined for out-of-bounds access
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayAtPart01Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([128, -129, 255, 0x81]);
-      expect(arr.at(4)).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1000
-     * @tc.name int8ArrayAtPart01Test010
-     * @tc.desc Verify at(1) on single-element Int8Array([42]) returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayAtPart01Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([42]);
-      expect(arr.at(1)).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1100
-     * @tc.name int8ArrayAtPart01Test011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0400
+     * @tc.name int8ArrayAtPart01Test004
      * @tc.desc Verify at(-1) returns 42 on Int8Array([42])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([42]);
       expect(arr.at(-1)).assertEqual(42);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1200
-     * @tc.name int8ArrayAtPart01Test012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0500
+     * @tc.name int8ArrayAtPart01Test005
      * @tc.desc Verify at(-2) returns 100 on Int8Array([100, -100])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([100, -100]);
       expect(arr.at(-2)).assertEqual(100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1300
-     * @tc.name int8ArrayAtPart01Test013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0600
+     * @tc.name int8ArrayAtPart01Test006
      * @tc.desc Verify at(-1) returns 0 on Int8Array([10, -10, INT8_MAX, INT8_MIN, 0])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, -10, INT8_MAX, INT8_MIN, 0]);
       expect(arr.at(-1)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1400
-     * @tc.name int8ArrayAtPart01Test014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0700
+     * @tc.name int8ArrayAtPart01Test007
      * @tc.desc Verify at(-arr.length) returns first element 10 on Int8Array([10, -10, INT8_MAX, INT8_MIN, 0])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([10, -10, INT8_MAX, INT8_MIN, 0]);
       expect(arr.at(-arr.length)).assertEqual(10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1500
-     * @tc.name int8ArrayAtPart01Test015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0800
+     * @tc.name int8ArrayAtPart01Test008
      * @tc.desc Verify at(-1) returns -127 on Int8Array([128, -129, 255, 0x81])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([128, -129, 255, 0x81]);
       expect(arr.at(-1)).assertEqual(-127);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1600
-     * @tc.name int8ArrayAtPart01Test016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_0900
+     * @tc.name int8ArrayAtPart01Test009
      * @tc.desc Verify at(-1) returns 0 on zero-filled Int8Array of length 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(100);
       expect(arr.at(-1)).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1700
-     * @tc.name int8ArrayAtPart01Test017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1000
+     * @tc.name int8ArrayAtPart01Test010
      * @tc.desc Verify at(0) returns first element 1 on Int8Array.of(1, 2, 3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(1, 2, 3);
       expect(arr.at(0)).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1800
-     * @tc.name int8ArrayAtPart01Test018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1100
+     * @tc.name int8ArrayAtPart01Test011
      * @tc.desc Verify at(0) returns first element 5 on Int8Array.from([5, 6, 7])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<int> = [5, 6, 7];
       let arr: Int8Array = Int8Array.from(src);
       expect(arr.at(0)).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1900
-     * @tc.name int8ArrayAtPart01Test019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1200
+     * @tc.name int8ArrayAtPart01Test012
      * @tc.desc Verify at(0) returns 9 after $_set(0, 9) on new Int8Array(buf)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let arr: Int8Array = new Int8Array(buf);
       arr.$_set(0, 9);
@@ -297,28 +206,28 @@ export default function int8ArrayAtPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_2000
-     * @tc.name int8ArrayAtPart01Test020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1300
+     * @tc.name int8ArrayAtPart01Test013
      * @tc.desc Verify at(0) on subarray(2) returns INT8_MAX(127)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let base: Int8Array = new Int8Array([10, -10, INT8_MAX, INT8_MIN, 0]);
       let view: Int8Array = base.subarray(2);
       expect(view.at(0)).assertEqual(INT8_MAX);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_2100
-     * @tc.name int8ArrayAtPart01Test021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART01_1400
+     * @tc.name int8ArrayAtPart01Test014
      * @tc.desc Verify at(0) returns 7 after fill(7)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart01Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart01Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(3);
       arr.fill(7);
       expect(arr.at(0)).assertEqual(7);

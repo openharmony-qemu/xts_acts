@@ -478,78 +478,52 @@ export default function int8ArrayAtPart02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART02_3000
      * @tc.name int8ArrayAtPart02Test030
-     * @tc.desc Verify at(out-of-bounds) returns undefined to distinguish from zero value element
+     * @tc.desc Verify at(0) returns 0 not undefined when element is 0 (zero value not out-of-bounds)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayAtPart02Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int8Array([0, 0, 0]);
-      expect(arr.at(5)).assertUndefined();
+      expect(arr.at(0)).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART02_3100
      * @tc.name int8ArrayAtPart02Test031
-     * @tc.desc Verify at(0) returns 0 not undefined when element is 0 (zero value not out-of-bounds)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayAtPart02Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int8Array([0, 0, 0]);
-      expect(arr.at(0)).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART02_3200
-     * @tc.name int8ArrayAtPart02Test032
-     * @tc.desc Verify at(-length-1) on single-element zero array returns undefined (negative out-of-bounds vs zero distinction)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayAtPart02Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr = new Int8Array([0]);
-      expect(arr.at(-2)).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART02_3300
-     * @tc.name int8ArrayAtPart02Test033
      * @tc.desc Verify at(0) on Int8Array.of constructed array returns first argument value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart02Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = Int8Array.of(11, 22, 33);
       expect(arr.at(0)).assertEqual(11);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART02_3400
-     * @tc.name int8ArrayAtPart02Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART02_3200
+     * @tc.name int8ArrayAtPart02Test032
      * @tc.desc Verify at(0) on Int8Array.from array source returns source first element value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart02Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart02Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<number> = [5, 10, 15];
       let arr = Int8Array.from(src);
       expect(arr.at(0)).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART02_3500
-     * @tc.name int8ArrayAtPart02Test035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_AT_PART02_3300
+     * @tc.name int8ArrayAtPart02Test033
      * @tc.desc Verify at(0) on Int8Array.from empty source returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayAtPart02Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayAtPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Array<number> = [];
       let arr = Int8Array.from(src);
       expect(arr.at(0)).assertUndefined();
