@@ -14,9 +14,9 @@
  */
 
 import usbMgr from '@ohos.usbManager';
-import { Driver, ON, MatchPattern } from '@ohos.UiTest';
+import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { isFilteredDevice } from './FilterUtils';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 let deviceList: Array<usbMgr.USBDevice>;
 let pipe: usbMgr.USBDevicePipe | null = null;
@@ -136,17 +136,15 @@ export default function UsbCoreApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetDevices001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testGetDevices001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testGetDevices001 start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testGetDevices001, skip`);
-        done();
         return;
       }
       let list = usbMgr.getDevices().filter(device => !isFilteredDevice(device.vendorId, device.productId));
       console.info(`${TAG} getDevices length: ${list.length}`);
       expect(list.length).assertLarger(0);
-      done();
     })
 
     /**
@@ -157,17 +155,15 @@ export default function UsbCoreApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testGetDevices002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testGetDevices002 start`);
       if (isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testGetDevices002, device connected, skip`);
-        done();
         return;
       }
       let res = usbMgr.getDevices();
       console.info(`${TAG} getDevices length: ${res.length}`);
       expect(res.length).assertEqual(0);
-      done();
     })
 
     /**
@@ -178,17 +174,15 @@ export default function UsbCoreApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testHasRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testHasRight001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testHasRight001 start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testHasRight001, skip`);
-        done();
         return;
       }
       let hasRight = usbMgr.hasRight(testDevice!.name);
       console.info(`${TAG} hasRight: ${hasRight}`);
       expect(hasRight).assertTrue();
-      done();
     })
 
     /**
@@ -241,7 +235,6 @@ export default function UsbCoreApiTest() {
         expect(remRight).assertTrue();
       } catch (error) {
         console.error(`${TAG} testRemoveRight001 catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
       } finally {
         await ensurePermission(testDevice!.name);
         done();
@@ -270,13 +263,12 @@ export default function UsbCoreApiTest() {
         console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
         expect(pipe.busNum).assertLarger(0);
         expect(pipe.devAddress).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testConnectDevice001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -303,13 +295,12 @@ export default function UsbCoreApiTest() {
         console.info(`${TAG} closePipe result: ${ret}`);
         expect(ret).assertEqual(0);
         pipe = null;
-        done();
       } catch (error) {
         console.error(`${TAG} testClosePipe001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -338,13 +329,12 @@ export default function UsbCoreApiTest() {
         let ret = usbMgr.closePipe(tmpPipe);
         console.info(`${TAG} closePipe result: ${ret}`);
         expect(ret).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testClosePipe002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -373,13 +363,12 @@ export default function UsbCoreApiTest() {
         let ret = usbMgr.closePipe(tmpPipe);
         console.info(`${TAG} closePipe result: ${ret}`);
         expect(ret).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testClosePipe003 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -409,13 +398,12 @@ export default function UsbCoreApiTest() {
         let ret = usbMgr.closePipe(tmpPipe);
         console.info(`${TAG} closePipe result: ${ret}`);
         expect(ret).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testClosePipe004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -442,13 +430,12 @@ export default function UsbCoreApiTest() {
         console.info(`${TAG} descriptor: ${JSON.stringify(descriptor)}`);
         expect(descriptor === undefined).assertFalse();
         expect(descriptor.length).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testGetRawDescriptor001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -474,13 +461,12 @@ export default function UsbCoreApiTest() {
         let fileDescriptor = usbMgr.getFileDescriptor(pipe);
         console.info(`${TAG} fileDescriptor: ${fileDescriptor}`);
         expect(fileDescriptor).assertLargerOrEqual(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testGetFileDescriptor001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -503,17 +489,16 @@ export default function UsbCoreApiTest() {
       let pipe: usbMgr.USBDevicePipe | null = null;
       try {
         pipe = setupDevicePipe(testDevice!);
-        let tempPipe: usbMgr.USBDevicePipe = {busNum: 255, devAddress: 255};
+        let tempPipe: usbMgr.USBDevicePipe = { busNum: 255, devAddress: 255 };
         let fileDescriptor = usbMgr.getFileDescriptor(tempPipe);
         console.info(`${TAG} fileDescriptor: ${fileDescriptor}`);
         expect(fileDescriptor).assertEqual(-1);
-        done();
       } catch (error) {
         console.error(`${TAG} testGetFileDescriptor002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -536,17 +521,16 @@ export default function UsbCoreApiTest() {
       let pipe: usbMgr.USBDevicePipe | null = null;
       try {
         pipe = setupDevicePipe(testDevice!);
-        let tempPipe: usbMgr.USBDevicePipe = {busNum: 255, devAddress: pipe.devAddress};
+        let tempPipe: usbMgr.USBDevicePipe = { busNum: 255, devAddress: pipe.devAddress };
         let fileDescriptor = usbMgr.getFileDescriptor(tempPipe);
         console.info(`${TAG} fileDescriptor: ${fileDescriptor}`);
         expect(fileDescriptor).assertEqual(-1);
-        done();
       } catch (error) {
         console.error(`${TAG} testGetFileDescriptor003 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -569,17 +553,16 @@ export default function UsbCoreApiTest() {
       let pipe: usbMgr.USBDevicePipe | null = null;
       try {
         pipe = setupDevicePipe(testDevice!);
-        let tempPipe: usbMgr.USBDevicePipe = {busNum: pipe.busNum, devAddress: 255};
+        let tempPipe: usbMgr.USBDevicePipe = { busNum: pipe.busNum, devAddress: 255 };
         let fileDescriptor = usbMgr.getFileDescriptor(tempPipe);
         console.info(`${TAG} fileDescriptor: ${fileDescriptor}`);
         expect(fileDescriptor).assertEqual(-1);
-        done();
       } catch (error) {
         console.error(`${TAG} testGetFileDescriptor004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -591,21 +574,18 @@ export default function UsbCoreApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetFileDescriptor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testGetFileDescriptor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testGetFileDescriptor005 start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testGetFileDescriptor005, skip`);
-        done();
         return;
       }
       try {
         usbMgr.getFileDescriptor(undefined);
         expect().assertFail();
-        done();
       } catch (error) {
         console.error(`${TAG} testGetFileDescriptor005 catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(401);
-        done();
       }
     })
 
@@ -617,21 +597,18 @@ export default function UsbCoreApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetFileDescriptor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testGetFileDescriptor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testGetFileDescriptor006 start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testGetFileDescriptor006, skip`);
-        done();
         return;
       }
       try {
         usbMgr.getFileDescriptor(null);
         expect().assertFail();
-        done();
       } catch (error) {
         console.error(`${TAG} testGetFileDescriptor006 catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(401);
-        done();
       }
     })
 
