@@ -4967,7 +4967,7 @@ describe('btConnectionTest', () => {
             console.info(`[bluetooth_js]off bluetoothDeviceFind no callback error, code is ${error.code}, message is ${error.message}`);
             if (error.code === 801) {
                 console.info('[bluetooth_js]bluetoothDeviceFind is not support');
-                expect(err.code).assertEqual(801);
+                expect(error.code).assertEqual(801);
             } else {
                 expect().assertFail();
             }
@@ -4994,7 +4994,7 @@ describe('btConnectionTest', () => {
             console.info(`[bluetooth_js]off bondStateChange no callback error, code is ${error.code}, message is ${error.message}`);
             if (error.code === 801) {
                 console.info('[bluetooth_js]bondStateChange is not support');
-                expect(err.code).assertEqual(801);
+                expect(error.code).assertEqual(801);
             } else {
                 expect().assertFail();
             }
@@ -5021,7 +5021,7 @@ describe('btConnectionTest', () => {
             console.info(`[bluetooth_js]off pinRequired no callback error, code is ${error.code}, message is ${error.message}`);
             if (error.code === 801) {
                 console.info('[bluetooth_js]pinRequired is not support');
-                expect(err.code).assertEqual(801);
+                expect(error.code).assertEqual(801);
             } else {
                 expect().assertFail();
             }
@@ -5051,7 +5051,7 @@ describe('btConnectionTest', () => {
             console.info(`[bluetooth_js]off batteryChange no callback error, code is ${error.code}, message is ${error.message}`);
             if (error.code === 801) {
                 console.info('[bluetooth_js]batteryChange is not support');
-                expect(err.code).assertEqual(801);
+                expect(error.code).assertEqual(801);
             } else {
                 expect().assertFail();
             }
