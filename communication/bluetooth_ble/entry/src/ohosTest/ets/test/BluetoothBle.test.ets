@@ -3336,9 +3336,9 @@ export default function bluetoothBleTest() {
                 expect(true).assertTrue();
             } catch (error) {
                 console.error(`[bt_arkts]BleScanner off BLEDeviceFind no callback is failed, code is ${error.code},message is ${error.message}`);
-                if (Number(error.code) === 801) {
+                if (error.code === '801') {
                     console.info('[bt_arkts]is not support');
-                    expect(Number(error.code) === 801).assertTrue();
+                    expect(error.code === '801').assertTrue();
                 } else {
                     expect().assertFail();
                 }
