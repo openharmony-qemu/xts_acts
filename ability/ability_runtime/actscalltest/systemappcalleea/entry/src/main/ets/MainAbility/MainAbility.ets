@@ -13,57 +13,64 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
-import commonEvent from '@ohos.commonEvent'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import commonEvent from '@ohos.commonEventManager'
+import rpc from '@ohos.rpc';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { BusinessError } from '@ohos.base';
+import { Caller } from '@ohos.app.ability.UIAbility';
 
-class MySequenceable {
+class MySequenceable implements rpc.Parcelable {
     public num: number = 0;
-    public str: string = "";
-    public result: string = "";
+    public str: string = '';
+    public result: string = '';
 
-    constructor(num, string, result) {
+    constructor(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    setMySequence(num, string, result) {
+    setMySequence(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    marshalling(messageParcel) {
+    marshalling(messageParcel: rpc.MessageSequence) {
         messageParcel.writeInt(this.num);
         messageParcel.writeString(this.str);
         messageParcel.writeString(this.result);
         return true;
     }
 
-    unmarshalling(messageParcel) {
+    unmarshalling(messageParcel: rpc.MessageSequence) {
         this.num = messageParcel.readInt();
         this.str = messageParcel.readString();
         this.result = messageParcel.readString();
         return true;
     }
 }
-var eventCase2000 = "call_case2000_test";
-var subscribeInfo = {
+let eventCase2000 = 'call_case2000_test';
+let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
     events: [eventCase2000, ],
 };
-var subscriber;
-function test2200ReleaseCallback(data) {
+let subscriber: commonEvent.CommonEventSubscriber;
+function test2200ReleaseCallback(data: string) {
     console.log('SystemAppCalleeA MainAbility test2200ReleaseCallback:' + data);
     test2200ReleaseFlag = data.toString();
 }
 
-var test2200ReleaseFlag = '';
+let test2200ReleaseFlag = '';
 
-function testCall(data) {
+function testCall(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
     console.log('======>SystemAppCalleeA MainAbility on testCall <======')
     data.readParcelable(recvSequence);
-    var result = recvSequence.str + 'processed';
-    var commonEventData = {
+    let result = recvSequence.str + 'processed';
+    let commonEventData: commonEvent.CommonEventPublishData = {
         code: 0,
         data: 'calleeCheckCallParam',
         parameters: {
@@ -79,7 +86,7 @@ function testCall(data) {
     return recvSequence;
 }
 
-function testCallWithResult(data) {
+function testCallWithResult(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
     console.log('======>SystemAppCalleeA MainAbility on testCall <======')
     data.readParcelable(recvSequence);
@@ -91,26 +98,26 @@ function testCallWithResult(data) {
 
 export default class MainAbility extends Ability {
 
-    test2200(data) {
-        console.log("SystemAppCalleeA MainAbility test2200");
+    test2200(data: rpc.MessageSequence) {
+        console.log('SystemAppCalleeA MainAbility test2200');
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
 
-        let want = {
-            bundleName: "com.example.systemappcalleea",
-            abilityName: "com.example.systemappcalleea.SecondAbility",
+        let want: Want = {
+            bundleName: 'com.example.systemappcalleea',
+            abilityName: 'com.example.systemappcalleea.SecondAbility',
         };
-        console.log("SystemAppCalleeA MainAbility test2200 before startAbilityByCall");
+        console.log('SystemAppCalleeA MainAbility test2200 before startAbilityByCall');
         let resultData = new MySequenceable(0, '', '');
-        globalThis.abilityContext.startAbilityByCall(want).then((caller) => {
-            let param = new MySequenceable(recvData.num + 1, recvData.str + "SystemAppCalleeA", '');
+        globalThis.abilityContext.startAbilityByCall(want).then((caller: Caller) => {
+            let param = new MySequenceable(recvData.num + 1, recvData.str + 'SystemAppCalleeA', '');
             caller.onRelease(test2200ReleaseCallback);
-            caller.callWithResult('test2200', param).then((data2) => {
+            caller.callWithResult('test2200', param).then((data2: rpc.MessageSequence) => {
                 data2.readParcelable(resultData);
                 caller.release();
-                for (let start=Date.now(); Date.now() - start <= 200;) { }
+                for (let start = Date.now(); Date.now() - start <= 200;) { }
                 resultData.result = test2200ReleaseFlag;
-                let commonEventData = {
+                let commonEventData: commonEvent.CommonEventPublishData = {
                     parameters: {
                         num: resultData.num,
                         str: resultData.str,
@@ -126,28 +133,28 @@ export default class MainAbility extends Ability {
         return resultData;
     }
 
-    subscribeCallBack(err, data) {
+    subscribeCallBack(err: BusinessError, data: commonEvent.CommonEventData) {
         console.log('SystemAppCalleeA MainAbility subscribeCallBack data:' + JSON.stringify(data));
         switch (data.event) {
           case eventCase2000:
-                globalThis.abilityContext.terminateSelf();
-                break;
+            globalThis.abilityContext.terminateSelf();
+            break;
           default:
-                console.log('SystemAppCalleeA MainAbility subscribeCallBack event error:' + data.event);
-                break;
+            console.log('SystemAppCalleeA MainAbility subscribeCallBack event error:' + data.event);
+            break;
         }
     }
 
-    onCreate(want, launchParam) {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         // Ability is creating, initialize resources for this ability
-        console.log("SystemAppCalleeA MainAbility onCreate")
+        console.log('SystemAppCalleeA MainAbility onCreate')
         globalThis.abilityWant = want;
         globalThis.abilityContext = this.context;
         this.callee.on('test2200', this.test2200);
         this.callee.on('testCall', testCall);
         this.callee.on('testCallWithResult', testCallWithResult);
-        commonEvent.createSubscriber(subscribeInfo).then((data) => {
-            console.log("SystemAppCalleeA MainAbility createSubscriber");
+        commonEvent.createSubscriber(subscribeInfo).then((data: commonEvent.CommonEventSubscriber) => {
+            console.log('SystemAppCalleeA MainAbility createSubscriber');
             subscriber = data;
             commonEvent.subscribe(subscriber, this.subscribeCallBack);
         });
@@ -155,27 +162,27 @@ export default class MainAbility extends Ability {
 
     onDestroy() {
         // Ability is destroying, release resources for this ability
-        console.log("SystemAppCalleeA MainAbility onDestroy")
+        console.log('SystemAppCalleeA MainAbility onDestroy')
     }
 
-    onWindowStageCreate(windowStage) {
+    onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
-        console.log("SystemAppCalleeA MainAbility onWindowStageCreate")
-        windowStage.setUIContent(this.context, "pages/index/index", null)
+        console.log('SystemAppCalleeA MainAbility onWindowStageCreate')
+        windowStage.loadContent('pages/index/index', null)
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("SystemAppCalleeA MainAbility onWindowStageDestroy")
+        console.log('SystemAppCalleeA MainAbility onWindowStageDestroy')
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("SystemAppCalleeA MainAbility onForeground");
+        console.log('SystemAppCalleeA MainAbility onForeground');
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("SystemAppCalleeA MainAbility onBackground")
+        console.log('SystemAppCalleeA MainAbility onBackground')
     }
 };

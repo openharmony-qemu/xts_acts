@@ -13,33 +13,38 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
-import commonEvent from '@ohos.commonEvent'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import commonEvent from '@ohos.commonEventManager'
+import rpc from '@ohos.rpc';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
-class MySequenceable {
+class MySequenceable implements rpc.Parcelable {
     public num: number = 0;
-    public str: string = "";
-    public result: string = "";
+    public str: string = '';
+    public result: string = '';
 
-    constructor(num, string, result) {
+    constructor(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    setMySequence(num, string, result) {
+    setMySequence(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    marshalling(messageParcel) {
+    marshalling(messageParcel: rpc.MessageSequence) {
         messageParcel.writeInt(this.num);
         messageParcel.writeString(this.str);
         messageParcel.writeString(this.result);
         return true;
     }
 
-    unmarshalling(messageParcel) {
+    unmarshalling(messageParcel: rpc.MessageSequence) {
         this.num = messageParcel.readInt();
         this.str = messageParcel.readString();
         this.result = messageParcel.readString();
@@ -47,12 +52,12 @@ class MySequenceable {
     }
 }
 
-function testCall(data) {
+function testCall(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
     console.log('======>SystemAppCalleeA MainAbility on testCall <======')
     data.readParcelable(recvSequence);
-    var result = recvSequence.str + 'processed';
-    var commonEventData = {
+    let result = recvSequence.str + 'processed';
+    let commonEventData: commonEvent.CommonEventPublishData = {
         code: 0,
         data: 'calleeCheckCallParam',
         parameters: {
@@ -68,7 +73,7 @@ function testCall(data) {
     return recvSequence;
 }
 
-function testCallWithResult(data) {
+function testCallWithResult(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
     console.log('======>SystemAppCalleeA MainAbility on testCall <======')
     data.readParcelable(recvSequence);
@@ -79,17 +84,17 @@ function testCallWithResult(data) {
 }
 
 export default class SecondAbility extends Ability {
-    test2200(data) {
-        console.log("SystemAppCalleeA SecondAbility test2200");
+    test2200(data: rpc.MessageSequence) {
+        console.log('SystemAppCalleeA SecondAbility test2200');
         let recvData = new MySequenceable(0, '', '');
         data.readParcelable(recvData);
-        let result = new MySequenceable(recvData.num + 1, recvData.str + "SystemAppCalleeA", '');
+        let result = new MySequenceable(recvData.num + 1, recvData.str + 'SystemAppCalleeA', '');
         return result;
     }
 
-    onCreate(want, launchParam) {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         // Ability is creating, initialize resources for this ability
-        console.log("SystemAppCalleeA SecondAbility onCreate")
+        console.log('SystemAppCalleeA SecondAbility onCreate')
         globalThis.abilityWant = want;
         globalThis.abilityContext2 = this.context;
         this.callee.on('test2200', this.test2200);
@@ -99,27 +104,27 @@ export default class SecondAbility extends Ability {
 
     onDestroy() {
         // Ability is destroying, release resources for this ability
-        console.log("SystemAppCalleeA SecondAbility onDestroy")
+        console.log('SystemAppCalleeA SecondAbility onDestroy')
     }
 
-    onWindowStageCreate(windowStage) {
+    onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
-        console.log("SystemAppCalleeA SecondAbility onWindowStageCreate")
-        windowStage.setUIContent(this.context, "pages/index/index", null)
+        console.log('SystemAppCalleeA SecondAbility onWindowStageCreate')
+        windowStage.loadContent('pages/index/index', null)
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("SystemAppCalleeA SecondAbility onWindowStageDestroy")
+        console.log('SystemAppCalleeA SecondAbility onWindowStageDestroy')
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("SystemAppCalleeA SecondAbility onForeground");
+        console.log('SystemAppCalleeA SecondAbility onForeground');
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("SystemAppCalleeA SecondAbility onBackground")
+        console.log('SystemAppCalleeA SecondAbility onBackground')
     }
 };

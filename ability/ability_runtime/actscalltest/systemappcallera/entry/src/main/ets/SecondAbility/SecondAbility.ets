@@ -13,33 +13,38 @@
  * limitations under the License.
  */
 import Ability from '@ohos.app.ability.UIAbility'
-import commonEvent from '@ohos.commonEvent'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+import commonEvent from '@ohos.commonEventManager'
+import rpc from '@ohos.rpc';
+import UIAbility from '@ohos.app.ability.UIAbility';
 
-class MySequenceable {
+class MySequenceable implements rpc.Parcelable {
     public num: number = 0;
-    public str: string = "";
-    public result: string = "";
+    public str: string = '';
+    public result: string = '';
 
-    constructor(num, string, result) {
+    constructor(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    setMySequence(num, string, result) {
+    setMySequence(num: number, string: string, result: string) {
         this.num = num;
         this.str = string;
         this.result = result;
     }
 
-    marshalling(messageParcel) {
+    marshalling(messageParcel: rpc.MessageSequence) {
         messageParcel.writeInt(this.num);
         messageParcel.writeString(this.str);
         messageParcel.writeString(this.result);
         return true;
     }
 
-    unmarshalling(messageParcel) {
+    unmarshalling(messageParcel: rpc.MessageSequence) {
         this.num = messageParcel.readInt();
         this.str = messageParcel.readString();
         this.result = messageParcel.readString();
@@ -47,12 +52,12 @@ class MySequenceable {
     }
 }
 
-function testCall(data) {
+function testCall(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
-    console.log('======>SystemAppCallerA ThirdAbility on testCall <======')
+    console.log('======>SystemAppCallerA SecondAbility on testCall <======')
     data.readParcelable(recvSequence);
-    var result = recvSequence.str + 'processed';
-    var commonEventData = {
+    let result = recvSequence.str + 'processed';
+    let commonEventData: commonEvent.CommonEventPublishData = {
         code: 0,
         data: 'calleeCheckCallParam',
         parameters: {
@@ -62,14 +67,14 @@ function testCall(data) {
         }
     }
     commonEvent.publish('CallTest', commonEventData, (err) => {
-        console.log('======>CallTestSysA ThirdAbility Call_Finish<======')
+        console.log('======>CallTestSysA SecondAbility Call_Finish<======')
     })
     return recvSequence;
 }
 
-function testCallWithResult(data) {
+function testCallWithResult(data: rpc.MessageSequence) {
     let recvSequence = new MySequenceable(0, '', '');
-    console.log('======>SystemAppCallerA ThirdAbility on testCall <======')
+    console.log('======>SystemAppCallerA SecondAbility on testCall <======')
     data.readParcelable(recvSequence);
     let result = recvSequence.str + 'processed';
     recvSequence.setMySequence(recvSequence.num, recvSequence.str, result);
@@ -77,10 +82,10 @@ function testCallWithResult(data) {
     return recvSequence;
 }
 
-export default class ThirdAbility extends Ability {
-    onCreate(want, launchParam) {
+export default class SecondAbility extends Ability {
+    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
         // Ability is creating, initialize resources for this ability
-        console.log("SystemAppCallerA ThirdAbility onCreate")
+        console.log('SystemAppCallerA SecondAbility onCreate')
         globalThis.abilityWant = want;
         globalThis.abilityContext = this.context;
         this.callee.on('testCall', testCall);
@@ -89,37 +94,38 @@ export default class ThirdAbility extends Ability {
 
     onDestroy() {
         // Ability is destroying, release resources for this ability
-        console.log("SystemAppCallerA ThirdAbility onDestroy")
+        console.log('SystemAppCallerA SecondAbility onDestroy')
     }
 
-    onWindowStageCreate(windowStage) {
+    onWindowStageCreate(windowStage: window.WindowStage): void {
         // Main window is created, set main page for this ability
-        console.log("SystemAppCallerA ThirdAbility onWindowStageCreate")
-        windowStage.setUIContent(this.context, "pages/index/index", null)
+        console.log('SystemAppCallerA SecondAbility onWindowStageCreate')
+        windowStage.loadContent('pages/index/index', null)
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("SystemAppCallerA ThirdAbility onWindowStageDestroy")
+        console.log('SystemAppCallerA SecondAbility onWindowStageDestroy')
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("SystemAppCallerA ThirdAbility onForeground");
-        if ((globalThis.abilityWant.parameters.case_num == "case0700") ||
-            (globalThis.abilityWant.parameters.case_num == "case0800")) {
-            var publishData = globalThis.abilityWant.parameters.case_num + "targetForeground";
-            var commonEventData = {
+        console.log('SystemAppCallerA SecondAbility onForeground');
+        if ((globalThis.abilityWant.parameters.case_num == 'case0700') ||
+            (globalThis.abilityWant.parameters.case_num == 'case0800')) {
+            console.log('SystemAppCallerA SecondAbility special process in');
+            let publishData = globalThis.abilityWant.parameters?.case_num + 'targetForeground';
+            let commonEventData: commonEvent.CommonEventPublishData = {
                 data: publishData,
             }
             commonEvent.publish('CallTest', commonEventData, (err) => {
-                console.log('======>SystemAppCallerA ThirdAbility Call_Finish<======')
+                console.log('======>SystemAppCallerA SecondAbility Call_Finish<======')
             })
         }
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("SystemAppCallerA ThirdAbility onBackground")
+        console.log('SystemAppCallerA SecondAbility onBackground')
     }
 };
