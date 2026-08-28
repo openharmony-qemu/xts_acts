@@ -13,16 +13,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,Level } from '../../../../hypium/index'
 import router from '@ohos.router';
-import { Driver } from '@ohos.UiTest';
+import {
+  Component,
+  DisplayRotation,
+  Driver,
+  MatchPattern,
+  ON,
+  Point,
+  PointerMatrix,
+  Rect,
+  ResizeDirection,
+  UiWindow,
+  WindowMode
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { Callback, MessageManager } from '../../../ets/MainAbility/utils/MessageManager';
+import window from '@ohos.window';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector'
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement'
+import display from '@ohos.display'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import common from '@ohos.app.ability.common';
+import { UtilsTest } from '../Util.test';
+
+let domain: number = 0x0000;
+let tag: String = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
+const uiContext = new UIContext();
 
 export default function outlineTest(): void {
   describe('outlineTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("outlineTest beforeAll start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
+      
+    });
+
     beforeEach(async (): Promise<void> => {
       console.info("outlineTest beforeEach start");
       let options: router.RouterOptions = {
@@ -53,25 +85,20 @@ export default function outlineTest(): void {
      * @tc.level    Level.LEVEL0
      */
 it('outlineTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        console.info('outlineTest_0100 START');
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let strJson = inspector.getInspectorByKey('outline_text');
-        await CommonFunc.sleep(1000);
-        let obj = JSON.parseJsonElement(strJson);
-        await CommonFunc.sleep(1000);
-        console.info("[outlineTest_0100] component obj is: " + JSON.stringify(obj));
-        console.info("[outlineTest_0100] component obj.getElement('$attrs') is: " +
-        JSON.stringify(obj.getElement('$attrs')));
-        let obj1: String =
-          JSON.parseJsonElement(obj.getElement('$attrs').getString('outline')).getElement('style').getString('left');
-        expect(obj1).assertEqual("OutlineStyle.SOLID");
-        console.info('[outlineTest_0100] END');
-      } catch (err) {
-        console.info('outlineTest_0100 err: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
+      console.info('outlineTest_0100 START');
+      let driver = Driver.create()
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('outline_text');
+      await CommonFunc.sleep(1000);
+      let obj = JSON.parseJsonElement(strJson);
+      await CommonFunc.sleep(1000);
+      console.info("[outlineTest_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[outlineTest_0100] component obj.getElement('$attrs') is: " +
+      JSON.stringify(obj.getElement('$attrs')));
+      let obj1: String =
+        JSON.parseJsonElement(obj.getElement('$attrs').getString('outline')).getElement('style').getString('left');
+      expect(obj1).assertEqual("OutlineStyle.SOLID");
+      console.info('[outlineTest_0100] END');
       done();
     });
     
@@ -83,25 +110,20 @@ it('outlineTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.level    Level.LEVEL0
      */
 it('outlineTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        console.info('outlineTest_0200 START');
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let strJson = inspector.getInspectorByKey('outline_text');
-        await CommonFunc.sleep(1000);
-        let obj = JSON.parseJsonElement(strJson);
-        await CommonFunc.sleep(1000);
-        console.info("[outlineTest_0200] component obj is: " + JSON.stringify(obj));
-        console.info("[outlineTest_0200] component obj.getElement('$attrs') is: " +
-        JSON.stringify(obj.getElement('$attrs')));
-        let obj1: String =
-          JSON.parseJsonElement(obj.getElement('$attrs').getString('outline')).getElement('style').getString('right');
-        expect(obj1).assertEqual("OutlineStyle.DASHED");
-        console.info('[outlineTest_0200] END');
-      } catch (err) {
-        console.info('outlineTest_0200 err: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
+      console.info('outlineTest_0200 START');
+      let driver = Driver.create()
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('outline_text');
+      await CommonFunc.sleep(1000);
+      let obj = JSON.parseJsonElement(strJson);
+      await CommonFunc.sleep(1000);
+      console.info("[outlineTest_0200] component obj is: " + JSON.stringify(obj));
+      console.info("[outlineTest_0200] component obj.getElement('$attrs') is: " +
+      JSON.stringify(obj.getElement('$attrs')));
+      let obj1: String =
+        JSON.parseJsonElement(obj.getElement('$attrs').getString('outline')).getElement('style').getString('right');
+      expect(obj1).assertEqual("OutlineStyle.DASHED");
+      console.info('[outlineTest_0200] END');
       done();
     });
     
@@ -113,25 +135,20 @@ it('outlineTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
      * @tc.level    Level.LEVEL0
      */
 it('outlineTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        console.info('outlineTest_0300 START');
-        let driver = Driver.create()
-        await CommonFunc.sleep(1000);
-        let strJson = inspector.getInspectorByKey('outline_text');
-        await CommonFunc.sleep(1000);
-        let obj = JSON.parseJsonElement(strJson);
-        await CommonFunc.sleep(1000);
-        console.info("[outlineTest_0300] component obj is: " + JSON.stringify(obj));
-        console.info("[outlineTest_0300] component obj.getElement('$attrs') is: " +
-        JSON.stringify(obj.getElement('$attrs')));
-        let obj1: String =
-          JSON.parseJsonElement(obj.getElement('$attrs').getString('outline')).getElement('style').getString('top');
-        expect(obj1).assertEqual("OutlineStyle.DOTTED");
-        console.info('[outlineTest_0300] END');
-      } catch (err) {
-        console.info('outlineTest_0300 err: ' + JSON.stringify(err));
-        expect().assertFail();
-      }
+      console.info('outlineTest_0300 START');
+      let driver = Driver.create()
+      await CommonFunc.sleep(1000);
+      let strJson = inspector.getInspectorByKey('outline_text');
+      await CommonFunc.sleep(1000);
+      let obj = JSON.parseJsonElement(strJson);
+      await CommonFunc.sleep(1000);
+      console.info("[outlineTest_0300] component obj is: " + JSON.stringify(obj));
+      console.info("[outlineTest_0300] component obj.getElement('$attrs') is: " +
+      JSON.stringify(obj.getElement('$attrs')));
+      let obj1: String =
+        JSON.parseJsonElement(obj.getElement('$attrs').getString('outline')).getElement('style').getString('top');
+      expect(obj1).assertEqual("OutlineStyle.DOTTED");
+      console.info('[outlineTest_0300] END');
       done();
     });
   })
