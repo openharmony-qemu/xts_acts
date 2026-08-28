@@ -156,20 +156,41 @@ struct ExecuteAIPageCommandInteractionTest {
     events_emitter.off(148188)
   }
 
-  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info('web page valueChangeCallBack');
-    if (eventData != null && eventData.data != null && eventData.data.ACTION != null) {
-      this.str = eventData.data.ACTION;
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
+        let strValue: string = String(data['ACTION']);
+        this.str = strValue;
+      }
     }
   }
 
   private sleep(ms: number): Promise<void> {
-    return new Promise((resolve: () => void) => {
+    return new Promise<void>((resolve: () => void) => {
       setTimeout(resolve, ms);
     });
   }
 
-  private async runCommand(msg: string, runner: AIPageCommandRunner, command: string, eventId: number,
+  private parseCode(res: string): number {
+    let code: number = -1;
+    try {
+      const elem = JSON.parseJsonElement(res);
+      const codeElem = elem.tryGetElement("code");
+      if (codeElem !== undefined) {
+        const codeDbl = codeElem.tryAsDouble();
+        if (codeDbl !== undefined) {
+          code = codeDbl as number;
+        }
+      }
+    } catch (e) {
+      console.error('parseCode error: ' + JSON.stringify(e));
+    }
+    return code;
+  }
+
+  private async runCommand(msg: string, runner: AIPageCommandRunner, command: string, eventId: Long,
     expectedError?: number): Promise<void> {
     let res: string = '';
     let errorCode: number = -1;
@@ -186,8 +207,7 @@ struct ExecuteAIPageCommandInteractionTest {
       if (i < 4) { await this.sleep(500); }
     }
     if (res && res.includes('code')) {
-      let json: CommandResult = JSON.parse(res);
-      Utils.emitEvent(json.code, eventId);
+      Utils.emitEvent(this.parseCode(res), eventId);
     } else if (errorCode !== -1) {
       Utils.emitEvent(errorCode, eventId);
     } else {
@@ -198,7 +218,8 @@ struct ExecuteAIPageCommandInteractionTest {
   build() {
     Column() {
       Row() {
-        Button('ExecuteAIPageCommandInteractionTest').key('InteractionTestButton').onClick(async () => {
+        Button('ExecuteAIPageCommandInteractionTest').key('InteractionTestButton').onClick((e: ClickEvent) => {
+          (async () => {
           console.info('key==>' + this.str)
           const runner: AIPageCommandRunner = this.controller as AIPageCommandRunner;
           const runnerNull: AIPageCommandRunner = this.controllerNull as AIPageCommandRunner;
@@ -581,6 +602,7 @@ struct ExecuteAIPageCommandInteractionTest {
             }
 
           }
+        })()
         })
       }
       Web({ src: 'resource://rawfile/ai_control_full_test.html', controller: this.controller })
