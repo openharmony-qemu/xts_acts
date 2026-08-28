@@ -31,7 +31,6 @@ export default {
   },
 
   onShow() {
-    this.$refs.list.scrollTo({index: this.itemIndex});
   },
 
   clickChange(item) {
