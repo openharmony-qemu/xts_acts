@@ -79,7 +79,7 @@ export default function webCookieLazyTest() {
       async (done: ()=> void):Promise<void> => {
       let expect_value:boolean = false;
       try {
-        webview.WebCookieManager.setLazyInitializeWebEngine(null);
+        webview.WebCookieManager.setLazyInitializeWebEngine(null as boolean);
         expect_value = true;
       } catch (error) {
         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -103,7 +103,7 @@ export default function webCookieLazyTest() {
       async (done: ()=> void):Promise<void> => {
       let expect_value:boolean = false;
       try {
-        webview.WebCookieManager.setLazyInitializeWebEngine(undefined);
+        webview.WebCookieManager.setLazyInitializeWebEngine(undefined as boolean);
         expect_value = true;
       } catch (error) {
         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

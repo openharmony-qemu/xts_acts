@@ -581,7 +581,7 @@ export default function WebHttpCookies() {
       async (done: ()=> void):Promise<void> => {
       let result:boolean = false
       try {
-        await webview.WebCookieManager.fetchAllCookies(null)
+        await webview.WebCookieManager.fetchAllCookies(null as boolean)
         result = true
       } catch (error) {
         console.error(`ErrorCode:${error.code}, Message: ${error.message}`)
@@ -605,7 +605,7 @@ export default function WebHttpCookies() {
       async (done: ()=> void):Promise<void> => {
       let result:boolean = false
       try {
-        await webview.WebCookieManager.fetchAllCookies(undefined)
+        await webview.WebCookieManager.fetchAllCookies(undefined as boolean)
         result = true
       } catch (error) {
         console.error(`ErrorCode:${error.code}, Message: ${error.message}`)
