@@ -96,6 +96,28 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               }
               break;
             }
+            case 'emitRefreshNullStatic001': {
+              try {
+                let param: boolean | null = null;
+                this.webviewCtl.refresh(param as boolean);
+                Utils.emitEvent(true, 41021801)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41021801)
+              }
+              break;
+            }
+            case 'emitRefreshUndefinedStatic001': {
+              try {
+                let param: boolean | undefined = undefined;
+                this.webviewCtl.refresh(param as boolean);
+                Utils.emitEvent(true, 41021802)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41021802)
+              }
+              break;
+            }
           }
         })
       }
