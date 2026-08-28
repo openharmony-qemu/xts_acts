@@ -71,7 +71,7 @@ export default function rotationGestureEventTest() {
       pointers.setPoint(1,0,{x: Math.round(areaObj1.right - areaWidth1/2),y: Math.round(areaObj1.bottom - areaHeight1/4) });
       pointers.setPoint(1,1,{x: Math.round(areaObj1.left + areaWidth1/4),y: Math.round(areaObj1.bottom - areaHeight1/4) });
       try {
-        await driver.injectMultiPointerAction(pointers,1200);
+        await driver.injectMultiPointerAction(pointers,2400);
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error('RotationGesture1_0100 after each error: ' + err);

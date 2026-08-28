@@ -90,7 +90,7 @@ it('RotationGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promi
         x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(), y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt()
       });
       try {
-        await driver.injectMultiPointerAction(pointers,1200);
+        await driver.injectMultiPointerAction(pointers,2400);
         await CommonFunc.sleep(2000);
       } catch (err) {
         console.error('RotationGesture1_static_0100 after each error: ' + err);
