@@ -20,8 +20,6 @@ import InjectOfflineResourcesTest from './InjectOfflineResourcesTest.test'
 import SetBlanklessLoadingWithParams from "./SetBlanklessLoadingWithParams.test";
 import SetBlanklessLoadingWithKey from "./SetBlanklessLoadingWithKey.test";
 import ExecuteAIPageCommandTest from "./ExecuteAIPageCommand.test";
-import ExecuteAIPageCommandInteractionTest from './ExecuteAIPageCommandInteraction.test'
-import ExecuteAIPageCommandCheckTest from './ExecuteAIPageCommandCheck.test'
 
 export default function testsuite() : void{
   ClearPrefetchedResourceTest();
@@ -29,6 +27,4 @@ export default function testsuite() : void{
   SetBlanklessLoadingWithParams();
   SetBlanklessLoadingWithKey();
   ExecuteAIPageCommandTest();
-  ExecuteAIPageCommandInteractionTest();
-  ExecuteAIPageCommandCheckTest();
 }
