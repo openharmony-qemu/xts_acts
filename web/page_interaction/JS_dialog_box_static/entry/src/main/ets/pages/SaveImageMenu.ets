@@ -185,6 +185,13 @@ struct BindMenuTest {
               this.controller.loadUrl("resource://rawfile/canvas.html");
               break;
             }
+			
+		   case 'emitSwitchNextPageStaticFileSelect' : {
+			  let uiContext: UIContext = this.getUIContext();
+			  let router: Router = uiContext.getRouter();
+			  router.pushUrl({ url: 'pages/FileSelectorParamTest' })
+			  console.log('push URL success')
+			}
 
           }
         })

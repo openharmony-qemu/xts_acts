@@ -148,6 +148,24 @@ export default function SaveImageMenuJsunit() {
         }
         done();
       })
+	  
+	    /**
+		 * @tc.name   testSwitchNextPageStaticFileSelect
+		 * @tc.number SUB_WEB_NEXT_PAGE_0300
+		 * @tc.desc   switchNextPage
+		 * @tc.type   FUNCTION
+		 * @tc.size   MEDIUMTEST
+		 * @tc.level  LEVEL3
+		 */
+		it('testSwitchNextPageStaticFileSelect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+		  async (done: () => void): Promise<void> => {
+			await Utils.msSleep(1000);
+			Utils.emitEvent('emitSwitchNextPageStaticFileSelect', 10)
+			await Utils.msSleep(1000);
+			inspector.sendEventByKey('webSaveImageMenu', 10, '');
+			await Utils.msSleep(4000)
+			done()
+		  })
 
   })
 }
