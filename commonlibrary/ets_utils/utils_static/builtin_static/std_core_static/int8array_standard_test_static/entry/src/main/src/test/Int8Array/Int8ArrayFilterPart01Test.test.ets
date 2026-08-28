@@ -43,6 +43,7 @@ export default function int8ArrayFilterPart01Test(): void {
       Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
+    const INT8_MIN: byte = -128;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILTER_PART01_0100
@@ -110,6 +111,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(10, 20, 30, 40);
       let result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return index < 2;
       });
       expect(result.length).assertEqual(2);
@@ -402,6 +406,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(10, 20, 30);
       let result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return index === 0;
       });
       expect(result.length).assertEqual(1);
@@ -419,6 +426,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(10, 20, 30);
       let result: Int8Array = arr.filter((_val: number, index: int, array: Int8Array): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return index === array.length - 1;
       });
       expect(result.length).assertEqual(1);
@@ -437,6 +447,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = Int8Array.of(10, 20, 30, 40);
       let maxIndex: int = -1;
       const result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         if (index > maxIndex) {
           maxIndex = index;
         }
@@ -460,6 +473,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = Int8Array.of(42);
       let seenIndex: int = -1;
       let result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         seenIndex = index;
         return true;
       });
@@ -478,6 +494,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return index % 2 === 0;
       });
       expect(result.length).assertEqual(3);
@@ -497,6 +516,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(10, 20, 30);
       let result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return index > 0;
       });
       expect(result.length).assertEqual(2);
@@ -516,6 +538,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = Int8Array.of(1, 2, 3);
       let seenLength: int = 0;
       const result: Int8Array = arr.filter((_val: number, _index: int, array: Int8Array): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         seenLength = array.length;
         return true;
       });
@@ -537,6 +562,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = Int8Array.of(1, 2, 3, 4, 5);
       let lenMatch: int = 0;
       const result: Int8Array = arr.filter((_val: number, _index: int, array: Int8Array): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         if (array.length === 5) {
           lenMatch = lenMatch + 1;
         }
@@ -583,6 +611,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = Int8Array.of(5, 10, 15);
       let sumFromCallback: number = 0;
       const result: Int8Array = arr.filter((_val: number, index: int, array: Int8Array): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         sumFromCallback = sumFromCallback + array.$_get(index);
         return true;
       });
@@ -603,6 +634,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(1, -2, 3, -4);
       let result: Int8Array = arr.filter((_val: number): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return true;
       });
       expect(result.length).assertEqual(4);
@@ -621,6 +655,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(1, -2, 3, -4);
       let result: Int8Array = arr.filter((_val: number): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return false;
       });
       expect(result.length).assertEqual(0);
@@ -714,6 +751,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let callCount: int = 0;
       try {
         const result: Int8Array = arr.filter((_val: number): boolean => {
+          if (_val < INT8_MIN || _val > INT8_MAX) {
+            return false;
+          }
           callCount = callCount + 1;
           throw new Error('first');
         });
@@ -765,6 +805,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = Int8Array.of(10, 20, 30);
       try {
         const result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+          if (_val < INT8_MIN || _val > INT8_MAX) {
+            return false;
+          }
           if (index === 2) {
             throw new TypeError('idx2');
           }
@@ -792,6 +835,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let callCount: int = 0;
       try {
         const result: Int8Array = arr.filter((_val: number, index: int, array: Int8Array): boolean => {
+          if (_val < INT8_MIN || _val > INT8_MAX) {
+            return false;
+          }
           callCount = callCount + 1;
           if (index === array.length - 1) {
             throw new Error('last');
@@ -821,6 +867,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let callCount: int = 0;
       try {
         const result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+          if (_val < INT8_MIN || _val > INT8_MAX) {
+            return false;
+          }
           callCount = callCount + 1;
           if (index === 2) {
             throw new Error('mid');
@@ -901,6 +950,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = Int8Array.of(1, 2, 3);
       try {
         const result: Int8Array = arr.filter((_val: number, _index: int, array: Int8Array): boolean => {
+          if (_val < INT8_MIN || _val > INT8_MAX) {
+            return false;
+          }
           if (array.length > 2) {
             throw new Error('too long');
           }
@@ -927,6 +979,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = new Int8Array(0);
       let callCount: int = 0;
       const result: Int8Array = arr.filter((_val: number): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         callCount = callCount + 1;
         return true;
       });
@@ -947,6 +1002,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let result: Int8Array = arr.filter((_val: number): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return true;
       });
       expect(result.length).assertEqual(0);
@@ -963,6 +1021,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let result: Int8Array = arr.filter((_val: number): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return true;
       });
       expect(result.BYTES_PER_ELEMENT).assertEqual(1);
@@ -1128,6 +1189,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(42);
       let result: Int8Array = arr.filter((_val: number): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return true;
       });
       expect(result.length).assertEqual(1);
@@ -1240,6 +1304,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(10, 20, 30, 40, 50);
       let result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return index === 1 || index === 3;
       });
       let r1: int = result.length;
@@ -1286,6 +1353,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(1, 2, 3);
       let result: Int8Array = arr.filter((_val: number): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return true;
       });
       let sameRef: int = 0;
@@ -1307,6 +1377,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = Int8Array.of(1, 2, 3, 4, 5);
       let lenInCallback: int = 0;
       const result: Int8Array = arr.filter((_val: number, _index: int, array: Int8Array): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         lenInCallback = array.length;
         return true;
       });
@@ -1346,6 +1419,9 @@ export default function int8ArrayFilterPart01Test(): void {
       let arr: Int8Array = Int8Array.of(7, 8, 9);
       let callCount: int = 0;
       const result: Int8Array = arr.filter((_val: number): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         callCount = callCount + 1;
         return false;
       });
@@ -1435,6 +1511,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(10, 20, 30, 40, 50, 60);
       let result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return index % 2 === 1;
       });
       expect(result.length).assertEqual(3);
@@ -1472,6 +1551,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(100, -100);
       let result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return index === 0;
       });
       expect(result.length).assertEqual(1);
@@ -1489,6 +1571,9 @@ export default function int8ArrayFilterPart01Test(): void {
     it('int8ArrayFilterPart01Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = Int8Array.of(100, -100);
       let result: Int8Array = arr.filter((_val: number, index: int): boolean => {
+        if (_val < INT8_MIN || _val > INT8_MAX) {
+          return false;
+        }
         return index === 1;
       });
       expect(result.length).assertEqual(1);

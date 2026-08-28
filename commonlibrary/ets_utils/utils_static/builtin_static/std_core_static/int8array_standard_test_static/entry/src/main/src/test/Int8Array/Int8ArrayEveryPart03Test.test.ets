@@ -55,7 +55,12 @@ export default function int8ArrayEveryPart03Test(): void {
      */
     it('int8ArrayEveryPart03Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
-      let result: boolean = arr.every((element: number): boolean => true);
+      let result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result).assertTrue();
     });
 
@@ -69,7 +74,12 @@ export default function int8ArrayEveryPart03Test(): void {
      */
     it('int8ArrayEveryPart03Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
-      let result: boolean = arr.every((element: number): boolean => false);
+      let result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
+        return false;
+      });
       expect(result).assertTrue();
     });
 
@@ -84,6 +94,9 @@ export default function int8ArrayEveryPart03Test(): void {
     it('int8ArrayEveryPart03Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         throw new RangeError('should not be called');
       });
       expect(result).assertTrue();
@@ -101,6 +114,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let count: int = 0;
       let arr: Int8Array = new Int8Array(0);
       const result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         count = count + 1;
         return true;
       });
@@ -120,6 +136,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let flag: boolean = false;
       let arr: Int8Array = new Int8Array(0);
       const result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         flag = true;
         return true;
       });
@@ -138,7 +157,12 @@ export default function int8ArrayEveryPart03Test(): void {
     it('int8ArrayEveryPart03Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(0);
       let arr: Int8Array = new Int8Array(buf);
-      let result: boolean = arr.every((element: number): boolean => true);
+      let result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result).assertTrue();
     });
 
@@ -153,6 +177,9 @@ export default function int8ArrayEveryPart03Test(): void {
     it('int8ArrayEveryPart03Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let result: boolean = arr.every((element: number, _index: int, array: Int8Array): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         return array.$_get(0) === 0;
       });
       expect(result).assertTrue();
@@ -170,6 +197,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let state: int[] = [0];
       let arr: Int8Array = new Int8Array(0);
       const result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         state[0] = 99;
         return true;
       });
@@ -188,6 +218,9 @@ export default function int8ArrayEveryPart03Test(): void {
     it('int8ArrayEveryPart03Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         throw new TypeError('should not be called');
       });
       expect(result).assertTrue();
@@ -205,6 +238,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let lastIndex: int = -1;
       let arr: Int8Array = new Int8Array(0);
       const result: boolean = arr.every((element: number, index: int): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         lastIndex = index;
         return true;
       });
@@ -222,7 +258,12 @@ export default function int8ArrayEveryPart03Test(): void {
      */
     it('int8ArrayEveryPart03Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
-      let result: boolean = arr.every((element: number): boolean => true);
+      let result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result).assertTrue();
       expect(arr.length).assertEqual(0);
     });
@@ -288,6 +329,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let count: int = 0;
       let arr: Int8Array = new Int8Array([5]);
       const result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         count = count + 1;
         return true;
       });
@@ -349,6 +393,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([5]);
       try {
         const result: boolean = arr.every((element: number): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           throw new TypeError('type error on single');
         });
         expect(result).assertTrue();
@@ -371,6 +418,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([5]);
       try {
         const result: boolean = arr.every((element: number, index: int): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           if (index === 0) {
             throw new RangeError('at index 0');
@@ -516,6 +566,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let count: int = 0;
       let arr: Int8Array = new Int8Array(100);
       let result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         count = count + 1;
         return true;
       });
@@ -535,6 +588,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let count: int = 0;
       let arr: Int8Array = new Int8Array([0, 0, 0, 0, 0]);
       let result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         count = count + 1;
         return false;
       });
@@ -582,6 +638,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       try {
         const result: boolean = arr.every((element: number): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           throw new RangeError('range error');
         });
         expect(result).assertTrue();
@@ -603,6 +662,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       try {
         const result: boolean = arr.every((element: number): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           throw new TypeError('type error');
         });
         expect(result).assertTrue();
@@ -624,6 +686,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       try {
         const result: boolean = arr.every((element: number): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           throw new Error('generic error');
         });
         expect(result).assertTrue();
@@ -645,6 +710,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       try {
         const result: boolean = arr.every((element: number): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           throw new RangeError('custom range message');
         });
         expect(result).assertTrue();
@@ -667,6 +735,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       try {
         const result: boolean = arr.every((element: number): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           throw new TypeError('custom type message');
         });
         expect(result).assertTrue();
@@ -689,6 +760,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       try {
         const result: boolean = arr.every((element: number): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           throw new Error('custom error message');
         });
         expect(result).assertTrue();
@@ -712,6 +786,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       try {
         const result: boolean = arr.every((element: number, index: int): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           if (index === 0) {
             throw new RangeError('at first');
@@ -739,6 +816,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       try {
         const result: boolean = arr.every((element: number, index: int): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           if (index === 2) {
             throw new RangeError('at middle');
@@ -766,6 +846,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       try {
         const result: boolean = arr.every((element: number, index: int): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           if (index === 4) {
             throw new RangeError('at last');
@@ -793,6 +876,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([7]);
       try {
         const result: boolean = arr.every((element: number, index: int): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           if (index === 0) {
             throw new TypeError('single throw');
@@ -820,6 +906,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array(100);
       try {
         const result: boolean = arr.every((element: number, index: int): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           if (index === 99) {
             throw new RangeError('at last of 100');
@@ -847,6 +936,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([10, 20, 30, 40, 50, 60, 70]);
       try {
         const result: boolean = arr.every((element: number, index: int): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           if (index === 3) {
             throw new Error('at middle of 7');
@@ -970,6 +1062,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       try {
         const result: boolean = arr.every((element: number, index: int): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           count = count + 1;
           if (index === 2) {
             throw new RangeError('at index 2');
@@ -996,6 +1091,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       try {
         const result: boolean = arr.every((element: number, _index: int, array: Int8Array): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           if (array.length > 2) {
             throw new TypeError('array too long');
           }
@@ -1021,6 +1119,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       try {
         const result: boolean = arr.every((element: number, index: int): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           if (index === 1) {
             flag = true;
           }
@@ -1048,6 +1149,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let count: int = 0;
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: boolean = arr.every((element: number): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         count = count + 1;
         return false;
       });
@@ -1067,6 +1171,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let count: int = 0;
       let arr: Int8Array = new Int8Array([0, 1, 2]);
       let result: boolean = arr.every((element: number, index: int): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         count = count + 1;
         if (index > 0) {
           throw new RangeError('should not reach');
@@ -1193,6 +1300,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let maxIndex: int = -1;
       let arr: Int8Array = new Int8Array([1, 2, 3, 4, 5]);
       const result: boolean = arr.every((element: number, index: int): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         maxIndex = index;
         return true;
       });
@@ -1367,6 +1477,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let len: int = 0;
       const result: boolean = arr.every((element: number, _index: int, array: Int8Array): boolean => {
+        if (element < INT8_MIN || element > INT8_MAX) {
+          return false;
+        }
         len = array.length;
         return true;
       });
@@ -1408,6 +1521,9 @@ export default function int8ArrayEveryPart03Test(): void {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       try {
         const result: boolean = arr.every((element: number, index: int, array: Int8Array): boolean => {
+          if (element < INT8_MIN || element > INT8_MAX) {
+            return false;
+          }
           array.$_set(index, 0);
           if (index === 2) {
             modified = true;

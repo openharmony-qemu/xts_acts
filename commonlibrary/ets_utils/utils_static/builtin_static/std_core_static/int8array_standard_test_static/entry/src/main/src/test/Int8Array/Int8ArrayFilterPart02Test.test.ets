@@ -55,7 +55,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(1, 2, 3);
-      let result = src.filter((_v: number): boolean => true);
+      let result = src.filter((_v: number): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result.length).assertEqual(3);
       let r1: boolean = ArrayBuffer.isView(result);
       expect(r1).assertTrue();
@@ -87,7 +92,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(42);
-      let result = src.filter((_v: number): boolean => true);
+      let result = src.filter((_v: number): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result.length).assertEqual(1);
       let r1: boolean = ArrayBuffer.isView(result);
       expect(r1).assertTrue();
@@ -120,7 +130,12 @@ export default function int8ArrayFilterPart02Test(): void {
     it('int8ArrayFilterPart02Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
       let src = new Int8Array(buf);
-      let result = src.filter((_v: number): boolean => true);
+      let result = src.filter((_v: number): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result.length).assertEqual(8);
       let r1: boolean = ArrayBuffer.isView(result);
       expect(r1).assertTrue();
@@ -157,7 +172,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(10, 20, 30, 40);
-      let result = src.filter((v: number, i: int): boolean => i % 2 === 0);
+      let result = src.filter((v: number, i: int): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
+        return i % 2 === 0;
+      });
       expect(result.length).assertEqual(2);
       let r1: number = result.$_get(0);
       let e1: int = 10;
@@ -176,7 +196,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(1, 2, 3);
-      let result = src.filter((_v: number, _i: int, a: Int8Array): boolean => a.length === 3);
+      let result = src.filter((_v: number, _i: int, a: Int8Array): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return a.length === 3;
+      });
       expect(result.length).assertEqual(3);
       let r1: boolean = ArrayBuffer.isView(result);
       expect(r1).assertTrue();
@@ -208,7 +233,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(INT8_MIN, 0, INT8_MAX);
-      let result = src.filter((_v: number): boolean => true);
+      let result = src.filter((_v: number): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       let r1: number = result.$_get(0);
       let e1: number = INT8_MIN;
       expect(r1).assertEqual(e1);
@@ -224,7 +254,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(-128, 0, INT8_MAX);
-      let result = src.filter((_v: number): boolean => true);
+      let result = src.filter((_v: number): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result.$_get(2)).assertEqual(INT8_MAX);
     });
 
@@ -269,7 +304,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(7, 8, 9);
-      let result = src.filter((_v: number): boolean => true);
+      let result = src.filter((_v: number): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       let r1: number = result.$_get(1);
       let e1: int = 8;
       expect(r1).assertEqual(e1);
@@ -347,7 +387,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(10, 20, 30, 40, 50);
-      let result = src.filter((v: number, i: int): boolean => i % 2 === 0);
+      let result = src.filter((v: number, i: int): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
+        return i % 2 === 0;
+      });
       expect(result.length).assertEqual(3);
     });
 
@@ -362,7 +407,12 @@ export default function int8ArrayFilterPart02Test(): void {
     it('int8ArrayFilterPart02Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf = new ArrayBuffer(8);
       let src = new Int8Array(buf, 2, 4);
-      let result = src.filter((_v: number): boolean => true);
+      let result = src.filter((_v: number): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result.byteOffset).assertEqual(0);
     });
 
@@ -376,7 +426,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(11, 22);
-      let result = src.filter((_v: number): boolean => true);
+      let result = src.filter((_v: number): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return true;
+      });
       expect(result.buffer.byteLength).assertEqual(2);
     });
 
@@ -483,7 +538,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(1, 2, 3);
-      let result = src.filter((_v: number): boolean => false);
+      let result = src.filter((_v: number): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return false;
+      });
       let r1: boolean = ArrayBuffer.isView(result);
       expect(r1).assertTrue();
       expect(result.length).assertEqual(0);
@@ -579,6 +639,9 @@ export default function int8ArrayFilterPart02Test(): void {
       let src = Int8Array.of(1, 2, 3);
       try {
         const result: Int8Array = src.filter((_v: number): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           throw new Error('boom');
         });
         expect().assertFail();
@@ -600,6 +663,9 @@ export default function int8ArrayFilterPart02Test(): void {
       let processed: int = 0;
       try {
         const result: Int8Array = src.filter((_v: number, i: int): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           processed = processed + 1;
           if (i === 1) {
             throw new Error('second');
@@ -625,6 +691,9 @@ export default function int8ArrayFilterPart02Test(): void {
       let src = Int8Array.of(1, 2, 3);
       try {
         const result: Int8Array = src.filter((_v: number): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           throw new RangeError('range');
         });
         expect().assertFail();
@@ -645,6 +714,9 @@ export default function int8ArrayFilterPart02Test(): void {
       let src = Int8Array.of(1, 2, 3);
       try {
         const result: Int8Array = src.filter((_v: number): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           throw new TypeError('type');
         });
         expect().assertFail();
@@ -665,6 +737,9 @@ export default function int8ArrayFilterPart02Test(): void {
       let src = Int8Array.of(11, 22, 33);
       try {
         const result: Int8Array = src.filter((_v: number): boolean => {
+          if (_v < INT8_MIN || _v > INT8_MAX) {
+            return false;
+          }
           throw new Error('boom');
         });
         expect().assertFail();
@@ -755,7 +830,12 @@ export default function int8ArrayFilterPart02Test(): void {
      */
     it('int8ArrayFilterPart02Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src = Int8Array.of(10, 20, 30);
-      let result = src.filter((_v: number, _i: int, a: Int8Array): boolean => a.length === 3);
+      let result = src.filter((_v: number, _i: int, a: Int8Array): boolean => {
+        if (_v < INT8_MIN || _v > INT8_MAX) {
+          return false;
+        }
+        return a.length === 3;
+      });
       expect(result.length).assertEqual(3);
       let r1: boolean = ArrayBuffer.isView(result);
       expect(r1).assertTrue();
