@@ -24,6 +24,6 @@
     <input class="sub-btn" type="button" value="Communication" onclick="navigateTo('Communication')" />
   </list-item>
   <list-item class="listItem">
-    <input class="report-btn" type="button" value="Generate Report" onclick="generateReport" />
+    <input class="report-btn" type="button" value="{{ reportBtnText }}" onclick="generateReport" />
   </list-item>
 </list>
