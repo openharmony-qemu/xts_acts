@@ -216,7 +216,7 @@ export default function onContextMenuHideCallbackTest():void {
 
     /**
      * @tc.name        testSwitchNextPageFileSelectorParamTest
-     * @tc.number      SUB_WEB_NEXT_PAGE_0800
+     * @tc.number      SUB_WEB_NEXT_PAGE_PARAM_0800
      * @tc.desc        onWindowNewExt
      * @tc.size        MediumTest
      * @tc.type        Function
