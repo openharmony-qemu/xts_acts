@@ -18,24 +18,27 @@ import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import commonEvent from '@ohos.commonEventManager';
 import fs, { type Filter } from '@ohos.file.fs';
+import { BusinessError } from '@ohos.base';
+import common from '@ohos.app.ability.common';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 const BUFSIZE = 1024;
 let DELAY_TIME = 100;
 let OFFSETNUMBER = 0;
 
-let message;
-let result;
-let files;
-let commonEventData = {
+let message: string = '';
+let result: string = '';
+let files: number = 0;
+let commonEventData: commonEvent.CommonEventPublishData = {
   parameters: {
     message: message,
     result: result,
     files: files
   }
 };
-let actionStr;
+let actionStr: string = '';
 
-function getListFile(dir): number {
+function getListFile(dir: string): number {
   class ListFileOption {
     public recursion: boolean = false;
     public listNum: number = 0;
@@ -51,7 +54,7 @@ function getListFile(dir): number {
   return files.length;
 }
 
-function onForegroundInner(actionStr, tempDir, context): void {
+function onForegroundInner(actionStr: string, tempDir: string, context: common.UIAbilityContext): void {
   if (actionStr === 'Acts_CleanTempFiles_0203') {
     AppStorage.setOrCreate('message', actionStr);
     let file = fs.openSync(tempDir + '/test.txt', fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
@@ -61,10 +64,10 @@ function onForegroundInner(actionStr, tempDir, context): void {
     let readLen = fs.readSync(file.fd, buf, {
       offset: OFFSETNUMBER
     });
-    let readBuf = String.fromCharCode.apply(null, new Uint8Array(buf.slice(OFFSETNUMBER, readLen)));
+    let readBuf = String.fromCharCode(...Array.from(new Uint8Array(buf.slice(OFFSETNUMBER, readLen))));
     console.log('Acts_CleanTempFiles_0203 the content of file: ' + readBuf);
     fs.closeSync(file);
-    commonEventData.parameters.message = readBuf;
+    commonEventData.parameters!.message = readBuf;
     console.log('Acts_CleanTempFiles_0203 Message: ' + JSON.stringify(readBuf));
     commonEvent.publish('Acts_CleanTempFiles_0203', commonEventData, (err) => {
       console.log('Acts_CleanTempFiles_0203 publish err: ' + JSON.stringify(err));
@@ -77,15 +80,15 @@ function onForegroundInner(actionStr, tempDir, context): void {
       offset: OFFSETNUMBER
     });
     fs.closeSync(file);
-    let readBuf = String.fromCharCode.apply(null, new Uint8Array(buf.slice(OFFSETNUMBER, readLen)));
-    commonEventData.parameters.message = readBuf;
+    let readBuf = String.fromCharCode(...Array.from(new Uint8Array(buf.slice(OFFSETNUMBER, readLen))));
+    commonEventData.parameters!.message = readBuf;
     console.log('Acts_CleanTempFiles_0204 Message: ' + JSON.stringify(readLen));
     commonEvent.publish('Acts_CleanTempFiles_0204', commonEventData, (err) => {
       console.log('Acts_CleanTempFiles_0204 publish err: ' + JSON.stringify(err));
       setTimeout(() => {
         context.terminateSelf().then(() => {
           console.log('Acts_CleanTempFiles_0101 rely terminateSelf end');
-        }).catch((err) => {
+        }).catch((err: BusinessError) => {
           console.log('Acts_CleanTempFiles_0101 rely terminateSelf err: ' + JSON.stringify(err));
         });
       }, DELAY_TIME);
@@ -94,9 +97,9 @@ function onForegroundInner(actionStr, tempDir, context): void {
 }
 
 export default class SecondAbility extends UIAbility {
-  onCreate(want, launchParam): void {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    actionStr = want.parameters.key;
+    actionStr = want.parameters?.key as string;
   }
 
   onDestroy(): void {
@@ -109,7 +112,7 @@ export default class SecondAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -132,16 +135,16 @@ export default class SecondAbility extends UIAbility {
       let readLen = fs.readSync(file.fd, buf, {
         offset: OFFSETNUMBER
       });
-      let readBuf = String.fromCharCode.apply(null, new Uint8Array(buf.slice(OFFSETNUMBER, readLen)));
+      let readBuf = String.fromCharCode(...Array.from(new Uint8Array(buf.slice(OFFSETNUMBER, readLen))));
       console.log('Acts_CleanTempFiles_0103 write: ' + JSON.stringify(writeLen) + 'readBuf:' + JSON.stringify(readBuf));
       fs.closeSync(file);
-      commonEventData.parameters.message = readBuf;
+      commonEventData.parameters!.message = readBuf;
       commonEvent.publish('Acts_CleanTempFiles_0103', commonEventData, (err) => {
         console.log('Acts_CleanTempFiles_0103 publish err: ' + JSON.stringify(err));
         setTimeout(() => {
           this.context.terminateSelf().then(() => {
             console.log('Acts_CleanTempFiles_0103 rely terminateSelf end');
-          }).catch((err) => {
+          }).catch((err: BusinessError) => {
             console.log('Acts_CleanTempFiles_0103 rely terminateSelf err: ' + JSON.stringify(err));
           });
         }, DELAY_TIME);
@@ -154,16 +157,16 @@ export default class SecondAbility extends UIAbility {
         offset: OFFSETNUMBER
       });
       fs.closeSync(file);
-      commonEventData.parameters.result = readLen;
+      commonEventData.parameters!.result = readLen;
       let dir = tempDir.split('temp');
-      commonEventData.parameters.files = getListFile(dir[0]);
+      commonEventData.parameters!.files = getListFile((dir as Record<string, ESObject>)[0]);
       console.log('Acts_CleanTempFiles_0104 Message: ' + JSON.stringify(readLen));
       commonEvent.publish('Acts_CleanTempFiles_0104', commonEventData, (err) => {
         console.log('Acts_CleanTempFiles_0104 publish err: ' + JSON.stringify(err));
         setTimeout(() => {
           this.context.terminateSelf().then(() => {
             console.log('Acts_CleanTempFiles_0104 rely terminateSelf end');
-          }).catch((err) => {
+          }).catch((err: BusinessError) => {
             console.log('Acts_CleanTempFiles_0104 rely terminateSelf err: ' + JSON.stringify(err));
           });
         }, DELAY_TIME);
