@@ -33,6 +33,34 @@ import napiSpecDiffBatch4StressProbeTest from './NapiSpecDiff/batch4/NapiSpecDif
 import napiCoverageSampleTest from './NapiCoverageSample/NapiCoverageSample.test';
 import mallocCoverageSampleTest from './MallocCoverageSample/MallocCoverageSample.test';
 
+import napiCovThreadSafeTest from './napiCovThreadSafe.test';
+import napiCovStrongRefTest from './napiCovStrongRef.test';
+import napiCovStringTest from './napiCovString.test';
+import napiCovSerializationTest from './napiCovSerialization.test';
+import napiCovSendableTest from './napiCovSendable.test';
+import napiCovPropertyTest from './napiCovProperty.test';
+import napiCovPromiseAsyncTest from './napiCovPromiseAsync.test';
+import napiCovPrimitiveTest from './napiCovPrimitive.test';
+import napiCovObjectTest from './napiCovObject.test';
+import napiCovModuleLoadTest from './napiCovModuleLoad.test';
+import napiCovLifeCycleTest from './napiCovLifeCycle.test';
+import napiCovFunctionTest from './napiCovFunction.test';
+import napiCovFastObjTest from './napiCovFastObj.test';
+import napiCovErrorTest from './napiCovError.test';
+import napiCovEnvLifeCycleTest from './napiCovEnvLifeCycle.test';
+import napiCovDateBigIntTest from './napiCovDateBigInt.test';
+import napiCovCustomAsyncTest from './napiCovCustomAsync.test';
+import napiCovCriticalSectionTest from './napiCovCriticalSection.test';
+import napiCovClassWrapTest from './napiCovClassWrap.test';
+import napiCovCallSiteInfoTest from './napiCovCallSiteInfo.test';
+import napiCovBufferTest from './napiCovBuffer.test';
+import napiCovBasicNumTest from './napiCovBasicNum.test';
+import napiCovArrayBufferTest from './napiCovArrayBuffer.test';
+import napiCovArrayTest from './napiCovArray.test';
+import napiCovArkRuntimeTest from './napiCovArkRuntime.test';
+import napiCovArkContextTest from './napiCovArkContext.test';
+import napiCovAsyncTest from './NapiCovAsync.test';
+import napiCovSpecDiffV8Test from './napiCovSpecDiffV8.test';
 
 export default function testsuite() {
   bufferTest();
@@ -58,4 +86,33 @@ export default function testsuite() {
 
   napiCoverageSampleTest();
   mallocCoverageSampleTest();
+  
+  napiCovThreadSafeTest();
+  napiCovStrongRefTest();
+  napiCovStringTest();
+  napiCovSerializationTest();
+  napiCovSendableTest();
+  napiCovPropertyTest();
+  napiCovPromiseAsyncTest();
+  napiCovPrimitiveTest();
+  napiCovObjectTest();
+  napiCovModuleLoadTest();
+  napiCovLifeCycleTest();
+  napiCovFunctionTest();
+  napiCovFastObjTest();
+  napiCovErrorTest();
+  napiCovEnvLifeCycleTest();
+  napiCovDateBigIntTest();
+  napiCovCustomAsyncTest();
+  napiCovCriticalSectionTest();
+  napiCovClassWrapTest();
+  napiCovCallSiteInfoTest();
+  napiCovBufferTest();
+  napiCovBasicNumTest();
+  napiCovArrayBufferTest();
+  napiCovArrayTest();
+  napiCovArkRuntimeTest();
+  napiCovArkContextTest();
+  napiCovAsyncTest();
+  napiCovSpecDiffV8Test();
 }
