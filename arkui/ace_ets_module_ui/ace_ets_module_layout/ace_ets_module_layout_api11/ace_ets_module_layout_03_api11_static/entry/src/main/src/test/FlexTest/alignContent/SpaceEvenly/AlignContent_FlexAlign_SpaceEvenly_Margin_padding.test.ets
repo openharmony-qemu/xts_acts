@@ -72,10 +72,10 @@ it('testAlignContentSpaceEvenlyFlexMarginAndPaddingNOSatisfy_static', Level.LEVE
       })
       try {
       await CommonFunc.sleep(2000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyMargin&padding_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyMargin&padding_flex001');
 
       let SpaceEvenly_Margin_Column_1: RectValue =
       CommonFunc.getComponentRect('AlignContentFlexSpaceEvenlyMargin&paddingColumn_1');
@@ -147,10 +147,10 @@ it('testAlignContentSpaceEvenlyFlexMarginAndPaddingSatisfy_static', Level.LEVEL0
       })
       try {
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyMargin&padding_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyMargin&padding_flex001');
 
       let SpaceEvenly_Margin_Column_2: RectValue = CommonFunc
         .getComponentRect('AlignContentFlexSpaceEvenlyMargin&paddingColumn_1');

@@ -72,11 +72,10 @@ it('testAlignContentSpaceEvenlyFlexPaddingNoSatisfy_static', Level.LEVEL0, async
       })
       try {
       await CommonFunc.sleep(2000)
-
-      let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyPadding_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyPadding_flex001');
 
       let AlignContentFlexSpaceEvenly_flex001: RectValue =
       CommonFunc.getComponentRect('AlignContentFlexSpaceEvenlyPadding_flex001');
@@ -138,10 +137,10 @@ it('testAlignContentSpaceEvenlyFlexPaddingSatisfy_static', Level.LEVEL0, async (
       })
       try {
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyPadding_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexSpaceEvenlyPadding_flex001');
 
       let AlignContentFlexSpaceEvenlyPadding_flex002: RectValue =
       CommonFunc.getComponentRect('AlignContentFlexSpaceEvenlyPadding_flex001');

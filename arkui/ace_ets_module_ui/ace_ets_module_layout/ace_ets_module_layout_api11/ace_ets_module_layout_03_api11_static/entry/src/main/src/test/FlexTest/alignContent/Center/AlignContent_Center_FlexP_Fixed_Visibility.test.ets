@@ -138,10 +138,10 @@ it('testAlignContentCenterFlexfixedVisibilityNone_static', Level.LEVEL0, async (
       });
       try {
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility' + '_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility' + '_flex001');
 
       let textStrJson = inspector.getInspectorByKey('AlignContent_Center_FlexP_Fixed_Visibility' + '_1');
       let AlignContentFlexCenter_flex002: RectValue = CommonFunc.getComponentRect('AlignContent_Center_FlexP_Fixed_Visibility' + '_flex001');

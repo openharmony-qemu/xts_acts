@@ -81,7 +81,7 @@ it('GridRows2_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
       }
       let button_Bottom = await driver.findComponent(ON.id('GridRows2Bt1'));
       try {
-      await button_Bottom.click();
+      await (button_Bottom?.click() as Promise<void>);
       } catch (err) {
       console.info('GridRows2Test await err: ' + JSON.stringify(err));
       }

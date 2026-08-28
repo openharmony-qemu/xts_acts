@@ -75,10 +75,10 @@ it('testAlignContentCenterFlexMarginPaddingNOSatisfy_staticAdapt001', Level.LEVE
       })
       try {
       await CommonFunc.sleep(2000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlexCenterMargin&padding_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexCenterMargin&padding_flex001');
 
       let Center_Margin_Column_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexCenterMargin&padding_Column_1');
       let AlignContentFlexCenter_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlexCenterMargin&padding_flex001');
@@ -137,10 +137,10 @@ it('testAlignContentCenterFlexMarginPaddingSatisfy_staticAdapt001', Level.LEVEL0
       })
       try {
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlexCenterMargin&padding_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexCenterMargin&padding_flex001');
 
       let Center_Margin_Column_2: RectValue = CommonFunc
         .getComponentRect('AlignContentFlexCenterMargin&padding_Column_1');

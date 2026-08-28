@@ -74,10 +74,10 @@ it('testAlignContentEndFlexFixedMarginSatisfy_static', Level.LEVEL0, async () =>
       })
       try {
       await CommonFunc.sleep(2000)
-      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
 
       console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor')));
@@ -136,10 +136,10 @@ it('testAlignContentEndFlexFixedMarginNoSatisfy_static', Level.LEVEL0, async () 
       })
       try {
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
 
       let AlignContentFlexEnd_flex002: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_flex001');
       let AlignContentFlexEnd_1: RectValue = CommonFunc.getComponentRect('AlignContent_End_FlexP_Fixed_Margin' + '_1');
