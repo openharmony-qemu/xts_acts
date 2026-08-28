@@ -1778,7 +1778,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLParamsHas9Emoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URI_EMOJI_0000
      * @tc.desc   Testing the Uri interface ParamsHas with input emoji \ud83d\udd03
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3466,7 +3466,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToString0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_0100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3486,7 +3486,7 @@ export default function Url_Emoji_append_get() {
     });
     /**
      * @tc.name   testURLEmojiToString0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_0200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3505,7 +3505,7 @@ export default function Url_Emoji_append_get() {
     });
     /**
      * @tc.name   testURLEmojiToString0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_0300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc6b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3524,7 +3524,7 @@ export default function Url_Emoji_append_get() {
     });
     /**
      * @tc.name   testURLEmojiToString0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_0400
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3543,7 +3543,7 @@ export default function Url_Emoji_append_get() {
     });
     /**
      * @tc.name   testURLEmojiToString0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_0500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3562,7 +3562,7 @@ export default function Url_Emoji_append_get() {
     });
     /**
      * @tc.name   testURLEmojiToString0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_0600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3581,7 +3581,7 @@ export default function Url_Emoji_append_get() {
     });
     /**
      * @tc.name   testURLEmojiToString0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_0700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3600,7 +3600,7 @@ export default function Url_Emoji_append_get() {
     });
     /**
      * @tc.name   testURLEmojiToString0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_0800
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3619,7 +3619,7 @@ export default function Url_Emoji_append_get() {
     });
     /**
      * @tc.name   testURLEmojiToString0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_0900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3638,7 +3638,7 @@ export default function Url_Emoji_append_get() {
     });
     /**
      * @tc.name   testURLEmojiToString0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_1000
      * @tc.desc   Testing the Url interface parseURL with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3659,7 +3659,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToString0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_1100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3681,7 +3681,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToString0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toString_1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOSTRING_1200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3703,7 +3703,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_0100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\ude0a  .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3725,7 +3725,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_0200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc64  .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3747,7 +3747,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_0300
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc6b  .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3770,7 +3770,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_0400
      * @tc.desc   Testing the Url interface parseURL with input emoji \u260e  .
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3791,7 +3791,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_0500
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc79.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3813,7 +3813,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_0600
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd5b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3835,7 +3835,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_0700
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf4f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3858,7 +3858,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_0800
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udd03.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3880,7 +3880,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_0900
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83c\udf41.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3903,7 +3903,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson1000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_1000
      * @tc.desc   Testing the Url interface parseURL with input emoji \u2666.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3925,7 +3925,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_1100
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83d\udc48.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -3947,7 +3947,7 @@ export default function Url_Emoji_append_get() {
 
     /**
      * @tc.name   testURLEmojiToJson0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_emoji_toJson1200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URL_EMOJI_TOJSON_1200
      * @tc.desc   Testing the Url interface parseURL with input emoji \ud83e\udd3c\u200d\u2642\ufe0f.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
