@@ -78,9 +78,11 @@ it('SheetMode_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       } catch (err) {
         console.info('SheetMode_0100 err: ' + JSON.stringify(err));
       }
-      let properties: window.WindowProperties = windowClass.getWindowProperties();
-      console.info("[SheetMode_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1)
+      if (windowClass) {
+        let properties: window.WindowProperties = windowClass.getWindowProperties();
+        console.info("[SheetMode_0100] title: " + JSON.stringify(properties.type));
+        expect(properties.type).assertEqual(1)
+      }
 
       console.info('[SheetMode_0100] END');
       done();

@@ -81,7 +81,7 @@ it('setPolyToPoly_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       } catch (err) {
         console.info('setPolyToPoly err: ' + JSON.stringify(err));
       }
-      let button1: Component | undefined;
+      let button1: Component | null;
       try {
         button1 = await driver.findComponent(ON.id('ImageSetPoly'));
       } catch (err) {

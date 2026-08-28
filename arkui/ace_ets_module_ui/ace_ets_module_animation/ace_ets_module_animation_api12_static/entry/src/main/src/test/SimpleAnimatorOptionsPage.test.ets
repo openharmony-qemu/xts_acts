@@ -84,7 +84,7 @@ it('SimpleAnimatorOptionsPage_static_0100', Level.LEVEL0, async (done: () => voi
         console.info('SimpleAnimatorOptionsPage err: ' + JSON.stringify(err));
       }
       console.log('btn1 start  ')
-      let btn1: Component | undefined;
+      let btn1: Component | null;
       try {
         btn1 = await driver.findComponent(ON.id('playId'));
       } catch (err) {
@@ -109,7 +109,7 @@ it('SimpleAnimatorOptionsPage_static_0100', Level.LEVEL0, async (done: () => voi
       expect(cubeSize).assertEqual(50);
       AppStorage.delete('cube_size');
 
-      let changeFillModeBtn: Component | undefined;
+      let changeFillModeBtn: Component | null;
       try {
         changeFillModeBtn = await driver.findComponent(ON.id('changeFillMode'));
       } catch (err) {
@@ -132,7 +132,7 @@ it('SimpleAnimatorOptionsPage_static_0100', Level.LEVEL0, async (done: () => voi
         console.info('SimpleAnimatorOptionsPage err: ' + JSON.stringify(err));
       }
 
-      let btn2: Component | undefined;
+      let btn2: Component | null;
       try {
         btn2 = await driver.findComponent(ON.id('playId'));
       } catch (err) {
@@ -160,7 +160,7 @@ it('SimpleAnimatorOptionsPage_static_0100', Level.LEVEL0, async (done: () => voi
       expect(cubeSize2).assertEqual(100);
       AppStorage.delete('cube_size');
 
-      let recoverBtn: Component | undefined;
+      let recoverBtn: Component | null;
       try {
         recoverBtn = await driver.findComponent(ON.id('recoverId'));
       } catch (err) {
@@ -205,7 +205,7 @@ it('SimpleAnimatorOptionsPage_static_0200', Level.LEVEL0, async (done: () => voi
         console.info('SimpleAnimatorOptionsPage err: ' + JSON.stringify(err));
       }
 
-      let delayBtn: Component | undefined;
+      let delayBtn: Component | null;
       try {
         delayBtn = await driver.findComponent(ON.id('changeDelayId'));
       } catch (err) {
@@ -223,7 +223,7 @@ it('SimpleAnimatorOptionsPage_static_0200', Level.LEVEL0, async (done: () => voi
         console.info('SimpleAnimatorOptionsPage err: ' + JSON.stringify(err));
       }
 
-      let playBtn: Component | undefined;
+      let playBtn: Component | null;
       try {
         playBtn = await driver.findComponent(ON.id('playId'));
       } catch (err) {
@@ -246,7 +246,7 @@ it('SimpleAnimatorOptionsPage_static_0200', Level.LEVEL0, async (done: () => voi
       expect(Number(testTime) > 2000 && Number(testTime) < 2500).assertTrue();
       AppStorage.delete('testTime');
 
-      let recoverBtn: Component | undefined;
+      let recoverBtn: Component | null;
       try {
         recoverBtn = await driver.findComponent(ON.id('recoverId'));
       } catch (err) {
@@ -286,7 +286,7 @@ it('SimpleAnimatorOptionsPage_static_0300', Level.LEVEL0, async (done: () => voi
         console.info('SimpleAnimatorOptionsPage err: ' + JSON.stringify(err));
       }
 
-      let iterationsBtn: Component | undefined;
+      let iterationsBtn: Component | null;
       try {
         iterationsBtn = await driver.findComponent(ON.id('changeIterationsId'));
       } catch (err) {
@@ -304,7 +304,7 @@ it('SimpleAnimatorOptionsPage_static_0300', Level.LEVEL0, async (done: () => voi
         console.info('SimpleAnimatorOptionsPage err: ' + JSON.stringify(err));
       }
 
-      let playBtn: Component | undefined;
+      let playBtn: Component | null;
       try {
         playBtn = await driver.findComponent(ON.id('playId'));
       } catch (err) {
@@ -327,7 +327,7 @@ it('SimpleAnimatorOptionsPage_static_0300', Level.LEVEL0, async (done: () => voi
       expect(Number(testTime) > 5000 && Number(testTime) < 5500).assertTrue();
       AppStorage.delete('testTime');
 
-      let recoverBtn: Component | undefined;
+      let recoverBtn: Component | null;
       try {
         recoverBtn = await driver.findComponent(ON.id('recoverId'));
       } catch (err) {
@@ -367,7 +367,7 @@ it('SimpleAnimatorOptionsPage_static_0400', Level.LEVEL0, async (done: () => voi
         console.info('SimpleAnimatorOptionsPage err: ' + JSON.stringify(err));
       }
 
-      let iterationsBtn: Component | undefined;
+      let iterationsBtn: Component | null;
       try {
         iterationsBtn = await driver.findComponent(ON.id('changeIterationsId'));
       } catch (err) {
@@ -385,7 +385,7 @@ it('SimpleAnimatorOptionsPage_static_0400', Level.LEVEL0, async (done: () => voi
         console.info('SimpleAnimatorOptionsPage err: ' + JSON.stringify(err));
       }
 
-      let directionBtn: Component | undefined;
+      let directionBtn: Component | null;
       try {
         directionBtn = await driver.findComponent(ON.id('changeDirectionId'));
       } catch (err) {
@@ -403,7 +403,7 @@ it('SimpleAnimatorOptionsPage_static_0400', Level.LEVEL0, async (done: () => voi
         console.info('SimpleAnimatorOptionsPage err: ' + JSON.stringify(err));
       }
 
-      let playBtn: Component | undefined;
+      let playBtn: Component | null;
       try {
         playBtn = await driver.findComponent(ON.id('playId'));
       } catch (err) {

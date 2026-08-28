@@ -87,7 +87,7 @@ it('APIParticleEmitter_0100', Level.LEVEL0, async (done: () => void): Promise<vo
         console.info('APIParticleEmitter err: ' + JSON.stringify(err));
       }
       console.info('APIParticleEmitter_0100 START');
-      let create: Component | undefined;
+      let create: Component | null;
       try {
         create = await driver.findComponent(ON.id('APIParticleEmitter_Button'));
       } catch (err) {

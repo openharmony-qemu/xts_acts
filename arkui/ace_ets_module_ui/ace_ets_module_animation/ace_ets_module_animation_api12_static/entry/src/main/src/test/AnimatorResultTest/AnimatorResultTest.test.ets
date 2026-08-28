@@ -87,7 +87,7 @@ it('AnimatorResultTest_static_001', Level.LEVEL0, async (done: () => void): Prom
       } catch (err) {
         console.info('AnimatorResultTest err: ' + JSON.stringify(err));
       }
-      let create: Component | undefined;
+      let create: Component | null;
       try {
         create = await driver.findComponent(ON.id('create'));
       } catch (err) {
@@ -108,7 +108,7 @@ it('AnimatorResultTest_static_001', Level.LEVEL0, async (done: () => void): Prom
       } catch (err) {
         console.info('AnimatorResultTest err: ' + JSON.stringify(err));
       }
-      let play: Component | undefined;
+      let play: Component | null;
       try {
         play = await driver.findComponent(ON.id('play'));
       } catch (err) {
@@ -156,7 +156,7 @@ it('AnimatorResultTest_static_002', Level.LEVEL0, async (done: () => void): Prom
       } catch (err) {
         console.info('AnimatorResultTest err: ' + JSON.stringify(err));
       }
-      let create: Component | undefined;
+      let create: Component | null;
       try {
         create = await driver.findComponent(ON.id('create'));
       } catch (err) {
@@ -177,7 +177,7 @@ it('AnimatorResultTest_static_002', Level.LEVEL0, async (done: () => void): Prom
       } catch (err) {
         console.info('AnimatorResultTest err: ' + JSON.stringify(err));
       }
-      let play: Component | undefined;
+      let play: Component | null;
       try {
         play = await driver.findComponent(ON.id('play'));
       } catch (err) {

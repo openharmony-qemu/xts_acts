@@ -80,7 +80,7 @@ it('WorkerUseCurves_static_0100', Level.LEVEL0, async (done: () => void): Promis
       } catch (err) {
         console.info('WorkerUseCurves_static_0100 err: ' + JSON.stringify(err));
       }
-      let button: Component | undefined;
+      let button: Component | null;
       try {
         button = await driver.findComponent(ON.id('workClickId'));
       } catch (err) {

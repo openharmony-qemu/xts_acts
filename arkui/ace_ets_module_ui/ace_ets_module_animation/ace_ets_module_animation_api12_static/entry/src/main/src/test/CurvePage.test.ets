@@ -85,7 +85,7 @@ it('CurvePage_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void
         console.info('CurvePage err: ' + JSON.stringify(err));
       }
       console.log('before btn1 click')
-      let btn1: Component | undefined;
+      let btn1: Component | null;
       try {
         btn1 = await driver.findComponent(ON.id('easeInOutId'));
       } catch (err) {
@@ -141,7 +141,7 @@ it('CurvePage_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void
         console.info('CurvePage err: ' + JSON.stringify(err));
       }
 
-      let btn2: Component | undefined;
+      let btn2: Component | null;
       try {
         btn2 = await driver.findComponent(ON.id('fastOutSlowIn'));
       } catch (err) {
@@ -186,7 +186,7 @@ it('CurvePage_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void
         console.info('CurvePage err: ' + JSON.stringify(err));
       }
 
-      let btn3: Component | undefined;
+      let btn3: Component | null;
       try {
         btn3 = await driver.findComponent(ON.id('springMotionId'));
       } catch (err) {
@@ -231,7 +231,7 @@ it('CurvePage_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void
         console.info('CurvePage err: ' + JSON.stringify(err));
       }
 
-      let btn4: Component | undefined;
+      let btn4: Component | null;
       try {
         btn4 = await driver.findComponent(ON.id('responsiveSpringId'));
       } catch (err) {

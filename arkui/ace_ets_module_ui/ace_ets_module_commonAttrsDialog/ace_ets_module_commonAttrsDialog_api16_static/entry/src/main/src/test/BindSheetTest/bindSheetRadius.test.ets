@@ -82,7 +82,7 @@ it('bindSheetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0100] driver is: " + driver);
-      let btn1: Component | undefined;
+      let btn1: Component | null;
       try {
         btn1 = await driver.findComponent(ON.id('bindSheet_001'));
       } catch (err) {
@@ -125,7 +125,7 @@ it('bindSheetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft'))))).assertEqual(parseInt(radius));
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight'))))).assertEqual(parseInt(radius));
       console.info('[' + tagName + '] END ===========================');
-      let btn2: Component | undefined;
+      let btn2: Component | null;
       try {
         btn2 = await driver.findComponent(ON.id('close1'));
       } catch (err) {
@@ -160,7 +160,7 @@ it('bindSheetTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0200] driver is: " + driver);
-      let btn1: Component | undefined;
+      let btn1: Component | null;
       try {
         btn1 = await driver.findComponent(ON.id('bindSheet_002'));
       } catch (err) {
@@ -198,7 +198,7 @@ it('bindSheetTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       expect(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft')).assertEqual("0.00vp");
       expect(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight')).assertEqual("0.00vp");
       console.info('[' + tagName + '] END ===========================');
-      let btn2: Component | undefined;
+      let btn2: Component | null;
       try {
         btn2 = await driver.findComponent(ON.id('close2'));
       } catch (err) {
@@ -233,7 +233,7 @@ it('bindSheetTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0300] driver is: " + driver);
-      let btn1: Component | undefined;
+      let btn1: Component | null;
       try {
         btn1 = await driver.findComponent(ON.id('bindSheet_003'));
       } catch (err) {
@@ -272,7 +272,7 @@ it('bindSheetTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       expect(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft')).assertEqual("100.00vp");
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight'))))).assertEqual(parseInt(radius));
       console.info('[' + tagName + '] END ===========================');
-      let btn2: Component | undefined;
+      let btn2: Component | null;
       try {
         btn2 = await driver.findComponent(ON.id('close3'));
       } catch (err) {
@@ -307,7 +307,7 @@ it('bindSheetTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
       let driver = Driver.create();
       console.info("[bindSheetTest_0400] driver is: " + driver);
-      let btn1: Component | undefined;
+      let btn1: Component | null;
       try {
         btn1 = await driver.findComponent(ON.id('bindSheet_004'));
       } catch (err) {
@@ -345,7 +345,7 @@ it('bindSheetTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topLeft'))))).assertEqual(parseInt(radius));
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight'))))).assertEqual(parseInt(radius));
       console.info('[' + tagName + '] END ===========================');
-      let btn2: Component | undefined;
+      let btn2: Component | null;
       try {
         btn2 = await driver.findComponent(ON.id('close4'));
       } catch (err) {

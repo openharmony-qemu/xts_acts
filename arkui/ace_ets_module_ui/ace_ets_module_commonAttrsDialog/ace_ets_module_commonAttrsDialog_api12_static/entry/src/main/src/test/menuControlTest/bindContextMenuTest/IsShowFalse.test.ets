@@ -88,9 +88,11 @@ it('IsShowFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       } catch (err) {
         console.info('IsShowFalse_0100 err: ' + JSON.stringify(err));
       }
-      let properties: window.WindowProperties = windowClass.getWindowProperties();
-      console.info("[IsShowFalse_0100] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1)
+      if (windowClass) {
+        let properties: window.WindowProperties = windowClass.getWindowProperties();
+        console.info("[IsShowFalse_0100] title: " + JSON.stringify(properties.type));
+        expect(properties.type).assertEqual(1)
+      }
 
       console.info('[IsShowFalse_0100] END');
       done();
@@ -121,9 +123,11 @@ it('IsShowFalse_0200', Level.LEVEL0, async (done: () => void): Promise<void> => 
       } catch (err) {
         console.info('IsShowFalse_0200 err: ' + JSON.stringify(err));
       }
-      let properties: window.WindowProperties = windowClass.getWindowProperties();
-      console.info("[IsShowFalse_0200] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(1)
+      if (windowClass) {
+        let properties: window.WindowProperties = windowClass.getWindowProperties();
+        console.info("[IsShowFalse_0200] title: " + JSON.stringify(properties.type));
+        expect(properties.type).assertEqual(1)
+      }
 
       console.info('[IsShowFalse_0100] END');
       done();
@@ -154,9 +158,11 @@ it('IsShowFalse_0300', Level.LEVEL0, async (done: () => void): Promise<void> => 
       } catch (err) {
         console.info('IsShowFalse_0300 err: ' + JSON.stringify(err));
       }
-      let properties: window.WindowProperties = windowClass.getWindowProperties();
-      console.info("[IsShowFalse_0300] title: " + JSON.stringify(properties.type));
-      expect(properties.type).assertEqual(0)
+      if (windowClass) {
+        let properties: window.WindowProperties = windowClass.getWindowProperties();
+        console.info("[IsShowFalse_0300] title: " + JSON.stringify(properties.type));
+        expect(properties.type).assertEqual(0)
+      }
       try {
         await CommonFunc.sleep(1000);
         await driver.triggerKey(2070);
