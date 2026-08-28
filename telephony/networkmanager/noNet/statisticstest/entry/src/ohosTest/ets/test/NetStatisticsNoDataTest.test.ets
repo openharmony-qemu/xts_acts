@@ -36,8 +36,6 @@ function sleep (time:number):Promise<string>{
   });
 }
 
-let cellularDisabledBySuite: boolean = false;
-
 async function getApplicationUid(): Promise<number> {
   try {
     let userId: number = await account.getAccountManager().getOsAccountLocalId();
@@ -68,35 +66,13 @@ export default function   netStatisticsNoDataTest() {
         if (netCapabilities.bearerTypes.includes(connection.NetBearType.BEARER_WIFI)) {
           console.info(`NetStatisticsNoDataTest beforeAll current network is WIFI, do nothing`);
         } else if (netCapabilities.bearerTypes.includes(connection.NetBearType.BEARER_CELLULAR)) {
-          console.info(`NetStatisticsNoDataTest beforeAll current network is CELLULAR, disable cellular data`);
-          try {
-            await data.disableCellularData();
-            await sleep(2000);
-            cellularDisabledBySuite = true;
-            console.info(`NetStatisticsNoDataTest beforeAll disableCellularData success`);
-          } catch (err) {
-            console.info(`NetStatisticsNoDataTest beforeAll disableCellularData failed ${JSON.stringify(err)}`);
-          }
+          console.info(`NetStatisticsNoDataTest beforeAll current network is CELLULAR, need to disable cellular data`);
         } else {
           console.info(`NetStatisticsNoDataTest beforeAll current network bearerTypes is ${JSON.stringify(netCapabilities.bearerTypes)}`);
         }
       } catch (err) {
         console.info(`NetStatisticsNoDataTest beforeAll getDefaultNet or getNetCapabilities failed ${JSON.stringify(err)}`);
       }
-    });
-
-    afterAll(async () => {
-      console.info(`NetStatisticsNoDataTest afterAll cellularDisabledBySuite is ${cellularDisabledBySuite}`);
-      if (cellularDisabledBySuite) {
-        try {
-          await data.enableCellularData();
-          await sleep(2000);
-          console.info(`NetStatisticsNoDataTest afterAll enableCellularData success`);
-        } catch (err) {
-          console.info(`NetStatisticsNoDataTest afterAll enableCellularData failed ${JSON.stringify(err)}`);
-        }
-      }
-      cellularDisabledBySuite = false;
     });
 
     /**
