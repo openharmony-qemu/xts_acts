@@ -80,7 +80,6 @@ export default function rotationGestureTest() {
       } catch (err) {
         console.error('RotationGesture after each error: ' + err);
       }
-      await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('RotationGesture');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[RotationGesture1_0100] component obj is: ' + JSON.stringify(obj));
@@ -134,7 +133,6 @@ export default function rotationGestureTest() {
       } catch (err) {
         console.error('RotationGesture after each error: ' + err);
       }
-      await CommonFunc.sleep(2000);
       let strJson = getInspectorByKey('RotationGesture');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[RotationGesture1_0200] component obj is: ' + JSON.stringify(obj));
