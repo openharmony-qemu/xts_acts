@@ -104,20 +104,41 @@ struct ExecuteAIPageCommandCheckTest {
     events_emitter.off(148188)
   }
 
-  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info('web page valueChangeCallBack');
-    if (eventData != null && eventData.data != null && eventData.data.ACTION != null) {
-      this.str = eventData.data.ACTION;
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
+        let strValue: string = String(data['ACTION']);
+        this.str = strValue;
+      }
     }
   }
 
   private sleep(ms: number): Promise<void> {
-    return new Promise((resolve: () => void) => {
+    return new Promise<void>((resolve: () => void) => {
       setTimeout(resolve, ms);
     });
   }
 
-  private async runCommand(msg: string, runner: AIPageCommandRunner, command: string, eventId: number,
+  private parseCode(res: string): number {
+    let code: number = -1;
+    try {
+      const elem = JSON.parseJsonElement(res);
+      const codeElem = elem.tryGetElement("code");
+      if (codeElem !== undefined) {
+        const codeDbl = codeElem.tryAsDouble();
+        if (codeDbl !== undefined) {
+          code = codeDbl as number;
+        }
+      }
+    } catch (e) {
+      console.error('parseCode error: ' + JSON.stringify(e));
+    }
+    return code;
+  }
+
+  private async runCommand(msg: string, runner: AIPageCommandRunner, command: string, eventId: Long,
     expectedError?: number): Promise<void> {
     let res: string = '';
     let errorCode: number = -1;
@@ -134,8 +155,7 @@ struct ExecuteAIPageCommandCheckTest {
       if (i < 4) { await this.sleep(500); }
     }
     if (res && res.includes('code')) {
-      let resCode = res.split(":")[1].trim().toInt();
-      Utils.emitEvent(resCode, eventId);
+      Utils.emitEvent(this.parseCode(res), eventId);
     } else if (errorCode !== -1) {
       Utils.emitEvent(errorCode, eventId);
     } else {
@@ -144,7 +164,7 @@ struct ExecuteAIPageCommandCheckTest {
   }
 
   private async runCaptureCommand(msg: string, runner: AIPageCommandRunner, command: string,
-    eventId: number): Promise<void> {
+    eventId: Long): Promise<void> {
     let res: string = '';
     let errorCode: number = -1;
     for (let i = 0; i < 5; i++) {
@@ -162,8 +182,7 @@ struct ExecuteAIPageCommandCheckTest {
     if (res && res.includes('data:image/png;base64')) {
       Utils.emitEvent(0, eventId);
     } else if (res && res.includes('code')) {
-      let resCode = res.split(":")[1].trim().toInt();
-      Utils.emitEvent(resCode, eventId);
+      Utils.emitEvent(this.parseCode(res), eventId);
     } else if (errorCode !== -1) {
       Utils.emitEvent(errorCode, eventId);
     } else {
@@ -191,15 +210,29 @@ struct ExecuteAIPageCommandCheckTest {
   private extractIdsByCase(raw: string, caseName: string): string[] {
     const ids: string[] = [];
     try {
-      const parsed: LiteDomResult = JSON.parse(raw) as LiteDomResult;
-      const nodes: LiteDomNode[] = parsed.nodes ?? [];
-      for (let i = 0; i < nodes.length; i++) {
-        const node = nodes[i];
-        const id: string = node.id ?? '';
-        if (id.length > 0) {
-          const serialized: string = JSON.stringify(node);
-          if (serialized.indexOf('"data-case":"' + caseName + '"') >= 0) {
-            ids.push(id);
+      const elem = JSON.parseJsonElement(raw);
+      const nodesElem = elem.tryGetElement("nodes");
+      if (nodesElem === undefined) {
+        return ids;
+      }
+      if (nodesElem.tryAsArray()) {
+        const nodesArr = nodesElem.tryAsArray() as Array<jsonx.JsonElement>;
+        const marker: string = '"data-case":"' + caseName + '"';
+        for (let i = 0; i < nodesArr.length; i++) {
+          const nodeElem = nodesArr[i];
+          const idElem = nodeElem.tryGetElement("id");
+          let nodeId: string = '';
+          if (idElem !== undefined) {
+            const idStr = idElem.tryAsString();
+            if (idStr !== undefined) {
+              nodeId = idStr;
+            }
+          }
+          if (nodeId.length > 0) {
+            const serialized: string = JSON.stringifyJsonElement(nodeElem);
+            if (serialized.indexOf(marker) >= 0) {
+              ids.push(nodeId);
+            }
           }
         }
       }
@@ -221,12 +254,7 @@ struct ExecuteAIPageCommandCheckTest {
     try {
       const script: string = 'JSON.stringify(window.__annotationTest ? window.__annotationTest.overlayInfo() : {exists:false})';
       const raw: string = await controller.runJavaScript(script);
-      let parsed: Object | string | number | boolean | null = JSON.parse(raw);
-      if (typeof parsed === 'string') {
-        parsed = JSON.parse(parsed);
-      }
-      const info: OverlayInfo = parsed as OverlayInfo;
-      return info.exists === true;
+      return raw.indexOf('"exists":true') >= 0;
     } catch (error) {
       console.error('checkOverlayAnnotated error: ' + JSON.stringify(error));
       return false;
@@ -240,18 +268,7 @@ struct ExecuteAIPageCommandCheckTest {
     while (new Date().getTime() - startTime < timeoutMs) {
       try {
         const raw: string = await controller.runJavaScript(script);
-        let parsed: Object | string | number | boolean | null = raw;
-        try {
-          parsed = JSON.parse(raw);
-          if (typeof parsed === 'string') {
-            try {
-              parsed = JSON.parse(parsed);
-            } catch (e) {
-            }
-          }
-        } catch (e) {
-        }
-        if (typeof parsed === 'string' && parsed === page) {
+        if (raw.indexOf('"' + page + '"') >= 0) {
           return true;
         }
       } catch (e) {
@@ -298,7 +315,8 @@ struct ExecuteAIPageCommandCheckTest {
   build() {
     Column() {
       Row() {
-        Button('ExecuteAIPageCommandCheckTest').key('CheckTestButton').onClick(async () => {
+        Button('ExecuteAIPageCommandCheckTest').key('CheckTestButton').onClick((e: ClickEvent) => {
+          (async () => {
           console.info('key==>' + this.str)
           const runner: AIPageCommandRunner = this.controller as AIPageCommandRunner;
           const runnerNull: AIPageCommandRunner = this.controllerNull as AIPageCommandRunner;
@@ -466,9 +484,21 @@ struct ExecuteAIPageCommandCheckTest {
               let addCode: number = -1;
               let addRenderedCount: number = 0;
               try {
-                const addResult: CommandResult = JSON.parse(addRaw);
-                addCode = addResult.code;
-                addRenderedCount = addResult.renderedCount ?? 0;
+                const addElem = JSON.parseJsonElement(addRaw);
+                const addCodeElem = addElem.tryGetElement("code");
+                if (addCodeElem !== undefined) {
+                  const addCodeDbl = addCodeElem.tryAsDouble();
+                  if (addCodeDbl !== undefined) {
+                    addCode = addCodeDbl as number;
+                  }
+                }
+                const addRcElem = addElem.tryGetElement("renderedCount");
+                if (addRcElem !== undefined) {
+                  const addRcDbl = addRcElem.tryAsDouble();
+                  if (addRcDbl !== undefined) {
+                    addRenderedCount = addRcDbl as number;
+                  }
+                }
               } catch (e) {
                 console.error('testRemovePageAnnotation001 parse add result error: ' + JSON.stringify(e));
               }
@@ -522,6 +552,7 @@ struct ExecuteAIPageCommandCheckTest {
             }
 
           }
+        })()
         })
       }
       Web({ src: 'resource://rawfile/ai_control_full_test.html', controller: this.controller })
