@@ -3279,6 +3279,7 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       networkId = -1;
       try {
+        await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
@@ -3524,6 +3525,7 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       networkId = -1;
       try {
+        await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
@@ -3627,7 +3629,7 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       networkId = -1;
       try {
-        await Utils.msSleep(5000);
+        await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
@@ -3774,6 +3776,7 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       networkId = -1;
       try {
+        await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
@@ -3824,6 +3827,7 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       networkId = -1;
       try {
+        await Utils.msSleep(3000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
