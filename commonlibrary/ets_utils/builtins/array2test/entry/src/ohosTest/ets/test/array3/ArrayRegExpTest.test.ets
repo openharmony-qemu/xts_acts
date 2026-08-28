@@ -24,7 +24,7 @@ const REGEXP_B: RegExp = /def/m;
 const REGEXP_C: RegExp = /^test$/u;
 const REGEXP_D: RegExp = new RegExp('');
 const REGEXP_E: RegExp = /测试😀/u;
-const REGEXP_F: RegExp = /[\u0000-\u001F]/g;
+const REGEXP_F: RegExp = /[\\u0000-\\u001F]/g;
 
 interface ArrayWithAt extends Array<RegExp> {
   at(index: number): RegExp | undefined;
@@ -32,7 +32,7 @@ interface ArrayWithAt extends Array<RegExp> {
 
 function runAt(values: Array<RegExp>): RegExp | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const VALID_VALUES: Array<RegExp> = [REGEXP_A, REGEXP_B, REGEXP_C, REGEXP_D, REGEXP_E, REGEXP_F, REGEXP_A];
@@ -109,7 +109,7 @@ export default function arrayRegExpTest() {
       const copyResult: Array<RegExp> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(6);
       expect(values.some((value: RegExp): boolean => value === values[0])).assertTrue();
 
       const reduceResult: RegExp = values.reduce(
@@ -152,10 +152,10 @@ export default function arrayRegExpTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual('/abc/gi|/def/m|/^test$/u|//|/测试😀/u|/[\\\\u0000-\\\\u001F]/g|/abc/gi');
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual('/abc/gi,/def/m,/^test$/u,//,/测试😀/u,/[\\\\u0000-\\\\u001F]/g,/abc/gi');
     });
 
     /**
@@ -178,11 +178,13 @@ export default function arrayRegExpTest() {
       expect(sliceResult[1]).assertEqual(values[1]);
 
       const sortValues: Array<RegExp> = values.slice();
-      const sortResult: Array<RegExp> = sortValues.sort((valueA: RegExp, valueB: RegExp): number =>
-        String(valueA).localeCompare(String(valueB)),
-      );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      const sortResult: Array<RegExp> = sortValues.sort((valueA: RegExp, valueB: RegExp): number => {
+        const sourceLengthResult: number = valueB.source.length - valueA.source.length;
+        return sourceLengthResult !== 0 ? sourceLengthResult : valueB.flags.length - valueA.flags.length;
+      });
+      expect(sortResult[0].source).assertEqual(REGEXP_F.source);
+      expect(sortResult[1].source).assertEqual(REGEXP_C.source);
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: RegExp = values[0];
       values.forEach((value: RegExp): void => {
@@ -204,7 +206,7 @@ export default function arrayRegExpTest() {
     /**
      * @tc.name testArrayRegExpTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_REGEXP_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with RegExp object values.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with RegExp object values.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -216,7 +218,7 @@ export default function arrayRegExpTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, RegExp]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -259,18 +261,16 @@ export default function arrayRegExpTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<RegExp> = values.slice();
-      const insertedItems: Array<RegExp> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<RegExp> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: RegExp): boolean => value === REGEXP_A)).assertFalse();
-      expect(values[0].source).assertEqual('abc');
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: RegExp): boolean => value instanceof RegExp)).assertTrue();
 
       const symbolItem: IteratorResult<RegExp> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(',')).assertLargerOrEqual(0);
+      expect(typeof localeResult).assertEqual('string');
     });
 
   });

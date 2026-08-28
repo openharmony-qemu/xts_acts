@@ -25,7 +25,7 @@ interface ArrayWithAt extends Array<boolean> {
 
 function runAt(values: Array<boolean>): boolean | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const VALID_VALUES: Array<boolean> = [true, false, true, false];
@@ -102,7 +102,7 @@ export default function arrayBooleanTest() {
       const copyResult: Array<boolean> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(2);
       expect(values.some((value: boolean): boolean => value === values[0])).assertTrue();
 
       const reduceResult: boolean = values.reduce(
@@ -145,10 +145,10 @@ export default function arrayBooleanTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual('true|false|true|false');
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual('true,false,true,false');
     });
 
     /**
@@ -172,10 +172,11 @@ export default function arrayBooleanTest() {
 
       const sortValues: Array<boolean> = values.slice();
       const sortResult: Array<boolean> = sortValues.sort((valueA: boolean, valueB: boolean): number =>
-        String(valueA).localeCompare(String(valueB)),
+        valueA === valueB ? 0 : valueA ? 1 : -1,
       );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      expect(sortResult[0]).assertEqual(false);
+      expect(sortResult[sortResult.length - 1]).assertEqual(true);
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: boolean = values[0];
       values.forEach((value: boolean): void => {
@@ -197,7 +198,7 @@ export default function arrayBooleanTest() {
     /**
      * @tc.name testArrayBooleanTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BOOLEAN_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with boolean values.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with boolean values.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -209,7 +210,7 @@ export default function arrayBooleanTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, boolean]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -252,18 +253,16 @@ export default function arrayBooleanTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<boolean> = values.slice();
-      const insertedItems: Array<boolean> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<boolean> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: boolean): boolean => value === true)).assertFalse();
-      expect(values[0]).assertEqual(true);
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: boolean): boolean => typeof value === 'boolean')).assertTrue();
 
       const symbolItem: IteratorResult<boolean> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(localeResult).assertEqual(values.join(','));
     });
 
   });

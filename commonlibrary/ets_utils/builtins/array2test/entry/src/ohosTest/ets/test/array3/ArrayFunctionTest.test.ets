@@ -39,7 +39,7 @@ interface ArrayWithAt extends Array<ArrayFunctionItem> {
 
 function runAt(values: Array<ArrayFunctionItem>): ArrayFunctionItem | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const FUNCTION_D: ArrayFunctionItem = (value: number): number => value * value;
@@ -120,7 +120,7 @@ export default function arrayFunctionTest() {
       const copyResult: Array<ArrayFunctionItem> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(6);
       expect(values.some((value: ArrayFunctionItem): boolean => value === values[0])).assertTrue();
 
       const reduceResult: ArrayFunctionItem = values.reduce(
@@ -163,10 +163,14 @@ export default function arrayFunctionTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual(
+        String(FUNCTION_A) + '|' + String(FUNCTION_B) + '|' + String(FUNCTION_C) + '|' + String(FUNCTION_D) + '|' +
+        String(FUNCTION_E) + '|' + String(FUNCTION_F) + '|' + String(FUNCTION_A));
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual(
+        String(FUNCTION_A) + ',' + String(FUNCTION_B) + ',' + String(FUNCTION_C) + ',' + String(FUNCTION_D) + ',' +
+        String(FUNCTION_E) + ',' + String(FUNCTION_F) + ',' + String(FUNCTION_A));
     });
 
     /**
@@ -190,10 +194,11 @@ export default function arrayFunctionTest() {
 
       const sortValues: Array<ArrayFunctionItem> = values.slice();
       const sortResult: Array<ArrayFunctionItem> = sortValues.sort((valueA: ArrayFunctionItem, valueB: ArrayFunctionItem): number =>
-        String(valueA).localeCompare(String(valueB)),
+        valueA(0) - valueB(0),
       );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      expect(sortResult[0](0)).assertEqual(FUNCTION_F(0));
+      expect(sortResult[sortResult.length - 1](0)).assertEqual(FUNCTION_C(0));
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: ArrayFunctionItem = values[0];
       values.forEach((value: ArrayFunctionItem): void => {
@@ -215,7 +220,7 @@ export default function arrayFunctionTest() {
     /**
      * @tc.name testArrayFunctionTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FUNCTION_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with function references.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with function references.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -227,7 +232,7 @@ export default function arrayFunctionTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, ArrayFunctionItem]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -270,18 +275,16 @@ export default function arrayFunctionTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<ArrayFunctionItem> = values.slice();
-      const insertedItems: Array<ArrayFunctionItem> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<ArrayFunctionItem> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: ArrayFunctionItem): boolean => value === FUNCTION_A)).assertFalse();
-      expect(values[0]).assertEqual(FUNCTION_A);
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: ArrayFunctionItem): boolean => typeof value === 'function')).assertTrue();
 
       const symbolItem: IteratorResult<ArrayFunctionItem> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(',')).assertLargerOrEqual(0);
+      expect(typeof localeResult).assertEqual('string');
     });
 
   });

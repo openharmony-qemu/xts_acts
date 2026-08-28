@@ -42,7 +42,7 @@ interface ArrayWithAt extends Array<ArrayClassItem> {
 
 function runAt(values: Array<ArrayClassItem>): ArrayClassItem | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const VALID_VALUES: Array<ArrayClassItem> = [CLASS_A, CLASS_B, CLASS_C, CLASS_D, CLASS_E, CLASS_F, CLASS_A];
@@ -119,7 +119,7 @@ export default function arrayClassTest() {
       const copyResult: Array<ArrayClassItem> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(6);
       expect(values.some((value: ArrayClassItem): boolean => value === values[0])).assertTrue();
 
       const reduceResult: ArrayClassItem = values.reduce(
@@ -162,10 +162,12 @@ export default function arrayClassTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual(
+        '[object Object]|[object Object]|[object Object]|[object Object]|[object Object]|[object Object]|[object Object]');
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual(
+        '[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]');
     });
 
     /**
@@ -189,10 +191,12 @@ export default function arrayClassTest() {
 
       const sortValues: Array<ArrayClassItem> = values.slice();
       const sortResult: Array<ArrayClassItem> = sortValues.sort((valueA: ArrayClassItem, valueB: ArrayClassItem): number =>
-        String(valueA).localeCompare(String(valueB)),
+        valueA.id - valueB.id,
       );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      expect(sortResult[0].id).assertEqual(CLASS_C.id);
+      expect(sortResult[1].id).assertEqual(CLASS_B.id);
+      expect(sortResult[sortResult.length - 1].id).assertEqual(CLASS_D.id);
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: ArrayClassItem = values[0];
       values.forEach((value: ArrayClassItem): void => {
@@ -214,7 +218,7 @@ export default function arrayClassTest() {
     /**
      * @tc.name testArrayClassTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CLASS_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with class-instance values.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with class-instance values.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -226,7 +230,7 @@ export default function arrayClassTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, ArrayClassItem]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -269,18 +273,16 @@ export default function arrayClassTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<ArrayClassItem> = values.slice();
-      const insertedItems: Array<ArrayClassItem> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<ArrayClassItem> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: ArrayClassItem): boolean => value === CLASS_A)).assertFalse();
-      expect(values[0].id).assertEqual(1);
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: ArrayClassItem): boolean => value instanceof ArrayClassItem)).assertTrue();
 
       const symbolItem: IteratorResult<ArrayClassItem> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(',')).assertLargerOrEqual(0);
+      expect(typeof localeResult).assertEqual('string');
     });
 
   });

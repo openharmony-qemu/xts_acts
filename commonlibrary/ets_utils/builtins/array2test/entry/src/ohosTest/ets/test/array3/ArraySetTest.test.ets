@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,18 @@ function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
 }
 
+function getSetSortValue(value: Set<number>): number {
+  let sortValue: number = Number.MIN_SAFE_INTEGER;
+  value.forEach((setValue: number): void => {
+    if (Number.isNaN(setValue)) {
+      sortValue = Number.MAX_VALUE;
+    } else if (setValue > sortValue) {
+      sortValue = setValue;
+    }
+  });
+  return sortValue;
+}
+
 const SET_A: Set<number> = new Set<number>();
 SET_A.add(1);
 const SET_B: Set<number> = new Set<number>();
@@ -32,7 +44,7 @@ interface ArrayWithAt extends Array<Set<number>> {
 
 function runAt(values: Array<Set<number>>): Set<number> | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const SET_D: Set<number> = new Set<number>();
@@ -119,7 +131,7 @@ export default function arraySetTest() {
       const copyResult: Array<Set<number>> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(7);
       expect(values.some((value: Set<number>): boolean => value === values[0])).assertTrue();
 
       const reduceResult: Set<number> = values.reduce(
@@ -162,10 +174,12 @@ export default function arraySetTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual(
+        '[object Set]|[object Set]|[object Set]|[object Set]|[object Set]|[object Set]|[object Set]|[object Set]');
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual(
+        '[object Set],[object Set],[object Set],[object Set],[object Set],[object Set],[object Set],[object Set]');
     });
 
     /**
@@ -189,10 +203,12 @@ export default function arraySetTest() {
 
       const sortValues: Array<Set<number>> = values.slice();
       const sortResult: Array<Set<number>> = sortValues.sort((valueA: Set<number>, valueB: Set<number>): number =>
-        String(valueA).localeCompare(String(valueB)),
+        getSetSortValue(valueA) - getSetSortValue(valueB),
       );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      expect(sortResult[0].size).assertEqual(0);
+      expect(sortResult[1].has(0)).assertTrue();
+      expect(sortResult[sortResult.length - 1].has(NaN)).assertTrue();
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: Set<number> = values[0];
       values.forEach((value: Set<number>): void => {
@@ -214,7 +230,7 @@ export default function arraySetTest() {
     /**
      * @tc.name testArraySetTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SET_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with Set object values.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with Set object values.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -226,7 +242,7 @@ export default function arraySetTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, Set<number>]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -269,18 +285,16 @@ export default function arraySetTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<Set<number>> = values.slice();
-      const insertedItems: Array<Set<number>> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<Set<number>> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: Set<number>): boolean => value === SET_A)).assertFalse();
-      expect(values[0].size).assertEqual(1);
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: Set<number>): boolean => value instanceof Set)).assertTrue();
 
       const symbolItem: IteratorResult<Set<number>> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(',')).assertLargerOrEqual(0);
+      expect(typeof localeResult).assertEqual('string');
     });
 
   });

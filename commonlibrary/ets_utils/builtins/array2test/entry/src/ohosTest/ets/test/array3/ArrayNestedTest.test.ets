@@ -25,7 +25,7 @@ interface ArrayWithAt extends Array<Array<number>> {
 
 function runAt(values: Array<Array<number>>): Array<number> | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const VALID_VALUES: Array<Array<number>> = [
@@ -105,7 +105,7 @@ export default function arrayNestedTest() {
       const copyResult: Array<Array<number>> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(0);
       expect(values.some((value: Array<number>): boolean => value === values[0])).assertTrue();
 
       const reduceResult: Array<number> = values.reduce(
@@ -148,10 +148,13 @@ export default function arrayNestedTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual(
+        '1,2,3|0,-1|NaN,Infinity|,,||9007199254740991|1,2,3');
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual(
+        '1,2,3' + ',' + '0,-1' + ',' + 'NaN,Infinity' + ',' + ',,' + ',' + '' + ',' +
+        '9007199254740991' + ',' + '1,2,3');
     });
 
     /**
@@ -174,11 +177,26 @@ export default function arrayNestedTest() {
       expect(sliceResult[1]).assertEqual(values[1]);
 
       const sortValues: Array<Array<number>> = values.slice();
-      const sortResult: Array<Array<number>> = sortValues.sort((valueA: Array<number>, valueB: Array<number>): number =>
-        String(valueA).localeCompare(String(valueB)),
-      );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      const sortResult: Array<Array<number>> = sortValues.sort((valueA: Array<number>, valueB: Array<number>): number => {
+        if (valueA.length !== valueB.length) {
+          return valueA.length - valueB.length;
+        }
+        const firstA: number | undefined = valueA[0];
+        const firstB: number | undefined = valueB[0];
+        const aIsNaN: boolean = Number.isNaN(firstA);
+        const bIsNaN: boolean = Number.isNaN(firstB);
+        if (aIsNaN) {
+          return bIsNaN ? 0 : 1;
+        }
+        if (bIsNaN) {
+          return -1;
+        }
+        return (firstA ?? 0) - (firstB ?? 0);
+      });
+      expect(sortResult[0].length).assertEqual(0);
+      expect(sortResult[1].length).assertEqual(1);
+      expect(sortResult[1][0]).assertEqual(Number.MAX_SAFE_INTEGER);
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: Array<number> = values[0];
       values.forEach((value: Array<number>): void => {
@@ -200,7 +218,7 @@ export default function arrayNestedTest() {
     /**
      * @tc.name testArrayNestedTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_NESTED_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with nested array values.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with nested array values.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -212,7 +230,7 @@ export default function arrayNestedTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, Array<number>]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -255,18 +273,16 @@ export default function arrayNestedTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<Array<number>> = values.slice();
-      const insertedItems: Array<Array<number>> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<Array<number>> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: Array<number>): boolean => value === values[0])).assertFalse();
-      expect(values[0][0]).assertEqual(1);
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: Array<number>): boolean => Array.isArray(value))).assertTrue();
 
       const symbolItem: IteratorResult<Array<number>> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(String(values[0][0]))).assertLargerOrEqual(0);
+      expect(localeResult).assertEqual(values.map((value: Array<number>): string => value.toLocaleString()).join(','));
     });
 
   });

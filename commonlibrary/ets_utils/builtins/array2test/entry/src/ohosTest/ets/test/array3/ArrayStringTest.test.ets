@@ -27,7 +27,7 @@ interface ArrayWithAt extends Array<StringDynamicItem> {
 
 function runAt(values: Array<StringDynamicItem>): StringDynamicItem | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const STRING_SPECIAL_CHARACTERS: string = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
@@ -115,7 +115,7 @@ export default function arrayStringTest() {
       const copyResult: Array<StringDynamicItem> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(0);
       expect(values.some((value: StringDynamicItem): boolean => value === values[0])).assertTrue();
 
       const reduceResult: StringDynamicItem = values.reduce(
@@ -158,10 +158,20 @@ export default function arrayStringTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual(
+        'test|测试|模板字符串123|中文|a|a\nb|0|NaN|true|null||   |\u200B|\u0000|\t|\r\n|a|' +
+        STRING_LONG_VALUE + '|测试😀|' + STRING_SPECIAL_CHARACTERS + '|' + STRING_ASCII_VISIBLE + '|' +
+        STRING_SPECIAL_ESCAPES + '|' + STRING_CONTROL_ESCAPES + '|👆|👀|💯|🎅|🀄|🏴|13800138000|' +
+        '310101199001011234|test@example.com|<script>alert(1)</script>|https://test.com|2026-03-05|' +
+        '138****8000|||\udc04|\ud83d|\udff4');
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual(
+        'test,测试,模板字符串123,中文,a,a\nb,0,NaN,true,null,,   ,\u200B,\u0000,\t,\r\n,a,' +
+        STRING_LONG_VALUE + ',测试😀,' + STRING_SPECIAL_CHARACTERS + ',' + STRING_ASCII_VISIBLE + ',' +
+        STRING_SPECIAL_ESCAPES + ',' + STRING_CONTROL_ESCAPES + ',👆,👀,💯,🎅,🀄,🏴,13800138000,' +
+        '310101199001011234,test@example.com,<script>alert(1)</script>,https://test.com,2026-03-05,' +
+        '138****8000,,,\udc04,\ud83d,\udff4');
     });
 
     /**
@@ -185,10 +195,12 @@ export default function arrayStringTest() {
 
       const sortValues: Array<StringDynamicItem> = values.slice();
       const sortResult: Array<StringDynamicItem> = sortValues.sort((valueA: StringDynamicItem, valueB: StringDynamicItem): number =>
-        String(valueA).localeCompare(String(valueB)),
+        String(valueB).length - String(valueA).length,
       );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      expect(String(sortResult[0]).length).assertEqual(STRING_LONG_VALUE.length);
+      expect(sortResult[sortResult.length - 2]).assertEqual('');
+      expect(sortResult[sortResult.length - 1]).assertEqual(undefined);
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: StringDynamicItem = values[0];
       values.forEach((value: StringDynamicItem): void => {
@@ -210,7 +222,7 @@ export default function arrayStringTest() {
     /**
      * @tc.name testArrayStringTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_STRING_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with special string values.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with special string values.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -222,7 +234,7 @@ export default function arrayStringTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, StringDynamicItem]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -265,18 +277,18 @@ export default function arrayStringTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<StringDynamicItem> = values.slice();
-      const insertedItems: Array<StringDynamicItem> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<StringDynamicItem> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: StringDynamicItem): boolean => value === 'test')).assertFalse();
-      expect(values[0]).assertEqual('test');
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: StringDynamicItem): boolean => typeof value === 'string' || value === null || value === undefined)).assertTrue();
 
       const symbolItem: IteratorResult<StringDynamicItem> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      const expectedLocaleResult: string = values.map((value: StringDynamicItem): string =>
+        value === null || value === undefined ? '' : value.toLocaleString().replace(/\u0000/g, '')).join(',');
+      expect(localeResult).assertEqual(expectedLocaleResult);
     });
 
   });

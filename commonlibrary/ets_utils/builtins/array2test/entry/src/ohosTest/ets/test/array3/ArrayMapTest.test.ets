@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,14 @@ function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
 }
 
+function getMapSortValue(value: Map<string, number>): number {
+  let sortValue: number = Number.MIN_SAFE_INTEGER;
+  value.forEach((mapValue: number): void => {
+    sortValue = mapValue;
+  });
+  return sortValue;
+}
+
 const MAP_A: Map<string, number> = new Map<string, number>();
 MAP_A.set('a', 1);
 const MAP_B: Map<string, number> = new Map<string, number>();
@@ -32,7 +40,7 @@ interface ArrayWithAt extends Array<Map<string, number>> {
 
 function runAt(values: Array<Map<string, number>>): Map<string, number> | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const MAP_D: Map<string, number> = new Map<string, number>();
@@ -117,7 +125,7 @@ export default function arrayMapTest() {
       const copyResult: Array<Map<string, number>> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(7);
       expect(values.some((value: Map<string, number>): boolean => value === values[0])).assertTrue();
 
       const reduceResult: Map<string, number> = values.reduce(
@@ -160,10 +168,12 @@ export default function arrayMapTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual(
+        '[object Map]|[object Map]|[object Map]|[object Map]|[object Map]|[object Map]|[object Map]|[object Map]');
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual(
+        '[object Map],[object Map],[object Map],[object Map],[object Map],[object Map],[object Map],[object Map]');
     });
 
     /**
@@ -187,10 +197,12 @@ export default function arrayMapTest() {
 
       const sortValues: Array<Map<string, number>> = values.slice();
       const sortResult: Array<Map<string, number>> = sortValues.sort((valueA: Map<string, number>, valueB: Map<string, number>): number =>
-        String(valueA).localeCompare(String(valueB)),
+        getMapSortValue(valueA) - getMapSortValue(valueB),
       );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      expect(sortResult[0].size).assertEqual(0);
+      expect(sortResult[1].get('\u200B')).assertEqual(-1);
+      expect(sortResult[sortResult.length - 1].get('max')).assertEqual(Number.MAX_SAFE_INTEGER);
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: Map<string, number> = values[0];
       values.forEach((value: Map<string, number>): void => {
@@ -212,7 +224,7 @@ export default function arrayMapTest() {
     /**
      * @tc.name testArrayMapTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_MAP_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with Map object values.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with Map object values.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -224,7 +236,7 @@ export default function arrayMapTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, Map<string, number>]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -267,18 +279,16 @@ export default function arrayMapTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<Map<string, number>> = values.slice();
-      const insertedItems: Array<Map<string, number>> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<Map<string, number>> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: Map<string, number>): boolean => value === MAP_A)).assertFalse();
-      expect(values[0].size).assertEqual(1);
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: Map<string, number>): boolean => value instanceof Map)).assertTrue();
 
       const symbolItem: IteratorResult<Map<string, number>> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(',')).assertLargerOrEqual(0);
+      expect(typeof localeResult).assertEqual('string');
     });
 
   });

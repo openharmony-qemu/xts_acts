@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  */
 
 import { beforeAll, beforeEach, afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { getAtZero, getUnionSymbol } from './ArrayUnionTest';
+import { getAtLast, getUnionSymbol } from './ArrayUnionTest';
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -63,6 +63,53 @@ const VALID_VALUES: Array<ArrayUnionItem> = [
   UNION_OBJECT_VALUE, UNION_REGEXP_VALUE,
 ];
 const ALL_VALUES: Array<ArrayUnionItem> = [...VALID_VALUES];
+
+function getUnionSortKey(value: ArrayUnionItem): string {
+  if (value === null) {
+    return '00:null';
+  }
+  if (value === undefined) {
+    return '01:undefined';
+  }
+  if (typeof value === 'boolean') {
+    return '02:' + String(value);
+  }
+  if (typeof value === 'number') {
+    return '03:' + (Number.isNaN(value) ? 'NaN' : String(value));
+  }
+  if (typeof value === 'bigint') {
+    return '04:' + String(value);
+  }
+  if (typeof value === 'string') {
+    return '05:' + value;
+  }
+  if (typeof value === 'symbol') {
+    return '06:' + String(value);
+  }
+  if (typeof value === 'function') {
+    return '07:' + String(value(1));
+  }
+  if (value instanceof Date) {
+    return '08:' + String(value.getTime());
+  }
+  if (value instanceof Map) {
+    let mapValue: number = Number.MIN_SAFE_INTEGER;
+    value.forEach((entryValue: number): void => {
+      mapValue = entryValue;
+    });
+    return '09:' + String(mapValue);
+  }
+  if (value instanceof Set) {
+    return '10:' + String(value.size);
+  }
+  if (Array.isArray(value)) {
+    return '11:' + String(value.length);
+  }
+  if (value instanceof RegExp) {
+    return '12:' + value.source;
+  }
+  return '13:' + String((value as ArrayClassItem).id);
+}
 
 export default function arrayUnionTest() {
   describe('ArrayUnionTest', () => {
@@ -130,7 +177,7 @@ export default function arrayUnionTest() {
       expect(values.some((value) => value === values[6])).assertTrue();
 
       const reduceResult = values.reduce((acc) => acc);
-      expect(String(reduceResult)).assertEqual('NaN');
+      expect(Number.isNaN(reduceResult)).assertTrue();
       const reduceRightResult = values.reduceRight((acc) => acc);
       expect(reduceRightResult === values[values.length - 1]).assertTrue();
 
@@ -156,7 +203,7 @@ export default function arrayUnionTest() {
 
       const shiftValues = values.slice();
       const shiftResult = shiftValues.shift();
-      expect(String(shiftResult)).assertEqual('NaN');
+      expect(Number.isNaN(shiftResult)).assertTrue();
       expect(shiftValues[0] === values[1]).assertTrue();
 
       const reverseValues = values.slice();
@@ -201,9 +248,11 @@ export default function arrayUnionTest() {
 
       const sortValues = values.slice();
       const sortResult = sortValues.sort((valueA, valueB) =>
-        String(valueA).localeCompare(String(valueB))
+        getUnionSortKey(valueA).localeCompare(getUnionSortKey(valueB))
       );
-      expect(sortResult === sortValues).assertTrue();
+      expect(sortResult[0] === null).assertTrue();
+      expect(sortResult[1] === false).assertTrue();
+      expect(sortResult[sortResult.length - 1] === undefined).assertTrue();
       expect(values.indexOf(values[6]) === 6).assertTrue();
 
       let forEachLastValue = values[0];
@@ -222,7 +271,7 @@ export default function arrayUnionTest() {
     /**
      * @tc.name testArrayUnionTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_UNION_TEST_0500
-     * @tc.desc Verify reduce, at(-0), iterators and find/includes/findIndex with mixed union values (including NaN, null and undefined).
+     * @tc.desc Verify reduce, at(-1), iterators and find/includes/findIndex with mixed union values (including NaN, null and undefined).
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -232,7 +281,7 @@ export default function arrayUnionTest() {
       const reduceInitialResult = values.reduce((_acc, value) => value, values[0]);
       expect(reduceInitialResult === values[values.length - 1]).assertTrue();
 
-      expect(Number.isNaN(getAtZero(values))).assertTrue();
+      expect(getAtLast(values) === values[values.length - 1]).assertTrue();
 
       const entriesItem = values.entries().next();
       expect(entriesItem.value[0] === 0).assertTrue();
@@ -283,7 +332,9 @@ export default function arrayUnionTest() {
       expect(Number.isNaN(symbolItem.value)).assertTrue();
 
       const localeResult = values.toLocaleString();
-      expect(localeResult.indexOf(String(values[6])) >= 0).assertTrue();
+      const expectedLocaleResult = values.map((value) =>
+        value === null || value === undefined ? '' : value.toLocaleString().replace(/\u0000/g, '')).join(',');
+      expect(localeResult).assertEqual(expectedLocaleResult);
     });
   });
 }

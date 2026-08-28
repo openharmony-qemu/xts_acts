@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  */
 
 import { beforeAll, beforeEach, afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { getSymbolAllValues, getSymbolAtZero, getSymbolValidValues } from './ArraySymbolTest';
+import { getSymbolAllValues, getSymbolAtLast, getSymbolValidValues } from './ArraySymbolTest';
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -48,7 +48,7 @@ function runArraySymbolTest0200(): Array<boolean> {
   return [
     copyResult[0] === values[1],
     copyValues[1] === values[1],
-    values.lastIndexOf(values[0]) >= 0,
+    values.lastIndexOf(values[0]) === 6,
     values.some((value) => value === values[0]),
     reduceResult === values[0],
     reduceRightResult === values[values.length - 1],
@@ -94,7 +94,7 @@ function runArraySymbolTest0400(): Array<boolean> {
   const sliceResult = values.slice(0, 2);
   const sortValues = values.slice();
   const sortResult = sortValues.sort((valueA, valueB) =>
-    String(valueA).localeCompare(String(valueB))
+    String(valueB).length - String(valueA).length
   );
   let forEachLastValue = values[0];
   values.forEach((value) => {
@@ -107,8 +107,9 @@ function runArraySymbolTest0400(): Array<boolean> {
     unshiftValues[0] === values[0],
     sliceResult[0] === values[0],
     sliceResult[1] === values[1],
-    sortResult === sortValues,
-    values.indexOf(values[0]) >= 0,
+    String(sortResult[0]) === 'Symbol(Symbol.iterator)',
+    String(sortResult[sortResult.length - 1]) === 'Symbol()',
+    values.indexOf(values[0]) === 0,
     forEachLastValue === values[values.length - 1],
     mapResult[1] === values[1],
     filterResult[0] === values[0],
@@ -124,7 +125,7 @@ function runArraySymbolTest0500(): Array<boolean> {
   const findResult = values.find((value) => value === values[0]);
   return [
     reduceInitialResult === values[values.length - 1],
-    getSymbolAtZero() === values[0],
+    getSymbolAtLast() === values[values.length - 1],
     entriesItem.value[0] === 0,
     entriesItem.value[1] === values[0],
     keysItem.value === 0,
@@ -143,7 +144,7 @@ function runArraySymbolTest0600(): Array<boolean> {
   const spliceDeleteValues = values.slice();
   const removedItems = spliceDeleteValues.splice(0, 1);
   const spliceInsertValues = values.slice();
-  const insertedItems = spliceInsertValues.splice(0, 0, values[1]);
+  const insertedItems = spliceInsertValues.splice(0, 0, values[0]);
   const symbolItem = values[Symbol.iterator]().next();
   const localeResult = values.toLocaleString();
 
@@ -153,11 +154,10 @@ function runArraySymbolTest0600(): Array<boolean> {
     removedItems[0] === values[0],
     spliceDeleteValues[0] === values[1],
     insertedItems.length === 0,
-    spliceInsertValues[0] === values[1],
-    spliceInsertValues[1] === values[0],
+    spliceInsertValues[0] === values[0],
     values.every((value) => typeof value === 'symbol'),
     symbolItem.value === values[0],
-    localeResult.indexOf(String(values[0])) >= 0,
+    localeResult === values.map((value) => value.toLocaleString()).join(','),
   ];
 }
 
@@ -260,7 +260,7 @@ export default function arraySymbolTest() {
     /**
      * @tc.name testArraySymbolTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SYMBOL_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with Symbol references.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with Symbol references.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

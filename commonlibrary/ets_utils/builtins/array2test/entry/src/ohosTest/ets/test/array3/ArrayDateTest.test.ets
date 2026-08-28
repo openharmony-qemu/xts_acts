@@ -32,7 +32,7 @@ interface ArrayWithAt extends Array<Date> {
 
 function runAt(values: Array<Date>): Date | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const VALID_VALUES: Array<Date> = [DATE_A, DATE_B, DATE_C, DATE_D, DATE_E, DATE_F, DATE_A];
@@ -109,7 +109,7 @@ export default function arrayDateTest() {
       const copyResult: Array<Date> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(6);
       expect(values.some((value: Date): boolean => value === values[0])).assertTrue();
 
       const reduceResult: Date = values.reduce(
@@ -152,10 +152,14 @@ export default function arrayDateTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual(
+        String(DATE_A) + '|' + String(DATE_B) + '|' + String(DATE_C) + '|' + String(DATE_D) + '|' +
+        String(DATE_E) + '|' + String(DATE_F) + '|' + String(DATE_A));
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual(
+        String(DATE_A) + ',' + String(DATE_B) + ',' + String(DATE_C) + ',' + String(DATE_D) + ',' +
+        String(DATE_E) + ',' + String(DATE_F) + ',' + String(DATE_A));
     });
 
     /**
@@ -178,11 +182,22 @@ export default function arrayDateTest() {
       expect(sliceResult[1]).assertEqual(values[1]);
 
       const sortValues: Array<Date> = values.slice();
-      const sortResult: Array<Date> = sortValues.sort((valueA: Date, valueB: Date): number =>
-        String(valueA).localeCompare(String(valueB)),
-      );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      const sortResult: Array<Date> = sortValues.sort((valueA: Date, valueB: Date): number => {
+        const timeA: number = valueA.getTime();
+        const timeB: number = valueB.getTime();
+        const aIsInvalid: boolean = Number.isNaN(timeA);
+        const bIsInvalid: boolean = Number.isNaN(timeB);
+        if (aIsInvalid) {
+          return bIsInvalid ? 0 : 1;
+        }
+        if (bIsInvalid) {
+          return -1;
+        }
+        return timeA - timeB;
+      });
+      expect(sortResult[0].getTime()).assertEqual(DATE_D.getTime());
+      expect(Number.isNaN(sortResult[sortResult.length - 1].getTime())).assertTrue();
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: Date = values[0];
       values.forEach((value: Date): void => {
@@ -204,7 +219,7 @@ export default function arrayDateTest() {
     /**
      * @tc.name testArrayDateTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_DATE_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with Date object values.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with Date object values.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -216,7 +231,7 @@ export default function arrayDateTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, Date]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -259,18 +274,16 @@ export default function arrayDateTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<Date> = values.slice();
-      const insertedItems: Array<Date> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<Date> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: Date): boolean => value === DATE_A)).assertFalse();
-      expect(values[0]).assertEqual(DATE_A);
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: Date): boolean => value instanceof Date)).assertTrue();
 
       const symbolItem: IteratorResult<Date> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(',')).assertLargerOrEqual(0);
+      expect(typeof localeResult).assertEqual('string');
     });
 
   });

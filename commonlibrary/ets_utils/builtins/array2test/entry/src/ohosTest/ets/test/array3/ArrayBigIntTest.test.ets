@@ -25,7 +25,7 @@ interface ArrayWithAt extends Array<bigint> {
 
 function runAt(values: Array<bigint>): bigint | undefined {
   const arrayWithAt: ArrayWithAt = values as ArrayWithAt;
-  return arrayWithAt.at(-0);
+  return arrayWithAt.at(-1);
 }
 
 const VALID_VALUES: Array<bigint> = [
@@ -105,7 +105,7 @@ export default function arrayBigIntTest() {
       const copyResult: Array<bigint> = copyValues.copyWithin(0, 1, 2);
       expect(copyResult[0]).assertEqual(values[1]);
       expect(copyValues[1]).assertEqual(values[1]);
-      expect(values.lastIndexOf(values[0])).assertLargerOrEqual(0);
+      expect(values.lastIndexOf(values[0])).assertEqual(0);
       expect(values.some((value: bigint): boolean => value === values[0])).assertTrue();
 
       const reduceResult: bigint = values.reduce(
@@ -148,10 +148,16 @@ export default function arrayBigIntTest() {
       expect(reverseResult[0]).assertEqual(values[values.length - 1]);
 
       const joined: string = values.join('|');
-      expect(joined.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(joined).assertEqual(
+        '100|-99|9007199254740991|9007199254740991|9007199254740991|-9007199254740991|0|0|' +
+        '123456789012345678901234567890|138001380001234567890|100000000000000000000000|-1',
+      );
 
       const stringResult: string = values.toString();
-      expect(stringResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      expect(stringResult).assertEqual(
+        '100,-99,9007199254740991,9007199254740991,9007199254740991,-9007199254740991,0,0,' +
+        '123456789012345678901234567890,138001380001234567890,100000000000000000000000,-1',
+      );
     });
 
     /**
@@ -175,10 +181,11 @@ export default function arrayBigIntTest() {
 
       const sortValues: Array<bigint> = values.slice();
       const sortResult: Array<bigint> = sortValues.sort((valueA: bigint, valueB: bigint): number =>
-        String(valueA).localeCompare(String(valueB)),
+        valueA < valueB ? -1 : valueA > valueB ? 1 : 0,
       );
-      expect(sortResult).assertEqual(sortValues);
-      expect(values.indexOf(values[0])).assertLargerOrEqual(0);
+      expect(sortResult[0]).assertEqual(-9007199254740991n);
+      expect(sortResult[sortResult.length - 1]).assertEqual(BigInt("123456789012345678901234567890"));
+      expect(values.indexOf(values[0])).assertEqual(0);
 
       let forEachLastValue: bigint = values[0];
       values.forEach((value: bigint): void => {
@@ -200,7 +207,7 @@ export default function arrayBigIntTest() {
     /**
      * @tc.name testArrayBigIntTest0500
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BIGINT_TEST_0500
-     * @tc.desc Verify reduce, at(-0), entries/keys/values and find/includes/findIndex with BigInt values.
+     * @tc.desc Verify reduce, at(-1), entries/keys/values and find/includes/findIndex with BigInt values.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -212,7 +219,7 @@ export default function arrayBigIntTest() {
         values[0],
       );
       expect(reduceInitialResult).assertEqual(values[values.length - 1]);
-      expect(runAt(values)).assertEqual(values[0]);
+      expect(runAt(values)).assertEqual(values[values.length - 1]);
 
       const entriesItem: IteratorResult<[number, bigint]> = values.entries().next();
       expect(entriesItem.value[0]).assertEqual(0);
@@ -255,18 +262,17 @@ export default function arrayBigIntTest() {
       expect(spliceDeleteValues[0]).assertEqual(values[1]);
 
       const spliceInsertValues: Array<bigint> = values.slice();
-      const insertedItems: Array<bigint> = spliceInsertValues.splice(0, 0, values[1]);
+      const insertedItems: Array<bigint> = spliceInsertValues.splice(0, 0, values[0]);
       expect(insertedItems.length).assertEqual(0);
-      expect(spliceInsertValues[0]).assertEqual(values[1]);
-      expect(spliceInsertValues[1]).assertEqual(values[0]);
-      expect(values.every((value: bigint): boolean => value > 0n)).assertFalse();
-      expect(values[0]).assertEqual(100n);
+      expect(spliceInsertValues[0]).assertEqual(values[0]);
+      expect(values.every((value: bigint): boolean => typeof value === 'bigint')).assertTrue();
 
       const symbolItem: IteratorResult<bigint> = values[Symbol.iterator]().next();
       expect(symbolItem.value).assertEqual(values[0]);
 
       const localeResult: string = values.toLocaleString();
-      expect(localeResult.indexOf(String(values[0]))).assertLargerOrEqual(0);
+      const expectedLocaleResult: string = values.map((value: bigint): string => value.toLocaleString()).join(',');
+      expect(localeResult).assertEqual(expectedLocaleResult);
     });
 
   });

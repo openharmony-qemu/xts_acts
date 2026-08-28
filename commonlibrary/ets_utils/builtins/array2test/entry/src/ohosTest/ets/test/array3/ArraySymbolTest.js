@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ export function getSymbolAllValues() {
   return ALL_VALUES;
 }
 
-export function getSymbolAtZero() {
-  return VALID_VALUES.at(-0);
+export function getSymbolAtLast() {
+  return VALID_VALUES.at(-1);
 }
 
