@@ -1,4 +1,4 @@
-﻿'use static';
+'use static';
 
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
@@ -1201,6 +1201,9 @@ export default function int8ArrayConstructorPart04Test(): void {
       const copied: Int8Array = new Int8Array(src);
       let count: int = 0;
       copied.forEach((v: number): void => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(0);

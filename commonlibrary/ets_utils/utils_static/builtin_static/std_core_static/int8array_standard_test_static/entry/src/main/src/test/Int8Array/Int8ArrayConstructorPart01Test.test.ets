@@ -42,6 +42,8 @@ export default function int8ArrayConstructorPart01Test(): void {
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
+    const INT8_MAX: byte = 127;
+    const INT8_MIN: byte = -128;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART01_TEST_0100
@@ -340,6 +342,9 @@ export default function int8ArrayConstructorPart01Test(): void {
       let arr: Int8Array = new Int8Array();
       let count: number = 0;
       arr.forEach((v: number): void => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return;
+        }
         count++;
       });
       expect(count).assertEqual(0);
@@ -411,6 +416,9 @@ export default function int8ArrayConstructorPart01Test(): void {
       let arr: Int8Array = new Int8Array();
       let count: number = 0;
       let r: Int8Array = arr.filter((v: number): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
         count++;
         return true;
       });
@@ -431,6 +439,9 @@ export default function int8ArrayConstructorPart01Test(): void {
     it('int8ArrayConstructorPart01Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array();
       let r: Int8Array = arr.filter((v: number): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
         return true;
       });
       let filterLen: int = r.length;
@@ -448,6 +459,9 @@ export default function int8ArrayConstructorPart01Test(): void {
     it('int8ArrayConstructorPart01Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array();
       let r: Int8Array = arr.filter((v: number): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
         return true;
       });
       expect(r).not().assertEqual(arr);
@@ -464,6 +478,9 @@ export default function int8ArrayConstructorPart01Test(): void {
     it('int8ArrayConstructorPart01Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array();
       let r: boolean = arr.some((v: number): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
         return true;
       });
       expect(r).assertFalse();
@@ -480,6 +497,9 @@ export default function int8ArrayConstructorPart01Test(): void {
     it('int8ArrayConstructorPart01Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array();
       let r: boolean = arr.every((v: number): boolean => {
+        if (v < INT8_MIN || v > INT8_MAX) {
+          return false;
+        }
         return false;
       });
       expect(r).assertTrue();

@@ -43,6 +43,7 @@ export default function int8ArrayConstructorPart03Test(): void {
       await Utils.releaseAfterEachTest();
     });
     const INT8_MAX: byte = 127;
+    const INT8_MIN: byte = -128;
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_CONSTRUCTOR_PART03_TEST_0100
@@ -721,6 +722,9 @@ export default function int8ArrayConstructorPart03Test(): void {
       let arr: Int8Array = new Int8Array(len);
       let count: number = 0;
       arr.forEach((x: number): void => {
+        if (x < INT8_MIN || x > INT8_MAX) {
+          return;
+        }
         count = count + 1;
       });
       expect(count).assertEqual(4);
