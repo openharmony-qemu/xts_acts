@@ -1118,8 +1118,8 @@ napi_value VideoEncodeApiDual0400(napi_env env, napi_callback_info info)
                 return CreateIntInt32Result(env, -1);
             }
         if (vencCodec == nullptr) { return CreateIntInt32Result(env, -1); }
-        OH_VideoEncoder_Destroy(primaryVencCodec);
         OH_VideoEncoder_Destroy(vencCodec);
+        OH_VideoEncoder_Destroy(primaryVencCodec);
         TestTearDownApi();
         return CreateIntInt32Result(env, 0);
     } else {
@@ -1170,9 +1170,9 @@ napi_value VideoEncodeApiDual0600(napi_env env, napi_callback_info info)
             primaryVencCodec, &thirdVencCodec) != AV_ERR_OPERATE_NOT_PERMIT) {
                 return CreateIntInt32Result(env, -1);
             }
-        OH_VideoEncoder_Destroy(primaryVencCodec);
         OH_VideoEncoder_Destroy(secondaryVencCodec);
         OH_VideoEncoder_Destroy(thirdVencCodec);
+        OH_VideoEncoder_Destroy(primaryVencCodec);
         TestTearDownApi();
         return CreateIntInt32Result(env, 0);
     } else {
