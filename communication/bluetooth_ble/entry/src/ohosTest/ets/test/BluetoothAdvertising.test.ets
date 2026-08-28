@@ -2555,5 +2555,35 @@ export default function bluetoothAdvertisingTest() {
       await sleep(2000);
       done();
     })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off advertisingStateChange without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+        console.info('[bluetooth_js] advertising state nocallback = ' + JSON.stringify(AdvertisingStateChangeInfo));
+      }
+      try {
+        bluetooth.on('advertisingStateChange', onReceiveEvent);
+        console.info('[bluetooth_js] on advertisingStateChange success');
+        bluetooth.off('advertisingStateChange');
+        console.info('[bluetooth_js] off advertisingStateChange without callback success');
+        expect(true).assertTrue();
+      } catch (err) {
+        console.info("offNoCallback errCode:" + err.code + ",errMessage:" + err.message);
+        if (err.code === 801) {
+          console.info('[bluetooth_js]api is not support');
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      done();
+    })
   })
 }

@@ -4947,5 +4947,116 @@ describe('btConnectionTest', () => {
         }
         done();
     })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off bluetoothDeviceFind without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            bluetooth.on("bluetoothDeviceFind", onReceiveEvent2);
+            console.info('[bluetooth_js]on bluetoothDeviceFind success');
+            bluetooth.off('bluetoothDeviceFind');
+            console.info('[bluetooth_js]off bluetoothDeviceFind without callback success');
+            expect(true).assertTrue();
+        } catch (error) {
+            console.info(`[bluetooth_js]off bluetoothDeviceFind no callback error, code is ${error.code}, message is ${error.message}`);
+            if (error.code === 801) {
+                console.info('[bluetooth_js]bluetoothDeviceFind is not support');
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_BONDSTATECHANGE_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_BONDSTATECHANGE_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off bondStateChange without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_BONDSTATECHANGE_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            bluetooth.on('bondStateChange', BondStateParam);
+            console.info('[bluetooth_js]on bondStateChange success');
+            bluetooth.off('bondStateChange');
+            console.info('[bluetooth_js]off bondStateChange without callback success');
+            expect(true).assertTrue();
+        } catch (error) {
+            console.info(`[bluetooth_js]off bondStateChange no callback error, code is ${error.code}, message is ${error.message}`);
+            if (error.code === 801) {
+                console.info('[bluetooth_js]bondStateChange is not support');
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PINREQUIRED_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PINREQUIRED_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off pinRequired without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PINREQUIRED_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        try {
+            bluetooth.on('pinRequired', PinRequiredParam);
+            console.info('[bluetooth_js]on pinRequired success');
+            bluetooth.off('pinRequired');
+            console.info('[bluetooth_js]off pinRequired without callback success');
+            expect(true).assertTrue();
+        } catch (error) {
+            console.info(`[bluetooth_js]off pinRequired no callback error, code is ${error.code}, message is ${error.message}`);
+            if (error.code === 801) {
+                console.info('[bluetooth_js]pinRequired is not support');
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_BATTERYCHANGE_OFF_NOCALLBACK_0100
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_BATTERYCHANGE_OFF_NOCALLBACK_0100
+     * @tc.desc   Test off batteryChange without callback param test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_BATTERYCHANGE_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+        let onReceiveEventBattery: (data: bluetooth.BatteryInfo) => void = (data: bluetooth.BatteryInfo) => {
+            console.info('BatteryInfo = ' + JSON.stringify(data));
+        }
+        try {
+            bluetooth.on('batteryChange', onReceiveEventBattery);
+            console.info('[bluetooth_js]on batteryChange success');
+            bluetooth.off('batteryChange');
+            console.info('[bluetooth_js]off batteryChange without callback success');
+            expect(true).assertTrue();
+        } catch (error) {
+            console.info(`[bluetooth_js]off batteryChange no callback error, code is ${error.code}, message is ${error.message}`);
+            if (error.code === 801) {
+                console.info('[bluetooth_js]batteryChange is not support');
+                expect(err.code).assertEqual(801);
+            } else {
+                expect().assertFail();
+            }
+        }
+        done();
+    })
 })
 }

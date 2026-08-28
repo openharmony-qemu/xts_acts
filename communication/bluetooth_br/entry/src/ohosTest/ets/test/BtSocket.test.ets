@@ -2457,5 +2457,46 @@ export default function btSocketTest() {
             }
             done();
         })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_NOCALLBACK_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_NOCALLBACK_0100
+         * @tc.desc   Test off sppRead without callback param test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHSOCKET_SPP_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            interface sppoption {
+                uuid : string;
+                secure : boolean;
+                type : number
+            }
+            let SppOption : sppoption = {
+                uuid: '00001810-0000-1000-8000-00805F9B34FB',
+                secure: false, type: bluetooth.SppType.SPP_RFCOMM
+            };
+            let serverNumber = -1;
+            let clientNumber = -1;
+            try {
+                bluetooth.sppListen('serverOffNoCallback', SppOption, serverSocket);
+                bluetooth.sppAccept(serverNumber, acceptClientSocket);
+                bluetooth.on('sppRead', clientNumber, dataRead);
+                console.info('[bluetooth_js]on sppRead success');
+                await sleep(500)
+                bluetooth.off('sppRead', clientNumber);
+                console.info('[bluetooth_js]off sppRead without callback success');
+                expect(true).assertTrue();
+            } catch (err) {
+                console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code === '801') {
+                    console.info('[bluetooth_js]sppReadOff is not support');
+                    expect(err.code).assertEqual('801');
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
     })
 }

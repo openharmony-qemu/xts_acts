@@ -3291,5 +3291,59 @@ export default function bluetoothBleTest() {
             }
             done();
         })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_OFF_NOCALLBACK_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_OFF_NOCALLBACK_0100
+         * @tc.desc   Test GattClientDevice off serviceChange without callback param test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_SERVICECHANGE_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                device.on('serviceChange', onReceiveEvent_void);
+                console.info('[bt_arkts]device on serviceChange success');
+                device.off('serviceChange');
+                console.info('[bt_arkts]device off serviceChange without callback success');
+                expect(true).assertTrue();
+            } catch (error) {
+                console.error(`[bt_arkts]service change off no callback is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) === 801) {
+                    console.info('[bt_arkts]is not support');
+                    expect(Number(error.code) === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_BLESCANNER_OFF_NOCALLBACK_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLESCANNER_OFF_NOCALLBACK_0100
+         * @tc.desc   Test BleScanner off BLEDeviceFind without callback param test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_BLESCANNER_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
+            try {
+                BleScanner.on("BLEDeviceFind", onReceiveEvents);
+                console.info('[bt_arkts]BleScanner on BLEDeviceFind success');
+                BleScanner.off("BLEDeviceFind");
+                console.info('[bt_arkts]BleScanner off BLEDeviceFind without callback success');
+                expect(true).assertTrue();
+            } catch (error) {
+                console.error(`[bt_arkts]BleScanner off BLEDeviceFind no callback is failed, code is ${error.code},message is ${error.message}`);
+                if (Number(error.code) === 801) {
+                    console.info('[bt_arkts]is not support');
+                    expect(Number(error.code) === 801).assertTrue();
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
     })
 }
