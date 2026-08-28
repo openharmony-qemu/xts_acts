@@ -14,7 +14,7 @@
  */
 
 import { beforeAll, beforeEach, afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { getSetSymbolValidValues } from './SetSymbolTest.js';
+import { getSetSymbolValidValues } from './SetSymbolsTest';
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -30,8 +30,8 @@ const ALL_VALUES: Array<SymbolAllValue> = [
   ...VALID_VALUES, 'Symbol', 123, null, undefined, SYMBOL_INVALID_OBJECT, [], undefined,
 ];
 
-export default function setSymbolTest() {
-  describe('SetSymbolTest', () => {
+export default function setSymbolsTest() {
+  describe('SetSymbolsTest', () => {
     beforeAll(() => {
     });
 

@@ -29,7 +29,7 @@ import setObjectTest from "./set3/SetObjectTest.test";
 import setRegExpTest from "./set3/SetRegExpTest.test";
 import setSetTest from "./set3/SetSetTest.test";
 import setStringTest from "./set3/SetStringTest.test";
-import setSymbolTest from "./set3/SetSymbolTest.test";
+import setSymbolsTest from "./set3/SetSymbolsTest.test";
 import setUnionTest from "./set3/SetUnionTest.test";
 
 export default function testsuite() {
@@ -64,6 +64,6 @@ export default function testsuite() {
   setRegExpTest();
   setSetTest();
   setStringTest();
-  setSymbolTest();
+  setSymbolsTest();
   setUnionTest();
 }
