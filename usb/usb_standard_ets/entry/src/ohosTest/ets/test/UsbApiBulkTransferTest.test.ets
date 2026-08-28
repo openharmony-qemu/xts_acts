@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
+import { afterAll, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import usbMgr from '@ohos.usbManager';
 import { isFilteredDevice } from './FilterUtils';
-import { Driver, ON, MatchPattern } from '@ohos.UiTest';
+import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 
 const TAG: string = "[UsbApiBulkTransferTest]";
 const SKIP_TAG: string = "[SKIP]";
@@ -88,8 +88,8 @@ function teardownDevicePipe(pipe: usbMgr.USBDevicePipe | null): void {
   }
 }
 
-function buildTransferParams(pipe: usbMgr.USBDevicePipe, flags: number, endpoint: number, transferType: number, timeout: number)
-{
+function buildTransferParams(pipe: usbMgr.USBDevicePipe, flags: number, endpoint: number, transferType: number,
+  timeout: number) {
   let transferParams: usbMgr.UsbDataTransferParams = {
     devPipe: pipe,
     flags: flags,
@@ -97,7 +97,8 @@ function buildTransferParams(pipe: usbMgr.USBDevicePipe, flags: number, endpoint
     type: transferType,
     timeout: timeout,
     length: 10,
-    callback: () => {},
+    callback: () => {
+    },
     userData: new Uint8Array(10),
     buffer: new Uint8Array(10),
     isoPacketCount: 2,
@@ -106,19 +107,20 @@ function buildTransferParams(pipe: usbMgr.USBDevicePipe, flags: number, endpoint
 }
 
 export default function UsbApiBulkTransferTest() {
-  
+
   describe('UsbApiBulkTransferTest', () => {
-    let isDeviceConnected:boolean = false;
+    let isDeviceConnected: boolean = false;
     let testDevice: usbMgr.USBDevice;
 
-    beforeAll( async () => {
-        console.info(`${TAG} beforeAll start`);
-        let rawList = usbMgr.getDevices();
-        if (!rawList) {
-          console.error(`${TAG} getDevices returned undefined`);
-          return;
-        }
-        let deviceList: Array<usbMgr.USBDevice> = rawList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
+    beforeAll(async () => {
+      console.info(`${TAG} beforeAll start`);
+      let rawList = usbMgr.getDevices();
+      if (!rawList) {
+        console.error(`${TAG} getDevices returned undefined`);
+        return;
+      }
+      let deviceList: Array<usbMgr.USBDevice> =
+        rawList.filter(device => !isFilteredDevice(device.vendorId, device.productId));
       console.info(`${TAG} getDevices: ${JSON.stringify(deviceList)}`);
       isDeviceConnected = deviceConnected(deviceList);
       console.info(`${TAG} isDeviceConnected: ${isDeviceConnected}`);
@@ -128,7 +130,7 @@ export default function UsbApiBulkTransferTest() {
       }
     })
 
-    afterAll( ()=> {
+    afterAll(() => {
       console.info(`${TAG} afterAll`);
     })
 
@@ -144,36 +146,37 @@ export default function UsbApiBulkTransferTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBulkSubmitTransferWriteSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(`${TAG} testBulkSubmitTransferWriteSuccess start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testBulkSubmitTransferWriteSuccess, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let pipe = setupDevicePipe(testDevice!);
-      let targetInterface: usbMgr.USBInterface = testDevice!.configs[0].interfaces[0];
-      let flags: number = usbMgr.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK;
-      let transferType: number = usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
-      let transferParams: usbMgr.UsbDataTransferParams = buildTransferParams(pipe, flags, 1, transferType, 2000);
-      usbMgr.claimInterface(pipe, targetInterface, true);
-      try {
-        transferParams.callback = (err: Error, callbackData: usbMgr.SubmitTransferCallback) => {
-          console.info(`${TAG} callbackData: ${JSON.stringify(callbackData)}`);
-          expect(callbackData.status).assertEqual(usbMgr.UsbTransferStatus.TRANSFER_COMPLETED);
-          expect(callbackData.actualLength).assertEqual(transferParams.buffer.length);
+    it('testBulkSubmitTransferWriteSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info(`${TAG} testBulkSubmitTransferWriteSuccess start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testBulkSubmitTransferWriteSuccess, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let pipe = setupDevicePipe(testDevice!);
+        let targetInterface: usbMgr.USBInterface = testDevice!.configs[0].interfaces[0];
+        let flags: number = usbMgr.UsbTransferFlags.USB_TRANSFER_SHORT_NOT_OK;
+        let transferType: number = usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
+        let transferParams: usbMgr.UsbDataTransferParams = buildTransferParams(pipe, flags, 1, transferType, 2000);
+        usbMgr.claimInterface(pipe, targetInterface, true);
+        try {
+          transferParams.callback = (err: Error, callbackData: usbMgr.SubmitTransferCallback) => {
+            console.info(`${TAG} callbackData: ${JSON.stringify(callbackData)}`);
+            expect(callbackData.status).assertEqual(usbMgr.UsbTransferStatus.TRANSFER_COMPLETED);
+            expect(callbackData.actualLength).assertEqual(transferParams.buffer.length);
+            teardownDevicePipe(pipe);
+            done();
+          }
+          usbMgr.usbSubmitTransfer(transferParams);
+        } catch (error) {
+          console.error(`${TAG} testBulkSubmitTransferWriteSuccess catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
           teardownDevicePipe(pipe);
           done();
         }
-        usbMgr.usbSubmitTransfer(transferParams);
-      } catch (error) {
-        console.error(`${TAG} testBulkSubmitTransferWriteSuccess catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        teardownDevicePipe(pipe);
-        done();
-      }
-    });
+      });
 
     /**
      * @tc.name   testBulkSubmitTransferReadTimeout
@@ -183,36 +186,37 @@ export default function UsbApiBulkTransferTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testBulkSubmitTransferReadTimeout', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info(`${TAG} testBulkSubmitTransferReadTimeout start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testBulkSubmitTransferReadTimeout, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let pipe = setupDevicePipe(testDevice!);
-      let targetInterface: usbMgr.USBInterface = testDevice!.configs[0].interfaces[0];
-      let flags: number = usbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
-      let transferType: number = usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
-      let transferParams: usbMgr.UsbDataTransferParams = buildTransferParams(pipe, flags, 129, transferType, 2000);
-      usbMgr.claimInterface(pipe, targetInterface, true);
-      try {
-        transferParams.callback = (err: Error, callbackData: usbMgr.SubmitTransferCallback) => {
-          console.info(`${TAG} callbackData: ${JSON.stringify(callbackData)}`);
-          expect(callbackData.status).assertEqual(usbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT);
-          expect(callbackData.actualLength).assertLargerOrEqual(0);
+    it('testBulkSubmitTransferReadTimeout', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        console.info(`${TAG} testBulkSubmitTransferReadTimeout start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testBulkSubmitTransferReadTimeout, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let pipe = setupDevicePipe(testDevice!);
+        let targetInterface: usbMgr.USBInterface = testDevice!.configs[0].interfaces[0];
+        let flags: number = usbMgr.UsbTransferFlags.USB_TRANSFER_FREE_BUFFER;
+        let transferType: number = usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
+        let transferParams: usbMgr.UsbDataTransferParams = buildTransferParams(pipe, flags, 129, transferType, 2000);
+        usbMgr.claimInterface(pipe, targetInterface, true);
+        try {
+          transferParams.callback = (err: Error, callbackData: usbMgr.SubmitTransferCallback) => {
+            console.info(`${TAG} callbackData: ${JSON.stringify(callbackData)}`);
+            expect(callbackData.status).assertEqual(usbMgr.UsbTransferStatus.TRANSFER_TIMED_OUT);
+            expect(callbackData.actualLength).assertLargerOrEqual(0);
+            teardownDevicePipe(pipe);
+            done();
+          }
+          usbMgr.usbSubmitTransfer(transferParams);
+        } catch (error) {
+          console.error(`${TAG} testBulkSubmitTransferReadTimeout catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
           teardownDevicePipe(pipe);
           done();
         }
-        usbMgr.usbSubmitTransfer(transferParams);
-      } catch (error) {
-        console.error(`${TAG} testBulkSubmitTransferReadTimeout catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        teardownDevicePipe(pipe);
-        done();
-      }
-    });
+      });
 
     /**
      * @tc.name   testBulkSubmitTransferInvalidEndpoint
@@ -222,32 +226,32 @@ export default function UsbApiBulkTransferTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testBulkSubmitTransferInvalidEndpoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testBulkSubmitTransferInvalidEndpoint start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testBulkSubmitTransferInvalidEndpoint, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let pipe = setupDevicePipe(testDevice!);
-      let targetInterface: usbMgr.USBInterface = testDevice!.configs[0].interfaces[0];
-      let flags: number = usbMgr.UsbTransferFlags.USB_TRANSFER_FREE_TRANSFER;
-      let transferType: number = usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
-      let transferParams: usbMgr.UsbDataTransferParams = buildTransferParams(pipe, flags, -1, transferType, 2000);
-      usbMgr.claimInterface(pipe, targetInterface, true);
-      try {
-        usbMgr.usbSubmitTransfer(transferParams);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testBulkSubmitTransferInvalidEndpoint catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(14400012);
-        done();
-      } finally {
-        teardownDevicePipe(pipe);
-      }
-    });
+    it('testBulkSubmitTransferInvalidEndpoint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testBulkSubmitTransferInvalidEndpoint start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testBulkSubmitTransferInvalidEndpoint, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let pipe = setupDevicePipe(testDevice!);
+        let targetInterface: usbMgr.USBInterface = testDevice!.configs[0].interfaces[0];
+        let flags: number = usbMgr.UsbTransferFlags.USB_TRANSFER_FREE_TRANSFER;
+        let transferType: number = usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
+        let transferParams: usbMgr.UsbDataTransferParams = buildTransferParams(pipe, flags, -1, transferType, 2000);
+        usbMgr.claimInterface(pipe, targetInterface, true);
+        try {
+          usbMgr.usbSubmitTransfer(transferParams);
+          expect().assertFail();
+        } catch (error) {
+          console.error(`${TAG} testBulkSubmitTransferInvalidEndpoint catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(14400012);
+        } finally {
+          teardownDevicePipe(pipe);
+          done();
+        }
+      });
 
     /**
      * @tc.name   testBulkSubmitTransferNoDevice
@@ -257,11 +261,10 @@ export default function UsbApiBulkTransferTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testBulkSubmitTransferNoDevice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testBulkSubmitTransferNoDevice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testBulkSubmitTransferNoDevice start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testBulkSubmitTransferNoDevice, skip`);
-        done();
         return;
       }
       let pipe: usbMgr.USBDevicePipe = {
@@ -274,11 +277,9 @@ export default function UsbApiBulkTransferTest() {
       try {
         usbMgr.usbSubmitTransfer(transferParams);
         expect().assertFail();
-        done();
       } catch (error) {
         console.error(`${TAG} testBulkSubmitTransferNoDevice catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14400001);
-        done();
       }
     });
 
@@ -311,16 +312,15 @@ export default function UsbApiBulkTransferTest() {
           console.info(`${TAG} callbackData: ${JSON.stringify(callbackData)}`);
           expect(callbackData.status).assertEqual(usbMgr.UsbTransferStatus.TRANSFER_CANCELED);
           expect(callbackData.actualLength).assertLargerOrEqual(0);
-          done();
         }
         usbMgr.usbSubmitTransfer(transferParams);
         usbMgr.usbCancelTransfer(transferParams);
       } catch (error) {
         console.error(`${TAG} testBulkCancelTransferSuccess catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     });
 
@@ -332,32 +332,32 @@ export default function UsbApiBulkTransferTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testBulkCancelTransferWithoutSubmit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testBulkCancelTransferWithoutSubmit start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testBulkCancelTransferWithoutSubmit, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let pipe = setupDevicePipe(testDevice!);
-      let targetInterface: usbMgr.USBInterface = testDevice!.configs[0].interfaces[0];
-      let flags: number = usbMgr.UsbTransferFlags.USB_TRANSFER_ADD_ZERO_PACKET;
-      let transferType: number = usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
-      let transferParams: usbMgr.UsbDataTransferParams = buildTransferParams(pipe, flags, 1, transferType, 500);
-      usbMgr.claimInterface(pipe, targetInterface, true);
-      try {
-        usbMgr.usbCancelTransfer(transferParams);
-        expect().assertFail();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testBulkCancelTransferWithoutSubmit catch err: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(14400011);
-        done();
-      } finally {
-        teardownDevicePipe(pipe);
-      }
-    });
+    it('testBulkCancelTransferWithoutSubmit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testBulkCancelTransferWithoutSubmit start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testBulkCancelTransferWithoutSubmit, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let pipe = setupDevicePipe(testDevice!);
+        let targetInterface: usbMgr.USBInterface = testDevice!.configs[0].interfaces[0];
+        let flags: number = usbMgr.UsbTransferFlags.USB_TRANSFER_ADD_ZERO_PACKET;
+        let transferType: number = usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK;
+        let transferParams: usbMgr.UsbDataTransferParams = buildTransferParams(pipe, flags, 1, transferType, 500);
+        usbMgr.claimInterface(pipe, targetInterface, true);
+        try {
+          usbMgr.usbCancelTransfer(transferParams);
+          expect().assertFail();
+        } catch (error) {
+          console.error(`${TAG} testBulkCancelTransferWithoutSubmit catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(14400011);
+        } finally {
+          teardownDevicePipe(pipe);
+          done();
+        }
+      });
 
   })
 }
