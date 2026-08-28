@@ -541,7 +541,7 @@ export default function AbilityRuntimeCreateDifferentAreaContext() {
         expect(areaModeContext.databaseDir).assertEqual('/data/storage/el1/database/entry_test')
         expect(areaModeContext.preferencesDir).assertEqual('/data/storage/el1/base/haps/entry_test/preferences')
         expect(areaModeContext.bundleCodeDir).assertEqual('/data/storage/el1/bundle')
-        expect(areaModeContext.distributedFilesDir).assertEqual('/data/storage/el2/distributedfiles')
+        expect(areaModeContext.distributedFilesDir).assertEqual('/data/storage/el1/distributedfiles')
         expect(areaModeContext.resourceDir).assertEqual('')
         expect(areaModeContext.cloudFileDir).assertEqual('/data/storage/el2/cloud')
         expect(areaModeContext.area).assertEqual(0)

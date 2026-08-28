@@ -296,4 +296,5 @@ export default function abilityTest() {
       hilog.info(0x0000, 'testTag', TEST_CASE_NAME + 'it end');
       done();
     })
+  })
 }
