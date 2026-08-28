@@ -1168,7 +1168,7 @@ export default function ActsLongTimeTaskAPI26ManagerStaticTest() {
               let bgModes: Array<string> = ['dataTransfer'];
               backgroundTaskManager.startBackgroundRunning(ability.context, bgModes, want).then((res: backgroundTaskManager.ContinuousTaskNotification) => {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_API26_TASK_STATIC_XTS_3000 startBackgroundRunning promise success');
-                let taskId: int = res.continuousTaskId ?? -1,
+                let taskId: int = res.continuousTaskId ?? -1;
                 let progressValues: int[] = [0, 25, 50, 75, 100];
                 let allSuccess: boolean = true;
                 for (let i = 0; i < progressValues.length; i++) {

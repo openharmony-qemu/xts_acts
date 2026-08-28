@@ -838,6 +838,7 @@ export default function ActsLongTimeTaskNopStaticTest() {
                 };
                 backgroundTaskManager.updateDataTransferProgress(ability.context, dataTransferProgress);
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2000 updateDataTransferProgress success (permission exists)');
+                done();
               } catch (err) {
                 let e: BusinessError = err as BusinessError;
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_2000 updateDataTransferProgress error: %{public}s', JSON.stringify(err));
