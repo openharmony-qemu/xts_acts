@@ -296,12 +296,6 @@ struct TextPickerAttributeModifier {
 
         Row() {
           TextPicker({ range: this.fruits, selected: this.select })
-            .id('textPicker15')
-            .attributeModifier(new DividerModifier(null))
-        }
-
-        Row() {
-          TextPicker({ range: this.fruits, selected: this.select })
             .id('textPicker16')
             .attributeModifier(new DividerModifier(undefined))
         }

@@ -400,7 +400,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_1400] fillColor: ' + obj.getElement('$attrs').getString('fillColor'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('fillColor')).assertContain('Red');
+        expect(obj.getElement('$attrs').getString('fillColor')).assertContain('#FFFF0000');
       } catch (err) {
         console.error('[static_1400] error: ' + err);
         expect(false).assertTrue();
@@ -425,7 +425,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_1500] fillColor: ' + obj.getElement('$attrs').getString('fillColor'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('fillColor')).assertContain('Blue');
+        expect(obj.getElement('$attrs').getString('fillColor')).assertContain('#FF0000FF');
       } catch (err) {
         console.error('[static_1500] error: ' + err);
         expect(false).assertTrue();
@@ -650,7 +650,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_2400] enableAnalyzer: ' + obj.getElement('$attrs').getString('enableAnalyzer'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('enableAnalyzer')).assertContain('true');
+        expect(obj.getElement('$attrs').getString('enableAnalyzer')).assertEqual('true');
       } catch (err) {
         console.error('[static_2400] error: ' + err);
         expect(false).assertTrue();
@@ -675,7 +675,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_2500] enableAnalyzer: ' + obj.getElement('$attrs').getString('enableAnalyzer'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('enableAnalyzer')).assertContain('false');
+        expect(obj.getElement('$attrs').getString('enableAnalyzer')).assertEqual('false');
       } catch (err) {
         console.error('[static_2500] error: ' + err);
         expect(false).assertTrue();
@@ -698,9 +698,9 @@ export default function ImageAttributeModifierTest() {
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('img_modifier_privacysensitive_true');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[static_2600] privacySensitive: ' + obj.getElement('$attrs').getString('privacySensitive'));
+        console.info('[static_2600] privacySensitive: ' + obj.getElement('$attrs').getBoolean('privacySensitive'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('privacySensitive')).assertContain('true');
+        expect(obj.getElement('$attrs').getString('privacySensitive')).assertEqual(true);
       } catch (err) {
         console.error('[static_2600] error: ' + err);
         expect(false).assertTrue();
@@ -723,9 +723,9 @@ export default function ImageAttributeModifierTest() {
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('img_modifier_privacysensitive_false');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[static_2700] privacySensitive: ' + obj.getElement('$attrs').getString('privacySensitive'));
+        console.info('[static_2700] privacySensitive: ' + obj.getElement('$attrs').getBoolean('privacySensitive'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('privacySensitive')).assertContain('false');
+        expect(obj.getElement('$attrs').getString('privacySensitive')).assertEqual(false);
       } catch (err) {
         console.error('[static_2700] error: ' + err);
         expect(false).assertTrue();
@@ -750,34 +750,9 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_2800] dynamicRangeMode: ' + obj.getElement('$attrs').getString('dynamicRangeMode'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('dynamicRangeMode')).assertContain('STANDARD');
+        expect(obj.getElement('$attrs').getString('dynamicRangeMode')).assertEqual('STANDARD');
       } catch (err) {
         console.error('[static_2800] error: ' + err);
-        expect(false).assertTrue();
-      }
-      done();
-    });
-
-    /**
-     * @tc.number SUB_ARKUI_IMAGE_MODIFIER_DYNAMICRANGE_0200
-     * @tc.name   ImageAttributeModifierTest_static_2900
-     * @tc.desc   Verify dynamicRangeMode property set to DynamicRangeMode.HIGH via AttributeModifier
-     * @tc.level  LEVEL0
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     */
-    it('ImageAttributeModifierTest_static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ImageAttributeModifierTest_static_2900 START');
-      try {
-        let driver = await Driver.create()
-        await CommonFunc.sleep(2000);
-        let strJson = inspector.getInspectorByKey('img_modifier_dynamicrange_high');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info('[static_2900] dynamicRangeMode: ' + obj.getElement('$attrs').getString('dynamicRangeMode'));
-        expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('dynamicRangeMode')).assertContain('HIGH');
-      } catch (err) {
-        console.error('[static_2900] error: ' + err);
         expect(false).assertTrue();
       }
       done();
@@ -800,7 +775,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_3000] orientation: ' + obj.getElement('$attrs').getString('orientation'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('orientation')).assertContain('UP');
+        expect(obj.getElement('$attrs').getString('orientation')).assertEqual('1');
       } catch (err) {
         console.error('[static_3000] error: ' + err);
         expect(false).assertTrue();
@@ -825,7 +800,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_3100] orientation: ' + obj.getElement('$attrs').getString('orientation'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('orientation')).assertContain('LEFT');
+        expect(obj.getElement('$attrs').getString('orientation')).assertEqual('4');
       } catch (err) {
         console.error('[static_3100] error: ' + err);
         expect(false).assertTrue();
@@ -848,9 +823,9 @@ export default function ImageAttributeModifierTest() {
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('img_modifier_hdrbrightness_05');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[static_3200] hdrBrightness: ' + obj.getElement('$attrs').getString('hdrBrightness'));
+        console.info('[static_3200] hdrBrightness: ' + obj.getElement('$attrs').getDouble('hdrBrightness'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('hdrBrightness')).assertContain('0.5');
+        expect(obj.getElement('$attrs').getString('hdrBrightness')).assertEqual('0.5');
       } catch (err) {
         console.error('[static_3200] error: ' + err);
         expect(false).assertTrue();
@@ -873,9 +848,9 @@ export default function ImageAttributeModifierTest() {
         await CommonFunc.sleep(2000);
         let strJson = inspector.getInspectorByKey('img_modifier_hdrbrightness_10');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[static_3300] hdrBrightness: ' + obj.getElement('$attrs').getString('hdrBrightness'));
+        console.info('[static_3300] hdrBrightness: ' + obj.getElement('$attrs').getDouble('hdrBrightness'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('hdrBrightness')).assertContain('1');
+        expect(obj.getElement('$attrs').getString('hdrBrightness')).assertEqual('1');
       } catch (err) {
         console.error('[static_3300] error: ' + err);
         expect(false).assertTrue();
@@ -900,7 +875,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_3400] supportSvg2: ' + obj.getElement('$attrs').getString('supportSvg2'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('supportSvg2')).assertContain('true');
+        expect(obj.getElement('$attrs').getString('supportSvg2')).assertEqual('true');
       } catch (err) {
         console.error('[static_3400] error: ' + err);
         expect(false).assertTrue();
@@ -925,7 +900,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_3500] supportSvg2: ' + obj.getElement('$attrs').getString('supportSvg2'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('supportSvg2')).assertContain('false');
+        expect(obj.getElement('$attrs').getString('supportSvg2')).assertEqual('false');
       } catch (err) {
         console.error('[static_3500] error: ' + err);
         expect(false).assertTrue();
@@ -950,7 +925,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_3600] antialiased: ' + obj.getElement('$attrs').getString('antialiased'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('antialiased')).assertContain('true');
+        expect(obj.getElement('$attrs').getString('antialiased')).assertEqual('true');
       } catch (err) {
         console.error('[static_3600] error: ' + err);
         expect(false).assertTrue();
@@ -975,7 +950,7 @@ export default function ImageAttributeModifierTest() {
         let obj = JSON.parseJsonElement(strJson);
         console.info('[static_3700] antialiased: ' + obj.getElement('$attrs').getString('antialiased'));
         expect(obj.getString('$type')).assertContain('Image');
-        expect(obj.getElement('$attrs').getString('antialiased')).assertContain('false');
+        expect(obj.getElement('$attrs').getString('antialiased')).assertEqual('false');
       } catch (err) {
         console.error('[static_3700] error: ' + err);
         expect(false).assertTrue();

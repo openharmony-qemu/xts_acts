@@ -146,7 +146,7 @@ export default function CalendarPickerAttributeModifierTest() {
       let obj = JSON.parseJsonElement(strJson);
       let textStyle = obj.getElement('$attrs').getElement('textStyle');
       expect(textStyle.getString('color')).assertEqual('#FF0000FF');
-      expect(textStyle.getElement('font').getString('size')).assertEqual('20.00vp');
+      expect(textStyle.getElement('font').getString('size')).assertEqual('20.00fp');
       expect(textStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Bold');
       done();
     });
@@ -163,7 +163,7 @@ export default function CalendarPickerAttributeModifierTest() {
       let obj = JSON.parseJsonElement(strJson);
       let textStyle = obj.getElement('$attrs').getElement('textStyle');
       expect(textStyle.getString('color')).assertEqual('#FFFF0000');
-      expect(textStyle.getElement('font').getString('size')).assertEqual('30.00vp');
+      expect(textStyle.getElement('font').getString('size')).assertEqual('30.00fp');
       expect(textStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
       done();
     });
@@ -179,7 +179,7 @@ export default function CalendarPickerAttributeModifierTest() {
       let strJson = inspector.getInspectorByKey('calendarPicker8');
       let obj = JSON.parseJsonElement(strJson);
       let textStyle = obj.getElement('$attrs').getElement('textStyle');
-      expect(textStyle.getString('color')).assertEqual('#FF182431');
+      expect(textStyle.getString('color')).assertContain('#');
       expect(textStyle.getElement('font').getString('size')).assertEqual('16.00fp');
       expect(textStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
       done();

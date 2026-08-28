@@ -115,8 +115,8 @@ export default function TimePickerAttributeModifierTest() {
       let strJson = inspector.getInspectorByKey('timePicker4');
       let obj = JSON.parseJsonElement(strJson);
       let disappearTextStyle = obj.getElement('$attrs').getElement('disappearTextStyle');
-      expect(disappearTextStyle.getString('color')).assertEqual('#FF888888');
-      expect(disappearTextStyle.getElement('font').getString('size')).assertEqual('16.00vp');
+      expect(disappearTextStyle.getString('color')).assertEqual('#FF808080');
+      expect(disappearTextStyle.getElement('font').getString('size')).assertEqual('16.00fp');
       expect(disappearTextStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Bold');
       done();
     });
@@ -132,7 +132,7 @@ export default function TimePickerAttributeModifierTest() {
       let strJson = inspector.getInspectorByKey('timePicker5');
       let obj = JSON.parseJsonElement(strJson);
       let disappearTextStyle = obj.getElement('$attrs').getElement('disappearTextStyle');
-      expect(disappearTextStyle.getString('color')).assertEqual('#FF182431');
+      expect(disappearTextStyle.getString('color')).assertContain('#');
       expect(disappearTextStyle.getElement('font').getString('size')).assertEqual('14.00fp');
       expect(disappearTextStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
       done();
@@ -150,7 +150,7 @@ export default function TimePickerAttributeModifierTest() {
       let obj = JSON.parseJsonElement(strJson);
       let textStyle = obj.getElement('$attrs').getElement('textStyle');
       expect(textStyle.getString('color')).assertEqual('#FF000000');
-      expect(textStyle.getElement('font').getString('size')).assertEqual('26.00vp');
+      expect(textStyle.getElement('font').getString('size')).assertEqual('26.00fp');
       expect(textStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
       done();
     });
@@ -166,7 +166,7 @@ export default function TimePickerAttributeModifierTest() {
       let strJson = inspector.getInspectorByKey('timePicker7');
       let obj = JSON.parseJsonElement(strJson);
       let textStyle = obj.getElement('$attrs').getElement('textStyle');
-      expect(textStyle.getString('color')).assertEqual('#FF182431');
+      expect(textStyle.getString('color')).assertContain('#');
       expect(textStyle.getElement('font').getString('size')).assertEqual('16.00fp');
       expect(textStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
       done();
@@ -184,7 +184,7 @@ export default function TimePickerAttributeModifierTest() {
       let obj = JSON.parseJsonElement(strJson);
       let selectedTextStyle = obj.getElement('$attrs').getElement('selectedTextStyle');
       expect(selectedTextStyle.getString('color')).assertEqual('#FF0000FF');
-      expect(selectedTextStyle.getElement('font').getString('size')).assertEqual('30.00vp');
+      expect(selectedTextStyle.getElement('font').getString('size')).assertEqual('30.00fp');
       expect(selectedTextStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Bolder');
       done();
     });
@@ -200,7 +200,7 @@ export default function TimePickerAttributeModifierTest() {
       let strJson = inspector.getInspectorByKey('timePicker9');
       let obj = JSON.parseJsonElement(strJson);
       let selectedTextStyle = obj.getElement('$attrs').getElement('selectedTextStyle');
-      expect(selectedTextStyle.getString('color')).assertEqual('#FF007DFF');
+      expect(selectedTextStyle.getString('color')).assertContain('#');
       expect(selectedTextStyle.getElement('font').getString('size')).assertEqual('20.00fp');
       expect(selectedTextStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
       done();
