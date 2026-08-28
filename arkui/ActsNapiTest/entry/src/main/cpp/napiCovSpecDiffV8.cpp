@@ -12,10 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 #include "napi/native_api.h"
 #include "common/native_common.h"
-#include <securec.h>
 #include <cstring>
 #include <climits>
 
@@ -40,11 +38,6 @@ static napi_value CreateInt32(napi_env env, int32_t value)
     return result;
 }
 
-// ============================================================================
-// SpecDiff-D01: napi_reference_unref 在 refcount=0 时 OH 返回 napi_ok（差异已确认）
-// Node.js 18: 返回 napi_generic_failure
-// OH: 返回 napi_ok
-// ============================================================================
 static napi_value SpecDiffV8D01(napi_env env, napi_callback_info info)
 {
     napi_value obj = nullptr;
@@ -66,11 +59,6 @@ static napi_value SpecDiffV8D01(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D02: napi_reference_ref 对弱引用 OH 无条件递增（差异已确认）
-// Node.js 18: 句柄为空时 Ref() 返回 0，不递增
-// OH: 无条件 ++refCount_，产生"幽灵计数"
-// ============================================================================
 static napi_value SpecDiffV8D02(napi_env env, napi_callback_info info)
 {
     napi_value obj = nullptr;
@@ -89,11 +77,6 @@ static napi_value SpecDiffV8D02(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D03: napi_throw 对非 Error 值 OH 返回 napi_invalid_arg（差异已确认）
-// Node.js 18: 可抛出任意 JS 值
-// OH: 要求 IsError()，非 Error 返回 napi_invalid_arg
-// ============================================================================
 static napi_value SpecDiffV8D03(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -111,11 +94,6 @@ static napi_value SpecDiffV8D03(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D04: napi_get_and_clear_last_exception 无异常时 OH 不写入 undefined（差异已确认）
-// Node.js 18: 写入 undefined 到 *result
-// OH: 不写入 *result，保留原值
-// ============================================================================
 static napi_value SpecDiffV8D04(napi_env env, napi_callback_info info)
 {
     napi_value sentinel = nullptr;
@@ -131,11 +109,6 @@ static napi_value SpecDiffV8D04(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D05: napi_create_arraybuffer 的 data 为 nullptr 时 OH 返回 napi_invalid_arg（差异已确认）
-// Node.js 18: data 可为 nullptr
-// OH: CHECK_ARG(env, data) 将其设为必填
-// ============================================================================
 static napi_value SpecDiffV8D05(napi_env env, napi_callback_info info)
 {
     napi_value arraybuffer = nullptr;
@@ -144,11 +117,6 @@ static napi_value SpecDiffV8D05(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D06: napi_get_arraybuffer_info 的 byte_length 为 nullptr 时 OH 返回 napi_invalid_arg（差异已确认）
-// Node.js 18: byte_length 可独立为 nullptr
-// OH: byte_length 为必填
-// ============================================================================
 static napi_value SpecDiffV8D06(napi_env env, napi_callback_info info)
 {
     napi_value arraybuffer = nullptr;
@@ -160,18 +128,17 @@ static napi_value SpecDiffV8D06(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D07: napi_create_buffer_copy 的 result_data 为 nullptr 时 OH 返回 napi_invalid_arg（差异已确认）
-// Node.js 18: result_data 可选
-// OH: result_data 为必填
-// ============================================================================
 static napi_value SpecDiffV8D07(napi_env env, napi_callback_info info)
 {
     napi_value srcBuf = nullptr;
     void *srcData = nullptr;
     napi_create_buffer(env, SPEC_DIFF_TEST_BUFFER_SIZE, &srcData, &srcBuf);
     if (srcData != nullptr) {
-        memcpy_s(srcData, SPEC_DIFF_TEST_BUFFER_SIZE, "test", SPEC_DIFF_TEST_BUFFER_SIZE);
+        const char *testStr = "test";
+        char *dst = static_cast<char *>(srcData);
+        for (size_t i = 0; i < SPEC_DIFF_TEST_BUFFER_SIZE; i++) {
+            dst[i] = testStr[i];
+        }
     }
 
     napi_value dstBuf = nullptr;
@@ -180,12 +147,6 @@ static napi_value SpecDiffV8D07(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D08: napi_get_buffer_info 传入 nullptr data/length 时 OH 崩溃（差异已确认）
-// Node.js 18: data 和 length 可独立为 nullptr
-// OH: 无条件解引用两者 -> 崩溃
-// 注意：传入 nullptr 会导致 OH 崩溃，此用例仅验证有效参数路径正常
-// ============================================================================
 static napi_value SpecDiffV8D08ValidParams(napi_env env, napi_callback_info info)
 {
     napi_value buf = nullptr;
@@ -199,11 +160,6 @@ static napi_value SpecDiffV8D08ValidParams(napi_env env, napi_callback_info info
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D09: napi_create_external_arraybuffer 的 finalize_cb 为 nullptr 时 OH 返回 napi_invalid_arg（差异已确认）
-// Node.js 18: finalize_callback 可为 nullptr
-// OH: CHECK_ARG(env, finalize_cb) 将其设为必填
-// ============================================================================
 static napi_value SpecDiffV8D09(napi_env env, napi_callback_info info)
 {
     static uint8_t externalData[SPEC_DIFF_TEST_BUFFER_SIZE] = {1, 2, 3, 4};
@@ -214,11 +170,6 @@ static napi_value SpecDiffV8D09(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D10: 字符串创建接口 length=0, str=nullptr 时 OH 返回 napi_invalid_arg（差异已确认）
-// Node.js 18: length==0 + nullptr 合法，创建空字符串
-// OH: 无条件 CHECK_ARG(env, str)
-// ============================================================================
 static napi_value SpecDiffV8D10Latin1(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -243,11 +194,6 @@ static napi_value SpecDiffV8D10Utf16(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D11: napi_create_string_latin1 按 UTF-8 解码而非 Latin-1（差异已确认）
-// Node.js 18: 使用 V8 NewFromOneByte，0xE9->U+00E9(e)
-// OH: 使用 NewFromUtf8，0x80-0xFF 被误解码，结果与 Latin-1 不同
-// ============================================================================
 static napi_value SpecDiffV8D11(napi_env env, napi_callback_info info)
 {
     const unsigned char latin1Bytes[] = {0xE9, 0xE7, 0xF1, 0x00};
@@ -266,11 +212,6 @@ static napi_value SpecDiffV8D11(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D12: 字符串创建接口 length > INT_MAX 时 OH 不返回 napi_invalid_arg（差异已确认）
-// Node.js 18: length > INT_MAX 返回 napi_invalid_arg
-// OH: 未做 INT_MAX 校验
-// ============================================================================
 static napi_value SpecDiffV8D12Latin1(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -287,11 +228,6 @@ static napi_value SpecDiffV8D12Utf8(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D13: napi_create_string_utf16 显式长度模式仍扫描 NUL 终止符（差异已确认）
-// Node.js 18: 显式长度直传，不要求 NUL 结尾
-// OH: 无条件执行 char_traits::length(str)，NUL 后内容被截断
-// ============================================================================
 static napi_value SpecDiffV8D13(napi_env env, napi_callback_info info)
 {
     char16_t buffer[] = {u'A', u'B', u'C', u'D', u'\0', u'E', u'F', u'G', u'\0'};
@@ -316,11 +252,6 @@ static napi_value SpecDiffV8D13(napi_env env, napi_callback_info info)
     return intVal;
 }
 
-// ============================================================================
-// SpecDiff-D14: napi_create_function 忽略 length，按 NUL 终止截断（差异已确认）
-// Node.js 18: 使用显式 length，含嵌入 NUL -> name 长度=5
-// OH: 忽略 length，strlen 截断 -> name 长度=2
-// ============================================================================
 static napi_value SpecDiffV8D14Callback(napi_env env, napi_callback_info info)
 {
     napi_value undefined = nullptr;
@@ -348,11 +279,6 @@ static napi_value SpecDiffV8D14(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D15: napi_define_class 使用 strlen 二次截断（差异已确认）
-// Node.js 18: 显式长度直传 -> name 长度=5
-// OH: min(length, strlen(name)) -> name 长度=2
-// ============================================================================
 static napi_value SpecDiffV8D15Constructor(napi_env env, napi_callback_info info)
 {
     napi_value thisArg = nullptr;
@@ -380,11 +306,6 @@ static napi_value SpecDiffV8D15(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D16: napi_get_cb_info 对 argv!=nullptr && argc==nullptr 静默返回 napi_ok（差异已确认）
-// Node.js 18: 返回 napi_invalid_arg
-// OH: 静默忽略，返回 napi_ok
-// ============================================================================
 static napi_value SpecDiffV8D16(napi_env env, napi_callback_info info)
 {
     napi_value argv[1] = {nullptr};
@@ -393,11 +314,6 @@ static napi_value SpecDiffV8D16(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D17: napi_is_detached_arraybuffer 对非 ArrayBuffer 返回 napi_invalid_arg（差异已确认）
-// Node.js 18: 返回 napi_ok，写入 false
-// OH: 返回 napi_invalid_arg，不写入结果
-// ============================================================================
 static napi_value SpecDiffV8D17(napi_env env, napi_callback_info info)
 {
     napi_value obj = nullptr;
@@ -409,11 +325,6 @@ static napi_value SpecDiffV8D17(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D18: napi_create_async_work 的 complete 为 nullptr 时 OH 返回 napi_invalid_arg（差异已确认）
-// Node.js 18: complete 可为 nullptr
-// OH: CHECK_ARG(env, complete) 将其设为必填
-// ============================================================================
 static void SpecDiffV8D18Execute(napi_env env, void *data)
 {
 }
@@ -433,20 +344,6 @@ static napi_value SpecDiffV8D18(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D19: napi_queue_async_work 忽略入队失败，固定返回 napi_ok（差异已确认，源码级）
-// Node.js 18: uv_queue_work 失败 -> CHECK_EQ 终止进程
-// OH: 忽略 Queue() 返回值，固定返回 napi_ok
-// ============================================================================
-// SpecDiff-D19-DEL: napi_queue_async_work 固定返回 napi_ok（源码级差异，设备测试会导致延迟崩溃，已删除）
-// SpecDiff-D21-DEL: napi_acquire_threadsafe_function 关闭后返回值（源码级差异，设备测试会导致延迟崩溃，已删除）
-// ============================================================================
-
-// ============================================================================
-// SpecDiff-D19: napi_make_callback 对原始值 receiver 返回 napi_object_expected（差异已确认）
-// Node.js 18: 使用 ToObject() 装箱
-// OH: 要求 IsObject()，返回 napi_object_expected
-// ============================================================================
 static napi_value SpecDiffV8D19Cb(napi_env env, napi_callback_info info)
 {
     napi_value undefined = nullptr;
@@ -468,13 +365,6 @@ static napi_value SpecDiffV8D19(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D21: napi_acquire_threadsafe_function 关闭后返回 napi_generic_failure 而非 napi_closing（差异已确认）
-// Node.js 18: 返回 napi_closing
-// OH: 所有非 OK 统一映射为 napi_generic_failure
-// ============================================================================
-// SpecDiff-D20: napi_get_version OH 返回的版本号为 8（Node.js 18 返回 9）（差异已确认）
-// ============================================================================
 static napi_value SpecDiffV8D20(napi_env env, napi_callback_info info)
 {
     uint32_t version = 0;
@@ -485,11 +375,6 @@ static napi_value SpecDiffV8D20(napi_env env, napi_callback_info info)
     return result;
 }
 
-// ============================================================================
-// SpecDiff-D21: napi_is_array 将 SendableArray 识别为数组（差异已确认）
-// Node.js 18: 仅识别 V8 Array，SendableArray -> false
-// OH: 额外识别 SharedArray -> true
-// ============================================================================
 static napi_value SpecDiffV8D21(napi_env env, napi_callback_info info)
 {
     napi_value sendableArray = nullptr;
@@ -504,11 +389,6 @@ static napi_value SpecDiffV8D21(napi_env env, napi_callback_info info)
     return CreateBoolean(env, confirmed);
 }
 
-// ============================================================================
-// SpecDiff-D22: napi_is_arraybuffer 将 SendableArrayBuffer 识别为 ArrayBuffer（差异已确认）
-// Node.js 18: 仅识别 V8 ArrayBuffer，SendableArrayBuffer -> false
-// OH: 额外识别 SendableArrayBuffer -> true
-// ============================================================================
 static napi_value SpecDiffV8D22(napi_env env, napi_callback_info info)
 {
     napi_value sendableAb = nullptr;
