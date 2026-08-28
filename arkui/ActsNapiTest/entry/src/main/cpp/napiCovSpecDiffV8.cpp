@@ -19,6 +19,9 @@
 #include <climits>
 
 static const size_t UTF16_BUFFER_SIZE = 8;
+static const int32_t SPEC_DIFF_TEST_BYTE_LENGTH = 16;
+static const int32_t SPEC_DIFF_TEST_REF_COUNT = 2;
+static const int32_t SPEC_DIFF_TEST_BUFFER_SIZE = 4;
 
 static napi_value CreateBoolean(napi_env env, bool value)
 {
@@ -44,7 +47,7 @@ static napi_value SpecDiffV8D01(napi_env env, napi_callback_info info)
     napi_value obj = nullptr;
     napi_create_object(env, &obj);
     napi_ref ref = nullptr;
-    napi_create_reference(env, obj, 2, &ref);
+    napi_create_reference(env, obj, SPEC_DIFF_TEST_REF_COUNT, &ref);
 
     uint32_t refCount = 0;
     napi_status status = napi_reference_unref(env, ref, &refCount);
@@ -133,7 +136,7 @@ static napi_value SpecDiffV8D04(napi_env env, napi_callback_info info)
 static napi_value SpecDiffV8D05(napi_env env, napi_callback_info info)
 {
     napi_value arraybuffer = nullptr;
-    napi_status status = napi_create_arraybuffer(env, 16, nullptr, &arraybuffer);
+    napi_status status = napi_create_arraybuffer(env, SPEC_DIFF_TEST_BYTE_LENGTH, nullptr, &arraybuffer);
     bool confirmed = (status == napi_invalid_arg);
     return CreateBoolean(env, confirmed);
 }
@@ -147,7 +150,7 @@ static napi_value SpecDiffV8D06(napi_env env, napi_callback_info info)
 {
     napi_value arraybuffer = nullptr;
     void *data = nullptr;
-    napi_create_arraybuffer(env, 16, &data, &arraybuffer);
+    napi_create_arraybuffer(env, SPEC_DIFF_TEST_BYTE_LENGTH, &data, &arraybuffer);
 
     napi_status status = napi_get_arraybuffer_info(env, arraybuffer, &data, nullptr);
     bool confirmed = (status == napi_invalid_arg);
@@ -163,13 +166,13 @@ static napi_value SpecDiffV8D07(napi_env env, napi_callback_info info)
 {
     napi_value srcBuf = nullptr;
     void *srcData = nullptr;
-    napi_create_buffer(env, 4, &srcData, &srcBuf);
+    napi_create_buffer(env, SPEC_DIFF_TEST_BUFFER_SIZE, &srcData, &srcBuf);
     if (srcData != nullptr) {
-        memcpy(srcData, "test", 4);
+        memcpy(srcData, "test", SPEC_DIFF_TEST_BUFFER_SIZE);
     }
 
     napi_value dstBuf = nullptr;
-    napi_status status = napi_create_buffer_copy(env, 4, srcData, nullptr, &dstBuf);
+    napi_status status = napi_create_buffer_copy(env, SPEC_DIFF_TEST_BUFFER_SIZE, srcData, nullptr, &dstBuf);
     bool confirmed = (status == napi_invalid_arg);
     return CreateBoolean(env, confirmed);
 }
@@ -184,12 +187,12 @@ static napi_value SpecDiffV8D08ValidParams(napi_env env, napi_callback_info info
 {
     napi_value buf = nullptr;
     void *bufData = nullptr;
-    napi_create_buffer(env, 4, &bufData, &buf);
+    napi_create_buffer(env, SPEC_DIFF_TEST_BUFFER_SIZE, &bufData, &buf);
 
     void *data = nullptr;
     size_t length = 0;
     napi_status status = napi_get_buffer_info(env, buf, &data, &length);
-    bool confirmed = (status == napi_ok && data != nullptr && length == 4);
+    bool confirmed = (status == napi_ok && data != nullptr && length == SPEC_DIFF_TEST_BUFFER_SIZE);
     return CreateBoolean(env, confirmed);
 }
 
@@ -200,9 +203,9 @@ static napi_value SpecDiffV8D08ValidParams(napi_env env, napi_callback_info info
 // ============================================================================
 static napi_value SpecDiffV8D09(napi_env env, napi_callback_info info)
 {
-    static uint8_t externalData[4] = {1, 2, 3, 4};
+    static uint8_t externalData[SPEC_DIFF_TEST_BUFFER_SIZE] = {1, 2, 3, 4};
     napi_value arraybuffer = nullptr;
-    napi_status status = napi_create_external_arraybuffer(env, externalData, 4, nullptr, nullptr, &arraybuffer);
+    napi_status status = napi_create_external_arraybuffer(env, externalData, SPEC_DIFF_TEST_BUFFER_SIZE, nullptr, nullptr, &arraybuffer);
     bool confirmed = (status == napi_invalid_arg);
     return CreateBoolean(env, confirmed);
 }

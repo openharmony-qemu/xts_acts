@@ -124,7 +124,8 @@ static napi_value DefineSendableClassRetVal(napi_env env, napi_callback_info inf
     napi_handle_scope scope = nullptr;
     napi_open_handle_scope(env, &scope);
     napi_value result = nullptr;
-    napi_status status = napi_define_sendable_class(env, "SendableClass", NAPI_AUTO_LENGTH, Constructor, nullptr, 0, nullptr, nullptr, &result);
+    napi_status status = napi_define_sendable_class(env, "SendableClass", NAPI_AUTO_LENGTH,
+        Constructor, nullptr, 0, nullptr, nullptr, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_close_handle_scope(env, scope);
     return Ret(env, ret);
@@ -137,7 +138,8 @@ static napi_value DefineSendableClassStable(napi_env env, napi_callback_info inf
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value result = nullptr;
-        napi_status status = napi_define_sendable_class(env, "SendableClass", NAPI_AUTO_LENGTH, Constructor, nullptr, 0, nullptr, nullptr, &result);
+        napi_status status = napi_define_sendable_class(env, "SendableClass", NAPI_AUTO_LENGTH,
+            Constructor, nullptr, 0, nullptr, nullptr, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -173,7 +175,8 @@ static napi_value DefineSendableClassMultiCtx(napi_env env, napi_callback_info i
         return Ret(env, 0);
     }
     napi_value result = nullptr;
-    napi_status status = napi_define_sendable_class(env, "SendableClass", NAPI_AUTO_LENGTH, Constructor, nullptr, 0, nullptr, nullptr, &result);
+    napi_status status = napi_define_sendable_class(env, "SendableClass", NAPI_AUTO_LENGTH,
+        Constructor, nullptr, 0, nullptr, nullptr, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);

@@ -19,6 +19,7 @@
 #include <atomic>
 
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const int32_t PRIMITIVE_TEST_INT_VALUE = 42;
 
 static napi_value GetBooleanAbnormal(napi_env env, napi_callback_info info)
 {
@@ -642,7 +643,7 @@ static napi_value CoerceToStringRetVal(napi_env env, napi_callback_info info)
     napi_handle_scope scope = nullptr;
     napi_open_handle_scope(env, &scope);
     napi_value num = nullptr;
-    napi_create_int32(env, 42, &num);
+    napi_create_int32(env, PRIMITIVE_TEST_INT_VALUE, &num);
     napi_value result = nullptr;
     napi_status status = napi_coerce_to_string(env, num, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
@@ -657,7 +658,7 @@ static napi_value CoerceToStringStable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value num = nullptr;
-        napi_create_int32(env, 42, &num);
+        napi_create_int32(env, PRIMITIVE_TEST_INT_VALUE, &num);
         napi_value result = nullptr;
         napi_status status = napi_coerce_to_string(env, num, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
@@ -695,7 +696,7 @@ static napi_value CoerceToStringMultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value num = nullptr;
-    napi_create_int32(env, 42, &num);
+    napi_create_int32(env, PRIMITIVE_TEST_INT_VALUE, &num);
     napi_value result = nullptr;
     napi_status status = napi_coerce_to_string(env, num, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
@@ -715,7 +716,7 @@ static napi_value CoerceToStringRuntime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value num = nullptr;
-        napi_create_int32(newEnv, 42, &num);
+        napi_create_int32(newEnv, PRIMITIVE_TEST_INT_VALUE, &num);
         napi_value napiRet = nullptr;
         napi_status status = napi_coerce_to_string(newEnv, num, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;

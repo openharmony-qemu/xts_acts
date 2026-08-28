@@ -20,6 +20,7 @@
 
 static const int32_t STABLE_LOOP_COUNT = 10;
 static const int32_t BASIC_NUM_TEST_VALUE = 42;
+static const double BASIC_NUM_TEST_DOUBLE_VALUE = 3.14;
 
 static napi_value CreateInt32Stable(napi_env env, napi_callback_info info)
 {
@@ -293,7 +294,7 @@ static napi_value CreateDoubleRetVal(napi_env env, napi_callback_info info)
     napi_handle_scope scope = nullptr;
     napi_open_handle_scope(env, &scope);
     napi_value result = nullptr;
-    napi_status status = napi_create_double(env, 3.14, &result);
+    napi_status status = napi_create_double(env, BASIC_NUM_TEST_DOUBLE_VALUE, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_close_handle_scope(env, scope);
     return Ret(env, ret);
@@ -306,7 +307,7 @@ static napi_value CreateDoubleStable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value result = nullptr;
-        napi_status status = napi_create_double(env, 3.14, &result);
+        napi_status status = napi_create_double(env, BASIC_NUM_TEST_DOUBLE_VALUE, &result);
         int32_t singleRet = (status == napi_ok) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
@@ -342,7 +343,7 @@ static napi_value CreateDoubleMultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value result = nullptr;
-    napi_status status = napi_create_double(env, 3.14, &result);
+    napi_status status = napi_create_double(env, BASIC_NUM_TEST_DOUBLE_VALUE, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -360,7 +361,7 @@ static napi_value CreateDoubleRuntime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_double(newEnv, 3.14, &napiRet);
+        napi_status status = napi_create_double(newEnv, BASIC_NUM_TEST_DOUBLE_VALUE, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -671,7 +672,7 @@ static napi_value GetValueDoubleRetVal(napi_env env, napi_callback_info info)
     napi_handle_scope scope = nullptr;
     napi_open_handle_scope(env, &scope);
     napi_value num = nullptr;
-    napi_create_double(env, 3.14, &num);
+    napi_create_double(env, BASIC_NUM_TEST_DOUBLE_VALUE, &num);
     double val = 0.0;
     napi_status status = napi_get_value_double(env, num, &val);
     int32_t ret = (status == napi_ok) ? 1 : 0;
@@ -686,7 +687,7 @@ static napi_value GetValueDoubleStable(napi_env env, napi_callback_info info)
         napi_handle_scope loopScope = nullptr;
         napi_open_handle_scope(env, &loopScope);
         napi_value num = nullptr;
-        napi_create_double(env, 3.14, &num);
+        napi_create_double(env, BASIC_NUM_TEST_DOUBLE_VALUE, &num);
         double val = 0.0;
         napi_status status = napi_get_value_double(env, num, &val);
         int32_t singleRet = (status == napi_ok && val > 3.0) ? 1 : 0;
@@ -724,7 +725,7 @@ static napi_value GetValueDoubleMultiCtx(napi_env env, napi_callback_info info)
         return Ret(env, 0);
     }
     napi_value num = nullptr;
-    napi_create_double(env, 3.14, &num);
+    napi_create_double(env, BASIC_NUM_TEST_DOUBLE_VALUE, &num);
     double val = 0.0;
     napi_status status = napi_get_value_double(env, num, &val);
     int32_t ret = (status == napi_ok && val > 3.0) ? 1 : 0;
@@ -744,7 +745,7 @@ static napi_value GetValueDoubleRuntime(napi_env env, napi_callback_info info)
             return;
         }
         napi_value num = nullptr;
-        napi_create_double(newEnv, 3.14, &num);
+        napi_create_double(newEnv, BASIC_NUM_TEST_DOUBLE_VALUE, &num);
         double val = 0.0;
         napi_status status = napi_get_value_double(newEnv, num, &val);
         int32_t ret = (status == napi_ok && val > 3.0) ? 1 : 0;

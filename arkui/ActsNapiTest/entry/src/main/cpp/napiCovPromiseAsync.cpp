@@ -18,6 +18,7 @@
 #include <thread>
 #include <atomic>
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const int32_t PROMISE_ASYNC_TEST_INT_VALUE = 42;
 
 static void AsyncExecute(napi_env env, void* data)
 {
@@ -129,7 +130,7 @@ static napi_value ResolveDeferredStable(napi_env env, napi_callback_info info)
         napi_deferred deferred = nullptr;
         napi_create_promise(env, &deferred, &promise);
         napi_value val = nullptr;
-        napi_create_int32(env, 42, &val);
+        napi_create_int32(env, PROMISE_ASYNC_TEST_INT_VALUE, &val);
         napi_status status = napi_resolve_deferred(env, deferred, val);
         int32_t singleRet = status == napi_ok ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
@@ -169,7 +170,7 @@ static napi_value ResolveDeferredMultiCtx(napi_env env, napi_callback_info info)
     napi_deferred deferred = nullptr;
     napi_create_promise(env, &deferred, &promise);
     napi_value val = nullptr;
-    napi_create_int32(env, 42, &val);
+    napi_create_int32(env, PROMISE_ASYNC_TEST_INT_VALUE, &val);
     napi_status status = napi_resolve_deferred(env, deferred, val);
     int32_t ret = status == napi_ok ? 1 : 0;
     napi_switch_ark_context(env);
@@ -191,7 +192,7 @@ static napi_value ResolveDeferredRuntime(napi_env env, napi_callback_info info)
         napi_deferred deferred = nullptr;
         napi_create_promise(newEnv, &deferred, &promise);
         napi_value val = nullptr;
-        napi_create_int32(newEnv, 42, &val);
+        napi_create_int32(newEnv, PROMISE_ASYNC_TEST_INT_VALUE, &val);
         napi_status status = napi_resolve_deferred(newEnv, deferred, val);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);

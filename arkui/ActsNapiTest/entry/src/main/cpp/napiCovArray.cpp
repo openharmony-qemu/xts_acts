@@ -22,6 +22,7 @@ static const int32_t STABLE_LOOP_COUNT = 10;
 static const int32_t ARRAY_BUFFER_BYTE_LENGTH = 16;
 static const int32_t DATAVIEW_BYTE_LENGTH = 8;
 static const int32_t ARRAY_LENGTH = 3;
+static const int32_t ARRAY_TEST_INT_VALUE = 42;
 
 static napi_value CreateArrayRetVal(napi_env env, napi_callback_info info)
 {
@@ -391,7 +392,7 @@ static napi_value SetElementStable(napi_env env, napi_callback_info info)
         napi_value arr = nullptr;
         napi_create_array(env, &arr);
         napi_value num = nullptr;
-        napi_create_int32(env, 42, &num);
+        napi_create_int32(env, ARRAY_TEST_INT_VALUE, &num);
         napi_status status = napi_set_element(env, arr, 0, num);
         int32_t singleRet = status == napi_ok ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
@@ -430,7 +431,7 @@ static napi_value SetElementMultiCtx(napi_env env, napi_callback_info info)
     napi_value arr = nullptr;
     napi_create_array(env, &arr);
     napi_value num = nullptr;
-    napi_create_int32(env, 42, &num);
+    napi_create_int32(env, ARRAY_TEST_INT_VALUE, &num);
     napi_status status = napi_set_element(env, arr, 0, num);
     int32_t ret = status == napi_ok ? 1 : 0;
     napi_switch_ark_context(env);
@@ -451,7 +452,7 @@ static napi_value SetElementRuntime(napi_env env, napi_callback_info info)
         napi_value arr = nullptr;
         napi_create_array(newEnv, &arr);
         napi_value num = nullptr;
-        napi_create_int32(newEnv, 42, &num);
+        napi_create_int32(newEnv, ARRAY_TEST_INT_VALUE, &num);
         napi_status status = napi_set_element(newEnv, arr, 0, num);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);
@@ -482,7 +483,7 @@ static napi_value GetElementStable(napi_env env, napi_callback_info info)
         napi_value arr = nullptr;
         napi_create_array(env, &arr);
         napi_value num = nullptr;
-        napi_create_int32(env, 42, &num);
+        napi_create_int32(env, ARRAY_TEST_INT_VALUE, &num);
         napi_set_element(env, arr, 0, num);
         napi_value result = nullptr;
         napi_status status = napi_get_element(env, arr, 0, &result);
@@ -523,7 +524,7 @@ static napi_value GetElementMultiCtx(napi_env env, napi_callback_info info)
     napi_value arr = nullptr;
     napi_create_array(env, &arr);
     napi_value num = nullptr;
-    napi_create_int32(env, 42, &num);
+    napi_create_int32(env, ARRAY_TEST_INT_VALUE, &num);
     napi_set_element(env, arr, 0, num);
     napi_value result = nullptr;
     napi_status status = napi_get_element(env, arr, 0, &result);
@@ -546,7 +547,7 @@ static napi_value GetElementRuntime(napi_env env, napi_callback_info info)
         napi_value arr = nullptr;
         napi_create_array(newEnv, &arr);
         napi_value num = nullptr;
-        napi_create_int32(newEnv, 42, &num);
+        napi_create_int32(newEnv, ARRAY_TEST_INT_VALUE, &num);
         napi_set_element(newEnv, arr, 0, num);
         napi_value napiRet = nullptr;
         napi_status status = napi_get_element(newEnv, arr, 0, &napiRet);

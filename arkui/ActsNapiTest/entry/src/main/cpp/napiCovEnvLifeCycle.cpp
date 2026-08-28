@@ -222,8 +222,9 @@ static napi_value AddEnvCleanupHookStable(napi_env env, napi_callback_info info)
     for (int32_t i = 0; i < STABLE_LOOP_COUNT; i++) {
         napi_status status = napi_add_env_cleanup_hook(env, [](void* d) { (void)d; }, nullptr);
         int32_t singleRet = status == napi_ok ? 1 : 0;
-        if (status == napi_ok) { napi_remove_env_cleanup_hook(env, [](void* d) {
-            (void)d;
+        if (status == napi_ok) {
+            napi_remove_env_cleanup_hook(env, [](void* d) {
+                (void)d;
             }, nullptr);
         }
         if (singleRet == 0) {
@@ -260,9 +261,11 @@ static napi_value AddEnvCleanupHookMultiCtx(napi_env env, napi_callback_info inf
     }
     napi_status status = napi_add_env_cleanup_hook(env, [](void* d) { (void)d; }, nullptr);
     int32_t ret = status == napi_ok ? 1 : 0;
-    if (status == napi_ok) { napi_remove_env_cleanup_hook(env, [](void* d) {
-        (void)d;
+    if (status == napi_ok) {
+        napi_remove_env_cleanup_hook(env, [](void* d) {
+            (void)d;
         }, nullptr);
+
     }
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -281,8 +284,9 @@ static napi_value AddEnvCleanupHookRuntime(napi_env env, napi_callback_info info
         }
         napi_status status = napi_add_env_cleanup_hook(newEnv, [](void* d) { (void)d; }, nullptr);
         int32_t ret = status == napi_ok ? 1 : 0;
-        if (status == napi_ok) { napi_remove_env_cleanup_hook(newEnv, [](void* d) {
-            (void)d;
+        if (status == napi_ok) {
+            napi_remove_env_cleanup_hook(newEnv, [](void* d) {
+                (void)d;
             }, nullptr);
         }
         result.store(ret);
@@ -397,8 +401,9 @@ static napi_value AddAsyncCleanupHookStable(napi_env env, napi_callback_info inf
     for (int32_t i = 0; i < STABLE_LOOP_COUNT; i++) {
         napi_async_cleanup_hook_handle hook = nullptr;
         napi_status status = napi_add_async_cleanup_hook(env,
-            [](napi_async_cleanup_hook_handle h, void* d) { (void)d;
-            napi_remove_async_cleanup_hook(h);
+            [](napi_async_cleanup_hook_handle h, void* d) {
+                (void)d;
+                napi_remove_async_cleanup_hook(h);
             }, nullptr, &hook);
         int32_t singleRet = status == napi_ok ? 1 : 0;
         if (singleRet == 0) {
@@ -435,8 +440,9 @@ static napi_value AddAsyncCleanupHookMultiCtx(napi_env env, napi_callback_info i
     }
     napi_async_cleanup_hook_handle hook = nullptr;
     napi_status status = napi_add_async_cleanup_hook(env,
-        [](napi_async_cleanup_hook_handle h, void* d) { (void)d;
-        napi_remove_async_cleanup_hook(h);
+        [](napi_async_cleanup_hook_handle h, void* d) {
+            (void)d;
+            napi_remove_async_cleanup_hook(h);
         }, nullptr, &hook);
     int32_t ret = status == napi_ok ? 1 : 0;
     napi_switch_ark_context(env);
@@ -456,8 +462,9 @@ static napi_value AddAsyncCleanupHookRuntime(napi_env env, napi_callback_info in
         }
         napi_async_cleanup_hook_handle hook = nullptr;
         napi_status status = napi_add_async_cleanup_hook(newEnv,
-            [](napi_async_cleanup_hook_handle h, void* d) { (void)d;
-            napi_remove_async_cleanup_hook(h);
+            [](napi_async_cleanup_hook_handle h, void* d) {
+                (void)d;
+                napi_remove_async_cleanup_hook(h);
             }, nullptr, &hook);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);

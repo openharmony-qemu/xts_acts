@@ -19,6 +19,7 @@
 #include <atomic>
 
 static const int32_t STABLE_LOOP_COUNT = 10;
+static const int32_t ARRAYBUFFER_TEST_BYTE_LENGTH = 16;
 
 static napi_value CreateArraybufferRetVal(napi_env env, napi_callback_info info)
 {
@@ -26,7 +27,7 @@ static napi_value CreateArraybufferRetVal(napi_env env, napi_callback_info info)
     napi_open_handle_scope(env, &scope);
     void* data = nullptr;
     napi_value result = nullptr;
-    napi_status status = napi_create_arraybuffer(env, 16, &data, &result);
+    napi_status status = napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_close_handle_scope(env, scope);
     return Ret(env, ret);
@@ -58,7 +59,7 @@ static napi_value CreateArraybufferMultiCtx(napi_env env, napi_callback_info inf
     }
     void* data = nullptr;
     napi_value result = nullptr;
-    napi_status status = napi_create_arraybuffer(env, 16, &data, &result);
+    napi_status status = napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &result);
     int32_t ret = (status == napi_ok) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
@@ -77,7 +78,7 @@ static napi_value CreateArraybufferRuntime(napi_env env, napi_callback_info info
         }
         void* data = nullptr;
         napi_value napiRet = nullptr;
-        napi_status status = napi_create_arraybuffer(newEnv, 16, &data, &napiRet);
+        napi_status status = napi_create_arraybuffer(newEnv, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &napiRet);
         int32_t ret = (status == napi_ok) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
@@ -104,7 +105,7 @@ static napi_value GetArraybufferInfoRetVal(napi_env env, napi_callback_info info
     napi_open_handle_scope(env, &scope);
     void* data = nullptr;
     napi_value ab = nullptr;
-    napi_create_arraybuffer(env, 16, &data, &ab);
+    napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
     size_t len = 0;
     void* abData = nullptr;
     napi_status status = napi_get_arraybuffer_info(env, ab, &abData, &len);
@@ -121,11 +122,11 @@ static napi_value GetArraybufferInfoStable(napi_env env, napi_callback_info info
         napi_open_handle_scope(env, &loopScope);
         void* data = nullptr;
         napi_value ab = nullptr;
-        napi_create_arraybuffer(env, 16, &data, &ab);
+        napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
         size_t len = 0;
         void* abData = nullptr;
         napi_status status = napi_get_arraybuffer_info(env, ab, &abData, &len);
-        int32_t singleRet = (status == napi_ok && len == 16) ? 1 : 0;
+        int32_t singleRet = (status == napi_ok && len == ARRAYBUFFER_TEST_BYTE_LENGTH) ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
         if (singleRet == 0) {
             pass = 0;
@@ -161,11 +162,11 @@ static napi_value GetArraybufferInfoMultiCtx(napi_env env, napi_callback_info in
     }
     void* data = nullptr;
     napi_value ab = nullptr;
-    napi_create_arraybuffer(env, 16, &data, &ab);
+    napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
     size_t len = 0;
     void* abData = nullptr;
     napi_status status = napi_get_arraybuffer_info(env, ab, &abData, &len);
-    int32_t ret = (status == napi_ok && len == 16) ? 1 : 0;
+    int32_t ret = (status == napi_ok && len == ARRAYBUFFER_TEST_BYTE_LENGTH) ? 1 : 0;
     napi_switch_ark_context(env);
     napi_destroy_ark_context(env);
     return Ret(env, ret);
@@ -183,11 +184,11 @@ static napi_value GetArraybufferInfoRuntime(napi_env env, napi_callback_info inf
         }
         void* data = nullptr;
         napi_value ab = nullptr;
-        napi_create_arraybuffer(newEnv, 16, &data, &ab);
+        napi_create_arraybuffer(newEnv, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
         size_t len = 0;
         void* abData = nullptr;
         napi_status status = napi_get_arraybuffer_info(newEnv, ab, &abData, &len);
-        int32_t ret = (status == napi_ok && len == 16) ? 1 : 0;
+        int32_t ret = (status == napi_ok && len == ARRAYBUFFER_TEST_BYTE_LENGTH) ? 1 : 0;
         result.store(ret);
         napi_destroy_ark_runtime(&newEnv);
     });
@@ -220,7 +221,7 @@ static napi_value IsArraybufferRetVal(napi_env env, napi_callback_info info)
     napi_open_handle_scope(env, &scope);
     void* data = nullptr;
     napi_value ab = nullptr;
-    napi_create_arraybuffer(env, 16, &data, &ab);
+    napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
     bool isAB = false;
     napi_status status = napi_is_arraybuffer(env, ab, &isAB);
     int32_t ret = (status == napi_ok) ? 1 : 0;
@@ -236,7 +237,7 @@ static napi_value IsArraybufferStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         void* data = nullptr;
         napi_value ab = nullptr;
-        napi_create_arraybuffer(env, 16, &data, &ab);
+        napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
         bool isAB = false;
         napi_status status = napi_is_arraybuffer(env, ab, &isAB);
         int32_t singleRet = (status == napi_ok && isAB) ? 1 : 0;
@@ -275,7 +276,7 @@ static napi_value IsArraybufferMultiCtx(napi_env env, napi_callback_info info)
     }
     void* data = nullptr;
     napi_value ab = nullptr;
-    napi_create_arraybuffer(env, 16, &data, &ab);
+    napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
     bool isAB = false;
     napi_status status = napi_is_arraybuffer(env, ab, &isAB);
     int32_t ret = (status == napi_ok && isAB) ? 1 : 0;
@@ -296,7 +297,7 @@ static napi_value IsArraybufferRuntime(napi_env env, napi_callback_info info)
         }
         void* data = nullptr;
         napi_value ab = nullptr;
-        napi_create_arraybuffer(newEnv, 16, &data, &ab);
+        napi_create_arraybuffer(newEnv, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
         bool isAB = false;
         napi_status status = napi_is_arraybuffer(newEnv, ab, &isAB);
         int32_t ret = (status == napi_ok && isAB) ? 1 : 0;
@@ -327,7 +328,7 @@ static napi_value DetachArraybufferStable(napi_env env, napi_callback_info info)
         napi_open_handle_scope(env, &loopScope);
         void* data = nullptr;
         napi_value ab = nullptr;
-        napi_create_arraybuffer(env, 16, &data, &ab);
+        napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
         napi_status status = napi_detach_arraybuffer(env, ab);
         int32_t singleRet = status == napi_ok ? 1 : 0;
         napi_close_handle_scope(env, loopScope);
@@ -365,7 +366,7 @@ static napi_value DetachArraybufferMultiCtx(napi_env env, napi_callback_info inf
     }
     void* data = nullptr;
     napi_value ab = nullptr;
-    napi_create_arraybuffer(env, 16, &data, &ab);
+    napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
     napi_status status = napi_detach_arraybuffer(env, ab);
     int32_t ret = status == napi_ok ? 1 : 0;
     napi_switch_ark_context(env);
@@ -385,7 +386,7 @@ static napi_value DetachArraybufferRuntime(napi_env env, napi_callback_info info
         }
         void* data = nullptr;
         napi_value ab = nullptr;
-        napi_create_arraybuffer(newEnv, 16, &data, &ab);
+        napi_create_arraybuffer(newEnv, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
         napi_status status = napi_detach_arraybuffer(newEnv, ab);
         int32_t ret = status == napi_ok ? 1 : 0;
         result.store(ret);
@@ -415,7 +416,7 @@ static napi_value IsDetachedArraybufferStable(napi_env env, napi_callback_info i
         napi_open_handle_scope(env, &loopScope);
         void* data = nullptr;
         napi_value ab = nullptr;
-        napi_create_arraybuffer(env, 16, &data, &ab);
+        napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
         napi_detach_arraybuffer(env, ab);
         bool isDetached = false;
         napi_status status = napi_is_detached_arraybuffer(env, ab, &isDetached);
@@ -455,7 +456,7 @@ static napi_value IsDetachedArraybufferMultiCtx(napi_env env, napi_callback_info
     }
     void* data = nullptr;
     napi_value ab = nullptr;
-    napi_create_arraybuffer(env, 16, &data, &ab);
+    napi_create_arraybuffer(env, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
     napi_detach_arraybuffer(env, ab);
     bool isDetached = false;
     napi_status status = napi_is_detached_arraybuffer(env, ab, &isDetached);
@@ -477,7 +478,7 @@ static napi_value IsDetachedArraybufferRuntime(napi_env env, napi_callback_info 
         }
         void* data = nullptr;
         napi_value ab = nullptr;
-        napi_create_arraybuffer(newEnv, 16, &data, &ab);
+        napi_create_arraybuffer(newEnv, ARRAYBUFFER_TEST_BYTE_LENGTH, &data, &ab);
         napi_detach_arraybuffer(newEnv, ab);
         bool isDetached = false;
         napi_status status = napi_is_detached_arraybuffer(newEnv, ab, &isDetached);
