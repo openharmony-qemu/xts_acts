@@ -23,7 +23,7 @@ import { RecordData } from '@ohos.base';
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 
 class Utils{
-  static isLoadAndSetupUiTest:boolean = false;
+  static isLoadAndSetupUiTest = false;
 
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
@@ -56,7 +56,7 @@ class Utils{
   }
 
   static registerBaseEvent(testCaseName: string, expected: Object, eventId: Long,
-    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void):void {
+    done: () => void, expectFunction: (backData: events_emitter.EventData, expected: Object) => void) {
     console.info(`[${testCaseName}] START`);
     try {
       let callBack = (backData: events_emitter.EventData) => {
@@ -78,7 +78,7 @@ class Utils{
     }
   }
 
-  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void):void {
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) {
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
       const data = backData?.data as Record<string, RecordData>;
       const action = data['ACTION'];
@@ -134,4 +134,3 @@ export {
   startAbility,
   stopApplication
 }
-
