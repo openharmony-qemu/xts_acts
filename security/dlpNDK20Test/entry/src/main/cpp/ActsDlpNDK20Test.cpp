@@ -107,6 +107,19 @@ static napi_value OsGetDlpPermissionInfo0105(napi_env env, napi_callback_info in
     napi_create_int32(env, ret, &result);
     return result;
 }
+static napi_value OsGetDlpPermissionInfo0106(napi_env env, napi_callback_info info)
+{
+    DLP_FileAccess dlpFileAccess = NO_PERMISSION;
+    DLP_ErrCode ret = OH_DLP_GetDlpPermissionInfo(&dlpFileAccess, nullptr);
+    if (ret == DLP_ErrCode::ERR_OH_SUCCESS) {
+        napi_value result = nullptr;
+        napi_create_int32(env, ret, &result);
+        return result;
+    }
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 static napi_value OsGetOriginalFileName0100(napi_env env, napi_callback_info info)
 {
     const char *fileName = "test.txt";
@@ -170,6 +183,15 @@ static napi_value OsGetOriginalFileName0400(napi_env env, napi_callback_info inf
     napi_create_int32(env, ret, &result);
     return result;
 }
+static napi_value OsGetOriginalFileName0500(napi_env env, napi_callback_info info)
+{
+    const char *fileName = "";
+    char *originalFileName = nullptr;
+    DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
+    napi_value result = nullptr;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 static napi_value OsSetSandboxAppConfig0100(napi_env env, napi_callback_info info)
 {
     const char *configInfo = nullptr;
@@ -199,6 +221,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr},
         {"OsGetDlpPermissionInfo0105", nullptr, OsGetDlpPermissionInfo0105, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"OsGetDlpPermissionInfo0106", nullptr, OsGetDlpPermissionInfo0106, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
         {"OsGetOriginalFileName0100", nullptr, OsGetOriginalFileName0100, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"OsGetOriginalFileName0200", nullptr, OsGetOriginalFileName0200, nullptr, nullptr, nullptr, napi_default,
@@ -206,6 +230,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"OsGetOriginalFileName0300", nullptr, OsGetOriginalFileName0300, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"OsGetOriginalFileName0400", nullptr, OsGetOriginalFileName0400, nullptr, nullptr, nullptr, napi_default,
+         nullptr},
+        {"OsGetOriginalFileName0500", nullptr, OsGetOriginalFileName0500, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"OsSetSandboxAppConfig0100", nullptr, OsSetSandboxAppConfig0100, nullptr, nullptr, nullptr, napi_default,
          nullptr},

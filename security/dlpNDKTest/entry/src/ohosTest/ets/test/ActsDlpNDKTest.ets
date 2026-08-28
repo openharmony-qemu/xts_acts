@@ -198,5 +198,32 @@ export default function ActsDlpNDKTest() {
       }
 
     })
+
+    /**
+     * @tc.name   ohDlpNotSupportedTest
+     * @tc.number ohDlpNotSupportedTest
+     * @tc.desc   Cover the OH_DLP_NOT_SUPPORTED (801) error code returned by DLP NDK APIs when DLP is not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ohDlpNotSupportedTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const OH_DLP_NOT_SUPPORTED = 801;
+      console.log("=======> ohDlpNotSupportedTest  ==========");
+      try{
+        let result = await testNapi.osGetDlpPermissionInfoA();
+        console.log("=======>ohDlpNotSupportedTest result:" + result);
+        if (result === OH_DLP_NOT_SUPPORTED) {
+          expect(result).assertEqual(OH_DLP_NOT_SUPPORTED);
+        } else {
+          expect(result).assertEqual(19100006);
+        }
+        done();
+      } catch (error) {
+        console.error("=======>ohDlpNotSupportedTest error:" + error);
+        expect(false).assertTrue();
+        done();
+      }
+    })
   })
 }
