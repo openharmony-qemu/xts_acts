@@ -72,10 +72,10 @@ it('testAlignContentStartFlexHeightSatisfy_static', Level.LEVEL0, async () => {
       })
       try {
       await CommonFunc.sleep(2000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlex_Start' + '_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlex_Start' + '_flex001');
 
 
   console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement(strJson)));
@@ -133,10 +133,10 @@ it('testAlignContentStartFlexHeightNoSatisfy_static', Level.LEVEL0, async () => 
       })
       try {
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlex_Start' + '_flex001');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlex_Start' + '_flex001');
 
       let AlignContentFlexStart_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001');
       let AlignContentFlexStart_1: RectValue = CommonFunc.getComponentRect('AlignContentFlex_Start' + '_flex001_1');

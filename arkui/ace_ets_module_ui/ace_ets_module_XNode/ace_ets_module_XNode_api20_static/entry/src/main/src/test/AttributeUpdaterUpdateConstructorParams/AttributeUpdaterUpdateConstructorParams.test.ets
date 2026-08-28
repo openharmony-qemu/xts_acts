@@ -79,7 +79,8 @@ export default function AttributeUpdaterUpdateConstructorParams() {
         console.info('AttributeUpdaterUpdateConstructorParamsTest await err: ' + JSON.stringify(err));
       }
 
-      // 閼惧嘲褰嘥ext缂佸嫪娆㈤崚婵嗩潗閸愬懎顔?      let strJson = inspector.getInspectorByKey('text_update_constructor_params');
+      // 閼惧嘲褰嘥ext缂佸嫪娆㈤崚婵嗩潗閸愬懎顔?
+      let strJson = inspector.getInspectorByKey('text_update_constructor_params');
       try {
         await CommonFunc.sleep(1000);
       } catch (err) {

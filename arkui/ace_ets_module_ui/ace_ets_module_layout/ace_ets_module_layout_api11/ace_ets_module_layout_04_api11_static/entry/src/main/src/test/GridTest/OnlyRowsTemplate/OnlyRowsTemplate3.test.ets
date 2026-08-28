@@ -96,11 +96,7 @@ it('SUB_ACE_GRID_OnlyRowsTemplate3_static_0300', Level.LEVEL0, async (done: () =
       } catch (err) {
       console.info('OnlyRowsTemplate3Test await err: ' + JSON.stringify(err));
       }
-      try {
-      await driver.findComponent(ON.id('OnlyRowsTemplate1' + '_button'));
-      } catch (err) {
-      console.info('OnlyRowsTemplate3Test await err: ' + JSON.stringify(err));
-      }
+      let button = await driver.findComponent(ON.id('OnlyRowsTemplate1' + '_button'));
       try {
       await (button?.click() as Promise<void>);
       } catch (err) {

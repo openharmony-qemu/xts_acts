@@ -265,7 +265,7 @@ it('GridItemJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise
       
       console.info('[GridItemJsunit_static_0600] START');
             try {
-        aawait CommonFunc.sleep(200)
+        await CommonFunc.sleep(200);
       } catch (err) {
         console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
       }
@@ -292,7 +292,8 @@ it('GridItemJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise
       
       console.info('[GridItemJsunit_static_0700] START');
             try {
-        awawait CommonFunc.sleep(200)      } catch (err) {
+        await CommonFunc.sleep(200);
+      } catch (err) {
         console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
       }
       let driver = Driver.create()
@@ -320,7 +321,8 @@ it('GridItemJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise
       console.info('[GridItemJsunit_static_0800] START');
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowStart',value:'1'})
             try {
-        awaawait CommonFunc.sleep(2000)     } catch (err) {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
         console.info('GridItemJsunitTest await err: ' + JSON.stringify(err));
       }
       AppStorage.get<MessageManager<string>>('messageManager')?.notify({name:'rowEnd',value:'4'})

@@ -65,11 +65,7 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0300', Level.LEVEL0, async (done: (
       } catch (err) {
       console.info('OnlyColumnsTemplate4Test await err: ' + JSON.stringify(err));
       }
-      try {
-      await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
-      } catch (err) {
-      console.info('OnlyColumnsTemplate4Test await err: ' + JSON.stringify(err));
-      }
+      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
       try {
       await (button?.click() as Promise<void>);
       } catch (err) {
@@ -134,11 +130,7 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate4_static_0500', Level.LEVEL0, async (done: (
       } catch (err) {
       console.info('OnlyColumnsTemplate4Test await err: ' + JSON.stringify(err));
       }
-      try {
-      await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
-      } catch (err) {
-      console.info('OnlyColumnsTemplate4Test await err: ' + JSON.stringify(err));
-      }
+      let button = await driver.findComponent(ON.id('OnlyColumnsTemplate1' + '_button'));
       try {
       await (button?.click() as Promise<void>);
       } catch (err) {

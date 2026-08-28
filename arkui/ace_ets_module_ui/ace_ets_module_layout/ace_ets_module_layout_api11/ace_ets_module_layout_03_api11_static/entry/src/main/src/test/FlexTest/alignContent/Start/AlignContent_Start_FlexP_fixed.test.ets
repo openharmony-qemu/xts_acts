@@ -73,10 +73,10 @@ it('testAlignContentStartFlexFixedSatisfy_static', Level.LEVEL0, async () => {
       })
       try {
       await CommonFunc.sleep(2000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlexStartP_fixed_flex');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexStartP_fixed_flex');
   console.info('flex [getInspectorByKey] is:' + JSON.stringify(JSON.parseJsonElement(strJson)));
   console.info('flex obj.$attrs.constructor is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor')));
       let AlignContentFlexStart_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlexStartP_fixed_flex');
@@ -133,10 +133,10 @@ it('testAlignContentStartFlexFixedNoSatisfy_static', Level.LEVEL0, async () => {
       })
       try {
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlexStartP_fixed_flex');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexStartP_fixed_flex');
 
       let AlignContentFlexStart_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlexStartP_fixed_flex');
       let AlignContentFlexStart_1: RectValue = CommonFunc.getComponentRect('AlignContentFlexStartP_fixed_1');

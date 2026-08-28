@@ -91,7 +91,8 @@ export default function AttributeUpdaterAttribute() {
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundColor')));
       let setColor = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('backgroundColor'));
       expect(setColor).assertEqual('"#FFD5D5D5"');
-      // 閻愮懓鍤瓸utton鐟欙箑褰俛ttribute閺囧瓨鏌?      let button = await driver.findComponent(ON.id('btn_with_modifier'));
+      // 閻愮懓鍤瓸utton鐟欙箑褰俛ttribute閺囧瓨鏌?
+      let button = await driver.findComponent(ON.id('btn_with_modifier'));
       try {
         await (button?.click() as Promise<void>);
       } catch (err) {

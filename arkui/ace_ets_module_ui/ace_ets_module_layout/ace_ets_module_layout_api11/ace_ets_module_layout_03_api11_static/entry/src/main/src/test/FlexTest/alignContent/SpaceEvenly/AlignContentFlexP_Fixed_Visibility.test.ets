@@ -74,10 +74,10 @@ it('testAlignContentSpaceEvenlyFlexfixedVisibilityHidden_static', Level.LEVEL0, 
       });
       try {
       await CommonFunc.sleep(2000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_flex');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_flex');
 
       let textStrJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_1');
   let AlignContentFlexSpaceEvenly_flex001: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_flex');
@@ -137,10 +137,10 @@ it('testAlignContentSpaceEvenlyFlexfixedVisibilityNone_static', Level.LEVEL0, as
       });
       try {
       await CommonFunc.sleep(3000)
-      let strJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_flex');
       } catch (err) {
         console.info('staticTest await err: ' + JSON.stringify(err));
       }
+      let strJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_flex');
 
       let textStrJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_1');
   let AlignContentFlexSpaceEvenly_flex002: RectValue = CommonFunc.getComponentRect('AlignContentFlexP_Fixed_Visibility' + '_flex');
