@@ -49,7 +49,11 @@ export default function DatePickerComponentDisplayModeTest() {
     })
 
     afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('DatePickerComponentDisplayModeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("DatePickerComponentDisplayModeTest after each called");
     })
 

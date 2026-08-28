@@ -49,7 +49,11 @@ export default function DatePickerComponentLunarTest() {
     })
 
     afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('DatePickerComponentLunarTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("DatePickerComponentLunarTest after each called");
     })
 

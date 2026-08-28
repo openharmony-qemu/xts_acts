@@ -47,7 +47,11 @@ export default function DatePickerComponentConstructorTest() {
     })
 
     afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('DatePickerComponentConstructorTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("DatePickerComponentConstructorTest after each called");
     })
 

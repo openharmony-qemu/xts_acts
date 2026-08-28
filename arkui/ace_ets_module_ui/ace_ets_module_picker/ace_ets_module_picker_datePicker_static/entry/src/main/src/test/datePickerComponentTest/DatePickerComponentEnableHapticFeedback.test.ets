@@ -48,7 +48,11 @@ export default function DatePickerComponentEnableHapticFeedbackTest() {
     })
 
     afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('DatePickerComponentEnableHapticFeedbackTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("DatePickerComponentEnableHapticFeedbackTest after each called");
     })
 

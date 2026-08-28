@@ -49,7 +49,11 @@ export default function DatePickerComponentOnScrollStopTest() {
     })
 
     afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('DatePickerComponentOnScrollStopTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("DatePickerComponentOnScrollStopTest after each called");
     })
 

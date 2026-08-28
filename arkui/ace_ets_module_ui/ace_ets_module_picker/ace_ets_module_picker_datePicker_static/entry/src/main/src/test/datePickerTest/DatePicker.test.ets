@@ -47,7 +47,11 @@ export default function DatePickerTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('DatePickerTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('DatePickerTest after each called');
     });
 

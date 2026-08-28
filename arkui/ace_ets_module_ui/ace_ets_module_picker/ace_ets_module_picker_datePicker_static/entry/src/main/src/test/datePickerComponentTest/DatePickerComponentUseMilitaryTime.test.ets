@@ -48,7 +48,11 @@ export default function DatePickerComponentUseMilitaryTimeTest() {
     })
 
     afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('DatePickerComponentUseMilitaryTimeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("DatePickerComponentUseMilitaryTimeTest after each called");
     })
 

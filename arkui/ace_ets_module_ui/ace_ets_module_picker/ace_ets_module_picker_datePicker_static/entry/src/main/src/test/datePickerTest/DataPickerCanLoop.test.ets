@@ -31,7 +31,11 @@ export default function DataPickerCanLoopTest() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/datePicker/DataPickerCanLoop',
       }
-      await Utils.sleep(SLEEP_TIME_L);
+      try {
+        await Utils.sleep(SLEEP_TIME_L);
+      } catch (err) {
+        console.info('DataPickerCanLoopTest sleep err: ' + JSON.stringify(err));
+      }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();

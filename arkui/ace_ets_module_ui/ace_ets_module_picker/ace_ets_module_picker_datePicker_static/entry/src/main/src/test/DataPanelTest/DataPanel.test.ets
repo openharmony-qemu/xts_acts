@@ -47,7 +47,11 @@ export default function DataPanelTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('DataPanelTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('DataPanelTest after each called');
     });
 

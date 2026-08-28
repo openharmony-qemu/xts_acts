@@ -45,7 +45,11 @@ export default function DatePickerDialogCanLoopTest() {
       console.info("DatePickerDialogCanLoopTest beforeEach end");
     });
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('DatePickerDialogCanLoopTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("DatePickerDialogCanLoopTest after each called");
     });
 
