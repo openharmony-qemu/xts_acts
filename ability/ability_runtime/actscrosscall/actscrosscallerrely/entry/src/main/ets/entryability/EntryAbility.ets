@@ -14,34 +14,40 @@
  */
 import hilog from '@ohos.hilog';
 import Ability from '@ohos.app.ability.UIAbility'
-import Window from '@ohos.window'
+import Want from '@ohos.app.ability.Want'
+import AbilityConstant from '@ohos.app.ability.AbilityConstant'
+import window from '@ohos.window'
+
 import commonEvent from '@ohos.commonEventManager'
+import { BusinessError } from '@ohos.base';
+import rpc from '@ohos.rpc';
+import UIAbility, { Caller } from '@ohos.app.ability.UIAbility';
 
-class MyParcelAble {
-  num: number = 0;
-  str: String = '';
-  result: boolean = false;
+class MyParcelAble implements rpc.Parcelable {
+  public num: number = 0;
+  public str: string = '';
+  public result: boolean = false;
 
-  constructor(num, string, result) {
+  constructor(num: number, string: string, result: boolean) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  MyParcelAble(num, string, result) {
+  MyParcelAble(num: number, string: string, result: boolean) {
     this.num = num;
     this.str = string;
     this.result = result;
   }
 
-  marshalling(messageParcel) {
+  marshalling(messageParcel: rpc.MessageSequence) {
     messageParcel.writeInt(this.num);
     messageParcel.writeString(this.str);
     messageParcel.writeBoolean(this.result);
     return true;
   }
 
-  unmarshalling(messageParcel) {
+  unmarshalling(messageParcel: rpc.MessageSequence) {
     this.num = messageParcel.readInt();
     this.str = messageParcel.readString();
     this.result = messageParcel.readBoolean();
@@ -49,18 +55,18 @@ class MyParcelAble {
   }
 }
 
-var message;
-var commonEventData = {
+let message: string = '';
+let commonEventData: commonEvent.CommonEventPublishData = {
   parameters:{
     message:message,
   }
 }
-var actionStr;
-var accountId;
-export default class EntryAbility extends Ability {
-  onCreate(want, launchParam) {
-    actionStr = want.parameters.action;
-    accountId = want.parameters.accountId;
+let actionStr: string = '';
+let accountId: number = 0;
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    actionStr = want.parameters?.action as string;
+    accountId = want.parameters?.accountId as number;
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
@@ -69,9 +75,9 @@ export default class EntryAbility extends Ability {
     globalThis.terminate = () => {
       setTimeout(() => {
         this.context.terminateSelf().then(() => {
-          console.info("====>EntryAbility terminateSelf end");
-        }).catch((err) => {
-          console.info("====>EntryAbility terminateSelf err:" + JSON.stringify(err));
+          console.info('====>EntryAbility terminateSelf end');
+        }).catch((err: BusinessError) => {
+          console.info('====>EntryAbility terminateSelf err:' + JSON.stringify(err));
         });
       }, 50)
     };
@@ -80,16 +86,16 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCallWithAccount({
         bundleName: 'com.acts.calleeabilityrely',
         abilityName: 'EntryAbility',
-      }, accountId).then((data) => {
+      }, accountId).then((data: Caller) => {
         console.info('====>' + actionStr + ' startAbilityByCall data:' + JSON.stringify(data));
-        commonEventData.parameters.message = data;
+        commonEventData.parameters!.message = data;
         commonEvent.publish('ACTS_CROSS_CALL_EVENT', commonEventData, (err) => {
           console.info('====>' + actionStr + ' publish err:' + JSON.stringify(err));
           globalThis.terminate();
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>' + actionStr + ' startAbilityByCall err:' + JSON.stringify(err));
-        commonEventData.parameters.message = err;
+        commonEventData.parameters!.message = err;
         commonEvent.publish('ACTS_CROSS_CALL_EVENT', commonEventData, (err) => {
           console.info('====>' + actionStr + ' publish err:' + JSON.stringify(err));
           globalThis.terminate();
@@ -98,10 +104,10 @@ export default class EntryAbility extends Ability {
     }
 
     if (actionStr === 'Acts_CrossUserCall_2900') {
-      var caller;
-      function releaseCallback(data) {
+      let caller: Caller;
+      const releaseCallback = (data: string) => {
         console.info('====>' + actionStr + ' releaseCallBack:' + data);
-        commonEventData.parameters.message = data;
+        commonEventData.parameters!.message = data;
         commonEvent.publish('ACTS_CROSS_RELEASE_EVENT', commonEventData, (err) => {
           console.info('====>' + actionStr + '  onRelease event publish err:' + JSON.stringify(err));
         })
@@ -109,22 +115,22 @@ export default class EntryAbility extends Ability {
       this.context.startAbilityByCallWithAccount({
         bundleName: 'com.acts.calleeabilityrely',
         abilityName: 'EntryAbility',
-      }, accountId).then((data) => {
+      }, accountId).then((data: Caller) => {
         caller = data;
         caller.onRelease(releaseCallback);
         let param = new MyParcelAble(2900, 'Acts_CrossUserCall_2900', false);
-        caller.callWithResult('call', param).then((data) => {
-          var result = new MyParcelAble(0, '', false);
+        caller.callWithResult('call', param).then((data: rpc.MessageSequence) => {
+          let result = new MyParcelAble(0, '', false);
           data.readParcelable(result);
           console.info('====>' + actionStr + '  callWithResult result:' + JSON.stringify(result));
-          commonEventData.parameters.message = result;
+          commonEventData.parameters!.message = result;
           commonEvent.publish('ACTS_CROSS_CALL_EVENT', commonEventData, (err) => {
             console.info('====>' + actionStr + '  call event publish err:' + JSON.stringify(err));
             globalThis.terminate();
           })
           caller.release();
         })
-      }).catch((err) => {
+      }).catch((err: BusinessError) => {
         console.info('====>' + actionStr + '  startAbilityByCall err:' + JSON.stringify(err));
       })
     }
@@ -135,12 +141,12 @@ export default class EntryAbility extends Ability {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
-  onWindowStageCreate(windowStage: Window.WindowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err, data) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.ERROR);
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
