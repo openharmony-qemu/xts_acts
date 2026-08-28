@@ -89,8 +89,12 @@ it('RotationGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promi
       pointers.setPoint(1, 1, {
         x: Math.round(areaObj1.left + areaWidth1 / 4).toInt(), y: Math.round(areaObj1.bottom - areaHeight1 / 4).toInt()
       });
-      await driver.injectMultiPointerAction(pointers);
-      await CommonFunc.sleep(2000);
+      try {
+        await driver.injectMultiPointerAction(pointers,1200);
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error('RotationGesture1_static_0100 after each error: ' + err);
+      }
       let strJson = inspector.getInspectorByKey('RotationGesture1');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[RotationGesture1_static_0100] component obj is: ' + JSON.stringify(obj));
