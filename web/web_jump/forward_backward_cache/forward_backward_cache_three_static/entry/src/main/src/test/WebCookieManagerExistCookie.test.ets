@@ -390,6 +390,78 @@ export default function webCookieManagerExistCookie() {
       })
 
 
+    /**
+     * @tc.name        testExistCookieIncognitoTrueStatic
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_INCOGNITO_TRUE_STATIC
+     * @tc.desc        test existCookie incognito true
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testExistCookieIncognitoTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testExistCookieIncognitoTrueStatic', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testExistCookieIncognitoTrueStatic', true, 100319, done);
+        inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
+
+    /**
+     * @tc.name        testExistCookieIncognitoFalseStatic
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_INCOGNITO_FALSE_STATIC
+     * @tc.desc        test existCookie incognito false
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testExistCookieIncognitoFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testExistCookieIncognitoFalseStatic', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testExistCookieIncognitoFalseStatic', true, 100320, done);
+        inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
+
+    /**
+     * @tc.name        testExistCookieNullStatic
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_NULL_STATIC
+     * @tc.desc        test existCookie null
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testExistCookieNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testExistCookieNullStatic', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testExistCookieNullStatic', true, 100321, done);
+        inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
+
+    /**
+     * @tc.name        testExistCookieUndefinedStatic
+     * @tc.number      SUB_WEB_WEBCOOKIEMANAGER_EXISTCOOKIE_UNDEFINED_STATIC
+     * @tc.desc        test existCookie undefined
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testExistCookieUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testExistCookieUndefinedStatic', 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testExistCookieUndefinedStatic', true, 100322, done);
+        inspector.sendEventByKey('WebCookieManagerExistCookieTestButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
+
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

@@ -826,6 +826,106 @@ export default function webViewControllerJsunit() {
       })
 
     /**
+     * @tc.name   testFetchCookieIncognitoSuccessStatic
+     * @tc.number SUB_WEB_FETCHCOOKIE_INCOGNITO_SUCCESS_STATIC
+     * @tc.desc   test fetchCookie incognito success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieIncognitoSuccessStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieIncognitoSuccessStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieIncognitoSuccessStatic', 'a=b', 2026072418, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieIncognitoNullStatic
+     * @tc.number SUB_WEB_FETCHCOOKIE_INCOGNITO_NULL_STATIC
+     * @tc.desc   test fetchCookie incognito null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieIncognitoNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieIncognitoNullStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieIncognitoNullStatic', 'a=b', 2026072419, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieIncognitoUndefinedStatic
+     * @tc.number SUB_WEB_FETCHCOOKIE_INCOGNITO_UNDEFINED_STATIC
+     * @tc.desc   test fetchCookie incognito undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieIncognitoUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieIncognitoUndefinedStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieIncognitoUndefinedStatic', 'a=b', 2026072420, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoNullStatic
+     * @tc.number SUB_WEB_FETCHCOOKIESYNC_INCOGNITO_NULL_STATIC
+     * @tc.desc   test fetchCookieSync incognito null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncIncognitoNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncIncognitoNullStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieSyncIncognitoNullStatic', 'incog=null', 2026072421, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
+     * @tc.name   testFetchCookieSyncIncognitoUndefinedStatic
+     * @tc.number SUB_WEB_FETCHCOOKIESYNC_INCOGNITO_UNDEFINED_STATIC
+     * @tc.desc   test fetchCookieSync incognito undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFetchCookieSyncIncognitoUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitFetchCookieSyncIncognitoUndefinedStatic', 10)
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testFetchCookieSyncIncognitoUndefinedStatic', 'incog=undefined', 2026072422, done);
+        await Utils.msSleep(1000);
+        inspector.sendEventByKey('webcomponent',10,'');
+        await Utils.msSleep(6000);
+        done();
+      })
+
+    /**
      * @tc.name        SwitchNextPageStatic
      * @tc.number      testWebViewWindowFeatures00900
      * @tc.desc        onWindowNewExt

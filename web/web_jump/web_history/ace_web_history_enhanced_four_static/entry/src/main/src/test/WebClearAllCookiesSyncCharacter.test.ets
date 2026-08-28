@@ -72,6 +72,60 @@ export default function webClearAllCookiesSyncCharacter() {
       done();
     })
     /**
+     * @tc.name   testClearAllCookiesSyncUndefinedStatic
+     * @tc.number SUB_WEB_CLEARALLCOOKIESSYNC_UNDEFINED_STATIC
+     * @tc.desc   test clearAllCookiesSync undefined \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClearAllCookiesSyncUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitClearAllCookiesSyncUndefined', 10);
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testClearAllCookiesSyncUndefinedStatic', 'a=b', 133421, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webClearAllCookiesSyncCharacterButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+    /**
+     * @tc.name   testClearAllCookiesSyncNullStatic
+     * @tc.number SUB_WEB_CLEARALLCOOKIESSYNC_NULL_STATIC
+     * @tc.desc   test clearAllCookiesSync null \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClearAllCookiesSyncNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitClearAllCookiesSyncNull', 10);
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testClearAllCookiesSyncNullStatic', 'a=b', 133422, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webClearAllCookiesSyncCharacterButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+    /**
+     * @tc.name   testClearAllCookiesSyncNoArgStatic
+     * @tc.number SUB_WEB_CLEARALLCOOKIESSYNC_NOARG_STATIC
+     * @tc.desc   test clearAllCookiesSync no argument \n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClearAllCookiesSyncNoArgStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent('emitClearAllCookiesSyncNoArg', 10);
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testClearAllCookiesSyncNoArgStatic', 'success', 133423, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webClearAllCookiesSyncCharacterButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+    /**
      * @tc.name       : SwitchNextPageStatic
      * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_02
      * @tc.desc       : test PAGE_REDIRECT

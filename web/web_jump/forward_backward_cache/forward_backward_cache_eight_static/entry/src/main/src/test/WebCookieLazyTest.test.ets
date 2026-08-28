@@ -66,5 +66,51 @@ export default function webCookieLazyTest() {
       expect(expect_value).assertEqual(true);
       done();
     })
+
+    /**
+     * @tc.name   testWebSetLazyInitializeWebEngineNullStatic
+     * @tc.number SUB_WEB_setLazyInitializeWebEngine_NULL_STATIC
+     * @tc.desc   test SetLazyInitializeWebEngine null
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 0
+     */
+    it('testWebSetLazyInitializeWebEngineNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: ()=> void):Promise<void> => {
+      let expect_value:boolean = false;
+      try {
+        webview.WebCookieManager.setLazyInitializeWebEngine(null);
+      } catch (error) {
+        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if ((error as BusinessError).code == 401) {
+          expect_value = true;
+        }
+      }
+      expect(expect_value).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebSetLazyInitializeWebEngineUndefinedStatic
+     * @tc.number SUB_WEB_setLazyInitializeWebEngine_UNDEFINED_STATIC
+     * @tc.desc   test SetLazyInitializeWebEngine undefined
+     * @tc.type   Function
+     * @tc.size   MediumTest
+     * @tc.level  Level 0
+     */
+    it('testWebSetLazyInitializeWebEngineUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: ()=> void):Promise<void> => {
+      let expect_value:boolean = false;
+      try {
+        webview.WebCookieManager.setLazyInitializeWebEngine(undefined);
+      } catch (error) {
+        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if ((error as BusinessError).code == 401) {
+          expect_value = true;
+        }
+      }
+      expect(expect_value).assertEqual(true);
+      done();
+    })
   })
 }

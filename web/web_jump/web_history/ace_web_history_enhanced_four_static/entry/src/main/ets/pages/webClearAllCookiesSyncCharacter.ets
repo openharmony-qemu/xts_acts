@@ -104,6 +104,52 @@ struct webClearAllCookiesSyncCharacter {
               }
               break;
             }
+            case 'emitClearAllCookiesSyncUndefined': {
+              try {
+                webView.WebCookieManager.clearAllCookiesSync(true);
+                webView.WebCookieManager.configCookieSync("https://www.baidu.com", 'a=b\nc', true, false);
+                webView.WebCookieManager.clearAllCookiesSync(undefined);
+                let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com", true);
+                console.log(this.str + 'fetchCookieSync cookie value= ' + value);
+                Utils.emitEvent(value, 133421);
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 133421);
+              }
+              break;
+            }
+            case 'emitClearAllCookiesSyncNull': {
+              try {
+                webView.WebCookieManager.clearAllCookiesSync(true);
+                webView.WebCookieManager.configCookieSync("https://www.baidu.com", 'a=b\nc', true, false);
+                webView.WebCookieManager.clearAllCookiesSync(null);
+                let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com", true);
+                console.log(this.str + 'fetchCookieSync cookie value= ' + value);
+                Utils.emitEvent(value, 133422);
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 133422);
+              }
+              break;
+            }
+            case 'emitClearAllCookiesSyncNoArg': {
+              try {
+                webView.WebCookieManager.clearAllCookiesSync(false);
+                webView.WebCookieManager.configCookieSync("https://www.baidu.com", 'a=b\nc');
+                webView.WebCookieManager.clearAllCookiesSync();
+                let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com");
+                console.log(this.str + 'fetchCookieSync cookie value= ' + value);
+                if (!value) {
+                  Utils.emitEvent('success', 133423);
+                }
+              } catch (error) {
+                console.error(this.str + `Errorcode: ${error.code}, Message: ${error.message}`);
+                if (error.code == 801) {
+                  Utils.emitEvent('success', 133423);
+                }
+              }
+              break;
+            }
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

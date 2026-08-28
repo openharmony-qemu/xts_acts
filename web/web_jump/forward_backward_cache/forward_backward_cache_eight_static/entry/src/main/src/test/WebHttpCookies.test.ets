@@ -569,5 +569,83 @@ export default function WebHttpCookies() {
       done();
     })
 
+    /**
+     * @tc.name   testWebFetchAllCookiesNullStatic
+     * @tc.number SUB_WEB_FetchAllCookies_NULL_STATIC
+     * @tc.desc   test fetchAllCookies null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebFetchAllCookiesNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: ()=> void):Promise<void> => {
+      let result:boolean = false
+      try {
+        webview.WebCookieManager.fetchAllCookies(null)
+      } catch (error) {
+        console.error(`ErrorCode:${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
+        if ((error as BusinessError).code == 401) {
+          result = true
+        }
+      }
+      expect(result).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   testWebFetchAllCookiesUndefinedStatic
+     * @tc.number SUB_WEB_FetchAllCookies_UNDEFINED_STATIC
+     * @tc.desc   test fetchAllCookies undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testWebFetchAllCookiesUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: ()=> void):Promise<void> => {
+      let result:boolean = false
+      try {
+        webview.WebCookieManager.fetchAllCookies(undefined)
+      } catch (error) {
+        console.error(`ErrorCode:${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
+        if ((error as BusinessError).code == 401) {
+          result = true
+        }
+      }
+      expect(result).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   testExistCookieTrueStatic
+     * @tc.number SUB_WEB_EXISTCOOKIE_TRUE_STATIC
+     * @tc.desc   test existCookie true with incognito cookie
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExistCookieTrueStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: ()=> void):Promise<void> => {
+      webview.WebCookieManager.configCookieSync(URL, 'a=b', true);
+      let isExistCookies:boolean = webview.WebCookieManager.existCookie(true);
+      expect(isExistCookies).assertEqual(true);
+      done();
+    })
+
+    /**
+     * @tc.name   testExistCookieFalseStatic
+     * @tc.number SUB_WEB_EXISTCOOKIE_FALSE_STATIC
+     * @tc.desc   test existCookie false with normal cookie
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testExistCookieFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: ()=> void):Promise<void> => {
+      await webview.WebCookieManager.clearAllCookies();
+      let isExistCookies:boolean = webview.WebCookieManager.existCookie();
+      expect(isExistCookies).assertEqual(false);
+      done();
+    })
+
   })
 }
