@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function LinkArray() {
   describe('LinkArray', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("LinkArray beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("LinkArray beforeEach start");
       let options: router.RouterOptions = {
@@ -64,13 +49,13 @@ export default function LinkArray() {
     
     
 /**
-     * @tc.number   LinkArray_static_0100
-     * @tc.name     LinkArray_static_0100
-     * @tc.desc     LinkArray_static_0100
+     * @tc.number   LinkArray_0100
+     * @tc.name     LinkArray_0100
+     * @tc.desc     LinkArray_0100
      * @tc.level    Level.LEVEL0
      */
-it('LinkArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkArray_static_0100 START');
+ it('LinkArray_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('LinkArray_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('LinkArray_state1'));
@@ -78,22 +63,22 @@ it('LinkArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkArray');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkArray_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkArray_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[LinkArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[LinkArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Array]" number is [10]');
-      console.info('[LinkArray_static_0100] END');
+      console.info('[LinkArray_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   LinkArray_static_0200
-     * @tc.name     LinkArray_static_0200
-     * @tc.desc     LinkArray_static_0200
+     * @tc.number   LinkArray_0200
+     * @tc.name     LinkArray_0200
+     * @tc.desc     LinkArray_0200
      * @tc.level    Level.LEVEL0
      */
-it('LinkArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkArray_static_0100 START');
+it('LinkArray_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('LinkArray_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('LinkArray_state2'));
@@ -101,22 +86,22 @@ it('LinkArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkArray');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkArray_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkArray_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[LinkArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[LinkArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Array]" number is [true]');
-      console.info('[LinkArray_static_0100] END');
+      console.info('[LinkArray_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   LinkArray_static_0300
-     * @tc.name     LinkArray_static_0300
-     * @tc.desc     LinkArray_static_0300
+     * @tc.number   LinkArray_0300
+     * @tc.name     LinkArray_0300
+     * @tc.desc     LinkArray_0300
      * @tc.level    Level.LEVEL0
      */
-it('LinkArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkArray_static_0100 START');
+it('LinkArray_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('LinkArray_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('LinkArray_state3'));
@@ -124,22 +109,22 @@ it('LinkArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkArray');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkArray_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkArray_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[LinkArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[LinkArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Boolean]" number is true');
-      console.info('[LinkArray_static_0100] END');
+      console.info('[LinkArray_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   LinkArray_static_0400
-     * @tc.name     LinkArray_static_0400
-     * @tc.desc     LinkArray_static_0400
+     * @tc.number   LinkArray_0400
+     * @tc.name     LinkArray_0400
+     * @tc.desc     LinkArray_0400
      * @tc.level    Level.LEVEL0
      */
-it('LinkArray_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkArray_static_0100 START');
+it('LinkArray_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('LinkArray_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('LinkArray_state4'));
@@ -147,10 +132,10 @@ it('LinkArray_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkArrayNew');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkArray_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkArray_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[LinkArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[LinkArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Array]" number is 200');
-      console.info('[LinkArray_static_0100] END');
+      console.info('[LinkArray_0100] END');
       done();
     });
 

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,22 +26,12 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-
 export default function ObjectLinkFarJsunit() {
   describe('ObjectLinkFarJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ObjectLinkFarJsunit beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      
-    });
-
-    beforeEach(async (): Promise<void> => {
+beforeEach(async (): Promise<void> => {
       console.info("ObjectLinkFarJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/State/ObjectLinkFar',
@@ -90,13 +80,13 @@ it('ObjectLinkFarJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ObjectLinkFarJsunit_static_0100] component obj1 is: " + JSON.stringify(obj1));
       console.info("[ObjectLinkFarJsunit_static_0100] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassAAA的numA值: 1");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassAAA的numA�? 1");
 
       let strJson2 = inspector.getInspectorByKey('sonClassBBB');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[ObjectLinkFarJsunit_static_0100] component obj2 is: " + JSON.stringify(obj2));
       console.info("[ObjectLinkFarJsunit_static_0100] text: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBBB的numB值: 5");
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBBB的numB�? 5");
 
       console.info('[ObjectLinkFarJsunit_static_0100] END');
       done();
@@ -125,7 +115,7 @@ it('ObjectLinkFarJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[ObjectLinkFarJsunit_static_0200] component obj2 is: " + JSON.stringify(obj2));
       console.info("[ObjectLinkFarJsunit_static_0200] text: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBBB的numB值: 6");
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBBB的numB�? 6");
 
       console.info('[ObjectLinkFarJsunit_static_0200] END');
       done();
@@ -148,13 +138,13 @@ it('ObjectLinkFarJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ObjectLinkFarJsunit_static_0300] component obj1 is: " + JSON.stringify(obj1));
       console.info("[ObjectLinkFarJsunit_static_0300] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBBB的numB值: 6");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBBB的numB�? 6");
 
       let strJson2 = inspector.getInspectorByKey('farClassAAA');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[ObjectLinkFarJsunit_static_0300] component obj2 is: " + JSON.stringify(obj2));
       console.info("[ObjectLinkFarJsunit_static_0300] text: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassAAA的numA值: 0");
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassAAA的numA�? 0");
 
       let strJson3 = inspector.getInspectorByKey('farClassBBB');
       let obj3 = JSON.parseJsonElement(strJson3);

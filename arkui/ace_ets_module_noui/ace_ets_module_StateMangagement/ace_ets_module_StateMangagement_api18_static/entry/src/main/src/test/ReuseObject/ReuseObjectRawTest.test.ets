@@ -13,24 +13,19 @@
  * See the License for specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest, startAbility } from '../Util.test';
 import { RecordData } from '@ohos.base'
 
 export default function ReuseObjectRawTest(): void {
   describe('ReuseObjectRawTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ReuseObjectRawTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility");
-      await UtilsTest.msSleep(1000);
-      console.info('ReuseObjectRawTest startAbility completed');
-    });
+
 
     beforeEach(async (): Promise<void> => {
       console.info("ReuseObjectRawTest beforeEach start");

@@ -13,22 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest,startAbility} from '../Util.test';
 import hilog from '@ohos.hilog'
 export default function componentLifecycleDecoratorsTest(): void {
   describe('ComponentLifecycleDecorators', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.StateMgmtUI.static", "EntryAbility");
-      await UtilsTest.msSleep(1000);
-      console.info("beforeAll case");
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ComponentLifecycleDecorators beforeEach start");

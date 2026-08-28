@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function PropColor() {
   describe('PropColor', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("PropColor beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("PropColor beforeEach start");
       let options: router.RouterOptions = {
@@ -66,13 +51,13 @@ export default function PropColor() {
     
     
 /**
-     * @tc.number   PropColor_static_0100
-     * @tc.name     PropColor_static_0100
-     * @tc.desc     PropColor_static_0100
+     * @tc.number   PropColor_0100
+     * @tc.name     PropColor_0100
+     * @tc.desc     PropColor_0100
      * @tc.level    Level.LEVEL0
      */
-it('PropColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('PropColor_static_0100 START');
+it('PropColor_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('PropColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('PropColor_state1'));
@@ -80,22 +65,22 @@ it('PropColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('PropColor_state1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[PropColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[PropColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+      console.info("[PropColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[PropColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFA500');
-      console.info('[PropColor_static_0100] END');
+      console.info('[PropColor_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   PropColor_static_0200
-     * @tc.name     PropColor_static_0200
-     * @tc.desc     PropColor_static_0200
+     * @tc.number   PropColor_0200
+     * @tc.name     PropColor_0200
+     * @tc.desc     PropColor_0200
      * @tc.level    Level.LEVEL0
      */
-it('PropColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('PropColor_static_0100 START');
+it('PropColor_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('PropColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('PropColor_state2'));
@@ -103,22 +88,22 @@ it('PropColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('PropColor_state2');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[PropColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[PropColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+      console.info("[PropColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[PropColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF0000FF');
-      console.info('[PropColor_static_0100] END');
+      console.info('[PropColor_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   PropColor_static_0300
-     * @tc.name     PropColor_static_0300
-     * @tc.desc     PropColor_static_0300
+     * @tc.number   PropColor_0300
+     * @tc.name     PropColor_0300
+     * @tc.desc     PropColor_0300
      * @tc.level    Level.LEVEL0
      */
-it('PropColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('PropColor_static_0100 START');
+it('PropColor_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('PropColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('PropColor_state3'));
@@ -126,22 +111,22 @@ it('PropColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('PropColor');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[PropColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[PropColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[PropColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[PropColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Undefined]" number is ');
-      console.info('[PropColor_static_0100] END');
+      console.info('[PropColor_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   PropColor_static_0400
-     * @tc.name     PropColor_static_0400
-     * @tc.desc     PropColor_static_0400
+     * @tc.number   PropColor_0400
+     * @tc.name     PropColor_0400
+     * @tc.desc     PropColor_0400
      * @tc.level    Level.LEVEL0
      */
-it('PropColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('PropColor_static_0100 START');
+it('PropColor_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('PropColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('PropColor_state4'));
@@ -149,23 +134,23 @@ it('PropColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('PropColor_state4');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[PropColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[PropColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+      console.info("[PropColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[PropColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFA52A2A');
-      console.info('[PropColor_static_0100] END');
+      console.info('[PropColor_0100] END');
       done();
     });
 
     
     
 /**
-     * @tc.number   PropColor_static_0500
-     * @tc.name     PropColor_static_0500
-     * @tc.desc     PropColor_static_0500
+     * @tc.number   PropColor_0500
+     * @tc.name     PropColor_0500
+     * @tc.desc     PropColor_0500
      * @tc.level    Level.LEVEL0
      */
-// it('PropColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-//       console.info('PropColor_static_0100 START');
+// it('PropColor_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+//       console.info('PropColor_0100 START');
 //       let driver = Driver.create()
 //       await CommonFunc.sleep(1000);
 //       let button = await driver.findComponent(ON.id('PropColor_state5'));
@@ -173,23 +158,23 @@ it('PropColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
 //       await CommonFunc.sleep(1000);
 //       let strJson = inspector.getInspectorByKey('PropColor');
 //       let obj = JSON.parseJsonElement(strJson);
-//       console.info("[PropColor_static_0100] component obj is: " + JSON.stringify(obj));
-//       console.info("[PropColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+//       console.info("[PropColor_0100] component obj is: " + JSON.stringify(obj));
+//       console.info("[PropColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
 //       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Null]" number is null');
-//       console.info('[PropColor_static_0100] END');
+//       console.info('[PropColor_0100] END');
 //       done();
 //     });
 
     
     
 /**
-     * @tc.number   PropColor_static_0600
-     * @tc.name     PropColor_static_0600
-     * @tc.desc     PropColor_static_0600
+     * @tc.number   PropColor_0600
+     * @tc.name     PropColor_0600
+     * @tc.desc     PropColor_0600
      * @tc.level    Level.LEVEL0
      */
-it('PropColor_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('PropColor_static_0100 START');
+it('PropColor_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('PropColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('PropColor_state6'));
@@ -197,10 +182,10 @@ it('PropColor_static_0600', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('PropColor_state6');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[PropColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[PropColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+      console.info("[PropColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[PropColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF008000');
-      console.info('[PropColor_static_0100] END');
+      console.info('[PropColor_0100] END');
       done();
     });
 

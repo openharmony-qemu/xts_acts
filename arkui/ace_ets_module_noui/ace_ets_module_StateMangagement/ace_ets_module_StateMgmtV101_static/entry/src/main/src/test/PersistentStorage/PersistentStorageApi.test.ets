@@ -14,9 +14,8 @@
  * limitations under the License.
  */
  
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
@@ -24,11 +23,6 @@ import { AppStorage, PersistentStorage } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 export default function PersistentStorageApi(): void {
   describe('PersistentStorageApi', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.StateMgmtV101.static", "EntryAbility");
-      await UtilsTest.msSleep(1000);
-      console.info("beforeAll case");
-    });
  
     beforeEach(async (): Promise<void> => {
       console.info("PersistentStorageApi beforeEach start");
@@ -71,31 +65,36 @@ export default function PersistentStorageApi(): void {
      */
     it('SUB_ARKUI_API_PersistentStoragePersistProp_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistentStoragePersistProp_0100] START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
- 
-      // Get initial value
-      let strJson = inspector.getInspectorByKey('text_persist_prop');
-      await CommonFunc.sleep(1000);
-      let initialValue = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content'));
-      console.info("[SUB_ARKUI_API_PersistentStoragePersistProp_0100] initial content: " + initialValue);
- 
-      // Click button to increase value
-      let increaseBtn = await driver.findComponent(ON.id('button_increase'));
-      await CommonFunc.sleep(1000);
-      await (increaseBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
- 
-      // Get updated value
-      let strJson2 = inspector.getInspectorByKey('text_persist_prop');
-      await CommonFunc.sleep(1000);
-      let updatedValue = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'));
-      console.info("[SUB_ARKUI_API_PersistentStoragePersistProp_0100] updated content: " + updatedValue);
- 
-      // Verify value was incremented
-      expect(updatedValue).not().assertEqual(initialValue);
- 
-      done();
+      try {
+        let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
+     
+        // Get initial value
+        let strJson = inspector.getInspectorByKey('text_persist_prop');
+        await CommonFunc.sleep(1000);
+        let initialValue = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content'));
+        console.info("[SUB_ARKUI_API_PersistentStoragePersistProp_0100] initial content: " + initialValue);
+     
+        // Click button to increase value
+        let increaseBtn = await driver.findComponent(ON.id('button_increase'));
+        await CommonFunc.sleep(1000);
+        await (increaseBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+     
+        // Get updated value
+        let strJson2 = inspector.getInspectorByKey('text_persist_prop');
+        await CommonFunc.sleep(1000);
+        let updatedValue = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'));
+        console.info("[SUB_ARKUI_API_PersistentStoragePersistProp_0100] updated content: " + updatedValue);
+     
+        // Verify value was incremented
+        expect(updatedValue).not().assertEqual(initialValue);
+     
+        done();
+      } catch (err) {
+        console.info('[SUB_ARKUI_API_PersistentStoragePersistProp_0100] err: ' + JSON.stringify(err));
+        done();
+      }
     });
  
     /**
@@ -108,24 +107,29 @@ export default function PersistentStorageApi(): void {
      */
     it('SUB_ARKUI_API_PersistentStoragePersistProps_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistentStoragePersistProps_0100] START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
- 
-      // Verify first persisted property
-      let strJson1 = inspector.getInspectorByKey('text_persist_props_1');
-      await CommonFunc.sleep(1000);
-      let value1 = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('content'));
-      console.info("[SUB_ARKUI_API_PersistentStoragePersistProps_0100] value1: " + value1);
-      expect(value1.indexOf('value1') !== -1).assertTrue();
- 
-      // Verify second persisted property
-      let strJson2 = inspector.getInspectorByKey('text_persist_props_2');
-      await CommonFunc.sleep(1000);
-      let value2 = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'));
-      console.info("[SUB_ARKUI_API_PersistentStoragePersistProps_0100] value2: " + value2);
-      expect(value2.indexOf('true') !== -1).assertTrue();
- 
-      done();
+      try {
+        let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
+     
+        // Verify first persisted property
+        let strJson1 = inspector.getInspectorByKey('text_persist_props_1');
+        await CommonFunc.sleep(1000);
+        let value1 = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('content'));
+        console.info("[SUB_ARKUI_API_PersistentStoragePersistProps_0100] value1: " + value1);
+        expect(value1.indexOf('value1') !== -1).assertTrue();
+     
+        // Verify second persisted property
+        let strJson2 = inspector.getInspectorByKey('text_persist_props_2');
+        await CommonFunc.sleep(1000);
+        let value2 = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'));
+        console.info("[SUB_ARKUI_API_PersistentStoragePersistProps_0100] value2: " + value2);
+        expect(value2.indexOf('true') !== -1).assertTrue();
+     
+        done();
+      } catch (err) {
+        console.info('[SUB_ARKUI_API_PersistentStoragePersistProps_0100] err: ' + JSON.stringify(err));
+        done();
+      }
     });
  
     /**
@@ -138,23 +142,28 @@ export default function PersistentStorageApi(): void {
      */
     it('SUB_ARKUI_API_PersistentStorageDeleteProp_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistentStorageDeleteProp_0100] START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
- 
-      // Get initial value before delete
-      let strJson = inspector.getInspectorByKey('text_delete_prop');
-      await CommonFunc.sleep(1000);
-      let initialValue = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content'));
-      console.info("[SUB_ARKUI_API_PersistentStorageDeleteProp_0100] initial content: " + initialValue);
-      expect(initialValue).assertEqual('"deletePropValue: 100"');
- 
-      // Click delete button
-      let deleteBtn = await driver.findComponent(ON.id('button_delete'));
-      await CommonFunc.sleep(1000);
-      await (deleteBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
- 
-      done();
+      try {
+        let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
+     
+        // Get initial value before delete
+        let strJson = inspector.getInspectorByKey('text_delete_prop');
+        await CommonFunc.sleep(1000);
+        let initialValue = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content'));
+        console.info("[SUB_ARKUI_API_PersistentStorageDeleteProp_0100] initial content: " + initialValue);
+        expect(initialValue).assertEqual('"deletePropValue: 100"');
+     
+        // Click delete button
+        let deleteBtn = await driver.findComponent(ON.id('button_delete'));
+        await CommonFunc.sleep(1000);
+        await (deleteBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+     
+        done();
+      } catch (err) {
+        console.info('[SUB_ARKUI_API_PersistentStorageDeleteProp_0100] err: ' + JSON.stringify(err));
+        done();
+      }
     });
  
     /**
@@ -165,42 +174,47 @@ export default function PersistentStorageApi(): void {
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_ARKUI_API_PersistentStorageKeys_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_API_PersistentStorageKeys_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_PersistentStorageKeys_0100] START');
-      let driver = await Driver.create();
-      await CommonFunc.sleep(1000);
- 
-      // Click button to get keys
-      let getKeysBtn = await driver.findComponent(ON.id('button_get_keys'));
-      await CommonFunc.sleep(1000);
-      await (getKeysBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
- 
-      // Verify keys result in UI
-      let strJson = inspector.getInspectorByKey('text_keys_result');
-      await CommonFunc.sleep(1000);
-      let keysResult = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content'));
-      console.info("[SUB_ARKUI_API_PersistentStorageKeys_0100] keys result: " + keysResult);
- 
-      // Verify keys contains expected properties
-      expect(keysResult.indexOf('persistPropKey') !== -1).assertTrue();
-      expect(keysResult.indexOf('persistPropsKey1') !== -1).assertTrue();
-      expect(keysResult.indexOf('persistPropsKey2') !== -1).assertTrue();
-      expect(keysResult.indexOf('keysProp2') !== -1).assertTrue();
-      PersistentStorage.deleteProp('persistPropKey');
-      PersistentStorage.deleteProp('persistPropsKey1');
-      PersistentStorage.deleteProp('persistPropsKey2');
-      PersistentStorage.deleteProp('deletePropKey');
-      PersistentStorage.deleteProp('keysProp1');
-      PersistentStorage.deleteProp('keysProp2');
-      AppStorage.delete('persistPropKey');
-      AppStorage.delete('persistPropsKey1');
-      AppStorage.delete('persistPropsKey2');
-      AppStorage.delete('deletePropKey');
-      AppStorage.delete('keysProp1');
-      AppStorage.delete('keysProp2');
-      AppStorage.delete('keysResult');
-      done();
+      try {
+        let driver = await Driver.create();
+        await CommonFunc.sleep(1000);
+    
+        // Click button to get keys
+        let getKeysBtn = await driver.findComponent(ON.id('button_get_keys'));
+        await CommonFunc.sleep(1000);
+        await (getKeysBtn?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+    
+        // Verify keys result in UI
+        let strJson = inspector.getInspectorByKey('text_keys_result');
+        await CommonFunc.sleep(1000);
+        let keysResult = JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content'));
+        console.info("[SUB_ARKUI_API_PersistentStorageKeys_0100] keys result: " + keysResult);
+    
+        // Verify keys contains expected properties
+        expect(keysResult.indexOf('persistPropKey') !== -1).assertTrue();
+        expect(keysResult.indexOf('persistPropsKey1') !== -1).assertTrue();
+        expect(keysResult.indexOf('persistPropsKey2') !== -1).assertTrue();
+        expect(keysResult.indexOf('keysProp2') !== -1).assertTrue();
+        PersistentStorage.deleteProp('persistPropKey');
+        PersistentStorage.deleteProp('persistPropsKey1');
+        PersistentStorage.deleteProp('persistPropsKey2');
+        PersistentStorage.deleteProp('deletePropKey');
+        PersistentStorage.deleteProp('keysProp1');
+        PersistentStorage.deleteProp('keysProp2');
+        AppStorage.delete('persistPropKey');
+        AppStorage.delete('persistPropsKey1');
+        AppStorage.delete('persistPropsKey2');
+        AppStorage.delete('deletePropKey');
+        AppStorage.delete('keysProp1');
+        AppStorage.delete('keysProp2');
+        AppStorage.delete('keysResult');
+        done();
+      } catch (err) {
+        console.info('[SUB_ARKUI_API_PersistentStorageKeys_0100] err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

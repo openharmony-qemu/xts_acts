@@ -17,7 +17,6 @@
 import {
   afterAll,
   afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
@@ -38,7 +37,7 @@ import {
 } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
+
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -46,12 +45,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function confirmDialogTest() {
   describe('confirmDialogTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("confirmDialogTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("confirmDialogTest beforeEach start");
       let options: router.RouterOptions = {

@@ -15,21 +15,12 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 let compareFlexShrink = 1;
 let targetFlexShrink = 9;
 
@@ -120,12 +111,6 @@ export default function flexShrinkTest() {
   }]
 
   describe('FlexShrinkTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("FlexShrinkTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.three.flex.three.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Get standard component rect in order to judge the standard component size not be changed
       console.info('[' + data.caseTag + '] get standard component rect ' +

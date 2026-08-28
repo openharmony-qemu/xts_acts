@@ -14,23 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function selectDialogTest() {
   describe('selectDialogTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("selectDialogTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("selectDialogTest beforeEach start");
@@ -73,7 +66,7 @@ export default function selectDialogTest() {
 it('selectDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[selectDialogTest_static_0100] START');
       let driver = Driver.create();
-      await Utils.sleep(1000);
+      await Utils.sleep(2000);
       // 点击打开SelectDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('SelectDialogV2'))
       await (openAlertDialog?.click() as Promise<void>);

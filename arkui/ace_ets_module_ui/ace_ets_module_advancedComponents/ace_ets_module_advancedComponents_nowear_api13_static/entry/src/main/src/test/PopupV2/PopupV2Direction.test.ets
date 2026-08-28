@@ -13,27 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
-  ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Driver, ON } from '@ohos.UiTest';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
-import {
-  $r,
-} from '@ohos.arkui.component';
 
 export default function PopupV2DirectionTest() {
   describe('PopupV2DirectionTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("PopupV2DirectionTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.popupV2.nowear.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("PopupV2DirectionTest beforeEach start");

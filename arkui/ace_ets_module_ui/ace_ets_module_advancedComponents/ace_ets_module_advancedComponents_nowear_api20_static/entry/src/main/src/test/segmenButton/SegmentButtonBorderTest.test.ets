@@ -16,11 +16,10 @@
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll, afterEach } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, afterEach } from '../../../../hypium/index';
 import { i18n } from '@kit.LocalizationKit';
 import display from '@ohos.display';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test'
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -29,11 +28,6 @@ import { BorderRadiuses } from '@ohos.arkui.component'
 
 export default function SegmentButtonBorderTest() {
   describe('SegmentButtonBorderTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("SegmentButtonBorderTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info("SegmentButtonBorderTest beforeEach start");

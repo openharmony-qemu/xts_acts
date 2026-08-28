@@ -18,7 +18,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import  hilog  from '@ohos.hilog'
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-let domain: int = 0x0000;
+let domain: number = 0x0000;
 let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
 class UtilsTest{
@@ -42,8 +42,8 @@ class UtilsTest{
     })
   }
 
-  static async msSleep(count:int) : Promise<int> {
-    return new Promise<int>((resolve, reject) => {
+  static async msSleep(count:number) : Promise<number> {
+    return new Promise<number>((resolve, reject) => {
       setTimeout(():void => {
         resolve(0)
       }, count)

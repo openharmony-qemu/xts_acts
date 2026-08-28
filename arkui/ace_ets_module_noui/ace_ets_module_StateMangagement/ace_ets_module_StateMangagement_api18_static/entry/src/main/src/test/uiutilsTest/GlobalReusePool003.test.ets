@@ -13,29 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size, afterAll } from "../../../../hypium/index"
+import { describe,beforeEach, afterEach, it, expect, Level, TestType, Size, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { IReusableInfo, IReusePool, AppStorage } from '@kit.ArkUI';
 
 
 export default function GlobalReusePool003Test() {
   describe('GlobalReusePool003Test', () => {
-    beforeAll(async () => {
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
-
-    })
     beforeEach(async (): Promise<void> => {
       console.info("GlobalReusePool003Test beforeEach start");
       let options: router.RouterOptions = {

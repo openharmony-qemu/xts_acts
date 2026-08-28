@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, Level, beforeAll, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, Level, beforeEach } from '../../../../hypium/index';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 
 interface ObservedObjectStub {
   _stableTag?: string;
@@ -175,10 +173,6 @@ export default function StateMgmtDecoratorShapeTest(): void {
   });
 
   describe('StateMgmtProbePageTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.stateManagement.api24.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/StateMgmtProbe/StateMgmtProbe',
@@ -187,7 +181,7 @@ export default function StateMgmtDecoratorShapeTest(): void {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         routerInstance.replaceUrl(options);
-        await Utils.sleep(500);
+        await new Promise<void>((resolve) => setTimeout(resolve, 500));
       } catch (err) {
         console.error('StateMgmtProbePageTest replaceUrl error: ' + err);
         expect().assertFail();

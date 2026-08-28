@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function LinkColor() {
   describe('LinkColor', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("LinkColor beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("LinkColor beforeEach start");
       let options: router.RouterOptions = {
@@ -64,13 +49,13 @@ export default function LinkColor() {
     
     
 /**
-     * @tc.number   LinkColor_static_0100
-     * @tc.name     LinkColor_static_0100
-     * @tc.desc     LinkColor_static_0100
+     * @tc.number   LinkColor_0100
+     * @tc.name     LinkColor_0100
+     * @tc.desc     LinkColor_0100
      * @tc.level    Level.LEVEL0
      */
-it('LinkColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkColor_static_0100 START');
+it('LinkColor_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('LinkColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('LinkColor001'));
@@ -78,10 +63,10 @@ it('LinkColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkColor001');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+      console.info("[LinkColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[LinkColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFA500');
-      console.info('[LinkColor_static_0100] END');
+      console.info('[LinkColor_0100] END');
       done();
     });
 
@@ -89,13 +74,13 @@ it('LinkColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
     
     
 /**
-     * @tc.number   LinkColor_static_0200
-     * @tc.name     LinkColor_static_0200
-     * @tc.desc     LinkColor_static_0200
+     * @tc.number   LinkColor_0200
+     * @tc.name     LinkColor_0200
+     * @tc.desc     LinkColor_0200
      * @tc.level    Level.LEVEL0
      */
-it('LinkColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkColor_static_0100 START');
+it('LinkColor_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('LinkColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('LinkColor002'));
@@ -103,22 +88,22 @@ it('LinkColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkColor002');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+      console.info("[LinkColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[LinkColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF0000FF');
-      console.info('[LinkColor_static_0100] END');
+      console.info('[LinkColor_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   LinkColor_static_0300
-     * @tc.name     LinkColor_static_0300
-     * @tc.desc     LinkColor_static_0300
+     * @tc.number   LinkColor_0300
+     * @tc.name     LinkColor_0300
+     * @tc.desc     LinkColor_0300
      * @tc.level    Level.LEVEL0
      */
-it('LinkColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkColor_static_0100 START');
+it('LinkColor_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('LinkColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('LinkColor003'));
@@ -126,22 +111,22 @@ it('LinkColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkColor');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[LinkColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[LinkColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Undefined]" number is ');
-      console.info('[LinkColor_static_0100] END');
+      console.info('[LinkColor_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   LinkColor_static_0400
-     * @tc.name     LinkColor_static_0400
-     * @tc.desc     LinkColor_static_0400
+     * @tc.number   LinkColor_0400
+     * @tc.name     LinkColor_0400
+     * @tc.desc     LinkColor_0400
      * @tc.level    Level.LEVEL0
      */
-it('LinkColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkColor_static_0100 START');
+it('LinkColor_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('LinkColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('LinkColor004'));
@@ -149,23 +134,23 @@ it('LinkColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkColor004');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+      console.info("[LinkColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[LinkColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFA52A2A');
-      console.info('[LinkColor_static_0100] END');
+      console.info('[LinkColor_0100] END');
       done();
     });
 
     
     
 /**
-     * @tc.number   LinkColor_static_0500
-     * @tc.name     LinkColor_static_0500
-     * @tc.desc     LinkColor_static_0500
+     * @tc.number   LinkColor_0500
+     * @tc.name     LinkColor_0500
+     * @tc.desc     LinkColor_0500
      * @tc.level    Level.LEVEL0
      */
-// it('LinkColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-//       console.info('LinkColor_static_0100 START');
+// it('LinkColor_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+//       console.info('LinkColor_0100 START');
 //       let driver = Driver.create()
 //       await CommonFunc.sleep(1000);
 //       let button = await driver.findComponent(ON.id('state5'));
@@ -173,10 +158,10 @@ it('LinkColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
 //       await CommonFunc.sleep(1000);
 //       let strJson = inspector.getInspectorByKey('LinkColor');
 //       let obj = JSON.parseJsonElement(strJson);
-//       console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
-//       console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+//       console.info("[LinkColor_0100] component obj is: " + JSON.stringify(obj));
+//       console.info("[LinkColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
 //       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Null]" number is null');
-//       console.info('[LinkColor_static_0100] END');
+//       console.info('[LinkColor_0100] END');
 //       done();
 //     });
 
@@ -184,13 +169,13 @@ it('LinkColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void
     
     
 /**
-     * @tc.number   LinkColor_static_0600
-     * @tc.name     LinkColor_static_0600
-     * @tc.desc     LinkColor_static_0600
+     * @tc.number   LinkColor_0600
+     * @tc.name     LinkColor_0600
+     * @tc.desc     LinkColor_0600
      * @tc.level    Level.LEVEL0
      */
-it('LinkColor_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('LinkColor_static_0100 START');
+it('LinkColor_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('LinkColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('LinkColor006'));
@@ -198,10 +183,10 @@ it('LinkColor_static_0600', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('LinkColor006');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[LinkColor_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[LinkColor_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
+      console.info("[LinkColor_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[LinkColor_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('backgroundColor')));
       expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF008000');
-      console.info('[LinkColor_static_0100] END');
+      console.info('[LinkColor_0100] END');
       done();
     });
 

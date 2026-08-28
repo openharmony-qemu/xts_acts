@@ -15,21 +15,12 @@
  */
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, beforeAll, expect, afterEach } from '../../../../hypium/index';
+import { describe, expect, afterEach } from '../../../../hypium/index';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { $r, Rectangle } from '@ohos.arkui.component';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 
 async function clickPoint(data: BasePageConfig, xPoint: number, yPoint: number) {
@@ -243,11 +234,6 @@ export default function responseRegionTest() {
 
   describe('ResponseRegionTest', () => {
 
-    beforeAll(async (): Promise<void> => {
-      console.info("ResponseRegionTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     afterEach(async (): Promise<void> => {
       AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', [{ x: 0, y: 0, width: '100%', height: '100%' } ])
       AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
@@ -267,10 +253,9 @@ export default function responseRegionTest() {
       AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', data.testValue.setValue)
       AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
       AppStorage.setOrCreate<string>('eventCallBackStr', '')
-      await Utils.sleep(2000);
+      await Utils.sleep(1000);
       console.info('wj--'+JSON.stringify(data.pageConfig.componentKey))
       let viewObj: jsonx.JsonElement = Utils.getComponentByKey(data.pageConfig.componentKey);
-      await Utils.sleep(2000);
       console.info('[wll]viewObj'+JSON.stringify(viewObj.toString()))
       console.info('+++++++describe'+data.testValue.describe)
       // console.info('[wllabc]'+JSON.stringify(data.testValue.expectValue?.responseRegion))

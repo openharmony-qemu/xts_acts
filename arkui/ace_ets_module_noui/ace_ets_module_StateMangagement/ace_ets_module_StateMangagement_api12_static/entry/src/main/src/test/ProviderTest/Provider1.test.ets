@@ -22,26 +22,13 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function Provider1Test() {
   describe('Provider1Test', () => {
 
-    beforeAll(async (): Promise<void> => {
-      console.info("Provider1Test beforeEach start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-
-    });
-
-    beforeEach(async (): Promise<void> => {
+        beforeEach(async (): Promise<void> => {
       console.info("Provider1Test beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Provider/Provider1',
@@ -63,7 +50,6 @@ export default function Provider1Test() {
       }
       console.info("Provider1Test beforeEach end");
     });
-
 
     
     
@@ -129,7 +115,6 @@ it('Provider1Test_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       obj = JSON.parseJsonElement(strJson);
       console.info("[Provider1Test_static_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('同组件内变量名和别名重名：reviewVotes(12)');
-
 
       console.info('[Provider1Test_static_0200] END');
       done();

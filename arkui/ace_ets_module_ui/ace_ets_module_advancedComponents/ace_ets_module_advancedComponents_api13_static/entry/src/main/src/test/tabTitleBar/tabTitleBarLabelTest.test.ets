@@ -13,23 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function tabTitleBarLabelTest() {
   describe('tabTitleBarLabelTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("tabTitleBarLabelTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("tabTitleBarLabelTest beforeEach start");
       let options: router.RouterOptions = {
@@ -48,6 +41,8 @@ export default function tabTitleBarLabelTest() {
       } catch (err) {
         console.error("push tabTitleBarLabelTest page error:" + err);
       }
+
+      await Utils.sleep(1000);
       console.info("tabTitleBarLabelTest beforeEach end");
     });
 

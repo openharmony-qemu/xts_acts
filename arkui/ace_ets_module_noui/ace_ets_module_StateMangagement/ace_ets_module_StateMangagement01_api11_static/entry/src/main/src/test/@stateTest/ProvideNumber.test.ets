@@ -14,33 +14,17 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 
 export default function ProvideNumber() {
   describe('ProvideNumber', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("LinkArray beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("LinkArray beforeEach start");
       let options: router.RouterOptions = {
@@ -67,13 +51,13 @@ export default function ProvideNumber() {
     
     
 /**
-     * @tc.number   ProvideNumber_static_0100
-     * @tc.name     ProvideNumber_static_0100
-     * @tc.desc     ProvideNumber_static_0100
+     * @tc.number   ProvideNumber_0100
+     * @tc.name     ProvideNumber_0100
+     * @tc.desc     ProvideNumber_0100
      * @tc.level    Level.LEVEL0
      */
-it('ProvideNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ProvideNumber_static_0100 START');
+it('ProvideNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ProvideNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ProvideNumber_state1'));
@@ -81,22 +65,22 @@ it('ProvideNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProvideNumber');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ProvideNumber_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ProvideNumber_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ProvideNumber_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ProvideNumber_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Number]" number is 10');
-      console.info('[ProvideNumber_static_0100] END');
+      console.info('[ProvideNumber_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   ProvideNumber_static_0200
-     * @tc.name     ProvideNumber_static_0200
-     * @tc.desc     ProvideNumber_static_0200
+     * @tc.number   ProvideNumber_0200
+     * @tc.name     ProvideNumber_0200
+     * @tc.desc     ProvideNumber_0200
      * @tc.level    Level.LEVEL0
      */
-it('ProvideNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ProvideNumber_static_0100 START');
+it('ProvideNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ProvideNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ProvideNumber_state2'));
@@ -104,22 +88,22 @@ it('ProvideNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProvideNumber');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ProvideNumber_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ProvideNumber_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ProvideNumber_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ProvideNumber_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Object]" number is {"pages":20}');
-      console.info('[ProvideNumber_static_0100] END');
+      console.info('[ProvideNumber_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   ProvideNumber_static_0300
-     * @tc.name     ProvideNumber_static_0300
-     * @tc.desc     ProvideNumber_static_0300
+     * @tc.number   ProvideNumber_0300
+     * @tc.name     ProvideNumber_0300
+     * @tc.desc     ProvideNumber_0300
      * @tc.level    Level.LEVEL0
      */
-it('ProvideNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ProvideNumber_static_0100 START');
+it('ProvideNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ProvideNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ProvideNumber_state3'));
@@ -127,22 +111,22 @@ it('ProvideNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProvideNumber');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ProvideNumber_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ProvideNumber_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ProvideNumber_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ProvideNumber_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Object]" number is {"number":"30"}');
-      console.info('[ProvideNumber_static_0100] END');
+      console.info('[ProvideNumber_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   ProvideNumber_static_0400
-     * @tc.name     ProvideNumber_static_0400
-     * @tc.desc     ProvideNumber_static_0400
+     * @tc.number   ProvideNumber_0400
+     * @tc.name     ProvideNumber_0400
+     * @tc.desc     ProvideNumber_0400
      * @tc.level    Level.LEVEL0
      */
-it('ProvideNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ProvideNumber_static_0100 START');
+it('ProvideNumber_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ProvideNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ProvideNumber_state4'));
@@ -150,22 +134,22 @@ it('ProvideNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProvideNumber');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ProvideNumber_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ProvideNumber_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ProvideNumber_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ProvideNumber_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Date]" number is "2021-08-08T00:00:00.000Z"');
-      console.info('[ProvideNumber_static_0100] END');
+      console.info('[ProvideNumber_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   ProvideNumber_static_0500
-     * @tc.name     ProvideNumber_static_0500
-     * @tc.desc     ProvideNumber_static_0500
+     * @tc.number   ProvideNumber_0500
+     * @tc.name     ProvideNumber_0500
+     * @tc.desc     ProvideNumber_0500
      * @tc.level    Level.LEVEL0
      */
-it('ProvideNumber_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ProvideNumber_static_0100 START');
+it('ProvideNumber_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ProvideNumber_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ProvideNumber_state5'));
@@ -173,10 +157,10 @@ it('ProvideNumber_static_0500', Level.LEVEL0, async (done: () => void): Promise<
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ProvideNumber');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ProvideNumber_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ProvideNumber_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ProvideNumber_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ProvideNumber_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Boolean]" number is true');
-      console.info('[ProvideNumber_static_0100] END');
+      console.info('[ProvideNumber_0100] END');
       done();
     });
 

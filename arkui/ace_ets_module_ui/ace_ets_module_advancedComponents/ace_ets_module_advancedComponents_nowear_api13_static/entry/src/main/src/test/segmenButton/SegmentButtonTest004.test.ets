@@ -14,25 +14,15 @@
  * limitations under the License.
  */
 
-import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation,
-  ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll, afterEach } from '../../../../hypium/index';
-import { i18n } from '@kit.LocalizationKit';
-import display from '@ohos.display';
+import { beforeEach, describe, expect, it, Level, afterEach } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test'
 import inspector from '@ohos.arkui.inspector'
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function SegmentButtonTest004() {
   describe('SegmentButton004', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("SegmentButton004 beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.api13.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info("SegmentButton004 beforeEach start");

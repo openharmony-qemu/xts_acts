@@ -15,7 +15,6 @@
  */
 import {
   describe,
-  beforeAll,
   beforeEach,
   afterEach,
   it,
@@ -41,23 +40,12 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { IReusableInfo, IReusePool, AppStorage } from '@kit.ArkUI';
 
 
 export default function GlobalReusePool004Test() {
   describe('GlobalReusePool004Test', () => {
-    beforeAll(async () => {
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
-
-    })
     beforeEach(async (): Promise<void> => {
       console.info("GlobalReusePool004Test beforeEach start");
       let options: router.RouterOptions = {

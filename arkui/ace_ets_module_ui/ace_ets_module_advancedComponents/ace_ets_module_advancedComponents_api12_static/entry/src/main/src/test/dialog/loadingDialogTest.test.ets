@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Component} from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
+
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -26,12 +26,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function loadingDialogTest() {
   describe('loadingDialogTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("loadingDialogTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("loadingDialogTest beforeEach start");
       let options: router.RouterOptions = {

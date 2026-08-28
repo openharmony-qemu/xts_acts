@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect } from '../../../../hypium/index'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { HoverEffect } from '@ohos.arkui.component'
 
 export default function LightUpEffectTest() {
   
@@ -61,11 +59,6 @@ export default function LightUpEffectTest() {
    * Create test suite.
    */
   describe('lightUpEffectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       
       console.info('[' + data.caseTag + '] lightUpEffectTest');

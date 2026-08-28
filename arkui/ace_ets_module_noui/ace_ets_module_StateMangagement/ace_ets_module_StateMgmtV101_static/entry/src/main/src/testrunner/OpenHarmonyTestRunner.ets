@@ -25,7 +25,7 @@ import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export class OpenHarmonyTestRunner implements TestRunner {
@@ -41,8 +41,23 @@ export class OpenHarmonyTestRunner implements TestRunner {
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
+
+    let cmd = 'aa start -d 0 -a EntryAbility' + ' -b ' + abilityDelegatorArguments.bundleName
+    let debug = abilityDelegatorArguments.parameters['-D']
+    if (debug == 'true') {
+      cmd += ' -D'
+    }
+    let user = abilityDelegatorArguments.parameters['-u'];
+    if (user !== undefined) {
+      cmd += ' -u ' + user;
+    }
+    hilog.info(domain, tag, 'cmd : %{public}s', cmd);
+    abilityDelegator.executeShellCommand(cmd)
+    hilog.info(domain, tag, '%{public}s', 'wait for ability ready...');
+    setTimeout(() => {
+      hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
+      Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
+    }, 4000)
   }
 }

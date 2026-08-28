@@ -14,32 +14,16 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function ConsumeArray() {
   describe('ConsumeArray', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("ConsumeArray beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("ConsumeArray beforeEach start");
       let options: router.RouterOptions = {
@@ -66,13 +50,13 @@ export default function ConsumeArray() {
       
     
 /**
-     * @tc.number   ConsumeArray_static_0100
-     * @tc.name     ConsumeArray_static_0100
-     * @tc.desc     ConsumeArray_static_0100
+     * @tc.number   ConsumeArray_0100
+     * @tc.name     ConsumeArray_0100
+     * @tc.desc     ConsumeArray_0100
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ConsumeArray_static_0100 START');
+it('ConsumeArray_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ConsumeArray_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ConsumeArray_state1'));
@@ -80,22 +64,22 @@ it('ConsumeArray_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ConsumeArray_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ConsumeArray_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Array]" number is [10]');
-      console.info('[ConsumeArray_static_0100] END');
+      console.info('[ConsumeArray_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   ConsumeArray_static_0200
-     * @tc.name     ConsumeArray_static_0200
-     * @tc.desc     ConsumeArray_static_0200
+     * @tc.number   ConsumeArray_0200
+     * @tc.name     ConsumeArray_0200
+     * @tc.desc     ConsumeArray_0200
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ConsumeArray_static_0100 START');
+it('ConsumeArray_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ConsumeArray_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ConsumeArray_state2'));
@@ -103,22 +87,22 @@ it('ConsumeArray_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ConsumeArray_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ConsumeArray_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Array]" number is [true]');
-      console.info('[ConsumeArray_static_0100] END');
+      console.info('[ConsumeArray_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   ConsumeArray_static_0300
-     * @tc.name     ConsumeArray_static_0300
-     * @tc.desc     ConsumeArray_static_0300
+     * @tc.number   ConsumeArray_0300
+     * @tc.name     ConsumeArray_0300
+     * @tc.desc     ConsumeArray_0300
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ConsumeArray_static_0100 START');
+it('ConsumeArray_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ConsumeArray_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ConsumeArray_state3'));
@@ -126,22 +110,22 @@ it('ConsumeArray_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArray');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ConsumeArray_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ConsumeArray_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Boolean]" number is true');
-      console.info('[ConsumeArray_static_0100] END');
+      console.info('[ConsumeArray_0100] END');
       done();
     });
     
     
 /**
-     * @tc.number   ConsumeArray_static_0400
-     * @tc.name     ConsumeArray_static_0400
-     * @tc.desc     ConsumeArray_static_0400
+     * @tc.number   ConsumeArray_0400
+     * @tc.name     ConsumeArray_0400
+     * @tc.desc     ConsumeArray_0400
      * @tc.level    Level.LEVEL0
      */
-it('ConsumeArray_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ConsumeArray_static_0100 START');
+it('ConsumeArray_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('ConsumeArray_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('ConsumeArray_state4'));
@@ -149,10 +133,10 @@ it('ConsumeArray_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeArrayNew');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ConsumeArray_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ConsumeArray_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      console.info("[ConsumeArray_0100] component obj is: " + JSON.stringify(obj));
+      console.info("[ConsumeArray_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('count type of "[object Array]" number is 200');
-      console.info('[ConsumeArray_static_0100] END');
+      console.info('[ConsumeArray_0100] END');
       done();
     });
 

@@ -15,22 +15,13 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, UIElementInfo } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 function sleep(time: int) : Promise<int>  {
     return new Promise<int>((resolve, reject) => {
@@ -42,13 +33,6 @@ function sleep(time: int) : Promise<int>  {
 
 export default function FreezeV1Test() {
   describe('FreezeV1Test', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("FreezeV1Test beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("FreezeV1Test beforeEach start");
       let options: router.RouterOptions = {
@@ -81,13 +65,13 @@ export default function FreezeV1Test() {
     
     
 /**
-     * @tc.number   FreezeTest_static_001
-     * @tc.name     FreezeTest_static_001
-     * @tc.desc     FreezeTest_static_001
+     * @tc.number   FreezeTest_001
+     * @tc.name     FreezeTest_001
+     * @tc.desc     FreezeTest_001
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_001', Level.LEVEL0, async () => {
-      console.info('FreezeTest_static_001 START');
+it('FreezeTest_001', Level.LEVEL0, async () => {
+      console.info('FreezeTest_001 START');
       let driver =  Driver.create()
       let changeIndex = await driver.findComponent(ON.id('changeIndex'));
       await (changeIndex?.click() as Promise<void>) ;
@@ -107,20 +91,20 @@ it('FreezeTest_static_001', Level.LEVEL0, async () => {
         }
       }
       observer1.onceToastShow(callback1)
-      console.info('FreezeTest_static_001 END');
+      console.info('FreezeTest_001 END');
     });
 
 
     
     
 /**
-     * @tc.number   FreezeTest_static_002
-     * @tc.name     FreezeTest_static_002
-     * @tc.desc     FreezeTest_static_002
+     * @tc.number   FreezeTest_002
+     * @tc.name     FreezeTest_002
+     * @tc.desc     FreezeTest_002
      * @tc.level    Level.LEVEL0
      */
-it('FreezeTest_static_002', Level.LEVEL0, async () => {
-      console.info('FreezeTest_static_002 START');
+it('FreezeTest_002', Level.LEVEL0, async () => {
+      console.info('FreezeTest_002 START');
       let driver =  Driver.create()
       let changeIndex0 = await driver.findComponent(ON.id('changeIndex0'));
       await (changeIndex0?.click() as Promise<void>) ;
@@ -136,7 +120,7 @@ it('FreezeTest_static_002', Level.LEVEL0, async () => {
         }
       }
       observer1.onceToastShow(callback1)
-      console.info('FreezeTest_static_002 END');
+      console.info('FreezeTest_002 END');
     });
   })
 }

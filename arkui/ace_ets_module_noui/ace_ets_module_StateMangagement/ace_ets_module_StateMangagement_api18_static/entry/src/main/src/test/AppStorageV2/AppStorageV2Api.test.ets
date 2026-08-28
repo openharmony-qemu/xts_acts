@@ -14,24 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest,startAbility} from '../Util.test';
 import { AppStorageV2 } from '@kit.ArkUI';
 import {Message1,Message2} from "../../../../main/ets/MainAbility/pages/AppStorageV2/AppStorageV2Api"
 
 export default function AppStorageV2Api(): void {
   describe('AppStorageV2ApiTest', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
-
-    })
     beforeEach(async (): Promise<void> => {
       console.info("AppStorageV2ApiTest beforeEach start");
       let options: router.RouterOptions = {
@@ -239,11 +233,11 @@ export default function AppStorageV2Api(): void {
       await (Btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
-      // 删除创建的值
+      // 删除创建的�?
       AppStorageV2.remove(Class.from<Message1>())
       AppStorageV2.remove(Class.from<Message2>())
 
-      // 验证array为空的情况
+      // 验证array为空的情�?
       let keys: Array<string> = AppStorageV2.keys();
       expect(keys.length).assertEqual(0);
 

@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function StateNumber() {
   describe('StateNumber', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("StateNumber beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("StateNumber beforeEach start");
       let options: router.RouterOptions = {
@@ -64,12 +49,12 @@ export default function StateNumber() {
     
     
 /**
-     * @tc.number   StateNumber_static_0100
-     * @tc.name     StateNumber_static_0100
-     * @tc.desc     StateNumber_static_0100
+     * @tc.number   StateNumber_0100
+     * @tc.name     StateNumber_0100
+     * @tc.desc     StateNumber_0100
      * @tc.level    Level.LEVEL0
      */
-it('StateNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('StateNumber_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -87,12 +72,12 @@ it('StateNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
     
     
 /**
-     * @tc.number   StateNumber_static_0200
-     * @tc.name     StateNumber_static_0200
-     * @tc.desc     StateNumber_static_0200
+     * @tc.number   StateNumber_0200
+     * @tc.name     StateNumber_0200
+     * @tc.desc     StateNumber_0200
      * @tc.level    Level.LEVEL0
      */
-it('StateNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('StateNumber_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -110,12 +95,12 @@ it('StateNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
     
     
 /**
-     * @tc.number   StateNumber_static_0300
-     * @tc.name     StateNumber_static_0300
-     * @tc.desc     StateNumber_static_0300
+     * @tc.number   StateNumber_0300
+     * @tc.name     StateNumber_0300
+     * @tc.desc     StateNumber_0300
      * @tc.level    Level.LEVEL0
      */
-it('StateNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('StateNumber_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -133,12 +118,12 @@ it('StateNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
     
     
 /**
-     * @tc.number   StateNumber_static_0400
-     * @tc.name     StateNumber_static_0400
-     * @tc.desc     StateNumber_static_0400
+     * @tc.number   StateNumber_0400
+     * @tc.name     StateNumber_0400
+     * @tc.desc     StateNumber_0400
      * @tc.level    Level.LEVEL0
      */
-it('StateNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('StateNumber_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -156,12 +141,12 @@ it('StateNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<vo
     
     
 /**
-     * @tc.number   StateNumber_static_0500
-     * @tc.name     StateNumber_static_0500
-     * @tc.desc     StateNumber_static_0500
+     * @tc.number   StateNumber_0500
+     * @tc.name     StateNumber_0500
+     * @tc.desc     StateNumber_0500
      * @tc.level    Level.LEVEL0
      */
-it('StateNumber_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+ it('StateNumber_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateNumber_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

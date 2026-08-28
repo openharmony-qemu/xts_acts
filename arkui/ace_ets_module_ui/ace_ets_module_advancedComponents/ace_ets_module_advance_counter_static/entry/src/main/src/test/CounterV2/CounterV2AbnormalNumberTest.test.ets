@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,10 +25,6 @@ import {
 
 export default function CounterV2AbnormalNumberTest(): void {
   describe('CounterV2AbnormalNumberTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.advance.counter.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/CounterV2/abnormal/CounterV2AbnormalNumber',
