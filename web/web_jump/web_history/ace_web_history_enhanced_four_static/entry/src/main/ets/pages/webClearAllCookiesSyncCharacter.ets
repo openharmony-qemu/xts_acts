@@ -124,7 +124,7 @@ struct webClearAllCookiesSyncCharacter {
                 webView.WebCookieManager.clearAllCookiesSync(true);
                 webView.WebCookieManager.configCookieSync("https://www.baidu.com", 'a=b\nc', true, false);
                 let incognito: boolean | null = null;
-                webView.WebCookieManager.clearAllCookiesSync(incognito);
+                webView.WebCookieManager.clearAllCookiesSync(incognito as boolean);
                 let value = webView.WebCookieManager.fetchCookieSync("https://www.baidu.com", true);
                 console.log(this.str + 'fetchCookieSync cookie value= ' + value);
                 Utils.emitEvent(value, 133422);

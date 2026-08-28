@@ -794,7 +794,7 @@ struct Index {
               try {
                 web_webview.WebCookieManager.clearAllCookiesSync();
                 web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b', false);
-                web_webview.WebCookieManager.fetchCookie('https://www.example.com', null, false)
+                web_webview.WebCookieManager.fetchCookie('https://www.example.com', null as boolean, false)
                   .then((cookie: string) => {
                     console.log('emitFetchCookieIncognitoNullStatic cookie = ' + cookie);
                     Utils.emitEvent(cookie, 2026072419);
@@ -816,7 +816,7 @@ struct Index {
               try {
                 web_webview.WebCookieManager.clearAllCookiesSync();
                 web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'a=b', false);
-                web_webview.WebCookieManager.fetchCookie('https://www.example.com', undefined, false)
+                web_webview.WebCookieManager.fetchCookie('https://www.example.com', undefined as boolean, false)
                   .then((cookie: string) => {
                     console.log('emitFetchCookieIncognitoUndefinedStatic cookie = ' + cookie);
                     Utils.emitEvent(cookie, 2026072420);
@@ -838,7 +838,7 @@ struct Index {
               try {
                 web_webview.WebCookieManager.clearAllCookiesSync();
                 web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'incog=null', false);
-                let cookie = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', null, false);
+                let cookie = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com', null as boolean, false);
                 console.log('emitFetchCookieSyncIncognitoNullStatic cookie = ' + cookie);
                 Utils.emitEvent(cookie, 2026072421);
               } catch (error) {
