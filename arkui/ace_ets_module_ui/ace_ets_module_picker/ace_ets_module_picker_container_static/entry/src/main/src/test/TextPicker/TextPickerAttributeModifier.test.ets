@@ -101,7 +101,7 @@ export default function TextPickerAttributeModifierTest() {
       let obj = JSON.parseJsonElement(strJson);
       let disappearTextStyle = obj.getElement('$attrs').getElement('disappearTextStyle');
       expect(disappearTextStyle.getString('color')).assertEqual('#FF808080');
-      expect(disappearTextStyle.getElement('font').getString('size')).assertEqual('16.00vp');
+      expect(disappearTextStyle.getElement('font').getString('size')).assertEqual('16.00fp');
       expect(disappearTextStyle.getElement('font').getString('weight')).assertEqual('FontWeight.Bold');
       done();
     });
