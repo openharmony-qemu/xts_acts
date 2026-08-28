@@ -84,7 +84,7 @@ export default function ParticleTest() {
         console.info('ParticleTest err: ' + JSON.stringify(err));
       }
       console.log('test animation  ')
-      let btn: Component | null;
+      let btn: Component | null = null;
       try {
         btn = await driver.findComponent(ON.id('btn'));
       } catch (err) {
@@ -142,7 +142,7 @@ export default function ParticleTest() {
       } catch (err) {
         console.info('ParticleTest err: ' + JSON.stringify(err));
       }
-      let btn: Component | null;
+      let btn: Component | null = null;
       try {
         btn = await driver.findComponent(ON.id('btn'));
       } catch (err) {
@@ -193,7 +193,7 @@ export default function ParticleTest() {
       } catch (err) {
         console.info('ParticleTest err: ' + JSON.stringify(err));
       }
-      let btn: Component | null;
+      let btn: Component | null = null;
       try {
         btn = await driver.findComponent(ON.id('btn'));
       } catch (err) {
@@ -244,7 +244,7 @@ export default function ParticleTest() {
       } catch (err) {
         console.info('ParticleTest err: ' + JSON.stringify(err));
       }
-      let btn: Component | null;
+      let btn: Component | null = null;
       try {
         btn = await driver.findComponent(ON.id('btn'));
       } catch (err) {

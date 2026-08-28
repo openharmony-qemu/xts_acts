@@ -72,7 +72,7 @@ it('geometryTransition_static_0100', Level.LEVEL0, async (done: () => void): Pro
       } catch (err) {
         console.info('geometryTransition_static_0100 err: ' + JSON.stringify(err));
       }
-      let button: Component | null;
+      let button: Component | null = null;
       try {
         button = await driver.findComponent(ON.id('geometry_follow_1'));
       } catch (err) {

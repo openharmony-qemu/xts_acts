@@ -86,7 +86,7 @@ it('ParticleAttributeTest_static_001', Level.LEVEL0, async (done: () => void): P
         console.info('ParticleAttributeTest err: ' + JSON.stringify(err));
       }
       console.log('test1156 ')
-      let btn: Component | null;
+      let btn: Component | null = null;
       try {
         btn = await driver.findComponent(ON.id('btn'));
       } catch (err) {

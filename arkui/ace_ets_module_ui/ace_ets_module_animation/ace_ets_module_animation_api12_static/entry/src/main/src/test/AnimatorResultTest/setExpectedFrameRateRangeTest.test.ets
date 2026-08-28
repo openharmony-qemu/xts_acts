@@ -78,7 +78,7 @@ it('setExpectedFrameRateRangeTest_static_001', Level.LEVEL0, async (done: () => 
         console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
       }
       let scrollBar = await driver.findComponent(ON.type('Scroll'));
-      let create: Component | null;
+      let create: Component | null = null;
       try {
         create = await (scrollBar?.scrollSearch(ON.id('create')) as Promise<Component>);
       } catch (err) {
@@ -94,7 +94,7 @@ it('setExpectedFrameRateRangeTest_static_001', Level.LEVEL0, async (done: () => 
       } catch (err) {
         console.info('setExpectedFrameRateRangeTest err: ' + JSON.stringify(err));
       }
-      let play: Component | null;
+      let play: Component | null = null;
       try {
         play = await (scrollBar?.scrollSearch(ON.id('play')) as Promise<Component>);
       } catch (err) {

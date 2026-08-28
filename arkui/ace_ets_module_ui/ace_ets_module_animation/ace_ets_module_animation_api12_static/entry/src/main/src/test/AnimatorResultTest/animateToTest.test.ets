@@ -83,7 +83,7 @@ it('animateToTest_static_001', Level.LEVEL3, async (done: () => void): Promise<v
         console.info('animateToTest err: ' + JSON.stringify(err));
       }
       let driver = Driver.create();
-      let button: Component | null;
+      let button: Component | null = null;
       try {
         button = await driver.findComponent(ON.id('animateToTestBt'));
       } catch (err) {
