@@ -3524,7 +3524,6 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test start`);
       networkId = -1;
       try {
-        await Utils.msSleep(5000);
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
