@@ -574,10 +574,11 @@ export default function UsbCoreApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetFileDescriptor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it('testGetFileDescriptor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} testGetFileDescriptor005 start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testGetFileDescriptor005, skip`);
+        done();
         return;
       }
       try {
@@ -586,6 +587,8 @@ export default function UsbCoreApiTest() {
       } catch (error) {
         console.error(`${TAG} testGetFileDescriptor005 catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(401);
+      } finally {
+        done();
       }
     })
 
@@ -597,10 +600,11 @@ export default function UsbCoreApiTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testGetFileDescriptor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it('testGetFileDescriptor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} testGetFileDescriptor006 start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testGetFileDescriptor006, skip`);
+        done();
         return;
       }
       try {
@@ -609,6 +613,8 @@ export default function UsbCoreApiTest() {
       } catch (error) {
         console.error(`${TAG} testGetFileDescriptor006 catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(401);
+      } finally {
+        done();
       }
     })
 

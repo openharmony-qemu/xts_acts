@@ -383,10 +383,11 @@ export default function UsbApiIsochronousTransferTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUsbSubmitTransfer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it('testUsbSubmitTransfer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} testUsbSubmitTransfer005 start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testUsbSubmitTransfer005, skip`);
+        done();
         return;
       }
       let fakePipe: usbMgr.USBDevicePipe = { busNum: 0, devAddress: 0 };
@@ -397,6 +398,8 @@ export default function UsbApiIsochronousTransferTest() {
       } catch (error) {
         console.error(`${TAG} testUsbSubmitTransfer005 catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14400001);
+      } finally {
+        done();
       }
     });
 
@@ -440,10 +443,11 @@ export default function UsbApiIsochronousTransferTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testUsbCancelTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it('testUsbCancelTransfer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} testUsbCancelTransfer002 start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testUsbCancelTransfer002, skip`);
+        done();
         return;
       }
       let fakePipe: usbMgr.USBDevicePipe = { busNum: 0, devAddress: 0 };
@@ -454,6 +458,8 @@ export default function UsbApiIsochronousTransferTest() {
       } catch (error) {
         console.error(`${TAG} testUsbCancelTransfer002 catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14400001);
+      } finally {
+        done();
       }
     });
 

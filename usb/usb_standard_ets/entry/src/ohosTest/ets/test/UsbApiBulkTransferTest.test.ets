@@ -261,10 +261,11 @@ export default function UsbApiBulkTransferTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testBulkSubmitTransferNoDevice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it('testBulkSubmitTransferNoDevice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} testBulkSubmitTransferNoDevice start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testBulkSubmitTransferNoDevice, skip`);
+        done();
         return;
       }
       let pipe: usbMgr.USBDevicePipe = {
@@ -280,6 +281,8 @@ export default function UsbApiBulkTransferTest() {
       } catch (error) {
         console.error(`${TAG} testBulkSubmitTransferNoDevice catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14400001);
+      } finally {
+        done();
       }
     });
 
