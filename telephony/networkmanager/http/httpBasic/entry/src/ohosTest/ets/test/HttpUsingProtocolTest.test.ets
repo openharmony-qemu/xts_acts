@@ -47,7 +47,7 @@ export default function HttpUsingProtocolTest() {
       console.info(`${caseName}---start`);
       try {
         let httpRequest  = http.createHttp();
-        httpRequest .request("https://www.baidu.com", {
+        httpRequest.request("https://www.baidu.com", {
           usingProtocol: http.HttpProtocol.HTTP1_1
         }).then((data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
@@ -67,7 +67,7 @@ export default function HttpUsingProtocolTest() {
     /**
      * @tc.name   testTelephonyNETSTACKHttp2TestBasicGet0200
      * @tc.number SUB_Telephony_NETSTACK_Http2TestBasicGet_0200
-     * @tc.desc   usingCache test
+     * @tc.desc   test http1_2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -77,7 +77,7 @@ export default function HttpUsingProtocolTest() {
       console.info(`${caseName}---start`);
       try {
         let httpRequest  = http.createHttp();
-        httpRequest .request("https://www.baidu.com", {
+        httpRequest.request("https://www.baidu.com", {
           usingProtocol: http.HttpProtocol.HTTP2
         }).then((data) =>{
           console.info(`${caseName} data: ` + JSON.stringify(data));
@@ -98,7 +98,7 @@ export default function HttpUsingProtocolTest() {
     /**
      * @tc.name   testTelephonyNETSTACKHttp2TestBasicGet0300
      * @tc.number SUB_Telephony_NETSTACK_Http2TestBasicGet_0300
-     * @tc.desc   set usingCache to true
+     * @tc.desc   test normal
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -108,7 +108,7 @@ export default function HttpUsingProtocolTest() {
       console.info(`${caseName}---start`);
       try {
         let httpRequest  = http.createHttp();
-        httpRequest .request("https://www.baidu.com").then( (data)=> {
+        httpRequest.request("https://www.baidu.com").then( (data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
           ExpectTrue(data.responseCode == 200);
           httpRequest .destroy();
@@ -204,7 +204,9 @@ export default function HttpUsingProtocolTest() {
             method: http.RequestMethod.GET,
             extraData: '',
             expectDataType: http.HttpDataType.STRING,
-            header: "content-type': 'application/json",
+            header:{
+              'Content-Type': 'application/json'
+            },
             readTimeout: 6000,
             connectTimeout: 6000,
             priority: 100,
