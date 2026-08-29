@@ -120,9 +120,8 @@ struct audioOutputRouting {
                         Logger.info(this.tag, `getDevices count: ${devices.length}, and ${JSON.stringify(devices)}`)
                         let hasTypeC = false
                         for (let i = 0; i < devices.length; i++) {
-                          if (devices[i].deviceType === audio.DeviceType.WIRED_HEADSET ||
-                            devices[i].deviceType === audio.DeviceType.WIRED_HEADPHONES ||
-                            devices[i].deviceType === audio.DeviceType.USB_HEADSET) {
+                          if (devices[i].deviceType === audio.DeviceType.BLUETOOTH_A2DP ||
+                            devices[i].deviceType === audio.DeviceType.BLUETOOTH_SCO) {
                               hasTypeC = true
                               break
                           }
