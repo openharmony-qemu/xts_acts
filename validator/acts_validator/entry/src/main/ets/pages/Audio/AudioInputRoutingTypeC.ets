@@ -114,7 +114,8 @@ struct audioInputRouting {
                       try {
                         let audioManager = audio.getAudioManager()
                         let routingManager = audioManager.getRoutingManager()
-                        let devices: audio.AudioDeviceDescriptors = await routingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
+                        let devices: audio.AudioDeviceDescriptors =
+                          await routingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
                         Logger.info(this.tag, `getDevices count: ${devices.length}, and ${JSON.stringify(devices)}`)
                         let hasTypeC = false
                         for (let i = 0; i < devices.length; i++) {
@@ -173,7 +174,8 @@ struct audioInputRouting {
                       try {
                         let audioManager = audio.getAudioManager()
                         let routingManager = audioManager.getRoutingManager()
-                        let devices: audio.AudioDeviceDescriptors = await routingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
+                        let devices: audio.AudioDeviceDescriptors =
+                          await routingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
                         Logger.info(this.tag, `getDevices count: ${devices.length}, and ${JSON.stringify(devices)}`)
                         let hasTypeC = false
                         for (let i = 0; i < devices.length; i++) {
