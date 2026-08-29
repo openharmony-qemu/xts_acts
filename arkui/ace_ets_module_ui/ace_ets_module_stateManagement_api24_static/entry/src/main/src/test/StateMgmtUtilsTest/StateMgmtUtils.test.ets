@@ -95,7 +95,7 @@ export default function StateMgmtUtilsTest(): void {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         routerInstance.replaceUrl(options);
-        await new Promise<void>((resolve) => setTimeout(resolve, 500));
+        Utils.sleep(500);
       } catch (err) {
         console.error('StateMgmtUtilsProbePageTest replaceUrl error: ' + err);
         expect().assertFail();

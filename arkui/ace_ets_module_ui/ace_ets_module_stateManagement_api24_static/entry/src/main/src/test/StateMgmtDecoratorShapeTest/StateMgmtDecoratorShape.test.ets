@@ -183,7 +183,7 @@ export default function StateMgmtDecoratorShapeTest(): void {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
         routerInstance.replaceUrl(options);
-        await new Promise<void>((resolve) => setTimeout(resolve, 500));
+        await Utils.sleep(500);
       } catch (err) {
         console.error('StateMgmtProbePageTest replaceUrl error: ' + err);
         expect().assertFail();
