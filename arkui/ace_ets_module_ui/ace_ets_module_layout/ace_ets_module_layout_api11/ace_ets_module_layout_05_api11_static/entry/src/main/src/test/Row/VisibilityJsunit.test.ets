@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect,Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, it, expect, beforeAll,Level } from "../../../../hypium/index";
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
@@ -21,12 +21,28 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Visibility } from '@ohos.arkui.component'
 import router from '@ohos.router';
 
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test'
 import { RecordData } from '@ohos.base';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function visibilityJsunit() {
   describe('appInfoTest_five_5', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("appInfoTest_five_5 beforeAll start");
+           
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("visibilityJsunit beforeEach start");
@@ -49,11 +65,7 @@ export default function visibilityJsunit() {
     });
 
     afterEach(async () => {
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('appInfoTest_five_5Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("visibility after each called");
     });
     
@@ -68,11 +80,7 @@ export default function visibilityJsunit() {
      */
 it('testVisibility01_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testVisibility01_static_01] START');
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('appInfoTest_five_5Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('box');
       let obj = JSON.parseJsonElement(strJson)
      console.info("[testVisibility01_static_01] obj is: " + JSON.stringify(obj));
@@ -107,11 +115,7 @@ it('testVisibility02_static_02', Level.LEVEL0, async (done: () => void): Promise
       } catch (err) {
         console.log("[testVisibility02_static_02] change component data error: " + (err as Error)?.message);
       }
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('appInfoTest_five_5Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('box');
       let obj = JSON.parseJsonElement(strJson)
      console.info("[testVisibility02_static_02] obj is: " + JSON.stringify(obj));
@@ -146,11 +150,7 @@ it('testVisibility03_static_03', Level.LEVEL0, async (done: () => void): Promise
       } catch (err) {
         console.log("[testVisibility03_static_03] change component data error: " + (err as Error)?.message);
       }
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('appInfoTest_five_5Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('box');
      console.info("[testVisibility03_static_03] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('visibility')).assertEqual('Visibility.None');

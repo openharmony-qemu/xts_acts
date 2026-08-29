@@ -13,15 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import {UtilsTest,startAbility} from '../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 export default function APIdisposeTreeTest() {
   describe('APIdisposeTreeTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("APIdisposeTreeTest beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async () : Promise<void> => {
       console.info("APIdisposeTreeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,44 +75,16 @@ it('APIdisposeTreeTest_static_static_0100', Level.LEVEL0, async (done: () => voi
 
       console.info('APIdisposeTreeTest_static_0100 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button1 = await driver.findComponent(ON.id('APIdisposeTree_Button2'));
-      try {
       await (button1?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button2 = await driver.findComponent(ON.id('APIdisposeTree_Button1'));
-      try {
       await (button2?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button3 = await driver.findComponent(ON.id('APIdisposeTree_Text'));
-      try {
       await (button3?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('APIdisposeTree_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[APIdisposeTreeTest_static_0100] component obj is: ",obj, obj.getElement('$attrs').getString('content'));

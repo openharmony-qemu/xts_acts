@@ -13,16 +13,23 @@
  * See the License for specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Driver, Component, On, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest, startAbility } from '../Util.test';
 
 export default function DrawContextSizeTest() {
   describe('DrawContextSizeTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("DrawContextSizeTest beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility");
+      await UtilsTest.msSleep(1000);
+      console.info('DrawContextSizeTest startAbility completed');
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("DrawContextSizeTest beforeEach start");
@@ -54,22 +61,10 @@ export default function DrawContextSizeTest() {
     it('DrawContext_size_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DrawContext_size_0100 START');
       let driver = Driver.create();
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button: Component | null = await driver.findComponent(ON.id('buttonGetProps'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('textSizeWidth');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[DrawContext_size_0100] size width: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
@@ -88,22 +83,10 @@ export default function DrawContextSizeTest() {
     it('DrawContext_size_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DrawContext_size_0200 START');
       let driver = Driver.create();
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button: Component | null = await driver.findComponent(ON.id('buttonGetProps'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('textSizeHeight');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[DrawContext_size_0200] size height: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
@@ -122,22 +105,10 @@ export default function DrawContextSizeTest() {
     it('DrawContext_sizeInPixel_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DrawContext_sizeInPixel_0100 START');
       let driver = Driver.create();
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button: Component | null = await driver.findComponent(ON.id('buttonGetProps'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('textSizeInPixelWidth');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[DrawContext_sizeInPixel_0100] sizeInPixel width: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
@@ -157,22 +128,10 @@ export default function DrawContextSizeTest() {
     it('DrawContext_sizeInPixel_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DrawContext_sizeInPixel_0200 START');
       let driver = Driver.create();
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button: Component | null = await driver.findComponent(ON.id('buttonGetProps'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('textSizeInPixelHeight');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[DrawContext_sizeInPixel_0200] sizeInPixel height: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
@@ -192,22 +151,10 @@ export default function DrawContextSizeTest() {
     it('DrawContext_canvas_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DrawContext_canvas_0100 START');
       let driver = Driver.create();
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button: Component | null = await driver.findComponent(ON.id('buttonGetProps'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('textCanvasValid');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[DrawContext_canvas_0100] canvas valid: " + JSON.stringify(obj.getElement('$attrs').getString('content')));

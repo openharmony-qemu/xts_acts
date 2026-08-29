@@ -17,7 +17,7 @@
 // import ohosrouter from '@ohos.router';
 import { $r } from '@ohos.arkui.component';
 import resourceManager from '@ohos.resourceManager';
-import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -31,11 +31,19 @@ import {
   WindowMode
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 interface ParamsData {
   data3: number[];
@@ -48,6 +56,12 @@ interface MyParams {
 
 export default function circleNewJsunit() {
   describe('circleNewTest', () => {
+    beforeAll(async () => {
+      
+      await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
+      
+    });
+
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Circle/circle',
@@ -70,11 +84,7 @@ export default function circleNewJsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('circleNewTest afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("circleNew after each called");
     });
 
@@ -89,11 +99,7 @@ export default function circleNewJsunit() {
      */
 it('testcircleNew_static_001', Level.LEVEL0, async (): Promise<void> => {
       console.info('circleNew testcircleNew_static_001 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('circleNewTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('circle' + '_circle');
       console.info("[testcircleNew_static_001] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -113,11 +119,7 @@ it('testcircleNew_static_001', Level.LEVEL0, async (): Promise<void> => {
      */
 it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
       console.info('circleNew testcircleNew_static_002 START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('circleNewTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('circle' + '_circle');
       console.info("[testcircleNew_static_002] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
@@ -303,11 +305,7 @@ it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
      */
 it('testGlobal_attribute_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.info('testGlobal_attribute_static_0100 START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('circleNewTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let resource: resourceManager.Resource = {
         bundleName: "com.arkui.ace.draw",
         moduleName: "phone",

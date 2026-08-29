@@ -14,18 +14,34 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../../hypium/index";
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
 import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import { Visibility } from '@ohos.arkui.component'
 import router from '@ohos.router';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../../../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function grid_RowCol_ItemVisibilityTest() {
   describe('Grid_RowCol_ItemVisibilityTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("grid_RowCol_ItemVisibilityTest beforeAll start");
+           
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("grid_RowCol_ItemVisibilityTest beforeEach start");
@@ -48,11 +64,7 @@ export default function grid_RowCol_ItemVisibilityTest() {
     });
 
     afterEach(async () => {
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('Grid_RowCol_ItemVisibilityTestTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("Grid_RowCol_ItemVisibilityTest after each called");
     });
     
@@ -70,11 +82,7 @@ it('testGridRowColItemVisibilityNone_static_01', Level.LEVEL0, async (done: () =
       AppStorage.get<MessageManager<Visibility>>('messageManager')?.notify({
         name: 'secondGridItemVisibility', value: Visibility.None
       });
-            try {
-        await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Grid_RowCol_ItemVisibilityTestTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility03');
@@ -120,11 +128,7 @@ it('testGridRowColItemVisibilityHidden_static_02', Level.LEVEL0, async (done: ()
       AppStorage.get<MessageManager<Visibility>>('messageManager')?.notify({
         name: 'secondGridItemVisibility', value: Visibility.Hidden
       });
-            try {
-        await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Grid_RowCol_ItemVisibilityTestTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility03');
@@ -173,11 +177,7 @@ it('testGridRowColItemVisibilityVisible_static_03', Level.LEVEL0, async (done: (
       AppStorage.get<MessageManager<Visibility>>('messageManager')?.notify({
         name: 'secondGridItemVisibility', value: Visibility.Visible
       });
-            try {
-        await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Grid_RowCol_ItemVisibilityTestTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility01');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility02');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemVisibility03');

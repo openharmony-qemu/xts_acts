@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -21,13 +21,24 @@ import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
-
-
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest } from '../../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function flexBasis_Default() {
   describe('flexBasis_Default', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("flexBasis_Default beforeEach start");
 
+
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
+    });
     beforeEach(async (): Promise<void> => {
       console.info("flexBasis_Default beforeEach start");
       let options: router.RouterOptions = {
@@ -53,11 +64,7 @@ export default function flexBasis_Default() {
     });
 
     afterEach(async () => {
-      try {
       await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('flexBasis_Default sleep err: ' + JSON.stringify(err));
-      }
       console.info("flexBasis_Default after each called")
     });
     
@@ -174,11 +181,7 @@ export default function flexBasis_Default() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'addflexBasis', value: -5
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('flexBasis_Default sleep err: ' + JSON.stringify(err));
-      }
       let Column_flexBasis_011: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_011');
       let Column_flexBasis_012: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_012');
       let Column_flexBasis_013: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_013');
@@ -226,11 +229,7 @@ export default function flexBasis_Default() {
     it('SUB_ACE_flexBasis_Default_TEST_static_0400', Level.LEVEL0, async () => {
       console.info('[SUB_ACE_flexBasis_Default_TEST_0400] START');
       const uiContext = AppStorage.get<UIContext>('uiContext');
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('flexBasis_Default sleep err: ' + JSON.stringify(err));
-      }
       let Column_flexBasis_021: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_021');
       let Column_flexBasis_022: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_022');
       let Column_flexBasis_023: RectValue = CommonFunc.getComponentRect('flexBasis_Default' + '_Column_flexBasis_023');

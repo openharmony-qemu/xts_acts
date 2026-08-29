@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+
+import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+import { UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -25,69 +27,40 @@ import { ensureAbnormalPage } from '../common/AbnormalPageRouter';
 
 export default function ChipV2AbnormalPrefixIconTest(): void {
   describe('ChipV2AbnormalPrefixIconTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility");
+    });
 
     beforeEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(300);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(300);
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(300);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(300);
     });
 
     it('SUB_ARKUI_CHIPV2_ABN_PRESIZE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_preSize_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_preSize_u');
       assertPropSame('abn_preSize_u', 'abn_preSize_d', 'size', 'root');
     });
     it('SUB_ARKUI_CHIPV2_ABN_PREFILL_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_preFill_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_preFill_u');
       assertChildrenSame('abn_preFill_u', 'abn_preFill_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_PREACTFILL_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_preActFill_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_preActFill_u');
       assertChildrenSame('abn_preActFill_u', 'abn_preActFill_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_PREMODIFIER_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_preModifier_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_preModifier_u');
       assertSmoke('abn_preModifier_u', 'abn_preModifier_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_PRESYMNORMAL_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_preSymNormal_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_preSymNormal_u');
       assertChildrenSame('abn_preSymNormal_u', 'abn_preSymNormal_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_PRESYMACT_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_preSymAct_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_preSymAct_u');
       assertChildrenSame('abn_preSymAct_u', 'abn_preSymAct_d');
     });
   });

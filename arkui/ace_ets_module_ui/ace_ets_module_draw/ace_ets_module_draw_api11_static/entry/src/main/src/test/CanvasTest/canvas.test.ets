@@ -15,16 +15,31 @@
  */
 
 import router from '@ohos.router';
-import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
+import { startAbility, stopApplication, UtilsTest } from '../Util.test'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
+
 export default function canvasActualBoundingBoxAscentJsunit() {
   describe('canvasActualBoundingBoxAscentTest', () => {
+    beforeAll(async () => {
+      
+      await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
+      
+    });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -49,11 +64,7 @@ export default function canvasActualBoundingBoxAscentJsunit() {
     });
 
     afterEach(async () => {
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('canvasTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info("canvasActualBoundingBoxAscent after each called");
     });
 
@@ -66,11 +77,7 @@ export default function canvasActualBoundingBoxAscentJsunit() {
      */
 it('testcanvasAttributes_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0001 testcanvasAttributes0001 START');
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('canvasTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');
       console.info("[testcanvasAttributes_static_0001] component width strJson:" + strJson);
       expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Canvas');
@@ -89,11 +96,7 @@ it('testcanvasAttributes_static_0001', Level.LEVEL0, async (done: () => void): P
      */
 it('testcanvasAttributes_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0002 testcanvasAttributes0002 START');
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('canvasTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');
       console.info("[testcanvasAttributes_static_0002] component height strJson:" + strJson);
 
@@ -113,11 +116,7 @@ it('testcanvasAttributes_static_0002', Level.LEVEL0, async (done: () => void): P
      */
 it('testcanvasAttributes_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0003 testcanvasAttributes0003 START');
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('canvasTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');
       console.info("[testcanvasAttributes_static_0003] component backgroundColor strJson:" + strJson);
 
@@ -137,11 +136,7 @@ it('testcanvasAttributes_static_0003', Level.LEVEL0, async (done: () => void): P
      */
 it('testcanvasAttributes_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0004 testcanvasAttributes0004 START');
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('canvasTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');
       console.info("[testcanvasAttributes_static_0004] component position strJson:" + strJson);
 
@@ -160,11 +155,7 @@ it('testcanvasAttributes_static_0004', Level.LEVEL0, async (done: () => void): P
      */
 it('testcanvasAttributes_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testcanvasAttributes_static_0005 testcanvasAttributes0004 START');
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('canvasTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('Canvas');
       console.info("[testtestcanvasAttributes_static_0005] component align strJson:" + strJson);
 

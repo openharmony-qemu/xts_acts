@@ -14,17 +14,33 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
 import inspector from '@ohos.arkui.inspector'
 import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager';
 import router from '@ohos.router';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../../../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_Row_GutterOption_Default() {
   describe('Grid_Row_GutterOption_Default', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("Grid_Row_GutterOption_Default beforeAll start");
+           
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("Grid_Row_GutterOption_Default beforeEach start");
@@ -47,11 +63,7 @@ export default function Grid_Row_GutterOption_Default() {
     });
 
     afterEach(async () => {
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Grid_Row_GutterOption_DefaultTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info("Grid_Row_GutterOption_Default after each called")
     });
 
@@ -67,11 +79,7 @@ export default function Grid_Row_GutterOption_Default() {
      */
 it('SUB_ACE_GridRowGutterOption_Default_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowGutterOption_Default_static_0100 START');
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Grid_Row_GutterOption_DefaultTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000)
 
       let GutterOption_1: RectValue = CommonFunc.getComponentRect('GutterOptionChange_001');
       let firstGutterOption: RectValue = CommonFunc.getComponentRect('GutterOptionChange_0');
@@ -108,11 +116,7 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0200', Level.LEVEL0, async (done:
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'optionX', value: 10.0
       })
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Grid_Row_GutterOption_DefaultTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000)
 
       let GutterOption_1: RectValue = CommonFunc.getComponentRect('GutterOptionChange_001');
       let firstGutterOption: RectValue = CommonFunc.getComponentRect('GutterOptionChange_0');
@@ -152,11 +156,7 @@ it('SUB_ACE_GridRowGutterOption_Default_static_0300', Level.LEVEL0, async (done:
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'optionY', value: 10.0
       })
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Grid_Row_GutterOption_DefaultTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000)
 
       let GutterOption_1: RectValue = CommonFunc.getComponentRect('GutterOptionChange_001');
       let firstGutterOption: RectValue = CommonFunc.getComponentRect('GutterOptionChange_0');

@@ -13,19 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, it, expect, beforeAll,Level } from "../../../../hypium/index"
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
 import { RotateOptions, ScaleOptions } from '@ohos.arkui.component'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test'
 import { RecordData } from '@ohos.base';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function transFormJsunit() {
   describe('appInfoTest_five_4', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("appInfoTest_five_4 beforeAll start");
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("transFormJsunit beforeEach start");
@@ -48,11 +63,7 @@ export default function transFormJsunit() {
     });
 
     afterEach(async () => {
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('appInfoTest_five_4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("transFrom each called");
     });
     
@@ -67,11 +78,7 @@ export default function transFormJsunit() {
      */
 it('testTransForm001_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testTransForm001_static_01] START');
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('appInfoTest_five_4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('rotate');
       let obj = JSON.parseJsonElement(strJson)
      console.info("[testTransForm001_static_01] component strJson:" + JSON.stringify(obj));
@@ -96,11 +103,7 @@ it('testTransForm001_static_01', Level.LEVEL0, async (done: () => void): Promise
      */
 it('testTransForm002_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testTransForm002_static_02] START');
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('appInfoTest_five_4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let rotateValue: RotateOptions = {
         x: 2,
         y: 2,
@@ -124,11 +127,7 @@ it('testTransForm002_static_02', Level.LEVEL0, async (done: () => void): Promise
       } catch (err) {
         console.log("[testTransForm002_static_02] change component data error: " + (err as Error)?.message);
       }
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('appInfoTest_five_4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJsonNew: string = inspector.getInspectorByKey('rotate');
       let obj = JSON.parseJsonElement(strJsonNew)
      console.info("[testTransForm002_static_02] component objNew is: " + JSON.stringifyJsonElement(obj));
@@ -152,11 +151,7 @@ it('testTransForm002_static_02', Level.LEVEL0, async (done: () => void): Promise
      */
 it('testTransForm003_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testTransForm003_static_03] START');
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('appInfoTest_five_4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('rotate3');
       let obj = JSON.parseJsonElement(strJson)
      console.info("[testTransForm003_static_03] component strJson:" + JSON.stringify(obj));
@@ -176,11 +171,7 @@ it('testTransForm003_static_03', Level.LEVEL0, async (done: () => void): Promise
      */
 it('testTransForm004_staic_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testTransForm004_staic_04] START');
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('appInfoTest_five_4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let scaleValue: ScaleOptions = {
         x: 1, y: 1
       }
@@ -199,11 +190,7 @@ it('testTransForm004_staic_04', Level.LEVEL0, async (done: () => void): Promise<
       } catch (err) {
         console.log("[testTransForm004_staic_04] change component data error: " + (err as Error)?.message);
       }
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('appInfoTest_five_4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let strJsonNew: string = inspector.getInspectorByKey('rotate3');
       let obj = JSON.parseJsonElement(strJsonNew)
      console.info("[testTransForm004_staic_04] component objNew is: " + JSON.stringify(obj));

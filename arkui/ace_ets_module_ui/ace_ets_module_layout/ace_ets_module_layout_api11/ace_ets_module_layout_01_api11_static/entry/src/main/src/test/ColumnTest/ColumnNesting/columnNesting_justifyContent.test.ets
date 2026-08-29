@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import {FlexAlign} from '@ohos.arkui.component'
 // import {fp2px,lpx2px} from '@ohos.arkui.UIContext'
@@ -21,17 +21,28 @@ import  RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 // import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-
-
-
-
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest, startAbility } from '../../Util.test';
 import inspector from '@ohos.arkui.inspector';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function columnNesting_justifyContent() {
   describe('columnNesting_justifyContent', () => {
+    beforeAll(async () => {
+      console.info("columnNesting_justifyContent beforeEach start");
 
+
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
+
+    })
     beforeEach(async () => {
       console.info("columnNesting_justifyContent beforeEach start");
       let options: router.RouterOptions = {
@@ -57,11 +68,7 @@ export default function columnNesting_justifyContent() {
       }
     });
     afterEach(async () => {
-      try {
       await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('columnNesting_justifyContent sleep err: ' + JSON.stringify(err));
-      }
       console.info("columnNesting_justifyContent after each called")
     });
 
@@ -78,11 +85,7 @@ export default function columnNesting_justifyContent() {
      */
     it('testColumnSpace_static_001', Level.LEVEL0, async () => {
       console.info('[testColumnSpace_static] START');
-      try {
       await CommonFunc.sleep(4000);
-      } catch (err) {
-        console.info('columnNesting_justifyContent sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       const uiContext = AppStorage.get<UIContext>("uiContext")
       let columnNesting_justifyContent_011: RectValue = CommonFunc.getComponentRect('columnNesting_justifyContent' + '_011');

@@ -14,17 +14,33 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../../hypium/index";
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
 import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../../../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function grid_RowCol_ItemRowStartEndTest() {
   describe('Grid_RowCol_ItemRowStartEndTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("grid_RowCol_ItemRowStartEndTest beforeAll start");
+           
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("grid_RowCol_ItemRowStartEndTest beforeEach start");
@@ -47,11 +63,7 @@ export default function grid_RowCol_ItemRowStartEndTest() {
     });
 
     afterEach(async () => {
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('Grid_RowCol_ItemRowStartEndTestTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("Grid_RowCol_ItemRowStartEndTest after each called");
     });
     
@@ -72,11 +84,7 @@ it('testGridRowColItemRowStartToZeroEndToThree_static_01', Level.LEVEL0, async (
       AppStorage.get<MessageManager<Int>>('messageManager')?.notify({
         name: 'RowEnd', value: 3 as Int
       });
-            try {
-        await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Grid_RowCol_ItemRowStartEndTestTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd1');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd2');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd3');
@@ -189,11 +197,7 @@ it('testGridRowColItemRowStartToOneEndToThree_static_02', Level.LEVEL0, async (d
       AppStorage.get<MessageManager<Int>>('messageManager')?.notify({
         name: 'RowEnd', value: 3
       });
-            try {
-        await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Grid_RowCol_ItemRowStartEndTestTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(3000);
       let firstGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd1');
       let secondGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd2');
       let thirdGridItem: RectValue = CommonFunc.getComponentRect('Grid_RowCol_ItemRowStartEnd3');

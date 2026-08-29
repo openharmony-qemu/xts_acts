@@ -14,18 +14,34 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_ReachStartAndEnd2() {
   describe('Grid_ReachStartAndEnd2', () => {
+    beforeAll(async (): Promise<void> => {
+      console.log("Grid_ReachStartAndEnd2 beforeAll start111")
+           
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("Grid_ReachStartAndEnd2 beforeEach start");
@@ -48,30 +64,14 @@ export default function Grid_ReachStartAndEnd2() {
     });
 
     afterEach(async () => {
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('Grid_ReachStartAndEnd2Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       
       
       let driver = Driver.create();
-            try {
-        await CommonFunc.sleep(300);
-      } catch (err) {
-        console.info('Grid_ReachStartAndEnd2Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(300);
       let btn = await driver.findComponent(ON.id('grid_Reset_bt'));
-            try {
-        await (btn?.click() as Promise<void>);
-      } catch (err) {
-        console.info('Grid_ReachStartAndEnd2Test await err: ' + JSON.stringify(err));
-      }
-            try {
-        await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Grid_ReachStartAndEnd2Test await err: ' + JSON.stringify(err));
-      }
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(3000);
 
       console.info("Grid_ReachStartAndEnd2 after each called");
     });
@@ -91,42 +91,26 @@ it('Grid_ReachStartAndEnd2_static_0200', Level.LEVEL0, async (done: () => void):
       console.info('[Grid_ReachStartAndEnd2_static_0200] START');
       let scrollBarRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ReachStartAndEnd_scrollBar')
       let driver = Driver.create()
-            try {
-        await driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`)).toInt(),
         1000);
-      } catch (err) {
-        console.info('Grid_ReachStartAndEnd2Test await err: ' + JSON.stringify(err));
-      }
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Grid_ReachStartAndEnd2Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('Grid_ReachStartAndEnd_tex2')
 
      console.info("[Grid_ReachStartAndEnd2_static_0200] component obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson1)))
      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('onReachEnd');
 
-            try {
-        await driver.swipe(
+      await driver.swipe(
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.5 + scrollBarRect.top}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.right - scrollBarRect.left) * 0.5 + scrollBarRect.left}`)).toInt(),
         (Number.parseInt(`${(scrollBarRect.bottom - scrollBarRect.top) * 0.1 + scrollBarRect.top}`)).toInt(),
         1000);
-      } catch (err) {
-        console.info('Grid_ReachStartAndEnd2Test await err: ' + JSON.stringify(err));
-      }
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Grid_ReachStartAndEnd2Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
 
       let strJson2 = inspector.getInspectorByKey('Grid_ReachStartAndEnd_tex1')
 

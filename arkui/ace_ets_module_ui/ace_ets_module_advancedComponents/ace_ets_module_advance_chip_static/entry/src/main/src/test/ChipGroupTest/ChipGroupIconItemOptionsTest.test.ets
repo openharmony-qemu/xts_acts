@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -25,6 +26,11 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function ChipGroupIconItemOptionsTest(): void {
   describe('ChipGroupIconItemOptionsTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("ChipGroupIconItemOptionsTest beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility")
+
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ChipGroupIconItemOptionsTest beforeEach start");
@@ -48,11 +54,7 @@ export default function ChipGroupIconItemOptionsTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("ChipGroupIconItemOptionsTest after each called");
     });
     
@@ -64,11 +66,7 @@ export default function ChipGroupIconItemOptionsTest(): void {
      */
     it('ChipGroupIconItemOptionsTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ChipGroupIconItemOptionsTest_static_001] START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
 
       let inspectorTree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let btn0 = inspectorTree

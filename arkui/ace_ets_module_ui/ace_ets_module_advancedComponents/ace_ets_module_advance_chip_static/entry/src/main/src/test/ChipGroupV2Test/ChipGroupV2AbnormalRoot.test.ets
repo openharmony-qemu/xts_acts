@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+
+import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
+import { UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -25,6 +27,9 @@ import {
 
 export default function ChipGroupV2AbnormalRootTest(): void {
   describe('ChipGroupV2AbnormalRootTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility");
+    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -44,11 +49,7 @@ export default function ChipGroupV2AbnormalRootTest(): void {
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(300);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(300);
     });
 
     it('SUB_ARKUI_CHIPGROUPV2_ABN_ITEMSTYLE_UNDEFINED_0100', Level.LEVEL0, async () => {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -21,13 +21,23 @@ import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
-
-
-
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest } from '../../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 export default function Column_Space_Default() {
   describe('Column_Space_Default', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("Column_Space_Default beforeEach start");
 
+
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
+    });
     beforeEach(async (): Promise<void> => {
       console.info("Column_Space_Default beforeEach start");
       let options: router.RouterOptions = {
@@ -53,11 +63,7 @@ export default function Column_Space_Default() {
     });
 
     afterEach(async () => {
-      try {
       await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Column_Space_Default sleep err: ' + JSON.stringify(err));
-      }
       console.info("Column_Space_Default after each called")
     });
 
@@ -127,11 +133,7 @@ export default function Column_Space_Default() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addSpace1', value: -10
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_Default sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_Default_011: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_011');
       let Column_Space_Default_012: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_012');
@@ -179,11 +181,7 @@ export default function Column_Space_Default() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addSpace2', value: 'abc'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_Default sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_Default_021: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_021');
       let Column_Space_Default_022: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_022');
@@ -232,11 +230,7 @@ export default function Column_Space_Default() {
       AppStorage.get<MessageManager<number|string>>("messageManager")?.notify({
         name: 'addSpace2', value: '80%'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_Default sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_Default_021: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_021');
       let Column_Space_Default_022: RectValue = CommonFunc.getComponentRect('Column_Space_Default' + '_022');

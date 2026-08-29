@@ -14,15 +14,19 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { UtilsTest } from '../Util.test';
 import { assertSystemMaterialSame } from '../common/AbnormalAssertHelper';
 
 export default function ChipAbnormalBackgroundSystemMaterialTest(): void {
   describe('ChipAbnormalBackgroundSystemMaterialTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility('com.arkui.ace.advance.chip.static', 'EntryAbility');
+    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -42,11 +46,7 @@ export default function ChipAbnormalBackgroundSystemMaterialTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(500);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(500);
     });
 
     it('SUB_ARKUI_CHIP_ABN_BGSYSMAT_UNDEFINED_0100', Level.LEVEL0, async () => {

@@ -14,18 +14,33 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../hypium/index';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../ets/MainAbility/common/Rect';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { Driver, ON } from '@ohos.UiTest';
+import hilog from '@ohos.hilog'
 import router from '@ohos.router';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import { UtilsTest } from '../../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function Grid_ScrollStartandStop4() {
   describe('Grid_ScrollStartandStop4', () => {
+    beforeAll(async (): Promise<void> => {
+           
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("Grid_ScrollStartandStop4 beforeEach start");
@@ -48,34 +63,14 @@ export default function Grid_ScrollStartandStop4() {
     });
 
     afterEach(async () => {
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('Grid_ScrollStartandStop4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       
-            try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('Grid_ScrollStartandStop4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let driver = Driver.create();
-            try {
-        await CommonFunc.sleep(300);
-      } catch (err) {
-        console.info('Grid_ScrollStartandStop4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(300);
       let btn = await driver.findComponent(ON.id('scrollStartAndStop_Reset_bt'));
-            try {
-        await (btn?.click() as Promise<void>);
-      } catch (err) {
-        console.info('Grid_ScrollStartandStop4Test await err: ' + JSON.stringify(err));
-      }
-            try {
-        await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Grid_ScrollStartandStop4Test await err: ' + JSON.stringify(err));
-      }
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(3000);
       console.info("Grid_ScrollStartandStop2 after each called");
     });
 
@@ -95,8 +90,7 @@ it('Grid_ScrollStartandStop4_static_0500', Level.LEVEL0, async (done: () => void
       console.info('[Grid_ScrollStartandStop4_static_0500] START');
       let gridRect: RectValue = CommonFunc.getComponentRectOnScreen('Grid_ScrollStartandStop_grid')
       let driver = Driver.create()
-            try {
-        await driver.fling({
+      await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
         y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`).toInt()
       },
@@ -104,14 +98,7 @@ it('Grid_ScrollStartandStop4_static_0500', Level.LEVEL0, async (done: () => void
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`).toInt(),
           y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`).toInt()
         }, 5, 1000);
-      } catch (err) {
-        console.info('Grid_ScrollStartandStop4Test await err: ' + JSON.stringify(err));
-      }
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Grid_ScrollStartandStop4Test await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
 
       let strJson1 = inspector.getInspectorByKey('Grid_ScrollStartandStop_tex1')
 

@@ -13,15 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import {UtilsTest,startAbility} from '../Util.test';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 export default function LengthUnitTest() {
   describe('LengthUnitTest', () => { 
+    beforeAll(async (): Promise<void> => {
+      console.info("LengthUnitTest beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async () : Promise<void> => {
       console.info("LengthUnitTest beforeEach start");
       let options: router.RouterOptions = {
@@ -47,11 +54,7 @@ export default function LengthUnitTest() {
     }); 
 
     afterEach(async () => {
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       console.info("LengthUnitTest after each called");
     });
     
@@ -68,18 +71,10 @@ export default function LengthUnitTest() {
 it('LengthUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[LengthUnitTest_001] START');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let span_px = inspector.getInspectorByKey('span_px');
       console.info('span_px log-----' + JSON.parseJsonElement(span_px).getElement('$attrs').getString('baselineOffset'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       expect(JSON.parseJsonElement(span_px).getElement('$attrs').getString('baselineOffset')).assertEqual('20.00px');
       console.info('[LengthUnitTest_001] END');
       done();
@@ -98,18 +93,10 @@ it('LengthUnitTest_static_001', Level.LEVEL0, async (done: () => void): Promise<
 it('LengthUnitTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[LengthUnitTest_002] START');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let span_fp = inspector.getInspectorByKey('span_fp');
       console.info('span_fp log-----' + JSON.parseJsonElement(span_fp).getElement('$attrs').getString('baselineOffset'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       expect(JSON.parseJsonElement(span_fp).getElement('$attrs').getString('baselineOffset')).assertEqual('20.00fp');
       console.info('[LengthUnitTest_002] END');
       done();
@@ -128,19 +115,11 @@ it('LengthUnitTest_static_002', Level.LEVEL0, async (done: () => void): Promise<
 it('LengthUnitTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[LengthUnitTest_003] START');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let span_percent = inspector.getInspectorByKey('span_percent');
       console.info('span_percent log-----' + JSON.parseJsonElement(span_percent).getElement('$attrs').getString('baselineOffset'));
       console.info('span_percent attrs-----' + JSON.parseJsonElement(span_percent).getElement('$attrs'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       expect(JSON.parseJsonElement(span_percent).getElement('$attrs').getString('baselineOffset')).assertEqual('0.00px');
       console.info('[LengthUnitTest_003] END');
       done();
@@ -159,18 +138,10 @@ it('LengthUnitTest_static_003', Level.LEVEL0, async (done: () => void): Promise<
 it('LengthUnitTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[LengthUnitTest_004] START');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let span_lpx = inspector.getInspectorByKey('span_lpx');
       console.info('span_lpx log-----' + JSON.parseJsonElement(span_lpx).getElement('$attrs').getString('baselineOffset'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       expect(JSON.parseJsonElement(span_lpx).getElement('$attrs').getString('baselineOffset')).assertEqual('20.00lpx');
       console.info('[LengthUnitTest_004] END');
       done();

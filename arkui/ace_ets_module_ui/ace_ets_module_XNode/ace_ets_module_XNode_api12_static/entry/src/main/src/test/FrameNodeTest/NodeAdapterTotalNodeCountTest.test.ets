@@ -14,8 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from "../../../../hypium/index"
+import {
+  describe,
+  beforeAll,
+  expect,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  Level
+} from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
@@ -24,6 +34,23 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 export default function NodeAdapterTotalNodeCountTest() {
   describe('NodeAdapterTotalNodeCountTest', () => {
+    beforeAll(async () => {
+      await UtilsTest.startAbility('com.arkui.ace.XNode.api12.static', 'EntryAbility');
+      await UtilsTest.msSleep(1000);
+      console.info('NodeAdapterTotalNodeCountTest startAbility completed');
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/FrameNode/NodeAdapterTotalNodeCount',
+      }
+      try {
+        const routerInstance = AppStorage.get<Router>('router') as Router;
+        routerInstance.pushUrl(options);
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error('push frameNodeApi page error:' + err);
+      }
+      console.info('frameNodeApi beforeEach end');
+      console.info('beforeAll case');
+    });
 
     beforeEach(async () => {
       console.info('frameNodeApi beforeEach start');
@@ -48,28 +75,12 @@ export default function NodeAdapterTotalNodeCountTest() {
       console.info('[NodeAdapterTotalNodeCount_0100] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('button_count_5'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
 
       let strJson = inspector.getInspectorByKey('totalNodeCount_display');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       console.info('[NodeAdapterTotalNodeCount_0100] content: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
       let content =
@@ -89,28 +100,12 @@ export default function NodeAdapterTotalNodeCountTest() {
       console.info('[NodeAdapterTotalNodeCount_0200] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('button_count_10'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
 
       let strJson = inspector.getInspectorByKey('totalNodeCount_display');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       console.info('[NodeAdapterTotalNodeCount_0200] content: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
       let content =
@@ -130,28 +125,12 @@ export default function NodeAdapterTotalNodeCountTest() {
       console.info('[NodeAdapterTotalNodeCount_0300] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('button_count_15'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
 
       let strJson = inspector.getInspectorByKey('totalNodeCount_display');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       console.info('[NodeAdapterTotalNodeCount_0300] content: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
       let content =
@@ -170,28 +149,12 @@ export default function NodeAdapterTotalNodeCountTest() {
       console.info('[NodeAdapterTotalNodeCount_0400] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('button_count_15'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
 
       let strJson = inspector.getInspectorByKey('totalNodeCount_display');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       console.info('[NodeAdapterTotalNodeCount_0400] content: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
       let content =
@@ -210,28 +173,12 @@ export default function NodeAdapterTotalNodeCountTest() {
       console.info('[NodeAdapterTotalNodeCount_0500] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('button_count_0'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
 
       let strJson = inspector.getInspectorByKey('totalNodeCount_display');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       console.info('[NodeAdapterTotalNodeCount_0500] content: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
       let content =
@@ -250,28 +197,12 @@ export default function NodeAdapterTotalNodeCountTest() {
       console.info('[NodeAdapterTotalNodeCount_0600] START');
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('button_count_1'));
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
 
       let strJson = inspector.getInspectorByKey('totalNodeCount_display');
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       console.info('[NodeAdapterTotalNodeCount_0600] content: ' +
       JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
       let content =

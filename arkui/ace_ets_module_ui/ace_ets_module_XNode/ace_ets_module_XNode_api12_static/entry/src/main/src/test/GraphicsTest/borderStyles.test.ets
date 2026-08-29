@@ -13,16 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import {UtilsTest,startAbility} from '../Util.test';
 import {MessageManager,Callback} from '../../../ets/MainAbility/utils/MessageManager';
 export default function borderStyles() {
   describe('borderStyles', () => { 
+    beforeAll(async (): Promise<void> => {
+      console.info("borderStyles beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async () : Promise<void> => {
       console.info("borderStyles beforeEach start");
       let options: router.RouterOptions = {
@@ -63,22 +70,10 @@ it('borderStyles_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('borderStyles_0100 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button: Component|null = await driver.findComponent(ON.id('borderStylesClick'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('borderStylesValue');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[borderStyles_0100] component obj is: " + JSON.stringify(obj));

@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation,
   ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,6 +27,11 @@ import { $r} from '@ohos.arkui.component';
 
 export default function ChipV2OptionsAccessibilityTest(): void {
   describe('ChipV2OptionsAccessibilityTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("ChipV2OptionsAccessibilityTest beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility")
+
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ChipV2OptionsAccessibilityTest beforeEach start");
@@ -49,13 +55,11 @@ export default function ChipV2OptionsAccessibilityTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("ChipV2OptionsAccessibilityTest after each called");
     });
+
+
 
     /**
      * @tc.number   SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0100
@@ -65,11 +69,7 @@ export default function ChipV2OptionsAccessibilityTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0100] START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       const treeText = JSON.stringify(inspector.getInspectorTree());
       const componentCount = treeText.split('"$type":"Image"').length - 1;
       console.info('[SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0100] length '+componentCount);
@@ -86,11 +86,7 @@ export default function ChipV2OptionsAccessibilityTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0200] START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let Btn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -111,11 +107,7 @@ export default function ChipV2OptionsAccessibilityTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0300] START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let Btn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
@@ -136,11 +128,7 @@ export default function ChipV2OptionsAccessibilityTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0400] START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let Btn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[2]
@@ -161,11 +149,7 @@ export default function ChipV2OptionsAccessibilityTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0500] START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let Btn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[3]
@@ -185,11 +169,7 @@ export default function ChipV2OptionsAccessibilityTest(): void {
      */
     it('SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipV2OptionsAccessibilityTest_static_0600] START');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let Btn = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[4]

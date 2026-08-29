@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import {FlexAlign} from '@ohos.arkui.component'
 // import {fp2px,lpx2px} from '@ohos.arkui.UIContext'
@@ -22,18 +22,29 @@ import  RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 // import GlobalContext from '../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-
-
-
-
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest, startAbility } from '../../Util.test';
 import inspector from '@ohos.arkui.inspector';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function column_JustifyContent_ChangeParent() {
 
   describe('Column_JustifyContent_ChangeParentTest', () => {
+    beforeAll(async () => {
+      console.info("Column_JustifyContent_ChangeParentTest beforeEach start");
 
+
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
+
+    })
     beforeEach(async (): Promise<void> => {
       console.info("Column_JustifyContent_ChangeParent beforeEach called");
       let options: router.RouterOptions = {
@@ -51,19 +62,11 @@ export default function column_JustifyContent_ChangeParent() {
       } catch (err) {
         console.error("push Column_JustifyContent_ChangeParent page error:" + JSON.stringify(err));
       }
-      try {
-      await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('Column_JustifyContent_ChangeParentTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
     });
 
     afterEach(async  () =>{
-      try {
-      await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Column_JustifyContent_ChangeParentTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("Column_JustifyContent_ChangeParent afterEach called");
     });
 
@@ -86,11 +89,7 @@ export default function column_JustifyContent_ChangeParent() {
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.Center
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_JustifyContent_ChangeParentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson = inspector.getInspectorByKey('ColumnJustifyContentChange1');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Column');
@@ -150,11 +149,7 @@ export default function column_JustifyContent_ChangeParent() {
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.End
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_JustifyContent_ChangeParentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson = inspector.getInspectorByKey('ColumnJustifyContentChange1');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Column');
@@ -213,11 +208,7 @@ export default function column_JustifyContent_ChangeParent() {
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.SpaceBetween
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_JustifyContent_ChangeParentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson = inspector.getInspectorByKey('ColumnJustifyContentChange1');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Column');
@@ -276,11 +267,7 @@ export default function column_JustifyContent_ChangeParent() {
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.SpaceAround
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_JustifyContent_ChangeParentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson = inspector.getInspectorByKey('ColumnJustifyContentChange1');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Column');
@@ -356,11 +343,7 @@ export default function column_JustifyContent_ChangeParent() {
       AppStorage.get<MessageManager<FlexAlign>>("messageManager")?.notify({
         name: 'justifyContent', value: FlexAlign.SpaceEvenly
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_JustifyContent_ChangeParentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson = inspector.getInspectorByKey('ColumnJustifyContentChange1');
       let obj= JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Column');

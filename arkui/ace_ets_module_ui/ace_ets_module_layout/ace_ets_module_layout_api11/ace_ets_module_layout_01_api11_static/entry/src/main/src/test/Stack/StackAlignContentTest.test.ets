@@ -13,26 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {Alignment} from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
-import { UtilsTest } from '../Util.test'
+import { UtilsTest,startAbility } from '../Util.test'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {  Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base'
-
-
-
-
+import { BusinessError } from '@ohos.base';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import { UIContext } from '@ohos.arkui.UIContext';
-import { RecordData } from '@ohos.base'
+import { RecordData } from '@ohos.base';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 
 export default function StackAlignContentTest() {
   describe('StackAlignContentTest',  () => {
+    beforeAll(async () => {
+      console.info("stack_alignContent beforeEach start");
 
+
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
+
+    })
     beforeEach(async (): Promise<void> => {
       console.info("StackAlignContent beforeEach start");
       let options:router.RouterOptions = {
@@ -55,11 +64,7 @@ export default function StackAlignContentTest() {
     });
 
     afterEach(async (): Promise<void> =>{
-      try {
       await UtilsTest.msSleep(1000);
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       console.info("stackAlignContent after each called");
     })
  
@@ -75,11 +80,7 @@ export default function StackAlignContentTest() {
     it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'testStackAlignContent';
       console.info('[' + tagName + '] START============================');
-      try {
       await UtilsTest.msSleep(1000)
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson = inspector.getInspectorByKey('keyAlignContent');
       let obj  = JSON.parseJsonElement(strJson);
       console.info('[' + tagName + '] component obj is: ' + obj.getElement('$attrs').getString('alignContent'));
@@ -102,11 +103,7 @@ export default function StackAlignContentTest() {
         err = err as BusinessError;
         console.log('[' + `${tagName}` + '] change component data error: ' + err.message);
       }
-      try {
       await UtilsTest.msSleep(2000);
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJsonNew = inspector.getInspectorByKey('keyAlignContent');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] component objNew is: ' + JSON.stringify(objNew));
@@ -130,11 +127,7 @@ export default function StackAlignContentTest() {
         err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      try {
       await UtilsTest.msSleep(2000);
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson2 = inspector.getInspectorByKey('keyAlignContent');
       let obj2  = JSON.parseJsonElement(strJson2);
       console.info('[' + tagName + '] component strJson2 is: ' + JSON.stringify(strJson2));
@@ -157,11 +150,7 @@ export default function StackAlignContentTest() {
         err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      try {
       await UtilsTest.msSleep(2000);
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson3 = inspector.getInspectorByKey('keyAlignContent');
       let obj3 = JSON.parseJsonElement(strJson3);
       console.info('[' + tagName + '] component strJson3 is: ' + JSON.stringify(strJson3));
@@ -184,11 +173,7 @@ export default function StackAlignContentTest() {
         err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      try {
       await UtilsTest.msSleep(2000);
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson4 = inspector.getInspectorByKey('keyAlignContent');
       let obj4 = JSON.parseJsonElement(strJson4);
       console.info('[' + tagName + '] component strJson4 is: ' + JSON.stringify(strJson4));
@@ -211,11 +196,7 @@ export default function StackAlignContentTest() {
         err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      try {
       await UtilsTest.msSleep(2000);
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson5 = inspector.getInspectorByKey('keyAlignContent');
       let obj5 = JSON.parseJsonElement(strJson5);
       console.info('[' + tagName + '] component strJson5 is: ' + JSON.stringify(strJson5));
@@ -238,11 +219,7 @@ export default function StackAlignContentTest() {
         err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      try {
       await UtilsTest.msSleep(2000);
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson6 = inspector.getInspectorByKey('keyAlignContent');
       let obj6 = JSON.parseJsonElement(strJson6);
       console.info('[' + tagName + '] component strJson6 is: ' + JSON.stringify(strJson6));
@@ -265,11 +242,7 @@ export default function StackAlignContentTest() {
         err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      try {
       await UtilsTest.msSleep(2000);
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson7 = inspector.getInspectorByKey('keyAlignContent');
       let obj7  = JSON.parseJsonElement(strJson7);
       console.info('[' + tagName + '] component strJson7 is: ' + JSON.stringify(strJson7));
@@ -292,11 +265,7 @@ export default function StackAlignContentTest() {
         err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
-      try {
       await UtilsTest.msSleep(2000);
-      } catch (err) {
-        console.info('StackAlignContentTest sleep err: ' + JSON.stringify(err));
-      }
       let strJson8 = inspector.getInspectorByKey('keyAlignContent');
       let obj8 = JSON.parseJsonElement(strJson8);
       console.info('[' + tagName + '] component strJson8 is: ' + JSON.stringify(strJson8));

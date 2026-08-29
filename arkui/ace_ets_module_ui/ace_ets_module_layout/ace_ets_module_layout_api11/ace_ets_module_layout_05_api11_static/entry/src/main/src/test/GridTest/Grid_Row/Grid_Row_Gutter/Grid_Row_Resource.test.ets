@@ -14,16 +14,32 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import RectValue  from '../../../../../ets/MainAbility/common/Rect';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../../../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 export default function Gutter_Length_Resource() {
   describe('Gutter_Length_Resource', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("Gutter_Length_Resource beforeAll start");
+           
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("push Gutter_Length_Resource beforeEach start");
@@ -46,11 +62,7 @@ export default function Gutter_Length_Resource() {
     });
 
     afterEach(async () => {
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Gutter_Length_ResourceTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       console.info("Gutter_Length_Resource after each called")
     });
 
@@ -66,11 +78,7 @@ export default function Gutter_Length_Resource() {
      */
 it('SUB_ACE_GridRowGutterLength_RESOURCE_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_GridRowGutterLength_RESOURCE_static_0100 START');
-            try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Gutter_Length_ResourceTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000)
 
       let LengthResource_1: RectValue = CommonFunc.getComponentRect('Length_Resource001');
       let firstLengthResource: RectValue = CommonFunc.getComponentRect('Length_Resource_0');

@@ -15,17 +15,32 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Matrix2D } from '@ohos.arkui.component';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
+
 export default function Matrix2DAttrsTest() {
   describe('Matrix2DAttrsTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("Matrix2DAttrsTest beforeAll start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
+    });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
     });
@@ -42,11 +57,7 @@ export default function Matrix2DAttrsTest() {
      */
     it('testMatrix2DAttrs_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testMatrix2DAttrs_static_0010] START');
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('Matrix2DAttrsTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
 
       let matrix: Matrix2D = new Matrix2D();
       matrix.scaleX = 1
@@ -75,11 +86,7 @@ export default function Matrix2DAttrsTest() {
      */
     it('testMatrix2DAttrs_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testMatrix2DAttrs_static_0020] START');
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('Matrix2DAttrsTest sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
 
       let matrix: Matrix2D = new Matrix2D();
       matrix.scaleX = undefined

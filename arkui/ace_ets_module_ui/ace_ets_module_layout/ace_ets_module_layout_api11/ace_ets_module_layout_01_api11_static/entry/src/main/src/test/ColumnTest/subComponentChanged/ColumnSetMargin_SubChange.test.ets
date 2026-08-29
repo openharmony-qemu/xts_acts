@@ -14,20 +14,31 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
-
-
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest } from '../../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSetMargin_SubChange() {
   describe('ColumnSetMargin_SubChange', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("ColumnSetMargin_SubChange beforeEach start");
 
+
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
+    });
     beforeEach(async (): Promise<void> => {
       console.info("ColumnSetMarginTest beforeEach start");
       let options: router.RouterOptions = {
@@ -43,7 +54,7 @@ export default function ColumnSetMargin_SubChange() {
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(1000);
+          await CommonFunc.sleep(2000);
           // console.info("push ColumnSetMarginTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
@@ -53,11 +64,7 @@ export default function ColumnSetMargin_SubChange() {
     });
 
     afterEach(async () => {
-      try {
       await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('ColumnSetMargin_SubChange sleep err: ' + JSON.stringify(err));
-      }
       console.info("SetMargin after each called");
     });
 
@@ -71,11 +78,7 @@ export default function ColumnSetMargin_SubChange() {
     it('testColumnParentMarginPadSubMarPad_static', Level.LEVEL0, async () => {
       console.info('new testColumnParentMarginPadSubMarPad_static START');
       const uiContext = AppStorage.get<UIContext>('uiContext');
-      try {
       await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('ColumnSetMargin_SubChange sleep err: ' + JSON.stringify(err));
-      }
       let columnSetMargin_1: RectValue = CommonFunc.getComponentRect('columnSetMargin_1');
       let columnSetMargin_2: RectValue = CommonFunc.getComponentRect('columnSetMargin_2');
       let columnSetMargin_3: RectValue = CommonFunc.getComponentRect('columnSetMargin_3');

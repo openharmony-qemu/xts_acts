@@ -13,15 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../../hypium/index";
 import router from "@ohos.router";
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import {UtilsTest,startAbility} from '../../Util.test';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from "@ohos.UiTest";
 export default function PercentReferenceTest() {
   describe('PercentReferenceTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("PercentReferenceTest beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async () : Promise<void> => {
       console.info("PercentReferenceTest beforeEach start");
       let options: router.RouterOptions = {
@@ -47,11 +54,7 @@ export default function PercentReferenceTest() {
     }); 
 
     afterEach(async () => {
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       console.info("PercentReferenceTest after each called");
     });
     
@@ -66,40 +69,16 @@ export default function PercentReferenceTest() {
 it('PercentReferenceTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info("[PercentReferenceTest_001] START");
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let driver: Driver = Driver.create();
       let btn: Component|null = await driver.findComponent(ON.id("btn"));
-      try {
       await (btn?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let show: Component|null = await driver.findComponent(ON.id("show"));
-      try {
       await (show?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let percentReference = inspector.getInspectorByKey("percentReference");
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       expect(JSON.parseJsonElement(percentReference).getElement('$attrs').getString('content')).assertEqual("percentReference");
       console.info("[PercentReferenceTest_001] END");
       done();

@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+import { UtilsTest } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import {
   assertPropSame, assertChildrenSame,
@@ -23,61 +24,36 @@ import { ensureAbnormalPage } from '../common/AbnormalPageRouter';
 
 export default function ChipV2AbnormalCloseIconTest(): void {
   describe('ChipV2AbnormalCloseIconTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility('com.arkui.ace.advance.chip.static', 'EntryAbility');
+    });
 
     beforeEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(300);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(300);
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(300);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(300);
     });
 
     it('SUB_ARKUI_CHIPV2_ABN_CLOSEICON_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_closeIcon_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_closeIcon_u');
       assertChildrenSame('abn_closeIcon_u', 'abn_closeIcon_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CLOSEFONTSIZE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_closeFontSize_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_closeFontSize_u');
       assertChildrenSame('abn_closeFontSize_u', 'abn_closeFontSize_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CLOSEA11YLV_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_closeA11yLv_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_closeA11yLv_u');
       assertPropSame('abn_closeA11yLv_u', 'abn_closeA11yLv_d', 'accessibilityLevel', 'root');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CLOSEA11YTX_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_closeA11yTx_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_closeA11yTx_u');
       assertPropSame('abn_closeA11yTx_u', 'abn_closeA11yTx_d', 'accessibilityText', 'root');
     });
     it('SUB_ARKUI_CHIPV2_ABN_CLOSEA11YDS_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_closeA11yDs_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_closeA11yDs_u');
       assertPropSame('abn_closeA11yDs_u', 'abn_closeA11yDs_d', 'accessibilityDescription', 'root');
     });
   });

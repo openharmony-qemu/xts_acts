@@ -13,15 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import {UtilsTest,startAbility} from '../Util.test';
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 export default function getAttrsTest() {
   describe('getAttrsTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("getAttrsTest beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async (): Promise<void> => {
       console.info("getAttrsTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,22 +75,10 @@ it('getAttrsTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_0100 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getPositionToWindow'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0100] component obj is: " + JSON.stringify(obj));
@@ -98,22 +101,10 @@ it('getAttrsTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_0200 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getPositionToParent'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0200] component obj is: " + JSON.stringify(obj));
@@ -136,22 +127,10 @@ it('getAttrsTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_0300 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getMeasuredSize'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0300] component obj is: " + JSON.stringify(obj));
@@ -174,22 +153,10 @@ it('getAttrsTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_0400 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getLayoutPosition'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0400] component obj is: " + JSON.stringify(obj));
@@ -212,22 +179,10 @@ it('getAttrsTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_0500 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getUserConfigBorderWidth'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0500] component obj is: " + JSON.stringify(obj));
@@ -254,22 +209,10 @@ it('getAttrsTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_0600 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getUserConfigPadding'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0600] component obj is: " + JSON.stringify(obj));
@@ -295,22 +238,10 @@ it('getAttrsTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_0700 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getUserConfigMargin'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0700] component obj is: " + JSON.stringify(obj));
@@ -336,22 +267,10 @@ it('getAttrsTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_0800 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getUserConfigSize'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0800] component obj is: " + JSON.stringify(obj));
@@ -374,22 +293,10 @@ it('getAttrsTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_0900 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getUniqueId'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_0900] component obj is: " + JSON.stringify(obj));
@@ -412,22 +319,10 @@ it('getAttrsTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_1000 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getCustomProperty'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_1000] component obj is: " + JSON.stringify(obj));
@@ -450,22 +345,10 @@ it('getAttrsTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<v
 
       console.info('getAttrsTest_static_1100 START');
       let driver = Driver.create()
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let button = await driver.findComponent(ON.id('getCommonAttribute'));
-      try {
       await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let strJson: string = inspector.getInspectorByKey('FrameNode_Text');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[getAttrsTest_static_1100] component obj is: " + JSON.stringify(obj));

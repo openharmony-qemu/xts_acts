@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {
   Component,
@@ -26,15 +26,32 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
+
 export default function ParticleJsunit() {
   describe('ParticleJsunit', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("ParticleJsunit beforeAll start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
+      
+    });
+
     beforeEach(async (): Promise<void> => {
       console.info("ParticleJsunit beforeEach start");
       let options: router.RouterOptions = {
@@ -71,11 +88,7 @@ it('ParticleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ParticleJsunit_static_0100] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_0100] type is: " + JSON.stringify(obj.getString("$type")));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getString("$type")).assertEqual('Particle');
       console.info('[ParticleJsunit_static_0100] END');
       done();
@@ -96,11 +109,7 @@ it('ParticleJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_0200] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_0200] borderStyle is: " +
       JSON.stringify(obj.getElement('$attrs').getString('borderStyle')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderStyle'))
         .assertEqual('BorderStyle.Solid');
       console.info('[ParticleJsunit_static_0200] END');
@@ -122,11 +131,7 @@ it('ParticleJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_0300] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_0300] borderColor is: " +
       JSON.stringify(obj.getElement('$attrs').getString('borderColor')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderColor')).assertEqual('#FF000000');
       console.info('[ParticleJsunit_static_0300] END');
       done();
@@ -147,11 +152,7 @@ it('ParticleJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_0400] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_0400] borderWidth is: " +
       JSON.stringify(obj.getElement('$attrs').getString('borderWidth')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderWidth')).assertEqual('0.00vp');
       console.info('[ParticleJsunit_static_0400] END');
       done();
@@ -172,11 +173,7 @@ it('ParticleJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_0500] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_0500] backgroundImage is: " +
       JSON.stringify(obj.getElement('$attrs').getString('backgroundImage')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundImage')).assertEqual('NONE');
       console.info('[ParticleJsunit_static_0500] END');
       done();
@@ -197,11 +194,7 @@ it('ParticleJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_0600] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_0600] backgroundImageSize is: " +
       JSON.stringify(obj.getElement('$attrs').getString('backgroundImageSize')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundImageSize'))
         .assertEqual('ImageSize.Auto');
       console.info('[ParticleJsunit_static_0600] END');
@@ -223,11 +216,7 @@ it('ParticleJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_0700] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_0700] brightness is: " +
       JSON.stringify(obj.getElement('$attrs').getDouble('brightness')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('brightness')).assertEqual(1);
       console.info('[ParticleJsunit_static_0700] END');
       done();
@@ -248,11 +237,7 @@ it('ParticleJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_0800] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_0800] saturate is: " +
       JSON.stringify(obj.getElement('$attrs').getDouble('saturate')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('saturate')).assertEqual(1);
       console.info('[ParticleJsunit_static_0800] END');
       done();
@@ -273,11 +258,7 @@ it('ParticleJsunit_static_0900', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_0900] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_0900] contrast is: " +
       JSON.stringify(obj.getElement('$attrs').getDouble('contrast')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('contrast')).assertEqual(1);
       console.info('[ParticleJsunit_static_0900] END');
       done();
@@ -298,11 +279,7 @@ it('ParticleJsunit_static_1000', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_1000] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_1000] clip is: " +
       JSON.stringify(obj.getElement('$attrs').getString('clip')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('clip')).assertEqual('false');
       console.info('[ParticleJsunit_static_1000] END');
       done();
@@ -323,11 +300,7 @@ it('ParticleJsunit_static_1100', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_1100] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_1100] opacity is: " +
       JSON.stringify(obj.getElement('$attrs').getDouble('opacity')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getDouble('opacity')).assertEqual(1);
       console.info('[ParticleJsunit_static_1100] END');
       done();
@@ -348,11 +321,7 @@ it('ParticleJsunit_static_1200', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_1200] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_1200] renderGroup is: " +
       JSON.stringify(obj.getElement('$attrs').getString('renderGroup')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('renderGroup')).assertEqual('false');
       console.info('[ParticleJsunit_static_1200] END');
       done();
@@ -373,11 +342,7 @@ it('ParticleJsunit_static_1300', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_1300] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_1300] renderFit is: " +
       JSON.stringify(obj.getElement('$attrs').getString('renderFit')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('renderFit'))
         .assertEqual('RenderFit.TOP_LEFT');
       console.info('[ParticleJsunit_static_1300] END');
@@ -399,11 +364,7 @@ it('ParticleJsunit_static_1400', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_1400] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_1400] scrollable is: " +
       JSON.stringify(obj.getElement('$attrs').getBoolean('scrollable')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(false);
       console.info('[ParticleJsunit_static_1400] END');
       done();
@@ -424,11 +385,7 @@ it('ParticleJsunit_static_1500', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_1500] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_1500] width is: " +
       JSON.stringify(obj.getElement('$attrs').getString('width')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('300.00vp');
       console.info('[ParticleJsunit_static_1500] END');
       done();
@@ -449,11 +406,7 @@ it('ParticleJsunit_static_1600', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_1600] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_1600] height is: " +
       JSON.stringify(obj.getElement('$attrs').getString('height')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('300.00vp');
       console.info('[ParticleJsunit_static_1600] END');
       done();
@@ -474,11 +427,7 @@ it('ParticleJsunit_static_1700', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_1700] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_1700] align is: " +
       JSON.stringify(obj.getElement('$attrs').getString('align')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('align')).assertEqual('Alignment.Center');
       console.info('[ParticleJsunit_static_1700] END');
       done();
@@ -499,11 +448,7 @@ it('ParticleJsunit_static_1800', Level.LEVEL0, async (done: () => void): Promise
       console.info("[ParticleJsunit_static_1800] obj is: " + JSON.stringify(obj));
       console.info("[ParticleJsunit_static_1800] flexBasis is: " +
       JSON.stringify(obj.getElement('$attrs').getString('flexBasis')));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('ParticleJsunit sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('flexBasis')).assertEqual('auto');
       console.info('[ParticleJsunit_static_1800] END');
       done();

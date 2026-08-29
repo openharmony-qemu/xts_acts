@@ -13,15 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../../hypium/index";
 import router from "@ohos.router";
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import {UtilsTest,startAbility} from '../../Util.test';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from "@ohos.UiTest";
 export default function CornerTest() {
   describe("CornerTest", () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("CornerTest beforeEach start");
+      await UtilsTest.msSleep(4000)
+      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async () : Promise<void> => {
       console.info("CornerTest beforeEach start");
       let options: router.RouterOptions = {
@@ -47,11 +54,7 @@ export default function CornerTest() {
     }); 
 
     afterEach(async () => {
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       console.info("CornerTest after each called");
     });
     
@@ -66,18 +69,10 @@ export default function CornerTest() {
 it('CornerTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info("[CornerTest_001] START");
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       let corners_x = inspector.getInspectorByKey("corners_x");
       let corners_y = inspector.getInspectorByKey("corners_y");
-      try {
       await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('XNodeTest await err: ' + JSON.stringify(err));
-      }
       expect(JSON.parseJsonElement(corners_x).getElement('$attrs').getString('content')).assertEqual("32");
       expect(JSON.parseJsonElement(corners_y).getElement('$attrs').getString('content')).assertEqual("32");
       console.info("[CornerTest_001] END");

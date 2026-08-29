@@ -14,13 +14,21 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../hypium/index"
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test'
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 
 
 
@@ -34,6 +42,13 @@ import { UtilsTest } from '../Util.test'
 
 export default function rowJsunit() {
   describe('rowTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("rowTest beforeAll start");
+           
+      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("rowJsunit beforeEach start");
@@ -56,11 +71,7 @@ export default function rowJsunit() {
     });
 
     afterEach(async () => {
-            try {
-        await UtilsTest.msSleep(1000);
-      } catch (err) {
-        console.info('rowTestTest await err: ' + JSON.stringify(err));
-      }
+      await UtilsTest.msSleep(1000)
       console.info("Row after each called");
     });
 
@@ -76,11 +87,7 @@ export default function rowJsunit() {
      */
 it('rowTest001_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('++++++++++++++++ rowTest001_static_01 START ++++++++++++++++');
-            try {
-        await UtilsTest.msSleep(1000);
-      } catch (err) {
-        console.info('rowTestTest await err: ' + JSON.stringify(err));
-      }
+      await UtilsTest.msSleep(1000)
       let strJson = inspector.getInspectorByKey('row');
      let obj = JSON.parseJsonElement(strJson);
      console.info("get inspector value is: " + JSON.stringify(obj));

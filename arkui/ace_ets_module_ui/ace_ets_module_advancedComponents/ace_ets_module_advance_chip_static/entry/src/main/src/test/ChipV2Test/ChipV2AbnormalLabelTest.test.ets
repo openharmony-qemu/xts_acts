@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+
+import { describe, beforeAll, beforeEach, afterEach, it, Level } from '../../../../hypium/index';
+import { UtilsTest } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -25,109 +27,60 @@ import { ensureAbnormalPage } from '../common/AbnormalPageRouter';
 
 export default function ChipV2AbnormalLabelTest(): void {
   describe('ChipV2AbnormalLabelTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility");
+    });
 
     beforeEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(300);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(300);
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(300);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(300);
     });
 
     it('SUB_ARKUI_CHIPV2_ABN_LBLFONTSIZE_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblFontSize_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblFontSize_u');
       assertChildrenSame('abn_lblFontSize_u', 'abn_lblFontSize_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLFONTCOLOR_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblFontColor_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblFontColor_u');
       assertChildrenSame('abn_lblFontColor_u', 'abn_lblFontColor_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLACTFONTCOLOR_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblActFontColor_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblActFontColor_u');
       assertChildrenSame('abn_lblActFontColor_u', 'abn_lblActFontColor_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLFONTFAMILY_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblFontFamily_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblFontFamily_u');
       assertChildrenSame('abn_lblFontFamily_u', 'abn_lblFontFamily_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLMARGIN_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblMargin_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblMargin_u');
       assertSmoke('abn_lblMargin_u', 'abn_lblMargin_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLMARGINLEFT_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblMarginLeft_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblMarginLeft_u');
       assertSmoke('abn_lblMarginLeft_u', 'abn_lblMarginLeft_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLMARGINRIGHT_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblMarginRight_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblMarginRight_u');
       assertSmoke('abn_lblMarginRight_u', 'abn_lblMarginRight_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLLOCMARGIN_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblLocMargin_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblLocMargin_u');
       assertSmoke('abn_lblLocMargin_u', 'abn_lblLocMargin_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLLOCSTART_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblLocStart_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblLocStart_u');
       assertSmoke('abn_lblLocStart_u', 'abn_lblLocStart_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLLOCEND_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblLocEnd_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblLocEnd_u');
       assertSmoke('abn_lblLocEnd_u', 'abn_lblLocEnd_d');
     });
     it('SUB_ARKUI_CHIPV2_ABN_LBLMODIFIER_UNDEFINED_0100', Level.LEVEL0, async () => {
-      try {
-        await ensureAbnormalPage('abn_lblModifier_u');
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await ensureAbnormalPage('abn_lblModifier_u');
       assertSmoke('abn_lblModifier_u', 'abn_lblModifier_d');
     });
   });

@@ -13,7 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import {
+  describe,
+  beforeAll,
+  beforeEach,
+  afterEach,
+  afterAll,
+  it,
+  expect,
+  TestType,
+  Size,
+  Level
+} from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Driver,
@@ -27,6 +38,7 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { UtilsTest, startAbility } from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,6 +46,11 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function ChipGroupV2ItemOptionsPage2Test(): void {
   describe('ChipGroupV2ItemOptionsPage2Test', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("ChipGroupV2ItemOptionsPage2Test beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.advance.chip.static", "EntryAbility")
+
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ChipGroupV2ItemOptionsPage2Test beforeEach start");
@@ -57,13 +74,10 @@ export default function ChipGroupV2ItemOptionsPage2Test(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("ChipGroupV2ItemOptionsPage2Test after each called");
     });
+
 
     /**
      * @tc.number   SUB_ARKUI_API_ChipGroupV2ItemOptionsPage2Test_static_0100
@@ -73,11 +87,7 @@ export default function ChipGroupV2ItemOptionsPage2Test(): void {
      */
     it('SUB_ARKUI_API_ChipGroupV2ItemOptionsPage2Test_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ARKUI_API_ChipGroupV2ItemOptionsPage2Test_static_0100] START');
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('xxxTest sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let roots = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
       let src1 = roots.getArray("$children")[0]
         .getArray("$children")[0]

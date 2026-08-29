@@ -13,24 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-
-
-
-
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest, startAbility } from '../../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 
 export default function Column_Space_String() {
   describe('Column_Space_String', () => {
+    beforeAll(async () => {
+      console.info("Column_Space_String beforeEach start");
 
+
+      await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
+
+    })
     beforeEach(async (): Promise<void> => {
       console.info("Column_Space_String beforeEach start");
       let options: router.RouterOptions = {
@@ -55,11 +66,7 @@ export default function Column_Space_String() {
       }
     });
     afterEach(async () => {
-      try {
       await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.info("Column_Space_String after each called")
     });
 
@@ -78,11 +85,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: '30'
       });
-      try {
       await CommonFunc.sleep(4000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -143,11 +146,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: '50px'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -208,11 +207,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: '50fp'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -275,11 +270,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: '50lpx'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -347,11 +338,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: AppStorage.get<UIContext>("uiContext")!.vp2px(10) + 'px'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -413,11 +400,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: context!.px2vp(10) + 'vp'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -479,11 +462,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: context!.fp2px(10) + 'px'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -545,11 +524,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: context!.px2fp(10) + 'fp'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -611,11 +586,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: context!.lpx2px(10) + 'px'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -677,11 +648,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: context!.px2lpx(10) + 'lpx'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -747,11 +714,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: '3' + '0'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
@@ -812,11 +775,7 @@ export default function Column_Space_String() {
       AppStorage.get<MessageManager<string>>("messageManager")?.notify({
         name: 'addSpace', value: '50'
       });
-      try {
       await CommonFunc.sleep(3000);
-      } catch (err) {
-        console.info('Column_Space_String sleep err: ' + JSON.stringify(err));
-      }
       console.log('get Initial value')
       let Column_Space_String_011: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_011');
       let Column_Space_String_012: RectValue = CommonFunc.getComponentRect('Column_Space_String' + '_012');
