@@ -15,6 +15,7 @@
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include <multimedia/player_framework/native_averrors.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
+#include <multimedia/player_framework/native_avcodec_videobase.h>
 #include <multimedia/player_framework/native_avcapability.h>
 #include <string>
 #include "SecureMemory.h"
@@ -409,4 +410,73 @@ napi_value VideoEncodeCapability5030Test(napi_env env, napi_callback_info info)
 void InitConfigureTest()
 {
     SetUpTestCase();
+}
+
+napi_value LOWPOWER_CONFIG_001Test(napi_env env, napi_callback_info info)
+{
+    if (cap) {
+        OH_AVCodec *venc = OH_VideoEncoder_CreateByName(g_codecName);
+        if (!venc) { return CreateIntInt32Result(env, -1); }
+        OH_AVFormat *format = OH_AVFormat_Create();
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0);
+        OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, CBR);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, 1);
+        int ret = OH_VideoEncoder_Configure(venc, format);
+        OH_VideoEncoder_Destroy(venc);
+        OH_AVFormat_Destroy(format);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        return CreateIntInt32Result(env, 0);
+    } else {
+        return CreateIntInt32Result(env, 0);
+    }
+}
+
+napi_value LOWPOWER_CONFIG_002Test(napi_env env, napi_callback_info info)
+{
+    if (cap_hevc) {
+        OH_AVCodec *venc = OH_VideoEncoder_CreateByName(g_codecNameHEVC);
+        if (!venc) { return CreateIntInt32Result(env, -1); }
+        OH_AVFormat *format = OH_AVFormat_Create();
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0);
+        OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, VBR);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, 0);
+        int ret = OH_VideoEncoder_Configure(venc, format);
+        OH_VideoEncoder_Destroy(venc);
+        OH_AVFormat_Destroy(format);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        return CreateIntInt32Result(env, 0);
+    } else {
+        return CreateIntInt32Result(env, 0);
+    }
+}
+
+napi_value LOWPOWER_CONFIG_003Test(napi_env env, napi_callback_info info)
+{
+    if (cap) {
+        OH_AVCodec *venc = OH_VideoEncoder_CreateByName(g_codecName);
+        if (!venc) { return CreateIntInt32Result(env, -1); }
+        OH_AVFormat *format = OH_AVFormat_Create();
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, DEFAULT_WIDTH);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+        OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, 30.0);
+        OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, VBR);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, 100);
+        int ret = OH_VideoEncoder_Configure(venc, format);
+        OH_VideoEncoder_Destroy(venc);
+        OH_AVFormat_Destroy(format);
+        if (ret != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        return CreateIntInt32Result(env, 0);
+    } else {
+        return CreateIntInt32Result(env, 0);
+    }
 }
