@@ -881,6 +881,21 @@ export default function ActsCommonEventManagerSupportTest() {
         .assertEqual('usual.event.SANDBOX_BUNDLE_REMOVED')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4900 END`)
     })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000
+     * @tc.desc   specific data volume status has been reported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_DATA_VOLUME_STATUS_REPORT)
+        .assertEqual('usual.event.DATA_VOLUME_STATUS_REPORT')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_5000 END`)
+    })
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
   })
 }
