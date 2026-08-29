@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { XComponentController, SurfaceConfig } from '@ohos.arkui.component';
 
@@ -29,12 +28,6 @@ const SLEEP_TIME = 1000;
 
 export default function XComponentTest() {
   describe('XComponentTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('XComponentTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility('com.arkui.ace.xComponent.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('XComponentTest beforeEach start');
       let options: router.RouterOptions = {
@@ -56,7 +49,11 @@ export default function XComponentTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(200);
+      try {
+        await Utils.sleep(200);
+      } catch (err) {
+        console.info('XComponentTest afterEach sleep err: ' + JSON.stringify(err));
+      }
     });
 
     // ============================================================

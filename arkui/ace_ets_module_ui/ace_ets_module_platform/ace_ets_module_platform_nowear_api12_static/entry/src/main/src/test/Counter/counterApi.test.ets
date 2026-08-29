@@ -14,25 +14,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function counterApi() {
   describe('counterApi', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.platform.nowear.api12.static", "EntryAbility");
-    });
 
     beforeEach(async () => {
       console.info("counterApi beforeEach start");
@@ -54,7 +44,11 @@ export default function counterApi() {
       console.info("counterApi foreEach end");
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('counterApiTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("counterApi after each called");
     });
 
@@ -67,17 +61,41 @@ export default function counterApi() {
      */
     it('counterApi_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[counterApi_static_001] START');
-      await CommonFunc.sleep(1000);
-      
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_001] sleep err: ' + JSON.stringify(err));
+      }
+
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_001] sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2049);
+      } catch (err) {
+        console.info('[counterApi_static_001] triggerKey err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_001] sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('counterApiText2');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_001] sleep err: ' + JSON.stringify(err));
+      }
       let obj = JSON.parseJsonElement(strJson);
       console.info("[counterApi_static_001] component obj is: " + JSON.stringify(obj));
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_001] sleep err: ' + JSON.stringify(err));
+      }
       expect(obj.getElement('$attrs').getString('content')).assertEqual('onFocusDecrease');
       console.info('[counterApi_static_001] END');
       done();
@@ -93,19 +111,47 @@ export default function counterApi() {
      */
     it('counterApi_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[counterApi_static_002] START');
-      await CommonFunc.sleep(1000);
-      
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_002] sleep err: ' + JSON.stringify(err));
+      }
+
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_002] sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2049);
+      } catch (err) {
+        console.info('[counterApi_static_002] triggerKey err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_002] sleep err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('counterApiText1');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_002] sleep err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('counterApiText2');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_002] sleep err: ' + JSON.stringify(err));
+      }
       console.info("[counterApi_static_002] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[counterApi_static_002] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson2)));
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_002] sleep err: ' + JSON.stringify(err));
+      }
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onFocusIncrease');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('onBlurDecrease');
       console.info('[counterApi_static_002] END');
@@ -121,16 +167,40 @@ export default function counterApi() {
      */
     it('counterApi_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[counterApi_static_003] START');
-      await CommonFunc.sleep(1000);
-      
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_003] sleep err: ' + JSON.stringify(err));
+      }
+
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      await driver.triggerKey(2049);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_003] sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await driver.triggerKey(2049);
+      } catch (err) {
+        console.info('[counterApi_static_003] triggerKey err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_003] sleep err: ' + JSON.stringify(err));
+      }
       let strJson2 = inspector.getInspectorByKey('counterApiText1');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_003] sleep err: ' + JSON.stringify(err));
+      }
       console.info("[counterApi_static_003] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson2)));
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('[counterApi_static_003] sleep err: ' + JSON.stringify(err));
+      }
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('onBlurIncrease');
       console.info('[counterApi_static_003] END');
       done();

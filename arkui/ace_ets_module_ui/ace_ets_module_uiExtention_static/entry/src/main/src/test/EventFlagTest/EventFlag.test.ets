@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 const SLEEP_TIME = 1000;
@@ -33,10 +32,6 @@ function getContentByKey(key: string): string {
 
 export default function EventFlagTest() {
   describe('EventFlagTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.ets.module.uiextention.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
       const options: router.RouterOptions = { url: PAGE_URL };
       try {
@@ -55,7 +50,11 @@ export default function EventFlagTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('EventFlagTest afterEach sleep err: ' + JSON.stringify(err));
+      }
     });
 
     /**
