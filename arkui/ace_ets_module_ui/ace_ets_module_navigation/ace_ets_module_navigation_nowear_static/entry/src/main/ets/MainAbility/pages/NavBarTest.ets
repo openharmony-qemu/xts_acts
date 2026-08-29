@@ -93,6 +93,17 @@ struct NavBarTest {
             })
             .margin(1)
 
+          Button('clear')
+            .id('clearStack')
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
+            .onClick((e: ClickEvent) => {
+              this.stack.clear();
+              this.updateStackInfo();
+            })
+            .margin(1)
+
           Button('get_sz')
             .id('clearGetStackSize')
             .fontSize(9)

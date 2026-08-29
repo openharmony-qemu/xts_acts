@@ -16,9 +16,9 @@
 
 import {
   Entry, Component, Builder, Text, TextAttribute, Column, Button, ButtonAttribute, ClickEvent,
-  Flex, Margin, FlexDirection, ItemAlign, FlexAlign, HorizontalAlign, FontWeight, Navigation, NavDestination,
+  Flex, Margin, FlexDirection, ItemAlign, FlexAlign, FlexWrap, HorizontalAlign, FontWeight, Navigation, NavDestination,
   NavPathStack, NavPathInfo, NavDestinationMode, NavigationTitleMode, Scroll, List, ListItem,
-  Row, Stack, Padding, PopInfo
+  Row, Stack, Padding, PopInfo, Color
 } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
@@ -50,6 +50,7 @@ struct NavigationPreload {
   @State pushAfterPreloadResult: string = 'idle'
 
   aboutToAppear() {
+    AppStorage.setOrCreate<NavPathStack>('preloadNavPathStack', this.stack)
     this.stackNames = JSON.stringify(this.stack.getAllPathName())
   }
 
@@ -74,44 +75,87 @@ struct NavigationPreload {
   }
 
   build() {
-    Navigation(this.stack) {
+    Column() {
+      // === Top control panel - ALL buttons and status Text outside Navigation ===
       Scroll() {
-        Column() {
-          // Result display area
+        Flex({ wrap: FlexWrap.Wrap }) {
+          // Status display texts (no prefix - tests read content attribute directly)
           Text(this.preloadResult)
             .id('preloadResult')
-            .fontSize(20)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(20)
+            .margin(1)
           Text(this.onDestroyCalled)
             .id('onDestroyCalled')
-            .fontSize(20)
+            .fontSize(9)
+            .height(20)
+            .margin(1)
           Text(this.errorCode)
             .id('errorCode')
-            .fontSize(20)
+            .fontSize(9)
+            .height(20)
+            .margin(1)
           Text(this.errorMsg)
             .id('errorMsg')
-            .fontSize(20)
+            .fontSize(9)
+            .height(20)
+            .margin(1)
           Text(this.stackNames)
             .id('stackNames')
-            .fontSize(20)
+            .fontSize(9)
+            .height(20)
+            .margin(1)
           Text(this.thenCalled)
             .id('thenCalled')
-            .fontSize(20)
+            .fontSize(9)
+            .height(20)
+            .margin(1)
           Text(this.catchCalled)
             .id('catchCalled')
-            .fontSize(20)
+            .fontSize(9)
+            .height(20)
+            .margin(1)
           Text(this.onPopCalled)
             .id('onPopCalled')
-            .fontSize(20)
+            .fontSize(9)
+            .height(20)
+            .margin(1)
           Text(this.pushAfterPreloadResult)
             .id('pushAfterPreloadResult')
-            .fontSize(20)
+            .fontSize(9)
+            .height(20)
+            .margin(1)
+
+          // Control buttons
+          Button('pop')
+            .id('preloadPopBtn')
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
+            .onClick((e: ClickEvent): void => {
+              this.stack.pop();
+              this.stackNames = JSON.stringify(this.stack.getAllPathName());
+            })
+            .margin(1)
+
+          Button('clear')
+            .id('preloadClearBtn')
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
+            .onClick((e: ClickEvent): void => {
+              this.stack.clear();
+              this.resetState();
+              this.stackNames = JSON.stringify(this.stack.getAllPathName());
+            })
+            .margin(1)
 
           // ========== Function call coverage ==========
-          Button('Preload STANDARD')
+          Button('Std')
             .id('btnPreloadStandard')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -128,11 +172,13 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
-          Button('Preload DIALOG')
+          Button('Dlg')
             .id('btnPreloadDialog')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -149,12 +195,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Parameter coverage - NavPathInfo.param types ==========
-          Button('Preload String Param')
+          Button('StrP')
             .id('btnPreloadStringParam')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -171,11 +219,13 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
-          Button('Preload Number Param')
+          Button('NumP')
             .id('btnPreloadNumberParam')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -192,11 +242,13 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
-          Button('Preload No Param')
+          Button('NoP')
             .id('btnPreloadNoParam')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -213,12 +265,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Parameter coverage - PreloadOptions ==========
-          Button('Preload No Options')
+          Button('NoOpt')
             .id('btnPreloadNoOptions')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -234,12 +288,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Parameter specification coverage - Error 401 ==========
-          Button('Preload Undefined Info')
+          Button('Undef')
             .id('btnPreloadUndefined')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               let undefinedNavInfo = new NavPathInfo('', undefined);
@@ -255,11 +311,13 @@ struct NavigationPreload {
                   this.errorMsg = error.message
                 })
             })
+            .margin(1)
 
-          Button('Preload Empty Name')
+          Button('EmptyN')
             .id('btnPreloadEmptyName')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -275,12 +333,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Error 100005 - Builder not registered ==========
-          Button('Preload Wrong Name')
+          Button('WrongN')
             .id('btnPreloadWrongName')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -296,12 +356,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Parameter spec coverage - null param ==========
-          Button('Preload Null Param')
+          Button('NullP')
             .id('btnPreloadNullParam')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -318,12 +380,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== NavPathInfo.onPop callback ==========
-          Button('Preload With OnPop')
+          Button('OnPop')
             .id('btnPreloadWithOnPop')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               let navInfo: NavPathInfo = new NavPathInfo('STANDARD_11', new NavParamTwo('OnPopTest'));
@@ -343,12 +407,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== NavPathInfo.isEntry ==========
-          Button('Preload IsEntry True')
+          Button('IsEntryT')
             .id('btnPreloadIsEntryTrue')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               let navInfo: NavPathInfo = new NavPathInfo('STANDARD_12', new NavParamTwo('IsEntryTrue'));
@@ -366,11 +432,13 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
-          Button('Preload IsEntry False')
+          Button('IsEntryF')
             .id('btnPreloadIsEntryFalse')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               let navInfo: NavPathInfo = new NavPathInfo('STANDARD_13', new NavParamTwo('IsEntryFalse'));
@@ -388,12 +456,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Return value coverage ==========
-          Button('Preload Then Verify')
+          Button('ThenV')
             .id('btnPreloadThenVerify')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -410,11 +480,13 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
-          Button('Preload Catch Verify')
+          Button('CatchV')
             .id('btnPreloadCatchVerify')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -430,12 +502,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Error code 100006 - NavDestination not found ==========
-          Button('Preload Not Found')
+          Button('NotFnd')
             .id('btnPreloadNotFound')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -451,12 +525,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== PreloadOptions.onDestroy - trigger by clearing ==========
-          Button('Preload Then Clear')
+          Button('PClr')
             .id('btnPreloadThenClear')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -477,12 +553,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Object param ==========
-          Button('Preload Object Param')
+          Button('ObjP')
             .id('btnPreloadObjectParam')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               let paramObj = new NavParamOne()
@@ -500,12 +578,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
-          // ========== Multiple sequential preload ==========
-          Button('Preload Multiple')
+          // ========== Multiple sequential preload (both STANDARD) ==========
+          Button('Multi')
             .id('btnPreloadMultiple')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               let successCount: number = 0
@@ -515,7 +595,7 @@ struct NavigationPreload {
               ).then((): void => {
                 successCount++
                 this.stack.preloadPath(
-                  new NavPathInfo('DIALOG_10', new NavParamTwo('Multi2')),
+                  new NavPathInfo('STANDARD_10B', new NavParamTwo('Multi2')),
                   { onDestroy: () => { this.onDestroyCalled = 'true' } }
                 ).then((): void => {
                   successCount++
@@ -535,12 +615,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Preload then pushPath integration ==========
-          Button('Preload Then Push Same')
+          Button('PushS')
             .id('btnPreloadThenPush')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -563,12 +645,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Preload then pushPath with different param ==========
-          Button('Preload Then Push Diff Param')
+          Button('PushD')
             .id('btnPreloadThenPushDiff')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -590,12 +674,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== Preload same name twice ==========
-          Button('Preload Same Twice')
+          Button('Same2')
             .id('btnPreloadSameTwice')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               let successCount: number = 0
@@ -634,12 +720,14 @@ struct NavigationPreload {
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
               }, 3000)
             })
+            .margin(1)
 
           // ========== Error 100005 - no builder registered for name ==========
-          Button('Preload No Builder')
+          Button('NoBld')
             .id('btnPreloadNoBuilder')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               // 'NoBuilderPage' has no matching entry in pageMap
@@ -656,12 +744,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
-          // ========== Preload with name-only NavPathInfo (like PageMap demo) ==========
-          Button('Preload Name Only')
+          // ========== Preload with name-only NavPathInfo ==========
+          Button('NameO')
             .id('btnPreloadNameOnly')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -678,12 +768,14 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
 
           // ========== PreloadOptions.onDestroy not called on success ==========
-          Button('Preload OnDestroy Not Called')
+          Button('NoDstr')
             .id('btnPreloadOnDestroyNotCalled')
-            .fontSize(16)
-            .margin({ top: 10 } as Margin)
+            .fontSize(9)
+            .height(24)
+            .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent): void => {
               this.resetState()
               this.stack.preloadPath(
@@ -701,17 +793,31 @@ struct NavigationPreload {
                 this.errorMsg = error.message
               })
             })
+            .margin(1)
         }
-        .width('100%')
-        .alignItems(HorizontalAlign.Center)
       }
       .width('100%')
-      .height('100%')
+      .height('55%')
+      .border({ width: 2, color: Color.Black })
+
+      Navigation(this.stack) {
+        Column() {
+          Text('NavigationPreload')
+            .fontSize(16)
+        }
+        .width('100%')
+        .height('100%')
+        .justifyContent(FlexAlign.Center)
+      }
+      .width('100%')
+      .height('45%')
+      .navDestination(this.pageMap)
+      .title('NavBar')
+      .titleMode(NavigationTitleMode.Mini)
+      .id('MyNavigation')
     }
-    .navDestination(this.pageMap)
-    .title('NavBar')
-    .titleMode(NavigationTitleMode.Mini)
-    .id('MyNavigation')
+    .width('100%')
+    .height('100%')
   }
 }
 

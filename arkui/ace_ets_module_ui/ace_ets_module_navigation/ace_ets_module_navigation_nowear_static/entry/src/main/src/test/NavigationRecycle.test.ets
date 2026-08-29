@@ -62,12 +62,7 @@ async function navigateToPage(url: string): Promise<void> {
     if (routerInstance !== undefined) {
       routerInstance.clear();
       let pages = routerInstance.getState();
-      if (pageName == pages.name) {
-        // Already on target page - replaceUrl to reset Navigation/NavPathStack state
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2500);
-      } else {
-        // Navigate to target page
+      if (!(pageName == pages.name)) {
         routerInstance.pushUrl(options);
         await CommonFunc.sleep(2500);
       }
@@ -78,6 +73,54 @@ async function navigateToPage(url: string): Promise<void> {
     console.error('navigateToPage navigate error:' + err);
     expect().assertFail();
   }
+}
+
+// Clear NavPathStack and AppStorage keys for NavigationRecyclePage
+async function clearRecycleState(driver: Driver): Promise<void> {
+  // Click clear button (always visible in top panel, even after NavDestination push)
+  let clearBtn: Component | null = await findComponentWithScroll(driver, 'recycle_clear_btn');
+  if (clearBtn !== null) {
+    await clearBtn.click();
+    await CommonFunc.sleep(300);
+  }
+  // Click pop button in case clear doesn't fully reset
+  let popBtn: Component | null = await findComponentWithScroll(driver, 'recycle_pop_btn');
+  if (popBtn !== null) {
+    await popBtn.click();
+    await CommonFunc.sleep(300);
+  }
+  // Clean AppStorage keys
+  AppStorage.delete('recycleStackSize');
+  AppStorage.delete('recycleAllPathNames');
+  AppStorage.delete('saveStateResult');
+  AppStorage.delete('restoreStateResult');
+  AppStorage.delete('restoreStateResultB');
+  AppStorage.delete('restoreEmptyResult');
+  AppStorage.delete('restoredScrollOffset');
+  AppStorage.delete('restoredDataB');
+  AppStorage.delete('recycleIndexByName');
+  AppStorage.delete('recycleParamByIndex');
+  AppStorage.delete('recycleParamByName');
+}
+
+// Clear NavPathStack and AppStorage keys for ModifierRecyclePage
+async function clearModifierState(driver: Driver): Promise<void> {
+  let clearBtn: Component | null = await findComponentWithScroll(driver, 'mod_clear_btn');
+  if (clearBtn !== null) {
+    await clearBtn.click();
+    await CommonFunc.sleep(300);
+  }
+  let popBtn: Component | null = await findComponentWithScroll(driver, 'mod_pop_btn');
+  if (popBtn !== null) {
+    await popBtn.click();
+    await CommonFunc.sleep(300);
+  }
+  AppStorage.delete('modStackSize');
+  AppStorage.delete('modAllPathNames');
+  AppStorage.delete('modSaveStateResult');
+  AppStorage.delete('modRestoreStateResult');
+  AppStorage.delete('modRestoredData');
+  AppStorage.delete('modNavDestShown');
 }
 
 export default function NavigationRecycleTest(): void {
@@ -93,7 +136,9 @@ export default function NavigationRecycleTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await clearRecycleState(driver);
+      await CommonFunc.sleep(500);
       console.info('NavigationRecycleTest after each called');
     });
 
@@ -625,7 +670,10 @@ export default function NavigationRecycleTest(): void {
         let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // updateStackInfo auto-called by push button click
+        // Click getIndexByName button to populate AppStorage key
+        let idxBtn = await requireComponent(driver, 'recycle_get_index_by_name');
+        await idxBtn.click();
+        await driver.delayMs(500);
         let indices = getAppStorageString('recycleIndexByName');
         expect(indices).assertEqual('[0]');
         AppStorage.delete('recycleIndexByName');
@@ -679,7 +727,10 @@ export default function NavigationRecycleTest(): void {
         let pushBtn = await requireComponent(driver, 'push_standard_with_param');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // updateStackInfo auto-called by push button click
+        // Click getParamByIndex button to populate AppStorage key
+        let paramBtn = await requireComponent(driver, 'recycle_get_param_by_index');
+        await paramBtn.click();
+        await driver.delayMs(500);
         let param = getAppStorageString('recycleParamByIndex');
         expect(param).assertContain('ParamTag1');
         AppStorage.delete('recycleParamByIndex');
@@ -708,7 +759,10 @@ export default function NavigationRecycleTest(): void {
         let pushBtn = await requireComponent(driver, 'push_standard_with_param');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // updateStackInfo auto-called by push button click
+        // Click getParamByName button to populate AppStorage key
+        let paramBtn = await requireComponent(driver, 'recycle_get_param_by_name');
+        await paramBtn.click();
+        await driver.delayMs(500);
         let params = getAppStorageString('recycleParamByName');
         expect(params).assertContain('ParamTag1');
         AppStorage.delete('recycleParamByName');
@@ -812,7 +866,10 @@ export default function NavigationRecycleTest(): void {
         let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // updateStackInfo auto-called by push button click
+        // Click getParamByIndex button to populate AppStorage key
+        let paramBtn = await requireComponent(driver, 'recycle_get_param_by_index');
+        await paramBtn.click();
+        await driver.delayMs(500);
         let param = getAppStorageString('recycleParamByIndex');
         // Without param, getParamByIndex should return undefined or null
         expect(param !== null).assertTrue();
@@ -1062,7 +1119,9 @@ export default function NavigationRecycleTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await clearModifierState(driver);
+      await CommonFunc.sleep(500);
       console.info('ModifierRecycleTest after each called');
     });
 
@@ -1494,7 +1553,9 @@ export default function NavigationRecycleTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await clearRecycleState(driver);
+      await CommonFunc.sleep(500);
       console.info('StackSizeLimitTest after each called');
     });
 
@@ -1776,7 +1837,10 @@ export default function NavigationRecycleTest(): void {
         await pushBtn.click();
         await driver.delayMs(1000);
         // Get param for first page - should still be accessible via NavPathInfo
-        // updateStackInfo() auto-called by push, read param directly from AppStorage
+        // Click getParamByIndex button to populate AppStorage key
+        let paramBtn = await requireComponent(driver, 'recycle_get_param_by_index');
+        await paramBtn.click();
+        await driver.delayMs(500);
         let param = getAppStorageString('recycleParamByIndex');
         expect(param).assertContain('ParamTag1');
         AppStorage.delete('recycleParamByIndex');
@@ -1839,7 +1903,9 @@ export default function NavigationRecycleTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      let driver = Driver.create();
+      await clearRecycleState(driver);
+      await CommonFunc.sleep(500);
       console.info('ClearContentStackTest after each called');
     });
 

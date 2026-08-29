@@ -32,12 +32,7 @@ async function navigateToPage(url: string): Promise<void> {
     if (routerInstance !== undefined) {
       routerInstance.clear();
       let pages = routerInstance.getState();
-      if (pageName == pages.name) {
-        // Already on target page - replaceUrl to reset Navigation/NavPathStack state
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2500);
-      } else {
-        // Navigate to target page
+      if (!(pageName == pages.name)) {
         routerInstance.pushUrl(options);
         await CommonFunc.sleep(2500);
       }
@@ -90,8 +85,31 @@ export default function ClearContentStackTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
+      // Clear NavPathStack via clear buttons on each page variant
+      let driver = Driver.create();
+      // Try all possible clear buttons (only the one for the current page will be found)
+      let clearBtn: Component | null = await findComponentWithScroll(driver, 'clearStack');
+      if (clearBtn !== null) {
+        await clearBtn.click();
+        await CommonFunc.sleep(300);
+      }
+      clearBtn = await findComponentWithScroll(driver, 'clearDisableStack');
+      if (clearBtn !== null) {
+        await clearBtn.click();
+        await CommonFunc.sleep(300);
+      }
+      clearBtn = await findComponentWithScroll(driver, 'clearModStack');
+      if (clearBtn !== null) {
+        await clearBtn.click();
+        await CommonFunc.sleep(300);
+      }
+      clearBtn = await findComponentWithScroll(driver, 'clearModDisableStack');
+      if (clearBtn !== null) {
+        await clearBtn.click();
+        await CommonFunc.sleep(300);
+      }
       clearClearAppStorage();
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(500);
     });
 
     // =========================================================================
