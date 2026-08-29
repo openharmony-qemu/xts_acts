@@ -18,6 +18,7 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
+  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -38,16 +39,32 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function menu() {
   describe('menu', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("menu beforeAll start")
+
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+
+      console.info("menu  beforeAll end")
+    })
     beforeEach(async (): Promise<void> => {
       console.info("menu beforeEach start");
       let options: router.RouterOptions = {
@@ -74,11 +91,7 @@ export default function menu() {
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info(" menu after each called");
     });
 
@@ -94,74 +107,28 @@ export default function menu() {
 it('menu_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[menu_static_001] START');
 
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let driver = Driver.create()
-      let button: Component | null;
-      try {
-        button = await driver.findComponent(ON.id('button_start_preview'));
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
+      let button = await driver.findComponent(ON.id('button_start_preview'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
-      let button1: Component | null;
-      try {
-        button1 = await driver.findComponent(ON.id('button_end_preview'));
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await (button1?.click() as Promise<void>);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
+      let button1 = await driver.findComponent(ON.id('button_end_preview'));
+      await (button1?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
 
       let strJson1 = inspector.getInspectorByKey('preview_start');
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let obj1 = JSON.parseJsonElement(strJson1);
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('10');
 
 
       let strJson2 = inspector.getInspectorByKey('preview_end');
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
       let obj2 = JSON.parseJsonElement(strJson2);
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('menuTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('20');
 
 
@@ -172,4 +139,5 @@ it('menu_static_001', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
   })
 }
+
 

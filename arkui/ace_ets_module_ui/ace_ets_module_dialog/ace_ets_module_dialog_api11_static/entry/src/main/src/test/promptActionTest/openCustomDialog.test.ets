@@ -19,6 +19,7 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
+  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -39,16 +40,33 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 
 export default function openCustomDialog() {
   describe('openCustomDialog', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("openCustomDialog beforeAll start")
+
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+
+      console.info("openCustomDialog beforeAll end")
+    })
     beforeEach(async (): Promise<void> => {
       console.info("openCustomDialog beforeEach start");
       let options: router.RouterOptions = {
@@ -87,57 +105,24 @@ export default function openCustomDialog() {
 it('openCustomDialog_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('openCustomDialog_static_0100 START');
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
-      }
-      let button: Component | null;
-      try {
-        button = await driver.findComponent(ON.id('CustomDialog'));
-      } catch (err) {
-        console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await (button?.click() as Promise<void>)
-      } catch (err) {
-        console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('CustomDialog'));
+      await (button?.click() as Promise<void>)
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('openCustomDialog');
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[openCustomDialog_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[openCustomDialog_static_0100] title: " +
       JSON.stringify(obj.getElement('$attrs').getString("content")));
       expect(obj.getElement('$attrs').getString("content")).assertEqual('Custom dialog Message');
-      let button1: Component | null;
-      try {
-        button1 = await driver.findComponent(ON.text('确认'));
-      } catch (err) {
-        console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await (button1?.click() as Promise<void>)
-      } catch (err) {
-        console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('openCustomDialogTest await err: ' + JSON.stringify(err));
-      }
+      let button1 = await driver.findComponent(ON.text('确认'));
+      await (button1?.click() as Promise<void>)
+      await CommonFunc.sleep(1000);
       console.info('[openCustomDialog_static_0100] END');
       done();
     });
 
   })
 }
+

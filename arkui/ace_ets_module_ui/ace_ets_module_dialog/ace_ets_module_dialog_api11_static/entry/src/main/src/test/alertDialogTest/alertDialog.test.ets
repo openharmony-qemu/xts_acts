@@ -29,18 +29,34 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router, MeasureUtils } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { RecordData } from '@ohos.base';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function alertDialogCenterStartJsunit() {
   describe('alertDialogCenterStartTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("alertDialogCenterStartTest beforeAll start")
+
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+
+      console.info("alertDialogCenterStartTest  beforeAll end")
+    })
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -65,11 +81,7 @@ export default function alertDialogCenterStartJsunit() {
     });
 
     afterEach(async () => {
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info("alertDialogCenterStart after each called");
     });
 
@@ -85,11 +97,7 @@ export default function alertDialogCenterStartJsunit() {
 it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('alertDialogCenterStart testalertDialogCenterStart0011 START');
       let driver = Driver.create()
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       try {
         let event: emitter.InnerEvent = {
           eventId: 81601,
@@ -107,27 +115,10 @@ it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => voi
       } catch (err) {
         console.info("testalertDialogCenterStart0001_static on emitter err : " + JSON.stringify(err));
       }
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
-      let button: Component | null;
-      try {
-        button = await driver.findComponent(ON.text('button'));
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
+      let button = await driver.findComponent(ON.text('button'));
+      await (button?.click() as Promise<void>);
+      await Utils.sleep(1000);
     });
 
 
@@ -141,17 +132,9 @@ it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => voi
      */
 it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('testMeasureText0001_static start');
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       let driver = Driver.create()
-      try {
-        await Utils.sleep(2000);
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(2000);
       try {
         let measureOptions: MeasureOptions = {
           textContent: "alertDialog-CenterStart"
@@ -166,22 +149,9 @@ it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise
         console.info("testMeasureText0001_static err : " + JSON.stringify(err));
         done();
       }
-      let button: Component | null;
-      try {
-        button = await driver.findComponent(ON.text('button'));
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('alertDialogTest await err: ' + JSON.stringify(err));
-      }
+      let button = await driver.findComponent(ON.text('button'));
+      await (button?.click() as Promise<void>);
+      await Utils.sleep(1000);
     });
 
   })

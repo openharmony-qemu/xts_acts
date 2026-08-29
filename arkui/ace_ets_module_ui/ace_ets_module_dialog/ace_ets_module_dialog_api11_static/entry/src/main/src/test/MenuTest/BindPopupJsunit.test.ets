@@ -18,6 +18,7 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
+  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -38,17 +39,33 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { RecordData } from '@ohos.base';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function bindPopupTest() {
   describe('bindPopupTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("bindPopupTest beforeAll start")
+
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+
+      console.info("bindPopupTest  beforeAll end")
+    })
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Menu/bindPopup',
@@ -64,7 +81,7 @@ export default function bindPopupTest() {
           console.info("get bindPopup state pages.name: " + JSON.stringify(pages.name));
           // let result = await routerInstance .pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(1000);
+          await CommonFunc.sleep(2000);
           // console.info("push bindPopup success: " + JSON.stringify(result));
         }
       } catch (err) {
@@ -74,11 +91,7 @@ export default function bindPopupTest() {
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("bindPopup after each called");
     });
 
@@ -94,11 +107,7 @@ export default function bindPopupTest() {
 it('bindPopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupTest_static_0100 START');
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1500);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1500);
       let callback = (indexEvent: emitter.EventData) => {
         console.info("bindPopupTest_static_0100 get state result is: " + JSON.stringify(indexEvent));
         expect(((indexEvent.data) as Record<String,RecordData>)?.['enableArrow']).assertEqual(true);
@@ -116,28 +125,12 @@ it('bindPopupTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<
       }
       console.info("bindPopupTest_static_0100 click result is: " +
       JSON.stringify(inspector.sendEventByKey('bindPopup' + '_button', 10, "")));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("bindPopupTest_static_0100 click Two result is: " +
       JSON.stringify(inspector.sendEventByKey('image', 10, "")));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await driver.triggerKey(2070)
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(2070)
+      await CommonFunc.sleep(1000);
       console.info('bindPopupTest_static_0100 END');
     });
 
@@ -169,11 +162,7 @@ it('bindPopupTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<
       } catch (err) {
         console.log("bindPopupTest_static_0200 change component data error: " + err.message);
       }
-      try {
-        await CommonFunc.sleep(1500);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1500);
       let callbackOne = (indexEventOne: emitter.EventData) => {
         console.info("bindPopupTest_static_0200 get state result is: " + JSON.stringify(indexEventOne));
         expect(((indexEventOne.data) as Record<String,RecordData>)?.['enableArrow']).assertEqual(false);
@@ -190,21 +179,9 @@ it('bindPopupTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<
       }
       console.info("bindPopupTest_static_0200 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await driver.triggerKey(2070)
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(2070)
+      await CommonFunc.sleep(1000);
       console.info('bindPopupTest_static_0200 END');
       done();
     });
@@ -221,11 +198,7 @@ it('bindPopupTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<
 it('bindPopupTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('bindPopupTest_static_0300 START');
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1500);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1500);
       let callback = (indexEvent: emitter.EventData) => {
         console.info("bindPopupTest_static_0300 get state result is: " + JSON.stringify(indexEvent));
         expect(((indexEvent.data) as Record<String,RecordData>)?.['placementOnTop']).assertEqual(false);
@@ -241,21 +214,9 @@ it('bindPopupTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<
       }
       console.info("bindPopupTest_static_0300 click result is: " +
       JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await driver.triggerKey(2070)
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('BindPopupJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(2070)
+      await CommonFunc.sleep(1000);
       console.info('bindPopupTest_static_0300 END');
       done();
     });

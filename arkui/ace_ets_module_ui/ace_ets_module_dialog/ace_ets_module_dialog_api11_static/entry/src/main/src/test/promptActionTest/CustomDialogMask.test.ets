@@ -19,6 +19,7 @@ import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
 import {
   describe,
+  beforeAll,
   beforeEach,
   afterEach,
   afterAll,
@@ -39,13 +40,22 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function CustomDialogMaskTest() {
 
@@ -53,6 +63,13 @@ export default function CustomDialogMaskTest() {
   const waitUiReadyMs: Int = 500;
 
   describe('CustomDialogMaskTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("CustomDialogMaskTest beforeAll start")
+
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+
+      console.info("CustomDialogMaskTest beforeAll end")
+    })
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/promptAction/CustomDialogMask",
@@ -95,33 +112,17 @@ it('ArkUI_CustomDialog_Mask_static_0100', Level.LEVEL2, async (done: () => void)
       let CASE: string = 'ArkUI_CustomDialog_Mask_static_0100'
       console.info(`${SUITE} ${CASE} START`);
 
-      try {
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create()
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_1', 10, "")
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       done()
     });
 
@@ -142,33 +143,17 @@ it('ArkUI_CustomDialog_Mask_static_0100', Level.LEVEL2, async (done: () => void)
 it('ArkUI_CustomDialog_static_Mask0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let CASE: string = 'ArkUI_CustomDialog_static_Mask0200'
       console.info(`${SUITE} ${CASE} START`);
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create()
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_2', 10, "")
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       done()
     });
 
@@ -190,27 +175,15 @@ it('ArkUI_CustomDialog_static_Mask0300', Level.LEVEL2, async (done: () => void):
       let CASE: string = 'ArkUI_CustomDialog_static_Mask0300'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_3', 10, "")
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       done()
     });
 
@@ -232,27 +205,15 @@ it('ArkUI_CustomDialog_static_Mask0400', Level.LEVEL2, async (done: () => void):
       let CASE: string = 'ArkUI_CustomDialog_static_Mask0400'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_4', 10, "")
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       done()
     });
 
@@ -274,27 +235,15 @@ it('ArkUI_CustomDialog_static_Mask0500', Level.LEVEL2, async (done: () => void):
       let CASE: string = 'ArkUI_CustomDialog_static_Mask0500'
       console.info(`${SUITE} ${CASE} START`);
       let driver: Driver = Driver.create()
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       inspector.sendEventByKey('CustomDialogMask_Button_Open_5', 10, "")
-      try {
-        await driver.delayMs(waitUiReadyMs)
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await driver.delayMs(waitUiReadyMs)
       let strObj: string = inspector.getInspectorByKey('CustomDialogMask' + '_Button_Close_1');
       expect(JSON.parseJsonElement(strObj).getElement('$attrs').getString("visibility"))
         .assertEqual("Visibility.Visible");
       inspector.sendEventByKey('CustomDialogMask_Button_Close_1', 10, "")
       console.info(`${SUITE} ${CASE} END`);
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('CustomDialogMaskTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       done()
     });
   })

@@ -23,3 +23,6 @@ arkui/ace_ets_module_ui/ace_ets_module_advancedComponents/ace_ets_module_*/tools
 # .claude/settings.json     # Team settings (official Claude Code)
 # .claude/commands/         # Team slash commands (official Claude Code)
 # .claude/.plans/           # Project documentation (extension-specific)
+
+# Exclude optimization summary reports
+**/*优化总结.md

@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import window from '@ohos.window';
 import emitter from '@ohos.events.emitter';
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import {
   Driver,
   Component,
@@ -28,17 +28,34 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { RecordData } from '@ohos.base';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
+
 
 export default function customDialogControllerJsunit() {
   describe('customDialogControllerTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("customDialogControllerTest beforeAll start")
+
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+
+      console.info("customDialogControllerTest  beforeAll end")
+    })
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/customDialog/customDialogController',
@@ -64,11 +81,7 @@ export default function customDialogControllerJsunit() {
     });
 
     afterEach(async () => {
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('CustomDialogControllerJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info("customDialogControllers after each called");
     });
 
@@ -100,16 +113,8 @@ it('testCustomDialogControllers_static_100', Level.LEVEL2, async (done: () => vo
       }
       console.info('[testClickEvent001] sendEventByKey ' +
       JSON.stringify(inspector.sendEventByKey('dialogController', 10, "")));
-      try {
-        await Utils.sleep(1000)
-      } catch (err) {
-        console.info('CustomDialogControllerJsunitTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await driver.pressBack();
-      } catch (err) {
-        console.info('CustomDialogControllerJsunitTest await err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000)
+      await driver.pressBack();
       console.info('[testClickEvent001] testSendTouchEvent END');
     });
 

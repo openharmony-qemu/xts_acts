@@ -15,6 +15,7 @@
  */
 import {
   describe,
+  beforeAll,
   beforeEach,
   afterEach,
   it,
@@ -39,15 +40,31 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
+import { BusinessError } from '@ohos.base';
 import window from '@ohos.window';
+import { UtilsTest } from '../Util.test';
 
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 let abilityStage = AppStorage.get<common.BaseContext>("abilityContext")
 
 
 export default function showToast() {
   describe('showToast', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("showToast beforeAll start")
+
+
+      await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
+
+      console.info("showToast beforeAll end")
+    })
 
     beforeEach(async (): Promise<void> => {
       console.info("showToast beforeEach start");
@@ -84,55 +101,21 @@ export default function showToast() {
 it('showToast_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('showToast_static_0100 START');
       let driver = Driver.create()
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('showToastTest await err: ' + JSON.stringify(err));
-      }
-      let button: Component | null;
-      try {
-        button = await driver.findComponent(ON.id('showToast'));
-      } catch (err) {
-        console.info('showToastTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await (button?.click() as Promise<void>);
-      } catch (err) {
-        console.info('showToastTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('showToastTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('showToast'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
-      try {
-        windowClass = await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
-      } catch (err) {
-        console.info('showToastTest await err: ' + JSON.stringify(err));
-      }
-      if (windowClass) {
-        let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
-        console.info("[showToast_static_0100] title: " + JSON.stringify(properties.type));
-        expect(properties.type).assertEqual(1) //1鐞涖劎銇氱化鑽ょ埠閸涘﹨顒熺粣妤€褰汿YPE_SYSTEM_ALERT
-      }
+      windowClass =
+        await (window.getLastWindow(AppStorage.get<common.BaseContext>('abilityContext') as common.BaseContext) as Promise<window.Window>);
+      let properties: window.WindowProperties = windowClass.getWindowProperties() as window.WindowProperties;
+      console.info("[showToast_static_0100] title: " + JSON.stringify(properties.type));
+      expect(properties.type).assertEqual(1) //1表示系统告警窗口TYPE_SYSTEM_ALERT
 
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('showToastTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await driver.triggerKey(2070)
-      } catch (err) {
-        console.info('showToastTest await err: ' + JSON.stringify(err));
-      }
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('showToastTest await err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      await driver.triggerKey(2070)
+      await CommonFunc.sleep(1000);
       console.info('[showToast_static_0100] END');
       done();
     });
@@ -140,3 +123,4 @@ it('showToast_static_0100', Level.LEVEL2, async (done: () => void): Promise<void
 
   })
 }
+
