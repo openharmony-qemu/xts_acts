@@ -88,7 +88,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testHttpRequestMethodErrorCode_static_0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -115,6 +114,10 @@ export default function httpRequestErrorCodeTest() {
               }
             });
           }
+        }).catch((error: BusinessError) => {
+          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          ExpectFail();
+          done();
         });
       }catch(err){
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
@@ -132,7 +135,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testHttpRequestMethodErrorCode_static_0200';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -177,7 +179,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'test03testHttpRequestMethodErrorCode_static_030000';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -223,7 +224,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testHttpRequestMethodErrorCode_static_0700';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -267,7 +267,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testHttpRequestMethodErrorCode_static_0800';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -311,7 +310,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_0900';
@@ -371,7 +369,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_1000';
@@ -417,7 +414,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_1100';
@@ -463,7 +459,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_1200';
@@ -510,7 +505,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_1300';
@@ -568,7 +562,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_1500';
@@ -631,7 +624,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_1600';
@@ -680,7 +672,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_1700';
@@ -729,7 +720,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_1900';
@@ -775,7 +765,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_2000';
@@ -831,7 +820,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_2100';
@@ -893,7 +881,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_2200';
@@ -940,7 +927,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_2300';
@@ -987,7 +973,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testHttpRequestMethodErrorCode_static_2400';
@@ -1042,7 +1027,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testHttpX509CertInterfaceCoverage0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testHttpX509CertInterfaceCoverage0100';
@@ -1107,7 +1091,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testValidationContextInterfaceCoverage0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testValidationContextInterfaceCoverage0100';
@@ -1180,7 +1163,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testValidationCallbackSignature0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testValidationCallbackSignature0100';
@@ -1269,7 +1251,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testServerAuthenticationInterfaceCoverage0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testServerAuthenticationInterfaceCoverage0100';
@@ -1338,7 +1319,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testServerAuthenticationCredentialCoverage0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testServerAuthenticationCredentialCoverage0100';
@@ -1409,7 +1389,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testTlsOptionsTypeCoverage0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testTlsOptionsTypeCoverage0100';
@@ -1471,7 +1450,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testRemoteValidationTypeCoverage0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testRemoteValidationTypeCoverage0100';
@@ -1535,7 +1513,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testAuthenticationTypeCoverage0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testAuthenticationTypeCoverage0100';
@@ -1605,7 +1582,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testTlsConfigInterfaceCoverage0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testTlsConfigInterfaceCoverage0100';
@@ -1673,7 +1649,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testTlsV13SpecificCipherSuite0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testTlsV13SpecificCipherSuite0100';
@@ -1731,7 +1706,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testTlsV12SpecificCipherSuite0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testTlsV12SpecificCipherSuite0100';
@@ -1793,7 +1767,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testTlsV10SpecificCipherSuite0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testTlsV10SpecificCipherSuite0100';
@@ -1867,7 +1840,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testCipherSuiteHierarchy0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testCipherSuiteHierarchy0100';
@@ -1938,7 +1910,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testTlsVersion0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testTlsVersion0100';
@@ -1986,7 +1957,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testTlsVersion0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testTlsVersion0101';
@@ -2034,7 +2004,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testTlsVersion0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testTlsVersion0102';
@@ -2082,7 +2051,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-
     it("testTlsVersion0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       let caseName: string = 'testTlsVersion0103';
@@ -2130,7 +2098,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testHttpRequestMethodErrorCode_static_0400';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -2176,7 +2143,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testHttpRequestMethodErrorCode_static_0500';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -2223,7 +2189,6 @@ export default function httpRequestErrorCodeTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-
     it("testHttpRequestMethodErrorCode_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testHttpRequestMethodErrorCode_static_0600';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
