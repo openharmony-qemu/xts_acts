@@ -17,6 +17,7 @@ import http from '@ohos.net.http';
 import connection from '@ohos.net.connection';
 import { describe, expect, it , TestType, Size, Level } from '@ohos/hypium';
 import {BusinessError} from '@ohos.base';
+import { expectTrue } from './utils';
 
 const ExpectFail = () => {
   try {
@@ -58,7 +59,7 @@ export default  function HttpCacheTest() {
             }).then((data) =>{
               console.info(`${caseName} get data is: `+ JSON.stringify(data));
               httpRequest.destroy();
-              ExpectTrue(data.responseCode === http.ResponseCode.OK || data.responseCode > 500);
+              ExpectTrue(data.responseCode === http.ResponseCode.OK);
               console.info(`${caseName}---end`);
               done();
             });
@@ -97,7 +98,7 @@ export default  function HttpCacheTest() {
             }).then((data) =>{
               httpRequest.destroy();
               console.info(`${caseName} get data is: `+ JSON.stringify(data));
-              ExpectTrue(data.responseCode === http.ResponseCode.OK || data.responseCode > 500);
+              ExpectTrue(data.responseCode === http.ResponseCode.OK);
               done();
             });
           }else{
@@ -136,7 +137,7 @@ export default  function HttpCacheTest() {
               usingCache: true
             }).then((data) =>{
               cache.flush().then(()=> {
-                ExpectTrue(true);
+                expectTrue(cache !== undefined);
                 httpRequest.destroy();
                 console.info(`${caseName}-flush success --end`);
                 done();
@@ -227,7 +228,7 @@ export default  function HttpCacheTest() {
             }).then((data)=> {
               cache.delete().then(()=>{
                 httpRequest.destroy();
-                ExpectTrue(true);
+                expectTrue(cache !== undefined);
                 console.info(`${caseName}---end`);
                 done();
               }).catch((err: BusinessError)=>{
