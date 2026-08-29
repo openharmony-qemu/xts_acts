@@ -111,8 +111,46 @@ struct audioInputRouting {
                     .enabled(!this.yesEnable1)
                     .opacity(!this.yesEnable1 ? 1 : 0.4)
                     .onClick(async () => {
-                      this.yesEnable = true
-                      this.recorderEnable = true
+                      try {
+                        let audioManager = audio.getAudioManager()
+                        let routingManager = audioManager.getRoutingManager()
+                        let devices: audio.AudioDeviceDescriptors = await routingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
+                        Logger.info(this.tag, `getDevices count: ${devices.length}, and ${JSON.stringify(devices)}`)
+                        let hasTypeC = false
+                        for (let i = 0; i < devices.length; i++) {
+                          if (devices[i].deviceType === audio.DeviceType.WIRED_HEADSET ||
+                            devices[i].deviceType === audio.DeviceType.WIRED_HEADPHONES ||
+                            devices[i].deviceType === audio.DeviceType.USB_HEADSET) {
+                              hasTypeC = true
+                              break
+                          }
+                        }
+                        if (hasTypeC) {
+                          this.yesEnable = true
+                          this.recorderEnable = true
+                        } else {
+                          this.yesEnable = true
+                          this.recorderEnable = false
+                          this.stopEnable = false
+                          this.playEnable = false
+                          promptAction.showDialog({
+                            title: '提示',
+                            message:'未检测到TypeC耳机',
+                            buttons: [
+                              { text: '确定', color: '#317aff' }
+                            ]
+                          })
+                        }
+                      } catch (err) {
+                        Logger.info(this.tag, `getDevices failed: ${JSON.stringify(err)}`)
+                        promptAction.showDialog({
+                          title: '提示',
+                          message:'查询输出设备失败，请重试',
+                          buttons: [
+                            { text: '确定', color: '#317aff' }
+                          ]
+                        })
+                      }
                     })
                 }
               }
@@ -132,10 +170,48 @@ struct audioInputRouting {
                     .enabled(this.recorderEnable)
                     .opacity(this.recorderEnable ? 1 : 0.4)
                     .onClick(async () => {
-                      this.stopEnable = true
-                      this.recorderEnable = false
-                      await AudioCapturer.createAudioCapturer()
-                      await AudioCapturer.startCapturer()
+                      try {
+                        let audioManager = audio.getAudioManager()
+                        let routingManager = audioManager.getRoutingManager()
+                        let devices: audio.AudioDeviceDescriptors = await routingManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
+                        Logger.info(this.tag, `getDevices count: ${devices.length}, and ${JSON.stringify(devices)}`)
+                        let hasTypeC = false
+                        for (let i = 0; i < devices.length; i++) {
+                          if (devices[i].deviceType === audio.DeviceType.WIRED_HEADSET ||
+                            devices[i].deviceType === audio.DeviceType.WIRED_HEADPHONES ||
+                            devices[i].deviceType === audio.DeviceType.USB_HEADSET) {
+                              hasTypeC = true
+                              break
+                          }
+                        }
+                        if (hasTypeC) {
+                          this.stopEnable = true
+                          this.recorderEnable = false
+                          await AudioCapturer.createAudioCapturer()
+                          await AudioCapturer.startCapturer()
+                        } else {
+                          this.yesEnable = true
+                          this.recorderEnable = false
+                          this.stopEnable = false
+                          this.playEnable = false
+                          promptAction.showDialog({
+                            title: '提示',
+                            message:'未检测到TypeC耳机',
+                            buttons: [
+                              { text: '确定', color: '#317aff' }
+                            ]
+                          })
+                        }
+                      } catch (err) {
+                        Logger.info(this.tag, `getDevices failed: ${JSON.stringify(err)}`)
+                        promptAction.showDialog({
+                          title: '提示',
+                          message:'查询设备失败，请重试',
+                          buttons: [
+                            { text: '确定', color: '#317aff' }
+                          ]
+                        })
+                      }
                     })
                 }
 
