@@ -18,6 +18,7 @@ import navigationMaterial from './navigationTest/navigationMaterial.test';
 import swiperSystemMaterial from './swiperTest/swiperSystemMaterial.test';
 import ClearContentStackTest from './ClearContentStack.test';
 import NavigationRecycleTest from './NavigationRecycle.test';
+import ClearContentStackApiRecycleTest from './ClearContentStackApiRecycle.test';
 import NavigationPreloadTest from './NavigationPreload/NavigationPreload.test';
 
 export default function testsuite(): void {
@@ -25,5 +26,6 @@ export default function testsuite(): void {
   swiperSystemMaterial();
   ClearContentStackTest();
   NavigationRecycleTest();
+  ClearContentStackApiRecycleTest();
   NavigationPreloadTest();
 }

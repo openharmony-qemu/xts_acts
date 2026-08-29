@@ -22,6 +22,7 @@ import {
 } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { BusinessError } from '@ohos.base';
 
 class NavParamOne {
   public desc: string = 'NavParamOne'
@@ -165,7 +166,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -188,7 +189,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -212,7 +213,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -235,7 +236,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -258,7 +259,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -281,7 +282,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -304,7 +305,7 @@ struct NavigationPreload {
                 .then((): void => {
                   this.preloadResult = 'success'
                   this.thenCalled = 'true'
-                }).catch((error: Error) => {
+                }).catch((error: BusinessError) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
                   this.errorCode = String(error.code)
@@ -326,7 +327,7 @@ struct NavigationPreload {
               ).then((): void => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -349,7 +350,7 @@ struct NavigationPreload {
               ).then((): void => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -373,7 +374,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -400,7 +401,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -425,7 +426,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -449,7 +450,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -473,7 +474,7 @@ struct NavigationPreload {
                 this.thenCalled = 'true'
                 this.preloadResult = 'success'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.catchCalled = 'true'
                 this.preloadResult = 'error'
                 this.errorCode = String(error.code)
@@ -495,7 +496,7 @@ struct NavigationPreload {
               ).then((): void => {
                 this.thenCalled = 'true'
                 this.preloadResult = 'success'
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.catchCalled = 'true'
                 this.preloadResult = 'error'
                 this.errorCode = String(error.code)
@@ -518,7 +519,7 @@ struct NavigationPreload {
               ).then((): void => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -546,7 +547,7 @@ struct NavigationPreload {
                   this.stack.clear()
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
                 }, 500)
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -571,7 +572,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -602,13 +603,13 @@ struct NavigationPreload {
                   this.preloadResult = 'success_' + String(successCount)
                   this.thenCalled = 'true'
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
-                }).catch((error: Error) => {
+                }).catch((error: BusinessError) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
                   this.errorCode = String(error.code)
                   this.errorMsg = error.message
                 })
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -638,7 +639,7 @@ struct NavigationPreload {
                   this.pushAfterPreloadResult = 'pushed'
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
                 }, 1000)
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -667,7 +668,7 @@ struct NavigationPreload {
                   this.pushAfterPreloadResult = 'pushed_diff'
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
                 }, 1000)
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -691,7 +692,7 @@ struct NavigationPreload {
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
               ).then((): void => {
                 successCount++
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 failCount++
                 this.errorCode = String(error.code)
                 this.errorMsg = error.message
@@ -701,7 +702,7 @@ struct NavigationPreload {
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
               ).then((): void => {
                 successCount++
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 failCount++
                 this.errorCode = String(error.code)
                 this.errorMsg = error.message
@@ -737,7 +738,7 @@ struct NavigationPreload {
               ).then((): void => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -761,7 +762,7 @@ struct NavigationPreload {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)
@@ -786,7 +787,7 @@ struct NavigationPreload {
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
                 // Do NOT clear the stack, so onDestroy should NOT be called
-              }).catch((error: Error) => {
+              }).catch((error: BusinessError) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
                 this.errorCode = String(error.code)

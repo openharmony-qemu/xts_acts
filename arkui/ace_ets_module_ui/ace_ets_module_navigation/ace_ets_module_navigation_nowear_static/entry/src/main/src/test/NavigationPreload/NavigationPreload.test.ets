@@ -29,27 +29,14 @@ const BUNDLE_NAME = 'com.arkui.ace.navigation.nowear.static';
 const ABILITY_NAME = 'EntryAbility';
 const PAGE_URL = 'MainAbility/pages/NavigationPreload/NavigationPreload';
 
-// Find component by id with swipe retry in top Scroll panel area
-async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 8): Promise<Component | null> {
-  let comp = await driver.findComponent(ON.id(id));
-  if (comp !== null) {
-    return comp;
-  }
+// Find component by id with retry polling (NO swipe — swipe interferes with Navigation)
+async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 10): Promise<Component | null> {
   for (let i: int = 0; i < maxSwipeRetries; i++) {
-    // Swipe up in top Scroll panel area (55% height) to scroll down and reveal buttons below
-    await driver.swipe(540, 1000, 540, 500, 600);
-    await CommonFunc.sleep(600);
-    comp = await driver.findComponent(ON.id(id));
+    let comp = await driver.findComponent(ON.id(id));
     if (comp !== null) {
       return comp;
     }
-    // Swipe down to scroll back up and reveal buttons above
-    await driver.swipe(540, 500, 540, 1000, 600);
-    await CommonFunc.sleep(600);
-    comp = await driver.findComponent(ON.id(id));
-    if (comp !== null) {
-      return comp;
-    }
+    await CommonFunc.sleep(500);
   }
   return null;
 }
