@@ -16,6 +16,7 @@
 
 import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import { Router } from '@ohos.arkui.UIContext';
+import { Component, Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import router from '@ohos.router';

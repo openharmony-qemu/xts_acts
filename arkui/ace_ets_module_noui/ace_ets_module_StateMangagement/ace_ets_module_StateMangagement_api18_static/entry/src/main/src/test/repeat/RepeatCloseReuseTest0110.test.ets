@@ -21,7 +21,8 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import deviceInfo from '@ohos.deviceInfo';
-let domain: number = 0x0000;
+import common from '@ohos.app.ability.common';
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 

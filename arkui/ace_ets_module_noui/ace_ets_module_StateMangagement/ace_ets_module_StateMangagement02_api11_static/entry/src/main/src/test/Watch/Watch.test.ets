@@ -26,6 +26,8 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility } from '../Util.test';
+let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 export default function WatchTest() {
@@ -70,11 +72,11 @@ it('WatchTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       let strJson = inspector.getInspectorByKey('totalText');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Total: 17.00 �?);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Total: 17.00 â‚¬');
       strJson = inspector.getInspectorByKey('priceText');
       obj = JSON.parseJsonElement(strJson);
       console.info("[WatchTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Price: 17.00 �?);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Price: 17.00 â‚¬');
       console.info('[WatchTest_static_0100] END');
       done();
     });
