@@ -115,7 +115,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -1071,7 +1071,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -1143,7 +1143,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -1231,7 +1231,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -1299,7 +1299,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -1369,7 +1369,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -1430,7 +1430,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -1493,7 +1493,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -1562,7 +1562,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -1629,7 +1629,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
@@ -2219,7 +2219,7 @@ export default function httpRequestErrorCodeTest() {
             });
           }
         }).catch((error: BusinessError) => {
-          hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
+          hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
         });
