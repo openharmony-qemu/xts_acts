@@ -3,9 +3,12 @@
     "MainAbility/pages/index/index",
     "MainAbility/pages/navigation/navigationMaterial",
     "MainAbility/pages/swiper/swiperSystemMaterial",
+    "MainAbility/pages/NavigationRecyclePage",
+    "MainAbility/pages/ModifierRecyclePage",
     "MainAbility/pages/NavBarTest",
     "MainAbility/pages/NavBarDisableClearTest",
     "MainAbility/pages/ModifierTest",
-    "MainAbility/pages/ModifierDisableClearTest"
+    "MainAbility/pages/ModifierDisableClearTest",
+    "MainAbility/pages/NavigationPreload/NavigationPreload"
   ]
 }
