@@ -13,10 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium-binary/src/main/indexStatic";
+import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import webSocket from '@ohos.net.webSocket';
+import connection from '@ohos.net.connection';
+import http from '@ohos.net.http';
 
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -2644,6 +2646,169 @@ async (done: () => void): Promise<void> => {
     done();
   }
     });
+    /**
+     * @tc.name   testNetworkWebSocket_HttpProxy_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_HttpProxy_0100
+     * @tc.desc   Cover type HttpProxy = connection.HttpProxy interface type definition in ohos.net.webSocket.d.ets module using webSocket namespace type alias
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkWebSocket_HttpProxy_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testNetworkWebSocket_HttpProxy_static_0100';
+      hilog.info(domain, tag, '%{public}s', caseName + ' start');
+      try {
+        let httpProxy: webSocket.HttpProxy = {
+          host: '192.168.1.2',
+          port: 8081,
+          exclusionList: ['www.test.com', '10.10.*.*']
+        };
+        ExpectTrue(httpProxy.host === '192.168.1.2');
+        ExpectTrue(httpProxy.port === 8081);
+        ExpectTrue(httpProxy.exclusionList !== undefined);
+        let options: webSocket.WebSocketRequestOptions = {
+          skipServerCertVerification: false,
+          proxy: httpProxy,
+          protocol: '',
+          pingInterval: 60,
+          pongTimeout: 60
+        };
+        ExpectTrue(options.skipServerCertVerification !== undefined);
+        ExpectTrue(options.proxy !== undefined);
+        hilog.info(domain, tag, '%{public}s', caseName + ' webSocket.HttpProxy interface covered successfully');
+        done();
+        hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+        ExpectTrue(false);
+        done();
+        hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+      }
+    });
 
+    /**
+     * @tc.name   testNetworkWebSocketClientCert_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_ClientCert_0100
+     * @tc.desc   Cover interface ClientCert interface type definition in ohos.net.webSocket.d.ets module using webSocket namespace interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testNetworkWebSocketClientCert_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testNetworkWebSocketClientCert_static_0100';
+      hilog.info(domain, tag, '%{public}s', caseName + ' start');
+      try {
+        let clientCert: webSocket.ClientCert = {
+          certPath: '/path/to/cert.pem',
+          keyPath: '/path/to/key.pem',
+          keyPassword: 'password123'
+        };
+        ExpectTrue(clientCert.certPath === '/path/to/cert.pem');
+        ExpectTrue(clientCert.keyPath === '/path/to/key.pem');
+        ExpectTrue(clientCert.keyPassword === 'password123');
+        let clientCertWithoutPassword: webSocket.ClientCert = {
+          certPath: '/path/to/cert.pem',
+          keyPath: '/path/to/key.pem'
+        };
+        ExpectTrue(clientCertWithoutPassword.certPath === '/path/to/cert.pem');
+        ExpectTrue(clientCertWithoutPassword.keyPath === '/path/to/key.pem');
+        ExpectTrue(clientCertWithoutPassword.keyPassword === undefined);
+        done();
+        hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+      } catch (err) {
+        hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+        ExpectTrue(false);
+        done();
+        hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+      }
+    });
+
+    /**
+     * @tc.name   testWebSocketSendCallbackReturn_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_Send_Callback_Return_0100
+     * @tc.desc   Cover webSocket.send(data, callback) interface, verify callback returns boolean value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketSendCallbackReturn_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketSendCallbackReturn_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws = webSocket.createWebSocket();
+          ws.onOpen((value: webSocket.OpenResult | undefined) => {
+            if (value && value !== null) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
+              ws.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
+                if (err && err.code !== 0) {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'send fail' + err.code);
+                  ExpectFail();
+                  done();
+                } else {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'send success ' + value);
+                  ExpectTrue(value !== null && value !== undefined && typeof value === 'boolean');
+                  ws.close();
+                  done();
+                }
+              });
+            }
+          });
+          ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err && err.code !== 0) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + err.code);
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+            }
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+          ExpectFail();
+          done();
+          hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+        }
+      });
+
+    /**
+     * @tc.name   testWebSocketSendPromiseReturn_static_0100
+     * @tc.number SUB_NetworkMgr_WebSocket_Send_Promise_Return_0100
+     * @tc.desc   Cover webSocket.send(data) interface, verify promise returns boolean value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebSocketSendPromiseReturn_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testWebSocketSendPromiseReturn_static_0100';
+        hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        try {
+          let ws = webSocket.createWebSocket();
+          ws.onOpen((value: webSocket.OpenResult | undefined) => {
+            if (value && value !== null) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
+              ws.send('hello!').then((value: boolean) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'send success ' + value);
+                ExpectTrue(value !== null && value !== undefined && typeof value === 'boolean');
+                ws.close();
+                done();
+              }).catch((err: Error) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'send fail' + JSON.stringify(err));
+                ExpectFail();
+                done();
+              });
+            }
+          });
+          ws.connect(availableWebSocketAddress).then((value: boolean) => {
+            hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, '%{public}s', caseName + 'connect fail! : errcode is ->' + JSON.stringify(err));
+          });
+        } catch (err) {
+          hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+          ExpectFail();
+          done();
+          hilog.info(domain, tag, '%{public}s', caseName + ' test end');
+        }
+      });
   })
 }
