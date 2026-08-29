@@ -65,45 +65,22 @@ struct NavigationRecyclePage {
   @State stackSizeLimit: number = 0;
   @State clearContentStack: boolean = false;
 
+  aboutToAppear(): void {
+    this.updateStackInfo();
+  }
+
   updateStackInfo(): void {
     AppStorage.setOrCreate<number>('recycleStackSize', this.stack.size());
-    let names: string[] = this.stack.getAllPathName();
-    AppStorage.setOrCreate<string>('recycleAllPathNames', names.join(','));
-    let indices = this.stack.getIndexByName('pageStandard');
-    AppStorage.setOrCreate<string>('recycleIndexByName', JSON.stringify(indices));
-    let param: Object | null | undefined = this.stack.size() > 0 ? this.stack.getParamByIndex(0) : null;
-    if (param) {
-      try {
-        AppStorage.setOrCreate<string>('recycleParamByIndex', JSON.stringify(param));
-      } catch (e) {
-        let desc: string = '';
-        try { desc = (param as Record<string, Object>)['desc'] as string } catch (e2) { desc = '' }
-        AppStorage.setOrCreate<string>('recycleParamByIndex', desc ? '{"desc":"' + desc + '"}' : 'object');
-      }
-    } else {
-      AppStorage.setOrCreate<string>('recycleParamByIndex', 'undefined');
-    }
-    let params: (Object | null | undefined)[] = this.stack.getParamByName('pageStandard');
     try {
-      AppStorage.setOrCreate<string>('recycleParamByName', JSON.stringify(params));
+      let names: string[] = this.stack.getAllPathName();
+      AppStorage.setOrCreate<string>('recycleAllPathNames', names.join(','));
     } catch (e) {
-      let descList: string[] = [];
-      for (let i = 0; i < params.length; i++) {
-        let p = params[i];
-        if (p) {
-          try {
-            descList.push(JSON.stringify(p));
-          } catch (e2) {
-            let desc: string = '';
-            try { desc = (p as Record<string, Object>)['desc'] as string } catch (e3) { desc = '' }
-            descList.push(desc ? '{"desc":"' + desc + '"}' : 'object');
-          }
-        } else {
-          descList.push('null');
-        }
-      }
-      AppStorage.setOrCreate<string>('recycleParamByName', '[' + descList.join(',') + ']');
+      AppStorage.setOrCreate<string>('recycleAllPathNames', '');
     }
+    // NOTE: getIndexByName, getParamByIndex, getParamByName are NOT called here
+    // because in 'use static' mode they trigger Koala interop serialization which
+    // can cause native-layer crashes (Resource deserialization error) that JS
+    // try-catch cannot intercept. These APIs are only called via dedicated buttons.
   }
 
   @Builder
@@ -297,8 +274,12 @@ struct NavigationRecyclePage {
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent) => {
-              let names: string[] = this.stack.getAllPathName();
-              AppStorage.setOrCreate<string>('recycleAllPathNames', names.join(','));
+              try {
+                let names: string[] = this.stack.getAllPathName();
+                AppStorage.setOrCreate<string>('recycleAllPathNames', names.join(','));
+              } catch (e) {
+                AppStorage.setOrCreate<string>('recycleAllPathNames', '');
+              }
             })
             .margin(1)
 
@@ -308,8 +289,12 @@ struct NavigationRecyclePage {
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent) => {
-              let indices = this.stack.getIndexByName('pageStandard');
-              AppStorage.setOrCreate<string>('recycleIndexByName', JSON.stringify(indices));
+              try {
+                let indices = this.stack.getIndexByName('pageStandard');
+                AppStorage.setOrCreate<string>('recycleIndexByName', JSON.stringify(indices));
+              } catch (e) {
+                AppStorage.setOrCreate<string>('recycleIndexByName', '[]');
+              }
             })
             .margin(1)
 
@@ -319,8 +304,12 @@ struct NavigationRecyclePage {
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent) => {
-              let param: Object | null | undefined = this.stack.size() > 0 ? this.stack.getParamByIndex(0) : null;
-              AppStorage.setOrCreate<string>('recycleParamByIndex', param ? JSON.stringify(param) : 'undefined');
+              try {
+                let param: Object | null | undefined = this.stack.size() > 0 ? this.stack.getParamByIndex(0) : null;
+                AppStorage.setOrCreate<string>('recycleParamByIndex', param ? JSON.stringify(param) : 'undefined');
+              } catch (e) {
+                AppStorage.setOrCreate<string>('recycleParamByIndex', 'error');
+              }
             })
             .margin(1)
 
@@ -330,8 +319,12 @@ struct NavigationRecyclePage {
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
             .onClick((e: ClickEvent) => {
-              let params: (Object | null | undefined)[] = this.stack.getParamByName('pageStandard');
-              AppStorage.setOrCreate<string>('recycleParamByName', JSON.stringify(params));
+              try {
+                let params: (Object | null | undefined)[] = this.stack.getParamByName('pageStandard');
+                AppStorage.setOrCreate<string>('recycleParamByName', JSON.stringify(params));
+              } catch (e) {
+                AppStorage.setOrCreate<string>('recycleParamByName', 'error');
+              }
             })
             .margin(1)
 
@@ -482,8 +475,9 @@ struct NavigationRecyclePage {
       .recoverable(this.navigationRecoverable)
       .configuration({
         recyclePagesOnLowMemory: this.recycleOnLowMemory,
-        stackSizeLimit:
-          this.stackSizeLimit === 0 ? 0 : this.stackSizeLimit === 1 ? 1 : this.stackSizeLimit === 3 ? 3 : -1,
+        stackSizeLimit: this.stackSizeLimit === 0 ? 0 :
+          this.stackSizeLimit === 1 ? 1 :
+          this.stackSizeLimit === 3 ? 3 : -1,
         clearContentStackOnPrimaryNavigation: this.clearContentStack
       })
     }
@@ -512,7 +506,6 @@ struct RecyclePageStandard {
     .title('StandardPage')
     .mode(NavDestinationMode.STANDARD)
     .recoverable(this.destRecoverable)
-    .onShown(() => { AppStorage.setOrCreate<string>('navDestShown', 'standardPage') })
   }
 }
 
@@ -536,7 +529,6 @@ struct RecyclePageDialog {
     .title('DialogPage')
     .mode(NavDestinationMode.DIALOG)
     .recoverable(this.destRecoverable)
-    .onShown(() => { AppStorage.setOrCreate<string>('navDestShown', 'dialogPage') })
   }
 }
 
@@ -607,7 +599,6 @@ struct RecyclePageSaveRestore {
       }
     })
     .onShown(() => {
-      AppStorage.setOrCreate<string>('navDestShown', 'saveRestorePage')
       this.scroller.scrollTo({ xOffset: this.scrollOffset.xOffset, yOffset: this.scrollOffset.yOffset });
     })
   }
@@ -643,7 +634,6 @@ struct RecyclePageSaveEmpty {
       AppStorage.setOrCreate<string>('restoreEmptyResult',
         saveState ? 'called_with_data' : 'called_null');
     })
-    .onShown(() => { AppStorage.setOrCreate<string>('navDestShown', 'saveEmptyPage') })
   }
 }
 
@@ -682,6 +672,5 @@ struct RecyclePageSaveRestoreB {
         AppStorage.setOrCreate<string>('restoredDataB', JSON.stringify(saveState));
       }
     })
-    .onShown(() => { AppStorage.setOrCreate<string>('navDestShown', 'saveRestorePageB') })
   }
 }

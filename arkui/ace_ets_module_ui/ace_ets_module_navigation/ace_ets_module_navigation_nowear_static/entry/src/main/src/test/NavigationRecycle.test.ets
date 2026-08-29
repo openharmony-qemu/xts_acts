@@ -13,59 +13,71 @@ const ABILITY_NAME = 'EntryAbility';
 const PAGE_URL = 'MainAbility/pages/NavigationRecyclePage';
 const MOD_PAGE_URL = 'MainAbility/pages/ModifierRecyclePage';
 
-// Find component by id with retry polling (NO swipe — swipe interferes with Navigation)
-async function findComponentWithRetry(driver: Driver, id: string, maxRetries: int = 10, intervalMs: int = 500): Promise<Component | null> {
-  for (let i: int = 0; i < maxRetries; i++) {
-    let comp = await driver.findComponent(ON.id(id));
+function getAppStorageNumber(key: string): number {
+  let val: number | undefined = AppStorage.get<number>(key);
+  return val !== undefined ? val : 0;
+}
+
+function getAppStorageString(key: string): string {
+  let val: string | undefined = AppStorage.get<string>(key);
+  return val !== undefined ? val : '';
+}
+
+async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 8): Promise<Component | null> {
+  let comp = await driver.findComponent(ON.id(id));
+  if (comp !== null) {
+    return comp;
+  }
+  for (let i: int = 0; i < maxSwipeRetries; i++) {
+    // Swipe up in top Scroll panel area to scroll down and reveal buttons below
+    await driver.swipe(540, 1000, 540, 500, 600);
+    await CommonFunc.sleep(600);
+    comp = await driver.findComponent(ON.id(id));
     if (comp !== null) {
       return comp;
     }
-    await CommonFunc.sleep(intervalMs);
+    // Swipe down to scroll back up and reveal buttons above
+    await driver.swipe(540, 500, 540, 1000, 600);
+    await CommonFunc.sleep(600);
+    comp = await driver.findComponent(ON.id(id));
+    if (comp !== null) {
+      return comp;
+    }
   }
   return null;
 }
 
-// Keep old name as alias for backward compatibility
-async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 10): Promise<Component | null> {
-  return findComponentWithRetry(driver, id, maxSwipeRetries, 500);
+// Require component by id: asserts non-null and returns Component type (avoids ! dereference at call site)
+async function requireComponent(driver: Driver, id: string): Promise<Component> {
+  let comp: Component | null = await findComponentWithScroll(driver, id);
+  expect(comp !== null).assertTrue();
+  return comp!;
 }
 
-// Find component or throw descriptive error — prevents NullPointerError from null dereference
-async function findOrFail(driver: Driver, id: string, maxRetries: int = 10): Promise<Component> {
-  let comp = await findComponentWithRetry(driver, id, maxRetries, 500);
-  if (comp === null) {
-    throw new Error('Component not found: ' + id);
+async function navigateToPage(url: string): Promise<void> {
+  let options: router.RouterOptions = { url: url };
+  let pageName: string = url.substring(url.lastIndexOf('/') + 1);
+  try {
+    let routerInstance: Router | undefined = AppStorage.get<Router>("router");
+    if (routerInstance !== undefined) {
+      routerInstance.clear();
+      let pages = routerInstance.getState();
+      if (pageName == pages.name) {
+        // Already on target page - replaceUrl to reset Navigation/NavPathStack state
+        routerInstance.replaceUrl(options);
+        await CommonFunc.sleep(2500);
+      } else {
+        // Navigate to target page
+        routerInstance.pushUrl(options);
+        await CommonFunc.sleep(2500);
+      }
+    } else {
+      console.error('navigateToPage: Router instance is undefined, cannot navigate to ' + url);
+    }
+  } catch (err) {
+    console.error('navigateToPage navigate error:' + err);
+    expect().assertFail();
   }
-  return comp;
-}
-
-// Find component and click it — common pattern, with null safety
-async function findAndClick(driver: Driver, id: string, maxRetries: int = 10): Promise<void> {
-  let comp = await findOrFail(driver, id, maxRetries);
-  await comp.click();
-}
-
-// Clear Navigation-related AppStorage keys to prevent state leakage between tests
-function clearNavAppStorage(): void {
-  AppStorage.delete('recycleStackSize');
-  AppStorage.delete('recycleAllPathNames');
-  AppStorage.delete('recycleIndexByName');
-  AppStorage.delete('recycleParamByIndex');
-  AppStorage.delete('recycleParamByName');
-  AppStorage.delete('navDestShown');
-  AppStorage.delete('saveStateResult');
-  AppStorage.delete('restoreStateResult');
-  AppStorage.delete('saveStateResultB');
-  AppStorage.delete('restoreStateResultB');
-  AppStorage.delete('restoredScrollOffset');
-  AppStorage.delete('restoreEmptyResult');
-  AppStorage.delete('restoredDataB');
-  AppStorage.delete('modStackSize');
-  AppStorage.delete('modAllPathNames');
-  AppStorage.delete('modNavDestShown');
-  AppStorage.delete('modSaveStateResult');
-  AppStorage.delete('modRestoreStateResult');
-  AppStorage.delete('modRestoredData');
 }
 
 export default function NavigationRecycleTest(): void {
@@ -76,16 +88,7 @@ export default function NavigationRecycleTest(): void {
 
     beforeEach(async (): Promise<void> => {
       console.info('NavigationRecycleTest beforeEach start');
-      clearNavAppStorage();
-      let options: router.RouterOptions = { url: PAGE_URL };
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.error('replace NavigationRecyclePage error:' + err);
-      }
+      await navigateToPage(PAGE_URL);
       console.info('NavigationRecycleTest beforeEach end');
     });
 
@@ -109,7 +112,7 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Set recoverable to true
-        let btn = await findOrFail(driver, 'nav_recoverable_true');
+        let btn = await requireComponent(driver, 'nav_recoverable_true');
         await btn.click();
         await driver.delayMs(500);
         // Verify Navigation id exists (component rendered)
@@ -134,7 +137,7 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let btn = await findOrFail(driver, 'nav_recoverable_false');
+        let btn = await requireComponent(driver, 'nav_recoverable_false');
         await btn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testNavigation');
@@ -162,7 +165,7 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let btn = await findOrFail(driver, 'recycle_memory_true');
+        let btn = await requireComponent(driver, 'recycle_memory_true');
         await btn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testNavigation');
@@ -186,7 +189,7 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let btn = await findOrFail(driver, 'recycle_memory_false');
+        let btn = await requireComponent(driver, 'recycle_memory_false');
         await btn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testNavigation');
@@ -215,17 +218,16 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Set dest recoverable true
-        let destBtn = await findOrFail(driver, 'dest_recoverable_true');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
         await driver.delayMs(300);
         // Push standard page
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Verify standard page is visible
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'standardPageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0500 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0500 error: ' + err);
@@ -245,16 +247,15 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Set dest recoverable false
-        let destBtn = await findOrFail(driver, 'dest_recoverable_false');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_false');
         await destBtn.click();
         await driver.delayMs(300);
         // Push standard page
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'standardPageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0600 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0600 error: ' + err);
@@ -273,15 +274,14 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let destBtn = await findOrFail(driver, 'dest_recoverable_true');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'push_dialog');
+        let pushBtn = await requireComponent(driver, 'push_dialog');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'dialogPageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0700 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0700 error: ' + err);
@@ -305,13 +305,12 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Push saveRestore page (which has onSaveState registered)
-        let pushBtn = await findOrFail(driver, 'push_saveRestore');
+        let pushBtn = await requireComponent(driver, 'push_saveRestore');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Verify saveRestore page is visible
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'saveRestorePageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0800 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0800 error: ' + err);
@@ -330,12 +329,11 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_saveEmpty');
+        let pushBtn = await requireComponent(driver, 'push_saveEmpty');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'saveEmptyPageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0900 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_0900 error: ' + err);
@@ -359,11 +357,11 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // First set true
-        let trueBtn = await findOrFail(driver, 'nav_recoverable_true');
+        let trueBtn = await requireComponent(driver, 'nav_recoverable_true');
         await trueBtn.click();
         await driver.delayMs(300);
         // Then set false
-        let falseBtn = await findOrFail(driver, 'nav_recoverable_false');
+        let falseBtn = await requireComponent(driver, 'nav_recoverable_false');
         await falseBtn.click();
         await driver.delayMs(500);
         // Verify Navigation still renders
@@ -388,10 +386,10 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let falseBtn = await findOrFail(driver, 'recycle_memory_false');
+        let falseBtn = await requireComponent(driver, 'recycle_memory_false');
         await falseBtn.click();
         await driver.delayMs(300);
-        let trueBtn = await findOrFail(driver, 'recycle_memory_true');
+        let trueBtn = await requireComponent(driver, 'recycle_memory_true');
         await trueBtn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testNavigation');
@@ -420,18 +418,18 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Enable both recoverable and recycle
-        let navBtn = await findOrFail(driver, 'nav_recoverable_true');
+        let navBtn = await requireComponent(driver, 'nav_recoverable_true');
         await navBtn.click();
         await driver.delayMs(300);
-        let memBtn = await findOrFail(driver, 'recycle_memory_true');
+        let memBtn = await requireComponent(driver, 'recycle_memory_true');
         await memBtn.click();
         await driver.delayMs(300);
         // Push a page - updateStackInfo() auto-called by push button
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Read stack size from AppStorage (auto-updated by updateStackInfo)
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1200 END');
@@ -456,16 +454,15 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let destBtn = await findOrFail(driver, 'dest_recoverable_true');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Verify standard page text
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'standardPageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1300 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1300 error: ' + err);
@@ -484,15 +481,14 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let destBtn = await findOrFail(driver, 'dest_recoverable_true');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'push_dialog');
+        let pushBtn = await requireComponent(driver, 'push_dialog');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'dialogPageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1400 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1400 error: ' + err);
@@ -515,10 +511,10 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let sizeBtn = await findOrFail(driver, 'recycle_get_stack_size');
+        let sizeBtn = await requireComponent(driver, 'recycle_get_stack_size');
         await sizeBtn.click();
         await driver.delayMs(500);
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(0);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1500 END');
@@ -539,11 +535,11 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo() auto-called by push button click
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1600 END');
@@ -568,11 +564,11 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo() auto-called by push button click
-        let names = AppStorage.get<string>('recycleAllPathNames');
+        let names = getAppStorageString('recycleAllPathNames');
         expect(names).assertEqual('pageStandard');
         AppStorage.delete('recycleAllPathNames');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1700 END');
@@ -594,14 +590,14 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Push standard then dialog via top panel buttons (always visible)
-        let pushStd = await findOrFail(driver, 'push_standard');
+        let pushStd = await requireComponent(driver, 'push_standard');
         await pushStd.click();
         await driver.delayMs(1000);
-        let pushDlg = await findOrFail(driver, 'push_dialog');
+        let pushDlg = await requireComponent(driver, 'push_dialog');
         await pushDlg.click();
         await driver.delayMs(1500);
         // updateStackInfo auto-called after each push
-        let names = AppStorage.get<string>('recycleAllPathNames');
+        let names = getAppStorageString('recycleAllPathNames');
         expect(names).assertEqual('pageStandard,pageDialog');
         AppStorage.delete('recycleAllPathNames');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1800 END');
@@ -626,11 +622,11 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo auto-called by push button click
-        let indices = AppStorage.get<string>('recycleIndexByName');
+        let indices = getAppStorageString('recycleIndexByName');
         expect(indices).assertEqual('[0]');
         AppStorage.delete('recycleIndexByName');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_1900 END');
@@ -652,10 +648,10 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // No page pushed, so 'pageStandard' should return empty
-        let idxBtn = await findOrFail(driver, 'recycle_get_index_by_name');
+        let idxBtn = await requireComponent(driver, 'recycle_get_index_by_name');
         await idxBtn.click();
         await driver.delayMs(500);
-        let indices = AppStorage.get<string>('recycleIndexByName');
+        let indices = getAppStorageString('recycleIndexByName');
         expect(indices).assertEqual('[]');
         AppStorage.delete('recycleIndexByName');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2000 END');
@@ -680,11 +676,11 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_standard_with_param');
+        let pushBtn = await requireComponent(driver, 'push_standard_with_param');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo auto-called by push button click
-        let param = AppStorage.get<string>('recycleParamByIndex');
+        let param = getAppStorageString('recycleParamByIndex');
         expect(param).assertContain('ParamTag1');
         AppStorage.delete('recycleParamByIndex');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2100 END');
@@ -709,11 +705,11 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_standard_with_param');
+        let pushBtn = await requireComponent(driver, 'push_standard_with_param');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo auto-called by push button click
-        let params = AppStorage.get<string>('recycleParamByName');
+        let params = getAppStorageString('recycleParamByName');
         expect(params).assertContain('ParamTag1');
         AppStorage.delete('recycleParamByName');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2200 END');
@@ -739,19 +735,19 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Push first - updateStackInfo auto-called
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Verify size = 1 (from auto updateStackInfo)
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('recycleStackSize');
         // Pop via top panel button (always visible)
-        let popBtn = await findOrFail(driver, 'recycle_pop_btn');
+        let popBtn = await requireComponent(driver, 'recycle_pop_btn');
         await popBtn.click();
         await driver.delayMs(1000);
         // Verify size = 0 (auto updateStackInfo on pop)
-        stackSize = AppStorage.get<number>('recycleStackSize');
+        stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(0);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2300 END');
@@ -773,22 +769,22 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Push two pages via top panel buttons (always visible)
-        let pushStd = await findOrFail(driver, 'push_standard');
+        let pushStd = await requireComponent(driver, 'push_standard');
         await pushStd.click();
         await driver.delayMs(1000);
-        let pushDlg = await findOrFail(driver, 'push_dialog');
+        let pushDlg = await requireComponent(driver, 'push_dialog');
         await pushDlg.click();
         await driver.delayMs(1000);
         // Verify size = 2 (from auto updateStackInfo after push_dialog)
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(2);
         AppStorage.delete('recycleStackSize');
         // Clear via top panel button
-        let clearBtn = await findOrFail(driver, 'recycle_clear_btn');
+        let clearBtn = await requireComponent(driver, 'recycle_clear_btn');
         await clearBtn.click();
         await driver.delayMs(1000);
         // Verify size = 0 (auto updateStackInfo on clear)
-        stackSize = AppStorage.get<number>('recycleStackSize');
+        stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(0);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2400 END');
@@ -813,11 +809,11 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo auto-called by push button click
-        let param = AppStorage.get<string>('recycleParamByIndex');
+        let param = getAppStorageString('recycleParamByIndex');
         // Without param, getParamByIndex should return undefined or null
         expect(param !== null).assertTrue();
         AppStorage.delete('recycleParamByIndex');
@@ -839,11 +835,11 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_standard_with_param');
+        let pushBtn = await requireComponent(driver, 'push_standard_with_param');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo auto-called by push button click
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2600 END');
@@ -869,29 +865,29 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Enable both
-        let navBtn = await findOrFail(driver, 'nav_recoverable_true');
+        let navBtn = await requireComponent(driver, 'nav_recoverable_true');
         await navBtn.click();
         await driver.delayMs(300);
-        let memBtn = await findOrFail(driver, 'recycle_memory_true');
+        let memBtn = await requireComponent(driver, 'recycle_memory_true');
         await memBtn.click();
         await driver.delayMs(300);
-        let destBtn = await findOrFail(driver, 'dest_recoverable_true');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
         await driver.delayMs(300);
         // Push page via top panel button
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Verify size (auto updateStackInfo)
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('recycleStackSize');
         // Pop via top panel button
-        let popBtn = await findOrFail(driver, 'recycle_pop_btn');
+        let popBtn = await requireComponent(driver, 'recycle_pop_btn');
         await popBtn.click();
         await driver.delayMs(1000);
         // Verify empty (auto updateStackInfo on pop)
-        stackSize = AppStorage.get<number>('recycleStackSize');
+        stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(0);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2700 END');
@@ -913,26 +909,26 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Disable both
-        let navBtn = await findOrFail(driver, 'nav_recoverable_false');
+        let navBtn = await requireComponent(driver, 'nav_recoverable_false');
         await navBtn.click();
         await driver.delayMs(300);
-        let memBtn = await findOrFail(driver, 'recycle_memory_false');
+        let memBtn = await requireComponent(driver, 'recycle_memory_false');
         await memBtn.click();
         await driver.delayMs(300);
         // Push page via top panel button
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Verify size (auto updateStackInfo)
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('recycleStackSize');
         // Pop via top panel button
-        let popBtn = await findOrFail(driver, 'recycle_pop_btn');
+        let popBtn = await requireComponent(driver, 'recycle_pop_btn');
         await popBtn.click();
         await driver.delayMs(1000);
         // Verify empty (auto updateStackInfo on pop)
-        stackSize = AppStorage.get<number>('recycleStackSize');
+        stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(0);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2800 END');
@@ -957,14 +953,13 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_saveRestore');
+        let pushBtn = await requireComponent(driver, 'push_saveRestore');
         await pushBtn.click();
         await driver.delayMs(1500);
         // The page has onSaveState that returns Record<string, Object> with mixed types
         // Verify page is visible (callback registration is successful)
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'saveRestorePageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2900 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_2900 error: ' + err);
@@ -983,12 +978,11 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let pushBtn = await findOrFail(driver, 'push_saveEmpty');
+        let pushBtn = await requireComponent(driver, 'push_saveEmpty');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'saveEmptyPageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3000 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3000 error: ' + err);
@@ -1012,13 +1006,12 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Push saveRestore page which has both onSaveState and onRestoreState registered
-        let pushBtn = await findOrFail(driver, 'push_saveRestore');
+        let pushBtn = await requireComponent(driver, 'push_saveRestore');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Verify page is rendered
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'saveRestorePageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3100 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3100 error: ' + err);
@@ -1041,15 +1034,14 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let destBtn = await findOrFail(driver, 'dest_recoverable_false');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_false');
         await destBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'push_dialog');
+        let pushBtn = await requireComponent(driver, 'push_dialog');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'dialogPageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3200 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_NavigationRecycle_static_3200 error: ' + err);
@@ -1065,16 +1057,7 @@ export default function NavigationRecycleTest(): void {
   describe('ModifierRecycleTest', () => {
     beforeEach(async (): Promise<void> => {
       console.info('ModifierRecycleTest beforeEach start');
-      clearNavAppStorage();
-      let options: router.RouterOptions = { url: MOD_PAGE_URL };
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.error('replace ModifierRecyclePage error:' + err);
-      }
+      await navigateToPage(MOD_PAGE_URL);
       console.info('ModifierRecycleTest beforeEach end');
     });
 
@@ -1093,7 +1076,7 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let recycleBtn = await findOrFail(driver, 'use_recycle_modifier');
+        let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testModNavigation');
@@ -1117,7 +1100,7 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let noRecycleBtn = await findOrFail(driver, 'use_no_recycle_modifier');
+        let noRecycleBtn = await requireComponent(driver, 'use_no_recycle_modifier');
         await noRecycleBtn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testModNavigation');
@@ -1141,23 +1124,23 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let recycleBtn = await findOrFail(driver, 'use_recycle_modifier');
+        let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
         await driver.delayMs(300);
         // Push standard page
-        let pushBtn = await findOrFail(driver, 'mod_push_standard');
+        let pushBtn = await requireComponent(driver, 'mod_push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Check size - updateModStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('modStackSize');
+        let stackSize = getAppStorageNumber('modStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('modStackSize');
         // Pop (in top panel, always visible)
-        let popBtn = await findOrFail(driver, 'mod_pop_btn');
+        let popBtn = await requireComponent(driver, 'mod_pop_btn');
         await popBtn.click();
         await driver.delayMs(1000);
         // Check size = 0 - updateModStackInfo() auto-called by pop
-        stackSize = AppStorage.get<number>('modStackSize');
+        stackSize = getAppStorageNumber('modStackSize');
         expect(stackSize).assertEqual(0);
         AppStorage.delete('modStackSize');
         console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0300 END');
@@ -1178,16 +1161,15 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let recycleBtn = await findOrFail(driver, 'use_recycle_modifier');
+        let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
         await driver.delayMs(300);
         // Push saveRestore page
-        let pushBtn = await findOrFail(driver, 'mod_push_saveRestore');
+        let pushBtn = await requireComponent(driver, 'mod_push_saveRestore');
         await pushBtn.click();
         await driver.delayMs(1500);
-        // Verify push succeeded via NavPathStack size (ModifierRecycle uses modStackSize)
-        let stackSize = AppStorage.get<number>('modStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'modSaveRestorePageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0400 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0400 error: ' + err);
@@ -1206,14 +1188,14 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let recycleBtn = await findOrFail(driver, 'use_recycle_modifier');
+        let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'mod_push_standard');
+        let pushBtn = await requireComponent(driver, 'mod_push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateModStackInfo() auto-called by push, read directly from AppStorage
-        let names = AppStorage.get<string>('modAllPathNames');
+        let names = getAppStorageString('modAllPathNames');
         expect(names).assertEqual('modPageStandard');
         AppStorage.delete('modAllPathNames');
         console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0500 END');
@@ -1235,19 +1217,19 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Start with recycle modifier
-        let recycleBtn = await findOrFail(driver, 'use_recycle_modifier');
+        let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
         await driver.delayMs(500);
         // Push page (mod_push_standard is in NavBar)
-        let pushBtn = await findOrFail(driver, 'mod_push_standard');
+        let pushBtn = await requireComponent(driver, 'mod_push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Pop back first - use_no_recycle_modifier is in NavBar, hidden after push
-        let popBtn = await findOrFail(driver, 'mod_pop_btn');
+        let popBtn = await requireComponent(driver, 'mod_pop_btn');
         await popBtn.click();
         await driver.delayMs(1000);
         // Now NavBar is visible again, switch to no-recycle modifier
-        let noRecycleBtn = await findOrFail(driver, 'use_no_recycle_modifier');
+        let noRecycleBtn = await requireComponent(driver, 'use_no_recycle_modifier');
         await noRecycleBtn.click();
         await driver.delayMs(500);
         // Verify navigation still renders
@@ -1272,19 +1254,19 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let recycleBtn = await findOrFail(driver, 'use_recycle_modifier');
+        let recycleBtn = await requireComponent(driver, 'use_recycle_modifier');
         await recycleBtn.click();
         await driver.delayMs(300);
         // Push page (mod_push_standard is in NavBar - only visible before push)
-        let pushBtn = await findOrFail(driver, 'mod_push_standard');
+        let pushBtn = await requireComponent(driver, 'mod_push_standard');
         await pushBtn.click();
         await driver.delayMs(2000);
         // Clear (in top panel, always visible)
-        let clearBtn = await findOrFail(driver, 'mod_clear_btn');
+        let clearBtn = await requireComponent(driver, 'mod_clear_btn');
         await clearBtn.click();
         await driver.delayMs(1000);
         // Verify size = 0 - updateModStackInfo() auto-called by clear
-        let stackSize = AppStorage.get<number>('modStackSize');
+        let stackSize = getAppStorageNumber('modStackSize');
         expect(stackSize).assertEqual(0);
         AppStorage.delete('modStackSize');
         console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0700 END');
@@ -1309,7 +1291,7 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let stackLimitBtn = await findOrFail(driver, 'use_stack_limit_modifier');
+        let stackLimitBtn = await requireComponent(driver, 'use_stack_limit_modifier');
         await stackLimitBtn.click();
         await driver.delayMs(500);
         // Verify navigation renders with stack limit modifier
@@ -1334,15 +1316,15 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let stackLimitBtn = await findOrFail(driver, 'use_stack_limit_modifier');
+        let stackLimitBtn = await requireComponent(driver, 'use_stack_limit_modifier');
         await stackLimitBtn.click();
         await driver.delayMs(300);
         // Push 1 page (within stackSizeLimit=2) - mod_push_standard is in NavBar, only visible before push
-        let pushBtn = await findOrFail(driver, 'mod_push_standard');
+        let pushBtn = await requireComponent(driver, 'mod_push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Check size - updateModStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('modStackSize');
+        let stackSize = getAppStorageNumber('modStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('modStackSize');
         console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_0900 END');
@@ -1367,7 +1349,7 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let clearStackBtn = await findOrFail(driver, 'use_clear_stack_modifier');
+        let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testModNavigation');
@@ -1391,14 +1373,14 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let clearStackBtn = await findOrFail(driver, 'use_clear_stack_modifier');
+        let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'mod_push_standard');
+        let pushBtn = await requireComponent(driver, 'mod_push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateModStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('modStackSize');
+        let stackSize = getAppStorageNumber('modStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('modStackSize');
         console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1100 END');
@@ -1419,10 +1401,10 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let clearStackBtn = await findOrFail(driver, 'use_clear_stack_modifier');
+        let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
         await driver.delayMs(500);
-        let noRecycleBtn = await findOrFail(driver, 'use_no_recycle_modifier');
+        let noRecycleBtn = await requireComponent(driver, 'use_no_recycle_modifier');
         await noRecycleBtn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testModNavigation');
@@ -1446,22 +1428,22 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let clearStackBtn = await findOrFail(driver, 'use_clear_stack_modifier');
+        let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'mod_push_standard');
+        let pushBtn = await requireComponent(driver, 'mod_push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateModStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('modStackSize');
+        let stackSize = getAppStorageNumber('modStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('modStackSize');
         // Pop (in top panel, always visible)
-        let popBtn = await findOrFail(driver, 'mod_pop_btn');
+        let popBtn = await requireComponent(driver, 'mod_pop_btn');
         await popBtn.click();
         await driver.delayMs(1000);
         // updateModStackInfo() auto-called by pop
-        stackSize = AppStorage.get<number>('modStackSize');
+        stackSize = getAppStorageNumber('modStackSize');
         expect(stackSize).assertEqual(0);
         AppStorage.delete('modStackSize');
         console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1300 END');
@@ -1482,14 +1464,14 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let clearStackBtn = await findOrFail(driver, 'use_clear_stack_modifier');
+        let clearStackBtn = await requireComponent(driver, 'use_clear_stack_modifier');
         await clearStackBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'mod_push_standard');
+        let pushBtn = await requireComponent(driver, 'mod_push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateModStackInfo() auto-called by push, read directly from AppStorage
-        let names = AppStorage.get<string>('modAllPathNames');
+        let names = getAppStorageString('modAllPathNames');
         expect(names).assertEqual('modPageStandard');
         AppStorage.delete('modAllPathNames');
         console.info('SUB_ARKUI_NAVIGATION_ModifierRecycle_static_1400 END');
@@ -1507,16 +1489,7 @@ export default function NavigationRecycleTest(): void {
   describe('StackSizeLimitTest', () => {
     beforeEach(async (): Promise<void> => {
       console.info('StackSizeLimitTest beforeEach start');
-      clearNavAppStorage();
-      let options: router.RouterOptions = { url: PAGE_URL };
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.error('replace NavigationRecyclePage error:' + err);
-      }
+      await navigateToPage(PAGE_URL);
       console.info('StackSizeLimitTest beforeEach end');
     });
 
@@ -1535,15 +1508,15 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let limitBtn = await findOrFail(driver, 'stack_limit_0');
+        let limitBtn = await requireComponent(driver, 'stack_limit_0');
         await limitBtn.click();
         await driver.delayMs(300);
         // Push 5 pages - no limit should allow all
-        let pushBtn = await findOrFail(driver, 'push_5_standard');
+        let pushBtn = await requireComponent(driver, 'push_5_standard');
         await pushBtn.click();
         await driver.delayMs(2000);
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(5);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0100 END');
@@ -1564,16 +1537,16 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let limitBtn = await findOrFail(driver, 'stack_limit_1');
+        let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
         await driver.delayMs(300);
         // Push 3 pages with stackSizeLimit=1
-        let pushBtn = await findOrFail(driver, 'push_3_standard');
+        let pushBtn = await requireComponent(driver, 'push_3_standard');
         await pushBtn.click();
         await driver.delayMs(2000);
         // NavPathInfo still kept in stack (size=3), but active nodes limited to 1
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         // Stack size should still reflect all path names (NavPathInfo preserved)
         expect(stackSize).assertEqual(3);
         AppStorage.delete('recycleStackSize');
@@ -1595,15 +1568,15 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let limitBtn = await findOrFail(driver, 'stack_limit_3');
+        let limitBtn = await requireComponent(driver, 'stack_limit_3');
         await limitBtn.click();
         await driver.delayMs(300);
         // Push 5 pages with stackSizeLimit=3
-        let pushBtn = await findOrFail(driver, 'push_5_standard');
+        let pushBtn = await requireComponent(driver, 'push_5_standard');
         await pushBtn.click();
         await driver.delayMs(2000);
         // NavPathInfo preserved for all 5 - updateStackInfo() auto-called by push
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(5);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0300 END');
@@ -1624,15 +1597,15 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let limitBtn = await findOrFail(driver, 'stack_limit_minus1');
+        let limitBtn = await requireComponent(driver, 'stack_limit_minus1');
         await limitBtn.click();
         await driver.delayMs(300);
         // Push 5 pages - negative limit means no limit
-        let pushBtn = await findOrFail(driver, 'push_5_standard');
+        let pushBtn = await requireComponent(driver, 'push_5_standard');
         await pushBtn.click();
         await driver.delayMs(2000);
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(5);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0400 END');
@@ -1654,23 +1627,22 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Enable recoverable and set stack limit
-        let navBtn = await findOrFail(driver, 'nav_recoverable_true');
+        let navBtn = await requireComponent(driver, 'nav_recoverable_true');
         await navBtn.click();
         await driver.delayMs(300);
-        let destBtn = await findOrFail(driver, 'dest_recoverable_true');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
         await driver.delayMs(300);
-        let limitBtn = await findOrFail(driver, 'stack_limit_1');
+        let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
         await driver.delayMs(300);
         // Push saveRestore page (has onSaveState)
-        let pushBtn = await findOrFail(driver, 'push_saveRestore');
+        let pushBtn = await requireComponent(driver, 'push_saveRestore');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Verify page pushed
-        // Verify push succeeded via NavPathStack size
-        let stackSize = AppStorage.get<number>('recycleStackSize') ?? 0;
-        expect(stackSize > 0).assertTrue();
+        let pageText = await requireComponent(driver, 'saveRestorePageText');
+        expect(pageText !== null).assertTrue();
         console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0500 END');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0500 error: ' + err);
@@ -1689,16 +1661,16 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let limitBtn = await findOrFail(driver, 'stack_limit_1');
+        let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
         await driver.delayMs(300);
         // Push 3 standard pages
-        let pushBtn = await findOrFail(driver, 'push_3_standard');
+        let pushBtn = await requireComponent(driver, 'push_3_standard');
         await pushBtn.click();
         await driver.delayMs(2000);
         // getAllPathName should still show all 3 (NavPathInfo preserved)
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let names = AppStorage.get<string>('recycleAllPathNames');
+        let names = getAppStorageString('recycleAllPathNames');
         expect(names).assertContain('pageStandard');
         AppStorage.delete('recycleAllPathNames');
         console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0600 END');
@@ -1720,21 +1692,21 @@ export default function NavigationRecycleTest(): void {
         let driver = Driver.create();
         await driver.delayMs(500);
         // Set stackSizeLimit=3 and recyclePagesOnLowMemory=true together
-        let limitBtn = await findOrFail(driver, 'stack_limit_3');
+        let limitBtn = await requireComponent(driver, 'stack_limit_3');
         await limitBtn.click();
         await driver.delayMs(300);
-        let memBtn = await findOrFail(driver, 'recycle_memory_true');
+        let memBtn = await requireComponent(driver, 'recycle_memory_true');
         await memBtn.click();
         await driver.delayMs(300);
-        let navBtn = await findOrFail(driver, 'nav_recoverable_true');
+        let navBtn = await requireComponent(driver, 'nav_recoverable_true');
         await navBtn.click();
         await driver.delayMs(300);
         // Push pages
-        let pushBtn = await findOrFail(driver, 'push_5_standard');
+        let pushBtn = await requireComponent(driver, 'push_5_standard');
         await pushBtn.click();
         await driver.delayMs(2000);
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(5);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0700 END');
@@ -1755,25 +1727,25 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let limitBtn = await findOrFail(driver, 'stack_limit_1');
+        let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
         await driver.delayMs(300);
-        let navBtn = await findOrFail(driver, 'nav_recoverable_true');
+        let navBtn = await requireComponent(driver, 'nav_recoverable_true');
         await navBtn.click();
         await driver.delayMs(300);
-        let destBtn = await findOrFail(driver, 'dest_recoverable_true');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
         await driver.delayMs(300);
         // Push 3 pages
-        let pushBtn = await findOrFail(driver, 'push_3_standard');
+        let pushBtn = await requireComponent(driver, 'push_3_standard');
         await pushBtn.click();
         await driver.delayMs(2000);
         // Pop - should navigate back (page recreated from NavPathInfo) - in top panel, always visible
-        let popBtn = await findOrFail(driver, 'recycle_pop_btn');
+        let popBtn = await requireComponent(driver, 'recycle_pop_btn');
         await popBtn.click();
         await driver.delayMs(1500);
         // Verify stack size decreased - updateStackInfo() auto-called by pop
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(2);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0800 END');
@@ -1794,18 +1766,18 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let limitBtn = await findOrFail(driver, 'stack_limit_1');
+        let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
         await driver.delayMs(300);
         // Push with param
-        let pushBtn = await findOrFail(driver, 'push_standard_with_param');
+        let pushBtn = await requireComponent(driver, 'push_standard_with_param');
         await pushBtn.click();
         await driver.delayMs(1000);
         await pushBtn.click();
         await driver.delayMs(1000);
         // Get param for first page - should still be accessible via NavPathInfo
         // updateStackInfo() auto-called by push, read param directly from AppStorage
-        let param = AppStorage.get<string>('recycleParamByIndex');
+        let param = getAppStorageString('recycleParamByIndex');
         expect(param).assertContain('ParamTag1');
         AppStorage.delete('recycleParamByIndex');
         console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_0900 END');
@@ -1826,25 +1798,25 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let navBtn = await findOrFail(driver, 'nav_recoverable_true');
+        let navBtn = await requireComponent(driver, 'nav_recoverable_true');
         await navBtn.click();
         await driver.delayMs(300);
-        let destBtn = await findOrFail(driver, 'dest_recoverable_true');
+        let destBtn = await requireComponent(driver, 'dest_recoverable_true');
         await destBtn.click();
         await driver.delayMs(300);
-        let limitBtn = await findOrFail(driver, 'stack_limit_1');
+        let limitBtn = await requireComponent(driver, 'stack_limit_1');
         await limitBtn.click();
         await driver.delayMs(300);
         // Push saveRestore page (has both onSaveState and onRestoreState)
-        let pushBtn = await findOrFail(driver, 'push_saveRestore');
+        let pushBtn = await requireComponent(driver, 'push_saveRestore');
         await pushBtn.click();
         await driver.delayMs(1500);
         // Push another saveRestoreB page to trigger auto-destroy of first
-        let pushB = await findOrFail(driver, 'push_saveRestoreB');
+        let pushB = await requireComponent(driver, 'push_saveRestoreB');
         await pushB.click();
         await driver.delayMs(2000);
         // Verify both pages in stack - updateStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(2);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_StackSizeLimit_static_1000 END');
@@ -1859,19 +1831,10 @@ export default function NavigationRecycleTest(): void {
   // ===========================================================================
   // clearContentStackOnPrimaryNavigation Tests (NavigationConfiguration)
   // ===========================================================================
-  describe('ClearContentStackTest', () => {
+  describe('ClearContentStackRecycleTest', () => {
     beforeEach(async (): Promise<void> => {
       console.info('ClearContentStackTest beforeEach start');
-      clearNavAppStorage();
-      let options: router.RouterOptions = { url: PAGE_URL };
-      try {
-        const routerInstance = AppStorage.get<Router>("router") as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
-      } catch (err) {
-        console.error('replace NavigationRecyclePage error:' + err);
-      }
+      await navigateToPage(PAGE_URL);
       console.info('ClearContentStackTest beforeEach end');
     });
 
@@ -1890,7 +1853,7 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let btn = await findOrFail(driver, 'clear_stack_true');
+        let btn = await requireComponent(driver, 'clear_stack_true');
         await btn.click();
         await driver.delayMs(500);
         // Verify Navigation still renders after setting clearContentStackOnPrimaryNavigation=true
@@ -1915,7 +1878,7 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let btn = await findOrFail(driver, 'clear_stack_false');
+        let btn = await requireComponent(driver, 'clear_stack_false');
         await btn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testNavigation');
@@ -1939,14 +1902,14 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let clearBtn = await findOrFail(driver, 'clear_stack_true');
+        let clearBtn = await requireComponent(driver, 'clear_stack_true');
         await clearBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_ClearContentStack_static_0300 END');
@@ -1967,14 +1930,14 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let clearBtn = await findOrFail(driver, 'clear_stack_false');
+        let clearBtn = await requireComponent(driver, 'clear_stack_false');
         await clearBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_ClearContentStack_static_0400 END');
@@ -1995,10 +1958,10 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let trueBtn = await findOrFail(driver, 'clear_stack_true');
+        let trueBtn = await requireComponent(driver, 'clear_stack_true');
         await trueBtn.click();
         await driver.delayMs(300);
-        let falseBtn = await findOrFail(driver, 'clear_stack_false');
+        let falseBtn = await requireComponent(driver, 'clear_stack_false');
         await falseBtn.click();
         await driver.delayMs(500);
         let strJson = inspector.getInspectorByKey('testNavigation');
@@ -2022,20 +1985,20 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let navBtn = await findOrFail(driver, 'nav_recoverable_true');
+        let navBtn = await requireComponent(driver, 'nav_recoverable_true');
         await navBtn.click();
         await driver.delayMs(300);
-        let memBtn = await findOrFail(driver, 'recycle_memory_true');
+        let memBtn = await requireComponent(driver, 'recycle_memory_true');
         await memBtn.click();
         await driver.delayMs(300);
-        let clearBtn = await findOrFail(driver, 'clear_stack_true');
+        let clearBtn = await requireComponent(driver, 'clear_stack_true');
         await clearBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(1);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_ClearContentStack_static_0600 END');
@@ -2056,20 +2019,20 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let clearBtn = await findOrFail(driver, 'clear_stack_true');
+        let clearBtn = await requireComponent(driver, 'clear_stack_true');
         await clearBtn.click();
         await driver.delayMs(300);
-        let limitBtn = await findOrFail(driver, 'stack_limit_3');
+        let limitBtn = await requireComponent(driver, 'stack_limit_3');
         await limitBtn.click();
         await driver.delayMs(300);
-        let navBtn = await findOrFail(driver, 'nav_recoverable_true');
+        let navBtn = await requireComponent(driver, 'nav_recoverable_true');
         await navBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'push_5_standard');
+        let pushBtn = await requireComponent(driver, 'push_5_standard');
         await pushBtn.click();
         await driver.delayMs(2000);
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let stackSize = AppStorage.get<number>('recycleStackSize');
+        let stackSize = getAppStorageNumber('recycleStackSize');
         expect(stackSize).assertEqual(5);
         AppStorage.delete('recycleStackSize');
         console.info('SUB_ARKUI_NAVIGATION_ClearContentStack_static_0700 END');
@@ -2090,14 +2053,14 @@ export default function NavigationRecycleTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let clearBtn = await findOrFail(driver, 'clear_stack_true');
+        let clearBtn = await requireComponent(driver, 'clear_stack_true');
         await clearBtn.click();
         await driver.delayMs(300);
-        let pushBtn = await findOrFail(driver, 'push_standard');
+        let pushBtn = await requireComponent(driver, 'push_standard');
         await pushBtn.click();
         await driver.delayMs(1500);
         // updateStackInfo() auto-called by push, read directly from AppStorage
-        let names = AppStorage.get<string>('recycleAllPathNames');
+        let names = getAppStorageString('recycleAllPathNames');
         expect(names).assertContain('pageStandard');
         AppStorage.delete('recycleAllPathNames');
         console.info('SUB_ARKUI_NAVIGATION_ClearContentStack_static_0800 END');

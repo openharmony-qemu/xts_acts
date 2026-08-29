@@ -35,14 +35,18 @@ export default function swiperSystemMaterial(): void {
         url: 'MainAbility/pages/swiper/swiperSystemMaterial',
       };
       try {
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info('swiperSystemMaterial state pages: ' + JSON.stringify(pages));
-        if (!('swiperSystemMaterial' == pages.name)) {
-          console.info('get swiperSystemMaterial pages.name:' + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2500);
+        let routerInstance: Router | undefined = AppStorage.get<Router>('router');
+        if (routerInstance !== undefined) {
+          routerInstance.clear();
+          let pages = routerInstance.getState();
+          console.info('swiperSystemMaterial state pages: ' + JSON.stringify(pages));
+          if (!('swiperSystemMaterial' == pages.name)) {
+            console.info('get swiperSystemMaterial pages.name:' + JSON.stringify(pages.name));
+            routerInstance.pushUrl(options);
+            await CommonFunc.sleep(2500);
+          }
+        } else {
+          console.error('swiperSystemMaterial beforeEach: Router instance is undefined');
         }
       } catch (err) {
         console.error('swiperSystemMaterial replaceUrl error: ' + err);

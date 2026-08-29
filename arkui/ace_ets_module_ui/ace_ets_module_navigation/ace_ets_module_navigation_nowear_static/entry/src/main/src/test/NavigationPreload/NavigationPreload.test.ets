@@ -41,6 +41,13 @@ async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetri
   return null;
 }
 
+// Require component by id: asserts non-null and returns Component type
+async function requireComponent(driver: Driver, id: string): Promise<Component> {
+  let comp: Component | null = await findComponentWithScroll(driver, id);
+  expect(comp !== null).assertTrue();
+  return comp!;
+}
+
 function getTextContentById(id: string): string {
   let strJson = inspector.getInspectorByKey(id);
   let obj = JSON.parseJsonElement(strJson);
@@ -62,10 +69,28 @@ export default function NavigationPreloadTest(): void {
       let options: router.RouterOptions = {
         url: PAGE_URL,
       }
-      const routerInstance = AppStorage.get<Router>('router') as Router;
-      routerInstance.clear();
-      routerInstance.replaceUrl(options);
-      await CommonFunc.sleep(2000);
+      try {
+        let routerInstance: Router | undefined = AppStorage.get<Router>('router');
+        if (routerInstance !== undefined) {
+          routerInstance.clear();
+          let pages = routerInstance.getState();
+          let pageName: string = PAGE_URL.substring(PAGE_URL.lastIndexOf('/') + 1);
+          if (pageName == pages.name) {
+            // Already on target page - replaceUrl to reset Navigation/NavPathStack state
+            routerInstance.replaceUrl(options);
+            await CommonFunc.sleep(2500);
+          } else {
+            // Navigate to target page
+            routerInstance.pushUrl(options);
+            await CommonFunc.sleep(2500);
+          }
+        } else {
+          console.error('NavigationPreload beforeEach: Router instance is undefined');
+        }
+      } catch (err) {
+        console.error('NavigationPreload beforeEach error:' + err);
+        expect().assertFail();
+      }
     });
 
     afterEach(async (): Promise<void> => {
@@ -87,9 +112,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadStandard');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadStandard');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -111,9 +135,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadDialog');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadDialog');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -135,9 +158,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadStandard');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadStandard');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -165,9 +187,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadStandard');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadStandard');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -189,9 +210,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadDialog');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadDialog');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -213,9 +233,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadWrongName');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadWrongName');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
@@ -239,9 +258,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadEmptyName');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadEmptyName');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
@@ -263,9 +281,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadObjectParam');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadObjectParam');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -287,9 +304,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadStringParam');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadStringParam');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -311,9 +327,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadNumberParam');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadNumberParam');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -335,9 +350,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadNoParam');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadNoParam');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -359,9 +373,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadStandard');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadStandard');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -385,9 +398,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadNoOptions');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadNoOptions');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -413,9 +425,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadUndefined');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadUndefined');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
@@ -442,9 +453,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadNullParam');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadNullParam');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result === 'success' || result === 'error').assertTrue();
@@ -466,9 +476,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadEmptyName');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadEmptyName');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
@@ -493,9 +502,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadNoBuilder');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadNoBuilder');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
@@ -522,9 +530,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadNotFound');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadNotFound');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
@@ -551,9 +558,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadWrongName');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadWrongName');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
@@ -579,9 +585,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadWithOnPop');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadWithOnPop');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -605,9 +610,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadIsEntryTrue');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadIsEntryTrue');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -629,9 +633,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadIsEntryFalse');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadIsEntryFalse');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -653,9 +656,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadNameOnly');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadNameOnly');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -681,9 +683,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadThenVerify');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadThenVerify');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let thenCalled = getTextContentById('thenCalled');
         expect(thenCalled).assertEqual('true');
@@ -709,9 +710,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadCatchVerify');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadCatchVerify');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
@@ -735,9 +735,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadWrongName');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadWrongName');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let errorCode = getTextContentById('errorCode');
         expect(errorCode.length).assertLarger(0);
@@ -762,9 +761,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadNotFound');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadNotFound');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let errorMsg = getTextContentById('errorMsg');
         expect(errorMsg.length).assertLarger(0);
@@ -788,9 +786,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadOnDestroyNotCalled');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadOnDestroyNotCalled');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -814,9 +811,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadThenClear');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadThenClear');
+        await btn.click();
         await CommonFunc.sleep(3000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -845,9 +841,8 @@ export default function NavigationPreloadTest(): void {
       try {
         let driver = Driver.create();
         let initialNames = getTextContentById('stackNames');
-        let btn = await findComponentWithScroll(driver, 'btnPreloadStandard');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadStandard');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -871,9 +866,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadMultiple');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadMultiple');
+        await btn.click();
         await CommonFunc.sleep(5000);
         let result = getTextContentById('preloadResult');
         console.info('SUB_ARKUI_NAVIGATION_PRELOADPATH_3100 preloadResult: ' + result);
@@ -898,9 +892,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadThenPush');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadThenPush');
+        await btn.click();
         await CommonFunc.sleep(3000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -927,9 +920,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadThenPushDiff');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadThenPushDiff');
+        await btn.click();
         await CommonFunc.sleep(3000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('success');
@@ -953,9 +945,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadSameTwice');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadSameTwice');
+        await btn.click();
         await CommonFunc.sleep(5000);
         let result = getTextContentById('preloadResult');
         console.info('SUB_ARKUI_NAVIGATION_PRELOADPATH_3400 preloadResult: ' + result);
@@ -979,9 +970,8 @@ export default function NavigationPreloadTest(): void {
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let driver = Driver.create();
-        let btn = await findComponentWithScroll(driver, 'btnPreloadUndefined');
-        expect(btn !== null && btn !== undefined).assertTrue();
-        await btn!.click();
+        let btn = await requireComponent(driver, 'btnPreloadUndefined');
+        await btn.click();
         await CommonFunc.sleep(2000);
         let errorCode = getTextContentById('errorCode');
         // In ArkTS-Sta mode, 401 is caught at compile time; runtime returns 100005/100006

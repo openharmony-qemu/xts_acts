@@ -23,6 +23,32 @@ import { Driver, ON, Component } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 
 const BUNDLE_NAME = 'com.arkui.ace.navigation.nowear.static';
+
+async function navigateToPage(url: string): Promise<void> {
+  let options: router.RouterOptions = { url: url };
+  let pageName: string = url.substring(url.lastIndexOf('/') + 1);
+  try {
+    let routerInstance: Router | undefined = AppStorage.get<Router>('router');
+    if (routerInstance !== undefined) {
+      routerInstance.clear();
+      let pages = routerInstance.getState();
+      if (pageName == pages.name) {
+        // Already on target page - replaceUrl to reset Navigation/NavPathStack state
+        routerInstance.replaceUrl(options);
+        await CommonFunc.sleep(2500);
+      } else {
+        // Navigate to target page
+        routerInstance.pushUrl(options);
+        await CommonFunc.sleep(2500);
+      }
+    } else {
+      console.error('navigateToPage: Router instance is undefined, cannot navigate to ' + url);
+    }
+  } catch (err) {
+    console.error('navigateToPage navigate error:' + err);
+    expect().assertFail();
+  }
+}
 const ABILITY_NAME = 'EntryAbility';
 const NAV_BAR_PAGE_URL = 'MainAbility/pages/NavBarTest';
 const NAV_BAR_DISABLE_PAGE_URL = 'MainAbility/pages/NavBarDisableClearTest';
@@ -58,7 +84,7 @@ function clearClearAppStorage(): void {
 }
 
 export default function ClearContentStackTest(): void {
-  describe('ClearContentStackTest', () => {
+  describe('ClearContentStackRecycleTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility(BUNDLE_NAME, ABILITY_NAME);
     });
@@ -82,11 +108,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: NAV_BAR_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(NAV_BAR_PAGE_URL);
         // Verify page loaded by checking enableClearTrue Radio is visible
         let enableClearRadio = await findComponentWithScroll(driver, 'enableClearTrue');
         expect(enableClearRadio !== null).assertTrue();
@@ -107,11 +129,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: NAV_BAR_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(NAV_BAR_PAGE_URL);
         // Click pushPath button to push a destination
         let pushBtn = await findComponentWithScroll(driver, 'pushPath');
         expect(pushBtn !== null).assertTrue();
@@ -143,11 +161,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: NAV_BAR_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(NAV_BAR_PAGE_URL);
         // Click enableClear false radio to toggle
         let clearFalseRadio = await findComponentWithScroll(driver, 'enableClearFalse');
         expect(clearFalseRadio !== null).assertTrue();
@@ -172,11 +186,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: NAV_BAR_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(NAV_BAR_PAGE_URL);
         // Switch to Split mode
         let splitRadio = await findComponentWithScroll(driver, 'modeSplit');
         if (splitRadio !== null) {
@@ -224,11 +234,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: NAV_BAR_DISABLE_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(NAV_BAR_DISABLE_PAGE_URL);
         // Verify page loaded
         let pushBtn = await findComponentWithScroll(driver, 'pushPath');
         expect(pushBtn !== null).assertTrue();
@@ -249,11 +255,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: NAV_BAR_DISABLE_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(NAV_BAR_DISABLE_PAGE_URL);
         // Push a page
         let pushBtn = await findComponentWithScroll(driver, 'pushPath');
         expect(pushBtn !== null).assertTrue();
@@ -302,11 +304,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: MODIFIER_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(MODIFIER_PAGE_URL);
         // Verify page loaded - check pushPath button exists
         let pushBtn = await findComponentWithScroll(driver, 'pushPath');
         expect(pushBtn !== null).assertTrue();
@@ -327,11 +325,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: MODIFIER_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(MODIFIER_PAGE_URL);
         // Verify enableClear Radio is present in AttrControlPanel
         let enableClearTrue = await findComponentWithScroll(driver, 'enableClearTrue');
         expect(enableClearTrue !== null).assertTrue();
@@ -362,11 +356,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: MODIFIER_DISABLE_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(MODIFIER_DISABLE_PAGE_URL);
         // Verify page loaded
         let pushBtn = await findComponentWithScroll(driver, 'pushPath');
         expect(pushBtn !== null).assertTrue();
@@ -387,11 +377,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: MODIFIER_DISABLE_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(MODIFIER_DISABLE_PAGE_URL);
         // Verify enableClear Radio is present
         let enableClearFalse = await findComponentWithScroll(driver, 'enableClearFalse');
         expect(enableClearFalse !== null).assertTrue();
@@ -418,11 +404,7 @@ export default function ClearContentStackTest(): void {
       try {
         let driver = Driver.create();
         await driver.delayMs(500);
-        let options: router.RouterOptions = { url: MODIFIER_DISABLE_PAGE_URL };
-        const routerInstance = AppStorage.get<Router>('router') as Router;
-        routerInstance.clear();
-        routerInstance.replaceUrl(options);
-        await CommonFunc.sleep(2000);
+        await navigateToPage(MODIFIER_DISABLE_PAGE_URL);
         // Switch to Split mode
         let splitRadio = await findComponentWithScroll(driver, 'modeSplit');
         if (splitRadio !== null) {

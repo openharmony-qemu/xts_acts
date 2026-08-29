@@ -88,7 +88,9 @@ class ClearStackModifier extends NavigationModifier {
 
   applyNormalAttribute(instance: NavigationAttribute): void {
     instance.configuration({
-      recyclePagesOnLowMemory: true, stackSizeLimit: 0, clearContentStackOnPrimaryNavigation: true
+      recyclePagesOnLowMemory: true,
+      stackSizeLimit: 0,
+      clearContentStackOnPrimaryNavigation: true
     });
     instance.recoverable(true);
   }

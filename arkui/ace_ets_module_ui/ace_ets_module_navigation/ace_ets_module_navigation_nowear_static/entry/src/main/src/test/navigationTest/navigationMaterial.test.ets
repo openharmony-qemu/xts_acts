@@ -40,14 +40,18 @@ export default function navigationMaterial(): void {
         url: 'MainAbility/pages/navigation/navigationMaterial',
       };
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info('get navigationMaterial state pages:' + JSON.stringify(pages));
-        if (!('navigationMaterial' == pages.name)) {
-          console.info('get navigationMaterial pages.name:' + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2500);
+        let routerInstance: Router | undefined = AppStorage.get<Router>("router");
+        if (routerInstance !== undefined) {
+          routerInstance.clear();
+          let pages = routerInstance.getState();
+          console.info('get navigationMaterial state pages:' + JSON.stringify(pages));
+          if (!('navigationMaterial' == pages.name)) {
+            console.info('get navigationMaterial pages.name:' + JSON.stringify(pages.name));
+            routerInstance.pushUrl(options);
+            await CommonFunc.sleep(2500);
+          }
+        } else {
+          console.error('navigationMaterial beforeEach: Router instance is undefined');
         }
       } catch (err) {
         console.error('push navigationMaterial page error:' + err);
