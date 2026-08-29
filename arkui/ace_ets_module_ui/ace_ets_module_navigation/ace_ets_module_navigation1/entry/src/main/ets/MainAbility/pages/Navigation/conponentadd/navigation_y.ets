@@ -26,23 +26,23 @@ struct NavigationExample {
   @State onActionCalled: boolean = false
   @State hideNavBar: boolean = false
   @State titleMode: NavigationTitleMode = NavigationTitleMode.Free
-  private stateChangCallBack = (eventData) => {
-    if (eventData != null) {
+  private stateChangCallBack = (eventData: events_emitter.EventData) => {
+    if (eventData != null && eventData.data != null) {
       console.info("tabs page state change called:" + JSON.stringify(eventData));
       if (eventData.data.vertical != null) {
-        this.titleMode = eventData.data.titleMode;
+        this.titleMode = eventData.data.titleMode as NavigationTitleMode;
       }
       if (eventData.data.hideToolBar != null) {
-        this.hideToolBar = parseInt(eventData.data.hideToolBar);
+        this.hideToolBar = !!parseInt(eventData.data.hideToolBar as string);
       }
       if (eventData.data.hideTitleBar != null) {
-        this.hideTitleBar = parseInt(eventData.data.hideTitleBar);
+        this.hideTitleBar = !!parseInt(eventData.data.hideTitleBar as string);
       }
       if (eventData.data.hideBackButton != null) {
-        this.hideBackButton = parseInt(eventData.data.hideBackButton);
+        this.hideBackButton = !!parseInt(eventData.data.hideBackButton as string);
       }
       if (eventData.data.hideNavBar != null) {
-        this.titleMode = parseInt(eventData.data.titleMode);
+        this.titleMode = parseInt(eventData.data.titleMode as string) as NavigationTitleMode;
       }
     }
   }
@@ -135,7 +135,6 @@ struct NavigationExample {
       }
       .title(this.NavigationTitle)
       .subTitle('subtitle')
-      .backButtonIcon()
       .navBarWidth(5)
       .navBarPosition(NavBarPosition.End)
       .menus(this.NavigationMenus)
@@ -143,7 +142,7 @@ struct NavigationExample {
       .hideTitleBar(false)
       .hideNavBar(false)
       .hideBackButton(false)
-      .onTitleModeChanged((titleModel: NavigationTitleMode) => {
+      .onTitleModeChange((titleModel: NavigationTitleMode) => {
         console.log('titleMode' + titleModel)
       })
       .onNavBarStateChange((isVisible: boolean) => {
