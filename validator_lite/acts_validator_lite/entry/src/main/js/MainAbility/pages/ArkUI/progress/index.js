@@ -7,20 +7,16 @@ export default {
     },
 
     onInit() {
-        console.info('onInit');
     },
 
     onDestroy() {
-        console.info('onDestroy');
     },
 
     changeHorizontal(e) {
-        console.log('click e ' + JSON.stringify(e));
         this.horizontalVal += 10;
     },
 
     changeArc(e) {
-        console.log('click e ' + JSON.stringify(e));
         this.arcVal += 10;
     },
 
@@ -32,11 +28,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.progress_bar.status = 'pass';
+        getApp().data.testItems['progress_bar'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.progress_bar.status = 'fail';
+        getApp().data.testItems['progress_bar'].status = 'fail';
         this.back();
     },
     backClicked() {

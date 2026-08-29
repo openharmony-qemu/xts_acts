@@ -8,13 +8,11 @@ export default {
     },
 
     onInit() {
-        console.info('onInit');
     },
 
     getInfo() {
         try {
             let info = app.getInfo();
-            console.log(JSON.stringify(info));
             this.resultText = '名称: ' + info.appName + '\n版本名称: ' + info.versionName + '\n版本号: ' + info.versionCode;
             this.statusMsg = 'success';
         } catch (e) {
@@ -31,11 +29,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.api_app.status = 'pass';
+        getApp().data.testItems['api_app'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.api_app.status = 'fail';
+        getApp().data.testItems['api_app'].status = 'fail';
         this.back();
     },
     backClicked() {

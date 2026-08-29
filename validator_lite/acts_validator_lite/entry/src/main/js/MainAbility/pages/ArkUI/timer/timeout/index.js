@@ -13,7 +13,6 @@ export default {
         }
         try {
             this.timeoutId = setTimeout(function() {
-                console.info('start setTimeout');
                 this.value = 'once_timer success';
                 this.statusMsg = 'timer fired';
             }.bind(this), 3000);
@@ -41,11 +40,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.api_timer_timeout.status = 'pass';
+        getApp().data.testItems['api_timer_timeout'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.api_timer_timeout.status = 'fail';
+        getApp().data.testItems['api_timer_timeout'].status = 'fail';
         this.back();
     },
     backClicked() {

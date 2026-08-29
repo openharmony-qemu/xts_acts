@@ -5,15 +5,18 @@ export default {
   data: {
     resultText: '',
     statusMsg: '',
+    hasError: false,
   },
   checkStorage() {
     this.resultText = '';
     this.statusMsg = 'testing...';
+    this.hasError = false;
     try {
       this.storageSet();
     } catch (e) {
       console.error('error: ' + e);
-      getApp().data.testItems.api_storage.errorDetail = 'checkStorage error: ' + e;
+      this.hasError = true;
+      getApp().data.testItems['api_storage'].errorDetail = 'checkStorage error: ' + e;
       this.statusMsg = 'error: ' + e;
     }
   },
@@ -24,20 +27,18 @@ export default {
       key: 'Storage1',
       value: 'Info1',
       success: function() {
-        console.log('storageSet call success');
         obj.resultText += 'set success\n';
         obj.statusMsg = 'set success, getting...';
         obj.storageGet();
       },
       fail: function(data, code) {
-        console.log('storageSet call fail, code: ' + code);
-        getApp().data.testItems.api_storage.errorDetail = 'storageSet fail: code=' + code + ', data=' + data;
+        obj.hasError = true;
+        getApp().data.testItems['api_storage'].errorDetail = 'storageSet fail: code=' + code + ', data=' + data;
         obj.resultText += 'set fail\n';
         obj.statusMsg = 'set fail, getting...';
         obj.storageGet();
       },
       complete: function() {
-        console.log('storageSet call complete');
       }
     });
   },
@@ -47,20 +48,18 @@ export default {
     storage.get({
       key: 'Storage1',
       success: function(data) {
-        console.log('storageGet call success');
         obj.resultText += 'get success\n';
         obj.statusMsg = 'get success, deleting...';
         obj.storageDelete();
       },
       fail: function(data, code) {
-        console.log('storageGet call fail, code: ' + code);
-        getApp().data.testItems.api_storage.errorDetail = 'storageGet fail: code=' + code + ', data=' + data;
+        obj.hasError = true;
+        getApp().data.testItems['api_storage'].errorDetail = 'storageGet fail: code=' + code + ', data=' + data;
         obj.resultText += 'get fail\n';
         obj.statusMsg = 'get fail, deleting...';
         obj.storageDelete();
       },
       complete: function() {
-        console.log('storageGet call complete');
       }
     });
   },
@@ -69,20 +68,18 @@ export default {
     storage.delete({
       key: 'Storage1',
       success: function(data) {
-        console.log('storageDelete call success');
         obj.resultText += 'delete success\n';
         obj.statusMsg = 'delete success, setting2...';
         obj.storageSet2();
       },
       fail: function(data, code) {
-        console.log('storageDelete call fail, code: ' + code);
-        getApp().data.testItems.api_storage.errorDetail = 'storageDelete fail: code=' + code + ', data=' + data;
+        obj.hasError = true;
+        getApp().data.testItems['api_storage'].errorDetail = 'storageDelete fail: code=' + code + ', data=' + data;
         obj.resultText += 'delete fail\n';
         obj.statusMsg = 'delete fail, setting2...';
         obj.storageSet2();
       },
       complete: function() {
-        console.log('storageDelete call complete');
       }
     });
   },
@@ -93,20 +90,18 @@ export default {
       key: 'Storage2',
       value: 'Info2',
       success: function() {
-        console.log('storageSet2 call success');
         obj.resultText += 'set2 success\n';
         obj.statusMsg = 'set2 success, clearing...';
         obj.storageClear();
       },
       fail: function(data, code) {
-        console.log('storageSet2 call fail, code: ' + code);
-        getApp().data.testItems.api_storage.errorDetail = 'storageSet2 fail: code=' + code + ', data=' + data;
+        obj.hasError = true;
+        getApp().data.testItems['api_storage'].errorDetail = 'storageSet2 fail: code=' + code + ', data=' + data;
         obj.resultText += 'set2 fail\n';
         obj.statusMsg = 'set2 fail, clearing...';
         obj.storageClear();
       },
       complete: function() {
-        console.log('storageSet2 call complete');
       }
     });
   },
@@ -115,24 +110,26 @@ export default {
     let obj = this;
     storage.clear({
       success: function(data) {
-        console.log('storageClear call success');
         obj.resultText += 'clear success\n';
-        obj.statusMsg = 'all done: clear success';
+        obj.statusMsg = obj.hasError ? 'all done: fail' : 'all done: success';
       },
       fail: function(data, code) {
-        console.log('storageClear call fail, code: ' + code);
-        getApp().data.testItems.api_storage.errorDetail = 'storageClear fail: code=' + code + ', data=' + data;
+        obj.hasError = true;
+        getApp().data.testItems['api_storage'].errorDetail = 'storageClear fail: code=' + code + ', data=' + data;
         obj.resultText += 'clear fail\n';
         obj.statusMsg = 'all done: clear fail';
       },
       complete: function() {
-        console.log('storageClear call complete');
       }
     });
   },
 
   onDestroy() {
+    try {
       this.storageClear();
+    } catch (e) {
+      console.error('onDestroy storageClear error: ' + e);
+    }
   },
 
     helpClicked() {
@@ -143,11 +140,11 @@ export default {
         router.replace({ uri: 'pages/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.api_storage.status = 'pass';
+        getApp().data.testItems['api_storage'].status = this.hasError ? 'fail' : 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.api_storage.status = 'fail';
+        getApp().data.testItems['api_storage'].status = 'fail';
         this.back();
     },
     backClicked() {

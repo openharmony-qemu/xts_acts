@@ -25,7 +25,14 @@ def _find_source_root():
 
 
 def _find_node_bin(prebuilts_dir, entries):
+    current_link = os.path.join(prebuilts_dir, "current")
+    if os.path.islink(current_link):
+        node_bin = os.path.join(current_link, "bin", "node")
+        if os.path.isfile(node_bin):
+            return os.path.join(current_link, "bin")
     for entry in entries:
+        if entry == "current":
+            continue
         node_bin = os.path.join(prebuilts_dir, entry, "bin", "node")
         if os.path.isfile(node_bin):
             return os.path.join(prebuilts_dir, entry, "bin")
@@ -42,9 +49,6 @@ def find_nodejs():
     for _ in range(10):
         prebuilts = os.path.join(cur, "prebuilts", "build-tools", "common", "nodejs")
         if os.path.isdir(prebuilts):
-            current_bin = os.path.join(prebuilts, "current", "bin", "node")
-            if os.path.isfile(current_bin):
-                return os.path.join(prebuilts, "current", "bin")
             entries = sorted(os.listdir(prebuilts), reverse=True)
             result = _find_node_bin(prebuilts, entries)
             if result:
