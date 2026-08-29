@@ -29,18 +29,14 @@ const BUNDLE_NAME = 'com.arkui.ace.navigation.nowear.static';
 const ABILITY_NAME = 'EntryAbility';
 const PAGE_URL = 'MainAbility/pages/NavigationPreload/NavigationPreload';
 
-async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 5): Promise<Component | null> {
-  let comp = await driver.findComponent(ON.id(id));
-  if (comp !== null) {
-    return comp;
-  }
+// Find component by id with retry polling (NO swipe — swipe interferes with Navigation)
+async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 10): Promise<Component | null> {
   for (let i: int = 0; i < maxSwipeRetries; i++) {
-    await driver.swipe(540, 1800, 540, 600, 600);
-    await CommonFunc.sleep(800);
-    comp = await driver.findComponent(ON.id(id));
+    let comp = await driver.findComponent(ON.id(id));
     if (comp !== null) {
       return comp;
     }
+    await CommonFunc.sleep(500);
   }
   return null;
 }
@@ -827,7 +823,7 @@ export default function NavigationPreloadTest() {
         let onDestroy = getTextContentById('onDestroyCalled');
         // stack.clear() clears the visible navigation stack; preloaded pages are in
         // a separate cache so onDestroy may or may not be triggered depending on
-        // implementation. Both outcomes are valid for this API surface test.
+        // implementation. Both outcomes are valid for this API behavior test.
         console.info('SUB_ARKUI_NAVIGATION_PRELOADPATH_2900 onDestroyCalled: ' + onDestroy);
         expect(onDestroy === 'true' || onDestroy === 'false').assertTrue();
       } catch (err) {

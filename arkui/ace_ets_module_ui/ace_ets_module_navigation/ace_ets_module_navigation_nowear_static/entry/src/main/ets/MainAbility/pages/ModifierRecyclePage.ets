@@ -87,7 +87,9 @@ class ClearStackModifier extends NavigationModifier {
   }
 
   applyNormalAttribute(instance: NavigationAttribute): void {
-    instance.configuration({ recyclePagesOnLowMemory: true, stackSizeLimit: 0, clearContentStackOnPrimaryNavigation: true });
+    instance.configuration({
+      recyclePagesOnLowMemory: true, stackSizeLimit: 0, clearContentStackOnPrimaryNavigation: true
+    });
     instance.recoverable(true);
   }
 }
@@ -288,6 +290,9 @@ struct ModRecyclePageStandard {
     .title('ModStandardPage')
     .mode(NavDestinationMode.STANDARD)
     .recoverable(true)
+    .onShown(() => {
+      AppStorage.setOrCreate<string>('modNavDestShown', 'modStandardPage');
+    })
   }
 }
 
@@ -325,6 +330,9 @@ struct ModRecyclePageSaveRestore {
       if (saveState) {
         AppStorage.setOrCreate<string>('modRestoredData', JSON.stringify(saveState));
       }
+    })
+    .onShown(() => {
+      AppStorage.setOrCreate<string>('modNavDestShown', 'modSaveRestorePage');
     })
   }
 }

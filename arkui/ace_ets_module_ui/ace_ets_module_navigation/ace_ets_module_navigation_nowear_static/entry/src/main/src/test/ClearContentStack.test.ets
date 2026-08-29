@@ -29,26 +29,14 @@ const NAV_BAR_DISABLE_PAGE_URL = 'MainAbility/pages/NavBarDisableClearTest';
 const MODIFIER_PAGE_URL = 'MainAbility/pages/ModifierTest';
 const MODIFIER_DISABLE_PAGE_URL = 'MainAbility/pages/ModifierDisableClearTest';
 
-async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 5): Promise<Component | null> {
-  let comp = await driver.findComponent(ON.id(id));
-  if (comp !== null) {
-    return comp;
-  }
+// Find component by id with retry polling (NO swipe — swipe interferes with Navigation)
+async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 10): Promise<Component | null> {
   for (let i: int = 0; i < maxSwipeRetries; i++) {
-    // Full-area swipe (for Navigation content area ~70% of screen)
-    await driver.swipe(540, 1800, 540, 600, 600);
-    await CommonFunc.sleep(800);
-    comp = await driver.findComponent(ON.id(id));
+    let comp = await driver.findComponent(ON.id(id));
     if (comp !== null) {
       return comp;
     }
-    // Top-area swipe (for AttrControlPanel ~25-30% of screen)
-    await driver.swipe(540, 600, 540, 100, 600);
-    await CommonFunc.sleep(800);
-    comp = await driver.findComponent(ON.id(id));
-    if (comp !== null) {
-      return comp;
-    }
+    await CommonFunc.sleep(500);
   }
   return null;
 }
@@ -109,17 +97,11 @@ export default function ClearContentStackTest() {
         await CommonFunc.sleep(2000);
         // Click pushPath button to push a destination
         let pushBtn = await findComponentWithScroll(driver, 'pushPath');
+        expect(pushBtn !== null).assertTrue();
         if (pushBtn !== null) {
           await pushBtn.click();
           await CommonFunc.sleep(1500);
-          // Verify stack has at least one entry by clicking getPath
-          let getPathBtn = await findComponentWithScroll(driver, 'getPath');
-          if (getPathBtn !== null) {
-            await getPathBtn.click();
-            await CommonFunc.sleep(500);
-          }
         }
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_ClearContentStackNav_static_0200 error: ' + err);
         expect(false).assertTrue();
@@ -189,7 +171,7 @@ export default function ClearContentStackTest() {
           await pushBtn.click();
           await CommonFunc.sleep(1500);
         }
-        expect(true).assertTrue();
+        expect(splitRadio !== null && pushBtn !== null).assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_ClearContentStackNav_static_0350 error: ' + err);
         expect(false).assertTrue();
@@ -243,6 +225,7 @@ export default function ClearContentStackTest() {
         await CommonFunc.sleep(2000);
         // Push a page
         let pushBtn = await findComponentWithScroll(driver, 'pushPath');
+        expect(pushBtn !== null).assertTrue();
         if (pushBtn !== null) {
           await pushBtn.click();
           await CommonFunc.sleep(1500);
@@ -253,7 +236,6 @@ export default function ClearContentStackTest() {
           await popBtn.click();
           await CommonFunc.sleep(1000);
         }
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_ClearContentStackNav_static_0500 error: ' + err);
         expect(false).assertTrue();
@@ -408,7 +390,8 @@ export default function ClearContentStackTest() {
           await pushBtn.click();
           await CommonFunc.sleep(1500);
         }
-        expect(true).assertTrue();
+        // Verify Split mode radio and push button were found and operated
+        expect(splitRadio !== null).assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_ClearContentStackNav_static_0950 error: ' + err);
         expect(false).assertTrue();

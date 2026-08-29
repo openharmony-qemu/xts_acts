@@ -482,7 +482,8 @@ struct NavigationRecyclePage {
       .recoverable(this.navigationRecoverable)
       .configuration({
         recyclePagesOnLowMemory: this.recycleOnLowMemory,
-        stackSizeLimit: this.stackSizeLimit === 0 ? 0 : this.stackSizeLimit === 1 ? 1 : this.stackSizeLimit === 3 ? 3 : -1,
+        stackSizeLimit:
+          this.stackSizeLimit === 0 ? 0 : this.stackSizeLimit === 1 ? 1 : this.stackSizeLimit === 3 ? 3 : -1,
         clearContentStackOnPrimaryNavigation: this.clearContentStack
       })
     }
@@ -511,6 +512,7 @@ struct RecyclePageStandard {
     .title('StandardPage')
     .mode(NavDestinationMode.STANDARD)
     .recoverable(this.destRecoverable)
+    .onShown(() => { AppStorage.setOrCreate<string>('navDestShown', 'standardPage') })
   }
 }
 
@@ -534,6 +536,7 @@ struct RecyclePageDialog {
     .title('DialogPage')
     .mode(NavDestinationMode.DIALOG)
     .recoverable(this.destRecoverable)
+    .onShown(() => { AppStorage.setOrCreate<string>('navDestShown', 'dialogPage') })
   }
 }
 
@@ -604,6 +607,7 @@ struct RecyclePageSaveRestore {
       }
     })
     .onShown(() => {
+      AppStorage.setOrCreate<string>('navDestShown', 'saveRestorePage')
       this.scroller.scrollTo({ xOffset: this.scrollOffset.xOffset, yOffset: this.scrollOffset.yOffset });
     })
   }
@@ -639,6 +643,7 @@ struct RecyclePageSaveEmpty {
       AppStorage.setOrCreate<string>('restoreEmptyResult',
         saveState ? 'called_with_data' : 'called_null');
     })
+    .onShown(() => { AppStorage.setOrCreate<string>('navDestShown', 'saveEmptyPage') })
   }
 }
 
@@ -677,5 +682,6 @@ struct RecyclePageSaveRestoreB {
         AppStorage.setOrCreate<string>('restoredDataB', JSON.stringify(saveState));
       }
     })
+    .onShown(() => { AppStorage.setOrCreate<string>('navDestShown', 'saveRestorePageB') })
   }
 }
