@@ -15,8 +15,10 @@
  */
 import {
   describe,
+  beforeAll,
   beforeEach,
   afterEach,
+  afterAll,
   it,
   expect,
   Level
@@ -24,12 +26,31 @@ import {
 import Utils from '../../../ets/MainAbility/common/Utils';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
+
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
+
+interface optionsObj {
+  uri: string
+}
 
 export default function ColumnSplitJsunit() {
   describe('ColumnSplitJsunit', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("ColumnSplitJsunit beforeAll start");
+
+      await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ColumnSplitJsunit beforeEach start");
@@ -43,23 +64,18 @@ export default function ColumnSplitJsunit() {
         console.info("get ColumnSplitJsunit state pages:" + "");
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get ColumnSplitJsunit pages.name:" + "");
-          await routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push ColumnSplitJsunit page error:" + err);
-        expect().assertFail();
       }
       console.info("ColumnSplitJsunit beforeEach end");
     });
 
 
     afterEach(async () => {
-      try {
-        await Utils.sleep(1000);
-      } catch (err) {
-        console.info('ColumnSplitJsunit afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info("columnSplit after each called");
     })
 
@@ -71,18 +87,13 @@ export default function ColumnSplitJsunit() {
      * @tc.level    0
      */
     it('testColumnSplitResizeable_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        let tagName = 'testColumnSplitResizeable_static_01';
-        console.info('[' + tagName + '] START============================');
-        await Utils.sleep(1000)
-        let strJson = inspector.getInspectorByKey('columnsplitkey');
-        console.info('[' + tagName + '] component obj is: ' + strJson);
-        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('ColumnSplit');
-        console.info('[' + tagName + '] END ===========================');
-      } catch (error) {
-        console.error('[testColumnSplitResizeable_static_01] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
-      }
+      let tagName = 'testColumnSplitResizeable_static_01';
+      console.info('[' + tagName + '] START============================');
+      await Utils.sleep(1000)
+      let strJson = inspector.getInspectorByKey('columnsplitkey');
+      console.info('[' + tagName + '] component obj is: ' + strJson);
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('ColumnSplit');
+      console.info('[' + tagName + '] END ===========================');
       done();
     });
   })

@@ -15,15 +15,32 @@
  */
 
 import router from '@ohos.router';
-import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
-import { Router } from '@ohos.arkui.UIContext';
+import events_emitter from '@ohos.events.emitter';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
+import { UtilsTest, startAbility, stopApplication } from "../Util.test"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+
+
+let domain: Int = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext: common.UIAbilityContext;
 
 export default function waterFlowDemoJsunit() {
   describe('waterFlowDemoJsunit', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("waterFlowDemoJsunit beforeAll start");
 
+      await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")
+    });
     beforeEach(async (): Promise<void> => {
       console.info("waterFlow beforeAll start");
       let options: router.RouterOptions = {
@@ -36,21 +53,16 @@ export default function waterFlowDemoJsunit() {
         console.info("get waterflowDemo state pages:" + "");
         if (!("waterflowDemo" == pages.name)) {
           console.info("get waterflowDemo pages.name:" + "");
-          await routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push waterflowDemo page error: " + err);
-        expect().assertFail();
       }
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (error) {
-        console.error("waterflowDemo afterEach error:" + error);
-      }
+      await CommonFunc.sleep(1000);
       console.info("waterflowDemo after each called");
     });
 
@@ -62,17 +74,12 @@ export default function waterFlowDemoJsunit() {
      * @tc.level    Level.LEVEL0
      */
     it('waterflowTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
-        console.info('waterflowDemo testalphabetIndexerWidth0001 START');
-        await CommonFunc.sleep(2000);
-        let strJson = inspector.getInspectorByKey('waterFlow');
-        console.info("[waterflowTest_static_0001] component width strJson:" + strJson);
-        let obj = JSON.parseJsonElement(strJson);
-        expect(obj.getString('$type')).assertEqual('WaterFlow');
-      } catch (error) {
-        console.error('[waterflowTest_static_0001] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
-      }
+      console.info('waterflowDemo testalphabetIndexerWidth0001 START');
+      await CommonFunc.sleep(2000);
+      let strJson = inspector.getInspectorByKey('waterFlow');
+      console.info("[waterflowTest_static_0001] component width strJson:" + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getString('$type')).assertEqual('WaterFlow');
       done();
     });
 

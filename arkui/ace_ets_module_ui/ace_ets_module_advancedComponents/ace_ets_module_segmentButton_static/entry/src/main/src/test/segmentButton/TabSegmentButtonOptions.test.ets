@@ -14,16 +14,26 @@
  * limitations under the License.
  */
 
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation,
+  ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, afterEach } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, beforeAll, afterEach } from '../../../../hypium/index';
+import { i18n } from '@kit.LocalizationKit';
+import display from '@ohos.display';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
+import { UtilsTest } from '../Util.test'
+import inspector from '@ohos.arkui.inspector'
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 
 export default function TabSegmentButtonOptionsTest() {
   describe('TabSegmentButtonOptionsTest', () => {
+
+    beforeAll(async (): Promise<void> => {
+      console.info("TabSegmentButtonOptionsTest beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
+    });
 
     beforeEach(async () => {
       console.info("TabSegmentButtonOptionsTest beforeEach start");
@@ -37,7 +47,7 @@ export default function TabSegmentButtonOptionsTest() {
         console.info("get current pages:" + JSON.stringify(pages));
         if (!("TabSegmentButtonOptions" == pages.name)) {
           console.info("get TabSegmentButtonOptionsTest pages.name:" + JSON.stringify(pages.name));
-          await routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -47,12 +57,8 @@ export default function TabSegmentButtonOptionsTest() {
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(1000);
-        console.info("TabSegmentButtonOptionsTest after each called");
-      } catch (err) {
-        console.error("afterEach error: " + err);
-      }
+      await CommonFunc.sleep(1000);
+      console.info("TabSegmentButtonOptionsTest after each called");
     });
 
     /**
@@ -62,25 +68,19 @@ export default function TabSegmentButtonOptionsTest() {
      * @tc.level    Level.LEVEL1
      */
     it('TabSegmentButtonOptionsTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
-        console.info('[TabSegmentButtonOptionsTest_static_001] START');
-        await CommonFunc.sleep(2000);
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('TabSegmentButtonOptions_type'));
-        await CommonFunc.sleep(500);
-        await (btn?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
-        console.info("[TabSegmentButtonOptionsTest_static_001] click succ");
-        expect(AppStorage.get<string>("TabSegmentButtonOptions_type")).assertEqual('tab');
-        AppStorage.delete("TabSegmentButtonOptions_type")
-        console.info('[TabSegmentButtonOptionsTest_static_001] END');
-        done();
-      } catch (err) {
-        console.error('TabSegmentButtonOptionsTest_static_001 error: ' + err);
-        expect(false).assertTrue();
-        done();
-      }
+      console.info('[TabSegmentButtonOptionsTest_static_001] START');
+      await CommonFunc.sleep(2000);
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('TabSegmentButtonOptions_type'));
+      await CommonFunc.sleep(500);
+      await (btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      console.info("[TabSegmentButtonOptionsTest_static_001] click succ");
+      expect(AppStorage.get<string>("TabSegmentButtonOptions_type")).assertEqual('tab');
+      AppStorage.delete("TabSegmentButtonOptions_type")
+      console.info('[TabSegmentButtonOptionsTest_static_001] END');
+      done();
     });
   })
 }

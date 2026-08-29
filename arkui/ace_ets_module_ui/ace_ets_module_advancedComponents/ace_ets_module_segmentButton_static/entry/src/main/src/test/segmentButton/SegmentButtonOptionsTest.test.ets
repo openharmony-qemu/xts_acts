@@ -13,16 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router } from '@ohos.arkui.UIContext';
+import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage,SegmentButtonOptions } from '@kit.ArkUI';
 import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import deviceInfo from "@ohos.deviceInfo"
+import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function SegmentButtonOptionsTest() {
   describe('SegmentButtonOptionsTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
+    })
 
     beforeEach(async (): Promise<void> => {
       console.info("SegmentButtonOptionsTest beforeEach start");
@@ -36,7 +46,7 @@ export default function SegmentButtonOptionsTest() {
         console.info("get SegmentButtonOptionsTest state pages: " + JSON.stringify(pages));
         if (!("SegmentButtonOptionsDemo" == pages.name)) {
           console.info("get SegmentButtonOptionsTest state pages.name: " + JSON.stringify(pages.name));
-          await SegmentButtonOptionsTest.pushUrl(options);
+          SegmentButtonOptionsTest.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -46,11 +56,7 @@ export default function SegmentButtonOptionsTest() {
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('SegmentButtonOptionsTest afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("SegmentButtonOptionsTest after each called");
     });
 
@@ -62,23 +68,18 @@ export default function SegmentButtonOptionsTest() {
      */
     it('SegmentButtonOptionsTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonOptionsTest_001] START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(2000);
-        let button = await driver.findComponent(ON.text('页签按钮2'));
-        await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
-        let strJsonNew = inspector.getInspectorByKey('onItemClickedIndex');
-        console.info( 'SegmentButtonOptionsTest_001 strJsonNew  is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-          .getElement('$attrs')
-          .getString('content')));
-        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('1');
-        await CommonFunc.sleep(2000);
-        console.info('[SegmentButtonOptionsTest_001] END');
-      } catch (error) {
-        console.error('[SegmentButtonOptionsTest_static_001] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
-      }
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(2000);
+      let button = await driver.findComponent(ON.text('页签按钮2'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+      let strJsonNew = inspector.getInspectorByKey('onItemClickedIndex');
+      console.info( 'SegmentButtonOptionsTest_001 strJsonNew  is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+        .getElement('$attrs')
+        .getString('content')));
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('1');
+      await CommonFunc.sleep(2000);
+      console.info('[SegmentButtonOptionsTest_001] END');
       done();
     });
 
@@ -90,35 +91,30 @@ export default function SegmentButtonOptionsTest() {
      */
     it('SegmentButtonOptionsTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonOptionsTest_002] START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(2000);
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(2000);
 
-        let tabOptions = AppStorage.get<SegmentButtonOptions>('SegmentButtonOptions001')!
-        let tabOptions2 = AppStorage.get<SegmentButtonOptions>('SegmentButtonOptions002')!
-        expect(tabOptions.type).assertEqual('tab');
-        expect(tabOptions2.type).assertEqual('capsule');
-        expect(tabOptions.multiply).assertEqual(false);
-        expect(tabOptions2.multiply).assertEqual(true);
-        expect(tabOptions.fontColor).assertEqual('#FF000000');
-        expect(tabOptions.selectedFontColor).assertEqual('#FFFFFF00');
-        expect(tabOptions.fontSize).assertEqual(18);
-        expect(tabOptions.selectedFontSize).assertEqual(20);
-        expect(tabOptions.selectedFontWeight).assertEqual(0);
-        expect(tabOptions.fontWeight).assertEqual(5);
-        expect(tabOptions.backgroundColor).assertEqual('#FF008000');
-        expect(tabOptions.selectedBackgroundColor).assertEqual('#FFFFA500');
-        expect(tabOptions.imageSize.width).assertEqual(40);
-        expect(JSON.stringify(tabOptions.buttonPadding)).assertEqual('{"top":4}');
-        await CommonFunc.sleep(2000);
-        AppStorage.delete('SegmentButtonOptions001');
-        AppStorage.delete('SegmentButtonOptions002');
-        await CommonFunc.sleep(2000);
-        console.info('[SegmentButtonOptionsTest_002] END');
-      } catch (error) {
-        console.error('[SegmentButtonOptionsTest_static_002] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
-      }
+      let tabOptions = AppStorage.get<SegmentButtonOptions>('SegmentButtonOptions001')!
+      let tabOptions2 = AppStorage.get<SegmentButtonOptions>('SegmentButtonOptions002')!
+      expect(tabOptions.type).assertEqual('tab');
+      expect(tabOptions2.type).assertEqual('capsule');
+      expect(tabOptions.multiply).assertEqual(false);
+      expect(tabOptions2.multiply).assertEqual(true);
+      expect(tabOptions.fontColor).assertEqual('#FF000000');
+      expect(tabOptions.selectedFontColor).assertEqual('#FFFFFF00');
+      expect(tabOptions.fontSize).assertEqual(18);
+      expect(tabOptions.selectedFontSize).assertEqual(20);
+      expect(tabOptions.selectedFontWeight).assertEqual(0);
+      expect(tabOptions.fontWeight).assertEqual(5);
+      expect(tabOptions.backgroundColor).assertEqual('#FF008000');
+      expect(tabOptions.selectedBackgroundColor).assertEqual('#FFFFA500');
+      expect(tabOptions.imageSize.width).assertEqual(40);
+      expect(JSON.stringify(tabOptions.buttonPadding)).assertEqual('{"top":4}');
+      await CommonFunc.sleep(2000);
+      AppStorage.delete('SegmentButtonOptions001');
+      AppStorage.delete('SegmentButtonOptions002');
+      await CommonFunc.sleep(2000);
+      console.info('[SegmentButtonOptionsTest_002] END');
       done();
     });
   })

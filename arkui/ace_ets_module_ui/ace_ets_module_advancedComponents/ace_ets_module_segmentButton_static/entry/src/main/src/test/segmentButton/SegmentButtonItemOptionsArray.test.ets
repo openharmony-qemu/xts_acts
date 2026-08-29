@@ -15,16 +15,23 @@
  */
 
 
-import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
+import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UtilsTest } from '../Util.test';
 import { Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 
 export default function SegmentButtonItemOptionsArrayTest() {
   describe('SegmentButtonItemOptionsArrayTest', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("SegmentButtonItemOptionsArrayTest beforeAll start");
+      await UtilsTest.msSleep(2000);
+      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility");
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("SegmentButtonItemOptionsArrayTest beforeEach start");
@@ -37,7 +44,7 @@ export default function SegmentButtonItemOptionsArrayTest() {
         let pages = routerInstance.getState();
         console.info("SegmentButtonItemOptionsArrayTest state pages: " + JSON.stringify(pages));
         if (pages.name !== "SegmentButtonIndex") {
-          await routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -47,11 +54,7 @@ export default function SegmentButtonItemOptionsArrayTest() {
     });
 
     afterEach(async () => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('SegmentButtonItemOptionsArrayTest afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await Utils.sleep(1000);
       console.info("SegmentButtonItemOptionsArrayTest after each called");
     });
 
@@ -62,26 +65,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_create_text', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_create_text START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnCreateText'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnCreateText');
-        console.info('[create_text] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('create_text:2');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_create_text END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_create_text] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnCreateText'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnCreateText');
+      console.info('[create_text] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('create_text:2');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_create_text END');
       done();
     });
 
@@ -92,26 +90,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_create_icon', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_create_icon START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnCreateIcon'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnCreateIcon');
-        console.info('[create_icon] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('create_icon:2');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_create_icon END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_create_icon] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnCreateIcon'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnCreateIcon');
+      console.info('[create_icon] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('create_icon:2');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_create_icon END');
       done();
     });
 
@@ -122,26 +115,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_create_icontext', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_create_icontext START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnCreateIconText'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnCreateIconText');
-        console.info('[create_icontext] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('create_icontext:2');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_create_icontext END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_create_icontext] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnCreateIconText'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnCreateIconText');
+      console.info('[create_icontext] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('create_icontext:2');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_create_icontext END');
       done();
     });
 
@@ -152,26 +140,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_push2', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_push2 START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnPush2'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnPush2');
-        console.info('[push2] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('push2:4');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_push2 END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_push2] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnPush2'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnPush2');
+      console.info('[push2] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('push2:4');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_push2 END');
       done();
     });
 
@@ -182,26 +165,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_push3', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_push3 START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnPush3'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnPush3');
-        console.info('[push3] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('push3:5');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_push3 END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_push3] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnPush3'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnPush3');
+      console.info('[push3] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('push3:5');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_push3 END');
       done();
     });
 
@@ -212,26 +190,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_pop', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_pop START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnPop'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnPop');
-        console.info('[pop] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('pop:3');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_pop END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_pop] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnPop'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnPop');
+      console.info('[pop] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('pop:3');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_pop END');
       done();
     });
 
@@ -242,26 +215,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_shift', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_shift START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnShift'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnShift');
-        console.info('[shift] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('shift:3');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_shift END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_shift] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnShift'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnShift');
+      console.info('[shift] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('shift:3');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_shift END');
       done();
     });
 
@@ -272,26 +240,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_unshift1', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_unshift1 START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnUnshift1'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnUnshift1');
-        console.info('[unshift1] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('unshift1:3');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_unshift1 END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_unshift1] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnUnshift1'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnUnshift1');
+      console.info('[unshift1] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('unshift1:3');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_unshift1 END');
       done();
     });
 
@@ -302,26 +265,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_unshift2', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_unshift2 START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnUnshift2'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnUnshift2');
-        console.info('[unshift2] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('unshift2:4');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_unshift2 END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_unshift2] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnUnshift2'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnUnshift2');
+      console.info('[unshift2] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('unshift2:4');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_unshift2 END');
       done();
     });
 
@@ -332,26 +290,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_unshift3', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_unshift3 START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnUnshift3'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnUnshift3');
-        console.info('[unshift3] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('unshift3:5');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_unshift3 END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_unshift3] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnUnshift3'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnUnshift3');
+      console.info('[unshift3] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('unshift3:5');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_unshift3 END');
       done();
     });
 
@@ -362,26 +315,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_splice_deleteOnly', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_splice_deleteOnly START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnSpliceDel'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnSpliceDel');
-        console.info('[splice_del] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('splice_del:2:2');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_splice_deleteOnly END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_splice_deleteOnly] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnSpliceDel'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnSpliceDel');
+      console.info('[splice_del] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('splice_del:2:2');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_splice_deleteOnly END');
       done();
     });
 
@@ -392,26 +340,21 @@ export default function SegmentButtonItemOptionsArrayTest() {
      */
     it('segmentButtonItemOptionsArray_splice_withInsert', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_splice_withInsert START');
-      try {
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let btn = await driver.findComponent(ON.id('btnSpliceIns'));
-        if (!btn) {
-          expect().assertFail();
-          done();
-          return;
-        }
-        await btn.click();
-        await CommonFunc.sleep(1000);
-        let mText = inspector.getInspectorByKey('btnSpliceIns');
-        console.info('[splice_ins] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
-        expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
-          .assertEqual('splice_ins:1:4');
-        console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_splice_withInsert END');
-      } catch (error) {
-        console.error('[segmentButtonItemOptionsArray_splice_withInsert] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let btn = await driver.findComponent(ON.id('btnSpliceIns'));
+      if (!btn) {
+        expect().assertFail();
+        done();
+        return;
       }
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      let mText = inspector.getInspectorByKey('btnSpliceIns');
+      console.info('[splice_ins] label=' + JSON.parseJsonElement(mText).getElement('$attrs').getString('label'));
+      expect(JSON.parseJsonElement(mText).getElement('$attrs').getString('label'))
+        .assertEqual('splice_ins:1:4');
+      console.info('SegmentButtonItemOptionsArrayTest: segmentButtonItemOptionsArray_splice_withInsert END');
       done();
     });
 

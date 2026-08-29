@@ -13,9 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from "../../../../hypium/index"
+import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import { Router } from '@ohos.arkui.UIContext';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import {UtilsTest,startAbility} from '../Util.test';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
@@ -23,6 +26,10 @@ import inspector from '@ohos.arkui.inspector';
 export default function CapsuleSegmentButtonAttributeTest() {
   describe('CapsuleSegmentButtonAttributeTest', () => {
 
+    beforeAll(async (): Promise<void> => {
+      console.info("CapsuleSegmentButtonAttributeTest beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
+    });
     beforeEach(async (): Promise<void> => {
       console.info("themePageToggleTest beforeEach start");
       let options: router.RouterOptions = {
@@ -37,7 +44,7 @@ export default function CapsuleSegmentButtonAttributeTest() {
           console.info("get themePageToggleTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
-          await routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push themePageToggleTest page result:" + JSON.stringify(result));
         }
@@ -55,7 +62,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_0100", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -82,11 +88,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_0100", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_0100 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
 
@@ -98,7 +99,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_0200", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -115,11 +115,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_0200", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_0200 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
     /**
@@ -130,7 +125,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_0300", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -146,11 +140,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_0300", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_0300 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
     /**
@@ -161,7 +150,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_0400", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -176,11 +164,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_0400", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_0400 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
 
@@ -192,7 +175,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_0500", "START");
         let symbol = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -209,11 +191,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_0500", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_0500 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
     /**
@@ -223,7 +200,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0
      */
     it('CapsuleSegmentButtonAttributeTest_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try {
       console.log("CapsuleSegmentButtonAttributeTest_static_0600", "START");
       let imageSegment = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
@@ -242,11 +218,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
       await CommonFunc.sleep(500);
       console.log("CapsuleSegmentButtonAttributeTest_static_0600", "END");
       done();
-      } catch (err) {
-        console.error("CapsuleSegmentButtonAttributeTest_static_0600 error: " + err);
-        expect(false).assertTrue();
-        done();
-      }
     });
 
 
@@ -258,7 +229,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_0700", "START");
         let imageUnselected = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -274,11 +244,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         expect(imageUnselected.getElement('$attrs').getString('fillColor')).assertEqual('#99000000');
         console.log("CapsuleSegmentButtonAttributeTest_static_0700", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_0700 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
 
@@ -290,7 +255,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_0800", "START");
         let symbol = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -307,11 +271,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_0800", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_0800 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
 
@@ -323,7 +282,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_0900", "START");
         let itemMinHeight = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -338,11 +296,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_0900", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_0900 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
 
@@ -354,7 +307,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_1000", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -373,11 +325,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_1000", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_1000 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
 
@@ -389,7 +336,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_1100", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -402,11 +348,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_1100", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_1100 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
 
@@ -418,7 +359,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_1200", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -436,11 +376,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_1200", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_1200 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
 
 
@@ -452,7 +387,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
      */
     it('CapsuleSegmentButtonAttributeTest_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         console.log("CapsuleSegmentButtonAttributeTest_static_1300", "START");
         let tabSegmentButton = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
           .getArray("$children")[0]
@@ -467,11 +401,6 @@ export default function CapsuleSegmentButtonAttributeTest() {
         await CommonFunc.sleep(500);
         console.log("CapsuleSegmentButtonAttributeTest_static_1300", "END");
         done();
-        } catch (err) {
-          console.error("CapsuleSegmentButtonAttributeTest_static_1300 error: " + err);
-          expect(false).assertTrue();
-          done();
-        }
       });
   })
 }

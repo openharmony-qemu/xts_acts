@@ -13,15 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
 import router from '@ohos.router';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import deviceInfo from '@ohos.deviceInfo';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function SegBtnItemTest0010() {
   describe('SegBtnItemTest0010', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
+    })
     beforeEach(async (): Promise<void> => {
       console.info("SegBtnItemTest0010 beforeEach start");
       let options: router.RouterOptions = {
@@ -34,7 +44,7 @@ export default function SegBtnItemTest0010() {
         console.info("get SegBtnItemTest0010 state pages: " + JSON.stringify(pages));
         if (!("SegBtnItem0010" == pages.name)) {
           console.info("get SegBtnItemTest0010 state pages.name: " + JSON.stringify(pages.name));
-          await pagesRouter.pushUrl(options);
+          pagesRouter.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -43,11 +53,7 @@ export default function SegBtnItemTest0010() {
       console.info("SegBtnItemTest0010 beforeEach end");
     });
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.error("SegBtnItemTest0010 afterEach error: " + err);
-      }
+      await CommonFunc.sleep(1000);
       console.info("SegBtnItemTest0010 after each called");
     });
 
@@ -60,7 +66,6 @@ export default function SegBtnItemTest0010() {
      * @tc.level  LEVEL1
      */
     it('SegBtnItemTest0010_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
       console.info('[SegBtnItemTest0010_001] START');
       await CommonFunc.sleep(1000);
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -106,10 +111,6 @@ export default function SegBtnItemTest0010() {
       JSON.stringify(btn3.getElement('$attrs').getString("accessibilityLevel")));
       expect(btn3.getElement('$attrs').getString("accessibilityLevel")).assertEqual('no-hide-descendants');
       console.info('[SegBtnItemTest0010_001] END');
-      } catch (err) {
-        console.error('[SegBtnItemTest0010_001] error: ' + err);
-        expect(false).assertTrue();
-      }
       done();
     });
 
@@ -122,7 +123,6 @@ export default function SegBtnItemTest0010() {
      * @tc.level  LEVEL1
      */
     it('SegBtnItemTest0010_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      try {
       console.info('[SegBtnItemTest0010_002] START');
       await CommonFunc.sleep(1000);
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -199,10 +199,6 @@ export default function SegBtnItemTest0010() {
       expect(icon1.getElement('$attrs').getString("accessibilityText")).assertEqual('notSelect');
       console.info('[SegBtnItemTest0010_002] END');
       await CommonFunc.sleep(500);
-      } catch (err) {
-        console.error('[SegBtnItemTest0010_002] error: ' + err);
-        expect(false).assertTrue();
-      }
       done();
     });
   })

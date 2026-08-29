@@ -13,18 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import deviceInfo from '@ohos.deviceInfo';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function CapsuleSegementButtonV2Animation() {
   describe('CapsuleSegementButtonV2Animation', () => {
-
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
+    })
     beforeEach(async (): Promise<void> => {
       console.info("CapsuleSegementButtonV2Animation beforeEach start");
       let options: router.RouterOptions = {
@@ -37,7 +44,7 @@ export default function CapsuleSegementButtonV2Animation() {
         console.info("get CapsuleSegementButtonV2Animation state pages: " + JSON.stringify(pages));
         if (!("CapsuleSegementButtonV2Animation" == pages.name)) {
           console.info("get CapsuleSegementButtonV2Animation state pages.name: " + JSON.stringify(pages.name));
-          await pageRouter.pushUrl(options);
+          pageRouter.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -45,13 +52,8 @@ export default function CapsuleSegementButtonV2Animation() {
       }
       console.info("CapsuleSegementButtonV2Animation beforeEach end");
     });
-
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-      } catch (err) {
-        console.info('CapsuleSegementButtonV2Animation afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
       console.info("CapsuleSegementButtonV2Animation after each called");
     });
 
@@ -65,22 +67,17 @@ export default function CapsuleSegementButtonV2Animation() {
      */
     it('CapsuleSegementButtonV2Animation_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.log("[CapsuleSegementButtonV2Animation_001] START");
-      try {
-        const driver = Driver.create();
-        await CommonFunc.sleep(1000);
-        const button = await driver.findComponent(ON.id('true'));
-        await (button?.click() as Promise<void>);
-        await CommonFunc.sleep(1000);
+      const driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      const button = await driver.findComponent(ON.id('true'));
+      await (button?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
 
-        let textJ = inspector.getInspectorByKey('text');
-        let text = JSON.parseJsonElement(textJ);
+      let textJ = inspector.getInspectorByKey('text');
+      let text = JSON.parseJsonElement(textJ);
 
-        expect(text.getElement('$attrs').getString('content')).assertEqual('true');
-        console.log("[CapsuleSegementButtonV2Animation_001] END");
-      } catch (error) {
-        console.error('[CapsuleSegementButtonV2Animation_001] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
-      }
+      expect(text.getElement('$attrs').getString('content')).assertEqual('true');
+      console.log("[CapsuleSegementButtonV2Animation_001] END");
       done();
     })
   })

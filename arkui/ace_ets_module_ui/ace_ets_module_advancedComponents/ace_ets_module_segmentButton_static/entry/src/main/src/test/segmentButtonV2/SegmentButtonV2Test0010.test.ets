@@ -13,16 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Driver, ON } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import deviceInfo from '@ohos.deviceInfo';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function SegmentButtonV2Test0010() {
   describe('SegmentButtonV2Test0010', () => {
+    beforeAll(async (): Promise<void> => {
+      console.info("SegmentButtonV2Test0010 beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.advanced.segmentButton.static", "EntryAbility")
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("SegmentButtonV2Test0010 beforeEach start");
@@ -36,8 +46,11 @@ export default function SegmentButtonV2Test0010() {
         console.info("get SegmentButtonV2Test0010 state pages:" + JSON.stringify(pages));
         if (!("SegmentButtonV20010" == pages.name)) {
           console.info("get SegmentButtonV2Test0010 pages.name:" + JSON.stringify(pages.name));
-          await routerInstance.pushUrl(options);
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
+          routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push SegmentButtonV2Test0010 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SegmentButtonV2Test0010 page error:" + err);
@@ -46,16 +59,13 @@ export default function SegmentButtonV2Test0010() {
     });
 
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(1000);
-        console.info("SegmentButtonV2Test0010 after each called");
-      } catch (err) {
-        console.error("SegmentButtonV2Test0010 afterEach sleep err: " + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(1000);
+      console.info("SegmentButtonV2Test0010 after each called");
     });
 
-
-
+    
+    
+    
     /**
      * @tc.number   SegmentButtonV2Test0010_static_001
      * @tc.name     SegmentButtonV2Test0010_static_001
@@ -64,137 +74,133 @@ export default function SegmentButtonV2Test0010() {
      */
 it('SegmentButtonV2Test0010_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonV2Test0010_static_001] START');
-      try {
-        await CommonFunc.sleep(1000);
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let textClick = await driver.findComponent(ON.text("share"));
-        await CommonFunc.sleep(500);
-        await (textClick?.click() as Promise<void>);
-        await CommonFunc.sleep(500);
-        let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvIndex0'));
-        console.info("[SegmentButtonV2Test0010] select index is: " + JSON.stringify(obj));
-        expect(obj.getElement('$attrs').getString('content')).assertEqual('2');
-        await CommonFunc.sleep(500);
-        let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-        console.info('SegmentButtonV2Test0010_static_001' + JSON.stringify(inspector.getInspectorTree()))
-        console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.accessibilityText is: " + btn0.getElement('$attrs').getString('accessibilityText'));
-        expect(btn0.getElement('$attrs').getString('accessibilityText')).assertEqual('search');
-        console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.accessibilityLevel is: " + JSON.stringify(btn0.getElement('$attrs').getString('accessibilityLevel')));
-        expect(btn0.getElement('$attrs').getString('accessibilityLevel')).assertEqual('auto');
-        console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.accessibilityDescription is: " +
-        JSON.stringify(btn0.getElement('$attrs').getString('accessibilityDescription')));
-        console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.accessibilityDescription is: " +
-        JSON.stringifyJsonElement(btn0.getElement('$attrs')));
-        expect(btn0.getElement('$attrs').getString('accessibilityDescription')).assertEqual('ButtonSearch');
-        console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.enabled is: " + JSON.stringify(btn0.getElement('$attrs').getBoolean('enabled')));
-        expect(btn0.getElement('$attrs').getBoolean('enabled')).assertTrue();
-        await CommonFunc.sleep(500);
-        let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[1]
-        console.info("[SegmentButtonV2Test0010_static_001] component btn1.attrs.accessibilityLevel is: " + JSON.stringify(btn1.getElement('$attrs').getString('accessibilityLevel')));
-        expect(btn1.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no');
-        console.info("[SegmentButtonV2Test0010_static_001] component btn1.attrs.enabled is: " + JSON.stringify(btn1.getElement('$attrs').getBoolean('enabled')));
-        expect(btn1.getElement('$attrs').getBoolean('enabled')).assertFalse();
-        await CommonFunc.sleep(500);
-        let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[2]
-        console.info("[SegmentButtonV2Test0010_static_001] component btn2.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn2.getElement('$attrs').getString('accessibilityLevel')));
-        expect(btn2.getElement('$attrs').getString('accessibilityLevel')).assertEqual('yes');
-        await CommonFunc.sleep(500);
-        let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[3]
-        console.info("[SegmentButtonV2Test0010_static_001] component btn3.getElement('$attrs').enabled is: " + JSON.stringify(btn3.getElement('$attrs').getBoolean('enabled')));
-        expect(btn3.getElement('$attrs').getBoolean('enabled')).assertTrue();
-        console.info("[SegmentButtonV2Test0010_static_001] component btn3.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn3.getElement('$attrs').getString('accessibilityLevel')));
-        expect(btn3.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no-hide-descendants');
-        let text0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[1]
-        console.info("[SegmentButtonV2Test0010_static_001] component text0.getElement('$attrs').getString('content') is: " + JSON.stringify(text0.getElement('$attrs').getString('content')));
-        expect(text0.getElement('$attrs').getString('content')).assertEqual('search');
-        console.info("[SegmentButtonV2Test0010_static_001] component text0.getElement('$attrs').getString('fontColor') is: " + JSON.stringify(text0.getElement('$attrs').getString('fontColor')));
-        expect(text0.getElement('$attrs').getString('fontColor')).assertEqual('#FFFFFF00');
-        await CommonFunc.sleep(500);
-        let text2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[1]
-        console.info("[SegmentButtonV2Test0010_static_001] component text2.getElement('$attrs').getString('content') is: " + JSON.stringify(text2.getElement('$attrs').getString('content')));
-        expect(text2.getElement('$attrs').getString('content')).assertEqual('share');
-        await CommonFunc.sleep(500);
-        let icon0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.info("[SegmentButtonV2Test0010_static_001] component icon0.getElement('$attrs').src is: " + JSON.stringify(icon0.getElement('$attrs').getString('src')));
-        expect(icon0.getElement('$attrs').getString('src')).assertEqual('resource:///125830097.svg');
-        console.info("[SegmentButtonV2Test0010_static_001] component icon0.getElement('$attrs').getString('backgroundColor') is: " + JSON.stringify(icon0.getElement('$attrs').getString('backgroundColor')));
-        expect(icon0.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFA500');
-        await CommonFunc.sleep(500);
-        let icon1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[1]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.info("[SegmentButtonV2Test0010_static_001] component icon1.getElement('$attrs').src is: " + JSON.stringify(icon1.getElement('$attrs').getString('src')));
-        expect(icon1.getElement('$attrs').getString('src')).assertEqual('resource:///125830651.svg');
-        console.info("[SegmentButtonV2Test0010_static_001] component icon1.getElement('$attrs').getString('backgroundColor') is: " + JSON.stringify(icon1.getElement('$attrs').getString('backgroundColor')));
-        expect(icon1.getElement('$attrs').getString('backgroundColor')).assertEqual('#00000000');
-        await CommonFunc.sleep(500);
-        let symbol3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.info("[SegmentButtonV2Test0010_static_001] component symbol3.getElement('$attrs').fontWeight is: " + JSON.stringify(symbol3.getElement('$attrs').getString('fontWeight')));
-        expect(symbol3.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Bolder');
-        console.info('[SegmentButtonV2Test0010_static_001] END');
-      } catch (error) {
-        console.error('[SegmentButtonV2Test0010_static_001] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
-      }
+      await CommonFunc.sleep(1000);
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let textClick = await driver.findComponent(ON.text("share"));
+      await CommonFunc.sleep(500);
+      await (textClick?.click() as Promise<void>);
+      await CommonFunc.sleep(500);
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvIndex0'));
+      console.info("[SegmentButtonV2Test0010] select index is: " + JSON.stringify(obj));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('2');
+      await CommonFunc.sleep(500);
+      let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[0]
+      console.info('SegmentButtonV2Test0010_static_001' + JSON.stringify(inspector.getInspectorTree()))
+      console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.accessibilityText is: " + btn0.getElement('$attrs').getString('accessibilityText'));
+      expect(btn0.getElement('$attrs').getString('accessibilityText')).assertEqual('search');
+      console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.accessibilityLevel is: " + JSON.stringify(btn0.getElement('$attrs').getString('accessibilityLevel')));
+      expect(btn0.getElement('$attrs').getString('accessibilityLevel')).assertEqual('auto');
+      console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.accessibilityDescription is: " +
+      JSON.stringify(btn0.getElement('$attrs').getString('accessibilityDescription')));
+      console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.accessibilityDescription is: " + 
+      JSON.stringifyJsonElement(btn0.getElement('$attrs')));
+      expect(btn0.getElement('$attrs').getString('accessibilityDescription')).assertEqual('ButtonSearch');
+      console.info("[SegmentButtonV2Test0010_static_001] component btn0.attrs.enabled is: " + JSON.stringify(btn0.getElement('$attrs').getBoolean('enabled')));
+      expect(btn0.getElement('$attrs').getBoolean('enabled')).assertTrue();
+      await CommonFunc.sleep(500);
+      let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[1]
+      console.info("[SegmentButtonV2Test0010_static_001] component btn1.attrs.accessibilityLevel is: " + JSON.stringify(btn1.getElement('$attrs').getString('accessibilityLevel')));
+      expect(btn1.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no');
+      console.info("[SegmentButtonV2Test0010_static_001] component btn1.attrs.enabled is: " + JSON.stringify(btn1.getElement('$attrs').getBoolean('enabled')));
+      expect(btn1.getElement('$attrs').getBoolean('enabled')).assertFalse();
+      await CommonFunc.sleep(500);
+      let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[2]
+      console.info("[SegmentButtonV2Test0010_static_001] component btn2.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn2.getElement('$attrs').getString('accessibilityLevel')));
+      expect(btn2.getElement('$attrs').getString('accessibilityLevel')).assertEqual('yes');
+      await CommonFunc.sleep(500);
+      let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[3]
+      console.info("[SegmentButtonV2Test0010_static_001] component btn3.getElement('$attrs').enabled is: " + JSON.stringify(btn3.getElement('$attrs').getBoolean('enabled')));
+      expect(btn3.getElement('$attrs').getBoolean('enabled')).assertTrue();
+      console.info("[SegmentButtonV2Test0010_static_001] component btn3.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn3.getElement('$attrs').getString('accessibilityLevel')));
+      expect(btn3.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no-hide-descendants');
+      let text0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+      console.info("[SegmentButtonV2Test0010_static_001] component text0.getElement('$attrs').getString('content') is: " + JSON.stringify(text0.getElement('$attrs').getString('content')));
+      expect(text0.getElement('$attrs').getString('content')).assertEqual('search');
+      console.info("[SegmentButtonV2Test0010_static_001] component text0.getElement('$attrs').getString('fontColor') is: " + JSON.stringify(text0.getElement('$attrs').getString('fontColor')));
+      expect(text0.getElement('$attrs').getString('fontColor')).assertEqual('#FFFFFF00');
+      await CommonFunc.sleep(500);
+      let text2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+      console.info("[SegmentButtonV2Test0010_static_001] component text2.getElement('$attrs').getString('content') is: " + JSON.stringify(text2.getElement('$attrs').getString('content')));
+      expect(text2.getElement('$attrs').getString('content')).assertEqual('share');
+      await CommonFunc.sleep(500);
+      let icon0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+      console.info("[SegmentButtonV2Test0010_static_001] component icon0.getElement('$attrs').src is: " + JSON.stringify(icon0.getElement('$attrs').getString('src')));
+      expect(icon0.getElement('$attrs').getString('src')).assertEqual('resource:///125830097.svg');
+      console.info("[SegmentButtonV2Test0010_static_001] component icon0.getElement('$attrs').getString('backgroundColor') is: " + JSON.stringify(icon0.getElement('$attrs').getString('backgroundColor')));
+      expect(icon0.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFA500');
+      await CommonFunc.sleep(500);
+      let icon1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[1]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+      console.info("[SegmentButtonV2Test0010_static_001] component icon1.getElement('$attrs').src is: " + JSON.stringify(icon1.getElement('$attrs').getString('src')));
+      expect(icon1.getElement('$attrs').getString('src')).assertEqual('resource:///125830651.svg');
+      console.info("[SegmentButtonV2Test0010_static_001] component icon1.getElement('$attrs').getString('backgroundColor') is: " + JSON.stringify(icon1.getElement('$attrs').getString('backgroundColor')));
+      expect(icon1.getElement('$attrs').getString('backgroundColor')).assertEqual('#00000000');
+      await CommonFunc.sleep(500);
+      let symbol3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+      console.info("[SegmentButtonV2Test0010_static_001] component symbol3.getElement('$attrs').fontWeight is: " + JSON.stringify(symbol3.getElement('$attrs').getString('fontWeight')));
+      expect(symbol3.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Bolder');
+      console.info('[SegmentButtonV2Test0010_static_001] END');
       done();
     });
 
-
-
+    
+    
+    
     /**
      * @tc.number   SegmentButtonV2Test0010_static_002
      * @tc.name     SegmentButtonV2Test0010_static_002
@@ -203,128 +209,123 @@ it('SegmentButtonV2Test0010_static_001', Level.LEVEL0, async (done: () => void):
      */
 it('SegmentButtonV2Test0010_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SegmentButtonV2Test0010_static_002] START');
-      try {
-        await CommonFunc.sleep(1000);
-        let driver: Driver = Driver.create();
-        await CommonFunc.sleep(500);
-        let textClick = await driver.findComponent(ON.text("close3"));
-        await CommonFunc.sleep(500);
-        await (textClick?.click() as Promise<void>);
-        await CommonFunc.sleep(500);
-        let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvIndex1'));
-        console.info("[SegmentButtonV2Test0010] select index is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-        expect(obj.getElement('$attrs').getString('content')).assertEqual('2');
-        await CommonFunc.sleep(500);
-        let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-        console.info("[SegmentButtonV2Test0010_static_002] component btn0.getElement('$attrs').accessibilityText is: " + JSON.stringify(btn0.getElement('$attrs').getString('accessibilityText')));
-        expect(btn0.getElement('$attrs').getString('accessibilityText')).assertEqual('close1');
-        console.info("[SegmentButtonV2Test0010_static_002] component btn0.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn0.getElement('$attrs').getString('accessibilityLevel')));
-        expect(btn0.getElement('$attrs').getString('accessibilityLevel')).assertEqual('auto');
-        console.info("[SegmentButtonV2Test0010_static_002] component btn0.getElement('$attrs').accessibilityDescription is: " +
-        JSON.stringify((btn0.getElement('$attrs').getString('accessibilityDescription'))));
-        expect(btn0.getElement('$attrs').getString('accessibilityDescription')).assertEqual('ButtonClose1');
-        console.info("[SegmentButtonV2Test0010_static_002] component btn0.getElement('$attrs').enabled is: " + JSON.stringify(btn0.getElement('$attrs').getBoolean('enabled')));
-        expect(btn0.getElement('$attrs').getBoolean('enabled')).assertTrue();
-        await CommonFunc.sleep(500);
-        let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[1]
-        console.info("[SegmentButtonV2Test0010_static_002] component btn1.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn1.getElement('$attrs').getString('accessibilityLevel')));
-        expect(btn1.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no-hide-descendants');
-        console.info("[SegmentButtonV2Test0010_static_002] component btn1.getElement('$attrs').enabled is: " + JSON.stringify(btn1.getElement('$attrs').getBoolean('enabled')));
-        expect(btn1.getElement('$attrs').getBoolean('enabled')).assertFalse();
-        await CommonFunc.sleep(500);
-        let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[2]
-        console.info("[SegmentButtonV2Test0010_static_002] component btn2.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn2.getElement('$attrs').getString('accessibilityLevel')));
-        expect(btn2.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no');
-        await CommonFunc.sleep(500);
-        let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[3]
-        console.info("[SegmentButtonV2Test0010_static_002] component btn3.getElement('$attrs').enabled is: " + JSON.stringify(btn3.getElement('$attrs').getBoolean('enabled')));
-        expect(btn3.getElement('$attrs').getBoolean('enabled')).assertTrue();
-        expect(btn3.getElement('$attrs').getString('accessibilityLevel')).assertEqual('yes');
-        let text0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[1]
-        console.info("[SegmentButtonV2Test0010_static_002] component text0.getElement('$attrs').getString('content') is: " + JSON.stringify(text0.getElement('$attrs').getString('content')));
-        expect(text0.getElement('$attrs').getString('content')).assertEqual('close1');
-        console.info("[SegmentButtonV2Test0010_static_002] component text0.getElement('$attrs').getString('fontColor') is: " + JSON.stringify(text0.getElement('$attrs').getString('fontColor')));
-        expect(text0.getElement('$attrs').getString('fontColor')).assertEqual('#FFFFFF00');
-        await CommonFunc.sleep(500);
-        let text2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[2]
-          .getArray("$children")[0]
-          .getArray("$children")[1]
-        console.info("[SegmentButtonV2Test0010_static_002] component text2.getElement('$attrs').getString('content') is: " + JSON.stringify(text2.getElement('$attrs').getString('content')));
-        expect(text2.getElement('$attrs').getString('content')).assertEqual('close3');
-        await CommonFunc.sleep(500);
-        let icon0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.info("[SegmentButtonV2Test0010_static_002] component icon0.getElement('$attrs').src is: " + JSON.stringify(icon0.getElement('$attrs').getString('src')));
-        expect(icon0.getElement('$attrs').getString('src')).assertEqual('resource:///125830852.svg');
-        console.info("[SegmentButtonV2Test0010_static_002] component icon0.getElement('$attrs').getString('backgroundColor') is: " + JSON.stringify(icon0.getElement('$attrs').getString('backgroundColor')));
-        expect(icon0.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFA500');
-        await CommonFunc.sleep(500);
-        let icon1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[1]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.info("[SegmentButtonV2Test0010_static_002] component icon1.getElement('$attrs').src is: " + JSON.stringify(icon1.getElement('$attrs').getString('src')));
-        expect(icon1.getElement('$attrs').getString('src')).assertEqual('resource:///125830852.svg');
-        console.info("[SegmentButtonV2Test0010_static_002] component icon1.getElement('$attrs').getString('backgroundColor') is: " + JSON.stringify(icon1.getElement('$attrs').getString('backgroundColor')));
-        expect(icon1.getElement('$attrs').getString('backgroundColor')).assertEqual('#00000000');
-        await CommonFunc.sleep(500);
-        let symbol3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
-          .getArray("$children")[0]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[5]
-          .getArray("$children")[3]
-          .getArray("$children")[0]
-          .getArray("$children")[0]
-        console.info("[SegmentButtonV2Test0010_static_002] component symbol3.getElement('$attrs').fontWeight is: " + JSON.stringify(symbol3.getElement('$attrs').getString('fontWeight')));
-        expect(symbol3.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Bolder');
-        console.info('[SegmentButtonV2Test0010_static_002] END');
-      } catch (error) {
-        console.error('[SegmentButtonV2Test0010_static_002] error: ' + JSON.stringify(error));
-        expect(false).assertTrue();
-      }
+      await CommonFunc.sleep(1000);
+      let driver: Driver = Driver.create();
+      await CommonFunc.sleep(500);
+      let textClick = await driver.findComponent(ON.text("close3"));
+      await CommonFunc.sleep(500);
+      await (textClick?.click() as Promise<void>);
+      await CommonFunc.sleep(500);
+      let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvIndex1'));
+      console.info("[SegmentButtonV2Test0010] select index is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('2');
+      await CommonFunc.sleep(500);
+      let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[0]
+      console.info("[SegmentButtonV2Test0010_static_002] component btn0.getElement('$attrs').accessibilityText is: " + JSON.stringify(btn0.getElement('$attrs').getString('accessibilityText')));
+      expect(btn0.getElement('$attrs').getString('accessibilityText')).assertEqual('close1');
+      console.info("[SegmentButtonV2Test0010_static_002] component btn0.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn0.getElement('$attrs').getString('accessibilityLevel')));
+      expect(btn0.getElement('$attrs').getString('accessibilityLevel')).assertEqual('auto');
+      console.info("[SegmentButtonV2Test0010_static_002] component btn0.getElement('$attrs').accessibilityDescription is: " +
+      JSON.stringify((btn0.getElement('$attrs').getString('accessibilityDescription'))));
+      expect(btn0.getElement('$attrs').getString('accessibilityDescription')).assertEqual('ButtonClose1');
+      console.info("[SegmentButtonV2Test0010_static_002] component btn0.getElement('$attrs').enabled is: " + JSON.stringify(btn0.getElement('$attrs').getBoolean('enabled')));
+      expect(btn0.getElement('$attrs').getBoolean('enabled')).assertTrue();
+      await CommonFunc.sleep(500);
+      let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[1]
+      console.info("[SegmentButtonV2Test0010_static_002] component btn1.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn1.getElement('$attrs').getString('accessibilityLevel')));
+      expect(btn1.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no-hide-descendants');
+      console.info("[SegmentButtonV2Test0010_static_002] component btn1.getElement('$attrs').enabled is: " + JSON.stringify(btn1.getElement('$attrs').getBoolean('enabled')));
+      expect(btn1.getElement('$attrs').getBoolean('enabled')).assertFalse();
+      await CommonFunc.sleep(500);
+      let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[2]
+      console.info("[SegmentButtonV2Test0010_static_002] component btn2.getElement('$attrs').accessibilityLevel is: " + JSON.stringify(btn2.getElement('$attrs').getString('accessibilityLevel')));
+      expect(btn2.getElement('$attrs').getString('accessibilityLevel')).assertEqual('no');
+      await CommonFunc.sleep(500);
+      let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[3]
+      console.info("[SegmentButtonV2Test0010_static_002] component btn3.getElement('$attrs').enabled is: " + JSON.stringify(btn3.getElement('$attrs').getBoolean('enabled')));
+      expect(btn3.getElement('$attrs').getBoolean('enabled')).assertTrue();
+      expect(btn3.getElement('$attrs').getString('accessibilityLevel')).assertEqual('yes');
+      let text0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+      console.info("[SegmentButtonV2Test0010_static_002] component text0.getElement('$attrs').getString('content') is: " + JSON.stringify(text0.getElement('$attrs').getString('content')));
+      expect(text0.getElement('$attrs').getString('content')).assertEqual('close1');
+      console.info("[SegmentButtonV2Test0010_static_002] component text0.getElement('$attrs').getString('fontColor') is: " + JSON.stringify(text0.getElement('$attrs').getString('fontColor')));
+      expect(text0.getElement('$attrs').getString('fontColor')).assertEqual('#FFFFFF00');
+      await CommonFunc.sleep(500);
+      let text2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[2]
+        .getArray("$children")[0]
+        .getArray("$children")[1]
+      console.info("[SegmentButtonV2Test0010_static_002] component text2.getElement('$attrs').getString('content') is: " + JSON.stringify(text2.getElement('$attrs').getString('content')));
+      expect(text2.getElement('$attrs').getString('content')).assertEqual('close3');
+      await CommonFunc.sleep(500);
+      let icon0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+      console.info("[SegmentButtonV2Test0010_static_002] component icon0.getElement('$attrs').src is: " + JSON.stringify(icon0.getElement('$attrs').getString('src')));
+      expect(icon0.getElement('$attrs').getString('src')).assertEqual('resource:///125830852.svg');
+      console.info("[SegmentButtonV2Test0010_static_002] component icon0.getElement('$attrs').getString('backgroundColor') is: " + JSON.stringify(icon0.getElement('$attrs').getString('backgroundColor')));
+      expect(icon0.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFA500');
+      await CommonFunc.sleep(500);
+      let icon1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[1]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+      console.info("[SegmentButtonV2Test0010_static_002] component icon1.getElement('$attrs').src is: " + JSON.stringify(icon1.getElement('$attrs').getString('src')));
+      expect(icon1.getElement('$attrs').getString('src')).assertEqual('resource:///125830852.svg');
+      console.info("[SegmentButtonV2Test0010_static_002] component icon1.getElement('$attrs').getString('backgroundColor') is: " + JSON.stringify(icon1.getElement('$attrs').getString('backgroundColor')));
+      expect(icon1.getElement('$attrs').getString('backgroundColor')).assertEqual('#00000000');
+      await CommonFunc.sleep(500);
+      let symbol3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[5]
+        .getArray("$children")[3]
+        .getArray("$children")[0]
+        .getArray("$children")[0]
+      console.info("[SegmentButtonV2Test0010_static_002] component symbol3.getElement('$attrs').fontWeight is: " + JSON.stringify(symbol3.getElement('$attrs').getString('fontWeight')));
+      expect(symbol3.getElement('$attrs').getString('fontWeight')).assertEqual('FontWeight.Bolder');
+      console.info('[SegmentButtonV2Test0010_static_002] END');
       done();
     });
   })
