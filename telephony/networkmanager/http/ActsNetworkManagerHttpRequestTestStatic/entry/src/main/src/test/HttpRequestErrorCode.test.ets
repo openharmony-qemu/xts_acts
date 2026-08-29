@@ -114,7 +114,7 @@ export default function httpRequestErrorCodeTest() {
               }
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -1070,7 +1070,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -1142,7 +1142,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -1187,8 +1187,6 @@ export default function httpRequestErrorCodeTest() {
             };
             let asyncCallbackPromise: http.ValidationCallback = (context: http.ValidationContext): Promise<boolean> => {
               return new Promise<boolean>((resolve) => {
-                ExpectTrue(asyncCallbackPromise !== undefined);
-                ExpectTrue(asyncCallbackPromise !== null);
                 ExpectTrue(typeof context === 'object');
                 resolve(true);
               });
@@ -1230,7 +1228,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -1298,7 +1296,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -1368,7 +1366,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -1429,7 +1427,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -1492,7 +1490,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -1561,7 +1559,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -1628,7 +1626,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
@@ -2218,7 +2216,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             });
           }
-        }).catch((error: BusinessError) => {
+        }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
           done();
