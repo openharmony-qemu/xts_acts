@@ -514,6 +514,36 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapReplyCustomEapDataErrorCode0700
+     * @tc.number SUB_Communication_Eap_ReplyCustomEapData_ErrorCode_0700
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapReplyCustomEapDataErrorCode0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapReplyCustomEapDataErrorCode0700";
+      console.info(`${caseName}---start`);
+      try {
+        let eapData:eap.EapData= {
+          msgId: 1,
+          eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
+          bufferLen: 5,
+        };
+        eap.replyCustomEapData(null, eapData);
+        console.info(`${caseName } replyCustomEapData success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 33200099);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   testCommunicationEapStartEthEapErrorCode0100
      * @tc.number SUB_Communication_Eap_StartEthEap_ErrorCode_0100
      * @tc.desc   verification parameter error

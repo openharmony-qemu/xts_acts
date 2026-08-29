@@ -68,7 +68,7 @@ export default function StatisticsTestHasCard() {
               });
             }).catch((err:BusinessError) => {
               console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
-              ExpectTrue(err.code== 8300003);
+              expectFalse();
               done();
             });
           }
@@ -110,7 +110,7 @@ export default function StatisticsTestHasCard() {
               });
             }).catch((err:BusinessError) => {
               console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
-              ExpectTrue(err.code == 8300003);
+              expectFalse();
               done();
             });
           }
@@ -155,7 +155,7 @@ export default function StatisticsTestHasCard() {
               });
             }).catch((err:BusinessError) => {
               console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
-              ExpectTrue(err.code == 8300003);
+              expectFalse();
               done();
             });
           }
@@ -196,7 +196,7 @@ export default function StatisticsTestHasCard() {
               });
             }).catch((err:BusinessError) => {
               console.error('When the device has no modem, the interface reports an error' + JSON.stringify(err));
-              ExpectTrue(err.code == 8300003);
+              expectFalse();
               done();
             });
           }
