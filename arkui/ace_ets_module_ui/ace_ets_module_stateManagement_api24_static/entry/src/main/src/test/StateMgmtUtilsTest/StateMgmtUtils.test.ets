@@ -18,6 +18,8 @@ import { describe, it, expect, Level, beforeEach } from '../../../../hypium/inde
 import { AppStorage, UIUtils } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import { UtilsTest } from '../Util.test';
 
 export default function StateMgmtUtilsTest(): void {
   describe('StateMgmtUtilsRealApiTest', () => {

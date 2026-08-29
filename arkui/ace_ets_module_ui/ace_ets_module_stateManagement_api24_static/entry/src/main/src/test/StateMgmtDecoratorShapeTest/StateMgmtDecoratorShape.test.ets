@@ -18,6 +18,8 @@ import { describe, it, expect, Level, beforeEach } from '../../../../hypium/inde
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import { UtilsTest } from '../Util.test';
 
 interface ObservedObjectStub {
   _stableTag?: string;
