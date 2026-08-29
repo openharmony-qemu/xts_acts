@@ -71,7 +71,7 @@ struct ModifierTest {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick(() => { this.enableClear = true; })
+            .onClick((e: ClickEvent) => { this.enableClear = true; })
             .margin(1)
 
           Button('clear_F')
@@ -79,7 +79,7 @@ struct ModifierTest {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick(() => { this.enableClear = false; })
+            .onClick((e: ClickEvent) => { this.enableClear = false; })
             .margin(1)
 
           Button('push')
@@ -87,7 +87,7 @@ struct ModifierTest {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick(() => {
+            .onClick((e: ClickEvent) => {
               this.stack.pushPath(new NavPathInfo('modifierDest', undefined));
               this.updateStackInfo();
             })
@@ -98,7 +98,7 @@ struct ModifierTest {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick(() => {
+            .onClick((e: ClickEvent) => {
               this.stack.pop();
               this.updateStackInfo();
             })
@@ -109,7 +109,7 @@ struct ModifierTest {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick(() => { this.updateStackInfo(); })
+            .onClick((e: ClickEvent) => { this.updateStackInfo(); })
             .margin(1)
         }
       }

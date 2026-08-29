@@ -48,7 +48,7 @@ struct NavBarDisableClearTest {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick(() => {
+            .onClick((e: ClickEvent) => {
               this.stack.pushPath(new NavPathInfo('navBarDisableDest', undefined));
               this.updateStackInfo();
             })
@@ -59,7 +59,7 @@ struct NavBarDisableClearTest {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick(() => {
+            .onClick((e: ClickEvent) => {
               this.stack.pop();
               this.updateStackInfo();
             })
@@ -70,7 +70,7 @@ struct NavBarDisableClearTest {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick(() => { this.updateStackInfo(); })
+            .onClick((e: ClickEvent) => { this.updateStackInfo(); })
             .margin(1)
         }
       }
