@@ -45,13 +45,13 @@ function getTextContentById(id: string): string {
   let strJson = inspector.getInspectorByKey(id);
   let obj = JSON.parseJsonElement(strJson);
   let content = obj.getElement('$attrs').getString('content');
-  if (content !== undefined && content !== null) {
+  if (content !== null) {
     return String(content);
   }
   return '';
 }
 
-export default function NavigationPreloadTest() {
+export default function NavigationPreloadTest(): void {
   describe('NavigationPreloadTest', () => {
 
     beforeAll(async (): Promise<void> => {

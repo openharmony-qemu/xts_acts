@@ -2,6 +2,10 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/navigation/navigationMaterial",
-    "MainAbility/pages/swiper/swiperSystemMaterial"
+    "MainAbility/pages/swiper/swiperSystemMaterial",
+    "MainAbility/pages/NavBarTest",
+    "MainAbility/pages/NavBarDisableClearTest",
+    "MainAbility/pages/ModifierTest",
+    "MainAbility/pages/ModifierDisableClearTest"
   ]
 }

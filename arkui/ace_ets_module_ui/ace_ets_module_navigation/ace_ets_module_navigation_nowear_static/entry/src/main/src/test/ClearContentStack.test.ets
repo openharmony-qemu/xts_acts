@@ -41,13 +41,30 @@ async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetri
   return null;
 }
 
-export default function ClearContentStackTest() {
+// Clear ClearContentStack-related AppStorage keys to prevent state leakage between tests
+function clearClearAppStorage(): void {
+  AppStorage.delete('clearStackSize');
+  AppStorage.delete('clearStackNames');
+  AppStorage.delete('clearNavDestShown');
+  AppStorage.delete('clearDisableStackSize');
+  AppStorage.delete('clearDisableStackNames');
+  AppStorage.delete('clearDisableNavDestShown');
+  AppStorage.delete('clearModStackSize');
+  AppStorage.delete('clearModStackNames');
+  AppStorage.delete('clearModNavDestShown');
+  AppStorage.delete('clearModDisableStackSize');
+  AppStorage.delete('clearModDisableStackNames');
+  AppStorage.delete('clearModDisableNavDestShown');
+}
+
+export default function ClearContentStackTest(): void {
   describe('ClearContentStackTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility(BUNDLE_NAME, ABILITY_NAME);
     });
 
     afterEach(async (): Promise<void> => {
+      clearClearAppStorage();
       await CommonFunc.sleep(1000);
     });
 
@@ -102,6 +119,9 @@ export default function ClearContentStackTest() {
           await pushBtn.click();
           await CommonFunc.sleep(1500);
         }
+        // Verify push succeeded via NavPathStack API
+        let stackSize: number | undefined = AppStorage.get<number>('clearStackSize');
+        expect(stackSize !== undefined && stackSize > 0).assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_ClearContentStackNav_static_0200 error: ' + err);
         expect(false).assertTrue();
@@ -172,6 +192,9 @@ export default function ClearContentStackTest() {
           await CommonFunc.sleep(1500);
         }
         expect(splitRadio !== null && pushBtn !== null).assertTrue();
+        // Verify push succeeded via NavPathStack API
+        let stackSize: number | undefined = AppStorage.get<number>('clearStackSize');
+        expect(stackSize !== undefined && stackSize > 0).assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_ClearContentStackNav_static_0350 error: ' + err);
         expect(false).assertTrue();
@@ -230,12 +253,18 @@ export default function ClearContentStackTest() {
           await pushBtn.click();
           await CommonFunc.sleep(1500);
         }
+        // Verify push succeeded via NavPathStack API
+        let stackSizeAfterPush: number | undefined = AppStorage.get<number>('clearDisableStackSize');
+        expect(stackSizeAfterPush !== undefined && stackSizeAfterPush > 0).assertTrue();
         // Pop
         let popBtn = await findComponentWithScroll(driver, 'pop');
         if (popBtn !== null) {
           await popBtn.click();
           await CommonFunc.sleep(1000);
         }
+        // Verify pop succeeded via NavPathStack API
+        let stackSizeAfterPop: number | undefined = AppStorage.get<number>('clearDisableStackSize');
+        expect(stackSizeAfterPop !== undefined && stackSizeAfterPop === 0).assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_ClearContentStackNav_static_0500 error: ' + err);
         expect(false).assertTrue();
@@ -392,6 +421,9 @@ export default function ClearContentStackTest() {
         }
         // Verify Split mode radio and push button were found and operated
         expect(splitRadio !== null).assertTrue();
+        // Verify push succeeded via NavPathStack API
+        let stackSize: number | undefined = AppStorage.get<number>('clearModDisableStackSize');
+        expect(stackSize !== undefined && stackSize > 0).assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_ClearContentStackNav_static_0950 error: ' + err);
         expect(false).assertTrue();

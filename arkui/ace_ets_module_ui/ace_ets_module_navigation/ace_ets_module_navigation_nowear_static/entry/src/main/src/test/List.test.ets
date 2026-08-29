@@ -17,7 +17,7 @@
 import navigationMaterial from './navigationTest/navigationMaterial.test';
 import swiperSystemMaterial from './swiperTest/swiperSystemMaterial.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   navigationMaterial();
   swiperSystemMaterial();
 }

@@ -27,7 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import { NavPathInfo, NavigationDividerStyle, ScrollEffectType } from '@ohos.arkui.component';
 
-export default function navigationMaterial() {
+export default function navigationMaterial(): void {
   describe('navigationMaterial', () => {
     beforeAll(async (): Promise<void> => {
       console.info('navigationMaterial beforeAll start');

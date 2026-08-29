@@ -21,7 +21,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
-export default function swiperSystemMaterial() {
+export default function swiperSystemMaterial(): void {
 
   describe('swiperSystemMaterial', () => {
     beforeAll(async (): Promise<void> => {

@@ -14,7 +14,7 @@ const PAGE_URL = 'MainAbility/pages/NavigationRecyclePage';
 const MOD_PAGE_URL = 'MainAbility/pages/ModifierRecyclePage';
 
 // Find component by id with retry polling (NO swipe — swipe interferes with Navigation)
-async function findComponentWithRetry(driver: Driver, id: string, maxRetries: int = 10, intervalMs: number = 500): Promise<Component | null> {
+async function findComponentWithRetry(driver: Driver, id: string, maxRetries: int = 10, intervalMs: int = 500): Promise<Component | null> {
   for (let i: int = 0; i < maxRetries; i++) {
     let comp = await driver.findComponent(ON.id(id));
     if (comp !== null) {
@@ -68,7 +68,7 @@ function clearNavAppStorage(): void {
   AppStorage.delete('modRestoredData');
 }
 
-export default function NavigationRecycleTest() {
+export default function NavigationRecycleTest(): void {
   describe('NavigationRecycleTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility(BUNDLE_NAME, ABILITY_NAME);
