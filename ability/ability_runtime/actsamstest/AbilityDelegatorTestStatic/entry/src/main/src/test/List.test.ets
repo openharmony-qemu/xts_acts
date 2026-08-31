@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 import abilityTest from "./ActsAbility.test";
-export default function testsuite() {
+export default function testsuite(): void {
     abilityTest();
 }
