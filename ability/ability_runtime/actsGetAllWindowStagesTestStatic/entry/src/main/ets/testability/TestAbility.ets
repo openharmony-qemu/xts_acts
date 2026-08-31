@@ -31,10 +31,6 @@ export default class TestAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(domain, tag, '%{public}s', 'TestAbility onCreate');
     AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context);
-    AppStorage.setOrCreate<common.UIAbilityContext>("TestAbility1_UIAbilityContext", this.context);
-    AppStorage.setOrCreate<common.UIAbilityContext>("TestAbility2_UIAbilityContext", this.context);
-    AppStorage.setOrCreate<common.UIAbilityContext>("TestAbility3_UIAbilityContext", this.context);
-    AppStorage.setOrCreate<common.UIAbilityContext>("ApplicationModule_UIAbilityContext", this.context);
     let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator =
       abilityDelegatorRegistry.getAbilityDelegator();
     let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs =

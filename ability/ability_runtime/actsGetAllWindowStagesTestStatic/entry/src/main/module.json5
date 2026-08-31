@@ -109,6 +109,49 @@
         "exported": true,
         "launchType": "multiton"
       },
+      {
+        "name": "TestAbility1",
+        "srcEntry": "./ets/testability1/TestAbility1.ets",
+        "description": "$string:EntryAbility1_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility1_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "launchType": "multiton"
+      },
+      {
+        "name": "TestAbility2",
+        "srcEntry": "./ets/testability2/TestAbility2.ets",
+        "description": "$string:EntryAbility1_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility1_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "process": ":kkk"
+      },
+      {
+        "name": "TestAbility3",
+        "srcEntry": "./ets/testability3/TestAbility3.ets",
+        "description": "$string:EntryAbility1_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility1_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "launchType": "specified"
+      },
+      {
+        "name": "ApplicationAbility",
+        "srcEntry": "./ets/applicationability/ApplicationAbility.ets",
+        "description": "$string:EntryAbility1_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility1_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true
+      }
     ]
   }
 }

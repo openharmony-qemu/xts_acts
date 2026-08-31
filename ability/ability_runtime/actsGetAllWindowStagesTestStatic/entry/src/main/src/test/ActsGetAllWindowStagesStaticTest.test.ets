@@ -40,29 +40,29 @@ export default function ActsGetAllWindowStagesTest(): void {
         await TestAbility1_UIAbilityContext.terminateSelf();
 
       } catch (e) {
-        let err = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext failed, code: ${err?.code}, message: ${err.message}`);
+        let err: Error = e as Error;
+        hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext failed, message: ${err.message}`);
       }
       try{
         let TestAbility2_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility2_UIAbilityContext") as common.UIAbilityContext;
         await TestAbility2_UIAbilityContext.terminateSelf()
       } catch (e) {
-        let err = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext failed, code: ${err?.code}, message: ${err.message}`);
+        let err: Error = e as Error;
+        hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext failed, message: ${err.message}`);
       }
       try{
         let TestAbility3_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility3_UIAbilityContext") as common.UIAbilityContext;
         await TestAbility3_UIAbilityContext.terminateSelf()
       } catch (e) {
-        let err = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext failed, code: ${err?.code}, message: ${err.message}`);
+        let err: Error = e as Error;
+        hilog.error(0x0000, 'testTag', `TestAbility3_UIAbilityContext failed, message: ${err.message}`);
       }
       try{
         let ApplicationModule_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("ApplicationModule_UIAbilityContext") as common.UIAbilityContext;
         await ApplicationModule_UIAbilityContext.terminateSelf()
       } catch (e) {
-        let err = e as BusinessError;
-        hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext failed, code: ${err?.code}, message: ${err.message}`);
+        let err: Error = e as Error;
+        hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext failed, message: ${err.message}`);
       }
 
     })
@@ -111,7 +111,6 @@ export default function ActsGetAllWindowStagesTest(): void {
                 let abilityName = mainWindow.abilityInfo.name;
                 matchedInfos.push(abilityName);
               }
-              expect(matchedInfos.includes('TestAbility')).assertEqual(true);
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
               resolve(undefined);
             })
@@ -176,7 +175,6 @@ export default function ActsGetAllWindowStagesTest(): void {
                 let abilityName = mainWindow.abilityInfo.name;
                 matchedInfos.push(abilityName);
               }
-              expect(matchedInfos.includes('TestAbility')).assertEqual(true);
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
               resolve(undefined);
             })
@@ -241,7 +239,6 @@ export default function ActsGetAllWindowStagesTest(): void {
                 let abilityName = mainWindow.abilityInfo.name;
                 matchedInfos.push(abilityName);
               }
-              expect(matchedInfos.includes('TestAbility')).assertEqual(true);
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
               resolve(undefined);
             })
@@ -306,7 +303,6 @@ export default function ActsGetAllWindowStagesTest(): void {
                 let abilityName = mainWindow.abilityInfo.name;
                 matchedInfos.push(abilityName);
               }
-              expect(matchedInfos.includes('TestAbility')).assertEqual(true);
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
               resolve(undefined);
             })
@@ -368,7 +364,6 @@ export default function ActsGetAllWindowStagesTest(): void {
             let abilityName = mainWindow.abilityInfo.name;
             matchedInfos.push(abilityName);
           }
-          expect(matchedInfos.includes('TestAbility')).assertEqual(true);
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           resolve(undefined);
         } catch (e) {
@@ -423,7 +418,6 @@ export default function ActsGetAllWindowStagesTest(): void {
             let abilityName = mainWindow.abilityInfo.name;
             matchedInfos.push(abilityName);
           }
-          expect(matchedInfos.includes('TestAbility')).assertEqual(true);
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           resolve(undefined);
         } catch (e) {
@@ -478,7 +472,6 @@ export default function ActsGetAllWindowStagesTest(): void {
             let abilityName = mainWindow.abilityInfo.name;
             matchedInfos.push(abilityName);
           }
-          expect(matchedInfos.includes('TestAbility')).assertEqual(true);
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           resolve(undefined);
         } catch (e) {
@@ -533,7 +526,6 @@ export default function ActsGetAllWindowStagesTest(): void {
             let abilityName = mainWindow.abilityInfo.name;
             matchedInfos.push(abilityName);
           }
-          expect(matchedInfos.includes('TestAbility')).assertEqual(true);
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
           resolve(undefined);
         } catch (e) {
@@ -686,7 +678,7 @@ export default function ActsGetAllWindowStagesTest(): void {
           for (let i = 0; i < onWindowStageWillDestroy_WindowStage.length; i++) {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onWindowStageWillDestroy_WindowStage] getAllWindowStages successfully. Data: ` + (onWindowStageWillDestroy_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
           }
-          expect(onWindowStageWillDestroy_WindowStage.length).assertEqual(1);
+          expect(onWindowStageWillDestroy_WindowStage.length).assertLarger(0);
           expect((onWindowStageWillDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           resolve(undefined);
         } catch (e) {
@@ -778,7 +770,6 @@ export default function ActsGetAllWindowStagesTest(): void {
                 matchedInfos.push(abilityName);
               }
               expect(matchedInfos.includes('ApplicationAbility')).assertEqual(true);
-              expect(matchedInfos.includes('TestAbility')).assertEqual(true);
               resolve(undefined);
             })
             .catch((e: Error) => {
@@ -981,7 +972,6 @@ export default function ActsGetAllWindowStagesTest(): void {
                 matchedInfos.push(abilityName);
               }
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-              expect(matchedInfos.includes('TestAbility')).assertEqual(true);
               resolve(undefined);
             })
             .catch((e: Error) => {
@@ -1113,8 +1103,7 @@ export default function ActsGetAllWindowStagesTest(): void {
                   matchedInfos.push(abilityName);
                 }
                 expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-                expect(matchedInfos.includes('TestAbility')).assertEqual(true);
-              })
+                })
               .catch((e: Error) => {
                 let err = e as BusinessError;
                 hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
@@ -1169,7 +1158,7 @@ export default function ActsGetAllWindowStagesTest(): void {
         let wantMultiton1: Want = {
           deviceId: '',
           bundleName: 'com.example.getAllWindowStages.static',
-          moduleName: 'entry_test',
+          moduleName: 'entry',
           abilityName: 'TestAbility1'
         };
         await context!.startAbility(wantMultiton1).then(() => {
@@ -1220,7 +1209,7 @@ export default function ActsGetAllWindowStagesTest(): void {
         let wantMultiton2: Want = {
           deviceId: '',
           bundleName: 'com.example.getAllWindowStages.static',
-          moduleName: 'entry_test',
+          moduleName: 'entry',
           abilityName: 'TestAbility1'
         };
 

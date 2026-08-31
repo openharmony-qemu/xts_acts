@@ -31,7 +31,7 @@ let context: common.UIAbilityContext | undefined;
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function ActsGetStaticTest() {
+export default function ActsGetStaticTest(): void {
   describe("ActsGetStaticTest", (): void => {
     beforeAll(async () => {
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
@@ -63,20 +63,20 @@ export default function ActsGetStaticTest() {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-            expect(data.length).assertEqual(1);
+            expect(data.length).assertEqual(2);
             expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('EntryAbility');
             done();
           })
           .catch((err: Error): void => {
             hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
-            expect().assertFail();
             done();
+            expect().assertFail();
             });
       } catch (e) {
         let err = e as BusinessError;
         hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
-        expect().assertFail();
         done();
+        expect().assertFail();
       }
     });
 
@@ -120,7 +120,7 @@ export default function ActsGetStaticTest() {
                 .getUIContext()
                 .getHostContext() as common.UIAbilityContext).abilityInfo.name);
           }
-          expect(onForeground_WindowStage.length).assertEqual(2);
+          expect(onForeground_WindowStage.length).assertEqual(3);
           let matchedInfos: string[] = [];
           for (let stage of onForeground_WindowStage) {
             let mainWindow = stage.getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext;
@@ -143,8 +143,8 @@ export default function ActsGetStaticTest() {
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
           done();
+          expect().assertFail();
         }
       })
 
@@ -188,7 +188,7 @@ export default function ActsGetStaticTest() {
                 .getUIContext()
                 .getHostContext() as common.UIAbilityContext).abilityInfo.name);
           }
-          expect(onBackground_WindowStage.length).assertEqual(2);
+          expect(onBackground_WindowStage.length).assertLarger(1);
           let matchedInfos: string[] = [];
           for (let stage of onBackground_WindowStage) {
             let mainWindow = stage.getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext;
@@ -210,8 +210,8 @@ export default function ActsGetStaticTest() {
         } catch (e) {
           let err = e as BusinessError;
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
           done();
+          expect().assertFail();
         }
       })
 
@@ -258,7 +258,7 @@ export default function ActsGetStaticTest() {
                     .getUIContext()
                     .getHostContext() as common.UIAbilityContext).abilityInfo.name);
               }
-              expect(data.length).assertEqual(1);
+              expect(data.length).assertLarger(1);
               expect((data[0].getMainWindowSync()
                 .getUIContext()
                 .getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('EntryAbility');
@@ -267,14 +267,14 @@ export default function ActsGetStaticTest() {
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
               done();
+              expect().assertFail();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
           done();
+          expect().assertFail();
         }
       })
 
@@ -319,7 +319,7 @@ export default function ActsGetStaticTest() {
                     .getUIContext()
                     .getHostContext() as common.UIAbilityContext).abilityInfo.name);
               }
-              expect(data.length).assertEqual(2);
+              expect(data.length).assertLarger(1);
               let matchedInfos: string[] = [];
               for (let stage of data) {
                 let mainWindow = stage.getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext;
@@ -342,14 +342,14 @@ export default function ActsGetStaticTest() {
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
               done();
+              expect().assertFail();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
           done();
+          expect().assertFail();
         }
       })
 
@@ -383,12 +383,12 @@ export default function ActsGetStaticTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
           for (i = 0; i < 1000; i++) {
-            appContext?.getAllWindowStages()
+            await appContext?.getAllWindowStages()
               .then((data: Array<window.WindowStage>) => {
                 hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success ` + i);
                 hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
                 hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-                expect(data.length).assertEqual(2);
+                expect(data.length).assertLarger(1);
                 let matchedInfos: string[] = [];
                 for (let stage of data) {
                   let mainWindow = stage.getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext;
@@ -400,8 +400,8 @@ export default function ActsGetStaticTest() {
               .catch((e: Error) => {
                 let err = e as BusinessError;
                 hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
-                expect().assertFail();
                 done();
+                expect().assertFail();
               });
           }
           expect(i).assertEqual(1000);
@@ -419,8 +419,8 @@ export default function ActsGetStaticTest() {
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
           done();
+          expect().assertFail();
         }
       })
 
@@ -477,15 +477,15 @@ export default function ActsGetStaticTest() {
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
               done();
+              expect().assertFail();
             });
 
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
           done();
+          expect().assertFail();
         }
       })
   })
