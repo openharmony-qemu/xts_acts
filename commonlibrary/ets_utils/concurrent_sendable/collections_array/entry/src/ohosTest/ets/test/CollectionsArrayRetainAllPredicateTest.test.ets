@@ -747,7 +747,7 @@ export default function CollectionsArrayRetainAllPredicateTest(): void {
         expect(receiver.retainAll((value: number): boolean => value === 0)).assertEqual(true);
         expect(receiver.length).assertEqual(5125);
         expect(receiver.at(0)).assertEqual(0);
-        expect(receiver.at(32767)).assertEqual(0);
+        expect(receiver.at(1024)).assertEqual(0);
         console.info(`${caseName}, test end`);
       });
   });

@@ -274,7 +274,7 @@ export default function CollectionsArrayContainsAllBuiltinTest(): void {
           receiver.push(i);
         }
         expect(receiver.containsAll([0, 5125, 10249])).assertEqual(true);
-        expect(receiver.containsAll([1, 2, 3, 65534, 10249])).assertEqual(true);
+        expect(receiver.containsAll([1, 2, 3, 1024, 10249])).assertEqual(true);
         console.info(`${caseName}, test end`);
       });
 

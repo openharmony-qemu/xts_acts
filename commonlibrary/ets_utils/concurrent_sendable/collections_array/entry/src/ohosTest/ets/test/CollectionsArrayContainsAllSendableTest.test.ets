@@ -743,7 +743,7 @@ export default function CollectionsArrayContainsAllSendableTest(): void {
           receiver.push(i);
         }
         expect(receiver.containsAll(new collections.Array<number>(0, 5125, 10249))).assertEqual(true);
-        expect(receiver.containsAll(new collections.Array<number>(1, 2, 3, 65534, 10249))).assertEqual(true);
+        expect(receiver.containsAll(new collections.Array<number>(1, 2, 3, 2048, 10249))).assertEqual(true);
         console.info(`${caseName}, test end`);
       });
 
