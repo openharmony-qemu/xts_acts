@@ -64,7 +64,7 @@ async function saveCameraPhotoAbnormalPromiseTest(done: Function, testName: stri
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
     expect(error.code).assertEqual(String(ErrorCode.ARGUMENT_INVALID_ERROR_CODE));
   } finally {
-    fetchResult.close();
+    if(fetchResult) fetchResult.close();
     done();
   }
 }
