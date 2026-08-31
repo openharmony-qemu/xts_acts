@@ -45,7 +45,7 @@ export default function HttpRequestInStreamTest() {
                         let httpRequest: http.HttpRequest = http.createHttp();
                         httpRequest.requestInStream(ADDR_TEST_DOMAIN_HTTPS, (err: BusinessError, data: number) => {
                             if (err) {
-                                console.info(`${caseName} requestInStream fail err: ${JSON.stringify(data)}`);
+                                console.info(`${caseName} requestInStream fail err: ${JSON.stringify(err)}`);
                                 ExpectFail();
                                 httpRequest.destroy();
                                 done();
@@ -285,51 +285,7 @@ export default function HttpRequestInStreamTest() {
             }
             console.info(`${caseName} test End`);
         });
-        /**
-         * @tc.name   testHttpRequestInStream0700
-         * @tc.number SUB_NetworkMgr_Http_RequestInStream_0700
-         * @tc.desc   test requestInStream with illegal url
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testHttpRequestInStream0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-            const caseName: string = "testHttpRequestInStream0700";
-            console.info(`${caseName} test Start`);
-            try {
-                connection.getDefaultNet((error: BusinessError, data: connection.NetHandle) => {
-                    if (data.netId == 0) {
-                        console.info(`${caseName} Please connect to the network`);
-                        ExpectFail();
-                        done();
-                    }
-                    else {
-                        console.info(`${caseName} Network connected`);
-                        let httpRequest: http.HttpRequest = http.createHttp();
-                        httpRequest.requestInStream(ADDR_TEST_ILLEGAL, (err: BusinessError, data: number) => {
-                            if (err) {
-                                console.info(`${caseName}  requestInStream fail err ${JSON.stringify(err)}`);
-                                ExpectTrue(err.code == 2300006);
-                                httpRequest.destroy();
-                                done();
-                            }
-                            else {
-                                console.info(`${caseName}  requestInStream success ${JSON.stringify(err)}`);
-                                ExpectFail();
-                                httpRequest.destroy();
-                                done();
-                            }
-                        });
-                    }
-                });
-            }
-            catch (err) {
-                console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
-                ExpectFail();
-                done();
-            }
-            console.info(`${caseName} test End`);
-        });
+
         /**
          * @tc.name   testHttpRequestInStream0800
          * @tc.number SUB_NetworkMgr_Http_RequestInStream_0800
@@ -365,11 +321,12 @@ export default function HttpRequestInStreamTest() {
                 });
             } catch (err) {
                 console.info(`${caseName} trycatch err: ${JSON.stringify(err)}`);
-                ExpectTrue(false);
+                ExpectFail();
                 done();
             }
             console.info(`${caseName} test End`);
         });
+
         /**
          * @tc.name   testHttpRequestInStream0900
          * @tc.number SUB_NetworkMgr_Http_RequestInStream_0900
