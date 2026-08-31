@@ -623,7 +623,7 @@ export default function CollectionsArrayContainsAllSendableTest(): void {
     /**
      * @tc.name   collectionsArrayContainsAllTest3300
      * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_3300
-     * @tc.desc   Verify containsAll returns true with different order (Kotlin semantics: check each element exists).
+      * @tc.desc   Verify containsAll returns true with different order (element-wise check: each element must exist in receiver).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
