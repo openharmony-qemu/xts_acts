@@ -52,7 +52,7 @@ export default function HttpUsingProtocolTest() {
         }).then((data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
           ExpectTrue(data.responseCode == 200);
-          httpRequest .destroy();
+          httpRequest.destroy();
           console.info(`${caseName}---end`);
           done();
         });
@@ -82,7 +82,7 @@ export default function HttpUsingProtocolTest() {
         }).then((data) =>{
           console.info(`${caseName} data: ` + JSON.stringify(data));
           ExpectTrue(data.responseCode == 200);
-          httpRequest .destroy();
+          httpRequest.destroy();
           console.info(`${caseName}---end`);
           done();
         });
@@ -111,7 +111,7 @@ export default function HttpUsingProtocolTest() {
         httpRequest.request("https://www.baidu.com").then( (data)=> {
           console.info(`${caseName} data: ` + JSON.stringify(data));
           ExpectTrue(data.responseCode == 200);
-          httpRequest .destroy();
+          httpRequest.destroy();
           console.info(`${caseName}---end`);
           done();
         });
