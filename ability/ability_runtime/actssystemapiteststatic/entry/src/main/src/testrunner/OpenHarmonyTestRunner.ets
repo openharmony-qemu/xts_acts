@@ -14,25 +14,22 @@
  * limitations under the License.
  */
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
 import { TestRunner } from '@kit.TestKit';
-
 import hilog from '@ohos.hilog';
+import { BusinessError } from '@ohos.base';
 
-import { Hypium } from '../../../hypium/index';
-import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
-
 export class OpenHarmonyTestRunner implements TestRunner {
   constructor() {}
 
   public onPrepare: () => void = () => {
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner OnPrepare');
+    abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   }
 
   public onRun: () => void = () => {
@@ -40,8 +37,21 @@ export class OpenHarmonyTestRunner implements TestRunner {
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+    let cmd = 'aa start -d 0 -a TestAbility -b com.example.systemapitest.static';
+    let debug = abilityDelegatorArguments.parameters['-D'];
+    if (debug == 'true') {
+      cmd += ' -D';
+    }
+    let user = abilityDelegatorArguments.parameters["-u"];
+    if (user !== undefined) {
+      cmd += ' -u ' + user;
+    }
+    hilog.info(domain, tag, '%{public}s', 'cmd : ' + cmd);
+    abilityDelegator.executeShellCommand(cmd, (err: BusinessError<void> | null,
+      data: abilityDelegatorRegistry.ShellCmdResult | undefined): void => {
+      hilog.info(domain, tag, 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
+      hilog.info(domain, tag, 'executeShellCommand : data : %{public}s', data?.stdResult ?? '');
+    });
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
   }
 }
