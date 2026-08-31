@@ -202,7 +202,7 @@ export default function ActsDlpNDKTest() {
     /**
      * @tc.name   SUB_Security_DataSecurity_DlpNotSupported_0010
      * @tc.number SUB_Security_DataSecurity_DlpNotSupported_0010
-     * @tc.desc   Cover the OH_DLP_NOT_SUPPORTED (801) error code returned by DLP NDK APIs when DLP is not supported.
+     * @tc.desc   Verify that the DLP API returns error code 801 when the DataLossPrevention capability is not supported.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
