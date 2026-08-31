@@ -90,19 +90,19 @@ export default function wifiEapErrorTest(){
                 if(error.code===201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register permission denied`);
                     expect(true).assertTrue();
-                }else if(error.code==33200006){
+                }else if(error.code===33200006){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register invalid NetType`);
                     expect(true).assertTrue();
-                }else if(error.code==33200007){
+                }else if(error.code===33200007){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register invalid EapCode`);
                     expect().assertFail();
-                }else if(error.code==33200008){
+                }else if(error.code===33200008){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register invalid EapType`);
                     expect().assertFail();
-                }else if(error.code==33200009){
+                }else if(error.code===33200009){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register netmanager stop`);
                     expect(true).assertTrue();
-                }else if(error.code==33200099){
+                }else if(error.code===33200099){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register internal error`);
                     expect(true).assertTrue();
                 }else {
@@ -163,19 +163,19 @@ export default function wifiEapErrorTest(){
                 if(error.code===201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register permission denied`);
                     expect(true).assertTrue();
-                }else if(error.code==33200006){
+                }else if(error.code===33200006){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register invalid NetType`);
                     expect().assertFail();
-                }else if(error.code==33200007){
+                }else if(error.code===33200007){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register invalid EapCode`);
                     expect(true).assertTrue();
-                }else if(error.code==33200008){
+                }else if(error.code===33200008){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register invalid EapType`);
                     expect().assertFail();
-                }else if(error.code==33200009){
+                }else if(error.code===33200009){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register netmanager stop`);
                     expect(true).assertTrue();
-                }else if(error.code==33200099){
+                }else if(error.code===33200099){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register internal error`);
                     expect(true).assertTrue();
                 }else {
@@ -235,19 +235,19 @@ export default function wifiEapErrorTest(){
                 if(error.code===201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register permission denied`);
                     expect(true).assertTrue();
-                }else if(error.code==33200006){
+                }else if(error.code===33200006){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register invalid NetType`);
                     expect().assertFail();
-                }else if(error.code==33200007){
+                }else if(error.code===33200007){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register invalid EapCode`);
                     expect().assertFail();
-                }else if(error.code==33200008){
+                }else if(error.code===33200008){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register invalid EapType`);
                     expect(true).assertTrue();
-                }else if(error.code==33200009){
+                }else if(error.code===33200009){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register netmanager stop`);
                     expect(true).assertTrue();
-                }else if(error.code==33200099){
+                }else if(error.code===33200099){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register internal error`);
                     expect(true).assertTrue();
                 }else {
@@ -301,19 +301,19 @@ export default function wifiEapErrorTest(){
                 if(error.code===201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister permission denied`);
                     expect(true).assertTrue();
-                }else if(error.code==33200006){
+                }else if(error.code===33200006){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister invalid NetType`);
                     expect(true).assertTrue();
-                }else if(error.code==33200007){
+                }else if(error.code===33200007){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister invalid EapCode`);
                     expect().assertFail();
-                }else if(error.code==33200008){
+                }else if(error.code===33200008){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister invalid EapType`);
                     expect().assertFail();
-                }else if(error.code==33200009){
+                }else if(error.code===33200009){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister netmanager stop`);
                     expect(true).assertTrue();
-                }else if(error.code==33200099){
+                }else if(error.code===33200099){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister internal error`);
                     expect(true).assertTrue();
                 }else {
@@ -366,19 +366,19 @@ export default function wifiEapErrorTest(){
                 if(error.code===201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister permission denied`);
                     expect(true).assertTrue();
-                }else if(error.code==33200006){
+                }else if(error.code===33200006){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister invalid NetType`);
                     expect().assertFail();
-                }else if(error.code==33200007){
+                }else if(error.code===33200007){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister invalid EapCode`);
                     expect(true).assertTrue();
-                }else if(error.code==33200008){
+                }else if(error.code===33200008){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister invalid EapType`);
                     expect().assertFail();
-                }else if(error.code==33200009){
+                }else if(error.code===33200009){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister netmanager stop`);
                     expect(true).assertTrue();
-                }else if(error.code==33200099){
+                }else if(error.code===33200099){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister internal error`);
                     expect(true).assertTrue();
                 }else {
@@ -432,19 +432,19 @@ export default function wifiEapErrorTest(){
                 if(error.code===201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister permission denied`);
                     expect(true).assertTrue();
-                }else if(error.code==33200006){
+                }else if(error.code===33200006){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister invalid NetType`);
                     expect().assertFail();
-                }else if(error.code==33200007){
+                }else if(error.code===33200007){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister invalid EapCode`);
                     expect().assertFail();
-                }else if(error.code==33200008){
+                }else if(error.code===33200008){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister invalid EapType`);
                     expect(true).assertTrue();
-                }else if(error.code==33200009){
+                }else if(error.code===33200009){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister netmanager stop`);
                     expect(true).assertTrue();
-                }else if(error.code==33200099){
+                }else if(error.code===33200099){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister internal error`);
                     expect(true).assertTrue();
                 }else {
@@ -483,16 +483,16 @@ export default function wifiEapErrorTest(){
                 if(error.code===201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 eap replyCustomEapData permission denied`);
                     expect(true).assertTrue();
-                }else if(error.code==33200004){
+                }else if(error.code===33200004){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 eap replyCustomEapData invalid result`);
                     expect(true).assertTrue();
-                }else if(error.code==33200005){
+                }else if(error.code===33200005){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 eap replyCustomEapData invalid size of eap data`);
                     expect().assertFail();
-                }else if(error.code==33200009){
+                }else if(error.code===33200009){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 eap replyCustomEapData netmanager stop`);
                     expect(true).assertTrue();
-                }else if(error.code==33200099){
+                }else if(error.code===33200099){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 eap replyCustomEapData internal error`);
                     expect(true).assertTrue();
                 }else {
@@ -548,19 +548,19 @@ export default function wifiEapErrorTest(){
                 if(error.code===201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap permission denied`);
                     expect(true).assertTrue();
-                }else if(error.code==33200001){
+                }else if(error.code===33200001){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap invalid netId`);
                     expect(true).assertTrue();
-                }else if(error.code==33200003){
+                }else if(error.code===33200003){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap invalid profile`);
                     expect(true).assertTrue();
-                }else if(error.code==33200009){
+                }else if(error.code===33200009){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap netmanager stop`);
                     expect(true).assertTrue();
-                }else if(error.code==33200010){
+                }else if(error.code===33200010){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap invalid eth state.`);
                     expect(true).assertTrue();
-                }else if(error.code==33200099){
+                }else if(error.code===33200099){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap internal error`);
                     expect(true).assertTrue();
                 }else {
