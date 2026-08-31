@@ -49,6 +49,15 @@
         ]
       },
       {
+        "name": "TestAbility",
+        "srcEntry": "./ets/testability/TestAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_desc",
+        "exported": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
+      },      {
         "name": "EntryAbility1",
         "srcEntry": "./ets/entryability1/EntryAbility1.ets",
         "description": "$string:EntryAbility_desc",
