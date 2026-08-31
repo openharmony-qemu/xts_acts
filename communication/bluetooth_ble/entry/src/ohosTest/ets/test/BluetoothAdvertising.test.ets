@@ -153,7 +153,7 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo: bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state01 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state01 = ' + AdvertisingStateChangeInfo.state);
         advStatus = AdvertisingStateChangeInfo.state;
@@ -614,7 +614,7 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo: bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state13 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -667,7 +667,7 @@ export default function bluetoothAdvertisingTest() {
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state14 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state14 = ' + AdvertisingStateChangeInfo.state);
         advStatus = AdvertisingStateChangeInfo.state;
@@ -1791,7 +1791,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1100"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state11 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state11 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state11 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -1839,7 +1839,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1200"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state12 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state12 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state12 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -1887,7 +1887,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1300"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state13 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state13 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -1922,7 +1922,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1400"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state14 = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state14 = ' + AdvertisingStateChangeInfo.state);
         console.info('bluetooth advertising state14 = ' + AdvertisingStateChangeInfo.advertisingId);
@@ -2079,7 +2079,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1700"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state = ' + AdvertisingStateChangeInfo.state);
         advStatus = AdvertisingStateChangeInfo.state;
@@ -2173,7 +2173,7 @@ export default function bluetoothAdvertisingTest() {
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
       let caseName = "SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_ADD_1800"
       let advStatus: Number = 0;
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('bluetooth advertising state = ' + JSON.stringify(AdvertisingStateChangeInfo));
         console.info('bluetooth advertising state = ' + AdvertisingStateChangeInfo.state);
         advStatus = AdvertisingStateChangeInfo.state;
@@ -2567,7 +2567,7 @@ export default function bluetoothAdvertisingTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHBLE_ADVERTISING_OFF_NOCALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) =>  {
-      let onReceiveEvent = (AdvertisingStateChangeInfo :bluetooth.AdvertisingStateChangeInfo) => {
+      let onReceiveEvent = (AdvertisingStateChangeInfo:bluetooth.AdvertisingStateChangeInfo) => {
         console.info('[bluetooth_js] advertising state nocallback = ' + JSON.stringify(AdvertisingStateChangeInfo));
       }
       try {
