@@ -24,8 +24,7 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 import { fileIo } from '@kit.CoreFileKit';
 
 let checkDeviceTypeIsCar = () => {
-  let deviceType = deviceInfo.deviceType;
-  if (deviceType == "car") {
+  if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
     return true;
   } else {
     return false;
@@ -69,24 +68,6 @@ let DLPErrCode: ERRCODE = {
   ERR_JS_SYSTEM_SERVICE_EXCEPTION: 19100011,
   ERR_JS_OUT_OF_MEMORY: 19100012,
 };
-
-interface Attribute {
-  attributeId: string;
-  attributeValues: Array<string>;
-  valueType: number;
-  opt: number;
-}
-
-interface Rule {
-  ruleId: string;
-  attributes: Array<Attribute>;
-}
-
-interface Policy {
-  rules: Array<Rule>;
-  policyId: string;
-  ruleConflictAlg: number;
-}
 
 export class TestDlpFileInfo {
   dlpFile: dlpPermission.DLPFile | null = null;
@@ -4431,6 +4412,13 @@ export default function dlpTest() {
           } catch (err) {
             expect(err.code).assertEqual(801);
           }
+        } else {
+          try {
+            await dlpPermission.getDLPPermissionInfo();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(19100006);
+          }
         }
         done();
       })
@@ -4452,6 +4440,13 @@ export default function dlpTest() {
             expect(false).assertTrue();
           } catch (err) {
             expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.queryDlpPolicy(null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(401);
           }
         }
         done();
@@ -4475,6 +4470,13 @@ export default function dlpTest() {
           } catch (err) {
             expect(err.code).assertEqual(801);
           }
+        } else {
+          try {
+            await dlpPermission.decryptDlpFile(null, null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(401);
+          }
         }
         done();
       })
@@ -4492,30 +4494,18 @@ export default function dlpTest() {
         let isCar: boolean = checkDeviceTypeIsCar();
         if (isCar) {
           try {
-            let attributeValues: Array<string> = [ '1' ];
-            let attribute: Attribute = {
-                attributeId: 'DeviceHealthyStatus',
-                attributeValues: attributeValues,
-                valueType: 0,
-                opt: 2
-            }; // 属性信息。
-            let rule: Rule = {
-                ruleId: 'ruleId',
-                attributes: [ attribute ]
-            }; // 规则。
-            let policy: Policy = {
-                rules: [ rule ],
-                policyId: 'policyId',
-                ruleConflictAlg: 0
-            }; // 策略。
-            let enterprisePolicy: dlpPermission.EnterprisePolicy = {
-                policyString: JSON.stringify(policy)
-            };
-            await dlpPermission.setEnterprisePolicy(enterprisePolicy);
+            await dlpPermission.setEnterprisePolicy(null);
             expect(false).assertTrue();
           } catch (err) {
             expect(err.code).assertEqual(801);
-          }
+          } 
+        } else {
+          try {
+            await dlpPermission.setEnterprisePolicy(null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(401);
+          } 
         }
         done();
       })
@@ -4537,6 +4527,13 @@ export default function dlpTest() {
             expect(false).assertTrue();
           } catch (err) {
             expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.DlpConnManager.unregisterPlugin();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(19100011);
           }
         }
         done();

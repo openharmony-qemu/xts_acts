@@ -193,7 +193,7 @@ export default function ActsDlpNDK20Test() {
         done()
       } catch (err) {
         console.error("====>testOsGetDlpPermissionInfo0106 catch err: " + err);
-        expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        expect(false).assertTrue();
         done()
       }
     })
@@ -319,7 +319,7 @@ export default function ActsDlpNDK20Test() {
         done()
       } catch (err) {
         console.error("====>testOsGetOriginalFileName0500 catch err: " + err);
-        expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        expect(false).assertTrue();
         done()
       }
     })

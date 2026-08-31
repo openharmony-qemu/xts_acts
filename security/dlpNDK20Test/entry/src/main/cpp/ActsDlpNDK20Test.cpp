@@ -188,6 +188,10 @@ static napi_value OsGetOriginalFileName0500(napi_env env, napi_callback_info inf
     const char *fileName = "";
     char *originalFileName = nullptr;
     DLP_ErrCode ret = OH_DLP_GetOriginalFileName(fileName, &originalFileName);
+    if (originalFileName != nullptr) {
+        free(originalFileName);
+        originalFileName = nullptr;
+    }
     napi_value result = nullptr;
     napi_create_int32(env, ret, &result);
     return result;
