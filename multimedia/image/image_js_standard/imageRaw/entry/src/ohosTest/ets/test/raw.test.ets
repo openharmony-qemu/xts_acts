@@ -273,14 +273,14 @@ export default function imageRaw() {
         console.info(`${testNum} createPixelMap leave`);
       };
     /**
-     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_0100
-     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_0100
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_RAW_3100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_RAW_3100
      * @tc.desc   1.create imagesource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it("SUB_MULTIMEDIA_IMAGE_RAW_0100", Level.LEVEL0, async (done: Function) => {
+    it("SUB_MULTIMEDIA_IMAGE_RAW_3100", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
         sampleSize: 1,
         editable: true,
@@ -294,7 +294,7 @@ export default function imageRaw() {
       let packOpts: ESObject = {
         format: ["image/webp"], quality: 100
       };
-      createPixelMapPromise(done, "SUB_MULTIMEDIA_IMAGE_RAW_0100", "test.arw", decodeOpts, packingPromise, packOpts);
+      createPixelMapPromise(done, "SUB_MULTIMEDIA_IMAGE_RAW_3100", "test.arw", decodeOpts, packingPromise, packOpts);
     });
 
     /**
