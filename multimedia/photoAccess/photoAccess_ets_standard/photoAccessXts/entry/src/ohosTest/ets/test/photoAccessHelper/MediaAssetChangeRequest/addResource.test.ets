@@ -64,13 +64,13 @@ async function addResourceAbnormalPromiseTest(done: Function, testName: string, 
       path = testContext.filesDir + '/' + pathUri;
       uri = fileUri.getUriFromPath(path);
     }
-    await assetChangeRequest.addResource(resourceType, uri);
+    await assetChangeRequest.addResource(resourceType as photoAccessHelper.ResourceType, uri);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('addResourceByFileUri successfully');
     expect().assertFail();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-    expect(error.code).assertEqual(String(errorCode));
+    expect(String(error.code)).assertEqual(String(errorCode));
   } finally {
     done();
   }
@@ -97,7 +97,7 @@ async function addResourceBufferPromiseTest(done: Function, testName: string, im
   }
 }
 
-async function addResourceBufferAbnormalPromiseTest(done: Function, testName: string, imageType: string, size: number, resourceType: photoAccessHelper.ResourceType | null | undefined) {
+async function addResourceBufferAbnormalPromiseTest(done: Function, testName: string, imageType: string, size: number, resourceType: photoAccessHelper.ResourceType | null | undefined, errorCode: ErrorCode = ErrorCode.PARAM_ERROR_CODE) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
   try {
@@ -107,14 +107,14 @@ async function addResourceBufferAbnormalPromiseTest(done: Function, testName: st
     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
       photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
     let buffer: ArrayBuffer = new ArrayBuffer(size);
-    await assetChangeRequest.addResource(resourceType, buffer);
+    await assetChangeRequest.addResource(resourceType as photoAccessHelper.ResourceType, buffer);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('addResourceByArrayBuffer successfully');
     expect().assertFail();
-    done();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-    expect(error.code).assertEqual(String(ErrorCode.PARAM_ERROR_CODE));
+    expect(String(error.code)).assertEqual(String(errorCode));
+  } finally {
     done();
   }
 }
