@@ -103,7 +103,7 @@ async function clearRecycleState(driver: Driver): Promise<void> {
 }
 
 export default function ClearContentStackApiRecycleTest(): void {
-  describe('ClearContentStackRecycleTest', () => {
+  describe('ClearContentStackApiRecycleTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility(BUNDLE_NAME, ABILITY_NAME);
     });
