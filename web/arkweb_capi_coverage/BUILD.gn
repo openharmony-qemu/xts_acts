@@ -15,5 +15,4 @@ ohos_js_app_suite("ArkWebCapiCoverageTest") {
   hap_name = "ActsArkWebCapiCoverageTest"
   part_name = "webview"
   subsystem_name = "web"
-  deps = [ ":ArkWebCapiCoverage" ]
 }
