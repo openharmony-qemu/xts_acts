@@ -25,17 +25,14 @@ async function setOrientationPromiseTest(done: Function, testName: string, orien
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   try {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
-    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-      await phAccessHelper.getAssets(fetchOption(testName, photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE));
-    const count = await fetchResult.getCount();
-    if (count == 0) {
-      await createUserAlbum(testContext, 'setOrientation', 'testAlbum');
-      fetchResult = await phAccessHelper.getAssets(fetchOption(testName, photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE));
-    }
-    let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-    await asset.clone(genRandomStr(10));
-    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-      new photoAccessHelper.MediaAssetChangeRequest(asset);
+    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+    let options: photoAccessHelper.CreateOptions = {title: testName}
+    let createAssetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, 'jpg', options);
+    createAssetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, (testContext.filesDir + "/01.jpg"));
+    await phAccessHelper.applyChanges(createAssetChangeRequest);
+    console.info(`${testName} :: apply createAssetRequest successfully !`);
+    const asset = createAssetChangeRequest.getAsset()
+    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
     await assetChangeRequest.setOrientation(orientation);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('apply setOrientation  successfully');
@@ -47,23 +44,26 @@ async function setOrientationPromiseTest(done: Function, testName: string, orien
   }
 }
 
-async function setOrientationAbnormalPromiseTest(done: Function, testName: string, orientation: number) {
+async function setOrientationAbnormalPromiseTest(done: Function, testName: string, orientation: number | undefined) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   try {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
-    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-      await phAccessHelper.getAssets(fetchAllOption());
-    let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
-    await asset.clone(genRandomStr(10));
-    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
-      new photoAccessHelper.MediaAssetChangeRequest(asset);
+    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+    let options: photoAccessHelper.CreateOptions = {title: testName}
+    let createAssetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, 'jpg', options);
+    createAssetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, (testContext.filesDir + "/01.jpg"));
+    await phAccessHelper.applyChanges(createAssetChangeRequest);
+    console.info(`${testName} :: apply createAssetRequest successfully !`);
+    const asset = createAssetChangeRequest.getAsset()
+    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
     await assetChangeRequest.setOrientation(orientation);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('apply setOrientation  successfully');
+    expect().assertFail();
     done();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-    expect(error.code == ErrorCode.PARAM_ERROR_CODE).assertTrue();
+    expect(error.code).assertEqual(String(ErrorCode.PARAM_ERROR_CODE));
     done();
   }
 }
@@ -90,85 +90,84 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
     });
 
     /**
-     * @tc.name   MediaAssetChangeRequest_setOrientation_promise_001
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_001
+     * @tc.name   SUB_MediaAssetChangeRequest_setOrientation_promise_0001
+     * @tc.number SUB_MediaAssetChangeRequest_setOrientation_promise_0001
      * @tc.desc   setOrientation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_setOrientation_promise_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_setOrientation_promise_001';
+    it('SUB_MediaAssetChangeRequest_setOrientation_promise_0001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_setOrientation_promise_0001';
       const orientation = 0;
       await setOrientationPromiseTest(done, testName, orientation);
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_setOrientation_promise_002
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_002
+     * @tc.name   SUB_MediaAssetChangeRequest_setOrientation_promise_0002
+     * @tc.number SUB_MediaAssetChangeRequest_setOrientation_promise_0002
      * @tc.desc   setOrientation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_setOrientation_promise_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_setOrientation_promise_002';
+    it('SUB_MediaAssetChangeRequest_setOrientation_promise_0002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_setOrientation_promise_0002';
       const orientation = 90;
       await setOrientationPromiseTest(done, testName, orientation);
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_setOrientation_promise_003
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_003
+     * @tc.name   SUB_MediaAssetChangeRequest_setOrientation_promise_0003
+     * @tc.number SUB_MediaAssetChangeRequest_setOrientation_promise_0003
      * @tc.desc   setOrientation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_setOrientation_promise_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_setOrientation_promise_003';
+    it('SUB_MediaAssetChangeRequest_setOrientation_promise_0003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_setOrientation_promise_0003';
       const orientation = 180;
       await setOrientationPromiseTest(done, testName, orientation);
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_setOrientation_promise_004
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_004
+     * @tc.name   SUB_MediaAssetChangeRequest_setOrientation_promise_0004
+     * @tc.number SUB_MediaAssetChangeRequest_setOrientation_promise_0004
      * @tc.desc   setOrientation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_setOrientation_promise_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_setOrientation_promise_004';
+    it('SUB_MediaAssetChangeRequest_setOrientation_promise_0004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_setOrientation_promise_0004';
       const orientation = 270;
       await setOrientationPromiseTest(done, testName, orientation);
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_setOrientation_Abnormal_promise_001
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_005  //TODO error.code is undefined
+     * @tc.name   SUB_MediaAssetChangeRequest_setOrientation_Abnormal_promise_0001
+     * @tc.number SUB_MediaAssetChangeRequest_setOrientation_Abnormal_promise_0001
      * @tc.desc   setOrientation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    /*it('MediaAssetChangeRequest_setOrientation_Abnormal_promise_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_setOrientation_Abnormal_promise_001';
-      const orientation = 360;
-      await setOrientationAbnormalPromiseTest(done, testName, orientation);
-    })*/
+    it('SUB_MediaAssetChangeRequest_setOrientation_Abnormal_promise_0001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_setOrientation_Abnormal_promise_0001';
+      await setOrientationAbnormalPromiseTest(done, testName, undefined);
+    })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_setOrientation_Abnormal_promise_002
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_006   //TODO error.code is undefined
+     * @tc.name   MediaAssetChangeRequest_setOrientation_Abnormal_promise_0002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_0006   //TODO error.code is undefined
      * @tc.desc   setOrientation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    /*it('MediaAssetChangeRequest_setOrientation_Abnormal_promise_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_setOrientation_Abnormal_promise_002';
+    /*it('MediaAssetChangeRequest_setOrientation_Abnormal_promise_0002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'MediaAssetChangeRequest_setOrientation_Abnormal_promise_0002';
       const orientation = -90;
       await setOrientationAbnormalPromiseTest(done, testName, orientation);
     })*/

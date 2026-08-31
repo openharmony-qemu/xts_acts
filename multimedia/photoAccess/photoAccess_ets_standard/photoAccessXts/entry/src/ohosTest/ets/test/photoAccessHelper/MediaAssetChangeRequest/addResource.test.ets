@@ -19,6 +19,7 @@ import { getPermission, driveFn, LOG_TAG, copyImageToSandbox } from '../../commo
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
 import { fileUri } from '@kit.CoreFileKit';
+import { ErrorCode } from '../../CommonErrorCode';
 
 const TAG = LOG_TAG + 'addResource';
 
@@ -46,6 +47,32 @@ async function addResourcePromiseTest(done: Function, testName: string, pathUri:
   }
 }
 
+async function addResourceAbnormalPromiseTest(done: Function, testName: string, pathUri: string | undefined, imageType: string,
+  ResourceType: photoAccessHelper.ResourceType | null | undefined, errorCode: ErrorCode = ErrorCode.PARAM_ERROR_CODE) {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+  try {
+    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+    let extension: string = imageType;
+    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+      photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+    let path: string | undefined = testContext.filesDir + '/' + pathUri;
+    if(pathUri === '' || pathUri === undefined) path = pathUri
+    let uri = fileUri.getUriFromPath(path);
+    let uriFlag = await fs.access(path);
+    console.log('fileUri is ' + JSON.stringify(uriFlag));
+    await assetChangeRequest.addResource(ResourceType, uri);
+    await phAccessHelper.applyChanges(assetChangeRequest);
+    console.info('addResourceByFileUri successfully');
+    expect().assertFail();
+    done();
+  } catch (error) {
+    console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
+    expect(error.code).assertEqual(String(errorCode));
+    done();
+  }
+}
+
 async function addResourceBufferPromiseTest(done: Function, testName: string, imageType: string, size: number) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
@@ -63,6 +90,28 @@ async function addResourceBufferPromiseTest(done: Function, testName: string, im
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
     expect().assertFail();
+    done();
+  }
+}
+
+async function addResourceBufferAbnormalPromiseTest(done: Function, testName: string, imageType: string, size: number, ResourceType: photoAccessHelper.ResourceType | null | undefined) {
+  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+  try {
+    console.info('addResourceByArrayBufferDemo');
+    let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
+    let extension: string = imageType;
+    let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
+      photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
+    let buffer: ArrayBuffer = new ArrayBuffer(size);
+    await assetChangeRequest.addResource(ResourceType, buffer);
+    await phAccessHelper.applyChanges(assetChangeRequest);
+    console.info('addResourceByArrayBuffer successfully');
+    expect().assertFail();
+    done();
+  } catch (error) {
+    console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
+    expect(error.code).assertEqual(String(ErrorCode.PARAM_ERROR_CODE));
     done();
   }
 }
@@ -89,15 +138,15 @@ export default function MediaAssetChangeRequestAddResourceTest() {
     });
 
     /**
-     * @tc.name   MediaAssetChangeRequest_addResource_promise_001
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_ADD_RESOURCE_001
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0001
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0001
      * @tc.desc   addResource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_addResource_promise_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_addResource_promise_001';
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0001';
       const fileName = 'test.jpg';
       const path = 'test.jpg';
       const imageType = 'jpg';
@@ -106,15 +155,15 @@ export default function MediaAssetChangeRequestAddResourceTest() {
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_addResource_promise_002
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_ADD_RESOURCE_002
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0002
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0002
      * @tc.desc   addResource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_addResource_promise_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_addResource_promise_002';
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0002';
       const fileName = 'test.svg';
       const path = 'test.svg';
       const imageType = 'svg';
@@ -123,15 +172,15 @@ export default function MediaAssetChangeRequestAddResourceTest() {
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_addResource_promise_003
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_ADD_RESOURCE_003
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0003
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0003
      * @tc.desc   addResource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_addResource_promise_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_addResource_promise_003';
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0003';
       const fileName = 'test.jpeg';
       const path = 'test.jpeg';
       const imageType = 'jpeg';
@@ -140,15 +189,15 @@ export default function MediaAssetChangeRequestAddResourceTest() {
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_addResource_promise_004
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_ADD_RESOURCE_004
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0004
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0004
      * @tc.desc   addResource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_addResource_promise_004', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_addResource_promise_004';
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0004';
       const fileName = 'test.svg';
       const path = 'test.svg';
       const imageType = 'svg';
@@ -157,15 +206,15 @@ export default function MediaAssetChangeRequestAddResourceTest() {
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_addResource_promise_005
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_ADD_RESOURCE_005
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0005
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0005
      * @tc.desc   addResource
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_addResource_promise_005', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_addResource_promise_005';
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0005';
       const fileName = 'test6.gif';
       const path = 'test6.gif';
       const imageType = 'gif';
@@ -174,48 +223,146 @@ export default function MediaAssetChangeRequestAddResourceTest() {
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_addResource_buffer_promise_001
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_ADD_RESOURCE_006
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0006
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0006
+     * @tc.desc   addResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0006';
+      const fileName = 'test6.gif';
+      const path = 'test6.gif';
+      const imageType = 'gif';
+      await copyImageToSandbox(fileName, path);
+      await addResourceAbnormalPromiseTest(done, testName, path, imageType, null);
+    })
+
+    /**
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0007
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0007
+     * @tc.desc   addResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0007';
+      const fileName = 'test6.gif';
+      const path = 'test6.gif';
+      const imageType = 'gif';
+      await copyImageToSandbox(fileName, path);
+      await addResourceAbnormalPromiseTest(done, testName, path, imageType, undefined);
+    })
+
+    /**
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0008
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0008
+     * @tc.desc   addResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0008';
+      const fileName = 'test6.gif';
+      const path = 'test6.gif';
+      const imageType = 'gif';
+      await copyImageToSandbox(fileName, path);
+      await addResourceAbnormalPromiseTest(done, testName, '', imageType, photoAccessHelper.ResourceType.IMAGE_RESOURCE, ErrorCode.UNEXIST_DIR_OR_FILE_ERROR_CODE);
+    })
+
+    /**
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_promise_0009
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_promise_0009
+     * @tc.desc   addResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MediaAssetChangeRequest_addResource_promise_0009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_promise_0009';
+      const fileName = 'test6.gif';
+      const path = 'test6.gif';
+      const imageType = 'gif';
+      await copyImageToSandbox(fileName, path);
+      await addResourceAbnormalPromiseTest(done, testName, undefined, imageType, photoAccessHelper.ResourceType.IMAGE_RESOURCE, ErrorCode.PARAM_ERROR_CODE);
+    })
+
+    /**
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_buffer_promise_0001
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_buffer_promise_0001
      * @tc.desc   addResource(type: ResourceType, data: ArrayBuffer): void
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_addResource_buffer_promise_001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_addResource_buffer_promise_001';
+    it('SUB_MediaAssetChangeRequest_addResource_buffer_promise_0001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_buffer_promise_0001';
       const imageType = 'jpg';
       const size = 2048;
       await addResourceBufferPromiseTest(done, testName, imageType, size);
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_addResource_buffer_promise_002
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_ADD_RESOURCE_007
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_buffer_promise_0002
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_buffer_promise_0002
      * @tc.desc   addResource(type: ResourceType, data: ArrayBuffer): void
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_addResource_buffer_promise_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_addResource_buffer_promise_002';
+    it('SUB_MediaAssetChangeRequest_addResource_buffer_promise_0002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_buffer_promise_0002';
       const imageType = 'gif';
       const size = 1024;
       await addResourceBufferPromiseTest(done, testName, imageType, size);
     })
 
     /**
-     * @tc.name   MediaAssetChangeRequest_addResource_buffer_promise_003
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_ADD_RESOURCE_008
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_buffer_promise_0003
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_buffer_promise_0003
      * @tc.desc   addResource(type: ResourceType, data: ArrayBuffer): void
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('MediaAssetChangeRequest_addResource_buffer_promise_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_addResource_buffer_promise_003';
+    it('SUB_MediaAssetChangeRequest_addResource_buffer_promise_0003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_buffer_promise_0003';
       const imageType = 'jpeg';
       const size = 1;
       await addResourceBufferPromiseTest(done, testName, imageType, size);
+    })
+
+    /**
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_buffer_promise_0004
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_buffer_promise_0004
+     * @tc.desc   addResource(type: ResourceType, data: ArrayBuffer): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MediaAssetChangeRequest_addResource_buffer_promise_0004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_buffer_promise_0004';
+      const imageType = 'jpeg';
+      const size = 1;
+      await addResourceBufferAbnormalPromiseTest(done, testName, imageType, size, null);
+    })
+
+    /**
+     * @tc.name   SUB_MediaAssetChangeRequest_addResource_buffer_promise_0005
+     * @tc.number SUB_MediaAssetChangeRequest_addResource_buffer_promise_0005
+     * @tc.desc   addResource(type: ResourceType, data: ArrayBuffer): void
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MediaAssetChangeRequest_addResource_buffer_promise_0005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetChangeRequest_addResource_buffer_promise_0005';
+      const imageType = 'jpeg';
+      const size = 1;
+      await addResourceBufferAbnormalPromiseTest(done, testName, imageType, size, undefined);
     })
   })
 }

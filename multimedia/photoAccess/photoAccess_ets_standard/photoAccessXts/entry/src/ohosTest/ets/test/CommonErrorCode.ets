@@ -37,4 +37,8 @@ export enum ErrorCode {
    * Member is not a valid PhotoKey
    */
   NOT_VALID_PHOTO_KEY_ERROR_CODE = 14000014,
+  /**
+   * No such file or directory
+   */
+  UNEXIST_DIR_OR_FILE_ERROR_CODE = 13900002
 }
