@@ -48,7 +48,7 @@ async function addResourcePromiseTest(done: Function, testName: string, pathUri:
 }
 
 async function addResourceAbnormalPromiseTest(done: Function, testName: string, pathUri: string | undefined, imageType: string,
-  ResourceType: photoAccessHelper.ResourceType | null | undefined, errorCode: ErrorCode = ErrorCode.PARAM_ERROR_CODE) {
+  resourceType: photoAccessHelper.ResourceType | null | undefined, errorCode: ErrorCode = ErrorCode.PARAM_ERROR_CODE) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
   try {
@@ -61,7 +61,7 @@ async function addResourceAbnormalPromiseTest(done: Function, testName: string, 
     let uri = fileUri.getUriFromPath(path);
     let uriFlag = await fs.access(path);
     console.log('fileUri is ' + JSON.stringify(uriFlag));
-    await assetChangeRequest.addResource(ResourceType, uri);
+    await assetChangeRequest.addResource(resourceType, uri);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('addResourceByFileUri successfully');
     expect().assertFail();
@@ -94,7 +94,7 @@ async function addResourceBufferPromiseTest(done: Function, testName: string, im
   }
 }
 
-async function addResourceBufferAbnormalPromiseTest(done: Function, testName: string, imageType: string, size: number, ResourceType: photoAccessHelper.ResourceType | null | undefined) {
+async function addResourceBufferAbnormalPromiseTest(done: Function, testName: string, imageType: string, size: number, resourceType: photoAccessHelper.ResourceType | null | undefined) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
   try {
@@ -104,7 +104,7 @@ async function addResourceBufferAbnormalPromiseTest(done: Function, testName: st
     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
       photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
     let buffer: ArrayBuffer = new ArrayBuffer(size);
-    await assetChangeRequest.addResource(ResourceType, buffer);
+    await assetChangeRequest.addResource(resourceType, buffer);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('addResourceByArrayBuffer successfully');
     expect().assertFail();
