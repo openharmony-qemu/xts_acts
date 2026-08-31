@@ -845,7 +845,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success, streamId: ${streamId}`);
-                  ExpectTrue(true);
+                  ExpectTrue(streamId === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -933,7 +933,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success, streamId: ${streamId}`);
-                  ExpectTrue(true);
+                  ExpectTrue(streamId === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -1021,7 +1021,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success, streamId: ${streamId}`);
-                  ExpectTrue(true);
+                  ExpectTrue(streamId === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -1109,7 +1109,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success, streamId: ${streamId}`);
-                  ExpectTrue(true);
+                  ExpectTrue(streamId === 200);
                   httpRequest.destroy();
                   done();
                 }
@@ -1197,7 +1197,7 @@ export default function HttpMultiFormDataListTest() {
                   done();
                 } else {
                   console.info(`${caseName} httpRequest success, streamId: ${streamId}`);
-                  ExpectTrue(true);
+                  ExpectTrue(streamId === 200);
                   httpRequest.destroy();
                   done();
                 }
