@@ -2474,7 +2474,7 @@ export default function btSocketTest() {
                 expect().assertFail()
             } catch (err) {
                 console.error("off sspRead errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == '801') {
+                if (err.code === '801') {
                     console.info('[bluetooth_js]sppReadOff is not support');
                     expect(err.code).assertEqual('801');
                 } else {
