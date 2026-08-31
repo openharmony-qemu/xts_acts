@@ -143,7 +143,7 @@ export default function windowEventTest() {
 
         let windowLimits = subWindowClass.getWindowLimits();
         console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
-        await subWindowClass.resize(windowLimits.minWidth as number, windowLimits.minHeight as number);
+        await subWindowClass.resize(windowLimits.minWidth as number + 10, windowLimits.minHeight as number + 10);
         await sleep(1000);
         let displayInfo = display.getDefaultDisplaySync();
         console.info(`${caseName} :display.getDefaultDisplaySync. info: ${JSON.stringify(displayInfo)}`);
@@ -165,7 +165,7 @@ export default function windowEventTest() {
         }
         mainWindow.on('touchOutside', callback);
         await sleep(200);
-        await driver.click(Math.round(windowProperties.windowRect.left as number + 10), Math.round(windowProperties.windowRect.top as number + 10));
+        await driver.click(Math.round(windowProperties.windowRect.left as number + 5), Math.round(windowProperties.windowRect.top as number + 5));
         await sleep(300);
 
       } catch (e) {
@@ -199,11 +199,8 @@ export default function windowEventTest() {
       try {
         let windowLimits = subWindowClass.getWindowLimits();
         console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
-        await subWindowClass.resize(windowLimits.minWidth as number + 200, windowLimits.minHeight as number);
-        await subWindowClass.moveWindowTo(200, 0);
-        if (isFreeWindowMode) {
-          await subWindowClass.moveWindowTo(200, 200);
-        }
+        await subWindowClass.resize(windowLimits.minWidth as number + 10, windowLimits.minHeight as number + 10);
+        await subWindowClass.moveWindowTo(200, 200);
         await subWindowClass.showWindow();
         await sleep(1000);
 
@@ -219,12 +216,12 @@ export default function windowEventTest() {
         console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
         await sleep(200);
         // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
-        await driver.click(Math.round((windowProperties.windowRect.left as number + 10)), (windowProperties.windowRect.top as number + 10));
+        await driver.click(Math.round((windowProperties.windowRect.left as number + 5)), (windowProperties.windowRect.top as number + 5));
         await sleep(300);
         console.log(`${caseName} timer1: ${timer}`);
         expect(timer).assertEqual(0);
         // await driver.click(((windowLimits.minWidth as number+200)+10) , 0);
-        await driver.click(((windowProperties.windowRect.left as number) - 10), 0);
+        await driver.click(50, 50);
         await sleep(300);
         console.log(`${caseName} timer2: ${timer}`);
         expect(timer).assertEqual(1);

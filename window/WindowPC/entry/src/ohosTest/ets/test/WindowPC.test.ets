@@ -222,7 +222,7 @@ export default function windowPCTest() {
       let windowPoint = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
       if (isFreeWindowMode == true) {
-        await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
+        await driver.drag(windowPoint.left + 100, windowPoint.top + 10, windowPoint.left + 200, windowPoint.top + 110)
         await sleep(1000)
       }
       windowPoint = windowClass.getWindowProperties().windowRect
@@ -230,12 +230,12 @@ export default function windowPCTest() {
       try {
         windowClass.setWindowTitleMoveEnabled(false);
         console.info(`${message} setWindowTitleMoveEnabled`)
-        await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
+        await driver.drag(windowPoint.left + 100, windowPoint.top + 10, windowPoint.left + 200, windowPoint.top + 110)
         await sleep(1000)
         let windowPointDragged = windowClass.getWindowProperties().windowRect
         console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
         expect(JSON.stringify(windowPointDragged)).assertEqual(JSON.stringify(windowPoint));
-        await driver.doubleClick(windowPointDragged.left + 100, windowPointDragged.top + 50)
+        await driver.doubleClick(windowPointDragged.left + 100, windowPointDragged.top + 10)
         await sleep(1000)
         let windowPointClicked = windowClass.getWindowProperties().windowRect
         console.info(`${message} windowPoiisWindowRectAutoSaventClicked = ${JSON.stringify(windowPointDragged)}`)
@@ -272,7 +272,7 @@ export default function windowPCTest() {
       let windowPoint = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
       if (isFreeWindowMode == true) {
-        await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
+        await driver.drag(windowPoint.left + 100, windowPoint.top + 10, windowPoint.left + 200, windowPoint.top + 110)
         await sleep(1000)
       }
       windowPoint = windowClass.getWindowProperties().windowRect
@@ -281,12 +281,12 @@ export default function windowPCTest() {
         windowClass.setWindowDecorVisible(false)
         windowClass.setWindowTitleMoveEnabled(false);
         console.info(`${message} setWindowTitleMoveEnabled`)
-        await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
+        await driver.drag(windowPoint.left + 100, windowPoint.top + 10, windowPoint.left + 200, windowPoint.top + 110)
         await sleep(1000)
         let windowPointDragged = windowClass.getWindowProperties().windowRect
         console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
         expect(JSON.stringify(windowPointDragged)).assertEqual(JSON.stringify(windowPoint));
-        await driver.doubleClick(windowPointDragged.left + 100, windowPointDragged.top + 50)
+        await driver.doubleClick(windowPointDragged.left + 100, windowPointDragged.top + 10)
         let windowPointClicked = windowClass.getWindowProperties().windowRect
         console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
         expect(JSON.stringify(windowPointClicked)).assertEqual(JSON.stringify(windowPoint));
@@ -322,7 +322,7 @@ export default function windowPCTest() {
       };
       windowStage.createSubWindowWithOptions('setWindowTitleMoveEnabledTest_0300', options).then(async (data) => {
         let windowClass = data
-        windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
+        windowClass.setUIContent("testability/pages/Index1");
         windowClass.resize(1000, 1200)
         windowClass.showWindow()
         await sleep(1000)
@@ -330,7 +330,7 @@ export default function windowPCTest() {
         let windowPoint = windowClass.getWindowProperties().windowRect
         console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
         if (isFreeWindowMode) {
-          await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
+          await driver.drag(windowPoint.left + 100, windowPoint.top + 10, windowPoint.left + 200, windowPoint.top + 110)
           await sleep(1000)
         }
         windowPoint = windowClass.getWindowProperties().windowRect
@@ -338,7 +338,7 @@ export default function windowPCTest() {
         try {
           windowClass.setWindowTitleMoveEnabled(false);
           console.info(`${message} setWindowTitleMoveEnabled`)
-          await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
+          await driver.drag(windowPoint.left + 100, windowPoint.top + 10, windowPoint.left + 200, windowPoint.top + 110)
           await sleep(1000)
           let windowPointDragged = windowClass.getWindowProperties().windowRect
           console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
@@ -392,14 +392,14 @@ export default function windowPCTest() {
         if (isFreeWindowMode) {
           windowClass.createSubWindowWithOptions('setWindowTitleMoveEnabledTest_0400', options).then(async (data) => {
             let windowClass = data
-            windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
+            windowClass.setUIContent("testability/pages/Index1");
             windowClass.resize(1000, 1200)
             windowClass.showWindow()
             await sleep(1000)
             let driver = Driver.create()
             let windowPoint = windowClass.getWindowProperties().windowRect
             console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-            await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200, windowPoint.top + 150)
+            await driver.drag(windowPoint.left + 100, windowPoint.top + 10, windowPoint.left + 200, windowPoint.top + 110)
             await sleep(1000)
             windowPoint = windowClass.getWindowProperties().windowRect
             console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
@@ -407,13 +407,13 @@ export default function windowPCTest() {
               windowClass.setWindowDecorVisible(false)
               windowClass.setWindowTitleMoveEnabled(false);
               console.info(`${message} setWindowTitleMoveEnabled`)
-              await driver.drag(windowPoint.left + 100, windowPoint.top + 50, windowPoint.left + 200,
-                windowPoint.top + 150)
+              await driver.drag(windowPoint.left + 100, windowPoint.top + 10, windowPoint.left + 200,
+                windowPoint.top + 110)
               await sleep(1000)
               let windowPointDragged = windowClass.getWindowProperties().windowRect
               console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
               expect(JSON.stringify(windowPointDragged)).assertEqual(JSON.stringify(windowPoint));
-              await driver.doubleClick(windowPointDragged.left + 100, windowPointDragged.top + 50)
+              await driver.doubleClick(windowPointDragged.left + 100, windowPointDragged.top + 10)
               let windowPointClicked = windowClass.getWindowProperties().windowRect
               console.info(`${message} windowPoiisWindowRectAutoSaventDragged = ${JSON.stringify(windowPointDragged)}`)
               expect(JSON.stringify(windowPointClicked)).assertEqual(JSON.stringify(windowPoint));
@@ -469,7 +469,7 @@ export default function windowPCTest() {
         if (isFreeWindowMode) {
           windowClass.createSubWindowWithOptions('setWindowTitleMoveEnabledTest_0500', options).then(async (data) => {
             let windowClass = data
-            windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
+            windowClass.setUIContent("testability/pages/Index1");
             windowClass.resize(1000, 1200)
             windowClass.showWindow()
             await sleep(1000)
