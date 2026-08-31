@@ -56,25 +56,22 @@ async function addResourceAbnormalPromiseTest(done: Function, testName: string, 
     let extension: string = imageType;
     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
       photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
-    let path: string | undefined
-    let uri
-    let uriFlag
+    let path: string | undefined;
+    let uri: string | undefined;
     if(pathUri === '' || pathUri === undefined){
       uri = pathUri
     }else{
       path = testContext.filesDir + '/' + pathUri;
       uri = fileUri.getUriFromPath(path);
-      uriFlag = await fs.access(path);
-      console.log('fileUri is ' + JSON.stringify(uriFlag));
     }
     await assetChangeRequest.addResource(resourceType, uri);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('addResourceByFileUri successfully');
     expect().assertFail();
-    done();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
     expect(error.code).assertEqual(String(errorCode));
+  } finally {
     done();
   }
 }
