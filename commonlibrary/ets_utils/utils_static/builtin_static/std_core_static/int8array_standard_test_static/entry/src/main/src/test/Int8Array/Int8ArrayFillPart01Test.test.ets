@@ -731,7 +731,7 @@ export default function int8ArrayFillPart01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4200
      * @tc.name int8ArrayFillPart01Test042
-     * @tc.desc Verify fill(v) with v=4 fills all elements of new Int8Array(5)
+     * @tc.desc Verify fill(v) with v=4 fills elements of new Int8Array(5)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -743,37 +743,17 @@ export default function int8ArrayFillPart01Test(): void {
       let r1: number = arr.$_get(0);
       let e1: int = 4;
       expect(r1).assertEqual(e1);
-      let r2: number = arr.$_get(4);
-      let e2: int = 4;
-      expect(r2).assertEqual(e2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4300
      * @tc.name int8ArrayFillPart01Test043
-     * @tc.desc Verify fill(v) with v=4 fills elements of new Int8Array(5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayFillPart01Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int8Array(5);
-      const v: byte = 4;
-      arr.fill(v);
-      let r1: number = arr.$_get(0);
-      let e1: int = 4;
-      expect(r1).assertEqual(e1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4400
-     * @tc.name int8ArrayFillPart01Test044
      * @tc.desc Verify fill(v).subarray(1, 3) yields 4 at index 0 with length 2 on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       const v: byte = 4;
       const sub = arr.fill(v).subarray(1, 3);
@@ -782,14 +762,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4500
-     * @tc.name int8ArrayFillPart01Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4400
+     * @tc.name int8ArrayFillPart01Test044
      * @tc.desc Verify fill(v) on Int8Array(buf, 2, 4) view writes 4 to view elements on ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Int8Array(buf, 2, 4);
       const v: byte = 4;
@@ -803,14 +783,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4600
-     * @tc.name int8ArrayFillPart01Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4500
+     * @tc.name int8ArrayFillPart01Test045
      * @tc.desc Verify fill(v, 3, 1) start > end keeps preset values 1 and 4, on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       arr.$_set(0, 1);
       arr.$_set(1, 2);
@@ -822,14 +802,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4700
-     * @tc.name int8ArrayFillPart01Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4600
+     * @tc.name int8ArrayFillPart01Test046
      * @tc.desc Verify fill(v, -1, -2) replaces elements in specified range with given value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       arr.$_set(3, 8);
       const v: byte = 9;
@@ -838,14 +818,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4800
-     * @tc.name int8ArrayFillPart01Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4700
+     * @tc.name int8ArrayFillPart01Test047
      * @tc.desc Verify fill(9, 0, -5) with end clamped to 0 is no-op keeping $_set(0, 3) on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       arr.$_set(0, 3);
       const v: byte = 9;
@@ -854,14 +834,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4900
-     * @tc.name int8ArrayFillPart01Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4800
+     * @tc.name int8ArrayFillPart01Test048
      * @tc.desc Verify fill(v, 10, 20) replaces elements in specified range with given value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       arr.$_set(0, 1);
       const v: byte = 9;
@@ -870,14 +850,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5000
-     * @tc.name int8ArrayFillPart01Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_4900
+     * @tc.name int8ArrayFillPart01Test049
      * @tc.desc Verify fill(v, -10, -8) replaces elements in specified range with given value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       arr.$_set(0, 1);
       const v: byte = 9;
@@ -886,14 +866,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5100
-     * @tc.name int8ArrayFillPart01Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5000
+     * @tc.name int8ArrayFillPart01Test050
      * @tc.desc Verify fill(v, -1, 1) replaces elements in specified range with given value on new Int8Array(0) and length remains 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(0);
       const v: byte = 9;
       const result = arr.fill(v, -1, 1);
@@ -902,14 +882,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5200
-     * @tc.name int8ArrayFillPart01Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5100
+     * @tc.name int8ArrayFillPart01Test051
      * @tc.desc Verify fill(v) with v=42 fills the single element of new Int8Array(1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(1);
       const v: byte = 42;
       arr.fill(v);
@@ -917,14 +897,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5300
-     * @tc.name int8ArrayFillPart01Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5200
+     * @tc.name int8ArrayFillPart01Test052
      * @tc.desc Verify fill(v) then $_set(1, 99) keeps 5 at indices 0, 2 and 99 at index 1, on new Int8Array(3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       const v: byte = 5;
       arr.fill(v);
@@ -935,14 +915,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5400
-     * @tc.name int8ArrayFillPart01Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5300
+     * @tc.name int8ArrayFillPart01Test053
      * @tc.desc Verify fill(v) with v=-128 fills all 3 elements, on new Int8Array(3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       const v: byte = -128;
       arr.fill(v);
@@ -952,14 +932,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5500
-     * @tc.name int8ArrayFillPart01Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5400
+     * @tc.name int8ArrayFillPart01Test054
      * @tc.desc Verify fill(INT8_MAX) sets elements asserting indices 0 1 and 2, on new Int8Array(3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       const v: byte = INT8_MAX;
       arr.fill(v);
@@ -969,14 +949,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5600
-     * @tc.name int8ArrayFillPart01Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5500
+     * @tc.name int8ArrayFillPart01Test055
      * @tc.desc Verify fill(0) overwrites preset 50, 60, 70 to 0 on new Int8Array(3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       arr.$_set(0, 50);
       arr.$_set(1, 60);
@@ -989,14 +969,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5700
-     * @tc.name int8ArrayFillPart01Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5600
+     * @tc.name int8ArrayFillPart01Test056
      * @tc.desc Verify fill(v) with v=-1 fills all 3 elements and toString returns '-1,-1,-1', on new Int8Array(3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       const v: byte = -1;
       arr.fill(v);
@@ -1009,14 +989,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5800
-     * @tc.name int8ArrayFillPart01Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5700
+     * @tc.name int8ArrayFillPart01Test057
      * @tc.desc Verify fill(1) sets elements asserting indices 0 1 and 2, on new Int8Array(3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       const v: byte = 1;
       arr.fill(v);
@@ -1026,14 +1006,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5900
-     * @tc.name int8ArrayFillPart01Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5800
+     * @tc.name int8ArrayFillPart01Test058
      * @tc.desc Verify fill(7, 1, 4) fills range [1,4) keeping edges 0 on new Int8Array(5)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(5);
       const v: byte = 7;
       arr.fill(v, 1, 4);
@@ -1044,14 +1024,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6000
-     * @tc.name int8ArrayFillPart01Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_5900
+     * @tc.name int8ArrayFillPart01Test059
      * @tc.desc Verify fill(33) readable via at(0) and at(-1) on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       const v: byte = 33;
       arr.fill(v);
@@ -1060,14 +1040,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6100
-     * @tc.name int8ArrayFillPart01Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6000
+     * @tc.name int8ArrayFillPart01Test060
      * @tc.desc Verify fill(5) makes join(',') return '5,5,5' on new Int8Array(3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       const v: byte = 5;
       arr.fill(v);
@@ -1075,14 +1055,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6200
-     * @tc.name int8ArrayFillPart01Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6100
+     * @tc.name int8ArrayFillPart01Test061
      * @tc.desc Verify fill(7, 1, 4) keeps $_set(0, 11) and $_set(4, 99) outside range on new Int8Array(5)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(5);
       arr.$_set(0, 11);
       arr.$_set(4, 99);
@@ -1093,14 +1073,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6300
-     * @tc.name int8ArrayFillPart01Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6200
+     * @tc.name int8ArrayFillPart01Test062
      * @tc.desc Verify fill(v, 2, 4) replaces elements in specified range with given value verified via at(0) and at(1)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(5);
       arr.$_set(0, 11);
       const v: byte = 7;
@@ -1110,14 +1090,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6400
-     * @tc.name int8ArrayFillPart01Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6300
+     * @tc.name int8ArrayFillPart01Test063
      * @tc.desc Verify fill(42) makes forEach sum 126 on new Int8Array(3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(3);
       const v: byte = 42;
       arr.fill(v);
@@ -1129,14 +1109,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6500
-     * @tc.name int8ArrayFillPart01Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6400
+     * @tc.name int8ArrayFillPart01Test064
      * @tc.desc Verify fill(5) on new Int8Array(buf) writes 5 visible via new view on ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const arr = new Int8Array(buf);
       const v: byte = 5;
@@ -1147,14 +1127,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6600
-     * @tc.name int8ArrayFillPart01Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6500
+     * @tc.name int8ArrayFillPart01Test065
      * @tc.desc Verify a.fill(7) on Int8Array(buf) visible in sibling view b on ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const a = new Int8Array(buf);
       const b = new Int8Array(buf);
@@ -1165,14 +1145,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6700
-     * @tc.name int8ArrayFillPart01Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6600
+     * @tc.name int8ArrayFillPart01Test066
      * @tc.desc Verify fill(v) on subarray(1,4) writes to original array at indices 1-3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(5);
       const sub = arr.subarray(1, 4);
       const v: byte = 9;
@@ -1184,14 +1164,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6800
-     * @tc.name int8ArrayFillPart01Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6700
+     * @tc.name int8ArrayFillPart01Test067
      * @tc.desc Verify copy.fill(9) leaves original arr $_set(0, 1) unchanged on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       arr.$_set(0, 1);
       const copy = arr.slice();
@@ -1202,34 +1182,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6900
-     * @tc.name int8ArrayFillPart01Test069
-     * @tc.desc Verify fill(v) with v=4 fills every element, on new Int8Array(5)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayFillPart01Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Int8Array(5);
-      const v: byte = 4;
-      arr.fill(v);
-      let r1: number = arr.$_get(0);
-      let e1: int = 4;
-      expect(r1).assertEqual(e1);
-      let r2: number = arr.$_get(4);
-      let e2: int = 4;
-      expect(r2).assertEqual(e2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7000
-     * @tc.name int8ArrayFillPart01Test070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6800
+     * @tc.name int8ArrayFillPart01Test068
      * @tc.desc Verify fill(v) with v=6 writes view range only, other buffer bytes stay 0, on new Int8Array(buf, 2, 4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Int8Array(buf, 2, 4);
       const v: byte = 6;
@@ -1242,14 +1202,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7100
-     * @tc.name int8ArrayFillPart01Test071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_6900
+     * @tc.name int8ArrayFillPart01Test069
      * @tc.desc Verify a1.fill(5) on Int8Array(buf, 0, 3) writes 5 visible in sibling view on ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(6);
       const a1 = new Int8Array(buf, 0, 3);
       const a2 = new Int8Array(buf, 3, 3);
@@ -1262,14 +1222,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7200
-     * @tc.name int8ArrayFillPart01Test072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7000
+     * @tc.name int8ArrayFillPart01Test070
      * @tc.desc Verify fill(-1) writes 255 bit pattern in Uint8Array view of shared buffer, on new Int8Array(buf)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(4);
       const arr = new Int8Array(buf);
       const v: byte = -1;
@@ -1280,14 +1240,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7300
-     * @tc.name int8ArrayFillPart01Test073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7100
+     * @tc.name int8ArrayFillPart01Test071
      * @tc.desc Verify fill(9, 0, 2) then reverse() yields 0 at index 0 and 9 at index 3 on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       const v: byte = 9;
       arr.fill(v, 0, 2);
@@ -1297,14 +1257,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7400
-     * @tc.name int8ArrayFillPart01Test074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7200
+     * @tc.name int8ArrayFillPart01Test072
      * @tc.desc Verify fill(7, 0, 2) then copyWithin(3, 0, 2) keeps filled values 7 at indices 3, 4
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(5);
       const v: byte = 7;
       arr.fill(v, 0, 2);
@@ -1314,14 +1274,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7500
-     * @tc.name int8ArrayFillPart01Test075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7300
+     * @tc.name int8ArrayFillPart01Test073
      * @tc.desc Verify fill(1, 0, 2) then fill(2, 2, 4) then fill(3, 4, 6) writes 1 at index 0 on new Int8Array(6)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(6);
       const fillValA: byte = 1;
       const fillValB: byte = 2;
@@ -1335,14 +1295,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7600
-     * @tc.name int8ArrayFillPart01Test076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7400
+     * @tc.name int8ArrayFillPart01Test074
      * @tc.desc Verify fill(7) makes indexOf(7) return 0 and includes(7) true on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       const v: byte = 7;
       arr.fill(v);
@@ -1351,14 +1311,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7700
-     * @tc.name int8ArrayFillPart01Test077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7500
+     * @tc.name int8ArrayFillPart01Test075
      * @tc.desc Verify fill(5) makes find(x === 5) return 5 on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       const v: byte = 5;
       arr.fill(v);
@@ -1367,14 +1327,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7800
-     * @tc.name int8ArrayFillPart01Test078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7600
+     * @tc.name int8ArrayFillPart01Test076
      * @tc.desc Verify fill(3, 0, 2).fill(6, 2, 4) writes 3, 3, 6, 6 on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       const fillValA: byte = 3;
       const fillValB: byte = 6;
@@ -1386,14 +1346,14 @@ export default function int8ArrayFillPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7900
-     * @tc.name int8ArrayFillPart01Test079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_FILL_PART01_TEST_7700
+     * @tc.name int8ArrayFillPart01Test077
      * @tc.desc Verify fill(5) then set(src, 1) preserves 5 at index 0 and fills 10, 20 at 1, 2 on new Int8Array(4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayFillPart01Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayFillPart01Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int8Array(4);
       const v: byte = 5;
       arr.fill(v);

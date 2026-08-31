@@ -397,13 +397,13 @@ export default function int8ArrayEveryPart02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2200
      * @tc.name int8ArrayEveryPart02Test022
-     * @tc.desc Verify every returns true when all elements > 0, on new Int8Array([1, 2, 3])
+     * @tc.desc Verify every on empty new Int8Array(0) returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayEveryPart02Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
+      let arr: Int8Array = new Int8Array(0);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
       expect(result).assertTrue();
     });
@@ -411,13 +411,13 @@ export default function int8ArrayEveryPart02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2300
      * @tc.name int8ArrayEveryPart02Test023
-     * @tc.desc Verify every on empty new Int8Array(0) returns true
+     * @tc.desc Verify every returns true for single element, on new Int8Array([5])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int8ArrayEveryPart02Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array(0);
+      let arr: Int8Array = new Int8Array([5]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
       expect(result).assertTrue();
     });
@@ -425,40 +425,12 @@ export default function int8ArrayEveryPart02Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2400
      * @tc.name int8ArrayEveryPart02Test024
-     * @tc.desc Verify every returns true for single element, on new Int8Array([5])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([5]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2500
-     * @tc.name int8ArrayEveryPart02Test025
-     * @tc.desc Verify every returns true for positive elements, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2600
-     * @tc.name int8ArrayEveryPart02Test026
      * @tc.desc Verify every returns true and byteLength equals length, on new Int8Array([1, 2, 3])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
       expect(result).assertTrue();
@@ -466,154 +438,56 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2700
-     * @tc.name int8ArrayEveryPart02Test027
-     * @tc.desc Verify every returns true for all elements > 0, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2800
-     * @tc.name int8ArrayEveryPart02Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2500
+     * @tc.name int8ArrayEveryPart02Test025
      * @tc.desc Verify every returns true when all elements > -200, on new Int8Array([-128, 0, INT8_MAX])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([-128, 0, INT8_MAX]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > -200);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2900
-     * @tc.name int8ArrayEveryPart02Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2600
+     * @tc.name int8ArrayEveryPart02Test026
      * @tc.desc Verify every returns true when all elements < 200, on new Int8Array([-128, 0, INT8_MAX])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([-128, 0, INT8_MAX]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e < 200);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3000
-     * @tc.name int8ArrayEveryPart02Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2700
+     * @tc.name int8ArrayEveryPart02Test027
      * @tc.desc Verify every returns true when all elements >= 0, on new Int8Array([0, 1, 2])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 1, 2]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e >= 0);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3100
-     * @tc.name int8ArrayEveryPart02Test031
-     * @tc.desc Verify every returns true for all positive elements, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3200
-     * @tc.name int8ArrayEveryPart02Test032
-     * @tc.desc Verify every returns true when every element passes predicate, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3300
-     * @tc.name int8ArrayEveryPart02Test033
-     * @tc.desc Verify every returns true when all elements satisfy e > 0, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3400
-     * @tc.name int8ArrayEveryPart02Test034
-     * @tc.desc Verify every returns true for predicate e > 0, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3500
-     * @tc.name int8ArrayEveryPart02Test035
-     * @tc.desc Verify every returns true on shared buffer array, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3600
-     * @tc.name int8ArrayEveryPart02Test036
-     * @tc.desc Verify every returns true for zero-offset array, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3700
-     * @tc.name int8ArrayEveryPart02Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2800
+     * @tc.name int8ArrayEveryPart02Test028
      * @tc.desc Verify every returns true on non-zero offset view, on new Int8Array(buf, 2, 4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let arr: Int8Array = new Int8Array(buf, 2, 4);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e >= 0);
@@ -621,14 +495,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3800
-     * @tc.name int8ArrayEveryPart02Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_2900
+     * @tc.name int8ArrayEveryPart02Test029
      * @tc.desc Verify every on subarray view returns true when all elements > 0, on new Int8Array([1, 2, 3, 4]) subarray(1, 3)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3, 4]);
       let view: Int8Array = arr.subarray(1, 3);
       let result: boolean = view.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
@@ -636,14 +510,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3900
-     * @tc.name int8ArrayEveryPart02Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3000
+     * @tc.name int8ArrayEveryPart02Test030
      * @tc.desc Verify every on view1 returns true when all elements > 0, on shared ArrayBuffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let view1: Int8Array = new Int8Array(buf, 0, 2);
       let view2: Int8Array = new Int8Array(buf, 2, 2);
@@ -656,14 +530,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4000
-     * @tc.name int8ArrayEveryPart02Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3100
+     * @tc.name int8ArrayEveryPart02Test031
      * @tc.desc Verify every stops at first failing element, callback count is 1 and result false, on new Int8Array([0, 1, 2])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 1, 2]);
       let count: number = 0;
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
@@ -675,14 +549,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4100
-     * @tc.name int8ArrayEveryPart02Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3200
+     * @tc.name int8ArrayEveryPart02Test032
      * @tc.desc Verify every expects 3, on new Int8Array([1, 2, 0, 4])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 0, 4]);
       let count: number = 0;
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
@@ -694,14 +568,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4200
-     * @tc.name int8ArrayEveryPart02Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3300
+     * @tc.name int8ArrayEveryPart02Test033
      * @tc.desc Verify every callback invoked 3 times, on new Int8Array([1, 2, 3])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let count: number = 0;
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
@@ -713,14 +587,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4300
-     * @tc.name int8ArrayEveryPart02Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3400
+     * @tc.name int8ArrayEveryPart02Test034
      * @tc.desc Verify every expects 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let count: number = 0;
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
@@ -732,14 +606,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4400
-     * @tc.name int8ArrayEveryPart02Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3500
+     * @tc.name int8ArrayEveryPart02Test035
      * @tc.desc Verify every expects 3, on new Int8Array([1, 2, 0])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 0]);
       let count: number = 0;
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
@@ -751,14 +625,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4500
-     * @tc.name int8ArrayEveryPart02Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3600
+     * @tc.name int8ArrayEveryPart02Test036
      * @tc.desc Verify every, on new Int8Array([1, 0, 3, 4])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 0, 3, 4]);
       let visited: boolean = false;
       const result: boolean = arr.every((e: number, i: int, _a: Int8Array): boolean => {
@@ -772,56 +646,56 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4600
-     * @tc.name int8ArrayEveryPart02Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3700
+     * @tc.name int8ArrayEveryPart02Test037
      * @tc.desc Verify every returns false when element 0 is not > 0, on new Int8Array([1, 0, 3, 4])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 0, 3, 4]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4700
-     * @tc.name int8ArrayEveryPart02Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3800
+     * @tc.name int8ArrayEveryPart02Test038
      * @tc.desc Verify every returns false when element 0 fails predicate, on new Int8Array([1, 0, 3, 4])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 0, 3, 4]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4800
-     * @tc.name int8ArrayEveryPart02Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_3900
+     * @tc.name int8ArrayEveryPart02Test039
      * @tc.desc Verify every returns false when element at index 1 is 0, on new Int8Array([1, 0, 99, 99])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 0, 99, 99]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4900
-     * @tc.name int8ArrayEveryPart02Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4000
+     * @tc.name int8ArrayEveryPart02Test040
      * @tc.desc Verify every throws Error when callback throws, on new Int8Array([1, 2, 3])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       try {
         const result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
@@ -830,7 +704,6 @@ export default function int8ArrayEveryPart02Test(): void {
           }
           throw new Error('boom');
         });
-        expect(result).assertTrue();
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
@@ -838,62 +711,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5000
-     * @tc.name int8ArrayEveryPart02Test050
-     * @tc.desc Verify every propagates Error thrown by callback, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      try {
-        const result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
-          if (e < INT8_MIN || e > INT8_MAX) {
-            return false;
-          }
-          throw new Error('boom');
-        });
-        expect(result).assertTrue();
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5100
-     * @tc.name int8ArrayEveryPart02Test051
-     * @tc.desc Verify every throws Error from callback, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      try {
-        const result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
-          if (e < INT8_MIN || e > INT8_MAX) {
-            return false;
-          }
-          throw new Error('boom');
-        });
-        expect(result).assertTrue();
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5200
-     * @tc.name int8ArrayEveryPart02Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4100
+     * @tc.name int8ArrayEveryPart02Test041
      * @tc.desc Verify every throws Error from callback on view, on new Int8Array(buf, 2, 4)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let arr: Int8Array = new Int8Array(buf, 2, 4);
       try {
@@ -903,7 +728,6 @@ export default function int8ArrayEveryPart02Test(): void {
           }
           throw new Error('boom');
         });
-        expect(result).assertTrue();
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
@@ -911,66 +735,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5300
-     * @tc.name int8ArrayEveryPart02Test053
-     * @tc.desc Verify every rethrows callback Error, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      try {
-        const result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
-          if (e < INT8_MIN || e > INT8_MAX) {
-            return false;
-          }
-          throw new Error('boom');
-        });
-        expect(result).assertTrue();
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('Error');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5400
-     * @tc.name int8ArrayEveryPart02Test054
-     * @tc.desc Verify arr reference unchanged after every (not replaced)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5500
-     * @tc.name int8ArrayEveryPart02Test055
-     * @tc.desc Verify every returns true when all elements satisfy predicate, on new Int8Array([1, 2, 3])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int8ArrayEveryPart02Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int8Array = new Int8Array([1, 2, 3]);
-      let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5600
-     * @tc.name int8ArrayEveryPart02Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4200
+     * @tc.name int8ArrayEveryPart02Test042
      * @tc.desc Verify multiple every calls return consistent results (idempotence)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([1, 2, 3]);
       let r1: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
       let r2: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
@@ -979,28 +751,28 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5700
-     * @tc.name int8ArrayEveryPart02Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4300
+     * @tc.name int8ArrayEveryPart02Test043
      * @tc.desc Verify every returns true when single element (200 as byte = -56) matches predicate e === -56
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([200]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e === -56);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5800
-     * @tc.name int8ArrayEveryPart02Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4400
+     * @tc.name int8ArrayEveryPart02Test044
      * @tc.desc Verify every on fill(1) filled new Int8Array(100) returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(100);
       arr.fill(1);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e > 0);
@@ -1008,14 +780,14 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5900
-     * @tc.name int8ArrayEveryPart02Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4500
+     * @tc.name int8ArrayEveryPart02Test045
      * @tc.desc Verify every on fill(1) filled new Int8Array(100) with $_set(99, 0) returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(100);
       arr.fill(1);
       arr.$_set(99, 0);
@@ -1024,70 +796,70 @@ export default function int8ArrayEveryPart02Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_6000
-     * @tc.name int8ArrayEveryPart02Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4600
+     * @tc.name int8ArrayEveryPart02Test046
      * @tc.desc Verify every returns true when all elements equal 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([7, 7, 7]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e === 7);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_6100
-     * @tc.name int8ArrayEveryPart02Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4700
+     * @tc.name int8ArrayEveryPart02Test047
      * @tc.desc Verify every returns false when no element satisfies e !== 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([7, 7, 7]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e !== 7);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_6200
-     * @tc.name int8ArrayEveryPart02Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4800
+     * @tc.name int8ArrayEveryPart02Test048
      * @tc.desc Verify every, on new Int8Array([0, 1, INT8_MAX])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, 1, INT8_MAX]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e >= 0);
       expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_6300
-     * @tc.name int8ArrayEveryPart02Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_4900
+     * @tc.name int8ArrayEveryPart02Test049
      * @tc.desc Verify every, on new Int8Array([0, -1, INT8_MAX])
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array([0, -1, INT8_MAX]);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => e >= 0);
       expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_6400
-     * @tc.name int8ArrayEveryPart02Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT8ARRAY_EVERY_PART02_5000
+     * @tc.name int8ArrayEveryPart02Test050
      * @tc.desc Verify every, on new Int8Array(0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int8ArrayEveryPart02Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int8ArrayEveryPart02Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int8Array = new Int8Array(0);
       let result: boolean = arr.every((e: number, _i: int, _a: Int8Array): boolean => {
         if (e < INT8_MIN || e > INT8_MAX) {
