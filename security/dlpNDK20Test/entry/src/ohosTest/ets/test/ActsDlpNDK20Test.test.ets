@@ -183,7 +183,7 @@ export default function ActsDlpNDK20Test() {
     it('testOsGetDlpPermissionInfo0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>testOsGetDlpPermissionInfo0106 start====");
-        let result = await osAccountNdk.OsGetDlpPermissionInfo0106();
+        let result: number = await osAccountNdk.OsGetDlpPermissionInfo0106();
         console.info("====>testOsGetDlpPermissionInfo0106 result: " + result);
         if (result === 801) {
             expect(result).assertEqual(801);
@@ -309,7 +309,7 @@ export default function ActsDlpNDK20Test() {
     it('testOsGetOriginalFileName0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>testOsGetOriginalFileName0500 start====");
-        let result = osAccountNdk.OsGetOriginalFileName0500();
+        let result: number = osAccountNdk.OsGetOriginalFileName0500();
         console.info("====>testOsGetOriginalFileName0500 result: " + result);
         if (result === 801) {
             expect(result).assertEqual(801);
