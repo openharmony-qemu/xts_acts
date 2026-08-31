@@ -16,20 +16,10 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue, RectValue, SetValue, ResponseRegion } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, beforeAll, expect } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
-let domain: int= 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 
 export default function onDisAppearTest() {
@@ -112,12 +102,6 @@ export default function onDisAppearTest() {
   }]
 
   describe('OnDisAppearTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data:BasePageConfig): Promise<void> => {
       //Set value
       // AttrsManager.change(data.caseTag, data.testValue.setValue);
