@@ -24,18 +24,34 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 
-// Safely extract error code from caught error
+// Extract error info from caught error
 // BusinessError import is required to prevent LinkerUnresolvedClassError for RouterOptions
-// instanceof check may fail cross-realm, so use type assertion as fallback
+// In ArkTS-Sta mode, framework errors may not have .code property accessible via instanceof/as
+// Strategy: try .code first, fallback to String(error) for non-empty error info
 function getErrorCode(error: Error): string {
   if (error instanceof BusinessError) {
     return String(error.code)
   }
-  // Fallback: framework throws BusinessError-like objects that have .code but
-  // don't pass instanceof check across module boundaries
   let err = error as BusinessError
   if (err.code !== undefined) {
     return String(err.code)
+  }
+  // Fallback: return full error string so test can verify error was caught
+  let str = String(error)
+  if (str.length > 0) {
+    return str
+  }
+  return ''
+}
+
+// Extract error message, fallback to String(error) if message is empty
+function getErrorMsg(error: Error): string {
+  if (error.message !== undefined && error.message.length > 0) {
+    return error.message
+  }
+  let str = String(error)
+  if (str.length > 0) {
+    return str
   }
   return ''
 }
