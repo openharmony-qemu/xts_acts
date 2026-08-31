@@ -22,7 +22,6 @@ import {
 } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
 
 class NavParamOne {
   public desc: string = 'NavParamOne'
@@ -50,12 +49,12 @@ struct NavigationPreload {
   @State onPopCalled: string = 'false'
   @State pushAfterPreloadResult: string = 'idle'
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     AppStorage.setOrCreate<NavPathStack>('preloadNavPathStack', this.stack)
     this.stackNames = JSON.stringify(this.stack.getAllPathName())
   }
 
-  resetState() {
+  resetState(): void {
     this.preloadResult = 'idle'
     this.onDestroyCalled = 'false'
     this.errorCode = ''
@@ -133,7 +132,7 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.stack.pop();
               this.stackNames = JSON.stringify(this.stack.getAllPathName());
             })
@@ -144,7 +143,7 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.stack.clear();
               this.resetState();
               this.stackNames = JSON.stringify(this.stack.getAllPathName());
@@ -157,19 +156,19 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_1', new NavParamTwo('ParamTag1')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -180,19 +179,19 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('DIALOG_1', new NavParamTwo('ParamTag2')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -204,19 +203,19 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_2', 'stringParam'),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -227,19 +226,19 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_3', 12345),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -250,19 +249,19 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_4', undefined),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -274,18 +273,18 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_5', new NavParamTwo('ParamTag5'))
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -297,18 +296,18 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               let undefinedNavInfo = new NavPathInfo('', undefined);
               this.stack.preloadPath(undefinedNavInfo,
                 { onDestroy: () => { this.onDestroyCalled = 'true' } })
-                .then((): void => {
+                .then(() => {
                   this.preloadResult = 'success'
                   this.thenCalled = 'true'
-                }).catch((error: BusinessError) => {
+                }).catch((error: Error) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
-                  this.errorCode = String(error.code)
+                  this.errorCode = String(error)
                   this.errorMsg = error.message
                 })
             })
@@ -319,18 +318,18 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('', new NavParamTwo('ParamTag1')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -342,18 +341,18 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('PageWrong', new NavParamTwo('ParamTag1')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -365,19 +364,19 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_6', undefined),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -389,7 +388,7 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               let navInfo: NavPathInfo = new NavPathInfo('STANDARD_11', new NavParamTwo('OnPopTest'));
               navInfo.onPop = (popInfo: PopInfo) => {
@@ -397,14 +396,14 @@ struct NavigationPreload {
               };
               this.stack.preloadPath(navInfo,
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -416,20 +415,20 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               let navInfo: NavPathInfo = new NavPathInfo('STANDARD_12', new NavParamTwo('IsEntryTrue'));
               navInfo.isEntry = true;
               this.stack.preloadPath(navInfo,
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -440,20 +439,20 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               let navInfo: NavPathInfo = new NavPathInfo('STANDARD_13', new NavParamTwo('IsEntryFalse'));
               navInfo.isEntry = false;
               this.stack.preloadPath(navInfo,
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -465,19 +464,19 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_7', new NavParamTwo('ThenVerify')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.thenCalled = 'true'
                 this.preloadResult = 'success'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.catchCalled = 'true'
                 this.preloadResult = 'error'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -488,18 +487,18 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('nonexistent_route', new NavParamTwo('CatchVerify')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.thenCalled = 'true'
                 this.preloadResult = 'success'
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.catchCalled = 'true'
                 this.preloadResult = 'error'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -511,18 +510,18 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('UNKNOWN_DEST', undefined),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -534,12 +533,12 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_8', new NavParamTwo('DestroyVerify')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
@@ -547,10 +546,10 @@ struct NavigationPreload {
                   this.stack.clear()
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
                 }, 500)
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -562,20 +561,20 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               let paramObj = new NavParamOne()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_9', paramObj),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -587,32 +586,32 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               let successCount: number = 0
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_10', new NavParamTwo('Multi1')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 successCount++
                 this.stack.preloadPath(
                   new NavPathInfo('STANDARD_10B', new NavParamTwo('Multi2')),
                   { onDestroy: () => { this.onDestroyCalled = 'true' } }
-                ).then((): void => {
+                ).then(() => {
                   successCount++
                   this.preloadResult = 'success_' + String(successCount)
                   this.thenCalled = 'true'
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
-                }).catch((error: BusinessError) => {
+                }).catch((error: Error) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
-                  this.errorCode = String(error.code)
+                  this.errorCode = String(error)
                   this.errorMsg = error.message
                 })
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -624,12 +623,12 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_14', new NavParamTwo('PreloadPush')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
@@ -639,10 +638,10 @@ struct NavigationPreload {
                   this.pushAfterPreloadResult = 'pushed'
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
                 }, 1000)
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -654,12 +653,12 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_15', new NavParamTwo('PreloadParam')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 // Push with different param
@@ -668,10 +667,10 @@ struct NavigationPreload {
                   this.pushAfterPreloadResult = 'pushed_diff'
                   this.stackNames = JSON.stringify(this.stack.getAllPathName())
                 }, 1000)
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -683,31 +682,31 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               let successCount: number = 0
               let failCount: number = 0
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_16', new NavParamTwo('SameTwice1')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 successCount++
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 failCount++
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_16', new NavParamTwo('SameTwice2')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 successCount++
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 failCount++
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
-              setTimeout((): void => {
+              setTimeout(() => {
                 if (successCount === 2) {
                   this.preloadResult = 'success_2'
                   this.thenCalled = 'true'
@@ -729,19 +728,19 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               // 'NoBuilderPage' has no matching entry in pageMap
               this.stack.preloadPath(
                 new NavPathInfo('NoBuilderPage', new NavParamTwo('NoBuilder')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -753,19 +752,19 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_17', undefined),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -777,20 +776,20 @@ struct NavigationPreload {
             .fontSize(9)
             .height(24)
             .padding({ left: 2, right: 2, top: 1, bottom: 1 } as Padding)
-            .onClick((e: ClickEvent): void => {
+            .onClick((e: ClickEvent) => {
               this.resetState()
               this.stack.preloadPath(
                 new NavPathInfo('STANDARD_18', new NavParamTwo('NoDestroy')),
                 { onDestroy: () => { this.onDestroyCalled = 'true' } }
-              ).then((): void => {
+              ).then(() => {
                 this.preloadResult = 'success'
                 this.thenCalled = 'true'
                 this.stackNames = JSON.stringify(this.stack.getAllPathName())
                 // Do NOT clear the stack, so onDestroy should NOT be called
-              }).catch((error: BusinessError) => {
+              }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = String(error.code)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
