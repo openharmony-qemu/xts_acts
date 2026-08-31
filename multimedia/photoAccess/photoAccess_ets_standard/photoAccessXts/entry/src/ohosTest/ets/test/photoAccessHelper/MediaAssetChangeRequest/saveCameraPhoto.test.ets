@@ -49,10 +49,10 @@ async function saveCameraPhotoPromiseTest(done: Function, testName: string,
 async function saveCameraPhotoAbnormalPromiseTest(done: Function, testName: string,
   imageType: null | undefined) {
   let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+  let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset>;
   try {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
-    let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-      await phAccessHelper.getAssets(fetchAllOption());
+    fetchResult = await phAccessHelper.getAssets(fetchAllOption());
     let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
       new photoAccessHelper.MediaAssetChangeRequest(asset);
