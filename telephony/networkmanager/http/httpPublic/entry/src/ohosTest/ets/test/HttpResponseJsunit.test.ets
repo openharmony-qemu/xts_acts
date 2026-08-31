@@ -48,7 +48,7 @@ export default function httpResponseJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -108,7 +108,7 @@ export default function httpResponseJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -146,7 +146,7 @@ export default function httpResponseJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -206,7 +206,7 @@ export default function httpResponseJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -244,7 +244,7 @@ export default function httpResponseJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -304,7 +304,7 @@ export default function httpResponseJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -342,7 +342,7 @@ export default function httpResponseJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -402,7 +402,7 @@ export default function httpResponseJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
