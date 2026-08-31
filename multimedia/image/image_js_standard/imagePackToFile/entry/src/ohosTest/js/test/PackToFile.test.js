@@ -272,14 +272,14 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0200
-         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0200
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_1000
          * @tc.desc   1.create imagesource-png
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0200", Level.LEVEL0, async function (done) {
+        it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_1000", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
             expect(globalImagesource != undefined).assertTrue();
             let writeFd = undefined;
@@ -293,19 +293,19 @@ export default function imagePackToFile() {
                 expect(width == picSize.pngWidth).assertTrue();
                 expect(height == picSize.pngHeight).assertTrue();
             }
-            packToFilePromise(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0200",
+            packToFilePromise(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_1000",
                 globalImagesource, writeFd, fpath, ops, checkSize)
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0300
-         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0300
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_1200
          * @tc.desc   1.create imagesource
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0300", Level.LEVEL0, async function (done) {
+        it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_1200", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
             expect(globalImagesource != undefined).assertTrue();
             let writeFd = undefined;
@@ -319,7 +319,7 @@ export default function imagePackToFile() {
                 expect(width == picSize.pngWidth).assertTrue();
                 expect(height == picSize.pngHeight).assertTrue();
             }
-            packToFilePromise(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_0300",
+            packToFilePromise(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_1200",
                 globalImagesource, writeFd, fpath, ops, checkSize)
         });
 
@@ -350,14 +350,14 @@ export default function imagePackToFile() {
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0200
-         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0200
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_1200
          * @tc.desc   1.create imagesource
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0200", Level.LEVEL0, async function (done) {
+        it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_1200", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
             expect(globalImagesource != undefined).assertTrue();
             let writeFd = undefined;
@@ -371,19 +371,19 @@ export default function imagePackToFile() {
                 expect(width == picSize.pngWidth).assertTrue();
                 expect(height == picSize.pngHeight).assertTrue();
             }
-            packToFileCallback(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0200",
+            packToFileCallback(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_1200",
                 globalImagesource, writeFd, fpath, ops, checkSize)
         });
 
         /**
-         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0300
-         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0300
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_1300
          * @tc.desc   1.create imagesource
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0300", Level.LEVEL0, async function (done) {
+        it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_1300", Level.LEVEL0, async function (done) {
             await getImageSourceData("test.png")
             expect(globalImagesource != undefined).assertTrue();
             let writeFd = undefined;
@@ -397,7 +397,7 @@ export default function imagePackToFile() {
                 expect(width == picSize.pngWidth).assertTrue();
                 expect(height == picSize.pngHeight).assertTrue();
             }
-            packToFileCallback(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_0300",
+            packToFileCallback(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_1300",
                 globalImagesource, writeFd, fpath, ops, checkSize)
         });
 
