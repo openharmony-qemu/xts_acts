@@ -32,9 +32,7 @@ import {TcTwoPubA,StringFieldWithMethod,DoubleFieldClass,MultiFieldClass,ChildCl
 export default function ConstructorCreateInstanceTest2Part2(): void {
   describe("ConstructorCreateInstanceTest2Part2", (): void => {
     beforeAll(() => {});
-    beforeEach(async () => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {
         setTimeout(() => {

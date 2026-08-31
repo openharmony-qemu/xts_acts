@@ -32,9 +32,7 @@ import {IsPrivateWithFactory,PrivateCtorTwoParams,GetParamTypeABC,Priv3IntStrBoo
 export default function ConstructorIsPrivateTest2Part2(): void {
   describe("ConstructorIsPrivateTest2Part2", (): void => {
     beforeAll(() => {});
-    beforeEach(async () => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {
         setTimeout(() => {

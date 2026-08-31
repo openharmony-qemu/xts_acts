@@ -33,9 +33,7 @@ import {C5,CtorBox,TcPub10,TcPub12,TcPub19,C1Object,FiveCtor,PubDouble,TcTwoPubA
 export default function ConstructorGetParameterTypeTest2Part2(): void {
   describe("ConstructorGetParameterTypeTest2Part2", (): void => {
     beforeAll(() => {});
-    beforeEach(async () => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {
         setTimeout(() => {

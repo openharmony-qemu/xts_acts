@@ -32,9 +32,7 @@ import {EmptyCls,MultiCtorTarget,DualParamCons,MixedParamCons,ZeroParamCons,Sing
 export default function ConstructorComprehensiveTest2Part1(): void {
   describe("ConstructorComprehensiveTest2Part1", (): void => {
     beforeAll(() => {});
-    beforeEach(async () => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {
         setTimeout(() => {

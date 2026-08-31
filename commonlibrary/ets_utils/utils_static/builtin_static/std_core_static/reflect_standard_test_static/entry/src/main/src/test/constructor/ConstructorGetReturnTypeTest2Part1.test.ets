@@ -31,9 +31,7 @@ import {Pair,BoxInt,ExtArrB,ExtArrC,ExtCmpB,ExtCmpC,ExtCmpE,ExtLenC,MapPair,Empt
 export default function ConstructorGetReturnTypeTest2Part1(): void {
   describe("ConstructorGetReturnTypeTest2Part1", (): void => {
     beforeAll(() => {});
-    beforeEach(async () => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {
         setTimeout(() => {

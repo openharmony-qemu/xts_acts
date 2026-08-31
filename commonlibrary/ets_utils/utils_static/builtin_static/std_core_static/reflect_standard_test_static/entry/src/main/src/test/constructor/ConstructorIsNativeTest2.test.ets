@@ -36,9 +36,7 @@ export default function ConstructorIsNativeTest2(): void {
   describe("ConstructorIsNativeTest2", (): void => {
     beforeAll(() => {});
 
-    beforeEach(async () => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
 
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {

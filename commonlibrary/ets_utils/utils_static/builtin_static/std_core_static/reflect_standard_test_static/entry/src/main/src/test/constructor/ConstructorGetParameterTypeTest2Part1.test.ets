@@ -31,9 +31,7 @@ import {DefaultAndRequired_Ext,StringFieldWithMethod,C4,C5,C6Last,TcTwoPubA,IP2_
 export default function ConstructorGetParameterTypeTest2Part1(): void {
   describe("ConstructorGetParameterTypeTest2Part1", (): void => {
     beforeAll(() => {});
-    beforeEach(async () => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {
         setTimeout(() => {

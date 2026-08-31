@@ -32,9 +32,7 @@ import {TcAllVisA,TcTwoPubA,GN3_Mix4ISBD,CtorArr3D,EmptyCls,TcPub10,GetParamType
 export default function ConstructorIsProtectedTest2Part1(): void {
   describe("ConstructorIsProtectedTest2Part1", (): void => {
     beforeAll(() => {});
-    beforeEach(async () => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {
         setTimeout(() => {

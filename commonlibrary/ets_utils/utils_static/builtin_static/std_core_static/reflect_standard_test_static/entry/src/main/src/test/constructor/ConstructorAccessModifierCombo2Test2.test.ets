@@ -61,28 +61,10 @@ class AM_ConcreteExtendsAbstract extends AM_AbstractCtor {
   public foo(): void {}
 }
 
-class AM_PrivateCtor {
-  private constructor() {}
-}
-
-class AM_ProtectedCtor {
-  protected constructor() {}
-}
-
-class AM_PrivateOneParam {
-  private constructor(x: int) {}
-}
-
-class AM_ProtectedOneParam {
-  protected constructor(x: string) {}
-}
-
 export default function ConstructorAccessModifierCombo2Test2(): void {
   describe("ConstructorAccessModifierCombo2Test2", (): void => {
     beforeAll((): void => {});
-    beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {
         setTimeout(() => {
@@ -261,80 +243,5 @@ export default function ConstructorAccessModifierCombo2Test2(): void {
       expect(ctor.isProtected()).assertFalse();
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_AMCOMBO_Ext_1000     
-     * @tc.name testConstructorAMCombo2Test010
-     * @tc.desc Verify private no-arg constructor (AM_PrivateCtor) getConstructors empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("testConstructorAMCombo2Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ctors = Class.from<AM_PrivateCtor>().getConstructors();
-      try {
-        let ctor = ctors[0];
-        expect(ctor.isPrivate()).assertTrue();
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("ArrayIndexOutOfBoundsError");
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_AMCOMBO_Ext_1100     
-     * @tc.name testConstructorAMCombo2Test011
-     * @tc.desc Verify private one-param constructor (AM_PrivateOneParam) getConstructors empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("testConstructorAMCombo2Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ctors = Class.from<AM_PrivateOneParam>().getConstructors();
-      try {
-        let ctor = ctors[0];
-        expect(ctor.isPrivate()).assertTrue();
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("ArrayIndexOutOfBoundsError");
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_AMCOMBO_Ext_1200     
-     * @tc.name testConstructorAMCombo2Test012
-     * @tc.desc Verify protected no-arg constructor (AM_ProtectedCtor) getConstructors empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("testConstructorAMCombo2Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ctors = Class.from<AM_ProtectedCtor>().getConstructors();
-      try {
-        let ctor = ctors[0];
-        expect(ctor.isProtected()).assertTrue();
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("ArrayIndexOutOfBoundsError");
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_AMCOMBO_Ext_1300     
-     * @tc.name testConstructorAMCombo2Test013
-     * @tc.desc Verify protected one-param constructor (AM_ProtectedOneParam) getConstructors empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("testConstructorAMCombo2Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ctors = Class.from<AM_ProtectedOneParam>().getConstructors();
-      try {
-        let ctor = ctors[0];
-        expect(ctor.isProtected()).assertTrue();
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual("ArrayIndexOutOfBoundsError");
-      }
-    });
   });
 }

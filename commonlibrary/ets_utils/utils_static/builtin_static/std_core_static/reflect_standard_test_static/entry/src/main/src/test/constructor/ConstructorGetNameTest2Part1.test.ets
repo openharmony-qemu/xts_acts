@@ -32,9 +32,7 @@ import {TcPub19,TcStr2D,EmptyCls,GN_4Ctor,GN_6Ctor,GenChild,TcBool2D,GN_Long2D,G
 export default function ConstructorGetNameTest2Part1(): void {
   describe("ConstructorGetNameTest2Part1", (): void => {
     beforeAll(() => {});
-    beforeEach(async () => {
-      await Utils.msSleep(30);
-    });
+    beforeEach((): void=> {});
     afterEach(async (): Promise<void> => {
       await new Promise<void>((resolve) => {
         setTimeout(() => {
