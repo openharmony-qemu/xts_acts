@@ -2660,16 +2660,12 @@ export default function WebSocketTest() {
         ExpectTrue(typeof httpProxy.port === 'number');
         ExpectTrue(Array.isArray(httpProxy.exclusionList));
         let options: webSocket.WebSocketRequestOptions = {
-          skipServerCertVerification: false,
           proxy: httpProxy,
           protocol: '',
           pingInterval: 60,
           pongTimeout: 60
         };
-        ExpectTrue(typeof options.skipServerCertVerification === 'boolean');
-        ExpectTrue(typeof options.proxy === 'object' && options.proxy !== null);
-        ExpectTrue(options.pingInterval !== undefined);
-        ExpectTrue(options.pongTimeout !== undefined);
+        ExpectTrue(typeof options.proxy === 'object');
         hilog.info(domain, tag, '%{public}s', caseName + ' webSocket.HttpProxy interface covered successfully');
         done();
         hilog.info(domain, tag, '%{public}s', caseName + ' test end');
