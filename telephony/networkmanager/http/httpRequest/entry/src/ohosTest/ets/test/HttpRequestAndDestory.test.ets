@@ -338,7 +338,7 @@ export default function HttpRequestAndDestroyTest() {
               httpRequest.destroy();
               done();
             }).catch((err: BusinessError) => {
-              console.info(`${caseName} httpRequest fail err: ${JSON.stringify(data)}`);
+              console.info(`${caseName} httpRequest fail err: ${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300006);
               httpRequest.destroy();
               done();
