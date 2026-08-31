@@ -14,8 +14,9 @@
 */
 
 import AbilityStage from "@ohos.app.ability.AbilityStage";
+import Want from '@ohos.app.ability.Want';
 
-let onAcceptWantCalledSeq;
+let onAcceptWantCalledSeq: string;
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
@@ -24,9 +25,10 @@ export default class MyAbilityStage extends AbilityStage {
     // globalThis.stageContext = this.context;
   }
 
-  onAcceptWant(want) {
+  onAcceptWant(want: Want): string | undefined {
     console.log("AbilityMultiInstanceAppD onAcceptWant called want:" + JSON.stringify(want));
-    let abilityId = want.parameters.startId.toString();
+    let parameters = want.parameters as Record<string, Object>;
+    let abilityId = parameters.startId.toString();
     onAcceptWantCalledSeq = "onAcceptWantCalled";
     onAcceptWantCalledSeq += "Id";
     onAcceptWantCalledSeq += abilityId;

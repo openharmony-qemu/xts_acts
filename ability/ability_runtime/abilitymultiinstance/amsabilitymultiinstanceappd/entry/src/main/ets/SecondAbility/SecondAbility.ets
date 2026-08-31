@@ -14,9 +14,20 @@
  */
 
 import Ability from '@ohos.app.ability.UIAbility';
+import { BusinessError } from '@ohos.base';
 import commonEvent from '@ohos.commonEvent';
 import Want from '@ohos.app.ability.Want';
+import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+
+
+interface MultiInstanceParams {
+  nextStep: number;
+  stepNum: number;
+  step: string[];
+  startId?: number;
+}
 
 let callBackSeq = "";
 
@@ -29,24 +40,24 @@ async function onShowProcess() {
   let callBackData = "AppD:";
   callBackSeq += AppStorage.get("onAcceptWantCalledSeq")!;
   callBackData += callBackSeq;
-  let commonEventPublishData = {
+  let commonEventPublishData: commonEvent.CommonEventPublishData = {
     data: callBackData,
     parameters: abilityWant.parameters
   }
 
   console.log("AbilityMultiInstanceAppD Sec abilityWant = " + JSON.stringify(abilityWant));
-  if (abilityWant.parameters.nextStep >= abilityWant.parameters.stepNum) {
+  if (abilityWant.parameters!.nextStep >= abilityWant.parameters!.stepNum) {
     commonEvent.publish("MultiInstanceStartFinish", commonEventPublishData, publishCallBack);
   } else {
     commonEvent.publish("MultiInstanceStartNext", commonEventPublishData, () => {
-      startAbilityProcess(AppStorage.get("AppDSecondAbilityContext"), abilityWant.parameters);
+      startAbilityProcess(AppStorage.get<common.UIAbilityContext>("AppDSecondAbilityContext")!, abilityWant.parameters! as MultiInstanceParams);
     })
   }
   AppStorage.setOrCreate("onAcceptWantCalledSeq", "");
   callBackSeq = "";
 }
 
-async function startAbilityProcess(appDSecondAbilityContext, parameters) {
+async function startAbilityProcess(appDSecondAbilityContext: common.UIAbilityContext, parameters: MultiInstanceParams) {
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
@@ -96,13 +107,13 @@ async function startAbilityProcess(appDSecondAbilityContext, parameters) {
     bundleName: bundleName,
     abilityName: abilityName,
     parameters: parameters
-  }, (error, data) => {
+  }, (error: BusinessError, data: void) => {
     console.log('AppD startAbilityProcess result: ' + JSON.stringify(error) + ", " + JSON.stringify(data));
   })
 }
 
 export default class SecondAbility extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     // Ability is creating, initialize resources for this ability
     console.log("AbilityMultiInstanceAppD Sec onCreate");
     callBackSeq += "onCreate";

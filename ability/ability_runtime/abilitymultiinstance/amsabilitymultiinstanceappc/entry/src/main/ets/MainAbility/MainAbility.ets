@@ -14,9 +14,20 @@
  */
 
 import Ability from '@ohos.app.ability.UIAbility';
+import { BusinessError } from '@ohos.base';
 import commonEvent from '@ohos.commonEvent';
 import Want from '@ohos.app.ability.Want';
+import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+
+
+interface MultiInstanceParams {
+  nextStep: number;
+  stepNum: number;
+  step: string[];
+  startId?: number;
+}
 
 let callBackSeq = "";
 
@@ -24,26 +35,26 @@ function publishCallBack() {
   console.debug("====>AbilityMultiInstanceAppC Publish CallBack ====>");
 }
 
-async function onShowProcess(appCAbilityContext) {
+async function onShowProcess(appCAbilityContext: common.UIAbilityContext) {
   let abilityWant = AppStorage.get<Want>("abilityWant")!;
   let callBackData = "AppC:";
   callBackData += callBackSeq;
-  let commonEventPublishData = {
+  let commonEventPublishData: commonEvent.CommonEventPublishData = {
     data: callBackData,
-    parameters: abilityWant!.parameters
+    parameters: abilityWant!.parameters!
   }
   console.log("AbilityMultiInstanceAppC onShowProcess");
-  if (abilityWant.parameters.nextStep >= abilityWant.parameters.stepNum) {
+  if (abilityWant.parameters!.nextStep >= abilityWant.parameters!.stepNum) {
     commonEvent.publish("MultiInstanceStartFinish", commonEventPublishData, publishCallBack);
   } else {
     commonEvent.publish("MultiInstanceStartNext", commonEventPublishData, () => {
-      startAbilityProcess(appCAbilityContext, abilityWant.parameters);
+      startAbilityProcess(appCAbilityContext, abilityWant.parameters! as MultiInstanceParams);
     })
   }
   callBackSeq = "";
 }
 
-async function startAbilityProcess(appCAbilityContext, parameters) {
+async function startAbilityProcess(appCAbilityContext: common.UIAbilityContext, parameters: MultiInstanceParams) {
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
@@ -93,13 +104,13 @@ async function startAbilityProcess(appCAbilityContext, parameters) {
     bundleName: bundleName,
     abilityName: abilityName,
     parameters: parameters
-  }, (error, data) => {
+  }, (error: BusinessError, data: void) => {
     console.log('AppC startAbilityProcess result: ' + JSON.stringify(error) + ", " + JSON.stringify(data));
   })
 }
 
 export default class MainAbility extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     // Ability is creating, initialize resources for this ability
     console.log("MainAbility onCreate");
     callBackSeq += "onCreate";

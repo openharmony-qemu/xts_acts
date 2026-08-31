@@ -14,10 +14,11 @@
 */
 
 import AbilityStage from "@ohos.app.ability.AbilityStage";
+import Want from '@ohos.app.ability.Want';
 
 const ONACCEPTWANT_KEY_NOTSET_ID = -1;
 const ONACCEPTWANT_KEY_UNDEFINED_ID = -2;
-let onAcceptWantCalledSeq;
+let onAcceptWantCalledSeq: string;
 
 export default class MyAbilityStage extends AbilityStage {
   onCreate() {
@@ -26,22 +27,23 @@ export default class MyAbilityStage extends AbilityStage {
     // globalThis.stageContext = this.context;
   }
 
-  onAcceptWant(want) {
+  onAcceptWant(want: Want): string | undefined {
     console.log("AbilityMultiInstanceAppA onAcceptWant called want:" + JSON.stringify(want));
-    if ((want.parameters == undefined) || (want.parameters.startId == undefined)) {
+    let parameters = want.parameters as Record<string, Object>;
+    let abilityId = parameters.startId.toString();
+    if ((parameters == undefined) || (parameters.startId == undefined)) {
       console.log("AbilityMultiInstanceAppA specified param err");
       return;
     }
 
-    let abilityId = want.parameters.startId.toString();
     onAcceptWantCalledSeq = "onAcceptWantCalled";
     onAcceptWantCalledSeq += "Id";
     onAcceptWantCalledSeq += abilityId;
     AppStorage.setOrCreate("onAcceptWantCalledSeq", onAcceptWantCalledSeq);
 
-    if (want.parameters.startId == ONACCEPTWANT_KEY_NOTSET_ID) {
+    if (Number(parameters.startId) == ONACCEPTWANT_KEY_NOTSET_ID) {
       return;
-    } else if (want.parameters.startId == ONACCEPTWANT_KEY_UNDEFINED_ID) {
+    } else if (Number(parameters.startId) == ONACCEPTWANT_KEY_UNDEFINED_ID) {
       return undefined;
     }
     AppStorage.setOrCreate("abilityWant", want);

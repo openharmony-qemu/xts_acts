@@ -14,9 +14,20 @@
  */
 
 import Ability from '@ohos.app.ability.UIAbility';
+import { BusinessError } from '@ohos.base';
 import commonEvent from '@ohos.commonEvent';
 import Want from '@ohos.app.ability.Want';
+import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+
+
+interface MultiInstanceParams {
+  nextStep: number;
+  stepNum: number;
+  step: string[];
+  startId?: number;
+}
 
 let callBackSeq = "";
 
@@ -24,7 +35,7 @@ function publishCallBack() {
   console.debug("====>AbilityMultiInstanceAppB Publish CallBack ====>");
 }
 
-async function startAbilityProcess(appBAbilityContext, parameters) {
+async function startAbilityProcess(appBAbilityContext: common.UIAbilityContext, parameters: MultiInstanceParams) {
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
@@ -74,34 +85,34 @@ async function startAbilityProcess(appBAbilityContext, parameters) {
     bundleName: bundleName,
     abilityName: abilityName,
     parameters: parameters
-  }, (error, data) => {
+  }, (error: BusinessError, data: void) => {
     console.log('AppB startAbilityProcess result: ' + JSON.stringify(error) + ", " + JSON.stringify(data));
   })
 }
 
-async function onShowProcess(appBAbilityContext) {
+async function onShowProcess(appBAbilityContext: common.UIAbilityContext) {
   let abilityWant: Want = AppStorage.get<Want>("abilityWant")!;
   let callBackData = "AppB:"
   callBackData += callBackSeq;
 
-  let commonEventPublishData = {
+  let commonEventPublishData: commonEvent.CommonEventPublishData = {
     data: callBackData,
-    parameters: abilityWant!.parameters
+    parameters: abilityWant!.parameters!
   }
   console.log("AbilityMultiInstanceAppB onShowProcess");
-  if (abilityWant.parameters.nextStep >= abilityWant.parameters.stepNum) {
+  if (abilityWant.parameters!.nextStep >= abilityWant.parameters!.stepNum) {
     commonEvent.publish("MultiInstanceStartFinish", commonEventPublishData, publishCallBack);
     callBackSeq = "";
   } else {
     commonEvent.publish("MultiInstanceStartNext", commonEventPublishData, () => {
       callBackSeq = "";
-      startAbilityProcess(appBAbilityContext, abilityWant.parameters);
+      startAbilityProcess(appBAbilityContext, abilityWant.parameters! as MultiInstanceParams);
     })
   }
 }
 
 export default class MainAbility extends Ability {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
     // Ability is creating, initialize resources for this ability
     console.log("AbilityMultiInstanceAppB MainAbility onCreate");
     callBackSeq += "onCreate";
