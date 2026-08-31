@@ -91,6 +91,7 @@ export default function abilityTest() {
       } catch (err) {
         console.log('beforeAll startAbility MainAbility err: ' + JSON.stringify(err));
       }
+      expect().assertFail();
       done();
     })
 
