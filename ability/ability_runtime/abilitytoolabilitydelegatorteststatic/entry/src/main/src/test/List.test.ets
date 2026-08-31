@@ -16,6 +16,6 @@
 
 import AbilityDelegatorStageStaticTest from './AbilityDelegatorStageStatic.test'
 
-export default function testsuite() {
+export default function testsuite(): void {
     AbilityDelegatorStageStaticTest();
 }
