@@ -1937,7 +1937,7 @@ napi_value LOWPOWER_SETPARAM_001Test(napi_env env, napi_callback_info info)
         if (vEncSample->SetParameter(format) != AV_ERR_OK) {
             OH_AVFormat_Destroy(format);
             vEncSample->Release();
-            return CreateIntInt32Result(env, -1); 
+            return CreateIntInt32Result(env, -1);
         }
         OH_AVFormat_Destroy(format);
         vEncSample->WaitForEOS();
@@ -1972,7 +1972,7 @@ napi_value LOWPOWER_SETPARAM_002Test(napi_env env, napi_callback_info info)
         if (vEncSample->SetParameter(format) != AV_ERR_OK) {
             OH_AVFormat_Destroy(format);
             vEncSample->Release();
-            return CreateIntInt32Result(env, -1); 
+            return CreateIntInt32Result(env, -1);
         }
         vEncSample->Release();
         return CreateIntInt32Result(env, 0);
@@ -2001,7 +2001,7 @@ napi_value LOWPOWER_SETPARAM_003Test(napi_env env, napi_callback_info info)
         if (vEncSample->SetParameter(format) != AV_ERR_OK) {
             OH_AVFormat_Destroy(format);
             vEncSample->Release();
-            return CreateIntInt32Result(env, -1); 
+            return CreateIntInt32Result(env, -1);
         }
         OH_AVFormat_Destroy(format);
         vEncSample->WaitForEOS();
