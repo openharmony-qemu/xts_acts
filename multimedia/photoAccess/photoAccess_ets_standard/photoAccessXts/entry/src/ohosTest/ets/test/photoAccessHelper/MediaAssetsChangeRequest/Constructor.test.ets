@@ -65,15 +65,15 @@ export default function MediaAssetsChangeRequestConstructorTest() {
     });
 
     /**
-     * @tc.name   SUB_MediaAssetsChangeRequest_constructor_0001
-     * @tc.number SUB_MediaAssetsChangeRequest_constructor_0001
+     * @tc.name   SUB_MediaAssetsChangeRequest_constructor_sync_0001
+     * @tc.number SUB_MediaAssetsChangeRequest_constructor_sync_0001
      * @tc.desc   constructor false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MediaAssetsChangeRequest_constructor_0001', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MediaAssetsChangeRequest_constructor_0001';
+    it('SUB_MediaAssetsChangeRequest_constructor_sync_0001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MediaAssetsChangeRequest_constructor_sync_0001';
       try {
         const asset: photoAccessHelper.PhotoAsset = await createAsset(testName, testName)
         await deleteAsset(asset)
