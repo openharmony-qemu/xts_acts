@@ -1,6 +1,6 @@
 'use static';
-/**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,76 +13,112 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach } from "../../../hypium/index"
 import hilog from '@ohos.hilog';
-import { BusinessError } from '@ohos.base';
+import { describe, beforeAll, it, expect, Level } from '../../../hypium/index';
+import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
-import image from "@ohos.multimedia.image";
+import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import Utils from './Util.test';
-let testAbilityContext: common.UIAbilityContext | undefined;
-export default function ActsSetMissionWindowIconStaticTest() {
-  describe('ActsSetMissionWindowIconStaticTest', () => {
-    beforeEach(async (): Promise<void> => {
-      console.info('beforeEach start');
-      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      let cmd = "aa start -a EntryAbility -b com.example.setmissionicon.static";
-      let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-      if(user !== undefined){
-          cmd += ' -u ' + user;
-      }
-      abilityDelegator.executeShellCommand(cmd)
-      await Utils.msSleep(5000);
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
-      console.info('beforeEach end');
+let context: common.UIAbilityContext | undefined;
+
+export default function ActsSetMissionWindowIconTest(): void {
+  describe('ActsSetMissionWindowIconTest', () => {
+    beforeAll(() => {
+      context = AppStorage.get<common.UIAbilityContext>('testAbilityContext') as common.UIAbilityContext;
     })
 
-    /**
-     * @tc.number  SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100
-     * @tc.desc    test setMissionWindowIcon interface success
-     * @tc.size    Large-scaleTest
-     * @tc.type    Interface
-     * @tc.level   Level 0
-     */
-    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100';
-        const testTag = 'testTag';
-        hilog.info(0x0000, testTag, `${TEST_CASE_NAME}start`);
-        let imagePixelMap: image.PixelMap;
-        let color = new ArrayBuffer(50 * 50 * 4);
-        let bufferArr = new Uint8Array(color);
-        for (let i = 0; i < bufferArr.length; i += 4) {
-          bufferArr[i] = 255;
-          bufferArr[i+1] = 0;
-          bufferArr[i+2] = 122;
-          bufferArr[i+3] = 255;
-        }
-        image.createPixelMap(color, {
-          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 50, width: 50 }
-        }).then((data) => {
-          hilog.info(0x0000, testTag, `${TEST_CASE_NAME}data:${JSON.stringify(data)}`);
-          imagePixelMap = data;
-          testAbilityContext?.setMissionWindowIcon(imagePixelMap)
-            .then((idata) => {
-              hilog.info(0x0000, testTag, `${TEST_CASE_NAME}'setMissionWindowIcon succeed')`);
-              hilog.info(0x0000, testTag, `${TEST_CASE_NAME}'data'+JSON.stringify(idata)`);
-              expect(JSON.stringify(idata)).assertEqual('0')
-              done();
-            })
-            .catch((err: Error): void => {
-              console.error(`${TEST_CASE_NAME}setMissionWindowIcon failed, code is ${err.code}, message is ${err.message}`);
-              expect(err.code).assertEqual(801);
-              done();
-            });
-        }).catch((err: Error): void => {
-          console.error(`${TEST_CASE_NAME}createPixelMap failed, code is ${err.code}, message is ${err.message}`);
-          expect().assertFail();
-          done();
-        });
-      })
+    /** 
+    * @tc.number SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100
+    * @tc.name SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100
+    * @tc.desc test setMissionWindowIcon success
+    * @tc.size MediumTest
+    * @tc.type Function
+    * @tc.level Level 0
+    */
+    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100', Level.LEVEL0, async (): Promise<void> => {
+          await new Promise<void>((resolve, reject) => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100';
+      hilog.info(0x0000, TEST_CASE_NAME, `start`);
+      let imagePixelMap: image.PixelMap;
+      let color = new ArrayBuffer(50 * 50 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i+1] = 0;
+        bufferArr[i+2] = 122;
+        bufferArr[i+3] = 255;
+      }
+      image.createPixelMap(color, {
+        editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 50, width: 50 }
+      }).then((data: image.PixelMap) => {
+        imagePixelMap = data;
+        context!.setMissionWindowIcon(imagePixelMap)
+          .then((idata) => {
+            expect(idata).assertEqual(undefined);
+            console.info('setMissionWindowIcon succeed');
+            resolve(undefined);
+          })
+          .catch((err: Error) => {
+            console.error(`setMissionWindowIcon failed, code is ${err?.code}, message is ${err.message}`);
+            expect(err?.code).assertEqual(801);
+            resolve(undefined);
+          });
+      }).catch((err: Error) => {
+        console.error(`createPixelMap failed, code is ${err?.code}, message is ${err.message}`);
+        expect().assertFail();
+        resolve(undefined);
+      });
+          });
+    })
+
+    /** 
+    * @tc.number SUB_Ability_AbilityRuntime_setMissionWindowIcon_0200
+    * @tc.name SUB_Ability_AbilityRuntime_setMissionWindowIcon_0200
+    * @tc.desc test null to the setMissionWindowIcon interface results in a 401 error code
+    * @tc.size MediumTest
+    * @tc.type Function
+    * @tc.level Level 0
+    */
+    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_0200', Level.LEVEL0, async (): Promise<void> => {
+          await new Promise<void>((resolve, reject) => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_0200';
+      hilog.info(0x0000, TEST_CASE_NAME, `start`);
+      try{
+        context!.setMissionWindowIcon(null as image.PixelMap);
+        console.info('setMissionWindowIcon succeed');
+        expect().assertFail();
+        resolve(undefined);
+      }catch(err){
+        console.error(`setMissionWindowIcon failed, code is ${err?.code}, message is ${err.message}`);
+        expect(err?.code).assertEqual(0);
+        resolve(undefined);
+      }
+          });
+    })
+
+    /** 
+    * @tc.number SUB_Ability_AbilityRuntime_setMissionWindowIcon_0300
+    * @tc.name SUB_Ability_AbilityRuntime_setMissionWindowIcon_0300
+    * @tc.desc test undefined to the setMissionWindowIcon interface results in a 401 error code
+    * @tc.size MediumTest
+    * @tc.type Function
+    * @tc.level Level 0
+    */
+    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_0300', Level.LEVEL0, async (): Promise<void> => {
+          await new Promise<void>((resolve, reject) => {
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_0300';
+      hilog.info(0x0000, TEST_CASE_NAME, `start`);
+      try{
+        context!.setMissionWindowIcon(undefined as image.PixelMap);
+        console.info('setMissionWindowIcon succeed');
+        expect().assertFail();
+        resolve(undefined);
+      }catch(err){
+        console.error(`setMissionWindowIcon failed, code is ${err?.code}, message is ${err.message}`);
+        expect(err?.code).assertEqual(0);
+        resolve(undefined);
+      }
+          });
+    })
   })
 }

@@ -14,6 +14,6 @@
  * limitations under the License.
  */
 import  ActsSetMissionWindowIconStaticTest from "./ActsSetMissionWindowIconStaticTest.test";
-export default function testsuite() {
+export default function testsuite(): void {
   ActsSetMissionWindowIconStaticTest();
 }
