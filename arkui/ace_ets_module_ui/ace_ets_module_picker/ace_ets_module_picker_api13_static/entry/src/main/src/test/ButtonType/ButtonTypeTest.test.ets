@@ -54,20 +54,20 @@ export default function ButtonTypeTest() {
     
     
     /**
-     * @tc.number   ButtonTypeTest_static_0100
-     * @tc.name     ButtonTypeTest_static_0100
-     * @tc.desc     ButtonTypeTest_static_0100
+     * @tc.number   SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100
+     * @tc.name     SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100
+     * @tc.desc     SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100
      * @tc.level    Level.LEVEL1
      */
-it('ButtonTypeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
 
-      console.info('ButtonTypeTest_static_0100 START');
+      console.info('SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100 START');
       await CommonFunc.sleep(1000);
       let btn = inspector.getInspectorByKey('btn');
-      console.info("ButtonTypeTest_static_0100 component obj is: " + JSON.stringify(btn));
-      console.info("[ButtonTypeTest_static_0100] title: " + JSON.stringify(JSON.parseJsonElement(btn).getElement('$attrs').getString('type')));
+      console.info("SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100 component obj is: " + JSON.stringify(btn));
+      console.info("[SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100] title: " + JSON.stringify(JSON.parseJsonElement(btn).getElement('$attrs').getString('type')));
       expect(JSON.stringify(JSON.parseJsonElement(btn).getElement('$attrs').getString('type'))).assertEqual('"ButtonType.ROUNDED_RECTANGLE"');
-      console.info('ButtonTypeTest_static_0100 END');
+      console.info('SUB_ARKUI_ACE_BUTTON_TYPE_TEST_STATIC_0100 END');
       done();
     });
   
