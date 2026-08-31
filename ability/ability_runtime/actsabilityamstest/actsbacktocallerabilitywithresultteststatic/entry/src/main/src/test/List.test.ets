@@ -16,6 +16,6 @@
 
 import BackWithResultStaticTest from "./BackWithResultTestStatic.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
     BackWithResultStaticTest();
 }
