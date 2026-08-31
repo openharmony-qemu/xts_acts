@@ -15,7 +15,7 @@
  */
 import ActsGetAllWindowStagesStaticTest from "./ActsGetAllWindowStagesStaticTest.test";
 import ActsGetStaticTest from "./ActsGetStaticTest.test"
-export default function testsuite() {
+export default function testsuite(): void {
   ActsGetStaticTest();
   ActsGetAllWindowStagesStaticTest();
 }
