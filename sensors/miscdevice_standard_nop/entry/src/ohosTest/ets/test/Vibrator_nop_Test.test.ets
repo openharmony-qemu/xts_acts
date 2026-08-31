@@ -340,8 +340,7 @@ export default function vibrator_nop_Test() {
           type:"pattern",
           pattern:pattern
         }, {
-          usage:"alarm",
-          systemUsage:false
+          usage:"alarm"
         }, (error) => {
           if (error) {
             console.info(TAG + ` startVibration error: error.code: ${error.code},error.message: ${error.message}`);
