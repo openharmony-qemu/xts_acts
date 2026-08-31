@@ -18,6 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
 import deviceInfo from '@ohos.deviceInfo';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -1407,10 +1408,16 @@ export default function windowPropertiesTest3() {
       console.info(`${message} begin`);
       
       try {
+        await mainWindowClass.setUIContent('testability/pages/Index');
+        await sleep(1000);
+
         let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
         console.info(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
         
-        let envSystemDensity = AppStorage.get('SystemDensity') as number;
+        let driver: Driver = Driver.create();
+        let button: Component = await driver.findComponent(ON.id('SystemDensity'));
+        let envSystemDensityText = await button.getText();
+        let envSystemDensity = Number(envSystemDensityText);
         console.info(`${message} envSystemDensity from page: ${envSystemDensity}`);
         
         let densityInfo = mainWindowClass.getWindowDensityInfo();
