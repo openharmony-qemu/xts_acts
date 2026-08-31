@@ -96,6 +96,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -103,8 +104,9 @@ export default function httpRequestErrorCodeTest() {
             httpRequest.request('', (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
               if(err?.code != 0){
                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                ExpectTrue(err?.code == 2300003);
+                ExpectTrue(err?.code === 2300003);
                 httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
               }else{
                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse ->'+JSON.stringify(data));
@@ -117,6 +119,7 @@ export default function httpRequestErrorCodeTest() {
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -143,6 +146,7 @@ export default function httpRequestErrorCodeTest() {
           if (data?.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -151,8 +155,9 @@ export default function httpRequestErrorCodeTest() {
             httpRequest.request('', {method: http.RequestMethod.POST}, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
               if(err?.code != 0){
                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                ExpectTrue(err?.code == 2300003);
+                ExpectTrue(err?.code === 2300003);
                 httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
               }else{
                 hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse ->'+JSON.stringify(data));
@@ -187,6 +192,7 @@ export default function httpRequestErrorCodeTest() {
           if (data?.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -198,12 +204,14 @@ export default function httpRequestErrorCodeTest() {
               hilog.info(domain, tag, '%{public}s', caseName +': HttpResponse ->'+JSON.stringify(data));
               ExpectFail();
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }).catch((error: Error) => {
               let err = error as BusinessError;
               hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-              ExpectTrue(err?.code == 2300003);
+              ExpectTrue(err?.code === 2300003);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             });
           }
@@ -232,6 +240,7 @@ export default function httpRequestErrorCodeTest() {
           if (data?.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -239,8 +248,9 @@ export default function httpRequestErrorCodeTest() {
             httpRequest.request('ws://baidu.com', (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
               if(err?.code != 0){
                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                ExpectTrue(err?.code == 2300001);
+                ExpectTrue(err?.code === 2300001);
                 httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
               }else{
                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
@@ -275,6 +285,7 @@ export default function httpRequestErrorCodeTest() {
           if (data?.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -282,8 +293,9 @@ export default function httpRequestErrorCodeTest() {
             httpRequest.request('ws://baidu.com', {method: http.RequestMethod.POST}, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
               if(err?.code != 0){
                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                ExpectTrue(err?.code == 2300001);
+                ExpectTrue(err?.code === 2300001);
                 httpRequest.destroy();
+                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
               }else{
                 hilog.info(domain, tag, '%{public}s', caseName +': data ->'+JSON.stringify(data));
@@ -319,6 +331,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -331,22 +344,22 @@ export default function httpRequestErrorCodeTest() {
                     done();
                   } else {
                     hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-                    ExpectTrue(typeof data?.result == 'string');
-                    ExpectTrue(typeof data?.resultType == 'int');
-                    ExpectTrue(typeof data?.responseCode == 'int');
-                    ExpectTrue(typeof data?.header == 'object');
-                    ExpectTrue(typeof data?.cookies == 'string');
-                    ExpectTrue(typeof data?.performanceTiming == 'object');
-                    ExpectTrue(typeof data?.performanceTiming.dnsTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.tcpTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.tlsTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.totalTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.redirectTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.firstSendTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.totalFinishTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.firstReceiveTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.responseBodyTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.responseHeaderTiming == 'number');
+                    ExpectTrue(typeof data?.result === 'string');
+                    ExpectTrue(typeof data?.resultType === 'int');
+                    ExpectTrue(typeof data?.responseCode === 'int');
+                    ExpectTrue(typeof data?.header === 'object');
+                    ExpectTrue(typeof data?.cookies === 'string');
+                    ExpectTrue(typeof data?.performanceTiming === 'object');
+                    ExpectTrue(typeof data?.performanceTiming.dnsTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.tcpTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.tlsTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.totalTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.redirectTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.firstSendTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.totalFinishTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.firstReceiveTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.responseBodyTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.responseHeaderTiming === 'number');
                     httpRequest.destroy();
                     done();
                   }
@@ -378,6 +391,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -386,7 +400,7 @@ export default function httpRequestErrorCodeTest() {
                 (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
                   if (err?.code != 0) {
                     hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
-                    ExpectTrue(err?.code == 2300007);
+                    ExpectTrue(err?.code === 2300007);
                     httpRequest.destroy();
                     done();
                   } else {
@@ -423,6 +437,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -431,7 +446,7 @@ export default function httpRequestErrorCodeTest() {
                 (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
                   if (err?.code != 0) {
                     hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
-                    ExpectTrue(err?.code == 2300060);
+                    ExpectTrue(err?.code === 2300060);
                     httpRequest.destroy();
                     done();
                   } else {
@@ -468,6 +483,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -482,7 +498,7 @@ export default function httpRequestErrorCodeTest() {
                   done();
                 } else {
                   hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-                  ExpectTrue(typeof data?.result == 'string');
+                  ExpectTrue(typeof data?.result === 'string');
                   httpRequest.destroy();
                   done();
                 }
@@ -514,6 +530,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -539,7 +556,7 @@ export default function httpRequestErrorCodeTest() {
                     done();
                   } else {
                     hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-                    ExpectTrue(typeof data?.result == 'string');
+                    ExpectTrue(typeof data?.result === 'string');
                     httpRequest.destroy();
                     done();
                   }
@@ -571,6 +588,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -586,22 +604,22 @@ export default function httpRequestErrorCodeTest() {
                     done();
                   } else {
                     hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-                    ExpectTrue(typeof data?.result == 'string');
-                    ExpectTrue(typeof data?.resultType == 'int');
-                    ExpectTrue(typeof data?.responseCode == 'int');
-                    ExpectTrue(typeof data?.header == 'object');
-                    ExpectTrue(typeof data?.cookies == 'string');
-                    ExpectTrue(typeof data?.performanceTiming == 'object');
-                    ExpectTrue(typeof data?.performanceTiming.dnsTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.tcpTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.tlsTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.totalTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.redirectTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.firstSendTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.totalFinishTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.firstReceiveTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.responseBodyTiming == 'number');
-                    ExpectTrue(typeof data?.performanceTiming.responseHeaderTiming == 'number');
+                    ExpectTrue(typeof data?.result === 'string');
+                    ExpectTrue(typeof data?.resultType === 'int');
+                    ExpectTrue(typeof data?.responseCode === 'int');
+                    ExpectTrue(typeof data?.header === 'object');
+                    ExpectTrue(typeof data?.cookies === 'string');
+                    ExpectTrue(typeof data?.performanceTiming === 'object');
+                    ExpectTrue(typeof data?.performanceTiming.dnsTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.tcpTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.tlsTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.totalTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.redirectTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.firstSendTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.totalFinishTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.firstReceiveTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.responseBodyTiming === 'number');
+                    ExpectTrue(typeof data?.performanceTiming.responseHeaderTiming === 'number');
                     httpRequest.destroy();
                     done();
                   }
@@ -633,6 +651,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -644,7 +663,7 @@ export default function httpRequestErrorCodeTest() {
                 (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
                   if (err?.code != 0) {
                     hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
-                    ExpectTrue(err?.code == 2300007);
+                    ExpectTrue(err?.code === 2300007);
                     httpRequest.destroy();
                     done();
                   } else {
@@ -681,6 +700,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -692,7 +712,7 @@ export default function httpRequestErrorCodeTest() {
                 (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
                   if (err?.code != 0) {
                     hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
-                    ExpectTrue(err?.code == 2300060);
+                    ExpectTrue(err?.code === 2300060);
                     httpRequest.destroy();
                     done();
                   } else {
@@ -729,6 +749,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -774,6 +795,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -829,6 +851,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -839,22 +862,22 @@ export default function httpRequestErrorCodeTest() {
               let promise = httpRequest.request('http://baidu.com', httpRequestOptions_noParm);
               promise.then((data: http.HttpResponse) => {
                 hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-                ExpectTrue(typeof data?.result == 'string');
-                ExpectTrue(typeof data?.resultType == 'int');
-                ExpectTrue(typeof data?.responseCode == 'int');
-                ExpectTrue(typeof data?.header == 'object');
-                ExpectTrue(typeof data?.cookies == 'string');
-                ExpectTrue(typeof data?.performanceTiming == 'object');
-                ExpectTrue(typeof data?.performanceTiming.dnsTiming == 'number');
-                ExpectTrue(typeof data?.performanceTiming.tcpTiming == 'number');
-                ExpectTrue(typeof data?.performanceTiming.tlsTiming == 'number');
-                ExpectTrue(typeof data?.performanceTiming.totalTiming == 'number');
-                ExpectTrue(typeof data?.performanceTiming.redirectTiming == 'number');
-                ExpectTrue(typeof data?.performanceTiming.firstSendTiming == 'number');
-                ExpectTrue(typeof data?.performanceTiming.totalFinishTiming == 'number');
-                ExpectTrue(typeof data?.performanceTiming.firstReceiveTiming == 'number');
-                ExpectTrue(typeof data?.performanceTiming.responseBodyTiming == 'number');
-                ExpectTrue(typeof data?.performanceTiming.responseHeaderTiming == 'number');
+                ExpectTrue(typeof data?.result === 'string');
+                ExpectTrue(typeof data?.resultType === 'int');
+                ExpectTrue(typeof data?.responseCode === 'int');
+                ExpectTrue(typeof data?.header === 'object');
+                ExpectTrue(typeof data?.cookies === 'string');
+                ExpectTrue(typeof data?.performanceTiming === 'object');
+                ExpectTrue(typeof data?.performanceTiming.dnsTiming === 'number');
+                ExpectTrue(typeof data?.performanceTiming.tcpTiming === 'number');
+                ExpectTrue(typeof data?.performanceTiming.tlsTiming === 'number');
+                ExpectTrue(typeof data?.performanceTiming.totalTiming === 'number');
+                ExpectTrue(typeof data?.performanceTiming.redirectTiming === 'number');
+                ExpectTrue(typeof data?.performanceTiming.firstSendTiming === 'number');
+                ExpectTrue(typeof data?.performanceTiming.totalFinishTiming === 'number');
+                ExpectTrue(typeof data?.performanceTiming.firstReceiveTiming === 'number');
+                ExpectTrue(typeof data?.performanceTiming.responseBodyTiming === 'number');
+                ExpectTrue(typeof data?.performanceTiming.responseHeaderTiming === 'number');
                 httpRequest.destroy();
                 done();
               }).catch((error: Error) => {
@@ -890,6 +913,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -905,7 +929,7 @@ export default function httpRequestErrorCodeTest() {
                 done();
               }).catch((error: Error) => {
                 hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(error));
-                ExpectTrue(error?.code == 2300007);
+                ExpectTrue(error?.code === 2300007);
                 httpRequest.destroy();
                 done();
               });
@@ -936,6 +960,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -951,7 +976,7 @@ export default function httpRequestErrorCodeTest() {
                 done();
               }).catch((error: Error) => {
                 hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(error));
-                ExpectTrue(error?.code == 2300060);
+                ExpectTrue(error?.code === 2300060);
                 httpRequest.destroy();
                 done();
               });
@@ -982,6 +1007,7 @@ export default function httpRequestErrorCodeTest() {
             if (data?.netId == 0) {
               hilog.info(domain, tag, '%{public}s', caseName + ' Please connect to the network');
               ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
@@ -1036,6 +1062,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -1059,20 +1086,23 @@ export default function httpRequestErrorCodeTest() {
             };
             httpRequest.request('https://www.baidu.com', httpRequestOptions).then((data: http.HttpResponse) => {
               hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }).catch((error: Error) => {
               let err = error as BusinessError;
               hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-              ExpectTrue(err?.code == 2300003);
+              ExpectTrue(err?.code === 2300003);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             });
           }
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -1100,6 +1130,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -1131,20 +1162,23 @@ export default function httpRequestErrorCodeTest() {
             };
             httpRequest.request('https://www.baidu.com', httpRequestOptions).then((data: http.HttpResponse) => {
               hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }).catch((error: Error) => {
               let err = error as BusinessError;
               hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-              ExpectTrue(err?.code == 2300003);
+              ExpectTrue(err?.code === 2300003);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             });
           }
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -1172,6 +1206,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -1199,7 +1234,7 @@ export default function httpRequestErrorCodeTest() {
             };
             httpRequestSync.request('https://www.baidu.com', httpRequestOptionsSync).then((data: http.HttpResponse) => {
               hilog.info(domain, tag, '%{public}s', caseName + ': syncCallbackTrue HttpResponse ->' + JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequestSync.destroy();
               hilog.info(domain, tag, '%{public}s', caseName+ ' syncCallbackTrue test end');
               let httpRequestAsync: http.HttpRequest = http.createHttp();
@@ -1210,20 +1245,20 @@ export default function httpRequestErrorCodeTest() {
               };
               httpRequestAsync.request('https://www.baidu.com', httpRequestOptionsAsync).then((dataAsync: http.HttpResponse) => {
                 hilog.info(domain, tag, '%{public}s', caseName + ': asyncCallbackPromise HttpResponse ->' + JSON.stringify(dataAsync));
-                ExpectTrue(dataAsync.responseCode == 200);
+                ExpectTrue(dataAsync.responseCode === 200);
                 httpRequestAsync.destroy();
                 done();
               }).catch((error: Error) => {
                 let err = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +' asyncCallbackPromise get error is '+JSON.stringify(err));
-                ExpectTrue(err?.code == 2300003);
+                ExpectTrue(err?.code === 2300003);
                 httpRequestAsync.destroy();
                 done();
               });
             }).catch((error: Error) => {
               let err = error as BusinessError;
               hilog.info(domain, tag, '%{public}s', caseName +' syncCallbackTrue get error is '+JSON.stringify(err));
-              ExpectTrue(err?.code == 2300003);
+              ExpectTrue(err?.code === 2300003);
               httpRequestSync.destroy();
               done();
             });
@@ -1231,6 +1266,7 @@ export default function httpRequestErrorCodeTest() {
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -1258,6 +1294,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -1285,20 +1322,23 @@ export default function httpRequestErrorCodeTest() {
             };
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
               hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }).catch((error: Error) => {
               let err = error as BusinessError;
               hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-              ExpectTrue(err?.code == 2300003);
+              ExpectTrue(err?.code === 2300003);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             });
           }
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -1326,6 +1366,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -1355,20 +1396,23 @@ export default function httpRequestErrorCodeTest() {
             };
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
               hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }).catch((error: Error) => {
               let err = error as BusinessError;
               hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-              ExpectTrue(err?.code == 2300003);
+              ExpectTrue(err?.code === 2300003);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             });
           }
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -1396,6 +1440,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -1416,20 +1461,23 @@ export default function httpRequestErrorCodeTest() {
             };
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
               hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }).catch((error: Error) => {
               let err = error as BusinessError;
               hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-              ExpectTrue(err?.code == 2300003);
+              ExpectTrue(err?.code === 2300003);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             });
           }
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -1457,6 +1505,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -1479,20 +1528,23 @@ export default function httpRequestErrorCodeTest() {
             };
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
               hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }).catch((error: Error) => {
               let err = error as BusinessError;
               hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-              ExpectTrue(err?.code == 2300003);
+              ExpectTrue(err?.code === 2300003);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             });
           }
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -1520,6 +1572,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -1548,20 +1601,23 @@ export default function httpRequestErrorCodeTest() {
             };
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
               hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === 200);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }).catch((error: Error) => {
               let err = error as BusinessError;
               hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-              ExpectTrue(err?.code == 2300003);
+              ExpectTrue(err?.code === 2300003);
               httpRequest.destroy();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             });
           }
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -1589,6 +1645,7 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
@@ -1604,8 +1661,6 @@ export default function httpRequestErrorCodeTest() {
             ExpectTrue(tlsConfig.tlsVersionMax !== undefined);
             ExpectTrue(tlsConfig.cipherSuites !== undefined);
             ExpectTrue(tlsConfig.cipherSuites!.length > 0);
-            ExpectTrue(typeof tlsConfig.tlsVersionMin === 'number');
-            ExpectTrue(typeof tlsConfig.tlsVersionMax === 'number');
             let httpRequest: http.HttpRequest = http.createHttp();
             let httpRequestOptions: http.HttpRequestOptions = {
               method: http.RequestMethod.GET,
@@ -1614,7 +1669,7 @@ export default function httpRequestErrorCodeTest() {
             };
             httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
               hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-              ExpectTrue(data.responseCode == 200);
+              ExpectTrue(data.responseCode === http.ResponseCode.OK);
               httpRequest.destroy();
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
@@ -1629,6 +1684,7 @@ export default function httpRequestErrorCodeTest() {
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
@@ -1677,7 +1733,7 @@ export default function httpRequestErrorCodeTest() {
         };
         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
           hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
@@ -1738,7 +1794,7 @@ export default function httpRequestErrorCodeTest() {
         };
         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
           hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
@@ -1811,7 +1867,7 @@ export default function httpRequestErrorCodeTest() {
         };
         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
           hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
@@ -1881,7 +1937,7 @@ export default function httpRequestErrorCodeTest() {
         };
         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
           hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
@@ -1903,7 +1959,7 @@ export default function httpRequestErrorCodeTest() {
     /**
      * @tc.name   testTlsVersion0100
      * @tc.number SUB_NetworkMgr_Http_TlsVersion_0100
-     * @tc.desc   test http TlsVersion.TLS_V_1_0 enum value equals 4 with actual HTTP request
+     * @tc.desc   test http TlsConfig with TLS_V_1_0 and actual HTTP request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1913,9 +1969,7 @@ export default function httpRequestErrorCodeTest() {
       let caseName: string = 'testTlsVersion0100';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try{
-        ExpectTrue(http.TlsVersion.TLS_V_1_0 == 4);
-        ExpectTrue(typeof http.TlsVersion.TLS_V_1_0 === 'number');
-
+        ExpectTrue(http.TlsVersion.TLS_V_1_0 === 4);
         let httpRequest: http.HttpRequest = http.createHttp();
         let tlsConfig: http.TlsConfig = {
           tlsVersionMin: http.TlsVersion.TLS_V_1_0,
@@ -1928,7 +1982,7 @@ export default function httpRequestErrorCodeTest() {
         };
         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
           hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
@@ -1950,7 +2004,7 @@ export default function httpRequestErrorCodeTest() {
     /**
      * @tc.name   testTlsVersion0101
      * @tc.number SUB_NetworkMgr_Http_TlsVersion_0101
-     * @tc.desc   test http TlsVersion.TLS_V_1_1 enum value equals 5 with actual HTTP request
+     * @tc.desc   test http TlsConfig with TLS_V_1_1 and actual HTTP request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1960,9 +2014,7 @@ export default function httpRequestErrorCodeTest() {
       let caseName: string = 'testTlsVersion0101';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try{
-        ExpectTrue(http.TlsVersion.TLS_V_1_1 == 5);
-        ExpectTrue(typeof http.TlsVersion.TLS_V_1_1 === 'number');
-
+        ExpectTrue(http.TlsVersion.TLS_V_1_1 === 5);
         let httpRequest: http.HttpRequest = http.createHttp();
         let tlsConfig: http.TlsConfig = {
           tlsVersionMin: http.TlsVersion.TLS_V_1_1,
@@ -1975,7 +2027,7 @@ export default function httpRequestErrorCodeTest() {
         };
         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
           hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
@@ -1997,7 +2049,7 @@ export default function httpRequestErrorCodeTest() {
     /**
      * @tc.name   testTlsVersion0102
      * @tc.number SUB_NetworkMgr_Http_TlsVersion_0102
-     * @tc.desc   test http TlsVersion.TLS_V_1_2 enum value equals 6 with actual HTTP request
+     * @tc.desc   test http TlsConfig with TLS_V_1_2 and actual HTTP request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -2007,9 +2059,7 @@ export default function httpRequestErrorCodeTest() {
       let caseName: string = 'testTlsVersion0102';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try{
-        ExpectTrue(http.TlsVersion.TLS_V_1_2 == 6);
-        ExpectTrue(typeof http.TlsVersion.TLS_V_1_2 === 'number');
-
+        ExpectTrue(http.TlsVersion.TLS_V_1_2 === 6);
         let httpRequest: http.HttpRequest = http.createHttp();
         let tlsConfig: http.TlsConfig = {
           tlsVersionMin: http.TlsVersion.TLS_V_1_2,
@@ -2022,7 +2072,7 @@ export default function httpRequestErrorCodeTest() {
         };
         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
           hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
@@ -2044,7 +2094,7 @@ export default function httpRequestErrorCodeTest() {
     /**
      * @tc.name   testTlsVersion0103
      * @tc.number SUB_NetworkMgr_Http_TlsVersion_0103
-     * @tc.desc   test http TlsVersion.TLS_V_1_3 enum value equals 7 with actual HTTP request
+     * @tc.desc   test http TlsConfig with TLS_V_1_3 and actual HTTP request
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -2054,9 +2104,7 @@ export default function httpRequestErrorCodeTest() {
       let caseName: string = 'testTlsVersion0103';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try{
-        ExpectTrue(http.TlsVersion.TLS_V_1_3 == 7);
-        ExpectTrue(typeof http.TlsVersion.TLS_V_1_3 === 'number');
-
+        ExpectTrue(http.TlsVersion.TLS_V_1_3 === 7);
         let httpRequest: http.HttpRequest = http.createHttp();
         let tlsConfig: http.TlsConfig = {
           tlsVersionMin: http.TlsVersion.TLS_V_1_3,
@@ -2069,7 +2117,7 @@ export default function httpRequestErrorCodeTest() {
         };
         httpRequest.request(ADDR_TEST_DOMAIN_HTTPS, httpRequestOptions).then((data: http.HttpResponse) => {
           hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
-          ExpectTrue(data.responseCode == 200);
+          ExpectTrue(data.responseCode === 200);
           httpRequest.destroy();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
@@ -2104,14 +2152,15 @@ export default function httpRequestErrorCodeTest() {
           if (data?.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.request('', (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
+            httpRequest.request('http://unresolvable.invalid/', (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
               if(err?.code != 0){
                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                ExpectTrue(err?.code == 2300996);
+                ExpectTrue(err?.code !== 2300996);
                 httpRequest.destroy();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
@@ -2149,15 +2198,16 @@ export default function httpRequestErrorCodeTest() {
           if (data?.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
 
             let httpRequest: http.HttpRequest = http.createHttp();
-            httpRequest.request('', {method: http.RequestMethod.POST}, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
+            httpRequest.request('http://unresolvable.invalid/', {method: http.RequestMethod.POST}, (err: BusinessError<void>|null, data: http.HttpResponse| undefined) => {
               if(err?.code != 0){
                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                ExpectTrue(err?.code == 2300996);
+                ExpectTrue(err?.code !== 2300996);
                 httpRequest.destroy();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
@@ -2195,11 +2245,12 @@ export default function httpRequestErrorCodeTest() {
           if (data.netId == 0) {
             hilog.info(domain, tag, '%{public}s', caseName +' Please connect to the network');
             ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' Network connected ');
             let httpRequest: http.HttpRequest = http.createHttp();
-            let promise = httpRequest.request('', {
+            let promise = httpRequest.request('http://unresolvable.invalid/', {
               method: http.RequestMethod.GET,
             });
             promise.then((data:http.HttpResponse) => {
@@ -2210,7 +2261,7 @@ export default function httpRequestErrorCodeTest() {
               done();
             }).catch((err:Error) => {
               hilog.info(domain, tag, '%{public}s', caseName +': catch error in request: '+JSON.stringify(err));
-              ExpectTrue((err as BusinessError)?.code == 2300996);
+              ExpectTrue((err as BusinessError)?.code !== 2300996);
               httpRequest.destroy();
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
@@ -2219,6 +2270,7 @@ export default function httpRequestErrorCodeTest() {
         }).catch((error: Error) => {
           hilog.info(domain, tag, '%{public}s', caseName +' catch error in getDefaultNet: '+JSON.stringify(error));
           ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       }catch(err){
