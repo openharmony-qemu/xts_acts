@@ -2674,7 +2674,8 @@ export default function WebSocketTest() {
         done();
         hilog.info(domain, tag, '%{public}s', caseName + ' test end');
       } catch (err) {
-        hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+        hilog.info(domain, tag, '%{public}s', caseName + ' catch error code is ' + JSON.stringify(err.code));
+        hilog.info(domain, tag, '%{public}s', caseName + ' catch error message is ' + JSON.stringify(err.message));
         ExpectTrue(false);
         done();
         hilog.info(domain, tag, '%{public}s', caseName + ' test end');
