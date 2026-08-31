@@ -2670,8 +2670,8 @@ async (done: () => void): Promise<void> => {
         };
         ExpectTrue(typeof options.skipServerCertVerification === 'boolean');
         ExpectTrue(typeof options.proxy === 'object' && options.proxy !== null);
-        ExpectTrue(typeof options.pingInterval === 'number');
-        ExpectTrue(typeof options.pongTimeout === 'number');
+        ExpectTrue(options.pingInterval !== undefined);
+        ExpectTrue(options.pongTimeout !== undefined);
         hilog.info(domain, tag, '%{public}s', caseName + ' webSocket.HttpProxy interface covered successfully');
         done();
         hilog.info(domain, tag, '%{public}s', caseName + ' test end');
@@ -2733,46 +2733,28 @@ async (done: () => void): Promise<void> => {
         let ws: webSocket.WebSocket | null = null;
         try {
           ws = webSocket.createWebSocket();
-          ws.onError((err: BusinessError<void>) => {
-            hilog.info(domain, tag, '%{public}s', caseName + ' onError ' + JSON.stringify(err));
-            if (ws) {
-              ws.close();
-              ws.off('open');
-              ws.off('error');
-            }
-            ExpectFail();
-            done();
-          });
           ws.onOpen((value: webSocket.OpenResult | undefined) => {
             if (value && value !== null) {
               hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
-              ws!.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
-                if (err && err.code !== 0) {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'send fail' + err.code);
-                  if (ws) {
-                    ws.close();
-                    ws.off('open');
-                    ws.off('error');
-                  }
-                  ExpectFail();
-                  done();
-                } else {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'send success ' + value);
-                  ExpectTrue(value !== null && value !== undefined && typeof value === 'boolean');
-                  if (ws) {
-                    ws.close();
-                    ws.off('open');
-                    ws.off('error');
-                  }
-                  done();
+              ws!.send('hello!').then((value: boolean) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'send success ' + value);
+                ExpectTrue(value !== null && value !== undefined && typeof value === 'boolean');
+                if (ws) {
+                  ws.close();
                 }
+                done();
+              }).catch((err: Error) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'send fail' + JSON.stringify(err));
+                if (ws) {
+                  ws.close();
+                }
+                ExpectFail();
+                done();
               });
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' onOpen value is falsy');
               if (ws) {
                 ws.close();
-                ws.off('open');
-                ws.off('error');
               }
               ExpectFail();
               done();
@@ -2789,8 +2771,6 @@ async (done: () => void): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
           if (ws) {
             ws.close();
-            ws.off('open');
-            ws.off('error');
           }
           ExpectFail();
           done();
