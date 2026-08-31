@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2023-2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
 import { TestRunner } from '@kit.TestKit';
-
 import hilog from '@ohos.hilog';
+import { BusinessError } from '@ohos.base';
 
-import { Hypium } from '../../../hypium/index';
-import testsuite from '../test/List.test';
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator;
 let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
 
@@ -40,9 +37,21 @@ export class OpenHarmonyTestRunner implements TestRunner {
 
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-    hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+    let cmd = 'aa start -d 0 -a TestAbility -b com.example.setmissionicon.static';
+    let debug = abilityDelegatorArguments.parameters['-D'];
+    if (debug == 'true') {
+      cmd += ' -D';
+    }
+    let user = abilityDelegatorArguments.parameters["-u"];
+    if (user !== undefined) {
+      cmd += ' -u ' + user;
+    }
+    hilog.info(domain, tag, '%{public}s', 'cmd : ' + cmd);
+    abilityDelegator.executeShellCommand(cmd, (err: BusinessError<void> | null,
+      data: abilityDelegatorRegistry.ShellCmdResult | undefined): void => {
+      hilog.info(domain, tag, 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
+      hilog.info(domain, tag, 'executeShellCommand : data : %{public}s', data?.stdResult ?? '');
+    });
     hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
   }
 }
