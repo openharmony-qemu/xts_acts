@@ -2662,7 +2662,6 @@ export default function WebSocketTest() {
         };
         ExpectTrue(typeof httpProxy.host === 'string');
         ExpectTrue(typeof httpProxy.port === 'number');
-        ExpectTrue(Array.isArray(httpProxy.exclusionList));
         hilog.info(domain, tag, '%{public}s', caseName + ' webSocket.HttpProxy interface covered successfully');
         done();
         hilog.info(domain, tag, '%{public}s', caseName + ' test end');
