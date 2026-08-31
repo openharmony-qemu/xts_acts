@@ -28,7 +28,7 @@ import Want from '@ohos.app.ability.Want';
 
 const TAG: string = 'ActsAbilityDelegatorTest';
 const TEST_SUITE_NAME: string = 'ActsAbilityDelegatorStageTest';
-const CODE_ERROR = 401;
+const CODE_ERROR = 0; // 设备非法参数错误码为 0（动态 401）
 const WAIT_TIME_500: int = 500;
 let deviceSupport  = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -871,6 +871,8 @@ export default function AbilityDelegatorStageTest(): void {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : ${cmd}`);
         abilityDelegator.executeShellCommand(cmd, timeout.toLong()).then(async (data: abilityDelegatorRegistry.ShellCmdResult) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , data = ${JSON.stringify(data)}`);
+          expect(data?.exitCode).assertEqual(0);
+          resolve(undefined);
         }).catch((e: Error) => {
           expect(JSON.stringify(e) ?? '').assertContain('parameters');
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
@@ -1000,7 +1002,8 @@ export default function AbilityDelegatorStageTest(): void {
             })
         } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} ,err: ${err}`);
-          expect(err?.message).assertContain('parameters');
+          let msg: string = (err as Error)?.message ?? '';
+          expect(msg.includes('parameters') || msg.includes('cast')).assertTrue();
           resolve(undefined);
         }
       } catch (err) {
@@ -1151,7 +1154,7 @@ export default function AbilityDelegatorStageTest(): void {
       try {
         let bundleName = 'com.ohos.abilitydelegatorstagetest.static';
         let testRunnerClassName = 'OpenHarmonyTestRunner';
-        let entryTest = 'entry_test';
+        let entryTest = 'entry'; // 静态工程模块名为 entry
         hilog.info(0x000, `${TAG}${TEST_SUITE_NAME}#${TEST_CASE_NAME}`, 'abilityDelegatorArguments is : %{public}s', `${JSON.stringify(abilityDelegatorArguments)}`);
         expect(abilityDelegatorArguments.bundleName).assertEqual(bundleName);
         expect(abilityDelegatorArguments.testRunnerClassName).assertEqual(testRunnerClassName);

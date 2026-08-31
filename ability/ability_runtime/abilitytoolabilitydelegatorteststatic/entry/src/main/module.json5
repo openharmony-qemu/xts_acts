@@ -57,6 +57,47 @@
         "exported": true,
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background"
-      },   ]
+      },
+      {
+        "name": "AssistantAbilityOne",
+        "srcEntry": "./ets/assistantabilityone/AssistantAbilityOne.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "exported": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "skills": [
+          {
+            "actions": [
+              "action.system.home"
+            ],
+            "entities": [
+              "entity.system.home"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "AssistantAbilityTwo",
+        "srcEntry": "./ets/assistantabilitytwo/AssistantAbilityTwo.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "exported": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "skills": [
+          {
+            "actions": [
+              "action.system.home"
+            ],
+            "entities": [
+              "entity.system.home"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
