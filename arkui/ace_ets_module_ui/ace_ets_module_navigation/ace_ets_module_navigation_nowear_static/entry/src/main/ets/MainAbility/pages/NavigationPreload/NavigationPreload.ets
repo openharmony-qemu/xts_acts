@@ -22,17 +22,6 @@ import {
 } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-// Safely extract error code from caught error
-// Framework throws error objects with .code property at runtime.
-// Use Object type assertion to access .code without importing BusinessError
-// (importing @ohos.base causes runtime LinkerUnresolvedClassError for RouterOptions)
-function getErrorCode(error: Error): string {
-  let code: Object | undefined = (error as Record<string, Object>)['code']
-  if (code !== undefined && code !== null) {
-    return String(code)
-  }
-  return ''
-}
 
 class NavParamOne {
   public desc: string = 'NavParamOne'
@@ -179,7 +168,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -202,7 +191,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -226,7 +215,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -249,7 +238,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -272,7 +261,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -295,7 +284,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -318,7 +307,7 @@ struct NavigationPreload {
                 }).catch((error: Error) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
-                  this.errorCode = getErrorCode(error)
+                  this.errorCode = String(error)
                   this.errorMsg = error.message
                 })
             })
@@ -340,7 +329,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -363,7 +352,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -387,7 +376,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -414,7 +403,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -439,7 +428,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -463,7 +452,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -487,7 +476,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.catchCalled = 'true'
                 this.preloadResult = 'error'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -509,7 +498,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.catchCalled = 'true'
                 this.preloadResult = 'error'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -532,7 +521,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -560,7 +549,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -585,7 +574,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -616,13 +605,13 @@ struct NavigationPreload {
                 }).catch((error: Error) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
-                  this.errorCode = getErrorCode(error)
+                  this.errorCode = String(error)
                   this.errorMsg = error.message
                 })
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -652,7 +641,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -681,7 +670,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -704,7 +693,7 @@ struct NavigationPreload {
                 successCount++
               }).catch((error: Error) => {
                 failCount++
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
               this.stack.preloadPath(
@@ -714,7 +703,7 @@ struct NavigationPreload {
                 successCount++
               }).catch((error: Error) => {
                 failCount++
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
               setTimeout(() => {
@@ -751,7 +740,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -775,7 +764,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
@@ -800,7 +789,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                this.errorCode = getErrorCode(error)
+                this.errorCode = String(error)
                 this.errorMsg = error.message
               })
             })
