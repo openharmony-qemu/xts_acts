@@ -17,8 +17,6 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
 import webSocket from '@ohos.net.webSocket';
-import connection from '@ohos.net.connection';
-import http from '@ohos.net.http';
 
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
