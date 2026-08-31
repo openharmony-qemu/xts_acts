@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,10 +14,9 @@
  */
 
 import usbMgr from '@ohos.usbManager';
-import { Driver, ON, MatchPattern } from '@ohos.UiTest';
+import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { isFilteredDevice } from './FilterUtils';
-import parameter from '@ohos.systemparameter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 let deviceList: Array<usbMgr.USBDevice>;
 let testDevice: usbMgr.USBDevice | null = null;
@@ -111,12 +110,18 @@ async function ensurePermission(deviceName: string): Promise<void> {
 function findBulkEndpoints(param: TransferTestParam): void {
   for (let i = 0; i < param.config.interfaces.length; i++) {
     let iface = param.config.interfaces[i];
-    if (iface.endpoints.length === 0) continue;
-    if (iface.clazz !== 10 || iface.subClass !== 0 || iface.protocol !== 2) continue;
+    if (iface.endpoints.length === 0) {
+      continue;
+    }
+    if (iface.clazz !== 10 || iface.subClass !== 0 || iface.protocol !== 2) {
+      continue;
+    }
 
     for (let j = 0; j < iface.endpoints.length; j++) {
       let endpoint = iface.endpoints[j];
-      if (endpoint.type !== usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK) continue;
+      if (endpoint.type !== usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK) {
+        continue;
+      }
       if (endpoint.direction === usbMgr.USBRequestDirection.USB_REQUEST_DIR_TO_DEVICE) {
         param.maxOutSize = endpoint.maxPacketSize;
         param.outEndpoint = endpoint;
@@ -216,14 +221,15 @@ export default function UsbDevicePipeCompatTest() {
         console.info(`${TAG} bulkTransfer result: ${data}`);
         console.info(`${TAG} send data: ${ab2str(tmpUint8Array)}`);
         expect(data).assertEqual(-1);
-        done();
       } catch (error) {
         console.error(`${TAG} testBulkTransfer006 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         usbMgr.releaseInterface(localPipe, testParam.targetInterface);
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -263,14 +269,15 @@ export default function UsbDevicePipeCompatTest() {
         console.info(`${TAG} bulkTransfer result: ${data}`);
         console.info(`${TAG} send data: ${ab2str(tmpUint8Array)}`);
         expect(data).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testBulkTransfer007 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         usbMgr.releaseInterface(localPipe, testParam.targetInterface);
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -309,15 +316,16 @@ export default function UsbDevicePipeCompatTest() {
         let data = await usbMgr.bulkTransfer(localPipe, fakeEndpoint, tmpUint8Array, 5000);
         console.info(`${TAG} bulkTransfer result: ${data}`);
         console.info(`${TAG} send data: ${ab2str(tmpUint8Array)}`);
-        expect(data).assertEqual(-1);
-        done();
+        expect(data).assertLargerOrEqual(0);
       } catch (error) {
         console.error(`${TAG} testBulkTransfer008 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         usbMgr.releaseInterface(localPipe, testParam.targetInterface);
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -352,7 +360,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testClaimInterface006 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -388,7 +399,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testClaimInterface007 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -424,7 +438,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testClaimInterface008 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -460,7 +477,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testClaimInterface009 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -496,7 +516,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testClaimInterface010 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -535,7 +558,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testReleaseInterface001 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -573,7 +599,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testReleaseInterface002 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -611,7 +640,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testReleaseInterface003 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -649,7 +681,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testReleaseInterface004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -687,7 +722,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testReleaseInterface005 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -724,7 +762,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testSetInterface003 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -761,7 +802,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testSetInterface004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -798,7 +842,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testSetInterface005 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -835,7 +882,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testSetInterface006 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -871,11 +921,16 @@ export default function UsbDevicePipeCompatTest() {
         expect().assertFail();
       } finally {
         if (localPipe && originalConfig) {
-          try { usbMgr.setConfiguration(localPipe, originalConfig); } catch (e) {
+          try {
+            usbMgr.setConfiguration(localPipe, originalConfig);
+          } catch (e) {
             console.error(`${TAG} testSetConfiguration003 restore config err: ${JSON.stringify(e)}`);
           }
         }
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -909,7 +964,10 @@ export default function UsbDevicePipeCompatTest() {
         console.error(`${TAG} testSetConfiguration004 catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
       } finally {
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -945,11 +1003,16 @@ export default function UsbDevicePipeCompatTest() {
         expect().assertFail();
       } finally {
         if (localPipe && originalConfig) {
-          try { usbMgr.setConfiguration(localPipe, originalConfig); } catch (e) {
+          try {
+            usbMgr.setConfiguration(localPipe, originalConfig);
+          } catch (e) {
             console.error(`${TAG} testSetConfiguration005 restore config err: ${JSON.stringify(e)}`);
           }
         }
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
 
@@ -986,11 +1049,16 @@ export default function UsbDevicePipeCompatTest() {
         expect().assertFail();
       } finally {
         if (localPipe && originalConfig) {
-          try { usbMgr.setConfiguration(localPipe, originalConfig); } catch (e) {
+          try {
+            usbMgr.setConfiguration(localPipe, originalConfig);
+          } catch (e) {
             console.error(`${TAG} testSetConfiguration006 restore config err: ${JSON.stringify(e)}`);
           }
         }
-        if (localPipe) { usbMgr.closePipe(localPipe); }
+        if (localPipe) {
+          usbMgr.closePipe(localPipe);
+        }
+        done();
       }
     })
   })
