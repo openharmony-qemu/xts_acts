@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, Component, MouseButton, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -22,22 +22,8 @@ import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function TapGestureAllowedTypesTest() {
   describe('TapGestureAllowedTypesTest', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
       console.info("TapGestureAllowedTypesTest beforeEach start");
       const searchRouter = AppStorage.get<Router>("router") as Router
@@ -54,8 +40,12 @@ export default function TapGestureAllowedTypesTest() {
       }
     });
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info("TapGestureAllowedTypes after each called");
+      } catch (err) {
+        console.error("TapGestureAllowedTypes after each error: " + err);
+      }
     });
 
 
@@ -68,6 +58,7 @@ export default function TapGestureAllowedTypesTest() {
      * @tc.level    Level.LEVEL0
      */
 it('TapGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('TapGestureAllowedTypesTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX:number = AppStorage.get<number>("winLeft") as number
@@ -168,6 +159,10 @@ it('TapGestureAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => vo
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');
 
       console.info('TapGestureAllowedTypesTest_static_0010 END');
+      } catch (err) {
+        console.error('TapGestureAllowedTypesTest_static_0010 error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
   })

@@ -13,9 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size, afterAll } from "../../../../hypium/index"
+import {
+  describe, beforeAll, beforeEach, afterEach, it, expect, Level, TestType, Size, afterAll
+} from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import {
+  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector'
@@ -83,7 +87,8 @@ export default function GlobalReusePoolTest(): void {
      */
     it('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSEPOOL_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSEPOOL_0100 START');
-      let getReusePoolUndefined: IReusableInfo | undefined = AppStorage.get<IReusableInfo | undefined>('getReusePoolUndefined') as IReusableInfo | undefined;
+      let getReusePoolUndefined: IReusableInfo | undefined =
+        AppStorage.get<IReusableInfo | undefined>('getReusePoolUndefined') as IReusableInfo | undefined;
       expect(getReusePoolUndefined).assertUndefined();
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSEPOOL_0100 END');
       done();
@@ -99,7 +104,8 @@ export default function GlobalReusePoolTest(): void {
      */
     it('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_0100 START');
-      let getReusableInfoUndefined: IReusableInfo | undefined = AppStorage.get<IReusableInfo | undefined>('getReusableInfoUndefined') as IReusableInfo | undefined;
+      let getReusableInfoUndefined: IReusableInfo | undefined =
+        AppStorage.get<IReusableInfo | undefined>('getReusableInfoUndefined') as IReusableInfo | undefined;
       expect(getReusableInfoUndefined).assertUndefined();
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_0100 END');
       done();
@@ -113,7 +119,8 @@ export default function GlobalReusePoolTest(): void {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_REUSEID_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_REUSEID_0100', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_REUSEID_0100 START');
       let driver = await Driver.create();
       let button = await driver.findComponent(ON.id('GlobalReusePoolChangeComponent'));
@@ -122,9 +129,11 @@ export default function GlobalReusePoolTest(): void {
       let button2 = await driver.findComponent(ON.id('GlobalReusePoolCheckGlobalChild'));
       button2?.click();
       await driver.delayMs(500)
-      let getReusePool: IReusePool| undefined = AppStorage.get<IReusePool| undefined>('getReusePoolNotUndefined') as IReusePool| undefined;
+      let getReusePool: IReusePool | undefined =
+        AppStorage.get<IReusePool | undefined>('getReusePoolNotUndefined') as IReusePool | undefined;
       expect(getReusePool).not().assertUndefined()
-      let iReusableInfoArray: IReusableInfo[]| undefined = AppStorage.get<IReusableInfo[]| undefined>('IReusableInfoArray') as IReusableInfo[]| undefined;
+      let iReusableInfoArray: IReusableInfo[] | undefined =
+        AppStorage.get<IReusableInfo[] | undefined>('IReusableInfoArray') as IReusableInfo[] | undefined;
       expect(iReusableInfoArray?.length).assertLarger(0)
       console.info('SUB_ARKUI_GLOBALREUSEPOOL_GETREUSABLEINFO_REUSEID_0100 END');
       done();
@@ -144,7 +153,8 @@ export default function GlobalReusePoolTest(): void {
       let button = await driver.findComponent(ON.id('GlobalReusePoolCheckLegacyComp'));
       button?.click();
       await driver.delayMs(500);
-      let iReusableInfo: IReusableInfo| undefined = AppStorage.get<IReusableInfo| undefined>('IReusableInfo') as IReusableInfo| undefined;
+      let iReusableInfo: IReusableInfo | undefined =
+        AppStorage.get<IReusableInfo | undefined>('IReusableInfo') as IReusableInfo | undefined;
       expect(iReusableInfo).not().assertUndefined();
       expect(iReusableInfo?.count).assertEqual(0);
       expect(iReusableInfo?.maxCount).assertEqual(100);

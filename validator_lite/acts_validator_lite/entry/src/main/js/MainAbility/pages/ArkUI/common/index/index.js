@@ -31,12 +31,9 @@ export default {
   },
 
   onShow() {
-    console.info("onShow item_index: " + this.itemIndex);
-    this.$refs.list.scrollTo({index: this.itemIndex});
   },
 
   clickChange(item) {
-    console.info('onclick url: ' + item.url);
     router.replace({
       uri: item.url,
       params: {
@@ -47,7 +44,6 @@ export default {
 
   swipeEvent(e) {
     if (e.direction === 'right') {
-      console.info('swipeEvent');
       router.replace({ uri: 'pages/index/index' });
     }
   },

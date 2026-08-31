@@ -16,6 +16,6 @@
 
 import webViewIncognitoMode from './WebViewIncognitoMode.test'
 
-export default function testsuite() {
+export default function testsuite(): void {
     webViewIncognitoMode();
 }

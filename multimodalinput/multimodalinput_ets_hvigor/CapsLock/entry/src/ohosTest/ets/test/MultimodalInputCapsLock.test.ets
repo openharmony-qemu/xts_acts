@@ -148,5 +148,143 @@ export default function MultimodalInputCapsLockTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0500
+     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0500
+     * @tc.desc   Test setFunctionKeyEnabled interface with null as first parameter, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0500";
+      try {
+        await inputDevice.setFunctionKeyEnabled(null, true).then(() => {
+          console.info(`${caseName} Set capslock state success`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Null first parameter test, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0600
+     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0600
+     * @tc.desc   Test setFunctionKeyEnabled interface with undefined as first parameter, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0600";
+      try {
+        await inputDevice.setFunctionKeyEnabled(undefined, true).then(() => {
+          console.info(`${caseName} Set capslock state success`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Undefined first parameter test, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0700
+     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0700
+     * @tc.desc   Test setFunctionKeyEnabled interface with null as second parameter, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0700";
+      try {
+        await inputDevice.setFunctionKeyEnabled(inputDevice.FunctionKey.CAPS_LOCK, null).then(() => {
+          console.info(`${caseName} Set capslock state success`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Null second parameter test, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0800
+     * @tc.number SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0800
+     * @tc.desc   Test setFunctionKeyEnabled interface with undefined as second parameter, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_setFunctionKeyEnabled_0800";
+      try {
+        await inputDevice.setFunctionKeyEnabled(inputDevice.FunctionKey.CAPS_LOCK, undefined).then(() => {
+          console.info(`${caseName} Set capslock state success`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Undefined second parameter test, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0100
+     * @tc.number SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0100
+     * @tc.desc   Test isFunctionKeyEnabled interface with null as first parameter, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0100";
+      try {
+        await inputDevice.isFunctionKeyEnabled(null).then((state: boolean) => {
+          console.info(`${caseName} Get function key state success: ${JSON.stringify(state)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Null parameter test, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0200
+     * @tc.number SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0200
+     * @tc.desc   Test isFunctionKeyEnabled interface with undefined as first parameter, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_IptDev_isFunctionKeyEnabled_0200";
+      try {
+        await inputDevice.isFunctionKeyEnabled(undefined).then((state: boolean) => {
+          console.info(`${caseName} Get function key state success: ${JSON.stringify(state)}`);
+          expect().assertFail();
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Undefined parameter test, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
   });
 }

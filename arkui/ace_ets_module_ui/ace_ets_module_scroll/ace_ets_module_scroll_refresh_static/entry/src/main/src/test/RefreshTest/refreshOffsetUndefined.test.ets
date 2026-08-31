@@ -13,21 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 export default function refreshOffsetUndefined() {
   describe('refreshOffsetUndefined', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('refreshOffsetUndefined beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.refresh.static', 'EntryAbility');
-    });
-
     beforeEach((): void => {
       console.info('refreshOffsetUndefined beforeEach start');
       let options: router.RouterOptions = {

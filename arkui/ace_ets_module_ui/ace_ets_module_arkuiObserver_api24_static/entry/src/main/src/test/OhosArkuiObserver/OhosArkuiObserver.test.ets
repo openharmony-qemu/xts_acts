@@ -15,13 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import { Driver, ON, Component } from '@kit.TestKit';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import Utils from '../../../../main/ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 
 const ROUTE = 'MainAbility/pages/OhosArkuiObserver/OhosArkuiObserver';
 const SLEEP = 500;
@@ -120,10 +119,6 @@ async function localOnAndInput(driver: Driver, text: string): Promise<void> {
 
 export default function OhosArkuiObserverTest(): void {
   describe('OhosArkuiObserver', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility('com.arkui.ace.ets.module.arkuiObserver.api24.static', 'EntryAbility');
-    });
-
     beforeEach(() => {
       try {
         replaceUrlForTest(ROUTE);
@@ -133,7 +128,11 @@ export default function OhosArkuiObserverTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(SLEEP);
+      try {
+        await Utils.sleep(SLEEP);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
     /**

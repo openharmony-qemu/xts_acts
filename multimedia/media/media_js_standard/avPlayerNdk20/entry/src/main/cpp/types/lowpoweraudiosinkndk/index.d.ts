@@ -88,4 +88,7 @@ export const OH_LowPowerAudioSink_Stop0200: () => number;
 export const OH_LowPowerAudioSink_Reset0200: () => number;
 export const OH_LowPowerAudioSink_SetVolume0200: () => number;
 export const OH_LowPowerAudioSink_SetVolume0300: () => number;
+export const OH_LowPowerVideoSink_GetParameter0100: () => number;
+export const OH_LowPowerVideoSink_GetParameter0200: () => number;
+export const OH_LowPowerVideoSink_GetParameter0300: () => number;
 

@@ -103,7 +103,7 @@ export default class CommonTest {
                 priority: events_emitter.EventPriority.LOW
               }
               events_emitter.emit(innerEvent, eventData);
-              await Utils.sleep(2000);
+              await Utils.sleep(1000);
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
               console.info('strJsonstrJsonstrJson' + strJson);

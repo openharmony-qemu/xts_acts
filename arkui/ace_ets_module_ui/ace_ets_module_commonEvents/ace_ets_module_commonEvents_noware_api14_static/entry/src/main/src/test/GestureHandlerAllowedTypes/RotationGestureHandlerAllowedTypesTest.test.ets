@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, PointerMatrix, Point } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { BusinessError } from '@ohos.base';
-import {UtilsTest} from '../Util.test'
 
 export default function RotationGestureHandlerAllowedTypesTest() {
   describe('RotationGestureHandlerAllowedTypesTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-
-      await UtilsTest.startAbility("com.open.harmony.nowearevent.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/GestureHandlerAllowedTypes/RotationGestureHandlerAllowedTypes',
@@ -52,7 +44,11 @@ export default function RotationGestureHandlerAllowedTypesTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error("RotationGestureHandlerAllowedTypesTest after each error: " + err);
+      }
       console.info("RotationGestureHandlerAllowedTypesTest after each called");
     });
 
@@ -66,7 +62,7 @@ export default function RotationGestureHandlerAllowedTypesTest() {
      */
 it('RotationGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RotationGestureHandlerAllowedTypesTest_static_0010 START');
-      await CommonFunc.sleep(200);
+      await CommonFunc.sleep(1000);
       let windowOffsetX:number = AppStorage.get<number>("winLeft") as number;
       let windowOffsetY:number = AppStorage.get<number>("winTop") as number;
       console.log('RotationGestureHandlerAllowedTypesTest_static_0010 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)

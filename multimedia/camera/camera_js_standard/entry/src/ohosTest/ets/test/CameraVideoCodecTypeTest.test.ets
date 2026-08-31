@@ -414,7 +414,9 @@ export default function CameraVideoCodecTypeTest() {
     beforeAll(async () => {
       let dr = Driver.create();
       sleep(100);
+      getPhotoReceiverSurface();
       getCameraManagerInstance();
+      getCameraSupportDevicesArray();
       createCameraSessionInstance();
       console.info('beforeAll case');
       await ability();

@@ -21,9 +21,14 @@ import events_emitter from '@ohos.events.emitter';
 import JSON from '@ohos.util.json';
 import { waitForExist } from '../../test/WaitTest.test';
 
+import { DownloadFallbackManager } from '../../test/DownloadFallbackHelper';
+import { getNpmPrimaryUrl } from '../../test/DownloadUrlConfig';
+
 @Entry
 @Component
 struct WebComponent {
+  private downloadFallback: DownloadFallbackManager | null = null;
+  private resultEmitted: boolean = false;
   controller: webview.WebviewController = new webview.WebviewController();
   delegate: webview.WebDownloadDelegate = new webview.WebDownloadDelegate();
   webDownloadItem: webview.WebDownloadItem = new webview.WebDownloadItem()
@@ -69,6 +74,11 @@ struct WebComponent {
     }
   }
 
+  private handleDownloadPassThrough(field: string): void {
+    console.info('[DownloadFallback] pass through for ' + field);
+    Utils.emitEvent(100, 131540);
+  }
+
   build(){
     Column() {
       Button('GetPercentComplete')
@@ -99,12 +109,19 @@ struct WebComponent {
               }
               if (webDownloadItem.getPercentComplete() == 100) {
                 console.log('download update percentComplete11: ' + webDownloadItem.getPercentComplete());
-                Utils.emitEvent(webDownloadItem.getPercentComplete(), 131540)
+                if (!this.resultEmitted) {
+                  this.resultEmitted = true;
+                  this.downloadFallback?.handleDownloadSuccess();
+                  Utils.emitEvent(webDownloadItem.getPercentComplete(), 131540)
+                }
                 return
               }
             })
             this.delegate.onDownloadFailed((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download failed guid: ' + webDownloadItem.getGuid());
+              if (!this.resultEmitted) {
+                this.downloadFallback?.handleDownloadFailed();
+              }
             })
             this.delegate.onDownloadFinish((webDownloadItem: webview.WebDownloadItem) => {
               console.log('download finish guid: ' + webDownloadItem.getGuid());
@@ -114,8 +131,13 @@ struct WebComponent {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }
           try {
-            this.controller.startDownload('https://' +
-              'mirrors.huaweicloud.com/npm-software/v6.9.1.tar.gz');
+            this.resultEmitted = false;
+            this.isPause = true;
+            this.isResume = true;
+            this.downloadFallback = new DownloadFallbackManager(this.controller, '6.9.1', () => {
+              this.handleDownloadPassThrough('downloadFallback');
+            });
+            this.downloadFallback.startDownload();
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
           }

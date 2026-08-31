@@ -24,6 +24,10 @@ import TaskGroupAbilityTest from './TaskGroupAbility.test';
 import TaskGroupAbilityTest2 from './TaskGroupAbility2.test';
 import TaskGroupAbilityTest3 from './TaskGroupAbility3.test';
 
+import TaskPolymorphismTest from './TaskPolymorphismTest.test';
+import TaskGroupInheritanceTest from './TaskGroupInheritanceTest.test';
+import UseConcurrentTest from './UseConcurrentTest.test';
+
 export default function testsuite() {
   taskPoolTaskMultipleTest();
   taskPoolTaskGroup();
@@ -37,4 +41,7 @@ export default function testsuite() {
   TaskGroupAbilityTest();
   TaskGroupAbilityTest2();
 
+  TaskPolymorphismTest();
+  TaskGroupInheritanceTest();
+  UseConcurrentTest();
 }

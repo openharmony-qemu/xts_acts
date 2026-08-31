@@ -36,6 +36,15 @@
     padding: 0 10px;
 }
 
+.content-tip {
+    width: 90%;
+    font-size: 16px;
+    color: #FF6B00;
+    text-align: center;
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
 .button-operate {
     width: 80%;
     height:50px;

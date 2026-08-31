@@ -2632,7 +2632,7 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       let count :number = 0
       try {
-        emitter.on("eventid", () => {
+        emitter.on('eventid', () => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit success,data is %{public}s');
           count++
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
@@ -2663,12 +2663,12 @@ export default function ActsNotificationEmitterTest() {
       const TEST_CASE_NAME = 'testDeserializeEmitterCallback';
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       let count :number = 0
-      const re = new RegExp("\\w+");
+      const re = new RegExp('\\w+');
       const buffer: ArrayBuffer = new ArrayBuffer(8);
       const view: Int32Array = new Int32Array(buffer);
       const buffer1: ArrayBuffer = new ArrayBuffer(16);
       const view1: DataView = new DataView(buffer1, 0);
-      const birthday: Date = new Date("December 17,1995 03:24:00");
+      const birthday: Date = new Date('December 17,1995 03:24:00');
       let a = view1.setInt16(1, 42);
       let b = view1.getInt16(1);
       const aa = new Set([1, 2, 3]);
@@ -2683,22 +2683,22 @@ export default function ActsNotificationEmitterTest() {
       };
       let eventData: emitter.EventData = {
         data: {
-          "number": 1,
-          "string": "str",
-          "boolean": false,
-          "reg": re,
-          "set": aa,
-          "date": birthday,
-          "view": view,
-          "map": bmaps,
-          "error": errtypes,
-          "la": b,
-          "obk": testObject
+          'number': 1,
+          'string': 'str',
+          'boolean': false,
+          'reg': re,
+          'set': aa,
+          'date': birthday,
+          'view': view,
+          'map': bmaps,
+          'error': errtypes,
+          'la': b,
+          'obk': testObject
         }
       };
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", (eventData: emitter.EventData) => {
+        emitter.on('eventid', (eventData: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success,data is %{public}s', JSON.stringify(eventData));
           count++
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
@@ -2738,9 +2738,9 @@ export default function ActsNotificationEmitterTest() {
       };
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventid", oncallback2);
-        emitter.emit("eventid");
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventid', oncallback2);
+        emitter.emit('eventid');
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();
@@ -2773,12 +2773,12 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success,data2 is %{public}s');
         count++;
       };
-      const re = new RegExp("\\w+");
+      const re = new RegExp('\\w+');
       const buffer: ArrayBuffer = new ArrayBuffer(8);
       const view: Int32Array = new Int32Array(buffer);
       const buffer1: ArrayBuffer = new ArrayBuffer(16);
       const view1: DataView = new DataView(buffer1, 0);
-      const birthday: Date = new Date("December 17,1995 03:24:00");
+      const birthday: Date = new Date('December 17,1995 03:24:00');
       let a = view1.setInt16(1, 42);
       let b = view1.getInt16(1);
       const aa = new Set([1, 2, 3]);
@@ -2793,24 +2793,24 @@ export default function ActsNotificationEmitterTest() {
       };
       let eventData: emitter.EventData = {
         data: {
-          "number": 1,
-          "string": "str",
-          "boolean": false,
-          "reg": re,
-          "set": aa,
-          "date": birthday,
-          "view": view,
-          "map": bmaps,
-          "error": errtypes,
-          "la": b,
-          "obk": testObject
+          'number': 1,
+          'string': 'str',
+          'boolean': false,
+          'reg': re,
+          'set': aa,
+          'date': birthday,
+          'view': view,
+          'map': bmaps,
+          'error': errtypes,
+          'la': b,
+          'obk': testObject
         }
       };
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventid", oncallback2);
-        emitter.emit("eventid", eventData);
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventid', oncallback2);
+        emitter.emit('eventid', eventData);
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();
@@ -2845,10 +2845,10 @@ export default function ActsNotificationEmitterTest() {
       };
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventids", oncallback2);
-        emitter.emit("eventid");
-        emitter.emit("eventids");
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventids', oncallback2);
+        emitter.emit('eventid');
+        emitter.emit('eventids');
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();
@@ -2893,10 +2893,10 @@ export default function ActsNotificationEmitterTest() {
       }
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventids", oncallback2);
-        emitter.emit("eventid", data1);
-        emitter.emit("eventids", data2);
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventids', oncallback2);
+        emitter.emit('eventid', data1);
+        emitter.emit('eventids', data2);
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();
@@ -2942,10 +2942,10 @@ export default function ActsNotificationEmitterTest() {
       }
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventids", oncallback2);
-        emitter.emit("eventid", data1);
-        emitter.emit("eventids", data2);
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventids', oncallback2);
+        emitter.emit('eventid', data1);
+        emitter.emit('eventids', data2);
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();
@@ -2992,10 +2992,10 @@ export default function ActsNotificationEmitterTest() {
       };
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventids", oncallback2);
-        emitter.emit("eventid", data1);
-        emitter.emit("eventids", data2);
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventids', oncallback2);
+        emitter.emit('eventid', data1);
+        emitter.emit('eventids', data2);
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();
@@ -3044,10 +3044,10 @@ export default function ActsNotificationEmitterTest() {
       };
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventids", oncallback2);
-        emitter.emit("eventid", data1);
-        emitter.emit("eventids", data2);
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventids', oncallback2);
+        emitter.emit('eventid', data1);
+        emitter.emit('eventids', data2);
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();
@@ -3097,10 +3097,10 @@ export default function ActsNotificationEmitterTest() {
       };
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventids", oncallback2);
-        emitter.emit("eventid", data1);
-        emitter.emit("eventids", data2);
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventids', oncallback2);
+        emitter.emit('eventid', data1);
+        emitter.emit('eventids', data2);
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();
@@ -3149,10 +3149,10 @@ export default function ActsNotificationEmitterTest() {
       };
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventids", oncallback2);
-        emitter.emit("eventid", data1);
-        emitter.emit("eventids", data2);
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventids', oncallback2);
+        emitter.emit('eventid', data1);
+        emitter.emit('eventids', data2);
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();
@@ -3200,10 +3200,10 @@ export default function ActsNotificationEmitterTest() {
       };
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
       try {
-        emitter.on("eventid", oncallback1);
-        emitter.on("eventids", oncallback2);
-        emitter.emit("eventid", data1);
-        emitter.emit("eventids", data2);
+        emitter.on('eventid', oncallback1);
+        emitter.on('eventids', oncallback2);
+        emitter.emit('eventid', data1);
+        emitter.emit('eventids', data2);
       } catch (e) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit failed,data is %{public}s', JSON.stringify(e));
         expect(false).assertTrue();

@@ -32,7 +32,6 @@ export default {
     this.state = animator.getState();
   },
   logStop() {
-    console.log('Stopped');
   },
 
     helpClicked() {
@@ -43,11 +42,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.image_animator.status = 'pass';
+        getApp().data.testItems['image_animator'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.image_animator.status = 'fail';
+        getApp().data.testItems['image_animator'].status = 'fail';
         this.back();
     },
     backClicked() {

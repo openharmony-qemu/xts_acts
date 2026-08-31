@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,8 @@ import ActsApi22LongTimeTaskManagerTest from './ActsApi22LongTimeTaskManagerTest
 import ActsLongTimeTaskManagerErrorCodeTest from './ActsLongTimeTaskManagerErrorCodeTest.test';
 import ActsApi9LongTimeTaskManagerTest from './ActsApi9LongTimeTaskManagerTest.test';
 import ActsApi12LongTimeTaskManagerTest from './ActsApi12LongTimeTaskManagerTest.test';
+import ActsApi26LongTimeTaskManagerNormalTest from './ActsApi26LongTimeTaskManagerNormalTest.test';
+import ActsApi26LongTimeTaskManagerErrorCodeTest from './ActsApi26LongTimeTaskManagerErrorCodeTest.test';
 
 export default function testsuite() {
   ActsLongTimeTaskManagerTest();
@@ -26,4 +28,6 @@ export default function testsuite() {
   ActsLongTimeTaskManagerErrorCodeTest();
   ActsApi9LongTimeTaskManagerTest();
   ActsApi12LongTimeTaskManagerTest();
+  ActsApi26LongTimeTaskManagerNormalTest();
+  ActsApi26LongTimeTaskManagerErrorCodeTest();
 }

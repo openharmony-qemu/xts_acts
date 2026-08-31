@@ -238,7 +238,7 @@ class OwnerMultiIface_064 implements OwnerIX_064, OwnerIY_064 {
 }
 
 class OwnerFixedArr_065 {
-  public fa: FixedArray<int> = new FixedArray<int>(3)
+  public fa: FixedArray<int> = new FixedArray<int>(3, 0)
 }
 
 class CurrentOwner_070 {

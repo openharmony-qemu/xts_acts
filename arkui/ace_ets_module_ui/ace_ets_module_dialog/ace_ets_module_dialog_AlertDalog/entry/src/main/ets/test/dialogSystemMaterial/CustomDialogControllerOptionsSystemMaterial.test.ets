@@ -64,11 +64,11 @@ export default function CustomDialogControllerOptionsSystemMaterialTest() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let dialog: ESObject = obj.$children[1];
       expect(dialog).not().assertUndefined();
-		  expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
-		  expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
-		  expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
-		  expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
-		  expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
+	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       console.info('CustomDialogControllerOptionsSystemMaterial_0100 Dialog Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -131,6 +131,7 @@ export default function CustomDialogControllerOptionsSystemMaterialTest() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let dialog: ESObject = obj.$children[1];
       expect(dialog).not().assertUndefined();
+
       console.info('CustomDialogControllerOptionsSystemMaterial_0300 Dialog SEMI_TRANSPARENT is visible');
 
       await CommonFunc.sleep(500);

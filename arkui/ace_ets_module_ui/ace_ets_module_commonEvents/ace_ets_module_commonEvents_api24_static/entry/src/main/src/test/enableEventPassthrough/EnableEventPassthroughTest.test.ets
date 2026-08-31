@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, Point } from '@kit.TestKit';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function EnableEventPassthroughTest(): void {
   describe('EnableEventPassthroughTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api24.static", "EntryAbility");
-    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -50,8 +46,12 @@ export default function EnableEventPassthroughTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info("[EnableEventPassthroughTest] afterEach called");
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -63,6 +63,7 @@ export default function EnableEventPassthroughTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('enableEventPassthroughEnableOnClickTest', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_ENABLEEVENTPASSTHROUGH_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -84,7 +85,12 @@ export default function EnableEventPassthroughTest(): void {
       expect(touchTypeContent).assertEqual('TouchType: 0');
 
       console.info('[SUB_ACE_ARKUI_ENABLEEVENTPASSTHROUGH_0100] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -96,6 +102,7 @@ export default function EnableEventPassthroughTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('enableEventPassthroughDisableOnClickTest', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_ENABLEEVENTPASSTHROUGH_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -117,7 +124,12 @@ export default function EnableEventPassthroughTest(): void {
       expect(mouseTypeContent).assertEqual('MouseType: 1');
 
       console.info('[SUB_ACE_ARKUI_ENABLEEVENTPASSTHROUGH_0200] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -129,6 +141,7 @@ export default function EnableEventPassthroughTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('enableEventPassthroughTouchEnumValueTest', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_ENABLEEVENTPASSTHROUGH_0300] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -144,7 +157,12 @@ export default function EnableEventPassthroughTest(): void {
       expect(touchTypeContent).assertEqual('TouchType: 0');
 
       console.info('[SUB_ACE_ARKUI_ENABLEEVENTPASSTHROUGH_0300] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -156,6 +174,7 @@ export default function EnableEventPassthroughTest(): void {
      * @tc.size      MEDIUMTEST
      */
     it('enableEventPassthroughMouseEnumValueTest', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ACE_ARKUI_ENABLEEVENTPASSTHROUGH_0400] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -171,7 +190,12 @@ export default function EnableEventPassthroughTest(): void {
       expect(mouseTypeContent).assertEqual('MouseType: 1');
 
       console.info('[SUB_ACE_ARKUI_ENABLEEVENTPASSTHROUGH_0400] END');
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   });
 }

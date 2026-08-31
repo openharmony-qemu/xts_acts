@@ -48,7 +48,11 @@ export default function InspectorLabelTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(200);
+      try {
+        await CommonFunc.sleep(200);
+      } catch (err) {
+        console.info('InspectorLabelTest afterEach sleep err: ' + JSON.stringify(err));
+      }
     });
 
     /**

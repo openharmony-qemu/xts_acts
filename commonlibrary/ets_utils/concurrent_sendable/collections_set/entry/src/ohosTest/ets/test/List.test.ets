@@ -27,6 +27,17 @@ import CollectionsSetValuesTest from "./CollectionsSetValuesTest.test";
 import CollectionsSetSizeTest from "./CollectionsSetSizeTest.test";
 import CollectionsSetSymbolIteratorTest from './CollectionsSetSymbolIteratorTest.test'
 
+import collectionsSetConstructorTest from './CollectionSetBase/CollectionsSetConstructor.test';
+import collectionsSetForEachEntriesTest from './CollectionSetBase/CollectionsSetForEachEntries.test';
+import collectionsSetKeysValuesForOfTest from './CollectionSetBase/CollectionsSetKeysValuesForOf.test';
+import collectionsSetAddHasTest from './CollectionSetBase/CollectionsSetAddHas.test';
+import collectionsSetDeleteClearSizeTest from './CollectionSetBase/CollectionsSetDeleteClearSize.test';
+import collectionsSetAuxiliaryTest from './CollectionSetBase/CollectionsSetAuxiliary.test';
+import collectionsSetConcurrentTest from './CollectionsSetConcurrent/CollectionsSetConcurrent.test';
+import collectionsSetWorkerTest from './CollectionsSetConcurrent/CollectionsSetWorker.test';
+import collectionsSetInheritanceAndSendableTypesTest from './CollectionSetBase/CollectionsSetInheritanceAndSendableTypes.test';
+import collectionsSetSendableFunctionTest from './CollectionSetBase/CollectionsSetSendableFunction.test';
+
 export default function testsuite() {
   CollectionsSetTest();
   CollectionsSetAddTest();
@@ -41,6 +52,17 @@ export default function testsuite() {
   CollectionsSetValuesTest();
   CollectionsSetSizeTest();
   CollectionsSetSymbolIteratorTest();
+  
+  collectionsSetConcurrentTest();
+  collectionsSetWorkerTest();
+  collectionsSetConstructorTest();
+  collectionsSetForEachEntriesTest();
+  collectionsSetKeysValuesForOfTest();
+  collectionsSetAddHasTest();
+  collectionsSetDeleteClearSizeTest();
+  collectionsSetAuxiliaryTest();
+  collectionsSetInheritanceAndSendableTypesTest();
+  collectionsSetSendableFunctionTest();
 
 };
 

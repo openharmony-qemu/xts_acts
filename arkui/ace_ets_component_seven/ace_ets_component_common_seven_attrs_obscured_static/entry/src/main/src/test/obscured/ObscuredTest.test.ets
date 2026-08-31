@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect } from '../../../../hypium/index'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { ObscuredReasons } from '@ohos.arkui.component'
 
 export default function ObscuredTest() {
@@ -61,11 +60,6 @@ export default function ObscuredTest() {
    * Create test suite.
    */
   describe('obscuredTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       console.info('[' + data.caseTag + ']' + 'obscured is:', JSON.stringifyJsonElement(data.viewObj!.getElement('$attrs').getArray('obscured')[0]));
       expect(data.viewObj!.getElement('$attrs').getArray('obscured')[0].asString())

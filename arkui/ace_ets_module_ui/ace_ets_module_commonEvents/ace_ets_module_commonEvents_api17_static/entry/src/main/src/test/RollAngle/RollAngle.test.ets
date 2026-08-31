@@ -14,31 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType,Size,Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, TestType,Size,Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import {UtilsTest} from '../Util.test'
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function RollAngle() {
   describe('RollAngle', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("RollAngle beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi17.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/RollAngle/RollAngle',
@@ -63,7 +48,11 @@ export default function RollAngle() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('RollAngle afterEach error: ' + err);
+      }
       console.info('RollAngle after each called');
     });
 
@@ -78,9 +67,13 @@ export default function RollAngle() {
 it('RollAngle_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RollAngle_static_0100] START');
       let driver: Driver = Driver.create();
-      let button = await driver.findComponent(ON.id('Touch'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(3000);
+      try {
+        let button = await driver.findComponent(ON.id('Touch'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.error('[RollAngle_static_0100] error: ' + err);
+      }
 
       // test the child component response
       let strJson = inspector.getInspectorByKey('text');

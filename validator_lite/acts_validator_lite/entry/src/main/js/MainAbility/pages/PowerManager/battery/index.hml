@@ -7,6 +7,7 @@
     <div class="content">
         <text class="content-info"> 当前电量: {{level}}%</text>
         <text class="content-info">状态: {{statusMsg}}</text>
+        <text class="content-tip">{{ tipMsg }}</text>
     </div>
 
     <div class="bottom-bt">

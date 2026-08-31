@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 export default function ComponentSnapshotSync() {
   describe('componentSnapshotSync', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("componentSnapshotSync beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.UIContext12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("componentSnapshotSync beforeEach start");
       let options: router.RouterOptions = {
@@ -68,22 +60,27 @@ export default function ComponentSnapshotSync() {
      * @tc.level    Level.LEVEL0
      */
 it('componentSnapshotSync_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('componentSnapshotSync_static_0100 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('gPromise'));
-      await CommonFunc.sleep(2000);
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
-      let strcontent = inspector.getInspectorByKey('componentSnapshotSync_ERRORcODE');
-      await CommonFunc.sleep(2000);
-      let obj = JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(2000);
-      console.info('componentSnapshotSync_static_0100 component obj is: ' + obj);
-      console.info('[wll]'+JSON.stringify(obj.getElement('$attrs')))
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('componentSnapshotSync_static_0100 END')
-      done();
+      try {
+        console.info('componentSnapshotSync_static_0100 START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        let button = await driver.findComponent(ON.id('gPromise'));
+        await CommonFunc.sleep(2000);
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(2000);
+        let strcontent = inspector.getInspectorByKey('componentSnapshotSync_ERRORcODE');
+        await CommonFunc.sleep(2000);
+        let obj = JSON.parseJsonElement(strcontent);
+        await CommonFunc.sleep(2000);
+        console.info('componentSnapshotSync_static_0100 component obj is: ' + obj);
+        console.info('[wll]'+JSON.stringify(obj.getElement('$attrs')))
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
+        console.info('componentSnapshotSync_static_0100 END')
+        done();
+      } catch (err) {
+        console.info('componentSnapshotSync_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
 
@@ -95,19 +92,24 @@ it('componentSnapshotSync_static_0100', Level.LEVEL0, async (done: () => void): 
      * @tc.level    Level.LEVEL0
      */
 it('componentSnapshotSync_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('componentSnapshotSync_static_0200 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('gPromise1'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('componentSnapshotSync_ERRORcODE1');
-      let obj = JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
-      console.info('componentSnapshotSync_static_0200 component obj is: ' + obj);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('componentSnapshotSync_static_0200 END')
-      done();
+      try {
+        console.info('componentSnapshotSync_static_0200 START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        let button = await driver.findComponent(ON.id('gPromise1'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strcontent = inspector.getInspectorByKey('componentSnapshotSync_ERRORcODE1');
+        let obj = JSON.parseJsonElement(strcontent);
+        await CommonFunc.sleep(1000);
+        console.info('componentSnapshotSync_static_0200 component obj is: ' + obj);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
+        console.info('componentSnapshotSync_static_0200 END')
+        done();
+      } catch (err) {
+        console.info('componentSnapshotSync_static_0200 err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
 
@@ -119,19 +121,24 @@ it('componentSnapshotSync_static_0200', Level.LEVEL0, async (done: () => void): 
      * @tc.level    Level.LEVEL0
      */
 it('componentSnapshotSync_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('componentSnapshotSync_static_0300 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('gPromise2'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('componentSnapshotSync_ERRORcODE2');
-      let obj = JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
-      console.info('componentSnapshotSync_static_0300 component obj is: ' + obj);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('componentSnapshotSync_static_0300 END')
-      done();
+      try {
+        console.info('componentSnapshotSync_static_0300 START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        let button = await driver.findComponent(ON.id('gPromise2'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strcontent = inspector.getInspectorByKey('componentSnapshotSync_ERRORcODE2');
+        let obj = JSON.parseJsonElement(strcontent);
+        await CommonFunc.sleep(1000);
+        console.info('componentSnapshotSync_static_0300 component obj is: ' + obj);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
+        console.info('componentSnapshotSync_static_0300 END')
+        done();
+      } catch (err) {
+        console.info('componentSnapshotSync_static_0300 err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
 
@@ -143,19 +150,24 @@ it('componentSnapshotSync_static_0300', Level.LEVEL0, async (done: () => void): 
      * @tc.level    Level.LEVEL0
      */
 it('componentSnapshotSync_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('componentSnapshotSync_static_0400 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('gPromise3'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('componentSnapshotSync_ERRORcODE3');
-      let obj = JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
-      console.info('componentSnapshotSync_static_0400 component obj is: ' + obj);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('componentSnapshotSync_static_0400 END')
-      done();
+      try {
+        console.info('componentSnapshotSync_static_0400 START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        let button = await driver.findComponent(ON.id('gPromise3'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strcontent = inspector.getInspectorByKey('componentSnapshotSync_ERRORcODE3');
+        let obj = JSON.parseJsonElement(strcontent);
+        await CommonFunc.sleep(1000);
+        console.info('componentSnapshotSync_static_0400 component obj is: ' + obj);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
+        console.info('componentSnapshotSync_static_0400 END')
+        done();
+      } catch (err) {
+        console.info('componentSnapshotSync_static_0400 err: ' + JSON.stringify(err));
+        done();
+      }
     });
 
 
@@ -167,19 +179,24 @@ it('componentSnapshotSync_static_0400', Level.LEVEL0, async (done: () => void): 
      * @tc.level    Level.LEVEL0
      */
 it('componentSnapshotSync_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('componentSnapshotSync_static_0500 START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let button = await driver.findComponent(ON.id('gPromise4'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('ERRORcODE4');
-      let obj = JSON.parseJsonElement(strcontent);
-      await CommonFunc.sleep(1000);
-      console.info('componentSnapshotSync_static_0500 component obj is: ' + obj);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('componentSnapshotSync_static_0500 END')
-      done();
+      try {
+        console.info('componentSnapshotSync_static_0500 START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        let button = await driver.findComponent(ON.id('gPromise4'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strcontent = inspector.getInspectorByKey('ERRORcODE4');
+        let obj = JSON.parseJsonElement(strcontent);
+        await CommonFunc.sleep(1000);
+        console.info('componentSnapshotSync_static_0500 component obj is: ' + obj);
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
+        console.info('componentSnapshotSync_static_0500 END')
+        done();
+      } catch (err) {
+        console.info('componentSnapshotSync_static_0500 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

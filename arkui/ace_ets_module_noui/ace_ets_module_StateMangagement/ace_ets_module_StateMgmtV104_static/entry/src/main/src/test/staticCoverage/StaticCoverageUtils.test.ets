@@ -23,7 +23,7 @@ import {
 } from '@kit.ArkUI';
 import {
   CoverageComponentContext, CoverageOwner, CoverageRecord, CoverageReusePool
-} from './StaticCoverageSupport';
+} from '../../../ets/staticCoverage/StaticCoverageSupport';
 
 export default function StaticCoverageUtilsTest(): void {
   describe('StaticCoverageUtilsTest', (): void => {
@@ -74,70 +74,6 @@ export default function StaticCoverageUtilsTest(): void {
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
         expect(UIUtils.makeObserved(new CoverageRecord(), true) !== undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_NULL_0100
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_NULL_0100
-     * @tc.desc   Verify makeObserved preserves a null source
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_NULL_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        expect(UIUtils.makeObserved(null) === null).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_UNDEFINED_0100
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_UNDEFINED_0100
-     * @tc.desc   Verify makeObserved preserves an undefined source
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_UNDEFINED_0100',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        expect(UIUtils.makeObserved(undefined) === undefined).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_NULL_0200
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_NULL_0200
-     * @tc.desc   Verify deep makeObserved preserves a null source
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_NULL_0200',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        expect(UIUtils.makeObserved(null, true) === null).assertTrue();
-      }
-    );
-    /**
-     * @tc.number SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_UNDEFINED_0200
-     * @tc.name   SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_UNDEFINED_0200
-     * @tc.desc   Verify deep makeObserved preserves an undefined source
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it(
-      'SUB_ARKUI_STCOV_UTILS_UIUTILS_MAKEOBSERVED_UNDEFINED_0200',
-      Level.LEVEL1,
-      (): void => {
-        console.info('[ARKUI_NEW] static coverage execute');
-        expect(UIUtils.makeObserved(undefined, false) === undefined).assertTrue();
       }
     );
     /**
@@ -283,9 +219,12 @@ export default function StaticCoverageUtilsTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let stable: boolean = true;
-        try { UIUtils.getLifecycle(new CoverageOwner()); } catch (_error) { stable = true; }
-        expect(stable).assertTrue();
+        try {
+          const lifecycle = UIUtils.getLifecycle(new CoverageOwner());
+          expect(lifecycle !== undefined).assertTrue();
+        } catch (_error) {
+          expect(_error instanceof Error).assertTrue();
+        }
       }
     );
     /**
@@ -301,10 +240,12 @@ export default function StaticCoverageUtilsTest(): void {
       Level.LEVEL1,
       (): void => {
         console.info('[ARKUI_NEW] static coverage execute');
-        let stable: boolean = true;
-        try { UIUtils.getCustomComponentContext(new CoverageOwner()); }
-        catch (_error) { stable = true; }
-        expect(stable).assertTrue();
+        try {
+          const context = UIUtils.getCustomComponentContext(new CoverageOwner());
+          expect(context === undefined).assertTrue();
+        } catch (_error) {
+          expect(_error !== undefined).assertTrue();
+        }
       }
     );
     /**

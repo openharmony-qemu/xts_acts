@@ -16,7 +16,9 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll,  it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
-import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import {
+  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix
+} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -52,15 +54,16 @@ export default function SVDeepListenObservedBuiltInTest(): void {
     });
 
     /**
-     * @tc.name   SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0100
-     * @tc.number SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0100
+     * @tc.name   SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0100
+     * @tc.number SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0100
      * @tc.desc   Test ObservedArray API observable - verify push and reverse operations trigger UI update
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0100] START');
+    it('SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0100', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0100] START');
 
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
@@ -88,20 +91,21 @@ export default function SVDeepListenObservedBuiltInTest(): void {
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('3,2,1,0');
 
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0100] END');
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0100] END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0200
-     * @tc.number SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0200
+     * @tc.name   SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0200
+     * @tc.number SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0200
      * @tc.desc   Test ObservedMap API observable - verify set and delete operations trigger UI update
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0200] START');
+    it('SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0200', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0200] START');
 
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
@@ -129,15 +133,16 @@ export default function SVDeepListenObservedBuiltInTest(): void {
     });
 
     /**
-     * @tc.name   SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0300
-     * @tc.number SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0300
+     * @tc.name   SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0300
+     * @tc.number SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0300
      * @tc.desc   Test ObservedSet API observable - verify add and delete operations trigger UI update
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0300] START');
+    it('SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0300', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0300] START');
 
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
@@ -161,20 +166,21 @@ export default function SVDeepListenObservedBuiltInTest(): void {
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('1');
 
 
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0300] END');
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0300] END');
       done();
     });
 
     /**
-     * @tc.name   SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400
-     * @tc.number SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400
+     * @tc.name   SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0400
+     * @tc.number SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0400
      * @tc.desc   Test ObservedDate API observable - verify setFullYear and setMonth operations trigger UI update
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400] START');
+    it('SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0400', Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0400] START');
 
       let driver: Driver = await Driver.create();
       await CommonFunc.sleep(2000);
@@ -183,7 +189,8 @@ export default function SVDeepListenObservedBuiltInTest(): void {
       let strJson = inspector.getInspectorByKey('dateText');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('2026-05-01');
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400] Step1: Initial state verified - date is 2026-05-01');
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0400] Step1: Initial state verified - ' +
+        'date is 2026-05-01');
 
       // Step2: Click increaseYearButton to increase year by 1, UI should refresh
       let button = await driver.findComponent(ON.id('increaseYearButton'));
@@ -193,7 +200,8 @@ export default function SVDeepListenObservedBuiltInTest(): void {
       strJson = inspector.getInspectorByKey('dateText');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('2027-05-01');
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400] Step2: After click increaseYearButton - year increased to 2027');
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0400] Step2: After click increaseYearButton - ' +
+        'year increased to 2027');
 
       // Step3: Click increaseMonthButton to increase month by 1, UI should refresh
       button = await driver.findComponent(ON.id('increaseMonthButton'));
@@ -203,9 +211,10 @@ export default function SVDeepListenObservedBuiltInTest(): void {
       strJson = inspector.getInspectorByKey('dateText');
       obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('2027-06-01');
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400] Step3: After click increaseMonthButton - month increased to 06');
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0400] Step3: After click increaseMonthButton - ' +
+        'month increased to 06');
 
-      console.info('[SUB_ARUI_SVDeepListenObservedBuiltInTest_static_0400] END');
+      console.info('[SUB_ARKUI_SVDeepListenObservedBuiltInTest_static_0400] END');
       done();
     });
   });

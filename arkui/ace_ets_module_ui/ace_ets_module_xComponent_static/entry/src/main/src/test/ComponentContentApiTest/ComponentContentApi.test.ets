@@ -63,7 +63,11 @@ export default function ComponentContentApiTest() {
 
       AppStorage.delete('ccApi_created');
       AppStorage.delete('ccApi_disposed');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        arkuiNewErr(SUITE, 'afterEach', 'sleep err: ' + JSON.stringify(err));
+      }
       arkuiNewLog(SUITE, 'afterEach', 'end');
     });
 

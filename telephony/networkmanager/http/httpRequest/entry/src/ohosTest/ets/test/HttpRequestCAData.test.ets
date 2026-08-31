@@ -433,6 +433,15 @@ export default function HttpRequestDataCATest() {
           ExpectFail();
           done();
         }
+        tlsSocketServer.on('connect', async (clientSocket: socket.TLSSocketConnection) => {
+          try {
+            console.info(`${caseName}-----tlsSocketServer on connect`);
+            let clientAddr: socket.NetAddress = await clientSocket.getRemoteAddress();
+            console.info(`${caseName}----------` + JSON.stringify(clientAddr));
+          } catch (e) {
+            console.error(`${caseName} on connect error: ${JSON.stringify(e)}`);
+          }
+        })
         let httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -485,10 +494,14 @@ export default function HttpRequestDataCATest() {
           ExpectFail();
           done();
         }
-        tlsSocketServer.on('connect', async (clientSocket: socket.TLSSocketConnection)=>{
-          console.info(`${caseName}-----tlsSocketServer on connect `);
-          let clientAddr: socket.NetAddress = await clientSocket.getRemoteAddress();
-          console.info(`${caseName}----------`+JSON.stringify(clientAddr));
+        tlsSocketServer.on('connect', async (clientSocket: socket.TLSSocketConnection) => {
+          try {
+            console.info(`${caseName}-----tlsSocketServer on connect`);
+            let clientAddr: socket.NetAddress = await clientSocket.getRemoteAddress();
+            console.info(`${caseName}----------` + JSON.stringify(clientAddr));
+          } catch (e) {
+            console.error(`${caseName} on connect error: ${JSON.stringify(e)}`);
+          }
         })
         let httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {

@@ -15,17 +15,11 @@
  */
 
 
-import { describe, it, expect, beforeAll, Level } from '../../../../hypium/index';
-import { UtilsTest } from '../Util.test';
+import { describe, it, expect, Level } from '../../../../hypium/index';
 import { canIUse } from '@internal.full.global';
 
 export default function CanIUseTest() {
   describe('CanIUseTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("[ARKUI_NEW] CanIUseTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.common.componentSnapshot.static", "EntryAbility");
-    });
-
     /**
      * @tc.number CanIUseTest_001
      * @tc.name canIUseSystemCapabilityArkUIFull

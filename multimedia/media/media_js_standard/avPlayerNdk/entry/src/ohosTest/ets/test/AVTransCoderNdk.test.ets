@@ -32,6 +32,9 @@ const VIDEO_VP9 = '1vp9_320x240_30.mp4';
 const VIDEO_WEBM = 'vp8_720x480_60.webm';
 const VIDEO_LARAGE_RESOLUTION = 'output_8k.mp4';
 const VIDEO_SMALL_RESOLUTION = 'output_160x120.mp4';
+const VIDEO_EXCEEDS_8K_RESOLUTION = 'output_avc_7680x4320.mp4';
+const VIDEO_LARAGE_4096_RESOLUTION = 'output_avc_4096x2304.mp4';
+const VIDEO_FEWER_238_RESOLUTION = 'output_avc_238x238.mp4';
 const AUDIO_SOURCE_MP3 = '01.mp3';
 const VIDEO_SOURCE_HDR_VIVID = 'test_hdr_1.mp4';
 const VIDEO_HIGH_BITRATE = "test_highBit_v46Mbps_a295kbps.mp4";
@@ -1968,6 +1971,162 @@ export default function AVTransCoderNdkTest() {
       let ret: number = avTransCoderNdk.AvTransCoderCreate();
       expect(ret).assertEqual(0);
       done();
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderNdk8KTo1080P0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_8KTO1080P_0001
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 8K to 1080P resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderNdk8KTo1080P0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let avFd = await getRawFd(VIDEO_LARAGE_4096_RESOLUTION);
+        let dstFd = await getFileFd('testOhAvTransCoderNdk8KTo1080P0001_output_video.mp4');
+        let originWidth = 4094;
+        let originHeight = 2302;
+        let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoResolution(avFd.fd, avFd.offset, avFd.length, dstFd.fd, originWidth, originHeight);
+        console.log('case testOhAvTransCoderNdk8KTo1080P0001 ret ' + JSON.stringify(ret));
+        await closeRawFd(VIDEO_LARAGE_4096_RESOLUTION);
+        await closeFileFd(dstFd.fd);
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(3048, 2160);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(1920, 1080);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+        } else {
+          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        }
+        done();
+      } catch (err) {
+        console.error('testOhAvTransCoderNdk8KTo1080P0001 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderNdk8KTo1080P0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_8KTO1080P_0002
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 8K to 1080P resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderNdk8KTo1080P0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let avFd = await getRawFd(VIDEO_FEWER_238_RESOLUTION);
+        let dstFd = await getFileFd('testOhAvTransCoderNdk8KTo1080P0002_output_video.mp4');
+        let originWidth = 240;
+        let originHeight = 240;
+        let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoResolution(avFd.fd, avFd.offset, avFd.length, dstFd.fd, originWidth, originHeight);
+        console.log('case testOhAvTransCoderNdk8KTo1080P0002 ret ' + JSON.stringify(ret));
+        await closeRawFd(VIDEO_FEWER_238_RESOLUTION);
+        await closeFileFd(dstFd.fd);
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(3048, 2160);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(1920, 1080);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+        } else {
+          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
+        }
+        done();
+      } catch (err) {
+        console.error('testOhAvTransCoderNdk8KTo1080P0002 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderNdk8KTo1080P0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_8KTO1080P_0003
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 8K to 1080P resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderNdk8KTo1080P0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let avFd = await getRawFd(VIDEO_EXCEEDS_8K_RESOLUTION);
+        let dstFd = await getFileFd('testOhAvTransCoderNdk8KTo1080P0003_output_video.mp4');
+        let originWidth = 7680;
+        let originHeight = 4318;
+        let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoResolution(avFd.fd, avFd.offset, avFd.length, dstFd.fd, originWidth, originHeight);
+        console.log('case testOhAvTransCoderNdk8KTo1080P0003 ret ' + JSON.stringify(ret));
+        await closeRawFd(VIDEO_EXCEEDS_8K_RESOLUTION);
+        await closeFileFd(dstFd.fd);
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(1920, 1080);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_INVALID_VAL);
+        } else {
+          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+        }
+        done();
+      } catch (err) {
+        console.error('testOhAvTransCoderNdk8KTo1080P0003 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testOhAvTransCoderNdk8KTo1080P0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_8KTO1080P_0004
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 8K to 1080P resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOhAvTransCoderNdk8KTo1080P0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let avFd = await getRawFd(VIDEO_EXCEEDS_8K_RESOLUTION);
+        let dstFd = await getFileFd('testOhAvTransCoderNdk8KTo1080P0004_output_video.mp4');
+        let originWidth = 4096;
+        let originHeight = 2304;
+        let ret: number = avTransCoderNdk.AvTransCodeConfigSetDstVideoResolution(avFd.fd, avFd.offset, avFd.length, dstFd.fd, originWidth, originHeight);
+        console.log('case testOhAvTransCoderNdk8KTo1080P0004 ret ' + JSON.stringify(ret));
+        await closeRawFd(VIDEO_EXCEEDS_8K_RESOLUTION);
+        await closeFileFd(dstFd.fd);
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(1920, 1080);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
+        } else {
+          console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
+          expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
+        }
+        done();
+      } catch (err) {
+        console.error('testOhAvTransCoderNdk8KTo1080P0004 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+        done();
+      }
     });
   })
 }

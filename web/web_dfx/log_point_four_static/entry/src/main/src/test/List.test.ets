@@ -15,10 +15,11 @@
  */
 
 import webInitTest from './WebInitTest.test'
-import webViewInitTest from "./WebInitTest2.test";
+import permissionRequestTest from './PermissionRequestTest.test';
+import verifyPinHandlerTest from './VerifyPinHandlerTest.test';
 
-
-export default function testsuite() {
+export default function testsuite():void {
     webInitTest();
-    webViewInitTest();
+    permissionRequestTest();
+    verifyPinHandlerTest();
 }

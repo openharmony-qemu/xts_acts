@@ -1711,7 +1711,6 @@ export default function cameraJSUnitOutput() {
         createPhotoSession(cameraObj.SceneMode.NORMAL_PHOTO);
         await addCommit(0, cameraObj.SceneMode.NORMAL_PHOTO);
         await cameraSession!.commitConfig();
-        await Utils.msSleep(500);
         await cameraSession!.start();
         if (isEmpty15(photoOutput!)) {
           hilog.info(domain, tag,
@@ -1727,12 +1726,9 @@ export default function cameraJSUnitOutput() {
               err.message);
             }
             hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 ends here");
-            waitForCompletion(async () => {await Utils.msSleep(1000);})
             done();
           })
         }
-        await Utils.msSleep(1000);
-        done();
       } catch (err) {
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 ends here");
         done();
@@ -3642,7 +3638,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (err) {
             console.info(`previewOutPut setLogViewAssistEnable enable failed: ${JSON.stringify(err)}`);
-            expect(err.code == 801).assertTrue()
+            expect(err.code).assertEqual(801)
           }
           try {
             previewOutput!.setLogViewAssistEnable(false)
@@ -3650,7 +3646,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (err) {
             console.info(`previewOutPut setLogViewAssistEnable diaable failed: ${JSON.stringify(err)}`);
-            expect(err.code == 801).assertTrue()
+            expect(err.code).assertEqual(801)
           }
         }
         console.info(`${caseName} PASSED`)
@@ -3691,7 +3687,7 @@ export default function cameraJSUnitOutput() {
           expect().assertFail()
         } catch (error) {
           console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-          expect(error.code == 801).assertTrue()
+          expect(error.code).assertEqual(801)
         }
         console.info(`${caseName} PASSED`)
       } catch (error) {
@@ -3740,7 +3736,7 @@ export default function cameraJSUnitOutput() {
             expect().assertFail()
           } catch (error) {
             console.error(`setLogViewAssistEnable failed, ${JSON.stringify(error)}`)
-            expect(error.code == cameraObj.CameraErrorCode.SESSION_NOT_CONFIG).assertTrue()
+            expect(error.code).assertEqual(cameraObj.CameraErrorCode.SESSION_NOT_CONFIG)
           }
         }
         console.info(`${caseName} PASSED`)

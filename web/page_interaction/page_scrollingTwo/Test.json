@@ -2,8 +2,8 @@
     "description": "Configuration for hjunit demo Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "180000",
-        "shell-timeout": "600000",
+        "test-timeout": "600000",
+        "shell-timeout": "900000",
         "bundle-name": "com.pageInteractionTwoscrollTwo.test",
         "module-name": "entry_test",
         "testcase-timeout": "70000"
@@ -15,7 +15,8 @@
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
-        },{
+        },
+        {
             "type": "ShellKit",
             "run-command": [
                 "wait 5",

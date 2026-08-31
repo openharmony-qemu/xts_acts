@@ -63,7 +63,11 @@ export default function XComponentHdrBrightnessTest() {
 
       AppStorage.delete('xcHdr_mounted');
       AppStorage.delete('xcHdr_hdr_brightness_typed');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        arkuiNewErr(SUITE, 'afterEach', 'sleep err: ' + JSON.stringify(err));
+      }
       arkuiNewLog(SUITE, 'afterEach', 'end');
     });
 

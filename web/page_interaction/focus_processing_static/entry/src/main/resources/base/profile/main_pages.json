@@ -2,6 +2,7 @@
   "src": [
     "pages/blurMode",
     "pages/WebGestureFocusMode",
-    "pages/WebForceEnableZoom"
+    "pages/WebForceEnableZoom",
+    "pages/WebSetSoftKeyboardBehaviorModeParamTest"
   ]
 }

@@ -1947,7 +1947,7 @@ export default function requestVideoTest() {
      */
     it('request_hdr_video_fileUri_imageUri_photoAsset_compatible_onprogress', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_hdr_video_compatible_onprogress';
-      let isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so')
+      let isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so')
       if (!isSupportHdr) {
         console.info('device unsupport hdr');
         done();
@@ -1996,7 +1996,7 @@ export default function requestVideoTest() {
      */
     it('request_hdr_video_fileUri_imageUri_photoAsset_compatible', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_hdr_video_compatible';
-      let isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so')
+      let isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so')
       if (!isSupportHdr) {
         console.info('device unsupport hdr');
         done();

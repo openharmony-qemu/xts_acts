@@ -4,24 +4,13 @@ export default {
   data: {
     listData: [],
   },
-  onInit() {
-    for (let i = 0; i < 10; i++) {
-      this.listData.push('/common/icon.png');
-      this.listData.push('/common/icon.png');
-      this.listData.push('/common/icon.png');
-      this.listData.push('/common/icon.png');
-      this.listData.push('/common/icon.png');
-      this.listData.push('/common/icon.png');
-    }
-  },
+    onInit() {
+        this.listData = new Array(60).fill('/common/icon.png');
+    },
 
   scrollEnd(endState, endComponentIndex) {
-    console.log(
-      'list onscrollend is triggered, end component index=' + endComponentIndex
-    );
   },
   listClick() {
-    console.log('list onclick is triggered');
   },
 
     helpClicked() {
@@ -32,11 +21,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.list_item.status = 'pass';
+        getApp().data.testItems['list_item'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.list_item.status = 'fail';
+        getApp().data.testItems['list_item'].status = 'fail';
         this.back();
     },
     backClicked() {

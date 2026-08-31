@@ -16,7 +16,12 @@
   "apiType": 'stageMode',
   "buildOption": {
     "sourceOption": {
-      "workers": []
+      "workers": [
+        "./src/ohosTest/ets/test/CollectionsArrayConcurrentTest/workers/ArrayForEachWorker.ets",
+        "./src/ohosTest/ets/test/CollectionsArrayConcurrentTest/workers/ArrayEntriesWorker.ets",
+        "./src/ohosTest/ets/test/CollectionsArrayConcurrentTest/workers/ArrayPopWorker.ets",
+        "./src/ohosTest/ets/test/CollectionsArrayConcurrentTest/workers/ArrayPushWorker.ets",
+      ]
     }
   },
   "targets": [

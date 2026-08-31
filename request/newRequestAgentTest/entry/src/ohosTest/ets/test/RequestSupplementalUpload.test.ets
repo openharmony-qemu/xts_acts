@@ -1441,7 +1441,6 @@ export default function requestSupplementalUploadTest() {
               expect(callback1Count > 0).assertTrue();
               expect(callback2Count > 0).assertTrue();
             } else {
-              expect(true).assertTrue();
             }
             uploadTask.off('progress');
             uploadTask.off('headerReceive');
@@ -1459,7 +1458,6 @@ export default function requestSupplementalUploadTest() {
             isDone = true;
             try {
               console.info(`====>SUB_Request_upload_Supplemental_3500 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
-              expect(true).assertTrue();
               uploadTask.off('progress');
               uploadTask.off('headerReceive');
               done();
@@ -1508,7 +1506,6 @@ export default function requestSupplementalUploadTest() {
             if (callback2Count > 0) {
               expect(callback2Count > 0).assertTrue();
             } else {
-              expect(true).assertTrue();
             }
             uploadTask.off('progress');
             uploadTask.off('headerReceive');
@@ -1528,7 +1525,6 @@ export default function requestSupplementalUploadTest() {
             try {
               console.info(`====>SUB_Request_upload_Supplemental_3600 timeout, callback1Count: ${callback1Count}, callback2Count: ${callback2Count}`);
               expect(callback1Count === 0).assertTrue();
-              expect(true).assertTrue();
               uploadTask.off('progress');
               uploadTask.off('headerReceive');
               done();
@@ -1603,7 +1599,6 @@ export default function requestSupplementalUploadTest() {
                 expect(callback1Count > 0).assertTrue();
                 expect(callback2Count > 0).assertTrue();
               } else {
-                expect(true).assertTrue();
               }
               uploadTask.off('headerReceive');
               done();
@@ -1667,7 +1662,6 @@ export default function requestSupplementalUploadTest() {
               if (callback2Count > 0) {
                 expect(callback2Count > 0).assertTrue();
               } else {
-                expect(true).assertTrue();
               }
               uploadTask.off('headerReceive');
               done();

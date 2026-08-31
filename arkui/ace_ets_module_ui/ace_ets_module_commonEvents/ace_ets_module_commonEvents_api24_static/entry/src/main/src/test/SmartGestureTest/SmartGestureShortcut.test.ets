@@ -13,26 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MouseButton, Point, Component } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
+
 import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
+
 import inspector from '@ohos.arkui.inspector';
 
 export default function smartGestureShortcutStaticTest(): void {
   describe('smartGestureShortcutStaticTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("smartGestureShortcutStaticTest beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api24.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("==============================");
@@ -55,8 +49,12 @@ export default function smartGestureShortcutStaticTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info('smartGestureShortcutStaticTest after each called');
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -68,6 +66,7 @@ export default function smartGestureShortcutStaticTest(): void {
      * @tc.size :    MEDIUMTEXT
      */
     it('SUB_ARKUI_SMART_GESTURE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ARKUI_SMART_GESTURE_STATIC_0100] START');
       await CommonFunc.sleep(300);
       let strJson = inspector.getInspectorByKey('button_PA_Static');
@@ -82,7 +81,12 @@ export default function smartGestureShortcutStaticTest(): void {
       expect(obj2).assertEqual(true);
       expect(obj3).assertEqual(true);
       console.info('[SUB_ARKUI_SMART_GESTURE_STATIC_0100] END')
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -94,6 +98,7 @@ export default function smartGestureShortcutStaticTest(): void {
      * @tc.size :    MEDIUMTEXT
      */
     it('SUB_ARKUI_SMART_GESTURE_STATIC_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ARKUI_SMART_GESTURE_STATIC_0200] START');
       let driver = Driver.create();
       let text1: Component = await driver.findComponent(ON.id('text_undefined_Static')) as Component;
@@ -111,7 +116,12 @@ export default function smartGestureShortcutStaticTest(): void {
       expect(obj2).assertEqual(false);
       expect(obj3).assertEqual(false);
       console.info('[SUB_ARKUI_SMART_GESTURE_STATIC_0200] END')
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -123,6 +133,7 @@ export default function smartGestureShortcutStaticTest(): void {
      * @tc.size :    MEDIUMTEXT
      */
     it('SUB_ARKUI_SMART_GESTURE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ARKUI_SMART_GESTURE_STATIC_0300] START');
       let driver = Driver.create();
       let text1: Component = await driver.findComponent(ON.id('text_false_Static')) as Component;
@@ -140,7 +151,12 @@ export default function smartGestureShortcutStaticTest(): void {
       expect(obj2).assertEqual(false);
       expect(obj3).assertEqual(false);
       console.info('[SUB_ARKUI_SMART_GESTURE_STATIC_0300] END')
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   })
 }

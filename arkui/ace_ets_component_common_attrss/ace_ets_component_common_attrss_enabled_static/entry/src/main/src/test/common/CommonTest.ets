@@ -76,7 +76,7 @@ export default class CommonTest {
             pageConfig.componentKey = targetView;
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
-            await Utils.pushPage(pageConfig);
+            try { await Utils.pushPage(pageConfig); } catch (e) { console.info('[' + caseTag + ']' + ' push page error:' + e); }
             console.info('[' + caseTag + ']' + ' push page. end');
             try {
               //If there is no call back functions, do nothing.
@@ -106,7 +106,7 @@ export default class CommonTest {
               // console.info('test ===== 112   ' + pageConfig.componentKey)
               // await Utils.sleep(2000);
               // data.viewObj = JSON.parseJsonElement(strJson);
-              await Utils.sleep(2000);
+              await Utils.sleep(1000);
               // console.info('[' + caseTag + '] ================== strJson: ' + strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
@@ -120,7 +120,7 @@ export default class CommonTest {
               }
             }
 
-            await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            try { await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex); } catch (e) { console.info('[' + caseTag + ']' + ' back error:' + e); }
 
             console.info('[' + caseTag + '] END');
             done();

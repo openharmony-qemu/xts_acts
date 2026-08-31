@@ -29,7 +29,7 @@ import media from '@ohos.multimedia.media';
 
 let mImageGenerator: media.AVImageGenerator | undefined;
 
-let isSupportHdr: boolean;
+let isSupportHdr: boolean = false;
 
 let isSupportedFetchFrameByTime: boolean = true;
 
@@ -47,18 +47,12 @@ export default function pixelMapSupportYuvFetchFrame() {
   describe('pixelMapSupportYuvFetchFrame', () => {
     beforeAll(async () => {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
-      isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
-        if (res) {
-          console.info("file exists");
-          return true;
-        } else {
-          console.info("file not exists");
-          return false;
-        }
-      }).catch((err: BusinessError) => {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        return false;
-      })
+      try {
+        isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportHdr is ' + isSupportHdr);
+      } catch (err) {
+        console.error('The file path does not exist');
+      }
       await checkIsSupportedFetchFrameByTime();
     })
 

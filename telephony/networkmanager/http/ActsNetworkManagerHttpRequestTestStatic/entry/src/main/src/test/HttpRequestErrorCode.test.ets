@@ -448,7 +448,7 @@ export default function httpRequestErrorCodeTest() {
             } else {
               hilog.info(domain, tag, '%{public}s', caseName + ' Network connected ');
               let httpRequest: http.HttpRequest = http.createHttp();
-              httpRequest.request('https://hao123.com',
+              httpRequest.request('https://self-signed.badssl.com',
                 (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
                   if (err?.code != 0) {
                     hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
@@ -724,7 +724,7 @@ export default function httpRequestErrorCodeTest() {
               let httpRequestOptions_noParm: http.HttpRequestOptions = {
                 method: http.RequestMethod.GET
               };
-              httpRequest.request('https://hao123.com', httpRequestOptions_noParm,
+              httpRequest.request('https://self-signed.badssl.com', httpRequestOptions_noParm,
                 (err: BusinessError<void> | null, data: http.HttpResponse | undefined) => {
                   if (err?.code != 0) {
                     hilog.info(domain, tag, '%{public}s', caseName + '  get error is ' + JSON.stringify(err));
@@ -994,7 +994,7 @@ export default function httpRequestErrorCodeTest() {
               let httpRequestOptions_noParm: http.HttpRequestOptions = {
                 method: http.RequestMethod.GET
               };
-              let promise = httpRequest.request('https://hao123.com', httpRequestOptions_noParm);
+              let promise = httpRequest.request('https://self-signed.badssl.com', httpRequestOptions_noParm);
               promise.then((data: http.HttpResponse) => {
                 hilog.info(domain, tag, '%{public}s', caseName + ': HttpResponse ->' + JSON.stringify(data));
                 ExpectFail();

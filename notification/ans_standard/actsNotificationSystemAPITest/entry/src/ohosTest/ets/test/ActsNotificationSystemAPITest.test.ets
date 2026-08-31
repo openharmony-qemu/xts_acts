@@ -40,9 +40,9 @@ export default function ActsNotificationSystemAPITest() {
         content: {
           contentType: notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_Publish"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_Publish'
           }
         }
       }
@@ -85,14 +85,14 @@ export default function ActsNotificationSystemAPITest() {
         content: {
           contentType: notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_Publish"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_Publish'
           }
         }
       }
 
-      notificationManager.publishAsBundle(notificationRequest, "example.bundleName", 0 , (err) => {
+      notificationManager.publishAsBundle(notificationRequest, 'example.bundleName', 0 , (err) => {
         if (err) {
           console.info(`${TAG} publishAsBundle AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(202);
@@ -119,7 +119,7 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4300 START`);
 
         let bundleOpt : notificationManager.BundleOption = {
-            bundle: "example.bundleName",
+            bundle: 'example.bundleName',
             uid: 0
         }
         let notificationRequest : notificationManager.NotificationRequest = {
@@ -127,9 +127,9 @@ export default function ActsNotificationSystemAPITest() {
             content: {
                 notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
                 normal: {
-                    title: "test_title",
-                    text: "test_text",
-                    additionalText: "test_Publish"
+                    title: 'test_title',
+                    text: 'test_text',
+                    additionalText: 'test_Publish'
                 }
             }
         }
@@ -158,7 +158,7 @@ export default function ActsNotificationSystemAPITest() {
     it('Sub_Notification_Ans_Publish_Cancel_0150', Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_0150 START`);
 
-      notificationManager.cancelAsBundle(1, "example.bundleName", 0 , (err) => {
+      notificationManager.cancelAsBundle(1, 'example.bundleName', 0 , (err) => {
         if (err) {
           console.info(`${TAG} cancelAsBundle AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(202);
@@ -185,7 +185,7 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_0160 START`);
 
         let bundleOpt : notificationManager.BundleOption = {
-            bundle: "example.bundleName",
+            bundle: 'example.bundleName',
             uid: 0
         }
         notificationManager.cancelAsBundle(bundleOpt, 1).then(() => {
@@ -244,7 +244,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_0700 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       notificationManager.setNotificationEnable(bundleOpt, true, (err) => {
@@ -274,7 +274,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_Query_0100 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       notificationManager.isNotificationEnabled(bundleOpt, (err, data) => {
@@ -355,7 +355,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Corner_Query_0100 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       notificationManager.displayBadge(bundleOpt, true, (err) => {
@@ -390,7 +390,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_3700 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       notificationManager.isBadgeDisplayed(bundleOpt, (err, data) => {
@@ -425,7 +425,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_3850 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       let slot: notificationManager.NotificationSlot = {
@@ -466,7 +466,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_0900 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
 
@@ -502,7 +502,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_1000 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
 
@@ -564,10 +564,10 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0100 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
-      notificationManager.removeGroupByBundle(bundleOpt, "groupName", (err) => {
+      notificationManager.removeGroupByBundle(bundleOpt, 'groupName', (err) => {
         if (err) {
           console.info(`${TAG} removeGroupByBundle AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(202);
@@ -790,7 +790,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4400 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       notificationManager.setDistributedEnableByBundle(bundleOpt, true, (err) => {
@@ -825,7 +825,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4500 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       notificationManager.isDistributedEnabledByBundle(bundleOpt, (err, data) => {
@@ -891,7 +891,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9600 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       let type = notificationManager.SlotType.SOCIAL_COMMUNICATION;
@@ -927,7 +927,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9700 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       let type = notificationManager.SlotType.SOCIAL_COMMUNICATION;
@@ -1053,7 +1053,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0200 START`);
 
       let subscribeInfo: notificationSubscribe.NotificationSubscribeInfo = {
-        bundleNames: ["example.bundleName"],
+        bundleNames: ['example.bundleName'],
         userId: 0
       }
       notificationSubscribe.subscribe(subscriber, subscribeInfo, (err) => {
@@ -1083,7 +1083,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_0300 START`);
 
       let subscribeInfo: notificationSubscribe.NotificationSubscribeInfo = {
-        bundleNames: ["example.bundleName"],
+        bundleNames: ['example.bundleName'],
         userId: 0
       }
 
@@ -1138,7 +1138,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0200 START`);
 
       let bundleOpt: notificationSubscribe.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       let key: notificationSubscribe.NotificationKey = {
@@ -1171,7 +1171,7 @@ export default function ActsNotificationSystemAPITest() {
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_0300', Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0300 START`);
 
-      notificationSubscribe.remove("device_0_1", notificationSubscribe.RemoveReason.CLICK_REASON_REMOVE, (err) => {
+      notificationSubscribe.remove('device_0_1', notificationSubscribe.RemoveReason.CLICK_REASON_REMOVE, (err) => {
         if (err) {
           console.info(`${TAG} remove AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err.code).assertEqual(202);
@@ -1198,7 +1198,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0400 START`);
 
       let bundleOpt: notificationSubscribe.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       notificationSubscribe.removeAll(bundleOpt, (err) => {
@@ -1280,7 +1280,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_Promise_0100 START`);
 
       await notificationManager.getDoNotDisturbDate().then((data: notificationManager.DoNotDisturbDate) => {
-        console.info("getDoNotDisturbDate success, data: " + JSON.stringify(data));
+        console.info('getDoNotDisturbDate success, data: ' + JSON.stringify(data));
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {
@@ -1312,7 +1312,7 @@ export default function ActsNotificationSystemAPITest() {
       let userId: number = 1;
 
       await notificationManager.getDoNotDisturbDate(userId).then((data: notificationManager.DoNotDisturbDate) => {
-        console.info("getDoNotDisturbDate success, data: " + JSON.stringify(data));
+        console.info('getDoNotDisturbDate success, data: ' + JSON.stringify(data));
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {
@@ -1342,12 +1342,12 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_Promise_1000 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "com.example.actsemitterandcomeventtest",
+        bundle: 'com.example.actsemitterandcomeventtest',
         uid: 0
       }
 
       await notificationManager.getSlotNumByBundle(bundleOpt).then((data: number) => {
-        console.info("getSlotNumByBundle success, data: " + JSON.stringify(data));
+        console.info('getSlotNumByBundle success, data: ' + JSON.stringify(data));
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {
@@ -1377,12 +1377,12 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_Promise_3700 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
 
       await notificationManager.isBadgeDisplayed(bundleOpt).then((data: boolean) => {
-        console.info("isBadgeDisplayed success, data: " + JSON.stringify(data));
+        console.info('isBadgeDisplayed success, data: ' + JSON.stringify(data));
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {
@@ -1412,13 +1412,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_Promise_9700 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       // isNotificationSlotEnabled
       await notificationManager.isNotificationSlotEnabled(bundleOpt,
         notificationManager.SlotType.SOCIAL_COMMUNICATION).then((data: boolean) => {
-        console.info("isNotificationSlotEnabled success, data: " + JSON.stringify(data));
+        console.info('isNotificationSlotEnabled success, data: ' + JSON.stringify(data));
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {
@@ -1448,7 +1448,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_Promise_4300 START`);
       let enable: boolean = true;
       notificationManager.setDistributedEnable(enable).then(() => {
-        console.info("setDistributedEnable success");
+        console.info('setDistributedEnable success');
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {
@@ -1477,13 +1477,13 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_Promise_4400 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
 
       let enable: boolean = true;
       notificationManager.setDistributedEnableByBundle(bundleOpt, enable).then(() => {
-        console.info("setDistributedEnableByBundle success");
+        console.info('setDistributedEnableByBundle success');
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {
@@ -1518,7 +1518,7 @@ export default function ActsNotificationSystemAPITest() {
       }
       let userId: number = 1;
       notificationManager.setDoNotDisturbDate(date, userId).then(() => {
-        console.info("setDoNotDisturbDate success");
+        console.info('setDoNotDisturbDate success');
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {
@@ -1547,14 +1547,14 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_Promise_9600 START`);
 
       let bundleOpt: notificationManager.BundleOption = {
-        bundle: "example.bundleName",
+        bundle: 'example.bundleName',
         uid: 0
       }
       notificationManager.setNotificationEnableSlot(
         bundleOpt,
         notificationManager.SlotType.SOCIAL_COMMUNICATION,
         true, true).then(() => {
-        console.info("setNotificationEnableSlot success");
+        console.info('setNotificationEnableSlot success');
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {
@@ -1583,7 +1583,7 @@ export default function ActsNotificationSystemAPITest() {
       console.info(`${TAG} Sub_Notification_Ans_NoDistrub_Query_Promise_0100 START`);
 
       notificationManager.isSupportDoNotDisturbMode().then((data: boolean) => {
-        console.info("isSupportDoNotDisturbMode success, data: " + JSON.stringify(data));
+        console.info('isSupportDoNotDisturbMode success, data: ' + JSON.stringify(data));
         expect(false).assertTrue()
         done()
       }).catch((err: BusinessError) => {

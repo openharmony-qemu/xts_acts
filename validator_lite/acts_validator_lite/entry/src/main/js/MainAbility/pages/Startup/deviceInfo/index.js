@@ -9,7 +9,6 @@ export default {
 
     clickAction() {
         let obj = this;
-        console.info('clickAction');
         try {
             device.getInfo({
                 success: function(data) {
@@ -27,20 +26,17 @@ export default {
                             'deviceType: ' + data.deviceType;
                     obj.resultText = str;
                     obj.statusMsg = 'success';
-                    console.log('get device info success, data:' + JSON.stringify(data));
                 },
                 fail: function(data, code) {
                     obj.statusMsg = 'fail code: ' + code;
-                    console.log('get device info failed, code: ' + code);
-                    getApp().data.testItems.api_deviceinfo.errorDetail = 'getInfo fail: code=' + code + ', data=' + data;
+                    getApp().data.testItems['api_deviceinfo'].errorDetail = 'getInfo fail: code=' + code + ', data=' + data;
                 },
                 complete: function() {
-                    console.log('get device info completed');
                 }
             });
         } catch (e) {
             console.error('error: ' + e);
-            getApp().data.testItems.api_deviceinfo.errorDetail = 'getInfo error: ' + e;
+            getApp().data.testItems['api_deviceinfo'].errorDetail = 'getInfo error: ' + e;
             this.statusMsg = 'error: ' + e;
         }
     },
@@ -53,11 +49,11 @@ export default {
         router.replace({ uri: 'pages/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.api_deviceinfo.status = 'pass';
+        getApp().data.testItems['api_deviceinfo'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.api_deviceinfo.status = 'fail';
+        getApp().data.testItems['api_deviceinfo'].status = 'fail';
         this.back();
     },
     backClicked() {

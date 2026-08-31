@@ -4696,23 +4696,16 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
         await tcp.bind(bindAddress).catch((err:BusinessError) => {
               console.info('fail to bind' + err.code.toString());
           });
-        await tcp.getState().then((data: socket.SocketStateBase) => {
-          console.info(`${caseName} success data:${JSON.stringify(data)}`);
-          expectEqual(data.isBound as boolean, true);
-          expectEqual(data.isClose as boolean, false);
-          expectEqual(data.isConnected as boolean, false);
-          done();
-        }).catch((err: BusinessError) => {
-          console.info(`${caseName} Fail err:${JSON.stringify(err)}`);
-          expectFail();
-          done();
-        }).finally(async () => {
-          await tcp.close().catch((err:BusinessError) => {
+        let data: socket.SocketStateBase = await tcp.getState();
+        console.info(`${caseName} success data:${JSON.stringify(data)}`);
+        expectEqual(data.isBound as boolean, true);
+        expectEqual(data.isClose as boolean, false);
+        expectEqual(data.isConnected as boolean, false);
+        await tcp.close().catch((err:BusinessError) => {
               console.info('fail to close' + err.code.toString());
           });
           console.info(`${caseName} test end`);
           done();
-        });
       } catch (err) {
         console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
         expectFail();

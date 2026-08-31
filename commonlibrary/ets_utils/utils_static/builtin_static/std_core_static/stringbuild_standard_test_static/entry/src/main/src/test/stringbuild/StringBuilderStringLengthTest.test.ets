@@ -148,7 +148,7 @@ export default function StringBuilderStringLengthTest(): void {
      * @tc.level LEVEL2
      */
     it('testStringBuilderStringLength007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let charArray = new FixedArray<char>(3);
+        let charArray = new FixedArray<char>(3, c'\u0000');
         charArray[0] = c'a';
         charArray[1] = c'b';
         charArray[2] = c'c';

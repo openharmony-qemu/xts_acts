@@ -13,28 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
 import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function renderNodeStateTest(): void {
   describe('renderNodeStateTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("renderNodeStateTest beforeAll start");
-
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi20.static", "EntryAbility")
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("==============================");
       let options: router.RouterOptions = {
@@ -56,7 +47,11 @@ export default function renderNodeStateTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('renderNodeStateTest afterEach sleep error: ' + err);
+      }
       console.info('renderNodeStateTest after each called');
     });
 

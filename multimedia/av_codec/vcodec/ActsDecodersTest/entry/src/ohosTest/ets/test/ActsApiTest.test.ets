@@ -645,5 +645,26 @@ export default function actsApiTest() {
         done();
       }
     });
+
+    /**
+     * @tc.number  SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3100
+     * @tc.name    SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3100
+     * @tc.desc    Check the encoder type
+     * @tc.size    MEDIUMTEST
+     * @tc.type    FUNC
+     * @tc.level   Level1
+     */
+    it('SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3100', Level.LEVEL1, async (done: Function) => {
+      try {
+        hilog.info(DOMAIN, TAG, 'Test SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3100');
+        let result = await testNapi.VideoDecCapApi0031();
+        expect(result).assertEqual(TEST_SUCCESS);
+        done();
+      } catch (err) {
+        hilog.error(DOMAIN, TAG, 'SUB_MULTIMEDIA_VIDEO_DEC_CAP_API_3100 err: %{public}s', JSON.stringify(err));
+        done();
+      }
+    });
+
   });
 }
