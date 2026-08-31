@@ -24,7 +24,7 @@ function publishCallBack() {
   console.debug("====>Publish CallBack ====>");
 }
 
-async function startAbilityProcess(AppAAbilityContext, parameters) {
+async function startAbilityProcess(appAAbilityContext, parameters) {
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
@@ -70,7 +70,7 @@ async function startAbilityProcess(AppAAbilityContext, parameters) {
       break;
   }
   parameters.nextStep = ++idx;
-  AppAAbilityContext.startAbility({
+  appAAbilityContext.startAbility({
     bundleName: bundleName,
     abilityName: abilityName,
     parameters: parameters
@@ -79,7 +79,7 @@ async function startAbilityProcess(AppAAbilityContext, parameters) {
   })
 }
 
-async function onShowProcess(AppAAbilityContext) {
+async function onShowProcess(appAAbilityContext) {
   let abilityWant: Want = AppStorage.get<Want>("abilityWant")!;
   let callBackData = "AppA:"
   callBackSeq += AppStorage.get("onAcceptWantCalledSeq")!;
@@ -99,7 +99,7 @@ async function onShowProcess(AppAAbilityContext) {
     commonEvent.publish("MultiInstanceStartNext", commonEventPublishData, () => {
       callBackSeq = "";
       AppStorage.setOrCreate("onAcceptWantCalledSeq", "");
-      startAbilityProcess(AppAAbilityContext, abilityWant.parameters);
+      startAbilityProcess(appAAbilityContext, abilityWant.parameters);
     })
   }
 }
