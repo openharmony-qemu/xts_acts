@@ -111,6 +111,30 @@ struct webViewController {
                 break;
               }
 
+              case 'emitSetAudioMutedNullStatic001': {
+                try {
+                  let param: boolean | null = null;
+                  this.controller.setAudioMuted(param as boolean);
+                  Utils.emitEvent(true, 41022701);
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(String(error.code), 41022701);
+                }
+                break;
+              }
+
+              case 'emitSetAudioMutedUndefinedStatic001': {
+                try {
+                  let param: boolean | undefined = undefined;
+                  this.controller.setAudioMuted(param as boolean);
+                  Utils.emitEvent(true, 41022702);
+                } catch (error) {
+                  error = error as BusinessError;
+                  Utils.emitEvent(String(error.code), 41022702);
+                }
+                break;
+              }
+
               case 'emitDeleteAllData001': {
                 try {
                   this.controller.loadUrl('resource://rawfile/addOrigin.html')

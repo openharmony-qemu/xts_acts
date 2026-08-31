@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import {beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -76,7 +77,12 @@ export default function webCookieManagerTest(): void {
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
         Utils.emitEvent("testIsCookieAllowed001", 10)
-        Utils.registerEvent("testIsCookieAllowed001", true, 30015, done);
+        Utils.registerBaseEvent("testIsCookieAllowed001", true, 30015, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebCookieManagerButton', 10, '');
         await Utils.msSleep(4000);
@@ -95,7 +101,12 @@ export default function webCookieManagerTest(): void {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsCookieAllowed002", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testIsCookieAllowed002", false, 30016, done);
+        Utils.registerBaseEvent("testIsCookieAllowed002", false, 30016, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         inspector.sendEventByKey('WebCookieManagerButton', 10, '');
         await Utils.msSleep(4000);
         done()
@@ -113,7 +124,12 @@ export default function webCookieManagerTest(): void {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsThirdPartyCookieAllowed001", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testIsThirdPartyCookieAllowed001", true, 30025, done);
+        Utils.registerBaseEvent("testIsThirdPartyCookieAllowed001", true, 30025, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         inspector.sendEventByKey('WebCookieManagerButton', 10, '');
         await Utils.msSleep(4000);
         done()
@@ -131,7 +147,12 @@ export default function webCookieManagerTest(): void {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testIsThirdPartyCookieAllowed002", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testIsThirdPartyCookieAllowed002", false, 30026, done);
+        Utils.registerBaseEvent("testIsThirdPartyCookieAllowed002", false, 30026, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         inspector.sendEventByKey('WebCookieManagerButton', 10, '');
         await Utils.msSleep(4000);
         done()
@@ -149,7 +170,58 @@ export default function webCookieManagerTest(): void {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("testPutAcceptThirdPartyCookieEnabled001", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testPutAcceptThirdPartyCookieEnabled001", false, 30033, done);
+        Utils.registerBaseEvent("testPutAcceptThirdPartyCookieEnabled001", false, 30033, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+        inspector.sendEventByKey('WebCookieManagerButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
+
+    /**
+     * @tc.name   testPutAcceptThirdPartyCookieEnabledNullStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_PUTACCEPTTHIRDPARTYCOOKIEENABLED_NULL_0100
+     * @tc.desc   test putAcceptThirdPartyCookieEnabled null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPutAcceptThirdPartyCookieEnabledNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testPutAcceptThirdPartyCookieEnabledNullStatic', 10)
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent('testPutAcceptThirdPartyCookieEnabledNullStatic', false, 30034, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+        inspector.sendEventByKey('WebCookieManagerButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
+
+    /**
+     * @tc.name   testPutAcceptThirdPartyCookieEnabledUndefinedStatic
+     * @tc.number SUB_WEB_WEBCOOKIEMANAGER_PUTACCEPTTHIRDPARTYCOOKIEENABLED_UNDEFINED_0200
+     * @tc.desc   test putAcceptThirdPartyCookieEnabled undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPutAcceptThirdPartyCookieEnabledUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testPutAcceptThirdPartyCookieEnabledUndefinedStatic', 10)
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent('testPutAcceptThirdPartyCookieEnabledUndefinedStatic', false, 30035, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
         inspector.sendEventByKey('WebCookieManagerButton', 10, '');
         await Utils.msSleep(4000);
         done()

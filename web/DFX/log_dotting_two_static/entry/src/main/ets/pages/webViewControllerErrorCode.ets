@@ -114,6 +114,52 @@ struct Index {
               break;
             }
 
+            case "testPageUpNullStatic001": {
+              try {
+                this.controller.pageUp(null as boolean);
+                Utils.emitEvent(true, 41022201)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 41022201)
+              }
+              break;
+            }
+
+            case "testPageUpUndefinedStatic001": {
+              try {
+                let param: boolean | undefined = undefined;
+                this.controller.pageUp(param as boolean);
+                Utils.emitEvent(true, 41022202)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 41022202)
+              }
+              break;
+            }
+
+            case "testPageDownNullStatic001": {
+              try {
+                this.controller.pageDown(null as boolean);
+                Utils.emitEvent(true, 41022301)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 41022301)
+              }
+              break;
+            }
+
+            case "testPageDownUndefinedStatic001": {
+              try {
+                let param: boolean | undefined = undefined;
+                this.controller.pageDown(param as boolean);
+                Utils.emitEvent(true, 41022302)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 41022302)
+              }
+              break;
+            }
+
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

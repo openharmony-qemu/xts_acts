@@ -499,7 +499,7 @@ export default function WebHttpCookies() {
         webview.WebCookieManager.fetchAllCookies(null)
       } catch (error) {
         console.error(`ErrorCode:${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
-        if (error.code == 401) {
+        if (error.code === 401) {
           result = true
         }
       }
@@ -521,7 +521,7 @@ export default function WebHttpCookies() {
         webview.WebCookieManager.fetchAllCookies(undefined)
       } catch (error) {
         console.error(`ErrorCode:${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
-        if (error.code == 401) {
+        if (error.code === 401) {
           result = true
         }
       }

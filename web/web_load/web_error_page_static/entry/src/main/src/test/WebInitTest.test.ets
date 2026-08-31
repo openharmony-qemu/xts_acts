@@ -14,28 +14,29 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-let testAbilityContext:common.UIAbilityContext;
+let testAbilityContext: common.UIAbilityContext;
 
-export default function webInitTest() {
-  describe('webInitTest', ():void => {
+export default function webInitTest(): void {
+  describe('webInitTest', (): void => {
     beforeAll(async (): Promise<void> => {
-      let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+      let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
         abilityName: 'EntryAbility',
-        moduleName:'entry',
-        onAbilityCreate: (abilitys : UIAbility) : void => {
+        moduleName: 'entry',
+        onAbilityCreate: (abilitys: UIAbility): void => {
           testAbilityContext = abilitys.context
         },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
+      }, (err: BusinessError | null, data: undefined): void => {
+        if (err != null) {
           console.log('-----' + err.code)
         }
         console.log('BusinessError  end')
@@ -333,7 +334,11 @@ export default function webInitTest() {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitSetErrorPageEnabledWithSubframe01', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetErrorPageEnabledWithSubframeStatic01', 'true,true', 60620, done);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframeStatic01', 'true,true', 60620, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebErrorPageButton', 10, '');
       await Utils.msSleep(6000);
@@ -352,7 +357,11 @@ export default function webInitTest() {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitSetErrorPageEnabledWithSubframe02', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetErrorPageEnabledWithSubframeStatic02', 'true,false', 60621, done);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframeStatic02', 'true,false', 60621, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebErrorPageButton', 10, '');
       await Utils.msSleep(6000);
@@ -371,7 +380,11 @@ export default function webInitTest() {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitSetErrorPageEnabledWithSubframe03', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetErrorPageEnabledWithSubframeStatic03', 'false,false', 60622, done);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframeStatic03', 'false,false', 60622, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebErrorPageButton', 10, '');
       await Utils.msSleep(6000);
@@ -390,7 +403,11 @@ export default function webInitTest() {
       await Utils.msSleep(2000);
       Utils.emitEvent('emitSetErrorPageEnabledWithSubframe04', 10)
       await Utils.msSleep(3000);
-      Utils.registerEvent('testSetErrorPageEnabledWithSubframeStatic04', 'false,false', 60623, done);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframeStatic04', 'false,false', 60623, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebErrorPageButton', 10, '');
       await Utils.msSleep(6000);
@@ -429,6 +446,482 @@ export default function webInitTest() {
       Utils.emitEvent('emitGetSubframeErrorPageEnabledErrorCode01', 10)
       await Utils.msSleep(3000);
       Utils.registerEvent('testGetSubframeErrorPageEnabledErrorCodeStatic01', 17100001, 60625, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testEnableAdsBlockNullStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0021
+    * @tc.desc         test enableAdsBlock null
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testEnableAdsBlockNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitEnableAdsBlockNull', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testEnableAdsBlockNullStatic', '401', 60626, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testEnableAdsBlockNullStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testEnableAdsBlockUndefinedStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0022
+    * @tc.desc         test enableAdsBlock undefined
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testEnableAdsBlockUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitEnableAdsBlockUndefined', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testEnableAdsBlockUndefinedStatic', '401', 60627, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testEnableAdsBlockUndefinedStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledNullStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0023
+    * @tc.desc         test setErrorPageEnabled null
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledNull', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testSetErrorPageEnabledNullStatic', '401', 60628, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testSetErrorPageEnabledNullStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledUndefinedStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0024
+    * @tc.desc         test setErrorPageEnabled undefined
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledUndefined', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testSetErrorPageEnabledUndefinedStatic', '401', 60629, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testSetErrorPageEnabledUndefinedStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledWithSubframeNullEnableStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0025
+    * @tc.desc         test setErrorPageEnabled(null, true)
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledWithSubframeNullEnableStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframeNullEnable', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframeNullEnableStatic', '401', 60630, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testSetErrorPageEnabledWithSubframeNullEnableStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledWithSubframeUndefinedEnableStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0026
+    * @tc.desc         test setErrorPageEnabled(undefined, true)
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledWithSubframeUndefinedEnableStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframeUndefinedEnable', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframeUndefinedEnableStatic', '401', 60631, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testSetErrorPageEnabledWithSubframeUndefinedEnableStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledWithSubframeNullSubframeStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0027
+    * @tc.desc         test setErrorPageEnabled(true, null)
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledWithSubframeNullSubframeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframeNullSubframe', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframeNullSubframeStatic', 'true,false', 60632, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testSetErrorPageEnabledWithSubframeNullSubframeStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetErrorPageEnabledWithSubframeUndefinedSubframeStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0028
+    * @tc.desc         test setErrorPageEnabled(true, undefined)
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetErrorPageEnabledWithSubframeUndefinedSubframeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetErrorPageEnabledWithSubframeUndefinedSubframe', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testSetErrorPageEnabledWithSubframeUndefinedSubframeStatic', 'true,false', 60633, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testSetErrorPageEnabledWithSubframeUndefinedSubframeStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testGetSubframeErrorPageEnabledStandaloneStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0029
+    * @tc.desc         test getSubframeErrorPageEnabled standalone
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testGetSubframeErrorPageEnabledStandaloneStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitGetSubframeErrorPageEnabledStandalone', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testGetSubframeErrorPageEnabledStandaloneStatic', true, 60634, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testGetSubframeErrorPageEnabledStandaloneStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testGetSubframeErrorPageEnabledReturnFalseStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0037
+    * @tc.desc         test getSubframeErrorPageEnabled return false
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testGetSubframeErrorPageEnabledReturnFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitGetSubframeErrorPageEnabledReturnFalse', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testGetSubframeErrorPageEnabledReturnFalseStatic', false, 60642, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testGetSubframeErrorPageEnabledReturnFalseStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testPrivateNetworkAccessNullStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0030
+    * @tc.desc         test enablePrivateNetworkAccess null
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testPrivateNetworkAccessNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitPrivateNetworkAccessNull', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testPrivateNetworkAccessNullStatic', '401', 60635, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testPrivateNetworkAccessNullStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testPrivateNetworkAccessUndefinedStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0031
+    * @tc.desc         test enablePrivateNetworkAccess undefined
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testPrivateNetworkAccessUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitPrivateNetworkAccessUndefined', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testPrivateNetworkAccessUndefinedStatic', '401', 60636, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testPrivateNetworkAccessUndefinedStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetAutoPreconnectNullStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0032
+    * @tc.desc         test setAutoPreconnect null
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetAutoPreconnectNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetAutoPreconnectNull', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testSetAutoPreconnectNullStatic', '401', 60637, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testSetAutoPreconnectNullStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testSetAutoPreconnectUndefinedStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0033
+    * @tc.desc         test setAutoPreconnect undefined
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testSetAutoPreconnectUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitSetAutoPreconnectUndefined', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testSetAutoPreconnectUndefinedStatic', '401', 60638, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testSetAutoPreconnectUndefinedStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testWebSiteIsolationModeNullStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0034
+    * @tc.desc         test setSiteIsolationMode null
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testWebSiteIsolationModeNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitWebSiteIsolationModeNull', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testWebSiteIsolationModeNullStatic', '401', 60639, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testWebSiteIsolationModeNullStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testWebSiteIsolationModeUndefinedStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0035
+    * @tc.desc         test setSiteIsolationMode undefined
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testWebSiteIsolationModeUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitWebSiteIsolationModeUndefined', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testWebSiteIsolationModeUndefinedStatic', '401', 60640, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testWebSiteIsolationModeUndefinedStatic] err:' + JSON.stringify(err));
+        done();
+      }
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebErrorPageButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+    * @tc.name         testWebSiteIsolationModeInvalidStatic
+    * @tc.number       SUB_ACE_WEB_ERRORPAGE_API_0036
+    * @tc.desc         test setSiteIsolationMode invalid enum
+    * @tc.size         MediumTest
+    * @tc.type         Function
+    * @tc.level        LEVEL0
+    */
+    it('testWebSiteIsolationModeInvalidStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitWebSiteIsolationModeInvalid', 10)
+      await Utils.msSleep(3000);
+      Utils.registerBaseEvent('testWebSiteIsolationModeInvalidStatic', '401', 60641, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          expect(data['ACTION']).assertEqual(expected);
+        });
+      } catch (err) {
+        console.info('[testWebSiteIsolationModeInvalidStatic] err:' + JSON.stringify(err));
+        done();
+      }
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebErrorPageButton', 10, '');
       await Utils.msSleep(6000);

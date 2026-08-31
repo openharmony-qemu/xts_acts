@@ -441,6 +441,68 @@ struct setBlanklessLoadingWithParamsTest {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();
                 router.pushUrl({ url: 'pages/SetBlanklessLoadingWithKeyTest' })
+                break;
+              }
+              case 'testSetBlanklessLoadingWithParams801Static': {
+                let msg = 'testSetBlanklessLoadingWithParams801Static';
+                try {
+                  let param: webView.BlanklessLoadingParam = {
+                    enable: true,
+                    duration: 500,
+                    expirationTime: 0,
+                    callback: (info: webView.BlanklessFrameInterpolationInfo) => {
+                      console.log(msg + ` callback key: ${info.key} , state: ${info.state}`);
+                    }
+                  }
+                  this.controller.setBlanklessLoadingWithParams('coverage801Key', param);
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(801, 148661);
+                  } else {
+                    Utils.emitEvent(Number(error.code), 148661);
+                  }
+                }
+                break;
+              }
+              case 'testSetBlanklessLoadingWithParamsEnableFalse': {
+                let msg = 'testSetBlanklessLoadingWithParamsEnableFalse';
+                let key = 'setBlanklessLoadingWithParamsEnableFalse';
+                try {
+                  this.controller.loadUrl('resource://rawfile/indexPhoto.html');
+                  setTimeout(() => {
+                    try {
+                      webView.WebviewController.clearBlanklessLoadingCache([key]);
+                      let infoOne = this.controller.getBlanklessInfoWithKey(key);
+                      console.log(msg, `errCode:${infoOne.errCode},similarity:${infoOne.similarity}`);
+                      let param: webView.BlanklessLoadingParam = {
+                        enable: false,
+                        duration: 500,
+                        expirationTime: 0,
+                        callback: (info: webView.BlanklessFrameInterpolationInfo) => {
+                          console.log(msg + ` callback key: ${info.key} , state: ${info.state}`);
+                        }
+                      }
+                      let result = this.controller.setBlanklessLoadingWithParams(key, param);
+                      if (result == webview.WebBlanklessErrorCode.SUCCESS) {
+                        Utils.emitEvent(result, 148665);
+                      }
+                    } catch (error) {
+                      if (Number(error.code) == 801) {
+                        Utils.emitEvent(0, 148665);
+                      } else {
+                        Utils.emitEvent(401, 148665);
+                      }
+                    }
+                  }, 2000);
+                } catch (error) {
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(0, 148665);
+                  } else {
+                    Utils.emitEvent(401, 148665);
+                  }
+                }
+                break;
               }
             }
           })

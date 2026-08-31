@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import {beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import Utils from '../../src/test/Util.test';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Driver, ON } from '@ohos.UiTest';
@@ -79,7 +80,12 @@ export default function webInitTest() {
 	  await Utils.msSleep(4000);
       Utils.emitEvent('emitSetPrintBackgroundOne', 10)
 	  await Utils.msSleep(4000);
-      Utils.registerEvent('testSetPrintBackgroundOne', false, 214, done);
+      Utils.registerBaseEvent('testSetPrintBackgroundOne', false, 214, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
 	  await Utils.msSleep(4000);
 	  inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.msSleep(4000);
@@ -98,7 +104,12 @@ export default function webInitTest() {
       await Utils.msSleep(4000);
       Utils.emitEvent('emitSetPrintBackgroundStatic002', 10)
       await Utils.msSleep(4000);
-      Utils.registerEvent('testSetPrintBackgroundOneStatic002', true, 202603251, done);
+      Utils.registerBaseEvent('testSetPrintBackgroundOneStatic002', true, 202603251, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(4000);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.msSleep(4000);
@@ -117,12 +128,81 @@ export default function webInitTest() {
       await Utils.msSleep(4000);
       Utils.emitEvent('emitSetPrintBackgroundStatic003', 10)
       await Utils.msSleep(4000);
-      Utils.registerEvent('testSetPrintBackgroundOneStatic003', "17100001", 202603252, done);
+      Utils.registerBaseEvent('testSetPrintBackgroundOneStatic003', "17100001", 202603252, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(4000);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.msSleep(10000);
       done();
     })
+
+    /**
+     * @tc.name   testSetPrintBackgroundNullStatic001
+     * @tc.number SUB_WEB_SETPRINTBACKGROUND_NULL_0100
+     * @tc.desc   test setPrintBackground with null param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetPrintBackgroundNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitSetPrintBackgroundNullStatic001', 10)
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent('testSetPrintBackgroundNullStatic001', true, 41022901, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+        const data = backData?.data as Record<string, RecordData>;
+        const action = data['ACTION'];
+        expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebInitTestButton', 10, '');
+        await Utils.msSleep(4000);
+        done();
+    
+      } catch (err) {
+        console.info('[testSetPrintBackgroundNullStatic001] err:' + JSON.stringify(err));
+        done();
+
+        }
+      })
+
+    /**
+     * @tc.name   testSetPrintBackgroundUndefinedStatic001
+     * @tc.number SUB_WEB_SETPRINTBACKGROUND_UNDEFINED_0100
+     * @tc.desc   test setPrintBackground with undefined param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetPrintBackgroundUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitSetPrintBackgroundUndefinedStatic001', 10)
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent('testSetPrintBackgroundUndefinedStatic001', true, 41022902, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+        const data = backData?.data as Record<string, RecordData>;
+        const action = data['ACTION'];
+        expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebInitTestButton', 10, '');
+        await Utils.msSleep(4000);
+        done();
+    
+      } catch (err) {
+        console.info('[testSetPrintBackgroundUndefinedStatic001] err:' + JSON.stringify(err));
+        done();
+
+        }
+      })
 
     /**
      * @tc.name   testOptimizeParserBudgetStatic
@@ -133,15 +213,27 @@ export default function webInitTest() {
      * @tc.level  LEVEL0
      */
     it('testOptimizeParserBudgetStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await Utils.msSleep(4000);
-      Utils.emitEvent('emitOptimizeParserBudgetStatic', 10)
-      await Utils.msSleep(4000);
-      Utils.registerEvent('testOptimizeParserBudgetStatic', true, 133826326, done);
-      await Utils.msSleep(4000);
-      inspector.sendEventByKey('WebInitTestButton', 10, '');
-      await Utils.msSleep(10000);
-      done();
-    })
+      try {
+        await Utils.msSleep(4000);
+        Utils.emitEvent('emitOptimizeParserBudgetStatic', 10)
+        await Utils.msSleep(4000);
+        Utils.registerBaseEvent('testOptimizeParserBudgetStatic', true, 133826326, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+        const data = backData?.data as Record<string, RecordData>;
+        const action = data['ACTION'];
+        expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(4000);
+        inspector.sendEventByKey('WebInitTestButton', 10, '');
+        await Utils.msSleep(10000);
+        done();
+    
+      } catch (err) {
+        console.info('[testOptimizeParserBudgetStatic] err:' + JSON.stringify(err));
+        done();
+
+        }
+      })
 
     /**
      * @tc.name   testWebViewNotRespondingReasonStatic001
@@ -155,7 +247,12 @@ export default function webInitTest() {
       await Utils.msSleep(4000);
       Utils.emitEvent('emitWebViewNotRespondingReason_INPUT_TIMEOUT', 10)
       await Utils.msSleep(4000);
-      Utils.registerEvent('testWebViewNotRespondingReasonStatic001', 0, 133826325, done);
+      Utils.registerBaseEvent('testWebViewNotRespondingReasonStatic001', 0, 133826325, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(4000);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.msSleep(12000);

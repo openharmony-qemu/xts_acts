@@ -104,6 +104,32 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                 break;
               }
 
+              case 'testPutAcceptThirdPartyCookieEnabledNullStatic': {
+                try {
+                  let v: boolean | null = null;
+                  webview.WebCookieManager.putAcceptThirdPartyCookieEnabled(v as boolean);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                setTimeout(() => {
+                  Utils.emitEvent(webview.WebCookieManager.isThirdPartyCookieAllowed(), 30034)
+                }, 3000)
+                break;
+              }
+
+              case 'testPutAcceptThirdPartyCookieEnabledUndefinedStatic': {
+                try {
+                  let v: boolean | undefined = undefined;
+                  webview.WebCookieManager.putAcceptThirdPartyCookieEnabled(v as boolean);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                setTimeout(() => {
+                  Utils.emitEvent(webview.WebCookieManager.isThirdPartyCookieAllowed(), 30035)
+                }, 3000)
+                break;
+              }
+
               case 'emitonSwitchNextPage': {
                 let uiContext: UIContext = this.getUIContext();
                 let router: Router = uiContext.getRouter();
