@@ -50,7 +50,7 @@ class MainAbility5 extends UIAbility {
       this.context.terminateSelf().then(() => {
         console.log('====>MainAbility5 in terminateSelf====>');
       })
-    }, 2000)
+    }, 500)
   }
 
   onDestroy(): Promise<void> | undefined {
