@@ -70,7 +70,7 @@ async function addResourceAbnormalPromiseTest(done: Function, testName: string, 
     expect().assertFail();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-    expect(String(error.code)).assertEqual(String(errorCode));
+    expect(error.code).assertEqual(String(errorCode));
   } finally {
     done();
   }
@@ -113,7 +113,7 @@ async function addResourceBufferAbnormalPromiseTest(done: Function, testName: st
     expect().assertFail();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
-    expect(String(error.code)).assertEqual(String(errorCode));
+    expect(error.code).assertEqual(String(errorCode));
   } finally {
     done();
   }
