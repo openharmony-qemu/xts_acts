@@ -210,8 +210,9 @@ export default function ActsDlpNDKTest() {
     it('SUB_Security_DataSecurity_DlpNotSupported_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const OH_DLP_NOT_SUPPORTED = 801;
       console.log("=======> SUB_Security_DataSecurity_DlpNotSupported_0010  ==========");
+      let result: number = OH_DLP_NOT_SUPPORTED;
       try{
-        let result = await testNapi.osGetDlpPermissionInfoA();
+        result = await testNapi.osGetDlpPermissionInfoA();
         console.log("=======>SUB_Security_DataSecurity_DlpNotSupported_0010 result:" + result);
         if (result === OH_DLP_NOT_SUPPORTED) {
           expect(result).assertEqual(OH_DLP_NOT_SUPPORTED);
