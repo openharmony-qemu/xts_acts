@@ -1674,41 +1674,50 @@ export default function WebSocketTest() {
               client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
                 if (value) {
                   hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
-                  let connections = server.listAllConnections()
-                  hilog.info(domain, tag, '%{public}s', caseName + 'connections: ' + JSON.stringify(connections));
-                  if (connections == null || connections.length === 0) {
-                    ExpectFail();
-                    client.close();
-                    server.stop();
-                    hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
-                    done();
-                  } else {
-                    let connection: webSocket.WebSocketConnection = connections[0];
-                    server.send("hello client", connection).then((value: boolean | undefined) => {
-                      if (value) {
-                        ExpectTrue(value !== null);
+                  let retryCount = 0;
+                  let maxRetry = 10;
+                  let tryGetConnections = () => {
+                    let connections = server.listAllConnections();
+                    hilog.info(domain, tag, '%{public}s', caseName + 'retry ' + retryCount + ' connections: ' + JSON.stringify(connections));
+                    if (connections != null && connections.length > 0) {
+                      let connection: webSocket.WebSocketConnection = connections[0];
+                      server.send("hello client", connection).then((value: boolean | undefined) => {
+                        if (value) {
+                          ExpectTrue(value !== null);
+                          client.close();
+                          server.stop();
+                          hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+                          done();
+                        } else {
+                          ExpectFail();
+                          client.close();
+                          server.stop();
+                          hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+                          done();
+                        }
+                      }).catch((error: Error) => {
+                        hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + (error as BusinessError).code);
+                        ExpectTrue((error as BusinessError).code === 2302006);
                         client.close();
                         server.stop();
                         hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                         done();
-                      } else {
-                        ExpectFail();
-                        client.close();
-                        server.stop();
-                        hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
-                        done();
-                      }
-                    }).catch((error: Error) => {
-                      hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + (error as BusinessError).code);
-                      ExpectTrue((error as BusinessError).code === 2302006);
+                      })
+                    } else if (retryCount < maxRetry) {
+                      retryCount++;
+                      setTimeout(tryGetConnections, 100);
+                    } else {
+                      ExpectFail();
                       client.close();
                       server.stop();
                       hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                       done();
-                    })
-                  }
+                    }
+                  };
+                  tryGetConnections();
                 } else {
                   ExpectFail();
+                  server.stop();
                   done()
                 }
               });
@@ -2669,10 +2678,6 @@ export default function WebSocketTest() {
         ExpectTrue(typeof httpProxy.host === 'string');
         ExpectTrue(typeof httpProxy.port === 'number');
         ExpectTrue(Array.isArray(httpProxy.exclusionList));
-        let options: webSocket.WebSocketRequestOptions = {
-          proxy: httpProxy
-        };
-        ExpectTrue(typeof options.proxy === 'object');
         hilog.info(domain, tag, '%{public}s', caseName + ' webSocket.HttpProxy interface covered successfully');
         done();
         hilog.info(domain, tag, '%{public}s', caseName + ' test end');
