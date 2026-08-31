@@ -13,43 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import UIAbility from '@ohos.app.ability.UIAbility';
-import AbilityConstant from '@ohos.app.ability.AbilityConstant';
-import Want from '@ohos.app.ability.Want';
-import window from '@ohos.window';
-import { BusinessError } from '@ohos.base';
+ 
+import { AbilityConstant, UIAbility, application, Want} from '@kit.AbilityKit';
+import common from '@ohos.app.ability.common';
 import hilog from '@ohos.hilog';
-import application from '@ohos.app.ability.application';
-import CommonEventManager from '@ohos.commonEventManager';
-
+import window from '@ohos.window';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { Constant } from '../../src/Common';
+import { commonEventManager } from '@kit.BasicServicesKit';
 const DOMAIN = 0x0000;
 
 async function publishEvent(err: BusinessError) {
-  let commonEventPublishData: CommonEventManager.CommonEventPublishData = {
+  let commonEventPublishData: commonEventManager.CommonEventPublishData = {
     code: err.code,
     data: err.message,
   };
-  CommonEventManager.publish('START_ABILITY_CALLBACK_200', commonEventPublishData, () => {
+  commonEventManager.publish(Constant.event_300, commonEventPublishData, () => {
     console.log('liubea-============>publish START_ABILITY_CALLBACK_998877 success==========>>');
   });
 }
 
-const TEST_SUITE_NAME: string = 'StartSpecifiedProcessStaticTest';
+const TEST_SUITE_NAME: string = 'StartSpecifiedProcessTest';
 
-async function publishEvent400(err: BusinessError) {
-  let commonEventPublishData: CommonEventManager.CommonEventPublishData = {
-    code: err.code,
-    data: err.message,
-  };
-  CommonEventManager.publish('START_ABILITY_CALLBACK_400', commonEventPublishData, () => {
-    console.log('liubea-============>publish START_ABILITY_CALLBACK_998877 success==========>>');
-  });
-}
-
-class EntryAbility3 extends UIAbility {
+export default class EntryAbility3 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    hilog.info(0x0000, 'testTag EntryAbility3', 'EntryAbility3 onCreate');
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
     let resultCode: BusinessError = {
       code: 0,
       message: 'success',
@@ -66,9 +54,10 @@ class EntryAbility3 extends UIAbility {
             console.info('promote succeed');
             publishEvent(resultCode);
           })
-          .catch((err: Error): void => {
+          .catch((err: Error) => {
             console.error(`promote failed, code is ${err.code}, message is ${err.message}`);
-            publishEvent(err as BusinessError<void>);
+            publishEvent(err as BusinessError);
+            return err;
           });
       } catch (error) {
         let code: number = (error as BusinessError).code;
@@ -86,9 +75,10 @@ class EntryAbility3 extends UIAbility {
             console.info('demote succeed');
             publishEvent(resultCode);
           })
-          .catch((err: Error): void => {
+          .catch((err: Error) => {
             console.error(`demote failed, code is ${err.code}, message is ${err.message}`);
-            publishEvent(err as BusinessError<void>);
+            publishEvent(err as BusinessError);
+            return err;
           });
       } catch (error) {
         let code: number = (error as BusinessError).code;
@@ -96,54 +86,37 @@ class EntryAbility3 extends UIAbility {
         console.error(`demoteCurrentFromCandidateMasterProcess failed, error.code: ${code}, error.message: ${message}`);
       }
     }
+  }
 
-    if (want.parameters?.['isExit'] === true || want.parameters?.['isOnNewProcessRequest'] === true) {
-      console.info(`${TEST_SUITE_NAME}====> begin: exit`)
-      try {
-        application.exitMasterProcessRole()
-          .then(() => {
-            console.info('exit succeed');
-            publishEvent(resultCode);
-          })
-          .catch((err: Error): void => {
-            console.error(`demote failed, code is ${err.code}, message is ${err.message}`);
-            publishEvent(err as BusinessError<void>);
-            publishEvent400(err as BusinessError<void>);
-          })
-      } catch (error) {
-        let code: number = (error as BusinessError).code;
-        let message: string = (error as BusinessError).message;
-        console.error(`exitMasterProcessRole failed, error.code: ${code}, error.message: ${message}`);
-      }
-    }
+  onDestroy(): void {
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    hilog.info(0x0000, 'testTag EntryAbility3', 'EntryAbility3 onWindowStageCreate');
-    windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
-        hilog.info(0x0000, 'testTag EntryAbility3', 'loadContent entering');
-        if (err?.code) {
-          hilog.info(0x0000, 'testTag EntryAbility3', 'loadContent error');
-          return;
-        }
-        hilog.info(0x0000, 'testTag EntryAbility3', 'loadContent ok');
-      });
+    // Main window is created, set main page for this ability
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+
+    windowStage.loadContent('pages/Index', (err) => {
+      if (err && err.code) {
+        hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
+        return;
+      }
+      hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
+    });
   }
 
-  onDestroy(): Promise<void> | undefined {
-    hilog.info(0x0000, 'testTag EntryAbility3', 'EntryAbility3 onDestroy');
-    return undefined;
+  onWindowStageDestroy(): void {
+    // Main window is destroyed, release UI related resources
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
-  onWindowStageDestroy() {
-    hilog.info(0x0000, 'testTag EntryAbility3', 'EntryAbility3 onWindowStageDestroy');
+  onForeground(): void {
+    // Ability has brought to foreground
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
-  onForeground() {
-    hilog.info(0x0000, 'testTag EntryAbility3', 'EntryAbility3 onForeground');
-  }
-
-  onBackground() {
-    hilog.info(0x0000, 'testTag EntryAbility3', 'EntryAbility3 onBackground');
+  onBackground(): void {
+    // Ability has back to background
+    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }

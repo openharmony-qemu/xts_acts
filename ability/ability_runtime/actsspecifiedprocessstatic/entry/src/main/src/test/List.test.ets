@@ -16,6 +16,6 @@
 
 import StartSpecifiedProcessStaticTest from './StartSpecifiedProcessStaticTest.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   StartSpecifiedProcessStaticTest();
 }
