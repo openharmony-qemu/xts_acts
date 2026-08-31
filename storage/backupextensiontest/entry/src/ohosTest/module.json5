@@ -58,7 +58,7 @@
             "resource": "$profile:backup_config"
           }
         ],
-        "srcEntrance": "./ets/common/BackupExtension.ts"
+        "srcEntrance": "./ets/common/BackupExtension.ets"
       }
     ]
   }

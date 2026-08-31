@@ -15,21 +15,21 @@
 
 {
   "module": {
-    "name": "entry_test",
-    "type": "feature",
-    "description": "$string:module_test_desc",
-    "mainElement": "TestAbility",
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:entry_desc",
+    "mainElement": "EntryAbility",
     "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
-    "pages": "$profile:test_pages",
+    "pages": "$profile:main_pages",
     "abilities": [
       {
-        "name": "TestAbility",
-        "srcEntry": "./ets/testability/TestAbility.ets",
-        "description": "$string:TestAbility_desc",
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:MainAbility_desc",
         "icon": "$media:icon",
-        "label": "$string:TestAbility_label",
+        "label": "$string:MainAbility_label",
         "exported": true,
         "startWindowIcon": "$media:icon",
         "startWindowBackground": "$color:start_window_background",
