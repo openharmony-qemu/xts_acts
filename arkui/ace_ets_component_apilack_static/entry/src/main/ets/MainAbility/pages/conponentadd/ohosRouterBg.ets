@@ -80,7 +80,7 @@ struct OhosRouterB {
     }.width('100%').height('100%')
   }
 
-  onPageShow() {
+  onPageShow(): void {
     const routerInstance = AppStorage.get<Router>("router") as Router
     let params = routerInstance.getParams();
     if (params) {
@@ -89,7 +89,7 @@ struct OhosRouterB {
     }
   }
 
-  getRouterParams(params: Object) {
+  getRouterParams(params: Object): void {
     try {
       let paramsData: events_emitter.EventData = {
         data: {

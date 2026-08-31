@@ -38,11 +38,11 @@ const TAG = 'ets_apiLack_add';
 @Entry
 @Component
 struct PathNew {
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear PathNew start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear PathNew end`)
   }
 

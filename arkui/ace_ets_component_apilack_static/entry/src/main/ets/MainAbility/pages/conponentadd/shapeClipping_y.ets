@@ -86,7 +86,7 @@ struct ClipAndMaskExample {
   @State clipType: CircleShape | EllipseShape | PathShape | RectShape =
     new CircleShape({ width: 280, height: 280 } as ShapeSize);
 
-  onPageShow() {
+  onPageShow(): void {
     console.info('shapeClipping page show called');
     let stateChangeEvent: events_emitter.InnerEvent = {
       eventId: 32,
@@ -140,21 +140,17 @@ struct ClipAndMaskExample {
   }
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      const data = eventData.data as Record<String,RecordData>
-      console.info("shapeClipping page state change called:" + JSON.stringify(eventData));
-      if (data['maskValue'] != null) {
-        this.maskType = new CircleShape({ width: 280, height: 280 } as ShapeSize);
-      }
+    const data = eventData.data as Record<string, RecordData>
+    console.info("shapeClipping page state change called:" + JSON.stringify(eventData));
+    if (data['maskValue'] != null) {
+      this.maskType = new CircleShape({ width: 280, height: 280 } as ShapeSize);
     }
   }
   private shapeChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      const data = eventData.data as Record<String,RecordData>
-      console.info("shapeClipping page shape change called:" + JSON.stringify(eventData));
-      if (data['clipValue'] != null) {
-        this.clipType = new RectShape({ radius: 20 } as RectShapeOptions);
-      }
+    const data = eventData.data as Record<string, RecordData>
+    console.info("shapeClipping page shape change called:" + JSON.stringify(eventData));
+    if (data['clipValue'] != null) {
+      this.clipType = new RectShape({ radius: 20 } as RectShapeOptions);
     }
   }
 }

@@ -27,7 +27,7 @@ import Utils from '../../../ets/MainAbility/common/Utils'
 import { RecordData } from '@ohos.base';
 
 let emitKey = "emitUserAgent";
-export default function web9Jsunit() {
+export default function web9Jsunit(): void {
   describe('web9Jsunit', () => {
     beforeAll(async (): Promise<void> => {
       console.info("web9Jsunit beforeAll start");

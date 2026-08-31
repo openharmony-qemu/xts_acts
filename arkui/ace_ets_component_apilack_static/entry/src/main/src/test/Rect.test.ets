@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function rectNeJsunit() {
+export default function rectNeJsunit(): void {
   describe('rectNeTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/rect',
@@ -60,7 +60,7 @@ export default function rectNeJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("rectNe after each called");
     });
@@ -74,7 +74,7 @@ export default function rectNeJsunit() {
      * @tc.desc     testrectNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testrectNe_static_0001', Level.LEVEL0, async () => {
+it('testrectNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('rectNe testrectNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Rect');
@@ -95,7 +95,7 @@ it('testrectNe_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testrectNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testrectNe_static_0002', Level.LEVEL0, async () => {
+it('testrectNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('rectNe testrectNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Rect');

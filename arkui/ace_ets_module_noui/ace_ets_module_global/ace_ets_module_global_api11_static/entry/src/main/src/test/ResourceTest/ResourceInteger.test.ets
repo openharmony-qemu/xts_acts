@@ -34,7 +34,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 
-export default function ResourceInteger() {
+export default function ResourceInteger(): void {
   describe('ResourceInteger', () => {
 
     beforeAll(async (): Promise<void> => {
@@ -105,7 +105,7 @@ it('ResourceInteger_static_0200', Level.LEVEL0, async (done: () => void): Promis
       let driver = Driver.create();
       await CommonFunc.sleep(5000);
       let button = await driver.findComponent(ON.id('ResourceInteger'));
-      await (button?.click() as Promise<void>);
+      await button?.click();
       await CommonFunc.sleep(5000);
       let strJson = inspector.getInspectorByKey('integer');
       let obj = JSON.parseJsonElement(strJson);

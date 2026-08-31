@@ -135,7 +135,7 @@ struct OhosRouterA {
                 // success
               })
           } catch (error) {
-            console.error(`pushUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
+            console.error(`pushUrl args error code is ${(error as BusinessError).code}, message is ${(error as Error).message}`);
           }
 
         });
@@ -160,7 +160,7 @@ struct OhosRouterA {
                 // success
               })
           } catch (error) {
-            console.error(`pushUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
+            console.error(`pushUrl args error code is ${(error as BusinessError).code}, message is ${(error as Error).message}`);
           }
           ;
         });
@@ -183,7 +183,7 @@ struct OhosRouterA {
                 // success
               })
           } catch (error) {
-            console.error(`replaceUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
+            console.error(`replaceUrl args error code is ${(error as BusinessError).code}, message is ${(error as Error).message}`);
           }
           ;
         });
@@ -205,7 +205,7 @@ struct OhosRouterA {
                 // success
               })
           } catch (error) {
-            console.info(`replaceUrl args error code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
+            console.info(`replaceUrl args error code is ${(error as BusinessError).code}, message is ${(error as Error).message}`);
           }
 
         });
@@ -264,7 +264,7 @@ struct OhosRouterA {
               message: 'Message Info'
             });
           } catch (error) {
-            console.error(`enableBackPageAlert failed, code is ${(error as BusinessError)?.code}, message is ${(error as Error)?.message}`);
+            console.error(`enableBackPageAlert failed, code is ${(error as BusinessError).code}, message is ${(error as Error).message}`);
           }
         });
 

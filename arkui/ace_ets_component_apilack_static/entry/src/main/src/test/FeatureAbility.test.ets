@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function featureAbilityStartAbilityJsunit() {
+export default function featureAbilityStartAbilityJsunit(): void {
   describe('featureAbilityStartAbilityTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/featureAbility',
@@ -59,7 +59,7 @@ export default function featureAbilityStartAbilityJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("featureAbilityStartAbility after each called");
     });
@@ -73,7 +73,7 @@ export default function featureAbilityStartAbilityJsunit() {
      * @tc.desc     testfeatureAbilityStartAbility_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testfeatureAbilityStartAbility_static_0001', Level.LEVEL0, async () => {
+it('testfeatureAbilityStartAbility_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('featureAbilityStartAbility testfeatureAbilityStartAbility0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('startAbilityText');

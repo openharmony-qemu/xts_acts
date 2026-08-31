@@ -20,6 +20,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
 import { sendTouchEvent } from "@ohos.arkui.Test";
+import { describe, it, expect } from '../../../../hypium/index';
 
 export default class Utils {
   static rect_left: number;
@@ -41,10 +42,10 @@ export default class Utils {
       "windowRect Top: " + AppStorage.get<number>("winTop"));
     console.info("xxxyyybbb: rectInfo: " + rectInfo.toString());
     return {
-      "left": Number(rectInfo[0][0] ?? 0),
-      "top": Number(rectInfo[0][1] ?? 0),
-      "right": Number(rectInfo[1][0] ?? 0),
-      "bottom": Number(rectInfo[1][1] ?? 0)
+      left: Number(rectInfo[0][0]),
+      top: Number(rectInfo[0][1]),
+      right: Number(rectInfo[1][0]),
+      bottom: Number(rectInfo[1][1])
     } as RectValue
   }
 
@@ -54,6 +55,55 @@ export default class Utils {
         resolve(0)
       }, time)
     })
+  }
+
+  static async msSleep(count: int): Promise<int> {
+    return new Promise<int>((resolve, reject) => {
+      setTimeout(() => {
+        resolve(0)
+      }, count)
+    })
+  }
+
+  static emitEvent(actualValue: Object, eventId: int): void {
+    try {
+      let backData: events_emitter.EventData = {
+        data: {
+          "ACTION": actualValue
+        }
+      }
+      let backEvent: events_emitter.InnerEvent = {
+        eventId: eventId,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.emit(backEvent, backData);
+    } catch (err) {
+      console.info("emit action state err: " + JSON.stringify(err));
+    }
+  }
+
+  static registerEvent(testCaseName: string, expectedValue: Object, eventId: int, done: () => void): void {
+    console.info(`[${testCaseName}] START`);
+    try {
+      let callBack = (backData: events_emitter.EventData) => {
+        try {
+          console.info(`${testCaseName} get result is:` + JSON.stringify(backData));
+          let data = backData.data as Record<string, Object>;
+          expect(data['ACTION']).assertEqual(expectedValue);
+          console.info(`[${testCaseName}] END`);
+        } catch (err) {
+          console.info(`[${testCaseName}] err:` + JSON.stringify(err));
+        }
+        done()
+      }
+      let innerEvent: events_emitter.InnerEvent = {
+        eventId: eventId,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.once(innerEvent, callBack)
+    } catch (err) {
+      console.info(`[${testCaseName}] err:` + JSON.stringify(err));
+    }
   }
 
   // static registerEvent(pageTag: string, eventId: number, callBack: Function) {
@@ -71,7 +121,7 @@ export default class Utils {
   //   })
   // }
 
-  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
+  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number): Promise<void> {
     console.info('start to drag')
     let xStep: number;
     let yStep: number;

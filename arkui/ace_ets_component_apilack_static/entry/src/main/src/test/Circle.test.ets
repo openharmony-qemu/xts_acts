@@ -45,14 +45,14 @@ interface DataParam {
   data3: number[]
 }
 
-export default function circleNewJsunit() {
+export default function circleNewJsunit(): void {
   describe('circleNewTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("circle beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/circle',
@@ -72,7 +72,7 @@ export default function circleNewJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("circleNew after each called");
     });
@@ -87,7 +87,7 @@ export default function circleNewJsunit() {
      * @tc.desc     testcircleNew_static_001
      * @tc.level    Level.LEVEL0
      */
-it('testcircleNew_static_001', Level.LEVEL0, async () => {
+it('testcircleNew_static_001', Level.LEVEL0, async (): Promise<void> => {
       console.info('circleNew testcircleNew0011 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('circle');
@@ -109,7 +109,7 @@ it('testcircleNew_static_001', Level.LEVEL0, async () => {
      * @tc.desc     testcircleNew_static_002
      * @tc.level    Level.LEVEL0
      */
-it('testcircleNew_static_002', Level.LEVEL0, async () => {
+it('testcircleNew_static_002', Level.LEVEL0, async (): Promise<void> => {
       console.info('circleNew testcircleNew002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('circle');
@@ -128,7 +128,7 @@ it('testcircleNew_static_002', Level.LEVEL0, async () => {
      * @tc.desc     ACE_global_console_debug_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ACE_global_console_debug_static_0100', Level.LEVEL0, async () => {
+it('ACE_global_console_debug_static_0100', Level.LEVEL0, async (): Promise<void> => {
       let casename: string = "ACE_global_003";
       console.log("-----------------------ACE_global_console_debug Test is starting-----------------------");
       try {
@@ -150,7 +150,7 @@ it('ACE_global_console_debug_static_0100', Level.LEVEL0, async () => {
      * @tc.desc     ACE_global_console_error_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ACE_global_console_error_static_0200', Level.LEVEL0, async () => {
+it('ACE_global_console_error_static_0200', Level.LEVEL0, async (): Promise<void> => {
       let casename: string = "ACE_global_004";
       console.log("-----------------------ACE_global_console_error Test is starting-----------------------");
       try {
@@ -172,7 +172,7 @@ it('ACE_global_console_error_static_0200', Level.LEVEL0, async () => {
      * @tc.desc     ACE_pushUrl_callback_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ACE_pushUrl_callback_static_0100', Level.LEVEL0, async () => {
+it('ACE_pushUrl_callback_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.info("-----------------------ACE_pushUrl_callback_0100 start-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({
@@ -185,7 +185,7 @@ it('ACE_pushUrl_callback_static_0100', Level.LEVEL0, async () => {
         } as MainData
       }, (err) => {
         if (err) {
-          console.error(`pushUrl failed, code is ${(err as BusinessError)?.code}, message is ${(err as Error)?.message}`);
+          console.error(`pushUrl failed, code is ${(err as BusinessError).code}, message is ${(err as Error).message}`);
           expect().assertFail();
         } else {
           console.info('pushUrl success');
@@ -203,7 +203,7 @@ it('ACE_pushUrl_callback_static_0100', Level.LEVEL0, async () => {
      * @tc.desc     ACE_pushUrl_callback_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ACE_pushUrl_callback_static_0200', Level.LEVEL0, async () => {
+it('ACE_pushUrl_callback_static_0200', Level.LEVEL0, async (): Promise<void> => {
       console.info("-----------------------ACE_pushUrl_promise_0200 start-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({
@@ -232,7 +232,7 @@ it('ACE_pushUrl_callback_static_0200', Level.LEVEL0, async () => {
      * @tc.desc     ACE_showAlertBeforeBackPage_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ACE_showAlertBeforeBackPage_static_0100', Level.LEVEL0, async () => {
+it('ACE_showAlertBeforeBackPage_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0100-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
@@ -241,7 +241,7 @@ it('ACE_showAlertBeforeBackPage_static_0100', Level.LEVEL0, async () => {
         });
         expect(true).assertTrue();
       } catch (error) {
-        console.error(`showAlertBeforeBackPage_0100 failed, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
+        console.error(`showAlertBeforeBackPage_0100 failed, code is ${(error as BusinessError).code}, message is ${error.message}`);
         expect().assertFail();
       }
 
@@ -254,7 +254,7 @@ it('ACE_showAlertBeforeBackPage_static_0100', Level.LEVEL0, async () => {
      * @tc.desc     ACE_showAlertBeforeBackPage_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ACE_showAlertBeforeBackPage_static_0200', Level.LEVEL0, async () => { //异常参数undefined
+it('ACE_showAlertBeforeBackPage_static_0200', Level.LEVEL0, async (): Promise<void> => { //异常参数undefined
       console.info("-----------------------ACE_showAlertBeforeBackPage_0200-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
@@ -263,8 +263,8 @@ it('ACE_showAlertBeforeBackPage_static_0200', Level.LEVEL0, async () => { //异�
         // });
         expect(true).assertTrue();
       } catch (error) {
-        console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
-        expect((error as BusinessError)?.code == 401).assertTrue();
+        console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError).code}, message is ${error.message}`);
+        expect((error as BusinessError).code == 401).assertTrue();
       }
 
     });
@@ -276,14 +276,14 @@ it('ACE_showAlertBeforeBackPage_static_0200', Level.LEVEL0, async () => { //异�
      * @tc.desc     ACE_hideAlertBeforeBackPage_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ACE_hideAlertBeforeBackPage_static_0100', Level.LEVEL0, async () => {
+it('ACE_hideAlertBeforeBackPage_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.info("-----------------------ACE_showAlertBeforeBackPage_0200-----------------------");
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
         routerInstance.hideAlertBeforeBackPage();
         expect(true).assertTrue();
       } catch (error) {
-        console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError)?.code}, message is ${error.message}`);
+        console.error(`ACE_showAlertBeforeBackPage_0200, code is ${(error as BusinessError).code}, message is ${error.message}`);
         expect().assertFail();
       }
 
@@ -299,7 +299,7 @@ it('ACE_hideAlertBeforeBackPage_static_0100', Level.LEVEL0, async () => {
      * @tc.desc     testGlobal_attribute_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('testGlobal_attribute_static_0100', Level.LEVEL0, async () => {
+it('testGlobal_attribute_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.info('testGlobal_attribute_0100 START');
       await Utils.sleep(1000);
       let resource: resourceManager.Resource = {

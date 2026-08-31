@@ -25,7 +25,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils'
 
-export default function webEditTextJsunit() {
+export default function webEditTextJsunit(): void {
   describe('webEditTextTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("ResourceString beforeAll start");

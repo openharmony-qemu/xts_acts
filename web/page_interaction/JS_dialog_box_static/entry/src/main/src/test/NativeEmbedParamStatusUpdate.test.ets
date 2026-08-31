@@ -26,7 +26,7 @@ import hilog from '@ohos.hilog';
 import { NativeEmbedParamStatus } from '@ohos.arkui.component'
 import { Driver, ON } from '@ohos.UiTest';
 
-export default function WebOnNativeEmbedObjectParamChange() {
+export default function WebOnNativeEmbedObjectParamChange(): void {
   describe('ActsAceWebOnNativeEmbedObjectParamChange', ():void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

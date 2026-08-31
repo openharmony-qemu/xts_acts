@@ -44,7 +44,7 @@ const TAG = 'ets_apiLack_add';
 struct CheckBoxGroupSelectAll {
   @State isSelect: boolean = true;
 
-  onPageShow() {
+  onPageShow(): void {
     console.info('[CheckBoxGroup] page show called');
     let stateChangeEvent: events_emitter.InnerEvent = {
       eventId: 60203,
@@ -61,7 +61,7 @@ struct CheckBoxGroupSelectAll {
     Log.showInfo(TAG, `aboutToDisAppear CheckBoxGroupSelectAll end`)
   }
 
-  showToast(message: string) {
+  showToast(message: string): void {
     prompt.showToast({
       message: message,
       duration: 2000
@@ -119,7 +119,7 @@ struct CheckBoxGroupSelectAll {
 
   private stateChangCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("[CheckBoxGroup] page stateChangCallBack");
-    if (eventData != null && eventData.data != null) {
+    if (eventData.data != null) {
       console.info("[CheckBoxGroup] page state change called:" + JSON.stringify(eventData));
       const data = eventData.data as Record<String,RecordData>
       if (data['isSelect'] != null) {

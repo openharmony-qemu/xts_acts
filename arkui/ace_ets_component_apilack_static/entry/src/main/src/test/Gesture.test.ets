@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function gestureSetDirectionJsunit() {
+export default function gestureSetDirectionJsunit(): void {
   describe('gestureSetDirectionTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/gesture',
@@ -59,7 +59,7 @@ export default function gestureSetDirectionJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("gestureSetDirection after each called");
     });
@@ -73,13 +73,13 @@ export default function gestureSetDirectionJsunit() {
      * @tc.desc     testgestureSetDirection_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testgestureSetDirection_static_0001', Level.LEVEL0, async () => {
+it('testgestureSetDirection_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('gestureSetDirection testgestureSetDirection0001 START');
       await Utils.sleep(2000);
       try {
         let callback: (eventData: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {
           console.info("onClick_0001 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as ESObject)?.getProperty('STATUS').toStaticObject())
+          expect(((indexEvent.data) as ESObject).getProperty('STATUS').toStaticObject())
             .assertEqual(PanDirection.Vertical);
         }
         let indexEvent: events_emitter.InnerEvent = {
@@ -104,13 +104,13 @@ it('testgestureSetDirection_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testgestureSetDistance_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testgestureSetDistance_static_0002', Level.LEVEL0, async () => {
+it('testgestureSetDistance_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('gestureSetDistance testgestureSetDistance0002 START');
       await Utils.sleep(2000);
       try {
         let callback: (eventData: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {
           console.info("onClick_0002 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as ESObject)?.getProperty('STATUS').toNumber()).assertEqual(4.0);
+          expect(((indexEvent.data) as ESObject).getProperty('STATUS').toNumber()).assertEqual(4.0);
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 60205,
@@ -134,13 +134,13 @@ it('testgestureSetDistance_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testgestureSetFingers_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testgestureSetFingers_static_0003', Level.LEVEL0, async () => {
+it('testgestureSetFingers_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('gestureSetFingers testgestureSetFingers0003 START');
       await Utils.sleep(2000);
       try {
         let callback: (eventData: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {
           console.info("onClick_0003 get state result is: " + JSON.stringify(indexEvent));
-          expect(((indexEvent.data) as ESObject)?.getProperty('STATUS').toBoolean()).assertEqual(true);
+          expect(((indexEvent.data) as ESObject).getProperty('STATUS').toBoolean()).assertEqual(true);
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 60206,

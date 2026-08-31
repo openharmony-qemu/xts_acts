@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function grid_colSpanJsunit() {
+export default function grid_colSpanJsunit(): void {
   describe('grid_colSpanTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/grid_col',
@@ -59,7 +59,7 @@ export default function grid_colSpanJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("grid_colSpan after each called");
     });
@@ -73,7 +73,7 @@ export default function grid_colSpanJsunit() {
      * @tc.desc     testgrid_colSpan_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testgrid_colSpan_static_0001', Level.LEVEL0, async () => {
+it('testgrid_colSpan_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('grid_rowOnBreakpointChange testgrid_colSpan0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('gridContainer');

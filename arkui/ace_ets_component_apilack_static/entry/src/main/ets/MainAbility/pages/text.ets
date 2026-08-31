@@ -58,11 +58,11 @@ const TAG = 'ets_apiLack_add';
 struct TextMinFontSize {
   copyNumber: Int = 0
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear TextMinFontSize start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear TextMinFontSize end `)
   }
 

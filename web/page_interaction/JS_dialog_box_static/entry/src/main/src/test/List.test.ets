@@ -26,7 +26,7 @@ import WebContextMenuResultConstructor from './WebContextMenuResultConstructor.t
 import ScreenCaptureHandlerConstructor from './ScreenCaptureHandlerConstructor.test'
 import FileSelectorParamTest from './FileSelectorParamTest.test'
 
-export default function testsuite() {
+export default function testsuite(): void {
     geolocationPermissions();
     webViewSrollableJsunit();
     webAttributeTest();

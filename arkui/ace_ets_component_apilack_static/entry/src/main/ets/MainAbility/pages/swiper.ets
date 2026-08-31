@@ -91,7 +91,7 @@ struct SwiperCurve {
     this.data = new MyDataSource(list)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear SwiperCurve end`)
   }
 

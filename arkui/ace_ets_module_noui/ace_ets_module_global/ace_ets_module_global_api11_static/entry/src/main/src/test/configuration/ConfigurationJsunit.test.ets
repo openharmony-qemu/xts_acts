@@ -24,7 +24,7 @@ import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils'
 import emitter from '@ohos.events.emitter';
-export default function configurationJsunit() {
+export default function configurationJsunit(): void {
   describe('configurationJsunit', () => {
     beforeAll(async (): Promise<void> => {
       console.info("configurationJsunit beforeAll start");

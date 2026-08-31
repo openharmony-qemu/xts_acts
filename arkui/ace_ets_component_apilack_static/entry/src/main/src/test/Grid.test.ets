@@ -33,14 +33,14 @@ import { UtilsTest } from './Util.test';
 
 import RectValue from './RectValue.test';
 
-export default function gridMaxCountJsunit() {
+export default function gridMaxCountJsunit(): void {
   describe('gridMaxCountTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/grid',
@@ -60,7 +60,7 @@ export default function gridMaxCountJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("gridMaxCount after each called");
     });
@@ -73,7 +73,7 @@ export default function gridMaxCountJsunit() {
      * @tc.desc     testcheckgridMaxCount_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcheckgridMaxCount_static_0001', Level.LEVEL0, async () => {
+it('testcheckgridMaxCount_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('testcheckgridMaxCount testcheckgridMaxCount0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('maxCountTest');
@@ -93,7 +93,7 @@ it('testcheckgridMaxCount_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testEdgeEffectOptions_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testEdgeEffectOptions_static_0002', Level.LEVEL0, async () => {
+it('testEdgeEffectOptions_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('maxCountTest');
@@ -111,7 +111,7 @@ it('testEdgeEffectOptions_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testEdgeEffectOptions_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testEdgeEffectOptions_static_0003', Level.LEVEL0, async () => {
+it('testEdgeEffectOptions_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0003 START');
       await Utils.sleep(2000);
       try {

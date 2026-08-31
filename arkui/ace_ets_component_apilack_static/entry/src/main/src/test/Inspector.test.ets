@@ -33,14 +33,14 @@ import { UtilsTest } from './Util.test';
 import { RecordData } from '@ohos.base';
 
 
-export default function inspectorJsunit() {
+export default function inspectorJsunit(): void {
   describe('inspectorTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/inspector',
@@ -60,7 +60,7 @@ export default function inspectorJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       console.info("inspectorTest after each called");
     });
 
@@ -73,7 +73,7 @@ export default function inspectorJsunit() {
      * @tc.desc     testInspectorTestAdd_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0001', Level.LEVEL0, async () => {
+it('testInspectorTestAdd_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('Inspector testInspectorTestAdd0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('inspectorApiOne');
@@ -94,7 +94,7 @@ it('testInspectorTestAdd_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testInspectorTestAdd_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0002', Level.LEVEL0, async () => {
+it('testInspectorTestAdd_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('Inspector testInspectorTestAdd0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('inspectorApiOne');
@@ -115,7 +115,7 @@ it('testInspectorTestAdd_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testInspectorTestAdd_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0003', Level.LEVEL0, async () => {
+it('testInspectorTestAdd_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info("testInspectorTestAdd0003 start test");
       let innerEvent1: events_emitter.InnerEvent = {
         eventId: 60208,
@@ -123,17 +123,17 @@ it('testInspectorTestAdd_static_0003', Level.LEVEL0, async () => {
       }
       let callback1: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("eventData.data.getInspectorNodes result is: " +
-        ((eventData.data) as ESObject)?.getProperty('getInspectorNodes'));
+        ((eventData.data) as ESObject).getProperty('getInspectorNodes'));
         try {
           console.info("callback1 success");
           console.info("inspector_101 eventData.data.result result is: " +
-          ((eventData.data) as ESObject)?.getProperty('result').toString());
-          expect(((eventData.data) as ESObject)?.getProperty('result').toString()).assertEqual("success");
+          ((eventData.data) as ESObject).getProperty('result').toString());
+          expect(((eventData.data) as ESObject).getProperty('result').toString()).assertEqual("success");
           console.info("inspector_101 end: ");
-          if (((eventData.data) as ESObject)?.getProperty('getInspectorNodes') != null) {
+          if (((eventData.data) as ESObject).getProperty('getInspectorNodes') != null) {
             console.info("eventData.data.result result is: " +
-            ((eventData.data) as ESObject)?.getProperty('result').toString());
-            expect(((eventData.data) as ESObject)?.getProperty('result').toString()).assertEqual("success");
+            ((eventData.data) as ESObject).getProperty('result').toString());
+            expect(((eventData.data) as ESObject).getProperty('result').toString()).assertEqual("success");
           }
         } catch (err) {
           console.info("inspector_101 on events_emitter err : " + JSON.stringify(err));
@@ -157,19 +157,19 @@ it('testInspectorTestAdd_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testInspectorTestAdd_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0004', Level.LEVEL0, async () => {
+it('testInspectorTestAdd_static_0004', Level.LEVEL0, async (): Promise<void> => {
       let innerEvent2: events_emitter.InnerEvent = {
         eventId: 60209,
         priority: events_emitter.EventPriority.LOW
       }
       let callback2: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
         console.info("eventData.data.getInspectorNodeById result is: " +
-        ((eventData.data) as ESObject)?.getProperty('getInspectorNodeById'));
+        ((eventData.data) as ESObject).getProperty('getInspectorNodeById'));
         try {
           console.info("callback2 success");
           console.info("inspector_102 eventData.data.result result is: " +
-          ((eventData.data) as ESObject)?.getProperty('result').toString());
-          expect(((eventData.data) as ESObject)?.getProperty('result').toString()).assertEqual("success");
+          ((eventData.data) as ESObject).getProperty('result').toString());
+          expect(((eventData.data) as ESObject).getProperty('result').toString()).assertEqual("success");
           console.info("inspector_102 end");
         } catch (err) {
           console.info("inspector_102 on events_emitter err : " + JSON.stringify(err));
@@ -195,7 +195,7 @@ it('testInspectorTestAdd_static_0004', Level.LEVEL0, async () => {
      * @tc.desc     testInspectorTestAdd_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0005', Level.LEVEL0, async () => {
+it('testInspectorTestAdd_static_0005', Level.LEVEL0, async (): Promise<void> => {
       try {
         console.info('testInspectorTestAdd0005 START');
         try {
@@ -226,7 +226,7 @@ it('testInspectorTestAdd_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testInspectorTestAdd_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testInspectorTestAdd_static_0006', Level.LEVEL0, async () => {
+it('testInspectorTestAdd_static_0006', Level.LEVEL0, async (): Promise<void> => {
       let innerEvent3: events_emitter.InnerEvent = {
         eventId: 60210,
         priority: events_emitter.EventPriority.LOW
@@ -235,8 +235,8 @@ it('testInspectorTestAdd_static_0006', Level.LEVEL0, async () => {
         try {
           console.info("callback3 success");
           console.info("inspector_103 eventData.data.result result is: " +
-          ((eventData.data) as ESObject)?.getProperty('catchStatus').toString());
-          expect(((eventData.data) as ESObject)?.getProperty('catchStatus').toString()).assertEqual("callBackSuccess");
+          ((eventData.data) as ESObject).getProperty('catchStatus').toString());
+          expect(((eventData.data) as ESObject).getProperty('catchStatus').toString()).assertEqual("callBackSuccess");
           console.info("inspector_103 end");
         } catch (err) {
           console.info("inspector_103 on events_emitter err : " + JSON.stringify(err));

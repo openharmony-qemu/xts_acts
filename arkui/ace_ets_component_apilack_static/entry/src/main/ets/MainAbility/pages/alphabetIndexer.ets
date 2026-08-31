@@ -53,12 +53,12 @@ struct AlphabetIndexerOnSelect {
     Log.showInfo(TAG, `aboutToDisAppear AlphabetIndexerOnSelect end`)
   }
 
-  onPageShow() {
+  onPageShow(): void {
     AppStorage.setOrCreate<boolean>('onRequestPopupDataStatus', false);
     AppStorage.setOrCreate<boolean>('onSelectStatus', false);
   }
 
-  showToast(message: string) {
+  showToast(message: string): void {
     this.getUIContext().getPromptAction().showToast({
       message: message,
       duration: 2000

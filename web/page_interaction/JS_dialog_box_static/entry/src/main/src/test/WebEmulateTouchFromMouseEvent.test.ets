@@ -26,7 +26,7 @@ import inspector from '@ohos.arkui.inspector';
 
 let testAbilityContext: common.UIAbilityContext;
 
-export default function WebKeyboardAvoidMode() {
+export default function WebKeyboardAvoidMode(): void {
 
   describe('WebKeyboardAvoidMode', () => {
 

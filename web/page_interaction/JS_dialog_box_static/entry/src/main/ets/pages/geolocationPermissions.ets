@@ -207,6 +207,156 @@ struct geolocationPermissions {
               break;
             }
 
+            case 'testGetStoredGeolocation007': {
+              try {
+                webView.GeolocationPermissions.getStoredGeolocation(null as boolean)
+                  .then(origins => {
+                    let origins_str: string = origins.join();
+                    console.log('getStoredGeolocationPromise null origins: ' + origins_str);
+                    Utils.emitEvent(origins_str, 100014);
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocationPromise null error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 100014);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocationPromise null catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(401, 100014);
+              }
+              break;
+            }
+
+            case 'testGetStoredGeolocation008': {
+              try {
+                webView.GeolocationPermissions.allowGeolocation('file:///')
+                webView.GeolocationPermissions.getStoredGeolocation(undefined)
+                  .then(origins => {
+                    let origins_str: string = origins.join();
+                    console.log('getStoredGeolocationPromise undefined origins: ' + origins_str);
+                    Utils.emitEvent(origins_str, 100015);
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocationPromise undefined error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 100015);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocationPromise undefined catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100015);
+              }
+              break;
+            }
+
+            case 'testGetStoredGeolocation009': {
+              try {
+                webView.GeolocationPermissions.deleteAllGeolocation(false);
+                webView.GeolocationPermissions.getStoredGeolocation(false)
+                  .then(origins => {
+                    let origins_str: string = origins.join();
+                    console.log('getStoredGeolocationPromise empty origins: ' + origins_str);
+                    Utils.emitEvent(origins_str, 100016);
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocationPromise empty error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 100016);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocationPromise empty catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100016);
+              }
+              break;
+            }
+
+            case 'testGetStoredGeolocation010': {
+              try {
+                webView.GeolocationPermissions.allowGeolocation('file:///')
+                webView.GeolocationPermissions.getStoredGeolocation(false)
+                  .then(origins => {
+                    let origins_str: string = origins.join();
+                    console.log('getStoredGeolocationPromise non-empty origins: ' + origins_str);
+                    Utils.emitEvent(origins_str, 100017);
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocationPromise non-empty error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 100017);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocationPromise non-empty catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100017);
+              }
+              break;
+            }
+
+            case 'testGetStoredGeolocationCbStatic011': {
+              try {
+                webView.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCb null error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code, 100018);
+                  } else {
+                    let origins_str = origins?.join() ?? '';
+                    Utils.emitEvent(origins_str, 100018);
+                  }
+                }, null as boolean);
+              } catch (error) {
+                console.error(`getStoredGeolocationCb null catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(401, 100018);
+              }
+              break;
+            }
+
+            case 'testGetStoredGeolocationCbStatic012': {
+              try {
+                webView.GeolocationPermissions.allowGeolocation('file:///')
+                webView.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCb undefined error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code, 100019);
+                  } else {
+                    let origins_str = origins?.join() ?? '';
+                    Utils.emitEvent(origins_str, 100019);
+                  }
+                }, undefined);
+              } catch (error) {
+                console.error(`getStoredGeolocationCb undefined catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100019);
+              }
+              break;
+            }
+
+            case 'testGetStoredGeolocationCbStatic013': {
+              try {
+                webView.GeolocationPermissions.deleteAllGeolocation(false);
+                webView.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCb empty error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code, 100020);
+                  } else {
+                    let origins_str = origins?.join() ?? '';
+                    Utils.emitEvent(origins_str, 100020);
+                  }
+                }, false);
+              } catch (error) {
+                console.error(`getStoredGeolocationCb empty catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100020);
+              }
+              break;
+            }
+
+            case 'testGetStoredGeolocationCbStatic014': {
+              try {
+                webView.GeolocationPermissions.allowGeolocation('file:///')
+                webView.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCb non-empty error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code, 100021);
+                  } else {
+                    let origins_str = origins?.join() ?? '';
+                    Utils.emitEvent(origins_str, 100021);
+                  }
+                }, false);
+              } catch (error) {
+                console.error(`getStoredGeolocationCb non-empty catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100021);
+              }
+              break;
+            }
+
             case 'testDeleteAllGeolocation001': {
               let text: undefined | String = '123'
               webView.GeolocationPermissions.allowGeolocation('resource://rawfile/')
@@ -223,6 +373,28 @@ struct geolocationPermissions {
               break;
             }
 
+            case 'testDeleteAllGeolocation002': {
+              try {
+                webView.GeolocationPermissions.deleteAllGeolocation(null as boolean);
+                Utils.emitEvent('success', 100022);
+              } catch (error) {
+                console.error(`deleteAllGeolocation null catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent('fail', 100022);
+              }
+              break;
+            }
+
+            case 'testDeleteAllGeolocation003': {
+              try {
+                webView.GeolocationPermissions.deleteAllGeolocation(undefined);
+                Utils.emitEvent('success', 100023);
+              } catch (error) {
+                console.error(`deleteAllGeolocation undefined catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100023);
+              }
+              break;
+            }
+
             case 'testGetAccessibleGeolocation001': {
               try {
                 webView.GeolocationPermissions.allowGeolocation(this.origin)
@@ -235,9 +407,8 @@ struct geolocationPermissions {
                   Utils.emitEvent(error, 100008);
                 });
               } catch (error) {
-                let e: BusinessError = error as BusinessError;
-                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 100008);
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100008);
               }
               break;
             }
@@ -254,9 +425,8 @@ struct geolocationPermissions {
                   Utils.emitEvent(error, 100009);
                 });
               } catch (error) {
-                let e: BusinessError = error as BusinessError;
-                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
-                Utils.emitEvent(e.code, 100009);
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                Utils.emitEvent(error.code, 100009);
               }
               break;
             }
@@ -266,7 +436,7 @@ struct geolocationPermissions {
 
                 this.errorMsg = 'failed';
                 webView.GeolocationPermissions.getAccessibleGeolocation("", (error, result) => {
-                  if (error) {
+                  if (error && error.code) {
                     console.log('getAccessibleGeolocationAsync error: ' + JSON.stringify(error));
                     this.errorCode = error.code;
                     this.errorMsg = error.message;

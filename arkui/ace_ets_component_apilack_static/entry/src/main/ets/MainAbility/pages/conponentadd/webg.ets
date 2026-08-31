@@ -57,7 +57,7 @@ struct Index {
   username_password: Array<string> = new Array<string>()
   origin: string = "file:///"
 
-  onPageShow() {
+  onPageShow(): void {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
@@ -65,7 +65,7 @@ struct Index {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
     let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
     console.info('start run testcase!!!')
@@ -137,7 +137,7 @@ struct Index {
             case "emitAllowGeolocation": {
               web_webview.GeolocationPermissions.allowGeolocation("file:///")
               web_webview.GeolocationPermissions.getAccessibleGeolocation(this.origin, (error, result) => {
-                if (error) {
+                if (error && error.code) {
                   console.log('error:' + JSON.stringify(error));
                   this.text = this.origin + ",error ," + JSON.stringify(error);
                 }
@@ -149,11 +149,11 @@ struct Index {
             case "emitDeleteGeolocation": {
               web_webview.GeolocationPermissions.deleteGeolocation("file:///")
               web_webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
-                if (error) {
+                if (error && error.code) {
                   console.log('error:' + JSON.stringify(error));
                   this.text = origins + ",error ," + JSON.stringify(error);
                 }
-                this.text = origins!.join();
+                this.text = origins?.join() ?? '';
                 // // Utils.emitEvent(this.text, 404)
               })
               break;
@@ -162,11 +162,11 @@ struct Index {
               web_webview.GeolocationPermissions.allowGeolocation("file:///")
               web_webview.GeolocationPermissions.deleteAllGeolocation()
               web_webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
-                if (error) {
+                if (error && error.code) {
                   console.log('error:' + JSON.stringify(error));
                   this.text = origins + ",error ," + JSON.stringify(error);
                 }
-                this.text = origins!.join();
+                this.text = origins?.join() ?? '';
                 // Utils.emitEvent(this.text, 406)
               })
               break;
@@ -269,7 +269,7 @@ struct Index {
                   let result = 'succesful'
                   // Utils.emitEvent(result, 446)
                 } catch (error) {
-                  console.info(`ErrorCode: ${(error as BusinessError)?.code}, Message: ${(error as Error)?.message}`)
+                  console.info(`ErrorCode: ${error.code}, Message: ${error.message}`)
                   let result = 'fail'
                   // Utils.emitEvent(result, 446)
                 }
@@ -283,7 +283,7 @@ struct Index {
                   let result = 'succesful'
                   // Utils.emitEvent(result, 446)
                 } catch (error) {
-                  console.info(`ErrorCode: ${(error as BusinessError)?.code}, Message: ${(error as Error)?.message}`)
+                  console.info(`ErrorCode: ${error.code}, Message: ${error.message}`)
                   let result = 'fail'
                   // Utils.emitEvent(result, 446)
                 }
@@ -294,18 +294,18 @@ struct Index {
               setTimeout(() => {
                 try {
                   web_webview.WebStorage.getOrigins((error, origins) => {
-                    if (error) {
+                    if (error && error.code) {
                       console.log('error: ' + error);
                       //Utils.emitEvent(result, 446)
                     }
-                    for (let i = 0; i < origins!.length; i++) {
+                    for (let i = 0; i < (origins?.length ?? 0); i++) {
                       console.log('origin: ' + origins![i].origin);
                       console.log('usage: ' + origins![i].usage);
                       console.log('quota: ' + origins![i].quota);
                     }
                   })
                 } catch (error) {
-                  console.error(`ErrorCode: ${(error as BusinessError)?.code}, Message: ${(error as Error)?.message}`);
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 }
                 // Utils.emitEvent('succesful', 446)
 
@@ -321,7 +321,7 @@ struct Index {
                   // Utils.emitEvent('sucessful', 446)
                 }, 3000)
               } catch (error) {
-                console.info(`ErrorCode: ${(error as BusinessError)?.code}, Message: ${(error as Error)?.message}`);
+                console.info(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 // Utils.emitEvent('fail', 446)
               }
               break;
@@ -330,7 +330,7 @@ struct Index {
               setTimeout(() => {
                 try {
                   web_webview.WebStorage.getOriginUsage(this.origin, (error, usage) => {
-                    if (error) {
+                    if (error && error.code) {
                       console.log('error: ' + error);
                       // Utils.emitEvent(error, 446)
                     }
@@ -339,7 +339,7 @@ struct Index {
                   })
                   // Utils.emitEvent('sucessful', 446)
                 } catch (error) {
-                  console.info(`ErrorCode: ${(error as BusinessError)?.code}, Message: ${(error as Error)?.message}`);
+                  console.info(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 }
               }, 3000)
               break;
@@ -383,7 +383,7 @@ struct Index {
                   // Utils.emitEvent('sucessful', 446)
 
                 } catch (error) {
-                  console.error(`ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 }
               }, 3000)
               break;
@@ -396,7 +396,7 @@ struct Index {
                     console.info("received message from html5, on message:" + msg);
                   })
                 } catch (error) {
-                  console.info(`ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
+                  console.info(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 }
                 // Utils.emitEvent('sucessful', 446)
               }, 3000)
@@ -410,7 +410,7 @@ struct Index {
                   console.info("extra: " + hitValue.extra);
                   // Utils.emitEvent('sucessful', 446)
                 } catch (error) {
-                  console.info(`ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
+                  console.info(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 }
               }, 3000)
 
@@ -423,7 +423,7 @@ struct Index {
                   console.log("userAgent: " + userAgent);
                   // Utils.emitEvent('sucessful', 446)
                 } catch (error) {
-                  console.info(`ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
+                  console.info(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 }
               }, 3000)
 
@@ -435,7 +435,7 @@ struct Index {
                   this.ports = this.controller.createWebMessagePorts();
                   // Utils.emitEvent('succesful', 446)
                 } catch (error) {
-                  console.error(`ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 }
               }, 3000)
               break;
@@ -446,7 +446,7 @@ struct Index {
                   this.newcontroller.clearMatches();
                   // Utils.emitEvent('succesful', 446)
                 } catch (error) {
-                  console.error(`Errorcode: ${(error as BusinessError)?.code}, Message: ${(error as Error)?.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
               }, 3000)
               break;
@@ -457,7 +457,7 @@ struct Index {
                   this.newcontroller.searchNext(true);
                   // Utils.emitEvent('succesful', 446)
                 } catch (error) {
-                  console.error(`Errorcode: ${(error as BusinessError)?.code}, Message: ${(error as Error)?.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
               }, 3000)
 
@@ -470,7 +470,7 @@ struct Index {
                   // Utils.emitEvent('succesful', 446)
 
                 } catch (error) {
-                  console.error(`Errorcode: ${(error as BusinessError)?.code}, Message: ${(error as Error)?.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
               }, 3000)
 
@@ -482,7 +482,7 @@ struct Index {
                   this.newcontroller.clearClientAuthenticationCache();
                   // Utils.emitEvent('succesful', 446)
                 } catch (error) {
-                  console.error(`Errorcode: ${(error as BusinessError)?.code}, Message: ${(error as Error)?.message}`);
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
               }, 3000)
 
@@ -495,7 +495,7 @@ struct Index {
                   // Utils.emitEvent('succesful', 446)
                 }, 3000)
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
 
               break;
@@ -523,7 +523,7 @@ struct Index {
             //                  this.controllerE.postMessageEvent();
             //                  // Utils.emitEvent('succesful',446)
             //                } catch (error) {
-            //                  console.error(`ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
+            //                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
             //            }
             //                  })
             //      }
@@ -535,7 +535,7 @@ struct Index {
             //                  this.controllerE.postMessage();
             //                  // Utils.emitEvent('succesful',446)
             //                } catch (error) {
-            //                  console.error(`ErrorCode: ${(error as BusinessError)?.code},  Message: ${(error as Error)?.message}`);
+            //                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
             //            }
             //                  })
             //      }
@@ -581,6 +581,299 @@ struct Index {
               }, 3000)
               break;
             }
+            case "emitGetStoredGeolocationNull": {
+              try {
+                web_webview.GeolocationPermissions.getStoredGeolocation(null as boolean)
+                  .then((origins: Array<string>) => {
+                    let originsStr: string = origins.join();
+                    console.log('getStoredGeolocation null origins: ' + originsStr);
+                    Utils.emitEvent(originsStr, 600);
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocation null error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 600);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocation null catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 600);
+              }
+              break;
+            }
+
+            case "emitGetStoredGeolocationUndefined": {
+              try {
+                web_webview.GeolocationPermissions.allowGeolocation("file:///")
+                web_webview.GeolocationPermissions.getStoredGeolocation(undefined)
+                  .then((origins: Array<string>) => {
+                    let originsStr: string = origins.join();
+                    console.log('getStoredGeolocation undefined origins: ' + originsStr);
+                    Utils.emitEvent(originsStr, 601);
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocation undefined error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 601);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocation undefined catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 601);
+              }
+              break;
+            }
+
+            case "emitGetStoredGeolocationEmpty": {
+              try {
+                web_webview.GeolocationPermissions.deleteAllGeolocation(false);
+                web_webview.GeolocationPermissions.getStoredGeolocation(false)
+                  .then((origins: Array<string>) => {
+                    let originsStr: string = origins.join();
+                    console.log('getStoredGeolocation empty origins: ' + originsStr);
+                    Utils.emitEvent(originsStr, 602);
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocation empty error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 602);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocation empty catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 602);
+              }
+              break;
+            }
+
+            case "emitGetStoredGeolocationNonEmpty": {
+              try {
+                web_webview.GeolocationPermissions.allowGeolocation("file:///")
+                web_webview.GeolocationPermissions.getStoredGeolocation(false)
+                  .then((origins: Array<string>) => {
+                    let originsStr: string = origins.join();
+                    console.log('getStoredGeolocation non-empty origins: ' + originsStr);
+                    Utils.emitEvent(originsStr, 603);
+                  }).catch((error: Error) => {
+                    console.error(`getStoredGeolocation non-empty error: ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 603);
+                  });
+              } catch (error) {
+                console.error(`getStoredGeolocation non-empty catch: ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 603);
+              }
+              break;
+            }
+
+            case "emitGetStoredGeolocationCbGNull": {
+              try {
+                web_webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCbG null error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code, 604);
+                  } else {
+                    let originsStr = origins?.join() ?? '';
+                    Utils.emitEvent(originsStr, 604);
+                  }
+                }, null as boolean);
+              } catch (error) {
+                Utils.emitEvent(error.code, 604);
+              }
+              break;
+            }
+
+            case "emitGetStoredGeolocationCbGUndefined": {
+              try {
+                web_webview.GeolocationPermissions.allowGeolocation("file:///")
+                web_webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCbG undefined error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code, 605);
+                  } else {
+                    let originsStr = origins?.join() ?? '';
+                    Utils.emitEvent(originsStr, 605);
+                  }
+                }, undefined as boolean);
+              } catch (error) {
+                Utils.emitEvent(error.code, 605);
+              }
+              break;
+            }
+
+            case "emitGetStoredGeolocationCbGEmpty": {
+              try {
+                web_webview.GeolocationPermissions.deleteAllGeolocation(false);
+                web_webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCbG empty error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code, 606);
+                  } else {
+                    let originsStr = origins?.join() ?? '';
+                    Utils.emitEvent(originsStr, 606);
+                  }
+                }, false);
+              } catch (error) {
+                Utils.emitEvent(error.code, 606);
+              }
+              break;
+            }
+
+            case "emitGetStoredGeolocationCbGNonEmpty": {
+              try {
+                web_webview.GeolocationPermissions.allowGeolocation("file:///")
+                web_webview.GeolocationPermissions.getStoredGeolocation((error, origins) => {
+                  if (error && error.code) {
+                    console.error('getStoredGeolocationCbG non-empty error: ' + JSON.stringify(error));
+                    Utils.emitEvent(error.code, 607);
+                  } else {
+                    let originsStr = origins?.join() ?? '';
+                    Utils.emitEvent(originsStr, 607);
+                  }
+                }, false);
+              } catch (error) {
+                Utils.emitEvent(error.code, 607);
+              }
+              break;
+            }
+
+            case "emitPutAcceptCookieEnabledGNull": {
+              try {
+                web_webview.WebCookieManager.putAcceptCookieEnabled(null as boolean);
+                Utils.emitEvent(true, 608);
+              } catch (error) {
+                Utils.emitEvent(error.code, 608);
+              }
+              break;
+            }
+
+            case "emitPutAcceptCookieEnabledGUndefined": {
+              try {
+                web_webview.WebCookieManager.putAcceptCookieEnabled(undefined as boolean);
+                Utils.emitEvent(true, 609);
+              } catch (error) {
+                Utils.emitEvent(error.code, 609);
+              }
+              break;
+            }
+
+            case "emitPutAcceptThirdPartyCookieEnabledGNull": {
+              try {
+                web_webview.WebCookieManager.putAcceptThirdPartyCookieEnabled(null as boolean);
+                Utils.emitEvent(true, 610);
+              } catch (error) {
+                Utils.emitEvent(error.code, 610);
+              }
+              break;
+            }
+
+            case "emitPutAcceptThirdPartyCookieEnabledGUndefined": {
+              try {
+                web_webview.WebCookieManager.putAcceptThirdPartyCookieEnabled(undefined as boolean);
+                Utils.emitEvent(true, 611);
+              } catch (error) {
+                Utils.emitEvent(error.code, 611);
+              }
+              break;
+            }
+
+            case "emitExistCookieGNull": {
+              try {
+                let result = web_webview.WebCookieManager.existCookie(null as boolean);
+                Utils.emitEvent(result, 612);
+              } catch (error) {
+                Utils.emitEvent(error.code, 612);
+              }
+              break;
+            }
+
+            case "emitExistCookieGUndefined": {
+              try {
+                web_webview.WebCookieManager.putAcceptCookieEnabled(true);
+                let result = web_webview.WebCookieManager.existCookie(undefined as boolean);
+                Utils.emitEvent(result, 613);
+              } catch (error) {
+                Utils.emitEvent(error.code, 613);
+              }
+              break;
+            }
+
+            case "emitExistCookieGEmpty": {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync(false);
+                let result = web_webview.WebCookieManager.existCookie(false);
+                Utils.emitEvent(result, 614);
+              } catch (error) {
+                Utils.emitEvent(error.code, 614);
+              }
+              break;
+            }
+
+            case "emitExistCookieGNonEmpty": {
+              try {
+                web_webview.WebCookieManager.putAcceptCookieEnabled(true);
+                let result = web_webview.WebCookieManager.existCookie(false);
+                Utils.emitEvent(result, 615);
+              } catch (error) {
+                Utils.emitEvent(error.code, 615);
+              }
+              break;
+            }
+
+            case "emitClearAllCookiesSyncGNull": {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync(null as boolean);
+                Utils.emitEvent(true, 616);
+              } catch (error) {
+                Utils.emitEvent(error.code, 616);
+              }
+              break;
+            }
+
+            case "emitClearAllCookiesSyncGUndefined": {
+              try {
+                web_webview.WebCookieManager.clearAllCookiesSync(undefined as boolean);
+                Utils.emitEvent(true, 617);
+              } catch (error) {
+                Utils.emitEvent(error.code, 617);
+              }
+              break;
+            }
+
+            case "emitDeleteAllGeolocationGNull": {
+              try {
+                web_webview.GeolocationPermissions.deleteAllGeolocation(null as boolean);
+                Utils.emitEvent(true, 618);
+              } catch (error) {
+                console.error('deleteAllGeolocation null error: ' + JSON.stringify(error));
+                Utils.emitEvent(false, 618);
+              }
+              break;
+            }
+
+            case "emitDeleteAllGeolocationGUndefined": {
+              try {
+                web_webview.GeolocationPermissions.deleteAllGeolocation(undefined);
+                Utils.emitEvent(true, 619);
+              } catch (error) {
+                console.error('deleteAllGeolocation undefined error: ' + JSON.stringify(error));
+                Utils.emitEvent(false, 619);
+              }
+              break;
+            }
+
+            case "emitDeleteAllDataGNull": {
+              try {
+                web_webview.WebStorage.deleteAllData(null as boolean);
+                Utils.emitEvent(true, 620);
+              } catch (error) {
+                console.error('deleteAllData null error: ' + JSON.stringify(error));
+                Utils.emitEvent(false, 620);
+              }
+              break;
+            }
+
+            case "emitDeleteAllDataGUndefined": {
+              try {
+                web_webview.WebStorage.deleteAllData(undefined);
+                Utils.emitEvent(true, 621);
+              } catch (error) {
+                console.error('deleteAllData undefined error: ' + JSON.stringify(error));
+                Utils.emitEvent(false, 621);
+              }
+              break;
+            }
+
             default:
               console.info("can not match case")
           }

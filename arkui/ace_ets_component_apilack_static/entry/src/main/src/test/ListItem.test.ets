@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function list_itemOnSelectJsunit() {
+export default function list_itemOnSelectJsunit(): void {
   describe('list_itemOnSelectTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/list_item',
@@ -59,7 +59,7 @@ export default function list_itemOnSelectJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("list_itemOnSelect after each called");
     });
@@ -73,7 +73,7 @@ export default function list_itemOnSelectJsunit() {
      * @tc.desc     testlist_itemOnSelect_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testlist_itemOnSelect_static_0001', Level.LEVEL0, async () => {
+it('testlist_itemOnSelect_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('selectOnSelect testlist_itemOnSelect0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('list_item_ListItem');
@@ -94,7 +94,7 @@ it('testlist_itemOnSelect_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testlist_itemOnSelect_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testlist_itemOnSelect_static_0002', Level.LEVEL0, async () => {
+it('testlist_itemOnSelect_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('selectOnSelect testlist_itemOnSelect0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('list_item_ListItem');
@@ -116,7 +116,7 @@ it('testlist_itemOnSelect_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testlist_itemOnSelect_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testlist_itemOnSelect_static_0003', Level.LEVEL0, async () => {
+it('testlist_itemOnSelect_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('selectOnSelect testlist_itemOnSelect0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('list_item_ListItem');
@@ -137,7 +137,7 @@ it('testlist_itemOnSelect_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testlist_itemSwipeAction_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testlist_itemSwipeAction_static_0004', Level.LEVEL0, async () => {
+it('testlist_itemSwipeAction_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('selectOnSelect testlist_itemSwipeAction0004 START');
       await Utils.sleep(2000);
       let obj = JSON.stringify(inspector.sendEventByKey('Del', 10, ""))

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import RectValue from './RectValue.test';
+import RectValue from '../../ets/MainAbility/common/Rect';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../ets/MainAbility/common/Common';
@@ -28,7 +28,7 @@ export default class Utils {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static getComponentRect(key: string) {
+  static getComponentRect(key: string): RectValue {
     let strJson = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> =
       JSON.parse<Object>(strJson, Class.from<String>()) as Record<string, Object>;
@@ -38,10 +38,10 @@ export default class Utils {
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
     console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
     AppStorage.get<number>("winTop"));
-    CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
-    CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
-    CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
-    CommonFunc.rect_bottom = Number(rectInfo[1][1] ?? 0);
+    CommonFunc.rect_left = Number(rectInfo[0][0]);
+    CommonFunc.rect_top = Number(rectInfo[0][1]);
+    CommonFunc.rect_right = Number(rectInfo[1][0]);
+    CommonFunc.rect_bottom = Number(rectInfo[1][1]);
     return CommonFunc.rect_value = {
       left: CommonFunc.rect_left,
       top: CommonFunc.rect_top,
@@ -58,7 +58,7 @@ export default class Utils {
     })
   }
 
-  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
+  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number): Promise<void> {
     console.info('start to drag')
     let xStep: number;
     let yStep: number;

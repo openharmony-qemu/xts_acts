@@ -44,7 +44,7 @@ struct MediaQueryOff {
   listener: mediaquery.MediaQueryListener = this.getUIContext().getMediaQuery().matchMediaSync('(orientation: landscape)');
   @StorageLink('result') result: boolean = true;
 
-  onPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
+  onPortrait(mediaQueryResult: mediaquery.MediaQueryResult): void {
     if (mediaQueryResult.matches) {
       this.color = '#FFD700'
       this.text = 'Landscape'
@@ -54,18 +54,18 @@ struct MediaQueryOff {
     }
   }
 
-  offPortrait(mediaQueryResult: mediaquery.MediaQueryResult) {
+  offPortrait(mediaQueryResult: mediaquery.MediaQueryResult): void {
     console.log(JSON.stringify(mediaQueryResult))
     AppStorage.setOrCreate<boolean>('result', true);
   }
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear MediaQueryOff start`)
     let portraitFunc = (mediaQueryResult: mediaquery.MediaQueryResult): void => this.onPortrait(mediaQueryResult)
     this.listener.onChange(portraitFunc)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear MediaQueryOff end`)
   }
 

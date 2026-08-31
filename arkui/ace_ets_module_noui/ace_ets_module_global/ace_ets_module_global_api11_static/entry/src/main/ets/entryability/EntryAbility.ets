@@ -24,7 +24,7 @@ import common from "@ohos.app.ability.common";
 import { UIContext } from '@ohos.arkui.UIContext';
 
 export default class EntryAbility extends UIAbility {
-  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
@@ -40,7 +40,7 @@ export default class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<common.UIAbilityContext>('abilityContext', this.context);
     windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError|null, data) => {
       if (err?.code) {
-        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
         return;
       }
       let windowClass: window.Window | undefined = undefined;
