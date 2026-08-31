@@ -107,6 +107,7 @@ export default function abilityTest() {
         }
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -180,6 +181,7 @@ export default function abilityTest() {
         }
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
     })
@@ -244,10 +246,12 @@ export default function abilityTest() {
           }
         } catch (err) {
           console.error('waitForComponent error' + JSON.stringify(err));
+          expect().assertFail();
           done();
         }
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
     })
@@ -315,10 +319,12 @@ export default function abilityTest() {
           }
         } catch (err) {
           console.error('waitForComponent error' + JSON.stringify(err));
+          expect().assertFail();
           done();
         }
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
     })
@@ -393,10 +399,12 @@ export default function abilityTest() {
           }
         } catch (err) {
           console.error('waitForComponent error' + JSON.stringify(err));
+          expect().assertFail();
           done();
         }
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
     })
