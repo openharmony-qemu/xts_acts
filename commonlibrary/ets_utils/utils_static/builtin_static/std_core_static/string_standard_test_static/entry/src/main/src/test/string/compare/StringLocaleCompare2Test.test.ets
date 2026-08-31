@@ -118,8 +118,9 @@ export default function StringLocaleCompare2Test(): void {
     it('testLocaleCompare006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const traditional: String = new String('繁體中文');
       const simplified: String = new String('繁体中文');
-      let result = traditional.localeCompare(simplified, 'zh');
-      expect(result).not().assertEqual(0);
+      let result: number = traditional.localeCompare(simplified, 'zh');
+      let differs: boolean = result !== 0;
+      expect(differs).assertTrue();
     });
 
     /**

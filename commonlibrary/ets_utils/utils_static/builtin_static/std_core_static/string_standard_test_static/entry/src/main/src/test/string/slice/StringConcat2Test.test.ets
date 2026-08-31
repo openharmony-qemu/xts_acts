@@ -667,7 +667,7 @@ export default function StringConcat2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConcat045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let promise: Promise<string> = new Promise<string>((resolve: (value: string) => void): void => {});
+      let promise: Promise<string> = Promise.resolve("placeholder");
       let result: string = String(promise);
       expect(result).assertEqual('[object Object]');
     });
@@ -681,7 +681,7 @@ export default function StringConcat2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConcat046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let promise: Promise<number> = new Promise<number>((resolve: (value: number) => void): void => {});
+      let promise: Promise<number> = Promise.resolve<number>(0);
       let strObj: String = new String(promise);
       expect(strObj.toString()).assertEqual('[object Object]');
 
@@ -698,7 +698,7 @@ export default function StringConcat2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConcat047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let promise: Promise<string> = new Promise<string>((resolve: (value: string) => void): void => {});
+      let promise: Promise<string> = Promise.resolve("value");
       let promiseStr: string = String(promise);
       let strObj: String = new String(promiseStr);
       expect(strObj.equals('[object Object]')).assertTrue();
@@ -715,9 +715,7 @@ export default function StringConcat2Test(): void {
      */
     it('testConcat048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let original: string = 'hello';
-      let promise: Promise<string> = new Promise<string>((resolve: (value: string) => void): void => {
-        resolve(original);
-      });
+      let promise: Promise<string> = Promise.resolve(original);
       let value: string = await promise;
       expect(value).assertEqual('hello');
     });
@@ -731,9 +729,7 @@ export default function StringConcat2Test(): void {
      * @tc.level LEVEL2
      */
     it('testConcat049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
-      let promise: Promise<string> = new Promise<string>((resolve: (value: string) => void): void => {
-        resolve('async value');
-      });
+      let promise: Promise<string> = Promise.resolve('async value');
       let value: string = await promise;
       let strObj: String = new String(value);
       expect(strObj.toString()).assertEqual('async value');
