@@ -23,12 +23,8 @@ import { BusinessError } from '@ohos.base';
 import { deviceInfo } from '@kit.BasicServicesKit';
 import { fileIo } from '@kit.CoreFileKit';
 
-let checkDeviceTypeIsCar = () => {
-  if (!canIUse("SystemCapability.Security.DataLossPrevention")) {
-    return true;
-  } else {
-    return false;
-  }
+let checkDlpNotSupported = () => {
+  return !canIUse("SystemCapability.Security.DataLossPrevention");
 }
 
 interface ERRCODE {
@@ -4404,8 +4400,8 @@ export default function dlpTest() {
      */
     it('SUB_Security_DataSecurity_DLP_getDLPPermissionInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let isCar: boolean = checkDeviceTypeIsCar();
-        if (isCar) {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
           try {
             await dlpPermission.getDLPPermissionInfo();
             expect(false).assertTrue();
@@ -4433,8 +4429,8 @@ export default function dlpTest() {
      */
     it('SUB_Security_DataSecurity_DLP_queryDlpPolicy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let isCar: boolean = checkDeviceTypeIsCar();
-        if (isCar) {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
           try { 
             await dlpPermission.queryDlpPolicy(null);
             expect(false).assertTrue();
@@ -4462,8 +4458,8 @@ export default function dlpTest() {
      */
     it('SUB_Security_DataSecurity_DLP_decryptDlpFile_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let isCar: boolean = checkDeviceTypeIsCar();
-        if (isCar) {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
           try {
             await dlpPermission.decryptDlpFile(null, null);
             expect(false).assertTrue();
@@ -4491,8 +4487,8 @@ export default function dlpTest() {
      */
     it('SUB_Security_DataSecurity_DLP_setEnterprisePolicy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let isCar: boolean = checkDeviceTypeIsCar();
-        if (isCar) {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
           try {
             await dlpPermission.setEnterprisePolicy(null);
             expect(false).assertTrue();
@@ -4520,8 +4516,8 @@ export default function dlpTest() {
      */
     it('SUB_Security_DataSecurity_DLP_unregisterPlugin_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
-        let isCar: boolean = checkDeviceTypeIsCar();
-        if (isCar) {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
           try {
             await dlpPermission.DlpConnManager.unregisterPlugin();
             expect(false).assertTrue();
