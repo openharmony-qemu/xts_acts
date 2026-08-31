@@ -286,6 +286,7 @@ export default function HttpHttpProtocolTest() {
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+              httpRequest.destroy();
               done();
             });
           }
@@ -547,6 +548,7 @@ export default function HttpHttpProtocolTest() {
             }).catch((err: BusinessError) => {
               console.info(`${caseName} request fail err:${JSON.stringify(err)}`);
               ExpectTrue(err.code == 2300999);//The device does not support HTTP3
+              httpRequest.destroy();
               done();
             });
           }
