@@ -39,7 +39,7 @@ char g_codecName[CODEC_NAME_SIZE] = {};
 char g_codecNameHEVC[CODEC_NAME_SIZE] = {};
 constexpr uint32_t DEFAULT_WIDTH = 1280;
 constexpr uint32_t DEFAULT_HEIGHT = 720;
-constexpr uint32_t LOWPWER_100 = 100;
+constexpr uint32_t LOWPOWER_100 = 100;
 } // namespace
 
 using namespace std;
@@ -472,7 +472,7 @@ napi_value LOWPOWER_CONFIG_003Test(napi_env env, napi_callback_info info)
         OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
         OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
         OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, VBR);
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, LOWPWER_100);
+        OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, LOWPOWER_100);
         int ret = OH_VideoEncoder_Configure(venc, format);
         OH_VideoEncoder_Destroy(venc);
         OH_AVFormat_Destroy(format);

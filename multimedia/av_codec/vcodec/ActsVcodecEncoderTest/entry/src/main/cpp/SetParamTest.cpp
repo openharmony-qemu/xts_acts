@@ -1934,7 +1934,11 @@ napi_value LOWPOWER_SETPARAM_001Test(napi_env env, napi_callback_info info)
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_AVFormat *format = OH_AVFormat_Create();
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, 1);
-        if (vEncSample->SetParameter(format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetParameter(format) != AV_ERR_OK) {
+            OH_AVFormat_Destroy(format);
+            vEncSample->Release();
+            return CreateIntInt32Result(env, -1); 
+        }
         OH_AVFormat_Destroy(format);
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
@@ -1965,7 +1969,11 @@ napi_value LOWPOWER_SETPARAM_002Test(napi_env env, napi_callback_info info)
         if (vEncSample->SetParameter(format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_AVFormat_Destroy(format);
         vEncSample->WaitForEOS();
-        if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetParameter(format) != AV_ERR_OK) {
+            OH_AVFormat_Destroy(format);
+            vEncSample->Release();
+            return CreateIntInt32Result(env, -1); 
+        }
         vEncSample->Release();
         return CreateIntInt32Result(env, 0);
     } else {
@@ -1990,7 +1998,11 @@ napi_value LOWPOWER_SETPARAM_003Test(napi_env env, napi_callback_info info)
         if (vEncSample->StartVideoEncoder() != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
         OH_AVFormat *format = OH_AVFormat_Create();
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_WITH_LOWPOWER_CAMERA, -1);
-        if (vEncSample->SetParameter(format) != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
+        if (vEncSample->SetParameter(format) != AV_ERR_OK) {
+            OH_AVFormat_Destroy(format);
+            vEncSample->Release();
+            return CreateIntInt32Result(env, -1); 
+        }
         OH_AVFormat_Destroy(format);
         vEncSample->WaitForEOS();
         if (vEncSample->errCount != AV_ERR_OK) { return CreateIntInt32Result(env, -1); }
