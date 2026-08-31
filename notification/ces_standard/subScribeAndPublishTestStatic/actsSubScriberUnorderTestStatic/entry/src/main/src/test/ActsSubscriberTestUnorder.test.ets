@@ -577,6 +577,7 @@ export default function ActsSubscriberTestUnorder() {
                 expect(CommonEventData?.code).assertEqual(0)
                 expect(CommonEventData?.data).assertEqual("initial_data")
                 expect(CommonEventData?.parameters?.['key1']).assertEqual('parameters_0100')
+                expect(CommonEventData?.bundleName).assertEqual(bundle_name)
                 done()
               }
             }
