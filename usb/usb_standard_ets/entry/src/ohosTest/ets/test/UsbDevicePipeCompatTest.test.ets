@@ -353,7 +353,7 @@ export default function UsbDevicePipeCompatTest() {
             fakeInterface.id = 123;
             let isClaim = usbMgr.claimInterface(localPipe, fakeInterface, true);
             console.info(`${TAG} claimInterface result: ${isClaim}`);
-            expect(isClaim).not().assertEqual(0);
+            expect(isClaim).assertEqual(-1);
           }
         }
       } catch (error) {
@@ -550,7 +550,7 @@ export default function UsbDevicePipeCompatTest() {
             fakeInterface.id = 134;
             let isRelease = usbMgr.releaseInterface(localPipe, fakeInterface);
             console.info(`${TAG} releaseInterface result: ${isRelease}`);
-            expect(isRelease).not().assertEqual(0);
+            expect(isRelease).assertEqual(-1);
             usbMgr.releaseInterface(localPipe, targetInterface);
           }
         }

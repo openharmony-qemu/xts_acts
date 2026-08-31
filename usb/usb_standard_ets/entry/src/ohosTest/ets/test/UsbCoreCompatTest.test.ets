@@ -629,10 +629,11 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testResetUsbDeviceNotConnected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+    it('testResetUsbDeviceNotConnected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info(`${TAG} testResetUsbDeviceNotConnected start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testResetUsbDeviceNotConnected, skip`);
+        done();
         return;
       }
       try {
@@ -642,6 +643,8 @@ export default function UsbCoreCompatTest() {
       } catch (error) {
         console.error(`${TAG} testResetUsbDeviceNotConnected catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14400013);
+      } finally {
+        done();
       }
     })
 
