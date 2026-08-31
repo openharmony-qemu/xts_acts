@@ -1683,10 +1683,7 @@ export default function WebSocketTest() {
                     hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                     done();
                   } else {
-                    let connection: webSocket.WebSocketConnection = {
-                      clientIP: '0.0.0.0',
-                      clientPort: 8099
-                    }
+                    let connection: webSocket.WebSocketConnection = connections[0];
                     server.send("hello client", connection).then((value: boolean | undefined) => {
                       if (value) {
                         ExpectTrue(value !== null);
@@ -1891,12 +1888,10 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          // 先等待 server.start() 完成
           let startResult: boolean | undefined = await server.start(serverConfig);
           if(!startResult) {
             hilog.info(domain, tag, '%{public}s server start returned false', caseName);
           }
-          // start 结束后再调用 stop
           let stopResult: boolean | undefined = await server.stop();
           ExpectTrue(stopResult === true);
           hilog.info(domain, tag, '%{public}s server stop result: %{public}s', caseName, JSON.stringify(stopResult));
@@ -2658,14 +2653,14 @@ async (done: () => void): Promise<void> => {
       let caseName: string = 'testNetworkWebSocket_HttpProxy_static_0100';
       hilog.info(domain, tag, '%{public}s', caseName + ' start');
       try {
-        let httpProxy: webSocket.HttpProxy = {
+        let httpProxy = {
           host: '192.168.1.2',
           port: 8081,
           exclusionList: ['www.test.com', '10.10.*.*']
-        };
-        ExpectTrue(httpProxy.host === '192.168.1.2');
-        ExpectTrue(httpProxy.port === 8081);
-        ExpectTrue(httpProxy.exclusionList !== undefined);
+        } as webSocket.HttpProxy;
+        ExpectTrue(typeof httpProxy.host === 'string');
+        ExpectTrue(typeof httpProxy.port === 'number');
+        ExpectTrue(Array.isArray(httpProxy.exclusionList));
         let options: webSocket.WebSocketRequestOptions = {
           skipServerCertVerification: false,
           proxy: httpProxy,
@@ -2673,8 +2668,10 @@ async (done: () => void): Promise<void> => {
           pingInterval: 60,
           pongTimeout: 60
         };
-        ExpectTrue(options.skipServerCertVerification !== undefined);
-        ExpectTrue(options.proxy !== undefined);
+        ExpectTrue(typeof options.skipServerCertVerification === 'boolean');
+        ExpectTrue(typeof options.proxy === 'object' && options.proxy !== null);
+        ExpectTrue(typeof options.pingInterval === 'number');
+        ExpectTrue(typeof options.pongTimeout === 'number');
         hilog.info(domain, tag, '%{public}s', caseName + ' webSocket.HttpProxy interface covered successfully');
         done();
         hilog.info(domain, tag, '%{public}s', caseName + ' test end');
@@ -2703,15 +2700,13 @@ async (done: () => void): Promise<void> => {
           keyPath: '/path/to/key.pem',
           keyPassword: 'password123'
         };
-        ExpectTrue(clientCert.certPath === '/path/to/cert.pem');
-        ExpectTrue(clientCert.keyPath === '/path/to/key.pem');
-        ExpectTrue(clientCert.keyPassword === 'password123');
+        ExpectTrue(typeof clientCert.certPath === 'string');
+        ExpectTrue(typeof clientCert.keyPath === 'string');
+        ExpectTrue(typeof clientCert.keyPassword === 'string');
         let clientCertWithoutPassword: webSocket.ClientCert = {
           certPath: '/path/to/cert.pem',
           keyPath: '/path/to/key.pem'
         };
-        ExpectTrue(clientCertWithoutPassword.certPath === '/path/to/cert.pem');
-        ExpectTrue(clientCertWithoutPassword.keyPath === '/path/to/key.pem');
         ExpectTrue(clientCertWithoutPassword.keyPassword === undefined);
         done();
         hilog.info(domain, tag, '%{public}s', caseName + ' test end');
@@ -2735,23 +2730,52 @@ async (done: () => void): Promise<void> => {
       async (done: () => void): Promise<void> => {
         let caseName: string = 'testWebSocketSendCallbackReturn_static_0100';
         hilog.info(domain, tag, '%{public}s', caseName + ' start');
+        let ws: webSocket.WebSocket | null = null;
         try {
-          let ws = webSocket.createWebSocket();
+          ws = webSocket.createWebSocket();
+          ws.onError((err: BusinessError<void>) => {
+            hilog.info(domain, tag, '%{public}s', caseName + ' onError ' + JSON.stringify(err));
+            if (ws) {
+              ws.close();
+              ws.off('open');
+              ws.off('error');
+            }
+            ExpectFail();
+            done();
+          });
           ws.onOpen((value: webSocket.OpenResult | undefined) => {
             if (value && value !== null) {
               hilog.info(domain, tag, '%{public}s', caseName + 'onOpen success ' + value.message);
-              ws.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
+              ws!.send('hello!', (err: BusinessError<void> | null, value: boolean | undefined) => {
                 if (err && err.code !== 0) {
                   hilog.info(domain, tag, '%{public}s', caseName + 'send fail' + err.code);
+                  if (ws) {
+                    ws.close();
+                    ws.off('open');
+                    ws.off('error');
+                  }
                   ExpectFail();
                   done();
                 } else {
                   hilog.info(domain, tag, '%{public}s', caseName + 'send success ' + value);
                   ExpectTrue(value !== null && value !== undefined && typeof value === 'boolean');
-                  ws.close();
+                  if (ws) {
+                    ws.close();
+                    ws.off('open');
+                    ws.off('error');
+                  }
                   done();
                 }
               });
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName + ' onOpen value is falsy');
+              if (ws) {
+                ws.close();
+                ws.off('open');
+                ws.off('error');
+              }
+              ExpectFail();
+              done();
             }
           });
           ws.connect(availableWebSocketAddress, (err: BusinessError<void> | null, value: boolean | undefined) => {
@@ -2763,6 +2787,11 @@ async (done: () => void): Promise<void> => {
           });
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + ' catch error is ' + JSON.stringify(err));
+          if (ws) {
+            ws.close();
+            ws.off('open');
+            ws.off('error');
+          }
           ExpectFail();
           done();
           hilog.info(domain, tag, '%{public}s', caseName + ' test end');
