@@ -15,6 +15,7 @@
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 
 import ability_featureAbility from '@ohos.ability.featureAbility';
+import ability from '@ohos.ability.ability';
 import commonEvent from '@ohos.commonEventManager';
 import appManager from "@ohos.application.appManager";
 import wantConstant from '@ohos.ability.wantConstant';
@@ -441,7 +442,7 @@ export default function verificationTest(){
             flag3 = true
             console.info(TAG + 'Ext onFailed, number = ' + number);
           }
-        })
+        } as ability.ConnectOptions)
       } catch (err) {
         console.info(TAG + "catch err = " + JSON.stringify(err));
         expect().assertFail();
