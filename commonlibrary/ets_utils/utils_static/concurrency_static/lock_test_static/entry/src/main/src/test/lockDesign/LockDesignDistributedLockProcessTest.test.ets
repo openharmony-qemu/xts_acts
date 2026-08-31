@@ -1,0 +1,584 @@
+'use static';
+/*
+ * Copyright (c) 2026 RKH Corp.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium';
+
+// ==================== DistributedLockProcess classes ====================
+class SharedLockData {
+  value: number = 0;
+}
+
+class ContentionData {
+  counter: number = 0;
+  maxSeen: number = 0;
+}
+
+class ProcessRetryData {
+  attempts: number = 0;
+  success: number = 0;
+}
+
+// ==================== DistributedLockTimeout classes ====================
+class TimeoutLockData {
+  completed: number = 0;
+}
+
+class RetryLockData {
+  attempts: number = 0;
+  success: number = 0;
+}
+
+class DynamicTimeoutData {
+  timeout: number = 100;
+  completed: number = 0;
+}
+
+class RetryLimitData {
+  retries: number = 0;
+  maxRetries: number = 3;
+  completed: number = 0;
+  aborted: number = 0;
+}
+
+// ==================== DistributedLockPriority classes ====================
+class LockPriorityData {
+  readCount: AtomicInt = new AtomicInt(0);
+  writeCount: number = 0;
+}
+
+class HighPriorityData {
+  completed: number = 0;
+  priority: number = 10;
+}
+
+class LowPriorityData {
+  completed: number = 0;
+  priority: number = 1;
+}
+
+class DynamicPriorityData {
+  priority: number = 5;
+  completed: number = 0;
+}
+
+// ==================== DistributedLockProcess task functions ====================
+function sharedLockTask(mutex: Mutex, data: SharedLockData, counter: AtomicInt): void {
+  mutex.lock();
+  try {
+    data.value = data.value + 1;
+    counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
+  }
+}
+
+function lockContentionTask(mutex: Mutex, data: ContentionData, counter: AtomicInt): void {
+  for (let i: number = 0; i < 10; i++) {
+    mutex.lock();
+    try {
+      data.counter = data.counter + 1;
+      if (data.counter > data.maxSeen) {
+        data.maxSeen = data.counter;
+      }
+      data.counter = data.counter - 1;
+    } finally {
+      mutex.unlock();
+    }
+  }
+  counter.fetchAdd(1);
+}
+
+function lockTimeoutTask(mutex: Mutex, counter: AtomicInt): void {
+  mutex.lock();
+  try {
+    for (let i: number = 0; i < 5; i++) {
+      let val: number = i * 2;
+    }
+    counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
+  }
+}
+
+function lockRetryTask(mutex: Mutex, data: ProcessRetryData, counter: AtomicInt): void {
+  let acquired: boolean = false;
+  for (let attempt: number = 0; attempt < 3; attempt++) {
+    mutex.lock();
+    try {
+      data.attempts = data.attempts + 1;
+      data.success = data.success + 1;
+      acquired = true;
+    } finally {
+      mutex.unlock();
+    }
+    if (acquired) {
+      break;
+    }
+  }
+  counter.fetchAdd(1);
+}
+
+// ==================== DistributedLockTimeout task functions ====================
+function lockTimeoutSimpleTask(mutex: Mutex, data: TimeoutLockData, counter: AtomicInt): void {
+  mutex.lock();
+  try {
+    data.completed = data.completed + 1;
+    counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
+  }
+}
+
+function lockRetryBackoffTask(mutex: Mutex, data: RetryLockData, counter: AtomicInt): void {
+  mutex.lock();
+  try {
+    data.attempts = data.attempts + 1;
+    data.success = data.success + 1;
+    counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
+  }
+}
+
+function dynamicTimeoutTask(mutex: Mutex, data: DynamicTimeoutData, counter: AtomicInt): void {
+  mutex.lock();
+  try {
+    if (data.completed > 2) {
+      data.timeout = data.timeout * 2;
+    }
+    data.completed = data.completed + 1;
+    counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
+  }
+}
+
+function retryLimitTask(mutex: Mutex, data: RetryLimitData, counter: AtomicInt): void {
+  mutex.lock();
+  try {
+    if (data.retries < data.maxRetries) {
+      data.retries = data.retries + 1;
+      data.completed = data.completed + 1;
+    } else {
+      data.aborted = data.aborted + 1;
+    }
+    counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
+  }
+}
+
+// ==================== DistributedLockPriority task functions ====================
+function readPriorityTask(rwlock: RWLock, data: LockPriorityData, counter: AtomicInt): void {
+  const readLock = rwlock.readLock();
+  readLock.lock();
+  try {
+    data.readCount.fetchAdd(1);
+    counter.fetchAdd(1);
+  } finally {
+    readLock.unlock();
+  }
+}
+
+function writePriorityTask(rwlock: RWLock, data: LockPriorityData, counter: AtomicInt): void {
+  const writeLock = rwlock.writeLock();
+  writeLock.lock();
+  try {
+    data.writeCount = data.writeCount + 1;
+    counter.fetchAdd(1);
+  } finally {
+    writeLock.unlock();
+  }
+}
+
+function highPriorityTask(mutex: Mutex, data: HighPriorityData, counter: AtomicInt): void {
+  mutex.lock();
+  try {
+    data.completed = data.completed + 1;
+    counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
+  }
+}
+
+function lowPriorityTask(mutex: Mutex, data: LowPriorityData, counter: AtomicInt): void {
+  mutex.lock();
+  try {
+    data.completed = data.completed + 1;
+    counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
+  }
+}
+
+function dynamicPriorityTask(mutex: Mutex, data: DynamicPriorityData, counter: AtomicInt): void {
+  mutex.lock();
+  try {
+    if (data.completed > 2) {
+      data.priority = data.priority + 1;
+    }
+    data.completed = data.completed + 1;
+    counter.fetchAdd(1);
+  } finally {
+    mutex.unlock();
+  }
+}
+
+// ==================== EXPORTED FUNCTION ====================
+export default function LockDesignDistributedLockProcessTest(): void {
+  // ---------- DistributedLockProcess tests ----------
+  describe('LockDesignDistributedLockProcessTest', (): void => {
+    beforeAll((): void => {})
+    beforeEach((): void => {})
+    afterEach((): void => {})
+    afterAll((): void => {})
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest0100
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0100
+     * @tc.desc    Verify shared lock with 5 concurrent tasks incrementing counter using Mutex
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL0
+     */
+    it('LockDesignDistributedLockProcessTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new SharedLockData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(sharedLockTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      expect(data.value).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest0200
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0200
+     * @tc.desc    Verify lock contention with 5 tasks each performing 10 lock-unlock cycles
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockDesignDistributedLockProcessTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new ContentionData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockContentionTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      expect(data.counter).assertEqual(0);
+      // Mutual exclusion oracle: maxSeen stays 1 only if the mutex serializes every cycle.
+      expect(data.maxSeen).assertEqual(1);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest0300
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0300
+     * @tc.desc    Verify 5 concurrent tasks performing loop operations complete under Mutex
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockDesignDistributedLockProcessTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockTimeoutTask, mutex, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0300 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest0400
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0400
+     * @tc.desc    Verify lock retry mechanism with 3 tasks each attempting up to 3 retries
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockDesignDistributedLockProcessTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new ProcessRetryData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 3; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockRetryTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(3);
+      expect(data.success).assertEqual(3);
+      expect(data.attempts).assertEqual(3);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0400 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest0500
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0500
+     * @tc.desc    Verify 5 concurrent tasks completing under Mutex with a shared completion counter
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockDesignDistributedLockProcessTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new TimeoutLockData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockTimeoutSimpleTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      expect(data.completed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0500 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest0600
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0600
+     * @tc.desc    Verify 5 concurrent tasks each record one attempt and acquire the lock once using Mutex
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockDesignDistributedLockProcessTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new RetryLockData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lockRetryBackoffTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      expect(data.success).assertEqual(5);
+      expect(data.attempts).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0600 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest0700
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0700
+     * @tc.desc    Verify dynamic timeout adjustment with 5 concurrent tasks
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockDesignDistributedLockProcessTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new DynamicTimeoutData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(dynamicTimeoutTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      expect(data.completed).assertEqual(5);
+      // The 4th and 5th serialized tasks each double the timeout field: 100 -> 200 -> 400.
+      expect(data.timeout).assertEqual(400);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0700 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest0800
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0800
+     * @tc.desc    Verify retry limit with 5 tasks respecting max retries threshold
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockDesignDistributedLockProcessTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new RetryLimitData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(retryLimitTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      // Serialized by the mutex: the first 3 tasks complete, the remaining 2 abort.
+      expect(data.completed).assertEqual(3);
+      expect(data.aborted).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0800 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest0900
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_0900
+     * @tc.desc    Verify RWLock with 5 concurrent readers and 2 writers completing read and write operations
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('LockDesignDistributedLockProcessTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+      const rwlock = new RWLock();
+      const data = new LockPriorityData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(readPriorityTask, rwlock, data, counter)));
+      }
+      for (let i: number = 0; i < 2; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(writePriorityTask, rwlock, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(7);
+      expect(data.readCount.load()).assertEqual(5);
+      expect(data.writeCount).assertEqual(2);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest0900 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest1000
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_1000
+     * @tc.desc    Verify high priority tasks complete with 5 concurrent tasks using Mutex
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockDesignDistributedLockProcessTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new HighPriorityData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(highPriorityTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      expect(data.completed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest1000 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest1100
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_1100
+     * @tc.desc    Verify low priority tasks complete with 5 concurrent tasks using Mutex
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockDesignDistributedLockProcessTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new LowPriorityData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(lowPriorityTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      expect(data.completed).assertEqual(5);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest1100 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name    LockDesignDistributedLockProcessTest1200
+     * @tc.number  SUB_LOCK_DESIGN_DISTRIBUTED_LOCK_PROCESS_TEST_1200
+     * @tc.desc    Verify dynamic priority adjustment with 5 concurrent tasks using Mutex
+     * @tc.type    FUNCTION
+     * @tc.size    MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('LockDesignDistributedLockProcessTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+      const mutex = new Mutex();
+      const data = new DynamicPriorityData();
+      const counter = new AtomicInt(0);
+      let promises: Promise<Any>[] = [];
+      for (let i: number = 0; i < 5; i++) {
+        promises.push(taskpool.execute(new taskpool.Task(dynamicPriorityTask, mutex, data, counter)));
+      }
+      await Promise.all(promises);
+      expect(counter.load()).assertEqual(5);
+      expect(data.completed).assertEqual(5);
+      // The last 2 serialized tasks each increment the priority field: 5 -> 6 -> 7.
+      expect(data.priority).assertEqual(7);
+      } catch (error) {
+        console.error(`LockDesignDistributedLockProcessTest1200 failed: ${error}`);
+        expect(false).assertFail();
+      }
+      done();
+    })
+  })
+}
