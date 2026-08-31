@@ -476,7 +476,9 @@ export default function openLinkTest() {
                 })
               }catch(e){
                 commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
-                  done()
+                  if (error) {
+                    hilog.info(0x0000, `${TAG}`, '%{public}s', `publish terminate error: ${JSON.stringify(error)}`);
+                  }
                 })
               }
             });

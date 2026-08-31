@@ -24,7 +24,7 @@ function publishCallBack() {
   console.debug("====>AbilityMultiInstanceAppC Publish CallBack ====>");
 }
 
-async function onShowProcess(AppCAbilityContext) {
+async function onShowProcess(appCAbilityContext) {
   let abilityWant = AppStorage.get<Want>("abilityWant")!;
   let callBackData = "AppC:";
   callBackData += callBackSeq;
@@ -37,13 +37,13 @@ async function onShowProcess(AppCAbilityContext) {
     commonEvent.publish("MultiInstanceStartFinish", commonEventPublishData, publishCallBack);
   } else {
     commonEvent.publish("MultiInstanceStartNext", commonEventPublishData, () => {
-      startAbilityProcess(AppCAbilityContext, abilityWant.parameters);
+      startAbilityProcess(appCAbilityContext, abilityWant.parameters);
     })
   }
   callBackSeq = "";
 }
 
-async function startAbilityProcess(AppCAbilityContext, parameters) {
+async function startAbilityProcess(appCAbilityContext, parameters) {
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
@@ -89,7 +89,7 @@ async function startAbilityProcess(AppCAbilityContext, parameters) {
       break;
   }
   parameters.nextStep = ++idx;
-  AppCAbilityContext.startAbility({
+  appCAbilityContext.startAbility({
     bundleName: bundleName,
     abilityName: abilityName,
     parameters: parameters
