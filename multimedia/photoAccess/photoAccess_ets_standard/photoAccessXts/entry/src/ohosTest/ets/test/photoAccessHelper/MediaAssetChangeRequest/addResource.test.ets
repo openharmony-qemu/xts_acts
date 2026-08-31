@@ -56,11 +56,17 @@ async function addResourceAbnormalPromiseTest(done: Function, testName: string, 
     let extension: string = imageType;
     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
       photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(testContext, photoType, extension);
-    let path: string | undefined = testContext.filesDir + '/' + pathUri;
-    if(pathUri === '' || pathUri === undefined) path = pathUri
-    let uri = fileUri.getUriFromPath(path);
-    let uriFlag = await fs.access(path);
-    console.log('fileUri is ' + JSON.stringify(uriFlag));
+    let path: string | undefined
+    let uri
+    let uriFlag
+    if(pathUri === '' || pathUri === undefined){
+      uri = pathUri
+    }else{
+      path = testContext.filesDir + '/' + pathUri;
+      uri = fileUri.getUriFromPath(path);
+      uriFlag = await fs.access(path);
+      console.log('fileUri is ' + JSON.stringify(uriFlag));
+    }
     await assetChangeRequest.addResource(resourceType, uri);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('addResourceByFileUri successfully');
