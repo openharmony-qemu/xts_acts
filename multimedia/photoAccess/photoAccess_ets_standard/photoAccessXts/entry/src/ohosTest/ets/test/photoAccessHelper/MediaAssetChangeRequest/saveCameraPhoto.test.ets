@@ -56,7 +56,7 @@ async function saveCameraPhotoAbnormalPromiseTest(done: Function, testName: stri
     let asset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
     let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
       new photoAccessHelper.MediaAssetChangeRequest(asset);
-    await assetChangeRequest.saveCameraPhoto(imageType);
+    await assetChangeRequest.saveCameraPhoto(imageType as photoAccessHelper.ImageFileType);
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('apply saveCameraPhoto successfully');
     expect().assertFail();
