@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,9 +14,9 @@
  */
 
 import usbMgr from '@ohos.usbManager';
-import { Driver, ON, MatchPattern } from '@ohos.UiTest';
+import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { isFilteredDevice } from './FilterUtils';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 let deviceList: Array<usbMgr.USBDevice>;
 let pipe: usbMgr.USBDevicePipe | null = null;
@@ -136,27 +136,28 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConnectDeviceInvalidDevAddress', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testConnectDeviceInvalidDevAddress start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidDevAddress, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
-      device.devAddress = 2 + 10000;
-      try {
-        let pipe = usbMgr.connectDevice(device);
-        console.info(`${TAG} connectDevice result: ${JSON.stringify(pipe)}`);
-        expect(pipe).assertUndefined();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testConnectDeviceInvalidDevAddress catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
-    })
+    it('testConnectDeviceInvalidDevAddress', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testConnectDeviceInvalidDevAddress start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidDevAddress, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
+        device.devAddress = 2 + 10000;
+        try {
+          let pipe = usbMgr.connectDevice(device);
+          console.info(`${TAG} connectDevice result: ${JSON.stringify(pipe)}`);
+          expect(pipe).assertUndefined();
+          done();
+        } catch (error) {
+          console.error(`${TAG} testConnectDeviceInvalidDevAddress catch err: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(14400001);
+          done();
+        }
+      })
 
     /**
      * @tc.name   testConnectDeviceInvalidBusNum
@@ -183,7 +184,7 @@ export default function UsbCoreCompatTest() {
         done();
       } catch (error) {
         console.error(`${TAG} testConnectDeviceInvalidBusNum catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
+        expect(error.code).assertEqual(14400001);
         done();
       }
     })
@@ -212,13 +213,12 @@ export default function UsbCoreCompatTest() {
         console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
         expect(pipe === undefined).assertFalse();
         expect(pipe.busNum).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testConnectDeviceInvalidSerial catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -230,31 +230,31 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConnectDeviceInvalidProductName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testConnectDeviceInvalidProductName start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidProductName, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
-      device.productName = 'sdfsdfe';
-      let pipe: usbMgr.USBDevicePipe | null = null;
-      try {
-        pipe = usbMgr.connectDevice(device);
-        console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
-        expect(pipe === undefined).assertFalse();
-        expect(pipe.busNum).assertLarger(0);
-        done();
-      } catch (error) {
-        console.error(`${TAG} testConnectDeviceInvalidProductName catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      } finally {
-        teardownDevicePipe(pipe);
-      }
-    })
+    it('testConnectDeviceInvalidProductName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testConnectDeviceInvalidProductName start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidProductName, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
+        device.productName = 'sdfsdfe';
+        let pipe: usbMgr.USBDevicePipe | null = null;
+        try {
+          pipe = usbMgr.connectDevice(device);
+          console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
+          expect(pipe === undefined).assertFalse();
+          expect(pipe.busNum).assertLarger(0);
+        } catch (error) {
+          console.error(`${TAG} testConnectDeviceInvalidProductName catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownDevicePipe(pipe);
+          done();
+        }
+      })
 
     /**
      * @tc.name   testConnectDeviceInvalidVersion
@@ -264,31 +264,31 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConnectDeviceInvalidVersion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testConnectDeviceInvalidVersion start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidVersion, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
-      device.version = 'gwefsdf';
-      let pipe: usbMgr.USBDevicePipe | null = null;
-      try {
-        pipe = usbMgr.connectDevice(device);
-        console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
-        expect(pipe === undefined).assertFalse();
-        expect(pipe.busNum).assertLarger(0);
-        done();
-      } catch (error) {
-        console.error(`${TAG} testConnectDeviceInvalidVersion catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      } finally {
-        teardownDevicePipe(pipe);
-      }
-    })
+    it('testConnectDeviceInvalidVersion', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testConnectDeviceInvalidVersion start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidVersion, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
+        device.version = 'gwefsdf';
+        let pipe: usbMgr.USBDevicePipe | null = null;
+        try {
+          pipe = usbMgr.connectDevice(device);
+          console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
+          expect(pipe === undefined).assertFalse();
+          expect(pipe.busNum).assertLarger(0);
+        } catch (error) {
+          console.error(`${TAG} testConnectDeviceInvalidVersion catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownDevicePipe(pipe);
+          done();
+        }
+      })
 
     /**
      * @tc.name   testConnectDeviceInvalidVendorId
@@ -298,31 +298,31 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConnectDeviceInvalidVendorId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testConnectDeviceInvalidVendorId start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidVendorId, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
-      device.vendorId = 2 + 10000;
-      let pipe: usbMgr.USBDevicePipe | null = null;
-      try {
-        pipe = usbMgr.connectDevice(device);
-        console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
-        expect(pipe === undefined).assertFalse();
-        expect(pipe.busNum).assertLarger(0);
-        done();
-      } catch (error) {
-        console.error(`${TAG} testConnectDeviceInvalidVendorId catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      } finally {
-        teardownDevicePipe(pipe);
-      }
-    })
+    it('testConnectDeviceInvalidVendorId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testConnectDeviceInvalidVendorId start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidVendorId, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
+        device.vendorId = 2 + 10000;
+        let pipe: usbMgr.USBDevicePipe | null = null;
+        try {
+          pipe = usbMgr.connectDevice(device);
+          console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
+          expect(pipe === undefined).assertFalse();
+          expect(pipe.busNum).assertLarger(0);
+        } catch (error) {
+          console.error(`${TAG} testConnectDeviceInvalidVendorId catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownDevicePipe(pipe);
+          done();
+        }
+      })
 
     /**
      * @tc.name   testConnectDeviceInvalidProductId
@@ -332,31 +332,31 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConnectDeviceInvalidProductId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testConnectDeviceInvalidProductId start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidProductId, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
-      device.productId = 2 + 10000;
-      let pipe: usbMgr.USBDevicePipe | null = null;
-      try {
-        pipe = usbMgr.connectDevice(device);
-        console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
-        expect(pipe === undefined).assertFalse();
-        expect(pipe.busNum).assertLarger(0);
-        done();
-      } catch (error) {
-        console.error(`${TAG} testConnectDeviceInvalidProductId catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      } finally {
-        teardownDevicePipe(pipe);
-      }
-    })
+    it('testConnectDeviceInvalidProductId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testConnectDeviceInvalidProductId start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidProductId, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
+        device.productId = 2 + 10000;
+        let pipe: usbMgr.USBDevicePipe | null = null;
+        try {
+          pipe = usbMgr.connectDevice(device);
+          console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
+          expect(pipe === undefined).assertFalse();
+          expect(pipe.busNum).assertLarger(0);
+        } catch (error) {
+          console.error(`${TAG} testConnectDeviceInvalidProductId catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownDevicePipe(pipe);
+          done();
+        }
+      })
 
     /**
      * @tc.name   testConnectDeviceInvalidClazz
@@ -382,13 +382,12 @@ export default function UsbCoreCompatTest() {
         console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
         expect(pipe === undefined).assertFalse();
         expect(pipe.busNum).assertLarger(0);
-        done();
       } catch (error) {
         console.error(`${TAG} testConnectDeviceInvalidClazz catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -400,31 +399,31 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConnectDeviceInvalidSubClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testConnectDeviceInvalidSubClass start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidSubClass, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
-      device.subClass = 2 + 10000;
-      let pipe: usbMgr.USBDevicePipe | null = null;
-      try {
-        pipe = usbMgr.connectDevice(device);
-        console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
-        expect(pipe === undefined).assertFalse();
-        expect(pipe.busNum).assertLarger(0);
-        done();
-      } catch (error) {
-        console.error(`${TAG} testConnectDeviceInvalidSubClass catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      } finally {
-        teardownDevicePipe(pipe);
-      }
-    })
+    it('testConnectDeviceInvalidSubClass', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testConnectDeviceInvalidSubClass start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidSubClass, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
+        device.subClass = 2 + 10000;
+        let pipe: usbMgr.USBDevicePipe | null = null;
+        try {
+          pipe = usbMgr.connectDevice(device);
+          console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
+          expect(pipe === undefined).assertFalse();
+          expect(pipe.busNum).assertLarger(0);
+        } catch (error) {
+          console.error(`${TAG} testConnectDeviceInvalidSubClass catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownDevicePipe(pipe);
+          done();
+        }
+      })
 
     /**
      * @tc.name   testConnectDeviceInvalidProtocol
@@ -434,31 +433,31 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testConnectDeviceInvalidProtocol', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testConnectDeviceInvalidProtocol start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidProtocol, skip`);
-        done();
-        return;
-      }
-      await ensurePermission(testDevice!.name);
-      let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
-      device.protocol = 2 + 10000;
-      let pipe: usbMgr.USBDevicePipe | null = null;
-      try {
-        pipe = usbMgr.connectDevice(device);
-        console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
-        expect(pipe === undefined).assertFalse();
-        expect(pipe.busNum).assertLarger(0);
-        done();
-      } catch (error) {
-        console.error(`${TAG} testConnectDeviceInvalidProtocol catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      } finally {
-        teardownDevicePipe(pipe);
-      }
-    })
+    it('testConnectDeviceInvalidProtocol', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testConnectDeviceInvalidProtocol start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testConnectDeviceInvalidProtocol, skip`);
+          done();
+          return;
+        }
+        await ensurePermission(testDevice!.name);
+        let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
+        device.protocol = 2 + 10000;
+        let pipe: usbMgr.USBDevicePipe | null = null;
+        try {
+          pipe = usbMgr.connectDevice(device);
+          console.info(`${TAG} pipe: ${JSON.stringify(pipe)}`);
+          expect(pipe === undefined).assertFalse();
+          expect(pipe.busNum).assertLarger(0);
+        } catch (error) {
+          console.error(`${TAG} testConnectDeviceInvalidProtocol catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+        } finally {
+          teardownDevicePipe(pipe);
+          done();
+        }
+      })
 
     /**
      * @tc.name   testHasRightInvalidName
@@ -468,18 +467,16 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testHasRightInvalidName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testHasRightInvalidName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testHasRightInvalidName start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testHasRightInvalidName, skip`);
-        done();
         return;
       }
       let deviceName = testDevice!.name + '$#';
       let hasRight = usbMgr.hasRight(deviceName);
       console.info(`${TAG} hasRight: ${hasRight}`);
       expect(hasRight).assertFalse();
-      done();
     })
 
     /**
@@ -490,18 +487,16 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testHasRightInvalidNameDigits', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+    it('testHasRightInvalidNameDigits', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testHasRightInvalidNameDigits start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testHasRightInvalidNameDigits, skip`);
-        done();
         return;
       }
       let deviceName = testDevice!.name + 'abcdg';
       let hasRight = usbMgr.hasRight(deviceName);
       console.info(`${TAG} hasRight: ${hasRight}`);
       expect(hasRight).assertFalse();
-      done();
     })
 
     /**
@@ -540,25 +535,26 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testRequestRightInvalidNameDigits', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testRequestRightInvalidNameDigits start`);
-      if (!isDeviceConnected) {
-        console.info(`${TAG} ${SKIP_TAG} testRequestRightInvalidNameDigits, skip`);
-        done();
-        return;
-      }
-      let deviceName = testDevice!.name + '123';
-      try {
-        let hasRight = await usbMgr.requestRight(deviceName);
-        console.info(`${TAG} requestRight result: ${hasRight}`);
-        expect(hasRight).assertFalse();
-        done();
-      } catch (error) {
-        console.error(`${TAG} testRequestRightInvalidNameDigits catch err: ${JSON.stringify(error)}`);
-        expect().assertFail();
-        done();
-      }
-    })
+    it('testRequestRightInvalidNameDigits', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        console.info(`${TAG} testRequestRightInvalidNameDigits start`);
+        if (!isDeviceConnected) {
+          console.info(`${TAG} ${SKIP_TAG} testRequestRightInvalidNameDigits, skip`);
+          done();
+          return;
+        }
+        let deviceName = testDevice!.name + '123';
+        try {
+          let hasRight = await usbMgr.requestRight(deviceName);
+          console.info(`${TAG} requestRight result: ${hasRight}`);
+          expect(hasRight).assertFalse();
+          done();
+        } catch (error) {
+          console.error(`${TAG} testRequestRightInvalidNameDigits catch err: ${JSON.stringify(error)}`);
+          expect().assertFail();
+          done();
+        }
+      })
 
     /**
      * @tc.name   testResetUsbDeviceSuccess
@@ -584,13 +580,12 @@ export default function UsbCoreCompatTest() {
         let result = usbMgr.resetUsbDevice(pipe);
         console.info(`${TAG} resetUsbDevice result: ${result}`);
         expect(result).assertTrue();
-        done();
       } catch (error) {
         console.error(`${TAG} testResetUsbDeviceSuccess catch err: ${JSON.stringify(error)}`);
         expect().assertFail();
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -614,16 +609,15 @@ export default function UsbCoreCompatTest() {
       try {
         let device: usbMgr.USBDevice = JSON.parse(JSON.stringify(testDevice!));
         pipe = usbMgr.connectDevice(device);
-        let fakePipe: usbMgr.USBDevicePipe = {busNum: 0, devAddress: 0};
+        let fakePipe: usbMgr.USBDevicePipe = { busNum: 0, devAddress: 0 };
         usbMgr.resetUsbDevice(fakePipe);
         expect().assertFail();
-        done();
       } catch (error) {
         console.error(`${TAG} testResetUsbDeviceInvalidPipe catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14400008);
-        done();
       } finally {
         teardownDevicePipe(pipe);
+        done();
       }
     })
 
@@ -635,22 +629,19 @@ export default function UsbCoreCompatTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testResetUsbDeviceNotConnected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testResetUsbDeviceNotConnected', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testResetUsbDeviceNotConnected start`);
       if (!isDeviceConnected) {
         console.info(`${TAG} ${SKIP_TAG} testResetUsbDeviceNotConnected, skip`);
-        done();
         return;
       }
       try {
-        let fakePipe: usbMgr.USBDevicePipe = {busNum: testDevice!.busNum, devAddress: testDevice!.devAddress};
+        let fakePipe: usbMgr.USBDevicePipe = { busNum: testDevice!.busNum, devAddress: testDevice!.devAddress };
         usbMgr.resetUsbDevice(fakePipe);
         expect().assertFail();
-        done();
       } catch (error) {
         console.error(`${TAG} testResetUsbDeviceNotConnected catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14400013);
-        done();
       }
     })
 
@@ -677,14 +668,13 @@ export default function UsbCoreCompatTest() {
         usbMgr.removeRight(testDevice!.name);
         usbMgr.resetUsbDevice(pipe);
         expect().assertFail();
-        done();
       } catch (error) {
         console.error(`${TAG} testResetUsbDeviceNoPermission catch err: ${JSON.stringify(error)}`);
         expect(error.code).assertEqual(14400001);
-        done();
       } finally {
         await ensurePermission(testDevice!.name);
         teardownDevicePipe(pipe);
+        done();
       }
     })
   })
