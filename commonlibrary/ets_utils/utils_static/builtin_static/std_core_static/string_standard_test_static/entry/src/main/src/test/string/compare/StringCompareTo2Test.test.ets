@@ -237,9 +237,6 @@ export default function StringCompareTo2Test(): void {
     it('testCompareTo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const text: String = new String('ArkTS');
       expect(text.compareTo(new String('ArkTS'))).assertEqual(0);
-      expect(text.compareTo(new String('arkTS')))
-        .not()
-        .assertEqual(0);
       expect(text.compareTo(new String('arkTS')) < 0).assertTrue();
     });
 

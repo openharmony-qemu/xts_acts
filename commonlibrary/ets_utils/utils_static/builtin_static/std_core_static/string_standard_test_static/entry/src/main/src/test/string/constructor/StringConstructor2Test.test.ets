@@ -475,7 +475,8 @@ export default function StringConstructor2Test(): void {
       const ca: String = new String([c'A', c'B', c'C'] as char[]);
       expect(ref.compareTo(fa)).assertEqual(0);
       expect(ref.compareTo(va)).assertEqual(0);
-      expect(ref.compareTo(ca)).not().assertEqual(0);
+      let diffCa: boolean = ref.compareTo(ca) !== 0;
+      expect(diffCa).assertTrue();
     });
 
     /**
@@ -1741,11 +1742,10 @@ export default function StringConstructor2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testConstructor113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
-      Promise.resolve(42).then((v: int): void => {
-        expect(String(v)).assertEqual("42");
-        done();
-      });
+    it('testConstructor113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let result: string = await Promise.resolve(42).then((v: int): string => String(v));
+      expect(result).assertEqual("42");
+      done();
     });
 
     /**
@@ -1785,11 +1785,10 @@ export default function StringConstructor2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testConstructor116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
-      Promise.resolve(null).then((v: Object | null): void => {
-        expect(String(v)).assertEqual("null");
-        done();
-      });
+    it('testConstructor116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let result: string = await Promise.resolve(null).then((v: Object | null): string => String(v));
+      expect(result).assertEqual("null");
+      done();
     });
 
     /**
@@ -1800,14 +1799,13 @@ export default function StringConstructor2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testConstructor117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
-      Promise.resolve(1)
+    it('testConstructor117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let result: string = await Promise.resolve(1)
         .then((v: int): string => String(v))
         .then((v: string): string => v + String(2))
-        .then((v: string): void => {
-          expect(v + String(3)).assertEqual("123");
-          done();
-        });
+        .then((v: string): string => v + String(3));
+      expect(result).assertEqual("123");
+      done();
     });
 
     /**
@@ -2551,14 +2549,13 @@ export default function StringConstructor2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testConstructor171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
-      Promise.resolve(0)
+    it('testConstructor171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let r: string = await Promise.resolve(0)
         .then((v: int): string => String(v + 1))
         .then((v: string): string => v + String(2))
-        .then((v: string): void => {
-          expect(v + String(3)).assertEqual("123");
-          done();
-        });
+        .then((v: string): string => v + String(3));
+      expect(r).assertEqual("123");
+      done();
     });
 
     /**
@@ -2569,13 +2566,12 @@ export default function StringConstructor2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testConstructor172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
-      Promise.resolve("你好")
+    it('testConstructor172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let r: string = await Promise.resolve("你好")
         .then((v: string): string => v + "世界")
-        .then((v: string): void => {
-          expect(String(v.length)).assertEqual("4");
-          done();
-        });
+        .then((v: string): string => String(v.length));
+      expect(r).assertEqual("4");
+      done();
     });
 
     /**
@@ -2614,11 +2610,10 @@ export default function StringConstructor2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testConstructor175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
-      Promise.resolve("value").then((v: string): void => {
-        expect(String(new String(v).getLength())).assertEqual("5");
-        done();
-      });
+    it('testConstructor175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let r: string = await Promise.resolve("value").then((v: string): string => String(new String(v).getLength()));
+      expect(r).assertEqual("5");
+      done();
     });
 
     /**
@@ -2629,11 +2624,10 @@ export default function StringConstructor2Test(): void {
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('testConstructor176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
-      Promise.resolve("hello").then((v: string): void => {
-        expect(String(v.length) + ":" + v).assertEqual("5:hello");
-        done();
-      });
+    it('testConstructor176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let r: string = await Promise.resolve("hello").then((v: string): string => String(v.length) + ":" + v);
+      expect(r).assertEqual("5:hello");
+      done();
     });
 
     /**
