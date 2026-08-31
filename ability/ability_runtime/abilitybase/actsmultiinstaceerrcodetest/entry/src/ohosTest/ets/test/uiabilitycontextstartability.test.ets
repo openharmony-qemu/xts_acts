@@ -335,10 +335,17 @@ export default function openLinkTest() {
             try{
               expect(err?.code).assertEqual(16000077);
               commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
+                if (error) {
+                  hilog.info(0x0000, `${TAG}`, '%{public}s', `publish terminate error: ${JSON.stringify(error)}`);
+                }
                 done()
               })
             }catch(e){
               commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
+                if (error) {
+                  hilog.info(0x0000, `${TAG}`, '%{public}s', `publish terminate error: ${JSON.stringify(error)}`);
+                }
+                expect().assertFail();
                 done()
               })
             }
