@@ -157,19 +157,5 @@ export default function MediaAssetChangeRequestSetOrientationTest() {
       const testName = 'SUB_MediaAssetChangeRequest_setOrientation_Abnormal_promise_0001';
       await setOrientationAbnormalPromiseTest(done, testName, undefined);
     })
-
-    /**
-     * @tc.name   MediaAssetChangeRequest_setOrientation_Abnormal_promise_0002
-     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_SET_ORIENTATION_0006   //TODO error.code is undefined
-     * @tc.desc   setOrientation
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    /*it('MediaAssetChangeRequest_setOrientation_Abnormal_promise_0002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'MediaAssetChangeRequest_setOrientation_Abnormal_promise_0002';
-      const orientation = -90;
-      await setOrientationAbnormalPromiseTest(done, testName, orientation);
-    })*/
   })
 }
