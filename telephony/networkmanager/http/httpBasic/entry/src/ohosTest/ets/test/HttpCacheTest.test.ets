@@ -17,7 +17,6 @@ import http from '@ohos.net.http';
 import connection from '@ohos.net.connection';
 import { describe, expect, it , TestType, Size, Level } from '@ohos/hypium';
 import {BusinessError} from '@ohos.base';
-import { expectTrue } from './utils';
 
 const ExpectFail = () => {
   try {
@@ -137,7 +136,7 @@ export default  function HttpCacheTest() {
               usingCache: true
             }).then((data) =>{
               cache.flush().then(()=> {
-                expectTrue(cache !== undefined);
+                ExpectTrue(cache !== undefined);
                 httpRequest.destroy();
                 console.info(`${caseName}-flush success --end`);
                 done();
@@ -228,7 +227,7 @@ export default  function HttpCacheTest() {
             }).then((data)=> {
               cache.delete().then(()=>{
                 httpRequest.destroy();
-                expectTrue(cache !== undefined);
+                ExpectTrue(cache !== undefined);
                 console.info(`${caseName}---end`);
                 done();
               }).catch((err: BusinessError)=>{
