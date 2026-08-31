@@ -60,10 +60,11 @@ async function saveCameraPhotoAbnormalPromiseTest(done: Function, testName: stri
     await phAccessHelper.applyChanges(assetChangeRequest);
     console.info('apply saveCameraPhoto successfully');
     expect().assertFail();
-    done();
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code},${error.message}`, testName);
     expect(error.code).assertEqual(String(ErrorCode.ARGUMENT_INVALID_ERROR_CODE));
+  } finally {
+    fetchResult.close();
     done();
   }
 }
