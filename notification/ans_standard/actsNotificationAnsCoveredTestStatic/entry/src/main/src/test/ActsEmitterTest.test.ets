@@ -460,5 +460,65 @@ export default function actsEmitterTest() {
         done()
       })
 
+    /**
+     * @tc.name   Sub_Notification_Ans_Emitter_Static_2900
+     * @tc.number Sub_Notification_Ans_Emitter_Static_2900
+     * @tc.desc   verify the promise function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Ans_Emitter_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let Tag: string = 'Sub_Notification_Ans_Emitter_Static_2900==>'
+
+        let myDate: Record<String, RecordData> = {
+          "id": "1",
+          "content": "c"
+        }
+        let eventData: emitter.EventData = { data: myDate }
+        
+        let innerEvent: emitter.InnerEvent = {
+          eventId: 1,
+          priority: emitter.EventPriority.HIGH
+        };
+        let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
+          console.info(TAG+ ' once success');
+        }
+        emitter.on("", onCallback);
+        await Utils.msSleep(100)
+        emitter.emit(innerEvent, eventData);
+        emitter.emit(innerEvent, eventData);
+        emitter.emit(innerEvent, eventData);
+        emitter.emit(innerEvent, eventData);
+        await Utils.msSleep(100)
+        console.info('Sub_NotificationAns_Emitter_Basic_Static_0002 PASS');
+        done()
+      })
+
+    /**
+     * @tc.name   Sub_Notification_Ans_Emitter_Static_3000
+     * @tc.number Sub_Notification_Ans_Emitter_Static_3000
+     * @tc.desc   verify the promise function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('Sub_Notification_Ans_Emitter_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let Tag: string = 'Sub_Notification_Ans_Emitter_Static_3000==>'
+        let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
+          console.info(TAG+ ' once success');
+        }
+        emitter.onEventData("", onCallback);
+        await Utils.msSleep(100)
+        emitter.emit('eventid');
+        emitter.emit('eventid');
+        emitter.emit('eventid');
+        emitter.emit('eventid');
+        await Utils.msSleep(100)
+        console.info('Sub_NotificationAns_Emitter_Basic_Static_0002 PASS');
+        done()
+      })
   })
 }
