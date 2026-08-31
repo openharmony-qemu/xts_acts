@@ -24,10 +24,13 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 
-// Safely extract error code from caught error (BusinessError has .code, plain Error does not)
+// Safely extract error code from caught error
+// Framework throws BusinessError-like objects that may not pass instanceof across module boundaries,
+// but they do have a .code property at runtime. Use type assertion to access it.
 function getErrorCode(error: Error): string {
-  if (error instanceof BusinessError) {
-    return String(error.code)
+  let err = error as BusinessError
+  if (err.code !== undefined) {
+    return String(err.code)
   }
   return ''
 }
