@@ -14,24 +14,24 @@
  */
 
 import usbMgr from '@ohos.usbManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 const TAG = "[UsbApiInputParaTest]";
 
-let USBDeviceFeature:usbMgr.USBDevice;
-let USBDeviceFeature1:usbMgr.USBDevice;
-let USBDeviceFeature2:usbMgr.USBDevice;
-let USBDeviceFeature3:usbMgr.USBDevice;
-let USBDeviceFeature4:usbMgr.USBDevice;
-let USBConfigurationFeature:usbMgr.USBConfiguration;
-let USBConfigurationFeature1:usbMgr.USBConfiguration;
-let USBConfigurationFeature2:usbMgr.USBConfiguration;
-let USBConfigurationFeature3:usbMgr.USBConfiguration;
-let USBInterfaceFeature:usbMgr.USBInterface;
-let USBInterfaceFeature1:usbMgr.USBInterface;
-let USBInterfaceFeature2:usbMgr.USBInterface;
-let USBEndpointFeature:usbMgr.USBEndpoint;
-let USBEndpointFeature1:usbMgr.USBEndpoint;
+let USBDeviceFeature: usbMgr.USBDevice;
+let USBDeviceFeature1: usbMgr.USBDevice;
+let USBDeviceFeature2: usbMgr.USBDevice;
+let USBDeviceFeature3: usbMgr.USBDevice;
+let USBDeviceFeature4: usbMgr.USBDevice;
+let USBConfigurationFeature: usbMgr.USBConfiguration;
+let USBConfigurationFeature1: usbMgr.USBConfiguration;
+let USBConfigurationFeature2: usbMgr.USBConfiguration;
+let USBConfigurationFeature3: usbMgr.USBConfiguration;
+let USBInterfaceFeature: usbMgr.USBInterface;
+let USBInterfaceFeature1: usbMgr.USBInterface;
+let USBInterfaceFeature2: usbMgr.USBInterface;
+let USBEndpointFeature: usbMgr.USBEndpoint;
+let USBEndpointFeature1: usbMgr.USBEndpoint;
 
 USBDeviceFeature = {
   busNum: 2,
@@ -209,10 +209,10 @@ export default function UsbApiInputParaTest() {
   describe('UsbApiInputParaTest', () => {
 
     beforeAll(async () => {
-    console.info(`${TAG} beforeAll start`);
+      console.info(`${TAG} beforeAll start`);
     })
 
-    beforeEach(() =>  {
+    beforeEach(() => {
       console.info(`${TAG} beforeEach`);
     })
 
@@ -221,7 +221,7 @@ export default function UsbApiInputParaTest() {
     })
 
     afterAll(() => {
-    console.info(`${TAG} afterAll`);
+      console.info(`${TAG} afterAll`);
     })
 
     /**
@@ -288,11 +288,15 @@ export default function UsbApiInputParaTest() {
      * @tc.level  LEVEL3
      */
     it('testRequestRightNoString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testRequestRightNoString start`);
-      let ret = await usbMgr.requestRight("");
-      console.info(`${TAG} testRequestRightNoString ret: ${ret}`);
-      expect(ret).assertFalse();
-      done();
+      try {
+        console.info(`${TAG} testRequestRightNoString start`);
+        let ret = await usbMgr.requestRight("");
+        console.info(`${TAG} testRequestRightNoString ret: ${ret}`);
+        expect(ret).assertFalse();
+        done();
+      } catch (err) {
+        done(err);
+      }
     })
 
     /**
@@ -304,8 +308,8 @@ export default function UsbApiInputParaTest() {
      * @tc.level  LEVEL3
      */
     it('testRequestRightNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testRequestRightNull start`);
       try {
+        console.info(`${TAG} testRequestRightNull start`);
         let ret = await usbMgr.requestRight(null);
         console.info(`${TAG} testRequestRightNull ret: ${ret}`);
         expect().assertFail();
@@ -326,8 +330,8 @@ export default function UsbApiInputParaTest() {
      * @tc.level  LEVEL3
      */
     it('testRequestRightUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      console.info(`${TAG} testRequestRightUndefined start`);
       try {
+        console.info(`${TAG} testRequestRightUndefined start`);
         let ret = await usbMgr.requestRight(undefined);
         console.info(`${TAG} testRequestRightUndefined ret: ${ret}`);
         expect().assertFail();
@@ -1200,7 +1204,7 @@ export default function UsbApiInputParaTest() {
       console.info(`${TAG} testClaimInterfaceInputPara start`);
       try {
         console.info(`${TAG} testClaimInterfaceInputPara USBInterfaceFeature: ${JSON.stringify(USBInterfaceFeature)}`);
-        let ret = usbMgr.claimInterface(null,USBInterfaceFeature);
+        let ret = usbMgr.claimInterface(null, USBInterfaceFeature);
         console.info(`${TAG} testClaimInterfaceInputPara ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1220,8 +1224,9 @@ export default function UsbApiInputParaTest() {
     it('testClaimInterfaceInputPara001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testClaimInterfaceInputPara001 start`);
       try {
-        console.info(`${TAG} testClaimInterfaceInputPara001 USBInterfaceFeature1: ${JSON.stringify(USBInterfaceFeature1)}`);
-        let ret = usbMgr.claimInterface(null,USBInterfaceFeature1);
+        console.info(
+          `${TAG} testClaimInterfaceInputPara001 USBInterfaceFeature1: ${JSON.stringify(USBInterfaceFeature1)}`);
+        let ret = usbMgr.claimInterface(null, USBInterfaceFeature1);
         console.info(`${TAG} testClaimInterfaceInputPara001 ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1241,8 +1246,9 @@ export default function UsbApiInputParaTest() {
     it('testClaimInterfaceInputPara002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testClaimInterfaceInputPara002 start`);
       try {
-        console.info(`${TAG} testClaimInterfaceInputPara002 USBInterfaceFeature2: ${JSON.stringify(USBInterfaceFeature2)}`);
-        let ret = usbMgr.claimInterface(null,USBInterfaceFeature2);
+        console.info(
+          `${TAG} testClaimInterfaceInputPara002 USBInterfaceFeature2: ${JSON.stringify(USBInterfaceFeature2)}`);
+        let ret = usbMgr.claimInterface(null, USBInterfaceFeature2);
         console.info(`${TAG} testClaimInterfaceInputPara002 ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1262,8 +1268,9 @@ export default function UsbApiInputParaTest() {
     it('testReleaseInterfaceInputPara', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testReleaseInterfaceInputPara start`);
       try {
-        console.info(`${TAG} testReleaseInterfaceInputPara USBInterfaceFeature: ${JSON.stringify(USBInterfaceFeature)}`);
-        let ret = usbMgr.releaseInterface(null,USBInterfaceFeature);
+        console.info(
+          `${TAG} testReleaseInterfaceInputPara USBInterfaceFeature: ${JSON.stringify(USBInterfaceFeature)}`);
+        let ret = usbMgr.releaseInterface(null, USBInterfaceFeature);
         console.info(`${TAG} testReleaseInterfaceInputPara ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1283,8 +1290,9 @@ export default function UsbApiInputParaTest() {
     it('testReleaseInterfaceInputPara001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testReleaseInterfaceInputPara001 start`);
       try {
-        console.info(`${TAG} testReleaseInterfaceInputPara001 USBInterfaceFeature1: ${JSON.stringify(USBInterfaceFeature1)}`);
-        let ret = usbMgr.releaseInterface(null,USBInterfaceFeature1);
+        console.info(
+          `${TAG} testReleaseInterfaceInputPara001 USBInterfaceFeature1: ${JSON.stringify(USBInterfaceFeature1)}`);
+        let ret = usbMgr.releaseInterface(null, USBInterfaceFeature1);
         console.info(`${TAG} testReleaseInterfaceInputPara001 ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1304,8 +1312,9 @@ export default function UsbApiInputParaTest() {
     it('testReleaseInterfaceInputPara002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testReleaseInterfaceInputPara002 start`);
       try {
-        console.info(`${TAG} testReleaseInterfaceInputPara002 USBInterfaceFeature2: ${JSON.stringify(USBInterfaceFeature2)}`);
-        let ret = usbMgr.releaseInterface(null,USBInterfaceFeature2);
+        console.info(
+          `${TAG} testReleaseInterfaceInputPara002 USBInterfaceFeature2: ${JSON.stringify(USBInterfaceFeature2)}`);
+        let ret = usbMgr.releaseInterface(null, USBInterfaceFeature2);
         console.info(`${TAG} testReleaseInterfaceInputPara002 ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1325,8 +1334,9 @@ export default function UsbApiInputParaTest() {
     it('testSetConfigurationInputPara', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testSetConfigurationInputPara start`);
       try {
-        console.info(`${TAG} testSetConfigurationInputPara USBConfigurationFeature: ${JSON.stringify(USBConfigurationFeature)}`);
-        let ret = usbMgr.setConfiguration(null,USBConfigurationFeature);
+        console.info(
+          `${TAG} testSetConfigurationInputPara USBConfigurationFeature: ${JSON.stringify(USBConfigurationFeature)}`);
+        let ret = usbMgr.setConfiguration(null, USBConfigurationFeature);
         console.info(`${TAG} testSetConfigurationInputPara ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1346,8 +1356,9 @@ export default function UsbApiInputParaTest() {
     it('testSetConfigurationInputPara001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testSetConfigurationInputPara001 start`);
       try {
-        console.info(`${TAG} testSetConfigurationInputPara001 USBConfigurationFeature1: ${JSON.stringify(USBConfigurationFeature1)}`);
-        let ret = usbMgr.setConfiguration(null,USBConfigurationFeature1);
+        console.info(`${TAG} testSetConfigurationInputPara001 USBConfigurationFeature1: ${JSON.stringify(
+          USBConfigurationFeature1)}`);
+        let ret = usbMgr.setConfiguration(null, USBConfigurationFeature1);
         console.info(`${TAG} testSetConfigurationInputPara001 ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1367,8 +1378,9 @@ export default function UsbApiInputParaTest() {
     it('testSetConfigurationInputPara002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testSetConfigurationInputPara002 start`);
       try {
-        console.info(`${TAG} testSetConfigurationInputPara002 USBConfigurationFeature2: ${JSON.stringify(USBConfigurationFeature2)}`);
-        let ret = usbMgr.setConfiguration(null,USBConfigurationFeature2);
+        console.info(`${TAG} testSetConfigurationInputPara002 USBConfigurationFeature2: ${JSON.stringify(
+          USBConfigurationFeature2)}`);
+        let ret = usbMgr.setConfiguration(null, USBConfigurationFeature2);
         console.info(`${TAG} testSetConfigurationInputPara002 ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1388,8 +1400,9 @@ export default function UsbApiInputParaTest() {
     it('testSetConfigurationInputPara003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testSetConfigurationInputPara003 start`);
       try {
-        console.info(`${TAG} testSetConfigurationInputPara003 USBConfigurationFeature3: ${JSON.stringify(USBConfigurationFeature3)}`);
-        let ret = usbMgr.setConfiguration(null,USBConfigurationFeature3);
+        console.info(`${TAG} testSetConfigurationInputPara003 USBConfigurationFeature3: ${JSON.stringify(
+          USBConfigurationFeature3)}`);
+        let ret = usbMgr.setConfiguration(null, USBConfigurationFeature3);
         console.info(`${TAG} testSetConfigurationInputPara003 ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1410,7 +1423,7 @@ export default function UsbApiInputParaTest() {
       console.info(`${TAG} testSetInterfaceInputPara start`);
       try {
         console.info(`${TAG} testSetInterfaceInputPara USBInterfaceFeature: ${JSON.stringify(USBInterfaceFeature)}`);
-        let ret = usbMgr.setInterface(null,USBInterfaceFeature);
+        let ret = usbMgr.setInterface(null, USBInterfaceFeature);
         console.info(`${TAG} testSetInterfaceInputPara ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1430,8 +1443,9 @@ export default function UsbApiInputParaTest() {
     it('testSetInterfaceInputPara001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testSetInterfaceInputPara001 start`);
       try {
-        console.info(`${TAG} testSetInterfaceInputPara001 USBInterfaceFeature1: ${JSON.stringify(USBInterfaceFeature1)}`);
-        let ret = usbMgr.setInterface(null,USBInterfaceFeature1);
+        console.info(
+          `${TAG} testSetInterfaceInputPara001 USBInterfaceFeature1: ${JSON.stringify(USBInterfaceFeature1)}`);
+        let ret = usbMgr.setInterface(null, USBInterfaceFeature1);
         console.info(`${TAG} testSetInterfaceInputPara001 ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1451,8 +1465,9 @@ export default function UsbApiInputParaTest() {
     it('testSetInterfaceInputPara002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(`${TAG} testSetInterfaceInputPara002 start`);
       try {
-        console.info(`${TAG} testSetInterfaceInputPara002 USBInterfaceFeature2: ${JSON.stringify(USBInterfaceFeature2)}`);
-        let ret = usbMgr.setInterface(null,USBInterfaceFeature2);
+        console.info(
+          `${TAG} testSetInterfaceInputPara002 USBInterfaceFeature2: ${JSON.stringify(USBInterfaceFeature2)}`);
+        let ret = usbMgr.setInterface(null, USBInterfaceFeature2);
         console.info(`${TAG} testSetInterfaceInputPara002 ret: ${ret}`);
         expect().assertFail();
       } catch (err) {
@@ -1483,7 +1498,8 @@ export default function UsbApiInputParaTest() {
           type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 0,
@@ -1518,7 +1534,8 @@ export default function UsbApiInputParaTest() {
           type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_INTERRUPT,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 1,
@@ -1553,7 +1570,8 @@ export default function UsbApiInputParaTest() {
           type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_ISOCHRONOUS,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 2,
@@ -1588,7 +1606,8 @@ export default function UsbApiInputParaTest() {
           type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 1,
@@ -1620,7 +1639,8 @@ export default function UsbApiInputParaTest() {
           type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 0,
@@ -1652,7 +1672,8 @@ export default function UsbApiInputParaTest() {
           type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 0,
@@ -1684,7 +1705,8 @@ export default function UsbApiInputParaTest() {
           type: 0,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 0,
@@ -1716,7 +1738,8 @@ export default function UsbApiInputParaTest() {
           type: 4,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 0,
@@ -1748,7 +1771,8 @@ export default function UsbApiInputParaTest() {
           type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 0,
@@ -1780,7 +1804,8 @@ export default function UsbApiInputParaTest() {
           type: usbMgr.UsbEndpointTransferType.TRANSFER_TYPE_BULK,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 0,
@@ -1812,7 +1837,8 @@ export default function UsbApiInputParaTest() {
           type: 0,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 0,
@@ -1844,7 +1870,8 @@ export default function UsbApiInputParaTest() {
           type: 4,
           timeout: 2000,
           length: 10,
-          callback: () => {},
+          callback: () => {
+          },
           userData: new Uint8Array(10),
           buffer: new Uint8Array(10),
           isoPacketCount: 0,
