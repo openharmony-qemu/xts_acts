@@ -84,6 +84,7 @@ export default function callTest() {
       expect(JSON.parse(JSON.parse(dataAssert))?.ringtone_modify_time?.type).assertEqual(9);
       expect(JSON.parse(JSON.parse(dataAssert))?.ringtone_modify_time?.data).assertEqual('28wTypeToString');
       console.info('------------end CallTest_0100-------------');
+      expect().assertFail();
       done();
     });
   })
