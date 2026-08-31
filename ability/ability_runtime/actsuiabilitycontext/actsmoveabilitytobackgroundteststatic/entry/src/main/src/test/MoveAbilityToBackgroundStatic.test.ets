@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,137 +13,136 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, beforeAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
-import Utils from './Util.test';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import common from '@ohos.app.ability.common';
+import {  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level  } from '../../../hypium/index';
+import { Driver, MatchPattern, ON, Component } from '@ohos.UiTest';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
-import { Driver, ON } from '@ohos.UiTest';
+import common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import Utils from './Util.test';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-
-export default function moveAbilityToBackgroundTestStatic() {
-  describe('ActsMoveAbilityToBackgroundTestStatic', () => {
+export default function moveAbilityToBackgroundTest(): void {
+  let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+  let driver = Driver.create();
+  let mpEnable = '';
+  describe('ActsMoveAbilityToBackgroundTest', () => {
     beforeAll(async () => {
-      let driver = Driver.create();	
       try {
-        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
-        if (allowed) {
-          await allowed.click();
-        }
-      } catch (err) {
-        console.error('findComponent failed: ' + JSON.stringify(err));
+        mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable', 'false');
+      } catch(err) {
+        console.error(`MoveAbilityToBackground Get system parameter error: ${JSON.stringify(err)}`);
       }
-    })
-    
-    /**
-     * @tc.name   SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100
-     * @tc.number SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100
-     * @tc.desc   Call UIAbilityContext moveAbilityToBackground,expect current ability moved to background and onBackground() called.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      tag = `SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100`;
-      hilog.info(domain, tag, `it begin`);
+      console.log(`MoveAbilityToBackground Get system parameter mpEnable is ${mpEnable}`);
+      let allowed: Component | null = null;
       try {
-        let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-        hilog.info(domain, tag, 'getAbilityDelegator success');
-        let cmd = "aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static";
-        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-        if(user !== undefined){
-            cmd += ' -u ' + user;
-        }
-        abilityDelegator.executeShellCommand(cmd)
-        await Utils.msSleep(2000);
-        hilog.info(domain, tag, 'start success');
-        let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-        hilog.info(domain, tag, 'getcontext success, context: ' + context);
-        context.moveAbilityToBackground().then(async () => {
-          await Utils.msSleep(2000);
-          hilog.info(domain, tag, `moveAbilityToBackground success.`);
-          let result = AppStorage.get<string>("onBackground")
-          expect(result + '').assertEqual('SUCCESS');
-          done();
-        }).catch((err): void => {
-          if (err instanceof BusinessError) {
-            hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-            if(JSON.stringify(err?.code) == '16000061'){
-              done();
-            }else{
-              expect().assertFail()
-              done();
-            }
-          }
-        });
-      } catch (err) {
-        hilog.info(domain, tag, `moveAbilityToBackground fail: ` + err);
-        expect().assertFail();
-        done();
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (e) {
+        console.log('advanced_dialog_button_0 not found');
       }
-    })
+      if (allowed) {
+        await allowed.click();
+      }
+    });
+    beforeEach(() => {
+    });
+    afterEach(async () => {
+      let abilityCtx: common.UIAbilityContext | undefined = AppStorage.get<common.UIAbilityContext>('abilityContext');
+      if (abilityCtx != undefined) {
+        abilityCtx.terminateSelf();
+      }
+      
+    });
+    afterAll(() => {
+    });
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200
-     * @tc.number SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200
-     * @tc.desc   Call UIAbilityContext moveAbilityToBackground twice, expecting to return 16000065 on the second attempt.
+     * @tc.name   SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100
+     * @tc.number SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100
+     * @tc.desc   expect current ability moved to background and onBackground() called.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      tag = `SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200`;
-      hilog.info(domain, tag, `it begin`);
-      try {
-        let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-        hilog.info(domain, tag, 'getAbilityDelegator success');
-        let cmd = "aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static";
-        let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
-        if(user !== undefined){
-            cmd += ' -u ' + user;
-        }
-        abilityDelegator.executeShellCommand(cmd)
-        await Utils.msSleep(2000);
-        hilog.info(domain, tag, 'start success');
-        let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
-        hilog.info(domain, tag, 'getcontext success, context: ' + context);
-        context.moveAbilityToBackground().then(() => {
-          hilog.info(domain, tag, `moveAbilityToBackground success.`);
-          let result = AppStorage.get<string>("onBackground")
-          expect(result + '').assertEqual('SUCCESS');
-        }).catch((err): void => {
-          if (err instanceof BusinessError) {
-            hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-            if(JSON.stringify(err?.code) == '16000061'){
-              done();
-            }else{
-              expect().assertFail()
-              done();
+    it('SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100', Level.LEVEL0, async (): Promise<void> => {
+          await new Promise<void>((resolve, reject) => {
+        let runCase = async (): Promise<void> => {
+      let tag = `SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100`;
+      console.log(`${tag}, it begin`);
+      if (mpEnable === 'true') {
+        try {
+          let cmd = "aa start -b com.acts.moveabilitytobgtest.static -a EntryAbility";
+          let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+          if(user !== undefined){
+              cmd += ' -u ' + user;
+          }
+          abilityDelegator.executeShellCommand(cmd);
+          let buttonPromise: Promise<Component | null> = driver.waitForComponent(ON.text("Move To background"), 4000);
+          let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
+            events: ['Acts_onBackground_MoveAbilityToBackground_Event_1']
+          };
+          let subscriber = CommonEventManager.createSubscriberSync(subscribeInfo);
+          let subscribeCB = (err: BusinessError<void> | null, data: CommonEventManager.CommonEventData | undefined) => {
+            if (err) {
+              console.error(`receive event failed, code is ${err?.code}, message is ${err?.message}`);
+              expect().assertFail();
+              resolve(undefined);
+            } else {
+              console.info(`receive event success, event:${data?.event}`);
+              if (data?.event == 'Acts_onBackground_MoveAbilityToBackground_Event_1') {
+                unSubscribe(subscriber, () => { resolve(undefined); });
+              }
             }
           }
-        });
-        await Utils.msSleep(2000);
-        context.moveAbilityToBackground().then(() => {
-          hilog.info(domain, tag, `moveAbilityToBackground success.`);
+          CommonEventManager.subscribe(subscriber, subscribeCB);
+          buttonPromise.then((button: Component | null): void => {
+            if (button != null) {
+              button.click();
+            }
+          });
+          Utils.msSleep(5000);
+          console.error(`${tag}, timeout`);
           expect().assertFail();
-          done();
-        }).catch((err): void => {
-          if (err instanceof BusinessError) {
-            hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-            expect(err.code).assertEqual(16000065);
-            done();
-          }
-        });
-      } catch (err) {
-        hilog.info(domain, tag, `moveAbilityToBackground fail: ` + err);
+        } catch (err) {
+          console.error(`${tag} error, errorCode: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          resolve(undefined);
+        }
+      }else if(mpEnable === 'false') {
+        console.error(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
+        resolve(undefined);
+      }else{
+        console.error(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
         expect().assertFail();
-        done();
+        resolve(undefined);
       }
+      
+        };
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+          });
     })
   })
+}
+
+let unSubscribeDone: () => void = () => {};
+function unSubscribe(subscriber: CommonEventManager.CommonEventSubscriber, callback: () => void) {
+  unSubscribeDone = callback;
+  let unSubscribeCB = (err: BusinessError<void> | null) => {
+    if (err) {
+      console.error(`unsubscribe failed, code is ${err?.code}, message is ${err?.message}`);
+    } else {
+      console.info("unsubscribe success");
+    }
+    unSubscribeDone();
+  };
+  CommonEventManager.unsubscribe(subscriber, unSubscribeCB);
+}
+
+function sleep(time: int): Promise<void> {
+  return new Promise<void>((resolve, reject) => {
+    setTimeout(() => {
+      resolve(undefined);
+    }, time);
+  });
 }

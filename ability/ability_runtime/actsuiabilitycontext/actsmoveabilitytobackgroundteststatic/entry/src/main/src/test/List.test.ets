@@ -17,7 +17,7 @@
 import moveAbilityToBackgroundTestStatic from "./MoveAbilityToBackgroundStatic.test";
 import LifeCycleLinstenerStaticTest from './LifeCycleLinstenerStatic.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
     moveAbilityToBackgroundTestStatic();
     LifeCycleLinstenerStaticTest();
 }
