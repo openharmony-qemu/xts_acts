@@ -375,6 +375,7 @@ export default function ActsGetAllWindowStagesTest() {
           }
           expect(matchedInfos.includes('TestAbility')).assertEqual(true);
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
+          expect().assertFail();
           done();
         } catch (e) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
@@ -601,6 +602,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(onDestroy_WindowStage.length).assertEqual(1);
           expect((onDestroy_WindowStage[0].getMainWindowSync().getUIContext()
             .getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+          expect().assertFail();
           done();
         } catch (e) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +
@@ -719,6 +721,7 @@ export default function ActsGetAllWindowStagesTest() {
           expect(onWindowStageWillDestroy_WindowStage.length).assertEqual(1);
           expect((onWindowStageWillDestroy_WindowStage[0].getMainWindowSync().getUIContext()
             .getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+          expect().assertFail();
           done();
         } catch (e) {
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${JSON.stringify(e)}, ` +

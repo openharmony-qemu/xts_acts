@@ -1253,6 +1253,7 @@ export default function errorCodeTest() {
         }
       } else {
         console.error(`${TAG} SUB_Ability_AbilityBase_ErrorCode_0024 error, current device not support feature.`);
+        expect().assertFail();
         done();
       }
     })
@@ -1436,6 +1437,7 @@ export default function errorCodeTest() {
         }
       } else {
         console.error(`${TAG} SUB_Ability_AbilityBase_ErrorCode_0027 error, current device not support feature.`);
+        expect().assertFail();
         done();
       }
     })

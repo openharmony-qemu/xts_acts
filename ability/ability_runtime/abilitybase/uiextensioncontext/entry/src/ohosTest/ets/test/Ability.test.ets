@@ -706,6 +706,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -974,6 +975,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -1108,6 +1110,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -1517,6 +1520,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -1919,6 +1923,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -1986,6 +1991,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -2053,6 +2059,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -2120,6 +2127,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -2187,6 +2195,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -2255,6 +2264,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -2322,6 +2332,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -2389,6 +2400,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -2456,6 +2468,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -2523,6 +2536,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -3065,6 +3079,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -3459,6 +3474,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
@@ -3524,6 +3540,7 @@ export default function ActsUIExtensionContextMethodTest() {
       } else if (mpEnable === 'false') {
         console.log(`${tag} function not enable.`);
         expect(mpEnable).assertEqual('false');
+        expect().assertFail();
         done();
       } else {
         console.log(`${tag} wrong param`);
