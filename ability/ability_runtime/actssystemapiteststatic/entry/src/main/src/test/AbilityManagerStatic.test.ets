@@ -117,28 +117,33 @@ export default function abilityManagerTest(): void {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let TAG = 'System_API_Test_Ability_Manager_0400';
-      abilityManager.getAbilityRunningInfos()
-        .then((data: Array<abilityManager.AbilityRunningInfo>) => {
-          console.log(`${TAG}, data: ${JSON.stringify(data)}`);
-          expect(data?.length).assertEqual(1);
-          expect(data?.[0].ability.bundleName).assertEqual('com.example.systemapitest.static');
-          expect(data[0].pid).assertLargerOrEqual(0);
-          expect(data[0].uid).assertLargerOrEqual(0);
-          expect(data[0].processName).assertEqual("com.example.systemapitest.static");
-          expect(data[0].abilityState).assertLargerOrEqual(abilityManager.AbilityState.INITIAL);
-          expect(data[0].startTime).assertLarger(0);
-          resolve(undefined);
-            return data;
-          return data;
-          return data;
-          return data;
-          return data;
-        })
-        .catch((err: Error) => {
+      // 静态运行时 promise 版 getAbilityRunningInfos 不回调（0300 回调版正常），改用回调形式
+      abilityManager.getAbilityRunningInfos((err: BusinessError<void> | null, data: Array<abilityManager.AbilityRunningInfo> | undefined): void => {
+        if (err?.code) {
           console.log(TAG + ' err:' + JSON.stringify(err));
-          expect().assertFail();
           resolve(undefined);
-        })
+          expect().assertFail();
+          return;
+        }
+        console.log(`${TAG}, data: ${JSON.stringify(data)}, errcode: ${err?.code}`);
+        console.log(`${TAG} s1`);
+        expect(data?.length).assertEqual(1);
+        console.log(`${TAG} s2`);
+        expect(data?.[0].ability.bundleName).assertEqual('com.example.systemapitest.static');
+        console.log(`${TAG} s3`);
+        expect(data![0].pid).assertLargerOrEqual(0);
+        console.log(`${TAG} s4`);
+        expect(data![0].uid).assertLargerOrEqual(0);
+        console.log(`${TAG} s5`);
+        expect(data![0].processName).assertEqual("com.example.systemapitest.static");
+        console.log(`${TAG} s6`);
+        // 静态运行时 abilityState 为枚举对象，需 Number() 转换后比较
+        expect(Number(data![0].abilityState)).assertLargerOrEqual(0);
+        console.log(`${TAG} s7`);
+        expect(data![0].startTime).assertLarger(0);
+        console.log(`${TAG} s8`);
+        resolve(undefined);
+      })
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
           });

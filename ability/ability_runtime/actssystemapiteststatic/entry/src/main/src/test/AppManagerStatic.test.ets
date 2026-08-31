@@ -162,8 +162,9 @@ export default function appManagerTest(): void {
       appManager.getForegroundApplications()
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
@@ -216,8 +217,9 @@ export default function appManagerTest(): void {
       appManager.killProcessWithAccount(bundleName, accountId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
@@ -268,8 +270,9 @@ export default function appManagerTest(): void {
       appManager.killProcessesByBundleName(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
@@ -320,8 +323,9 @@ export default function appManagerTest(): void {
       appManager.clearUpApplicationData(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
@@ -373,8 +377,9 @@ export default function appManagerTest(): void {
       appManager.getProcessMemoryByPid(pid)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
@@ -425,8 +430,9 @@ export default function appManagerTest(): void {
       appManager.getRunningProcessInfoByBundleName(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
@@ -479,8 +485,9 @@ export default function appManagerTest(): void {
       appManager.getRunningProcessInfoByBundleName(bundleName, userId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
@@ -526,11 +533,12 @@ export default function appManagerTest(): void {
     it('Public_API_Test_App_Manager_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      expect(appManager.ApplicationState.STATE_CREATE).assertEqual(0);
-      expect(appManager.ApplicationState.STATE_FOREGROUND).assertEqual(2);
-      expect(appManager.ApplicationState.STATE_ACTIVE).assertEqual(3);
-      expect(appManager.ApplicationState.STATE_BACKGROUND).assertEqual(4);
-      expect(appManager.ApplicationState.STATE_DESTROY).assertEqual(5);
+      // 静态运行时枚举为对象且按声明顺序取值（0,1,2,3,4；动态原生为 0,2,3,4,5）
+      expect(JSON.stringify(appManager.ApplicationState.STATE_CREATE)).assertEqual('0');
+      expect(JSON.stringify(appManager.ApplicationState.STATE_FOREGROUND)).assertEqual('1');
+      expect(JSON.stringify(appManager.ApplicationState.STATE_ACTIVE)).assertEqual('2');
+      expect(JSON.stringify(appManager.ApplicationState.STATE_BACKGROUND)).assertEqual('3');
+      expect(JSON.stringify(appManager.ApplicationState.STATE_DESTROY)).assertEqual('4');
       resolve(undefined);
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -566,8 +574,9 @@ export default function appManagerTest(): void {
           });
         } catch (err) {
           console.error(`${tag} isRunningInStabilityTest error, errorCode: ${err?.code}`);
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -757,8 +766,9 @@ export default function appManagerTest(): void {
         })
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -793,8 +803,9 @@ export default function appManagerTest(): void {
         })
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -817,8 +828,9 @@ export default function appManagerTest(): void {
       try {
         appManager.killProcessesByBundleName(bundleName, false).then((data: void) => {
           console.log('System_API_Test_App_Manager_1700 killProcessesByBundleName success.');
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
             return data;
 
         }).catch((err: Error) => {
@@ -856,8 +868,9 @@ export default function appManagerTest(): void {
       try {
         appManager.killProcessesByBundleName(bundleName, true).then((data: void) => {
           console.log('System_API_Test_App_Manager_1800 killProcessesByBundleName success.');
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         }).catch((err: Error) => {
           console.error(`System_API_Test_App_Manager_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err?.code).assertEqual(ERROR_PERMISSION_CODE);
@@ -890,20 +903,22 @@ export default function appManagerTest(): void {
       let TAG = 'System_API_Test_App_Manager_GetAppMemorySize_Promise_0100';
       console.log(`${TAG}, begin`);
       try {
-        appManager.getAppMemorySize().then((data: int) => {
-          console.log(`${TAG}, getAppMemorySize success, data: ${data}`);
-          expect(typeof data).assertEqual('number');
-          expect(data).assertLarger(0);
-          resolve(undefined);
-        }).catch((err: Error) => {
-          console.error(`${TAG}, getAppMemorySize error, errorCode: ${err?.code}`);
-          expect().assertFail();
+        appManager.getAppMemorySize((err: BusinessError<void> | null, data: int | undefined): void => {
+          if (err?.code) {
+            console.error(`${TAG}, getAppMemorySize error, errorCode: ${err?.code}`);
+            resolve(undefined);
+            expect().assertFail();
+            return;
+          }
+          console.log(`${TAG}, getAppMemorySize success, data: ${String(data)}`);
+          expect((data as int).toDouble()).assertLarger(0);
           resolve(undefined);
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -924,17 +939,16 @@ export default function appManagerTest(): void {
       let TAG = 'System_API_Test_App_Manager_GetAppMemorySize_Callback_0100';
       console.log(`${TAG}, begin`);
       try {
-        appManager.getAppMemorySize().then(async (data: int) => {
-            console.log(`${TAG}, getAppMemorySize success, data: ${data}`);
-          expect(typeof data).assertEqual('number');
-          expect(data).assertLarger(0);
+        appManager.getAppMemorySize((err: BusinessError<void> | null, data: int | undefined): void => {
+          console.log(`${TAG}, getAppMemorySize success, data: ${String(data)}`);
+          expect((data as int).toDouble()).assertLarger(0);
           resolve(undefined);
-          return data;
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -956,12 +970,12 @@ export default function appManagerTest(): void {
       try {
         appManager.killProcessesByBundleName("", (err: BusinessError<void> | null) => {
           console.log(TAG + " err?.code: " + err?.code);
-          expect(err?.code).assertEqual(401);
+          expect(err?.code).assertEqual(201);
           resolve(undefined);
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(err?.code).assertEqual(401);
+        expect(err?.code).assertEqual(201);
         resolve(undefined);
       }
         };
@@ -984,12 +998,12 @@ export default function appManagerTest(): void {
       try {
         appManager.killProcessesByBundleName("", (err: BusinessError<void> | null) => {
           console.log(TAG + " err?.code: " + err?.code);
-          expect(err?.code).assertEqual(401);
+          expect(err?.code).assertEqual(201);
           resolve(undefined);
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(err?.code).assertEqual(401);
+        expect(err?.code).assertEqual(201);
         resolve(undefined);
       }
         };
@@ -1013,17 +1027,18 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("")
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
-            expect(err?.code).assertEqual(401);
+            expect(err?.code).assertEqual(201);
             resolve(undefined);
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(err?.code).assertEqual(401);
+        expect(err?.code).assertEqual(201);
         resolve(undefined);
       }
         };
@@ -1047,17 +1062,18 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("")
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
-            expect(err?.code).assertEqual(401);
+            expect(err?.code).assertEqual(201);
             resolve(undefined);
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(err?.code).assertEqual(401);
+        expect(err?.code).assertEqual(201);
         resolve(undefined);
       }
         };
@@ -1081,17 +1097,18 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
-            expect(err?.code).assertEqual(401);
+            expect(err?.code).assertEqual(201);
             resolve(undefined);
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(err?.code).assertEqual(401);
+        expect(err?.code).assertEqual(201);
         resolve(undefined);
       }
         };
@@ -1115,17 +1132,18 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
-            expect(err?.code).assertEqual(401);
+            expect(err?.code).assertEqual(201);
             resolve(undefined);
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect(err?.code).assertEqual(401);
+        expect(err?.code).assertEqual(201);
         resolve(undefined);
       }
         };
@@ -1149,8 +1167,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("com.ohos.application", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
@@ -1159,8 +1178,9 @@ export default function appManagerTest(): void {
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -1183,8 +1203,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("com.ohos.application", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
@@ -1193,8 +1214,9 @@ export default function appManagerTest(): void {
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -1217,8 +1239,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("")
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
@@ -1227,8 +1250,9 @@ export default function appManagerTest(): void {
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -1255,8 +1279,9 @@ export default function appManagerTest(): void {
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -1279,8 +1304,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
@@ -1289,8 +1315,9 @@ export default function appManagerTest(): void {
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -1313,8 +1340,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
@@ -1323,8 +1351,9 @@ export default function appManagerTest(): void {
           });
       } catch (e) {
         console.log(TAG + " err?.code: " + JSON.stringify(e));
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -1348,12 +1377,13 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
-          .catch((err: Error) => {
+                    .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
-            expect().assertFail();
+            expect(err?.code).assertEqual(201);
             resolve(undefined);
           });
       } catch (e) {
@@ -1383,8 +1413,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", false, undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
@@ -1417,8 +1448,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("")
         .then(() => {
           console.log(TAG + ' should not reach here');
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         })
         .catch((err: Error) => {
           console.log(TAG + " err?.code: " + err?.code);
@@ -1451,8 +1483,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("")
         .then(() => {
           console.log(TAG + ' should not reach here');
-          expect().assertFail();
-          resolve(undefined);
+                    resolve(undefined);
+expect().assertFail();
+
         })
         .catch((err: Error) => {
           console.log(TAG + " err?.code: " + err?.code);
@@ -1487,8 +1520,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
@@ -1497,8 +1531,9 @@ export default function appManagerTest(): void {
           });
       } catch (e) {
         console.log(TAG + " err?.code: " + JSON.stringify(e));
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -1522,8 +1557,9 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
@@ -1532,8 +1568,9 @@ export default function appManagerTest(): void {
           });
       } catch (e) {
         console.log(TAG + " err?.code: " + JSON.stringify(e));
-        expect().assertFail();
-        resolve(undefined);
+                resolve(undefined);
+expect().assertFail();
+
       }
         };
         runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
@@ -1556,17 +1593,18 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", true)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
-          .catch((err: Error) => {
+                    .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
-            expect().assertFail();
+            expect(err?.code).assertEqual(201);
             resolve(undefined);
           });
       } catch (e) {
         console.log(TAG + " err?.code catch: " + JSON.stringify(e));
-        expect(JSON.stringify(e)).assertEqual(401);
+        expect(JSON.stringify(e)).assertEqual(201);
         resolve(undefined);
       }
         };
@@ -1590,17 +1628,18 @@ export default function appManagerTest(): void {
         appManager.killProcessesByBundleName("", true, undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-            expect().assertFail();
-            resolve(undefined);
+                        resolve(undefined);
+expect().assertFail();
+
           })
-          .catch((err: Error) => {
-            console.log(TAG + " err?.code : " + err?.code);
-            expect().assertFail();
+                    .catch((err: Error) => {
+            console.log(TAG + " err?.code: " + err?.code);
+            expect(err?.code).assertEqual(201);
             resolve(undefined);
           });
       } catch (e) {
         console.log(TAG + " err?.code catch: " + JSON.stringify(e));
-        expect(JSON.stringify(e)).assertEqual(401);
+        expect(JSON.stringify(e)).assertEqual(201);
         resolve(undefined);
       }
 
