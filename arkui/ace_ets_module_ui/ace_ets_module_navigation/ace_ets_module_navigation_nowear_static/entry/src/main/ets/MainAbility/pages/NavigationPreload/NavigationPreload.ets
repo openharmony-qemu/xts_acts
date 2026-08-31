@@ -22,15 +22,14 @@ import {
 } from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
-
 // Safely extract error code from caught error
-// Framework throws BusinessError-like objects that may not pass instanceof across module boundaries,
-// but they do have a .code property at runtime. Use type assertion to access it.
+// Framework throws error objects with .code property at runtime.
+// Use Object type assertion to access .code without importing BusinessError
+// (importing @ohos.base causes runtime LinkerUnresolvedClassError for RouterOptions)
 function getErrorCode(error: Error): string {
-  let err = error as BusinessError
-  if (err.code !== undefined) {
-    return String(err.code)
+  let code: Object | undefined = (error as Record<string, Object>)['code']
+  if (code !== undefined && code !== null) {
+    return String(code)
   }
   return ''
 }
