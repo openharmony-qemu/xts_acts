@@ -66,7 +66,7 @@ async function setPropertiesAbnormalPromiseTest(done: Function, testName: string
     }
   } catch (error) {
     console.info(TAG, `failed; error: ${error},${error.code}`, testName);
-    expect(error.code === "7600202" || error.code === "401").assertTrue();
+    expect(error.code == 7600202 || error.code == 401).assertTrue();
   }
   return result;
 }
