@@ -1675,8 +1675,10 @@ export default function WebSocketTest() {
                 if (value) {
                   hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
                   let connections = server.listAllConnections()
-                  if (connections == null) {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'connections: ' + JSON.stringify(connections));
+                  if (connections == null || connections.length === 0) {
                     ExpectFail();
+                    client.close();
                     server.stop();
                     hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                     done();
@@ -1685,15 +1687,23 @@ export default function WebSocketTest() {
                     server.send("hello client", connection).then((value: boolean | undefined) => {
                       if (value) {
                         ExpectTrue(value !== null);
+                        client.close();
+                        server.stop();
+                        hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                         done();
                       } else {
                         ExpectFail();
+                        client.close();
+                        server.stop();
+                        hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                         done();
                       }
                     }).catch((error: Error) => {
-                      hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + error.code);
-                      ExpectTrue(error.code === 2302006);
+                      hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + (error as BusinessError).code);
+                      ExpectTrue((error as BusinessError).code === 2302006);
+                      client.close();
                       server.stop();
+                      hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                       done();
                     })
                   }
@@ -2660,10 +2670,7 @@ export default function WebSocketTest() {
         ExpectTrue(typeof httpProxy.port === 'number');
         ExpectTrue(Array.isArray(httpProxy.exclusionList));
         let options: webSocket.WebSocketRequestOptions = {
-          proxy: httpProxy,
-          protocol: '',
-          pingInterval: 60,
-          pongTimeout: 60
+          proxy: httpProxy
         };
         ExpectTrue(typeof options.proxy === 'object');
         hilog.info(domain, tag, '%{public}s', caseName + ' webSocket.HttpProxy interface covered successfully');
