@@ -15,6 +15,10 @@
  */
 
 import declarativeCreationTwo from './DeclarativeCreationTwo.test'
+import MouseInfoCallbackTest from './MouseInfoCallbackTest.test'
+import OnContextMenuHideCallbackTest from './OnContextMenuHideCallbackTest.test'
 export default function testsuite() {
   declarativeCreationTwo();
+  MouseInfoCallbackTest();
+  OnContextMenuHideCallbackTest()
 }
