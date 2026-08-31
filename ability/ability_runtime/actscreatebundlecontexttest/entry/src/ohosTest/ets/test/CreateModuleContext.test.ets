@@ -116,6 +116,7 @@ export default function createModuleContextTest() {
           checkFeatureModuleContext(data, tag, done);
         }).catch((error: BusinessError) => {
           hilog.error(0x0000, 'testTag', '%{public}s', `${tag} createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
+          expect().assertFail();
           done();
         })
       } catch (error) {

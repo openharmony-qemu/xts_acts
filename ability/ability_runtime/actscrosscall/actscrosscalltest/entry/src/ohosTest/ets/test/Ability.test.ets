@@ -71,6 +71,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -124,6 +125,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -177,6 +179,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -230,6 +233,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -283,6 +287,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -336,6 +341,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -389,6 +395,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -442,6 +449,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -514,6 +522,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -586,6 +595,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -643,6 +653,7 @@ export default function abilityTest() {
             expect(data.parameters!.message.code).assertEqual(16000001);
             commonEvent.unsubscribe(subscriber, () => {
               console.info('====>Acts_CrossUserCall_1400 unSubscribeCallback');
+              expect().assertFail();
               done();
             });
           }
@@ -660,6 +671,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -721,6 +733,7 @@ export default function abilityTest() {
             expect(data.parameters!.message.code).assertEqual(401);
             commonEvent.unsubscribe(subscriber, () => {
               console.info('====>Acts_CrossUserCall_1600 unSubscribeCallback');
+              expect().assertFail();
               done();
             });
           }
@@ -739,6 +752,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -818,6 +832,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -896,6 +911,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -957,6 +973,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
@@ -1018,6 +1035,7 @@ export default function abilityTest() {
         })
       }).catch((err: BusinessError) => {
         console.error('createSubscriber err: ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       });
 
