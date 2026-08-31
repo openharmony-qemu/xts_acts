@@ -382,9 +382,6 @@ export default function HttpRequestOptionsJsunit() {
       let caseName: string = 'testNetworkMgrHttpHttpRequestOptionsReadTimeout0100';
       console.info(`${caseName}---Start`);
       try {
-        // 修复1: header 改为对象格式，修复引号不匹配问题
-        // 修复2: readTimeout 改为正整数 10（毫秒），触发读超时
-        // 修复3: connectTimeout 改为 60000（毫秒），确保连接成功
         let httpRequestOptions: http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
           header: { 'content-type': 'application/json' },
@@ -392,11 +389,7 @@ export default function HttpRequestOptionsJsunit() {
           connectTimeout: 60
         };
         let httpRequest = http.createHttp();
-
-        // 修复4: 删除无意义的 time 判断逻辑（原代码恒为 true，导致测试提前退出）
-
         httpRequest.request("https://www.baidu.com/", httpRequestOptions, (err, data) => {
-          // 修复5: 增加 err 判断，超时可能通过 err 返回
           if (err) {
             console.log(caseName + " err: " + JSON.stringify(err));
             expectTrue(err.code == 2300028);
@@ -467,9 +460,6 @@ export default function HttpRequestOptionsJsunit() {
       let caseName: string = 'testNetworkMgrHttpHttpRequestOptionsConnectTimeout0100';
       console.info(`${caseName}---Start`);
       try {
-        // 修复1: header 改为对象格式，修复引号不匹配问题
-        // 修复2: readTimeout 改为正整数 10（毫秒），触发读超时
-        // 修复3: connectTimeout 改为 60000（毫秒），确保连接成功
         let httpRequestOptions: http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
           header: { 'content-type': 'application/json' },
@@ -477,11 +467,7 @@ export default function HttpRequestOptionsJsunit() {
           connectTimeout: 0.1
         };
         let httpRequest = http.createHttp();
-
-        // 修复4: 删除无意义的 time 判断逻辑（原代码恒为 true，导致测试提前退出）
-
         httpRequest.request("https://www.baidu.com/", httpRequestOptions, (err, data) => {
-          // 修复5: 增加 err 判断，超时可能通过 err 返回
           if (err) {
             console.log(caseName + " err: " + JSON.stringify(err));
             expectTrue(err.code == 2300028);
