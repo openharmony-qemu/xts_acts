@@ -39,7 +39,7 @@ export default function selectOnSelectJsunit() {
           console.info("get select pages.name:" + JSON.stringify(pages.name));
           // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await Utils.sleep(2000);
           // console.info("push select page result:" + JSON.stringify(result));
         }
       } catch (err) {
