@@ -1097,7 +1097,7 @@ export default function etsIntlPtsFunTest(): void {
      */
     it('testDatePrototypeObject006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let date = new Date(Date.UTC(2022, 9, 20, 18, 0, 0));
-      let zerotime = "2022/10/20 下午6:00:00";
+      let zerotime = "2022/10/20 18:00:00";
       let options: Intl.DateTimeFormatOptions = { timeZone: 'UTC' };
       let value = date.toLocaleString('zh', options);
       expect(value).assertEqual(zerotime);

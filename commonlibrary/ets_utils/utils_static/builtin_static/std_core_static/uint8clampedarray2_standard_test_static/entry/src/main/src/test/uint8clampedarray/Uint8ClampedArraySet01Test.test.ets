@@ -469,7 +469,7 @@ export default function uint8ClampedArraySetOneTest(): void {
         dst.set(src, 2147483647);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 
