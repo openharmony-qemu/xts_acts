@@ -14,7 +14,7 @@
  * limitations under the License.
  * kdslahfahnja fsd skdfsf fsdsdffs
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -29,16 +29,12 @@ import {
 } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 
 export default function WaterFlowScrollEdgeCallbackJsunit() {
   describe('WaterFlowScrollEdgeCallbackJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info('text beforeEach start');
       let options: router.RouterOptions = {

@@ -16,30 +16,18 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { Color,$r } from '@ohos.arkui.component'
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../common/Common';
 
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { startAbility, UtilsTest } from '../Util.test.ets';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
 
 export default function ScrollBarColorTest() {
   describe('ScrollBarColorTest', () => {
     const SLEEP_TIME_1000 = 1000;
-    beforeAll(async (): Promise<void> => {
-      console.info('ScrollBarColorTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility')
-    });
     beforeEach(async (): Promise<void> => {
       console.info('ScrollBarColorTest beforeEach start');
       try {
