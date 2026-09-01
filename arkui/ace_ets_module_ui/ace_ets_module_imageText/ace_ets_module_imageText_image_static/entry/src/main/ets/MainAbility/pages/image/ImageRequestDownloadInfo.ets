@@ -67,9 +67,10 @@ struct ImageRequestDownloadInfo {
           .margin({ top: 10, bottom: 10 })
 
         Row() {
-          Image('https://www.example.com/nonexistent_image_test.png')
+          Image('https://app img.dbankcdn.com/substancechartimg/64/f7e291e71006440caed2f552f4dbb522.jpg')
             .width(100)
             .height(100)
+            .border({ width : 1})
             .onError((error: ImageError) => {
               this.onErrorTriggered1 = 'triggered'
               if (error.downloadInfo) {
@@ -78,7 +79,7 @@ struct ImageRequestDownloadInfo {
                 this.downloadInfoStr1 = 'null'
               }
               if (error.error) {
-                this.errorCode1 = `${error.error.code}`
+                this.errorCode1 = `${error.error?.code}`
               } else {
                 this.errorCode1 = '-1'
               }
@@ -106,6 +107,7 @@ struct ImageRequestDownloadInfo {
           Image('common/nonexistent_local_image.png')
             .width(100)
             .height(100)
+            .border({ width : 1})
             .onError((error: ImageError) => {
               this.onErrorTriggered2 = 'triggered'
               if (error.downloadInfo) {
@@ -126,6 +128,7 @@ struct ImageRequestDownloadInfo {
           Image($r('app.media.startIcon'))
             .width(100)
             .height(100)
+            .border({ width : 1})
             .onError((error: ImageError) => {
               this.onErrorTriggered3 = 'triggered'
             })
@@ -139,6 +142,7 @@ struct ImageRequestDownloadInfo {
           Image('https://www.example.com/nonexistent2_test.png')
             .width(100)
             .height(100)
+            .border({ width : 1})
             .onError(undefined)
             .key('downloadInfoImage4')
         }.width('80%')
@@ -147,6 +151,7 @@ struct ImageRequestDownloadInfo {
           Image('https://www.example.com/nonexistent3_test.png')
             .width(100)
             .height(100)
+            .border({ width : 1})
             .onError((error: ImageError) => {
               this.onErrorTriggered5 = 'triggered'
               if (error.downloadInfo) {
@@ -170,6 +175,7 @@ struct ImageRequestDownloadInfo {
           Image('https://www.example.com/nonexistent4_test.png')
             .width(80)
             .height(60)
+            .border({ width : 1})
             .onError((error: ImageError) => {
               this.onErrorTriggered6 = 'triggered'
               if (error.downloadInfo) {
