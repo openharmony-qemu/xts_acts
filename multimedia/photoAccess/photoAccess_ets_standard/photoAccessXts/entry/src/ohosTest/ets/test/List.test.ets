@@ -93,7 +93,7 @@ import getRangeObjectsTest from './photoAccessHelper/FetchResult/getRangeObjects
 import createPhotoAssetTest from './photoAccessHelper/photoAccessHelper/createPhotoAsset.test';
 import mediaLibraryAvailabilityTest from './photoAccessHelper/MediaLibraryAvailability/mediaLibraryAvailability.test.ets';
 import mediaLibraryAvailabilityNoPermissionTest from './photoAccessHelper/MediaLibraryAvailability/mediaLibraryAvailabilityNoPermission.test.ets';
-import MediaAssetsChangeRequestConstructorTest from './photoAccessHelper/MediaAssetsChangeRequest/constructor.test';
+import MediaAssetsChangeRequestConstructorTest from './photoAccessHelper/MediaAssetsChangeRequest/Constructor.test';
 
 export default function testsuite() {
   mediaLibraryAvailabilityNoPermissionTest()  // need no permission add to the first
