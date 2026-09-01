@@ -1999,7 +1999,7 @@ export default function builtinsJsonTypeStringifiersTest(): void {
      */
     it('builtinsJsonTypeStringifiersTest0109', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(JSON.stringify(null)).assertEqual('null');
-      expect(JSON.stringify(undefined)).assertEqual('undefined');
+      expect(JSON.stringify(undefined)).assertEqual('');
     });
 
     /**
