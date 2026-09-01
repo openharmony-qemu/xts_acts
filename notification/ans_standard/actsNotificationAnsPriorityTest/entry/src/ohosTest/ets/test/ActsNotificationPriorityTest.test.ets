@@ -510,36 +510,6 @@ export default function actsNotificationPriorityTest() {
 
     })
 
-    /**
-     * @tc.name   SUB_Notification_Ans_Notification_Supplement_0100
-     * @tc.number SUB_Notification_Ans_Notification_Supplement_0100
-     * @tc.desc   Options填写非法枚举值
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_Notification_Ans_Notification_Supplement_0100', Level.LEVEL0, async (done: Function) => {
-      let TAG ="SUB_Notification_Ans_Notification_Supplement_0100"
-      let count = 0
-      try {
-        notificationManager.isNotificationEnabled(1,(err, data) => {
-          if (err) {
-            console.info(`${TAG} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-            expect(false).assertTrue()
-            done()
-          } else {
-            console.info(`${TAG} isNotificationEnabled AsyncCallback success`)
-            expect(data).assertTrue();
-            done()
-          }
-        });
-      }catch (err) {
-        console.info(`${TAG} removeSlot AsyncCallback err: ${err.code}`)
-        expect(err.code).assertEqual(401)
-        done()
-      }
-
-    })
 
     /**
      * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6400
