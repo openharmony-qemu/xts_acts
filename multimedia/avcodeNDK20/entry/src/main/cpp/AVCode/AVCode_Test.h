@@ -176,6 +176,7 @@ napi_value EnumOHScalingMode1(napi_env env, napi_callback_info info);
 napi_value EnumOHScalingMode2(napi_env env, napi_callback_info info);
 napi_value EnumOHEnableSkipSamples1(napi_env env, napi_callback_info info);
 napi_value EnumOHEnableSkipSamples2(napi_env env, napi_callback_info info);
+napi_value EnumOHAudioChannelLayout(napi_env env, napi_callback_info info);
 
 // 两个版本共有的函数声明（仅保留一次）
 napi_value EnumOHAudioChannelSet1(napi_env env, napi_callback_info info);

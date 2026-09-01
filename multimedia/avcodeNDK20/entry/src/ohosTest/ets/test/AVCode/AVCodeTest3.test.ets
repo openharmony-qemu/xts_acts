@@ -2375,5 +2375,25 @@ export default function AVCodeTest3() {
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVCODEC_AUDIO_CHANNEL_LAYOUT_0100
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIO_CHANNEL_LAYOUT_0100
+     * @tc.desc   Set Audio Channel Layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AVCODEC_AUDIO_CHANNEL_LAYOUT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAudioChannelLayout();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testEnumOHAudioChannelLayout catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
   })
 }
