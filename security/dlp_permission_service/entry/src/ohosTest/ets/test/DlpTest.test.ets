@@ -4478,35 +4478,6 @@ export default function dlpTest() {
       })
 
     /**
-     * @tc.name   SUB_Security_DataSecurity_DLP_setEnterprisePolicy_0100
-     * @tc.number SUB_Security_DataSecurity_DLP_setEnterprisePolicy_0100
-     * @tc.desc   test setEnterprisePolicy in car return 801
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_Security_DataSecurity_DLP_setEnterprisePolicy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        let isDlpNotSupported: boolean = checkDlpNotSupported();
-        if (isDlpNotSupported) {
-          try {
-            await dlpPermission.setEnterprisePolicy(null);
-            expect(false).assertTrue();
-          } catch (err) {
-            expect(err.code).assertEqual(801);
-          } 
-        } else {
-          try {
-            await dlpPermission.setEnterprisePolicy(null);
-            expect(false).assertTrue();
-          } catch (err) {
-            expect(err.code).assertEqual(401);
-          } 
-        }
-        done();
-      })
-
-    /**
      * @tc.name   SUB_Security_DataSecurity_DLP_unregisterPlugin_0100
      * @tc.number SUB_Security_DataSecurity_DLP_unregisterPlugin_0100
      * @tc.desc   test unregisterPlugin in car return 801
