@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -22,16 +22,11 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 
 export default function ImageColorFilterTest() {
   describe('ImageColorFilterTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ImageColorFilterTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ImageColorFilterTest beforeEach start");
       let options: router.RouterOptions = {
@@ -66,15 +61,21 @@ export default function ImageColorFilterTest() {
      * @tc.size :
      */
     it('ImageColorFilterTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageColorFilterTest_static_0100 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('ImageColorFilterTest_static_0100 START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(2000);
 
-      let strJson = inspector.getInspectorByKey('imageColorFilterMatrixColor');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[ImageColorFilterTest_static_0100] matrix is: ' + obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getElement('$attrs').getString('colorFilter')).assertContain('1.000000');
-      done();
+        let strJson = inspector.getInspectorByKey('imageColorFilterMatrixColor');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[ImageColorFilterTest_static_0100] matrix is: ' + obj.getElement('$attrs').getString('colorFilter'));
+        expect(obj.getElement('$attrs').getString('colorFilter')).assertContain('1.000000');
+        done();
+      } catch (err) {
+        console.error('[ImageColorFilterTest_static_0100] error: ' + err);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
     /**
@@ -86,16 +87,22 @@ export default function ImageColorFilterTest() {
      * @tc.size :
      */
     it('ImageColorFilterTest_static_0200', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageColorFilterTest_static_0200 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('ImageColorFilterTest_static_0200 START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(2000);
 
-      let strJson = inspector.getInspectorByKey('imageColorFilterEnumColor');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[ImageColorFilterTest_static_0200] obj is: ' + strJson);
-      console.info('[ImageColorFilterTest_static_0200] EnumColor is: ' + obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getString('$type')).assertContain('Image');
-      done();
+        let strJson = inspector.getInspectorByKey('imageColorFilterEnumColor');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[ImageColorFilterTest_static_0200] obj is: ' + strJson);
+        console.info('[ImageColorFilterTest_static_0200] EnumColor is: ' + obj.getElement('$attrs').getString('colorFilter'));
+        expect(obj.getString('$type')).assertContain('Image');
+        done();
+      } catch (err) {
+        console.error('[ImageColorFilterTest_static_0200] error: ' + err);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
     /**
@@ -107,16 +114,22 @@ export default function ImageColorFilterTest() {
      * @tc.size :
      */
     it('ImageColorFilterTest_static_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageColorFilterTest_static_0300 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('ImageColorFilterTest_static_0300 START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(2000);
 
-      let strJson = inspector.getInspectorByKey('imageColorFilterNumColor');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[ImageColorFilterTest_static_0300] obj is: ' + strJson);
-      console.info('[ImageColorFilterTest_static_0300] Resource Number is: ' + obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getString('$type')).assertContain('Image');
-      done();
+        let strJson = inspector.getInspectorByKey('imageColorFilterNumColor');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[ImageColorFilterTest_static_0300] obj is: ' + strJson);
+        console.info('[ImageColorFilterTest_static_0300] Resource Number is: ' + obj.getElement('$attrs').getString('colorFilter'));
+        expect(obj.getString('$type')).assertContain('Image');
+        done();
+      } catch (err) {
+        console.error('[ImageColorFilterTest_static_0300] error: ' + err);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
     /**
@@ -128,16 +141,22 @@ export default function ImageColorFilterTest() {
      * @tc.size :
      */
     it('ImageColorFilterTest_static_0400', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageColorFilterTest_static_0400 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('ImageColorFilterTest_static_0400 START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(2000);
 
-      let strJson = inspector.getInspectorByKey('imageColorFilterStringColor');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[ImageColorFilterTest_static_0400] obj is: ' + strJson);
-      console.info('[ImageColorFilterTest_static_0400] Resource String is: ' + obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getString('$type')).assertContain('Image');
-      done();
+        let strJson = inspector.getInspectorByKey('imageColorFilterStringColor');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[ImageColorFilterTest_static_0400] obj is: ' + strJson);
+        console.info('[ImageColorFilterTest_static_0400] Resource String is: ' + obj.getElement('$attrs').getString('colorFilter'));
+        expect(obj.getString('$type')).assertContain('Image');
+        done();
+      } catch (err) {
+        console.error('[ImageColorFilterTest_static_0400] error: ' + err);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
     /**
@@ -149,16 +168,22 @@ export default function ImageColorFilterTest() {
      * @tc.size :
      */
     it('ImageColorFilterTest_static_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageColorFilterTest_static_0500 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('ImageColorFilterTest_static_0500 START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(2000);
 
-      let strJson = inspector.getInspectorByKey('imageColorFilterDrawingColor');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[ImageColorFilterTest_static_0500] obj is: ' + strJson);
-      console.info('[ImageColorFilterTest_static_0500] DrawingColor is: ' + obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getString('$type')).assertContain('Image');
-      done();
+        let strJson = inspector.getInspectorByKey('imageColorFilterDrawingColor');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[ImageColorFilterTest_static_0500] obj is: ' + strJson);
+        console.info('[ImageColorFilterTest_static_0500] DrawingColor is: ' + obj.getElement('$attrs').getString('colorFilter'));
+        expect(obj.getString('$type')).assertContain('Image');
+        done();
+      } catch (err) {
+        console.error('[ImageColorFilterTest_static_0500] error: ' + err);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
     /**
@@ -170,16 +195,22 @@ export default function ImageColorFilterTest() {
      * @tc.size :
      */
     it('ImageColorFilterTest_static_0600', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageColorFilterTest_static_0600 START');
-      let driver = await Driver.create()
-      await CommonFunc.sleep(2000);
+      try {
+        console.info('ImageColorFilterTest_static_0600 START');
+        let driver = await Driver.create()
+        await CommonFunc.sleep(2000);
 
-      let strJson = inspector.getInspectorByKey('imageColorFilterResourceColor');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[ImageColorFilterTest_static_0600] obj is: ' + strJson);
-      console.info('[ImageColorFilterTest_static_0600] ResourceColor is: ' + obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getString('$type')).assertContain('Image');
-      done();
+        let strJson = inspector.getInspectorByKey('imageColorFilterResourceColor');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[ImageColorFilterTest_static_0600] obj is: ' + strJson);
+        console.info('[ImageColorFilterTest_static_0600] ResourceColor is: ' + obj.getElement('$attrs').getString('colorFilter'));
+        expect(obj.getString('$type')).assertContain('Image');
+        done();
+      } catch (err) {
+        console.error('[ImageColorFilterTest_static_0600] error: ' + err);
+        expect(false).assertTrue();
+        done();
+      }
     });
   })
 }
