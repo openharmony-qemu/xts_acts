@@ -1101,15 +1101,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_005
-     * @tc.number SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_005
+     * @tc.name   SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0005
+     * @tc.number SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0005
      * @tc.desc   setSmoothZoom when the second param null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_005', Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_005';
+    it('SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0005';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -1135,15 +1135,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
-     * @tc.name   CAMERA_SESSION_SET_SMOOTH_ZOOM_006
-     * @tc.number CAMERA_SESSION_SET_SMOOTH_ZOOM_006
+     * @tc.name   SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0006
+     * @tc.number SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0006
      * @tc.desc   setSmoothZoom when the second param undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_SET_SMOOTH_ZOOM_006', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_SET_SMOOTH_ZOOM_006';
+    it('SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0006', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_0006';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
