@@ -458,7 +458,7 @@ export default function int16ArrayConstructorPart04Test(): void {
      */
     it("int16ArrayConstructorPart04Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array(1);
-      let copy: Int16Array = new Int16Array(src);
+      let copy: Any = new Int16Array(src);
       let actual: boolean = copy instanceof Int8Array;
       expect(actual).assertFalse();
     });
@@ -473,7 +473,7 @@ export default function int16ArrayConstructorPart04Test(): void {
      */
     it("int16ArrayConstructorPart04Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array(1);
-      let copy: Int16Array = new Int16Array(src);
+      let copy: Any = new Int16Array(src);
       let actual: boolean = copy instanceof Uint16Array;
       expect(actual).assertFalse();
     });

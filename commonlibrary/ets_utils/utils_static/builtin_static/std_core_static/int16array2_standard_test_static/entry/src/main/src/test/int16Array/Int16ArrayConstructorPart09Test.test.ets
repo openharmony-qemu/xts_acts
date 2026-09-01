@@ -226,7 +226,7 @@ export default function int16ArrayConstructorPart09Test(): void {
     it("int16ArrayConstructorPart09Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = new ArrayBuffer(8);
       const arr = new Int16Array(buf, 0);
-      let actual: int = arr.$_get(0);
+      let actual: number = arr.$_get(0);
       let expected: int = 0;
       expect(actual).assertEqual(expected);
     });

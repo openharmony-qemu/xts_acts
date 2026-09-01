@@ -219,7 +219,7 @@ export default function int16ArrayConstructorPart12Test(): void {
      */
     it("int16ArrayConstructorPart12Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(8);
-      let arr: Int16Array = new Int16Array(buf, Number.NaN as Number, 2 as Number);
+      let arr: Int16Array = new Int16Array(buf, Number.NaN, 2 as Number);
       let actual: int = arr.byteOffset;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
@@ -321,7 +321,7 @@ export default function int16ArrayConstructorPart12Test(): void {
      */
     it("int16ArrayConstructorPart12Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(8);
-      let arr: Int16Array = new Int16Array(buf, 0 as Number, Number.NaN as Number);
+      let arr: Int16Array = new Int16Array(buf, 0 as Number, Number.NaN);
       let actual: int = arr.length;
       let expected: int = 0;
       expect(actual).assertEqual(expected);

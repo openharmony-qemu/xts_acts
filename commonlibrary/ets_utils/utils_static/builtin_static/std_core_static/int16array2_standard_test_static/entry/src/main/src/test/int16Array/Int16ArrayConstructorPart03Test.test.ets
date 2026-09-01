@@ -444,7 +444,7 @@ export default function int16ArrayConstructorPart03Test(): void {
      */
     it("int16ArrayConstructorPart03Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        new Int16Array(-Number.POSITIVE_INFINITY as number);
+        new Int16Array(-Number.POSITIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
         let actual: string = e.name;
@@ -463,7 +463,7 @@ export default function int16ArrayConstructorPart03Test(): void {
      */
     it("int16ArrayConstructorPart03Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        new Int16Array(Number.POSITIVE_INFINITY as number);
+        new Int16Array(Number.POSITIVE_INFINITY);
         expect().assertFail();
       } catch (e) {
         let actual: string = e.name;
@@ -730,7 +730,7 @@ export default function int16ArrayConstructorPart03Test(): void {
     it("int16ArrayConstructorPart03Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(2);
       try {
-        (arr as Record<string, number>)["byteOffset"] = 999;
+        (arr as Record<string, Any>)["byteOffset"] = 999;
         expect().assertFail();
       } catch (e) {
         let actualError: string = e.name;
@@ -753,7 +753,7 @@ export default function int16ArrayConstructorPart03Test(): void {
     it("int16ArrayConstructorPart03Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(5);
       try {
-        (arr as Record<string, number>)["length"] = 100;
+        (arr as Record<string, Any>)["length"] = 100;
         expect().assertFail();
       } catch (e) {
         let actualError: string = e.name;
@@ -776,7 +776,7 @@ export default function int16ArrayConstructorPart03Test(): void {
     it("int16ArrayConstructorPart03Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Int16Array(5);
       try {
-        (arr as Record<string, number>)["byteLength"] = 9999;
+        (arr as Record<string, Any>)["byteLength"] = 9999;
         expect().assertFail();
       } catch (e) {
         let actualError: string = e.name;
@@ -820,7 +820,7 @@ export default function int16ArrayConstructorPart03Test(): void {
       let arr = new Int16Array(2);
       let fakeBuf = new ArrayBuffer(100);
       try {
-        (arr as Record<string, ArrayBuffer>)["buffer"] = fakeBuf;
+        (arr as Record<string, Any>)["buffer"] = fakeBuf;
         expect().assertFail();
       } catch (e) {
         let actualError: string = e.name;

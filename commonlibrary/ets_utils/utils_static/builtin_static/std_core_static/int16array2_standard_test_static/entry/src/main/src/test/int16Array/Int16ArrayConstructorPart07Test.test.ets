@@ -488,7 +488,7 @@ export default function int16ArrayConstructorPart07Test(): void {
      */
     it("int16ArrayConstructorPart07Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let source: Array<int> = [1, 2, 3];
-      let result: Int16Array = new Int16Array(source);
+      let result: Any = new Int16Array(source);
       let isSameRef: boolean = result === source;
       expect(isSameRef).assertFalse();
     });
