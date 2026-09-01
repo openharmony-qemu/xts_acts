@@ -14,30 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import { Driver, ON} from '@ohos.UiTest';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function OnlyRowsTemplate1() {
   describe('OnlyRowsTemplate1', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("OnlyRowsTemplate1 beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("OnlyRowsTemplate1 beforeEach start");
       let options: router.RouterOptions = {
@@ -70,7 +57,11 @@ export default function OnlyRowsTemplate1() {
      */
 it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate1_static_0100] START');
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
@@ -91,12 +82,28 @@ it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0100', Level.LEVEL0, async (done: () =
       expect(Math.abs(GridItem_01.bottom - GridItem_01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(154))) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
+      try {
       await CommonFunc.sleep(300);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('OnlyRowsTemplate1' + '_button'));
+      try {
       await (button?.click() as Promise<void>);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate1_static_0100] END');
       done();
     });
@@ -121,7 +128,11 @@ it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0200', Level.LEVEL0, async (done: () =
       AppStorage.get<MessageManager<int>>('messageManager')?.notify({
         name: 'rowEnd2', value: 3
       })
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyRowsTemplate1_GridItem_01');
@@ -132,12 +143,28 @@ it('SUB_ACE_GRID_OnlyRowsTemplate1_static_0200', Level.LEVEL0, async (done: () =
       expect(Math.abs(GridItem_01.bottom - GridItem_01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(154))) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create();
+      try {
       await CommonFunc.sleep(300);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('OnlyRowsTemplate1' + '_button'));
+      try {
       await (button?.click() as Promise<void>);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('OnlyRowsTemplate1Test await err: ' + JSON.stringify(err));
+      }
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate1_static_0200] END');
       done();
     });

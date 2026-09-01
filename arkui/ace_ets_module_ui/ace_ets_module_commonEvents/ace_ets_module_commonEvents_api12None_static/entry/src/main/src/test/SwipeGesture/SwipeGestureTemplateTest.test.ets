@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,15 +21,8 @@ import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageMa
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest} from '../Util.test'
-
 export default function SwipeGestureTemplateTest() {
   describe('SwipeGestureTemplateTest', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12None.static", "EntryAbility")
-
-    });
     beforeEach(async ():Promise<void> => {
       console.info("SwipeGestureTemplateTest beforeEach start");
       let options: router.RouterOptions = {
@@ -54,7 +47,11 @@ export default function SwipeGestureTemplateTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error("SwipeGestureTemplateTest afterEach error: " + err);
+      }
       console.info("SwipeGestureTemplateTest after each called");
     });
 

@@ -8,7 +8,106 @@
     },
     "kits": [
         {
+            "type": "PushKit",
+            "pre-push": [
+                "mount -o rw,remount /",
+                "power-shell wakeup",
+                "uinput -T -m 300 1279 280 200",
+                "uinput -T -d 300 600 -u 300 100",
+                "power-shell timeout -o 86400000",
+                "echo '{' > /data/local/tmp/cap_node.json",
+                "echo '            \"bundleName\": \"com.ohos.iotmanagementsvc\",' >> /data/local/tmp/cap_node.json",
+                "echo '            \"app_signature\": [\"5E047E55280883CB26E80BCDECBB84D83E14F01D16A6DEF1D83D242CFAB4299B\"],' >> /data/local/tmp/cap_node.json",
+                "echo '            \"allowAppDesktopIconHide\": true,' >> /data/local/tmp/cap_node.json",
+                "echo '            \"allowAppUsePrivilegeExtension\": true' >> /data/local/tmp/cap_node.json",
+                "echo '        }' >> /data/local/tmp/cap_node.json",
+                "echo '{' > /data/local/tmp/perm_node.json",
+                "echo '        \"bundleName\" : \"com.ohos.iotmanagementsvc\",' >> /data/local/tmp/perm_node.json",
+                "echo '        \"app_signature\" : [\"5E047E55280883CB26E80BCDECBB84D83E14F01D16A6DEF1D83D242CFAB4299B\"],' >> /data/local/tmp/perm_node.json",
+                "echo '        \"permissions\" : [' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.START_ABILITIES_FROM_BACKGROUND\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.GET_BUNDLE_INFO\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.USE_BLUETOOTH\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.ACCESS_BLUETOOTH\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.DISCOVER_BLUETOOTH\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.MANAGE_BLUETOOTH\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.GET_NETWORK_INFO\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.MANAGE_WIFI_CONNECTION\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.GET_WIFI_PEERS_MAC\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.GET_WIFI_CONFIG\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.SET_WIFI_CONFIG\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.SET_WIFI_INFO\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.GET_WIFI_INFO\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.INTERNET\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.GET_DISTRIBUTED_ACCOUNT\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.ACCESS_SERVICE_DM\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            },' >> /data/local/tmp/perm_node.json",
+                "echo '            {' >> /data/local/tmp/perm_node.json",
+                "echo '                \"name\" : \"ohos.permission.GET_BLUETOOTH_PEERS_MAC\",' >> /data/local/tmp/perm_node.json",
+                "echo '                \"userCancellable\" : false' >> /data/local/tmp/perm_node.json",
+                "echo '            }' >> /data/local/tmp/perm_node.json",
+                "echo '        ]' >> /data/local/tmp/perm_node.json",
+                "echo '    }' >> /data/local/tmp/perm_node.json",
+                "if ! grep -q 'com.ohos.iotmanagementsvc' /system/etc/app/install_list_capability.json; then tac /system/etc/app/install_list_capability.json | tail -n +2 | tac > /data/local/tmp/_cap.tmp && mv /data/local/tmp/_cap.tmp /system/etc/app/install_list_capability.json; tac /system/etc/app/install_list_capability.json | tail -n +2 | tac > /data/local/tmp/_cap.tmp && mv /data/local/tmp/_cap.tmp /system/etc/app/install_list_capability.json; tac /system/etc/app/install_list_capability.json | sed '1s/}/},/' | tac > /data/local/tmp/_cap.tmp && mv /data/local/tmp/_cap.tmp /system/etc/app/install_list_capability.json; cat /data/local/tmp/cap_node.json >> /system/etc/app/install_list_capability.json; echo '    ]' >> /system/etc/app/install_list_capability.json; echo '}' >> /system/etc/app/install_list_capability.json; fi",
+                "if ! grep -q 'com.ohos.iotmanagementsvc' /system/etc/app/install_list_permissions.json; then tac /system/etc/app/install_list_permissions.json | tail -n +2 | tac > /data/local/tmp/_perm.tmp && mv /data/local/tmp/_perm.tmp /system/etc/app/install_list_permissions.json; tac /system/etc/app/install_list_permissions.json | sed '1s/}/},/' | tac > /data/local/tmp/_perm.tmp && mv /data/local/tmp/_perm.tmp /system/etc/app/install_list_permissions.json; cat /data/local/tmp/perm_node.json >> /system/etc/app/install_list_permissions.json; echo ']' >> /system/etc/app/install_list_permissions.json; fi"
+            ],
+            "push": [],
+            "post-push": [
+                "mount -o rw,remount /",
+                "reboot"
+            ],
+            "uninstall": false
+        },
+        {
             "test-file-name": [
+                "./resource/iotc_validator/iotc/iotmanagementsvc.hap",
                 "iotc_validator.hap"
             ],
             "type": "AppInstallKit",
@@ -17,7 +116,18 @@
         {
             "type": "ShellKit",
             "run-command": [
-                "hilog -Q pidoff"
+                "mount -o rw,remount /",
+                "reboot"
+            ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "hilog -Q pidoff",
+                "power -shell wakeup",
+                "uinput -T -m 300 1279 280 200",
+                "uinput -T -d 300 600 -u 300 100",
+                "power-shell timeout -o 86400000"
             ]
         },
         {
@@ -31,14 +141,8 @@
         },
         {
             "type": "PushKit",
-            "push": [
-            ],
+            "push": [],
             "uninstall": false
-        },
-        {
-            "type": "ShellKit",
-            "run-command": [
-            ]
         }
     ]
 }

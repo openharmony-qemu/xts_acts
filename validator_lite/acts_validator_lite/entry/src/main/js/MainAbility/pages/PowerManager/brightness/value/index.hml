@@ -3,6 +3,7 @@
         <text style="width:150px;height:50px;text-align: center;font-size:16px;">屏幕亮度</text>
         <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
     </div>
+    <text class="content-tip">{{ tipMsg }}</text>
 
     <div class="content">
         <text class="content-info"> 当前亮度值: {{getValue}}</text>

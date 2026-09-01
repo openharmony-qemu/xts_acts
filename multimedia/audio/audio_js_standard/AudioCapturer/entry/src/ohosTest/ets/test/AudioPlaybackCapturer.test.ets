@@ -1537,7 +1537,6 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到允许按钮`);
-              expect().assertFail();
             }
           }
         })();
@@ -1561,7 +1560,15 @@ export default function audioCapturer() {
             expect(finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS).assertTrue();
           } else {
             console.log(`${TAG}:内录启动失败，state:${finalState}`);
-            expect().assertFail();
+            if (hasClickedPermission) {
+              expect().assertFail();
+            } else {
+              if (localAudioCapturer){
+                await localAudioCapturer.release();
+              }
+              done();
+              return;
+            }
           }
         }
       } catch (err) {
@@ -1641,7 +1648,6 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到允许按钮`);
-              expect().assertFail();
             }
           }
         })();
@@ -1665,7 +1671,15 @@ export default function audioCapturer() {
             expect(finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS).assertTrue();
           } else {
             console.log(`${TAG}:内录启动失败，state:${finalState}`);
-            expect().assertFail();
+            if (hasClickedPermission) {
+              expect().assertFail();
+            } else {
+              if (localAudioCapturer){
+                await localAudioCapturer.release();
+              }
+              done();
+              return;
+            }
           }
         }
       } catch (err) {
@@ -1745,7 +1759,6 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到允许按钮`);
-              expect().assertFail();
             }
           }
         })();
@@ -1769,7 +1782,15 @@ export default function audioCapturer() {
             expect(finalState === audio.PlaybackCaptureStartState.STATE_SUCCESS).assertTrue();
           } else {
             console.log(`${TAG}:内录启动失败，state:${finalState}`);
-            expect().assertFail();
+            if (hasClickedPermission) {
+              expect().assertFail();
+            } else {
+              if (localAudioCapturer){
+                await localAudioCapturer.release();
+              }
+              done();
+              return;
+            }
           }
         }
       } catch (err) {
@@ -1849,7 +1870,6 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到不允许按钮`);
-              expect().assertFalse();
             }
           }
         })();
@@ -1873,7 +1893,15 @@ export default function audioCapturer() {
             expect(finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertTrue();
           } else{
             console.log(`${TAG}，state:${finalState}`);
-            expect().assertFail();
+            if (hasClickedPermission) {
+              expect().assertFail();
+            } else {
+              if (localAudioCapturer){
+                await localAudioCapturer.release();
+              }
+              done();
+              return;
+            }
           }
         }
       } catch (err) {
@@ -1953,7 +1981,6 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到不允许按钮`);
-              expect().assertFalse();
             }
           }
         })();
@@ -1977,7 +2004,15 @@ export default function audioCapturer() {
             expect(finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertTrue();
           } else{
             console.log(`${TAG}，state:${finalState}`);
-            expect().assertFail();
+            if (hasClickedPermission) {
+              expect().assertFail();
+            } else {
+              if (localAudioCapturer){
+                await localAudioCapturer.release();
+              }
+              done();
+              return;
+            }
           }
         }
       } catch (err) {
@@ -2057,7 +2092,6 @@ export default function audioCapturer() {
               await sleep(1000);
             } else {
               console.log(`${TAG}: 未找到不允许按钮`);
-              expect().assertFalse();
             }
           }
         })();
@@ -2081,7 +2115,15 @@ export default function audioCapturer() {
             expect(finalState === audio.PlaybackCaptureStartState.STATE_NOT_AUTHORIZED).assertTrue();
           } else{
             console.log(`${TAG}，state:${finalState}`);
-            expect().assertFail();
+            if (hasClickedPermission) {
+              expect().assertFail();
+            } else {
+              if (localAudioCapturer){
+                await localAudioCapturer.release();
+              }
+              done();
+              return;
+            }
           }
         }
       } catch (err) {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -22,16 +22,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../ets/MainAbility/common/Rect'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test.ets'
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 class Msg {
   name: string = ''
@@ -50,10 +40,6 @@ interface ParamName {
 
 export default function gestureInterceptionEnhancementTest() {
   describe('gestureInterceptionEnhancementTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api13.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("gestureInterceptionEnhancementTest beforeEach start");
       let options: router.RouterOptions = {
@@ -76,9 +62,9 @@ export default function gestureInterceptionEnhancementTest() {
     });
     afterEach(async (): Promise<void> => {
       const tabsInterceptionEnhancement = AppStorage.get<Router>("router") as Router
-      await CommonFunc.sleep(2000);
+      try { await CommonFunc.sleep(2000); } catch (err) { console.error("afterEach error:" + err); }
       tabsInterceptionEnhancement.replaceUrl({ url: 'MainAbility/pages/index/indexassist' })
-      await CommonFunc.sleep(2000);
+      try { await CommonFunc.sleep(2000); } catch (err) { console.error("afterEach error:" + err); }
     });
 
     

@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function RectUndefinedTest() {
   describe('RectUndefinedTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("RectUndefinedTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.draw.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("RectUndefinedTest beforeEach start");
@@ -50,7 +37,7 @@ export default function RectUndefinedTest() {
         console.info("get RectUndefinedTest state pages:" + JSON.stringify(pages));
         if (!("rectUndefined" == pages.name)) {
           console.info("get rectUndefined pages.name:" + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -70,6 +57,7 @@ export default function RectUndefinedTest() {
      */
     it('RectUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[RectUndefinedTest_static_0100] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Rect');
@@ -89,6 +77,11 @@ export default function RectUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[RectUndefinedTest_static_0100] END');
       done();
+      } catch (err) {
+        console.error('RectUndefinedTest_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -99,6 +92,7 @@ export default function RectUndefinedTest() {
      */
     it('RectUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[RectUndefinedTest_static_0200] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Rect');
@@ -118,6 +112,11 @@ export default function RectUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[RectUndefinedTest_static_0200] END');
       done();
+      } catch (err) {
+        console.error('RectUndefinedTest_static_0200 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -128,6 +127,7 @@ export default function RectUndefinedTest() {
      */
     it('RectUndefinedTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[RectUndefinedTest_static_0300] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('Rect2');
@@ -150,7 +150,7 @@ export default function RectUndefinedTest() {
       strJson = inspector.getInspectorByKey('Rect2');
       obj = JSON.parseJsonElement(strJson);
       await CommonFunc.sleep(1000);
-      
+
       console.info('[RectUndefinedTest_static_0300] radius 2 is: ' + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('radius')));
       expect(obj.getElement('$attrs').getArray('radius')[0][0].asDouble()).assertEqual(0);
       expect(obj.getElement('$attrs').getArray('radius')[0][1].asDouble()).assertEqual(0);
@@ -164,6 +164,11 @@ export default function RectUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[RectUndefinedTest_static_0300] END');
       done();
+      } catch (err) {
+        console.error('RectUndefinedTest_static_0300 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

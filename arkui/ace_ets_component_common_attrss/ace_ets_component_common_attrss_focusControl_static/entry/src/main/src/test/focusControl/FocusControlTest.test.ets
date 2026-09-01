@@ -13,22 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Utils, { BasePageConfig, PageConfig, TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
-import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index';
-import { AlignRuleOption, VerticalAlign, HorizontalAlign,focusControl } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+import { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
+import CommonTest from '../common/CommonTest';
+import { describe, expect } from '../../../../hypium/index';
+import { focusControl } from '@ohos.arkui.component';
 
 export default function FocusControlTest() {
 
@@ -97,12 +85,6 @@ export default function FocusControlTest() {
    */
 
   describe('FocusControlTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("FocusControlTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      
-    });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig):Promise<void> => {
       if ('SetFocusableTrue' == data.testValue.describe) {

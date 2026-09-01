@@ -74,26 +74,31 @@ export default function AddMonitorObservedV2Map(): void {
     it('AddMonitorObservedV2Map_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let tagName = 'AddMonitorObservedV2Map_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = await Driver.create();
-      let btn_true = await driver.findComponent(ON.id('ObservedMap1')) as Component;
-      await btn_true.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew = inspector.getInspectorByKey('ObservedMap');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] Map has changed from 0,a,1,b,3,c to 0,a,1,b,3,c');
-      let btn_true1 = await driver.findComponent(ON.id('ObservedMapClear')) as Component;
-      await btn_true1.click();
-      await CommonFunc.sleep(1000);
-      let btn_true2 = await driver.findComponent(ON.id('ObservedMap2')) as Component;
-      await btn_true2.click();
-      await CommonFunc.sleep(1000);
-      let strJsonNew1 = inspector.getInspectorByKey('ObservedMap');
-      console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
-        .getElement('$attrs')
-        .getString('content')));
-      expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] Map has changed from 0,a,1,b,3,c to 0,a,1,b,3,c');
+      try{
+        let driver = await Driver.create();
+        let btn_true = await driver.findComponent(ON.id('ObservedMap1'));
+        await (btn_true?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJsonNew = inspector.getInspectorByKey('ObservedMap');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] Map has changed from 0,a,1,b,3,c to 0,a,1,b,3,c');
+        let btn_true1 = await driver.findComponent(ON.id('ObservedMapClear'));
+        await (btn_true1?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let btn_true2 = await driver.findComponent(ON.id('ObservedMap2'));
+        await (btn_true2?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJsonNew1 = inspector.getInspectorByKey('ObservedMap');
+        console.info('[' + tagName + '] text is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew1)
+          .getElement('$attrs')
+          .getString('content')));
+        expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('[addMonitorTest] Map has changed from 0,a,1,b,3,c to 0,a,1,b,3,c');
+      } catch (err) {
+        console.error('AddMonitorObservedV2Map_static_0100 error: ' + err);
+        expect(true).assertEqual(false);
+      }
       console.info('[' + tagName + '] END ===========================');
       done();
     });

@@ -410,6 +410,48 @@ struct setBlanklessLoadingWithKeyTest {
                 }
                 break;
               }
+              case 'testGetBlanklessInfoWithKey801Static': {
+                let msg = 'testGetBlanklessInfoWithKey801Static';
+                try {
+                  this.controller.getBlanklessInfoWithKey('coverage801Key');
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(801, 148590);
+                  } else {
+                    Utils.emitEvent(Number(error.code), 148590);
+                  }
+                }
+                break;
+              }
+              case 'testSetBlanklessLoadingWithKey801Static': {
+                let msg = 'testSetBlanklessLoadingWithKey801Static';
+                try {
+                  this.controller.setBlanklessLoadingWithKey('coverage801Key', true);
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(801, 148594);
+                  } else {
+                    Utils.emitEvent(Number(error.code), 148594);
+                  }
+                }
+                break;
+              }
+              case 'testClearBlanklessLoadingCache801Static': {
+                let msg = 'testClearBlanklessLoadingCache801Static';
+                try {
+                  webView.WebviewController.clearBlanklessLoadingCache(['coverage801Key']);
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) === 801) {
+                    Utils.emitEvent(801, 148598);
+                  } else {
+                    Utils.emitEvent(Number(error.code), 148598);
+                  }
+                }
+                break;
+              }
             }
           })
 

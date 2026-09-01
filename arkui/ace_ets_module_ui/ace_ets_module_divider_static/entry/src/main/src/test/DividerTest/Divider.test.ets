@@ -15,14 +15,13 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { LineCapStyle } from '@ohos.arkui.component';
 
@@ -30,11 +29,6 @@ const SLEEP_TIME = 1000;
 
 export default function DividerTest() {
   describe('DividerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] DividerTest beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.divider.static", "EntryAbility");
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest beforeEach start');
@@ -58,7 +52,11 @@ export default function DividerTest() {
 
     afterEach(async (): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest afterEach start');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('[ARKUI_NEW] DividerTest afterEach end');
     });
 
@@ -72,7 +70,11 @@ export default function DividerTest() {
      */
     it('dividerDefault', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerDefault START');
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       const driver = Driver.create();
       const comp = await driver.findComponent(ON.id('dividerDefault'));
       expect(!!comp).assertEqual(true);
@@ -91,11 +93,15 @@ export default function DividerTest() {
      * @tc.desc Divider vertical true — verify node exists, check attrs
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.level   LEVEL1
      */
     it('dividerVerticalTrue', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerVerticalTrue START');
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       const driver = Driver.create();
       const comp = await driver.findComponent(ON.id('dividerVerticalTrue'));
       expect(!!comp).assertEqual(true);
@@ -121,7 +127,11 @@ export default function DividerTest() {
      */
     it('dividerVerticalFalse', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerVerticalFalse START');
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       const driver = Driver.create();
       const comp = await driver.findComponent(ON.id('dividerVerticalFalse'));
       expect(!!comp).assertEqual(true);
@@ -147,7 +157,11 @@ export default function DividerTest() {
      */
     it('dividerColorRed', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerColorRed START');
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       const driver = Driver.create();
       const comp = await driver.findComponent(ON.id('dividerColorRed'));
       expect(!!comp).assertEqual(true);
@@ -173,7 +187,11 @@ export default function DividerTest() {
      */
     it('dividerStrokeWidth5', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth5 START');
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       const driver = Driver.create();
       const comp = await driver.findComponent(ON.id('dividerStrokeWidth5'));
       expect(!!comp).assertEqual(true);
@@ -199,7 +217,11 @@ export default function DividerTest() {
      */
     it('dividerStrokeWidth10px', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerStrokeWidth10px START');
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       const driver = Driver.create();
       const comp = await driver.findComponent(ON.id('dividerStrokeWidth10px'));
       expect(!!comp).assertEqual(true);
@@ -225,7 +247,11 @@ export default function DividerTest() {
      */
     it('dividerLineCapButt', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapButt START');
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       expect(LineCapStyle.Butt).assertEqual(0);
       const driver = Driver.create();
       const comp = await driver.findComponent(ON.id('dividerLineCapButt'));
@@ -252,7 +278,11 @@ export default function DividerTest() {
      */
     it('dividerLineCapRound', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapRound START');
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       expect(LineCapStyle.Round).assertEqual(1);
       const driver = Driver.create();
       const comp = await driver.findComponent(ON.id('dividerLineCapRound'));
@@ -279,7 +309,11 @@ export default function DividerTest() {
      */
     it('dividerLineCapSquare', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapSquare START');
-      await CommonFunc.sleep(SLEEP_TIME);
+      try {
+        await CommonFunc.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
       expect(LineCapStyle.Square).assertEqual(2);
       const driver = Driver.create();
       const comp = await driver.findComponent(ON.id('dividerLineCapSquare'));
@@ -295,6 +329,6 @@ export default function DividerTest() {
       console.info('[ARKUI_NEW] DividerTest execute: dividerLineCapSquare END');
       done();
     });
-    
+
   });
 }

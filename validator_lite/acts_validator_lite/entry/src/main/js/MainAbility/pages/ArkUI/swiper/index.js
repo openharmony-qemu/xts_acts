@@ -15,11 +15,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.swiper.status = 'pass';
+        getApp().data.testItems['swiper'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.swiper.status = 'fail';
+        getApp().data.testItems['swiper'].status = 'fail';
         this.back();
     },
     backClicked() {

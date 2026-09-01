@@ -21,7 +21,7 @@ import ActsAcewebViewCookieTrack from './WebViewCookieTrack.test'
 import WebNestedScrollOptionsScrollBackwardHorizontalTest from './WebNestedScrollOptionsScrollBackwardHorizontalTest.test'
 import  webJsunit from './WebJsunit.test'
 import  webViewControllerPart2Test from './WebViewControllerPart2.test'
-export default function testsuite() {
+export default function testsuite(): void {
     webInitTest();
     componentLifeCycleTestOne();
     webViewSharedRenderProcessToken();

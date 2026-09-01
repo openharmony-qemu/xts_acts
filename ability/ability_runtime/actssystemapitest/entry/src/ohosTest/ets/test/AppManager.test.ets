@@ -36,25 +36,25 @@ export default function appManagerTest() {
     it('System_API_Test_App_Manager_0100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0100';
       let applicationStateObserver : appManager.ApplicationStateObserver= {
-        onForegroundApplicationChanged(appStateData) {
+        onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
           console.log(TAG + '------------ onForegroundApplicationChanged -----------', appStateData);
         },
-        onAbilityStateChanged(abilityStateData) {
+        onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
           console.log(TAG + '------------ onAbilityStateChanged -----------', abilityStateData);
         },
-        onProcessCreated(processData) {
+        onProcessCreated(processData: appManager.ProcessData) {
           console.log(TAG + '------------ onProcessCreated -----------', processData);
         },
-        onProcessDied(processData) {
+        onProcessDied(processData: appManager.ProcessData) {
           console.log(TAG + '------------ onProcessDied -----------', processData);
         },
-        onProcessStateChanged(processData) {
+        onProcessStateChanged(processData: appManager.ProcessData) {
           console.log(TAG + '------------ onProcessStateChanged -----------', processData);
         },
-        onAppStarted(appStateData) {
+        onAppStarted(appStateData: appManager.AppStateData) {
           console.log(TAG + '------------ onAppStarted -----------', appStateData);
         },
-        onAppStopped(appStateData) {
+        onAppStopped(appStateData: appManager.AppStateData) {
           console.log(TAG + '------------ onAppStopped -----------', appStateData);
         },
       }
@@ -79,25 +79,25 @@ export default function appManagerTest() {
     it('System_API_Test_App_Manager_0200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_App_Manager_0200';
       let applicationStateObserver : appManager.ApplicationStateObserver = {
-        onForegroundApplicationChanged(appStateData) {
+        onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
           console.log(TAG + '------------ onForegroundApplicationChanged -----------', appStateData);
         },
-        onAbilityStateChanged(abilityStateData) {
+        onAbilityStateChanged(abilityStateData: appManager.AbilityStateData) {
           console.log(TAG + '------------ onAbilityStateChanged -----------', abilityStateData);
         },
-        onProcessCreated(processData) {
+        onProcessCreated(processData: appManager.ProcessData) {
           console.log(TAG + '------------ onProcessCreated -----------', processData);
         },
-        onProcessDied(processData) {
+        onProcessDied(processData: appManager.ProcessData) {
           console.log(TAG + '------------ onProcessDied -----------', processData);
         },
-        onProcessStateChanged(processData) {
+        onProcessStateChanged(processData: appManager.ProcessData) {
           console.log(TAG + '------------ onProcessStateChanged -----------', processData);
         },
-        onAppStarted(appStateData) {
+        onAppStarted(appStateData: appManager.AppStateData) {
           console.log(TAG + '------------ onAppStarted -----------', appStateData);
         },
-        onAppStopped(appStateData) {
+        onAppStopped(appStateData: appManager.AppStateData) {
           console.log(TAG + '------------ onAppStopped -----------', appStateData);
         },
       }

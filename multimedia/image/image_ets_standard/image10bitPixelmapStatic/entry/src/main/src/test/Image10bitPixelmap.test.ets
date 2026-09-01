@@ -25,7 +25,7 @@ import hdrCapability from '@ohos.graphics.hdrCapability';
 import display from '@ohos.display';
 import { initialize } from './AbilityContextHelper.test';
 
-let isSupportHdr: boolean;
+let isSupportHdr: boolean = false;
 
 interface WriteFile {
   fd: int,
@@ -68,14 +68,10 @@ export default function image10bitPixelMap() {
       filesDir = Hypium.get('filesDir') as string | undefined;
       cacheDir = Hypium.get('cacheDir') as string | undefined;
       try {
-        isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
-        if (isSupportHdr) {
-          console.info("file exists");
-        } else {
-          console.info("file not exists");
-        }
+        isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportHdr is ' + isSupportHdr);
       } catch (err) {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
+        console.error('The file path does not exist');
       }
       isSupportHEICEncode =
         image.createImagePacker().supportedFormats.includes("image/heic");

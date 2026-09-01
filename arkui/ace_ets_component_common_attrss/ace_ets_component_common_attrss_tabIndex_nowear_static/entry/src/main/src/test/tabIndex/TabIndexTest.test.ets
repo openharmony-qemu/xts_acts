@@ -16,19 +16,7 @@
 import Utils, {CurrentRatio, BasePageConfig, PageConfig, TestValue, RectValue,StrJsonObj } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, expect,beforeAll, beforeEach } from '../../../../hypium/index';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import inspector from '@ohos.arkui.inspector';
-let domain: int= 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+import { describe, expect } from '../../../../hypium/index';
 async function executeTab(data: BasePageConfig, referenceOneValue: string, textValue: string, referenceTwoValue: string) {
   expect(Utils.performKeyEventDownUp(2049, 'Tab')).assertEqual(true);
   await Utils.sleep(1000);
@@ -84,13 +72,6 @@ export default function TabIndexTest() {
   ]
 
   describe('TabIndexTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('TabIndexTest beforeEach start')
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrsTabindex.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     //Generate test cases (it) through a loop based on the support view * test values.
 
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

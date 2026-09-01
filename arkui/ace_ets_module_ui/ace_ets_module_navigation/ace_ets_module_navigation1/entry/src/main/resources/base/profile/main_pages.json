@@ -58,6 +58,19 @@
         "MainAbility/pages/CustomNavigation/Navigation1",
         "MainAbility/pages/CustomNavigation/Navigation2",
         "MainAbility/pages/CustomNavigation/Navigation3",
-        "MainAbility/pages/CustomNavigation/Navigation4"
+        "MainAbility/pages/CustomNavigation/Navigation4",
+
+        "MainAbility/pages/NavigationPreload/NavigationPreload",
+        "MainAbility/pages/Navigation/NavigationRecyclePage",
+        "MainAbility/pages/Navigation/ModifierRecyclePage",
+        "MainAbility/pages/Navigation/NavPushReplacePage",
+        "MainAbility/pages/Navigation/ClearContentStackPage",
+        "MainAbility/pages/Navigation/ModifierClearPage",
+        "MainAbility/pages/Navigation/HomeDestClearPage",
+        "MainAbility/pages/Navigation/SplitClearPage",
+        "MainAbility/pages/Navigation/SplitNoClearPage",
+        "MainAbility/pages/Navigation/SplitReplaceClearPage",
+        "MainAbility/pages/Navigation/StackNoEffectPage",
+        "MainAbility/pages/Navigation/conponentadd/navigation_y"
     ]
 }

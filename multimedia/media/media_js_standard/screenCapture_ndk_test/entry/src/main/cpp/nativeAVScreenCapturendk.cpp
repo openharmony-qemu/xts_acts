@@ -69,6 +69,7 @@ static OH_AVScreenCapture *screenCaptureSurface;
 static OH_AVScreenCapture *screenCaptureContentChange;
 static OH_AVScreenCapture *screenCaptureStrategyForPrivacyMaskMode;
 static OH_AVScreenCapture *screenCapturePauseResume = nullptr;
+static OH_AVScreenCapture *screenCaptureVirtualExtended = nullptr;
 static OH_AVSCREEN_CAPTURE_ErrCode screenCaptureResult = AV_SCREEN_CAPTURE_ERR_EXTEND_START;
 static OHNativeWindow *nativeWindowTest;
 static napi_env screenCaptureEnv;
@@ -444,6 +445,78 @@ static napi_value normalAVScreenRecordTestStop(napi_env env, napi_callback_info 
     OH_AVSCREEN_CAPTURE_ErrCode result1 = OH_AVScreenCapture_StopScreenRecording(screenCaptureRecord);
     OH_LOG_INFO(LOG_APP, "StopScreenRecording result1 = %{public}d", result1);
     OH_AVSCREEN_CAPTURE_ErrCode result2 = OH_AVScreenCapture_Release(screenCaptureRecord);
+    OH_LOG_INFO(LOG_APP, "Release result2 = %{public}d", result2);
+
+    OH_AVSCREEN_CAPTURE_ErrCode result = AV_SCREEN_CAPTURE_ERR_OK;
+    if (result2 == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = AV_SCREEN_CAPTURE_ERR_OK;
+    } else {
+        result = AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT;
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
+// SUB_MULTIMEDIA_SCREEN_CAPTURE_VIRTUAL_EXTENDED_SCREEN_0100
+static napi_value virtualExtendedScreenRecordTest(napi_env env, napi_callback_info info)
+{
+    screenCaptureVirtualExtended = OH_AVScreenCapture_Create();
+    if (screenCaptureVirtualExtended == nullptr) {
+        napi_throw_error((env), nullptr, "error : expect screenCaptureVirtualExtended is not nullptr");
+    }
+    OH_AVScreenCaptureConfig config_;
+    OH_RecorderInfo recorderInfo;
+    const std::string screenCaptureRoot = "/data/storage/el2/base/files/";
+    int32_t outputFd = open((screenCaptureRoot + "screen_virtual_extended.mp4").c_str(), O_RDWR | O_CREAT, 0777);
+    std::string fileUrl = "fd://" + std::to_string(outputFd);
+    recorderInfo.url = const_cast<char *>(fileUrl.c_str());
+    recorderInfo.fileFormat = OH_ContainerFormatType::CFT_MPEG_4;
+    SetConfig(config_);
+    config_.captureMode = OH_CAPTURE_VIRTUAL_EXTENDED_SCREEN;
+    config_.dataType = OH_CAPTURE_FILE;
+    config_.recorderInfo = recorderInfo;
+
+    bool isMicrophone = false;
+    screenCaptureResult = OH_AVScreenCapture_SetMicrophoneEnabled(screenCaptureVirtualExtended, isMicrophone);
+    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((env), nullptr, "error : expect SetMicrophoneEnabled is 0 ");
+    }
+    screenCaptureResult = OH_AVScreenCapture_SetErrorCallback(screenCaptureVirtualExtended, OnError, nullptr);
+    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((env), nullptr, "error : expect SetErrorCallback is 0 ");
+    }
+    screenCaptureResult = OH_AVScreenCapture_SetStateCallback(screenCaptureVirtualExtended, OnStateChange, nullptr);
+    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((env), nullptr, "error : expect SetStateCallback is 0 ");
+    }
+    screenCaptureResult = OH_AVScreenCapture_SetDataCallback(screenCaptureVirtualExtended, OnBufferAvailable, nullptr);
+    if (screenCaptureResult != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((env), nullptr, "error : expect SetDataCallback is 0 ");
+    }
+    OH_AVSCREEN_CAPTURE_ErrCode result1 = OH_AVScreenCapture_Init(screenCaptureVirtualExtended, config_);
+    OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_Init result1 = %{public}d", result1);
+    OH_AVSCREEN_CAPTURE_ErrCode result2 = OH_AVScreenCapture_StartScreenRecording(screenCaptureVirtualExtended);
+    OH_LOG_INFO(LOG_APP, "OH_AVScreenCapture_StartScreenRecording result2 = %{public}d", result2);
+
+    OH_AVSCREEN_CAPTURE_ErrCode result = AV_SCREEN_CAPTURE_ERR_OK;
+    if (result2 == AV_SCREEN_CAPTURE_ERR_OK) {
+        result = AV_SCREEN_CAPTURE_ERR_OK;
+    } else {
+        result = AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT;
+    }
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    return res;
+}
+
+// SUB_MULTIMEDIA_SCREEN_CAPTURE_VIRTUAL_EXTENDED_SCREEN_0100
+static napi_value virtualExtendedScreenRecordTestStop(napi_env env, napi_callback_info info)
+{
+    usleep(g_recordTimeOne);
+    OH_AVSCREEN_CAPTURE_ErrCode result1 = OH_AVScreenCapture_StopScreenRecording(screenCaptureVirtualExtended);
+    OH_LOG_INFO(LOG_APP, "StopScreenRecording result1 = %{public}d", result1);
+    OH_AVSCREEN_CAPTURE_ErrCode result2 = OH_AVScreenCapture_Release(screenCaptureVirtualExtended);
     OH_LOG_INFO(LOG_APP, "Release result2 = %{public}d", result2);
 
     OH_AVSCREEN_CAPTURE_ErrCode result = AV_SCREEN_CAPTURE_ERR_OK;
@@ -3386,6 +3459,10 @@ static napi_value Init(napi_env env, napi_value exports)
             normalAVScreenCaptureResumeScreenCaptureErr, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureResumeScreenCaptureError", nullptr,
             normalAVScreenCaptureResumeScreenCaptureError, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"virtualExtendedScreenRecordTest", nullptr,
+            virtualExtendedScreenRecordTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"virtualExtendedScreenRecordTestStop", nullptr,
+            virtualExtendedScreenRecordTestStop, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

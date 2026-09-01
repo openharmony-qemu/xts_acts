@@ -21,7 +21,7 @@ import { RecordData } from '@ohos.base';
 
 let emitKey = ''
 
-export default function ActsAcewebViewSharedRenderProcessToken() {
+export default function ActsAcewebViewSharedRenderProcessToken(): void {
   describe('ActsAcewebViewSharedRenderProcessToken', () => {
 
     beforeAll(async (): Promise<void> => {

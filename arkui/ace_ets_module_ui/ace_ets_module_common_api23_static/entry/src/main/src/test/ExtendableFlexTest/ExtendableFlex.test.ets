@@ -15,25 +15,19 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
-import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
 
 export default function ExtendableFlexTest() {
   describe('ExtendableFlexTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('ExtendableFlexTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.common.api23.static', 'EntryAbility');
-    });
 
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('ExtendableFlexTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/ExtendableFlex/ExtendableFlex',
@@ -44,10 +38,10 @@ export default function ExtendableFlexTest() {
         let pages = routerInstance.getState();
         console.info('ExtendableFlexTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'ExtendableFlex') {
-          routerInstance.replaceUrl(options);
+          await routerInstance.pushUrl(options);
         }
       } catch (err) {
-        console.error('ExtendableFlexTest replaceUrl error: ' + err);
+        console.error('ExtendableFlexTest pushUrl error: ' + err);
         expect().assertFail();
       }
     });

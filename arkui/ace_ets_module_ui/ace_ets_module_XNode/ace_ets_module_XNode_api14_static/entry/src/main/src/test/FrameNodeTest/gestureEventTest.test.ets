@@ -14,27 +14,15 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function gestureEventTest() {
   describe('gestureEventTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("gestureEventTest beforeEach start");
       let options: router.RouterOptions = {
@@ -58,12 +46,15 @@ export default function gestureEventTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('gestureEventTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("gestureEventTest after each called");
     });
 
 
-    
     
 /**
      * @tc.number   gestureEventTest_static_0100
@@ -73,24 +64,52 @@ export default function gestureEventTest() {
      */
 it('gestureEventTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gestureEventTest_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('gestureEventTest sleep err: ' + JSON.stringify(err));
+      }
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('gestureEventTest sleep err: ' + JSON.stringify(err));
+      }
       let node: Component = await driver.findComponent(ON.id('gestureEventTest_node')) as Component;
       let point = await node.getBoundsCenter();
       console.info("[gestureEventTest_static_0100] getBoundsCenter point.x: " + point.x + ", point.y: " + point.y);
-      await driver.swipe((Math.round(point.x - UIContext.resolveUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt(), (Math.round(point.x + UIContext.resolveUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt());
-      await CommonFunc.sleep(2000);
+      try {
+        await driver.swipe((Math.round(point.x - UIContext.resolveUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt(), (Math.round(point.x + UIContext.resolveUIContext()!.vp2px(50))).toInt(), (Math.round(point.y)).toInt());
+      } catch (err) {
+        console.info('gestureEventTest swipe err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('gestureEventTest sleep err: ' + JSON.stringify(err));
+      }
       let btn = await driver.findComponent(ON.id('getpanGestureInfo')) as Component;
-      await btn.click()
-      await CommonFunc.sleep(1000);
+      try {
+        await btn.click()
+      } catch (err) {
+        console.info('gestureEventTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('gestureEventTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson1 = inspector.getInspectorByKey('panGesture_text1');
       let strJson2 = inspector.getInspectorByKey('panGesture_text2');
       let strJson3 = inspector.getInspectorByKey('panGesture_text3');
       let obj1 = JSON.parseJsonElement(strJson1);
       let obj2 = JSON.parseJsonElement(strJson2);
       let obj3 = JSON.parseJsonElement(strJson3);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('gestureEventTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("[gestureEventTest_static_0100] panGesture_text1 is: " + obj1.getElement('$attrs').getString('content'));
       console.info("[gestureEventTest_static_0100] panGesture_text2 is: " + obj2.getElement('$attrs').getString('content'));
       console.info("[gestureEventTest_static_0100] panGesture_text3 is: " + obj3.getElement('$attrs').getString('content'));

@@ -7,14 +7,13 @@ export default {
         fail: 'false;'
     },
     onInit() {
-        console.info('image onInit');
     },
     passClicked() {
-        getApp().data.testItems.image_display.status = 'pass';
+        getApp().data.testItems['image_display'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.image_display.status = 'fail';
+        getApp().data.testItems['image_display'].status = 'fail';
         this.back();
     },
     helpClicked() {

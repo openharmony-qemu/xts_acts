@@ -14,30 +14,17 @@
  * limitations under the License.
  */
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function flex_Wrap_FlexPad_TextMarPadTest() {
   describe('Flex_Wrap_FlexPad_TextMarPadTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Flex_Wrap_FlexPad_TextMarPadTest beforeEach start");
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Flex_Wrap_FlexPad_TextMarPadTest beforeEach start");
       let options: router.RouterOptions = {
@@ -81,7 +68,11 @@ export default function flex_Wrap_FlexPad_TextMarPadTest() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'flexPadding', value: 0
       });
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       console.info("Flex_Wrap_FlexPad_TextMarPadText after each called");
     });
     
@@ -106,7 +97,11 @@ it('testWrapWrapFlexPadTextPad_static', Level.LEVEL0, async () => {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'flexPadding', value: 30
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('Wrap_FlexPad_TextMarPad1');
       let secondText: RectValue = CommonFunc.getComponentRect('Wrap_FlexPad_TextMarPad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_FlexPad_TextMarPad3');
@@ -154,7 +149,11 @@ it('testWrapWrapFlexPadTextMargin_static', Level.LEVEL0, async () => {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'flexPadding', value: 20
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('Wrap_FlexPad_TextMarPad1');
       let secondText: RectValue = CommonFunc.getComponentRect('Wrap_FlexPad_TextMarPad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_FlexPad_TextMarPad3');
@@ -216,7 +215,11 @@ it('testWrapWrapFlexPadTextMarPad_static', Level.LEVEL0, async () => {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'flexPadding', value: 30
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('Wrap_FlexPad_TextMarPad1');
       let secondText: RectValue = CommonFunc.getComponentRect('Wrap_FlexPad_TextMarPad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Wrap_FlexPad_TextMarPad3');

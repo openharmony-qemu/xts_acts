@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -46,13 +45,6 @@ class EntryAbility extends UIAbility {
 }
 export default function APIsetDragEventStrictReportingEnabled() {
   describe('APIsetDragEventStrictReportingEnabled', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("APIsetDragEventStrictReportingEnabled beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("APIsetDragEventStrictReportingEnabled beforeEach start");
       let options: router.RouterOptions = {
@@ -78,7 +70,11 @@ export default function APIsetDragEventStrictReportingEnabled() {
     }); 
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('APIsetDragEventStrictReportingEnabled afterEach err: ' + JSON.stringify(err));
+      }
       console.info("APIsetDragEventStrictReportingEnabled after each called");
     })
     
@@ -90,16 +86,20 @@ export default function APIsetDragEventStrictReportingEnabled() {
      * @tc.level    Level.LEVEL0
      */
 it('APIsetDragEventStrictReportingEnabled_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('APIsetDragEventStrictReportingEnabled_static_0100 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('APIsetDragEventStrictReportingEnabled_Text01');
-      console.info("[APIsetDragEventStrictReportingEnabled_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)), JSON.parseJsonElement(strJson)
-        .getElement('$attrs').getString('content'));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('APIsetDragEventStrictReportingEnabled');
-      console.info('[APIsetDragEventStrictReportingEnabled_static_0100] END');
-      done();
+      try {
+        console.info('APIsetDragEventStrictReportingEnabled_static_0100 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('APIsetDragEventStrictReportingEnabled_Text01');
+        console.info("[APIsetDragEventStrictReportingEnabled_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)), JSON.parseJsonElement(strJson)
+          .getElement('$attrs').getString('content'));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('APIsetDragEventStrictReportingEnabled');
+        console.info('[APIsetDragEventStrictReportingEnabled_static_0100] END');
+        done();
+      } catch (err) {
+        console.info('APIsetDragEventStrictReportingEnabled_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

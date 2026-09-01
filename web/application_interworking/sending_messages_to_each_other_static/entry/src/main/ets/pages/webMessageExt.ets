@@ -914,6 +914,50 @@ struct webMessageExt {
               break;
             }
 
+            case "testWebMessageExtSetBooleanNullStatic001": {
+              try {
+                if (this.nativePort) {
+                  this.message.setType(webView.WebMessageType.BOOLEAN);
+                  let param: boolean | null = null;
+                  this.message.setBoolean(param as boolean);
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postBooleanToHtml()", (error, result) => {
+                    if (result) {
+                      Utils.emitEvent(result, 41021501)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41021501)
+              }
+              break;
+            }
+
+            case "testWebMessageExtSetBooleanUndefinedStatic001": {
+              try {
+                if (this.nativePort) {
+                  this.message.setType(webView.WebMessageType.BOOLEAN);
+                  let param: boolean | undefined = undefined;
+                  this.message.setBoolean(param as boolean);
+                  this.nativePort.postMessageEventExt(this.message);
+                }
+                setTimeout(() => {
+                  this.controller.runJavaScript("postBooleanToHtml()", (error, result) => {
+                    if (result) {
+                      Utils.emitEvent(result, 41021502)
+                    }
+                  })
+                }, 1000)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41021502)
+              }
+              break;
+            }
+
             case 'SwitchNextPageStatic' : {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();

@@ -1571,7 +1571,7 @@ export default function EscapeBufferTest() {
     });
     /**
      * @tc.name   testBufferIndexOfEmoji0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_7800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_7800
      * @tc.desc   Test the function of the Interface escape \b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1592,7 +1592,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_7900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_7900
      * @tc.desc   Test the function of the Interface escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1613,7 +1613,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_8000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_8000
      * @tc.desc   Test the function of the Interface escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1634,7 +1634,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_8100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_8100
      * @tc.desc   Test the function of the Interface escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1655,7 +1655,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_8200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_8200
      * @tc.desc   Test the function of the Interface escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1676,7 +1676,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_8300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_8300
      * @tc.desc   Test the function of the Interface escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1697,7 +1697,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_8400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_8400
      * @tc.desc   Test the function of the Interface escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1718,7 +1718,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_8500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_8500
      * @tc.desc   Test the function of the Interface escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1739,7 +1739,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_8600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_8600
      * @tc.desc   Test the function of the Interface escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1760,7 +1760,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_8700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_8700
      * @tc.desc   Test the function of the Interface escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1781,7 +1781,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferIndexOfEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_indexOf_Escape_8800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_ESCAPE_8800
      * @tc.desc   Test the function of the Interface escape \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1801,7 +1801,7 @@ export default function EscapeBufferTest() {
     });
     /**
      * @tc.name   testBufferLastIndexOfEscape0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_8900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_8900
      * @tc.desc   Test the function of the Interface escape \b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1822,7 +1822,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEmoji0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9000
      * @tc.desc   Test the function of the Interface escape \f
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1843,7 +1843,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEmoji0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9100
      * @tc.desc   Test the function of the Interface escape \n
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1864,7 +1864,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEscape004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9200
      * @tc.desc   Test the function of the Interface escape \r
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1885,7 +1885,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEmoji0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9300
      * @tc.desc   Test the function of the Interface escape \t
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1906,7 +1906,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEmoji0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9400
      * @tc.desc   Test the function of the Interface escape \v
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1927,7 +1927,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEmoji0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9500
      * @tc.desc   Test the function of the Interface escape \x24
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1948,7 +1948,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEmoji0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9600
      * @tc.desc   Test the function of the Interface escape \开
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1969,7 +1969,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEmoji0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9700
      * @tc.desc   Test the function of the Interface escape \😊
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1990,7 +1990,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEmoji0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9800
      * @tc.desc   Test the function of the Interface escape \0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2011,7 +2011,7 @@ export default function EscapeBufferTest() {
 
     /**
      * @tc.name   testBufferLastIndexOfEmoji0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LastIndexOf_Escape_9900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LASTINDEXOF_ESCAPE_9900
      * @tc.desc   Test the function of the Interface escape \\b
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

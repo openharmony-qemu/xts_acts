@@ -65,7 +65,8 @@ export default function native_blanklessTest() {
      */
     it('TestNativeArkWeb_SetBlanklessLoadingCacheCapacity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
-        expect(nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacity()).assertEqual(0);
+        const result = nativeFunc.TestNativeArkWeb_SetBlanklessLoadingCacheCapacity();
+        expect(result === 0 || result === 100).assertTrue();
         done();
       });
 

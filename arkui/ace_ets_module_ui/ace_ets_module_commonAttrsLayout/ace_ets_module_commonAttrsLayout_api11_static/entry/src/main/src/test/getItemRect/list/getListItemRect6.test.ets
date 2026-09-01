@@ -14,33 +14,20 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import { Driver, ON } from '@ohos.UiTest';
 import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../../Util.test';
-import { BusinessError } from '@ohos.base';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../../ets/MainAbility/common/Rect';
 
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
+
 
 export default function getListItemRect6() {
   describe('getListItemRect6', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("getListItemRect6 beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-
-    });
     beforeEach(() => {
       console.info("getListItemRect6 beforeEach start");
       let options: router.RouterOptions = {
@@ -61,7 +48,11 @@ export default function getListItemRect6() {
       }
     });
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       // const routerInstance = AppStorage.get<Router>("router") as Router
       // routerInstance.back();
@@ -82,14 +73,22 @@ it('getListItemRect6_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       const message: MessageManager<Int> = AppStorage.get<MessageManager<Int>>("messageManager")!
       message.notify({ name: 'index', value: 4 })
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get Initial value')
       let listItem_4: RectValue = CommonFunc.getComponentRect('getListItemRect6_listItem_4') as RectValue;
 
 
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('delete')
       await driver.swipe(
@@ -102,12 +101,24 @@ it('getListItemRect6_static_0100', Level.LEVEL0, async (done: () => void): Promi
         Math.round((listItem_4.bottom - listItem_4.top) * 0.5 + listItem_4.top +
         Number(AppStorage.get<number>("winTop"))).toInt()
       )
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('button click')
       let btn = await driver.findComponent(ON.id('getListItemRect6_button'));
-      await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      try {
+        await (btn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('xxxTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
 
       console.log('get text message')
       let strJson1 = inspector.getInspectorByKey('getListItemRect6_text1')

@@ -13,19 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
-import {UtilsTest} from '../Util.test'
+import {describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 export default function SubscribaleAbstractJsunit() {
 
   describe('SubscribaleAbstract', () =>{
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api11.static", "EntryAbility")
-      
-    });
-    
-    
-    
 /**
      * @tc.number   stateManagement_SubscribaleAbstract_addOwningProperty_static_0100
      * @tc.name     stateManagement_SubscribaleAbstract_addOwningProperty_static_0100

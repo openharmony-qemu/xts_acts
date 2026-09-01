@@ -19,7 +19,6 @@
 #include "samgr_lite.h"
 #include "samgr_maintenance.h"
 
-
 #define SERVICE_NAME "S_iunknown"
 #define FEATURE_NAME "F_iunknown"
 
@@ -167,6 +166,59 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0030, Function | MediumTest 
     demoApi->Release((IUnknown *)demoApi);
 
     SAMGR_GetInstance()->UnregisterFeatureApi(SERVICE_NAME, FEATURE_NAME);
+}
+
+/**
+ * @tc.name   testAddRef0020
+ * @tc.number DMSLite_SAMGR_AddRef_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+LITE_TEST_CASE(IUnknownTestSuite, testAddRef0020, Function | MediumTest | Level2)
+{
+    IUnknown *iUnknown = GET_IUNKNOWN(g_feature);
+    int resultAdd = IUNKNOWN_AddRef(iUnknown);
+    TEST_ASSERT_TRUE(resultAdd > 0);
+}
+
+/**
+ * @tc.name   testQueryInterface0040
+ * @tc.number DMSLite_SAMGR_QueryInterface_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0040, Function | MediumTest | Level2)
+{
+    IUnknown *iUnknown = GET_IUNKNOWN(g_feature);
+    SamgrTestApi *demoApi = NULL;
+    int resultQuery = IUNKNOWN_QueryInterface(iUnknown, DEFAULT_VERSION, (void **)&demoApi);
+    TEST_ASSERT_EQUAL_INT(EC_SUCCESS, resultQuery);
+    TEST_ASSERT_EQUAL_INT(TRUE, demoApi != NULL);
+    resultQuery = IUNKNOWN_QueryInterface(iUnknown, 0x30, (void **)&demoApi);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, resultQuery);
+    resultQuery = IUNKNOWN_QueryInterface(NULL, DEFAULT_VERSION, (void **)&demoApi);
+    TEST_ASSERT_EQUAL_INT(EC_INVALID, resultQuery);
+}
+
+/**
+ * @tc.name   testRelease0020
+ * @tc.number DMSLite_SAMGR_Release_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+LITE_TEST_CASE(IUnknownTestSuite, testRelease0020, Function | MediumTest | Level2)
+{
+    IUnknown *iUnknown = GET_IUNKNOWN(g_feature);
+    int resultRelease = IUNKNOWN_Release(iUnknown);
+    TEST_ASSERT_TRUE(resultRelease >= 0);
+    resultRelease = IUNKNOWN_Release(NULL);
+    TEST_ASSERT_TRUE(resultRelease < 0);
 }
 
 RUN_TEST_SUITE(IUnknownTestSuite);

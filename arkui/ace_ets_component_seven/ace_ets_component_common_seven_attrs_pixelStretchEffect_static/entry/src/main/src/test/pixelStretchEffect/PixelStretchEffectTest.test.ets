@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index'
+import { describe, expect } from '../../../../hypium/index'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, SetValue, TestValue } from '../../../ets/MainAbility/common/Utils';
-import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { PixelStretchEffectOptions } from '@ohos.arkui.component'
 
@@ -72,12 +71,6 @@ export default function PixelStretchEffectTest() {
    * Create test suite.
    */
   describe('pixelStretchEffectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000);
-      
-    });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the target component properties.

@@ -15,21 +15,18 @@
  */
 
 import { Level, Size, TestType, beforeAll, beforeEach, describe, it, afterEach } from '../../../hypium/index';
-import router from '@ohos.router';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
-import events_emitter from '@ohos.events.emitter';
-import hilog from '@ohos.hilog';
 import { Driver, ON } from '@ohos.UiTest';
 
 let emitKey = ''
 let testAbilityContext: common.UIAbilityContext;
 
-export default function ActsAceWebViewIncognitoMode() {
+export default function ActsAceWebViewIncognitoMode(): void {
 
   describe('ActsAceWebViewIncognitoMode', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -374,7 +371,237 @@ export default function ActsAceWebViewIncognitoMode() {
       await Utils.msSleep(2000)
       inspector.sendEventByKey('webViewIncognitoModeButton', 10, '');
       await Utils.msSleep(6000)
-      done()
-    })
-  })
+       done()
+     })
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic24
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0024
+     * @tc.desc   test getStoredGeolocation promise with incognito null, expect 401 error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode24'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(9000);
+        Utils.registerEvent('testWebViewIncognitoModeStatic24', 401, 8039, done);
+        await Utils.msSleep(9000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic25
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0025
+     * @tc.desc   test getStoredGeolocation promise with incognito undefined, expect non-empty result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode25'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(9000);
+        Utils.registerEvent('testWebViewIncognitoModeStatic25', 'fail', 8040, done);
+        await Utils.msSleep(9000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic26
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0026
+     * @tc.desc   test getStoredGeolocation promise return empty array after deleteAllGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode26'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(9000);
+        Utils.registerEvent('testWebViewIncognitoModeStatic26', 'success', 8041, done);
+        await Utils.msSleep(9000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic27
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0027
+     * @tc.desc   test getStoredGeolocation promise return non-empty array after allowGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode27'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(9000);
+        Utils.registerEvent('testWebViewIncognitoModeStatic27', 'success', 8042, done);
+        await Utils.msSleep(9000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic28
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0028
+     * @tc.desc   test getStoredGeolocation callback with incognito null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode28'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(9000);
+        Utils.registerEvent('testWebViewIncognitoModeStatic28', 401, 8043, done);
+        await Utils.msSleep(9000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic29
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0029
+     * @tc.desc   test getStoredGeolocation callback with incognito undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic29', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode29'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(9000);
+        Utils.registerEvent('testWebViewIncognitoModeStatic29', 'success', 8044, done);
+        await Utils.msSleep(9000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic30
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0030
+     * @tc.desc   test getStoredGeolocation callback return empty after deleteAllGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode30'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(9000);
+        Utils.registerEvent('testWebViewIncognitoModeStatic30', 'success', 8045, done);
+        await Utils.msSleep(9000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+    /**
+     * @tc.name   testWebViewIncognitoModeStatic31
+     * @tc.number SUB_ACE_WEB_INCOGNITOMODE_API_STATIC_0031
+     * @tc.desc   test getStoredGeolocation callback return non-empty after allowGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWebViewIncognitoModeStatic31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        emitKey = 'emitWebViewIncognitoMode31'
+        Utils.emitEvent(emitKey, 10);
+        await Utils.msSleep(9000);
+        Utils.registerEvent('testWebViewIncognitoModeStatic31', 'success', 8046, done);
+        await Utils.msSleep(9000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testDeleteAllGeolocationNull
+     * @tc.number SUB_WEB_DELETEALLGEOLOCATION_NULL_0100
+     * @tc.desc   test deleteAllGeolocation with null parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDeleteAllGeolocationNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testDeleteAllGeolocationNull', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testDeleteAllGeolocationNull', 'fail', 8047, done);
+        await Utils.msSleep(3000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+
+    /**
+     * @tc.name   testDeleteAllGeolocationUndefined
+     * @tc.number SUB_WEB_DELETEALLGEOLOCATION_UNDEFINED_0100
+     * @tc.desc   test deleteAllGeolocation with undefined parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDeleteAllGeolocationUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent('testDeleteAllGeolocationUndefined', 10);
+        await Utils.msSleep(2000);
+        Utils.registerEvent('testDeleteAllGeolocationUndefined', 'success', 8048, done);
+        await Utils.msSleep(3000);
+        let driver: Driver = Driver.create();
+        await Utils.msSleep(2000);
+        let button = await driver.findComponent(ON.id('webViewIncognitoModeButton'));
+        await Utils.msSleep(2000);
+        button?.click();
+        await Utils.msSleep(3000);
+        done();
+      })
+   })
 }

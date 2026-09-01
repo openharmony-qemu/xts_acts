@@ -43,7 +43,6 @@ export default {
     },
 
     onInit() {
-        console.info('onInit');
     },
 
     addData() {
@@ -54,7 +53,6 @@ export default {
     },
 
     onDestroy() {
-        console.info('onDestroy');
 
     },
 
@@ -66,11 +64,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.chart_line.status = 'pass';
+        getApp().data.testItems['chart_line'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.chart_line.status = 'fail';
+        getApp().data.testItems['chart_line'].status = 'fail';
         this.back();
     },
     backClicked() {

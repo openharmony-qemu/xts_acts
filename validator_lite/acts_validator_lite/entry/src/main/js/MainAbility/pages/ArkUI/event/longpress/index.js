@@ -10,9 +10,7 @@ export default {
     timeStamp: 0,
   },
   longPressEvent(e) {
-    console.info('press start');
     commonFunc(this, e);
-    console.info('press stop');
   },
 
     helpClicked() {
@@ -23,11 +21,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.event_longpress.status = 'pass';
+        getApp().data.testItems['event_longpress'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.event_longpress.status = 'fail';
+        getApp().data.testItems['event_longpress'].status = 'fail';
         this.back();
     },
     backClicked() {

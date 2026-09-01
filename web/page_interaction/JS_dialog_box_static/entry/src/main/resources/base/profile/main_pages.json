@@ -4,8 +4,9 @@
     "pages/bindSelectionMenu",
     "pages/WebAttributeTest",
     "pages/WebViewEnumAndFontLibrary",
-	  "pages/SaveImageMenu",
+	"pages/SaveImageMenu",
     "pages/ScreenCaptureHandlerConstructor",
-    "pages/WebContextMenuResultConstructor"
+    "pages/WebContextMenuResultConstructor",
+	"pages/NativeEmbedParamStatusUpdate"
   ]
 }

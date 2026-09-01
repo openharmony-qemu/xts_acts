@@ -158,10 +158,6 @@ VDecAPI11Sample::~VDecAPI11Sample()
             OH_NativeImage_Destroy(&cNativeImage[i]);
             cNativeImage[i] = nullptr;
         }
-        if (pNativeWindow[i]) {
-            OH_NativeWindow_DestroyNativeWindow(pNativeWindow[i]);
-            pNativeWindow[i] = nullptr;
-        }
     }
     g_yuvSurface = false;
     abnormalIndexValue = false;

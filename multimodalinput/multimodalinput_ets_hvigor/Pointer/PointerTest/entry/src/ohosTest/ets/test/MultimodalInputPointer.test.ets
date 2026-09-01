@@ -120,6 +120,91 @@ export default function MultimodalInputPointerTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisible_0400
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisible_0400
+     * @tc.desc   Test callback setPointerVisible interface with null visible parameter, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerVisible_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisible_0400";
+      try {
+        pointer.setPointerVisible(null, (err, data) => {
+          if (err) {
+            console.info(`${caseName} Set pointer visible failed, err: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(401);
+            done();
+          } else {
+            console.info(`${caseName} Set pointer visible callback invoked`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisible_0500
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisible_0500
+     * @tc.desc   Test callback setPointerVisible interface with undefined visible parameter, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerVisible_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisible_0500";
+      try {
+        pointer.setPointerVisible(undefined, (err, data) => {
+          if (err) {
+            console.info(`${caseName} Set pointer visible failed, err: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(401);
+            done();
+          } else {
+            console.info(`${caseName} Set pointer visible callback invoked`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch (error) {
+        console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisible_0600
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisible_0600
+     * @tc.desc   Test promise setPointerVisible interface with undefined visible parameter, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerVisible_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisible_0600";
+      try {
+        pointer.setPointerVisible(undefined).then(() => {
+          console.info(`${caseName} Set pointer visible success`);
+          expect().assertFail();
+          done();
+        }).catch((error: BusinessError) => {
+          console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          expect(error.code).assertEqual(401);
+          done();
+        });
+      } catch (error) {
+        console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100
      * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0100
      * @tc.desc   Test setPointerVisibleSync interface to show or hide the mouse pointer.
@@ -141,6 +226,30 @@ export default function MultimodalInputPointerTest() {
         ExpectFalse(true);
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0400
+     * @tc.number SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0400
+     * @tc.desc   Test setPointerVisibleSync interface when the visible parameter is null, expect 401 error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_Pointer_setPointerVisibleSync_0400";
+      console.info(`${caseName} enter`);
+      try {
+        pointer.setPointerVisibleSync(null);
+        console.info(`${caseName} Set pointer visible success`);
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      console.info(`${caseName} exit`);
     });
 
     /**

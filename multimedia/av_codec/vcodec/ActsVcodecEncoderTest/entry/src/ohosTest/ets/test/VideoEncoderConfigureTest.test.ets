@@ -6,6 +6,8 @@ export default function VideoEncoderConfigureTest() {
   describe('VideoEncoderConfigureTest', () => {
     beforeAll(() => {
       console.info('VideoEncoderConfigureTest beforeAll called');
+      testNapi.initTests();
+      console.info('VideoEncoderConfigureTest initTests completed');
     });
 
     afterAll(() => {
@@ -154,6 +156,45 @@ export default function VideoEncoderConfigureTest() {
     it('SUB_MUlTIMEDIA_AV_CODEC_VIDEO_ENCODE_CBRHQ_CAPABILITY_5200', Level.LEVEL2, async () => {
       console.info('VideoEncodeCapability5200Test start');
       let result: number = await testNapi.VideoEncodeCapability5030Test();
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_CONFIG_0100
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_CONFIG_0100
+     * @tc.desc   configure lowpower camera with value 1 (AVC+CBR)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_CONFIG_0100', Level.LEVEL2, async () => {
+      console.info('LOWPOWER_CONFIG_001Test start');
+      let result: number = await testNapi.LOWPOWER_CONFIG_001Test();
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_CONFIG_0200
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_CONFIG_0200
+     * @tc.desc   configure lowpower camera with value 0 (HEVC+VBR)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_CONFIG_0200', Level.LEVEL2, async () => {
+      console.info('LOWPOWER_CONFIG_002Test start');
+      let result: number = await testNapi.LOWPOWER_CONFIG_002Test();
+      expect(result).assertEqual(0);
+    });
+    /**
+     * @tc.name SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_CONFIG_0300
+     * @tc.number SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_CONFIG_0300
+     * @tc.desc   configure lowpower camera with value 100 (AVC+VBR)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MUlTIMEDIA_AV_CODEC_LOWPOWER_CONFIG_0300', Level.LEVEL2, async () => {
+      console.info('LOWPOWER_CONFIG_003Test start');
+      let result: number = await testNapi.LOWPOWER_CONFIG_003Test();
       expect(result).assertEqual(0);
     });
   });

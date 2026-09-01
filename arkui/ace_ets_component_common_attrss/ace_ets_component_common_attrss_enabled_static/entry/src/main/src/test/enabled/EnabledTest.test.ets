@@ -16,16 +16,10 @@
 
 import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest from '../common/CommonTest';
-import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { describe, expect } from '../../../../hypium/index';
 import { MouseAction, MouseButton } from '@ohos.arkui.component';
-import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 function expectEvent(data: BasePageConfig, event: string) {
   let referenceComponent = Utils.getComponentByKey(data.pageConfig.referenceComponentKey);
@@ -201,10 +195,6 @@ export default function enabledTest() {
    * Create test suite.
    */
   describe('EnabledTest', () => {
-    beforeAll(async () => {
-      console.info("enabledTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility");
-    });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
 

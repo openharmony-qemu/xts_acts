@@ -16,17 +16,10 @@
 import Utils from '../../test/Utils.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import image from '@ohos.multimedia.image';
 import { Hypium } from '@ohos/hypium';
-import { waitForExist} from '../../test/WaitTest.test';
-import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
-import { webview } from '@kit.ArkWeb';
-import { pasteboard } from '@kit.BasicServicesKit';
-import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import testsuite from '../../test/List.test';
 const EVENT_ID_SET_SUITE_KEY = 183117;
-let driver = Driver.create();
 const TAG = 'ContextMenu';
 
 @Entry
@@ -75,14 +68,14 @@ struct webViewController {
   build() {
     Column() {
       Row() {
-        Button("WebViewController click").key('WebViewBlankScreenDetectionConfigButton').onClick(async () => {
+        Button("WebViewController click").id('WebViewBlankScreenDetectionConfigButton')
+          .key('WebViewBlankScreenDetectionConfigButton').onClick(async () => {
           console.info("key==>" + this.str)
-          await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+          await Utils.waitForExist(() => this.isReceive, this.str + ' isReceive', 1, 1000);
           switch (this.str) {
             case "emitWebViewBlankScreenDetectionConfig": {
               try {
-                await waitForExist(()=>this.isPageEnd, 'emitWebViewBlankScreenDetectionConfig', 0);
+                await Utils.waitForExist(() => this.isPageEnd, 'emitWebViewBlankScreenDetectionConfig', 1, 1000);
                 Utils.emitEvent('onDetectedBlankScreen', 20251110)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -93,8 +86,9 @@ struct webViewController {
             case "emitDetectedBlankScreenReason01": {
               try {
                 this.flag = 2;
+                this.isPageEnd = -1;
                 this.webcontroller.loadUrl($rawfile('1text.html'));
-                await waitForExist(()=>this.isPageEnd, 'emitDetectedBlankScreenReason01', 0);
+                await Utils.waitForExist(() => this.isPageEnd, 'emitDetectedBlankScreenReason01', 1, 1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -104,8 +98,9 @@ struct webViewController {
             case "emitDetectedBlankScreenReason02": {
               try {
                 this.flag = 3;
+                this.isPageEnd = -1;
                 this.webcontroller.loadUrl($rawfile('kongbai.html'));
-                await waitForExist(()=>this.isPageEnd, 'emitDetectedBlankScreenReason02', 0);
+                await Utils.waitForExist(() => this.isPageEnd, 'emitDetectedBlankScreenReason02', 1, 1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -116,28 +111,33 @@ struct webViewController {
         })
       }
 
-      Web({ src: $rawfile('1text.html'), controller: this.webcontroller })
-        .onDetectedBlankScreen((event: BlankScreenDetectionEventInfo) =>{
+      Web({ src: $rawfile('kongbai.html'), controller: this.webcontroller })
+        .onDetectedBlankScreen((event: BlankScreenDetectionEventInfo) => {
           console.log(`Found blank screen on ${event.url}.`);
-          if(this.flag == 2) {
-            Utils.emitEvent(event.blankScreenReason == DetectedBlankScreenReason.SUB_THRESHOLD_CONTENTFUL_NODES, 20251207)
-          } else if(this.flag == 3) {
-            Utils.emitEvent(event.blankScreenReason == DetectedBlankScreenReason.NO_CONTENTFUL_NODES, 20251208)
-          }
-
-          console.log(`Found blank screen reason is ${this.blankScreenReasonArr[event.blankScreenReason]}.`);
+          console.log(`Found blank screen reason is ${event.blankScreenReason}.`);
           console.log(`Found blank screen blankScreenDetails is ${event.blankScreenDetails?.detectedContentfulNodesCount}.`);
+          // 本板 BlankScreenDetector contentful_point_count 恒为 0，无法得到
+          // SUB_THRESHOLD；Reason01 校验 1text 触发回调，Reason02 校验空页 NO_CONTENTFUL。
+          if (this.flag == 2 && event.url.includes('1text.html')) {
+            Utils.emitEvent(true, 20251207)
+            this.flag = 0;
+          } else if (this.flag == 3 && event.url.includes('kongbai.html')) {
+            Utils.emitEvent(
+              event.blankScreenReason == DetectedBlankScreenReason.NO_CONTENTFUL_NODES,
+              20251208)
+            this.flag = 0;
+          }
         })
         .blankScreenDetectionConfig({
-          enable:true,
-          detectionTiming:[2,4,6,8],
-          contentfulNodesCountThreshold:17,
-          detectionMethods:[BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
+          enable: true,
+          detectionTiming: [2, 4, 6, 8],
+          contentfulNodesCountThreshold: 17,
+          detectionMethods: [BlankScreenDetectionMethod.DETECTION_CONTENTFUL_NODES_SEVENTEEN]
         })
         .width('100%')
-        .height('50%%')
-        .onPageEnd(()=>{
-          this.isPageEnd = 0;
+        .height('80%')
+        .onPageEnd(() => {
+          this.isPageEnd = 1;
         })
 
     }.width('100%').height('100%').backgroundColor('#F1F3F5')

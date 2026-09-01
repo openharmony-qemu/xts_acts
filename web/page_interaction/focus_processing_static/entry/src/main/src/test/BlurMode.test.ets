@@ -129,5 +129,22 @@ export default function webViewSrollableJsunit() {
       await Utils.msSleep(3000)
       done();
     })
+
+    /**
+     * @tc.name   testOnSwitchNextPageBehaviorModeParamTest
+     * @tc.number SUB_WEB_MODE_PARAM_0100
+     * @tc.desc   PAGE_REDIRECT.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
+     */
+    it('testOnSwitchNextPageBehaviorModeParamTest',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('emitOnSwitchNextPageBehaviorModeParamTest', 10)
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('blurOnKeyboardHideMode01', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
   })
 }

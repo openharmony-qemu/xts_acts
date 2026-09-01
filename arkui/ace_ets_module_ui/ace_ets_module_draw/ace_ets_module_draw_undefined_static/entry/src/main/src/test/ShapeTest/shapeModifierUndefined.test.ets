@@ -15,29 +15,16 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function ShapeModifierUndefinedTest() {
   describe('ShapeModifierUndefinedTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ShapeModifierUndefinedTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.draw.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("ShapeModifierUndefinedTest beforeEach start");
@@ -51,7 +38,7 @@ export default function ShapeModifierUndefinedTest() {
         console.info("get ShapeModifierUndefinedTest state pages:" + JSON.stringify(pages));
         if (!("shapeModifierUndefined" == pages.name)) {
           console.info("get shapeModifierUndefined pages.name:" + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -71,6 +58,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_0100] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -90,6 +78,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_0100] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -100,6 +93,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_0200] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -119,6 +113,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_0200] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_0200 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -129,6 +128,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_0300] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -148,6 +148,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_0300] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_0300 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -158,6 +163,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_0400] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -181,6 +187,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_0400] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_0400 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -191,6 +202,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_0500] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -214,6 +226,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_0500] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_0500 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -224,6 +241,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_0600] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -243,6 +261,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_0600] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_0600 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -253,6 +276,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_0700] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -271,6 +295,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_0700] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_0700 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -281,6 +310,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_0800] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -300,6 +330,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_0800] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_0800 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -310,6 +345,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_0900] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -333,6 +369,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_0900] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_0900 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -343,6 +384,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_1000] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -362,6 +404,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_1000] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_1000 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -372,6 +419,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_1100] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM');
@@ -391,6 +439,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_1100] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_1100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -401,6 +454,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_1200] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM3');
@@ -420,6 +474,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_1200] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_1200 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -430,6 +489,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_1300] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ShapeM4');
@@ -449,6 +509,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_1300] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_1300 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -459,6 +524,7 @@ export default function ShapeModifierUndefinedTest() {
      */
     it('ShapeModifierUndefinedTest_static_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_1400] START');
+      try {
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ShapeM2');
@@ -480,6 +546,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_1400] END');
       done();
+      } catch (err) {
+        console.error('ShapeModifierUndefinedTest_static_1400 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

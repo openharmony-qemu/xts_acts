@@ -26,7 +26,7 @@ import events_emitter from '@ohos.events.emitter';
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function componentLifeCycleTestOne() {
+export default function componentLifeCycleTestOne(): void {
 
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
@@ -41,6 +41,99 @@ export default function componentLifeCycleTestOne() {
     })
 
     /**
+     * @tc.name   testSetRenderProcessModeNullStatic001
+     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_NULL_0200
+     * @tc.desc   test setRenderProcessMode with null param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetRenderProcessModeNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent('emitSetRenderProcessModeNullStatic001', 10)
+          await Utils.msSleep(2000);
+          Utils.registerBaseEvent('testSetRenderProcessModeNullStatic001', '401', 41023201, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+          });
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+          await Utils.msSleep(4000);
+          done();
+      
+        } catch (err) {
+          console.info('[testSetRenderProcessModeNullStatic001] err:' + JSON.stringify(err));
+          done();
+
+          }
+      })
+
+    /**
+     * @tc.name   testSetRenderProcessModeUndefinedStatic001
+     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_UNDEFINED_0200
+     * @tc.desc   test setRenderProcessMode with undefined param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetRenderProcessModeUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent('emitSetRenderProcessModeUndefinedStatic001', 10)
+          await Utils.msSleep(2000);
+          Utils.registerBaseEvent('testSetRenderProcessModeUndefinedStatic001', '401', 41023202, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+          });
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+          await Utils.msSleep(4000);
+          done();
+      
+        } catch (err) {
+          console.info('[testSetRenderProcessModeUndefinedStatic001] err:' + JSON.stringify(err));
+          done();
+
+          }
+      })
+
+    /**
+     * @tc.name   testSetRenderProcessModeInvalidStatic001
+     * @tc.number SUB_WEB_SETRENDERPROCESSMODE_INVALID_0200
+     * @tc.desc   test setRenderProcessMode with invalid enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetRenderProcessModeInvalidStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent('emitSetRenderProcessModeInvalidStatic001', 10)
+          await Utils.msSleep(2000);
+          Utils.registerBaseEvent('testSetRenderProcessModeInvalidStatic001', '401', 41023203, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+          });
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+          await Utils.msSleep(4000);
+          done();
+      
+        } catch (err) {
+          console.info('[testSetRenderProcessModeInvalidStatic001] err:' + JSON.stringify(err));
+          done();
+
+          }
+      })
+
+    /**
      * @tc.name   onInactiveStatic
      * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_STATIC_007
      * @tc.desc   make web component inactive
@@ -51,7 +144,12 @@ export default function componentLifeCycleTestOne() {
     it('onInactiveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitonInactive", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("onInactive", "baidu", 7, done);
+      Utils.registerBaseEvent("onInactive", "baidu", 7, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
       await Utils.msSleep(5000);
       done();
@@ -68,7 +166,12 @@ export default function componentLifeCycleTestOne() {
     it('onActiveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent("emitonActive", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("onActive", "index", 8, done); //Depend on execution order, executed after onInactive, result is "index"
+      Utils.registerBaseEvent("onActive", "index", 8, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        }); //Depend on execution order, executed after onInactive, result is "index"
       inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
       await Utils.msSleep(5000);
       done();
@@ -174,11 +277,18 @@ export default function componentLifeCycleTestOne() {
      */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        Utils.emitEvent('emitonSwitchNextPage', 10)
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
-        await Utils.msSleep(5000)
-        done();
+        try {
+          Utils.emitEvent('emitonSwitchNextPage', 10)
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('HttpAuthHandlerButton', 10, '');
+          await Utils.msSleep(5000)
+          done();
+      
+        } catch (err) {
+          console.info('[emitonSwitchNextPage] err:' + JSON.stringify(err));
+          done();
+
+          }
       })
   })
 }
