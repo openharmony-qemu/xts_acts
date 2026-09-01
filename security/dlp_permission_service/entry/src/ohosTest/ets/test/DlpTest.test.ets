@@ -21,6 +21,11 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { deviceInfo } from '@kit.BasicServicesKit';
+import { fileIo } from '@kit.CoreFileKit';
+
+let checkDlpNotSupported = () => {
+  return !canIUse("SystemCapability.Security.DataLossPrevention");
+}
 
 interface ERRCODE {
   DLP_OK: number,
@@ -4385,5 +4390,120 @@ export default function dlpTest() {
       }
     }
 
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_getDLPPermissionInfo_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_getDLPPermissionInfo_0100
+     * @tc.desc   test getDLPPermissionInfo in car return 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_getDLPPermissionInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
+          try {
+            await dlpPermission.getDLPPermissionInfo();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.getDLPPermissionInfo();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(19100006);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_queryDlpPolicy_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_queryDlpPolicy_0100
+     * @tc.desc   test queryDlpPolicy in car return 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_queryDlpPolicy_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
+          try { 
+            await dlpPermission.queryDlpPolicy(null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.queryDlpPolicy(null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(401);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_decryptDlpFile_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_decryptDlpFile_0100
+     * @tc.desc   test decryptDlpFile in car return 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_decryptDlpFile_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
+          try {
+            await dlpPermission.decryptDlpFile(null, null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.decryptDlpFile(null, null);
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(401);
+          }
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_Security_DataSecurity_DLP_unregisterPlugin_0100
+     * @tc.number SUB_Security_DataSecurity_DLP_unregisterPlugin_0100
+     * @tc.desc   test unregisterPlugin in car return 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_DataSecurity_DLP_unregisterPlugin_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        let isDlpNotSupported: boolean = checkDlpNotSupported();
+        if (isDlpNotSupported) {
+          try {
+            await dlpPermission.DlpConnManager.unregisterPlugin();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(801);
+          }
+        } else {
+          try {
+            await dlpPermission.DlpConnManager.unregisterPlugin();
+            expect(false).assertTrue();
+          } catch (err) {
+            expect(err.code).assertEqual(19100011);
+          }
+        }
+        done();
+      })
   })
 }
