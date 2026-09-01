@@ -54,7 +54,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = Int16Array.of(10, 20);
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = 10;
       expect(actual).assertEqual(expected);
     });
@@ -71,7 +74,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = new Int16Array([5, 10]);
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _i;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
     });
@@ -88,7 +94,7 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = Int16Array.of(100);
       let iter = arr.entries();
       let result = iter.next();
-      let actual: boolean = result.done!;
+      let actual: boolean = result.done;
       expect(actual).assertFalse();
     });
 
@@ -105,7 +111,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let iter = arr.entries();
       iter.next();
       let entry = iter.next().value!;
-      let actual: number = entry[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _i;
       let expected: int = 1;
       expect(actual).assertEqual(expected);
     });
@@ -123,7 +132,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let iter = arr.entries();
       iter.next();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = 15;
       expect(actual).assertEqual(expected);
     });
@@ -140,7 +152,7 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = new Int16Array(0);
       let iter = arr.entries();
       let result = iter.next();
-      let actual: boolean = result.done!;
+      let actual: boolean = result.done;
       expect(actual).assertTrue();
     });
 
@@ -172,7 +184,7 @@ export default function int16ArrayEntriesPart02Test(): void {
       let iter = arr.entries();
       iter.next();
       let result = iter.next();
-      let actual: boolean = result.done!;
+      let actual: boolean = result.done;
       expect(actual).assertTrue();
     });
 
@@ -188,7 +200,7 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = Int16Array.of(99);
       let iter = arr.entries();
       let result = iter.next();
-      let actual: boolean = result.done!;
+      let actual: boolean = result.done;
       expect(actual).assertFalse();
     });
 
@@ -205,7 +217,7 @@ export default function int16ArrayEntriesPart02Test(): void {
       let iter = arr.entries();
       iter.next();
       let result = iter.next();
-      let actual: boolean = result.done!;
+      let actual: boolean = result.done;
       expect(actual).assertTrue();
     });
 
@@ -221,7 +233,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = Int16Array.of(41, 52, 63);
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: number = arr.$_get(0);
       expect(actual).assertEqual(expected);
     });
@@ -239,7 +254,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let iter = arr.entries();
       iter.next();
       let entry = iter.next().value!;
-      let actual: number = entry[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _i;
       let expected: int = 1;
       expect(actual).assertEqual(expected);
     });
@@ -257,7 +275,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let iter = arr.entries();
       iter.next();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: number = arr.$_get(1);
       expect(actual).assertEqual(expected);
     });
@@ -276,7 +297,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       iter.next();
       iter.next();
       let entry = iter.next().value!;
-      let actual: number = entry[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _i;
       let expected: int = 2;
       expect(actual).assertEqual(expected);
     });
@@ -295,7 +319,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       iter.next();
       iter.next();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: number = arr.$_get(2);
       expect(actual).assertEqual(expected);
     });
@@ -315,7 +342,7 @@ export default function int16ArrayEntriesPart02Test(): void {
       iter.next();
       iter.next();
       let result = iter.next();
-      let actual: boolean = result.done!;
+      let actual: boolean = result.done;
       expect(actual).assertTrue();
     });
 
@@ -358,7 +385,10 @@ export default function int16ArrayEntriesPart02Test(): void {
         lastEntry = result.value;
         result = iter.next();
       }
-      let actual: number = lastEntry![0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = lastEntry!;
+      let actual: number = _i;
       let expected: number = arr.length - 1;
       expect(actual).assertEqual(expected);
     });
@@ -376,7 +406,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let iter = arr.entries();
       iter.next();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = -1;
       expect(actual).assertEqual(expected);
     });
@@ -393,7 +426,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = new Int16Array(3);
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
     });
@@ -410,7 +446,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = Int16Array.from([44, 55]);
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = 44;
       expect(actual).assertEqual(expected);
     });
@@ -428,7 +467,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = new Int16Array(src);
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = 66;
       expect(actual).assertEqual(expected);
     });
@@ -447,7 +489,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       arr.fill(val);
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = 32767;
       expect(actual).assertEqual(expected);
     });
@@ -466,7 +511,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       arr.$_set(0, val);
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = -32768;
       expect(actual).assertEqual(expected);
     });
@@ -991,7 +1039,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let iterB = arr.entries();
       iterA.next();
       let entryB = iterB.next().value!;
-      let actual: number = entryB[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entryB;
+      let actual: number = _i;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
     });
@@ -1010,10 +1061,13 @@ export default function int16ArrayEntriesPart02Test(): void {
       while (!iterA.next().done) {}
       let iterB = arr.entries();
       let firstEntryB = iterB.next().value!;
-      let actual: number = firstEntryB[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = firstEntryB;
+      let actual: number = _i;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
-      let actual2: number = firstEntryB[1];
+      let actual2: number = _v;
       let expected2: int = 9;
       expect(actual2).assertEqual(expected2);
     });
@@ -1033,10 +1087,13 @@ export default function int16ArrayEntriesPart02Test(): void {
       iterA.next();
       let iterB = arr.entries();
       let firstEntryB = iterB.next().value!;
-      let actual: number = firstEntryB[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = firstEntryB;
+      let actual: number = _i;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
-      let actual2: number = firstEntryB[1];
+      let actual2: number = _v;
       let expected2: int = 12;
       expect(actual2).assertEqual(expected2);
     });
@@ -1055,11 +1112,17 @@ export default function int16ArrayEntriesPart02Test(): void {
       let iterB = arr.entries();
       let aResult = iterA.next();
       let bResult = iterB.next();
-      let actual: number = aResult.value![0];
-      let expected: number = bResult.value![0];
+      let _iA: int;
+      let _vA: Number;
+      [_iA, _vA] = aResult.value!;
+      let _iB: int;
+      let _vB: Number;
+      [_iB, _vB] = bResult.value!;
+      let actual: number = _iA;
+      let expected: number = _iB;
       expect(actual).assertEqual(expected);
-      let actual2: number = aResult.value![1];
-      let expected2: number = bResult.value![1];
+      let actual2: number = _vA;
+      let expected2: number = _vB;
       expect(actual2).assertEqual(expected2);
     });
 
@@ -1094,7 +1157,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = Int16Array.of(10, 20, 30);
       let indexSeq: int[] = [];
       for (let entry of arr.entries()) {
-        indexSeq.push(entry[0]);
+        let _i: int;
+        let _v: Number;
+        [_i, _v] = entry;
+        indexSeq.push(_i);
       }
       let actual: number = indexSeq[0];
       let expected: int = 0;
@@ -1119,10 +1185,16 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = Int16Array.of(17, 34, 51);
       let manualIter = arr.entries();
       let manualRes = manualIter.next();
-      let manualVal: Number = manualRes.value![1];
+      let _mi: int;
+      let _mv: Number;
+      [_mi, _mv] = manualRes.value!;
+      let manualVal: Number = _mv;
       let forOfVal: Number | undefined = undefined;
       for (let entry of arr.entries()) {
-        forOfVal = entry[1];
+        let _i: int;
+        let _v: Number;
+        [_i, _v] = entry;
+        forOfVal = _v;
         break;
       }
       let actual: Number | undefined = forOfVal;
@@ -1159,7 +1231,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let arr: Int16Array = Int16Array.of(123);
       let entryIdx: int = -1;
       for (let entry of arr.entries()) {
-        entryIdx = entry[0];
+        let _i: int;
+        let _v: Number;
+        [_i, _v] = entry;
+        entryIdx = _i;
       }
       let actual: number = entryIdx;
       let expected: number = 0;
@@ -1179,7 +1254,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       arr.fill(99);
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = 99;
       expect(actual).assertEqual(expected);
     });
@@ -1197,7 +1275,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       arr.reverse();
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = 300;
       expect(actual).assertEqual(expected);
     });
@@ -1215,7 +1296,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       arr.sort();
       let iter = arr.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: int = 10;
       expect(actual).assertEqual(expected);
     });
@@ -1233,7 +1317,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let sub: Int16Array = arr.subarray(1, 3);
       let iter = sub.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _i;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
     });
@@ -1274,7 +1361,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let sub: Int16Array = arr.subarray(1, 4);
       let iter = sub.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[1];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _v;
       let expected: number = sub.$_get(0);
       expect(actual).assertEqual(expected);
     });
@@ -1308,7 +1398,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let view: Int16Array = new Int16Array(buf, 0, 3);
       let iter = view.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _i;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
     });
@@ -1326,7 +1419,10 @@ export default function int16ArrayEntriesPart02Test(): void {
       let view: Int16Array = new Int16Array(buf, 4, 2);
       let iter = view.entries();
       let entry = iter.next().value!;
-      let actual: number = entry[0];
+      let _i: int;
+      let _v: Number;
+      [_i, _v] = entry;
+      let actual: number = _i;
       let expected: int = 0;
       expect(actual).assertEqual(expected);
     });
