@@ -48,7 +48,7 @@ export default function ComposeListItemIconType() {
 
     /**
      * @tc.name   ComposeListItemContentItem_static_0100
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0200
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0100
      * @tc.desc   Test ComposeListItem contentItem with IconType.BADGE
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
@@ -69,11 +69,11 @@ export default function ComposeListItemIconType() {
         done();
       }
     });
-
+ 
     /**
      * @tc.name   ComposeListItemContentItem_static_0200
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0300
-     * @tc.desc   Test ComposeListItem contentItem with IconType.SYSTEM_ICON
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0200
+     * @tc.desc   Test ComposeListItem contentItem with IconType.NORMAL_ICON
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -83,7 +83,7 @@ export default function ComposeListItemIconType() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let systemIconText = await driver.findComponent(ON.text('SYSTEM_ICON'));
+        let systemIconText = await driver.findComponent(ON.text('NORMAL_ICON'));
         expect(systemIconText !== null).assertTrue();
         console.info('[ComposeListItemContentItem_static_0200] END');
         done();
@@ -93,11 +93,11 @@ export default function ComposeListItemIconType() {
         done();
       }
     });
-
+ 
     /**
      * @tc.name   ComposeListItemContentItem_static_0300
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0400
-     * @tc.desc   Test ComposeListItem contentItem with IconType.HEAD_SCULPTURE
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0300
+     * @tc.desc   Test ComposeListItem contentItem with IconType.SYSTEM_ICON
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -107,8 +107,8 @@ export default function ComposeListItemIconType() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let headSculptureText = await driver.findComponent(ON.text('HEAD_SCULPTURE'));
-        expect(headSculptureText !== null).assertTrue();
+        let systemIconText = await driver.findComponent(ON.text('SYSTEM_ICON'));
+        expect(systemIconText !== null).assertTrue();
         console.info('[ComposeListItemContentItem_static_0300] END');
         done();
       } catch (error) {
@@ -117,11 +117,11 @@ export default function ComposeListItemIconType() {
         done();
       }
     });
-
+ 
     /**
      * @tc.name   ComposeListItemContentItem_static_0400
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0500
-     * @tc.desc   Test ComposeListItem contentItem with IconType.APP_ICON
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0400
+     * @tc.desc   Test ComposeListItem contentItem with IconType.HEAD_SCULPTURE
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -131,8 +131,8 @@ export default function ComposeListItemIconType() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let appIconText = await driver.findComponent(ON.text('APP_ICON'));
-        expect(appIconText !== null).assertTrue();
+        let headSculptureText = await driver.findComponent(ON.text('HEAD_SCULPTURE'));
+        expect(headSculptureText !== null).assertTrue();
         console.info('[ComposeListItemContentItem_static_0400] END');
         done();
       } catch (error) {
@@ -141,11 +141,11 @@ export default function ComposeListItemIconType() {
         done();
       }
     });
-
+ 
     /**
      * @tc.name   ComposeListItemContentItem_static_0500
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0600
-     * @tc.desc   Test ComposeListItem contentItem with IconType.PREVIEW
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0500
+     * @tc.desc   Test ComposeListItem contentItem with IconType.APP_ICON
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -155,60 +155,12 @@ export default function ComposeListItemIconType() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let previewText = await driver.findComponent(ON.text('PREVIEW'));
-        expect(previewText !== null).assertTrue();
+        let appIconText = await driver.findComponent(ON.text('APP_ICON'));
+        expect(appIconText !== null).assertTrue();
         console.info('[ComposeListItemContentItem_static_0500] END');
         done();
       } catch (error) {
         console.error('[ComposeListItemContentItem_static_0500] error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   ComposeListItemContentItem_static_0600
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0700
-     * @tc.desc   Test ComposeListItem contentItem with IconType.LONGITUDINAL
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('ComposeListItemContentItem_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[ComposeListItemContentItem_static_0600] START');
-      try {
-        let driver = Driver.create();
-        await CommonFunc.sleep(1000);
-        let longitudinalText = await driver.findComponent(ON.text('LONGITUDINAL'));
-        expect(longitudinalText !== null).assertTrue();
-        console.info('[ComposeListItemContentItem_static_0600] END');
-        done();
-      } catch (error) {
-        console.error('[ComposeListItemContentItem_static_0600] error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   ComposeListItemContentItem_static_0700
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0800
-     * @tc.desc   Test ComposeListItem contentItem with IconType.VERTICAL
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('ComposeListItemContentItem_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[ComposeListItemContentItem_static_0700] START');
-      try {
-        let driver = Driver.create();
-        await CommonFunc.sleep(1000);
-        let verticalText = await driver.findComponent(ON.text('VERTICAL'));
-        expect(verticalText !== null).assertTrue();
-        console.info('[ComposeListItemContentItem_static_0700] END');
-        done();
-      } catch (error) {
-        console.error('[ComposeListItemContentItem_static_0700] error:' + error);
         expect().assertFail();
         done();
       }

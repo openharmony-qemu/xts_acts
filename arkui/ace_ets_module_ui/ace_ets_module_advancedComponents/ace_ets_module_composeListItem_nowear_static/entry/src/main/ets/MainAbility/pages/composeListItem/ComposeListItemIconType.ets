@@ -32,7 +32,7 @@ import {
   IconType
 } from '@ohos.arkui.advanced.ComposeListItem';
 import { SymbolGlyphModifier } from '@ohos.arkui.modifier';
-
+ 
 @Entry
 @Component
 struct ComposeListItemIconType {
@@ -44,10 +44,21 @@ struct ComposeListItemIconType {
             contentItem: ({
               iconStyle: IconType.BADGE,
               icon: $r('sys.media.ohos_app_icon'),
-              symbolStyle: new SymbolGlyphModifier($r('sys.symbol.camera')).fontColor([Color.Red]),
               primaryText: 'BADGE',
-              secondaryText: '辅助文字',
-              description: '描述内容文字',
+              secondaryText: 'contentItem',
+              description: 'IconType1',
+            })
+          })
+        }
+        ListItem() {
+          ComposeListItem({
+            contentItem: ({
+              iconStyle: IconType.NORMAL_ICON,
+              icon: $r('sys.media.ohos_app_icon'),
+              symbolStyle: new SymbolGlyphModifier($r('sys.symbol.camera')).fontColor([Color.Red]),
+              primaryText: 'NORMAL_ICON',
+              secondaryText: 'contentItem',
+              description: 'IconType2',
             })
           })
         }
@@ -57,8 +68,8 @@ struct ComposeListItemIconType {
               iconStyle: IconType.SYSTEM_ICON,
               icon: $r('sys.media.ohos_app_icon'),
               primaryText: 'SYSTEM_ICON',
-              secondaryText: '辅助文字',
-              description: '描述内容文字',
+              secondaryText: 'contentItem',
+              description: 'IconType3',
             })
           })
         }
@@ -68,8 +79,8 @@ struct ComposeListItemIconType {
               iconStyle: IconType.HEAD_SCULPTURE,
               icon: $r('sys.media.ohos_app_icon'),
               primaryText: 'HEAD_SCULPTURE',
-              secondaryText: '辅助文字',
-              description: '描述内容文字',
+              secondaryText: 'contentItem',
+              description: 'IconType4',
             })
           })
         }
@@ -79,8 +90,8 @@ struct ComposeListItemIconType {
               iconStyle: IconType.APP_ICON,
               icon: $r('sys.media.ohos_app_icon'),
               primaryText: 'APP_ICON',
-              secondaryText: '辅助文字',
-              description: '描述内容文字',
+              secondaryText: 'contentItem',
+              description: 'IconType5',
             })
           })
         }
@@ -90,8 +101,8 @@ struct ComposeListItemIconType {
               iconStyle: IconType.PREVIEW,
               icon: $r('sys.media.ohos_app_icon'),
               primaryText: 'PREVIEW',
-              secondaryText: '辅助文字',
-              description: '描述内容文字',
+              secondaryText: 'contentItem',
+              description: 'IconType6',
             })
           })
         }
@@ -101,8 +112,8 @@ struct ComposeListItemIconType {
               iconStyle: IconType.LONGITUDINAL,
               icon: $r('sys.media.ohos_app_icon'),
               primaryText: 'LONGITUDINAL',
-              secondaryText: '辅助文字',
-              description: '描述内容文字',
+              secondaryText: 'contentItem',
+              description: 'IconType7',
             })
           })
         }
@@ -112,8 +123,8 @@ struct ComposeListItemIconType {
               iconStyle: IconType.VERTICAL,
               icon: $r('sys.media.ohos_app_icon'),
               primaryText: 'VERTICAL',
-              secondaryText: '辅助文字',
-              description: '描述内容文字',
+              secondaryText: 'contentItem',
+              description: 'IconType8',
             })
           })
         }

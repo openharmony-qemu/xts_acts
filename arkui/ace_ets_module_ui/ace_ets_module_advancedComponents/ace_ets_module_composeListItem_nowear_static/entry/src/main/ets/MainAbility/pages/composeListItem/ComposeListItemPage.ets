@@ -37,7 +37,6 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct ComposeListItemPage {
-  @State checkboxValue: boolean = false;
 
   build() {
     Column() {
@@ -46,13 +45,15 @@ struct ComposeListItemPage {
           ComposeListItem({
             contentItem: ({
               iconStyle: IconType.NORMAL_ICON,
-              icon: $r('sys.media.ohos_app_icon'),
-              primaryText: '双行列表',
+              icon: $r('sys.symbol.house'),
+              primaryText: 'Icon1',
+              secondaryText: 'ComposeListItem',
+              description: 'operateItem',
             }),
             operateItem: ({
               icon: {
                 value: $r('sys.symbol.car'),
-                symbolStyle: new SymbolGlyphModifier($r('sys.symbol.heart')).fontColor([Color.Orange]),
+                symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Orange]),
                 action: () => {
                   this.getUIContext().getPromptAction().showToast({
                     message: 'icon'
@@ -77,17 +78,17 @@ struct ComposeListItemPage {
         }
         ListItem() {
           ComposeListItem({
-            contentItem: ({
+            contentItem: {
               iconStyle: IconType.NORMAL_ICON,
               icon: $r('sys.symbol.house'),
-              symbolStyle: new SymbolGlyphModifier($r('sys.symbol.bell')).fontColor([Color.Red]),
-              primaryText: 'with symbolStyle',
-            }),
-            operateItem: ({
+              primaryText: 'SymbolStyle2',
+              secondaryText: 'ComposeListItem',
+              description: 'operateItem',
+            },
+            operateItem: {
               image: $r('sys.symbol.car'),
-              symbolStyle: new SymbolGlyphModifier($r('sys.symbol.heart')).fontColor([Color.Pink]),
-              text: '右侧文本',
-            })
+              symbolStyle: new SymbolGlyphModifier($r('sys.symbol.align_right')).fontColor([Color.Pink])
+            }
           })
         }
         ListItem() {
@@ -95,7 +96,9 @@ struct ComposeListItemPage {
             contentItem: ({
               iconStyle: IconType.NORMAL_ICON,
               icon: $r('sys.media.ohos_app_icon'),
-              primaryText: 'with radio',
+              primaryText: 'Radio3',
+              secondaryText: 'ComposeListItem',
+              description: 'operateItem',
             }),
             operateItem: ({
               radio: {
@@ -106,7 +109,7 @@ struct ComposeListItemPage {
                 onChange: (value: boolean) => {
                   console.log('radio onChange: ' + value)
                 }
-              }
+              },
             })
           })
         }
@@ -115,12 +118,14 @@ struct ComposeListItemPage {
           ComposeListItem({
             contentItem: ({
               iconStyle: IconType.NORMAL_ICON,
-              icon: $r('sys.media.ohos_app_icon'),
-              primaryText: 'with button',
+              icon: $r('sys.symbol.house'),
+              primaryText: 'Button4',
+              secondaryText: 'ComposeListItem',
+              description: 'operateItem',
             }),
             operateItem: ({
               button: {
-                text: 'Button',
+                text: '确定',
                 accessibilityText: 'Button Text',
                 accessibilityDescription: 'Button Description',
                 accessibilityLevel: 'no'
@@ -134,11 +139,13 @@ struct ComposeListItemPage {
             contentItem: ({
               iconStyle: IconType.NORMAL_ICON,
               icon: $r('sys.media.ohos_app_icon'),
-              primaryText: 'with Arrow',
+              primaryText: 'Arrow5',
+              secondaryText: 'ComposeListItem',
+              description: 'operateItem',
             }),
             operateItem: ({
               arrow: {
-                value: $r('sys.media.ohos_app_icon'),
+                value: $r('sys.symbol.house'),
                 symbolStyle: new SymbolGlyphModifier($r('sys.symbol.heart')).fontColor([Color.Pink]),
                 action: () => {
                   console.info('Arrow clicked');
@@ -146,7 +153,8 @@ struct ComposeListItemPage {
                 accessibilityText: 'arrow Text',
                 accessibilityDescription: 'arrow Description',
                 accessibilityLevel: 'yes'
-              }
+              },
+              text: '右侧',
             })
           })
         }
@@ -155,11 +163,13 @@ struct ComposeListItemPage {
             contentItem: {
               iconStyle: IconType.NORMAL_ICON,
               icon: $r('sys.media.ohos_app_icon'),
-              primaryText: 'with Checkbox'
+              primaryText: 'Checkbox6',
+              secondaryText: 'ComposeListItem',
+              description: 'operateItem',
             },
             operateItem: {
               checkbox: {
-                isCheck: this.checkboxValue,
+                isCheck: false,
                 onChange: (value: boolean) => {
                   console.log('checkbox onChange: ' + value)
                 },
@@ -174,12 +184,14 @@ struct ComposeListItemPage {
           ComposeListItem({
             contentItem: {
               iconStyle: IconType.NORMAL_ICON,
-              icon: $r('sys.media.ohos_app_icon'),
-              primaryText: 'with toggle'
+              icon: $r('sys.symbol.house'),
+              primaryText: 'Toggle7',
+              secondaryText: 'ComposeListItem',
+              description: 'operateItem',
             },
             operateItem: {
               toggle: {
-                isCheck: false,
+                isCheck: true,
                 accessibilityText: 'toggle',
                 accessibilityDescription: '未选中',
                 accessibilityLevel: 'yes',

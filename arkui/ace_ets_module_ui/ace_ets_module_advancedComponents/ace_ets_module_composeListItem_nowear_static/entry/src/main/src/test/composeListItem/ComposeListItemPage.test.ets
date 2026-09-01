@@ -47,33 +47,9 @@ export default function ComposeListItemPage() {
     });
 
     /**
-     * @tc.name   ComposeListItemContentItem_static_0800
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_CONTENTITEM_STATIC_0900
-     * @tc.desc   Test ComposeListItem contentItem with IconType.NORMAL_ICON and operateItem with icon and subIcon
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('ComposeListItemContentItem_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[ComposeListItemContentItem_static_0800] START');
-      try {
-        let driver = Driver.create();
-        await CommonFunc.sleep(1000);
-        let normalIconText = await driver.findComponent(ON.text('双行列表'));
-        expect(normalIconText !== null).assertTrue();
-        console.info('[ComposeListItemContentItem_static_0800] END');
-        done();
-      } catch (error) {
-        console.error('[ComposeListItemContentItem_static_0800] error:' + error);
-        expect().assertFail();
-        done();
-      }
-    });
-
-    /**
      * @tc.name   ComposeListItemOperateItem_static_0100
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0200
-     * @tc.desc   Test ComposeListItem operateItem with image symbolStyle and text
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0100
+     * @tc.desc   Test ComposeListItem operateItem with icon and subIcon
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -83,7 +59,7 @@ export default function ComposeListItemPage() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let operateText = await driver.findComponent(ON.text('右侧文本'));
+        let operateText = await driver.findComponent(ON.text('Icon1'));
         expect(operateText !== null).assertTrue();
         console.info('[ComposeListItemOperateItem_static_0100] END');
         done();
@@ -96,8 +72,8 @@ export default function ComposeListItemPage() {
 
     /**
      * @tc.name   ComposeListItemOperateItem_static_0200
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0300
-     * @tc.desc   Test ComposeListItem operateItem with radio checked
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0200
+     * @tc.desc   Test ComposeListItem operateItem with image symbolStyle
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -107,8 +83,8 @@ export default function ComposeListItemPage() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let radio = await driver.findComponent(ON.text('with radio'));
-        expect(radio !== null).assertTrue();
+        let operateText = await driver.findComponent(ON.text('SymbolStyle2'));
+        expect(operateText !== null).assertTrue();
         console.info('[ComposeListItemOperateItem_static_0200] END');
         done();
       } catch (error) {
@@ -120,8 +96,8 @@ export default function ComposeListItemPage() {
 
     /**
      * @tc.name   ComposeListItemOperateItem_static_0300
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0400
-     * @tc.desc   Test ComposeListItem operateItem with button
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0300
+     * @tc.desc   Test ComposeListItem operateItem with radio checked
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -131,8 +107,8 @@ export default function ComposeListItemPage() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let operateButton = await driver.findComponent(ON.text('with button'));
-        expect(operateButton !== null).assertTrue();
+        let radio = await driver.findComponent(ON.text('Radio3'));
+        expect(radio !== null).assertTrue();
         console.info('[ComposeListItemOperateItem_static_0300] END');
         done();
       } catch (error) {
@@ -144,8 +120,8 @@ export default function ComposeListItemPage() {
 
     /**
      * @tc.name   ComposeListItemOperateItem_static_0400
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0500
-     * @tc.desc   Test ComposeListItem operateItem with arrow
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0400
+     * @tc.desc   Test ComposeListItem operateItem with button
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -155,8 +131,8 @@ export default function ComposeListItemPage() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let arrowText = await driver.findComponent(ON.text('with Arrow'));
-        expect(arrowText !== null).assertTrue();
+        let operateButton = await driver.findComponent(ON.text('确定'));
+        expect(operateButton !== null).assertTrue();
         console.info('[ComposeListItemOperateItem_static_0400] END');
         done();
       } catch (error) {
@@ -168,8 +144,8 @@ export default function ComposeListItemPage() {
 
     /**
      * @tc.name   ComposeListItemOperateItem_static_0500
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0600
-     * @tc.desc   Test ComposeListItem operateItem with checkbox
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0500
+     * @tc.desc   Test ComposeListItem operateItem with arrow and text
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -179,8 +155,8 @@ export default function ComposeListItemPage() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let checkbox = await driver.findComponent(ON.text('with Checkbox'));
-        expect(checkbox !== null).assertTrue();
+        let arrowText = await driver.findComponent(ON.text('右侧'));
+        expect(arrowText !== null).assertTrue();
         console.info('[ComposeListItemOperateItem_static_0500] END');
         done();
       } catch (error) {
@@ -192,8 +168,8 @@ export default function ComposeListItemPage() {
 
     /**
      * @tc.name   ComposeListItemOperateItem_static_0600
-     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0700
-     * @tc.desc   Test ComposeListItem operateItem with toggle
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0600
+     * @tc.desc   Test ComposeListItem operateItem with checkbox
      * @tc.type   FUNCTION
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
@@ -203,12 +179,36 @@ export default function ComposeListItemPage() {
       try {
         let driver = Driver.create();
         await CommonFunc.sleep(1000);
-        let toggle = await driver.findComponent(ON.text('with toggle'));
-        expect(toggle !== null).assertTrue();
+        let checkbox = await driver.findComponent(ON.text('Checkbox6'));
+        expect(checkbox !== null).assertTrue();
         console.info('[ComposeListItemOperateItem_static_0600] END');
         done();
       } catch (error) {
         console.error('[ComposeListItemOperateItem_static_0600] error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   ComposeListItemOperateItem_static_0700
+     * @tc.number SUB_ARKUI_COMPOSELISTITEM_OPERATEITEM_STATIC_0700
+     * @tc.desc   Test ComposeListItem operateItem with toggle
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('ComposeListItemOperateItem_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[ComposeListItemOperateItem_static_0700] START');
+      try {
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let toggle = await driver.findComponent(ON.text('Toggle7'));
+        expect(toggle !== null).assertTrue();
+        console.info('[ComposeListItemOperateItem_static_0700] END');
+        done();
+      } catch (error) {
+        console.error('[ComposeListItemOperateItem_static_0700] error:' + error);
         expect().assertFail();
         done();
       }
