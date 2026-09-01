@@ -4038,5 +4038,77 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG);
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OHCAMWEANDK_GET_PHYSICAL_APERTURE_0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_GET_PHYSICAL_APERTURE_0100
+     * @tc.desc   Test OH_CaptureSession_GetPhysicalAperture when the second paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_OHCAMWEANDK_GET_PHYSICAL_APERTURE_0100', Level.LEVEL2, () => {
+      if(PhysicalcaptureSessionstart()){
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+        let ret: number = cameraObj.oHgetPhysicalAperture(Parameter_Setting.SECOND_PARAMETER_ERROR);
+        console.info(TAG + "oHgetPhysicalAperture ret:", ret);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.desc   Test OH_CaptureSession_GetSupportedExposureDurationRange when the second paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100', Level.LEVEL2, () => {
+      if(PhysicalcaptureSessionstart()){
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+        let ret: number = cameraObj.oHgetSupportedExposureDurationRange(Parameter_Setting.SECOND_PARAMETER_ERROR);
+        console.info(TAG + "oHGetSupportedExposureDurationRange ret:", ret);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.desc   Test OH_CaptureSession_GetSupportedExposureDurationRange when the third paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200', Level.LEVEL2, () => {
+      if(PhysicalcaptureSessionstart()){
+        createPhotoOutput();
+        addPhotoOutput();
+        sessionCommitConfig();
+        let ret: number = cameraObj.oHgetSupportedExposureDurationRange(Parameter_Setting.THIRD_PARAMETER_ERROR);
+        console.info(TAG + "oHgetSupportedExposureDurationRange ret:", ret);
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+      }
+    })
+    /**
+     * @tc.name   SUB_MULTIMEIDA_OHCAMWEANDK_GET_EXPOSURE_DURATION_100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_GET_EXPOSURE_DURATION_100
+     * @tc.desc   Test SUB_MULTIMEIDA_OHCAMWEANDK_GET_EXPOSURE_DURATION_100 when the second paran null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testOHExposureDuration0100', Level.LEVEL2, () => {
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.oHgetExposureDuration(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "oHgetExposureDuration ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+
   })
 }

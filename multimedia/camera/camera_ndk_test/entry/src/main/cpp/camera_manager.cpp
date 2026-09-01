@@ -431,6 +431,9 @@ Camera_ErrorCode NDKCamera::GetCameraHostType(void)
     LOG("HostDeviceType value: %{public}d", HOST_DEVICE_TYPE_UNKNOWN_TYPE);
     LOG("HostDeviceType value: %{public}d", HOST_DEVICE_TYPE_PHONE);
     LOG("HostDeviceType value: %{public}d", HOST_DEVICE_TYPE_TABLET);
+    if (HOST_DEVICE_TYPE_UNKNOWN_TYPE != 0 || HOST_DEVICE_TYPE_PHONE != 14 || HOST_DEVICE_TYPE_TABLET != 17) {
+        return CAMERA_DEVICE_SETTING_LOCKED;
+    }
     ret_ = OH_CameraDevice_GetHostDeviceType(&cameras_[cameraDeviceIndex_], &hostType_);
     if (ret_ != CAMERA_OK) {
         LOG("ndkXTS OH_CameraDevice_GetCameraHostType failed.");
@@ -4008,6 +4011,8 @@ Camera_ErrorCode NDKCamera::getIso(int useCaseCode)
         ret_ = OH_CaptureSession_GetIso(captureSession_, &getIso);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_CaptureSession_GetIso(nullptr, &getIso);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetIso(captureSession_, nullptr);
     }
     return ret_;
 }
@@ -4056,6 +4061,17 @@ Camera_ErrorCode NDKCamera::TestPhyAptNullApts()
     uint32_t size = 0;
     return OH_CaptureSession_GetSupportedPhysicalApertures(
         captureSession_, nullptr, &size);
+}
+
+Camera_ErrorCode NDKCamera::TestPhyAptNoSize()
+{
+    if (captureSession_ == nullptr) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    OH_Camera_PhysicalAperture* apertures = nullptr;
+    return OH_CaptureSession_GetSupportedPhysicalApertures(
+        captureSession_, &apertures, nullptr);
 }
 
 Camera_ErrorCode NDKCamera::TestPhyAptNoInput()
@@ -4872,6 +4888,61 @@ Camera_ErrorCode NDKCamera::CaptureWithCaptureSettingExt(int useCaseCode)
     }
     if (ret_ != CAMERA_OK) {
         LOG("CaptureWithCaptureSettingExt failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::OHgetPhysicalAperture(int useCaseCode)
+{
+    LOG("OHgetPhysicalAperture useCaseCode: %{public}d", useCaseCode);
+    double aperture;
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_GetPhysicalAperture(captureSession_, &aperture);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetPhysicalAperture(nullptr, &aperture);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetPhysicalAperture(captureSession_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetPhysicalAperture failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::OHgetSupportedExposureDurationRange(int useCaseCode)
+{
+    LOG("OHgetSupportedExposureDurationRange useCaseCode: %{public}d", useCaseCode);
+    int32_t minExposureDuration;
+    int32_t maxExposureDuration;
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_GetSupportedExposureDurationRange(captureSession_,
+            &minExposureDuration, &maxExposureDuration);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetSupportedExposureDurationRange(nullptr, &minExposureDuration, &maxExposureDuration);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetSupportedExposureDurationRange(captureSession_, nullptr, &maxExposureDuration);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CaptureSession_GetSupportedExposureDurationRange(captureSession_, &minExposureDuration, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetPhysicalAperture failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::OHgetExposureDuration(int useCaseCode)
+{
+    LOG("OHgetExposureDuration useCaseCode: %{public}d", useCaseCode);
+    int32_t exposureDuration;
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_GetExposureDuration(captureSession_, &exposureDuration);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetExposureDuration(nullptr, &exposureDuration);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetExposureDuration(captureSession_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetExposureDuration failed.");
     }
     return ret_;
 }

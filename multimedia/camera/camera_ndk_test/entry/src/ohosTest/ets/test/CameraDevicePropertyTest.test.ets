@@ -409,6 +409,22 @@ export default function CameraDevicePropertyTest() {
     })
 
     /**
+     * @tc.name   SUB_Multimedia_Camera_PhysicalAperture_Func_0600
+     * @tc.number SUB_Multimedia_Camera_PhysicalAperture_Func_0600
+     * @tc.desc   Test OH_CaptureSession_GetSupportedPhysicalApertures with null size,
+     *            return CAMERA_INVALID_ARGUMENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Multimedia_Camera_PhysicalAperture_Func_0600', Level.LEVEL0, () => {
+      if (PhysicalcaptureSessionstart()) {
+        let ret: number = cameraObj.oHCaptureSessionTestPhyAptNullSize();
+        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+      }
+    })
+
+    /**
      * @tc.name   testOHDeletePhysicalApertures_0100
      * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHDeletePhysicalApertures_0100
      * @tc.desc   Test OH_CaptureSession_DeletePhysicalApertures in normal condition.

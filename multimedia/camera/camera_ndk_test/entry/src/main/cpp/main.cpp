@@ -3601,6 +3601,15 @@ static napi_value OHCaptureSessionTestPhyAptNoOutput(napi_env env, napi_callback
     return result;
 }
 
+static napi_value OHCaptureSessionTestPhyAptNullSize(
+    napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    Camera_ErrorCode code = ndkCamera_->TestPhyAptNoSize();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 static napi_value OHCaptureSessionTestDelPhyApts(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -4236,6 +4245,45 @@ static napi_value CaptureWithCaptureSettingExt(napi_env env, napi_callback_info 
     return result;
 }
 
+static napi_value OHgetPhysicalAperture(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->OHgetPhysicalAperture(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value OHgetSupportedExposureDurationRange(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->OHgetSupportedExposureDurationRange(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value OHgetExposureDuration(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    napi_value result;
+    Camera_ErrorCode ret = ndkCamera_->OHgetExposureDuration(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -4443,6 +4491,12 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr },
         { "enumTestAutomotiveCameraPosition", nullptr, EnumTestAutomotiveCameraPosition, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "oHgetPhysicalAperture", nullptr, OHgetPhysicalAperture, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHgetSupportedExposureDurationRange", nullptr, OHgetSupportedExposureDurationRange, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "oHgetExposureDuration", nullptr, OHgetExposureDuration, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
     };
     napi_property_descriptor desc1[] = {
         {"oHCaptureSessionRegisterCallback", nullptr, OHCaptureSessionRegisterCallback, nullptr, nullptr, nullptr,
@@ -4496,6 +4550,8 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "oHCaptureSessionTestPhyAptNoOutput", nullptr, OHCaptureSessionTestPhyAptNoOutput, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "oHCaptureSessionTestPhyAptNullSize", nullptr, OHCaptureSessionTestPhyAptNullSize, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
         { "oHCaptureSessionTestDelPhyApts", nullptr, OHCaptureSessionTestDelPhyApts, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "oHCaptureSessionTestDelPhyAptsNullSession", nullptr, OHCaptureSessionTestDelPhyAptsNullSession, nullptr,
