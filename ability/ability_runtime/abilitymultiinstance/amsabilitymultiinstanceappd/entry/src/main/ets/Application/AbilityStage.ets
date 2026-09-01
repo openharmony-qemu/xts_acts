@@ -25,7 +25,7 @@ export default class MyAbilityStage extends AbilityStage {
     // globalThis.stageContext = this.context;
   }
 
-  onAcceptWant(want: Want): string | undefined {
+  onAcceptWant(want: Want): string {
     console.log("AbilityMultiInstanceAppD onAcceptWant called want:" + JSON.stringify(want));
     let parameters = want.parameters as Record<string, Object>;
     let abilityId = parameters.startId.toString();

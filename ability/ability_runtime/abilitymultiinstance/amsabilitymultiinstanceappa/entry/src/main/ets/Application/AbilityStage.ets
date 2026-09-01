@@ -27,13 +27,13 @@ export default class MyAbilityStage extends AbilityStage {
     // globalThis.stageContext = this.context;
   }
 
-  onAcceptWant(want: Want): string | undefined {
+  onAcceptWant(want: Want): string {
     console.log("AbilityMultiInstanceAppA onAcceptWant called want:" + JSON.stringify(want));
     let parameters = want.parameters as Record<string, Object>;
     let abilityId = parameters.startId.toString();
     if ((parameters == undefined) || (parameters.startId == undefined)) {
       console.log("AbilityMultiInstanceAppA specified param err");
-      return;
+      return '';
     }
 
     onAcceptWantCalledSeq = "onAcceptWantCalled";
@@ -42,9 +42,9 @@ export default class MyAbilityStage extends AbilityStage {
     AppStorage.setOrCreate("onAcceptWantCalledSeq", onAcceptWantCalledSeq);
 
     if (Number(parameters.startId) == ONACCEPTWANT_KEY_NOTSET_ID) {
-      return;
+      return '';
     } else if (Number(parameters.startId) == ONACCEPTWANT_KEY_UNDEFINED_ID) {
-      return undefined;
+      return '';
     }
     AppStorage.setOrCreate("abilityWant", want);
     console.log("AbilityMultiInstanceAppA set globalThis result :" + AppStorage.get("onAcceptWantCalledSeq")!);

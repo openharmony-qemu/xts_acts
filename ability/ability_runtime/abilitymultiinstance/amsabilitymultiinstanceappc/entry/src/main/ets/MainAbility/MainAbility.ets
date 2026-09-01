@@ -16,6 +16,7 @@
 import Ability from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import commonEvent from '@ohos.commonEvent';
+import { CommonEventPublishData } from '@ohos.commonEventManager';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
@@ -39,7 +40,7 @@ async function onShowProcess(appCAbilityContext: common.UIAbilityContext) {
   let abilityWant = AppStorage.get<Want>("abilityWant")!;
   let callBackData = "AppC:";
   callBackData += callBackSeq;
-  let commonEventPublishData: commonEvent.CommonEventPublishData = {
+  let commonEventPublishData: CommonEventPublishData = {
     data: callBackData,
     parameters: abilityWant!.parameters!
   }
@@ -48,7 +49,7 @@ async function onShowProcess(appCAbilityContext: common.UIAbilityContext) {
     commonEvent.publish("MultiInstanceStartFinish", commonEventPublishData, publishCallBack);
   } else {
     commonEvent.publish("MultiInstanceStartNext", commonEventPublishData, () => {
-      startAbilityProcess(appCAbilityContext, abilityWant.parameters! as MultiInstanceParams);
+      startAbilityProcess(appCAbilityContext, abilityWant.parameters! as unknown as MultiInstanceParams);
     })
   }
   callBackSeq = "";
@@ -103,7 +104,7 @@ async function startAbilityProcess(appCAbilityContext: common.UIAbilityContext, 
   appCAbilityContext.startAbility({
     bundleName: bundleName,
     abilityName: abilityName,
-    parameters: parameters
+    parameters: parameters as Record<string, Object>
   }, (error: BusinessError, data: void) => {
     console.log('AppC startAbilityProcess result: ' + JSON.stringify(error) + ", " + JSON.stringify(data));
   })
