@@ -83,7 +83,7 @@ export default function int16ArrayIndexOfPart02Test(): void {
      */
     it("int16ArrayIndexOfPart02Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Int16Array([1, 2, 3]);
-      const result: int = arr.indexOf(99);
+      const result: int | undefined = arr.indexOf(99);
       let actual: boolean = result !== undefined;
       expect(actual).assertTrue();
     });

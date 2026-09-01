@@ -274,7 +274,7 @@ export default function int16ArrayValueOfPart02Test(): void {
       try {
         result.$_get(0 as int);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
     });

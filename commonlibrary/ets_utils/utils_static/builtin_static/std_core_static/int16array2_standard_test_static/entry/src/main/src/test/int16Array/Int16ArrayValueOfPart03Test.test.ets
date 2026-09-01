@@ -56,7 +56,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_get(-1);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
     });
@@ -75,7 +75,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_get(3);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
     });
@@ -94,7 +94,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_get(0);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
     });
@@ -113,7 +113,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_get(-1);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
     });
@@ -132,7 +132,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_get(1);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
     });
@@ -151,7 +151,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_get(-2);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
     });
@@ -170,7 +170,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_set(-1, 99);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       let actual: number = arr.$_get(0);
@@ -192,7 +192,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_set(3, 99);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       let actual: number = arr.$_get(2);
@@ -214,7 +214,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_set(0, 99);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       expect(result).assertEqual(arr);
@@ -234,7 +234,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_set(-1, 99);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       expect(result).assertEqual(arr);
@@ -254,7 +254,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_set(1, 99);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       let actual: number = arr.$_get(0);
@@ -276,7 +276,7 @@ export default function int16ArrayValueOfPart03Test(): void {
       try {
         result.$_set(-2, 99);
         expect().assertFail();
-      } catch (e: Error) {
+      } catch (e) {
         expect(e.name).assertEqual("RangeError");
       }
       let actual: number = arr.$_get(0);
