@@ -28,6 +28,7 @@ import coverageSystemPackageTest from './CoverageSystemPackageTest.test.ets';
 
 
 export default function testsuite() {
+  coverage17700026Test();
   getProfileByAbility();
   getProfileByExtensionAbility();
   getBundleInfoForSelf();
@@ -38,6 +39,5 @@ export default function testsuite() {
   getApplicationLabel();
   addAITestCaseTest();
   coverageEnhancementTest();
-  coverage17700026Test();
   coverageSystemPackageTest();
 }

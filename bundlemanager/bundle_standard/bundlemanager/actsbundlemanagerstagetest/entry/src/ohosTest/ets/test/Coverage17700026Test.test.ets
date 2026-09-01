@@ -19,36 +19,39 @@ import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
 
 const DISABLED_BUNDLE_NAME = "com.example.myapplication1";
 const ERROR_CODE_BUNDLE_DISABLED = 17700026;
+const USER_ID = 100;
+
+function getErrorCode(error: BusinessError | number): number {
+  if (typeof error === 'number') {
+    return error;
+  }
+  return error.code;
+}
 
 export default function coverage17700026Test() {
   describe('Coverage17700026Test', () => {
+
     /**
      * @tc.name   SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200
      * @tc.number SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200
-     * @tc.desc   test getBundleInfo promise when bundle is disabled (需先 bm disable)
+     * @tc.desc   test getBundleInfo promise when bundle is disabled
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          await bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT)
-            .then((data) => {
-              console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 should not succeed: ' +
-                JSON.stringify(data));
-              expect().assertFail();
-              done();
-            }).catch((err: BusinessError) => {
-              console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 err: ' + JSON.stringify(err));
-              expect(err.code).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
-              done();
-            });
-        } catch (error) {
-          console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 catch: ' + JSON.stringify(error));
-          expect((error as BusinessError).code).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
-          done();
-        }
+      (done: Function) => {
+        bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT)
+          .then((data) => {
+            console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 should not succeed: ' +
+              JSON.stringify(data));
+            expect().assertFail();
+            done();
+          }).catch((error: BusinessError | number) => {
+            console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 err: ' + JSON.stringify(error));
+            expect(getErrorCode(error)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+            done();
+          });
       });
 
     /**
@@ -60,13 +63,13 @@ export default function coverage17700026Test() {
      * @tc.level  LEVEL0
      */
     it('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      (done: Function) => {
         try {
           bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT,
-            (err: BusinessError, data: bundleManager.BundleInfo) => {
+            (err: BusinessError | number, data: bundleManager.BundleInfo) => {
               if (err) {
                 console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 err: ' + JSON.stringify(err));
-                expect(err.code).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+                expect(getErrorCode(err)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
                 done();
               } else {
                 console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 should not succeed');
@@ -76,7 +79,7 @@ export default function coverage17700026Test() {
             });
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 catch: ' + JSON.stringify(error));
-          expect((error as BusinessError).code).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+          expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
           done();
         }
       });
@@ -90,13 +93,14 @@ export default function coverage17700026Test() {
      * @tc.level  LEVEL0
      */
     it('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      (done: Function) => {
         try {
-          bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100,
-            (err: BusinessError, data: bundleManager.BundleInfo) => {
+          bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT, USER_ID,
+            (err: BusinessError | number, data: bundleManager.BundleInfo) => {
               if (err) {
-                console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 err: ' + JSON.stringify(err));
-                expect(err.code).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+                console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 err: ' +
+                  JSON.stringify(err));
+                expect(getErrorCode(err)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
                 done();
               } else {
                 console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 should not succeed');
@@ -105,8 +109,9 @@ export default function coverage17700026Test() {
               }
             });
         } catch (error) {
-          console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 catch: ' + JSON.stringify(error));
-          expect((error as BusinessError).code).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+          console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 catch: ' +
+            JSON.stringify(error));
+          expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
           done();
         }
       });
@@ -120,18 +125,19 @@ export default function coverage17700026Test() {
      * @tc.level  LEVEL0
      */
     it('SUB_BMS_FRAMEWORK_GetLaunchWantForBundleSync_17700026_9203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
+      (done: Function) => {
         try {
           let res = bundleManager.getLaunchWantForBundleSync(DISABLED_BUNDLE_NAME);
           console.info('SUB_BMS_FRAMEWORK_GetLaunchWantForBundleSync_17700026_9203 should not succeed: ' +
             JSON.stringify(res));
           expect().assertFail();
+          done();
         } catch (error) {
-          let code = (error as BusinessError).code;
+          let code = getErrorCode(error as BusinessError | number);
           console.info('SUB_BMS_FRAMEWORK_GetLaunchWantForBundleSync_17700026_9203 catch: ' + JSON.stringify(error));
           expect(code === ERROR_CODE_BUNDLE_DISABLED || code === 201).assertTrue();
+          done();
         }
-        done();
       });
   });
 }

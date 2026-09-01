@@ -20,7 +20,11 @@
             "type": "ShellKit",
             "run-command": [
                 "power-shell wakeup",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "bm disable -n com.example.myapplication1"
+            ],
+            "teardown-command": [
+                "bm enable -n com.example.myapplication1"
             ]
         }
     ]
