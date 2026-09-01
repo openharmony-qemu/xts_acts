@@ -13,13 +13,21 @@
  * limitations under the License.
  */
 
+import { common } from '@kit.AbilityKit';
+import { camera } from '@kit.CameraKit';
+
 import OHMediaAssetCreateTest from "./photo/OHMediaAssetCreateTest.test";
 import OHMediaAssetManagerRequest from "./photo/OHMediaAssetManagerRequest.test";
 import AssetManagerCancelRequestTest from "./photo/MediaAssetManagerCancelRequestTest.test";
 
+let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+const cameraManager = camera.getCameraManager(testContext);
+const cameraDeviceArray = cameraManager.getSupportedCameras();
 
 export default function testsuite() {
-  OHMediaAssetCreateTest();
-  AssetManagerCancelRequestTest()
-  OHMediaAssetManagerRequest();
+  if (cameraDeviceArray.length != 0) {
+    OHMediaAssetCreateTest();
+    AssetManagerCancelRequestTest();
+    OHMediaAssetManagerRequest();
+  }
 }
