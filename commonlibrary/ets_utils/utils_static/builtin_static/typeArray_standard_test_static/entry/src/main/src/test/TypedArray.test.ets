@@ -2262,7 +2262,7 @@ export default function typedArray(): void {
       try {
         let array = [12n, 5n, 8n, 130n, 44n];
         let typedArray = new BigInt64Array(array);
-        let value = Array.from(typedArray).filter((elem) => elem <= 10);
+        let value = Array.from(typedArray).filter((elem) => elem <= 10n);
         expect(value.toString()).assertEqual('5,8');
       } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -2282,7 +2282,7 @@ export default function typedArray(): void {
       const TAG = "testTypedArrayPrototypeFilter0011";
       try {
         let array = [12n, 5n, 8n, 130n, 44n]
-        let value = new BigUint64Array(array).filter((elem) => elem <= 10);
+        let value = new BigUint64Array(array).filter((elem) => elem <= 10n);
         expect(value.toString()).assertEqual('5,8');
       } catch (err) {
         err = err as BusinessError;

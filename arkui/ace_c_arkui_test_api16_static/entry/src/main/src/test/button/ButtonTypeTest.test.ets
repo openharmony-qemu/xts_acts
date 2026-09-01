@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level , beforeAll } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
-import { UtilsTest } from '../Util.test'
 import {LibUtil} from '../../../ets/pages/LibUtil'
 let libUtil:LibUtil = new LibUtil();
 
 export default function ButtonTypeTest() {
 
   describe('ButtonTypeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api16.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('ButtonTypeTest beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     

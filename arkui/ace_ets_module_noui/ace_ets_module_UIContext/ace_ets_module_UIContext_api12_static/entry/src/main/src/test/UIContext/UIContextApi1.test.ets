@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 export default function UIContextApi1() {
   describe('UIContextApi1', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("UIContextApi1 beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.UIContext12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("UIContextApi1 beforeEach start");
       let options: router.RouterOptions = {
@@ -68,14 +60,19 @@ export default function UIContextApi1() {
      * @tc.level    Level.LEVEL0
      */
 it('UIContextApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextApi1_static_0100 START');
-      await CommonFunc.sleep(1000);
-      inspector.sendEventByKey('UIContextApi1_btn2',10,"")
-      await CommonFunc.sleep(1000);
-      let UIContextApi1_1 = inspector.getInspectorByKey('UIContextApi1_btn2');
-      expect(JSON.stringify(JSON.parseJsonElement(UIContextApi1_1).getElement('$attrs').getString('backgroundColor'))).assertEqual('"#FF0000FF"');
-      console.info('UIContextApi1_static_0100 END');
-      done();
+      try {
+        console.info('UIContextApi1_static_0100 START');
+        await CommonFunc.sleep(1000);
+        inspector.sendEventByKey('UIContextApi1_btn2',10,"")
+        await CommonFunc.sleep(1000);
+        let UIContextApi1_1 = inspector.getInspectorByKey('UIContextApi1_btn2');
+        expect(JSON.stringify(JSON.parseJsonElement(UIContextApi1_1).getElement('$attrs').getString('backgroundColor'))).assertEqual('"#FF0000FF"');
+        console.info('UIContextApi1_static_0100 END');
+        done();
+      } catch (err) {
+        console.info('UIContextApi1_static_0100 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

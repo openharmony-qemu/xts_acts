@@ -1600,6 +1600,39 @@ export default function MultimodalInputDeviceTest() {
     });
 
     /**
+     * @tc.name   SUB_MMI_Input_Api_IptDev_on_0200
+     * @tc.number SUB_MMI_Input_Api_IptDev_on_0200
+     * @tc.desc   Test on interface to register multiple different callbacks simultaneously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_IptDev_on_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = "SUB_MMI_Input_Api_IptDev_on_0200";
+      let registerCount = 0;
+      try {
+        const callback1 = (data: inputDevice.DeviceListener) => {
+          console.info(`${caseName} callback1 event: ${JSON.stringify(data, [`type`, `deviceId`])}`);
+        };
+        const callback2 = (data: inputDevice.DeviceListener) => {
+          console.info(`${caseName} callback2 event: ${JSON.stringify(data, [`type`, `deviceId`])}`);
+        };
+        inputDevice.on("change", callback1);
+        registerCount++;
+        inputDevice.on("change", callback2);
+        registerCount++;
+        inputDevice.off("change", callback1);
+        inputDevice.off("change", callback2);
+        expect(registerCount).assertEqual(2);
+        done();
+      } catch (error) {
+        console.info(`${caseName} Register multiple callbacks failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
      * @tc.name   SUB_MMI_Input_Api_IptDev_off_0300
      * @tc.number SUB_MMI_Input_Api_IptDev_off_0300
      * @tc.desc   Test callback on and off interfaces to cancel the hot swap event for the specified input device.

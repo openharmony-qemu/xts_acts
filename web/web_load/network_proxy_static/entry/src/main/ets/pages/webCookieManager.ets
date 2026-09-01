@@ -93,6 +93,30 @@ struct webCookieManager {
               break;
             }
 
+            case 'testRemoveAllCacheNullStatic001': {
+              try {
+                let param: boolean | null = null;
+                webView.WebviewController.removeAllCache(param as boolean);
+                Utils.emitEvent('success', 41022601);
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41022601);
+              }
+              break;
+            }
+
+            case 'testRemoveAllCacheUndefinedStatic001': {
+              try {
+                let param: boolean | undefined = undefined;
+                webView.WebviewController.removeAllCache(param as boolean);
+                Utils.emitEvent('success', 41022602);
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41022602);
+              }
+              break;
+            }
+
             case 'WebHttpCookieSameSitePolicy_NONE': {
               try {
                 Utils.emitEvent(webView.WebHttpCookieSameSitePolicy.NONE, 202502213)

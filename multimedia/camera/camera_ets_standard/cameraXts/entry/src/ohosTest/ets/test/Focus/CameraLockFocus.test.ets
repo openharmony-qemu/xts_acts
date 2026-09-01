@@ -941,6 +941,5 @@ export default function CameraLockFocusTest() {
       }
       done();
     });
-
   });
 }

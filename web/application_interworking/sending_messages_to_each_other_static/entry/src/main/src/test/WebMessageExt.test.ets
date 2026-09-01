@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import {beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Utils.test';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import {BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
@@ -73,7 +74,12 @@ export default function webMessageExt() {
     it('testWebMessageExGetTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExGetType001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExGetType001", 1, 20260, done);
+      Utils.registerBaseEvent("testWebMessageExGetType001", 1, 20260, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -91,7 +97,12 @@ export default function webMessageExt() {
     it('testWebMessageExGetTypeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExGetType002", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExGetType002", 2, 20261, done);
+      Utils.registerBaseEvent("testWebMessageExGetType002", 2, 20261, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -109,7 +120,12 @@ export default function webMessageExt() {
     it('testWebMessageExGetTypeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExGetType003", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExGetType003", 3, 20262, done);
+      Utils.registerBaseEvent("testWebMessageExGetType003", 3, 20262, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -127,7 +143,12 @@ export default function webMessageExt() {
     it('testWebMessageExGetTypeStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExGetType004", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExGetType004", 4, 20263, done);
+      Utils.registerBaseEvent("testWebMessageExGetType004", 4, 20263, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -145,7 +166,12 @@ export default function webMessageExt() {
     it('testWebMessageExGetTypeStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExGetType005", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExGetType005", 5, 20264, done);
+      Utils.registerBaseEvent("testWebMessageExGetType005", 5, 20264, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -163,7 +189,12 @@ export default function webMessageExt() {
     it('testWebMessageExGetTypeStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExGetType006", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExGetType006", 6, 20265, done);
+      Utils.registerBaseEvent("testWebMessageExGetType006", 6, 20265, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -181,7 +212,12 @@ export default function webMessageExt() {
     it('testWebMessageExtWebMessageTypeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtWebMessageType001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType001", 0, 30000, done);
+      Utils.registerBaseEvent("testWebMessageExtWebMessageType001", 0, 30000, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -199,7 +235,12 @@ export default function webMessageExt() {
     it('testWebMessageExtWebMessageTypeStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtWebMessageType002", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType002", 1, 30001, done);
+      Utils.registerBaseEvent("testWebMessageExtWebMessageType002", 1, 30001, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -217,7 +258,12 @@ export default function webMessageExt() {
     it('testWebMessageExtWebMessageTypeStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtWebMessageType003", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType003", 2, 30002, done);
+      Utils.registerBaseEvent("testWebMessageExtWebMessageType003", 2, 30002, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -235,7 +281,12 @@ export default function webMessageExt() {
     it('testWebMessageExtWebMessageTypeStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtWebMessageType004", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType004", 3, 30003, done);
+      Utils.registerBaseEvent("testWebMessageExtWebMessageType004", 3, 30003, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -253,7 +304,12 @@ export default function webMessageExt() {
     it('testWebMessageExtWebMessageTypeStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtWebMessageType005", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType005", 4, 30004, done);
+      Utils.registerBaseEvent("testWebMessageExtWebMessageType005", 4, 30004, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -271,7 +327,12 @@ export default function webMessageExt() {
     it('testWebMessageExtWebMessageTypeStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtWebMessageType006", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType006", 5, 30005, done);
+      Utils.registerBaseEvent("testWebMessageExtWebMessageType006", 5, 30005, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -289,7 +350,12 @@ export default function webMessageExt() {
     it('testWebMessageExtWebMessageTypeStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtWebMessageType007", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtWebMessageType007", 6, 30006, done);
+      Utils.registerBaseEvent("testWebMessageExtWebMessageType007", 6, 30006, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -307,7 +373,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetStringStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetString001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetString001", 'hello', 100020, done);
+      Utils.registerBaseEvent("testWebMessageExtGetString001", 'hello', 100020, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -325,7 +396,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetStringErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetStringErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetStringErrorCode001", 17100014, 100003, done);
+      Utils.registerBaseEvent("testWebMessageExtGetStringErrorCode001", 17100014, 100003, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -343,7 +419,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetNumberStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetNumber001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetNumber001", 1, 100021, done);
+      Utils.registerBaseEvent("testWebMessageExtGetNumber001", 1, 100021, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -361,7 +442,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetNumberErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetNumberErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetNumberErrorCode001",17100014 ,100008 , done);
+      Utils.registerBaseEvent("testWebMessageExtGetNumberErrorCode001", 17100014 , 100008 , done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -379,7 +465,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetBooleanStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetBoolean001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetBoolean001", true, 100022, done);
+      Utils.registerBaseEvent("testWebMessageExtGetBoolean001", true, 100022, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -397,7 +488,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetBooleanStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetBoolean002", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetBoolean002", false, 100023, done);
+      Utils.registerBaseEvent("testWebMessageExtGetBoolean002", false, 100023, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -415,7 +511,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetBooleanErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetBooleanErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetBooleanErrorCodeStatic001",17100014 ,110000 , done);
+      Utils.registerBaseEvent("testWebMessageExtGetBooleanErrorCodeStatic001", 17100014 , 110000 , done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -433,7 +534,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetArrayBufferStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetArrayBuffer001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetArrayBuffer001", 'result getArrayBuffer byteLength:8', 100024, done);
+      Utils.registerBaseEvent("testWebMessageExtGetArrayBuffer001", 'result getArrayBuffer byteLength:8', 100024, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -451,7 +557,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetArrayBufferErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetArrayBufferErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetArrayBufferErrorCode001",17100014 ,110001 , done);
+      Utils.registerBaseEvent("testWebMessageExtGetArrayBufferErrorCode001", 17100014 , 110001 , done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -469,7 +580,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetArrayStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetArray001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetArray001", 'apple', 100025, done);
+      Utils.registerBaseEvent("testWebMessageExtGetArray001", 'apple', 100025, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -486,7 +602,12 @@ export default function webMessageExt() {
     */
     it('testWebMessageExtGetArrayEmptyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetArrayEmpty001", 17100014, 110004, done);
+      Utils.registerBaseEvent("testWebMessageExtGetArrayEmpty001", 17100014, 110004, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -504,7 +625,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetArrayErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetArrayErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetArrayErrorCode001",17100014 ,110002 , done);
+      Utils.registerBaseEvent("testWebMessageExtGetArrayErrorCode001", 17100014 , 110002 , done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -522,7 +648,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetError001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetError001", 'URIERROR: URI SEQ 0222', 100026, done);
+      Utils.registerBaseEvent("testWebMessageExtGetError001", 'URIERROR: URI SEQ 0222', 100026, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -540,7 +671,12 @@ export default function webMessageExt() {
     it('testWebMessageExtGetErrorErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtGetErrorErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtGetErrorErrorCode001",17100014 ,110003 , done);
+      Utils.registerBaseEvent("testWebMessageExtGetErrorErrorCode001", 17100014 , 110003 , done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -559,7 +695,12 @@ export default function webMessageExt() {
       let result = "String:helloFromEts"
       Utils.emitEvent("testWebMessageExtSetString001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetString001", JSON.stringify(result), 100027, done);
+      Utils.registerBaseEvent("testWebMessageExtSetString001", JSON.stringify(result), 100027, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -577,7 +718,12 @@ export default function webMessageExt() {
     it('testWebMessageExtSetStringErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtSetStringErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetStringErrorCode001", 17100014, 100001, done);
+      Utils.registerBaseEvent("testWebMessageExtSetStringErrorCode001", 17100014, 100001, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -596,7 +742,12 @@ export default function webMessageExt() {
       let result = "String:"
       Utils.emitEvent("testWebMessageExtSetStringEmpty001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetStringEmpty001", JSON.stringify(result), 100002, done);
+      Utils.registerBaseEvent("testWebMessageExtSetStringEmpty001", JSON.stringify(result), 100002, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -615,7 +766,12 @@ export default function webMessageExt() {
       let result = "Number:1"
       Utils.emitEvent("testWebMessageExtSetNumber001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetNumber001", JSON.stringify(result), 100028, done);
+      Utils.registerBaseEvent("testWebMessageExtSetNumber001", JSON.stringify(result), 100028, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -633,7 +789,12 @@ export default function webMessageExt() {
     it('testWebMessageExtSetNumberErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtSetNumberErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetNumberErrorCode001", 17100014, 100004, done);
+      Utils.registerBaseEvent("testWebMessageExtSetNumberErrorCode001", 17100014, 100004, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -652,7 +813,12 @@ export default function webMessageExt() {
       let result = "Boolean:true"
       Utils.emitEvent("testWebMessageExtSetBoolean001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetBoolean001", JSON.stringify(result), 100029, done);
+      Utils.registerBaseEvent("testWebMessageExtSetBoolean001", JSON.stringify(result), 100029, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -672,7 +838,12 @@ export default function webMessageExt() {
       let result = "Boolean:false"
       Utils.emitEvent("testWebMessageExtSetBoolean002", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetBoolean002", JSON.stringify(result), 100030, done);
+      Utils.registerBaseEvent("testWebMessageExtSetBoolean002", JSON.stringify(result), 100030, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -691,7 +862,12 @@ export default function webMessageExt() {
       let result = "Boolean:false"
       Utils.emitEvent("testWebMessageExtSetBooleanErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetBooleanErrorCode001", 17100014 , 100005, done);
+      Utils.registerBaseEvent("testWebMessageExtSetBooleanErrorCode001", 17100014 , 100005, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -710,7 +886,12 @@ export default function webMessageExt() {
       let result = "ArrayBuffer:8"
       Utils.emitEvent("testWebMessageExtSetArrayBuffer001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetArrayBuffer001", JSON.stringify(result), 100031, done);
+      Utils.registerBaseEvent("testWebMessageExtSetArrayBuffer001", JSON.stringify(result), 100031, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -729,7 +910,12 @@ export default function webMessageExt() {
       let result = "ArrayBuffer:8"
       Utils.emitEvent("testWebMessageExtSetArrayBufferErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetArrayBufferErrorCode001", 17100014, 100006, done);
+      Utils.registerBaseEvent("testWebMessageExtSetArrayBufferErrorCode001", 17100014, 100006, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -748,7 +934,12 @@ export default function webMessageExt() {
       let result = "Array len:1, value:apple";
       Utils.emitEvent("testWebMessageExtSetArray001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetArray001", JSON.stringify(result), 100032, done);
+      Utils.registerBaseEvent("testWebMessageExtSetArray001", JSON.stringify(result), 100032, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -766,7 +957,12 @@ export default function webMessageExt() {
     it('testWebMessageExtSetArrayEmptyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtSetArrayEmpty001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetArrayEmpty001", 401, 100009, done);
+      Utils.registerBaseEvent("testWebMessageExtSetArrayEmpty001", 401, 100009, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -784,7 +980,12 @@ export default function webMessageExt() {
     it('testWebMessageExtSetArrayErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtSetArrayErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetArrayErrorCode001", 17100014, 100007, done);
+      Utils.registerBaseEvent("testWebMessageExtSetArrayErrorCode001", 17100014, 100007, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -802,7 +1003,12 @@ export default function webMessageExt() {
     it('testWebMessageExtSetErrorErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtSetErrorErrorCode001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetErrorErrorCode001", 17100014, 100008, done);
+      Utils.registerBaseEvent("testWebMessageExtSetErrorErrorCode001", 17100014, 100008, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -820,7 +1026,12 @@ export default function webMessageExt() {
     it('testWebMessageExtSetNotSupportStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testWebMessageExtSetNotSupport001", 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testWebMessageExtSetNotSupport001", 17100014, 110008, done);
+      Utils.registerBaseEvent("testWebMessageExtSetNotSupport001", 17100014, 110008, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebMessageExtButton', 10, '');
       await Utils.msSleep(6000);
@@ -843,6 +1054,56 @@ export default function webMessageExt() {
         inspector.sendEventByKey('WebMessageExtButton', 10, '');
         await Utils.msSleep(6000);
         done();
+      })
+
+    /**
+     * @tc.name        testWebMessageExtSetBooleanNullStatic001
+     * @tc.number      SUB_WEB_WEBMESSAGEEXT_SETBOOLEAN_NULL_0100
+     * @tc.desc        test WebMessageExtSetBoolean with null param
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testWebMessageExtSetBooleanNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let result = "Boolean:false"
+        Utils.emitEvent("testWebMessageExtSetBooleanNullStatic001", 10)
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent("testWebMessageExtSetBooleanNullStatic001", JSON.stringify(result), 41021501, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebMessageExtButton', 10, '');
+        await Utils.msSleep(6000);
+        done()
+      })
+
+    /**
+     * @tc.name        testWebMessageExtSetBooleanUndefinedStatic001
+     * @tc.number      SUB_WEB_WEBMESSAGEEXT_SETBOOLEAN_UNDEFINED_0100
+     * @tc.desc        test WebMessageExtSetBoolean with undefined param
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       LEVEL0
+     */
+    it('testWebMessageExtSetBooleanUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let result = "Boolean:false"
+        Utils.emitEvent("testWebMessageExtSetBooleanUndefinedStatic001", 10)
+        await Utils.msSleep(2000);
+        Utils.registerBaseEvent("testWebMessageExtSetBooleanUndefinedStatic001", JSON.stringify(result), 41021502, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          const data = backData?.data as Record<string, RecordData>;
+          const action = data['ACTION'];
+          expect(action).assertEqual(expected);
+        });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebMessageExtButton', 10, '');
+        await Utils.msSleep(6000);
+        done()
       })
 
   })

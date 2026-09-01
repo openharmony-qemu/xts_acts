@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, Component, MouseButton, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,22 +21,8 @@ import RectValue from '../../../ets/MainAbility/common/Rect';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function PinchGestureHandlerAllowedTypesTest() {
   describe('PinchGestureHandlerAllowedTypesTest', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
       console.info("PinchGestureHandlerAllowedTypesTest beforeEach start");
       const searchRouter = AppStorage.get<Router>("router") as Router
@@ -54,8 +40,12 @@ export default function PinchGestureHandlerAllowedTypesTest() {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(2000);
       console.info("PinchGestureHandlerAllowedTypesTest after each called");
+      } catch (err) {
+        console.error("PinchGestureHandlerAllowedTypesTest after each error: " + err);
+      }
     });
 
 
@@ -68,6 +58,7 @@ export default function PinchGestureHandlerAllowedTypesTest() {
      * @tc.level    Level.LEVEL0
      */
 it('PinchGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('PinchGestureHandlerAllowedTypesTest_static_0010 START');
       await CommonFunc.sleep(1000);
       let windowOffsetX:number = AppStorage.get<number>("winLeft") as number
@@ -125,6 +116,10 @@ it('PinchGestureHandlerAllowedTypesTest_static_0010', Level.LEVEL0, async (done:
       console.log('PinchGestureHandlerAllowedTypesTest_static_0010 obj9 $attrs content',obj9.getElement('$attrs').getString('content'),obj9)
       expect(obj9.getElement('$attrs').getString('content')).assertEqual('allowed types default');
       console.info('PinchGestureHandlerAllowedTypesTest_static_0010 END');
+      } catch (err) {
+        console.error('PinchGestureHandlerAllowedTypesTest_static_0010 error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
   })

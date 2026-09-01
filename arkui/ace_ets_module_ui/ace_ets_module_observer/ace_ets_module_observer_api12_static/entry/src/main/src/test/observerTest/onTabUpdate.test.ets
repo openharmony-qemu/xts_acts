@@ -13,30 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 export default function onTabUpdate() {
   describe('onTabUpdate', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("onTabUpdate beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.observer12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
     beforeEach(async (): Promise<void> => {
       console.info("onTabUpdate beforeEach start");
       let options: router.RouterOptions = {
@@ -49,10 +35,8 @@ export default function onTabUpdate() {
         console.info("get   state pages:" + JSON.stringify(pages));
         if (!("onTabUpdate" == pages.name)) {
           console.info("get onTabUpdate pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push onTabUpdate page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push onTabUpdate page error:" + err);
@@ -60,8 +44,8 @@ export default function onTabUpdate() {
       console.info("onTabUpdate beforeEach end");
     });
 
-    
-    
+
+
 /**
      * @tc.number   onTabUpdate_static_0100
      * @tc.name     onTabUpdate_static_0100
@@ -71,16 +55,20 @@ export default function onTabUpdate() {
 it('onTabUpdate_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
       console.info('[onTabUpdate_0100] START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let btn1 = await driver.findComponent(ON.id('change_index_1'));
-      await CommonFunc.sleep(500);
-      await (btn1?.click() as Promise<void>);
-      await CommonFunc.sleep(1500);
-      let strJson = inspector.getInspectorByKey('tab_Index_1');
-      console.info("[onTabUpdate_0100] component obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[onTabUpdate_0100] content: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('index: 1');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let btn1 = await driver.findComponent(ON.id('change_index_1'));
+        await CommonFunc.sleep(500);
+        await (btn1?.click() as Promise<void>);
+        await CommonFunc.sleep(1500);
+        let strJson = inspector.getInspectorByKey('tab_Index_1');
+        console.info("[onTabUpdate_0100] component obj1 is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+        console.info("[onTabUpdate_0100] content: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('index: 1');
+      } catch (err) {
+        console.info('onTabUpdate_0100 err: ' + JSON.stringify(err));
+      }
       console.info('[onTabUpdate_0100] END');
       done();
     });

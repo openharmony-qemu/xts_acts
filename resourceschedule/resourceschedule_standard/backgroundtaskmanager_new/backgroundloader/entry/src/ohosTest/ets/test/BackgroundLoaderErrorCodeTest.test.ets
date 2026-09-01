@@ -54,7 +54,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0100 registerTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -82,7 +82,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0200 registerTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -109,7 +109,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0300 registerTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -136,6 +136,8 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400 unregisterTask failed. code is ${e.code} message is ${e.message}`);
+        expect(e.code).assertEqual(9700004);
+        done();
       }
       expect(unregisterSucceeded).assertTrue();
       done();
@@ -163,7 +165,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0500 registerTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -190,7 +192,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0600 unregisterTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -217,7 +219,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0700 unregisterTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -244,7 +246,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0800 unregisterTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -264,7 +266,7 @@ export default function BackgroundLoaderErrorCodeTest() {
         done();
       }).catch((error: BusinessError) => {
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0900 getTaskInfo failed. code is ${error.code} message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(9700004);
+        expect(error.code).assertEqual(9700004);
         done();
       })
     })
@@ -285,7 +287,7 @@ export default function BackgroundLoaderErrorCodeTest() {
         done();
       }).catch((error: BusinessError) => {
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1000 getTaskInfo failed. code is ${error.code} message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(9700004);
+        expect(error.code).assertEqual(9700004);
         done();
       })
     })
@@ -306,7 +308,7 @@ export default function BackgroundLoaderErrorCodeTest() {
         done();
       }).catch((error: BusinessError) => {
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1100 getTaskInfo failed. code is ${error.code} message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(9700004);
+        expect(error.code).assertEqual(9700004);
         done();
       })
     })
@@ -327,7 +329,7 @@ export default function BackgroundLoaderErrorCodeTest() {
         done();
       }).catch((error: BusinessError) => {
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1200 getTaskInfo failed. code is ${error.code} message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(9700004);
+        expect(error.code).assertEqual(9700004);
         done();
       })
     })
@@ -354,7 +356,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1300 finishTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -381,7 +383,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1400 finishTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -408,7 +410,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1500 finishTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -435,7 +437,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1600 finishTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -462,7 +464,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1700 finishTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -494,7 +496,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1800 duplicate registerTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         backgroundLoader.unregisterTask(taskInfo);
         done();
       }
@@ -525,7 +527,7 @@ export default function BackgroundLoaderErrorCodeTest() {
           done();
         }).catch((error: BusinessError) => {
           console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_1900 getTaskInfo failed. code is ${error.code} message is ${error.message}`);
-          expect(Number(error.code)).assertEqual(9700004);
+          expect(error.code).assertEqual(9700004);
           done();
         })
       } catch (error) {
@@ -558,7 +560,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2000 unregisterTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -586,7 +588,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2100 finishTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -607,7 +609,7 @@ export default function BackgroundLoaderErrorCodeTest() {
         done();
       }).catch((error: BusinessError) => {
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2200 getTaskInfo failed. code is ${error.code} message is ${error.message}`);
-        expect(Number(error.code)).assertEqual(9700004);
+        expect(error.code).assertEqual(9700004);
         done();
       })
     })
@@ -634,7 +636,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2300 registerTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -661,7 +663,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2400 unregisterTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -688,7 +690,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2500 registerTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -715,7 +717,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2600 finishTask failed. code is ${e.code} message is ${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -751,7 +753,7 @@ export default function BackgroundLoaderErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2700 unregisterTask2 success');
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2700 failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -794,7 +796,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_2900 registerTask failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -816,7 +818,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_3000 registerTask failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -838,7 +840,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_3100 unregisterTask failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -860,7 +862,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_3200 unregisterTask failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -936,7 +938,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_3500 failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })
@@ -958,7 +960,7 @@ export default function BackgroundLoaderErrorCodeTest() {
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_3600 failed. code: %{public}s, message: %{public}s', `${e.code}`, `${e.message}`);
-        expect(Number(e.code)).assertEqual(9700004);
+        expect(e.code).assertEqual(9700004);
         done();
       }
     })

@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { LibUtil } from '../../../ets/pages/LibUtil';
-import { UtilsTest } from '../Util.test'
 
 const libUtil: LibUtil = new LibUtil();
 
 export default function SliderTest() {
 
   describe('SliderTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_nowear_xts_api18_static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('SliderTest beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     

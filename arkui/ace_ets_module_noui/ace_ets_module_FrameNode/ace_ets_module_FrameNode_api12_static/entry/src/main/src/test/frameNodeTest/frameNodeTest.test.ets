@@ -14,39 +14,18 @@
  * limitations under the License.
  */
 import inspector from '@ohos.arkui.inspector'
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
-import pasteboard from '@ohos.pasteboard'
 import {
-  Component,
   Driver,
-  UiWindow,
   ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {UtilsTest,startAbility} from '../Util.test'
 
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function frameNodeTest() {
   describe('frameNodeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("frameNodeTest beforeEach start");
-      await startAbility("com.arkui.ace.FrameNode.api12.static", "EntryAbility")
-    });
     beforeEach(async () => {
       console.info("frameNodeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,7 +39,7 @@ export default function frameNodeTest() {
         if (!("frameNode" == pages.name)) {
           console.info("get frameNodeTest state pages.name: " + JSON.stringify(pages.name));
           
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
           
         }
@@ -80,18 +59,24 @@ export default function frameNodeTest() {
      * @tc.level    Level.LEVEL0
      */
 it('frameNodeTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('frameNodeTest_static_0100 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('frameNode_2'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('frameNode_1');
-      let obj= JSON.parseJsonElement(strJson);
-      console.info("[frameNodeTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:11');
-      console.info('[frameNodeTest_static_0100] END');
-      done();
+      try {
+        console.info('frameNodeTest_static_0100 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('frameNode_2'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('frameNode_1');
+        let obj= JSON.parseJsonElement(strJson);
+        console.info("[frameNodeTest_static_0100] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:11');
+        console.info('[frameNodeTest_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[frameNodeTest_static_0100] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     });
     
 
@@ -104,18 +89,24 @@ it('frameNodeTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.level    Level.LEVEL0
      */
 it('frameNodeTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('frameNodeTest_static_0200 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('frameNode_3'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('frameNode_1');
-      let obj= JSON.parseJsonElement(strJson);
-      console.info("[frameNodeTest_static_0200] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:12');
-      console.info('[frameNodeTest_static_0200] END');
-      done();
+      try {
+        console.info('frameNodeTest_static_0200 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('frameNode_3'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('frameNode_1');
+        let obj= JSON.parseJsonElement(strJson);
+        console.info("[frameNodeTest_static_0200] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:12');
+        console.info('[frameNodeTest_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[frameNodeTest_static_0200] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     });
     
 
@@ -128,18 +119,24 @@ it('frameNodeTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.level    Level.LEVEL0
      */
 it('frameNodeTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('frameNodeTest_static_0300 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('frameNode_4'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('frameNode_1');
-      let obj= JSON.parseJsonElement(strJson);
-      console.info("[frameNodeTest_static_0100] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:11');
-      console.info('[frameNodeTest_static_0100] END');
-      done();
+      try {
+        console.info('frameNodeTest_static_0300 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('frameNode_4'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('frameNode_1');
+        let obj= JSON.parseJsonElement(strJson);
+        console.info("[frameNodeTest_static_0100] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:11');
+        console.info('[frameNodeTest_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[frameNodeTest_static_0300] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     });
     
 
@@ -152,18 +149,24 @@ it('frameNodeTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.level    Level.LEVEL0
      */
 it('frameNodeTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('frameNodeTest_static_0400 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('frameNode_5'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('frameNode_1');
-      let obj= JSON.parseJsonElement(strJson);
-      console.info("[frameNodeTest_static_0400] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:0');
-      console.info('[frameNodeTest_static_0400] END');
-      done();
+      try {
+        console.info('frameNodeTest_static_0400 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('frameNode_5'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('frameNode_1');
+        let obj= JSON.parseJsonElement(strJson);
+        console.info("[frameNodeTest_static_0400] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('ChildrenCount:0');
+        console.info('[frameNodeTest_static_0400] END');
+        done();
+      } catch (error) {
+        console.error('[frameNodeTest_static_0400] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     });
     
 
@@ -176,24 +179,30 @@ it('frameNodeTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.level    Level.LEVEL0
      */
 it('frameNodeTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('frameNodeTest_static_0500 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('frameNode_13'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('frameNode_10');
-      let obj= JSON.parseJsonElement(strJson);
-      let strJson1 = inspector.getInspectorByKey('frameNode_11');
-      let obj1= JSON.parseJsonElement(strJson1);
-      let strJson2 = inspector.getInspectorByKey('frameNode_12');
-      let obj2= JSON.parseJsonElement(strJson2);
-      console.info("[frameNodeTest_static_0500] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('getRenderNode:getRenderNode1');
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('getRenderNode:getRenderNode2');
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('getRenderNode:getRenderNode3');
-      console.info('[frameNodeTest_static_0500] END');
-      done();
+      try {
+        console.info('frameNodeTest_static_0500 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('frameNode_13'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('frameNode_10');
+        let obj= JSON.parseJsonElement(strJson);
+        let strJson1 = inspector.getInspectorByKey('frameNode_11');
+        let obj1= JSON.parseJsonElement(strJson1);
+        let strJson2 = inspector.getInspectorByKey('frameNode_12');
+        let obj2= JSON.parseJsonElement(strJson2);
+        console.info("[frameNodeTest_static_0500] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('getRenderNode:getRenderNode1');
+        expect(obj1.getElement('$attrs').getString('content')).assertEqual('getRenderNode:getRenderNode2');
+        expect(obj2.getElement('$attrs').getString('content')).assertEqual('getRenderNode:getRenderNode3');
+        console.info('[frameNodeTest_static_0500] END');
+        done();
+      } catch (error) {
+        console.error('[frameNodeTest_static_0500] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     });
     
 
@@ -206,18 +215,24 @@ it('frameNodeTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
      * @tc.level    Level.LEVEL0
      */
 it('frameNodeTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
-      console.info('frameNodeTest_static_0600 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('frameNode_15'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('frameNode_14');
-      let obj= JSON.parseJsonElement(strJson);
-      console.info("[frameNodeTest_static_0600] component obj is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('builderNode:1');
-      console.info('[frameNodeTest_static_0600] END');
-      done();
+      try {
+        console.info('frameNodeTest_static_0600 START');
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('frameNode_15'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('frameNode_14');
+        let obj= JSON.parseJsonElement(strJson);
+        console.info("[frameNodeTest_static_0600] component obj is: " + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('builderNode:1');
+        console.info('[frameNodeTest_static_0600] END');
+        done();
+      } catch (error) {
+        console.error('[frameNodeTest_static_0600] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        done();
+      }
     });
   })
 }

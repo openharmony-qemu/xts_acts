@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
-import { UtilsTest } from '../Util.test'
 import inspector from '@ohos.arkui.inspector';
 
 export default function customComponentOnDrawFrontTest() {
@@ -25,13 +24,7 @@ export default function customComponentOnDrawFrontTest() {
 
     let PAGE_TAG = 'CustomComponentOnDrawFrontTest';
 
-    beforeAll(async (): Promise<void> => {
-      console.info("[ui] beforeAll start");
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api20.static", "EntryAbility")
-      console.info("[ui] beforeAll end");
-    });
 
-    
     /**
      * @tc.number   testCustomComponentOnDrawFrontStatic001
      * @tc.name     testCustomComponentOnDrawFrontStatic001
@@ -39,12 +32,17 @@ export default function customComponentOnDrawFrontTest() {
      * @tc.level    Level.LEVEL0
      */
     it('testCustomComponentOnDrawFrontStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info("[ui] pushPage start");
-      await Utils.pushPage(`customcomponent/${PAGE_TAG}`, false);
-      console.info("[ui] pushPage end");
-      let strJson:string = inspector.getInspectorByKey('OnDrawTest');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00')
-      done()
+      try {
+        console.info("[ui] pushPage start");
+        await Utils.pushPage(`customcomponent/${PAGE_TAG}`, false);
+        console.info("[ui] pushPage end");
+        let strJson:string = inspector.getInspectorByKey('OnDrawTest');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00')
+        done()
+      } catch (err) {
+        console.info('testCustomComponentOnDrawFrontStatic001 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
   })

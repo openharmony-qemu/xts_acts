@@ -154,7 +154,10 @@ hap_pack("acts_validator_lite_hap") {
 action("acts_validator_lite_deploy") {
   deps = [ ":acts_validator_lite_hap" ]
   if (ohos_kernel_type == "liteos_a" || ohos_kernel_type == "linux") {
-    deps += [ "//foundation/ability/ability_lite/services/abilitymgr_lite/tools:aa" ]
+    deps += [
+      "//foundation/ability/ability_lite/services/abilitymgr_lite/tools:aa",
+      "//foundation/bundlemanager/bundle_framework_lite/services/bundlemgr_lite/tools:bm",
+    ]
   }
   script = "//test/xts/tools/lite/build/deploy_lite.py"
   sources = [ "Test.json" ]
@@ -179,8 +182,24 @@ action("acts_validator_lite_deploy") {
   ]
 }
 
+action("acts_validator_lite_copy_bm") {
+  deps = [ "//foundation/bundlemanager/bundle_framework_lite/services/bundlemgr_lite/tools:bm" ]
+  script = "//test/xts/tools/lite/build/utils.py"
+  outputs = [ "$_tools_dir/bm" ]
+  args = [
+    "--method_name",
+    "copy_file",
+    "--arguments",
+    "output=" + rebase_path(_tools_dir) +
+    "#sources=" + rebase_path("$root_out_dir/dev_tools/bin/bm") + "#to_dir=True",
+  ]
+}
+
 action("acts_validator_lite_remove_from_rootfs") {
-  deps = [ ":acts_validator_lite_deploy" ]
+  deps = [
+    ":acts_validator_lite_deploy",
+    ":acts_validator_lite_copy_bm",
+  ]
   script = "rm_from_rootfs.py"
   outputs = [ "$target_gen_dir/rm_acts_validator_lite.stamp" ]
   args = [

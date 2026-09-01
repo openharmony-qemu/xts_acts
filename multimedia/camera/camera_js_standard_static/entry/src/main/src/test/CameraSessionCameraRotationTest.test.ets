@@ -155,7 +155,6 @@ export default function cameraSessionCameraRotationTest() {
       console.log(`getVideoReceiveSurface AVRecorder = undefined`);
     } else {
       let errs = await AVRecorder!.prepare(videoConfig);
-      await Utils.msSleep(5000);
       mVideoSurface = await AVRecorder!.getInputSurface();
       if (mVideoSurface == undefined) {
         console.log(`getVideoReceiveSurface mVideoSurface = undefined`);

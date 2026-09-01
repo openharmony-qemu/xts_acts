@@ -13,26 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, MouseButton, Point } from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest } from '../Util.test';
+
 import { Driver, ON } from '@kit.TestKit';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
+
 import inspector from '@ohos.arkui.inspector';
 
 export default function globalListenerTest(): void {
   describe('globalListenerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api24.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("==============================");
@@ -55,8 +49,12 @@ export default function globalListenerTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info('globalListenerTest after each called');
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+      }
     });
 
     /**
@@ -68,6 +66,7 @@ export default function globalListenerTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ACE_ARKUI_GLOBAL_LISTENER_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[globalListenerTest_0100] START');
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('listenTest'));
@@ -80,7 +79,12 @@ export default function globalListenerTest(): void {
       expect(obj.getElement('$attrs').getString('content')).assertEqual('listenTouchType=1');
 
       console.info('[globalListenerTest_0100] END')
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -92,6 +96,7 @@ export default function globalListenerTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ACE_ARKUI_GLOBAL_LISTENER_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[globalListenerTest_0200] START');
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('listenTest'));
@@ -105,7 +110,12 @@ export default function globalListenerTest(): void {
       expect(obj.getElement('$attrs').getString('content')).assertEqual('listenButton=2,Action=2');
 
       console.info('[globalListenerTest_0200] END')
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
 
     /**
@@ -117,6 +127,7 @@ export default function globalListenerTest(): void {
      * @tc.level  LEVEL1
      */
     it('SUB_ACE_ARKUI_GLOBAL_LISTENER_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
       console.info('[globalListenerTest_0300] START');
       let driver: Driver = Driver.create();
       await driver.triggerKey(2049);
@@ -128,7 +139,12 @@ export default function globalListenerTest(): void {
       expect(obj.getElement('$attrs').getString('content')).assertEqual('listenKeyType=1');
 
       console.info('[globalListenerTest_0300] END')
-      done();
+      } catch (e) {
+        console.error('error: ' + JSON.stringify(e));
+        expect().assertFail();
+      } finally {
+        done();
+      }
     });
   })
 }

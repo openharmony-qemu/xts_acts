@@ -27,40 +27,33 @@ struct PromptActionCloseToastTest {
     Row() {
       Column() {
         Text('PromptAction CloseToast Test Page')
-          .fontSize(20)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
-          .margin({ bottom: 20 })
 
         Text('Test Result: ' + this.toastTestResult)
-          .fontSize(16)
-          .margin({ bottom: 10 })
+          .fontSize(10)
           .id('toast_test_result')
 
         Text('Last Error: ' + this.lastError)
-          .fontSize(14)
+          .fontSize(10)
           .fontColor(Color.Red)
-          .margin({ bottom: 20 })
           .id('toast_last_error')
 
         Text('Current Toast ID: ' + this.currentToastId)
-          .fontSize(14)
+          .fontSize(10)
           .fontColor(Color.Blue)
-          .margin({ bottom: 20 })
           .id('current_toast_id')
-
-        Divider().margin({ bottom: 20 })
+        
 
         // ========== 创建Toast用于测试关闭 ==========
         Text('=== Create Toast for Testing ===')
-          .fontSize(16)
+          .fontSize(10)
           .fontWeight(FontWeight.Medium)
-          .margin({ bottom: 10 })
 
         Button('Create Toast for Testing')
           .id('btn_create_toast')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               promptAction.showToast({
@@ -78,16 +71,14 @@ struct PromptActionCloseToastTest {
 
         // ========== closeToast 测试 ==========
         Text('=== closeToast Method Tests ===')
-          .fontSize(16)
+          .fontSize(10)
           .fontWeight(FontWeight.Medium)
-          .margin({ top: 20, bottom: 10 })
 
         // Test closeToast with valid ID
         Button('Close Toast with Valid ID')
           .id('btn_closetoast_valid')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               promptAction.closeToast(this.currentToastId);
@@ -105,7 +96,6 @@ struct PromptActionCloseToastTest {
           .id('btn_closetoast_invalid')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               promptAction.closeToast(99999);
@@ -120,16 +110,14 @@ struct PromptActionCloseToastTest {
 
         // ========== null/undefined 参数测试 ==========
         Text('=== Null/Undefined Tests ===')
-          .fontSize(16)
+          .fontSize(10)
           .fontWeight(FontWeight.Medium)
-          .margin({ top: 20, bottom: 10 })
 
         // Test closeToast with null ID
         Button('Close Toast with null ID')
           .id('btn_closetoast_null')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               // Test passing null as toastId parameter
@@ -148,7 +136,6 @@ struct PromptActionCloseToastTest {
           .id('btn_closetoast_undefined')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
           .onClick(() => {
             try {
               // Test passing undefined as toastId parameter
@@ -164,7 +151,6 @@ struct PromptActionCloseToastTest {
       }
       .width('100%')
       .height('100%')
-      .padding(20)
     }
     .height('100%')
   }

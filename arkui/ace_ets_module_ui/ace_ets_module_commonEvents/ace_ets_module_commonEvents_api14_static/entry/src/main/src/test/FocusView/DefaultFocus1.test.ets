@@ -14,30 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import { Driver, ON, Component } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function defaultFocus() {
 
   describe('defaultFocus', () => {
-    beforeAll(async (): Promise<void> => {
-
-      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-
-    });
     beforeEach(async (): Promise<void> => {
       console.info("defaultFocus beforeEach start");
       const searchRouter = AppStorage.get<Router>("router") as Router
@@ -59,8 +45,12 @@ export default function defaultFocus() {
 
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
       console.info("defaultFocus after each called");
+      } catch (err) {
+        console.error("defaultFocus after each error: " + err);
+      }
     });
 
     
@@ -73,6 +63,7 @@ export default function defaultFocus() {
      * @tc.level    Level.LEVEL0
      */
 it('defaultFocus_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('defaultFocus_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -82,6 +73,10 @@ it('defaultFocus_static_0010', Level.LEVEL0, async (done: () => void): Promise<v
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('false');
       await CommonFunc.sleep(1000);
       console.info('[defaultFocus_0010] END');
+      } catch (err) {
+        console.error('[defaultFocus_static_0010] error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
     
@@ -94,6 +89,7 @@ it('defaultFocus_static_0010', Level.LEVEL0, async (done: () => void): Promise<v
      * @tc.level    Level.LEVEL0
      */
 it('defaultFocus_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('defaultFocus_0020 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -106,6 +102,10 @@ it('defaultFocus_static_0020', Level.LEVEL0, async (done: () => void): Promise<v
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('true');
       await CommonFunc.sleep(1000);
       console.info('[defaultFocus_0020] END');
+      } catch (err) {
+        console.error('[defaultFocus_static_0020] error: ' + err);
+        expect().assertFail();
+      }
       done();
     });
 

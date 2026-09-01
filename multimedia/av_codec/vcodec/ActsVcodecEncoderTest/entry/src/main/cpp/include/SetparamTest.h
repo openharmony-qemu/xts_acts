@@ -87,6 +87,9 @@ napi_value COLORSPACE_CONFIG_ADD_011Test(napi_env env, napi_callback_info info);
 napi_value COLORSPACE_CONFIG_ADD_012Test(napi_env env, napi_callback_info info);
 napi_value FRAMENUM_JUDGMENT_001Test(napi_env env, napi_callback_info info);
 napi_value FRAMENUM_JUDGMENT_002Test(napi_env env, napi_callback_info info);
+napi_value LOWPOWER_SETPARAM_001Test(napi_env env, napi_callback_info info);
+napi_value LOWPOWER_SETPARAM_002Test(napi_env env, napi_callback_info info);
+napi_value LOWPOWER_SETPARAM_003Test(napi_env env, napi_callback_info info);
 
 void InitSetparamTest();
 void TestTearDownSetparam();

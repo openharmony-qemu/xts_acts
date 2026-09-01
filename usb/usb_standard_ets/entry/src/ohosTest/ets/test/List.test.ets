@@ -19,7 +19,7 @@ import UsbApiBulkTransferTest from './UsbApiBulkTransferTest.test';
 import UsbApiInterruptTransferTest from './UsbApiInterruptTransferTest.test';
 import UsbApiIsochronousTransferTest from './UsbApiIsochronousTransferTest.test';
 import UsbAccessoryEtsTest from './UsbAccessoryEtsTest.test';
-import UsbCoreEtsTest from './UsbCoreEtsTest.test';
+import UsbCoreApiTest from './UsbCoreApiTest.test';
 import UsbCoreEtsTestEx from './UsbCoreEtsTestEx.test';
 import UsbDevicePipeTest from './UsbDevicePipeTest.test';
 import UsbDevicePipeTestEx from './UsbDevicePipeTestEx.test';
@@ -35,7 +35,7 @@ export default function testsuite() {
   UsbApiBulkTransferTest()
   UsbApiInterruptTransferTest()
   UsbApiIsochronousTransferTest()
-  UsbCoreEtsTest()
+  UsbCoreApiTest()
   UsbCoreEtsTestEx()
   UsbDevicePipeTest()
   UsbDevicePipeTestEx()

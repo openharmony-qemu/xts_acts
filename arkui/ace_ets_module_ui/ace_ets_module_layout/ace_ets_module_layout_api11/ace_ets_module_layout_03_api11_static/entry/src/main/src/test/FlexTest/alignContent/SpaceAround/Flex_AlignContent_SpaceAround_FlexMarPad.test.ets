@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
@@ -22,22 +22,9 @@ import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function flex_AlignContent_SpaceAround_FlexMarPadTest() {
   describe('Flex_AlignContent_SpaceAround_FlexMarPadTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Flex_AlignContent_SpaceAround_FlexMarPadTest beforeEach start");
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Flex_AlignContent_SpaceAround_FlexMarPadTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,7 +47,11 @@ export default function flex_AlignContent_SpaceAround_FlexMarPadTest() {
     });
 
     afterEach(async (): Promise<void> => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       console.info("Flex_AlignContent_SpaceAround_FlexMarPadTest after each called");
     });
     
@@ -80,7 +71,11 @@ it('testFlexAlignContentSpaceAroundFlexMarPadOverflow_static', Level.LEVEL0, asy
         name: 'margin', value: 20
       });
 
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_FlexMarPad01');
       let secondText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_FlexMarPad02');
       let thirdText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_FlexMarPad03');
@@ -126,7 +121,11 @@ it('testFlexAlignContentSpaceAroundFlexMarPadMeet_static', Level.LEVEL0, async (
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'padding', value: 10
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_FlexMarPad01');
       let secondText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_FlexMarPad02');
       let thirdText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_FlexMarPad03');

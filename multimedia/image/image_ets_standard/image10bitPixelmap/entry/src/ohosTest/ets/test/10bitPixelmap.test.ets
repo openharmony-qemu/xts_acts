@@ -25,7 +25,7 @@ import display from '@ohos.display';
 import resourceManager from '@ohos.resourceManager';
 import common from '@ohos.app.ability.common';
 
-let isSupportHdr: boolean;
+let isSupportHdr: boolean = false;
 
 interface WriteFile {
   fd: number,
@@ -55,18 +55,12 @@ export default function image10bitPixelMap() {
     beforeAll(async () => {
       filesDir = AppStorage.get('pathDir');
       cacheDir = AppStorage.get('cacheDir');
-      isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so').then((res: boolean) => {
-        if (res) {
-          console.info("file exists");
-          return true;
-        } else {
-          console.info("file not exists");
-          return false;
-        }
-      }).catch((err: BusinessError) => {
-        console.error("access failed with error message: " + err.message + ", error code: " + err.code);
-        return false;
-      })
+      try {
+        isSupportHdr = await fs.access('/sys_prod/lib64/VideoProcessingEngine/libaihdr_engine.so');
+        console.info('isSupportHdr is ' + isSupportHdr);
+      } catch (err) {
+        console.error('The file path does not exist');
+      }
       isSupportHEICEncode =
         image.createImagePacker().supportedFormats.includes("image/heic");
     })

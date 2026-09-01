@@ -13,31 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver } from '@ohos.UiTest';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import {UtilsTest} from '../Util.test'
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function AxisEvent() {
   describe('AxisEvent', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AxisEvent beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi17.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/AxisEvent/AxisEvent',
@@ -61,7 +46,11 @@ export default function AxisEvent() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(2000);
+      try {
+        await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error('AxisEvent afterEach error: ' + err);
+      }
       console.info('AxisEvent after each called');
     });
 
@@ -75,7 +64,11 @@ export default function AxisEvent() {
      */
 it('AxisEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('AxisEvent_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('AxisEvent_static_0100 sleep error: ' + err);
+      }
       let windowOffsetX:number = AppStorage.get<number>("winLeft") as number;
       let windowOffsetY:number = AppStorage.get<number>("winTop") as number;
       console.log('AxisEvent_static_0100 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
@@ -83,7 +76,11 @@ it('AxisEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       let FatherObjHeight = FatherObj.bottom - FatherObj.top
       let FatherObjWidth = FatherObj.right - FatherObj.left
       console.log('AxisEvent_static_0100 FatherObj',FatherObj.left,FatherObj.top,FatherObj.right,FatherObj.bottom)
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('AxisEvent_static_0100 sleep error: ' + err);
+      }
       let areaObj = CommonFunc.getComponentRectOnScreen('AxisEvent001');
       let areaHeight = areaObj.bottom - areaObj.top
       let areaWidth = areaObj.right - areaObj.left
@@ -91,11 +88,19 @@ it('AxisEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       console.log('AxisEvent_static_0100 areaObj clicked',Math.round(areaObj.left + areaWidth/2),Math.round(areaObj.top + areaHeight/2))
 
       let driver:Driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('AxisEvent_static_0100 sleep error: ' + err);
+      }
       console.log('+++++++++++++++++++++++++++++++++1')
       // await driver.mouseScroll({x:Math.round(areaObj.left + areaWidth/2) as Int, y:Math.round(areaObj.top + areaHeight/2) as Int}, true, 30, 2072,20)
       console.log('+++++++++++++++++++++++++++++++++2')
-      await CommonFunc.sleep(3000);
+      try {
+        await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.error('AxisEvent_static_0100 sleep error: ' + err);
+      }
       console.log('+++++++++++++++++++++++++++++++++3')
       let text1 = inspector.getInspectorByKey('x');
       console.log('+++++++++++++++++++++++++++++++++4')

@@ -17,11 +17,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.input.status = 'pass';
+        getApp().data.testItems['input'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.input.status = 'fail';
+        getApp().data.testItems['input'].status = 'fail';
         this.back();
     },
     backClicked() {

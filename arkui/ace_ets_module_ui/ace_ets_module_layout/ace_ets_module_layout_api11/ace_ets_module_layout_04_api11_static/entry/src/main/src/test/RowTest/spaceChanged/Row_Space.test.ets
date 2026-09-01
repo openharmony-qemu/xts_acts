@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function Row_Space() {
   describe('row_SpaceTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("row_SpaceTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("row_SpaceTest beforeEach start");
       let options: router.RouterOptions = {
@@ -59,7 +46,11 @@ export default function Row_Space() {
       console.info("row_SpaceTest beforeEach end");
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000);
+      } catch (err) {
+      console.info('row_SpaceTestTest await err: ' + JSON.stringify(err));
+      }
       console.info("row_SpaceTest after each called")
     });
     
@@ -77,7 +68,11 @@ it('testRowSpaceUnfill_static_01', Level.LEVEL0, async (done: () => void): Promi
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'addSpace', value: 10
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('row_SpaceTestTest await err: ' + JSON.stringify(err));
+      }
       let Row_Space_011: RectValue = CommonFunc.getComponentRect('Row_Space_011');
       let Row_Space_012: RectValue = CommonFunc.getComponentRect('Row_Space_012');
       let Row_Space_013: RectValue = CommonFunc.getComponentRect('Row_Space_013');
@@ -124,7 +119,11 @@ it('testRowSpaceFill_static_02', Level.LEVEL0, async (done: () => void): Promise
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'addSpace', value: 25
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('row_SpaceTestTest await err: ' + JSON.stringify(err));
+      }
       let Row_Space_011: RectValue = CommonFunc.getComponentRect('Row_Space_011');
       let Row_Space_012: RectValue = CommonFunc.getComponentRect('Row_Space_012');
       let Row_Space_013: RectValue = CommonFunc.getComponentRect('Row_Space_013');
@@ -172,7 +171,11 @@ it('testRowSpaceOverflow_static_03', Level.LEVEL0, async (done: () => void): Pro
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'addSpace', value: 30
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('row_SpaceTestTest await err: ' + JSON.stringify(err));
+      }
       let Row_Space_011: RectValue = CommonFunc.getComponentRect('Row_Space_011');
       let Row_Space_012: RectValue = CommonFunc.getComponentRect('Row_Space_012');
       let Row_Space_013: RectValue = CommonFunc.getComponentRect('Row_Space_013');

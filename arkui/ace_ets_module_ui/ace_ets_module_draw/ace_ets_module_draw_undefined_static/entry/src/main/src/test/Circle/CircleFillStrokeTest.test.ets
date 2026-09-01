@@ -15,22 +15,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, ON } from '@ohos.UiTest';
+import { Driver } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 export default function CircleFillStrokeTest() {
   describe('CircleFillStrokeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility('com.arkui.ace.draw.undefined.static', 'EntryAbility');
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('CircleFillStrokeTest beforeEach start');
       let options: router.RouterOptions = {
@@ -43,7 +36,7 @@ export default function CircleFillStrokeTest() {
         console.info('get CircleFillStroke state pages:' + JSON.stringify(pages));
         if (!('pointsUndefined' == pages.name)) {
           console.info('get CircleFillStroke pages.name:' + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -62,6 +55,7 @@ export default function CircleFillStrokeTest() {
      */
     it('CircleFillStrokeTest_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[CircleFillStrokeTest_0100] START');
+      try {
       let driver = Driver.create();
       await CommonFunc.sleep(2000);
 
@@ -72,9 +66,14 @@ export default function CircleFillStrokeTest() {
       expect(JSON.parseJsonElement(strJson1).getString('$type')).assertEqual('Circle');
       expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Circle');
       expect(JSON.parseJsonElement(strJson3).getString('$type')).assertEqual('Text');
-      
+
       console.info('[CircleFillStrokeTest_0100] END');
       done();
+      } catch (err) {
+        console.error('CircleFillStrokeTest_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

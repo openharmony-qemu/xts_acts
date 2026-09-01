@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -29,20 +29,12 @@ import {
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Callback, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
 export default function setCursorTest() {
   describe('setCursorTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("setCursorTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.nowear.api11.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("setCursorTest beforeEach start");
       let options: router.RouterOptions = {
@@ -73,23 +65,28 @@ export default function setCursorTest() {
      */
 it('setCursorTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setCursorTest_static_0100 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('setCursor_2'));
-      console.log('test button ' + JSON.stringify(button))
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('setCursor_1'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('setCursor_1');
-      await CommonFunc.sleep(1000);
-      console.info("[setCursorTest_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[setCursorTest_static_0100] component obj.$attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[setCursorTest_static_0100] text: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('setCursor枚举值：3');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('setCursor_2'));
+        console.log('test button ' + JSON.stringify(button))
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let button1 = await driver.findComponent(ON.id('setCursor_1'));
+        await (button1?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('setCursor_1');
+        await CommonFunc.sleep(1000);
+        console.info("[setCursorTest_static_0100] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+        console.info("[setCursorTest_static_0100] component obj.$attrs is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[setCursorTest_static_0100] text: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('setCursor枚举值：3');
+      } catch (err) {
+        console.error('[setCursorTest_static_0100] error: ' + err);
+        expect().assertFail();
+      }
       console.info('[setCursorTest_static_0100] END');
       done();
     });
@@ -103,22 +100,27 @@ it('setCursorTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
      */
 it('setCursorTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setCursorTest_static_0200 START');
-      let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('setCursor_3'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let button1 = await driver.findComponent(ON.id('setCursor_1'));
-      await (button1?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('setCursor_1');
-      await CommonFunc.sleep(1000);
-      console.info("[setCursorTest_static_0200] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[setCursorTest_static_0200] component obj.$attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-      console.info("[setCursorTest_static_0200] text: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('setCursor枚举值：0');
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let button = await driver.findComponent(ON.id('setCursor_3'));
+        await (button?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let button1 = await driver.findComponent(ON.id('setCursor_1'));
+        await (button1?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('setCursor_1');
+        await CommonFunc.sleep(1000);
+        console.info("[setCursorTest_static_0200] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+        console.info("[setCursorTest_static_0200] component obj.$attrs is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+        console.info("[setCursorTest_static_0200] text: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')));
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('label')).assertEqual('setCursor枚举值：0');
+      } catch (err) {
+        console.error('[setCursorTest_static_0200] error: ' + err);
+        expect().assertFail();
+      }
       console.info('[setCursorTest_static_0100] END');
       done();
     });

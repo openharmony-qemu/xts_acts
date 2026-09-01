@@ -15,11 +15,12 @@
  */
 
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
+import events_emitter from '@ohos.events.emitter';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -147,5 +148,63 @@ export default function SetBlanklessLoadingWithParams() : void{
         await Utils.msSleep(5000);
         done();
       })
+
+    /**
+     * @tc.name   testSetBlanklessLoadingWithParams801Static
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHPARAMS_801_0600
+     * @tc.desc   test setBlanklessLoadingWithParams error code 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetBlanklessLoadingWithParams801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testSetBlanklessLoadingWithParams801Static', 10)
+        await Utils.msSleep(3000);
+        Utils.registerBaseEvent('testSetBlanklessLoadingWithParams801Static', 801, 148661, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
+        await Utils.msSleep(4000);
+        done();
+      } catch (err) {
+        console.info('[testSetBlanklessLoadingWithParams801Static] err:' + JSON.stringify(err));
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetBlanklessLoadingWithParamsEnableFalseStatic
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHPARAMS_ENABLEFALSE_1000
+     * @tc.desc   test setBlanklessLoadingWithParams param.enable is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetBlanklessLoadingWithParamsEnableFalseStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      try {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('testSetBlanklessLoadingWithParamsEnableFalse', 10)
+        await Utils.msSleep(3000);
+        Utils.registerBaseEvent('testSetBlanklessLoadingWithParamsEnableFalseStatic', 0, 148665, done,
+          (backData: events_emitter.EventData, expected: Object) => {
+            const data = backData?.data as Record<string, RecordData>;
+            expect(data['ACTION']).assertEqual(expected);
+          });
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('setBlanklessLoadingWithParamsTestButton', 10, '');
+        await Utils.msSleep(6000);
+        done();
+      } catch (err) {
+        console.info('[testSetBlanklessLoadingWithParamsEnableFalseStatic] err:' + JSON.stringify(err));
+        done();
+      }
+    })
   })
 }

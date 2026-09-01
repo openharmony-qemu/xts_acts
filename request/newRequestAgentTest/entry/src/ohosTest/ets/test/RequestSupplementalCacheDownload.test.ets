@@ -174,5 +174,132 @@ export default function requestSupplementalCacheDownloadTest() {
       }
     });
 
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_0600
+     * @tc.number SUB_Request_cacheDownload_Supplemental_0600
+     * @tc.desc   offDownloadSuccess url is empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_0600', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_cacheDownload_Supplemental_0600 is starting-----------------------");
+      try {
+        cacheDownload.offDownloadSuccess('');
+        console.info("====>SUB_Request_cacheDownload_Supplemental_0600 offDownloadSuccess empty url success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_Supplemental_0600 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_0700
+     * @tc.number SUB_Request_cacheDownload_Supplemental_0700
+     * @tc.desc   offDownloadSuccess url length exceeds 8192 bytes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_0700', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_cacheDownload_Supplemental_0700 is starting-----------------------");
+      try {
+        let longUrl = 'https://example.com/' + ''.padEnd(8200, 'a');
+        cacheDownload.offDownloadSuccess(longUrl);
+        console.info("====>SUB_Request_cacheDownload_Supplemental_0700 offDownloadSuccess long url success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_Supplemental_0700 catch err: ${JSON.stringify(err)}`);
+        expect(err.code === 401).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_0800
+     * @tc.number SUB_Request_cacheDownload_Supplemental_0800
+     * @tc.desc   offDownloadSuccess url with invalid protocol (ftp).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_0800', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_cacheDownload_Supplemental_0800 is starting-----------------------");
+      let isOffSuccess: boolean = false;
+      try {
+        cacheDownload.offDownloadSuccess('ftp://example.com/resource');
+        isOffSuccess = true;
+        console.info("====>SUB_Request_cacheDownload_Supplemental_0800 offDownloadSuccess invalid protocol url success");
+        expect(isOffSuccess).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_Supplemental_0800 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_0900
+     * @tc.number SUB_Request_cacheDownload_Supplemental_0900
+     * @tc.desc   offDownloadSuccess with valid url and callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_0900', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_cacheDownload_Supplemental_0900 is starting-----------------------");
+      let isOffSuccess: boolean = false;
+      try {
+        let testUrl = 'https://127.0.0.1:9996/testResource';
+        let successCallback = () => {
+          console.info("====>SUB_Request_cacheDownload_Supplemental_0900 onDownloadSuccess callback");
+        };
+        cacheDownload.onDownloadSuccess(testUrl, successCallback);
+        cacheDownload.offDownloadSuccess(testUrl, successCallback);
+        isOffSuccess = true;
+        console.info("====>SUB_Request_cacheDownload_Supplemental_0900 offDownloadSuccess with callback success");
+        expect(isOffSuccess).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_Supplemental_0900 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_Supplemental_1000
+     * @tc.number SUB_Request_cacheDownload_Supplemental_1000
+     * @tc.desc   offDownloadSuccess with valid url and no callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Request_cacheDownload_Supplemental_1000', Level.LEVEL3, async (done: Function) => {
+      console.info("-----------------------SUB_Request_cacheDownload_Supplemental_1000 is starting-----------------------");
+      let isOffSuccess: boolean = false;
+      try {
+        let testUrl = 'https://127.0.0.1:9995/testResource';
+        let successCallback = () => {
+          console.info("====>SUB_Request_cacheDownload_Supplemental_1000 onDownloadSuccess callback");
+        };
+        cacheDownload.onDownloadSuccess(testUrl, successCallback);
+        cacheDownload.offDownloadSuccess(testUrl);
+        isOffSuccess = true;
+        console.info("====>SUB_Request_cacheDownload_Supplemental_1000 offDownloadSuccess without callback success");
+        expect(isOffSuccess).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Request_cacheDownload_Supplemental_1000 catch err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    });
+
   })
 }

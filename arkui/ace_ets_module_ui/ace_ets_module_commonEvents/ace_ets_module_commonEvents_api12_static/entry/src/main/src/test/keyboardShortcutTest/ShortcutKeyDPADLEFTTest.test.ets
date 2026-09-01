@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
@@ -23,23 +23,10 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test';
 import { KeyCode } from '@ohos.multimodalInput.keyCode';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function ShortcutKeyDPADLEFTTest() {
   describe('ShortcutKeyDPADLEFTTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-      
-    });
     beforeEach(async () => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/keyboardShortcut/ShortcutKeyDPADLEFT",
@@ -56,7 +43,11 @@ export default function ShortcutKeyDPADLEFTTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(2000);
+      try {
+            await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.error("afterEach error: " + err);
+      }
     });
 
     

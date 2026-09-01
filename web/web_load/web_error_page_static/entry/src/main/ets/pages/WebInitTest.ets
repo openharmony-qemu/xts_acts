@@ -302,6 +302,246 @@ struct webViewController {
                 break;
               }
 
+              case 'emitEnableAdsBlockNull': {
+                try {
+                  let param: boolean | null = null;
+                  this.controller.enableAdsBlock(param as boolean);
+                  let isBlocked: boolean = this.controller.isAdsBlockEnabled();
+                  Utils.emitEvent(isBlocked, 60626);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60626);
+                }
+                break;
+              }
+
+              case 'emitEnableAdsBlockUndefined': {
+                try {
+                  let param: boolean | undefined = undefined;
+                  this.controller.enableAdsBlock(param as boolean);
+                  let isBlocked: boolean = this.controller.isAdsBlockEnabled();
+                  Utils.emitEvent(isBlocked, 60627);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60627);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledNull': {
+                try {
+                  let param: boolean | null = null;
+                  this.controller.setErrorPageEnabled(param as boolean);
+                  let result = this.controller.getErrorPageEnabled();
+                  Utils.emitEvent(result, 60628);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60628);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledUndefined': {
+                try {
+                  let param: boolean | undefined = undefined;
+                  this.controller.setErrorPageEnabled(param as boolean);
+                  let result = this.controller.getErrorPageEnabled();
+                  Utils.emitEvent(result, 60629);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60629);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledWithSubframeNullEnable': {
+                try {
+                  let param: boolean | null = null;
+                  this.controller.setErrorPageEnabled(param as boolean, true);
+                  let enableResult: boolean = this.controller.getErrorPageEnabled();
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  let resultStr: string = (enableResult ? 'true' : 'false') + ',' +
+                    (subframeResult ? 'true' : 'false');
+                  Utils.emitEvent(resultStr, 60630);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60630);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledWithSubframeUndefinedEnable': {
+                try {
+                  let param: boolean | undefined = undefined;
+                  this.controller.setErrorPageEnabled(param as boolean, true);
+                  let enableResult: boolean = this.controller.getErrorPageEnabled();
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  let resultStr: string = (enableResult ? 'true' : 'false') + ',' +
+                    (subframeResult ? 'true' : 'false');
+                  Utils.emitEvent(resultStr, 60631);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60631);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledWithSubframeNullSubframe': {
+                try {
+                  let subframe: boolean | null = null;
+                  this.controller.setErrorPageEnabled(true, subframe as boolean);
+                  let enableResult: boolean = this.controller.getErrorPageEnabled();
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  let resultStr: string = (enableResult ? 'true' : 'false') + ',' +
+                    (subframeResult ? 'true' : 'false');
+                  Utils.emitEvent(resultStr, 60632);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60632);
+                }
+                break;
+              }
+
+              case 'emitSetErrorPageEnabledWithSubframeUndefinedSubframe': {
+                try {
+                  let subframe: boolean | undefined = undefined;
+                  this.controller.setErrorPageEnabled(true, subframe as boolean);
+                  let enableResult: boolean = this.controller.getErrorPageEnabled();
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  let resultStr: string = (enableResult ? 'true' : 'false') + ',' +
+                    (subframeResult ? 'true' : 'false');
+                  Utils.emitEvent(resultStr, 60633);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60633);
+                }
+                break;
+              }
+
+              case 'emitGetSubframeErrorPageEnabledStandalone': {
+                try {
+                  this.controller.setErrorPageEnabled(true, true);
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  Utils.emitEvent(subframeResult, 60634);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(error.message, 60634);
+                }
+                break;
+              }
+
+              case 'emitGetSubframeErrorPageEnabledReturnFalse': {
+                try {
+                  this.controller.setErrorPageEnabled(true, false);
+                  let subframeResult: boolean = this.controller.getSubframeErrorPageEnabled();
+                  Utils.emitEvent(subframeResult, 60642);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(Number(error.code), 60642);
+                }
+                break;
+              }
+
+              case 'emitPrivateNetworkAccessNull': {
+                try {
+                  let param: boolean | null = null;
+                  webView.WebviewController.enablePrivateNetworkAccess(param as boolean);
+                  let result = webView.WebviewController.isPrivateNetworkAccessEnabled();
+                  Utils.emitEvent(String(result), 60635);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60635);
+                }
+                break;
+              }
+
+              case 'emitPrivateNetworkAccessUndefined': {
+                try {
+                  let param: boolean | undefined = undefined;
+                  webView.WebviewController.enablePrivateNetworkAccess(param as boolean);
+                  let result = webView.WebviewController.isPrivateNetworkAccessEnabled();
+                  Utils.emitEvent(String(result), 60636);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60636);
+                }
+                break;
+              }
+
+              case 'emitSetAutoPreconnectNull': {
+                try {
+                  let param: boolean | null = null;
+                  webView.WebviewController.setAutoPreconnect(param as boolean);
+                  let result = webView.WebviewController.isAutoPreconnectEnabled();
+                  Utils.emitEvent(String(result), 60637);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60637);
+                }
+                break;
+              }
+
+              case 'emitSetAutoPreconnectUndefined': {
+                try {
+                  let param: boolean | undefined = undefined;
+                  webView.WebviewController.setAutoPreconnect(param as boolean);
+                  let result = webView.WebviewController.isAutoPreconnectEnabled();
+                  Utils.emitEvent(String(result), 60638);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60638);
+                }
+                break;
+              }
+
+              case 'emitWebSiteIsolationModeNull': {
+                try {
+                  webView.WebviewController.setSiteIsolationMode((null as Int) as webView.SiteIsolationMode);
+                  Utils.emitEvent(true, 60639);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60639);
+                }
+                break;
+              }
+
+              case 'emitWebSiteIsolationModeUndefined': {
+                try {
+                  webView.WebviewController.setSiteIsolationMode((undefined as Int) as webView.SiteIsolationMode);
+                  Utils.emitEvent(true, 60640);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60640);
+                }
+                break;
+              }
+
+              case 'emitWebSiteIsolationModeInvalid': {
+                try {
+                  let invalidMode = 99 as webView.SiteIsolationMode;
+                  webView.WebviewController.setSiteIsolationMode(invalidMode);
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(String(error.code), 60641);
+                }
+                break;
+              }
+
             }
           })
 

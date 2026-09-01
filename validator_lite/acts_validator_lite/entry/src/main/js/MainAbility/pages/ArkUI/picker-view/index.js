@@ -7,7 +7,6 @@ export default {
     },
 
     onInit() {
-        console.info('onInit');
         this.defaultTime = this.now();
         this.time = this.defaultTime;
     },
@@ -17,7 +16,6 @@ export default {
     },
 
     onDestroy() {
-        console.info('onDestroy');
 
     },
 
@@ -25,7 +23,6 @@ export default {
         let date = new Date();
         let hours = date.getHours();
         let minutes = date.getMinutes();
-        console.log('now hours:' + hours + ' minutes:' + minutes);
         return this.concat(hours, minutes);
     },
 
@@ -45,11 +42,11 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems.picker_view.status = 'pass';
+        getApp().data.testItems['picker_view'].status = 'pass';
         this.back();
     },
     failClicked() {
-        getApp().data.testItems.picker_view.status = 'fail';
+        getApp().data.testItems['picker_view'].status = 'fail';
         this.back();
     },
     backClicked() {

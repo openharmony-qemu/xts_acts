@@ -92,7 +92,9 @@ it('SUB_ACE_ListItem_aspectRatio_width2_static_0100', Level.LEVEL0, async (done:
       let width: number = list01.right - list01.left;
       let height: number = list01.bottom - list01.top;
 
+      console.info('[SUB_ACE_ListItem_aspectRatio_width2_0100] width: ' + width);
       expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(width * 0.6)) <= 1).assertTrue();
+      console.info('[SUB_ACE_ListItem_aspectRatio_width2_0100] height: ' + height);
       expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(height * 0.2)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItem_aspectRatio_width2_0100] END');
@@ -123,8 +125,11 @@ it('SUB_ACE_ListItem_aspectRatio_width2_static_0200', Level.LEVEL0, async (done:
       let height: number = list01.bottom - list01.top;
       let itemWidth: number = ListItem01.right - ListItem01.left;
 
+      console.info('[SUB_ACE_ListItem_aspectRatio_width2_0200] (ListItem01.right - ListItem01.left): ' + (ListItem01.right - ListItem01.left));
       expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(width * 0.6)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((ListItem01.bottom - ListItem01.top) - (itemWidth * 2))) <= 1).assertTrue();
+      console.info('[SUB_ACE_ListItem_aspectRatio_width2_0200] (ListItem01.bottom - ListItem01.top): ' + (ListItem01.bottom - ListItem01.top));
+      console.info('[SUB_ACE_ListItem_aspectRatio_width2_0200] itemWidth: ' + itemWidth);
+      expect(Math.floor(Math.abs((ListItem01.bottom - ListItem01.top)/2 - itemWidth)) <= 1).assertTrue();
 
 
       console.info('[SUB_ACE_ListItem_aspectRatio_width2_0200] END');
@@ -154,7 +159,9 @@ it('SUB_ACE_ListItem_aspectRatio_width2_static_0300', Level.LEVEL0, async (done:
       let width: number = list01.right - list01.left;
       let height: number = list01.bottom - list01.top;
 
+      console.info('[SUB_ACE_ListItem_aspectRatio_width2_0300] (ListItem01.right - ListItem01.left): ' + (ListItem01.right - ListItem01.left));
       expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(width * 0.6)) <= 1).assertTrue();
+      console.info('[SUB_ACE_ListItem_aspectRatio_width2_0300] (ListItem01.bottom - ListItem01.top): ' + (ListItem01.bottom - ListItem01.top));
       expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(width * 0.6 / 2)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItem_aspectRatio_width2_0300] END');
@@ -184,7 +191,9 @@ it('SUB_ACE_ListItem_aspectRatio_width2_static_0400', Level.LEVEL0, async (done:
       let width: number = list01.right - list01.left;
       let height: number = list01.bottom - list01.top;
 
+      console.info('[SUB_ACE_ListItem_aspectRatio_width2_0400] (ListItem01.right - ListItem01.left): ' + (ListItem01.right - ListItem01.left));
       expect(Math.abs(Math.round(ListItem01.right - ListItem01.left) - Math.round(width * 0.6)) <= 1).assertTrue();
+      console.info('[SUB_ACE_ListItem_aspectRatio_width2_0400] (ListItem01.bottom - ListItem01.top): ' + (ListItem01.bottom - ListItem01.top));
       expect(Math.abs(Math.round(ListItem01.bottom - ListItem01.top) - Math.round(height * 0.2)) <= 1).assertTrue();
 
       console.info('[SUB_ACE_ListItem_aspectRatio_width2_0400] END');

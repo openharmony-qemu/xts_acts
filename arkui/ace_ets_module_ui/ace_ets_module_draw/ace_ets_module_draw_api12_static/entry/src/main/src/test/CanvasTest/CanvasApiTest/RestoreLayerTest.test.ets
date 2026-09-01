@@ -13,25 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from "../../../../ets/MainAbility/common/Common";
 import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { startAbility, UtilsTest } from '../../Util.test';
 
 export default function RestoreLayerTest() {
   describe('RestoreLayerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("RestoreLayerTest beforeEach start");
-
-
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
-
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("RestoreLayerTest beforeEach start");
@@ -56,7 +47,11 @@ export default function RestoreLayerTest() {
       console.info("RestoreLayerTest beforeEach end");
     });
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('RestoreLayerTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("RestoreLayerTest after each called");
     });
 
@@ -69,9 +64,17 @@ export default function RestoreLayerTest() {
      */
 it('RestoreLayerTest_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[RestoreLayerTest_001] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('RestoreLayerTest sleep err: ' + JSON.stringify(err));
+      }
       let text1 = inspector.getInspectorByKey('text1');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('RestoreLayerTest sleep err: ' + JSON.stringify(err));
+      }
       expect(JSON.parseJsonElement(text1).getElement('$attrs').getString('content')).assertEqual('restoreLayer');
       console.info('[RestoreLayerTest_001] END');
       done();

@@ -1,4 +1,4 @@
-'use static';
+﻿'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,9 +15,9 @@
  */
 
 import type { KeyCode } from '@ohos.multimodalInput.keyCode';
-import { BusinessError } from '@ohos.base';
+
 import { Callback, Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -25,14 +25,8 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { FunctionKey, ModifierKey } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test';
+
 let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 // to test Ctrl + A ,Ctrl + C ..
 const keycodeMap = new Map<string | FunctionKey, int>();
@@ -63,10 +57,6 @@ keycodeMap.set(FunctionKey.DPAD_RIGHT, KeyCode.KEYCODE_DPAD_RIGHT);
 
 export default function globalShortcutKeyTest3() {
   describe('globalShortcutKeyTest3', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
         url: "MainAbility/pages/shotCutKeyTest/globalShortcutKeyTest3",
@@ -89,13 +79,17 @@ export default function globalShortcutKeyTest3() {
     });
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(500);
+      try {
+        await CommonFunc.sleep(500);
+      } catch (err) {
+        console.info('xxxTest sleep err: ' + JSON.stringify(err));
+      }
     });
 
     /**
      * @tc.number    SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0080
      * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0080
-     * @tc.desc      simulate the keyboard operate “CTRL + C”
+     * @tc.desc      simulate the keyboard operate 鈥淐TRL + C鈥?
      * @tc.level:    Level 0
      * @tc.type :
      * @tc.size :
@@ -127,10 +121,18 @@ async function testAsyncFunction(keyChar: string | FunctionKey, driver: Driver):
   AppStorage.get<MessageManager<string | FunctionKey>>("messageManager")!.notify({
     name: 'changeChar', value: keyChar
   });
-  await CommonFunc.sleep(500);
+  try {
+    await CommonFunc.sleep(500);
+  } catch (err) {
+    console.info('xxxTest sleep err: ' + JSON.stringify(err));
+  }
   // keyboard to sumilate
   driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, keycodeMap.get(keyChar) as int);
-  await CommonFunc.sleep(2000);
+  try {
+    await CommonFunc.sleep(2000);
+  } catch (err) {
+    console.info('xxxTest sleep err: ' + JSON.stringify(err));
+  }
   // to get the data to check
   let tt2 = inspector.getInspectorByKey('keyTest');
   let obj2 = JSON.parseJsonElement(tt2);

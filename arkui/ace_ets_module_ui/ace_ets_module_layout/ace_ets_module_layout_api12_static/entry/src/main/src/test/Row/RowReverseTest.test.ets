@@ -15,28 +15,14 @@
  */
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function RowReverseTest() {
   describe('RowReverseTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info("RowReverseTest beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("RowReverseTest beforeEach start");
       let options: router.RouterOptions = {
@@ -70,7 +56,11 @@ export default function RowReverseTest() {
      */
 it('RowReverseTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RowReverseTest_static_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('RowReverseTest sleep err: ' + JSON.stringify(err));
+      }
 
       let Row_1 = CommonFunc.getComponentRect('RowReverse_Row_1');
       let Row_01 = CommonFunc.getComponentRect('RowReverse_Row_01');
@@ -94,7 +84,11 @@ it('RowReverseTest_static_0100', Level.LEVEL0, async (done: () => void): Promise
      */
 it('RowReverseTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RowReverseTest_static_0200] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('RowReverseTest sleep err: ' + JSON.stringify(err));
+      }
 
       let Row_2 = CommonFunc.getComponentRect('RowReverse_Row_2');
       let Row_03 = CommonFunc.getComponentRect('RowReverse_Row_03');

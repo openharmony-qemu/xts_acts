@@ -14,31 +14,18 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
 import { Visibility } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function flexAlign_SpaceBetween_fixedParentVisibility() {
   describe('FlexAlign_SpaceBetween_fixedParentVisibility', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("FlexAlign_SpaceBetween_fixedParentVisibility beforeEach start");
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("FlexAlign_SpaceBetween_fixedParentVisibility beforeEach start");
       let options: router.RouterOptions = {
@@ -54,7 +41,7 @@ export default function flexAlign_SpaceBetween_fixedParentVisibility() {
           
           
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
           
         }
       } catch (err) {
@@ -65,7 +52,11 @@ export default function flexAlign_SpaceBetween_fixedParentVisibility() {
 
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(1000);
+      try {
+      await CommonFunc.sleep(2000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       console.info("FlexAlign_SpaceBetween_fixedParentVisibility afterEach called");
     });
 
@@ -82,7 +73,11 @@ it('testAlignSpaceBetweenRowNoWrapVisibilityNone_static', Level.LEVEL0, async ()
       AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
         name: 'visibility', value: Visibility.None
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('FlexAlignSpaceBetween10');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Flex');
@@ -130,7 +125,11 @@ it('testAlignSpaceBetweenRowNoWrapVisibilityHidden_static', Level.LEVEL0, async 
       AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
         name: 'visibility', value: Visibility.Hidden
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('FlexAlignSpaceBetween10');
 
       expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Flex');

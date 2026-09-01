@@ -16,11 +16,9 @@
 
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
@@ -28,12 +26,6 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function splitLayoutTest() {
   describe('splitLayoutTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("splitLayoutTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.splitLayout.nowear.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("splitLayoutTest beforeEach start");
@@ -47,26 +39,24 @@ export default function splitLayoutTest() {
         console.info("get splitLayoutTest state pages:" + JSON.stringify(pages));
         if (!("splitLayoutTest" == pages.name)) {
           console.info("get splitLayoutTest pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push splitLayoutTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push splitLayoutTest page error:" + err);
       }
       console.info("splitLayoutTest beforeEach end");
     });
-    
+
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('splitLayoutTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('splitLayoutTest after each called');
     })
-    
-    
-    
-    
+
     /**
      * @tc.number   testSplitLayout_static_0100
      * @tc.name     testSplitLayout_static_0100
@@ -75,6 +65,7 @@ export default function splitLayoutTest() {
      */
 it('testSplitLayout_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSplitLayout_static_0100] START');
+      try {
       let driver = Driver.create();
       await driver.delayMs(2000);
 
@@ -88,11 +79,13 @@ it('testSplitLayout_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
       expect(SplitLayoutItem3!== null).assertTrue();
       console.info('[testSplitLayout_static_0100] END');
       done();
+      } catch (err) {
+        console.error('testSplitLayout_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
-    
-    
-    
-    
+
     /**
      * @tc.number   testSplitLayout_static_0200
      * @tc.name     testSplitLayout_static_0200
@@ -101,14 +94,20 @@ it('testSplitLayout_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
      */
 it('testSplitLayout_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testSplitLayout_static_0200] START');
+      try {
       let driver = Driver.create();
       await driver.delayMs(2000);
-      
+
       let SplitLayoutItem = await driver.findComponent(ON.text('示例：空白区域容器内可添加组件'));
       await CommonFunc.sleep(2000);
       expect(SplitLayoutItem!== null).assertTrue();
       console.info('[testSplitLayout_static_0200] END');
       done();
+      } catch (err) {
+        console.error('testSplitLayout_static_0200 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

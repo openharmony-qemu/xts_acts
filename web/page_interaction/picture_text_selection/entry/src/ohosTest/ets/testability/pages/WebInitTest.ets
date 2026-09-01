@@ -80,7 +80,7 @@ struct WebInitTest {
           .onClick(async () => {
             console.info("key==>" + this.str)
             await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
             switch (this.str) {
               case "emitSearchAllAsync": {
                 try {
@@ -129,7 +129,7 @@ struct WebInitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('indexCopy.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.pixelmap = this.controller.getFavicon();
                   this.pixelmap.getImageInfo().then(imageInfo => {
                     if (imageInfo == undefined) {
@@ -148,7 +148,7 @@ struct WebInitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl($rawfile('secondCopy.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.pixelmap = this.controller.getFavicon();
                   this.pixelmap.getImageInfo().then(imageInfo => {
                     if (imageInfo == undefined) {
@@ -168,7 +168,7 @@ struct WebInitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/search.html');
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   console.error(`searchResultCount is: ${this.searchResultCount}`);
                   this.isOnSearchReceive = -1;
                   this.controller.searchAllAsync('search');
@@ -184,7 +184,7 @@ struct WebInitTest {
                 try {
                   this.isPageEnd = -1;
                   this.controller.loadUrl('resource://rawfile/search.html');
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                   this.isOnSearchReceive = -1;
                   this.controller.searchAllAsync('searchNone');
                   await Utils.waitForExist(()=>this.isOnSearchReceive, this.str+' isOnSearchReceive', 1, 1000);

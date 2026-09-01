@@ -25,7 +25,6 @@ import {
   Level
 } from '../../../../hypium/index'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
@@ -34,12 +33,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 export default function FrameNodeCancelAnimations() {
   describe('FrameNodeCancelAnimations', () => {
-    beforeAll(async () => {
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(1000);
-      console.info('beforeAll case');
-    });
-
     beforeEach(async () => {
       console.info('frameNodeApi beforeEach start');
       let options: router.RouterOptions  = {
@@ -75,15 +68,35 @@ export default function FrameNodeCancelAnimations() {
     it('FrameNodeCancelAnimations_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FrameNodeCancelAnimations_0100] START');
       let driver = Driver.create();
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('FrameNodeCancelAnimationsTest await err: ' + JSON.stringify(err));
+      }
 
       let cancelBtn = await driver.findComponent(ON.id('ButtonCancelAnimations'));
-      await CommonFunc.sleep(1000);
-      await (cancelBtn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('FrameNodeCancelAnimationsTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await (cancelBtn?.click() as Promise<void>);
+      } catch (err) {
+        console.info('FrameNodeCancelAnimationsTest await err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('FrameNodeCancelAnimationsTest await err: ' + JSON.stringify(err));
+      }
 
       let strJson = inspector.getInspectorByKey('cancelResult');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('FrameNodeCancelAnimationsTest await err: ' + JSON.stringify(err));
+      }
       console.info('[FrameNodeCancelAnimations_0100] content: ' +
         JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('content')));
 

@@ -1386,11 +1386,11 @@ export default function typeArrayBigInt64ArrayTest() {
       const bigInt64Arr: BigInt64Array = new BigInt64Array(buf);
       bigInt64Arr.set([15n, 25n, 35n]);
       const dv: DataView = new DataView(buf);
-      expect(bigInt64Arr.every(val => val > 10)).assertEqual(true);
-      expect(bigInt64Arr.every(val => val < 30)).assertEqual(false);
+      expect(bigInt64Arr.every(val => val > 10n)).assertEqual(true);
+      expect(bigInt64Arr.every(val => val < 30n)).assertEqual(false);
       dv.setBigInt64(16, 28n, true);
       expect(bigInt64Arr.length).assertEqual(3);
-      expect(bigInt64Arr.every(val => val < 30)).assertEqual(true);
+      expect(bigInt64Arr.every(val => val < 30n)).assertEqual(true);
     })
 
     /**
@@ -1407,10 +1407,10 @@ export default function typeArrayBigInt64ArrayTest() {
       bigInt64Arr.set([5n, 15n, 25n]);
       const dv: DataView = new DataView(sab);
       expect(bigInt64Arr.some(val => val === 15n)).assertEqual(true);
-      expect(bigInt64Arr.some(val => val > 30)).assertEqual(false);
+      expect(bigInt64Arr.some(val => val > 30n)).assertEqual(false);
       dv.setBigInt64(16, 35n, true);
       expect(bigInt64Arr.length).assertEqual(3);
-      expect(bigInt64Arr.some(val => val > 30)).assertEqual(true);
+      expect(bigInt64Arr.some(val => val > 30n)).assertEqual(true);
     })
 
     /**

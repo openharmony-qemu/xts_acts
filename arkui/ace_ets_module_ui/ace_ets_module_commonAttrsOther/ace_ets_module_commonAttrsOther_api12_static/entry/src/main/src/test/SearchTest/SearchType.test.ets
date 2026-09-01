@@ -13,29 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll} from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, it, expect, Level} from "../../../../hypium/index"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 // import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 
 export default function SearchTypeTest() {
   describe('SearchTypeTest', (): void => {
 
     beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
-      
 
       const searchRouter = AppStorage.get<Router>("router") as Router
       console.info("SearchTypeTest beforeEach start222");

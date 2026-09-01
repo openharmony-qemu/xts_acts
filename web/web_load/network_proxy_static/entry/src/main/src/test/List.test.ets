@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,10 +17,16 @@
 import  webviewNetworkProxy from './WebviewNetworkProxy.test'
 import webCookieManager from './WebCookieManager.test'
 import webviewController from './WebViewController.test'
-
-
+import ProxyConfigEnableReverseBypass from './ProxyConfigEnableReverseBypass.test'
+import UserAgentMetadataSetWow64 from './UserAgentMetadataSetWow64.test'
+import WebOnVerifyPinCallback from './WebOnVerifyPinCallback.test'
+import ProxyConfigInsertDirectRuleParam from './ProxyConfigInsertDirectRuleParam.test'
 export default function testsuite() {
   webviewNetworkProxy();
-  webCookieManager();
   webviewController();
+  webCookieManager();
+  ProxyConfigEnableReverseBypass()
+  UserAgentMetadataSetWow64()
+  WebOnVerifyPinCallback()
+  ProxyConfigInsertDirectRuleParam()
 }

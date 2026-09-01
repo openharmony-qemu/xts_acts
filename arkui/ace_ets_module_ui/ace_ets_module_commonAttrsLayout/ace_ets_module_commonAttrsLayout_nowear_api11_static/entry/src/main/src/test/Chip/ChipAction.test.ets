@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, MouseButton, ON } from '@ohos.UiTest';
@@ -21,23 +21,8 @@ import { ComponentUtils, Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { UtilsTest } from '../Util.test';
-import { BusinessError } from '@ohos.base';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
-
 export default function ChipAction() {
   describe('ChipAction', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("ChipAction beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-    });
 
     beforeEach(() => {
       console.info("ChipAction beforeEach start");
@@ -71,20 +56,24 @@ it('ChipAction_static_001', Level.LEVEL0, async (done: () => void): Promise<void
       const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
       console.info('ChipAction_static_001 START');
       let ChipActionCol = CommonFunc.getComponentRect('ChipActionCol');
-      await CommonFunc.sleep(200);
+      try { await CommonFunc.sleep(200); } catch (err) { console.info('ChipAction sleep err: ' + JSON.stringify(err)); }
       let right: number = ChipActionCol.right - uiContext.vp2px(22) + Number(AppStorage.get<number>("winLeft") ?? 0);
       let top: number = ChipActionCol.top + uiContext.vp2px(60) + Number(AppStorage.get<number>("winTop") ?? 0);
-      await CommonFunc.sleep(200);
+      try { await CommonFunc.sleep(200); } catch (err) { console.info('ChipAction sleep err: ' + JSON.stringify(err)); }
       console.info('ChipAction_static_001 right：' + right + ',top:' + top);
       let driver = Driver.create();
-      await driver.mouseClick({
-        x: Math.round(right).toInt(), y: Math.round(top).toInt()
-      }, MouseButton.MOUSE_BUTTON_LEFT);
-      await CommonFunc.sleep(1000);
+      try {
+        await driver.mouseClick({
+          x: Math.round(right).toInt(), y: Math.round(top).toInt()
+        }, MouseButton.MOUSE_BUTTON_LEFT);
+      } catch (err) {
+        console.info('ChipAction mouseClick err: ' + JSON.stringify(err));
+      }
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('ChipAction sleep err: ' + JSON.stringify(err)); }
       console.info('ChipAction_static_001 click success');
 
       let strJson1 = inspector.getInspectorByKey('ChipAction');
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.info('ChipAction sleep err: ' + JSON.stringify(err)); }
       console.info("[ChipAction_static_001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson1)));
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('action');
       console.info('[ChipAction_static_001] END');

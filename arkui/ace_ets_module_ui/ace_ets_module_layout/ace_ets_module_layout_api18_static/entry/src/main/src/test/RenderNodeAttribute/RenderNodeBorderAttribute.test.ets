@@ -15,23 +15,15 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, it, Level, expect } from '../../../../hypium/index'
 import router from '@ohos.router';
-import { Component, Driver, ON, MatchPattern, DisplayRotation } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest, startAbility } from '../Util.test';
 
 export default function RenderNodeBorderAttributeTest() {
   describe('RenderNodeBorderAttributeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('RenderNodeBorderAttributeTest beforeAll start');
-      await UtilsTest.msSleep(4000)
-      await startAbility('com.arkui.ace.StateMangagement.api18.static', 'EntryAbility')
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('RenderNodeBorderAttributeTest beforeEach start');
@@ -43,7 +35,7 @@ export default function RenderNodeBorderAttributeTest() {
         router.clear();
         let pages = router.getState();
         if (!('RenderNodeBorderAttribute' == pages.name)) {
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -56,10 +48,6 @@ export default function RenderNodeBorderAttributeTest() {
       console.info('afterEach case');
     });
 
-    afterAll(async () => {
-      console.info('afterAll case');
-    });
-
     /**
      * @tc.number   RenderNodeBorderAttributeTest_static_0100
      * @tc.name     RenderNodeBorderAttributeTest_static_0100
@@ -69,17 +57,22 @@ export default function RenderNodeBorderAttributeTest() {
      * @tc.level    Level.LEVEL0
      */
     it('RenderNodeBorderAttributeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RenderNodeBorderAttributeTest_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('RenderNodeBorderAttributeTest_0100 START');
+        await CommonFunc.sleep(1000);
 
-      // 验证 borderStyle top
-      let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_borderStyle_top');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[RenderNodeBorderAttributeTest_0100] component obj is: ' + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('borderStyle top: 2');
+        // 验证 borderStyle top
+        let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_borderStyle_top');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[RenderNodeBorderAttributeTest_0100] component obj is: ' + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('borderStyle top: 2');
 
+        console.info('RenderNodeBorderAttributeTest_0100 END');
+      } catch (err) {
+        console.error('RenderNodeBorderAttributeTest_0100 err: ' + err);
+        expect().assertFail();
+      }
       done();
-      console.info('RenderNodeBorderAttributeTest_0100 END');
     })
 
     /**
@@ -91,17 +84,22 @@ export default function RenderNodeBorderAttributeTest() {
      * @tc.level    Level.LEVEL0
      */
     it('RenderNodeBorderAttributeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RenderNodeBorderAttributeTest_0200 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('RenderNodeBorderAttributeTest_0200 START');
+        await CommonFunc.sleep(1000);
 
-      // 验证 borderWidth top
-      let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_borderWidth_top');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[RenderNodeBorderAttributeTest_0200] component obj is: ' + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('borderWidth top: 5');
+        // 验证 borderWidth top
+        let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_borderWidth_top');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[RenderNodeBorderAttributeTest_0200] component obj is: ' + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('borderWidth top: 5');
 
+        console.info('RenderNodeBorderAttributeTest_0200 END');
+      } catch (err) {
+        console.error('RenderNodeBorderAttributeTest_0200 err: ' + err);
+        expect().assertFail();
+      }
       done();
-      console.info('RenderNodeBorderAttributeTest_0200 END');
     })
 
     /**
@@ -113,17 +111,22 @@ export default function RenderNodeBorderAttributeTest() {
      * @tc.level    Level.LEVEL0
      */
     it('RenderNodeBorderAttributeTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RenderNodeBorderAttributeTest_0300 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('RenderNodeBorderAttributeTest_0300 START');
+        await CommonFunc.sleep(1000);
 
-      // 验证 borderColor top
-      let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_borderColor_top');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[RenderNodeBorderAttributeTest_0300] component obj is: ' + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('borderColor top: -16711936');
+        // 验证 borderColor top
+        let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_borderColor_top');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[RenderNodeBorderAttributeTest_0300] component obj is: ' + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('borderColor top: -16711936');
 
+        console.info('RenderNodeBorderAttributeTest_0300 END');
+      } catch (err) {
+        console.error('RenderNodeBorderAttributeTest_0300 err: ' + err);
+        expect().assertFail();
+      }
       done();
-      console.info('RenderNodeBorderAttributeTest_0300 END');
     })
 
     /**
@@ -135,17 +138,22 @@ export default function RenderNodeBorderAttributeTest() {
      * @tc.level    Level.LEVEL0
      */
     it('RenderNodeBorderAttributeTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RenderNodeBorderAttributeTest_0400 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('RenderNodeBorderAttributeTest_0400 START');
+        await CommonFunc.sleep(1000);
 
-      // 验证 borderRadius.topLeft
-      let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_borderRadius_topLeft');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[RenderNodeBorderAttributeTest_0400] component obj is: ' + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('borderRadius topLeft: 10');
+        // 验证 borderRadius.topLeft
+        let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_borderRadius_topLeft');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[RenderNodeBorderAttributeTest_0400] component obj is: ' + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('borderRadius topLeft: 10');
 
+        console.info('RenderNodeBorderAttributeTest_0400 END');
+      } catch (err) {
+        console.error('RenderNodeBorderAttributeTest_0400 err: ' + err);
+        expect().assertFail();
+      }
       done();
-      console.info('RenderNodeBorderAttributeTest_0400 END');
     })
 
     /**
@@ -157,17 +165,22 @@ export default function RenderNodeBorderAttributeTest() {
      * @tc.level    Level.LEVEL0
      */
     it('RenderNodeBorderAttributeTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('RenderNodeBorderAttributeTest_0500 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('RenderNodeBorderAttributeTest_0500 START');
+        await CommonFunc.sleep(1000);
 
-      // 验证 label
-      let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_label');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('[RenderNodeBorderAttributeTest_0500] component obj is: ' + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('label: testLabel');
+        // 验证 label
+        let strJson: string = inspector.getInspectorByKey('RenderNodeBorderAttribute_label');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('[RenderNodeBorderAttributeTest_0500] component obj is: ' + JSON.stringify(obj));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('label: testLabel');
 
+        console.info('RenderNodeBorderAttributeTest_0500 END');
+      } catch (err) {
+        console.error('RenderNodeBorderAttributeTest_0500 err: ' + err);
+        expect().assertFail();
+      }
       done();
-      console.info('RenderNodeBorderAttributeTest_0500 END');
     })
   })
 }

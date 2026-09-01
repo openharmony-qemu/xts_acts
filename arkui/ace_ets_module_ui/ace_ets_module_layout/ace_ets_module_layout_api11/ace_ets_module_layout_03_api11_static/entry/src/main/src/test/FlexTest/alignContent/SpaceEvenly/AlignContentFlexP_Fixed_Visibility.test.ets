@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
@@ -23,23 +23,10 @@ import inspector from '@ohos.arkui.inspector';
 import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
 import { Visibility } from '@ohos.arkui.component';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function AlignContentFlexP_Fixed_Visibility() {
 
   describe('AlignContentFlexP_Fixed_Visibility', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("AlignContentFlexP_Fixed_Visibility beforeEach start");
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("AlignContentFlexP_Fixed_Visibility beforeEach start");
       let options: router.RouterOptions = {
@@ -53,7 +40,7 @@ export default function AlignContentFlexP_Fixed_Visibility() {
         if (!("AlignContentFlexP_Fixed_Visibility" == pages.name)) {
           console.info("get AlignContentFlexP_Fixed_Visibility pages.name:" + '');
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await CommonFunc.sleep(1000);
         }
       } catch (err) {
         console.error("push AlignContentFlexP_Fixed_Visibility page error:" + err);
@@ -63,8 +50,12 @@ export default function AlignContentFlexP_Fixed_Visibility() {
 
 
     afterEach(async (): Promise<void> => {
-      await CommonFunc.sleep(2000)
+      try {
+      await CommonFunc.sleep(1000)
       console.info("AlignContentFlexP_Fixed_Visibility after each called");
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
     });
 
     
@@ -81,7 +72,11 @@ it('testAlignContentSpaceEvenlyFlexfixedVisibilityHidden_static', Level.LEVEL0, 
       AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
         name: 'visibility', value: Visibility.Hidden
       });
-      await CommonFunc.sleep(3000)
+      try {
+      await CommonFunc.sleep(2000)
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_flex');
 
       let textStrJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_1');
@@ -140,7 +135,11 @@ it('testAlignContentSpaceEvenlyFlexfixedVisibilityNone_static', Level.LEVEL0, as
       AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
         name: 'visibility', value: Visibility.None
       });
+      try {
       await CommonFunc.sleep(3000)
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_flex');
 
       let textStrJson = inspector.getInspectorByKey('AlignContentFlexP_Fixed_Visibility' + '_1');

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
   Component,
@@ -27,26 +27,12 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import {UtilsTest,startAbility} from '../Util.test';
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
+
 export default function frameNodeMoveToErrorCodeTest() {
   describe('frameNodeMoveToErrorCodeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("frameNodeMoveToErrorCodeTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async () => {
       console.info('frameNodeMoveToErrorCodeTest beforeEach start');
       let options: router.RouterOptions = {
@@ -56,13 +42,11 @@ export default function frameNodeMoveToErrorCodeTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        // let result = await router.replaceUrl(options);
         router.replaceUrl(options);
         console.info('get frameNodeMoveToErrorCodeTest state pages:' + JSON.stringify(pages));
         if (!('frameNodeMoveToErrorCodeTest' == pages.name)) {
           console.info('get frameNodeMoveToErrorCodeTest pages.name:' + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
-          //console.info('push frameNodeMoveToErrorCodeTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push frameNodeMoveToErrorCodeTest page error:' + err);
@@ -71,14 +55,15 @@ export default function frameNodeMoveToErrorCodeTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('frameNodeMoveToErrorCodeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info('frameNodeMoveToErrorCodeTest after each called');
     });
 
-    
-    
-
-
+    afterAll(() => {})
 
     /**
      * @tc.number   frameNodeMoveToErrorCodeTest_static_0100
@@ -86,14 +71,31 @@ export default function frameNodeMoveToErrorCodeTest() {
      * @tc.desc     frameNodeMoveToErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('frameNodeMoveToErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+    it('frameNodeMoveToErrorCodeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
 
       console.info('frameNodeMoveOneTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
-      let button = await (driver.findComponent(ON.id('check_error_id')) as Promise<Component | null>);
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('frameNodeMoveToErrorCodeTest sleep err: ' + JSON.stringify(err));
+      }
+      let button: Component | null = null;
+      try {
+        button = await (driver.findComponent(ON.id('check_error_id')) as Promise<Component | null>);
+      } catch (err) {
+        console.info('frameNodeMoveToErrorCodeTest findComponent err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('frameNodeMoveToErrorCodeTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('frameNodeMoveToErrorCodeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('error_str_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[frameNodeMoveToErrorCodeTest_0100] content obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('content')));

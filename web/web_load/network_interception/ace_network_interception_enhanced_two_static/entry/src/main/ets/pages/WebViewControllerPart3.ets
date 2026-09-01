@@ -127,6 +127,32 @@ struct webViewController {
               })
               break;
             }
+
+            case "testSetNetworkAvailableNullStatic001": {
+              try {
+                this.controller.loadUrl('resource://rawfile/indexCopy.html')
+                let param: boolean | null = null;
+                this.controller.setNetworkAvailable(param as boolean);
+                Utils.emitEvent(true, 41022401)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 41022401)
+              }
+              break;
+            }
+
+            case "testSetNetworkAvailableUndefinedStatic001": {
+              try {
+                this.controller.loadUrl('resource://rawfile/indexCopy.html')
+                let param: boolean | undefined = undefined;
+                this.controller.setNetworkAvailable(param as boolean);
+                Utils.emitEvent(true, 41022402)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(String(error.code), 41022402)
+              }
+              break;
+            }
           }
         })
       }

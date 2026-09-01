@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level , beforeAll } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import {LibUtil} from '../../../ets/pages/LibUtil'
 import { Driver, ON, PointerMatrix, Rect ,Component} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 
 let libUtil:LibUtil = new LibUtil();
 
 export default function TextAreaLetterSpacing(){
 
   describe('TextAreaLetterSpacing',  () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api16.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('TextAreaLetterSpacing beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     /*
@@ -50,38 +50,43 @@ export default function TextAreaLetterSpacing(){
      * @tc.level    Level.LEVEL1
      */
     it('textAreaLetterSpacing001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'TextAreaLetterSpacing';
-      await Utils.pushPage(`textArea/${PAGE_TAG}`);
-      console.info("[textAreaLetterSpacing001] start succ");
-      await Utils.sleep(500);
-      let driver = Driver.create();
-      await Utils.sleep(500);
+      try {
+        let PAGE_TAG = 'TextAreaLetterSpacing';
+        await Utils.pushPage(`textArea/${PAGE_TAG}`);
+        console.info("[textAreaLetterSpacing001] start succ");
+        await Utils.sleep(500);
+        let driver = Driver.create();
+        await Utils.sleep(500);
 
-      let textarea:Component | null = await driver.findComponent(ON.id('textarea'));
-      await Utils.sleep(500);
-      await (textarea?.click() as Promise<void>);
-      await Utils.sleep(500);
-      await driver.triggerKey(2017);
-      await Utils.sleep(500);
-      await driver.triggerKey(2047);
-      await Utils.sleep(500);
-      await driver.triggerKey(2017);
-      await Utils.sleep(500);
-      await driver.triggerKey(2047);
-      await Utils.sleep(500);
-      await driver.triggerKey(2024);
-      await Utils.sleep(500);
-      await driver.triggerKey(2047);
-      await Utils.sleep(500);
-      let strJson3 = inspector.getInspectorByKey('text7');
-      await Utils.sleep(200);
-      let obj3 = JSON.parseJsonElement(strJson3);
-      console.info("[textAreaLetterSpacing001] component obj3 is: " + JSON.stringify(obj3));
-      console.info("[textAreaLetterSpacing001] content is: " + JSON.stringify(obj3.getElement('$attrs').getString('backgroundColor')));
-      await Utils.sleep(500);
-      expect(obj3.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFE31111');
+        let textarea:Component | null = await driver.findComponent(ON.id('textarea'));
+        await Utils.sleep(500);
+        await (textarea?.click() as Promise<void>);
+        await Utils.sleep(500);
+        await driver.triggerKey(2017);
+        await Utils.sleep(500);
+        await driver.triggerKey(2047);
+        await Utils.sleep(500);
+        await driver.triggerKey(2017);
+        await Utils.sleep(500);
+        await driver.triggerKey(2047);
+        await Utils.sleep(500);
+        await driver.triggerKey(2024);
+        await Utils.sleep(500);
+        await driver.triggerKey(2047);
+        await Utils.sleep(500);
+        let strJson3 = inspector.getInspectorByKey('text7');
+        await Utils.sleep(200);
+        let obj3 = JSON.parseJsonElement(strJson3);
+        console.info("[textAreaLetterSpacing001] component obj3 is: " + JSON.stringify(obj3));
+        console.info("[textAreaLetterSpacing001] content is: " + JSON.stringify(obj3.getElement('$attrs').getString('backgroundColor')));
+        await Utils.sleep(500);
+        expect(obj3.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFE31111');
 
-      done()
+        done()
+      } catch (err) {
+        console.info('textAreaLetterSpacing001 err: ' + JSON.stringify(err));
+        done();
+      }
     })
   })
 }

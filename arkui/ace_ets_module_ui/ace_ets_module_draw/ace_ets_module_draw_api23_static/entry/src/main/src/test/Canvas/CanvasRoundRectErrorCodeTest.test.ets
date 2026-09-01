@@ -14,24 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 export default function CanvasRoundRectErrorCodeTest() {
   describe('CanvasRoundRectErrorCodeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CanvasRoundRectErrorCodeTest beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.draw.api23.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("CanvasWidthHeightCanvas beforeEach start");
       let options: router.RouterOptions = {
@@ -63,7 +55,11 @@ export default function CanvasRoundRectErrorCodeTest() {
     */
     it('CanvasRoundRectErrorCodeTest_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
     console.info('[CanvasRoundRectErrorCodeTest_0100] START');
-    await CommonFunc.sleep(1000);
+    try {
+      await CommonFunc.sleep(1000);
+    } catch (err) {
+      console.info('CanvasRoundRectErrorCodeTest sleep err: ' + JSON.stringify(err));
+    }
 
     console.info('[CanvasRoundRectErrorCodeTest_0100] get result:' + AppStorage.get<int>('StaticRoundRectErrorCode'));
     expect(AppStorage.get<int>('StaticRoundRectErrorCode')).assertEqual(103701);

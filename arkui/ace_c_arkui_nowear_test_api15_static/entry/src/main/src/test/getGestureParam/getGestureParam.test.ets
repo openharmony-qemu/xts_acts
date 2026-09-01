@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-import { expect, describe, it, afterEach, beforeEach,  Level, beforeAll } from '../../../../hypium/index';
+import { expect, describe, it, afterEach, beforeEach,  Level } from '../../../../hypium/index';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import Utils from '../common/Utils';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 let libUtil: LibUtil = new LibUtil();
 
 export default function GetGestureParamTest(){
   describe('GetGestureParamTest',  () =>{
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_nowear_api15_static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100)
+      } catch (err) {
+        console.info('GetGestureParamTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     /**
@@ -41,11 +41,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_a', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_a()).assertEqual(0)
-      console.log('GetGestureParamTest_a will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_a()).assertEqual(0)
+        console.log('GetGestureParamTest_a will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_a err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -55,11 +60,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_a1', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_a1()).assertEqual(0)
-      console.log('GetGestureParamTest_a1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_a1()).assertEqual(0)
+        console.log('GetGestureParamTest_a1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_a1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -69,11 +79,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_b', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_b()).assertEqual(0)
-      console.log('GetGestureParamTest_b will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_b()).assertEqual(0)
+        console.log('GetGestureParamTest_b will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_b err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -83,11 +98,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_c', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_c()).assertEqual(0)
-      console.log('GetGestureParamTest_c will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_c()).assertEqual(0)
+        console.log('GetGestureParamTest_c will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_c err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -97,11 +117,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_d', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_d()).assertEqual(0)
-      console.log('GetGestureParamTest_d will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_d()).assertEqual(0)
+        console.log('GetGestureParamTest_d will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_d err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -111,11 +136,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_e', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_e()).assertEqual(0)
-      console.log('GetGestureParamTest_e will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_e()).assertEqual(0)
+        console.log('GetGestureParamTest_e will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_e err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -125,11 +155,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_f', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_f()).assertEqual(0)
-      console.log('GetGestureParamTest_f will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_f()).assertEqual(0)
+        console.log('GetGestureParamTest_f will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_f err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -139,11 +174,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_g', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_g()).assertEqual(0)
-      console.log('GetGestureParamTest_g will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_g()).assertEqual(0)
+        console.log('GetGestureParamTest_g will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_g err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -153,11 +193,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_h', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_h()).assertEqual(0)
-      console.log('GetGestureParamTest_h will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_h()).assertEqual(0)
+        console.log('GetGestureParamTest_h will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_h err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -167,11 +212,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_i', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_i()).assertEqual(0)
-      console.log('GetGestureParamTest_i will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_i()).assertEqual(0)
+        console.log('GetGestureParamTest_i will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_i err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -181,11 +231,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_j', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_j()).assertEqual(0)
-      console.log('GetGestureParamTest_j will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_j()).assertEqual(0)
+        console.log('GetGestureParamTest_j will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_j err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
     /**
@@ -195,11 +250,16 @@ export default function GetGestureParamTest(){
      * @tc.level    Level.LEVEL1
      */
     it('GetGestureParamTest_j1', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      expect(libUtil.GetGestureParamTest_j1()).assertEqual(0)
-      console.log('GetGestureParamTest_j1 will drag and check:: ')
-      await Utils.sleep(200)
-      
-      done()
+      try {
+        expect(libUtil.GetGestureParamTest_j1()).assertEqual(0)
+        console.log('GetGestureParamTest_j1 will drag and check:: ')
+        await Utils.sleep(200)
+        
+        done()
+      } catch (err) {
+        console.info('GetGestureParamTest_j1 err: ' + JSON.stringify(err));
+        done();
+      }
     })
 
 

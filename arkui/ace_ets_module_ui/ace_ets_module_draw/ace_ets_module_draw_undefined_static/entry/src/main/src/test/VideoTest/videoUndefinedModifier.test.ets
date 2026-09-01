@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, it, expect, Level } from '../../../../hypium/index';
+
+import { describe, beforeEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 export default function VideoUndefinedModifierTest() {
   describe('VideoUndefinedModifierTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility('com.arkui.ace.scroll.undefined.static', 'EntryAbility');
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('VideoUndefinedModifierTest beforeEach start');
       let options: router.RouterOptions = {
@@ -42,7 +36,7 @@ export default function VideoUndefinedModifierTest() {
         console.info('get VideoUndefinedModifierTest state pages:' + JSON.stringify(pages));
         if (!('videoUndefinedModifier' == pages.name)) {
           console.info('get VideoUndefinedModifierTest pages.name:' + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -59,6 +53,7 @@ export default function VideoUndefinedModifierTest() {
      */
     it('VideoUndefinedModifierTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0100] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -90,6 +85,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0100] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -100,6 +100,7 @@ export default function VideoUndefinedModifierTest() {
      */
     it('VideoUndefinedModifierTest_static_0101', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0101] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -135,6 +136,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0101] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0101 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -145,6 +151,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0102', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0102] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -176,6 +183,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0102] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0102 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -186,6 +198,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0103', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0103] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -217,6 +230,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0103] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0103 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -227,6 +245,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0104', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0104] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -263,6 +282,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0104] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0104 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -273,6 +297,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0105', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0105] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -309,6 +334,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0105] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0105 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -319,6 +349,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0106', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0106] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -350,6 +381,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0106] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0106 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -360,6 +396,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0107', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0107] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -380,6 +417,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0107] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0107 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -390,6 +432,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0108', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0108] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -410,6 +453,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0108] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0108 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -420,6 +468,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0109', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0109] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -444,6 +493,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0109] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0109 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -454,6 +508,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0110', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0110] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -474,6 +529,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0110] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0110 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -484,6 +544,7 @@ export default function VideoUndefinedModifierTest() {
     */
     it('VideoUndefinedModifierTest_static_0111', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[VideoUndefinedModifierTest_static_0111] START');
+      try {
       await CommonFunc.sleep(500);
 
       let driver = Driver.create();
@@ -504,6 +565,11 @@ export default function VideoUndefinedModifierTest() {
 
       console.info('[VideoUndefinedModifierTest_static_0111] END');
       done();
+      } catch (err) {
+        console.error('VideoUndefinedModifierTest_static_0111 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

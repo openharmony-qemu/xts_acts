@@ -58,6 +58,7 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
       "ace_ets_module_treeViewV2_nowear:ActsAceEtsModuleTreeViewV2Test",
       "ace_ets_module_advancedDialogV2_nowear:ActsAceEtsModuleAdvancedDialogV2Test",
       "ace_ets_module_gridObjectSortComponent_nowear:ActsAceEtsModuleGridObjectSortComponentNoWearTest",
+      "ace_ets_module_gridObjectSortComponent_nowear_static:ActsAceEtsModuleGridObjectSortComponentStaticTest",
       "ace_ets_module_progressButtonV2_nowear:ActsAceEtsModuleProgressButtonV2Test",
       "ace_ets_module_toolBarV2_nowear:ActsAceEtsModuleToolBarV2Test",
       "ace_ets_module_advanceDialog:ActsAceEtsModuleAdvancedDialogTest",

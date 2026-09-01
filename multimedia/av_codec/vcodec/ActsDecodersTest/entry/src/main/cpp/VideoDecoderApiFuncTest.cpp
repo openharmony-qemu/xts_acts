@@ -892,3 +892,12 @@ napi_value VideoDecCapApi0030(napi_env env, napi_callback_info info)
         return CreateIntInt32Result(env, -1);
     }
 }
+
+napi_value VideoDecCapApi0031(napi_env env, napi_callback_info info)
+{
+    bool checkMimeType = true;
+    const char *nullString = "";
+    checkMimeType = OH_AVCapability_CheckMimeType(nullptr, nullString);
+    if (checkMimeType) { return CreateIntInt32Result(env, -1); }
+    return CreateIntInt32Result(env, 0);
+}

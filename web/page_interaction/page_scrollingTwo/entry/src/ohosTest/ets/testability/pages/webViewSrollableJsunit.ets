@@ -19,6 +19,7 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import { Driver } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 182301;
 let driver: Driver = Driver.create();
@@ -28,6 +29,7 @@ let driver: Driver = Driver.create();
 struct webViewScrollable {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   controller1: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitScrollableOne";
   @State res: boolean = false;
   @State xNum: number = 0;
@@ -55,6 +57,14 @@ struct webViewScrollable {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
+  aboutToDisappear() {
+    try {
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+    } catch (_e) {
+      // page teardown: controller may already be unbound (17100001)
+    }
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -73,15 +83,15 @@ struct webViewScrollable {
           Button("web click").key('webcomponentScrollable').onClick(async () => {
             console.info("key==>" + this.str)
             await Utils.waitForExist(()=>this.isReceive, this.str+' isReceive', 1, 1000);
-            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-            await Utils.waitForExist(()=>this.isPageEnd1, this.str+' isPageEnd', 1, 1000);
+            await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
+            await Utils.waitForExist(()=>this.isPageEnd1, this.str+' isPageEnd', 1, 1000, 5);
             switch (this.str) {
               case "emitScrollableOne": {
                 this.controller.setScrollable(true);
                 // await Utils.sleep(2000);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.xNum = -10;
                 this.yNum = -10;
                 try {
@@ -108,7 +118,7 @@ struct webViewScrollable {
                 // await Utils.sleep(2000);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.xNum = -10;
                 this.yNum = 3500;
                 let scrollEnabled= this.controller.getScrollable();
@@ -142,7 +152,7 @@ struct webViewScrollable {
                 this.controller.setScrollable(false);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 let scrollEnabled= this.controller.getScrollable();
                 console.log("scrollEnabled: " + scrollEnabled);
                 this.xNum = -10;
@@ -170,7 +180,7 @@ struct webViewScrollable {
                 this.controller.setScrollable(false);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.xNum = 200;
                 this.yNum = -10;
                 try {
@@ -196,7 +206,7 @@ struct webViewScrollable {
                 this.controller.setScrollable(false);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.xNum = 4000;
                 this.yNum = -10;
                 try {
@@ -227,7 +237,7 @@ struct webViewScrollable {
                 this.controller.setScrollable(false);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.xNum = 200;
                 this.yNum = 200;
                 try {
@@ -253,7 +263,7 @@ struct webViewScrollable {
                 this.controller.setScrollable(false);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.xNum = 4000;
                 this.yNum = 3500;
                 try {
@@ -286,7 +296,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.xNum = 4000;
                 this.yNum = 3500;
                 try {
@@ -309,7 +319,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.pageUp(false);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
@@ -329,7 +339,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.pageDown(false);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
@@ -347,7 +357,7 @@ struct webViewScrollable {
                 this.controller.setScrollable(false);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   let scrollEnabled= this.controller.getScrollable();
                   console.log("scrollEnabled: " + scrollEnabled);
@@ -375,7 +385,7 @@ struct webViewScrollable {
                 this.controller.setScrollable(true);
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.xNum = 200;
                 this.yNum = 200;
                 try {
@@ -425,7 +435,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(500, 500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -447,7 +457,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(500, 500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -468,7 +478,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.runJavaScript("tryScroll()", (error, result) => {
                   if (error) {
@@ -498,7 +508,7 @@ struct webViewScrollable {
                 this.isPageEnd = -1;
                 this.isPageEnd1 = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller1.loadUrl($rawfile('theScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd1, this.str+' isPageEnd1', 1, 1000);
                 try {
@@ -528,7 +538,7 @@ struct webViewScrollable {
                 this.isPageEnd = -1;
                 this.isPageEnd1 = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller1.loadUrl($rawfile('theScroll.html'));
                 await Utils.waitForExist(()=>this.isPageEnd1, this.str+' isPageEnd1', 1, 1000);
                 try {
@@ -553,7 +563,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(500, 500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -597,7 +607,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -619,7 +629,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -641,7 +651,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -664,7 +674,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -689,7 +699,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -714,7 +724,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -739,7 +749,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -766,7 +776,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -783,15 +793,15 @@ struct webViewScrollable {
               }
               case "emitScrollableThirty": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.setScrollable(true);
                 this.scrollForwardEnums = NestedScrollMode.SELF_FIRST;
                 this.onScrollx = 0;
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -808,15 +818,15 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyOne": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.setScrollable(true);
                 this.scrollForwardEnums = NestedScrollMode.PARENT_FIRST;
                 this.onScrollx = 0;
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -833,15 +843,15 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyTwo": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.setScrollable(true);
                 this.scrollForwardEnums = NestedScrollMode.PARALLEL;
                 this.onScrollx = 0;
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -858,8 +868,8 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyThree": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.setScrollable(true);
                 this.scrollForwardEnums = NestedScrollMode.SELF_ONLY;
                 this.scrollBackwardEnums = NestedScrollMode.SELF_ONLY;
@@ -867,7 +877,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -889,7 +899,7 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyFour": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1,)
                 this.controller.setScrollable(true);
                 this.scrollBackwardEnums = NestedScrollMode.SELF_FIRST;
@@ -897,7 +907,7 @@ struct webViewScrollable {
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -919,15 +929,15 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtyFive": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.setScrollable(true);
                 this.scrollBackwardEnums = NestedScrollMode.PARENT_FIRST;
                 this.onScrollx = 0;
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');
@@ -949,15 +959,15 @@ struct webViewScrollable {
               }
               case "emitScrollableThirtySix": {
                 this.isPageEnd = -1;
-                this.controller.loadUrl('www.example.com')
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 this.controller.setScrollable(true);
                 this.scrollBackwardEnums = NestedScrollMode.PARALLEL;
                 this.onScrollx = 0;
                 this.onScrolly = 0;
                 this.isPageEnd = -1;
                 this.controller.loadUrl($rawfile('theScroll.html'));
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000, 5);
                 try {
                   this.controller.scrollBy(3500, 3500);
                   await Utils.waitForScrollStop(()=>this.controller.getPageOffset().x, this.str+' webXOffset');

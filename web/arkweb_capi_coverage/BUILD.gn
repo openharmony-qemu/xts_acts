@@ -1,6 +1,6 @@
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ArkWebCapiCoverage") {
+ohos_app_assist_suite("ActsArkWebCapiCoverageCppTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsArkWebCapiCoverageCppTest"
@@ -8,12 +8,12 @@ ohos_app_assist_suite("ArkWebCapiCoverage") {
   subsystem_name = "web"
 }
 
-ohos_js_app_suite("ArkWebCapiCoverageTest") {
+ohos_js_app_suite("ActsArkWebCapiCoverageTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsArkWebCapiCoverageTest"
   part_name = "webview"
   subsystem_name = "web"
-  deps = [ ":ArkWebCapiCoverage" ]
+  deps = [ ":ActsArkWebCapiCoverageCppTest" ]
 }

@@ -30,6 +30,8 @@ import ImageReloadKeyTest from './imageTest/ImageReloadKey.test';
 import DrawableDescriptorReleaseTest from './drawableDescriptorTest/DrawableDescriptorRelease.test';
 import PixelMapDrawableDescriptorConstructorTest from './drawableDescriptorTest/PixelMapDrawableDescriptorConstructor.test';
 import SetHdrCompositionTest from './drawableDescriptorTest/SetHdrComposition.test';
+import ImageAnimatorAttributeModifierTest from './ImageAnimatorTest/ImageAnimatorAttributeModifier.test';
+import ImageAttributeModifierTest from './imageTest/ImageAttributeModifier.test';
 
 export default function testsuite() {
   blendNodeTest();
@@ -48,4 +50,6 @@ export default function testsuite() {
   DrawableDescriptorReleaseTest();
   PixelMapDrawableDescriptorConstructorTest();
   SetHdrCompositionTest();
+  ImageAnimatorAttributeModifierTest();
+  ImageAttributeModifierTest();
 }

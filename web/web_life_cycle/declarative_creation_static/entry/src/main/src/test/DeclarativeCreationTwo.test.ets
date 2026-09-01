@@ -20,7 +20,7 @@ import inspector from '@ohos.arkui.inspector';
 import { Driver, ON } from '@ohos.UiTest';
 
 
-export default function declarativeCreationTwo() {
+export default function declarativeCreationTwo():void {
 
   describe('declarativeCreationOne', () => {
     beforeAll(async (): Promise<void> => {
@@ -67,5 +67,30 @@ export default function declarativeCreationTwo() {
       await Utils.msSleep(5000);
       done();
     })
+
+
+    /**
+     * @tc.name        testSwitchNextPageMouseInfo
+     * @tc.number      SUB_WEB_NEXT_PAGE_0300
+     * @tc.desc        nextPage
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('testSwitchNextPageMouseInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          Utils.emitEvent("emitSwitchNextPageMouseInfo", 10)
+          await Utils.msSleep(3000);
+          inspector.sendEventByKey('webViewContCreatePdfAndOthersErrorButton', 10, '');
+          await Utils.msSleep(2000);
+        } catch(err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
   })
 }
+
+
