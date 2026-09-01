@@ -1121,15 +1121,15 @@ export default function CameraVideoSessionOnOffTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_001
-     * @tc.number SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_001
+     * @tc.name   SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001
+     * @tc.number SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001
      * @tc.desc   PhotoSession off smoothZoomInfoAvailable when no callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_001', Level.LEVEL2, async (done: Function) => {
-      const testName ='SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_001'
+    it('SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001', Level.LEVEL2, async (done: Function) => {
+      const testName ='SUB_MULTIMEDIA_PHOTO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001'
 
       let onCallback: zoomCallback = (err: BusinessError, smoothZoomInfo: camera.SmoothZoomInfo) => {
         if (err !== undefined && err.code !== 0) {
@@ -1166,15 +1166,15 @@ export default function CameraVideoSessionOnOffTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_001
-     * @tc.number SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_001
+     * @tc.name   SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001
+     * @tc.number SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001
      * @tc.desc   VideoSession off smoothZoomInfoAvailable when no callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_001', Level.LEVEL2, async (done: Function) => {
-      const testName ='SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_001'
+    it('SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001', Level.LEVEL2, async (done: Function) => {
+      const testName ='SUB_MULTIMEDIA_VIDEO_SESSION_OFF_SMOOTH_ZOOM_INFO_AVAILABLE_0001'
 
       let onCallback: zoomCallback = (err: BusinessError, smoothZoomInfo: camera.SmoothZoomInfo) => {
         if (err !== undefined && err.code !== 0) {
