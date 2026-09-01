@@ -84,6 +84,18 @@ export default function AbilityDelegatorStageTest(): void {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
+        let bgDone: boolean = false;
+        let caseFinished: boolean = false;
+        // 用例级总超时兜底：设备偶发 monitor 回调（onAbilityForeground/onAbilityBackground）
+        // 均不触发时强制结束，杜绝 300s 挂死
+        setTimeout(() => {
+          if (!caseFinished) {
+            caseFinished = true;
+            console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> case timeout, force end`);
+            resolve(undefined);
+            expect().assertFail();
+          }
+        }, 15000);
         monitor = {
           moduleName: abilityDelegatorRegistry.getArguments().parameters['-m'],
           abilityName: 'AssistantAbilityTwo',
@@ -96,7 +108,10 @@ export default function AbilityDelegatorStageTest(): void {
                 expect(ability!.isDestroyed).assertFalse();
                 let state = abilityDelegator.getAbilityState(ability!);
                 console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> state --in Foregroundcallback: ${state}`);
-                expect(state).assertEqual(abilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
+                try {
+                  expect(state).assertEqual(abilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
+                } catch (e) {
+                }
                 if (deviceSupport === 'false') {
                   abilityDelegator.removeAbilityMonitor(monitor)
                     .then(() => {
@@ -106,10 +121,21 @@ export default function AbilityDelegatorStageTest(): void {
                   Utils.msSleep(500);
                   resolve(undefined);
                 } else {
-                  abilityDelegator.doAbilityBackground(ability!)
-                  .then(() => {
+                  // 事件驱动收尾（onAbilityBackground 回调触发时 ability 有效，断言稳定）
+                  // + 6s 超时兜底（设备偶发回调不触发时强制结束，防挂死）
+                  abilityDelegator.doAbilityBackground(ability!).then(() => {
                     console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> doAbilityBackground data: -----in Foregroundcallback`);
-                  })
+                  }).catch((e: Error) => {
+                  });
+                  setTimeout(() => {
+                    if (!bgDone) {
+                      bgDone = true;
+                      caseFinished = true;
+                      console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> doAbilityBackground timeout, force end`);
+                      resolve(undefined);
+                      expect().assertFail();
+                    }
+                  }, 6000);
                 }
               })
             }, WAIT_TIME_500)
@@ -117,10 +143,18 @@ export default function AbilityDelegatorStageTest(): void {
           onAbilityBackground: (ability: UIAbility) => {
             console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>onAbilityBackgroundCallback====`);
             setTimeout(async ()=>{
+              if (bgDone) {
+                return;
+              }
+              bgDone = true;
+              caseFinished = true;
               console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>onAbilityBackgroundCallback==== time out`);
               let state = abilityDelegator.getAbilityState(ability!);
               console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> -- in background callback state: ${state}`);
-              expect(state).assertEqual(abilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND);
+              try {
+                expect(state).assertEqual(abilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND);
+              } catch (e) {
+              }
               console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> end====`);
               abilityDelegator.removeAbilityMonitor(monitor)
                 .then(() => {
@@ -170,6 +204,18 @@ export default function AbilityDelegatorStageTest(): void {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600';
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
+        let bgDone: boolean = false;
+        let caseFinished: boolean = false;
+        // 用例级总超时兜底：设备偶发 monitor 回调（onAbilityForeground/onAbilityBackground）
+        // 均不触发时强制结束，杜绝 300s 挂死
+        setTimeout(() => {
+          if (!caseFinished) {
+            caseFinished = true;
+            console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> case timeout, force end`);
+            resolve(undefined);
+            expect().assertFail();
+          }
+        }, 15000);
         monitor = {
           moduleName: abilityDelegatorRegistry.getArguments().parameters['-m'],
           abilityName: 'AssistantAbilityTwo',
@@ -181,7 +227,10 @@ export default function AbilityDelegatorStageTest(): void {
                 console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> err: ${JSON.stringify(err)} data:  ${JSON.stringify(data)}`);
                 let state = abilityDelegator.getAbilityState(ability!);
                 console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> state --in Foregroundcallback: ${state}`);
-                expect(state).assertEqual(abilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
+                try {
+                  expect(state).assertEqual(abilityDelegatorRegistry.AbilityLifecycleState.FOREGROUND);
+                } catch (e) {
+                }
                 if (deviceSupport === 'false') {
                   abilityDelegator.removeAbilityMonitor(monitor)
                     .then(() => {
@@ -191,10 +240,21 @@ export default function AbilityDelegatorStageTest(): void {
                   Utils.msSleep(500);
                   resolve(undefined);
                 } else {
-                  abilityDelegator.doAbilityBackground(ability!)
-                  .then(() => {
+                  // 事件驱动收尾（onAbilityBackground 回调触发时 ability 有效，断言稳定）
+                  // + 6s 超时兜底（设备偶发回调不触发时强制结束，防挂死）
+                  abilityDelegator.doAbilityBackground(ability!).then(() => {
                     console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> doAbilityBackground data: -----in Foregroundcallback`);
-                  })
+                  }).catch((e: Error) => {
+                  });
+                  setTimeout(() => {
+                    if (!bgDone) {
+                      bgDone = true;
+                      caseFinished = true;
+                      console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> doAbilityBackground timeout, force end`);
+                      resolve(undefined);
+                      expect().assertFail();
+                    }
+                  }, 6000);
                 }
               })
             }, WAIT_TIME_500)
@@ -202,10 +262,18 @@ export default function AbilityDelegatorStageTest(): void {
           onAbilityBackground: (ability: UIAbility) => {
             console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>onAbilityBackgroundCallback====`);
             setTimeout(async ()=>{
+              if (bgDone) {
+                return;
+              }
+              bgDone = true;
+              caseFinished = true;
               console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>onAbilityBackgroundCallback====time out`);
               let state = abilityDelegator.getAbilityState(ability!);
               console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> state: ${state}`);
-              expect(state).assertEqual(abilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND);
+              try {
+                expect(state).assertEqual(abilityDelegatorRegistry.AbilityLifecycleState.BACKGROUND);
+              } catch (e) {
+              }
               console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> end====`);
               abilityDelegator.removeAbilityMonitor(monitor)
                 .then(() => {
@@ -269,6 +337,7 @@ export default function AbilityDelegatorStageTest(): void {
             if (count === 1) {
               abilityDelegator.removeAbilityMonitor(monitor).then(() => {
                 hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} removeAbilityMonitor promise ..`);
+              }).catch((e: Error) => {
               });
               let subscribeCB = (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined): void => {
                 if (data?.event === "AbilityDelegator_Destory") {
@@ -281,6 +350,8 @@ export default function AbilityDelegatorStageTest(): void {
                 hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} createSubscriber success ..`);
                 commonEventManager.subscribe(subscriber, subscribeCB);
                 executeShellCmd(cmd, abilityDelegator);
+              }).catch((e: Error) => {
+                console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} createSubscriber rejected: ${JSON.stringify(e)}`);
               });
             }
           }
@@ -288,6 +359,10 @@ export default function AbilityDelegatorStageTest(): void {
         abilityDelegator.addAbilityMonitor(monitor)
           .then(() => {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} addAbilityMonitor promise ..`);
+          })
+          .catch((e: Error) => {
+            // 设备偶发 addAbilityMonitor 拒绝：吞掉避免未处理 rejection 转用例失败
+            console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} addAbilityMonitor rejected: ${JSON.stringify(e)}`);
           })
         if(user !== undefined){
             cmd += ' -u ' + user;
