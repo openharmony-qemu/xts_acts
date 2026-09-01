@@ -478,7 +478,7 @@ export default function actsEmitterTest() {
         }
         let eventData: emitter.EventData = { data: myDate }
         
-        let innerEvent: emitter.InnerEvent = {
+        let innerEvent1: emitter.InnerEvent = {
           eventId: 1,
           priority: emitter.EventPriority.HIGH
         };
@@ -486,12 +486,12 @@ export default function actsEmitterTest() {
           console.info(TAG+ ' once success');
           onConsume_number++
         }
-        emitter.on("", onCallback);
+        emitter.onceEventData('1', onCallback);
         await Utils.msSleep(100)
-        emitter.emit(innerEvent, eventData);
-        emitter.emit(innerEvent, eventData);
-        emitter.emit(innerEvent, eventData);
-        emitter.emit(innerEvent, eventData);
+        emitter.emit(innerEvent1, eventData);
+        emitter.emit(innerEvent1, eventData);
+        emitter.emit(innerEvent1, eventData);
+        emitter.emit(innerEvent1, eventData);
         await Utils.msSleep(100)
         expect(onConsume_number).assertEqual(0);
         console.info('Sub_NotificationAns_Emitter_Basic_Static_0002 PASS');
@@ -514,7 +514,7 @@ export default function actsEmitterTest() {
           console.info(TAG+ ' once success');
           onConsume_number++
         }
-        emitter.onEventData("", onCallback);
+        emitter.onEventData("eventid1", onCallback);
         await Utils.msSleep(100)
         emitter.emit('eventid');
         emitter.emit('eventid');
