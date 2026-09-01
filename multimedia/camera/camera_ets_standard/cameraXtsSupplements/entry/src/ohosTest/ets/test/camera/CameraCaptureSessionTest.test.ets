@@ -770,15 +770,15 @@ export default function CameraCaptureSessionTest() {
       }
     })
     /**
-     * @tc.name   SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_004
-     * @tc.number SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_004
+     * @tc.name   SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0004
+     * @tc.number SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0004
      * @tc.desc   setFocusMode FocusMode null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_004', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_004';
+    it('SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0004', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAMERA_CAPTURE_SESSION_SET_FOCUS_MODE_0004';
       if (isEmpty(mCameraManager)) {
         console.info(TAG, `${testName} cameraManager is null.`);
         done();
