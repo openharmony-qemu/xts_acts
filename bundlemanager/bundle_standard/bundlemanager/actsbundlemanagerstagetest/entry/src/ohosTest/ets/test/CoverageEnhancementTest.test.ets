@@ -72,16 +72,17 @@ export default function CoverageEnhancementTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          await bundle.getAllBundleInfo(undefined);
-          console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 should not succeed');
+      (done: Function) => {
+        bundle.getAllBundleInfo(undefined).then((data) => {
+          console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 should not succeed: ' +
+            JSON.stringify(data));
           expect().assertFail();
-        } catch (error) {
+          done();
+        }).catch((error: BusinessError | number) => {
           console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 catch: ' + JSON.stringify(error));
-          expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
-        }
-        done();
+          expect(getErrorCode(error)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
+          done();
+        });
       });
 
     /**
@@ -93,25 +94,17 @@ export default function CoverageEnhancementTest() {
      * @tc.level  LEVEL1
      */
     it('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        try {
-          bundle.getAllBundleInfo(INVALID_BUNDLE_FLAG, (err: BusinessError | number, data) => {
-            if (err) {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 err: ' + JSON.stringify(err));
-              expect(getErrorCode(err)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
-              done();
-            } else {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 should not succeed: ' +
-                JSON.stringify(data));
-              expect().assertFail();
-              done();
-            }
-          });
-        } catch (error) {
-          console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 catch: ' + JSON.stringify(error));
-          expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
+      (done: Function) => {
+        bundle.getAllBundleInfo(INVALID_BUNDLE_FLAG).then((data) => {
+          console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 should not succeed: ' +
+            JSON.stringify(data));
+          expect().assertFail();
           done();
-        }
+        }).catch((error: BusinessError | number) => {
+          console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 catch: ' + JSON.stringify(error));
+          expect(getErrorCode(error)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
+          done();
+        });
       });
 
     /**
