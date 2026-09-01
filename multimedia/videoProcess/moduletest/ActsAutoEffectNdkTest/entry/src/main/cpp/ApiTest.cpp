@@ -144,14 +144,13 @@ int32_t AutoEffectApiTest00300()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
     }
     PrepareXComponent();
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, nullptr);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), nullptr);
     if (ret != VIDEO_PROCESSING_ERROR_INVALID_VALUE) {
         ApiLogResult(ret, __func__);
         return -1;
@@ -421,8 +420,7 @@ int32_t AutoEffectApiTest01500()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
@@ -430,7 +428,7 @@ int32_t AutoEffectApiTest01500()
     PrepareXComponent();
     OH_AVFormat* param = OH_AVFormat_Create();
     OH_AVFormat_SetFloatValue(param, VIDEO_AUTOEFFECT_AISR_STRENGTH, 0.5f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
@@ -454,8 +452,7 @@ int32_t AutoEffectApiTest01600()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
@@ -463,7 +460,7 @@ int32_t AutoEffectApiTest01600()
     PrepareXComponent();
     OH_AVFormat* param = OH_AVFormat_Create();
     OH_AVFormat_SetIntValue(param, VIDEO_AUTOEFFECT_ENABLE, 1);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
@@ -487,15 +484,14 @@ int32_t AutoEffectApiTest01700()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
     }
     PrepareXComponent();
     OH_AVFormat* param = CreateParam(-1, 0.5f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
@@ -519,15 +515,14 @@ int32_t AutoEffectApiTest01800()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
     }
     PrepareXComponent();
     OH_AVFormat* param = CreateParam(2, 0.5f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
@@ -551,15 +546,14 @@ int32_t AutoEffectApiTest01900()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
     }
     PrepareXComponent();
     OH_AVFormat* param = CreateParam(1, 2.0f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_ERROR_INVALID_VALUE) {
         ApiLogResult(ret, __func__);
@@ -583,15 +577,14 @@ int32_t AutoEffectApiTest02000()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
     }
     PrepareXComponent();
     OH_AVFormat* param = CreateParam(1, -1.0f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_ERROR_INVALID_VALUE) {
         ApiLogResult(ret, __func__);
@@ -615,15 +608,14 @@ int32_t AutoEffectApiTest02100()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
     }
     PrepareXComponent();
     OH_AVFormat* param = CreateParam(1, 0.0f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
@@ -647,15 +639,14 @@ int32_t AutoEffectApiTest02200()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
     }
     PrepareXComponent();
     OH_AVFormat* param = CreateParam(1, 0.5f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
@@ -679,15 +670,14 @@ int32_t AutoEffectApiTest02300()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
     }
     PrepareXComponent();
     OH_AVFormat* param = CreateParam(1, 1.0f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
@@ -832,15 +822,14 @@ int32_t AutoEffectApiTest03000()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(GetAisrType(), true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);
         return -1;
     }
     PrepareXComponent();
     OH_AVFormat* param = CreateParam(0, 0.5f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(GetAisrType(), nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         ApiLogResult(ret, __func__);

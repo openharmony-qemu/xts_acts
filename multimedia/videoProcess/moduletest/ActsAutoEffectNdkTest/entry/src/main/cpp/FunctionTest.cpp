@@ -145,14 +145,13 @@ int32_t AutoEffectFuncTest00100()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(type, true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(type, true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         FuncLogFail("UseAutoEffect", ret, __func__);
         return -1;
     }
     PrepareXComponent();
-    if (TestSetParamSeries(type, name) != 0) {
+    if (TestSetParamSeries(type, nameStr.c_str()) != 0) {
         FuncLogFail("SetAutoEffectParam", -1, __func__);
         return -1;
     }
@@ -174,14 +173,13 @@ int32_t AutoEffectFuncTest00200()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(type, false, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(type, false, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         FuncLogFail("UseAutoEffect", ret, __func__);
         return -1;
     }
     PrepareXComponent();
-    if (TestSetParamSeries(type, name) == 0) {
+    if (TestSetParamSeries(type, nameStr.c_str()) == 0) {
         FuncLogFail("SetAutoEffectParam", -1, __func__);
         return -1;
     }
@@ -203,22 +201,21 @@ int32_t AutoEffectFuncTest00300()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
     OH_AVFormat* param = CreateParam(1, 0.5f);
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_SetAutoEffectParam(type, name, param);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_SetAutoEffectParam(type, nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) {
         FuncLogFail("SetAutoEffectParam", ret, __func__);
         return -1;
     }
-    ret = OH_VideoProcessing_UseAutoEffect(type, true, name);
+    ret = OH_VideoProcessing_UseAutoEffect(type, true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         FuncLogFail("UseAutoEffect", ret, __func__);
         return -1;
     }
     PrepareXComponent();
     param = CreateParam(1, 0.5f);
-    ret = OH_VideoProcessing_SetAutoEffectParam(type, name, param);
+    ret = OH_VideoProcessing_SetAutoEffectParam(type, nameStr.c_str(), param);
     OH_AVFormat_Destroy(param);
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         FuncLogFail("SetAutoEffectParam", ret, __func__);
@@ -242,24 +239,22 @@ int32_t AutoEffectFuncTest00400()
         return 0;
     }
     std::string nameAStr = GenerateXComponentName();
-    const char* nameA = nameAStr.c_str();
     std::string nameBStr = GenerateXComponentName2();
-    const char* nameB = nameBStr.c_str();
-    if (OH_VideoProcessing_UseAutoEffect(type, true, nameA) != VIDEO_PROCESSING_SUCCESS) {
+    if (OH_VideoProcessing_UseAutoEffect(type, true, nameAStr.c_str()) != VIDEO_PROCESSING_SUCCESS) {
         FuncLogFail("UseAutoEffect", -1, __func__);
         return -1;
     }
-    if (OH_VideoProcessing_UseAutoEffect(type, false, nameB) != VIDEO_PROCESSING_SUCCESS) {
+    if (OH_VideoProcessing_UseAutoEffect(type, false, nameBStr.c_str()) != VIDEO_PROCESSING_SUCCESS) {
         FuncLogFail("UseAutoEffect", -1, __func__);
         return -1;
     }
     PrepareXComponent();
     PrepareXComponent2();
-    if (TestSetParamSeries(type, nameA) != 0) {
+    if (TestSetParamSeries(type, nameAStr.c_str()) != 0) {
         FuncLogFail("SetAutoEffectParam nameA", -1, __func__);
         return -1;
     }
-    if (TestSetParamSeries(type, nameB) == 0) {
+    if (TestSetParamSeries(type, nameBStr.c_str()) == 0) {
         FuncLogFail("SetAutoEffectParam nameB", -1, __func__);
         return -1;
     }
@@ -281,24 +276,22 @@ int32_t AutoEffectFuncTest00500()
         return 0;
     }
     std::string nameAStr = GenerateXComponentName();
-    const char* nameA = nameAStr.c_str();
     std::string nameBStr = GenerateXComponentName2();
-    const char* nameB = nameBStr.c_str();
-    if (OH_VideoProcessing_UseAutoEffect(type, true, nameA) != VIDEO_PROCESSING_SUCCESS) {
+    if (OH_VideoProcessing_UseAutoEffect(type, true, nameAStr.c_str()) != VIDEO_PROCESSING_SUCCESS) {
         FuncLogFail("UseAutoEffect", -1, __func__);
         return -1;
     }
-    if (OH_VideoProcessing_UseAutoEffect(type, true, nameB) != VIDEO_PROCESSING_SUCCESS) {
+    if (OH_VideoProcessing_UseAutoEffect(type, true, nameBStr.c_str()) != VIDEO_PROCESSING_SUCCESS) {
         FuncLogFail("UseAutoEffect", -1, __func__);
         return -1;
     }
     PrepareXComponent();
     PrepareXComponent2();
-    if (TestSetParamSeries(type, nameA) != 0) {
+    if (TestSetParamSeries(type, nameAStr.c_str()) != 0) {
         FuncLogFail("SetAutoEffectParam nameA", -1, __func__);
         return -1;
     }
-    if (TestSetParamSeries(type, nameB) != 0) {
+    if (TestSetParamSeries(type, nameBStr.c_str()) != 0) {
         FuncLogFail("SetAutoEffectParam nameB", -1, __func__);
         return -1;
     }
@@ -393,14 +386,13 @@ int32_t AutoEffectFuncTest00900()
         return 0;
     }
     std::string nameStr = GenerateXComponentName();
-    const char* name = nameStr.c_str();
-    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(type, true, name);
+    VideoProcessing_ErrorCode ret = OH_VideoProcessing_UseAutoEffect(type, true, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_SUCCESS) {
         FuncLogFail("UseAutoEffect1", ret, __func__);
         return -1;
     }
     PrepareXComponent();
-    ret = OH_VideoProcessing_UseAutoEffect(type, false, name);
+    ret = OH_VideoProcessing_UseAutoEffect(type, false, nameStr.c_str());
     if (ret != VIDEO_PROCESSING_ERROR_OPERATION_NOT_PERMITTED) {
         FuncLogFail("UseAutoEffect2", ret, __func__);
         return -1;
