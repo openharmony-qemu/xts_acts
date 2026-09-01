@@ -30,9 +30,10 @@ export default class AssistantAbilityOne extends UIAbility {
 
   onDestroy(): void {
     hilog.info(0x0000, 'testTag AssistantAbilityOne', '%{public}s', 'Ability onDestroy');
-    commonEventManager.publish('AbilityDelegator_Destory', (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined) => {
+    commonEventManager.publish('AbilityDelegator_Destory',
+      (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined) => {
       hilog.info(0x0000, 'testTag AssistantAbilityOne', '%{public}s', 'publish success');
-    });;
+    });
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {

@@ -29,16 +29,17 @@ function recordStages(ctx: common.UIAbilityContext, key: string, tag: string): v
   try {
     let appContext: common.ApplicationContext = ctx.getApplicationContext();
     appContext.getAllWindowStages()
-      .then((data: Array<window.WindowStage>) => {
+      .then((data: window.WindowStage[]) => {
         hilog.info(DOMAIN, 'testTag', `[${tag}] getAllWindowStages size ${data.length}`);
-        AppStorage.setOrCreate<Array<window.WindowStage>>(key, data);
+        AppStorage.setOrCreate<window.WindowStage[]>(key, data);
       })
       .catch((e: Error) => {
-        let err = e as BusinessError;
-        hilog.error(DOMAIN, 'testTag', `[${tag}] getAllWindowStages error. code: ${err?.code}, message: ${err.message}`);
+        let err: Error = e as Error;
+        hilog.error(DOMAIN, 'testTag', `[${tag}] getAllWindowStages error. code: ${err?.code}, ` +
+          `message: ${err.message}`);
       });
   } catch (e) {
-    let err = e as BusinessError;
+    let err: Error = e as Error;
     hilog.error(DOMAIN, 'testTag', `[${tag}] getAllWindowStages failed. code: ${err?.code}, message: ${err.message}`);
   }
 }
