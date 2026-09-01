@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
@@ -32,23 +32,10 @@ import {
   TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../Util.test.ets';
-import { UtilsTest } from '../Util.test';
 
 export default function onVisibleIndexesChangeTest() {
 
   describe('onVisibleIndexesChangeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("onVisibleIndexesChangeTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.scroll.api24.static", "EntryAbility");
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("onVisibleIndexesChangeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -81,15 +68,21 @@ export default function onVisibleIndexesChangeTest() {
      */
     it('onVisibleIndexesChangeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onVisibleIndexesChangeTest_static_0100] START');
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('lazyVGridLayout_on1');
-      console.info("[onVisibleIndexesChangeTest_static_0100] type: " +
-        JSON.parseJsonElement(strJson).getString('$type'));
+      try {
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('lazyVGridLayout_on1');
+        console.info("[onVisibleIndexesChangeTest_static_0100] type: " +
+          JSON.parseJsonElement(strJson).getString('$type'));
 
-      await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("LazyVGridLayout");
-      console.info('[onVisibleIndexesChangeTest_static_0100] END');
-      done();
+        await CommonFunc.sleep(1000);
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("LazyVGridLayout");
+        console.info('[onVisibleIndexesChangeTest_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[onVisibleIndexesChangeTest_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }
