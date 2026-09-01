@@ -73,12 +73,9 @@ export default function NavigationPreloadTest(): void {
         let routerInstance: Router | undefined = AppStorage.get<Router>('router');
         if (routerInstance !== undefined) {
           routerInstance.clear();
-          let pages = routerInstance.getState();
-          let pageName: string = PAGE_URL.substring(PAGE_URL.lastIndexOf('/') + 1);
-          if (!(pageName == pages.name)) {
-            routerInstance.pushUrl(options);
-            await CommonFunc.sleep(2500);
-          }
+          // Always replaceUrl to ensure fresh page instance (fixes connected-run state leakage)
+          routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2500);
         } else {
           console.error('NavigationPreload beforeEach: Router instance is undefined');
         }
@@ -94,16 +91,16 @@ export default function NavigationPreloadTest(): void {
       let clearBtn: Component | null = await findComponentWithScroll(driver, 'preloadClearBtn');
       if (clearBtn !== null) {
         await clearBtn.click();
-        await CommonFunc.sleep(300);
+        await CommonFunc.sleep(500);
       }
       let popBtn: Component | null = await findComponentWithScroll(driver, 'preloadPopBtn');
       if (popBtn !== null) {
         await popBtn.click();
-        await CommonFunc.sleep(300);
+        await CommonFunc.sleep(500);
       }
       // Clean AppStorage keys
       AppStorage.delete('preloadNavPathStack');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(800);
     });
 
     // ========================================================================
@@ -442,8 +439,10 @@ export default function NavigationPreloadTest(): void {
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
         let errorCode = getTextContentById('errorCode');
-        // In ArkTS-Sta mode, String(error) returns full error string, not numeric code
-        expect(errorCode.length).assertLarger(0);
+        // PROBE: expose actual error.code value via AssertException
+        expect(errorCode).assertEqual('PROBE');
+        let errorMsg = getTextContentById('errorMsg');
+        expect(errorMsg).assertEqual('NavDestination not found.');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1400 error: ' + err);
         expect(false).assertTrue();
@@ -491,8 +490,10 @@ export default function NavigationPreloadTest(): void {
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
         let errorCode = getTextContentById('errorCode');
-        // In ArkTS-Sta mode, String(error) returns full error string, not numeric code
-        expect(errorCode.length).assertLarger(0);
+        // PROBE: expose actual (error as ErrorWithCode).code value via AssertException
+        expect(errorCode).assertEqual('PROBE');
+        let errorMsg = getTextContentById('errorMsg');
+        expect(errorMsg).assertEqual('NavDestination not found.');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1600 error: ' + err);
         expect(false).assertTrue();
@@ -519,8 +520,10 @@ export default function NavigationPreloadTest(): void {
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
         let errorCode = getTextContentById('errorCode');
-        // In ArkTS-Sta mode, String(error) returns full error string, not numeric code
-        expect(errorCode.length).assertLarger(0);
+        // PROBE: expose actual error.code value via AssertException
+        expect(errorCode).assertEqual('PROBE');
+        let errorMsg = getTextContentById('errorMsg');
+        expect(errorMsg).assertEqual('NavDestination not found.');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1700 error: ' + err);
         expect(false).assertTrue();
@@ -547,8 +550,10 @@ export default function NavigationPreloadTest(): void {
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
         let errorCode = getTextContentById('errorCode');
-        // In ArkTS-Sta mode, String(error) returns full error string, not numeric code
-        expect(errorCode.length).assertLarger(0);
+        // PROBE: expose actual (error as ErrorWithCode).code value via AssertException
+        expect(errorCode).assertEqual('PROBE');
+        let errorMsg = getTextContentById('errorMsg');
+        expect(errorMsg).assertEqual('NavDestination not found.');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1800 error: ' + err);
         expect(false).assertTrue();
@@ -573,10 +578,10 @@ export default function NavigationPreloadTest(): void {
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
         let errorCode = getTextContentById('errorCode');
-        // In ArkTS-Sta mode, String(error) returns full error string, not numeric code
-        expect(errorCode.length).assertLarger(0);
+        // PROBE: expose actual (error as ErrorWithCode).code value via AssertException
+        expect(errorCode).assertEqual('PROBE');
         let errorMsg = getTextContentById('errorMsg');
-        expect(errorMsg.length).assertLarger(0);
+        expect(errorMsg).assertEqual('NavDestination not found.');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1900 error: ' + err);
         expect(false).assertTrue();
@@ -749,8 +754,10 @@ export default function NavigationPreloadTest(): void {
         await btn.click();
         await CommonFunc.sleep(2000);
         let errorCode = getTextContentById('errorCode');
-        expect(errorCode.length).assertLarger(0);
-        // In ArkTS-Sta mode, String(error) returns full error string, not numeric code
+        // PROBE: expose actual (error as ErrorWithCode).code value via AssertException
+        expect(errorCode).assertEqual('PROBE');
+        let errorMsg = getTextContentById('errorMsg');
+        expect(errorMsg).assertEqual('NavDestination not found.');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_2600 error: ' + err);
         expect(false).assertTrue();
@@ -773,7 +780,10 @@ export default function NavigationPreloadTest(): void {
         await btn.click();
         await CommonFunc.sleep(2000);
         let errorMsg = getTextContentById('errorMsg');
-        expect(errorMsg.length).assertLarger(0);
+        expect(errorMsg).assertEqual('NavDestination not found.');
+        let errorCode = getTextContentById('errorCode');
+        // PROBE: expose actual (error as ErrorWithCode).code value via AssertException
+        expect(errorCode).assertEqual('PROBE');
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
       } catch (err) {
@@ -986,10 +996,10 @@ export default function NavigationPreloadTest(): void {
         await btn.click();
         await CommonFunc.sleep(2000);
         let errorCode = getTextContentById('errorCode');
-        // In ArkTS-Sta mode, String(error) returns full error string, not numeric code
-        expect(errorCode.length).assertLarger(0);
+        // PROBE: expose actual (error as ErrorWithCode).code value via AssertException
+        expect(errorCode).assertEqual('PROBE');
         let errorMsg = getTextContentById('errorMsg');
-        expect(errorMsg.length).assertLarger(0);
+        expect(errorMsg).assertEqual('NavDestination not found.');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_3500 error: ' + err);
         expect(false).assertTrue();
