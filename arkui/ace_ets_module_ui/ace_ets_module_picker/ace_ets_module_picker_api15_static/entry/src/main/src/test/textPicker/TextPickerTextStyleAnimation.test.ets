@@ -36,7 +36,7 @@ export default function TextPickerTextStyleAnimationTest() {
         if (!('TextStyleAnimation' == pages.name)) {
           console.info('get TextStyle state success ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options)
-          await UtilsTest.msSleep(2000)
+          await CommonFunc.sleep(2000)
           
         }
       } catch (err) {
