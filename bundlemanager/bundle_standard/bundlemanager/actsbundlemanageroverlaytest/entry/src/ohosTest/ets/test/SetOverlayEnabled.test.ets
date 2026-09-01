@@ -405,7 +405,7 @@ export default function setOverlayEnabled() {
           console.info("SUB_BMS_FRAMEWORK_Status_OverlayEnable_1000 result" + JSON.stringify(data));
           expect().assertFail();
           done();
-        }).catch((e) => {
+        }).catch((e: BusinessError) => {
           console.info("SUB_BMS_FRAMEWORK_Status_OverlayEnable_1000 catch" + JSON.stringify(e));
           expect(e.code).assertEqual(ERROR_CODE);
           done();
@@ -444,7 +444,7 @@ export default function setOverlayEnabled() {
           console.info("SUB_BMS_FRAMEWORK_Status_OverlayEnable_1100 result" + JSON.stringify(data));
           expect().assertFail();
           done();
-        }).catch((e) => {
+        }).catch((e: BusinessError) => {
           console.info("SUB_BMS_FRAMEWORK_Status_OverlayEnable_1100 catch" + JSON.stringify(e));
           expect(e.code).assertEqual(ERROR_CODE);
           done();
