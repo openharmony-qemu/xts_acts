@@ -36,20 +36,20 @@ export default function abilityTest(): void {
     });
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Callback_Static_0100
-     * @tc.number ACTS_AddAbilityMonitor_Callback_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0100
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility to trigger onAbilityCreate (Callback).
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Callback_Static_0100";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0100";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
-        console.info(TAG + "====>ACTS_AddAbilityMonitor_0100 onAbilityCreate");
+        console.info(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0100 onAbilityCreate");
         expect(ability != null).assertTrue();
         resolve(undefined);
       }
@@ -60,9 +60,9 @@ export default function abilityTest(): void {
         abilityName: 'MainAbility2',
         onAbilityCreate: onAbilityCreate
       };
-      console.info(TAG + "====>ACTS_AddAbilityMonitor_0100 start");
+      console.info(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0100 start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, (err: BusinessError<void> | null) => {
-        console.info(TAG + "====>ACTS_AddAbilityMonitor_0100 addAbilityMonitor err: " + err?.code);
+        console.info(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0100 addAbilityMonitor err: " + err?.code);
         delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest.static',
@@ -75,16 +75,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Callback_Static_0200
-     * @tc.number ACTS_AddAbilityMonitor_Callback_Static_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0200
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility to
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Callback_Static_0200";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0200";
       console.log(TAG + " start");
 
       let onAbilityForeground = (ability: UIAbility) => {
@@ -117,16 +117,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Callback_Static_0300
-     * @tc.number ACTS_AddAbilityMonitor_Callback_Static_0300
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0300
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility to trigger
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Callback_Static_0300";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0300";
       console.log(TAG + " start");
       let onAbilityBackgroundPromise = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityBackgroundPromise ====>");
@@ -154,16 +154,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Callback_Static_0400
-     * @tc.number ACTS_AddAbilityMonitor_Callback_Static_0400
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0400
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Callback_Static_0400";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0400";
       console.log(TAG + " start");
 
       let onAbilityDestroy = (ability: UIAbility) => {
@@ -193,16 +193,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Callback_Static_0500
-     * @tc.number ACTS_AddAbilityMonitor_Callback_Static_0500
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0500
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Callback_Static_0500";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0500";
       console.log(TAG + " start");
 
       let onWindowStageCreate = (ability: UIAbility) => {
@@ -219,7 +219,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, (err: BusinessError<void> | null) => {
-        console.log(TAG + "====>ACTS_AddAbilityMonitor_0500 success====>" + err?.code);
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0500 success====>" + err?.code);
         delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest.static',
@@ -232,16 +232,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Callback_Static_0600
-     * @tc.number ACTS_AddAbilityMonitor_Callback_Static_0600
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0600
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Callback_Static_0600";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0600";
       console.log(TAG + " start");
 
       let onWindowStageDestroy = (ability: UIAbility) => {
@@ -258,7 +258,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, (err: BusinessError<void> | null) => {
-        console.log(TAG + "====>ACTS_AddAbilityMonitor_0600 success====>" + err?.code);
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0600 success====>" + err?.code);
         delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest.static',
@@ -271,16 +271,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Callback_Static_0700
-     * @tc.number ACTS_AddAbilityMonitor_Callback_Static_0700
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0700
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Callback_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Callback_Static_0700";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0700";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -297,7 +297,7 @@ export default function abilityTest(): void {
       };
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, (err: BusinessError<void> | null) => {
-        console.log(TAG + "====>ACTS_AddAbilityMonitor_0700 addAbilityMonitorfir====>" + err?.code);
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0700 addAbilityMonitorfir====>" + err?.code);
         delegator.addAbilityMonitor(
           {
             moduleName: 'entry',
@@ -305,7 +305,7 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2',
             onAbilityCreate: onAbilityCreate
           }, (err: BusinessError<void> | null) => {
-          console.log(TAG + "====>ACTS_AddAbilityMonitor_0700 addAbilityMonitorsec====>" + err?.code);
+          console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0700 addAbilityMonitorsec====>" + err?.code);
           delegator.startAbility(
             {
               bundleName: 'com.example.abilitymonitortest.static',
@@ -319,16 +319,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Promise_Static_0100
-     * @tc.number ACTS_AddAbilityMonitor_Promise_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0100
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Promise_Static_0100";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0100";
       console.log(TAG + " start");
 
       let onAbilityCreatePromise = (ability: UIAbility) => {
@@ -345,7 +345,7 @@ export default function abilityTest(): void {
       };
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then(() => {
-        console.log(TAG + "====>ACTS_AddAbilityMonitor_0800 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0800 success====>");
         delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest.static',
@@ -358,16 +358,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Promise_Static_0200
-     * @tc.number ACTS_AddAbilityMonitor_Promise_Static_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0200
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Promise_Static_0200";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0200";
       console.log(TAG + " start");
 
       let onAbilityForegroundPromise = (ability: UIAbility) => {
@@ -384,7 +384,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then(async () => {
-        console.log(TAG + "====>ACTS_AddAbilityMonitor_0900 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0900 success====>");
         delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest.static',
@@ -397,16 +397,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Promise_Static_0300
-     * @tc.number ACTS_AddAbilityMonitor_Promise_Static_0300
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0300
      * @tc.desc   Use addAbilityMonitor to add a monitor with onAbilityBackground callback,
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Promise_Static_0300";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0300";
       console.log(TAG + " start");
       let onAbilityBackgroundPromise = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityBackgroundPromise ====>");
@@ -421,7 +421,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then(async () => {
-        console.log(TAG + "====>ACTS_AddAbilityMonitor_1000 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_1000 success====>");
         delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest.static',
@@ -434,16 +434,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Promise_Static_0400
-     * @tc.number ACTS_AddAbilityMonitor_Promise_Static_0400
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0400
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Promise_Static_0400";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0400";
       console.log(TAG + " start");
 
       let onAbilityDestroyPromise = (ability: UIAbility) => {
@@ -460,7 +460,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then(async () => {
-        console.log(TAG + "====>ACTS_AddAbilityMonitor_1100 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_1100 success====>");
       })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
@@ -474,16 +474,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Promise_Static_0500
-     * @tc.number ACTS_AddAbilityMonitor_Promise_Static_0500
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0500
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Promise_Static_0500";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0500";
       console.log(TAG + " start");
 
       let onWindowStageCreatePromise = (ability: UIAbility) => {
@@ -500,7 +500,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then(async () => {
-        console.log(TAG + "====>ACTS_AddAbilityMonitor_1200 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_1200 success====>");
         delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest.static',
@@ -513,16 +513,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Promise_Static_0600
-     * @tc.number ACTS_AddAbilityMonitor_Promise_Static_0600
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0600
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Promise_Static_0600";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0600";
       console.log(TAG + " start");
 
       let onWindowStageDestroyPromsie = (ability: UIAbility) => {
@@ -539,7 +539,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then(async () => {
-        console.log(TAG + "====>ACTS_AddAbilityMonitor_1300 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_1300 success====>");
         delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest.static',
@@ -552,16 +552,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_AddAbilityMonitor_Promise_Static_0700
-     * @tc.number ACTS_AddAbilityMonitor_Promise_Static_0700
+     * @tc.name   SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0700
      * @tc.desc   Use addAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_AddAbilityMonitor_Promise_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_AddAbilityMonitor_Promise_Static_0700";
+      TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0700";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -599,16 +599,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_Static_0100
-     * @tc.number ACTS_RemoveAbilityMonitor_Callback_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0100
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Callback_Static_0100";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0100";
       console.log(TAG + " start");
 
       let onAbilityCreate = () => {
@@ -644,16 +644,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_Static_0200
-     * @tc.number ACTS_RemoveAbilityMonitor_Callback_Static_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0200
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Callback_Static_0200";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0200";
       console.log(TAG + " start");
 
       let onAbilityForeground = () => {
@@ -689,16 +689,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_Static_0300
-     * @tc.number ACTS_RemoveAbilityMonitor_Callback_Static_0300
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0300
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Callback_Static_0300";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0300";
       console.log(TAG + " start");
 
       let onAbilityBackground = () => {
@@ -734,16 +734,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_Static_0400
-     * @tc.number ACTS_RemoveAbilityMonitor_Callback_Static_0400
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0400
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Callback_Static_0400";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0400";
       console.log(TAG + " start");
 
       let onAbilityDestroy = () => {
@@ -779,16 +779,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_Static_0500
-     * @tc.number ACTS_RemoveAbilityMonitor_Callback_Static_0500
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0500
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Callback_Static_0500";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0500";
       console.log(TAG + " start");
 
       let onWindowStageCreate = () => {
@@ -824,16 +824,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_Static_0600
-     * @tc.number ACTS_RemoveAbilityMonitor_Callback_Static_0600
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0600
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Callback_Static_0600";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0600";
       console.log(TAG + " start");
 
       let onWindowStageDestroy = () => {
@@ -869,16 +869,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_Static_0700
-     * @tc.number ACTS_RemoveAbilityMonitor_Callback_Static_0700
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0700
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Callback_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Callback_Static_0700";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0700";
       console.log(TAG + " start");
 
       let onAbilityCreate = () => {
@@ -902,16 +902,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Callback_Static_0800
-     * @tc.number ACTS_RemoveAbilityMonitor_Callback_Static_0800
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0800
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0800
      * @tc.desc   Use waitAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Callback_Static_0800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Callback_Static_0800";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0800";
       console.log(TAG + " start");
 
       let onAbilityCreate = () => {
@@ -948,16 +948,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_Static_0100
-     * @tc.number ACTS_RemoveAbilityMonitor_Promise_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0100
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Promise_Static_0100";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0100";
       console.log(TAG + " start");
 
       let onAbilityCreate = () => {
@@ -993,16 +993,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_Static_0200
-     * @tc.number ACTS_RemoveAbilityMonitor_Promise_Static_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0200
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Promise_Static_0200";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0200";
       console.log(TAG + " start");
 
       let onAbilityForeground = () => {
@@ -1038,16 +1038,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_Static_0300
-     * @tc.number ACTS_RemoveAbilityMonitor_Promise_Static_0300
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0300
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Promise_Static_0300";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0300";
       console.log(TAG + " start");
 
       let onAbilityBackground = () => {
@@ -1083,16 +1083,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_Static_0400
-     * @tc.number ACTS_RemoveAbilityMonitor_Promise_Static_0400
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0400
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Promise_Static_0400";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0400";
       console.log(TAG + " start");
 
       let onAbilityDestroy = () => {
@@ -1128,16 +1128,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_Static_0500
-     * @tc.number ACTS_RemoveAbilityMonitor_Promise_Static_0500
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0500
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Promise_Static_0500";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0500";
       console.log(TAG + " start");
 
       let onWindowStageCreate = () => {
@@ -1173,16 +1173,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_Static_0600
-     * @tc.number ACTS_RemoveAbilityMonitor_Promise_Static_0600
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0600
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Promise_Static_0600";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0600";
       console.log(TAG + " start");
 
       let onWindowStageDestroy = () => {
@@ -1218,16 +1218,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_Static_0700
-     * @tc.number ACTS_RemoveAbilityMonitor_Promise_Static_0700
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0700
      * @tc.desc   Use addAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Promise_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Promise_Static_0700";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0700";
       console.log(TAG + " start");
 
       let onAbilityCreate = () => {
@@ -1258,16 +1258,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_RemoveAbilityMonitor_Promise_Static_0800
-     * @tc.number ACTS_RemoveAbilityMonitor_Promise_Static_0800
+     * @tc.name   SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0800
+     * @tc.number SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0800
      * @tc.desc   Use waitAbilityMonitor to add monitor and use removeAbilityMonitor
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_RemoveAbilityMonitor_Promise_Static_0800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_RemoveAbilityMonitor_Promise_Static_0800";
+      TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0800";
       console.log(TAG + " start");
 
       let onAbilityCreate = () => {
@@ -1303,16 +1303,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Callback_Static_0100
-     * @tc.number ACTS_WaitAbilityMonitor_Callback_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0100
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Callback_Static_0100";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0100";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1330,29 +1330,29 @@ export default function abilityTest(): void {
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
         console.log(TAG + '===>0100err?.code is===>' + JSON.stringify(err?.code))
         expect(err?.code).assertEqual(0)
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0100 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0100 success====>");
       })
       delegator.startAbility(
         {
           bundleName: 'com.example.abilitymonitortest.static',
           abilityName: 'MainAbility2'
         }).then(async () => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0100 startAbility success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0100 startAbility success====>");
       })
           });
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Callback_Static_0200
-     * @tc.number ACTS_WaitAbilityMonitor_Callback_Static_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0200
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Callback_Static_0200";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0200";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1369,7 +1369,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, 3000, (err: BusinessError<void> | null, waitability: UIAbility | undefined) => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0200 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0200 success====>");
         expect(err?.code).assertEqual(16000100)
         console.log(TAG + '===>0200err?.code is===>' + JSON.stringify(err?.code))
       })
@@ -1379,23 +1379,23 @@ export default function abilityTest(): void {
             bundleName: 'com.example.abilitymonitortest.static',
             abilityName: 'MainAbility2'
           }).then(() => {
-          console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0200 startAbility end====>");
+          console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0200 startAbility end====>");
         })
       }, 5010)
           });
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Callback_Static_0300
-     * @tc.number ACTS_WaitAbilityMonitor_Callback_Static_0300
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0300
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Callback_Static_0300";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0300";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1414,29 +1414,29 @@ export default function abilityTest(): void {
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, 1000, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
         console.log(TAG + '===>0300err?.code is===>' + JSON.stringify(err?.code))
         expect(err?.code).assertEqual(0)
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0300 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0300 success====>");
       })
       delegator.startAbility(
         {
           bundleName: 'com.example.abilitymonitortest.static',
           abilityName: 'MainAbility2'
         }).then(async () => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0300 startAbility success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0300 startAbility success====>");
       })
           });
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Callback_Static_0400
-     * @tc.number ACTS_WaitAbilityMonitor_Callback_Static_0400
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0400
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Callback_Static_0400";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0400";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1464,23 +1464,23 @@ export default function abilityTest(): void {
             bundleName: 'com.example.abilitymonitortest.static',
             abilityName: 'MainAbility2'
           }).then(() => {
-          console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0400 startAbility end====>");
+          console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0400 startAbility end====>");
         })
       }, 1010)
           });
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Callback_Static_0500
-     * @tc.number ACTS_WaitAbilityMonitor_Callback_Static_0500
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0500
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Callback_Static_0500";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0500";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1499,7 +1499,7 @@ export default function abilityTest(): void {
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, 5000, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
         console.log(TAG + '===>0500err?.code is===>' + JSON.stringify(err?.code))
         expect(err?.code).assertEqual(0)
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0500 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0500 success====>");
       })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
@@ -1507,22 +1507,22 @@ export default function abilityTest(): void {
           bundleName: 'com.example.abilitymonitortest.static',
           abilityName: 'MainAbility2'
         }).then(async () => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0500 startAbility success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0500 startAbility success====>");
       })
           });
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Callback_Static_0600
-     * @tc.number ACTS_WaitAbilityMonitor_Callback_Static_0600
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0600
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Callback_Static_0600";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0600";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1541,7 +1541,7 @@ export default function abilityTest(): void {
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, -1, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
         console.log(TAG + '===>0600err?.code is===>' + JSON.stringify(err?.code))
         expect(err?.code).assertEqual(0)
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0600 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0600 success====>");
       })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
@@ -1549,22 +1549,22 @@ export default function abilityTest(): void {
           bundleName: 'com.example.abilitymonitortest.static',
           abilityName: 'MainAbility2'
         }).then(async () => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0600 startAbility success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0600 startAbility success====>");
       })
           });
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Promise_Static_0100
-     * @tc.number ACTS_WaitAbilityMonitor_Promise_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0100
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Promise_Static_0100";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0100";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1581,7 +1581,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then(async (data: UIAbility) => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0100 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0100 success====>");
       })
       console.log(TAG + " startAbility start");
       Utils.msSleep(500);
@@ -1590,22 +1590,22 @@ export default function abilityTest(): void {
           bundleName: 'com.example.abilitymonitortest.static',
           abilityName: 'MainAbility2'
         }).then(async () => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0100 startAbility success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0100 startAbility success====>");
       })
           });
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Promise_Static_0200
-     * @tc.number ACTS_WaitAbilityMonitor_Promise_Static_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0200
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Promise_Static_0200";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0200";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1622,7 +1622,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then((data: UIAbility) => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0200 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0200 success====>");
       })
       setTimeout(() => {
         console.log(TAG + " startAbility start");
@@ -1640,16 +1640,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Promise_Static_0300
-     * @tc.number ACTS_WaitAbilityMonitor_Promise_Static_0300
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0300
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Promise_Static_0300";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0300";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1666,7 +1666,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, 1000).then(async (data: UIAbility) => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0300 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0300 success====>");
       })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
@@ -1674,22 +1674,22 @@ export default function abilityTest(): void {
           bundleName: 'com.example.abilitymonitortest.static',
           abilityName: 'MainAbility2'
         }).then(async () => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0300 startAbility success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0300 startAbility success====>");
       })
           });
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Promise_Static_0400
-     * @tc.number ACTS_WaitAbilityMonitor_Promise_Static_0400
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0400
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Promise_Static_0400";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0400";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1706,7 +1706,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, 1000).then((data: UIAbility) => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0400 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0400 success====>");
       })
       setTimeout(() => {
         console.log(TAG + " startAbility start");
@@ -1715,7 +1715,7 @@ export default function abilityTest(): void {
             bundleName: 'com.example.abilitymonitortest.static',
             abilityName: 'MainAbility2'
           }).then(() => {
-          console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0400 startAbility end====>");
+          console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0400 startAbility end====>");
           setTimeout(() => {
             resolve(undefined);
           }, 2500)
@@ -1725,16 +1725,16 @@ export default function abilityTest(): void {
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Promise_Static_0500
-     * @tc.number ACTS_WaitAbilityMonitor_Promise_Static_0500
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0500
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Promise_Static_0500";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0500";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1751,7 +1751,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, 100).then(async (data: UIAbility) => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0500 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0500 success====>");
       })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
@@ -1759,22 +1759,22 @@ export default function abilityTest(): void {
           bundleName: 'com.example.abilitymonitortest.static',
           abilityName: 'MainAbility2'
         }).then(async () => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0500 startAbility success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0500 startAbility success====>");
       })
           });
     })
 
     /**
-     * @tc.name   ACTS_WaitAbilityMonitor_Promise_Static_0600
-     * @tc.number ACTS_WaitAbilityMonitor_Promise_Static_0600
+     * @tc.name   SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0600
      * @tc.desc   Use waitAbilityMonitor to add a monitor then use startAbility
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('ACTS_WaitAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      TAG = "ACTS_WaitAbilityMonitor_Promise_Static_0600";
+      TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0600";
       console.log(TAG + " start");
 
       let onAbilityCreate = (ability: UIAbility) => {
@@ -1791,7 +1791,7 @@ export default function abilityTest(): void {
       }
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, -1).then(async (data: UIAbility) => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0600 success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0600 success====>");
       })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
@@ -1799,7 +1799,7 @@ export default function abilityTest(): void {
           bundleName: 'com.example.abilitymonitortest.static',
           abilityName: 'MainAbility2'
         }).then(async () => {
-        console.log(TAG + "====>ACTS_WaitAbilityMonitor_Promise_0600 startAbility success====>");
+        console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0600 startAbility success====>");
       })
           });
     })

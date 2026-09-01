@@ -29,17 +29,17 @@ export default function appManagerTest(): void {
   describe('appManagerTest', () => {
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_0100
-     * @tc.number System_API_Test_App_Manager_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0100
      * @tc.desc   Test the third-party application without permission call appManager.on will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_0100';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0100';
       let applicationStateObserver : appManager.ApplicationStateObserver= {
         onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
           console.log(TAG + '------------ onForegroundApplicationChanged -----------', appStateData);
@@ -77,17 +77,17 @@ export default function appManagerTest(): void {
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_0200
-     * @tc.number System_API_Test_App_Manager_Static_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0200
      * @tc.desc   Test the third-party application without permission call appManager.on will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_0200';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0200';
       let applicationStateObserver : appManager.ApplicationStateObserver = {
         onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
           console.log(TAG + '------------ onForegroundApplicationChanged -----------', appStateData);
@@ -126,17 +126,17 @@ export default function appManagerTest(): void {
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_0300
-     * @tc.number System_API_Test_App_Manager_Static_0300
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0300
      * @tc.desc   Test the third-party application call getForegroundApplications will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_0300';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0300';
       appManager.getForegroundApplications((err) => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_CODE);
@@ -148,17 +148,17 @@ export default function appManagerTest(): void {
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_0400
-     * @tc.number System_API_Test_App_Manager_Static_0400
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0400
      * @tc.desc   Test the third-party application call getForegroundApplications will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_0400';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0400';
       appManager.getForegroundApplications()
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
@@ -177,17 +177,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_0500
-     * @tc.number System_API_Test_App_Manager_Static_0500
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0500
      * @tc.desc   Test the third-party application call killProcessWithAccount will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_0500';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0500';
       let bundleName = "com.ohos.application";
       let accountId = 100;
       appManager.killProcessWithAccount(bundleName, accountId, (err) => {
@@ -201,17 +201,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_0600
-     * @tc.number System_API_Test_App_Manager_Static_0600
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0600
      * @tc.desc   Test the third-party application call killProcessWithAccount will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_0600';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0600';
       let bundleName = "com.ohos.application";
       let accountId = 100;
       appManager.killProcessWithAccount(bundleName, accountId)
@@ -232,17 +232,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_0700
-     * @tc.number System_API_Test_App_Manager_Static_0700
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0700
      * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_0700';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0700';
       let bundleName = "com.ohos.application";
       appManager.killProcessesByBundleName(bundleName, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
@@ -255,17 +255,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_0800
-     * @tc.number System_API_Test_App_Manager_Static_0800
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0800
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0800
      * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_0800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_0800';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0800';
       let bundleName = "com.ohos.application";
       appManager.killProcessesByBundleName(bundleName)
         .then(err => {
@@ -285,17 +285,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_0900
-     * @tc.number System_API_Test_App_Manager_Static_0900
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0900
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_0900
      * @tc.desc   Test the third-party application call clearUpApplicationData will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_0900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_0900', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_0900';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0900';
       let bundleName = "com.ohos.application";
       appManager.clearUpApplicationData(bundleName, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
@@ -308,17 +308,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_1000
-     * @tc.number System_API_Test_App_Manager_Static_1000
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1000
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_1000
      * @tc.desc   Test the third-party application call clearUpApplicationData will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_1000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_1000', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_1000';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1000';
       let bundleName = "com.ohos.application";
       appManager.clearUpApplicationData(bundleName)
         .then(err => {
@@ -339,17 +339,17 @@ expect().assertFail();
 
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_1100
-     * @tc.number System_API_Test_App_Manager_Static_1100
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_1100
      * @tc.desc   Test the third-party application call GetProcessMemoryByPid will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_1100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_1100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_1100';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1100';
       let pid = 0;
       appManager.getProcessMemoryByPid(pid, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
@@ -362,17 +362,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_1200
-     * @tc.number System_API_Test_App_Manager_Static_1200
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1200
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_1200
      * @tc.desc   Test the third-party application call GetProcessMemoryByPid will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_1200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_1200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_1200';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1200';
       let pid = 0;
       appManager.getProcessMemoryByPid(pid)
         .then(err => {
@@ -392,17 +392,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_1300
-     * @tc.number System_API_Test_App_Manager_Static_1300
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1300
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_1300
      * @tc.desc   Test the third-party application call getRunningProcessInfoByBundleName will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_1300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_1300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_1300';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1300';
       let bundleName = "com.ohos.application";
       appManager.getRunningProcessInfoByBundleName(bundleName, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
@@ -415,17 +415,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_1400
-     * @tc.number System_API_Test_App_Manager_Static_1400
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1400
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_1400
      * @tc.desc   Test the third-party application call getRunningProcessInfoByBundleName will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_1400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_1400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_1400';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1400';
       let bundleName = "com.ohos.application";
       appManager.getRunningProcessInfoByBundleName(bundleName)
         .then(err => {
@@ -445,17 +445,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_1500
-     * @tc.number System_API_Test_App_Manager_Static_1500
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1500
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_1500
      * @tc.desc   Test the third-party application call getRunningProcessInfoByBundleName will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_1500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_1500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_1500';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1500';
       let bundleName = "com.ohos.application";
       let userId = 100;
       appManager.getRunningProcessInfoByBundleName(bundleName, userId, (err) => {
@@ -469,17 +469,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_1600
-     * @tc.number System_API_Test_App_Manager_Static_1600
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1600
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_1600
      * @tc.desc   Test the third-party application call getRunningProcessInfoByBundleName will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_1600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_1600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_1600';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1600';
       let bundleName = "com.ohos.application";
       let userId = 100;
       appManager.getRunningProcessInfoByBundleName(bundleName, userId)
@@ -501,14 +501,14 @@ expect().assertFail();
 
 
     /**
-     * @tc.name   Public_API_Test_App_Manager_Static_0100
-     * @tc.number Public_API_Test_App_Manager_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Public_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Public_Static_0100
      * @tc.desc   Test the third-party application get ProcessState enum will be right
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Public_API_Test_App_Manager_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Public_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       expect(appManager.ProcessState.STATE_CREATE).assertEqual(0);
@@ -523,14 +523,14 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   Public_API_Test_App_Manager_Static_0200
-     * @tc.number Public_API_Test_App_Manager_Static_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Public_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Public_Static_0200
      * @tc.desc   Test the third-party application get ApplicationState enum will be right
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Public_API_Test_App_Manager_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Public_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       // 静态运行时枚举为对象且按声明顺序取值（0,1,2,3,4；动态原生为 0,2,3,4,5）
@@ -813,28 +813,28 @@ expect().assertFail();
     })
 
      /**
-      * @tc.name   System_API_Test_App_Manager_Static_1700
-      * @tc.number System_API_Test_App_Manager_Static_1700
+      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1700
+      * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_1700
       * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
       * @tc.type   FUNCTION
       * @tc.size   MEDIUMTEST
       * @tc.level  LEVEL0
       */
-     it('System_API_Test_App_Manager_Static_1700', Level.LEVEL0, async (): Promise<void> => {
+     it('SUB_Ability_AbilityRuntime_AppManager_Static_1700', Level.LEVEL0, async (): Promise<void> => {
            await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_1700';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1700';
       let bundleName = "com.ohos.applicationsss";
       try {
         appManager.killProcessesByBundleName(bundleName, false).then((data: void) => {
-          console.log('System_API_Test_App_Manager_1700 killProcessesByBundleName success.');
+          console.log('SUB_Ability_AbilityRuntime_AppManager_1700 killProcessesByBundleName success.');
                     resolve(undefined);
 expect().assertFail();
 
             return data;
 
         }).catch((err: Error) => {
-          console.error(`System_API_Test_App_Manager_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
+          console.error(`SUB_Ability_AbilityRuntime_AppManager_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err?.code).assertEqual(ERROR_PERMISSION_CODE);
 
           resolve(undefined);
@@ -842,7 +842,7 @@ expect().assertFail();
       } catch (paramError) {
         let code = JSON.stringify(paramError);
         let message = JSON.stringify(paramError);
-        console.error(`System_API_Test_App_Manager_1700 [appManager] error: ${code}, ${message}`);
+        console.error(`SUB_Ability_AbilityRuntime_AppManager_1700 [appManager] error: ${code}, ${message}`);
         expect(JSON.stringify(paramError)).assertEqual(ERROR_PERMISSION_CODE);
         resolve(undefined);
       }
@@ -853,26 +853,26 @@ expect().assertFail();
 
     
     /**
-     * @tc.name   System_API_Test_App_Manager_Static_1800
-     * @tc.number System_API_Test_App_Manager_Static_1800
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1800
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_Static_1800
      * @tc.desc   Test the third-party application without permission call killProcessesByBundleName will be blocked
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_Static_1800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_Static_1800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_Static_1800';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1800';
       let bundleName = "com.ohos.applicationsss";
       try {
         appManager.killProcessesByBundleName(bundleName, true).then((data: void) => {
-          console.log('System_API_Test_App_Manager_1800 killProcessesByBundleName success.');
+          console.log('SUB_Ability_AbilityRuntime_AppManager_1800 killProcessesByBundleName success.');
                     resolve(undefined);
 expect().assertFail();
 
         }).catch((err: Error) => {
-          console.error(`System_API_Test_App_Manager_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
+          console.error(`SUB_Ability_AbilityRuntime_AppManager_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err?.code).assertEqual(ERROR_PERMISSION_CODE);
 
           resolve(undefined);
@@ -880,7 +880,7 @@ expect().assertFail();
       } catch (paramError) {
         let code = JSON.stringify(paramError);
         let message = JSON.stringify(paramError);
-        console.error(`System_API_Test_App_Manager_1800 [appManager] error: ${code}, ${message}`);
+        console.error(`SUB_Ability_AbilityRuntime_AppManager_1800 [appManager] error: ${code}, ${message}`);
         expect(JSON.stringify(paramError)).assertEqual(ERROR_PERMISSION_CODE);
         resolve(undefined);
       }
@@ -890,17 +890,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_GetAppMemorySize_Promise_Static_0100
-     * @tc.number System_API_Test_App_Manager_GetAppMemorySize_Promise_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Promise_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Promise_Static_0100
      * @tc.desc   Test getAppMemorySize with promise style.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_GetAppMemorySize_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_GetAppMemorySize_Promise_Static_0100';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Promise_Static_0100';
       console.log(`${TAG}, begin`);
       try {
         appManager.getAppMemorySize((err: BusinessError<void> | null, data: int | undefined): void => {
@@ -926,17 +926,17 @@ expect().assertFail();
     })
 
     /**
-     * @tc.name   System_API_Test_App_Manager_GetAppMemorySize_Callback_Static_0100
-     * @tc.number System_API_Test_App_Manager_GetAppMemorySize_Callback_Static_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Callback_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Callback_Static_0100
      * @tc.desc   Test getAppMemorySize with callback style.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('System_API_Test_App_Manager_GetAppMemorySize_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      let TAG = 'System_API_Test_App_Manager_GetAppMemorySize_Callback_Static_0100';
+      let TAG = 'SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Callback_Static_0100';
       console.log(`${TAG}, begin`);
       try {
         appManager.getAppMemorySize((err: BusinessError<void> | null, data: int | undefined): void => {
