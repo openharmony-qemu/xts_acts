@@ -471,7 +471,7 @@ export default function actsEmitterTest() {
     it('SUB_Notification_Ans_Emitter_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'SUB_Notification_Ans_Emitter_Static_2900==>'
-
+        let onConsume_number: number = 0
         let myDate: Record<String, RecordData> = {
           "id": "1",
           "content": "c"
@@ -484,6 +484,7 @@ export default function actsEmitterTest() {
         };
         let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(TAG+ ' once success');
+          onConsume_number++
         }
         emitter.on("", onCallback);
         await Utils.msSleep(100)
@@ -492,6 +493,7 @@ export default function actsEmitterTest() {
         emitter.emit(innerEvent, eventData);
         emitter.emit(innerEvent, eventData);
         await Utils.msSleep(100)
+        expect(onConsume_number).assertEqual(0);
         console.info('Sub_NotificationAns_Emitter_Basic_Static_0002 PASS');
         done()
       })
@@ -507,8 +509,10 @@ export default function actsEmitterTest() {
     it('SUB_Notification_Ans_Emitter_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'SUB_Notification_Ans_Emitter_Static_3000==>'
+        let onConsume_number: number = 0
         let onCallback: Callback<emitter.EventData> = (eventData: emitter.EventData) => {
           console.info(TAG+ ' once success');
+          onConsume_number++
         }
         emitter.onEventData("", onCallback);
         await Utils.msSleep(100)
@@ -517,6 +521,7 @@ export default function actsEmitterTest() {
         emitter.emit('eventid');
         emitter.emit('eventid');
         await Utils.msSleep(100)
+        expect(onConsume_number).assertEqual(0);
         console.info('Sub_NotificationAns_Emitter_Basic_Static_0002 PASS');
         done()
       })
