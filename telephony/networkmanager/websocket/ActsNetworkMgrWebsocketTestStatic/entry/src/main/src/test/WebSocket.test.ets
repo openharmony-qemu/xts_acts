@@ -1671,41 +1671,40 @@ export default function WebSocketTest() {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'start success!');
               let client: webSocket.WebSocket = webSocket.createWebSocket();
+              server.on('connect', (connection: webSocket.WebSocketConnection): void => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'server on connect success!');
+                server.send("hello client", connection).then((sendValue: boolean | undefined) => {
+                  if (sendValue) {
+                    ExpectTrue(sendValue !== null);
+                    client.close();
+                    server.stop();
+                    hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+                    done();
+                  } else {
+                    ExpectFail();
+                    client.close();
+                    server.stop();
+                    hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+                    done();
+                  }
+                }).catch((error: Error) => {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + (error as BusinessError).code);
+                  ExpectTrue((error as BusinessError).code === 2302006);
+                  client.close();
+                  server.stop();
+                  hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+                  done();
+                });
+              });
               client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
                 if (value) {
                   hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
                 } else {
                   ExpectFail();
                   server.stop();
-                  done()
+                  done();
                 }
               });
-              let connection: webSocket.WebSocketConnection = {
-                clientIP: '0.0.0.0',
-                clientPort: 8099
-              };
-              server.send("hello client", connection).then((value: boolean | undefined) => {
-                if (value) {
-                  ExpectTrue(value !== null);
-                  client.close();
-                  server.stop();
-                  hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
-                  done();
-                } else {
-                  ExpectFail();
-                  client.close();
-                  server.stop();
-                  hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
-                  done();
-                }
-              }).catch((error: Error) => {
-                hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + (error as BusinessError).code);
-                ExpectTrue((error as BusinessError).code === 2302006);
-                client.close();
-                server.stop();
-                hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
-                done();
-              })
             } else {
               ExpectFail();
               done();
