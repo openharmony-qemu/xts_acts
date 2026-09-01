@@ -101,9 +101,14 @@ export default function moveAbilityToBackgroundTest(): void {
               button.click();
             }
           });
-          Utils.msSleep(5000);
-          console.error(`${tag}, timeout`);
-          expect().assertFail();
+          // 静态运行时 TestAbility 前台生命周期需主线程执行：不能阻塞主线程等待
+          // （msSleep 阻塞主线程 → 生命周期回调无法派发 → 设备 LIFECYCLE_HALF_TIMEOUT 冻结），
+          // 改定时器兜底，用例完成由订阅回调驱动
+          setTimeout(() => {
+            console.error(`${tag}, timeout`);
+            resolve(undefined);
+            expect().assertFail();
+          }, 5000);
         } catch (err) {
           console.error(`${tag} error, errorCode: ${JSON.stringify(err)}`);
           expect().assertFail();

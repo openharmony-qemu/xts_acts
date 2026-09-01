@@ -38,7 +38,12 @@ export default class TestAbility extends UIAbility {
     let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs =
       abilityDelegatorRegistry.getArguments();
     hilog.info(domain, tag, '%{public}s', 'start run testcase!!!');
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+    // uitest 初始化（启动 server-daemon）耗时 ~3s，同步执行会阻塞 TestAbility 前台事务
+    // 超过设备 AAFWK LIFECYCLE_HALF_TIMEOUT（2.5s）阈值触发 appfreeze 冻结；
+    // 延迟到事务完成后执行，用例行为不变
+    setTimeout(() => {
+      Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
+    }, 0);
   }
 
   onDestroy(): void {
