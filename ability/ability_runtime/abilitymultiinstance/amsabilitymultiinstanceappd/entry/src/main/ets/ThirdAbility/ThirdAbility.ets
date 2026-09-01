@@ -41,7 +41,7 @@ async function onShowProcess() {
   callBackData += callBackSeq;
   let commonEventPublishData: PublishData = {
     data: callBackData,
-    parameters: abilityWant.parameters
+    parameters: abilityWant.parameters!
   };
 
   console.log("AbilityMultiInstanceAppD Third abilityWant = " + JSON.stringify(abilityWant));
@@ -60,8 +60,9 @@ async function startAbilityProcess(appDThirdAbilityContext: common.UIAbilityCont
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
-  let idx = parameters.nextStep;
-  switch (parameters.step[idx]) {
+  let idx: number = parameters.nextStep;
+  let stepList: string[] = parameters.step;
+  switch (stepList[idx]) {
     case "StartA1":
       parameters.startId = 1;
       break;

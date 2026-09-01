@@ -38,8 +38,9 @@ async function startAbilityProcess(appAAbilityContext: common.UIAbilityContext, 
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
-  let idx = parameters.nextStep;
-  switch (parameters.step[idx]) {
+  let idx: number = parameters.nextStep;
+  let stepList: string[] = parameters.step;
+  switch (stepList[idx]) {
     case "StartA1":
       parameters.startId = 1;
       break;
