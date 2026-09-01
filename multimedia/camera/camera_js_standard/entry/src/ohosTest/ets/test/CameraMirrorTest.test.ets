@@ -727,7 +727,7 @@ export default function CameraMirrorTest() {
       } catch (err) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_ENABLE_MIRROR_0400 FAILED err : " + JSON.stringify(err));
-          expect(err.code == cameraObj.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
+          expect(err.code).assertEqual("7400101");
       }
       await stopCameraSession()
       done()

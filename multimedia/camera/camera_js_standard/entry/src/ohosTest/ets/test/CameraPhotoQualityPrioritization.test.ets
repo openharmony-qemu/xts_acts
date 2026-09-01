@@ -581,7 +581,7 @@ export default function CameraPhotoQualityPrioritizationTest() {
       } catch (err) {
         console.info(TAG +
           "Entering mPhotoOutput isPhotoQualityPrioritizationSupported err : " + JSON.stringify(err));
-        expect(Number(err.code)).assertEqual(401);
+        expect(err.code).assertEqual("401");
       }
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0600 ends here");
       await stopCameraSession();
@@ -622,7 +622,7 @@ export default function CameraPhotoQualityPrioritizationTest() {
       } catch (err) {
         console.info(TAG +
           "Entering mPhotoOutput isPhotoQualityPrioritizationSupported err : " + JSON.stringify(err));
-        expect(Number(err.code)).assertEqual(401);
+        expect(err.code).assertEqual("401");
       }
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0700 ends here");
       await stopCameraSession();
@@ -662,7 +662,7 @@ export default function CameraPhotoQualityPrioritizationTest() {
       } catch (err) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0800 FAILED err : " + JSON.stringify(err));
-        expect(Number(err.code)).assertEqual(401);
+        expect(err.code).assertEqual("401");
       }
       await stopCameraSession();
       console.info(TAG + 'stopCameraSession end');
@@ -703,7 +703,7 @@ export default function CameraPhotoQualityPrioritizationTest() {
       } catch (err) {
         console.info(TAG +
           "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0900 FAILED err : " + JSON.stringify(err));
-        expect(Number(err.code)).assertEqual(401);
+        expect(err.code).assertEqual("401");
       }
       await stopCameraSession();
       console.info(TAG + 'stopCameraSession end');
