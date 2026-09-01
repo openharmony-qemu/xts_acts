@@ -262,5 +262,33 @@ export default function abilityTest() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_MULTIMEIDA_AVCODEC_DRM_1600
+     * @tc.number SUB_MULTIMEIDA_AVCODEC_DRM_1600
+     * @tc.desc   test OH_AVCencInfo_SetAlgorithm ErrCode AV_ERR_INVALID_VAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEIDA_AVCODEC_DRM_1600', Level.LEVEL0, async (done: Function) => {
+      let result: number = avcodec.AVCencInfoSetAlgorithmOne();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEIDA_DRM_ENUM_0100
+     * @tc.number SUB_MULTIMEIDA_DRM_ENUM_0100
+     * @tc.desc   Drm_Enum_TEST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEIDA_DRM_ENUM_0100', Level.LEVEL0, async (done: Function) => {
+      let result: number = avcodec.DrmCencAlgorithmEnum();
+      expect(result).assertEqual(0);
+      done();
+    });
+
   })
 }

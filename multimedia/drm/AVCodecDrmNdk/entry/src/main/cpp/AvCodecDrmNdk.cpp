@@ -81,6 +81,29 @@ static napi_value Test_AVCencInfo_SetAlgorithm(napi_env env, napi_callback_info 
     napi_create_int32(env, ret, &result);
     return result;
 }
+static napi_value Test_AVCencInfo_SetAlgorithmOne(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    int32_t ret = 1;
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    size_t argcOneLen = 0;
+    char *argc0ne = nullptr;
+    int32_t argcTwo;
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_get_value_string_utf8(env, args[0], nullptr, 0, &argcOneLen);
+    argc0ne = new char[argcOneLen + 1];
+    napi_get_value_string_utf8(env, args[0], argc0ne, argcOneLen + 1, &argcOneLen);
+    napi_get_value_int32(env, args[1], &argcTwo);
+
+    OH_AVCencInfo *handle_ptr = nullptr;
+    OH_AVErrCode errCode = OH_AVCencInfo_SetAlgorithm(handle_ptr, (DrmCencAlgorithm)argcTwo);
+    if (errCode == AV_ERR_INVALID_VAL) {
+        ret = 0;
+    }
+    napi_create_int32(env, ret, &result);
+    return result;
+}
 static napi_value Test_AVCencInfo_SetKeyIdAndIv(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -271,6 +294,25 @@ static napi_value Test_AVCencInfo_SetAVBuffer(napi_env env, napi_callback_info i
     napi_create_int32(env, ret, &result);
     return result;
 }
+static napi_value Test_DrmCencAlgorithm_Enum(napi_env env, napi_callback_info info)
+{
+    int32_t res = 1;
+    int32_t unencrypted = 0;
+    int32_t aesCtr = 1;
+    int32_t aesWv = 2;
+    int32_t aesCbc = 3;
+    int32_t sm4Ctr = 5;
+    if (DrmCencAlgorithm::DRM_ALG_CENC_UNENCRYPTED == unencrypted &&
+        DrmCencAlgorithm::DRM_ALG_CENC_AES_CTR == aesCtr &&
+        DrmCencAlgorithm::DRM_ALG_CENC_AES_WV == aesWv &&
+        DrmCencAlgorithm::DRM_ALG_CENC_AES_CBC == aesCbc &&
+        DrmCencAlgorithm::DRM_ALG_CENC_SM4_CTR == sm4Ctr) {
+        res = 0;
+    }
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -278,10 +320,14 @@ static napi_value Init(napi_env env, napi_value exports)
     napi_property_descriptor desc[] = {
         { "Test_CencInfo_Destroy", nullptr, Test_CencInfo_Destroy, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "Test_AVCencInfo_SetAlgorithm", nullptr, Test_AVCencInfo_SetAlgorithm, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "AVCencInfoSetAlgorithmOne", nullptr, Test_AVCencInfo_SetAlgorithmOne, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
         { "Test_AVCencInfo_SetKeyIdAndIv", nullptr, Test_AVCencInfo_SetKeyIdAndIv, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "Test_AVCencInfo_SetSubsampleInfo", nullptr, Test_AVCencInfo_SetSubsampleInfo, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "Test_AVCencInfo_SetMode", nullptr, Test_AVCencInfo_SetMode, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "Test_AVCencInfo_SetAVBuffer", nullptr, Test_AVCencInfo_SetAVBuffer, nullptr, nullptr, nullptr, napi_default, nullptr }
+        {"Test_AVCencInfo_SetAVBuffer", nullptr, Test_AVCencInfo_SetAVBuffer, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"DrmCencAlgorithmEnum", nullptr, Test_DrmCencAlgorithm_Enum, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

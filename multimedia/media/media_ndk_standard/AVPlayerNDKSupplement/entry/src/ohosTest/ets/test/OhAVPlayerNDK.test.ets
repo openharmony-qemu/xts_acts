@@ -776,6 +776,25 @@ export default function OhAVPlayerNDKTest() {
       expect(testResult).assertEqual(OH_AVErrCode.AV_ERR_OK)
       done();
     });
+
+    /**
+     * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETDATASOURCEDELEGATE_0100
+     * @tc.name   SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETDATASOURCEDELEGATE_0100
+     * @tc.desc   Test OH_AVPlayer_SetDataSourceDelegate, input valid respondDataCount and loadingErr
+     *            testOhAvPlayerNdkSetDataSourceDelegate
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('SUB_MULTIMEIDA_MEDIA_OHAVPLAYER_SETDATASOURCEDELEGATE_0100', Level.LEVEL0, async (done: Function) => {
+      let respondDataCount: number = MAX_COUNT;
+      let loadingErr: number = 0;
+      let testResult: avplayer.NdkAVPlayerResult = avplayer.testSetDataSourceDelegate(respondDataCount, loadingErr, fileDescriptor);
+      console.info("====> testOhAvPlayerNdkSetMediaSource0011 testResult result:" + testResult.result);
+      await sleep(1000);
+      expect(testResult.result).assertEqual(OH_AVErrCode.AV_ERR_OK)
+      done();
+    });
     
     /**
      * @tc.number SUB_MULTIMEIDA_MEDIA_OHAVHTTPHEADER_DESTROY_0001
