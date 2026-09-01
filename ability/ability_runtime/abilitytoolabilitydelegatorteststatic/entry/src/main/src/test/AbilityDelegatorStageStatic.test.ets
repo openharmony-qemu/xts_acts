@@ -71,17 +71,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500
      * @tc.desc   testing doAbilityBackground by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_23500';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         monitor = {
@@ -157,17 +157,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_23600
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_23600
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600
      * @tc.desc   testing doAbilityBackground by AsyncCallback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_23600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_23600';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600';
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         monitor = {
@@ -242,17 +242,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_14800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_14800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_14800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_14800
      * @tc.desc   Delete the window stage destruction status listening (Promise) of Ability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_14800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_14800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_14800';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_14800';
         let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
         let user = abilityDelegatorArguments.parameters["-u"];
         let cmd = 'aa start -d 0 -a AssistantAbilityOne' + ' -b ' + abilityDelegatorArguments.bundleName;
@@ -304,17 +304,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16300
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16300
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16300
      * @tc.desc   Invalid timeout parameter for executing shell command (AsyncCallback)  timeout = -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16300';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -340,17 +340,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16400
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16400
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16400
      * @tc.desc   Invalid timeout parameter for executing shell command (Promise)  timeout = -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16400';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16400';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -378,17 +378,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16500
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16500
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16500
      * @tc.desc   Invalid timeout parameter for executing shell command (AsyncCallback)  timeout = 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16500';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16500';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -414,17 +414,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16600
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16600
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16600
      * @tc.desc   Invalid timeout parameter for executing shell command (Promise)  timeout = 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16600';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16600';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -452,17 +452,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16700
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16700
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16700
      * @tc.desc   for executing shell command (AsyncCallback)  with un-exist shell parameter  shell命令参数：ppwd -L  timeout = 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16700';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16700';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'ppwd -L';
@@ -488,17 +488,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16800
      * @tc.desc   for executing shell command (Promise)  with un-exist shell parameter ppwd -L  timeout = 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16800';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16800';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'ppwd -L';
@@ -526,17 +526,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_16900
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_16900
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16900
      * @tc.desc   for executing shell command (AsyncCallback)  without timeout parameter ,aa help
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_16900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16900', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_16900';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16900';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -559,17 +559,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17000
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17000
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17000
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17000
      * @tc.desc   for executing shell command (Promise)  without timeout parameter, aa help
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17000', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17000';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17000';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -596,17 +596,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17100
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17100
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17100
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17100
      * @tc.desc   for executing exception shell command (AsyncCallback),xx - help
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17100';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17100';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'xx - help';
@@ -628,17 +628,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17200
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17200
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17200
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17200
      * @tc.desc   for executing exception shell command (Promise) ,xx - help
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17200';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17200';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'xx - help';
@@ -663,17 +663,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17300
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17300
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17300
      * @tc.desc   for executing shell command (AsyncCallback) with timeout parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17300';
         let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
         let user = abilityDelegatorArguments.parameters["-u"];
         let cmd = 'aa start -d 0 -a AssistantAbilityOne' + ' -b ' + abilityDelegatorArguments.bundleName;
@@ -704,17 +704,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17400
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17400
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17400
      * @tc.desc   for executing shell command (Promise) with timeout parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17400';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17400';
         let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
         let user = abilityDelegatorArguments.parameters["-u"];
         let cmd = 'aa start -d 0 -a AssistantAbilityOne' + ' -b ' + abilityDelegatorArguments.bundleName;
@@ -746,17 +746,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17500
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17500
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17500
      * @tc.desc   for executing exception shell command (AsyncCallback) with timeout parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17500'
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17500'
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'xx start';
@@ -781,17 +781,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17600
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17600
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17600
      * @tc.desc   for executing exception shell command (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17600';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17600';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'null';
@@ -816,17 +816,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17700
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17700
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17700
      * @tc.desc   for executing exception shell command (Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17700';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17700';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'null';
@@ -853,17 +853,17 @@ export default function AbilityDelegatorStageTest(): void {
 
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_17800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_17800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17800
      * @tc.desc   for executing  shell command (AsyncCallback) with timeout parameter is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_17800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_17800';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17800';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -891,17 +891,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18700
      * @tc.desc   for testing command -b -s -w are valid but adding an invalid parameter -z
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18700';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa test -b com.ohos.abilitydelegatorstagetest.static -m entry_test -s unittest /ets/testrunner/OpenHarmonyTestRunner ' +
@@ -931,17 +931,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18800
      * @tc.desc   for testing command -s -w are valid but -b invalid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18800';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa test -b invalid -m entry_test -s unittest /ets/testrunner/OpenHarmonyTestRunner ' +
@@ -979,17 +979,17 @@ export default function AbilityDelegatorStageTest(): void {
 
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19300
      * @tc.desc   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19300';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let msg: string | null = null;
@@ -1017,17 +1017,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19400
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19400
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400
      * @tc.desc   for testing command -b -s -w are valid and call print by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19400';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let result = -1;
@@ -1064,17 +1064,17 @@ export default function AbilityDelegatorStageTest(): void {
       '9aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae'
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19500
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19500
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500
      * @tc.desc   for testing command is valid and call print by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19500';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let result = -1;
@@ -1101,17 +1101,17 @@ export default function AbilityDelegatorStageTest(): void {
 
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19600
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19600
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600
      * @tc.desc   for testing command is valid and call print by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19600';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let result = -1;
@@ -1139,17 +1139,17 @@ export default function AbilityDelegatorStageTest(): void {
 
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19700
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_19700
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
      * @tc.desc   for testing getArguments()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_19700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_19700';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700';
         let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
       try {
         let bundleName = 'com.ohos.abilitydelegatorstagetest.static';
@@ -1171,20 +1171,20 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200
      * @tc.desc   for testing shell command
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
-        const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200';
+        const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200';
         let cmd = 'aa test -b com.ohos.abilitydelegatorstagetest.static -m entry_test -s unittest /ets/testrunner/OpenHarmonyTestRunner ' +
           '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200 -s timeout 15000 -w invalid';
         let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
@@ -1217,17 +1217,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20300
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20300
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20300
      * @tc.desc   for testing finishTest by AsyncCallback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_20300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20300';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let flag = true;
@@ -1248,17 +1248,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20400
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20400
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20400
      * @tc.desc   for testing finishTest by AsyncCallback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_20400';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20400';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         abilityDelegator.finishTest(undefined as string, 1, (err: BusinessError<void> | null, data: void | undefined): void => {

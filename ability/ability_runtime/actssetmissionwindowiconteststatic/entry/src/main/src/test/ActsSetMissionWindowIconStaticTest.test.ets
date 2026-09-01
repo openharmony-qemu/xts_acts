@@ -28,16 +28,16 @@ export default function ActsSetMissionWindowIconTest(): void {
     })
 
     /** 
-    * @tc.number SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100
-    * @tc.name SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100
+    * @tc.number SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0100
+    * @tc.name SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0100
     * @tc.desc test setMissionWindowIcon success
     * @tc.size MediumTest
     * @tc.type Function
     * @tc.level Level 0
     */
-    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_0100';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0100';
       hilog.info(0x0000, TEST_CASE_NAME, `start`);
       let imagePixelMap: image.PixelMap;
       let color = new ArrayBuffer(50 * 50 * 4);
@@ -72,16 +72,16 @@ export default function ActsSetMissionWindowIconTest(): void {
     })
 
     /** 
-    * @tc.number SUB_Ability_AbilityRuntime_setMissionWindowIcon_0200
-    * @tc.name SUB_Ability_AbilityRuntime_setMissionWindowIcon_0200
+    * @tc.number SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0200
+    * @tc.name SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0200
     * @tc.desc test null to the setMissionWindowIcon interface results in a 401 error code
     * @tc.size MediumTest
     * @tc.type Function
     * @tc.level Level 0
     */
-    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_0200';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0200';
       hilog.info(0x0000, TEST_CASE_NAME, `start`);
       try{
         context!.setMissionWindowIcon(null as image.PixelMap);
@@ -97,16 +97,16 @@ export default function ActsSetMissionWindowIconTest(): void {
     })
 
     /** 
-    * @tc.number SUB_Ability_AbilityRuntime_setMissionWindowIcon_0300
-    * @tc.name SUB_Ability_AbilityRuntime_setMissionWindowIcon_0300
+    * @tc.number SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0300
+    * @tc.name SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0300
     * @tc.desc test undefined to the setMissionWindowIcon interface results in a 401 error code
     * @tc.size MediumTest
     * @tc.type Function
     * @tc.level Level 0
     */
-    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_0300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_setMissionWindowIcon_Static_0300';
       hilog.info(0x0000, TEST_CASE_NAME, `start`);
       try{
         context!.setMissionWindowIcon(undefined as image.PixelMap);

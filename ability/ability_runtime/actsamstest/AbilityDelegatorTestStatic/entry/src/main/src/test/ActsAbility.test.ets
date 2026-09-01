@@ -65,14 +65,56 @@ export default function abilityDelegatorStage(): void {
     });
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12800
      * @tc.desc   Unable to start specified PageAbility(Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800', Level.LEVEL0, async (): Promise<void> => {
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700
+     * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700', Level.LEVEL0, async (): Promise<void> => {
+          await new Promise<void>((resolve, reject) => {
+        let runCase = async (): Promise<void> => {
+      hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700 begin');
+      try {
+        abilityDelegator.startAbility({
+          bundleName: 'com.acts.abilitydelegatortest.static',
+          abilityName: 'abilityName'
+        }, (err: BusinessError<void> | null, data: void | undefined): void => {
+          console.info('startAbility callback err ' + JSON.stringify(err?.code));
+          if (err?.code) {
+            if (targetVersion >= 20) {
+              expect(err?.code).assertEqual(16000001);
+            } else {
+              expect(err?.code).assertEqual(2097152);
+            }
+            resolve(undefined);
+          } else {
+            expect(false).assertTrue();
+            resolve(undefined);
+          }
+        });
+      } catch (error) {
+        hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
+          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700 failed ' + JSON.stringify(error));
+        expect(false).assertTrue();
+        resolve(undefined);
+      }
+        };
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+          });
+    })
+
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -108,14 +150,14 @@ export default function abilityDelegatorStage(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12900
      * @tc.desc   Unable to obtain background Ability information (Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12900', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -169,14 +211,14 @@ export default function abilityDelegatorStage(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_13000
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_13000
      * @tc.desc   Unable to obtain background Ability information (callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_13000', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -231,14 +273,14 @@ export default function abilityDelegatorStage(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_21900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_21900
      * @tc.desc   Can start the specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_21900', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -273,14 +315,14 @@ export default function abilityDelegatorStage(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_22000
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_22000
      * @tc.desc   Can start the specified PageAbility (Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_22000', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',

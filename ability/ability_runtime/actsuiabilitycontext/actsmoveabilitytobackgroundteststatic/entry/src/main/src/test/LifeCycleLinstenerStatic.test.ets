@@ -51,14 +51,14 @@ export default function LifeCycleLinstenerTest(): void {
     });
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100
-     * @tc.number SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
      * @tc.desc   expect current ability moved to background and onBackground() called.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100`;
@@ -77,14 +77,14 @@ export default function LifeCycleLinstenerTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_0100
-     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
      * @tc.desc   expect current ability moved to background and onBackground() called.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_OnApplicationStateChange_0100`;
@@ -159,14 +159,14 @@ export default function LifeCycleLinstenerTest(): void {
 
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_0200
-     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
      * @tc.desc   expect current ability moved to background and onBackground() called.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_OnApplicationStateChange_0200`;

@@ -63,16 +63,16 @@ export default function StartSpecifiedProcessTest(): void {
     });
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100
-     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0100
      * @tc.desc   The testcase is for testing promoteCurrentToCandidateMasterProcess failed and errcode is 16000115.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0100';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100====>");
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -118,16 +118,16 @@ let want : Want = {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200
-     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0200
      * @tc.desc   The testcase is for testing demoteCurrentFromCandidateMasterProcess failed and errcode is 16000117.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0200';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200====>");
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -173,16 +173,16 @@ let want : Want = {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300
-     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0300
      * @tc.desc   The testcase is for testing promoteCurrentToCandidateMasterProcess success.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0300';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300====>");
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -228,16 +228,16 @@ let want : Want = {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400
-     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0400
      * @tc.desc   The testcase is for testing demoteCurrentFromCandidateMasterProcess falied and errcode is 16000116.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0400';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400====>");
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -283,16 +283,16 @@ let want : Want = {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500
-     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0500
      * @tc.desc   The testcase is for testing exitMasterProcessRole falied and errcode is 16000118.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0500';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500====>");
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
@@ -339,16 +339,16 @@ let want : Want = {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600
-     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0600
      * @tc.desc   The testcase is for testing exitMasterProcessRole falied and errcode is 16000119.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0600';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600====>");
       try {
         let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {

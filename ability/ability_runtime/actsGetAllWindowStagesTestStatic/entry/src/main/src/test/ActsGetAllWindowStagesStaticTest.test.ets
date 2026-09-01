@@ -68,17 +68,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_2600
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_2600
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600
      * @tc.desc       apppcation.getApplicationContext
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2600";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600";
         let NAME = "getAllWindowStages";
         let appContext = application.getApplicationContextInstance();
         let wantInfo: Want = {
@@ -132,17 +132,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_2700
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_2700
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2700
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2700
      * @tc.desc       apppcation.getApplicationContextInstance
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2700";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2700";
         let NAME = "getAllWindowStages";
         let appContext = application.getApplicationContextInstance().getApplicationContext();
         let wantInfo: Want = {
@@ -196,17 +196,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_2800
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_2800
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2800
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2800
      * @tc.desc       createAreaModeContext.getApplicationContext
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2800";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2800";
         let NAME = "getAllWindowStages";
         let appContext = context!.createAreaModeContext(contextConstant.AreaMode.EL2).getApplicationContext();
         let wantInfo: Want = {
@@ -260,17 +260,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_2900
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_2900
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2900
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2900
      * @tc.desc       createdisplayContext.getApplicationContext
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2900', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2900";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2900";
         let NAME = "getAllWindowStages";
         let appContext = context!.createDisplayContext(0).getApplicationContext();
         let wantInfo: Want = {
@@ -324,17 +324,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_0100
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_0100
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0100
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0100
      * @tc.desc       onCreate getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0100";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0100";
         let NAME = "getAllWindowStages";
         let wantInfo: Want = {
           deviceId: '',
@@ -377,17 +377,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_0300
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_0300
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0300
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0300
      * @tc.desc       onWindowStageCreate getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0300', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0300";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0300";
         let NAME = "getAllWindowStages";
         let wantInfo: Want = {
           deviceId: '',
@@ -431,17 +431,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_0500
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_0500
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500
      * @tc.desc       onForeground getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0500";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500";
         let NAME = "getAllWindowStages";
         let wantInfo: Want = {
           deviceId: '',
@@ -485,17 +485,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_0600
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_0600
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600
      * @tc.desc       onBackground getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0600";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600";
         let NAME = "getAllWindowStages";
         let wantInfo: Want = {
           deviceId: '',
@@ -539,17 +539,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_0200
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_0200
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0200
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0200
      * @tc.desc       onDestroy getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0200";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0200";
         let NAME = "getAllWindowStages";
         let wantInfo: Want = {
           deviceId: '',
@@ -590,17 +590,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_0400
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_0400
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0400
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0400
      * @tc.desc       onWindowStageDestroy getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0400', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0400";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0400";
         let NAME = "getAllWindowStages";
         let wantInfo: Want = {
           deviceId: '',
@@ -641,17 +641,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_0700
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_0700
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0700
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0700
      * @tc.desc       onWindowStageWillDestroy getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0700";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0700";
         let NAME = "getAllWindowStages";
         let wantInfo: Want = {
           deviceId: '',
@@ -696,17 +696,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_3700
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_3700
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3700
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3700
      * @tc.desc       AbilityStage getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_3700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_3700";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3700";
         let NAME = "getAllWindowStages";
         let AbilityStage_WindowStage =  AppStorage.get<Array<window.WindowStage>>('AbilityStage_WindowStage') as Array<window.WindowStage>
         try {
@@ -729,17 +729,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_1100
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_1100
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1100
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1100
      * @tc.desc       multi-module getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_1100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_1100";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1100";
         let NAME = "getAllWindowStages";
         let wantInfo: Want = {
           deviceId: '',
@@ -793,17 +793,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
       /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_2100
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_2100
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100
      * @tc.desc       Create a new process to launch the UIAbility by configuring the options of startAbility
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2100";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100";
         let NAME = "getAllWindowStages";
         let appContext = context!.getApplicationContext();
         let wantInfo: Want = {
@@ -863,17 +863,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_2200
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_2200
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2200
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2200
      * @tc.desc       Create a new process to launch the UIAbility by configuring the process tag
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_2200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2200', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_2200";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2200";
         let NAME = "getAllWindowStages";
         let appContext = context!.getApplicationContext();
         await Utils.msSleep(1000);
@@ -930,17 +930,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_3000
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_3000
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000
      * @tc.desc       createModuleContext.getApplicationContext
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_3000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_3000";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000";
         let NAME = "getAllWindowStages";
         let wantInfo: Want = {
           deviceId: '',
@@ -995,17 +995,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_1000
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_1000
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000
      * @tc.desc       Obtain the WindowStage after launching multiple instances of the application
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_1000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_1000";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000";
         let NAME = "getAllWindowStages";
         let appContext = context!.getApplicationContext();
         let want: Want = {
@@ -1062,17 +1062,17 @@ export default function ActsGetAllWindowStagesTest(): void {
 
       
    /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_1700
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_1700
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700
      * @tc.desc       Pressure Test
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_1700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_1700";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700";
         let NAME = "getAllWindowStages";
         let appContext = context!.getApplicationContext();
         let i = 0;
@@ -1127,17 +1127,17 @@ export default function ActsGetAllWindowStagesTest(): void {
     })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_0800
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_0800
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0800
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0800
      * @tc.desc       Acquire WindowStages by launching multiple Abilities in other launch modes.
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_0800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0800', Level.LEVEL0, async (): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0800";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0800";
         let NAME = "getAllWindowStages";
         let appContext = application.getApplicationContextInstance();
         let wantSpecified1: Want = {
