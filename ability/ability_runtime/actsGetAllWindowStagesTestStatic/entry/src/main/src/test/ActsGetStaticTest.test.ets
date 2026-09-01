@@ -46,15 +46,15 @@ export default function ActsGetStaticTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600
-     * @tc.number SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600
+     * @tc.name   SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3800
+     * @tc.number SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3800
      * @tc.desc   Using the on method set color mode and check the result
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600";
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3800', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3800";
       let NAME = "getAllWindowStages";
       let applicationContext: common.ApplicationContext = context!.getApplicationContext();
       try {
@@ -81,18 +81,18 @@ export default function ActsGetStaticTest(): void {
     });
 
      /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3900
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3900
      * @tc.desc       onForeground getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3900";
         let NAME = "getAllWindowStages";
-        await Utils.msSleep(1000);
+        await Utils.msSleep(4100);
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.getAllWindowStages.static',
@@ -105,7 +105,7 @@ export default function ActsGetStaticTest(): void {
           let err = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
-        await Utils.msSleep(1000);
+        await Utils.msSleep(4100);
         let onForeground_WindowStage =
           AppStorage.get<Array<window.WindowStage>>('onForeground_WindowStage') as Array<window.WindowStage>
         try {
@@ -149,18 +149,18 @@ export default function ActsGetStaticTest(): void {
       })
 
   /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4000
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4000
      * @tc.desc       onBackground getAllWindowStages
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4000";
         let NAME = "getAllWindowStages";
-        await Utils.msSleep(1000);
+        await Utils.msSleep(4100);
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.getAllWindowStages.static',
@@ -173,7 +173,7 @@ export default function ActsGetStaticTest(): void {
           let err = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
-        await Utils.msSleep(1000);
+        await Utils.msSleep(4100);
         let onBackground_WindowStage =
           AppStorage.get<Array<window.WindowStage>>('onBackground_WindowStage') as Array<window.WindowStage>
         try {
@@ -216,18 +216,18 @@ export default function ActsGetStaticTest(): void {
       })
 
    /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4100
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4100
      * @tc.desc       Obtain the WindowStage after launching multiple instances of the application
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4100";
         let NAME = "getAllWindowStages";
-        await Utils.msSleep(1000);
+        await Utils.msSleep(4100);
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.getAllWindowStages.static',
@@ -243,7 +243,7 @@ export default function ActsGetStaticTest(): void {
           let err = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
-        await Utils.msSleep(1000);
+        await Utils.msSleep(4100);
         let appContext = context?.getApplicationContext();
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
@@ -279,18 +279,18 @@ export default function ActsGetStaticTest(): void {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4200
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4200
      * @tc.desc       createModuleContext.getApplicationContext
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4200";
         let NAME = "getAllWindowStages";
-        await Utils.msSleep(1000);
+        await Utils.msSleep(4100);
         let wantInfo: Want = {
           deviceId: '',
           bundleName: 'com.example.getAllWindowStages.static',
@@ -304,7 +304,7 @@ export default function ActsGetStaticTest(): void {
           let err = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
-        await Utils.msSleep(1000);
+        await Utils.msSleep(4100);
         let appContext = (await application.createModuleContext(context!, 'entry')).getApplicationContext();
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
@@ -354,16 +354,16 @@ export default function ActsGetStaticTest(): void {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4300
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4300
      * @tc.desc       Pressure Test
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4300";
         let NAME = "getAllWindowStages";
         let appContext = context?.getApplicationContext();
         let i = 0;
@@ -379,10 +379,10 @@ export default function ActsGetStaticTest(): void {
           let err = e as BusinessError
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
-        await Utils.msSleep(1000);
+        await Utils.msSleep(4100);
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          for (i = 0; i < 1000; i++) {
+          for (i = 0; i < 4100; i++) {
             await appContext?.getAllWindowStages()
               .then((data: Array<window.WindowStage>) => {
                 hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success ` + i);
@@ -404,7 +404,7 @@ export default function ActsGetStaticTest(): void {
                 expect().assertFail();
               });
           }
-          expect(i).assertEqual(1000);
+          expect(i).assertEqual(4100);
           try {
             let EntryAbility1_UIAbilityContext: common.UIAbilityContext =
               AppStorage.get<common.UIAbilityContext>("EntryAbility1_UIAbilityContext") as common.UIAbilityContext;
@@ -425,16 +425,16 @@ export default function ActsGetStaticTest(): void {
       })
 
    /**
-     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100
-     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100
+     * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4400
+     * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4400
      * @tc.desc       Create a new process to launch the UIAbility by configuring the options of startAbility
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it("SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100";
+        let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_4400";
         let NAME = "getAllWindowStages";
         let appContext = context?.getApplicationContext();
         let wantInfo: Want = {

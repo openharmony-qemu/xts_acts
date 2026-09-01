@@ -71,17 +71,17 @@ export default function AbilityDelegatorStageTest(): void {
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2350
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2350
      * @tc.desc   testing doAbilityBackground by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2350', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2350';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let bgDone: boolean = false;
@@ -92,7 +92,7 @@ export default function AbilityDelegatorStageTest(): void {
           if (!caseFinished) {
             caseFinished = true;
             console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> case timeout, force end`);
-            resolve(undefined);
+            resolve(undefined); done();
             expect().assertFail();
           }
         }, 15000);
@@ -116,23 +116,25 @@ export default function AbilityDelegatorStageTest(): void {
                   abilityDelegator.removeAbilityMonitor(monitor)
                     .then(() => {
                       console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>removeAbilityMonitor====`)
-                    })
+                    }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
                   ability!.context.terminateSelf();
                   Utils.msSleep(500);
-                  resolve(undefined);
+                  resolve(undefined); done();
                 } else {
                   // 事件驱动收尾（onAbilityBackground 回调触发时 ability 有效，断言稳定）
                   // + 6s 超时兜底（设备偶发回调不触发时强制结束，防挂死）
                   abilityDelegator.doAbilityBackground(ability!).then(() => {
                     console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> doAbilityBackground data: -----in Foregroundcallback`);
                   }).catch((e: Error) => {
+                    console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} doAbilityBackground rejected: ` + JSON.stringify(e));
+                    done();
                   });
                   setTimeout(() => {
                     if (!bgDone) {
                       bgDone = true;
                       caseFinished = true;
                       console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> doAbilityBackground timeout, force end`);
-                      resolve(undefined);
+                      resolve(undefined); done();
                       expect().assertFail();
                     }
                   }, 6000);
@@ -159,10 +161,10 @@ export default function AbilityDelegatorStageTest(): void {
               abilityDelegator.removeAbilityMonitor(monitor)
                 .then(() => {
                   console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>removeAbilityMonitor====`)
-                })
+                }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
               ability!.context.terminateSelf();
               Utils.msSleep(500);
-              resolve(undefined);
+              resolve(undefined); done();
             }, WAIT_TIME_500)
           }
         }
@@ -178,30 +180,30 @@ export default function AbilityDelegatorStageTest(): void {
               })
               .then(() => {
                 console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>startAbility------}`);
-              })
-          })
+              }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2360
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2360
      * @tc.desc   testing doAbilityBackground by AsyncCallback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2360', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2360';
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let bgDone: boolean = false;
@@ -212,7 +214,7 @@ export default function AbilityDelegatorStageTest(): void {
           if (!caseFinished) {
             caseFinished = true;
             console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> case timeout, force end`);
-            resolve(undefined);
+            resolve(undefined); done();
             expect().assertFail();
           }
         }, 15000);
@@ -235,23 +237,25 @@ export default function AbilityDelegatorStageTest(): void {
                   abilityDelegator.removeAbilityMonitor(monitor)
                     .then(() => {
                       console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>removeAbilityMonitor====`)
-                    })
+                    }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
                   ability!.context.terminateSelf();
                   Utils.msSleep(500);
-                  resolve(undefined);
+                  resolve(undefined); done();
                 } else {
                   // 事件驱动收尾（onAbilityBackground 回调触发时 ability 有效，断言稳定）
                   // + 6s 超时兜底（设备偶发回调不触发时强制结束，防挂死）
                   abilityDelegator.doAbilityBackground(ability!).then(() => {
                     console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> doAbilityBackground data: -----in Foregroundcallback`);
                   }).catch((e: Error) => {
+                    console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} doAbilityBackground rejected: ` + JSON.stringify(e));
+                    done();
                   });
                   setTimeout(() => {
                     if (!bgDone) {
                       bgDone = true;
                       caseFinished = true;
                       console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} ====> doAbilityBackground timeout, force end`);
-                      resolve(undefined);
+                      resolve(undefined); done();
                       expect().assertFail();
                     }
                   }, 6000);
@@ -278,10 +282,10 @@ export default function AbilityDelegatorStageTest(): void {
               abilityDelegator.removeAbilityMonitor(monitor)
                 .then(() => {
                   console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>removeAbilityMonitor====`);
-                })
+                }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
               ability!.context.terminateSelf();
               Utils.msSleep(500);
-              resolve(undefined);
+              resolve(undefined); done();
             }, WAIT_TIME_500)
           }
         }
@@ -297,30 +301,30 @@ export default function AbilityDelegatorStageTest(): void {
               })
               .then(() => {
                 console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====>startAbility finish====`);
-              })
-          })
+              }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_14800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_14800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1480
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1480
      * @tc.desc   Delete the window stage destruction status listening (Promise) of Ability
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_14800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1480', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_14800';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1480';
         let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
         let user = abilityDelegatorArguments.parameters["-u"];
         let cmd = 'aa start -d 0 -a AssistantAbilityOne' + ' -b ' + abilityDelegatorArguments.bundleName;
@@ -338,12 +342,14 @@ export default function AbilityDelegatorStageTest(): void {
               abilityDelegator.removeAbilityMonitor(monitor).then(() => {
                 hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} removeAbilityMonitor promise ..`);
               }).catch((e: Error) => {
+                console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} removeAbilityMonitor rejected: ` + JSON.stringify(e));
+                done();
               });
               let subscribeCB = (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined): void => {
                 if (data?.event === "AbilityDelegator_Destory") {
                   Utils.msSleep(2000);
                   expect(count).assertEqual(1);
-                  resolve(undefined);
+                  resolve(undefined); done();
                 }
               };
               commonEventManager.createSubscriber(commonEventSubscribeInfo).then(async (subscriber: commonEventManager.CommonEventSubscriber) => {
@@ -352,6 +358,7 @@ export default function AbilityDelegatorStageTest(): void {
                 executeShellCmd(cmd, abilityDelegator);
               }).catch((e: Error) => {
                 console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} createSubscriber rejected: ${JSON.stringify(e)}`);
+                done();
               });
             }
           }
@@ -363,6 +370,7 @@ export default function AbilityDelegatorStageTest(): void {
           .catch((e: Error) => {
             // 设备偶发 addAbilityMonitor 拒绝：吞掉避免未处理 rejection 转用例失败
             console.error(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} addAbilityMonitor rejected: ${JSON.stringify(e)}`);
+            done();
           })
         if(user !== undefined){
             cmd += ' -u ' + user;
@@ -371,25 +379,25 @@ export default function AbilityDelegatorStageTest(): void {
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16300
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16300
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1630
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1630
      * @tc.desc   Invalid timeout parameter for executing shell command (AsyncCallback)  timeout = -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1630', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1630';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -400,32 +408,32 @@ export default function AbilityDelegatorStageTest(): void {
           expect(data?.exitCode).assertEqual(0);
           expect(isEmpty(data?.stdResult ?? '')).assertFalse();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-          resolve(undefined);
+          resolve(undefined); done();
         }).catch((e: Error) => {
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16400
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16400
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1640
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1640
      * @tc.desc   Invalid timeout parameter for executing shell command (Promise)  timeout = -1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1640', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16400';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1640';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -437,33 +445,34 @@ export default function AbilityDelegatorStageTest(): void {
             expect(data?.exitCode).assertEqual(0);
             expect(isEmpty(data?.stdResult ?? '')).assertFalse();
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-            resolve(undefined);
+            resolve(undefined); done();
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16500
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16500
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1650
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1650
      * @tc.desc   Invalid timeout parameter for executing shell command (AsyncCallback)  timeout = 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1650', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16500';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1650';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -474,32 +483,32 @@ export default function AbilityDelegatorStageTest(): void {
           expect(data?.exitCode).assertEqual(0);
           expect(isEmpty(data?.stdResult ?? '')).assertFalse();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-          resolve(undefined);
+          resolve(undefined); done();
         }).catch((e: Error) => {
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16600
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16600
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1660
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1660
      * @tc.desc   Invalid timeout parameter for executing shell command (Promise)  timeout = 0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1660', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16600';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1660';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -511,33 +520,34 @@ export default function AbilityDelegatorStageTest(): void {
             expect(data?.exitCode).assertEqual(0);
             expect(isEmpty(data?.stdResult ?? '')).assertFalse();
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-            resolve(undefined);
+            resolve(undefined); done();
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16700
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16700
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1670
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1670
      * @tc.desc   for executing shell command (AsyncCallback)  with un-exist shell parameter  shell命令参数：ppwd -L  timeout = 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1670', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16700';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1670';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'ppwd -L';
@@ -548,32 +558,32 @@ export default function AbilityDelegatorStageTest(): void {
           expect(data?.exitCode === 0).assertFalse();
           expect(isEmpty(data?.stdResult ?? '')).assertTrue();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-          resolve(undefined);
+          resolve(undefined); done();
         }).catch((e: Error) => {
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1680
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1680
      * @tc.desc   for executing shell command (Promise)  with un-exist shell parameter ppwd -L  timeout = 1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1680', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16800';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1680';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'ppwd -L';
@@ -585,33 +595,34 @@ export default function AbilityDelegatorStageTest(): void {
             expect(data?.exitCode === 0).assertFalse();
             expect(isEmpty(data?.stdResult ?? '')).assertTrue();
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-            resolve(undefined);
+            resolve(undefined); done();
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16900
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16900
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1690
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1690
      * @tc.desc   for executing shell command (AsyncCallback)  without timeout parameter ,aa help
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1690', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_16900';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1690';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -621,30 +632,30 @@ export default function AbilityDelegatorStageTest(): void {
           expect(data?.exitCode === 0).assertTrue();
           expect(data?.stdResult).assertContain('aa');
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17000
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17000
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1700
      * @tc.desc   for executing shell command (Promise)  without timeout parameter, aa help
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17000';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1700';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -655,33 +666,34 @@ export default function AbilityDelegatorStageTest(): void {
             expect(data?.exitCode === 0).assertTrue();
             expect(data?.stdResult).assertContain('aa');
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-            resolve(undefined);
+            resolve(undefined); done();
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17100
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17100
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1710
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1710
      * @tc.desc   for executing exception shell command (AsyncCallback),xx - help
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1710', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17100';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1710';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'xx - help';
@@ -690,30 +702,30 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , err = ${err} , data= ${JSON.stringify(data)}`);
           expect(data?.exitCode).assertEqual(-1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17200
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17200
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1720
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1720
      * @tc.desc   for executing exception shell command (Promise) ,xx - help
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1720', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17200';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1720';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'xx - help';
@@ -722,33 +734,34 @@ export default function AbilityDelegatorStageTest(): void {
           .then(data => {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} data ${JSON.stringify(data)}`);
             expect(data?.exitCode).assertEqual(-1);
-            resolve(undefined);
+            resolve(undefined); done();
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17300
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17300
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1730
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1730
      * @tc.desc   for executing shell command (AsyncCallback) with timeout parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1730', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1730';
         let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
         let user = abilityDelegatorArguments.parameters["-u"];
         let cmd = 'aa start -d 0 -a AssistantAbilityOne' + ' -b ' + abilityDelegatorArguments.bundleName;
@@ -764,32 +777,32 @@ export default function AbilityDelegatorStageTest(): void {
           expect(data?.exitCode).assertEqual(0);
           expect(data?.stdResult).assertContain('start ability successfully');
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-          resolve(undefined);
+          resolve(undefined); done();
         }).catch((e: Error) => {
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17400
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17400
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1740
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1740
      * @tc.desc   for executing shell command (Promise) with timeout parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1740', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17400';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1740';
         let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
         let user = abilityDelegatorArguments.parameters["-u"];
         let cmd = 'aa start -d 0 -a AssistantAbilityOne' + ' -b ' + abilityDelegatorArguments.bundleName;
@@ -805,33 +818,34 @@ export default function AbilityDelegatorStageTest(): void {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} data ${JSON.stringify(data)}`);
             expect(data?.exitCode).assertEqual(0);
             expect(data?.stdResult).assertContain('start ability successfully');
-            resolve(undefined);
+            resolve(undefined); done();
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17500
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17500
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1750
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1750
      * @tc.desc   for executing exception shell command (AsyncCallback) with timeout parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1750', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17500'
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1750'
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'xx start';
@@ -841,32 +855,32 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , data = ${JSON.stringify(data)} , data= ${JSON.stringify(data)}`);
           expect(data?.exitCode).assertEqual(-1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-          resolve(undefined);
+          resolve(undefined); done();
         }).catch((e: Error) => {
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17600
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17600
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1760
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1760
      * @tc.desc   for executing exception shell command (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1760', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17600';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1760';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'null';
@@ -876,32 +890,32 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , data = ${JSON.stringify(data)} , data= ${JSON.stringify(data)}`);
           expect(data?.exitCode).assertEqual(-1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-          resolve(undefined);
+          resolve(undefined); done();
         }).catch((e: Error) => {
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17700
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17700
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1770
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1770
      * @tc.desc   for executing exception shell command (Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1770', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17700';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1770';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'null';
@@ -911,34 +925,35 @@ export default function AbilityDelegatorStageTest(): void {
           .then(data => {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} data ${JSON.stringify(data)}`);
             expect(data?.exitCode).assertEqual(-1);
-            resolve(undefined);
+            resolve(undefined); done();
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1780
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1780
      * @tc.desc   for executing  shell command (AsyncCallback) with timeout parameter is null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1780', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_17800';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1780';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa help';
@@ -947,40 +962,40 @@ export default function AbilityDelegatorStageTest(): void {
         abilityDelegator.executeShellCommand(cmd, timeout.toLong()).then(async (data: abilityDelegatorRegistry.ShellCmdResult) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , data = ${JSON.stringify(data)}`);
           expect(data?.exitCode).assertEqual(0);
-          resolve(undefined);
+          resolve(undefined); done();
         }).catch((e: Error) => {
           expect(JSON.stringify(e) ?? '').assertContain('parameters');
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
-          resolve(undefined);
+          resolve(undefined); done();
         }).catch((e: Error) => {
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , err = ${err}`);
         expect(err?.message).assertContain('parameters');
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18700
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18700
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1870
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1870
      * @tc.desc   for testing command -b -s -w are valid but adding an invalid parameter -z
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1870', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18700';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1870';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa test -b com.ohos.abilitydelegatorstagetest.static -m entry_test -s unittest /ets/testrunner/OpenHarmonyTestRunner ' +
-          '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_18700 -s timeout 15000 -z test';
+          '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_1870 -s timeout 15000 -z test';
         let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
         if(user !== undefined){
             cmd += ' -u ' + user;
@@ -990,37 +1005,38 @@ export default function AbilityDelegatorStageTest(): void {
           .then(data => {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , data= ${JSON.stringify(data)}`);
             expect(data?.stdResult).assertContain('error: unknown option');
-            resolve(undefined);
+            resolve(undefined); done();
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1880
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1880
      * @tc.desc   for testing command -s -w are valid but -b invalid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1880', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_18800';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1880';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let cmd = 'aa test -b invalid -m entry_test -s unittest /ets/testrunner/OpenHarmonyTestRunner ' +
-          '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_18800 -s timeout 15000';
+          '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_1880 -s timeout 15000';
         let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
         if(user !== undefined){
             cmd += ' -u ' + user;
@@ -1035,74 +1051,74 @@ export default function AbilityDelegatorStageTest(): void {
               .then(() => {
                 hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , print ------------`);
                 expect().assertFail();
-                resolve(undefined);
-              })
+                resolve(undefined); done();
+              }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           }).catch((err: Error) => {
             expect(!isEmpty(err?.message)).assertTrue();
-            resolve(undefined);
+            resolve(undefined); done();
           })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
 
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19300
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19300
-     * @tc.desc   SUB_Ability_AbilityTools_AbilityDelegator_Stage_19300
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1930
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1930
+     * @tc.desc   SUB_Ability_AbilityTools_AbilityDelegator_Stage_1930
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1930', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1930';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let msg: string | null = null;
         try {
           await abilityDelegator.print(msg as string)
             .then(() => {
-              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , print ------------19300`);
+              hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , print ------------1930`);
               expect().assertFail();
-              resolve(undefined);
-            })
+              resolve(undefined); done();
+            }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
         } catch (err) {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} ,err: ${err}`);
           let msg: string = (err as Error)?.message ?? '';
           expect(msg.includes('parameters') || msg.includes('cast')).assertTrue();
-          resolve(undefined);
+          resolve(undefined); done();
         }
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1940
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1940
      * @tc.desc   for testing command -b -s -w are valid and call print by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1940', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1940';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let result = -1;
@@ -1112,18 +1128,19 @@ export default function AbilityDelegatorStageTest(): void {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , msg = ${msg}`);
             result = 0;
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
         expect(result).assertEqual(0);
-        resolve(undefined);
+        resolve(undefined); done();
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -1139,17 +1156,17 @@ export default function AbilityDelegatorStageTest(): void {
       '9aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae'
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1950
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1950
      * @tc.desc   for testing command is valid and call print by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1950', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1950';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let result = -1;
@@ -1159,34 +1176,35 @@ export default function AbilityDelegatorStageTest(): void {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , msg = ${msg} `);
             result = 0;
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
         expect(result).assertEqual(0);
-        resolve(undefined);
+        resolve(undefined); done();
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1960
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1960
      * @tc.desc   for testing command is valid and call print by promise
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1960', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1960';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let result = -1;
@@ -1197,34 +1215,35 @@ export default function AbilityDelegatorStageTest(): void {
             result = 0;
             console.log(TAG, msg);
           }).catch((err: Error) => {
+            console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch err: ` + JSON.stringify(err));
             expect().assertFail();
-            resolve(undefined);
+            resolve(undefined); done();
           })
         expect(result).assertEqual(0);
-        resolve(undefined);
+        resolve(undefined); done();
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1970
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1970
      * @tc.desc   for testing getArguments()
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1970', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19700';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1970';
         let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
       try {
         let bundleName = 'com.ohos.abilitydelegatorstagetest.static';
@@ -1234,34 +1253,34 @@ export default function AbilityDelegatorStageTest(): void {
         expect(abilityDelegatorArguments.bundleName).assertEqual(bundleName);
         expect(abilityDelegatorArguments.testRunnerClassName).assertEqual(testRunnerClassName);
         expect(abilityDelegatorArguments.parameters["-m"]).assertEqual(entryTest);
-        resolve(undefined);
+        resolve(undefined); done();
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2020
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2020
      * @tc.desc   for testing shell command
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2020', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2020';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
-        const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20200';
+        const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2020';
         let cmd = 'aa test -b com.ohos.abilitydelegatorstagetest.static -m entry_test -s unittest /ets/testrunner/OpenHarmonyTestRunner ' +
-          '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_20200 -s timeout 15000 -w invalid';
+          '-s class ActsAbilityTest#SUB_Ability_AbilityTools_AbilityDelegator_Stage_2020 -s timeout 15000 -w invalid';
         let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
         if(user !== undefined){
             cmd += ' -u ' + user;
@@ -1275,79 +1294,79 @@ export default function AbilityDelegatorStageTest(): void {
             result = 0;
             abilityDelegator.print(msg as string)
               .then(() => {
-                hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , print 20200------------`);
+                hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} , print 2020------------`);
                 result = 1;
-              })
-          })
+              }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
         expect(result).assertEqual(-1);
-        resolve(undefined);
+        resolve(undefined); done();
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err}`);
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20300
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20300
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2030
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2030
      * @tc.desc   for testing finishTest by AsyncCallback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2030', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20300';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2030';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         let flag = true;
         abilityDelegator.finishTest(null as string, 1, (err: BusinessError<void> | null, data: void | undefined): void => {
-          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --test  end ========> callback `);
+          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --test  end ========> callback, err: ${JSON.stringify(err)}`);
           flag = false;
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err?.code}`);
         expect(err?.code).assertEqual(CODE_ERROR);
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20400
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20400
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2040
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2040
      * @tc.desc   for testing finishTest by AsyncCallback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2040', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
-      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_20400';
+      const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2040';
         let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       try {
         abilityDelegator.finishTest(undefined as string, 1, (err: BusinessError<void> | null, data: void | undefined): void => {
-          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --test  end ========> callback `);
+          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --test  end ========> callback, err: ${JSON.stringify(err)}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (err) {
         console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} --err: ${err?.code}`);
         expect(err?.code).assertEqual(CODE_ERROR);
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
   })

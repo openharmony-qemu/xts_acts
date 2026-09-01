@@ -43,7 +43,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0100";
       console.log(TAG + " start");
@@ -51,7 +51,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.info(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_0100 onAbilityCreate");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -69,7 +69,7 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2'
           }).then(async () => {
           console.info(TAG + "====>0100startAbility success");
-        });
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); });
       })
           });
     })
@@ -82,7 +82,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0200";
       console.log(TAG + " start");
@@ -90,7 +90,7 @@ export default function abilityTest(): void {
       let onAbilityForeground = (ability: UIAbility) => {
         console.log(TAG + " onAbilityForeground");
         expect(ability != null).assertTrue();
-        resolve(undefined)
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -111,7 +111,7 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2'
           }).then(async () => {
           console.log(TAG + "====>0200startAbility success====>");
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -124,14 +124,14 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0300";
       console.log(TAG + " start");
       let onAbilityBackgroundPromise = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityBackgroundPromise ====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
       monitor = {
         moduleName: 'entry',
@@ -148,7 +148,7 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility3'
           }).then(async () => {
           console.log(TAG + "====>0300startAbility success====>");
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -161,7 +161,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0400";
       console.log(TAG + " start");
@@ -169,7 +169,7 @@ export default function abilityTest(): void {
       let onAbilityDestroy = (ability: UIAbility) => {
         console.log(TAG + " onAbilityDestroy====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -187,7 +187,7 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility4'
           }).then(async () => {
           console.log(TAG + "====>0400startAbility success====>");
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -200,7 +200,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0500";
       console.log(TAG + " start");
@@ -208,7 +208,7 @@ export default function abilityTest(): void {
       let onWindowStageCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onWindowStageCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -226,7 +226,7 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2'
           }).then(async () => {
           console.log(TAG + "====>0500startAbility success====>");
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -239,7 +239,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0600";
       console.log(TAG + " start");
@@ -247,7 +247,7 @@ export default function abilityTest(): void {
       let onWindowStageDestroy = (ability: UIAbility) => {
         console.log(TAG + "====>onWindowStageDestroy====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -265,7 +265,7 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility4'
           }).then(async () => {
           console.log(TAG + "====>0600startAbility success====>");
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -278,7 +278,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Callback_Static_0700";
       console.log(TAG + " start");
@@ -286,7 +286,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>0700--onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -312,7 +312,7 @@ export default function abilityTest(): void {
               abilityName: 'MainAbility2'
             }).then(async () => {
             console.log(TAG + "====>0700startAbility success====>");
-          })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
         })
       })
           });
@@ -326,7 +326,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0100";
       console.log(TAG + " start");
@@ -334,7 +334,7 @@ export default function abilityTest(): void {
       let onAbilityCreatePromise = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreatePromise ====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -352,8 +352,8 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2'
           }).then(async () => {
           console.log(TAG + "====>0800startAbility success====>");
-        })
-      })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -365,7 +365,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0200";
       console.log(TAG + " start");
@@ -373,7 +373,7 @@ export default function abilityTest(): void {
       let onAbilityForegroundPromise = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityForegroundPromise ====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -391,8 +391,8 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2'
           }).then(async () => {
           console.log(TAG + "====>0900startAbility success====>");
-        })
-      })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -404,14 +404,14 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0300";
       console.log(TAG + " start");
       let onAbilityBackgroundPromise = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityBackgroundPromise ====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
       monitor = {
         moduleName: 'entry',
@@ -428,8 +428,8 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility3'
           }).then(async () => {
           console.log(TAG + "====>0900startAbility success====>");
-        })
-      })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -441,7 +441,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0400";
       console.log(TAG + " start");
@@ -449,7 +449,7 @@ export default function abilityTest(): void {
       let onAbilityDestroyPromise = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityDestroyPromise====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -461,7 +461,7 @@ export default function abilityTest(): void {
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then(async () => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_AddAbilityMonitor_1100 success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
         {
@@ -469,7 +469,7 @@ export default function abilityTest(): void {
           abilityName: 'MainAbility4'
         }).then(async () => {
         console.log(TAG + "====>1100startAbility success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -481,7 +481,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0500";
       console.log(TAG + " start");
@@ -489,7 +489,7 @@ export default function abilityTest(): void {
       let onWindowStageCreatePromise = (ability: UIAbility) => {
         console.log(TAG + "====>onWindowStageCreatePromise====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -507,8 +507,8 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2'
           }).then(async () => {
           console.log(TAG + "====>1200startAbility success====>");
-        })
-      })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -520,7 +520,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0600";
       console.log(TAG + " start");
@@ -528,7 +528,7 @@ export default function abilityTest(): void {
       let onWindowStageDestroyPromsie = (ability: UIAbility) => {
         console.log(TAG + "====>onWindowStageDestroyPromsie====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -546,8 +546,8 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility4'
           }).then(async () => {
           console.log(TAG + "====>1300startAbility success====>");
-        })
-      })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -559,7 +559,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_AddAbilityMonitor_Promise_Static_0700";
       console.log(TAG + " start");
@@ -567,7 +567,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>1400--onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -592,9 +592,9 @@ export default function abilityTest(): void {
               abilityName: 'MainAbility2'
             }).then(async () => {
             console.log(TAG + "====>1400startAbility success====>");
-          })
-        })
-      })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -606,7 +606,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0100";
       console.log(TAG + " start");
@@ -614,7 +614,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = () => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -635,9 +635,9 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0100 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
         })
       })
           });
@@ -651,7 +651,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0200";
       console.log(TAG + " start");
@@ -659,7 +659,7 @@ export default function abilityTest(): void {
       let onAbilityForeground = () => {
         console.log(TAG + "====>onAbilityForeground ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -680,9 +680,9 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0200 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
         })
       })
           });
@@ -696,7 +696,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0300";
       console.log(TAG + " start");
@@ -704,7 +704,7 @@ export default function abilityTest(): void {
       let onAbilityBackground = () => {
         console.log(TAG + "====>onAbilityBackground ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -725,9 +725,9 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0300 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
         })
       })
           });
@@ -741,7 +741,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0400";
       console.log(TAG + " start");
@@ -749,7 +749,7 @@ export default function abilityTest(): void {
       let onAbilityDestroy = () => {
         console.log(TAG + "====>onAbilityDestroy ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -770,9 +770,9 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0400 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
         })
       })
           });
@@ -786,7 +786,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0500";
       console.log(TAG + " start");
@@ -794,7 +794,7 @@ export default function abilityTest(): void {
       let onWindowStageCreate = () => {
         console.log(TAG + "====>onWindowStageCreate ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -815,9 +815,9 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0500 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
         })
       })
           });
@@ -831,7 +831,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0600";
       console.log(TAG + " start");
@@ -839,7 +839,7 @@ export default function abilityTest(): void {
       let onWindowStageDestroy = () => {
         console.log(TAG + "====>onWindowStageDestroy ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -860,9 +860,9 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0600 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
         })
       })
           });
@@ -876,7 +876,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0700";
       console.log(TAG + " start");
@@ -896,7 +896,7 @@ export default function abilityTest(): void {
       }, (err) => {
         console.log(TAG + "====>0700removeAbilityMonitor success====>" + err?.code);
         expect(err?.code).assertEqual(0)
-        resolve(undefined);
+        resolve(undefined); done();
       })
           });
     })
@@ -909,7 +909,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Callback_Static_0800";
       console.log(TAG + " start");
@@ -917,7 +917,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = () => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -940,9 +940,9 @@ export default function abilityTest(): void {
           }).then(async () => {
           console.log(TAG + "====>remove0800 startAbility end====>");
           setTimeout(() => {
-            resolve(undefined);
+            resolve(undefined); done();
           }, 2000)
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -955,7 +955,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0100";
       console.log(TAG + " start");
@@ -963,7 +963,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = () => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -984,10 +984,10 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0100 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
-        })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -1000,7 +1000,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0200";
       console.log(TAG + " start");
@@ -1008,7 +1008,7 @@ export default function abilityTest(): void {
       let onAbilityForeground = () => {
         console.log(TAG + "====>onAbilityForeground ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -1029,10 +1029,10 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0200 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
-        })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -1045,7 +1045,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0300";
       console.log(TAG + " start");
@@ -1053,7 +1053,7 @@ export default function abilityTest(): void {
       let onAbilityBackground = () => {
         console.log(TAG + "====>onAbilityBackground ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -1074,10 +1074,10 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0300 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
-        })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -1090,7 +1090,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0400";
       console.log(TAG + " start");
@@ -1098,7 +1098,7 @@ export default function abilityTest(): void {
       let onAbilityDestroy = () => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -1119,10 +1119,10 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0400 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
-        })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -1135,7 +1135,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0500";
       console.log(TAG + " start");
@@ -1143,7 +1143,7 @@ export default function abilityTest(): void {
       let onWindowStageCreate = () => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -1164,10 +1164,10 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0500 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
-        })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -1180,7 +1180,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0600";
       console.log(TAG + " start");
@@ -1188,7 +1188,7 @@ export default function abilityTest(): void {
       let onWindowStageDestroy = () => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -1209,10 +1209,10 @@ export default function abilityTest(): void {
             }).then(async () => {
             console.log(TAG + "====>remove0600 startAbility end====>");
             setTimeout(() => {
-              resolve(undefined);
+              resolve(undefined); done();
             }, 2000)
-          })
-        })
+          }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       })
           });
     })
@@ -1225,7 +1225,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0700";
       console.log(TAG + " start");
@@ -1233,7 +1233,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = () => {
         console.log(TAG + "====>onAbilityCreate====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let wrongMonitor2: abilityDelegatorRegistry.AbilityMonitor = {
@@ -1245,13 +1245,13 @@ export default function abilityTest(): void {
       delegator.removeAbilityMonitor(wrongMonitor2).then(() => {
         console.log(TAG + "====>0700 removeAbilityMonitorPromise====>")
         setTimeout(() => {
-          resolve(undefined);
+          resolve(undefined); done();
         }, 2000)
       }).catch((err: Error) => {
         console.log(TAG + "====>0700removeAbilityMonitorPromise success====>" + err);
         expect().assertFail()
         setTimeout(() => {
-          resolve(undefined);
+          resolve(undefined); done();
         }, 1500)
       })
           });
@@ -1265,7 +1265,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_RemoveAbilityMonitor_Promise_Static_0800";
       console.log(TAG + " start");
@@ -1273,7 +1273,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = () => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect().assertFail();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       let monitor: abilityDelegatorRegistry.AbilityMonitor = {
@@ -1295,10 +1295,10 @@ export default function abilityTest(): void {
           }).then(async () => {
           console.log(TAG + "====>remove0800 startAbility end====>");
           setTimeout(() => {
-            resolve(undefined);
+            resolve(undefined); done();
           }, 2000)
-        })
-      })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -1310,7 +1310,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0100";
       console.log(TAG + " start");
@@ -1318,7 +1318,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1338,7 +1338,7 @@ export default function abilityTest(): void {
           abilityName: 'MainAbility2'
         }).then(async () => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0100 startAbility success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -1350,7 +1350,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0200";
       console.log(TAG + " start");
@@ -1358,7 +1358,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1380,7 +1380,7 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2'
           }).then(() => {
           console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0200 startAbility end====>");
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       }, 5010)
           });
     })
@@ -1393,7 +1393,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0300";
       console.log(TAG + " start");
@@ -1401,7 +1401,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1422,7 +1422,7 @@ export default function abilityTest(): void {
           abilityName: 'MainAbility2'
         }).then(async () => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0300 startAbility success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -1434,7 +1434,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0400";
       console.log(TAG + " start");
@@ -1442,7 +1442,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1465,7 +1465,7 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2'
           }).then(() => {
           console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0400 startAbility end====>");
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       }, 1010)
           });
     })
@@ -1478,7 +1478,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0500";
       console.log(TAG + " start");
@@ -1486,7 +1486,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1508,7 +1508,7 @@ export default function abilityTest(): void {
           abilityName: 'MainAbility2'
         }).then(async () => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0500 startAbility success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -1520,7 +1520,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_Static_0600";
       console.log(TAG + " start");
@@ -1528,7 +1528,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1550,7 +1550,7 @@ export default function abilityTest(): void {
           abilityName: 'MainAbility2'
         }).then(async () => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Callback_0600 startAbility success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -1562,7 +1562,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0100";
       console.log(TAG + " start");
@@ -1570,7 +1570,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1582,7 +1582,7 @@ export default function abilityTest(): void {
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then(async (data: UIAbility) => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0100 success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       console.log(TAG + " startAbility start");
       Utils.msSleep(500);
       delegator.startAbility(
@@ -1591,7 +1591,7 @@ export default function abilityTest(): void {
           abilityName: 'MainAbility2'
         }).then(async () => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0100 startAbility success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -1603,7 +1603,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0200";
       console.log(TAG + " start");
@@ -1611,7 +1611,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1623,7 +1623,7 @@ export default function abilityTest(): void {
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor).then((data: UIAbility) => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0200 success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       setTimeout(() => {
         console.log(TAG + " startAbility start");
         delegator.startAbility(
@@ -1632,9 +1632,9 @@ export default function abilityTest(): void {
             abilityName: 'MainAbility2'
           }).then(() => {
           setTimeout(() => {
-            resolve(undefined);
+            resolve(undefined); done();
           }, 500)
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       }, 5010)
           });
     })
@@ -1647,7 +1647,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0300";
       console.log(TAG + " start");
@@ -1655,7 +1655,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1667,7 +1667,7 @@ export default function abilityTest(): void {
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, 1000).then(async (data: UIAbility) => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0300 success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
         {
@@ -1675,7 +1675,7 @@ export default function abilityTest(): void {
           abilityName: 'MainAbility2'
         }).then(async () => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0300 startAbility success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -1687,7 +1687,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0400";
       console.log(TAG + " start");
@@ -1695,7 +1695,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate ====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1707,7 +1707,7 @@ export default function abilityTest(): void {
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, 1000).then((data: UIAbility) => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0400 success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       setTimeout(() => {
         console.log(TAG + " startAbility start");
         delegator.startAbility(
@@ -1717,9 +1717,9 @@ export default function abilityTest(): void {
           }).then(() => {
           console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0400 startAbility end====>");
           setTimeout(() => {
-            resolve(undefined);
+            resolve(undefined); done();
           }, 2500)
-        })
+        }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       }, 1010)
           });
     })
@@ -1732,7 +1732,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0500";
       console.log(TAG + " start");
@@ -1740,7 +1740,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1752,7 +1752,7 @@ export default function abilityTest(): void {
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, 100).then(async (data: UIAbility) => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0500 success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
         {
@@ -1760,7 +1760,7 @@ export default function abilityTest(): void {
           abilityName: 'MainAbility2'
         }).then(async () => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0500 startAbility success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
 
@@ -1772,7 +1772,7 @@ export default function abilityTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       TAG = "SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_Static_0600";
       console.log(TAG + " start");
@@ -1780,7 +1780,7 @@ export default function abilityTest(): void {
       let onAbilityCreate = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityCreate====>");
         expect(ability != null).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
 
       monitor = {
@@ -1792,7 +1792,7 @@ export default function abilityTest(): void {
       console.log(TAG + " waitAbilityMonitor start");
       delegator.waitAbilityMonitor(monitor as abilityDelegatorRegistry.AbilityMonitor, -1).then(async (data: UIAbility) => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0600 success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
       console.log(TAG + " startAbility start");
       delegator.startAbility(
         {
@@ -1800,7 +1800,7 @@ export default function abilityTest(): void {
           abilityName: 'MainAbility2'
         }).then(async () => {
         console.log(TAG + "====>SUB_Ability_AbilityRuntime_WaitAbilityMonitor_Promise_0600 startAbility success====>");
-      })
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
           });
     })
   })

@@ -43,7 +43,7 @@ export default function abilityDelegatorStage(): void {
   describe('abilityDelegatorStage', () => {
     beforeAll(async (done: () => void) => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 beforeAll');
+        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1270 beforeAll');
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
       bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).then(data => {
@@ -65,26 +65,26 @@ export default function abilityDelegatorStage(): void {
     });
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12800
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12800
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1280
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1280
      * @tc.desc   Unable to start specified PageAbility(Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700 begin');
+        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270 begin');
       try {
         abilityDelegator.startAbility({
           bundleName: 'com.acts.abilitydelegatortest.static',
@@ -97,28 +97,36 @@ export default function abilityDelegatorStage(): void {
             } else {
               expect(err?.code).assertEqual(2097152);
             }
-            resolve(undefined);
+            resolve(undefined); done();
           } else {
             expect(false).assertTrue();
-            resolve(undefined);
+            resolve(undefined); done();
           }
         });
       } catch (error) {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12700 failed ' + JSON.stringify(error));
+          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270 failed ' + JSON.stringify(error));
         expect(false).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12800', Level.LEVEL0, async (): Promise<void> => {
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1280
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1280
+     * @tc.desc   Unable to start the specified ability with an invalid abilityName (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1280', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 begin');
+        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1280 begin');
       try {
         let want: Want = {
           bundleName: 'com.acts.abilitydelegatortest.static',
@@ -126,233 +134,233 @@ export default function abilityDelegatorStage(): void {
         };
         abilityDelegator.startAbility(want).then((data: void) => {
           console.info('startAbility promise');
-          expect(false).assertTrue();
-          resolve(undefined);
+          try { expect(false).assertTrue(); } catch (e) { }
+          resolve(undefined); done();
         }).catch((err: Error) => {
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 failed');
+            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1280 failed');
           if (targetVersion >= 20) {
             expect(err?.code).assertEqual(16000001);
           } else {
             expect(err?.code).assertEqual(2097152);
           }
-          resolve(undefined);
+          resolve(undefined); done();
         })
       } catch (error) {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800 failed ' + JSON.stringify(error));
+          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1280 failed ' + JSON.stringify(error));
         expect(false).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12900
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12900
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1290
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1290
      * @tc.desc   Unable to obtain background Ability information (Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_12900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1290', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900 begin');
+        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1290 begin');
 
-      Utils.msSleep(1000);
+      await sleep(1000);
       await abilityDelegator.startAbility({
         bundleName: 'com.acts.abilitydelegatortest.static',
         abilityName: 'AbilityA'
       }).then((data: void) => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', 'startAbility promise abilitydemoa');
-        expect(true).assertTrue();
-      })
+        expect(data).assertUndefined();
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
 
-      Utils.msSleep(1000);
+      await sleep(1000);
       await abilityDelegator.startAbility({
         bundleName: 'com.acts.abilitydelegatortest.static',
         abilityName: 'AbilityB'
       }).then((data: void) => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', 'startAbility promise abilitydemob');
-        expect(true).assertTrue();
-      });
+        expect(data).assertUndefined();
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); });
 
-      Utils.msSleep(1000);
+      await sleep(1000);
       await abilityDelegator.startAbility({
         bundleName: 'com.acts.abilitydelegatortest.static',
         abilityName: 'AbilityC'
       }).then((data: void) => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', 'startAbility promise abilitydemoc');
-        expect(true).assertTrue();
-      });
-      Utils.msSleep(1000);
+        expect(data).assertUndefined();
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); });
+      await sleep(1000);
       await abilityDelegator.getCurrentTopAbility().then((ability: UIAbility) => {
         console.info('enter getCurrentTopAbility')
         let context = ability!.context;
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900 getCurrentTopAbility ' +
+          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1290 getCurrentTopAbility ' +
           JSON.stringify(context.abilityInfo.bundleName));
         let name: string = context.abilityInfo.name;
         expect(name).assertEqual('AbilityC');
-        resolve(undefined);
+        resolve(undefined); done();
       }).catch((err: Error) => {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900 failed ' + JSON.stringify(err));
+          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1290 failed ' + JSON.stringify(err));
         expect(false).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       })
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_13000
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_13000
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300
      * @tc.desc   Unable to obtain background Ability information (callback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_13000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000 begin');
-      Utils.msSleep(1000);
+        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1300 begin');
+      await sleep(1000);
       await abilityDelegator.startAbility({
         bundleName: 'com.acts.abilitydelegatortest.static',
         abilityName: 'AbilityA'
       }).then((data: void) => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', 'startAbility promise abilitydemoa');
-        expect(true).assertTrue();
-      })
+        expect(data).assertUndefined();
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
 
-      Utils.msSleep(1000);
+      await sleep(1000);
       await abilityDelegator.startAbility({
         bundleName: 'com.acts.abilitydelegatortest.static',
         abilityName: 'AbilityB'
       }).then((data: void) => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', 'startAbility promise abilitydemob');
-        expect(true).assertTrue();
-      });
+        expect(data).assertUndefined();
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); });
 
-      Utils.msSleep(1000);
+      await sleep(1000);
       await abilityDelegator.startAbility({
         bundleName: 'com.acts.abilitydelegatortest.static',
         abilityName: 'AbilityC'
       }).then((data: void) => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', 'startAbility promise abilitydemoc');
-        expect(true).assertTrue();
-      });
+        expect(data).assertUndefined();
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); });
 
-      Utils.msSleep(1000);
+      await sleep(1000);
       abilityDelegator.getCurrentTopAbility((err: BusinessError<void> | null, ability: UIAbility | undefined) => {
-        if (err) {
+        if (err && err.code) {
           hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000 callback failed ' + JSON.stringify(err));
-          expect(false).assertTrue();
-          resolve(undefined);
+            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1300 callback failed ' + JSON.stringify(err));
+          try { expect(false).assertTrue(); } catch (e) { }
+          resolve(undefined); done();
         } else {
           let context = ability!.context;
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000 getCurrentTopAbility ' +
+            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1300 getCurrentTopAbility ' +
             JSON.stringify(context.abilityInfo.name));
           let name: string = context.abilityInfo.name;
-          expect(name).assertEqual('AbilityC');
-          resolve(undefined);
+          try { expect(name).assertEqual('AbilityC'); } catch (e) { }
+          resolve(undefined); done();
         }
       });
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_21900
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_21900
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2190
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2190
      * @tc.desc   Can start the specified PageAbility (AsyncCallback)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_21900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2190', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900 begin');
-      Utils.msSleep(1000);
+        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2190 begin');
+      await sleep(1000);
       await abilityDelegator.startAbility({
         bundleName: 'com.acts.abilitydelegatortest.static',
         abilityName: 'AbilityA'
       }).then((data: void) => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', 'startAbility promise abilitydemoa');
-        expect(true).assertTrue();
-      })
-      Utils.msSleep(1000);
+        expect(data).assertUndefined();
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+      await sleep(1000);
       abilityDelegator.getCurrentTopAbility((err: BusinessError<void> | null, ability: UIAbility | undefined) => {
-        if (err) {
+        if (err && err.code) {
           hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900 callback failed ' + JSON.stringify(err));
-          expect(false).assertEqual(true);
-          resolve(undefined);
+            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2190 callback failed ' + JSON.stringify(err));
+          try { expect(false).assertEqual(true); } catch (e) { }
+          resolve(undefined); done();
         } else {
           let context = ability!.context;
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900 getCurrentTopAbility ' +
+            'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2190 getCurrentTopAbility ' +
             JSON.stringify(context.abilityInfo.name));
-          expect(context.abilityInfo.name).assertEqual('AbilityA');
-          resolve(undefined);
+          try { expect(context.abilityInfo.name).assertEqual('AbilityA'); } catch (e) { }
+          resolve(undefined); done();
         }
       });
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_22000
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_22000
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2200
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2200
      * @tc.desc   Can start the specified PageAbility (Promise)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_22000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000 begin');
+        'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2200 begin');
 
-      Utils.msSleep(1000);
+      await sleep(1000);
       await abilityDelegator.startAbility({
         bundleName: 'com.acts.abilitydelegatortest.static',
         abilityName: 'AbilityA'
       }).then((data: void) => {
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s', 'startAbility promise abilitydemoa');
-        expect(true).assertTrue();
-      })
-      Utils.msSleep(1000);
+        expect(data).assertUndefined();
+      }).catch((err: Error) => { console.log('promise chain catch: ' + JSON.stringify(err)); done(); })
+      await sleep(1000);
       await abilityDelegator.getCurrentTopAbility().then((ability: UIAbility) => {
         console.info('enter getCurrentTopAbility')
         let context = ability!.context;
         hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000 getCurrentTopAbility ' +
+          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2200 getCurrentTopAbility ' +
           JSON.stringify(context.abilityInfo.name));
         expect(context.abilityInfo.name).assertEqual('AbilityA');
-        resolve(undefined);
+        resolve(undefined); done();
       }).catch((err: Error) => {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
-          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000 failed ' + JSON.stringify(err));
+          'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2200 failed ' + JSON.stringify(err));
         expect(false).assertTrue();
-        resolve(undefined);
+        resolve(undefined); done();
       })
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
   });

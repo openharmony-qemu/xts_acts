@@ -42,7 +42,7 @@ export default function BackWithResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_BackWithResult_Static_3000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_BackWithResult_Static_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_BackWithResult_Static_3000';
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start`);
@@ -60,7 +60,7 @@ export default function BackWithResultTest(): void {
         hilog.error(0x0000, TAG, `backToCallerAbilityWithResult1 failed, code is ${err?.code}, message is ${err.message}`);
         expect(err?.code).assertEqual(0);
       };
-      resolve(undefined);
+      resolve(undefined); done();
           });
     })
 
@@ -72,7 +72,7 @@ export default function BackWithResultTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_BackWithResult_Static_2900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_BackWithResult_Static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_BackWithResult_Static_2900';
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start`);
@@ -95,19 +95,19 @@ export default function BackWithResultTest(): void {
         hilog.error(0x0000, TAG, `backToCallerAbilityWithResult1 failed, code is ${err?.code}, message is ${err.message}`);
         expect(err?.code).assertEqual(0);
       };
-      resolve(undefined);
+      resolve(undefined); done();
           });
     })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_BackWithResult_Static_2800
-     * @tc.number SUB_Ability_AbilityRuntime_BackWithResult_Static_2900
+     * @tc.number SUB_Ability_AbilityRuntime_BackWithResult_Static_2800
      * @tc.desc   Verify that the backToCallerAbleWithResult is invalid when requestCode is invalid
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_BackWithResult_Static_2800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_BackWithResult_Static_2800', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_BackWithResult_Static_2800';
       hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} start`);
@@ -131,7 +131,7 @@ export default function BackWithResultTest(): void {
         hilog.error(0x0000, TAG, `backToCallerAbilityWithResult1 failed, code is ${err?.code}, message is ${err.message}`);
         expect(err?.code).assertEqual(PARAMETER_ERROR_CODE2);
       };
-      resolve(undefined);
+      resolve(undefined); done();
           });
     })
   })

@@ -58,6 +58,36 @@
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background"
       },      {
+        "name": "AbilityA",
+        "srcEntry": "./ets/testability/AbilityA/AbilityA.ets",
+        "description": "$string:TestAbility_desc_A",
+        "icon": "$media:layered_image",
+        "label": "$string:TestAbility_label_A",
+        "visible": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
+      },
+      {
+        "name": "AbilityB",
+        "srcEntry": "./ets/testability/AbilityB/AbilityB.ets",
+        "description": "$string:TestAbility_desc_B",
+        "icon": "$media:layered_image",
+        "label": "$string:TestAbility_label_B",
+        "visible": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
+      },
+      {
+        "name": "AbilityC",
+        "srcEntry": "./ets/testability/AbilityC/AbilityC.ets",
+        "description": "$string:TestAbility_desc_C",
+        "icon": "$media:layered_image",
+        "label": "$string:TestAbility_label_C",
+        "visible": true,
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
+      },
+      {
         "name": "EntryAbility1",
         "srcEntry": "./ets/entryability/EntryAbility1.ets",
         "description": "$string:EntryAbility1_desc",

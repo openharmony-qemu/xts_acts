@@ -75,7 +75,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600";
@@ -112,22 +112,22 @@ export default function ActsGetAllWindowStagesTest(): void {
                 matchedInfos.push(abilityName);
               }
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-              resolve(undefined);
+              resolve(undefined); done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
               expect().assertFail();
-              resolve(undefined);
+              resolve(undefined); done();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -139,7 +139,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2700";
@@ -176,22 +176,22 @@ export default function ActsGetAllWindowStagesTest(): void {
                 matchedInfos.push(abilityName);
               }
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-              resolve(undefined);
+              resolve(undefined); done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
               expect().assertFail();
-              resolve(undefined);
+              resolve(undefined); done();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -203,7 +203,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2800', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2800";
@@ -240,22 +240,22 @@ export default function ActsGetAllWindowStagesTest(): void {
                 matchedInfos.push(abilityName);
               }
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-              resolve(undefined);
+              resolve(undefined); done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
               expect().assertFail();
-              resolve(undefined);
+              resolve(undefined); done();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -267,7 +267,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2900";
@@ -304,22 +304,22 @@ export default function ActsGetAllWindowStagesTest(): void {
                 matchedInfos.push(abilityName);
               }
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-              resolve(undefined);
+              resolve(undefined); done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
               expect().assertFail();
-              resolve(undefined);
+              resolve(undefined); done();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -331,7 +331,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0100";
@@ -364,15 +364,15 @@ export default function ActsGetAllWindowStagesTest(): void {
             let abilityName = mainWindow.abilityInfo.name;
             matchedInfos.push(abilityName);
           }
-          resolve(undefined);
+          resolve(undefined); done();
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -384,7 +384,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0300";
@@ -418,15 +418,15 @@ export default function ActsGetAllWindowStagesTest(): void {
             matchedInfos.push(abilityName);
           }
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-          resolve(undefined);
+          resolve(undefined); done();
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -438,7 +438,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0500";
@@ -472,15 +472,15 @@ export default function ActsGetAllWindowStagesTest(): void {
             matchedInfos.push(abilityName);
           }
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-          resolve(undefined);
+          resolve(undefined); done();
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -492,7 +492,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0600";
@@ -526,15 +526,15 @@ export default function ActsGetAllWindowStagesTest(): void {
             matchedInfos.push(abilityName);
           }
           expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-          resolve(undefined);
+          resolve(undefined); done();
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -546,7 +546,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0200";
@@ -577,15 +577,15 @@ export default function ActsGetAllWindowStagesTest(): void {
           }
           expect(onDestroy_WindowStage.length).assertEqual(1);
           expect((onDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-          resolve(undefined);
+          resolve(undefined); done();
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -597,7 +597,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0400";
@@ -628,15 +628,15 @@ export default function ActsGetAllWindowStagesTest(): void {
           }
           expect(onWindowStageDestroy_WindowStage.length).assertEqual(1);
           expect((onWindowStageDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-          resolve(undefined);
+          resolve(undefined); done();
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -648,7 +648,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0700";
@@ -683,15 +683,15 @@ export default function ActsGetAllWindowStagesTest(): void {
           }
           // 静态运行时 WillDestroy 时机残留阶段解析为前台名，只验证回调记录了阶段
           expect(onWindowStageWillDestroy_WindowStage.length).assertLarger(0);
-          resolve(undefined);
+          resolve(undefined); done();
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -703,7 +703,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3700";
@@ -716,15 +716,15 @@ export default function ActsGetAllWindowStagesTest(): void {
             hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [[AbilityStage]] getAllWindowStages successfully. Data: ` + (AbilityStage_WindowStage[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
           }
           expect(AbilityStage_WindowStage.length).assertEqual(0);
-          resolve(undefined);
+          resolve(undefined); done();
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -736,7 +736,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1100";
@@ -773,22 +773,22 @@ export default function ActsGetAllWindowStagesTest(): void {
                 matchedInfos.push(abilityName);
               }
               expect(matchedInfos.includes('ApplicationAbility')).assertEqual(true);
-              resolve(undefined);
+              resolve(undefined); done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
               expect().assertFail();
-              resolve(undefined);
+              resolve(undefined); done();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -800,7 +800,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2100";
@@ -820,11 +820,11 @@ export default function ActsGetAllWindowStagesTest(): void {
         context!.startAbility(wantInfo,options, (err: BusinessError | null) => {
           if (err?.code !== 0) {
             if(err?.code==801) {
-              resolve(undefined)
-            }else{
+              resolve(undefined); done();
+            } else {
               hilog.info(0x0000,'testTag',`startAbilitycccc, code is ${err?.code}, message is ${err?.message}`);
-              resolve(undefined)
-            }
+              resolve(undefined); done();
+      }
           } else {
             hilog.info(0x0000,'testTag', `startAbility success`);
           }
@@ -842,23 +842,23 @@ export default function ActsGetAllWindowStagesTest(): void {
               }
               expect(data.length).assertEqual(1);
               expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-              resolve(undefined);
+              resolve(undefined); done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
               expect().assertFail();
-              resolve(undefined);
+              resolve(undefined); done();
             });
 
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -870,7 +870,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2200";
@@ -910,22 +910,22 @@ export default function ActsGetAllWindowStagesTest(): void {
                 matchedInfos.push(abilityName);
               }
               expect(matchedInfos.includes('TestAbility') || matchedInfos.includes('TestAbility2')).assertEqual(true);
-              resolve(undefined);
+              resolve(undefined); done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
               expect().assertFail();
-              resolve(undefined);
+              resolve(undefined); done();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -937,7 +937,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_3000";
@@ -975,22 +975,22 @@ export default function ActsGetAllWindowStagesTest(): void {
                 matchedInfos.push(abilityName);
               }
               expect(matchedInfos.includes('TestAbility1')).assertEqual(true);
-              resolve(undefined);
+              resolve(undefined); done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
               expect().assertFail();
-              resolve(undefined);
+              resolve(undefined); done();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -1002,7 +1002,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1000";
@@ -1041,22 +1041,22 @@ export default function ActsGetAllWindowStagesTest(): void {
               }
               expect(data.length).assertEqual(1);
               expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-              resolve(undefined);
+              resolve(undefined); done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
               hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
               expect().assertFail();
-              resolve(undefined);
+              resolve(undefined); done();
             });
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -1069,7 +1069,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_1700";
@@ -1110,19 +1110,19 @@ export default function ActsGetAllWindowStagesTest(): void {
                 let err = e as BusinessError;
                 hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
                 expect().assertFail();
-                resolve(undefined);
+                resolve(undefined); done();
               });
           }
           expect(i).assertEqual(1000);
-          resolve(undefined);
+          resolve(undefined); done();
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -1134,7 +1134,7 @@ export default function ActsGetAllWindowStagesTest(): void {
      * @tc.type       Function
      * @tc.level      LEVEL3
      */
-    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_0800";
@@ -1242,9 +1242,9 @@ export default function ActsGetAllWindowStagesTest(): void {
           hilog.error(0x0000, 'testTag', `Second getAllWindowStages failed: ${err.message}`);
           expect().assertFail();
         }
-        resolve(undefined);
+        resolve(undefined); done();
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
   })

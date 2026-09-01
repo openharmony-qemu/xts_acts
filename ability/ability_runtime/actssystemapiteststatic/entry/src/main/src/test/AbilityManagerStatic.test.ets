@@ -34,7 +34,7 @@ export default function abilityManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0100', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityManager_Static_0100';
@@ -44,10 +44,10 @@ export default function abilityManagerTest(): void {
       abilityManager.updateConfiguration(configInit, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_CODE);
-        resolve(undefined);
+        resolve(undefined); done();
       });
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -59,7 +59,7 @@ export default function abilityManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0200', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityManager_Static_0200';
@@ -70,15 +70,15 @@ export default function abilityManagerTest(): void {
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
           expect(err?.code).assertEqual(ERROR_CODE);
-          resolve(undefined);
+          resolve(undefined); done();
         })
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -90,7 +90,7 @@ export default function abilityManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0300', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityManager_Static_0300';
@@ -98,10 +98,10 @@ export default function abilityManagerTest(): void {
         console.log(TAG + "  err: " + JSON.stringify(err) + "  data: " + JSON.stringify(data));
         expect(data?.length).assertEqual(1);
         expect(data?.[0].ability.bundleName).assertEqual("com.example.systemapitest.static");
-        resolve(undefined);
+        resolve(undefined); done();
       });
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -113,7 +113,7 @@ export default function abilityManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0400', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityManager_Static_0400';
@@ -121,7 +121,7 @@ export default function abilityManagerTest(): void {
       abilityManager.getAbilityRunningInfos((err: BusinessError<void> | null, data: Array<abilityManager.AbilityRunningInfo> | undefined): void => {
         if (err?.code) {
           console.log(TAG + ' err:' + JSON.stringify(err));
-          resolve(undefined);
+          resolve(undefined); done();
           expect().assertFail();
           return;
         }
@@ -142,10 +142,10 @@ export default function abilityManagerTest(): void {
         console.log(`${TAG} s7`);
         expect(data![0].startTime).assertLarger(0);
         console.log(`${TAG} s8`);
-        resolve(undefined);
+        resolve(undefined); done();
       })
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -157,7 +157,7 @@ export default function abilityManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0500', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityManager_Static_0500';
@@ -165,10 +165,10 @@ export default function abilityManagerTest(): void {
       abilityManager.getExtensionRunningInfos(upperLimit, (err: BusinessError<void> | null): void => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_CODE);
-        resolve(undefined);
+        resolve(undefined); done();
       });
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -180,7 +180,7 @@ export default function abilityManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0600', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityManager_Static_0600';
@@ -189,15 +189,15 @@ export default function abilityManagerTest(): void {
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
           expect().assertFail();
-          resolve(undefined);
+          resolve(undefined); done();
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
           expect(err?.code).assertEqual(ERROR_CODE);
-          resolve(undefined);
+          resolve(undefined); done();
         })
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -209,7 +209,7 @@ export default function abilityManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0700', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityManager_Static_0700';
@@ -220,10 +220,10 @@ export default function abilityManagerTest(): void {
       } catch (error) {
         console.log(TAG + "  err?.code: " + error.code);
         expect(error.code).assertEqual(ERROR_CODE);
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -235,7 +235,7 @@ export default function abilityManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0800', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AbilityManager_Static_0800';
@@ -244,10 +244,10 @@ export default function abilityManagerTest(): void {
       } catch (error) {
         console.log(TAG + "  err?.code: " + error.code);
         expect(error.code).assertEqual(ERROR_CODE);
-        resolve(undefined);
+        resolve(undefined); done();
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
 
@@ -259,7 +259,7 @@ export default function abilityManagerTest(): void {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0900', Level.LEVEL0, async (): Promise<void> => {
+    it('SUB_Ability_AbilityRuntime_AbilityManager_Static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
           await new Promise<void>((resolve, reject) => {
         let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_AbilityManager_0900`;
@@ -272,13 +272,13 @@ export default function abilityManagerTest(): void {
         expect(abilityManager.AbilityState.FOREGROUNDING).assertEqual(11);
         expect(abilityManager.AbilityState.BACKGROUNDING).assertEqual(12);
         console.log(`${tag}, test end`);
-        resolve(undefined);
+        resolve(undefined); done();
       } catch (error) {
         console.log(`${tag}, failed: ${JSON.stringify(error)}`);
         expect().assertFail()
       }
         };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); });
+        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
           });
     })
   })
