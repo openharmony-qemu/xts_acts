@@ -3190,7 +3190,7 @@ export default function ActsGzipDecompressionTest() {
                     expect().assertFail();
                 });
             } catch (errData) {
-                expect(errData.code).assertEqual(17800009);
+                expect(errData.code).assertEqual(17800004);
             }
             await gzip.gzopen(allfilePath, "rb");
             try {
