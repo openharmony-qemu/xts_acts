@@ -19,14 +19,14 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 export default function coverageLauncherTypeExportsTest() {
   describe('CoverageLauncherTypeExportsTest', () => {
     /**
-     * @tc.name   SUB_BMS_COVERAGE_launcherBundleManager_TypeExports
-     * @tc.number SUB_BMS_COVERAGE_launcherBundleManager_TypeExports
+     * @tc.name   SUB_BMS_FRAMEWORK_LauncherBundleManager_TypeExports_9400
+     * @tc.number SUB_BMS_FRAMEWORK_LauncherBundleManager_TypeExports_9400
      * @tc.desc   Cover ShortcutInfo / ShortcutWant / ParameterItem type exports
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_BMS_COVERAGE_launcherBundleManager_TypeExports', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_BMS_FRAMEWORK_LauncherBundleManager_TypeExports_9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         const parameter: launcherBundleManager.ParameterItem = {
           key: 'source',

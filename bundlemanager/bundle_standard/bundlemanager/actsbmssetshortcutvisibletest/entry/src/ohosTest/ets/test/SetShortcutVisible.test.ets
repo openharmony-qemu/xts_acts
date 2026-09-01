@@ -142,16 +142,16 @@ export default function setShortcutVisible() {
     })
 
     /**
-     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_0700
-     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_0700
+     * @tc.name   SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700
+     * @tc.number SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700
      * @tc.desc   Test setShortcutVisibleForSelf with visible parameter is null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Bms_Framework_Icon_ShortcutVisible_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_0700 begin');
+        hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700 begin');
         try {
           await shortcutManager.setShortcutVisibleForSelf('id_test1', null);
           expect().assertFail();
@@ -160,22 +160,22 @@ export default function setShortcutVisible() {
           let msg: string = `setShortcutVisibleForSelf(id_test1,null) failed: ${JSON.stringify(error)}`;
           hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
           expect(error.code).assertEqual(401);
-          hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_0700 end');
+          hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0700 end');
           done();
         }
     })
 
     /**
-     * @tc.name   Sub_Bms_Framework_Icon_ShortcutVisible_0800
-     * @tc.number Sub_Bms_Framework_Icon_ShortcutVisible_0800
+     * @tc.name   SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800
+     * @tc.number SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800
      * @tc.desc   Test setShortcutVisibleForSelf with visible parameter is undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Bms_Framework_Icon_ShortcutVisible_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_0800 begin');
+        hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800 begin');
         try {
           await shortcutManager.setShortcutVisibleForSelf('id_test1', undefined);
           expect().assertFail();
@@ -184,7 +184,7 @@ export default function setShortcutVisible() {
           let msg: string = `setShortcutVisibleForSelf(id_test1,undefined) failed: ${JSON.stringify(error)}`;
           hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
           expect(error.code).assertEqual(401);
-          hilog.info(DOMAIN, 'testTag', '%{public}s', 'Sub_Bms_Framework_Icon_ShortcutVisible_0800 end');
+          hilog.info(DOMAIN, 'testTag', '%{public}s', 'SUB_BMS_FRAMEWORK_Icon_ShortcutVisible_0800 end');
           done();
         }
     })

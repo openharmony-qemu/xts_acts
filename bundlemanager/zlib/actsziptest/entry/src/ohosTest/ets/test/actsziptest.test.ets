@@ -18753,15 +18753,15 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.name   deflateInit2InvalidEnum
-         * @tc.number ACTS_ZipTest_150
+         * @tc.name   SUB_BMS_Zlib_DeflateInit2_InvalidEnum_0156
+         * @tc.number SUB_BMS_Zlib_DeflateInit2_InvalidEnum_0156
          * @tc.desc   test deflateInit2 with invalid enum values for level, method and strategy
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('deflateInit2InvalidEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
-            console.info("==================deflateInit2InvalidEnum start==================");
+        it('SUB_BMS_Zlib_DeflateInit2_InvalidEnum_0156', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_InvalidEnum_0156 start==================");
             let str = 'hello world!';
             let arrayBufferIn = new ArrayBuffer(str.length);
             let byteArray = new Uint8Array(arrayBufferIn);
@@ -18776,23 +18776,23 @@ export default function ActsZipTest() {
                     invalidEnum, invalidEnum, 15, invalidEnum, invalidEnum);
                 expect().assertFail();
             } catch (errData) {
-                console.error(`deflateInit2InvalidEnum errData is errCode:${errData.code}  message:${errData.message}`);
+                console.error(`SUB_BMS_Zlib_DeflateInit2_InvalidEnum_0156 errCode:${errData.code}  message:${errData.message}`);
                 expect(errData.code).assertEqual(401);
             }
-            console.info("==================deflateInit2InvalidEnum end==================");
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_InvalidEnum_0156 end==================");
             done();
         })
 
         /**
-         * @tc.name   deflateInit2ReturnStatusEnum
-         * @tc.number ACTS_ZipTest_151
+         * @tc.name   SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157
+         * @tc.number SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157
          * @tc.desc   test deflateInit2 return status enum coverage
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('deflateInit2ReturnStatusEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
-            console.info("==================deflateInit2ReturnStatusEnum start==================");
+        it('SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157 start==================");
             let str = 'hello world!';
             let arrayBufferIn = new ArrayBuffer(str.length);
             let byteArray = new Uint8Array(arrayBufferIn);
@@ -18814,17 +18814,17 @@ export default function ActsZipTest() {
                     expect(zlib.ReturnStatus.MEM_ERROR).assertEqual(-4);
                     expect(zlib.ReturnStatus.BUF_ERROR).assertEqual(-5);
                 }).catch((errData: base.BusinessError) => {
-                    console.error(`deflateInit2ReturnStatusEnum errData is errCode:${errData.code}  message:${errData.message}`);
+                    console.error(`SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157 errCode:${errData.code}  message:${errData.message}`);
                     expect().assertFail();
                 });
             await zip.deflate({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
                 zlib.CompressFlushMode.FINISH).then((data) => {
                     expect(data).assertEqual(zlib.ReturnStatus.STREAM_END);
                 }).catch((errData: base.BusinessError) => {
-                    console.error(`deflateInit2ReturnStatusEnum deflate errData is errCode:${errData.code}`);
+                    console.error(`SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157 deflate errCode:${errData.code}`);
                     expect().assertFail();
                 });
-            console.info("==================deflateInit2ReturnStatusEnum end==================");
+            console.info("==================SUB_BMS_Zlib_DeflateInit2_ReturnStatusEnum_0157 end==================");
             done();
         })
     })

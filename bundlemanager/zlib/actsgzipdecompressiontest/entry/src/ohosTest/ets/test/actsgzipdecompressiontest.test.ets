@@ -3146,15 +3146,15 @@ export default function ActsGzipDecompressionTest() {
         })
 
         /**
-         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900
-         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900
+         * @tc.name   SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910
+         * @tc.number SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910
          * @tc.desc   test gzprintf with empty and non-empty args array coverage
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
-            console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900 Start=====");
+        it('SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.log("=====SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910 Start=====");
             let gzip = zlib.createGZipSync();
             await gzip.gzopen(allfilePath, "wb");
             try {
@@ -3173,19 +3173,19 @@ export default function ActsGzipDecompressionTest() {
             }
             await gzip.gzclose();
             done();
-            console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900 End=====");
+            console.log("=====SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910 End=====");
         })
 
         /**
-         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000
-         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000
+         * @tc.name   SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920
+         * @tc.number SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920
          * @tc.desc   test gzprintf error code 17800009 when gzip is not opened for write
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
          */
-        it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
-            console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000 Start=====");
+        it('SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.log("=====SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920 Start=====");
             let gzip = zlib.createGZipSync();
             try {
                 await gzip.gzprintf("name is %s", "Tom").then(() => {
@@ -3204,7 +3204,7 @@ export default function ActsGzipDecompressionTest() {
             }
             await gzip.gzclose();
             done();
-            console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000 End=====");
+            console.log("=====SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920 End=====");
         })
     })
 }

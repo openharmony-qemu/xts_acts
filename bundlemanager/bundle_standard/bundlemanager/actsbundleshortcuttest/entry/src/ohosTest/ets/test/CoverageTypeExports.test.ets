@@ -19,14 +19,14 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 export default function coverageShortcutTypeExportsTest() {
   describe('CoverageShortcutTypeExportsTest', () => {
     /**
-     * @tc.name   SUB_BMS_COVERAGE_shortcutManager_TypeExports
-     * @tc.number SUB_BMS_COVERAGE_shortcutManager_TypeExports
+     * @tc.name   SUB_BMS_FRAMEWORK_ShortcutManager_TypeExports_9401
+     * @tc.number SUB_BMS_FRAMEWORK_ShortcutManager_TypeExports_9401
      * @tc.desc   Cover shortcutManager ShortcutWant / ParameterItem type exports
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_BMS_COVERAGE_shortcutManager_TypeExports', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('SUB_BMS_FRAMEWORK_ShortcutManager_TypeExports_9401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         const parameter: shortcutManager.ParameterItem = {
           key: 'source',
