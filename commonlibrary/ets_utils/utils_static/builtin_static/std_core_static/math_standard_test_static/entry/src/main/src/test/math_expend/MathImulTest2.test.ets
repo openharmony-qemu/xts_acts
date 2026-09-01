@@ -819,7 +819,6 @@ export default function mathImulTest2(): void {
     it('testMathImul050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let result: number = (Math.imul as Object as (x: number) => number)(3)
-        expect(result).assertEqual(0)
         expect().assertFail()
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError')

@@ -417,7 +417,6 @@ export default function mathAbsTest2(): void {
     it('testMathAbs025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let positive1: number = Math.abs(null as number)
-        expect(positive1).assertEqual(0)
         expect().assertFail()
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError')
