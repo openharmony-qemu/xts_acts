@@ -390,5 +390,66 @@ export default function setOverlayEnabled() {
     })
 
 
+    /**
+     * @tc.name   SetOverlayEnabledIsEnabledNull
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_1000
+     * @tc.desc   Failed to set when the isEnabled parameter is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SetOverlayEnabledIsEnabledNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+      try {
+        await overlay.setOverlayEnabled(MODULE_NAME, null).then(data => {
+          console.info("SetOverlayEnabledIsEnabledNull result" + JSON.stringify(data));
+          expect().assertFail();
+        });
+      } catch (e) {
+        console.info("SetOverlayEnabledIsEnabledNull catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+
+      try {
+        overlay.setOverlayEnabled(MODULE_NAME, null, (err, data) => {
+          console.info("SetOverlayEnabledIsEnabledNull callback err" + JSON.stringify(err));
+          expect().assertFail();
+        });
+      } catch (e) {
+        console.info("SetOverlayEnabledIsEnabledNull callback catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+    })
+
+    /**
+     * @tc.name   SetOverlayEnabledIsEnabledUndefined
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_1100
+     * @tc.desc   Failed to set when the isEnabled parameter is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SetOverlayEnabledIsEnabledUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+      try {
+        await overlay.setOverlayEnabled(MODULE_NAME, undefined).then(data => {
+          console.info("SetOverlayEnabledIsEnabledUndefined result" + JSON.stringify(data));
+          expect().assertFail();
+        });
+      } catch (e) {
+        console.info("SetOverlayEnabledIsEnabledUndefined catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+
+      try {
+        overlay.setOverlayEnabled(MODULE_NAME, undefined, (err, data) => {
+          console.info("SetOverlayEnabledIsEnabledUndefined callback err" + JSON.stringify(err));
+          expect().assertFail();
+        });
+      } catch (e) {
+        console.info("SetOverlayEnabledIsEnabledUndefined callback catch" + JSON.stringify(e));
+        expect(e.code).assertEqual(ERROR_CODE);
+      }
+    })
+
+
   })
 }

@@ -3144,5 +3144,67 @@ export default function ActsGzipDecompressionTest() {
             done();
             }
         })
+
+        /**
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900
+         * @tc.desc   test gzprintf with empty and non-empty args array coverage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900 Start=====");
+            let gzip = zlib.createGZipSync();
+            await gzip.gzopen(allfilePath, "wb");
+            try {
+                await gzip.gzprintf("plain text only").then((result) => {
+                    expect(result).assertEqual(14);
+                });
+            } catch (errData) {
+                expect().assertFail();
+            }
+            try {
+                await gzip.gzprintf("name is %s, age is %d", "Tom", 23).then((result) => {
+                    expect(result).assertEqual(22);
+                });
+            } catch (errData) {
+                expect().assertFail();
+            }
+            await gzip.gzclose();
+            done();
+            console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_4900 End=====");
+        })
+
+        /**
+         * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000
+         * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000
+         * @tc.desc   test gzprintf error code 17800009 when gzip is not opened for write
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+            console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000 Start=====");
+            let gzip = zlib.createGZipSync();
+            try {
+                await gzip.gzprintf("name is %s", "Tom").then(() => {
+                    expect().assertFail();
+                });
+            } catch (errData) {
+                expect(errData.code).assertEqual(17800009);
+            }
+            await gzip.gzopen(allfilePath, "rb");
+            try {
+                await gzip.gzprintf("name is %s", "Tom").then(() => {
+                    expect().assertFail();
+                });
+            } catch (errData) {
+                expect(errData.code).assertEqual(17800009);
+            }
+            await gzip.gzclose();
+            done();
+            console.log("=====SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_5000 End=====");
+        })
     })
 }

@@ -18751,5 +18751,81 @@ export default function ActsZipTest() {
             }
             done();
         })
+
+        /**
+         * @tc.name   deflateInit2InvalidEnum
+         * @tc.number ACTS_ZipTest_150
+         * @tc.desc   test deflateInit2 with invalid enum values for level, method and strategy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('deflateInit2InvalidEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================deflateInit2InvalidEnum start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            const invalidEnum = 99999;
+            try {
+                await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                    invalidEnum, invalidEnum, 15, invalidEnum, invalidEnum);
+                expect().assertFail();
+            } catch (errData) {
+                console.error(`deflateInit2InvalidEnum errData is errCode:${errData.code}  message:${errData.message}`);
+                expect(errData.code).assertEqual(401);
+            }
+            console.info("==================deflateInit2InvalidEnum end==================");
+            done();
+        })
+
+        /**
+         * @tc.name   deflateInit2ReturnStatusEnum
+         * @tc.number ACTS_ZipTest_151
+         * @tc.desc   test deflateInit2 return status enum coverage
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('deflateInit2ReturnStatusEnum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
+            console.info("==================deflateInit2ReturnStatusEnum start==================");
+            let str = 'hello world!';
+            let arrayBufferIn = new ArrayBuffer(str.length);
+            let byteArray = new Uint8Array(arrayBufferIn);
+            for (let i = 0, j = str.length; i < j; i++) {
+                byteArray[i] = str.charCodeAt(i)
+            }
+            let arrayBufferOut = new ArrayBuffer(100);
+            let zip = zlib.createZipSync();
+            await zip.deflateInit2({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressLevel.COMPRESS_LEVEL_DEFAULT_COMPRESSION, zlib.CompressMethod.DEFLATED, 15,
+                zlib.MemLevel.MEM_LEVEL_DEFAULT, zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY)
+                .then((data) => {
+                    expect(data).assertEqual(zlib.ReturnStatus.OK);
+                    expect(zlib.ReturnStatus.STREAM_END).assertEqual(1);
+                    expect(zlib.ReturnStatus.NEED_DICT).assertEqual(2);
+                    expect(zlib.ReturnStatus.ERRNO).assertEqual(-1);
+                    expect(zlib.ReturnStatus.STREAM_ERROR).assertEqual(-2);
+                    expect(zlib.ReturnStatus.DATA_ERROR).assertEqual(-3);
+                    expect(zlib.ReturnStatus.MEM_ERROR).assertEqual(-4);
+                    expect(zlib.ReturnStatus.BUF_ERROR).assertEqual(-5);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit2ReturnStatusEnum errData is errCode:${errData.code}  message:${errData.message}`);
+                    expect().assertFail();
+                });
+            await zip.deflate({ nextIn: arrayBufferIn, availableIn: str.length, nextOut: arrayBufferOut, availableOut: 100 },
+                zlib.CompressFlushMode.FINISH).then((data) => {
+                    expect(data).assertEqual(zlib.ReturnStatus.STREAM_END);
+                }).catch((errData: base.BusinessError) => {
+                    console.error(`deflateInit2ReturnStatusEnum deflate errData is errCode:${errData.code}`);
+                    expect().assertFail();
+                });
+            console.info("==================deflateInit2ReturnStatusEnum end==================");
+            done();
+        })
     })
 }
