@@ -15,14 +15,12 @@
  */
 
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON, MatchPattern } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON, MatchPattern } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME = 1000;
 // Add short delay after router navigation to reduce race with inspector cleanup (avoid GlobalObjectStorage::Get crash)
@@ -31,11 +29,6 @@ const DELAY_AFTER_TEST_MS = 300;
 
 export default function UIObserverTest() {
   describe('UIObserverTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] UIObserverTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.uicontext.api23.static', 'EntryAbility');
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] UIObserverTest beforeEach start");
       let options: router.RouterOptions = {
@@ -112,7 +105,11 @@ export default function UIObserverTest() {
       if (AppStorage.get<boolean>('uiObserverOffNavDestinationSizeChangeByUniqueId') != undefined) {
         AppStorage.delete('uiObserverOffNavDestinationSizeChangeByUniqueId');
       }
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('UIObserverTest afterEach err: ' + JSON.stringify(err));
+      }
       console.info("[ARKUI_NEW] UIObserverTest afterEach end");
     });
 
