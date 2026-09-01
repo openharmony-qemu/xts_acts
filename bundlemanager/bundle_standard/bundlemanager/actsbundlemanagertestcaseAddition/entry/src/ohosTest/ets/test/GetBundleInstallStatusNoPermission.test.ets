@@ -21,21 +21,21 @@ const BUNDLE_NAME = 'ohos.acts.bundlemanagererrcode.test';
 export default function getBundleInstallStatusNoPermissionTest() {
   describe('GetBundleInstallStatusNoPermissionTest', () => {
     /**
-     * @tc.name getBundleInstallStatusNoPermission201
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Dynamic_201
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_NOPERM_0100
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_NOPERM_0100
      * @tc.desc Verify error 201 without ohos.permission.GET_BUNDLE_INFO_PRIVILEGED.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('getBundleInstallStatusNoPermission201',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_NOPERM_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         try {
           bundleManager.getBundleInstallStatus(BUNDLE_NAME);
           expect().assertFail();
         } catch (err) {
           const error = err as BusinessError;
-          console.info(`getBundleInstallStatusNoPermission201: ${JSON.stringify(error)}`);
+          console.info(`SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_NOPERM_0100: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(201);
         }
       });

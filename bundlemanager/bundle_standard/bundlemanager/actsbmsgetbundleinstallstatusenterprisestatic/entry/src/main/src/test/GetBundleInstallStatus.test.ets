@@ -22,14 +22,14 @@ const BUNDLE_NAME_NOT_EXIST: string = 'ohos.acts.bundle.not.exist.dummy';
 export default function getBundleInstallStatusTest(): void {
   describe('GetBundleInstallStatusStaticTest', (): void => {
     /**
-     * @tc.name getBundleInstallStatusStaticEmpty
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Static_001
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0100
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0100
      * @tc.desc Verify an empty bundle name returns BUNDLE_NOT_EXIST.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('getBundleInstallStatusStaticEmpty',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const status = bundleManager.getBundleInstallStatus('');
@@ -38,14 +38,14 @@ export default function getBundleInstallStatusTest(): void {
       });
 
     /**
-     * @tc.name getBundleInstallStatusStaticNotExist
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Static_003
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0200
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0200
      * @tc.desc Verify a non-empty missing bundle name returns BUNDLE_NOT_EXIST.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('getBundleInstallStatusStaticNotExist',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const status = bundleManager.getBundleInstallStatus(BUNDLE_NAME_NOT_EXIST);
@@ -54,14 +54,14 @@ export default function getBundleInstallStatusTest(): void {
       });
 
     /**
-     * @tc.name getBundleInstallStatusStaticInstalled
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Static_002
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0300
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0300
      * @tc.desc Verify the test bundle is reported as BUNDLE_INSTALLED.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('getBundleInstallStatusStaticInstalled',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const status = bundleManager.getBundleInstallStatus(BUNDLE_NAME);

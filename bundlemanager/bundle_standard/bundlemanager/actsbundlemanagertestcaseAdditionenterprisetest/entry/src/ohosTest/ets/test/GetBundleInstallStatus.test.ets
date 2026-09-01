@@ -22,42 +22,42 @@ const BUNDLE_NAME_NOT_EXIST = 'ohos.acts.bundle.not.exist.dummy';
 export default function getBundleInstallStatusTest() {
   describe('GetBundleInstallStatusTest', () => {
     /**
-     * @tc.name getBundleInstallStatusEmpty
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Dynamic_001
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0100
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0100
      * @tc.desc Verify an empty bundle name returns BUNDLE_NOT_EXIST.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('getBundleInstallStatusEmpty',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const status = bundleManager.getBundleInstallStatus('');
         expect(status).assertEqual(bundleManager.BundleInstallStatus.BUNDLE_NOT_EXIST);
       });
 
     /**
-     * @tc.name getBundleInstallStatusNotExist
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Dynamic_005
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0200
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0200
      * @tc.desc Verify a non-empty missing bundle name returns BUNDLE_NOT_EXIST.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('getBundleInstallStatusNotExist',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         const status = bundleManager.getBundleInstallStatus(BUNDLE_NAME_NOT_EXIST);
         expect(status).assertEqual(bundleManager.BundleInstallStatus.BUNDLE_NOT_EXIST);
       });
 
     /**
-     * @tc.name getBundleInstallStatusNull
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Dynamic_002
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0300
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0300
      * @tc.desc Verify null is rejected with parameter error 401.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('getBundleInstallStatusNull',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         try {
           bundleManager.getBundleInstallStatus(null);
@@ -68,14 +68,14 @@ export default function getBundleInstallStatusTest() {
       });
 
     /**
-     * @tc.name getBundleInstallStatusUndefined
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Dynamic_003
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0400
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0400
      * @tc.desc Verify undefined is rejected with parameter error 401.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL1
      */
-    it('getBundleInstallStatusUndefined',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         try {
           bundleManager.getBundleInstallStatus(undefined);
@@ -86,14 +86,14 @@ export default function getBundleInstallStatusTest() {
       });
 
     /**
-     * @tc.name getBundleInstallStatusInstalled
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Dynamic_004
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0500
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0500
      * @tc.desc Verify the test bundle is reported as BUNDLE_INSTALLED.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('getBundleInstallStatusInstalled',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
         const status = bundleManager.getBundleInstallStatus(BUNDLE_NAME);
         expect(status).assertEqual(bundleManager.BundleInstallStatus.BUNDLE_INSTALLED);

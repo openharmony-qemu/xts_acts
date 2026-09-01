@@ -22,14 +22,14 @@ const BUNDLE_NAME: string = 'ohos.acts.bundle.test.static';
 export default function getBundleInstallStatusNoPermissionTest(): void {
   describe('GetBundleInstallStatusNoPermissionStaticTest', (): void => {
     /**
-     * @tc.name getBundleInstallStatusStaticNoPermission201
-     * @tc.number Sub_Bms_GetBundleInstallStatus_Static_201
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_NOPERM_0100
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_NOPERM_0100
      * @tc.desc Verify error 201 without ohos.permission.GET_BUNDLE_INFO_PRIVILEGED.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('getBundleInstallStatusStaticNoPermission201',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_NOPERM_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
@@ -38,7 +38,7 @@ export default function getBundleInstallStatusNoPermissionTest(): void {
           done();
         } catch (err) {
           const error = err as BusinessError;
-          console.info(`getBundleInstallStatusStaticNoPermission201: ${JSON.stringify(error)}`);
+          console.info(`SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_NOPERM_0100: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(201);
           done();
         }
