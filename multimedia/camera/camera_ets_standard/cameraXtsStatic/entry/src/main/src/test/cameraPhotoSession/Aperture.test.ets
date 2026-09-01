@@ -388,5 +388,36 @@ export default function ApertureTest(): void {
     done();
     });
 
+    /**
+     * @tc.name SUB_MULTIMEDIA_CAMERA_getPhysicalAperture_photo_abNormal_static_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_getPhysicalAperture_photo_abNormal_static_0300
+     * @tc.desc getPhysicalAperture error code 7400102 test.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_getPhysicalAperture_photo_abNormal_static_0300',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_getPhysicalAperture_photo_abNormal_static_0300';
+      console.info(TAG, testName + ' begin.');
+      // ========== 预制过程 ==========
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput!, mPhotoOutput!);
+      await mCameraInput!.close();
+      try {
+        mPhotoSession!.getPhysicalAperture();
+        console.error(TAG, testName + ' should throw error 7400102.');
+        getCameraInput();
+        expect().assertFail();
+      } catch (error) {
+        console.info(TAG, testName + ' catch error: ' + error.code + ', msg: ' + error.message);
+        getCameraInput();
+        expect(error.code).assertEqual(camera.CameraErrorCode.OPERATION_NOT_ALLOWED);
+      }
+      // ========== 恢复过程 ==========
+      await releasePhotoSession();
+      done();
+    });
+
   });
 }
