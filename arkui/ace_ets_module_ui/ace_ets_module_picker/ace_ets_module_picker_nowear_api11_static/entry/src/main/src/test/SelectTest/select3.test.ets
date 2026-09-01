@@ -25,7 +25,7 @@ import inspector from '@ohos.arkui.inspector';
 
 export default function selectOnSelectJsunit() {
   describe('selectOnSelectTest', () => {
-    beforeAll(async () => {
+    beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Select/select3',
