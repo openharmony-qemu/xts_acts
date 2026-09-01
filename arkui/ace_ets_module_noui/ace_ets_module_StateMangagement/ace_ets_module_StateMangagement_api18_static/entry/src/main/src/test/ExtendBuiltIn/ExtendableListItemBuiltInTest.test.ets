@@ -14,16 +14,27 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import hilog from '@ohos.hilog';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { ButtonType, ControlSize } from '@kit.ArkUI';
 import { Router } from '@ohos.arkui.UIContext';
-import { Component, Driver, ON } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import deviceInfo from '@ohos.deviceInfo';
+import { BusinessError } from '@ohos.base';
 
 export default function ExtendableListItemBuiltInTest() {
   describe('ExtendableListItemBuiltInTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api18.static", "EntryAbility")
+    })
     beforeEach(async (): Promise<void> => {
       console.info("ExtendableListItemBuiltInTest beforeEach start");
       let options: router.RouterOptions = {

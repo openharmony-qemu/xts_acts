@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import router from '@ohos.router';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -29,6 +30,10 @@ function readContent(key: string): string {
 
 export default function PersistenceV2AbnormalDefaultSubCreatorsTest(): void {
   describe('PersistenceV2AbnormalDefaultSubCreatorsTest', () => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility('com.arkui.ace.StateMangagement.api18.static', 'EntryAbility');
+      await UtilsTest.msSleep(1000);
+    });
 
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
