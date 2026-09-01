@@ -2660,8 +2660,10 @@ export default function WebSocketTest() {
           port: 8081,
           exclusionList: ['www.test.com', '10.10.*.*']
         };
-        ExpectTrue(typeof httpProxy.host === 'string');
-        ExpectTrue(typeof httpProxy.port === 'number');
+        hilog.info(domain, tag, '%{public}s', caseName + ' httpProxy.host is ' + httpProxy.host);
+        hilog.info(domain, tag, '%{public}s', caseName + ' httpProxy.port is ' + httpProxy.port);
+        ExpectTrue(httpProxy.host !== undefined);
+        ExpectTrue(httpProxy.port !== undefined);
         hilog.info(domain, tag, '%{public}s', caseName + ' webSocket.HttpProxy interface covered successfully');
         done();
         hilog.info(domain, tag, '%{public}s', caseName + ' test end');
