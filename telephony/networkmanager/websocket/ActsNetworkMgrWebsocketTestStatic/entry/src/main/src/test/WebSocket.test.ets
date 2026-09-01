@@ -1667,13 +1667,24 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'start success!');
-              let client: webSocket.WebSocket = webSocket.createWebSocket();
-              server.on('connect', (connection: webSocket.WebSocketConnection): void => {
-                hilog.info(domain, tag, '%{public}s', caseName + 'server on connect success!');
-                server.send("hello client", connection).then((sendValue: boolean | undefined) => {
+            } else {
+              ExpectFail();
+              done();
+            }
+          }).catch((error: Error) => {
+            ExpectFail();
+            done();
+          })
+          let client: webSocket.WebSocket = webSocket.createWebSocket();
+          client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (value) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+              let connections = server.listAllConnections();
+              if (connections) {
+                server.send("hello client", connections[0]).then((sendValue: boolean | undefined) => {
                   if (sendValue) {
                     ExpectTrue(sendValue !== null);
                     client.close();
@@ -1695,23 +1706,16 @@ export default function WebSocketTest() {
                   hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                   done();
                 });
-              });
-              client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
-                if (value) {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
-                } else {
-                  ExpectFail();
-                  server.stop();
-                  done();
-                }
-              });
+              } else {
+                ExpectFail();
+                server.stop();
+                done();
+              }
             } else {
               ExpectFail();
+              server.stop();
               done();
             }
-          }).catch((error: Error) => {
-            ExpectFail();
-            done();
           })
 
         } catch (err) {
@@ -1741,45 +1745,9 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'start success!');
-              let client: webSocket.WebSocket = webSocket.createWebSocket();
-              client.connect('ws://127.0.0.1:8096', (err: BusinessError<void> | null, value: boolean | undefined) => {
-                if (value) {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
-                } else {
-                  ExpectFail();
-                  done()
-                }
-              });
-
-              let connections = server.listAllConnections()
-              if (connections == null) {
-                ExpectFail();
-                server.stop();
-                hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
-                done();
-              } else {
-                let wrongConnection: webSocket.WebSocketConnection = {
-                  clientIP: '1.1.1.1',
-                  clientPort: 8888
-                }
-                server.send("hello client", wrongConnection).then((value: boolean | undefined) => {
-                  if (value) {
-                    ExpectTrue(value !== null);
-                    done();
-                  } else {
-                    ExpectFail();
-                    done();
-                  }
-                }).catch((error: Error) => {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + error.code);
-                  ExpectTrue(error.code === 2302006);
-                  server.stop();
-                  done();
-                })
-              }
             } else {
               ExpectFail();
               done();
@@ -1788,6 +1756,42 @@ export default function WebSocketTest() {
             ExpectFail();
             done();
           })
+          let client: webSocket.WebSocket = webSocket.createWebSocket();
+          client.connect('ws://127.0.0.1:8096', (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (value) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+            } else {
+              ExpectFail();
+              done()
+            }
+          });
+
+          let connections = server.listAllConnections()
+          if (connections == null) {
+            ExpectFail();
+            server.stop();
+            hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+            done();
+          } else {
+            let wrongConnection: webSocket.WebSocketConnection = {
+              clientIP: '1.1.1.1',
+              clientPort: 8888
+            }
+            server.send("hello client", wrongConnection).then((value: boolean | undefined) => {
+              if (value) {
+                ExpectTrue(value !== null);
+                done();
+              } else {
+                ExpectFail();
+                done();
+              }
+            }).catch((error: Error) => {
+              hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + error.code);
+              ExpectTrue(error.code === 2302006);
+              server.stop();
+              done();
+            })
+          }
 
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + err.code);
@@ -1816,44 +1820,9 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'start success!');
-              let client: webSocket.WebSocket = webSocket.createWebSocket();
-              client.connect('ws://127.0.0.1:8097', (err: BusinessError<void> | null, value: boolean | undefined) => {
-                if (value) {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
-                } else {
-                  ExpectFail();
-                  done()
-                }
-              });
-
-              let connections = server.listAllConnections()
-              if (connections == null) {
-                ExpectFail();
-                server.stop();
-                hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
-                done();
-              } else {
-                let connection: webSocket.WebSocketConnection = {
-                  clientIP: '0.0.0.0',
-                  clientPort: 8097
-                }
-                server.send("hello client", connection).then((value: boolean | undefined) => {
-                  if (value) {
-                    ExpectTrue(value !== null);
-                    done();
-                  } else {
-                    ExpectFail();
-                    done();
-                  }
-                }).catch((error: Error) => {
-                  hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + error.code);
-                  server.stop();
-                  done();
-                })
-              }
             } else {
               ExpectFail();
               done();
@@ -1862,6 +1831,41 @@ export default function WebSocketTest() {
             ExpectFail();
             done();
           })
+          let client: webSocket.WebSocket = webSocket.createWebSocket();
+          client.connect('ws://127.0.0.1:8097', (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (value) {
+              hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
+            } else {
+              ExpectFail();
+              done()
+            }
+          });
+
+          let connections = server.listAllConnections()
+          if (connections == null) {
+            ExpectFail();
+            server.stop();
+            hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+            done();
+          } else {
+            let connection: webSocket.WebSocketConnection = {
+              clientIP: '0.0.0.0',
+              clientPort: 8097
+            }
+            server.send("hello client", connection).then((value: boolean | undefined) => {
+              if (value) {
+                ExpectTrue(value !== null);
+                done();
+              } else {
+                ExpectFail();
+                done();
+              }
+            }).catch((error: Error) => {
+              hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + error.code);
+              server.stop();
+              done();
+            })
+          }
 
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + err.code);
@@ -1923,7 +1927,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'start success!');
             } else {
@@ -1934,7 +1938,7 @@ export default function WebSocketTest() {
             ExpectFail();
             done();
           });
-          server.stop().then((value: boolean | undefined) => {
+          await server.stop().then((value: boolean | undefined) => {
             if (value) {
               console.info('server stop service successfully');
               done();
@@ -1972,7 +1976,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
             } else {
@@ -2045,7 +2049,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
             } else {
@@ -2120,7 +2124,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
             } else {
@@ -2195,7 +2199,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
             } else {
@@ -2271,7 +2275,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
             } else {
@@ -2351,7 +2355,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
             } else {
@@ -2432,7 +2436,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
             } else {
@@ -2508,7 +2512,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
             } else {
@@ -2586,7 +2590,7 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
+          await server.start(serverConfig).then((value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'server start!');
             } else {
