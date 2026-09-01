@@ -680,6 +680,72 @@ export default function VideoSessionManualControlTest() {
     })
 
     /**
+     * @tc.name SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_PARAM_0500
+     * @tc.number SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_PARAM_0500
+     * @tc.desc setExposureMeteringMode param test with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_PARAM_0500',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_PARAM_0500"
+      console.info(TAG, caseName + ' start: supported mode');
+      await createCameraInputAndOutput();
+      await createCameraSession();
+      await addInputAndOutput();
+      await startCameraSession();
+      try {
+        let isSupported = session.isExposureMeteringModeSupported(-100);
+        if (!isSupported) {
+          session.setExposureMeteringMode(null);
+          let result = session.getExposureMeteringMode();
+          console.info(TAG, 'setExposureMeteringMode result: ' + result);
+          expect(result === 0).assertTrue();
+        }
+        console.info(TAG, caseName + ' end');
+        done();
+      } catch (error) {
+        console.info(TAG, caseName + ' error: ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_PARAM_0600
+     * @tc.number SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_PARAM_0600
+     * @tc.desc setExposureMeteringMode param test with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_PARAM_0600',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_PARAM_0600"
+      console.info(TAG, caseName + ' start: supported mode');
+      await createCameraInputAndOutput();
+      await createCameraSession();
+      await addInputAndOutput();
+      await startCameraSession();
+      try {
+        let isSupported = session.isExposureMeteringModeSupported(-100);
+        if (!isSupported) {
+          session.setExposureMeteringMode(undefined);
+          let result = session.getExposureMeteringMode();
+          console.info(TAG, 'setExposureMeteringMode result: ' + result);
+          expect(result === 0).assertTrue();
+        }
+        console.info(TAG, caseName + ' end');
+        done();
+      } catch (error) {
+        console.info(TAG, caseName + ' error: ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_ERRORCODE_0200
      * @tc.number SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_SETEXPOSUREMETERINGMODE_ERRORCODE_0200
      * @tc.desc setExposureMeteringMode ERRORCODE 7400103 test.
@@ -781,6 +847,64 @@ export default function VideoSessionManualControlTest() {
         done();
       } catch (error) {
         console.info(TAG, 'SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_ISEXPOSUREMETERINGMODE_SUPPORTED_PARAM_0300 error: ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_ISEXPOSUREMETERINGMODE_SUPPORTED_PARAM_0400
+     * @tc.number SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_ISEXPOSUREMETERINGMODE_SUPPORTED_PARAM_0400
+     * @tc.desc isExposureMeteringModeSupported param test with null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_ISEXPOSUREMETERINGMODE_SUPPORTED_PARAM_0400',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_ISEXPOSUREMETERINGMODE_SUPPORTED_PARAM_0400"
+      console.info(TAG, caseName + ' start: negative value');
+      await createCameraInputAndOutput();
+      await createCameraSession();
+      await addInputAndOutput();
+      await startCameraSession();
+      try {
+        let result = session.isExposureMeteringModeSupported(null);
+        console.info(TAG, 'isExposureMeteringModeSupported result: ' + result);
+        expect(typeof result === 'boolean').assertTrue();
+        console.info(TAG, caseName + ' end');
+        done();
+      } catch (error) {
+        console.info(TAG, caseName + ' error: ' + JSON.stringify(error));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_ISEXPOSUREMETERINGMODE_SUPPORTED_PARAM_0500
+     * @tc.number SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_ISEXPOSUREMETERINGMODE_SUPPORTED_PARAM_0500
+     * @tc.desc isExposureMeteringModeSupported param test with undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL3
+     */
+    it('SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_ISEXPOSUREMETERINGMODE_SUPPORTED_PARAM_0500',
+        TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "SUB_CAMERA_VIDEOSESSION_MANUALCONTROL_ISEXPOSUREMETERINGMODE_SUPPORTED_PARAM_0500"
+      console.info(TAG, caseName + ' start: negative value');
+      await createCameraInputAndOutput();
+      await createCameraSession();
+      await addInputAndOutput();
+      await startCameraSession();
+      try {
+        let result = session.isExposureMeteringModeSupported(undefined);
+        console.info(TAG, 'isExposureMeteringModeSupported result: ' + result);
+        expect(typeof result === 'boolean').assertTrue();
+        console.info(TAG, caseName + ' end');
+        done();
+      } catch (error) {
+        console.info(TAG, caseName + ' error: ' + JSON.stringify(error));
         expect().assertFail();
         done();
       }

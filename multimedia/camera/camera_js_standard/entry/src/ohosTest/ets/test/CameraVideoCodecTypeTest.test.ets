@@ -586,5 +586,94 @@ export default function CameraVideoCodecTypeTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300
+     * @tc.desc   Check capture session set moving photo video codec type null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300--------------");
+
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300 FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG +
+            "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300 start for camera[" +
+            i + "]");
+
+          await startCameraSession(i);
+
+          try {
+            mPhotoOutput.setMovingPhotoVideoCodecType(null);
+            console.error(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300 finish");
+            expect().assertFail();
+          } catch (err) {
+            console.info(TAG +
+              "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300 FAILED VideoCodecType is: null");
+            expect(err.code).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT);
+          }
+
+          await stopCameraSession();
+          console.info(TAG +
+            "Enter SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300 end for camera[" + i + "]");
+        }
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300 ends here");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400
+     * @tc.desc   Check capture session set moving photo video codec type undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400--------------");
+
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400 FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG +
+            "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400 start for camera[" +
+            i + "]");
+
+          await startCameraSession(i);
+
+          try {
+            mPhotoOutput.setMovingPhotoVideoCodecType(undefined);
+            console.error(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400 finish");
+            expect().assertFail();
+          } catch (err) {
+            console.info(TAG +
+              "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400 FAILED VideoCodecType is: null");
+            expect(err.code).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT);
+          }
+
+          await stopCameraSession();
+          console.info(TAG +
+            "Enter SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400 end for camera[" + i + "]");
+        }
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400 ends here");
+        done();
+      }
+    })    
+
   })
 }
