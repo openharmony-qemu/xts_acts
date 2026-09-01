@@ -43,6 +43,11 @@ import vectorTest06 from './vector/VectorTest06.test';
 import vectorTest07 from './vector/VectorTest07.test';
 import vectorTest08 from './vector/VectorTest08.test';
 import vectorTest09 from './vector/VectorTest09.test';
+import arrayListNew from './arraylist/ArrayListNew.test';
+import hashSetNew from './hashset/HashSetNew.test';
+import plainArrayNew from './plainarray/PlainArrayNew.test';
+import queueNew from './queue/QueueNew.test';
+import vectorNew from './vector/VectorNew.test';
 
 export default function testsuite() {
   arrayList();
@@ -90,4 +95,9 @@ export default function testsuite() {
   vectorTest07();
   vectorTest08();
   vectorTest09();
+  arrayListNew();
+  hashSetNew();
+  plainArrayNew();
+  queueNew();
+  vectorNew();
 }
