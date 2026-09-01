@@ -1,10 +1,12 @@
 {
     "devices": {
         "general": [],
-        "custom::entry": {
-            "xts": [
-                "SystemCapability.BundleManager.BundleFramework"
-            ]
-        }
+        "custom": [
+            {
+                "xts": [
+                    "SystemCapability.BundleManager.BundleFramework"
+                ]
+            }
+        ]
     }
 }
