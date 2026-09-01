@@ -67,23 +67,14 @@ export default function CoverageEnhancementTest() {
     it('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
-          bundle.getAllBundleInfo(undefined, (err: BusinessError, data) => {
-            if (err) {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 err: ' + JSON.stringify(err));
-              expect((err as BusinessError).code).assertEqual(ERROR_CODE_PARAM_ERROR);
-              done();
-            } else {
-              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 should not succeed: ' +
-                JSON.stringify(data));
-              expect().assertFail();
-              done();
-            }
-          });
+          await bundle.getAllBundleInfo(undefined);
+          console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 should not succeed');
+          expect().assertFail();
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 catch: ' + JSON.stringify(error));
           expect((error as BusinessError).code).assertEqual(ERROR_CODE_PARAM_ERROR);
-          done();
         }
+        done();
       });
 
     /**

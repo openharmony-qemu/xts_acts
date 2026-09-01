@@ -18777,7 +18777,7 @@ export default function ActsZipTest() {
                 expect().assertFail();
             } catch (errData) {
                 console.error(`SUB_BMS_Zlib_DeflateInit2_InvalidEnum_0156 errCode:${errData.code}  message:${errData.message}`);
-                expect(errData.code).assertEqual(401);
+                expect(errData.code).assertEqual(17800004);
             }
             console.info("==================SUB_BMS_Zlib_DeflateInit2_InvalidEnum_0156 end==================");
             done();

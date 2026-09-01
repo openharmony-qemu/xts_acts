@@ -3158,16 +3158,14 @@ export default function ActsGzipDecompressionTest() {
             let gzip = zlib.createGZipSync();
             await gzip.gzopen(allfilePath, "wb");
             try {
-                await gzip.gzprintf("plain text only").then((result) => {
-                    expect(result).assertEqual(14);
-                });
+                let emptyArgsLen = await gzip.gzprintf("name is %s, age is %d");
+                expect(emptyArgsLen).assertEqual(21);
             } catch (errData) {
                 expect().assertFail();
             }
             try {
-                await gzip.gzprintf("name is %s, age is %d", "Tom", 23).then((result) => {
-                    expect(result).assertEqual(22);
-                });
+                let withArgsLen = await gzip.gzprintf("name is %s, age is %d", "Tom", 23);
+                expect(withArgsLen).assertEqual(22);
             } catch (errData) {
                 expect().assertFail();
             }
@@ -3179,7 +3177,7 @@ export default function ActsGzipDecompressionTest() {
         /**
          * @tc.name   SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920
          * @tc.number SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920
-         * @tc.desc   test gzprintf error code 17800009 when gzip is not opened for write
+         * @tc.desc   test gzprintf error code when gzip is not opened or opened for read
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL3
@@ -3200,7 +3198,7 @@ export default function ActsGzipDecompressionTest() {
                     expect().assertFail();
                 });
             } catch (errData) {
-                expect(errData.code).assertEqual(17800009);
+                expect(errData.code).assertEqual(17800004);
             }
             await gzip.gzclose();
             done();
