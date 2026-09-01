@@ -445,7 +445,7 @@ export default function getObjectByPositionTest() {
     
     /**
      * @tc.name   fetchResult_getObjectByPosition_abnormal_promise_004
-     * @tc.number SUB_PHOTOACCESS_HELPER_FETCH_RESULT_GET_OBJECT_BY_POSITION_019
+     * @tc.number SUB_PHOTOACCESS_HELPER_FETCHRESULT_GETOBJECTBYPOSITION_PROMISE_019
      * @tc.desc   getObjectByPosition error 14000011
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
