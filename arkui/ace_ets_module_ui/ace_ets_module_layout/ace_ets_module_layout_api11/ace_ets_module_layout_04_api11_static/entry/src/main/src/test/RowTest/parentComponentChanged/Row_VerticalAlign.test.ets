@@ -15,32 +15,18 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import inspector from '@ohos.arkui.inspector'
 import { VerticalAlign } from '@ohos.arkui.component'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function Row_VerticalAlign() {
   describe('Row_VerticalAlign', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_VerticalAlign beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_VerticalAlign beforeEach start");
       let options: router.RouterOptions = {
@@ -65,7 +51,11 @@ export default function Row_VerticalAlign() {
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000)
+      } catch (err) {
+      console.info('Row_VerticalAlignTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_VerticalAlign after each called");
     });
 
@@ -85,7 +75,11 @@ it('testRowAlignItemsVerticalAlignTop_static_01', Level.LEVEL0, async (done: () 
       AppStorage.get<MessageManager<VerticalAlign>>('messageManager')?.notify({
         name: 'alignItems', value: VerticalAlign.Top
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_VerticalAlignTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row_VerticalAlign' + '_Row');
 
      console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
@@ -136,7 +130,11 @@ it('testRowAlignItemsVerticalAlignBottom_static_02', Level.LEVEL0, async (done: 
       AppStorage.get<MessageManager<VerticalAlign>>('messageManager')?.notify({
         name: 'alignItems', value: VerticalAlign.Bottom
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_VerticalAlignTest await err: ' + JSON.stringify(err));
+      }
       let strJson = inspector.getInspectorByKey('Row_VerticalAlign' + '_Row');
 
      console.info('Row obj.$attrs is:' + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));

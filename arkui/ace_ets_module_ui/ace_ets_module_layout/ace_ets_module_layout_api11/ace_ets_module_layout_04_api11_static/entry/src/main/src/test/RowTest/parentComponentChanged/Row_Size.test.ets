@@ -13,30 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from "../../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index";
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function Row_Size() {
   describe('Row_Size', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_Size beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_Size beforeEach start");
       let options: router.RouterOptions = {
@@ -58,12 +44,20 @@ export default function Row_Size() {
       } catch (err) {
         console.error("push Row_Size page error " + JSON.stringify(err));
       }
+      try {
       await CommonFunc.sleep(1000)
+      } catch (err) {
+      console.info('Row_SizeTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_Size beforeEach end");
     });
 
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(2000)
+      } catch (err) {
+      console.info('Row_SizeTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_Size after each called");
     });
 
@@ -86,7 +80,11 @@ it('testRowSizeBothSatisfy_static_01', Level.LEVEL0, async (done: () => void): P
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'height', value: 200
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_SizeTest await err: ' + JSON.stringify(err));
+      }
       let Row: RectValue = CommonFunc.getComponentRect('Row_Size_Row');
       let Text1: RectValue = CommonFunc.getComponentRect('Row_Size_Text1');
       let Text2: RectValue = CommonFunc.getComponentRect('Row_Size_Text2');
@@ -138,7 +136,11 @@ it('testRowSizeWidthNOSatisfy_static_02', Level.LEVEL0, async (done: () => void)
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'height', value: 200
       });
+      try {
       await CommonFunc.sleep(3000)
+      } catch (err) {
+      console.info('Row_SizeTest await err: ' + JSON.stringify(err));
+      }
       let Row: RectValue = CommonFunc.getComponentRect('Row_Size_Row');
       let Text1: RectValue = CommonFunc.getComponentRect('Row_Size_Text1');
       let Text2: RectValue = CommonFunc.getComponentRect('Row_Size_Text2');
@@ -187,7 +189,11 @@ it('testRowSizeHeightNOSatisfy_static_03', Level.LEVEL0, async (done: () => void
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'height', value: 100
       });
+      try {
       await CommonFunc.sleep(3000)
+      } catch (err) {
+      console.info('Row_SizeTest await err: ' + JSON.stringify(err));
+      }
       let Row: RectValue = CommonFunc.getComponentRect('Row_Size_Row');
       let Text1: RectValue = CommonFunc.getComponentRect('Row_Size_Text1');
       let Text2: RectValue = CommonFunc.getComponentRect('Row_Size_Text2');

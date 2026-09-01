@@ -15,28 +15,14 @@
  */
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnReverseTest() {
   describe('ColumnReverseTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ColumnReverseTest beforeAll start");
-
-      await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ColumnReverseTest beforeEach start");
       let options: router.RouterOptions = {
@@ -70,7 +56,11 @@ export default function ColumnReverseTest() {
      */
 it('ColumnReverseTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ColumnReverseTest_0100] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ColumnReverseTest sleep err: ' + JSON.stringify(err));
+      }
 
       let Column_1 = CommonFunc.getComponentRect('ColumnReverse_Column_1');
       let Column_01 = CommonFunc.getComponentRect('ColumnReverse_Column_01');
@@ -94,7 +84,11 @@ it('ColumnReverseTest_static_0100', Level.LEVEL0, async (done: () => void): Prom
      */
 it('ColumnReverseTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ColumnReverseTest_static_0200] START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ColumnReverseTest sleep err: ' + JSON.stringify(err));
+      }
 
       let Column_2 = CommonFunc.getComponentRect('ColumnReverse_Column_2');
       let Column_03 = CommonFunc.getComponentRect('ColumnReverse_Column_03');

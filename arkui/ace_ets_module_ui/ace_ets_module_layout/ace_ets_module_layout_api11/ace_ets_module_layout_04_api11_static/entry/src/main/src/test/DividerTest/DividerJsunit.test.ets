@@ -15,31 +15,17 @@
  */
 
 
-import { afterEach, beforeEach, describe, expect, it, beforeAll,Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 
 import { LineCapStyle } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function dividerJsunit() {
   describe('dividerTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("dividerTest beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("dividerTest beforeEach start");
       let options: router.RouterOptions = {
@@ -53,16 +39,24 @@ export default function dividerJsunit() {
         if (!("Divider" == pages.name)) {
           console.info("get divider state success " + "");
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000)
+          await CommonFunc.sleep(1000)
         }
       } catch (err) {
         console.error("push divider page error " + JSON.stringify(err));
       }
+      try {
       await UtilsTest.msSleep(1000)
+      } catch (err) {
+      console.info('dividerTestTest await err: ' + JSON.stringify(err));
+      }
     });
 
     afterEach(async () => {
+      try {
       await UtilsTest.msSleep(1000)
+      } catch (err) {
+      console.info('dividerTestTest await err: ' + JSON.stringify(err));
+      }
       console.info("Divider after each called");
     });
 

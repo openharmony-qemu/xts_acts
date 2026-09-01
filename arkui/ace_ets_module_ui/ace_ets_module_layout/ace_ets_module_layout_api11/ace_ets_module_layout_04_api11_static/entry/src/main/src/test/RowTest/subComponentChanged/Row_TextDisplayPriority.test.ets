@@ -14,31 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function row_TextDisplayPriorityTest() {
   describe('Row_TextDisplayPriorityTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Row_TextDisplayPriorityTest beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Row_TextDisplayPriorityTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,7 +46,11 @@ export default function row_TextDisplayPriorityTest() {
       console.info("Row_TextDisplayPriorityTest beforeEach end");
     });
     afterEach(async () => {
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+      console.info('Row_TextDisplayPriorTest await err: ' + JSON.stringify(err));
+      }
       console.info("Row_TextDisplayPriorityTest after each called");
     });
     
@@ -84,7 +74,11 @@ it('testRowTextDisplayPriority01_static_01', Level.LEVEL0, async (done: () => vo
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'thirdTextDisplayPriority', value: 3
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_TextDisplayPriorTest await err: ' + JSON.stringify(err));
+      }
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority3');
       let rowContainer: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority_Container01');
       let rowContainerStrJson = inspector.getInspectorByKey('Row_TextDisplayPriority_Container01');
@@ -124,7 +118,11 @@ it('testRowTextDisplayPriority02_static_02', Level.LEVEL0, async (done: () => vo
       AppStorage.get<MessageManager<number>>('messageManager')?.notify({
         name: 'thirdTextDisplayPriority', value: 3
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+      console.info('Row_TextDisplayPriorTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority1');
       let secondText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority2');
       let thirdText: RectValue = CommonFunc.getComponentRect('Row_TextDisplayPriority3');

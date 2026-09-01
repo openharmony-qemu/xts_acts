@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import {UtilsTest,startAbility} from '../Util.test'
 
 export default function ApplyNormalAttributeTest() {
   describe('ApplyNormalAttributeTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ApplyNormalAttributeTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async () => {
       console.info("ApplyNormalAttributeTest beforeEach start");
       let options: router.RouterOptions = {
@@ -55,12 +47,15 @@ export default function ApplyNormalAttributeTest() {
 
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ApplyNormalAttributeTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("ApplyNormalAttributeTest after each called");
     });
 
-  
-  
+
     /**
      * @tc.number   ApplyNormalAttributeTest_static_0100
      * @tc.name     ApplyNormalAttributeTest_static_0100
@@ -71,10 +66,22 @@ it('ApplyNormalAttributeTest_static_0100', Level.LEVEL2, async (done: ()=>void) 
 
       console.info('ApplyNormalAttributeTest_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ApplyNormalAttributeTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('applyNormalAttribute_btn_id'));
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('ApplyNormalAttributeTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('ApplyNormalAttributeTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('applyNormalAttribute_value_id');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ApplyNormalAttributeTest_0100] component obj is: " + JSON.stringify(obj));
