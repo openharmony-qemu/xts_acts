@@ -13,6 +13,10 @@
     "MainAbility/pages/UIPickerComponent/UIPickerOnScrollStopModifier",
     "MainAbility/pages/UIPickerComponent/UIPickerIndicatorModifier",
     "MainAbility/pages/UIPickerComponent/UIPickerItemHeight",
-    "MainAbility/pages/UIPickerComponent/UIPickerDisplayedItemCount"
+    "MainAbility/pages/UIPickerComponent/UIPickerDisplayedItemCount",
+    "MainAbility/pages/CalendarPicker/CalendarPickerAttributeModifier",
+    "MainAbility/pages/DatePicker/DatePickerAttributeModifier",
+    "MainAbility/pages/TextPicker/TextPickerAttributeModifier",
+    "MainAbility/pages/TimePicker/TimePickerAttributeModifier"
   ]
 }
