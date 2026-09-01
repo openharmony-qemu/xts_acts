@@ -1201,15 +1201,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
-     * @tc.name   CAMERA_SESSION_ENABLE_CONTROL_CENTER_002
-     * @tc.number CAMERA_SESSION_ENABLE_CONTROL_CENTER_002
+     * @tc.name   SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0002
+     * @tc.number SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0002
      * @tc.desc   enableControlCenter null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_ENABLE_CONTROL_CENTER_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_ENABLE_CONTROL_CENTER_002';
+    it('SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_ENABLE_CONTROL_CENTER_0002';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -1225,7 +1225,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             }
             catch (err) {
               console.info(TAG, testName, `enableControlCenter error, code: ${err.code}, message: ${err.message}`);
-              expect(Number(err.code)).assertEqual(camera.CameraErrorCode.INVALID_ARGUMENT)
+              expect(err.code).assertEqual('7400101')
             }
           } else {
             console.info(TAG, testName, ' 该设备不支持');
@@ -1264,7 +1264,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
             }
             catch (err) {
               console.info(TAG, testName, `enableControlCenter error, code: ${err.code}, message: ${err.message}`);
-              expect(Number(err.code)).assertEqual(camera.CameraErrorCode.INVALID_ARGUMENT)
+              expect(err.code).assertEqual('7400101')
             }
           } else {
             console.info(TAG, testName, ' 该设备不支持');
@@ -1350,15 +1350,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
-     * @tc.name   CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_003
-     * @tc.number CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_003
+     * @tc.name   SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0003
+     * @tc.number SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0003
      * @tc.desc   enableAutoDeviceSwitch undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_003';
+    it('SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0003';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -1551,15 +1551,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
     })
 
     /**
-     * @tc.name   CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100
-     * @tc.number CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100
+     * @tc.name   SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100
+     * @tc.number SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100
      * @tc.desc   setWhiteBalanceMode param null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100';
+    it('SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0100';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
