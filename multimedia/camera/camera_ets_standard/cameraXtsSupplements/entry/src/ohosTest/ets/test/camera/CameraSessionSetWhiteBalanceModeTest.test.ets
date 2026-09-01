@@ -1101,15 +1101,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
-     * @tc.name   CAMERA_SESSION_SET_SMOOTH_ZOOM_005
-     * @tc.number CAMERA_SESSION_SET_SMOOTH_ZOOM_005
+     * @tc.name   SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_005
+     * @tc.number SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_005
      * @tc.desc   setSmoothZoom when the second param null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_SET_SMOOTH_ZOOM_005', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_SET_SMOOTH_ZOOM_005';
+    it('SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_005', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_SMOOTH_ZOOM_005';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -1240,15 +1240,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
-     * @tc.name   CAMERA_SESSION_ENABLE_CONTROL_CENTER_003
-     * @tc.number CAMERA_SESSION_ENABLE_CONTROL_CENTER_003
+     * @tc.name   CAMERA_SESSION_ENABLE_CONTROL_CENTER_0003
+     * @tc.number CAMERA_SESSION_ENABLE_CONTROL_CENTER_0003
      * @tc.desc   enableControlCenter undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_ENABLE_CONTROL_CENTER_003', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_ENABLE_CONTROL_CENTER_003';
+    it('CAMERA_SESSION_ENABLE_CONTROL_CENTER_0003', Level.LEVEL0, async (done: Function) => {
+      const testName = 'CAMERA_SESSION_ENABLE_CONTROL_CENTER_0003';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -1493,15 +1493,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
     })
 
     /**
-     * @tc.name   CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100
-     * @tc.number CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100
+     * @tc.name   SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100
+     * @tc.number SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100
      * @tc.desc   isWhiteBalanceModeSupported param null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100';
+    it('SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0100';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -1522,15 +1522,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
     })
 
     /**
-     * @tc.name   CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200
-     * @tc.number CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200
+     * @tc.name   SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200
+     * @tc.number SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200
      * @tc.desc   isWhiteBalanceModeSupported param undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200';
+    it('SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_IS_WHITE_BALANCE_MODE_SUPPORTED_0200';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
@@ -1589,15 +1589,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
     })
 
     /**
-     * @tc.name   CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200
-     * @tc.number CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200
+     * @tc.name   SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200
+     * @tc.number SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200
      * @tc.desc   setWhiteBalanceMode param undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200';
+    it('SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_CAMERA_SESSION_SET_WHITE_BALANCE_MODE_0200';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
