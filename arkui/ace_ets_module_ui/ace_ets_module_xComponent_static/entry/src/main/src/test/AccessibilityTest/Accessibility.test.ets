@@ -1,4 +1,4 @@
-'use static';
+'use static'
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,8 +14,6 @@
  * limitations under the License.
  */
  
- 
- 
 import { describe, it, expect, beforeEach, afterEach, afterAll, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
@@ -28,7 +26,7 @@ const PAGE = 'MainAbility/pages/accessibility/AccessibilityTest';
  
 export default function AccessibilityTest() {
   describe('AccessibilityTest', () => {
-    
+
     beforeEach(async (): Promise<void> => {
       console.info('AccessibilityTest beforeEach start');
       let options: router.RouterOptions = {
@@ -40,7 +38,7 @@ export default function AccessibilityTest() {
         let pages = routerInstance.getState();
         console.info('AccessibilityTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'AccessibilityTest') {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
         }
         await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {
@@ -50,11 +48,7 @@ export default function AccessibilityTest() {
     });
  
     afterEach(async (): Promise<void> => {
-      try {
-        await CommonFunc.sleep(200);
-      } catch (err) {
-        console.info('AccessibilityTest afterEach sleep err: ' + JSON.stringify(err));
-      }
+      await CommonFunc.sleep(200);
     });
  
     afterAll(async (): Promise<void> => {

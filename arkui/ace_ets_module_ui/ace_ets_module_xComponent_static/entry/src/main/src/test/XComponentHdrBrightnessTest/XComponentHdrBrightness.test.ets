@@ -48,7 +48,7 @@ export default function XComponentHdrBrightnessTest() {
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
-        routerInstance.replaceUrl(options);
+        await routerInstance.replaceUrl(options);
         await Utils.sleep(600);
       } catch (err) {
         arkuiNewErr(SUITE, 'beforeEach', 'replaceUrl error: ' + err);

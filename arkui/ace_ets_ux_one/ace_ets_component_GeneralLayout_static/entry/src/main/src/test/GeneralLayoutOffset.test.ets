@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll } from '../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import { i18n } from '@kit.LocalizationKit';
 import display from '@ohos.display';
 import CommonFunc from '../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility } from './Util.test'
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -37,13 +36,6 @@ export default function GeneralLayoutOffsetTest() {
     let mirror_rect_top: number;
     let mirror_rect_right: number;
 
-    beforeAll(async (): Promise<void> => {
-      console.info("GeneralLayoutOffsetTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.example.GeneralLayout.static", "EntryAbility")
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -56,9 +48,7 @@ export default function GeneralLayoutOffsetTest() {
         console.info("get IndexOff state success " + JSON.stringify(pages));
         if (!("IndexOff" == pages.name)) {
           console.info("get IndexOff state success " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
-          // console.info("push IndexOff page success " + JSON.stringify(result));
+          await routerInstance.pushUrl(options);
         }
       } catch (err) {
         console.error("push IndexOff page error: " + err);

@@ -15,23 +15,18 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { ItemFillPolicy, PresetFillType, EditModeOptions } from '@ohos.arkui.component';
 
 
 export default function GridTest(): void {
   describe('GridTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info('GridTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.layout.grid.static', 'EntryAbility');
-    });
 
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('GridTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Grid/Grid',
@@ -42,15 +37,12 @@ export default function GridTest(): void {
         let pages = routerInstance.getState();
         console.info('GridTest state pages: ' + JSON.stringify(pages));
         if (!('Grid' == pages.name)) {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
         }
       } catch (err) {
         console.error('GridTest beforeEach error: ' + err);
         expect().assertFail();
       }
-    });
-
-    afterEach((): void => {
     });
 
     /**
@@ -59,14 +51,20 @@ export default function GridTest(): void {
      * @tc.desc grid.d.ets GridAttribute.columnsTemplate - string variant: '1fr 1fr'     */
     it('gridColumnsTemplateString', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridColumnsTemplateString START');
-      let strJson = inspector.getInspectorByKey('gridColTplStr');
-      expect(strJson.length > 0).assertEqual(true);
-      let obj = JSON.parseJsonElement(strJson);
-      let attrs = obj.getElement('$attrs');
-      let val = attrs.getString('columnsTemplate');
-      console.info('GridTest gridColumnsTemplateString value: ' + val);
-      expect(val).assertEqual('1fr 1fr');
-      done();
+      try {
+        let strJson = inspector.getInspectorByKey('gridColTplStr');
+        expect(strJson.length > 0).assertEqual(true);
+        let obj = JSON.parseJsonElement(strJson);
+        let attrs = obj.getElement('$attrs');
+        let val = attrs.getString('columnsTemplate');
+        console.info('GridTest gridColumnsTemplateString value: ' + val);
+        expect(val).assertEqual('1fr 1fr');
+        done();
+      } catch (err) {
+        console.error('GridTest gridColumnsTemplateString error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -75,11 +73,17 @@ export default function GridTest(): void {
      * @tc.desc grid.d.ets GridAttribute.columnsTemplate - undefined variant     */
     it('gridColumnsTemplateUndefined', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridColumnsTemplateUndefined START');
-      let strJson = inspector.getInspectorByKey('gridColTplUndef');
-      expect(strJson.length > 0).assertEqual(true);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj != null).assertTrue();
-      done();
+      try {
+        let strJson = inspector.getInspectorByKey('gridColTplUndef');
+        expect(strJson.length > 0).assertEqual(true);
+        let obj = JSON.parseJsonElement(strJson);
+        expect(obj != null).assertTrue();
+        done();
+      } catch (err) {
+        console.error('GridTest gridColumnsTemplateUndefined error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -88,14 +92,20 @@ export default function GridTest(): void {
      * @tc.desc grid.d.ets GridAttribute.scrollBarColor - Color enum variant: Color.Red     */
     it('gridScrollBarColorEnum', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridScrollBarColorEnum START');
-      let strJson = inspector.getInspectorByKey('gridSbcColor');
-      expect(strJson.length > 0).assertEqual(true);
-      let obj = JSON.parseJsonElement(strJson);
-      let attrs = obj.getElement('$attrs');
-      let val = attrs.getString('scrollBarColor');
-      console.info('GridTest gridScrollBarColorEnum value: ' + val);
-      expect(val.length > 0).assertEqual(true);
-      done();
+      try {
+        let strJson = inspector.getInspectorByKey('gridSbcColor');
+        expect(strJson.length > 0).assertEqual(true);
+        let obj = JSON.parseJsonElement(strJson);
+        let attrs = obj.getElement('$attrs');
+        let val = attrs.getString('scrollBarColor');
+        console.info('GridTest gridScrollBarColorEnum value: ' + val);
+        expect(val.length > 0).assertEqual(true);
+        done();
+      } catch (err) {
+        console.error('GridTest gridScrollBarColorEnum error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -104,14 +114,20 @@ export default function GridTest(): void {
      * @tc.desc grid.d.ets GridAttribute.scrollBarColor - int variant: 0xFF0000     */
     it('gridScrollBarColorInt', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridScrollBarColorInt START');
-      let strJson = inspector.getInspectorByKey('gridSbcInt');
-      expect(strJson.length > 0).assertEqual(true);
-      let obj = JSON.parseJsonElement(strJson);
-      let attrs = obj.getElement('$attrs');
-      let val = attrs.getString('scrollBarColor');
-      console.info('GridTest gridScrollBarColorInt value: ' + val);
-      expect(val.length > 0).assertEqual(true);
-      done();
+      try {
+        let strJson = inspector.getInspectorByKey('gridSbcInt');
+        expect(strJson.length > 0).assertEqual(true);
+        let obj = JSON.parseJsonElement(strJson);
+        let attrs = obj.getElement('$attrs');
+        let val = attrs.getString('scrollBarColor');
+        console.info('GridTest gridScrollBarColorInt value: ' + val);
+        expect(val.length > 0).assertEqual(true);
+        done();
+      } catch (err) {
+        console.error('GridTest gridScrollBarColorInt error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -120,14 +136,20 @@ export default function GridTest(): void {
      * @tc.desc grid.d.ets GridAttribute.scrollBarColor - string variant: '#00FF00'     */
     it('gridScrollBarColorString', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridScrollBarColorString START');
-      let strJson = inspector.getInspectorByKey('gridSbcStr');
-      expect(strJson.length > 0).assertEqual(true);
-      let obj = JSON.parseJsonElement(strJson);
-      let attrs = obj.getElement('$attrs');
-      let val = attrs.getString('scrollBarColor');
-      console.info('GridTest gridScrollBarColorString value: ' + val);
-      expect(val.length > 0).assertEqual(true);
-      done();
+      try {
+        let strJson = inspector.getInspectorByKey('gridSbcStr');
+        expect(strJson.length > 0).assertEqual(true);
+        let obj = JSON.parseJsonElement(strJson);
+        let attrs = obj.getElement('$attrs');
+        let val = attrs.getString('scrollBarColor');
+        console.info('GridTest gridScrollBarColorString value: ' + val);
+        expect(val.length > 0).assertEqual(true);
+        done();
+      } catch (err) {
+        console.error('GridTest gridScrollBarColorString error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -136,14 +158,20 @@ export default function GridTest(): void {
      * @tc.desc grid.d.ets GridAttribute.scrollBarColor - Resource variant: $r('app.color.color_hello')     */
     it('gridScrollBarColorResource', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridScrollBarColorResource START');
-      let strJson = inspector.getInspectorByKey('gridSbcRes');
-      expect(strJson.length > 0).assertEqual(true);
-      let obj = JSON.parseJsonElement(strJson);
-      let attrs = obj.getElement('$attrs');
-      let val = attrs.getString('scrollBarColor');
-      console.info('GridTest gridScrollBarColorResource value: ' + val);
-      expect(val.length > 0).assertEqual(true);
-      done();
+      try {
+        let strJson = inspector.getInspectorByKey('gridSbcRes');
+        expect(strJson.length > 0).assertEqual(true);
+        let obj = JSON.parseJsonElement(strJson);
+        let attrs = obj.getElement('$attrs');
+        let val = attrs.getString('scrollBarColor');
+        console.info('GridTest gridScrollBarColorResource value: ' + val);
+        expect(val.length > 0).assertEqual(true);
+        done();
+      } catch (err) {
+        console.error('GridTest gridScrollBarColorResource error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -152,11 +180,17 @@ export default function GridTest(): void {
      * @tc.desc grid.d.ets GridAttribute.scrollBarColor - undefined variant     */
     it('gridScrollBarColorUndefined', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridScrollBarColorUndefined START');
-      let strJson = inspector.getInspectorByKey('gridSbcUndef');
-      expect(strJson.length > 0).assertEqual(true);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj != null).assertTrue();
-      done();
+      try {
+        let strJson = inspector.getInspectorByKey('gridSbcUndef');
+        expect(strJson.length > 0).assertEqual(true);
+        let obj = JSON.parseJsonElement(strJson);
+        expect(obj != null).assertTrue();
+        done();
+      } catch (err) {
+        console.error('GridTest gridScrollBarColorUndefined error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -168,23 +202,29 @@ export default function GridTest(): void {
      */
     it('gridColumnsTemplateItemFillPolicy', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridColumnsTemplateItemFillPolicy START');
-      let policyDefault: ItemFillPolicy = { fillType: PresetFillType.BREAKPOINT_DEFAULT };
-      console.info('GridTest ItemFillPolicy BREAKPOINT_DEFAULT fillType: ' + policyDefault.fillType);
-      expect(policyDefault.fillType).assertEqual(PresetFillType.BREAKPOINT_DEFAULT);
-      expect(policyDefault.fillType).assertEqual(0);
-      let policySm1: ItemFillPolicy = { fillType: PresetFillType.BREAKPOINT_SM1MD2LG3 };
-      console.info('GridTest ItemFillPolicy BREAKPOINT_SM1MD2LG3 fillType: ' + policySm1.fillType);
-      expect(policySm1.fillType).assertEqual(PresetFillType.BREAKPOINT_SM1MD2LG3);
-      expect(policySm1.fillType).assertEqual(1);
-      let policySm2: ItemFillPolicy = { fillType: PresetFillType.BREAKPOINT_SM2MD3LG5 };
-      console.info('GridTest ItemFillPolicy BREAKPOINT_SM2MD3LG5 fillType: ' + policySm2.fillType);
-      expect(policySm2.fillType).assertEqual(PresetFillType.BREAKPOINT_SM2MD3LG5);
-      expect(policySm2.fillType).assertEqual(2);
-      let policyNoFill: ItemFillPolicy = {};
-      console.info('GridTest ItemFillPolicy empty fillType: ' + policyNoFill.fillType);
-      expect(policyNoFill.fillType == undefined).assertEqual(true);
-      console.info('GridTest: gridColumnsTemplateItemFillPolicy END');
-      done();
+      try {
+        let policyDefault: ItemFillPolicy = { fillType: PresetFillType.BREAKPOINT_DEFAULT };
+        console.info('GridTest ItemFillPolicy BREAKPOINT_DEFAULT fillType: ' + policyDefault.fillType);
+        expect(policyDefault.fillType).assertEqual(PresetFillType.BREAKPOINT_DEFAULT);
+        expect(policyDefault.fillType).assertEqual(0);
+        let policySm1: ItemFillPolicy = { fillType: PresetFillType.BREAKPOINT_SM1MD2LG3 };
+        console.info('GridTest ItemFillPolicy BREAKPOINT_SM1MD2LG3 fillType: ' + policySm1.fillType);
+        expect(policySm1.fillType).assertEqual(PresetFillType.BREAKPOINT_SM1MD2LG3);
+        expect(policySm1.fillType).assertEqual(1);
+        let policySm2: ItemFillPolicy = { fillType: PresetFillType.BREAKPOINT_SM2MD3LG5 };
+        console.info('GridTest ItemFillPolicy BREAKPOINT_SM2MD3LG5 fillType: ' + policySm2.fillType);
+        expect(policySm2.fillType).assertEqual(PresetFillType.BREAKPOINT_SM2MD3LG5);
+        expect(policySm2.fillType).assertEqual(2);
+        let policyNoFill: ItemFillPolicy = {};
+        console.info('GridTest ItemFillPolicy empty fillType: ' + policyNoFill.fillType);
+        expect(policyNoFill.fillType == undefined).assertEqual(true);
+        console.info('GridTest: gridColumnsTemplateItemFillPolicy END');
+        done();
+      } catch (err) {
+        console.error('GridTest gridColumnsTemplateItemFillPolicy error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -197,23 +237,28 @@ export default function GridTest(): void {
      */
     it('gridSupportEmptyBranchInLazy', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridSupportEmptyBranchInLazy START');
+      try {
+        let valTrue: boolean | undefined = true;
+        console.info('GridTest supportEmptyBranch param=true: ' + valTrue);
+        expect(valTrue).assertEqual(true);
+        expect(typeof valTrue).assertEqual('boolean');
 
-      let valTrue: boolean | undefined = true;
-      console.info('GridTest supportEmptyBranch param=true: ' + valTrue);
-      expect(valTrue).assertEqual(true);
-      expect(typeof valTrue).assertEqual('boolean');
+        let valFalse: boolean | undefined = false;
+        console.info('GridTest supportEmptyBranch param=false: ' + valFalse);
+        expect(valFalse).assertEqual(false);
+        expect(typeof valFalse).assertEqual('boolean');
 
-      let valFalse: boolean | undefined = false;
-      console.info('GridTest supportEmptyBranch param=false: ' + valFalse);
-      expect(valFalse).assertEqual(false);
-      expect(typeof valFalse).assertEqual('boolean');
+        let valUndef: boolean | undefined = undefined;
+        console.info('GridTest supportEmptyBranch param=undefined: ' + valUndef);
+        expect(valUndef == undefined).assertEqual(true);
 
-      let valUndef: boolean | undefined = undefined;
-      console.info('GridTest supportEmptyBranch param=undefined: ' + valUndef);
-      expect(valUndef == undefined).assertEqual(true);
-
-      console.info('GridTest: gridSupportEmptyBranchInLazy END');
-      done();
+        console.info('GridTest: gridSupportEmptyBranchInLazy END');
+        done();
+      } catch (err) {
+        console.error('GridTest gridSupportEmptyBranchInLazy error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
     /**
@@ -228,48 +273,53 @@ export default function GridTest(): void {
      */
     it('gridEditModeOptions', Level.LEVEL1, (done: () => void) => {
       console.info('GridTest: gridEditModeOptions START');
+      try {
+        let opts1: EditModeOptions = { enableGatherSelectedItemsAnimation: true };
+        console.info('GridTest EditModeOptions enableGather=true: ' + opts1.enableGatherSelectedItemsAnimation);
+        expect(opts1.enableGatherSelectedItemsAnimation).assertEqual(true);
 
-      let opts1: EditModeOptions = { enableGatherSelectedItemsAnimation: true };
-      console.info('GridTest EditModeOptions enableGather=true: ' + opts1.enableGatherSelectedItemsAnimation);
-      expect(opts1.enableGatherSelectedItemsAnimation).assertEqual(true);
+        let opts2: EditModeOptions = { enableGatherSelectedItemsAnimation: false };
+        console.info('GridTest EditModeOptions enableGather=false: ' + opts2.enableGatherSelectedItemsAnimation);
+        expect(opts2.enableGatherSelectedItemsAnimation).assertEqual(false);
 
-      let opts2: EditModeOptions = { enableGatherSelectedItemsAnimation: false };
-      console.info('GridTest EditModeOptions enableGather=false: ' + opts2.enableGatherSelectedItemsAnimation);
-      expect(opts2.enableGatherSelectedItemsAnimation).assertEqual(false);
+        let opts3: EditModeOptions = {};
+        console.info('GridTest EditModeOptions enableGather=unset: ' + opts3.enableGatherSelectedItemsAnimation);
+        expect(opts3.enableGatherSelectedItemsAnimation == undefined).assertEqual(true);
 
-      let opts3: EditModeOptions = {};
-      console.info('GridTest EditModeOptions enableGather=unset: ' + opts3.enableGatherSelectedItemsAnimation);
-      expect(opts3.enableGatherSelectedItemsAnimation == undefined).assertEqual(true);
+        let fnTrue: () => boolean | int = (): boolean | int => { return true; };
+        let opts4: EditModeOptions = { onGetPreviewBadge: fnTrue };
+        console.info('GridTest EditModeOptions onGetPreviewBadge set: ' + (opts4.onGetPreviewBadge != undefined));
+        expect(opts4.onGetPreviewBadge != undefined).assertEqual(true);
+        let r4 = fnTrue();
+        console.info('GridTest EditModeOptions badge result (true): ' + r4);
+        expect(r4).assertEqual(true);
 
-      let fnTrue: () => boolean | int = (): boolean | int => { return true; };
-      let opts4: EditModeOptions = { onGetPreviewBadge: fnTrue };
-      console.info('GridTest EditModeOptions onGetPreviewBadge set: ' + (opts4.onGetPreviewBadge != undefined));
-      expect(opts4.onGetPreviewBadge != undefined).assertEqual(true);
-      let r4 = fnTrue();
-      console.info('GridTest EditModeOptions badge result (true): ' + r4);
-      expect(r4).assertEqual(true);
+        let fnFalse: () => boolean | int = (): boolean | int => { return false; };
+        let opts5: EditModeOptions = { onGetPreviewBadge: fnFalse };
+        let r5 = fnFalse();
+        console.info('GridTest EditModeOptions badge result (false): ' + r5);
+        expect(r5).assertEqual(false);
 
-      let fnFalse: () => boolean | int = (): boolean | int => { return false; };
-      let opts5: EditModeOptions = { onGetPreviewBadge: fnFalse };
-      let r5 = fnFalse();
-      console.info('GridTest EditModeOptions badge result (false): ' + r5);
-      expect(r5).assertEqual(false);
+        let fnInt: () => boolean | int = (): boolean | int => { return 5 as int; };
+        let opts6: EditModeOptions = { onGetPreviewBadge: fnInt };
+        let r6 = fnInt();
+        console.info('GridTest EditModeOptions badge result (int 5): ' + r6);
+        expect(r6).assertEqual(5);
 
-      let fnInt: () => boolean | int = (): boolean | int => { return 5 as int; };
-      let opts6: EditModeOptions = { onGetPreviewBadge: fnInt };
-      let r6 = fnInt();
-      console.info('GridTest EditModeOptions badge result (int 5): ' + r6);
-      expect(r6).assertEqual(5);
+        let optsFull: EditModeOptions = {
+          enableGatherSelectedItemsAnimation: true,
+          onGetPreviewBadge: fnInt
+        };
+        expect(optsFull.enableGatherSelectedItemsAnimation).assertEqual(true);
+        expect(optsFull.onGetPreviewBadge != undefined).assertEqual(true);
 
-      let optsFull: EditModeOptions = {
-        enableGatherSelectedItemsAnimation: true,
-        onGetPreviewBadge: fnInt
-      };
-      expect(optsFull.enableGatherSelectedItemsAnimation).assertEqual(true);
-      expect(optsFull.onGetPreviewBadge != undefined).assertEqual(true);
-
-      console.info('GridTest: gridEditModeOptions END');
-      done();
+        console.info('GridTest: gridEditModeOptions END');
+        done();
+      } catch (err) {
+        console.error('GridTest gridEditModeOptions error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
   });
 }

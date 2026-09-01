@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 import router from '@ohos.router';
-import { beforeEach, describe, expect, it, Level, beforeAll } from '../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../hypium/index';
 import { i18n } from '@kit.LocalizationKit';
 import display from '@ohos.display';
 import CommonFunc from '../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility } from './Util.test'
 import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -34,13 +33,6 @@ export default function GeneralLayoutOriginalTest() {
     let original_rect_bottom: number;
     let original_rect_right: number;
 
-    beforeAll(async (): Promise<void> => {
-      console.info("GeneralLayoutOffsetTest beforeEach start");
-      
-      await UtilsTest.startAbility("com.example.GeneralLayout.static", "EntryAbility")
-      
-    });
-
     beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -53,8 +45,7 @@ export default function GeneralLayoutOriginalTest() {
         console.info("get IndexOrig state success " + JSON.stringify(pages));
         if (!("IndexOrig" == pages.name)) {
           console.info("get IndexOrig state success " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
-          await UtilsTest.msSleep(2000)
+          await routerInstance.pushUrl(options);
         }
       } catch (err) {
         console.error("push IndexOrig page error: " + err);

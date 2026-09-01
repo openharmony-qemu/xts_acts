@@ -14,29 +14,16 @@
  * limitations under the License.
  */
 
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function PolygonUndefinedTest() {
   describe('PolygonUndefinedTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("PolygonUndefinedTest beforeAll start");
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.draw.undefined.static", "EntryAbility");
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("PolygonUndefinedTest beforeEach start");
@@ -50,7 +37,7 @@ export default function PolygonUndefinedTest() {
         console.info("get PolygonUndefinedTest state pages:" + JSON.stringify(pages));
         if (!("polygonUndefined" == pages.name)) {
           console.info("get polygonUndefined pages.name:" + JSON.stringify(pages.name));
-          router.pushUrl(options);
+          await router.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -70,6 +57,7 @@ export default function PolygonUndefinedTest() {
      */
     it('PolygonUndefinedTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[PolygonUndefinedTest_static_0100] START');
+      try {
       let driver: Driver = Driver.create()
       const uiContext = AppStorage.get<UIContext>('uiContent')!;
       await CommonFunc.sleep(1000);
@@ -99,6 +87,11 @@ export default function PolygonUndefinedTest() {
       await (changeBtn?.click() as Promise<void>);
       console.info('[PolygonUndefinedTest_static_0100] END');
       done();
+      } catch (err) {
+        console.error('PolygonUndefinedTest_static_0100 error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

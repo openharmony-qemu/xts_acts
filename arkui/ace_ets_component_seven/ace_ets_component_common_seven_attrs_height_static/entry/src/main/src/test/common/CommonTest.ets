@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue, SetValue } from '../../../ets/MainAbility/common/Utils';
+import Utils, { BasePageConfig, PageConfig, TestValue } from '../../../ets/MainAbility/common/Utils';
 import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
@@ -70,7 +68,11 @@ export default class CommonTest {
             pageConfig.componentKey = targetView;
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
-            await Utils.pushPage(pageConfig);
+            try {
+              await Utils.pushPage(pageConfig);
+            } catch (err) {
+              console.info('HeightTest pushPage err: ' + JSON.stringify(err));
+            }
             try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
@@ -105,12 +107,20 @@ export default class CommonTest {
               console.error(msg);
               console.error(err.stack);
               if (err.name != 'AssertException') {
-                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                try {
+                  await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+                } catch (backErr) {
+                  console.info('HeightTest back in catch err: ' + JSON.stringify(backErr));
+                }
                 expect(msg).assertTrue();
               }
             }
 
-            await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            try {
+              await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            } catch (err) {
+              console.info('HeightTest back err: ' + JSON.stringify(err));
+            }
 
             console.info('[' + caseTag + '] END');
             done();

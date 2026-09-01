@@ -13,33 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { Driver, ON } from '@ohos.UiTest';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
-
-let domain: number = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function WidthTest() {
   describe('WidthTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("WidthTest beforeAll start");
-      
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api15.static", "EntryAbility")
-      
-    });
     beforeEach(async (): Promise<void> => {
       console.info("WidthTest beforeEach start");
       let options: router.RouterOptions = {
@@ -52,7 +34,7 @@ export default function WidthTest() {
         console.info("get WidthTest state pages: " + JSON.stringify(pages));
         if (!("WidthPage" == pages.name)) {
           console.info("get WidthTest state pages.name: " + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -70,23 +52,28 @@ export default function WidthTest() {
      */
 it('WidthTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('WidthTest_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
 
-      let column_parent = Utils.getComponentRect('WidthTest_0100_Column_Parent');
-      let column_parent_width = column_parent.right - column_parent.left;
-      let column_parent_height = column_parent.bottom - column_parent.top;
-      let column_child = Utils.getComponentRect('WidthTest_0100_Column_Child');
-      let column_child_width = column_child.right - column_child.left;
-      let column_child_height = column_child.bottom - column_child.top;
-      console.log('[WidthTest_static_0100] column_parent_width is:' + column_parent_width);
-      console.log('[WidthTest_static_0100] column_parent_height is:' + column_parent_height);
-      console.log('[WidthTest_static_0100] column_child_width is:' + column_child_width);
-      console.log('[WidthTest_static_0100] column_child_height is:' + column_child_height);
+        let column_parent = Utils.getComponentRect('WidthTest_0100_Column_Parent');
+        let column_parent_width = column_parent.right - column_parent.left;
+        let column_parent_height = column_parent.bottom - column_parent.top;
+        let column_child = Utils.getComponentRect('WidthTest_0100_Column_Child');
+        let column_child_width = column_child.right - column_child.left;
+        let column_child_height = column_child.bottom - column_child.top;
+        console.log('[WidthTest_static_0100] column_parent_width is:' + column_parent_width);
+        console.log('[WidthTest_static_0100] column_parent_height is:' + column_parent_height);
+        console.log('[WidthTest_static_0100] column_child_width is:' + column_child_width);
+        console.log('[WidthTest_static_0100] column_child_height is:' + column_child_height);
 
-      expect(Math.floor(Math.abs(column_parent_width - column_child_width)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(column_parent_height - column_child_height)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(column_parent_width - column_child_width)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(column_parent_height - column_child_height)) <= 1).assertTrue();
 
-      console.info('[WidthTest_static_0100] END');
+        console.info('[WidthTest_static_0100] END');
+      } catch (error) {
+        console.error('[WidthTest_static_0100] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     });
 
