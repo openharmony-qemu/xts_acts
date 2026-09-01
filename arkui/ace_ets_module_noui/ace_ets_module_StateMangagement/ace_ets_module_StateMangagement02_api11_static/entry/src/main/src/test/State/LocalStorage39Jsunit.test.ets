@@ -60,7 +60,7 @@ beforeEach(async (): Promise<void> => {
      * @tc.level    Level.LEVEL0
      */
 it('LocalStorage39Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      //Size获取AppStorage中存在键值对的个�?
+      //Size获取AppStorage中存在键值对的个数
       console.info('[LocalStorage39Jsunit_static_0200] START');
       let driver = Driver.create()
       let Storage12Button1 = await driver.findComponent(ON.id('LocalStorage39_button4'));
@@ -115,7 +115,7 @@ it('LocalStorage39Jsunit_static_0600', Level.LEVEL0, async (done: () => void): P
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[LocalStorage39Jsunit_static_0600] obj1 is: " + JSON.stringify(obj1));
       await CommonFunc.sleep(1000);
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual('get PropA�?');
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('get PropA：1');
       console.info('[LocalStorage39Jsunit_static_0600] END');
       done();
     });

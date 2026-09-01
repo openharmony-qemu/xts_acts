@@ -18,6 +18,7 @@ import { describe, beforeEach, afterEach, afterAll, it, expect, Level, Size, Tes
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';

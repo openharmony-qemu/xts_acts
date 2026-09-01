@@ -86,7 +86,7 @@ it('ObjectLinkCanJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pr
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[ObjectLinkCanJsunit_static_0100] component obj2 is: " + JSON.stringify(obj2));
       console.info("[ObjectLinkCanJsunit_static_0100] text: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBN的numB�? 6");
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBN的numB值: 6");
 
       console.info('[ObjectLinkCanJsunit_static_0100] END');
       done();
@@ -109,13 +109,13 @@ it('ObjectLinkCanJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ObjectLinkCanJsunit_static_0200] component obj1 is: " + JSON.stringify(obj1));
       console.info("[ObjectLinkCanJsunit_static_0200] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBN 赋�?: 3");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("ClassBN 赋值3: 3");
 
       let strJson2 = inspector.getInspectorByKey('sonClassBN');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[ObjectLinkCanJsunit_static_0200] component obj2 is: " + JSON.stringify(obj2));
       console.info("[ObjectLinkCanJsunit_static_0200] text: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBN的numB�? 3");
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBN的numB值: 3");
 
       console.info('[ObjectLinkCanJsunit_static_0200] END');
       done();
@@ -138,7 +138,7 @@ it('ObjectLinkCanJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ObjectLinkCanJsunit_static_0300] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLinkCanJsunit_static_0300] text: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual("ClassBN的numB�? 6");
+      expect(obj.getElement('$attrs').getString('content')).assertEqual("ClassBN的numB值: 6");
 
       let strJson1 = inspector.getInspectorByKey('farClassBN');
       let obj1 = JSON.parseJsonElement(strJson1);
@@ -150,7 +150,7 @@ it('ObjectLinkCanJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[ObjectLinkCanJsunit_static_0300] component obj2 is: " + JSON.stringify(obj2));
       console.info("[ObjectLinkCanJsunit_static_0300] text: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBN 赋�?: 6");
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual("ClassBN 赋值3: 6");
 
       console.info('[ObjectLinkCanJsunit_static_0300] END');
       done();

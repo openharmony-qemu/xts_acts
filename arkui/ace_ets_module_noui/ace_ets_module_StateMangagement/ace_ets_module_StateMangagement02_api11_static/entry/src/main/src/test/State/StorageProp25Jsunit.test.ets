@@ -118,7 +118,7 @@ it('StorageProp25Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[StorageProp25Jsunit_static_0300] component obj1 is: " + JSON.stringify(obj1));
       console.info("[StorageProp25Jsunit_static_0300] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("LocalStorage值PropB�?");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("LocalStorage值PropB为0");
 
       let strJson2 = inspector.getInspectorByKey('sonPropB');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -201,7 +201,7 @@ it('StorageProp25Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[StorageProp25Jsunit_static_0600] component obj1 is: " + JSON.stringify(obj1));
       console.info("[StorageProp25Jsunit_static_0600] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("LocalStorage值PropB�?");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("LocalStorage值PropB为0");
 
       let strJson2 = inspector.getInspectorByKey('sonPropB');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -230,7 +230,7 @@ it('StorageProp25Jsunit_static_0700', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[StorageProp25Jsunit_static_0700] component obj1 is: " + JSON.stringify(obj1));
       console.info("[StorageProp25Jsunit_static_0700] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("LocalStorage值PropB�?23");
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("LocalStorage值PropB为123");
 
       let strJson2 = inspector.getInspectorByKey('sonPropB');
       let obj2 = JSON.parseJsonElement(strJson2);
@@ -259,8 +259,8 @@ it('StorageProp25Jsunit_static_0800', Level.LEVEL0, async (done: () => void): Pr
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[StorageProp25Jsunit_static_0800] component obj1 is: " + JSON.stringify(obj1));
       console.info("[StorageProp25Jsunit_static_0800] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
-      expect(obj1.getElement('$attrs').getString('content')).assertEqual("LocalStorage值PropB�?23");
-
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual("LocalStorage值PropB为123");
+      
       let strJson2 = inspector.getInspectorByKey('sonPropB');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[StorageProp25Jsunit_static_0800] component obj2 is: " + JSON.stringify(obj2));
