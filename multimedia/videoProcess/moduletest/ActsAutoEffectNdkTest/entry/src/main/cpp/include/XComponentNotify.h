@@ -17,6 +17,7 @@
 #define ACTSAUTOEFFECTNDKTEST_XCOMPONENTNOTIFY_H
 
 #include "napi/native_api.h"
+#include <string>
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,13 +37,16 @@ void SetCurrentXComponentName2(const char* name);
 
 napi_value GetCurrentXComponentName(napi_env env, napi_callback_info info);
 napi_value GetCurrentXComponentName2(napi_env env, napi_callback_info info);
-const char* GenerateXComponentName();
-const char* GenerateXComponentName2();
 void PrepareXComponent();
 void PrepareXComponent2();
 
 #ifdef __cplusplus
 }
+#endif
+
+#ifdef __cplusplus
+std::string GenerateXComponentName();
+std::string GenerateXComponentName2();
 #endif
 
 #endif

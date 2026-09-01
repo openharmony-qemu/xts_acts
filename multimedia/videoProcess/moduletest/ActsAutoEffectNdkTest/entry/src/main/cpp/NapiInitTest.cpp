@@ -63,13 +63,13 @@ static void CallJsCallback(napi_env env, napi_value jsCb, void* context, void* d
     napi_call_function(env, undefined, jsCb, 1, &readyValue, &unused);
 }
 
-using TestFunction = std::function<int()>;
+using TestFunction = std::function<int32_t()>;
 
 struct AsyncTestContext {
     napi_deferred deferred;
     napi_async_work work;
     TestFunction func;
-    int result;
+    int32_t result;
 };
 
 static void ExecuteTestAsync(napi_env env, void* data)
@@ -105,22 +105,22 @@ static napi_value RunTestAsync(napi_env env, TestFunction func, const char* name
     if (status != napi_ok) {
         return nullptr;
     }
-    AsyncTestContext* context = new AsyncTestContext{deferred, nullptr, func, -1};
+    auto context = std::make_unique<AsyncTestContext>(AsyncTestContext{deferred, nullptr, func, -1});
     napi_value resourceName;
     napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH, &resourceName);
     status = napi_create_async_work(env, nullptr, resourceName, ExecuteTestAsync,
-        CompleteTestAsync, context, &context->work);
+        CompleteTestAsync, context.get(), &context->work);
     if (status != napi_ok) {
-        delete context;
         napi_value error;
         napi_create_string_utf8(env, "Failed to create async work", NAPI_AUTO_LENGTH, &error);
         napi_reject_deferred(env, deferred, error);
         return promise;
     }
-    status = napi_queue_async_work(env, context->work);
+    AsyncTestContext* rawContext = context.release();
+    status = napi_queue_async_work(env, rawContext->work);
     if (status != napi_ok) {
-        napi_delete_async_work(env, context->work);
-        delete context;
+        napi_delete_async_work(env, rawContext->work);
+        delete rawContext;
         napi_value error;
         napi_create_string_utf8(env, "Failed to queue async work", NAPI_AUTO_LENGTH, &error);
         napi_reject_deferred(env, deferred, error);
@@ -336,26 +336,6 @@ napi_value GetCurrentXComponentName2(napi_env env, napi_callback_info info)
     return result;
 }
 
-const char* GenerateXComponentName()
-{
-    std::lock_guard<std::mutex> lock(g_nameMutex);
-    g_xcomponentCounter++;
-    g_currentXComponentName = "AutoEffectTest_" + std::to_string(g_xcomponentCounter);
-    ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
-                        "GenerateXComponentName name=%{public}s", g_currentXComponentName.c_str()));
-    return g_currentXComponentName.c_str();
-}
-
-const char* GenerateXComponentName2()
-{
-    std::lock_guard<std::mutex> lock(g_nameMutex);
-    g_xcomponentCounter++;
-    g_currentXComponentName2 = "AutoEffectTest_" + std::to_string(g_xcomponentCounter);
-    ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
-                        "GenerateXComponentName2 name=%{public}s", g_currentXComponentName2.c_str()));
-    return g_currentXComponentName2.c_str();
-}
-
 void PrepareXComponent()
 {
     std::string currentName;
@@ -461,6 +441,26 @@ static napi_value Init(napi_env env, napi_value exports)
     return exports;
 }
 EXTERN_C_END
+
+std::string GenerateXComponentName()
+{
+    std::lock_guard<std::mutex> lock(g_nameMutex);
+    g_xcomponentCounter++;
+    g_currentXComponentName = "AutoEffectTest_" + std::to_string(g_xcomponentCounter);
+    ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
+                        "GenerateXComponentName name=%{public}s", g_currentXComponentName.c_str()));
+    return g_currentXComponentName;
+}
+
+std::string GenerateXComponentName2()
+{
+    std::lock_guard<std::mutex> lock(g_nameMutex);
+    g_xcomponentCounter++;
+    g_currentXComponentName2 = "AutoEffectTest_" + std::to_string(g_xcomponentCounter);
+    ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
+                        "GenerateXComponentName2 name=%{public}s", g_currentXComponentName2.c_str()));
+    return g_currentXComponentName2;
+}
 
 static napi_module autoeffecttestModule = {
     .nm_version = 1,
