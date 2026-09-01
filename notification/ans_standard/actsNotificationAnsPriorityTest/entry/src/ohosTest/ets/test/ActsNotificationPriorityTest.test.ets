@@ -3,6 +3,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import notificationManager from '@ohos.notificationManager';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@kit.TestKit';
+import Base from '@ohos.base';
+import notification from '@ohos.notification'
 import image from '@ohos.multimedia.image';
 
 let context: common.UIAbilityContext;
