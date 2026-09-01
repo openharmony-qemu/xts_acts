@@ -21,7 +21,7 @@ import hilog from '@ohos.hilog';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
-export default function GetLaunchWant() {
+export default function GetLaunchWant(): void {
   describe('GetLaunchWant', (): void => {
     /**
      * @tc.name   testGetLaunchWantStatic

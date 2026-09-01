@@ -10,7 +10,7 @@ let tag: string = 'testTag';
 const BUNDLE_NAME = "ohos.acts.bundle.stage.test.static";
 const VENDOR = "example";
 
-export default function getBundleInfo() {
+export default function getBundleInfo(): void {
   describe('getBundleInfo', (): void => {
 
     /**
