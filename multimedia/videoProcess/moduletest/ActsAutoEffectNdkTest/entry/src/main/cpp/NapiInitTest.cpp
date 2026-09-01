@@ -19,6 +19,7 @@
 #include <hilog/log.h>
 #include <iostream>
 #include <vector>
+#include <memory>
 #include <functional>
 #include <cstring>
 #include <string>
@@ -42,7 +43,7 @@ static std::mutex g_surfaceMutex2;
 static std::condition_variable g_surfaceCV2;
 static bool g_surfaceReady2 = false;
 
-static int g_xcomponentCounter = 0;
+static int32_t g_xcomponentCounter = 0;
 static std::string g_currentXComponentName = "AutoEffectTest001";
 static std::string g_currentXComponentName2 = "AutoEffectTest002";
 static std::mutex g_nameMutex;
@@ -100,13 +101,30 @@ static napi_value RunTestAsync(napi_env env, TestFunction func, const char* name
 {
     napi_value promise;
     napi_deferred deferred;
-    napi_create_promise(env, &deferred, &promise);
+    napi_status status = napi_create_promise(env, &deferred, &promise);
+    if (status != napi_ok) {
+        return nullptr;
+    }
     AsyncTestContext* context = new AsyncTestContext{deferred, nullptr, func, -1};
     napi_value resourceName;
     napi_create_string_utf8(env, name, NAPI_AUTO_LENGTH, &resourceName);
-    napi_create_async_work(env, nullptr, resourceName, ExecuteTestAsync,
+    status = napi_create_async_work(env, nullptr, resourceName, ExecuteTestAsync,
         CompleteTestAsync, context, &context->work);
-    napi_queue_async_work(env, context->work);
+    if (status != napi_ok) {
+        delete context;
+        napi_value error;
+        napi_create_string_utf8(env, "Failed to create async work", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, deferred, error);
+        return promise;
+    }
+    status = napi_queue_async_work(env, context->work);
+    if (status != napi_ok) {
+        napi_delete_async_work(env, context->work);
+        delete context;
+        napi_value error;
+        napi_create_string_utf8(env, "Failed to queue async work", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, deferred, error);
+    }
     return promise;
 }
 
@@ -129,9 +147,12 @@ static napi_value AsyncWrapper(napi_env env, napi_callback_info info)
 
 static napi_property_descriptor XL(const char* functionName, int32_t (*func)())
 {
-    auto* entry = new Entry{func, functionName};
+    static std::vector<std::unique_ptr<Entry>> entryPool;
+    auto entry = std::make_unique<Entry>(Entry{func, functionName});
+    auto* rawPtr = entry.get();
+    entryPool.push_back(std::move(entry));
     return {functionName, nullptr, AsyncWrapper, nullptr, nullptr, nullptr,
-            napi_default, entry};
+            napi_default, rawPtr};
 }
 
 static napi_value InitTests(napi_env env, napi_callback_info info)
@@ -317,8 +338,8 @@ napi_value GetCurrentXComponentName2(napi_env env, napi_callback_info info)
 
 const char* GenerateXComponentName()
 {
-    g_xcomponentCounter++;
     std::lock_guard<std::mutex> lock(g_nameMutex);
+    g_xcomponentCounter++;
     g_currentXComponentName = "AutoEffectTest_" + std::to_string(g_xcomponentCounter);
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
                         "GenerateXComponentName name=%{public}s", g_currentXComponentName.c_str()));
@@ -327,8 +348,8 @@ const char* GenerateXComponentName()
 
 const char* GenerateXComponentName2()
 {
-    g_xcomponentCounter++;
     std::lock_guard<std::mutex> lock(g_nameMutex);
+    g_xcomponentCounter++;
     g_currentXComponentName2 = "AutoEffectTest_" + std::to_string(g_xcomponentCounter);
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
                         "GenerateXComponentName2 name=%{public}s", g_currentXComponentName2.c_str()));
@@ -337,8 +358,13 @@ const char* GenerateXComponentName2()
 
 void PrepareXComponent()
 {
+    std::string currentName;
+    {
+        std::lock_guard<std::mutex> lock(g_nameMutex);
+        currentName = g_currentXComponentName;
+    }
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
-                        "PrepareXComponent name=%{public}s", g_currentXComponentName.c_str()));
+                        "PrepareXComponent name=%{public}s", currentName.c_str()));
     {
         std::lock_guard<std::mutex> lock(g_surfaceMutex);
         g_surfaceReady = false;
@@ -351,8 +377,13 @@ void PrepareXComponent()
 
 void PrepareXComponent2()
 {
+    std::string currentName;
+    {
+        std::lock_guard<std::mutex> lock(g_nameMutex);
+        currentName = g_currentXComponentName2;
+    }
     ((void)OH_LOG_Print(LOG_APP, LOG_INFO, NAPI_LOG_DOMAIN, NAPI_LOG_TAG,
-                        "PrepareXComponent2 name=%{public}s", g_currentXComponentName2.c_str()));
+                        "PrepareXComponent2 name=%{public}s", currentName.c_str()));
     {
         std::lock_guard<std::mutex> lock(g_surfaceMutex2);
         g_surfaceReady2 = false;

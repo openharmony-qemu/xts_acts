@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -117,6 +117,9 @@ static int32_t TestSetParamSeries(uint32_t type, const char* name)
     for (size_t i = 0; i < sizeof(enables) / sizeof(enables[0]); i++) {
         for (size_t j = 0; j < sizeof(strengths) / sizeof(strengths[0]); j++) {
             OH_AVFormat* param = CreateParam(enables[i], strengths[j]);
+            if (param == nullptr) {
+                return -1;
+            }
             VideoProcessing_ErrorCode ret = OH_VideoProcessing_SetAutoEffectParam(type, name, param);
             OH_AVFormat_Destroy(param);
             if (ret != VIDEO_PROCESSING_SUCCESS) {
@@ -358,7 +361,7 @@ int32_t AutoEffectFuncTest00800()
         return 0;
     }
     const char* name = GetFuncName();
-    for (int i = 0; i < THREE; i++) {
+    for (int32_t i = 0; i < THREE; i++) {
         VideoProcessing_ErrorCode ret = UseAutoEffectAndNotify(type, true, name);
         if (ret == VIDEO_PROCESSING_SUCCESS) {
             FuncLogFail("UseAutoEffect", ret, __func__);
