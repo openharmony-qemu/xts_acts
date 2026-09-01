@@ -598,6 +598,7 @@ expect().assertFail();
       console.log(`${tag}, it begin`);
       try {
         appManager.isRunningInStabilityTest((err, data)=>{
+          if (err && err.code) { console.log(`${tag} isRunningInStabilityTest err: ` + JSON.stringify(err)); }
           console.error(`${tag} isRunningInStabilityTest success, errorCode: ${data}`);
           if(data == true){
             try{expect(data).assertTrue();}catch(e){}
@@ -756,6 +757,7 @@ expect().assertFail();
       console.log(`${tag}, it begin`);
       try {
         appManager.isRamConstrainedDevice((err, data)=>{
+          if (err && err.code) { console.log(`${tag} isRamConstrainedDevice err: ` + JSON.stringify(err)); }
           try{expect(typeof data).assertEqual('boolean');}catch(e){}
           if(data == true){
             try{expect(data).assertTrue();}catch(e){}

@@ -410,6 +410,7 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
           resolve(undefined); done();
         }).catch((e: Error) => {
+          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch e: ` + JSON.stringify(e));
           resolve(undefined); done();
         })
       } catch (err) {
@@ -485,6 +486,7 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
           resolve(undefined); done();
         }).catch((e: Error) => {
+          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch e: ` + JSON.stringify(e));
           resolve(undefined); done();
         })
       } catch (err) {
@@ -560,6 +562,7 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
           resolve(undefined); done();
         }).catch((e: Error) => {
+          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch e: ` + JSON.stringify(e));
           resolve(undefined); done();
         })
       } catch (err) {
@@ -779,6 +782,7 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
           resolve(undefined); done();
         }).catch((e: Error) => {
+          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch e: ` + JSON.stringify(e));
           resolve(undefined); done();
         })
       } catch (err) {
@@ -857,6 +861,7 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
           resolve(undefined); done();
         }).catch((e: Error) => {
+          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch e: ` + JSON.stringify(e));
           resolve(undefined); done();
         })
       } catch (err) {
@@ -892,6 +897,7 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
           resolve(undefined); done();
         }).catch((e: Error) => {
+          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch e: ` + JSON.stringify(e));
           resolve(undefined); done();
         })
       } catch (err) {
@@ -968,6 +974,7 @@ export default function AbilityDelegatorStageTest(): void {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} executeShellCommand : end`);
           resolve(undefined); done();
         }).catch((e: Error) => {
+          console.log(`${TEST_SUITE_NAME}#${TEST_CASE_NAME} promise catch e: ` + JSON.stringify(e));
           resolve(undefined); done();
         })
       } catch (err) {

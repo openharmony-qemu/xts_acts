@@ -65,14 +65,6 @@ export default function abilityDelegatorStage(): void {
     });
 
     /**
-     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1280
-     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1280
-     * @tc.desc   Unable to start specified PageAbility(Promise)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    /**
      * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270
      * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270
      * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
