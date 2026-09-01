@@ -25,19 +25,27 @@ interface CheckPackageHasInstalledResponse {
 
 export default function coverageSystemPackageTest() {
   describe('CoverageSystemPackageTest', () => {
-    it('SUB_BMS_COVERAGE_systemPackage_hasInstalled_self', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Self_9300
+     * @tc.number SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Self_9300
+     * @tc.desc   test system.package hasInstalled for self bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Self_9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let flag = 0;
         pkg.hasInstalled({
           bundleName: BUNDLE_NAME,
           success: (data: CheckPackageHasInstalledResponse) => {
-            console.info('SUB_BMS_COVERAGE_systemPackage_hasInstalled_self success: result=' + data.result);
+            console.info('SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Self_9300 success: result=' + data.result);
             expect(typeof data.result).assertEqual('boolean');
             expect(data.result).assertTrue();
             flag += 1;
           },
           fail: (data: string, code: number) => {
-            console.info('SUB_BMS_COVERAGE_systemPackage_hasInstalled_self fail: ' + data + ' code=' + code);
+            console.info('SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Self_9300 fail: ' + data + ' code=' + code);
             expect().assertFail();
           },
           complete: () => {
@@ -47,19 +55,27 @@ export default function coverageSystemPackageTest() {
         });
       });
 
-    it('SUB_BMS_COVERAGE_systemPackage_hasInstalled_other', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Other_9301
+     * @tc.number SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Other_9301
+     * @tc.desc   test system.package hasInstalled for not installed bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Other_9301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let flag = 0;
         pkg.hasInstalled({
           bundleName: NOT_INSTALLED_BUNDLE_NAME,
           success: (data: CheckPackageHasInstalledResponse) => {
-            console.info('SUB_BMS_COVERAGE_systemPackage_hasInstalled_other success: result=' + data.result);
+            console.info('SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Other_9301 success: result=' + data.result);
             expect(typeof data.result).assertEqual('boolean');
             expect(data.result).assertFalse();
             flag += 1;
           },
           fail: (data: string, code: number) => {
-            console.info('SUB_BMS_COVERAGE_systemPackage_hasInstalled_other fail: ' + data + ' code=' + code);
+            console.info('SUB_BMS_FRAMEWORK_SystemPackage_HasInstalled_Other_9301 fail: ' + data + ' code=' + code);
             expect().assertFail();
           },
           complete: () => {
