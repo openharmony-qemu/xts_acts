@@ -1311,15 +1311,15 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
       }
     })
     /**
-     * @tc.name   CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_002
-     * @tc.number CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_002
+     * @tc.name   CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0002
+     * @tc.number CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0002
      * @tc.desc   enableAutoDeviceSwitch null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_002', Level.LEVEL0, async (done: Function) => {
-      const testName = 'CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_002';
+    it('CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0002', Level.LEVEL0, async (done: Function) => {
+      const testName = 'CAMERA_SESSION_ENABLE_AUTO_DEVICE_SWITCH_0002';
       try {
         if (isEmpty(mCameraDeviceArray)) {
           console.info(TAG, testName, ' mCameraDeviceArray is null.');
