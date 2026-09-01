@@ -185,7 +185,7 @@ export default function getFirstObjectTest() {
 
     /**
      * @tc.name   fetchResult_getFirstObject_callback_004
-     * @tc.number SUB_PHOTOACCESS_HELPER_FETCH_RESULT_GET_FIRST_OBJECT_007
+     * @tc.number SUB_PHOTOACCESS_HELPER_FETCHRESULT_GETFIRSTOBJECT_PROMISE_007
      * @tc.desc   getFirstObject
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
