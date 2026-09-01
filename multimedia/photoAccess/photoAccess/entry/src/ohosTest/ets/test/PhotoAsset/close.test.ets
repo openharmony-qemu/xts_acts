@@ -182,6 +182,37 @@ export default function closeTest () {
     });
 
     /**
+     * @tc.name   photoAsset_close_callback_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_CALLBACK_0300
+     * @tc.desc   vasset close, fd is -1, error code 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('photoAsset_close_callback_003', Level.LEVEL2, async (done:Function)=> {
+      const testNum = 'photoAsset_close_callback_003';
+      const errorCode = 13900020;
+      const fetchOps:photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.jpg');
+      let photoAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+      try{
+        photoAsset.close(-1, (err) => {
+          if(err){
+            expect(false).assertTrue();
+            done();
+          }
+          else{
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      }catch (error) {
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(error.code).assertEqual(String(errorCode));
+        done();
+      }
+    });
+
+    /**
      * @tc.name   photoAsset_close_promise_000
      * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_PROMISE_0000
      * @tc.desc   image asset close
@@ -221,6 +252,30 @@ export default function closeTest () {
       const testNum = 'photoAsset_close_promise_002';
       const fetchOps:ESObject = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.mp4');
       await closeErrorPromiseTest(done, testNum, fetchOps);
+    });
+
+    /**
+     * @tc.name   photoAsset_close_promise_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_FILE_ASSET_CLOSE_PROMISE_0300
+     * @tc.desc   asset close, fd is -1, error code 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('photoAsset_close_promise_003', Level.LEVEL2, async (done:Function)=> {
+      const testNum = 'photoAsset_close_promise_003';
+      const errorCode = 13900020;
+      const fetchOps:photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.jpg');
+      let photoAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
+      try{
+        await photoAsset.close(-1);
+        expect(false).assertTrue();
+        done();
+      }catch (error) {
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(error.code).assertEqual(String(errorCode)));
+        done();
+      }
     });
   })
 }

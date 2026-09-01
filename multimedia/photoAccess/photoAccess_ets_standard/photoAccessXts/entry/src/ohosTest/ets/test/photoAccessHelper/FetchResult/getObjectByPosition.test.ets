@@ -442,5 +442,32 @@ export default function getObjectByPositionTest() {
       const index = await returnCount(fetchOps);
       await getObjectByPositionAbnormalCallbackTest(done, fetchOps, testName, index);
     })
+    
+    /**
+     * @tc.name   fetchResult_getObjectByPosition_abnormal_promise_004
+     * @tc.number SUB_FETCH_RESULT_SENDABLE_GET_OBJECT_BY_POSITION_019
+     * @tc.desc   getObjectByPosition error 14000011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fetchResult_getObjectByPosition_abnormal_promise_004', Level.LEVEL0, async (done: Function) => {
+      const testName = 'fetchResult_getObjectByPosition_abnormal_promise_004';
+      const errorCode = 14000011;
+      try{
+        let fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
+        let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
+          await phAccessHelper.getAssets(fetchOps);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getObjectByPosition(-1);
+        fetchResult.close();
+        expect(false).assertTrue();
+        done();
+      } catch (error){
+        console.info(`${testName} failed; error: ${error}`);
+        expect(error.code).assertEqual(String(14000011));
+        done();
+      }
+    })
   })
 }

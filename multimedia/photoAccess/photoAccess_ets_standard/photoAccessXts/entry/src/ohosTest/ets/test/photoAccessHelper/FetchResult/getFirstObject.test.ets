@@ -182,5 +182,33 @@ export default function getFirstObjectTest() {
       let fetchOps: photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.PHOTO_TYPE, photoType.VIDEO);
       await getFirstObjectCallbackTest(done, fetchOps, testNum);
     })
+
+    /**
+     * @tc.name   fetchResult_getFirstObject_callback_004
+     * @tc.number SUB_FETCH_RESULT_GET_FIRST_OBJECT_007
+     * @tc.desc   getFirstObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('fetchResult_getFirstObject_callback_004', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'fetchResult_getFirstObject_callback_004';
+      const errorCode = 14000011;
+      try{
+        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+        predicates.equalTo('noexist', 'noexist');
+        let fetchOption: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        }
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(fetchOption);
+        let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+        expect(false).assertTrue();
+        done();
+      } catch (error){
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(error.code).assertEqual(String(errorCode));
+        done();
+      }
   })
 }

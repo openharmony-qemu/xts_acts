@@ -540,6 +540,74 @@ export default function albumGetAssetsTest () {
       }
     });
 
+    /**
+      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_1100
+      * @tc.name    album_getAssets_callback_011
+      * @tc.desc    album getAssets File that fetchOption error, error code is 13900020
+      * @tc.size    MEDIUM
+      * @tc.type    Function
+      * @tc.level   Level 0
+    */
+    it('album_getAssets_callback_011', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'album_getAssets_callback_011';
+      const errorCode = 13900020;
+      try {
+        const fetchResult = await help.getAlbums(albumType.SYSTEM, albumSubtype.VIDEO);
+        const album = await fetchResult.getFirstObject();
+        fetchResult.close();
+        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+        let fetchOption: photoAccessHelper.FetchOptions = {
+          fetchColumns: ['noexist'],
+          predicates: predicates
+        }
+        album.getAssets(fetchOption, async (err, FetchResult) => {
+          if(err){
+            expect(false).assertTrue();
+            done();
+          }
+          else{
+            FetchResult.close();
+            expect(false).assertTrue();
+            done();
+          }
+        })
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(error.code).assertEqual(String(errorCode));
+        done();
+      }
+    });
+
+    /**
+      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ASSETS_1200
+      * @tc.name    album_getAssets_callback_012
+      * @tc.desc    album getAssets File that check lpath
+      * @tc.size    MEDIUM
+      * @tc.type    Function
+      * @tc.level   Level 0
+    */
+    it('album_getAssets_callback_012', Level.LEVEL0, async (done: Function) => {
+      const testNum = 'album_getAssets_callback_012';
+      try {
+        let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+        let albumFetchOptions: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        }
+        let albumList: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper.getAlbums(photoAccessHelper.AlbumType.SOURCE,
+          photoAccessHelper.AlbumSubtype.SOURCE_GENERIC, albumFetchOptions);
+        let album: photoAccessHelper.Album = await albumList.getFirstObject();
+        const albumlpath: string = '/Pictures/' + album.albumName;
+        expect(album.lpath === albumlpath).assertTrue();
+        albumList.close();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
     //promise
     /**
      * @tc.name   album_getAssets_promise_000
