@@ -32,19 +32,15 @@ import Utils from "../Util.test";
 
 export default function int16ArrayIndexOfPart04Test02Test(): void {
   describe("Int16ArrayIndexOfPart04Test02Test", (): void => {
-    beforeAll(() => {
-    });
+    beforeAll((): void => {});
 
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
 
-    afterEach(() => {
-    });
+    afterEach((): void => {});
 
-    afterAll(async (): Promise<void> => {
-      await Utils.msSleep(30);
-    });
+    afterAll((): void => {});
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEX_OF_PART04_02_0100
@@ -140,7 +136,8 @@ export default function int16ArrayIndexOfPart04Test02Test(): void {
       let source = [1, 2, 3] as number[];
       let arr = Int16Array.from(source);
       arr.fill(32768);
-      let result = arr.indexOf(-32768);
+      let val:short = -32768
+      let result = arr.indexOf(val);
       expect(result).assertEqual(0);
     });
 
