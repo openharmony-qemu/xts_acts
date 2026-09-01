@@ -22,6 +22,9 @@ import PublicApiEightTest from './PublicApiEightTest.test.ets';
 import PublicApiNineTest from './PublicApiNineTest.test.ets';
 import getApplicationLabel from './GetApplicationLabel.test.ets';
 import addAITestCaseTest from './addAItestcase.test.ets';
+import coverageEnhancementTest from './CoverageEnhancementTest.test.ets';
+import coverage17700026Test from './Coverage17700026Test.test.ets';
+import coverageSystemPackageTest from './CoverageSystemPackageTest.test.ets';
 
 
 export default function testsuite() {
@@ -34,4 +37,7 @@ export default function testsuite() {
   PublicApiNineTest();
   getApplicationLabel();
   addAITestCaseTest();
+  coverageEnhancementTest();
+  coverage17700026Test();
+  coverageSystemPackageTest();
 }

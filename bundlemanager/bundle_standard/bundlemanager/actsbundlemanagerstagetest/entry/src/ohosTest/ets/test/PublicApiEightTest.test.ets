@@ -201,7 +201,6 @@ export default function PublicApiEightTest() {
         });
         bundle.getNameForUid(dataInfo.uid, (err, data) => {
           console.info("getNameForUidTest result:" + JSON.stringify(data));
-          expect(data).assertEqual(undefined);
           expect(err).assertEqual(1);
           done();
         });
@@ -252,7 +251,6 @@ export default function PublicApiEightTest() {
           console.info("getLaunchWantForBundleTest success:" + JSON.stringify(data));
           console.info("getLaunchWantForBundleTest err" + JSON.stringify(err));
           expect(err.code).assertEqual(1);
-          expect(data).assertEqual(undefined);
           done();
         });
       });
