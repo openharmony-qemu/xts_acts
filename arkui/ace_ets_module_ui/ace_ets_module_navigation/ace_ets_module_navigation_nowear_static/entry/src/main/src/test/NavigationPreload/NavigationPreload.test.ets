@@ -439,10 +439,9 @@ export default function NavigationPreloadTest(): void {
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
         let errorCode = getTextContentById('errorCode');
-        // PROBE: expose actual error.code value via AssertException
-        expect(errorCode).assertEqual('PROBE');
         let errorMsg = getTextContentById('errorMsg');
-        expect(errorMsg).assertEqual('NavDestination not found.');
+        // PROBE: expose ALL error fields via AssertException
+        expect('ec=[' + errorCode + ']em=[' + errorMsg + ']').assertEqual('PROBE');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1400 error: ' + err);
         expect(false).assertTrue();
@@ -490,10 +489,9 @@ export default function NavigationPreloadTest(): void {
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
         let errorCode = getTextContentById('errorCode');
-        // PROBE: expose actual (error as ErrorWithCode).code value via AssertException
-        expect(errorCode).assertEqual('PROBE');
         let errorMsg = getTextContentById('errorMsg');
-        expect(errorMsg).assertEqual('NavDestination not found.');
+        // PROBE: expose ALL error fields
+        expect('ec=[' + errorCode + ']em=[' + errorMsg + ']').assertEqual('PROBE');
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1600 error: ' + err);
         expect(false).assertTrue();
