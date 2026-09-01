@@ -16,19 +16,17 @@
 import Ability from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import commonEvent from '@ohos.commonEvent';
-import { CommonEventPublishData } from '@ohos.commonEventManager';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 
 
-interface MultiInstanceParams {
-  nextStep: number;
-  stepNum: number;
-  step: string[];
-  startId?: number;
+interface PublishData {
+  data: string;
+  parameters: Record<string, Object>;
 }
+
 
 let callBackSeq = "";
 
@@ -40,7 +38,7 @@ async function onShowProcess(appCAbilityContext: common.UIAbilityContext) {
   let abilityWant = AppStorage.get<Want>("abilityWant")!;
   let callBackData = "AppC:";
   callBackData += callBackSeq;
-  let commonEventPublishData: CommonEventPublishData = {
+  let commonEventPublishData: PublishData = {
     data: callBackData,
     parameters: abilityWant!.parameters!
   }
@@ -49,13 +47,13 @@ async function onShowProcess(appCAbilityContext: common.UIAbilityContext) {
     commonEvent.publish("MultiInstanceStartFinish", commonEventPublishData, publishCallBack);
   } else {
     commonEvent.publish("MultiInstanceStartNext", commonEventPublishData, () => {
-      startAbilityProcess(appCAbilityContext, abilityWant.parameters! as unknown as MultiInstanceParams);
+      startAbilityProcess(appCAbilityContext, abilityWant.parameters!);
     })
   }
   callBackSeq = "";
 }
 
-async function startAbilityProcess(appCAbilityContext: common.UIAbilityContext, parameters: MultiInstanceParams) {
+async function startAbilityProcess(appCAbilityContext: common.UIAbilityContext, parameters: ESObject) {
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
@@ -104,7 +102,7 @@ async function startAbilityProcess(appCAbilityContext: common.UIAbilityContext, 
   appCAbilityContext.startAbility({
     bundleName: bundleName,
     abilityName: abilityName,
-    parameters: parameters as Record<string, Object>
+    parameters: parameters
   }, (error: BusinessError, data: void) => {
     console.log('AppC startAbilityProcess result: ' + JSON.stringify(error) + ", " + JSON.stringify(data));
   })
