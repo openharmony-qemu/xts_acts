@@ -4047,15 +4047,15 @@ export default function PhotoTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEIDA_CAMWEA_GET_PHYSICAL_APERTURE_0100', Level.LEVEL2, () => {
-      if(PhysicalcaptureSessionstart()){
-        createPhotoOutput();
-        addPhotoOutput();
-        sessionCommitConfig();
-        let ret: number = cameraObj.oHgetPhysicalAperture(Parameter_Setting.SECOND_PARAMETER_ERROR);
-        console.info(TAG + "oHgetPhysicalAperture ret:", ret);
-        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
-      }
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.oHgetPhysicalAperture(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "oHgetPhysicalAperture ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
+
     /**
      * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
      * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
@@ -4065,15 +4065,15 @@ export default function PhotoTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100', Level.LEVEL2, () => {
-      if(PhysicalcaptureSessionstart()){
-        createPhotoOutput();
-        addPhotoOutput();
-        sessionCommitConfig();
-        let ret: number = cameraObj.oHgetSupportedExposureDurationRange(Parameter_Setting.SECOND_PARAMETER_ERROR);
-        console.info(TAG + "oHGetSupportedExposureDurationRange ret:", ret);
-        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
-      }
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.oHgetSupportedExposureDurationRange(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "oHGetSupportedExposureDurationRange ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
+
     /**
      * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
      * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
@@ -4083,15 +4083,15 @@ export default function PhotoTest() {
      * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200', Level.LEVEL2, () => {
-      if(PhysicalcaptureSessionstart()){
-        createPhotoOutput();
-        addPhotoOutput();
-        sessionCommitConfig();
-        let ret: number = cameraObj.oHgetSupportedExposureDurationRange(Parameter_Setting.THIRD_PARAMETER_ERROR);
-        console.info(TAG + "oHgetSupportedExposureDurationRange ret:", ret);
-        expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
-      }
+      captureSessionstart();
+      createPhotoOutput();
+      addPhotoOutput();
+      sessionCommitConfig();
+      let ret: number = cameraObj.oHgetSupportedExposureDurationRange(Parameter_Setting.THIRD_PARAMETER_ERROR);
+      console.info(TAG + "oHgetSupportedExposureDurationRange ret:", ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
+    
     /**
      * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_0100
      * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_0100
