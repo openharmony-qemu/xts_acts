@@ -13,31 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import events_emitter from '@ohos.events.emitter';
-import { UtilsTest, startAbility } from '../Util.test.ets';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { RecordData } from '@ohos.base';
 
 export default function cachedShowFlow() {
   describe('cachedShowFlow', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("cachedShowFlow beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("cachedShowFlow beforeEach start");
       let options: router.RouterOptions = {

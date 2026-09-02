@@ -13,29 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, ON } from '@ohos.UiTest';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import hilog from '@ohos.hilog';
-import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest, startAbility } from '../../Util.test';
 export default function ScrollToIndexForWaterFlowJsunit02() {
   describe('ScrollToIndexForWaterFlowJsunit02', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("ScrollToIndexForWaterFlowJsunit02 beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("ScrollToIndexForWaterFlowJsunit02 beforeEach start");
       let options: router.RouterOptions = {

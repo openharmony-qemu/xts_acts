@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import { Component, Driver, On, ON, MouseButton, Rect } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest, startAbility } from '../Util.test';
 
 export default function WaterFlowBackToTopTest() {
   describe('WaterFlowBackToTopTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("WaterFlowBackToTopTest beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.scroll.nowear.api15.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       const SUITE: string = 'WaterFlowBackToTop'
       let options: router.RouterOptions = {

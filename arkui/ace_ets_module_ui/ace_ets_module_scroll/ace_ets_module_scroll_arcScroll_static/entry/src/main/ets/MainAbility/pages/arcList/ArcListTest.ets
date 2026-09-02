@@ -74,6 +74,27 @@ struct ArcListTest {
       .focusable(true)
       .focusOnTouch(true)
       .defaultFocus(true)
+      .onScrollIndex((start: int, end: int, center: int) => {
+        console.info('start:' + start + ', end:' + end + ', center:' + center)
+      })
+      .onReachStart(() => {
+        console.info('onReachStart succ')
+      })
+      .onReachEnd(() => {
+        console.info('onReachEnd succ')
+      })
+      .onScrollStart(() => {
+        console.info('onScrollStart succ')
+      })
+      .onScrollStop(() => {
+        console.info('onScrollStop  succ')
+      })
+      .onWillScroll(() => {
+        console.info('onWillScroll succ')
+      })
+      .onDidScroll(()=>{
+        console.info('onDidScroll succ')
+      })
     }
     .align(Alignment.Center)
     .width(this.watchSize)
