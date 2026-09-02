@@ -1400,7 +1400,7 @@ export default function AVTranscoderTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100';
       avTranscoderTest8KConfig.videoFrameWidth = 4094;
       avTranscoderTest8KConfig.videoFrameHeight = 2302;
@@ -1435,7 +1435,7 @@ export default function AVTranscoderTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100';
       avTranscoderTest8KConfig.videoFrameWidth = 240;
       avTranscoderTest8KConfig.videoFrameHeight = 240;
@@ -1481,7 +1481,7 @@ export default function AVTranscoderTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100';
       avTranscoderTest8KConfig.videoFrameWidth = 7680;
       avTranscoderTest8KConfig.videoFrameHeight = 4318;
@@ -1527,7 +1527,7 @@ export default function AVTranscoderTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100';
       avTranscoderTest8KConfig.videoFrameWidth = 4096;
       avTranscoderTest8KConfig.videoFrameHeight = 2304;
