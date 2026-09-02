@@ -1434,7 +1434,7 @@ export default function ConnectionRegisterTest() {
           } else {
             console.info(caseName + " unregister success ");
             console.info(caseName + " ListenTimes is :" +ListenTimes);
-            ExpectTrue(caseName, ListenTimes == 0);
+            ExpectTrue(caseName, ListenTimes === 0);
           }
           console.info(`${caseName}---End`);
           done();
@@ -1487,7 +1487,7 @@ export default function ConnectionRegisterTest() {
           } else {
             console.info(caseName + " unregister success ");
             console.info(caseName + " ListenTimes is :" +ListenTimes);
-            ExpectTrue(caseName, ListenTimes == 11);
+            ExpectTrue(caseName, ListenTimes === 11);
           }
           console.info(`${caseName}---End`);
           done();
@@ -1542,7 +1542,7 @@ export default function ConnectionRegisterTest() {
           } else {
             console.info(caseName + " unregister success ");
             console.info(caseName + " ListenTimes is :" +ListenTimes);
-            ExpectTrue(caseName, ListenTimes == 0);
+            ExpectTrue(caseName, ListenTimes === 0);
           }
           console.info(`${caseName}---End`);
           done();
@@ -1597,7 +1597,7 @@ export default function ConnectionRegisterTest() {
           } else {
             console.info(caseName + " unregister success ");
             console.info(caseName + " ListenTimes is :" +ListenTimes);
-            ExpectTrue(caseName, ListenTimes == 0);
+            ExpectTrue(caseName, ListenTimes === 0);
           }
           console.info(`${caseName}---End`);
           done();
