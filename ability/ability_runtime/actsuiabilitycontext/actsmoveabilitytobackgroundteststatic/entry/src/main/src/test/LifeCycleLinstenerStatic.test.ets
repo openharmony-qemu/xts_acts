@@ -59,8 +59,6 @@ export default function LifeCycleLinstenerTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_0100`;
       console.log(`${tag}, it begin`);
       try {
@@ -69,12 +67,9 @@ export default function LifeCycleLinstenerTest(): void {
       } catch (err) {
         console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
         expect(JSON.stringify(err)).assertEqual('{}');
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
@@ -85,8 +80,6 @@ export default function LifeCycleLinstenerTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_OnApplicationStateChange_0100`;
       console.log(`${tag}, it begin`);
       let forgoundFlag = false;
@@ -111,7 +104,7 @@ export default function LifeCycleLinstenerTest(): void {
           } catch (paramError) {
             console.info(`error: ${JSON.stringify(paramError)}`);
             expect(1).assertEqual(5);
-            resolve(undefined); done();
+            done();
           }
           TestAbilityContext!.moveAbilityToBackground();
           await Promise.all([
@@ -136,26 +129,23 @@ export default function LifeCycleLinstenerTest(): void {
           } catch (paramError) {
             console.info(tag + ` off error: ${JSON.stringify(paramError)}, ${JSON.stringify(paramError)}`);
             expect().assertFail();
-            resolve(undefined); done();
+            done();
           }
-          resolve(undefined); done();
+          done();
         } catch (err) {
           console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
           expect().assertFail();
-          resolve(undefined); done();
+          done();
         }
       }else if(mpEnable === 'false') {
         console.info(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
-        resolve(undefined); done();
+        done();
       }else{
         console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
         expect().assertFail();
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
 
     /**
@@ -167,8 +157,6 @@ export default function LifeCycleLinstenerTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_OnApplicationStateChange_0200`;
       console.log(`${tag}, it begin`);
       if (mpEnable === 'true') {
@@ -193,13 +181,13 @@ export default function LifeCycleLinstenerTest(): void {
           } catch (paramError) {
             console.info(tag + ` error: ${JSON.stringify(paramError)}, ${JSON.stringify(paramError)}`);
             expect().assertFail();
-            resolve(undefined); done();
+            done();
           }
           try {
           } catch (paramError) {
             console.info(`error: ${JSON.stringify(paramError)}`);
             expect().assertFail();
-            resolve(undefined); done();
+            done();
           }
           TestAbilityContext!.startAbility({
             bundleName:'com.acts.moveabilitytobgtest.static',
@@ -209,7 +197,7 @@ export default function LifeCycleLinstenerTest(): void {
           }).catch((error: Error) => {
             console.info(tag + `error: ${JSON.stringify(error)}`);
             try{expect().assertFail();}catch (e) {}
-            resolve(undefined); done();
+            done();
           })
           await Promise.all([
             eventBus.onWait('EntryAbility1_onForeground'),
@@ -235,25 +223,22 @@ export default function LifeCycleLinstenerTest(): void {
             expect().assertFail();
           }else{
             console.info(tag + ` off listener success`);
-            resolve(undefined); done();
+            done();
           }
         } catch (err) {
           console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
           expect().assertFail();
-          resolve(undefined); done();
+          done();
         }
       }else if(mpEnable === 'false') {
         console.info(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
-        resolve(undefined); done();
+        done();
       }else{
         console.info(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
         expect().assertFail();
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
   })
 }
 

@@ -37,8 +37,6 @@ export default function appManagerTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0100';
       let applicationStateObserver : appManager.ApplicationStateObserver= {
         onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
@@ -69,12 +67,9 @@ export default function appManagerTest(): void {
       } catch (err) {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_PERMISSION_CODE);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0200
@@ -85,8 +80,6 @@ export default function appManagerTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0200';
       let applicationStateObserver : appManager.ApplicationStateObserver = {
         onForegroundApplicationChanged(appStateData: appManager.AppStateData) {
@@ -118,12 +111,9 @@ export default function appManagerTest(): void {
       } catch (err) {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_PERMISSION_CODE);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0300
@@ -134,18 +124,13 @@ export default function appManagerTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0300';
       appManager.getForegroundApplications((err) => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_CODE);
-        resolve(undefined); done();
+        done();
       });
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0400
@@ -156,25 +141,20 @@ export default function appManagerTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0400';
       appManager.getForegroundApplications()
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
           expect(err?.code).assertEqual(ERROR_CODE);
-          resolve(undefined); done();
+          done();
         })
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0500
@@ -185,20 +165,15 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0500';
       let bundleName = "com.ohos.application";
       let accountId = 100;
       appManager.killProcessWithAccount(bundleName, accountId, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_CODE);
-        resolve(undefined); done();
+        done();
       });
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0600
@@ -209,27 +184,22 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0600';
       let bundleName = "com.ohos.application";
       let accountId = 100;
       appManager.killProcessWithAccount(bundleName, accountId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
           expect(err?.code).assertEqual(ERROR_CODE);
-          resolve(undefined); done();
+          done();
         })
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0700
@@ -240,19 +210,14 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0700';
       let bundleName = "com.ohos.application";
       appManager.killProcessesByBundleName(bundleName, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_PERMISSION_CODE);
-        resolve(undefined); done();
+        done();
       });
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0800
@@ -263,26 +228,21 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0800';
       let bundleName = "com.ohos.application";
       appManager.killProcessesByBundleName(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
           expect(err?.code).assertEqual(ERROR_PERMISSION_CODE);
-          resolve(undefined); done();
+          done();
         })
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_0900
@@ -293,19 +253,14 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_0900';
       let bundleName = "com.ohos.application";
       appManager.clearUpApplicationData(bundleName, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_CODE);
-        resolve(undefined); done();
+        done();
       });
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1000
@@ -316,26 +271,21 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1000';
       let bundleName = "com.ohos.application";
       appManager.clearUpApplicationData(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
           expect(err?.code).assertEqual(ERROR_CODE);
-          resolve(undefined); done();
+          done();
         })
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
 
     /**
@@ -347,19 +297,14 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1100';
       let pid = 0;
       appManager.getProcessMemoryByPid(pid, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_CODE);
-        resolve(undefined); done();
+        done();
       });
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1200
@@ -370,26 +315,21 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1200';
       let pid = 0;
       appManager.getProcessMemoryByPid(pid)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
           expect(err?.code).assertEqual(ERROR_CODE);
-          resolve(undefined); done();
+          done();
         })
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1300
@@ -400,19 +340,14 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1300';
       let bundleName = "com.ohos.application";
       appManager.getRunningProcessInfoByBundleName(bundleName, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_CODE);
-        resolve(undefined); done();
+        done();
       });
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1400
@@ -423,26 +358,21 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1400';
       let bundleName = "com.ohos.application";
       appManager.getRunningProcessInfoByBundleName(bundleName)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
           expect(err?.code).assertEqual(ERROR_CODE);
-          resolve(undefined); done();
+          done();
         })
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1500
@@ -453,20 +383,15 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1500';
       let bundleName = "com.ohos.application";
       let userId = 100;
       appManager.getRunningProcessInfoByBundleName(bundleName, userId, (err) => {
         console.log(TAG + "  err?.code: " + err?.code);
         expect(err?.code).assertEqual(ERROR_CODE);
-        resolve(undefined); done();
+        done();
       });
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1600
@@ -477,27 +402,22 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1600';
       let bundleName = "com.ohos.application";
       let userId = 100;
       appManager.getRunningProcessInfoByBundleName(bundleName, userId)
         .then(err => {
           console.log(TAG + ` err->${JSON.stringify(err)}`);
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         })
         .catch((err: Error) => {
           console.log(TAG + "  err?.code: " + err?.code);
           expect(err?.code).assertEqual(ERROR_CODE);
-          resolve(undefined); done();
+          done();
         })
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
 
     /**
@@ -509,18 +429,13 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Public_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       expect(appManager.ProcessState.STATE_CREATE).assertEqual(0);
       expect(appManager.ProcessState.STATE_FOREGROUND).assertEqual(1);
       expect(appManager.ProcessState.STATE_ACTIVE).assertEqual(2);
       expect(appManager.ProcessState.STATE_BACKGROUND).assertEqual(3);
       expect(appManager.ProcessState.STATE_DESTROY).assertEqual(4);
-      resolve(undefined); done();
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+      done();
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Public_Static_0200
@@ -531,19 +446,14 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Public_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       // 静态运行时枚举为对象且按声明顺序取值（0,1,2,3,4；动态原生为 0,2,3,4,5）
       expect(JSON.stringify(appManager.ApplicationState.STATE_CREATE)).assertEqual('0');
       expect(JSON.stringify(appManager.ApplicationState.STATE_FOREGROUND)).assertEqual('1');
       expect(JSON.stringify(appManager.ApplicationState.STATE_ACTIVE)).assertEqual('2');
       expect(JSON.stringify(appManager.ApplicationState.STATE_BACKGROUND)).assertEqual('3');
       expect(JSON.stringify(appManager.ApplicationState.STATE_DESTROY)).assertEqual('4');
-      resolve(undefined); done();
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+      done();
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0100
@@ -554,8 +464,6 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0100`;
       console.log(`${tag}, it begin`);
         try {
@@ -566,22 +474,19 @@ expect().assertFail();
             }else{
               try{expect(data).assertFalse();}catch(e){}
             }
-            resolve(undefined); done();
+            done();
           }).catch((err: Error) => {
             console.log(`${tag} isRunningInStabilityTest error, err: ${err?.code}`);
             try{expect().assertFail();}catch(e){}
-            resolve(undefined); done();
+            done();
           });
         } catch (err) {
           console.error(`${tag} isRunningInStabilityTest error, errorCode: ${err?.code}`);
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0200
@@ -592,8 +497,6 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_AA_ChildProcessManager_startChildProcess_0300`;
       console.log(`${tag}, it begin`);
       try {
@@ -605,17 +508,14 @@ expect().assertFail();
           }else{
             try{expect(data).assertFalse();}catch(e){}
           }
-          resolve(undefined); done();
+          done();
         })
       } catch (err) {
         console.error(`${tag} isRunningInStabilityTest error, errorCode: ${err?.code}`);
         try{expect().assertFail();}catch(e){}
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0400
@@ -626,29 +526,24 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0400`;
       console.log(`${tag}, it begin`);
       try {
         appManager.isAppRunning('com.acts.example.startselfuiabilitytest', 0).then((data)=>{
           console.log(`${tag} isAppRunning success, data: ${data}`);
           try{expect(data).assertFalse();}catch(e){}
-          resolve(undefined); done();
+          done();
         }).catch((err: Error) => {
           console.log(`${tag} isAppRunning error, err: ${err?.code}`);
           try{expect(err?.code).assertEqual(201);}catch(e){}
-          resolve(undefined); done();
+          done();
         });
       } catch (err) {
         console.error(`${tag} isAppRunning error, errorCode: ${err?.code}`);
         expect().assertFalse();
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0500
@@ -659,29 +554,24 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0500`;
       console.log(`${tag}, it begin`);
       try {
         appManager.isAppRunning('com.acts.example.startselfuiabilitytest').then((data)=>{
           console.log(`${tag} isAppRunning success, data: ${data}`);
           try{expect(data).assertFalse();}catch(e){}
-          resolve(undefined); done();
+          done();
         }).catch((err: Error) => {
           console.log(`${tag} isAppRunning error, err: ${err?.code}`);
           try{expect(err?.code).assertEqual(201);}catch(e){}
-          resolve(undefined); done();
+          done();
         });
       } catch (err) {
         console.error(`${tag} isAppRunning error, errorCode: ${err?.code}`);
         expect().assertFalse();
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0600
      * @tc.number SUB_Ability_AbilityBase_AppManager_Static_0600
@@ -691,29 +581,24 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0600`;
       console.log(`${tag}, it begin`);
       try {
         appManager.offApplicationStateChange(1).then((data)=>{
           console.log(`${tag} off success, pid: ${data}`);
           try{expect(data).assertFalse();}catch(e){}
-          resolve(undefined); done();
+          done();
         }).catch((err: Error) => {
           console.log(`${tag} off error, err: ${err?.code}`);
           try{expect().assertFail();}catch(e){}
-          resolve(undefined); done();
+          done();
         });
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
         expect(err?.code).assertEqual(401)
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0700
      * @tc.number SUB_Ability_AbilityBase_AppManager_Static_0700
@@ -723,24 +608,19 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0700`;
       console.log(`${tag}, it begin`);
       try {
         appManager.offApplicationStateChange(1, (data)=>{
           try{expect(data).assertFalse();}catch(e){}
-          resolve(undefined); done();
+          done();
         })
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
         expect(err?.code).assertEqual(401)
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_0900
@@ -751,8 +631,6 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_0700`;
       console.log(`${tag}, it begin`);
       try {
@@ -764,18 +642,15 @@ expect().assertFail();
           }else{
             try{expect(data).assertFalse();}catch(e){}
           }
-          resolve(undefined); done();
+          done();
         })
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
     
     /**
      * @tc.name   SUB_Ability_AbilityBase_AppManager_Static_1000
@@ -786,8 +661,6 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_AppManager_Static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityBase_AppManager_1000`;
       console.log(`${tag}, it begin`);
       try {
@@ -798,22 +671,19 @@ expect().assertFail();
           }else{
             try{expect(data).assertFalse();}catch(e){}
           }
-          resolve(undefined); done();
+          done();
         }).catch((err: Error) => {
           console.log(`${tag} isRamConstrainedDevice error: ` + JSON.stringify(err));
           try{expect().assertFail();}catch(e){}
-          resolve(undefined); done();
+          done();
         })
       } catch (err) {
         console.error(`${tag} off error, errorCode: ${err?.code}`);
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
      /**
       * @tc.name   SUB_Ability_AbilityRuntime_AppManager_Static_1700
@@ -824,14 +694,12 @@ expect().assertFail();
       * @tc.level  LEVEL0
       */
      it('SUB_Ability_AbilityRuntime_AppManager_Static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-           await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1700';
       let bundleName = "com.ohos.applicationsss";
       try {
         appManager.killProcessesByBundleName(bundleName, false).then((data: void) => {
           console.log('SUB_Ability_AbilityRuntime_AppManager_1700 killProcessesByBundleName success.');
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
             return data;
@@ -840,19 +708,16 @@ expect().assertFail();
           console.error(`SUB_Ability_AbilityRuntime_AppManager_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err?.code).assertEqual(ERROR_PERMISSION_CODE);
 
-          resolve(undefined); done();
+          done();
         });
       } catch (paramError) {
         let code = JSON.stringify(paramError);
         let message = JSON.stringify(paramError);
         console.error(`SUB_Ability_AbilityRuntime_AppManager_1700 [appManager] error: ${code}, ${message}`);
         expect(JSON.stringify(paramError)).assertEqual(ERROR_PERMISSION_CODE);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-           });
-     })
+         })
 
     
     /**
@@ -864,33 +729,28 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_Static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_Static_1800';
       let bundleName = "com.ohos.applicationsss";
       try {
         appManager.killProcessesByBundleName(bundleName, true).then((data: void) => {
           console.log('SUB_Ability_AbilityRuntime_AppManager_1800 killProcessesByBundleName success.');
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         }).catch((err: Error) => {
           console.error(`SUB_Ability_AbilityRuntime_AppManager_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
           expect(err?.code).assertEqual(ERROR_PERMISSION_CODE);
 
-          resolve(undefined); done();
+          done();
         });
       } catch (paramError) {
         let code = JSON.stringify(paramError);
         let message = JSON.stringify(paramError);
         console.error(`SUB_Ability_AbilityRuntime_AppManager_1800 [appManager] error: ${code}, ${message}`);
         expect(JSON.stringify(paramError)).assertEqual(ERROR_PERMISSION_CODE);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Promise_Static_0100
@@ -901,32 +761,27 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Promise_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Promise_Static_0100';
       console.log(`${TAG}, begin`);
       try {
         appManager.getAppMemorySize((err: BusinessError<void> | null, data: int | undefined): void => {
           if (err?.code) {
             console.error(`${TAG}, getAppMemorySize error, errorCode: ${err?.code}`);
-            resolve(undefined); done();
+            done();
             expect().assertFail();
             return;
           }
           console.log(`${TAG}, getAppMemorySize success, data: ${String(data)}`);
           expect((data as int).toDouble()).assertLarger(0);
-          resolve(undefined); done();
+          done();
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Callback_Static_0100
@@ -937,8 +792,6 @@ expect().assertFail();
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Callback_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_GetAppMemorySize_Callback_Static_0100';
       console.log(`${TAG}, begin`);
       try {
@@ -946,18 +799,15 @@ expect().assertFail();
           if (err && err.code) { console.log(`${TAG}, getAppMemorySize err: ${JSON.stringify(err)}`); }
           console.log(`${TAG}, getAppMemorySize success, data: ${String(data)}`);
           expect((data as int).toDouble()).assertLarger(0);
-          resolve(undefined); done();
+          done();
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0100
@@ -968,24 +818,19 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0100';
       try {
         appManager.killProcessesByBundleName("", (err: BusinessError<void> | null) => {
           console.log(TAG + " err?.code: " + err?.code);
           expect(err?.code).assertEqual(201);
-          resolve(undefined); done();
+          done();
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
         expect(err?.code).assertEqual(201);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0200
@@ -996,24 +841,19 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0200';
       try {
         appManager.killProcessesByBundleName("", (err: BusinessError<void> | null) => {
           console.log(TAG + " err?.code: " + err?.code);
           expect(err?.code).assertEqual(201);
-          resolve(undefined); done();
+          done();
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
         expect(err?.code).assertEqual(201);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0300
@@ -1024,31 +864,26 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0300';
       try {
         appManager.killProcessesByBundleName("")
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
         expect(err?.code).assertEqual(201);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0400
@@ -1059,31 +894,26 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0400';
       try {
         appManager.killProcessesByBundleName("")
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
         expect(err?.code).assertEqual(201);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0500
@@ -1094,31 +924,26 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0500';
       try {
         appManager.killProcessesByBundleName("", false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
         expect(err?.code).assertEqual(201);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0600
@@ -1129,31 +954,26 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0600';
       try {
         appManager.killProcessesByBundleName("", false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
         expect(err?.code).assertEqual(201);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0700
@@ -1164,32 +984,27 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0700';
       try {
         appManager.killProcessesByBundleName("com.ohos.application", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0800
@@ -1200,32 +1015,27 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0800';
       try {
         appManager.killProcessesByBundleName("com.ohos.application", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0900
@@ -1236,32 +1046,27 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_0900';
       try {
         appManager.killProcessesByBundleName("")
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1000
@@ -1272,25 +1077,20 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1000';
       try {
         appManager.killProcessesByBundleName("", (err: BusinessError<void> | null) => {
           console.log(TAG + " err?.code: " + err?.code);
           expect(err?.code).assertEqual(201);
-          resolve(undefined); done();
+          done();
         });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1100
@@ -1301,32 +1101,27 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1100';
       try {
         appManager.killProcessesByBundleName("", false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (err) {
         console.error(`${TAG} unexpected error, errorCode: ${err?.code}`);
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1200
@@ -1337,32 +1132,27 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1200';
       try {
         appManager.killProcessesByBundleName("", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (e) {
         console.log(TAG + " err?.code: " + JSON.stringify(e));
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1300
@@ -1373,32 +1163,27 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1300';
 
       try {
         appManager.killProcessesByBundleName("", false)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
                     .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (e) {
         console.log(TAG + " err?.code: " + JSON.stringify(e));
         expect(JSON.stringify(e)).assertEqual(401);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1400
@@ -1409,32 +1194,27 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1400';
 
       try {
         appManager.killProcessesByBundleName("", false, undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (e) {
         console.log(TAG + " err?.code: " + JSON.stringify(e));
         expect(JSON.stringify(e)).assertEqual(401);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1500
@@ -1445,31 +1225,26 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1500';
       try {
         appManager.killProcessesByBundleName("")
         .then(() => {
           console.log(TAG + ' should not reach here');
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         })
         .catch((err: Error) => {
           console.log(TAG + " err?.code: " + err?.code);
           expect(err?.code).assertEqual(201);
-          resolve(undefined); done();
+          done();
         });
       } catch (err) {
         console.log(TAG + " err?.code: " + err?.code);
         expect(err?.code).assertEqual(401);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1600
@@ -1480,32 +1255,27 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1600';
       try {
         appManager.killProcessesByBundleName("")
         .then(() => {
           console.log(TAG + ' should not reach here');
-                    resolve(undefined); done();
+                    done();
 expect().assertFail();
 
         })
         .catch((err: Error) => {
           console.log(TAG + " err?.code: " + err?.code);
           expect(err?.code).assertEqual(201);
-          resolve(undefined); done();
+          done();
         });
 
       } catch (err) {
         console.log(TAG + " err?.code: " + err?.code);
         expect(err?.code).assertEqual(401);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1700
@@ -1516,33 +1286,28 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1700';
 
       try {
         appManager.killProcessesByBundleName("", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (e) {
         console.log(TAG + " err?.code: " + JSON.stringify(e));
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1800
@@ -1553,33 +1318,28 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1800';
 
       try {
         appManager.killProcessesByBundleName("", false, 0)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
           .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (e) {
         console.log(TAG + " err?.code: " + JSON.stringify(e));
-                resolve(undefined); done();
+                done();
 expect().assertFail();
 
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1900
@@ -1590,31 +1350,26 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_1900';
       try {
         appManager.killProcessesByBundleName("", true)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
                     .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (e) {
         console.log(TAG + " err?.code catch: " + JSON.stringify(e));
         expect(JSON.stringify(e)).assertEqual(201);
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_2000
@@ -1625,31 +1380,26 @@ expect().assertFail();
      * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let TAG = 'SUB_Ability_AbilityRuntime_AppManager_KillProcessesByBundleName_Static_2000';
       try {
         appManager.killProcessesByBundleName("", true, undefined)
           .then(() => {
             console.log(TAG + ' should not reach here');
-                        resolve(undefined); done();
+                        done();
 expect().assertFail();
 
           })
                     .catch((err: Error) => {
             console.log(TAG + " err?.code: " + err?.code);
             expect(err?.code).assertEqual(201);
-            resolve(undefined); done();
+            done();
           });
       } catch (e) {
         console.log(TAG + " err?.code catch: " + JSON.stringify(e));
         expect(JSON.stringify(e)).assertEqual(201);
-        resolve(undefined); done();
+        done();
       }
 
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
   })
 }

@@ -73,8 +73,6 @@ export default function abilityDelegatorStage(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270 begin');
       try {
@@ -89,22 +87,19 @@ export default function abilityDelegatorStage(): void {
             } else {
               expect(err?.code).assertEqual(2097152);
             }
-            resolve(undefined); done();
+            done();
           } else {
             expect(false).assertTrue();
-            resolve(undefined); done();
+            done();
           }
         });
       } catch (error) {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
           'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1270 failed ' + JSON.stringify(error));
         expect(false).assertTrue();
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1280
@@ -115,8 +110,6 @@ export default function abilityDelegatorStage(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1280', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1280 begin');
       try {
@@ -127,7 +120,7 @@ export default function abilityDelegatorStage(): void {
         abilityDelegator.startAbility(want).then((data: void) => {
           console.info('startAbility promise');
           try { expect(false).assertTrue(); } catch (e) { }
-          resolve(undefined); done();
+          done();
         }).catch((err: Error) => {
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
             'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1280 failed');
@@ -136,18 +129,15 @@ export default function abilityDelegatorStage(): void {
           } else {
             expect(err?.code).assertEqual(2097152);
           }
-          resolve(undefined); done();
+          done();
         })
       } catch (error) {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
           'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1280 failed ' + JSON.stringify(error));
         expect(false).assertTrue();
-        resolve(undefined); done();
+        done();
       }
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1290
@@ -158,8 +148,6 @@ export default function abilityDelegatorStage(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1290', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1290 begin');
 
@@ -198,17 +186,14 @@ export default function abilityDelegatorStage(): void {
           JSON.stringify(context.abilityInfo.bundleName));
         let name: string = context.abilityInfo.name;
         expect(name).assertEqual('AbilityC');
-        resolve(undefined); done();
+        done();
       }).catch((err: Error) => {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
           'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1290 failed ' + JSON.stringify(err));
         expect(false).assertTrue();
-        resolve(undefined); done();
+        done();
       })
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300
@@ -219,8 +204,6 @@ export default function abilityDelegatorStage(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1300 begin');
       await sleep(1000);
@@ -256,7 +239,7 @@ export default function abilityDelegatorStage(): void {
           hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
             'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1300 callback failed ' + JSON.stringify(err));
           try { expect(false).assertTrue(); } catch (e) { }
-          resolve(undefined); done();
+          done();
         } else {
           let context = ability!.context;
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -264,13 +247,10 @@ export default function abilityDelegatorStage(): void {
             JSON.stringify(context.abilityInfo.name));
           let name: string = context.abilityInfo.name;
           try { expect(name).assertEqual('AbilityC'); } catch (e) { }
-          resolve(undefined); done();
+          done();
         }
       });
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2190
@@ -281,8 +261,6 @@ export default function abilityDelegatorStage(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2190', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2190 begin');
       await sleep(1000);
@@ -299,20 +277,17 @@ export default function abilityDelegatorStage(): void {
           hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
             'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2190 callback failed ' + JSON.stringify(err));
           try { expect(false).assertEqual(true); } catch (e) { }
-          resolve(undefined); done();
+          done();
         } else {
           let context = ability!.context;
           hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
             'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2190 getCurrentTopAbility ' +
             JSON.stringify(context.abilityInfo.name));
           try { expect(context.abilityInfo.name).assertEqual('AbilityA'); } catch (e) { }
-          resolve(undefined); done();
+          done();
         }
       });
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2200
@@ -323,8 +298,6 @@ export default function abilityDelegatorStage(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2200 begin');
 
@@ -344,17 +317,14 @@ export default function abilityDelegatorStage(): void {
           'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2200 getCurrentTopAbility ' +
           JSON.stringify(context.abilityInfo.name));
         expect(context.abilityInfo.name).assertEqual('AbilityA');
-        resolve(undefined); done();
+        done();
       }).catch((err: Error) => {
         hilog.error(0x0000, 'abilityDelegatorStageTag', '%{public}s',
           'SUB_Ability_AbilityTools_AbilityDelegator_Stage_2200 failed ' + JSON.stringify(err));
         expect(false).assertTrue();
-        resolve(undefined); done();
+        done();
       })
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
   });
 }
 

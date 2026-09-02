@@ -66,8 +66,6 @@ export default function moveAbilityToBackgroundTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
-        let runCase = async (): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100`;
       console.log(`${tag}, it begin`);
       if (mpEnable === 'true') {
@@ -87,11 +85,11 @@ export default function moveAbilityToBackgroundTest(): void {
             if (err) {
               console.error(`receive event failed, code is ${err?.code}, message is ${err?.message}`);
               expect().assertFail();
-              resolve(undefined); done();
+              done();
             } else {
               console.info(`receive event success, event:${data?.event}`);
               if (data?.event == 'Acts_onBackground_MoveAbilityToBackground_Event_1') {
-                unSubscribe(subscriber, () => { resolve(undefined); done(); });
+                unSubscribe(subscriber, () => { done(); });
               }
             }
           }
@@ -106,27 +104,24 @@ export default function moveAbilityToBackgroundTest(): void {
           // 改定时器兜底，用例完成由订阅回调驱动
           setTimeout(() => {
             console.error(`${tag}, timeout`);
-            resolve(undefined); done();
+            done();
             expect().assertFail();
           }, 5000);
         } catch (err) {
           console.error(`${tag} error, errorCode: ${JSON.stringify(err)}`);
           expect().assertFail();
-          resolve(undefined); done();
+          done();
         }
       }else if(mpEnable === 'false') {
         console.error(`${tag} error, current device not support MoveAbilityToBackground,please check: ${JSON.stringify(mpEnable)}`);
-        resolve(undefined); done();
+        done();
       }else{
         console.error(`${tag} error, current device get MoveAbilityToBackground config fail,please check: ${JSON.stringify(mpEnable)}`);
         expect().assertFail();
-        resolve(undefined); done();
+        done();
       }
       
-        };
-        runCase().catch((e: Error) => { console.error('case error: ' + JSON.stringify(e)); resolve(undefined); done(); });
-          });
-    })
+        })
   })
 }
 

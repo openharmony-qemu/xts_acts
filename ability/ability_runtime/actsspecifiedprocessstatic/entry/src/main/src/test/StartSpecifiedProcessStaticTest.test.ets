@@ -71,7 +71,6 @@ export default function StartSpecifiedProcessTest(): void {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0100';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0100====>");
       try {
@@ -92,7 +91,7 @@ export default function StartSpecifiedProcessTest(): void {
               }
               commonEventManager.unsubscribe(subscriber, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined) => {
                 if (err && err.code) { console.log('unsubscribe err: ' + JSON.stringify(err)); }
-                resolve(undefined); done();
+                done();
               });
             })
         }
@@ -113,10 +112,9 @@ let want : Want = {
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
         expect().assertFail()
-        resolve(undefined); done();
+        done();
       }
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0200
@@ -127,7 +125,6 @@ let want : Want = {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0200';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0200====>");
       try {
@@ -148,7 +145,7 @@ let want : Want = {
               }
               commonEventManager.unsubscribe(subscriber, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined) => {
                 if (err && err.code) { console.log('unsubscribe err: ' + JSON.stringify(err)); }
-                resolve(undefined); done();
+                done();
               });
             })
         }
@@ -169,10 +166,9 @@ let want : Want = {
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
         expect().assertFail()
-        resolve(undefined); done();
+        done();
       }
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0300
@@ -183,7 +179,6 @@ let want : Want = {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0300';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0300====>");
       try {
@@ -204,7 +199,7 @@ let want : Want = {
               }
               commonEventManager.unsubscribe(subscriber, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined) => {
                 if (err && err.code) { console.log('unsubscribe err: ' + JSON.stringify(err)); }
-                resolve(undefined); done();
+                done();
               });
             })
         }
@@ -225,10 +220,9 @@ let want : Want = {
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
         expect().assertFail()
-        resolve(undefined); done();
+        done();
       }
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0400
@@ -239,7 +233,6 @@ let want : Want = {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0400';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0400====>");
       try {
@@ -260,7 +253,7 @@ let want : Want = {
               }
               commonEventManager.unsubscribe(subscriber, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined) => {
                 if (err && err.code) { console.log('unsubscribe err: ' + JSON.stringify(err)); }
-                resolve(undefined); done();
+                done();
               });
             })
         }
@@ -281,10 +274,9 @@ let want : Want = {
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
         expect().assertFail()
-        resolve(undefined); done();
+        done();
       }
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0500
@@ -295,7 +287,6 @@ let want : Want = {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0500';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0500====>");
       try {
@@ -316,7 +307,7 @@ let want : Want = {
               }
               commonEventManager.unsubscribe(subscriber, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined) => {
                 if (err && err.code) { console.log('unsubscribe err: ' + JSON.stringify(err)); }
-                resolve(undefined); done();
+                done();
               });
             })
         }
@@ -338,10 +329,9 @@ let want : Want = {
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
         expect().assertFail()
-        resolve(undefined); done();
+        done();
       }
-          });
-    })
+        })
 
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0600
@@ -352,7 +342,6 @@ let want : Want = {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-          await new Promise<void>((resolve, reject) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_Static_0600';
       console.log("====>in SUB_Ability_AbilityRuntime_ABILITY_StartSpecifiedProcessTest_0600====>");
       try {
@@ -373,7 +362,7 @@ let want : Want = {
               }
               commonEventManager.unsubscribe(subscriber, (err: BusinessError<void> | null, data: commonEventManager.CommonEventData | undefined) => {
                 if (err && err.code) { console.log('unsubscribe err: ' + JSON.stringify(err)); }
-                resolve(undefined); done();
+                done();
               });
             })
         }
@@ -396,9 +385,8 @@ let want : Want = {
       }catch(err){
         console.info(`${TEST_SUITE_NAME}#${TEST_CASE_NAME}====> err: ${err}`)
         expect().assertFail()
-        resolve(undefined); done();
+        done();
       }
-          });
-    })
+        })
   })
 }
