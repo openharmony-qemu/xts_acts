@@ -18,7 +18,7 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
 const BUNDLE_NAME = 'ohos.acts.bundlemanagererrcode.test';
 const ERROR_MESSAGE_PERMISSION_DENIED =
-  'BusinessError 201: Permission denied. An attempt was made to GetBundleInstallStatus forbidden by permission: ohos.permission.GET_BUNDLE_INFO_PRIVILEGED.';
+  'BusinessError 201: Permission denied. An attempt was made to getBundleInstallStatus forbidden by permission: ohos.permission.GET_BUNDLE_INFO_PRIVILEGED.';
 
 export default function getBundleInstallStatusNoPermissionTest() {
   describe('GetBundleInstallStatusNoPermissionTest', () => {
