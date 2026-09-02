@@ -59,246 +59,246 @@ export default function ImageRequestDownloadInfoTest() {
       console.info("ImageRequestDownloadInfoTest after each called");
     });
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_001
-     * @tc.name     ImageRequestDownloadInfoTest_static_001
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0100
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0100
      * @tc.desc     Test onError callback is triggered when network image fails to load
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_001 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0100 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('onErrorTriggered1Text');
       let obj = JSON.parseJsonElement(strJson);
       let triggered = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_001 onErrorTriggered: ' + triggered);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0100 onErrorTriggered: ' + triggered);
       expect(triggered).assertEqual('triggered');
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_002
-     * @tc.name     ImageRequestDownloadInfoTest_static_002
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0200
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0200
      * @tc.desc     Test downloadInfo field is present (not null) for network image error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_002 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0200 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('downloadInfoStr1Text');
       let obj = JSON.parseJsonElement(strJson);
       let downloadInfo = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_002 downloadInfoStr: ' + downloadInfo);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0200 downloadInfoStr: ' + downloadInfo);
       expect(downloadInfo === 'not_null' || downloadInfo === 'null').assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_003
-     * @tc.name     ImageRequestDownloadInfoTest_static_003
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300
      * @tc.desc     Test ImageError error code is accessible for network image error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_003 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('errorCode1Text');
       let obj = JSON.parseJsonElement(strJson);
       let errorCode = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_003 errorCode: ' + errorCode);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300 errorCode: ' + errorCode);
       expect(errorCode.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_004
-     * @tc.name     ImageRequestDownloadInfoTest_static_004
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400
      * @tc.desc     Test ImageError componentWidth is accessible for network image error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_004 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('componentWidth1Text');
       let obj = JSON.parseJsonElement(strJson);
       let width = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_004 componentWidth: ' + width);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400 componentWidth: ' + width);
       expect(width.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_005
-     * @tc.name     ImageRequestDownloadInfoTest_static_005
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500
      * @tc.desc     Test ImageError componentHeight is accessible for network image error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_005 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('componentHeight1Text');
       let obj = JSON.parseJsonElement(strJson);
       let height = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_005 componentHeight: ' + height);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500 componentHeight: ' + height);
       expect(height.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_006
-     * @tc.name     ImageRequestDownloadInfoTest_static_006
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0600
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0600
      * @tc.desc     Test ImageError message field is accessible for network image error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_006 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0600 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('message1Text');
       let obj = JSON.parseJsonElement(strJson);
       let message = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_006 message: ' + message);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0600 message: ' + message);
       expect(message.length >= 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_007
-     * @tc.name     ImageRequestDownloadInfoTest_static_007
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0700
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0700
      * @tc.desc     Test onError callback is triggered for local image error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_007', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_007 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0700 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('onErrorTriggered2Text');
       let obj = JSON.parseJsonElement(strJson);
       let triggered = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_007 onErrorTriggered: ' + triggered);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0700 onErrorTriggered: ' + triggered);
       expect(triggered).assertEqual('triggered');
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_008
-     * @tc.name     ImageRequestDownloadInfoTest_static_008
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800
      * @tc.desc     Test downloadInfo is null for local image error (not network source)
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_008', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_008 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('downloadInfoStr2Text');
       let obj = JSON.parseJsonElement(strJson);
       let downloadInfo = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_008 downloadInfoStr: ' + downloadInfo);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800 downloadInfoStr: ' + downloadInfo);
       expect(downloadInfo).assertEqual('null');
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_009
-     * @tc.name     ImageRequestDownloadInfoTest_static_009
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0900
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0900
      * @tc.desc     Test onError callback is NOT triggered for valid image
      * @tc.level    Level.LEVEL2
      */
-    it('ImageRequestDownloadInfoTest_static_009', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_009 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0900', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0900 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('onErrorTriggered3Text');
       let obj = JSON.parseJsonElement(strJson);
       let triggered = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_009 onErrorTriggered: ' + triggered);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0900 onErrorTriggered: ' + triggered);
       expect(triggered).assertEqual('not_triggered');
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_010
-     * @tc.name     ImageRequestDownloadInfoTest_static_010
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1000
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1000
      * @tc.desc     Test onError with undefined callback does not crash
      * @tc.level    Level.LEVEL2
      */
-    it('ImageRequestDownloadInfoTest_static_010', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_010 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1000', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1000 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('downloadInfoImage4');
-      console.info('ImageRequestDownloadInfoTest_static_010 component exists: ' + (strJson.length > 0));
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1000 component exists: ' + (strJson.length > 0));
       expect(strJson.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_011
-     * @tc.name     ImageRequestDownloadInfoTest_static_011
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100
      * @tc.desc     Test onError callback downloadInfo for another network image error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_011', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_011 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('onErrorTriggered5Text');
       let obj = JSON.parseJsonElement(strJson);
       let triggered = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_011 onErrorTriggered: ' + triggered);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100 onErrorTriggered: ' + triggered);
       expect(triggered).assertEqual('triggered');
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_012
-     * @tc.name     ImageRequestDownloadInfoTest_static_012
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1200
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1200
      * @tc.desc     Test downloadInfo field accessibility for another network image error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_012', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_012 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1200 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('downloadInfoStr5Text');
       let obj = JSON.parseJsonElement(strJson);
       let downloadInfo = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_012 downloadInfoStr: ' + downloadInfo);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1200 downloadInfoStr: ' + downloadInfo);
       expect(downloadInfo === 'not_null' || downloadInfo === 'null').assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_013
-     * @tc.name     ImageRequestDownloadInfoTest_static_013
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1300
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1300
      * @tc.desc     Test message field for another network image error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_013', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_013 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1300 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('message5Text');
       let obj = JSON.parseJsonElement(strJson);
       let message = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_013 message: ' + message);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1300 message: ' + message);
       expect(message.length >= 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_014
-     * @tc.name     ImageRequestDownloadInfoTest_static_014
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400
      * @tc.desc     Test componentWidth and componentHeight match Image dimensions for network error
      * @tc.level    Level.LEVEL1
      */
-    it('ImageRequestDownloadInfoTest_static_014', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_014 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJsonW = inspector.getInspectorByKey('componentWidth6Text');
       let objW = JSON.parseJsonElement(strJsonW);
       let width = objW.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_014 componentWidth: ' + width);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400 componentWidth: ' + width);
       expect(width.length > 0).assertTrue();
 
       let strJsonH = inspector.getInspectorByKey('componentHeight6Text');
       let objH = JSON.parseJsonElement(strJsonH);
       let height = objH.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_014 componentHeight: ' + height);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400 componentHeight: ' + height);
       expect(height.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageRequestDownloadInfoTest_static_015
-     * @tc.name     ImageRequestDownloadInfoTest_static_015
+     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1500
+     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1500
      * @tc.desc     Test downloadInfo field for network image with different dimensions
      * @tc.level    Level.LEVEL2
      */
-    it('ImageRequestDownloadInfoTest_static_015', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageRequestDownloadInfoTest_static_015 START');
+    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1500 START');
       await Utils.sleep(SLEEP_TIME_NETWORK);
       let strJson = inspector.getInspectorByKey('downloadInfoStr6Text');
       let obj = JSON.parseJsonElement(strJson);
       let downloadInfo = obj.getElement('$attrs').getString('content');
-      console.info('ImageRequestDownloadInfoTest_static_015 downloadInfoStr: ' + downloadInfo);
+      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1500 downloadInfoStr: ' + downloadInfo);
       expect(downloadInfo === 'not_null' || downloadInfo === 'null').assertTrue();
       done();
     })

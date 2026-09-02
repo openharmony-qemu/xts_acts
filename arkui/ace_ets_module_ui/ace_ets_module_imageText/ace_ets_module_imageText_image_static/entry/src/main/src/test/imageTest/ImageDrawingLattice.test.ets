@@ -58,136 +58,136 @@ export default function ImageDrawingLatticeTest() {
       console.info("ImageDrawingLatticeTest after each called");
     });
     /**
-     * @tc.number   ImageDrawingLatticeTest_static_001
-     * @tc.name     ImageDrawingLatticeTest_static_001
+     * @tc.number   SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0100
+     * @tc.name     SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0100
      * @tc.desc     Test resizable with valid DrawingLattice (normal xDivs, yDivs, fXCount, fYCount)
      * @tc.level    Level.LEVEL1
      */
-    it('ImageDrawingLatticeTest_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageDrawingLatticeTest_static_001 START');
+    it('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0100 START');
       await Utils.sleep(SLEEP_TIME_S);
       let strJson = inspector.getInspectorByKey('drawingLatticeImage1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageDrawingLatticeTest_static_001 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0100 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
       expect(strJson.length > 0).assertTrue();
       let resizableValue = obj.getElement('$attrs').getString('resizable');
       expect(resizableValue.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageDrawingLatticeTest_static_002
-     * @tc.name     ImageDrawingLatticeTest_static_002
+     * @tc.number   SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0200
+     * @tc.name     SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0200
      * @tc.desc     Test resizable with different DrawingLattice parameters (different xDivs/yDivs)
      * @tc.level    Level.LEVEL1
      */
-    it('ImageDrawingLatticeTest_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageDrawingLatticeTest_static_002 START');
+    it('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0200 START');
       await Utils.sleep(SLEEP_TIME_S);
       let strJson = inspector.getInspectorByKey('drawingLatticeImage2');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageDrawingLatticeTest_static_002 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0200 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
       expect(strJson.length > 0).assertTrue();
       let resizableValue = obj.getElement('$attrs').getString('resizable');
       expect(resizableValue.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageDrawingLatticeTest_static_003
-     * @tc.name     ImageDrawingLatticeTest_static_003
+     * @tc.number   SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0300
+     * @tc.name     SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0300
      * @tc.desc     Test resizable with undefined (no stretch)
      * @tc.level    Level.LEVEL2
      */
-    it('ImageDrawingLatticeTest_static_003', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageDrawingLatticeTest_static_003 START');
+    it('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0300', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0300 START');
       await Utils.sleep(SLEEP_TIME_S);
       let strJson = inspector.getInspectorByKey('drawingLatticeImage3');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageDrawingLatticeTest_static_003 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0300 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
       expect(strJson.length > 0).assertTrue();
       let resizableValue = obj.getElement('$attrs').getString('resizable');
       expect(resizableValue).assertEqual('');
       done();
     })
     /**
-     * @tc.number   ImageDrawingLatticeTest_static_004
-     * @tc.name     ImageDrawingLatticeTest_static_004
+     * @tc.number   SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0400
+     * @tc.name     SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0400
      * @tc.desc     Test resizable with DrawingLattice via AttributeModifier
      * @tc.level    Level.LEVEL1
      */
-    it('ImageDrawingLatticeTest_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageDrawingLatticeTest_static_004 START');
+    it('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0400 START');
       await Utils.sleep(SLEEP_TIME_S);
       let strJson = inspector.getInspectorByKey('drawingLatticeImage4');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageDrawingLatticeTest_static_004 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0400 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
       expect(strJson.length > 0).assertTrue();
       let resizableValue = obj.getElement('$attrs').getString('resizable');
       expect(resizableValue.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageDrawingLatticeTest_static_005
-     * @tc.name     ImageDrawingLatticeTest_static_005
+     * @tc.number   SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0500
+     * @tc.name     SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0500
      * @tc.desc     Test resizable with undefined via AttributeModifier
      * @tc.level    Level.LEVEL2
      */
-    it('ImageDrawingLatticeTest_static_005', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageDrawingLatticeTest_static_005 START');
+    it('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0500', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0500 START');
       await Utils.sleep(SLEEP_TIME_S);
       let strJson = inspector.getInspectorByKey('drawingLatticeImage5');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageDrawingLatticeTest_static_005 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0500 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
       expect(strJson.length > 0).assertTrue();
       let resizableValue = obj.getElement('$attrs').getString('resizable');
       expect(resizableValue).assertEqual('');
       done();
     })
     /**
-     * @tc.number   ImageDrawingLatticeTest_static_006
-     * @tc.name     ImageDrawingLatticeTest_static_006
+     * @tc.number   SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0600
+     * @tc.name     SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0600
      * @tc.desc     Test resizable with both slice and DrawingLattice set
      * @tc.level    Level.LEVEL1
      */
-    it('ImageDrawingLatticeTest_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageDrawingLatticeTest_static_006 START');
+    it('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0600 START');
       await Utils.sleep(SLEEP_TIME_S);
       let strJson = inspector.getInspectorByKey('drawingLatticeImage6');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageDrawingLatticeTest_static_006 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0600 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
       expect(strJson.length > 0).assertTrue();
       let resizableValue = obj.getElement('$attrs').getString('resizable');
       expect(resizableValue.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageDrawingLatticeTest_static_007
-     * @tc.name     ImageDrawingLatticeTest_static_007
+     * @tc.number   SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0700
+     * @tc.name     SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0700
      * @tc.desc     Test resizable with DrawingLattice using minimal values (single division)
      * @tc.level    Level.LEVEL2
      */
-    it('ImageDrawingLatticeTest_static_007', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageDrawingLatticeTest_static_007 START');
+    it('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0700 START');
       await Utils.sleep(SLEEP_TIME_S);
       let strJson = inspector.getInspectorByKey('drawingLatticeImage7');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageDrawingLatticeTest_static_007 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0700 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
       expect(strJson.length > 0).assertTrue();
       let resizableValue = obj.getElement('$attrs').getString('resizable');
       expect(resizableValue.length > 0).assertTrue();
       done();
     })
     /**
-     * @tc.number   ImageDrawingLatticeTest_static_008
-     * @tc.name     ImageDrawingLatticeTest_static_008
+     * @tc.number   SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0800
+     * @tc.name     SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0800
      * @tc.desc     Test Image without resizable property (default, no stretch)
      * @tc.level    Level.LEVEL2
      */
-    it('ImageDrawingLatticeTest_static_008', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageDrawingLatticeTest_static_008 START');
+    it('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0800', Level.LEVEL2, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0800 START');
       await Utils.sleep(SLEEP_TIME_S);
       let strJson = inspector.getInspectorByKey('drawingLatticeImage8');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageDrawingLatticeTest_static_008 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
+      console.info('SUB_ARKUI_IMAGE_DRAWINGLATTICE_PARAM_0800 resizable is: ' + obj.getElement('$attrs').getString('resizable'));
       expect(strJson.length > 0).assertTrue();
       let resizableValue = obj.getElement('$attrs').getString('resizable');
       expect(resizableValue).assertEqual('');
