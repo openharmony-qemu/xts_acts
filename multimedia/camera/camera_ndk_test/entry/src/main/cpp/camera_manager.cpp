@@ -428,15 +428,15 @@ Camera_ErrorCode NDKCamera::GetCameraHostType(void)
     if (size_ <= 0) {
         return CAMERA_OK;
     }
-    int32_t enumValue_0 = 0;
-    int32_t enumValue_14 = 14;
-    int32_t enumValue_17 = 17;
+    int32_t enumValue0 = 0;
+    int32_t enumValue14 = 14;
+    int32_t enumValue17 = 17;
     LOG("HostDeviceType value: %{public}d", HOST_DEVICE_TYPE_UNKNOWN_TYPE);
     LOG("HostDeviceType value: %{public}d", HOST_DEVICE_TYPE_PHONE);
     LOG("HostDeviceType value: %{public}d", HOST_DEVICE_TYPE_TABLET);
-    if (HOST_DEVICE_TYPE_UNKNOWN_TYPE != enumValue_0 ||
-        HOST_DEVICE_TYPE_PHONE != enumValue_14 ||
-        HOST_DEVICE_TYPE_TABLET != enumValue_17) {
+    if (HOST_DEVICE_TYPE_UNKNOWN_TYPE != enumValue0 ||
+        HOST_DEVICE_TYPE_PHONE != enumValue14 ||
+        HOST_DEVICE_TYPE_TABLET != enumValue17) {
         return CAMERA_DEVICE_SETTING_LOCKED;
     }
     ret_ = OH_CameraDevice_GetHostDeviceType(&cameras_[cameraDeviceIndex_], &hostType_);
