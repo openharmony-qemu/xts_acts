@@ -1,7 +1,7 @@
 'use static';
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { UIAbility, Want } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry, Driver, ON, MouseButton, MatchPattern, UiDirection, Rect } from '@kit.TestKit';
 import inspector from '@ohos.arkui.inspector';
@@ -12,7 +12,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../common/Common';
 import Utils from '../common/Utils';
 import display from '@ohos.display';
-import { startAbility, UtilsTest } from '../Util.test.ets';
 
 let want: Want;
 const bundleName = abilityDelegatorRegistry.getArguments().bundleName;
@@ -21,10 +20,6 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegat
 
 export default function scrollToTest() {
   describe('ActsScrollToTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('TextLineSpacingTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.scroll.nowear.api20.static', 'EntryAbility');
-    })
     beforeEach(async (): Promise<void> => {
       console.info('TextLineSpacingTest beforeEach start');
       let options: router.RouterOptions = {

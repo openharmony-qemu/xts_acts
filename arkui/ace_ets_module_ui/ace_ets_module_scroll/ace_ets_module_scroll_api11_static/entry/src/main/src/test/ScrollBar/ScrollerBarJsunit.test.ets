@@ -15,12 +15,11 @@
  */
 
 
-import { afterEach, beforeEach, describe, expect, it, beforeAll, Level } from '../../../../hypium/index';
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 function sleep(time: number) {
   return new Promise<string>((resolve, reject) => {
@@ -34,11 +33,6 @@ function sleep(time: number) {
 
 export default function scrollbarJsunit() {
   describe('scrollbarTest', () => {
-    beforeAll(async (): Promise<void> => {
-      
-      await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info('[scrollbarTest] before each called')

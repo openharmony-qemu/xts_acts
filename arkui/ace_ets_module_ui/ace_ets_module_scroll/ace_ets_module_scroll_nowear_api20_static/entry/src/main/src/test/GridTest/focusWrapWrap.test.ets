@@ -13,29 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import router from '@ohos.router';
-import hilog from '@ohos.hilog';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function focusWrapWrap() {
   describe('focusWrapWrap', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ActsAceCalendarPickerTest beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api20.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
     beforeEach(async (): Promise<void> => {
       console.info("focusWrapWrap beforeEach start");
       let options: router.RouterOptions = {

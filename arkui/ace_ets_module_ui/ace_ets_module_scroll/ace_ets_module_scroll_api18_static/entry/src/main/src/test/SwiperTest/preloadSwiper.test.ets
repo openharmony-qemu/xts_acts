@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
+import { afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {
   Component,
@@ -31,25 +31,9 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../Util.test';
-
-let domain: int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 export default function preloadSwiper() {
   describe('preloadSwiper', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("preloadSwiper beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.scroll18.static", "EntryAbility");
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("preloadSwiper beforeEach start");
       const preloadSwiper = AppStorage.get<Router>("router") as Router
@@ -63,7 +47,7 @@ export default function preloadSwiper() {
         if (!("preloadSwiper" == pages.name)) {
           console.info("get preloadSwiper pages.name:" + JSON.stringify(pages.name));
           preloadSwiper.pushUrl(options);
-          await CommonFunc.sleep(1500);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push preloadSwiper page error:" + err);

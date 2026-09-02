@@ -13,20 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
 import observer from '@ohos.arkui.observer';
-import { UtilsTest, startAbility, stopApplication } from '../../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
 export default function WaterFlowSectionDemo33Jsunit() {
   describe('WaterFlowSectionDemo33Jsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("WaterFlowSectionDemo33Jsunit beforeEach start");
       let options: router.RouterOptions = {
