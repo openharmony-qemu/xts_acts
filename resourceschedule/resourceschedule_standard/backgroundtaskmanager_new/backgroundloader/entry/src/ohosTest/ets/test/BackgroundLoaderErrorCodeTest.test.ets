@@ -117,7 +117,7 @@ export default function BackgroundLoaderErrorCodeTest() {
     /**
      * @tc.number SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400
      * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400
-     * @tc.desc   Test unregisterTask accepts a negative taskId in the documented integer range
+     * @tc.desc   Test unregisterTask with a negative taskId returns error 9700004
      * @tc.level  LEVEL3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -128,19 +128,17 @@ export default function BackgroundLoaderErrorCodeTest() {
         taskId: -1,
         abilityName: 'TestAbility'
       }
-      let unregisterSucceeded: boolean = false;
       try {
         backgroundLoader.unregisterTask(taskInfo);
-        unregisterSucceeded = true;
-        console.info(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400 unregisterTask success`);
+        console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400 unregisterTask unexpected success`);
+        expect(false).assertTrue();
+        done();
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400 unregisterTask failed. code is ${e.code} message is ${e.message}`);
         expect(e.code).assertEqual(9700004);
         done();
       }
-      expect(unregisterSucceeded).assertTrue();
-      done();
     })
 
     /**
