@@ -879,39 +879,25 @@ export default function int32ArrayJoinPart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6000
      * @tc.name int32ArrayJoinPart03TestMindmapTest060
-     * @tc.desc Verify join without arguments returns the single element string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int32ArrayJoinPart03TestMindmapTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int32Array = Int32Array.of(1);
-      let r: string = arr.join();
-      expect(r).assertEqual('1');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6100
-     * @tc.name int32ArrayJoinPart03TestMindmapTest061
      * @tc.desc Verify join length [12,345] 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayJoinPart03TestMindmapTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayJoinPart03TestMindmapTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(12, 345);
       expect(arr.join('')).assertEqual('12345');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6200
-     * @tc.name int32ArrayJoinPart03TestMindmapTest062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6100
+     * @tc.name int32ArrayJoinPart03TestMindmapTest061
      * @tc.desc Verify join length-1=2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayJoinPart03TestMindmapTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayJoinPart03TestMindmapTest061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       let r: string = arr.join(',');
       let cnt: number = 0;
@@ -924,16 +910,34 @@ export default function int32ArrayJoinPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6300
-     * @tc.name int32ArrayJoinPart03TestMindmapTest063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6200
+     * @tc.name int32ArrayJoinPart03TestMindmapTest062
      * @tc.desc Verify join with '|' separator returns '42|56'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayJoinPart03TestMindmapTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayJoinPart03TestMindmapTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(42, 56);
       expect(arr.join('|')).assertEqual('42|56');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6300
+     * @tc.name int32ArrayJoinPart03TestMindmapTest063
+     * @tc.desc Verify join
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int32ArrayJoinPart03TestMindmapTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int32Array = Int32Array.of(1, 2, 3, 4);
+      let r1: string = arr.join();
+      let r2: string = arr.join();
+      let r3: string = arr.join();
+      expect(r1).assertEqual('1,2,3,4');
+      expect(r2).assertEqual('1,2,3,4');
+      expect(r3).assertEqual('1,2,3,4');
     });
 
     /**
@@ -945,13 +949,9 @@ export default function int32ArrayJoinPart03Test(): void {
      * @tc.level LEVEL2
      */
     it('int32ArrayJoinPart03TestMindmapTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int32Array = Int32Array.of(1, 2, 3, 4);
-      let r1: string = arr.join();
-      let r2: string = arr.join();
-      let r3: string = arr.join();
-      expect(r1).assertEqual('1,2,3,4');
-      expect(r2).assertEqual('1,2,3,4');
-      expect(r3).assertEqual('1,2,3,4');
+      let a: Int32Array = Int32Array.of(7, 8, 9);
+      let b: Int32Array = Int32Array.of(7, 8, 9);
+      expect(a.join()).assertEqual(b.join());
     });
 
     /**
@@ -963,47 +963,33 @@ export default function int32ArrayJoinPart03Test(): void {
      * @tc.level LEVEL2
      */
     it('int32ArrayJoinPart03TestMindmapTest065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Int32Array = Int32Array.of(7, 8, 9);
-      let b: Int32Array = Int32Array.of(7, 8, 9);
-      expect(a.join()).assertEqual(b.join());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6600
-     * @tc.name int32ArrayJoinPart03TestMindmapTest066
-     * @tc.desc Verify join
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int32ArrayJoinPart03TestMindmapTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Int32Array = Int32Array.of(1, 2);
       let b: Int32Array = Int32Array.of(1, 3);
       expect(a.join()).not().assertEqual(b.join());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6700
-     * @tc.name int32ArrayJoinPart03TestMindmapTest067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6600
+     * @tc.name int32ArrayJoinPart03TestMindmapTest066
      * @tc.desc Verify join join(',')
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayJoinPart03TestMindmapTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayJoinPart03TestMindmapTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       expect(arr.join()).assertEqual(arr.join(','));
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6800
-     * @tc.name int32ArrayJoinPart03TestMindmapTest068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6700
+     * @tc.name int32ArrayJoinPart03TestMindmapTest067
      * @tc.desc Verify join() does not mutate the separator variable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayJoinPart03TestMindmapTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayJoinPart03TestMindmapTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sep: string = '|';
       let arr: Int32Array = Int32Array.of(1, 2);
       arr.join(sep);
@@ -1011,66 +997,66 @@ export default function int32ArrayJoinPart03Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6900
-     * @tc.name int32ArrayJoinPart03TestMindmapTest069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6800
+     * @tc.name int32ArrayJoinPart03TestMindmapTest068
      * @tc.desc Verify join() separator "\r' '1\r2"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayJoinPart03TestMindmapTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayJoinPart03TestMindmapTest068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1, 2);
       expect(arr.join('\r')).assertEqual('1\r2');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_7000
-     * @tc.name int32ArrayJoinPart03TestMindmapTest070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_6900
+     * @tc.name int32ArrayJoinPart03TestMindmapTest069
      * @tc.desc Verify join() separator "\\' [-1,0] '-1\\0"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayJoinPart03TestMindmapTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayJoinPart03TestMindmapTest069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(-1, 0);
       expect(arr.join('\\')).assertEqual('-1\\0');
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_7000
+     * @tc.name int32ArrayJoinPart03TestMindmapTest070
+     * @tc.desc Verify join() separator '\'\' \'1\'2'
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it('int32ArrayJoinPart03TestMindmapTest070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: Int32Array = Int32Array.of(1, 2);
+      expect(arr.join('\'')).assertEqual('1\'2');
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_7100
      * @tc.name int32ArrayJoinPart03TestMindmapTest071
-     * @tc.desc Verify join() separator '\'\' \'1\'2'
+     * @tc.desc Verify join() with a left brace separator
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int32ArrayJoinPart03TestMindmapTest071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1, 2);
-      expect(arr.join('\'')).assertEqual('1\'2');
+       expect(arr.join('\u007b')).assertEqual('1\u007b2');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_7200
      * @tc.name int32ArrayJoinPart03TestMindmapTest072
-     * @tc.desc Verify join() with a left brace separator
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int32ArrayJoinPart03TestMindmapTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int32Array = Int32Array.of(1, 2);
-       expect(arr.join('\u007b')).assertEqual('1\u007b2');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_JOIN_PART03_TEST_MINDMAP_7300
-     * @tc.name int32ArrayJoinPart03TestMindmapTest073
      * @tc.desc Verify join() separator '~'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayJoinPart03TestMindmapTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayJoinPart03TestMindmapTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(2147483647, -2147483648);
       expect(arr.join('~')).assertEqual('2147483647~-2147483648');
     });
