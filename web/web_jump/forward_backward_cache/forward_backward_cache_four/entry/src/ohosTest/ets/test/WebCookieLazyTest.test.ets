@@ -88,7 +88,7 @@ export default function webCookieLazyTest() {
         webview.WebCookieManager.setLazyInitializeWebEngine(null);
       } catch (error) {
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-        if (error.code === 401) {
+        if (error.code == 401) {
           expect_value = true;
         }
       }
@@ -110,7 +110,7 @@ export default function webCookieLazyTest() {
         webview.WebCookieManager.setLazyInitializeWebEngine(undefined);
       } catch (error) {
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-        if (error.code === 401) {
+        if (error.code == 401) {
           expect_value = true;
         }
       }
