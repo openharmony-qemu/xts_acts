@@ -1657,6 +1657,7 @@ export default function extensionWindowPropertiesTest() {
       try {
         const callback = (data: boolean) => { };
         subWindowClass.on("uiExtensionSecureLimitChange", callback);
+        subWindowClass.off("uiExtensionSecureLimitChange");
         expect().assertFail();
         done()
       } catch (error) {

@@ -809,7 +809,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         console.log('www data setAutoStartEnabled_undefined_test begin')
         pipController.setAutoStartEnabled(undefined);
         console.log('www data Succeeded in setAutoStartEnabled_undefined_test')
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         console.log('www data Failed to setAutoStartEnabled_undefined_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
@@ -849,7 +849,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         console.log('www data setAutoStartEnabled_null_test begin')
         pipController.setAutoStartEnabled(null);
         console.log('www data Succeeded in setAutoStartEnabled_null_test')
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         console.log('www data Failed to setAutoStartEnabled_null_test' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message))
@@ -1202,7 +1202,7 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
         });
 
         console.log('www data Succeeded in registering multiple callbacks');
-        expect(true).assertTrue();
+        
         done();
       } catch (error) {
         console.log('www data Failed to controlPanelActionEvent_Multiple_Callbacks' + JSON.stringify(error.code) + ':msg:' + JSON.stringify(error.message));
