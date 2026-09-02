@@ -46,7 +46,7 @@ import vectorTest09 from './vector/VectorTest09.test';
 import arrayListNew from './arraylist/ArrayListNew.test';
 import hashSetNew from './hashset/HashSetNew.test';
 import plainArrayNew from './plainarray/PlainArrayNew.test';
-import queueNew from './queue/QueueNew.test';
+import QueueNewTest from './queue/QueueNew.test';
 import vectorNew from './vector/VectorNew.test';
 
 export default function testsuite() {
@@ -98,6 +98,6 @@ export default function testsuite() {
   arrayListNew();
   hashSetNew();
   plainArrayNew();
-  queueNew();
+  QueueNewTest();
   vectorNew();
 }

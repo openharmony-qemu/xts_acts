@@ -16,8 +16,8 @@ import Queue from '@ohos.util.Queue';
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { test007, test008, test017, test018, test019 } from './QueueResource';
 
-export default function QueueTest() {
-  describe("QueueTest", () => {
+export default function QueueNewTest() {
+  describe("QueueNewTest", () => {
 
     /**
      * @tc.name   testAdd002

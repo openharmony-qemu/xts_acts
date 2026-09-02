@@ -16,8 +16,8 @@ import Stack from '@ohos.util.Stack';
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { test004, test006, test007, test009, test010, test021, test032, test033, test035 } from './StackResource';
 
-export default function StackTest() {
-  describe("StackTest", () => {
+export default function StackNewTest() {
+  describe("StackNewTest", () => {
     /**
      * @tc.name   testPush002
      * @tc.number SUB_COMMONLIBRARY_UTIL_STACKFP_0100

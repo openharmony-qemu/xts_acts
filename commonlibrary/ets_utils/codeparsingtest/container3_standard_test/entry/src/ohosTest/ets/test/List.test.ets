@@ -46,7 +46,7 @@ import treeSetTest07 from './treeset/TreeSetTest07.test';
 import hashMapNew from './hashmap/HashMapNew.test';
 import lightWeightMapNew from './lightweightmap/LightWeightMapNew.test';
 import lightWeightSetNew from './lightweightset/LightWeightSetNew.test';
-import stackNew from './stack/StackNew.test';
+import StackNewTest from './stack/StackNew.test';
 import treeMapNew from './treemap/TreemapNew.test';
 import treeSetNew from './treeset/TreeSetNew.test';
 
@@ -99,7 +99,7 @@ export default function testsuite() {
   hashMapNew();
   lightWeightMapNew();
   lightWeightSetNew();
-  stackNew();
+  StackNewTest();
   treeMapNew();
   treeSetNew();
 }
