@@ -147,6 +147,17 @@ struct WebSchemeHandlerResponse {
                 break;
               }
 
+              case "WebSchemeHandlerResponse_setCustomErrorCode": {
+                try {
+                  response.setCustomErrorCode(32159)
+                  console.log("[schemeHandler] getCustomErrorCode:" + response.getCustomErrorCode())
+                  Utils.emitEvent(response.getCustomErrorCode(), 8820)
+                } catch (error) {
+                  console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                }
+                break;
+              }
+
           }
         })
 

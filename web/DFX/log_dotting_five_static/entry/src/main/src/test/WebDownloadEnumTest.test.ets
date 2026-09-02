@@ -27,7 +27,7 @@ import wifiMg from '@ohos.wifiManager';
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function webDownloadEnumTest() {
+export default function webDownloadEnumTest(): void {
 
   describe('WebDownloadEnumTest', () => {
     beforeAll(async (): Promise<void> => {

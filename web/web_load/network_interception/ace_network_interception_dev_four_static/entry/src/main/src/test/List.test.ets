@@ -17,9 +17,11 @@ import  WebSchemeHandlerResponse from './WebSchemeHandlerResponse.test'
 import  WebHttpBodyStream from './WebHttpBodyStream.test'
 import  SetAndClearServiceWorkerWebSchemeHandler from './SetAndClearServiceWorkerWebSchemeHandler.test'
 import  WebSchemeHandlerRequest from './WebSchemeHandlerRequest.test'
-export default function testsuite() {
+import  WebCustomErrorCode from './WebCustomErrorCode.test'
+export default function testsuite(): void {
   WebSchemeHandlerResponse();
   WebHttpBodyStream();
   SetAndClearServiceWorkerWebSchemeHandler();
   WebSchemeHandlerRequest();
+  WebCustomErrorCode();
 }

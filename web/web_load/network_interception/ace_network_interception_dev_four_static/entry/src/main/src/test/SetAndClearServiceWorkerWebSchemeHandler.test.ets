@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let testAbilityContext:common.UIAbilityContext;
 
-export default function SetAndClearServiceWorkerWebSchemeHandler() {
+export default function SetAndClearServiceWorkerWebSchemeHandler(): void {
   describe('SetAndClearServiceWorkerWebSchemeHandler', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')

@@ -16,12 +16,12 @@
 import { beforeAll, beforeEach, describe, it , TestType, Size, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
-import { accessibility, config } from '@kit.AccessibilityKit';
+import { accessibility as a11yKit, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
 import { Driver,ON } from '@ohos.UiTest'
 import wifiMg from '@ohos.wifiManager';
 let driver = Driver.create();
-const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+const CAPACITY: a11yKit.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 
@@ -102,6 +102,22 @@ export default function webResourceError() {
     it('testGetErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetErrorCode001", 120010)
       Utils.registerEvent("testGetErrorCode001", -200, 120020, done);
+      let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
+      await component.click();
+    })
+
+    /**
+     * @tc.name   testGetCustomErrorCode001
+     * @tc.number SUB_WEB_WEBRESOURCEERROR_GETCUSTOMERRORCODE_0100
+     * @tc.desc   test WebResourceError getCustomErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testGetCustomErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      expect(32159).assertEqual(32159);
+      Utils.emitEvent("testGetCustomErrorCode001", 120010)
+      Utils.registerEvent("testGetCustomErrorCode001", 32159, 120025, done);
       let component = await driver.findComponent(ON.id("WebResourceErrorButton"));
       await component.click();
     })
