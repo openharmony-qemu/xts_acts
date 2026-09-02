@@ -570,7 +570,7 @@ export default function ConnectionBasicTest() {
           console.error(JSON.stringify(error));
         });
         await sleep(200);
-        ExpectTrue(count1 == 0);
+        ExpectTrue(count1 === 0);
         ExpectTrue(count2 >= 1);
         console.info(`${caseName}---End`);
         done();
@@ -960,7 +960,7 @@ export default function ConnectionBasicTest() {
         netConn.unregister((error: BusinessError) => {
           console.error(JSON.stringify(error));
         });
-        ExpectTrue(count1 == 0);
+        ExpectTrue(count1 === 0);
         ExpectTrue(count2 >= 1);
         console.info(`${caseName}---End`);
         done();
