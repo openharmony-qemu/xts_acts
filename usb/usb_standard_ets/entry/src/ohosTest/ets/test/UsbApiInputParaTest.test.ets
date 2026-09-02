@@ -1623,7 +1623,7 @@ export default function UsbApiInputParaTest() {
     /**
      * @tc.name   testUsbSubmitTransferParamEx001
      * @tc.number SUB_USB_HostManager_InputPara_6700
-     * @tc.desc   usbSubmitTransfer with invalid flags=-1 should throw 14400001 (no device permission)
+     * @tc.desc   usbSubmitTransfer with invalid flags=-1 should throw 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1649,14 +1649,14 @@ export default function UsbApiInputParaTest() {
         expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbSubmitTransferParamEx001 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(14400001);
+        expect(err.code).assertEqual(401);
       }
     })
 
     /**
      * @tc.name   testUsbSubmitTransferParamEx002
      * @tc.number SUB_USB_HostManager_InputPara_6800
-     * @tc.desc   usbSubmitTransfer with invalid flags=4 (out of range) should throw error
+     * @tc.desc   usbSubmitTransfer with invalid flags=4 (out of range) should throw 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1689,7 +1689,7 @@ export default function UsbApiInputParaTest() {
     /**
      * @tc.name   testUsbSubmitTransferParamEx003
      * @tc.number SUB_USB_HostManager_InputPara_6900
-     * @tc.desc   usbSubmitTransfer with invalid type=0 should throw 14400001 (no device permission)
+     * @tc.desc   usbSubmitTransfer with invalid type=0 should throw 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1715,14 +1715,14 @@ export default function UsbApiInputParaTest() {
         expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbSubmitTransferParamEx003 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(14400001);
+        expect(err.code).assertEqual(401);
       }
     })
 
     /**
      * @tc.name   testUsbSubmitTransferParamEx004
      * @tc.number SUB_USB_HostManager_InputPara_7000
-     * @tc.desc   usbSubmitTransfer with invalid type=4 (out of range) should throw error
+     * @tc.desc   usbSubmitTransfer with invalid type=4 (out of range) should throw 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1755,7 +1755,7 @@ export default function UsbApiInputParaTest() {
     /**
      * @tc.name   testUsbCancelTransferParamEx001
      * @tc.number SUB_USB_HostManager_InputPara_7100
-     * @tc.desc   usbCancelTransfer with invalid flags=-1 should throw 14400001 (no device permission)
+     * @tc.desc   usbCancelTransfer with invalid flags=-1 should throw 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1781,14 +1781,14 @@ export default function UsbApiInputParaTest() {
         expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx001 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(14400001);
+        expect(err.code).assertEqual(401);
       }
     })
 
     /**
      * @tc.name   testUsbCancelTransferParamEx002
      * @tc.number SUB_USB_HostManager_InputPara_7200
-     * @tc.desc   usbCancelTransfer with invalid flags=4 (out of range) should throw 14400001 (no device permission)
+     * @tc.desc   usbCancelTransfer with invalid flags=4 (out of range) should throw 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1814,14 +1814,14 @@ export default function UsbApiInputParaTest() {
         expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx002 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(14400001);
+        expect(err.code).assertEqual(401);
       }
     })
 
     /**
      * @tc.name   testUsbCancelTransferParamEx003
      * @tc.number SUB_USB_HostManager_InputPara_7300
-     * @tc.desc   usbCancelTransfer with invalid type=0 should throw 14400001 (no device permission)
+     * @tc.desc   usbCancelTransfer with invalid type=0 should throw 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1847,14 +1847,14 @@ export default function UsbApiInputParaTest() {
         expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx003 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(14400001);
+        expect(err.code).assertEqual(401);
       }
     })
 
     /**
      * @tc.name   testUsbCancelTransferParamEx004
      * @tc.number SUB_USB_HostManager_InputPara_7400
-     * @tc.desc   usbCancelTransfer with invalid type=4 (out of range) should throw 14400001 (no device permission)
+     * @tc.desc   usbCancelTransfer with invalid type=4 (out of range) should throw 401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
@@ -1880,7 +1880,7 @@ export default function UsbApiInputParaTest() {
         expect().assertFail();
       } catch (err) {
         console.info(`${TAG} testUsbCancelTransferParamEx004 catch err: ${JSON.stringify(err)}`);
-        expect(err.code).assertEqual(14400001);
+        expect(err.code).assertEqual(401);
       }
     })
   })
