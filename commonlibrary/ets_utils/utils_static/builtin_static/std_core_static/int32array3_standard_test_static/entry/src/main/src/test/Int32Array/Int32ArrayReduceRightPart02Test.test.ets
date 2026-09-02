@@ -1034,7 +1034,7 @@ export default function int32ArrayReduceRightPart02Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2);
       try {
         arr.reduceRight((p: number, c: number, i: int, a: Int32Array): number => {
-          expect(c).assertEqual(2);
+          expect(c).assertEqual(1);
           throw new TypeError('t');
         });
         expect().assertFail();
@@ -1055,7 +1055,7 @@ export default function int32ArrayReduceRightPart02Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2);
       try {
         arr.reduceRight((p: number, c: number, i: int, a: Int32Array): number => {
-          expect(c).assertEqual(2);
+          expect(c).assertEqual(1);
           throw new Error('e');
         });
         expect().assertFail();
@@ -1110,7 +1110,7 @@ export default function int32ArrayReduceRightPart02Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2);
       try {
         arr.reduceRight((p: number, c: number, i: int, a: Int32Array): number => {
-          expect(c).assertEqual(2);
+          expect(c).assertEqual(1);
           throw new Error('first boom');
         });
         expect().assertFail();
@@ -1185,12 +1185,10 @@ export default function int32ArrayReduceRightPart02Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2);
       try {
         arr.reduceRight((p: number, c: number, i: int, a: Int32Array): number => {
-          expect(c).assertEqual(2);
           throw new RangeError('r');
         });
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('RangeError');
         expect(e.name).assertEqual('RangeError');
       }
     });
