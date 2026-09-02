@@ -129,11 +129,13 @@ struct injectOfflineResourcesTest {
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-    const data = eventData.data as Record<string, RecordData>;
-    if (data['ACTION'] != null) {
-      let strValue: string = String(data['ACTION']);
-      this.str = strValue;
+    if (eventData != null) {
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
+        let strValue: string = String(data['ACTION']);
+        this.str = strValue;
+      }
     }
   }
 
