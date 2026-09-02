@@ -527,5 +527,28 @@ int32_t ActsGamePadRightThumbstickUnregisterAxisInputMonitor01()
     return static_cast<int32_t>(code);
 }
 
+int32_t ActsGamePadButtonUnknownRegisterButtonInputMonitor01()
+{
+    GameController_ErrorCode code =
+        OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor(ButtonInputMonitorCallbackTest01);
+
+    OH_GamePad_ButtonUnknown_UnregisterButtonInputMonitor();
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGamePadButtonUnknownRegisterButtonInputMonitor02()
+{
+    GameController_ErrorCode code = OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor(nullptr);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGamePadButtonUnknownUnregisterButtonInputMonitor01()
+{
+    OH_GamePad_ButtonUnknown_RegisterButtonInputMonitor(ButtonInputMonitorCallbackTest01);
+
+    GameController_ErrorCode code = OH_GamePad_ButtonUnknown_UnregisterButtonInputMonitor();
+    return static_cast<int32_t>(code);
+}
+
 } // namespace GameController
 } // namespace OHOS

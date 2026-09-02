@@ -198,6 +198,21 @@ static napi_value ActsGameDeviceDeviceInfoGetDeviceType02(napi_env env, napi_cal
     return CreateTestFunction(&OHOS::GameController::ActsGameDeviceDeviceInfoGetDeviceType02, env, info);
 }
 
+static napi_value ActsGameDeviceDeviceInfoGetVendor01(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceDeviceInfoGetVendor01, env, info);
+}
+
+static napi_value ActsGameDeviceDeviceInfoGetVendor02(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceDeviceInfoGetVendor02, env, info);
+}
+
+static napi_value ActsGameDeviceDeviceInfoGetVendor03(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGameDeviceDeviceInfoGetVendor03, env, info);
+}
+
 // game_device_event_test end
 
 // game_pad_test begin
@@ -533,6 +548,21 @@ static napi_value ActsGamePadRightThumbstickRegisterAxisInputMonitor02(napi_env 
 static napi_value ActsGamePadRightThumbstickUnregisterAxisInputMonitor01(napi_env env, napi_callback_info info)
 {
     return CreateTestFunction(&OHOS::GameController::ActsGamePadRightThumbstickUnregisterAxisInputMonitor01, env, info);
+}
+
+static napi_value ActsGamePadButtonUnknownRegisterButtonInputMonitor01(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGamePadButtonUnknownRegisterButtonInputMonitor01, env, info);
+}
+
+static napi_value ActsGamePadButtonUnknownRegisterButtonInputMonitor02(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGamePadButtonUnknownRegisterButtonInputMonitor02, env, info);
+}
+
+static napi_value ActsGamePadButtonUnknownUnregisterButtonInputMonitor01(napi_env env, napi_callback_info info)
+{
+    return CreateTestFunction(&OHOS::GameController::ActsGamePadButtonUnknownUnregisterButtonInputMonitor01, env, info);
 }
 
 // game_pad_test end
@@ -997,6 +1027,12 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"ActsGameDeviceDeviceInfoGetDeviceType02", nullptr, ActsGameDeviceDeviceInfoGetDeviceType02, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"ActsGameDeviceDeviceInfoGetVendor01", nullptr, ActsGameDeviceDeviceInfoGetVendor01, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"ActsGameDeviceDeviceInfoGetVendor02", nullptr, ActsGameDeviceDeviceInfoGetVendor02, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"ActsGameDeviceDeviceInfoGetVendor03", nullptr, ActsGameDeviceDeviceInfoGetVendor03, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
 
     {"ActsGamePadLeftShoulderRegisterButtonInputMonitor01", nullptr,
      ActsGamePadLeftShoulderRegisterButtonInputMonitor01, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -1130,6 +1166,12 @@ napi_property_descriptor desc[] = {
      ActsGamePadRightThumbstickRegisterAxisInputMonitor02, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"ActsGamePadRightThumbstickUnregisterAxisInputMonitor01", nullptr,
      ActsGamePadRightThumbstickUnregisterAxisInputMonitor01, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGamePadButtonUnknownRegisterButtonInputMonitor01", nullptr,
+     ActsGamePadButtonUnknownRegisterButtonInputMonitor01, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGamePadButtonUnknownRegisterButtonInputMonitor02", nullptr,
+     ActsGamePadButtonUnknownRegisterButtonInputMonitor02, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"ActsGamePadButtonUnknownUnregisterButtonInputMonitor01", nullptr,
+     ActsGamePadButtonUnknownUnregisterButtonInputMonitor01, nullptr, nullptr, nullptr, napi_default, nullptr},
 
     {"ActsGameControllerGamePadButtonEventGetDeviceId01", nullptr, ActsGameControllerGamePadButtonEventGetDeviceId01,
      nullptr, nullptr, nullptr, napi_default, nullptr},
