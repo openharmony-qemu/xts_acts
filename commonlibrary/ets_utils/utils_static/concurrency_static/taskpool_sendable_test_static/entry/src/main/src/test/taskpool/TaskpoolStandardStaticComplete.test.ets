@@ -2927,7 +2927,7 @@ export default function TaskPoolTest(): void {
     /**
      * @tc.name   testTaskPoolClassStatic108
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCURRENT_TASKPOOL_TASKPOOLSTANDARD_1170
-     * @tc.desc   cancel the executeDelay task
+     * @tc.desc   cancel an executeDelayed task after it has finished
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -2949,7 +2949,7 @@ export default function TaskPoolTest(): void {
         caught = true;
         expect(e.code).assertEqual(10200085);
       }
-      expect(caught).assertFalse();
+      expect(caught).assertTrue();
       expect(result).assertEqual(100);
       done();
     })

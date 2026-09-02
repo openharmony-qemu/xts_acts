@@ -1296,7 +1296,6 @@ export default function taskTimeoutTest() {
           e = e as Error;
           expect(e.message).assertEqual('taskpool:: task has been executed');
         }
-        taskpool.cancel(task);
         console.info(`${TAG} test end`);
         done();
       });
