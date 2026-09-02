@@ -28,7 +28,7 @@ let subscriber = commonEventManager.createSubscriberSync({
 @Concurrent
 function StartSelfUIAbilityWithPidResult(casesName: string): number {
   let result = -1;
-  if(casesName == 'StartSelfUIAbilityWithPidResult_0200'){
+  if(casesName == "StartSelfUIAbilityWithPidResult_0200"){
     result = testNapi.ndkStartSelfUIAbilityWithPidResult_0200();
   }
   return result
@@ -41,7 +41,7 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
     beforeEach(() => {})
     afterEach(() => {})
     afterAll(() => {})
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0100
      * @tc.number SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0100
@@ -82,8 +82,7 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
           done();
         });
       });
-      let task1: taskpool.Task = new taskpool.Task(
-        StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0200');
+      let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0200");
       await taskpool.execute(task1).then((value: Object) => {
         hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
         if(value == 801){

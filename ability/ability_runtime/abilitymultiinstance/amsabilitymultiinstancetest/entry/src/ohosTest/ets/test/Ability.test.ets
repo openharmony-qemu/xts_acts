@@ -33,7 +33,7 @@ class Params {
 }
 
 let subscriberInfoMultiInstance: commonEventManager.CommonEventSubscribeInfo = {
-  events: ['MultiInstanceStartNext', 'MultiInstanceStartFinish']
+  events: ["MultiInstanceStartNext", "MultiInstanceStartFinish"]
 }
 const START_ABILITY_TIMEOUT = 9000;
 const ONACCEPTWANT_KEY_NOTSET_ID = -1;
@@ -41,55 +41,55 @@ const ONACCEPTWANT_KEY_UNDEFINED_ID = -2;
 const UNSUBSCRIBE_TIMEOUT = 5000;
 
 async function startAbilityProcess(testAbilityContext: common.UIAbilityContext, parameters: Params) {
-  let bundleName = 'com.acts.abilitymultiinstancea';
-  let abilityName = 'com.acts.abilitymultiinstancea.MainAbility';
+  let bundleName = "com.acts.abilitymultiinstancea";
+  let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
   let idx: number = parameters.nextStep;
   switch (parameters.step![idx]) {
-    case 'StartA1':
+    case "StartA1":
       parameters.startId = 1;
       break;
-    case 'StartA2':
+    case "StartA2":
       parameters.startId = 2;
       break;
-    case 'StartA3':
+    case "StartA3":
       parameters.startId = 3;
       break;
-    case 'StartANS':
+    case "StartANS":
       parameters.startId = ONACCEPTWANT_KEY_NOTSET_ID;
       break;
-    case 'StartAUD':
+    case "StartAUD":
       parameters.startId = ONACCEPTWANT_KEY_UNDEFINED_ID;
       break;
-    case 'StartB':
-      bundleName = 'com.acts.abilitymultiinstanceb';
-      abilityName = 'com.acts.abilitymultiinstanceb.MainAbility';
+    case "StartB":
+      bundleName = "com.acts.abilitymultiinstanceb";
+      abilityName = "com.acts.abilitymultiinstanceb.MainAbility";
       break;
-    case 'StartC':
-      bundleName = 'com.acts.abilitymultiinstancec';
-      abilityName = 'com.acts.abilitymultiinstancec.MainAbility';
+    case "StartC":
+      bundleName = "com.acts.abilitymultiinstancec";
+      abilityName = "com.acts.abilitymultiinstancec.MainAbility";
       break;
-    case 'StartDMain1':
-      bundleName = 'com.acts.abilitymultiinstanced';
-      abilityName = 'com.acts.abilitymultiinstanced.MainAbility';
+    case "StartDMain1":
+      bundleName = "com.acts.abilitymultiinstanced";
+      abilityName = "com.acts.abilitymultiinstanced.MainAbility";
       parameters.startId = 1;
       break;
-    case 'StartDMain2':
-      bundleName = 'com.acts.abilitymultiinstanced';
-      abilityName = 'com.acts.abilitymultiinstanced.MainAbility';
+    case "StartDMain2":
+      bundleName = "com.acts.abilitymultiinstanced";
+      abilityName = "com.acts.abilitymultiinstanced.MainAbility";
       parameters.startId = 2;
       break;
-    case 'StartDSec':
-      bundleName = 'com.acts.abilitymultiinstanced';
-      abilityName = 'com.acts.abilitymultiinstanced.SecondAbility';
+    case "StartDSec":
+      bundleName = "com.acts.abilitymultiinstanced";
+      abilityName = "com.acts.abilitymultiinstanced.SecondAbility";
       break;
-    case 'StartDThd':
-      bundleName = 'com.acts.abilitymultiinstanced';
-      abilityName = 'com.acts.abilitymultiinstanced.ThirdAbility';
+    case "StartDThd":
+      bundleName = "com.acts.abilitymultiinstanced";
+      abilityName = "com.acts.abilitymultiinstanced.ThirdAbility";
       break;
-    case 'StartE':
-      bundleName = 'com.acts.abilitymultiinstancee';
-      abilityName = 'com.acts.abilitymultiinstancee.MainAbility';
+    case "StartE":
+      bundleName = "com.acts.abilitymultiinstancee";
+      abilityName = "com.acts.abilitymultiinstancee.MainAbility";
       break;
     default:
       break;
@@ -105,25 +105,25 @@ async function startAbilityProcess(testAbilityContext: common.UIAbilityContext, 
       step: parameters.step
     }
   }, (error, data) => {
-    console.log('startAbilityProcess result: ' + JSON.stringify(error) + ', ' + JSON.stringify(data));
+    console.log('startAbilityProcess result: ' + JSON.stringify(error) + ", " + JSON.stringify(data));
   })
 }
 
 export default function abilityTest(testAbilityContext: common.UIAbilityContext) {
   describe('ActsAbilityTest', () => {
-    let TAG1 = 'ACTS_AbilityMultiInstance_Single == ';
+    let TAG1 = "ACTS_AbilityMultiInstance_Single == ";
     afterEach(async (done: Function) => {
-      console.log(TAG1 + 'afterEach called');
+      console.log(TAG1 + "afterEach called");
 
       let cmd = 'aa start -b com.example.abilitymultiinstance -a com.example.abilitymultiinstance.MainAbility';
-      let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
+      let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
       if(user !== undefined){
           cmd += ' -u ' + user;
       }
       await abilityDelegator.executeShellCommand(cmd);
 
       setTimeout(() => {
-        console.log(TAG1 + 'afterEach end');
+        console.log(TAG1 + "afterEach end");
         done();
       }, 500);
     })
@@ -140,33 +140,33 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       console.log('ACTS_AbilityMultiInstance_Single_0100====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onCreateonForegroundonAcceptWantCalledId1', 'AppB:onCreateonForeground',
-        'AppA:onForegroundonAcceptWantCalledId1'];
+      let checkEventResults = ["AppA:onCreateonForegroundonAcceptWantCalledId1", "AppB:onCreateonForeground",
+        "AppA:onForegroundonAcceptWantCalledId1"];
       let checkIndex = 0;
 
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_0100 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(3);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_0100 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             if (checkIndex === 2 && deviceSupport === 'false') {
               clearTimeout(id);
                 commonEvent.unsubscribe(subscriber, () => {
-                  console.debug('====>UnSubscribe CallBack====>');
+                  console.debug("====>UnSubscribe CallBack====>");
                   setTimeout(() => {
                     done();
                   }, 700)
@@ -179,7 +179,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('StartAbilityMultiInstanceTester timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -191,7 +191,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 3,
         nextStep: 0,
-        step: ['StartA1', 'StartB', 'StartA1']
+        step: ["StartA1", "StartB", "StartA1"]
       })
     })
 
@@ -207,34 +207,34 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       console.log('ACTS_AbilityMultiInstance_Single_0200====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onCreateonForegroundonAcceptWantCalledId3', 'AppB:onCreateonForeground',
-        'AppA:onCreateonForegroundonAcceptWantCalledId2'];
+      let checkEventResults = ["AppA:onCreateonForegroundonAcceptWantCalledId3", "AppB:onCreateonForeground",
+        "AppA:onCreateonForegroundonAcceptWantCalledId2"];
       let checkIndex = 0;
 
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_0200 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(3);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0200 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_0200 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             if (checkIndex === 2 && deviceSupport === 'false') {
               clearTimeout(id);
                 commonEvent.unsubscribe(subscriber, () => {
-                  console.debug('====>UnSubscribe CallBack====>');
+                  console.debug("====>UnSubscribe CallBack====>");
                   setTimeout(() => {
                     done();
                   }, 700)
@@ -247,7 +247,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('StartAbilityMultiInstanceTester timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -259,7 +259,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 3,
         nextStep: 0,
-        step: ['StartA3', 'StartB', 'StartA2']
+        step: ["StartA3", "StartB", "StartA2"]
       })
     })
 
@@ -279,27 +279,27 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onForegroundonAcceptWantCalledId1', 'AppC:onCreateonForeground',
-        'AppA:onForegroundonAcceptWantCalledId1'];
+      let checkEventResults = ["AppA:onForegroundonAcceptWantCalledId1", "AppC:onCreateonForeground",
+        "AppA:onForegroundonAcceptWantCalledId1"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_0300 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(3);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0300 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_0300 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -309,7 +309,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_0300 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -321,7 +321,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 3,
         nextStep: 0,
-        step: ['StartA1', 'StartC', 'StartA1']
+        step: ["StartA1", "StartC", "StartA1"]
       })
     })
 
@@ -341,27 +341,27 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onForegroundonAcceptWantCalledId3', 'AppC:onForeground',
-        'AppA:onForegroundonAcceptWantCalledId2'];
+      let checkEventResults = ["AppA:onForegroundonAcceptWantCalledId3", "AppC:onForeground",
+        "AppA:onForegroundonAcceptWantCalledId2"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (error, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_0400 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(2);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0400 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_0400 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -371,7 +371,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_0400 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -383,7 +383,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 3,
         nextStep: 0,
-        step: ['StartA3', 'StartC', 'StartA2']
+        step: ["StartA3", "StartC", "StartA2"]
       });
     })
 
@@ -403,27 +403,27 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onForegroundonAcceptWantCalledId1',
-        'AppA:onForegroundonAcceptWantCalledId2'];
+      let checkEventResults = ["AppA:onForegroundonAcceptWantCalledId1",
+        "AppA:onForegroundonAcceptWantCalledId2"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_0600 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(2);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             });
             console.log('ACTS_AbilityMultiInstance_Single_0600 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_0600 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -433,7 +433,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_0600 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -445,7 +445,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 2,
         nextStep: 0,
-        step: ['StartA1', 'StartA2']
+        step: ["StartA1", "StartA2"]
       })
     })
 
@@ -465,27 +465,27 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onForegroundonAcceptWantCalledId1', 'AppB:onCreateonForeground',
-        'AppC:onForeground', 'AppA:onForegroundonAcceptWantCalledId1'];
+      let checkEventResults = ["AppA:onForegroundonAcceptWantCalledId1", "AppB:onCreateonForeground",
+        "AppC:onForeground", "AppA:onForegroundonAcceptWantCalledId1"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_0700 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(3);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0700 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_0700 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -495,7 +495,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_0700 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -507,7 +507,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 4,
         nextStep: 0,
-        step: ['StartA1', 'StartB', 'StartC', 'StartA1']
+        step: ["StartA1", "StartB", "StartC", "StartA1"]
       });
     })
 
@@ -527,27 +527,27 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onForegroundonAcceptWantCalledId3', 'AppB:onCreateonForeground',
-        'AppC:onForeground', 'AppA:onCreateonForegroundonAcceptWantCalledId2'];
+      let checkEventResults = ["AppA:onForegroundonAcceptWantCalledId3", "AppB:onCreateonForeground",
+        "AppC:onForeground", "AppA:onCreateonForegroundonAcceptWantCalledId2"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_0800 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(3);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0800 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_0800 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -557,7 +557,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_0800 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -569,7 +569,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 4,
         nextStep: 0,
-        step: ['StartA3', 'StartB', 'StartC', 'StartA2']
+        step: ["StartA3", "StartB", "StartC", "StartA2"]
       })
     })
 
@@ -589,28 +589,28 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         return;
       }
       let id: number;
-      let checkEventResults = ['AppB:onCreateonForeground', 'AppA:onForegroundonAcceptWantCalledId1',
-        'AppC:onForeground', 'AppA:onForegroundonAcceptWantCalledId1'];
+      let checkEventResults = ["AppB:onCreateonForeground", "AppA:onForegroundonAcceptWantCalledId1",
+        "AppC:onForeground", "AppA:onForegroundonAcceptWantCalledId1"];
       let checkIndex = 0;
 
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_0900 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(3);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_0900 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_0900 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -620,7 +620,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_0900 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -632,7 +632,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 4,
         nextStep: 0,
-        step: ['StartB', 'StartA1', 'StartC', 'StartA1']
+        step: ["StartB", "StartA1", "StartC", "StartA1"]
       })
     })
 
@@ -652,27 +652,27 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppB:onCreateonForeground', 'AppA:onForegroundonAcceptWantCalledId1',
-        'AppC:onForeground', 'AppA:onForegroundonAcceptWantCalledId2'];
+      let checkEventResults = ["AppB:onCreateonForeground", "AppA:onForegroundonAcceptWantCalledId1",
+        "AppC:onForeground", "AppA:onForegroundonAcceptWantCalledId2"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_1000 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(3);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1000 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_1000 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -683,7 +683,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_1000 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -695,7 +695,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 4,
         nextStep: 0,
-        step: ['StartB', 'StartA1', 'StartC', 'StartA2']
+        step: ["StartB", "StartA1", "StartC", "StartA2"]
       })
     })
 
@@ -715,27 +715,27 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppD:onCreateonForegroundonAcceptWantCalledId1', 'AppD:onCreateonForeground',
-        'AppD:onCreateonForeground', 'AppD:onForegroundonAcceptWantCalledId1'];
+      let checkEventResults = ["AppD:onCreateonForegroundonAcceptWantCalledId1", "AppD:onCreateonForeground",
+        "AppD:onCreateonForeground", "AppD:onForegroundonAcceptWantCalledId1"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_1100 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(4);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1100 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_1100 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -745,7 +745,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_1100 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -757,7 +757,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 4,
         nextStep: 0,
-        step: ['StartDMain1', 'StartDSec', 'StartDThd', 'StartDMain1']
+        step: ["StartDMain1", "StartDSec", "StartDThd", "StartDMain1"]
       })
     })
 
@@ -777,27 +777,27 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppD:onCreateonForegroundonAcceptWantCalledId2', 'AppD:onCreateonForeground',
-        'AppD:onForeground', 'AppD:onForegroundonAcceptWantCalledId1'];
+      let checkEventResults = ["AppD:onCreateonForegroundonAcceptWantCalledId2", "AppD:onCreateonForeground",
+        "AppD:onForeground", "AppD:onForegroundonAcceptWantCalledId1"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_1200 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(4);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1200 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_1200 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -807,7 +807,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_1200 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -819,7 +819,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 4,
         nextStep: 0,
-        step: ['StartDMain2', 'StartDSec', 'StartDThd', 'StartDMain1']
+        step: ["StartDMain2", "StartDSec", "StartDThd", "StartDMain1"]
       })
     })
 
@@ -839,26 +839,26 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppB:onCreateonForeground', 'AppB:onCreateonForeground'];
+      let checkEventResults = ["AppB:onCreateonForeground", "AppB:onCreateonForeground"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_1300 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(2);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1300 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_1300 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -868,7 +868,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_1300 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -880,7 +880,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 2,
         nextStep: 0,
-        step: ['StartB', 'StartB']
+        step: ["StartB", "StartB"]
       });
     })
 
@@ -900,27 +900,27 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppE:onInit', 'AppA:onForegroundonAcceptWantCalledId1'];
+      let checkEventResults = ["AppE:onInit", "AppA:onForegroundonAcceptWantCalledId1"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
 
-          if (data.event == 'MultiInstanceStartFinish') {
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_1400 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(2);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             });
             console.log('ACTS_AbilityMultiInstance_Single_1400 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_1400 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -930,7 +930,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_1400 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -942,7 +942,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 2,
         nextStep: 0,
-        step: ['StartE', 'StartA1']
+        step: ["StartE", "StartA1"]
       });
     })
 
@@ -962,26 +962,26 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       }
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onForegroundonAcceptWantCalledId2', 'AppE:onInit'];
+      let checkEventResults = ["AppA:onForegroundonAcceptWantCalledId2", "AppE:onInit"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_1500 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(2);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1500 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_1500 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -991,7 +991,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_1500 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -1003,7 +1003,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 2,
         nextStep: 0,
-        step: ['StartA2', 'StartE']
+        step: ["StartA2", "StartE"]
       })
     })
 
@@ -1019,14 +1019,14 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       console.log('ACTS_AbilityMultiInstance_Single_1600====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onCreateonForegroundonAcceptWantCalledId-1'];
+      let checkEventResults = ["AppA:onCreateonForegroundonAcceptWantCalledId-1"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_1600 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
@@ -1037,7 +1037,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1600 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_1600 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -1058,7 +1058,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 1,
         nextStep: 0,
-        step: ['StartANS']
+        step: ["StartANS"]
       });
     })
 
@@ -1074,26 +1074,26 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
       console.log('ACTS_AbilityMultiInstance_Single_1700====<begin');
       let subscriber: commonEventManager.CommonEventSubscriber;
       let id: number;
-      let checkEventResults = ['AppA:onCreateonForegroundonAcceptWantCalledId-2'];
+      let checkEventResults = ["AppA:onCreateonForegroundonAcceptWantCalledId-2"];
       let checkIndex = 0;
       commonEvent.createSubscriber(subscriberInfoMultiInstance).then(async (data) => {
-        console.debug('====>Create Subscriber====>');
+        console.debug("====>Create Subscriber====>");
         subscriber = data;
         commonEvent.subscribe(subscriber, (err, data) => {
-          console.debug('====>Subscribe CallBack data:====>' + JSON.stringify(data));
-          if (data.event == 'MultiInstanceStartFinish') {
+          console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+          if (data.event == "MultiInstanceStartFinish") {
             clearTimeout(id);
             console.log('ACTS_AbilityMultiInstance_Single_1700 finish callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
             expect(checkIndex).assertEqual(1);
             commonEvent.unsubscribe(subscriber, () => {
-              console.debug('====>UnSubscribe CallBack====>');
+              console.debug("====>UnSubscribe CallBack====>");
               setTimeout(() => {
                 done();
               }, 1500)
             })
             console.log('ACTS_AbilityMultiInstance_Single_1700 finish');
-          } else if (data.event == 'MultiInstanceStartNext') {
+          } else if (data.event == "MultiInstanceStartNext") {
             console.log('ACTS_AbilityMultiInstance_Single_1700 callBackSeq = ' + data.data);
             expect(data.data).assertEqual(checkEventResults[checkIndex++]);
           }
@@ -1103,7 +1103,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         expect().assertFail();
         console.log('ACTS_AbilityMultiInstance_Single_1700 timeout');
         commonEvent.unsubscribe(subscriber, () => {
-          console.debug('====>UnSubscribe CallBack====>');
+          console.debug("====>UnSubscribe CallBack====>");
           setTimeout(() => {
             done();
           }, UNSUBSCRIBE_TIMEOUT)
@@ -1115,7 +1115,7 @@ export default function abilityTest(testAbilityContext: common.UIAbilityContext)
         startId: 0,
         stepNum: 1,
         nextStep: 0,
-        step: ['StartAUD']
+        step: ["StartAUD"]
       })
     })
   })

@@ -70,7 +70,7 @@ export default function ActsLifeCycleMainBackgroundTest() {
         if(data.data != '16000061'){
           try {
           expect(data.data)
-            .assertEqual('onWillBackground,onBackground,hidden event,onDidBackground');
+            .assertEqual("onWillBackground,onBackground,hidden event,onDidBackground");
           } catch (error) {
             console.error(`${tag}-expect failed, code is ${error.code}, message is ${error.message}`);
           }
@@ -118,8 +118,7 @@ export default function ActsLifeCycleMainBackgroundTest() {
         console.info(`${tag}-subscribeCallBack success1-${data.data}`);
         try {
           expect(data.data)
-            .assertEqual('onWillBackground,' +
-                'onBackground,hidden event,onDidBackground,onWindowStageWillDestroy,onWindowStageDestroy,onDestroy');
+            .assertEqual("onWillBackground,onBackground,hidden event,onDidBackground,onWindowStageWillDestroy,onWindowStageDestroy,onDestroy");
         }catch (error) {
         }
         commonEventManager.unsubscribe(subscriber);
@@ -165,8 +164,7 @@ export default function ActsLifeCycleMainBackgroundTest() {
         console.info(`${tag}-subscribeCallBack success1- ${data.data}`);
         try {
           expect(data.data)
-            .assertEqual('onWillBackground,' +
-                'onBackground,hidden event,onDidBackground,onWindowStageWillDestroy,onWindowStageDestroy,onDestroy');
+            .assertEqual("onWillBackground,onBackground,hidden event,onDidBackground,onWindowStageWillDestroy,onWindowStageDestroy,onDestroy");
         }catch (error) {
         }
         commonEventManager.unsubscribe(subscriber);
@@ -213,8 +211,7 @@ export default function ActsLifeCycleMainBackgroundTest() {
         console.info(`${tag}-subscribeCallBack success1- ${data.data}`);
         try {
           expect(data.data)
-            .assertEqual('onWillBackground,' +
-                'onBackground,hidden event,onDidBackground,onWindowStageWillDestroy,onWindowStageDestroy,onDestroy');
+            .assertEqual("onWillBackground,onBackground,hidden event,onDidBackground,onWindowStageWillDestroy,onWindowStageDestroy,onDestroy");
         }catch (error) {
         }
         commonEventManager.unsubscribe(subscriber);
