@@ -20,40 +20,40 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 
 export default class MainAbility2 extends Ability {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    console.log('[Demo] MainAbility2 onCreate')
+    console.log("[Demo] MainAbility2 onCreate")
     globalThis.abilityWant = want;
     globalThis.abilityContext = this.context
   }
 
   onDestroy() {
-    console.log('[Demo] MainAbility2 onDestroy')
+    console.log("[Demo] MainAbility2 onDestroy")
     globalThis.abilityContext = undefined;
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
-    console.log('[Demo] MainAbility2 onWindowStageCreate')
+    console.log("[Demo] MainAbility2 onWindowStageCreate")
 
-    windowStage.loadContent('pages/Index2', null)
+    windowStage.loadContent("pages/Index2", null)
     setTimeout(() => {
       globalThis.abilityContext.terminateSelf().then(() => {
-        console.log('====>MainAbility2 in terminateSelf====>');
+        console.log("====>MainAbility2 in terminateSelf====>");
       })
     }, 500)
   }
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log('[Demo] MainAbility2 onWindowStageDestroy')
+    console.log("[Demo] MainAbility2 onWindowStageDestroy")
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log('[Demo] MainAbility2 onForeground')
+    console.log("[Demo] MainAbility2 onForeground")
   }
 
   onBackground() {
     // Ability has back to background
-    console.log('[Demo] MainAbility2 onBackground')
+    console.log("[Demo] MainAbility2 onBackground")
   }
 };

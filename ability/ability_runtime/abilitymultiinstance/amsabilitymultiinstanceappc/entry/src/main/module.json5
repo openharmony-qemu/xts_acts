@@ -17,7 +17,7 @@
   "module": {
     "name": "com.acts.abilitymultiinstancec",
     "type": "entry",
-    "srcEntry": "./ets/Application/AbilityStage.ets",
+    "srcEntry": "./ets/Application/AbilityStage.ts",
     "description": "$string:phone_entry_dsc",
     "mainElement": "MainAbility",
     "deviceTypes": [],
@@ -27,7 +27,7 @@
     "abilities": [
       {
         "name": "com.acts.abilitymultiinstancec.MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ets",
+        "srcEntry": "./ets/MainAbility/MainAbility.ts",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",

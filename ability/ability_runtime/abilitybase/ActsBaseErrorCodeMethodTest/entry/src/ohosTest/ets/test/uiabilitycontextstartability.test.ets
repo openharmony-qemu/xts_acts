@@ -366,7 +366,7 @@ export default function openLinkTest() {
             bundleName:'com.acts.actsbaseerrrocodemethodtest',
             abilityName:'EntryAbility',
             parameters: {
-              [wantConstant.Params.APP_INSTANCE_KEY] : 'app_instance_0'
+              [wantConstant.Params.APP_INSTANCE_KEY] : "app_instance_0"
             }
           }, (err, data)=>{
             hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_StartAbilityError_1500 ${err?.code}`);
@@ -400,7 +400,7 @@ export default function openLinkTest() {
             bundleName:'com.acts.ability.baseerrorrely',
             abilityName:'EntryAbility',
             parameters: {
-              [wantConstant.Params.APP_INSTANCE_KEY] : 'app_instance_0'
+              [wantConstant.Params.APP_INSTANCE_KEY] : "app_instance_0"
             }
           }, {
             windowLeft: 20,

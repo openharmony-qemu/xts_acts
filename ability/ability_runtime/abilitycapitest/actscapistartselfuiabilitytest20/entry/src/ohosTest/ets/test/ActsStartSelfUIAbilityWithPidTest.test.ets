@@ -28,28 +28,28 @@ function sleep(ms: number) {
 @Concurrent
 function StartSelfUIAbilityWithPidResult(casesName: string): number {
   let result = -1;
-  if(casesName == 'StartSelfUIAbilityWithPidResult_0200'){
+  if(casesName == "StartSelfUIAbilityWithPidResult_0200"){
     result = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsNoError();
   }
-  if(casesName == 'StartSelfUIAbilityWithPidResult_0100'){
+  if(casesName == "StartSelfUIAbilityWithPidResult_0100"){
     result = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport();
   }
-  if(casesName == 'StartSelfUIAbilityWithPidResult_0300'){
+  if(casesName == "StartSelfUIAbilityWithPidResult_0300"){
     result = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached();
   }
-  if(casesName == 'StartSelfUIAbilityWithPidResult_0400'){
+  if(casesName == "StartSelfUIAbilityWithPidResult_0400"){
     result = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility();
   }
-  if(casesName == 'StartSelfUIAbilityWithPidResult_0500'){
+  if(casesName == "StartSelfUIAbilityWithPidResult_0500"){
     result = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp();
   }
-  if(casesName == 'StartSelfUIAbilityWithPidResult_0600'){
+  if(casesName == "StartSelfUIAbilityWithPidResult_0600"){
     result = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsCodeInternal();
   }
-  if(casesName == 'StartSelfUIAbilityWithPidResult_0700'){
+  if(casesName == "StartSelfUIAbilityWithPidResult_0700"){
     result = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey();
   }
-  if(casesName == 'StartSelfUIAbilityWithPidResult_0800'){
+  if(casesName == "StartSelfUIAbilityWithPidResult_0800"){
     result = AbilityKitTest.StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled();
   }
   return result
@@ -57,7 +57,7 @@ function StartSelfUIAbilityWithPidResult(casesName: string): number {
 
 export default function ActsStartSelfUIAbilityWithPidTest() {
   describe('ActsStartSelfUIAbilityWithPidTest', () => {
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
      * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0200
@@ -72,8 +72,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         try {
           console.info(`====>${LOG_NAME} start====`);
           await sleep(2000)
-          let task1: taskpool.Task = new taskpool.Task(
-            StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0200');
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0200");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
@@ -93,7 +92,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         }
       })
 
-
+      
     /**
      * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0100
      * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0100
@@ -107,8 +106,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0100`;
         try {
           console.info(`====>${LOG_NAME} start====`);
-          let task1: taskpool.Task = new taskpool.Task(
-            StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0100');
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0100");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
@@ -148,8 +146,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0300`;
         try {
           console.info(`====>${LOG_NAME} start====`);
-          let task1: taskpool.Task = new taskpool.Task(
-            StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0300');
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0300");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
@@ -188,8 +185,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0400`;
         try {
           console.info(`====>${LOG_NAME} start====`);
-          let task1: taskpool.Task = new taskpool.Task(
-            StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0400');
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0400");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
@@ -222,8 +218,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0500`;
         try {
           console.info(`====>${LOG_NAME} start====`);
-          let task1: taskpool.Task = new taskpool.Task(
-            StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0500');
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0500");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
@@ -256,8 +251,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0600`;
         try {
           console.info(`====>${LOG_NAME} start====`);
-          let task1: taskpool.Task = new taskpool.Task(
-            StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0600');
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0600");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
@@ -290,8 +284,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0700`;
         try {
           console.info(`====>${LOG_NAME} start====`);
-          let task1: taskpool.Task = new taskpool.Task(
-            StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0700');
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0700");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){
@@ -330,8 +323,7 @@ export default function ActsStartSelfUIAbilityWithPidTest() {
         const LOG_NAME = `SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithPidResult_0800`;
         try {
           console.info(`====>${LOG_NAME} start====`);
-          let task1: taskpool.Task = new taskpool.Task(
-            StartSelfUIAbilityWithPidResult, 'StartSelfUIAbilityWithPidResult_0800');
+          let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0800");
           await taskpool.execute(task1).then((value: Object) => {
             hilog.info(0x0000, TAG, LOG_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
             if(value == 801){

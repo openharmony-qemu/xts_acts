@@ -35,7 +35,7 @@ export class SendableObject {
 function sleep(time:number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve('ok');
+      resolve("ok");
     }, time)
   });
 }
@@ -45,7 +45,7 @@ let context:common.UIAbilityContext;
 export default function AbilityRuntimeCreateDifferentAreaContext() {
   describe('AbilityRuntimeCreateDifferentAreaContext', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
     })
     beforeEach(async () => {})
     afterEach(() => {})
@@ -205,7 +205,7 @@ export default function AbilityRuntimeCreateDifferentAreaContext() {
       try {
         let areaModeContext = await context.createAreaModeContext(3)
         const STORE_CONFIG: relationalStore.StoreConfig = {
-          name: 'RdbTest.db',
+          name: "RdbTest.db",
           securityLevel: relationalStore.SecurityLevel.S3
         };
         relationalStore.getRdbStore(areaModeContext,STORE_CONFIG, async (err: BusinessError, rdbStore: relationalStore.RdbStore) => {
@@ -479,7 +479,7 @@ export default function AbilityRuntimeCreateDifferentAreaContext() {
       try {
         let areaModeContext = await context.createAreaModeContext(2)
         const STORE_CONFIG: relationalStore.StoreConfig = {
-          name: 'RdbTest.db',
+          name: "RdbTest.db",
           securityLevel: relationalStore.SecurityLevel.S3
         };
         relationalStore.getRdbStore(areaModeContext,STORE_CONFIG, async (err: BusinessError, rdbStore: relationalStore.RdbStore) => {

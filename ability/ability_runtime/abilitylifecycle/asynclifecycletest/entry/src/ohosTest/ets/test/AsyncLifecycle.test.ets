@@ -38,7 +38,7 @@ const DOMAIN: number = 0x0000;
 function sleep(time:number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve('ok');
+      resolve("ok");
     }, time)
   });
 }
@@ -68,7 +68,7 @@ export default function AsyncLifecycleTest() {
       };
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} subscribeCallBack success. data:${JSON.stringify(data)}`);
-        expect(data.data).assertEqual('onAcceptWant');
+        expect(data.data).assertEqual("onAcceptWant");
         let want: Want = JSON.parse(data.parameters?.want);
         expect(want.bundleName).assertEqual('com.acts.ability.asynclifecycletest');
         commonEventManager.unsubscribe(subscriber);
@@ -114,7 +114,7 @@ export default function AsyncLifecycleTest() {
       };
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} subscribeCallBack success. data:${data.data}`);
-        expect(data.data).assertEqual('module1.onAcceptWantAsync');
+        expect(data.data).assertEqual("module1.onAcceptWantAsync");
         commonEventManager.unsubscribe(subscriber);
         done();
       };
@@ -158,7 +158,7 @@ export default function AsyncLifecycleTest() {
       };
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} subscribeCallBack success. data:${data.data}`);
-        expect(data.data).assertEqual('onAcceptWantAsync');
+        expect(data.data).assertEqual("onAcceptWantAsync");
         commonEventManager.unsubscribe(subscriber);
         done();
       };
@@ -202,7 +202,7 @@ export default function AsyncLifecycleTest() {
       };
       let subscribeCallBack = async (err: BusinessError, data: commonEventManager.CommonEventData) => {
         hilog.info(DOMAIN, 'testTag', '%{public}s', `${tag} subscribeCallBack success. data:${data.data}`);
-        expect(data.data).assertEqual('module2.onAcceptWantAsync');
+        expect(data.data).assertEqual("module2.onAcceptWantAsync");
         commonEventManager.unsubscribe(subscriber);
         done();
       };

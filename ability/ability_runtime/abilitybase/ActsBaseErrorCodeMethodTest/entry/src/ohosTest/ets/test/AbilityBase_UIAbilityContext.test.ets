@@ -1472,7 +1472,7 @@ export default function openLinkTest() {
     it('testSetMissionLabelEmptyStringCallback0100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4250`;
       console.log(`${tag}, it begin`);
-      let label: string = '';
+      let label: string = "";
       try {
         context.setMissionLabel(label, (err: BusinessError, data) => {
           if (err?.code) {
@@ -1508,7 +1508,7 @@ export default function openLinkTest() {
     it('testSetMissionLabelEmptyStringPromise0200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4260`;
       console.log(`${tag}, it begin`);
-      let label: string = '';
+      let label: string = "";
       try {
         context.setMissionLabel(label).then((data) => {
           console.info(`#${tag}# SetMissionLabel successful ` + data);

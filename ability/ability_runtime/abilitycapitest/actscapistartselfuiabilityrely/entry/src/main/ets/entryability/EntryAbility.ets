@@ -71,7 +71,7 @@ export default class EntryAbility extends UIAbility {
       this.context.setAbilityInstanceInfo('111111', pixelMap).then(() => {
         commonEventManager.publish('setAbilityInstanceInfo_success', () => {});
       }).catch((err: BusinessError) => {
-        hilog.info(DOMAIN, 'testTag', 'setAbilityInstanceInfo failed: ' + JSON.stringify(err))
+        hilog.info(DOMAIN, 'testTag', "setAbilityInstanceInfo failed: " + JSON.stringify(err))
         commonEventManager.publish('setAbilityInstanceInfo_fail', {code: err?.code}, () => {});
       });
       this.context.terminateSelf();
@@ -82,7 +82,7 @@ export default class EntryAbility extends UIAbility {
     // Ability has back to background
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onBackground');
   }
-
+  
   async onPrepareToTerminateAsync(): Promise<boolean> {
     hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility onPrepareToTerminateAsync');
     return true;

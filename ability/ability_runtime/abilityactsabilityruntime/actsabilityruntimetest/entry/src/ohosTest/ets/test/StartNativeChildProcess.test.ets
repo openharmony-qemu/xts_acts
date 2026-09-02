@@ -29,11 +29,11 @@ let mpEnable: string;
 export default function AbilityRuntimeStartNativeChildProcess() {
   describe('AbilityRuntimeStartNativeChildProcess', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
       } catch (err) {
-        hilog.info(0x0000, '[%{public}s] Get system parameter error: ${public}s', JSON.stringify(err));
+        hilog.info(0x0000, "[%{public}s] Get system parameter error: ${public}s", JSON.stringify(err));
         mpEnable = 'fail';
       }
     })
@@ -52,7 +52,7 @@ export default function AbilityRuntimeStartNativeChildProcess() {
       const testNum = 'SUB_Ability_AbilityRuntime_startNativeChildProcess_0100';
       if (mpEnable == 'true') {
         let args: ChildProcessArgs = {
-          entryParams: 'testParam',
+          entryParams: "testParam",
           fds: {}
         };
         try {
@@ -87,7 +87,7 @@ export default function AbilityRuntimeStartNativeChildProcess() {
           isolationMode: false
         };
         try {
-          await childProcessManager.startNativeChildProcess('libentry.so:Main', null, options);
+          await childProcessManager.startNativeChildProcess("libentry.so:Main", null, options);
         } catch (err) {
           hilog.error(0x0000, 'testTag', `requestPermissionsFromUser  restart failed: ${err.code}, ${err.message},${testNum}`);
           expect(err?.code).assertEqual(401)
@@ -114,17 +114,17 @@ export default function AbilityRuntimeStartNativeChildProcess() {
     it('SUB_Ability_AbilityRuntime_startNativeChildProcess_0800', Level.LEVEL0, async (done:Function) => {
       const testNum = 'SUB_Ability_AbilityRuntime_startNativeChildProcess_0800';
       if (mpEnable == 'true') {
-        let path = abilityDelegator.getAppContext().filesDir + '/test.txt';
+        let path = abilityDelegator.getAppContext().filesDir + "/test.txt";
         let file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE | fs.OpenMode.TRUNC);
         let args: ChildProcessArgs = {
-          entryParams: 'testParam',
+          entryParams: "testParam",
           fds: {
             'fd1': file.fd
           }
         };
         let options = undefined;
         try {
-          await childProcessManager.startNativeChildProcess('libentry.so:Main', args,options);
+          await childProcessManager.startNativeChildProcess("libentry.so:Main", args,options);
         } catch (err) {
           hilog.error(0x0000, 'testTag', `requestPermissionsFromUser  restart failed: ${err.code}, ${err.message},${testNum}`);
           expect(err?.code).assertEqual(401)

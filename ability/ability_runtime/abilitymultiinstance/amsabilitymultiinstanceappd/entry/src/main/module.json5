@@ -17,7 +17,7 @@
   "module": {
     "name": "com.acts.abilitymultiinstanced",
     "type": "entry",
-    "srcEntry": "./ets/Application/AbilityStage.ets",
+    "srcEntry": "./ets/Application/AbilityStage.ts",
     "description": "$string:phone_entry_dsc",
     "mainElement": "MainAbility",
     "deviceTypes": [],
@@ -27,7 +27,7 @@
     "abilities": [
       {
         "name": "com.acts.abilitymultiinstanced.MainAbility",
-        "srcEntry": "./ets/MainAbility/MainAbility.ets",
+        "srcEntry": "./ets/MainAbility/MainAbility.ts",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -49,7 +49,7 @@
       },
       {
         "name": "com.acts.abilitymultiinstanced.SecondAbility",
-        "srcEntry": "./ets/SecondAbility/SecondAbility.ets",
+        "srcEntry": "./ets/SecondAbility/SecondAbility.ts",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",
@@ -71,7 +71,7 @@
       },
       {
         "name": "com.acts.abilitymultiinstanced.ThirdAbility",
-        "srcEntry": "./ets/ThirdAbility/ThirdAbility.ets",
+        "srcEntry": "./ets/ThirdAbility/ThirdAbility.ts",
         "description": "$string:phone_entry_main",
         "icon": "$media:icon",
         "label": "$string:entry_label",

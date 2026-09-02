@@ -49,7 +49,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                 }
               }
               commonEventManager.publish(tag, commonEventData, (result) => {
-                console.info(TAG + 'common event success ' + result);
+                console.info(TAG + "common event success " + result);
               });
 
             } else {
@@ -66,7 +66,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
         }
 
       } catch (error) {
-        console.info(TAG + 'error...' + error)
+        console.info(TAG + "error..." + error)
       }
     } else
 
@@ -91,7 +91,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -108,12 +108,12 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
 
-      if (want?.parameters!.case == 'startErrorCodeCallBack16000004') {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000004") {
         try{
 
           let want: Want = {
@@ -133,7 +133,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -150,16 +150,16 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
 
-      if (want?.parameters!.case == 'startErrorCodeCallBack16000019') {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000019") {
         try{
 
           let want: Want = {
-            action :'xxxx'
+            action :"xxxx"
           };
           // test errcode
           try {
@@ -173,7 +173,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -190,11 +190,11 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
-      if (want?.parameters!.case == 'startErrorCodeCallBack16000072')  {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000072")  {
         try{
 
           let want: Want = {
@@ -216,7 +216,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -233,7 +233,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
@@ -390,7 +390,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       //   }
       //
       // } else
-      if (want?.parameters!.case == 'startErrorCodeCallBack16000080') {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000080") {
         try{
           let want: Want = {
             bundleName: 'com.ability.errcode.assist',
@@ -411,7 +411,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -428,12 +428,12 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
 
-      if (want?.parameters!.case == 'startErrorCodeCallBack16000073') {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000073") {
         try{
           let want: Want = {
             bundleName: 'com.ability.errcode.assist',
@@ -455,7 +455,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -472,17 +472,17 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
-      if (want?.parameters!.case == 'startErrorCodeCallBack16000078') {
+      if (want?.parameters!.case == "startErrorCodeCallBack16000078") {
         try {
           let want: Want = {
             bundleName: 'com.ability.errcode.assist3',
             abilityName: 'EntryAbility',
             parameters: {
-              [wantConstant.Params.APP_INSTANCE_KEY]: 'app_instance_0',
+              [wantConstant.Params.APP_INSTANCE_KEY]: "app_instance_0",
             }
           };
           // test errcode
@@ -497,7 +497,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -514,7 +514,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
@@ -543,7 +543,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -559,12 +559,12 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
 
-      if (want?.parameters!.case == 'startErrorCodeCallBackOptions16000004') {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000004") {
         try{
 
           let want: Want = {
@@ -587,7 +587,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -603,16 +603,16 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
 
-      if (want?.parameters!.case == 'startErrorCodeCallBackOptions16000019') {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000019") {
         try{
 
           let want: Want = {
-            action :'xxxx'
+            action :"xxxx"
           };
 
           let options: StartOptions= {
@@ -631,7 +631,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -648,12 +648,12 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
 
-      if (want?.parameters!.case == 'startErrorCodeCallBackOptions16000072')  {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000072")  {
         try{
 
           let want: Want = {
@@ -679,7 +679,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -696,7 +696,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
@@ -857,7 +857,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
       //   }
       //
       // } else
-      if (want?.parameters!.case == 'startErrorCodeCallBackOptions16000080') {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000080") {
         try{
           let want: Want = {
             bundleName: 'com.ability.errcode.assist',
@@ -881,7 +881,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -897,12 +897,12 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
 
-      if (want?.parameters!.case == 'startErrorCodeCallBackOptions16000073') {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000073") {
         try{
           let want: Want = {
             bundleName: 'com.ability.errcode.assist',
@@ -927,7 +927,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -944,17 +944,17 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       } else
-      if (want?.parameters!.case == 'startErrorCodeCallBackOptions16000078') {
+      if (want?.parameters!.case == "startErrorCodeCallBackOptions16000078") {
         try {
           let want: Want = {
             bundleName: 'com.ability.errcode.assist3',
             abilityName: 'EntryAbility',
             parameters: {
-              [wantConstant.Params.APP_INSTANCE_KEY]: 'app_instance_0',
+              [wantConstant.Params.APP_INSTANCE_KEY]: "app_instance_0",
             }
           };
           let options: StartOptions= {
@@ -972,7 +972,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
                   }
                 }
                 commonEventManager.publish(tag, commonEventData, (result) => {
-                  console.info(TAG + 'common event success ' + result);
+                  console.info(TAG + "common event success " + result);
                 });
 
               } else {
@@ -989,7 +989,7 @@ export default class TestEmbeddedAbility extends EmbeddedUIExtensionAbility {
           }
 
         } catch (error) {
-          console.info(TAG + 'error...' + error)
+          console.info(TAG + "error..." + error)
         }
 
       }

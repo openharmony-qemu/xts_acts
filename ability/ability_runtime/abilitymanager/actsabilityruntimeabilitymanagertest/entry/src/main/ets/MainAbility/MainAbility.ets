@@ -32,7 +32,7 @@ export default class MainAbility extends Ability {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     console.log('ActsSystemAPITest  MainAbility onWindowStageCreate');
-    windowStage.loadContent('pages/index/index', null);
+    windowStage.loadContent("pages/index/index", null);
     console.log('ActsSystemAPITest  MainAbility onWindowStageCreate finish');
   }
 

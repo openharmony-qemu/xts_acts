@@ -14,8 +14,8 @@
  */
 
 import { describe, it, expect, Level } from '@ohos/hypium'
-import abilityManager from '@ohos.app.ability.abilityManager'
-import systemParameterEnhance from '@ohos.systemParameterEnhance'
+import abilityManager from "@ohos.app.ability.abilityManager"
+import systemParameterEnhance from "@ohos.systemParameterEnhance"
 
 export default function abilityManagerTest() {
   describe('abilityManagerTestTest', () => {

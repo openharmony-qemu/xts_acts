@@ -521,7 +521,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2100 start');
       try {
-        abilityDelegator.finishTest('FINISH TEST', undefined).then((data)=>{
+        abilityDelegator.finishTest("FINISH TEST", undefined).then((data)=>{
           try{expect().assertFail();}catch(e){}
           done();
         }).catch((err:BusinessError)=>{
@@ -548,10 +548,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_2200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_2200 start');
       try {
-        abilityDelegator.finishTest('FINISH TEST', undefined, (err, data)=>{
-          if (err) {
-            hilog.info(0x0000, `${TAG}`, '%{public}s', `finishTest callback err code: ${err?.code}`);
-          }
+        abilityDelegator.finishTest("FINISH TEST", undefined, (err, data)=>{
           try{expect().assertFail();}catch(e){}
           done();
         })
@@ -1025,7 +1022,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_4300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4300 start');
       try {
-        abilityDelegator.finishTest('FINISH TEST', null).then((data)=>{
+        abilityDelegator.finishTest("FINISH TEST", null).then((data)=>{
           try{expect().assertFail();}catch(e){}
           done();
         }).catch((err:BusinessError)=>{
@@ -1052,10 +1049,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_4400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_4400 start');
       try {
-        abilityDelegator.finishTest('FINISH TEST', null, (err, data)=>{
-          if (err) {
-            hilog.info(0x0000, `${TAG}`, '%{public}s', `finishTest callback err code: ${err?.code}`);
-          }
+        abilityDelegator.finishTest("FINISH TEST", null, (err, data)=>{
           try{expect().assertFail();}catch(e){}
           done();
         })
@@ -1107,7 +1101,7 @@ export default function openLinkTest() {
         done();
       }
     })
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_4502
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_4502
@@ -1277,7 +1271,7 @@ export default function openLinkTest() {
       }
     })
 
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5500
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5500
@@ -1298,7 +1292,7 @@ export default function openLinkTest() {
         done();
       }
     })
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5600
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5600
@@ -1344,7 +1338,7 @@ export default function openLinkTest() {
         done();
       }
     })
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5800
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5800
@@ -1368,7 +1362,7 @@ export default function openLinkTest() {
       }
     })
 
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_5900
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_5900
@@ -1389,7 +1383,7 @@ export default function openLinkTest() {
         done();
       }
     })
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6000
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6000
@@ -1435,7 +1429,7 @@ export default function openLinkTest() {
         done();
       }
     })
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6200
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6200
@@ -1482,7 +1476,7 @@ export default function openLinkTest() {
       }
     })
 
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6600
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6600
@@ -1517,7 +1511,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_6700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_6700 start');
       try {
-        abilityDelegator.executeShellCommand('', 1, (err, data)=>{
+        abilityDelegator.executeShellCommand("", 1, (err, data)=>{
           hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_6700 ${err?.code}`);
           hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_6700 ` + JSON.stringify(data));
           try{expect(err?.code).assertEqual(16000100);}catch(e){}
@@ -1530,7 +1524,7 @@ export default function openLinkTest() {
       }
     })
 
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6800
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6800
@@ -1542,7 +1536,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_6800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_6800 start');
       try {
-        abilityDelegator.executeShellCommand('aa dump', undefined, (err, data)=>{
+        abilityDelegator.executeShellCommand("aa dump", undefined, (err, data)=>{
           hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_6800 ${err?.code}`);
           hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_6800 ` + JSON.stringify(data));
           try{expect().assertFail();}catch(e){}
@@ -1554,7 +1548,7 @@ export default function openLinkTest() {
         done();
       }
     })
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_6900
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_6900
@@ -1566,7 +1560,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_6900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_6900 start');
       try {
-        abilityDelegator.executeShellCommand('aa dump', null, (err, data)=>{
+        abilityDelegator.executeShellCommand("aa dump", null, (err, data)=>{
           hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_6900 ${err?.code}`);
           hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_6900 ` + JSON.stringify(data));
           try{expect().assertFail();}catch(e){}
@@ -1590,7 +1584,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_7000', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_7000 start');
       try {
-        abilityDelegator.executeShellCommand('', 1).then((data)=>{
+        abilityDelegator.executeShellCommand("", 1).then((data)=>{
           hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_7000 ` + JSON.stringify(data));
           try{expect().assertFail();}catch(e){}
           done();
@@ -1617,7 +1611,7 @@ export default function openLinkTest() {
     it('SUB_Ability_AbilityBase_AbilityDelegatorError_7100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_AbilityDelegatorError_7100 start');
       try {
-        abilityDelegator.executeShellCommand('', (err, data)=>{
+        abilityDelegator.executeShellCommand("", (err, data)=>{
           hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_AbilityDelegatorError_7100 ${err?.code} ` + JSON.stringify(data));
           try{expect(err?.code).assertEqual(16000100);}catch(e){}
           done();
@@ -1628,7 +1622,7 @@ export default function openLinkTest() {
         done();
       }
     })
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_7200
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_7200
@@ -1652,7 +1646,7 @@ export default function openLinkTest() {
       }
     })
 
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_7300
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_7300
@@ -1675,7 +1669,7 @@ export default function openLinkTest() {
         done();
       }
     })
-
+    
     /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityDelegatorError_7600
      * @tc.number SUB_Ability_AbilityBase_AbilityDelegatorError_7600

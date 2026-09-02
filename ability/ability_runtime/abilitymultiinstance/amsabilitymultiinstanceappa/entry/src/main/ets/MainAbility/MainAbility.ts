@@ -14,55 +14,22 @@
  */
 
 import Ability from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
 import commonEvent from '@ohos.commonEvent';
 import Want from '@ohos.app.ability.Want';
-import common from '@ohos.app.ability.common';
 import window from '@ohos.window';
-import AbilityConstant from '@ohos.app.ability.AbilityConstant';
-
-
-interface PublishData {
-  data: string;
-  parameters: Record<string, Object>;
-}
-
 
 let callBackSeq = "";
 
 function publishCallBack() {
-  console.debug("====>AbilityMultiInstanceAppD Sec Publish CallBack ====>");
+  console.debug("====>Publish CallBack ====>");
 }
 
-async function onShowProcess() {
-  let abilityWant: Want = AppStorage.get("abilityWant")!;
-  let callBackData = "AppD:";
-  callBackSeq += AppStorage.get("onAcceptWantCalledSeq")!;
-  callBackData += callBackSeq;
-  let commonEventPublishData: PublishData = {
-    data: callBackData,
-    parameters: abilityWant.parameters!
-  }
-
-  console.log("AbilityMultiInstanceAppD Sec abilityWant = " + JSON.stringify(abilityWant));
-  if (abilityWant.parameters!.nextStep >= abilityWant.parameters!.stepNum) {
-    commonEvent.publish("MultiInstanceStartFinish", commonEventPublishData, publishCallBack);
-  } else {
-    commonEvent.publish("MultiInstanceStartNext", commonEventPublishData, () => {
-      startAbilityProcess(AppStorage.get<common.UIAbilityContext>("AppDSecondAbilityContext")!, abilityWant.parameters!);
-    })
-  }
-  AppStorage.setOrCreate("onAcceptWantCalledSeq", "");
-  callBackSeq = "";
-}
-
-async function startAbilityProcess(appDSecondAbilityContext: common.UIAbilityContext, parameters: ESObject) {
+async function startAbilityProcess(AppAAbilityContext, parameters) {
   let bundleName = "com.acts.abilitymultiinstancea";
   let abilityName = "com.acts.abilitymultiinstancea.MainAbility";
 
-  let idx: number = parameters.nextStep;
-  let stepList: string[] = parameters.step;
-  switch (stepList[idx]) {
+  let idx = parameters.nextStep;
+  switch (parameters.step[idx]) {
     case "StartA1":
       parameters.startId = 1;
       break;
@@ -103,49 +70,74 @@ async function startAbilityProcess(appDSecondAbilityContext: common.UIAbilityCon
       break;
   }
   parameters.nextStep = ++idx;
-  appDSecondAbilityContext.startAbility({
+  AppAAbilityContext.startAbility({
     bundleName: bundleName,
     abilityName: abilityName,
     parameters: parameters
-  }, (error: BusinessError, data: void) => {
-    console.log('AppD startAbilityProcess result: ' + JSON.stringify(error) + ", " + JSON.stringify(data));
+  }, (error, data) => {
+    console.log('AppA startAbilityProcess result: ' + JSON.stringify(error) + ", " + JSON.stringify(data));
   })
 }
 
-export default class SecondAbility extends Ability {
-  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+async function onShowProcess(AppAAbilityContext) {
+  let abilityWant: Want = AppStorage.get<Want>("abilityWant")!;
+  let callBackData = "AppA:"
+  callBackSeq += AppStorage.get("onAcceptWantCalledSeq")!;
+  callBackData += callBackSeq;
+
+  let commonEventPublishData = {
+    data: callBackData,
+    parameters: abilityWant!.parameters
+  }
+
+  console.log("AbilityMultiInstanceAppA abilityWant = " + JSON.stringify(abilityWant));
+  if (abilityWant.parameters.nextStep >= abilityWant.parameters.stepNum) {
+    commonEvent.publish("MultiInstanceStartFinish", commonEventPublishData, publishCallBack);
+    callBackSeq = "";
+    AppStorage.setOrCreate("onAcceptWantCalledSeq", "");
+  } else {
+    commonEvent.publish("MultiInstanceStartNext", commonEventPublishData, () => {
+      callBackSeq = "";
+      AppStorage.setOrCreate("onAcceptWantCalledSeq", "");
+      startAbilityProcess(AppAAbilityContext, abilityWant.parameters);
+    })
+  }
+}
+
+export default class MainAbility extends Ability {
+  onCreate(want, launchParam) {
     // Ability is creating, initialize resources for this ability
-    console.log("AbilityMultiInstanceAppD Sec onCreate");
+    console.log("AbilityMultiInstanceAppA onCreate");
     callBackSeq += "onCreate";
     AppStorage.setOrCreate("abilityWant", want);
   }
 
   onDestroy() {
     // Ability is destroying, release resources for this ability
-    console.log("AbilityMultiInstanceAppD Sec onDestroy");
+    console.log("AbilityMultiInstanceAppA onDestroy");
   }
 
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
-    console.log("AbilityMultiInstanceAppD Sec onWindowStageCreate");
-    AppStorage.setOrCreate("AppDSecondAbilityContext", this.context);
+    console.log("AbilityMultiInstanceAppA onWindowStageCreate");
+    AppStorage.setOrCreate("AppAAbilityContext", this.context);
     windowStage.loadContent("pages/index/index", null);
   }
 
   onWindowStageDestroy() {
     // Main window is destroyed, release UI related resources
-    console.log("AbilityMultiInstanceAppD Sec onWindowStageDestroy");
+    console.log("AbilityMultiInstanceAppA onWindowStageDestroy");
   }
 
   onForeground() {
     // Ability has brought to foreground
-    console.log("AbilityMultiInstanceAppD Sec onForeground");
+    console.log("AbilityMultiInstanceAppA onForeground");
     callBackSeq += "onForeground";
-    onShowProcess();
+    onShowProcess(this.context);
   }
 
   onBackground() {
     // Ability has back to background
-    console.log("AbilityMultiInstanceAppD Sec onBackground");
+    console.log("AbilityMultiInstanceAppA onBackground");
   }
 }

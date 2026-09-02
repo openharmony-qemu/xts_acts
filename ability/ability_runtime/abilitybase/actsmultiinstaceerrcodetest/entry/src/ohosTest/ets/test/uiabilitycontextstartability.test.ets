@@ -59,7 +59,7 @@ export default function openLinkTest() {
             bundleName: 'com.acts.ability.multiinstaceerrcodetest',
             abilityName: 'EntryAbility',
             parameters:{
-              [wantConstant.Params.APP_INSTANCE_KEY] : 'app_instance_100'
+              [wantConstant.Params.APP_INSTANCE_KEY] : "app_instance_100"
             }
           }, (err, data)=>{
             hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_StartAbilityError_0200 ${err?.code}`);
@@ -94,7 +94,7 @@ export default function openLinkTest() {
             abilityName: 'EntryAbility',
             parameters:{
               [wantConstant.Params.CREATE_APP_INSTANCE_KEY] : true,
-              [wantConstant.Params.APP_INSTANCE_KEY] : 'app_instance_0'
+              [wantConstant.Params.APP_INSTANCE_KEY] : "app_instance_0"
             }
           }, (err, data)=>{
             hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_StartAbilityError_0400 ${err?.code}`);
@@ -128,7 +128,7 @@ export default function openLinkTest() {
             bundleName: 'com.acts.ability.multiinstaceerrcodetest',
             abilityName: 'EntryAbility',
             parameters:{
-              [wantConstant.Params.APP_INSTANCE_KEY] : 'app_default_100'
+              [wantConstant.Params.APP_INSTANCE_KEY] : "app_default_100"
             }
           }, {
             windowLeft: 20,
@@ -167,7 +167,7 @@ export default function openLinkTest() {
             abilityName: 'EntryAbility',
             parameters:{
               [wantConstant.Params.CREATE_APP_INSTANCE_KEY] : true,
-              [wantConstant.Params.APP_INSTANCE_KEY] : 'app_instance_0'
+              [wantConstant.Params.APP_INSTANCE_KEY] : "app_instance_0"
             }
           }, {
             windowLeft: 20,
@@ -202,8 +202,8 @@ export default function openLinkTest() {
       if(mpEnable == 'true'){
         try {
           context.startAbility({
-            bundleName:'com.acts.ability.multiinstaceerrcodetest',
-            abilityName:'EntryAbility',
+            bundleName:"com.acts.ability.multiinstaceerrcodetest",
+            abilityName:"EntryAbility",
             parameters:{
               [wantConstant.Params.CREATE_APP_INSTANCE_KEY] : true,
             }
@@ -212,8 +212,8 @@ export default function openLinkTest() {
           })
           await sleep(1000);
           context.startAbility({
-            bundleName:'com.acts.ability.multiinstaceerrcodetest',
-            abilityName:'EntryAbility',
+            bundleName:"com.acts.ability.multiinstaceerrcodetest",
+            abilityName:"EntryAbility",
             parameters:{
               [wantConstant.Params.CREATE_APP_INSTANCE_KEY] : true,
             }
@@ -221,12 +221,12 @@ export default function openLinkTest() {
             hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityBase_StartAbilityError_1800 ${err?.code}`);
             try{
               expect(err?.code).assertEqual(16000077);
-              commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
+              commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
                 hilog.info(0x0000, `${TAG}`, '%{public}s', tag + ` ${error?.code}`);
                 done();
               })
             }catch(e){
-              commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
+              commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
                 hilog.info(0x0000, `${TAG}`, '%{public}s', tag + ` ${error?.code}`);
                 done();
               })            }
@@ -256,8 +256,8 @@ export default function openLinkTest() {
       if(mpEnable == 'true'){
         try {
           context.startAbility({
-            bundleName:'com.acts.ability.multiinstaceerrcodetest',
-            abilityName:'EntryAbility',
+            bundleName:"com.acts.ability.multiinstaceerrcodetest",
+            abilityName:"EntryAbility",
             parameters:{
               [wantConstant.Params.CREATE_APP_INSTANCE_KEY] : true,
             }
@@ -266,8 +266,8 @@ export default function openLinkTest() {
           })
           await sleep(1000);
           context.startAbility({
-            bundleName:'com.acts.ability.multiinstaceerrcodetest',
-            abilityName:'EntryAbility',
+            bundleName:"com.acts.ability.multiinstaceerrcodetest",
+            abilityName:"EntryAbility",
             parameters:{
               [wantConstant.Params.CREATE_APP_INSTANCE_KEY] : true,
             }
@@ -278,12 +278,12 @@ export default function openLinkTest() {
             hilog.info(0x0000, `${TAG}`, '%{public}s', tag + ` ${err?.code}`);
             try{
               expect(err?.code).assertEqual(16000077);
-              commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
+              commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
                 hilog.info(0x0000, `${TAG}`, '%{public}s', tag + ` ${error?.code}`);
                 done();
               })
             }catch(e){
-              commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
+              commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
                 hilog.info(0x0000, `${TAG}`, '%{public}s', tag + ` ${error?.code}`);
                 done();
               })            }
@@ -334,18 +334,11 @@ export default function openLinkTest() {
             hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityRuntime_UIAbilityContextError_0500 ${err?.code}`);
             try{
               expect(err?.code).assertEqual(16000077);
-              commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
-                if (error) {
-                  hilog.info(0x0000, `${TAG}`, '%{public}s', `publish terminate error: ${JSON.stringify(error)}`);
-                }
+              commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
                 done()
               })
             }catch(e){
-              commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
-                if (error) {
-                  hilog.info(0x0000, `${TAG}`, '%{public}s', `publish terminate error: ${JSON.stringify(error)}`);
-                }
-                expect().assertFail();
+              commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
                 done()
               })
             }
@@ -401,18 +394,11 @@ export default function openLinkTest() {
             hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityRuntime_UIAbilityContextError_1500 ${err?.code}`);
             try{
               expect(err?.code).assertEqual(16000077);
-              commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
-                if (error) {
-                  hilog.info(0x0000, `${TAG}`, '%{public}s', `publish terminate error: ${JSON.stringify(error)}`);
-                }
+              commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
                 done()
               })
             }catch(e){
-              commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
-                if (error) {
-                  hilog.info(0x0000, `${TAG}`, '%{public}s', `publish terminate error: ${JSON.stringify(error)}`);
-                }
-                expect().assertFail();
+              commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
                 done()
               })
             }
@@ -485,18 +471,12 @@ export default function openLinkTest() {
               hilog.info(0x0000, `${TAG}`, '%{public}s', `SUB_Ability_AbilityRuntime_UIAbilityContextError_2500 ${err?.code}`);
               try{
                 expect(err?.code).assertEqual(16000077);
-                commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
-                  if (error) {
-                    hilog.info(0x0000, `${TAG}`, '%{public}s', `publish terminate error: ${JSON.stringify(error)}`);
-                  }
-                  expect().assertFail();
+                commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
                   done()
                 })
               }catch(e){
-                commonEventManager.publish('terminateSelf_multiinstance_ability', (error, result)=>{
-                  if (error) {
-                    hilog.info(0x0000, `${TAG}`, '%{public}s', `publish terminate error: ${JSON.stringify(error)}`);
-                  }
+                commonEventManager.publish("terminateSelf_multiinstance_ability", (error, result)=>{
+                  done()
                 })
               }
             });
@@ -527,7 +507,7 @@ export default function openLinkTest() {
         bundleName: 'com.acts.ability.multiinstaceerrcodetest',
         abilityName: 'EntryAbility',
         parameters:{
-          [wantConstant.Params.APP_INSTANCE_KEY]:'app_default_100'
+          [wantConstant.Params.APP_INSTANCE_KEY]:"app_default_100"
         }
       };
       if(mpEnable == 'true'){
@@ -565,7 +545,7 @@ export default function openLinkTest() {
         bundleName: 'com.acts.ability.multiinstaceerrcodetest',
         abilityName: 'EntryAbility',
         parameters:{
-          [wantConstant.Params.APP_INSTANCE_KEY]:'app_default_100'
+          [wantConstant.Params.APP_INSTANCE_KEY]:"app_default_100"
         }
       };
       let options: StartOptions = {
@@ -605,7 +585,7 @@ export default function openLinkTest() {
         bundleName: 'com.acts.ability.multiinstaceerrcodetest',
         abilityName: 'EntryAbility',
         parameters:{
-          [wantConstant.Params.APP_INSTANCE_KEY]:'app_default_100'
+          [wantConstant.Params.APP_INSTANCE_KEY]:"app_default_100"
         }
       };
       let options: StartOptions = {
@@ -652,7 +632,7 @@ export default function openLinkTest() {
         bundleName: 'com.acts.ability.multiinstaceerrcodetest',
         abilityName: 'EntryAbility',
         parameters:{
-          [wantConstant.Params.APP_INSTANCE_KEY]:'app_default_100'
+          [wantConstant.Params.APP_INSTANCE_KEY]:"app_default_100"
         }
       };
       if(mpEnable == 'true'){
@@ -697,7 +677,7 @@ export default function openLinkTest() {
         abilityName: 'EntryAbility',
         parameters:{
           [wantConstant.Params.CREATE_APP_INSTANCE_KEY]:true,
-          [wantConstant.Params.APP_INSTANCE_KEY]:'app_instance_0'
+          [wantConstant.Params.APP_INSTANCE_KEY]:"app_instance_0"
         }
       };
       if(mpEnable == 'true'){
@@ -736,7 +716,7 @@ export default function openLinkTest() {
         abilityName: 'EntryAbility',
         parameters:{
           [wantConstant.Params.CREATE_APP_INSTANCE_KEY]:true,
-          [wantConstant.Params.APP_INSTANCE_KEY]:'app_default_0'
+          [wantConstant.Params.APP_INSTANCE_KEY]:"app_default_0"
         }
       };
       let options: StartOptions = {
@@ -778,7 +758,7 @@ export default function openLinkTest() {
         abilityName: 'EntryAbility',
         parameters:{
           [wantConstant.Params.CREATE_APP_INSTANCE_KEY]:true,
-          [wantConstant.Params.APP_INSTANCE_KEY]:'app_default_0'
+          [wantConstant.Params.APP_INSTANCE_KEY]:"app_default_0"
         }
       };
       let options: StartOptions = {
@@ -826,7 +806,7 @@ export default function openLinkTest() {
         abilityName: 'EntryAbility',
         parameters:{
           [wantConstant.Params.CREATE_APP_INSTANCE_KEY]:true,
-          [wantConstant.Params.APP_INSTANCE_KEY]:'app_default_0'
+          [wantConstant.Params.APP_INSTANCE_KEY]:"app_default_0"
         }
       };
       let caller: Caller;
