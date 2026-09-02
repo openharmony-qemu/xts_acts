@@ -37,11 +37,11 @@ import { drawing } from '@kit.ArkGraphics2D'
 
 export class MyLatticeModifier1 implements AttributeModifier<ImageAttribute> {
   applyNormalAttribute(instance: ImageAttribute): void {
-    let xDivs: Array<number> = [1, 2, 200];
-    let yDivs: Array<number> = [1, 2, 200];
-    let fXCount: number = 3;
-    let fYCount: number = 3;
-    let lattice: drawing.Lattice = drawing.Lattice.createImageLattice(xDivs, yDivs, fXCount, fYCount);
+    let xDivs: Array<int> = [1, 2, 200];
+    let yDivs: Array<int> = [1, 2, 200];
+    let fXCount: int = 3;
+    let fYCount: int = 3;
+    let lattice: drawing.Lattice | undefined = drawing.Lattice.createImageLattice(xDivs, yDivs, fXCount, fYCount);
     instance.resizable({ lattice: lattice })
   }
 }
@@ -55,25 +55,25 @@ export class MyLatticeModifier2 implements AttributeModifier<ImageAttribute> {
 @Entry
 @Component
 struct ImageDrawingLattice {
-  private xDivs1: Array<number> = [1, 2, 200];
-  private yDivs1: Array<number> = [1, 2, 200];
-  private fXCount1: number = 3;
-  private fYCount1: number = 3;
-  private drawingLattice1: drawing.Lattice =
+  private xDivs1: Array<int> = [1, 2, 200];
+  private yDivs1: Array<int> = [1, 2, 200];
+  private fXCount1: int = 3;
+  private fYCount1: int = 3;
+  private drawingLattice1: drawing.Lattice | undefined =
     drawing.Lattice.createImageLattice(this.xDivs1, this.yDivs1, this.fXCount1, this.fYCount1);
 
-  private xDivs2: Array<number> = [0, 50, 100];
-  private yDivs2: Array<number> = [0, 50, 100];
-  private fXCount2: number = 2;
-  private fYCount2: number = 2;
-  private drawingLattice2: drawing.Lattice =
+  private xDivs2: Array<int> = [0, 50, 100];
+  private yDivs2: Array<int> = [0, 50, 100];
+  private fXCount2: int = 2;
+  private fYCount2: int = 2;
+  private drawingLattice2: drawing.Lattice | undefined =
     drawing.Lattice.createImageLattice(this.xDivs2, this.yDivs2, this.fXCount2, this.fYCount2);
 
-  private xDivs3: Array<number> = [1];
-  private yDivs3: Array<number> = [1];
-  private fXCount3: number = 1;
-  private fYCount3: number = 1;
-  private drawingLattice3: drawing.Lattice =
+  private xDivs3: Array<int> = [1];
+  private yDivs3: Array<int> = [1];
+  private fXCount3: int = 1;
+  private fYCount3: int = 1;
+  private drawingLattice3: drawing.Lattice | undefined =
     drawing.Lattice.createImageLattice(this.xDivs3, this.yDivs3, this.fXCount3, this.fYCount3);
 
   @State modifier1: MyLatticeModifier1 = new MyLatticeModifier1();
