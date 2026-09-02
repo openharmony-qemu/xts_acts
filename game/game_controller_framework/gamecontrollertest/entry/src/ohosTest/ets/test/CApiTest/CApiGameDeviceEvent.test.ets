@@ -434,5 +434,53 @@ export default function CApiGameDeviceEventTest() {
       expect(ret).assertEqual(401);
     });
 
+    /**
+     * @tc.name   OH_GameDevice_DeviceInfo_GetVendor01
+     * @tc.number OH_GameDevice_DeviceInfo_GetVendor01
+     * @tc.desc   GetVendor success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_DeviceInfo_GetVendor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceDeviceInfoGetVendor01();
+      expect(ret).assertEqual(0);
+    });
+
+    /**
+     * @tc.name   OH_GameDevice_DeviceInfo_GetVendor02
+     * @tc.number OH_GameDevice_DeviceInfo_GetVendor02
+     * @tc.desc   GetVendor failed, when deviceEvent is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_DeviceInfo_GetVendor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceDeviceInfoGetVendor02();
+      expect(ret).assertEqual(401);
+    });
+
+    /**
+     * @tc.name   OH_GameDevice_DeviceInfo_GetVendor03
+     * @tc.number OH_GameDevice_DeviceInfo_GetVendor03
+     * @tc.desc   GetVendor failed when vendor is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('OH_GameDevice_DeviceInfo_GetVendor03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
+      if (SyscapChecker.canNotUse()) {
+        return;
+      }
+      let ret: number = GC.ActsGameDeviceDeviceInfoGetVendor03();
+      expect(ret).assertEqual(401);
+    });
+
   })
 }

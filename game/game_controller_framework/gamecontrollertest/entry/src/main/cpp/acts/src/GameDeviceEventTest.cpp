@@ -317,5 +317,33 @@ int32_t ActsGameDeviceDeviceInfoGetDeviceType03()
     OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
     return static_cast<int32_t>(code);
 }
+
+int32_t ActsGameDeviceDeviceInfoGetVendor01()
+{
+    int32_t vendor;
+    GameDevice_DeviceInfo *deviceInfo = CreateDeviceInfo(DeviceTypeEnum::GAME_PAD);
+
+    GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetVendor(deviceInfo, &vendor);
+    if (vendor != VENDOR) {
+        code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
+    }
+    OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameDeviceDeviceInfoGetVendor02()
+{
+    int32_t vendor;
+    GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetVendor(nullptr, &vendor);
+    return static_cast<int32_t>(code);
+}
+
+int32_t ActsGameDeviceDeviceInfoGetVendor03()
+{
+    GameDevice_DeviceInfo *deviceInfo = CreateDeviceInfo(DeviceTypeEnum::GAME_PAD);
+    GameController_ErrorCode code = OH_GameDevice_DeviceInfo_GetVendor(deviceInfo, nullptr);
+    OH_GameDevice_DestroyDeviceInfo(&deviceInfo);
+    return static_cast<int32_t>(code);
+}
 } // namespace GameController
 }

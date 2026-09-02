@@ -363,3 +363,15 @@ export const ActsGameControllerGamePadAxisEventGetBrakeAxisValue03: () => number
 export const ActsGameControllerGamePadAxisEventGetGasAxisValue03: () => number;
 
 export const ActsGameControllerGamePadAxisEventGetActionTime03: () => number;
+
+export const ActsGamePadButtonUnknownRegisterButtonInputMonitor01: () => number;
+
+export const ActsGamePadButtonUnknownRegisterButtonInputMonitor02: () => number;
+
+export const ActsGamePadButtonUnknownUnregisterButtonInputMonitor01: () => number;
+
+export const ActsGameDeviceDeviceInfoGetVendor01: () => number;
+
+export const ActsGameDeviceDeviceInfoGetVendor02: () => number;
+
+export const ActsGameDeviceDeviceInfoGetVendor03: () => number;
