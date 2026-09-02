@@ -28,10 +28,10 @@ const callbackEvent: OnInputmethodAttachedCallback  = ()=> {
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
+  inputMethodController = inputMethod.getController()
   @State str: string = "";
   @State text:string = ''
   @State userAgentPC:string = "";
-  inputMethodController = inputMethod.getController()
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State isOnConsoleEnd: number = -1;
@@ -88,6 +88,7 @@ struct WebComponent {
         .onInputmethodAttached(() => {
           console.log('inputmethod attached');
           inputMethod.getController().showTextInput();
+		      this.inputMethodController.hideTextInput();
           if(this.flag == 1) {
             Utils.emitEvent(true, 20250418)
           } else if(this.flag == 2) {
