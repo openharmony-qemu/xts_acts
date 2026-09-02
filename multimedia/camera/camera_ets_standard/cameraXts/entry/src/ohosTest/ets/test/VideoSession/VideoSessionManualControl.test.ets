@@ -696,10 +696,14 @@ export default function VideoSessionManualControlTest() {
       await addInputAndOutput();
       await startCameraSession();
       try {
-        let isSupported = session.isExposureMeteringModeSupported(-100);
-        if (!isSupported) {
-          session.setExposureMeteringMode(null);
+        let isSupported = session.isExposureMeteringModeSupported(camera.ExposureMeteringMode.SPOT);
+        if (isSupported) {
+          session.setExposureMeteringMode(camera.ExposureMeteringMode.SPOT);
           let result = session.getExposureMeteringMode();
+          console.info(TAG, 'setExposureMeteringMode result: ' + result);
+          expect(result === camera.ExposureMeteringMode.SPOT).assertTrue();
+          session.setExposureMeteringMode(null);
+          result = session.getExposureMeteringMode();
           console.info(TAG, 'setExposureMeteringMode result: ' + result);
           expect(result === 0).assertTrue();
         }
@@ -729,10 +733,14 @@ export default function VideoSessionManualControlTest() {
       await addInputAndOutput();
       await startCameraSession();
       try {
-        let isSupported = session.isExposureMeteringModeSupported(-100);
-        if (!isSupported) {
-          session.setExposureMeteringMode(undefined);
+        let isSupported = session.isExposureMeteringModeSupported(camera.ExposureMeteringMode.SPOT);
+        if (isSupported) {
+          session.setExposureMeteringMode(camera.ExposureMeteringMode.SPOT);
           let result = session.getExposureMeteringMode();
+          console.info(TAG, 'setExposureMeteringMode result: ' + result);
+          expect(result === camera.ExposureMeteringMode.SPOT).assertTrue();
+          session.setExposureMeteringMode(undefined);
+          result = session.getExposureMeteringMode();
           console.info(TAG, 'setExposureMeteringMode result: ' + result);
           expect(result === 0).assertTrue();
         }
