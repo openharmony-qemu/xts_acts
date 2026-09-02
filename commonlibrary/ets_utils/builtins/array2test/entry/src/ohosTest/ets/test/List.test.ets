@@ -66,6 +66,21 @@ import BuiltinsArrayPrototypePopExtendedTest from './Array2/Array_PrototypePop/B
 import BuiltinsArrayPrototypePushTest from './Array2/Array_PrototypePush/BuiltinsArrayPrototypePushTest.test';
 import BuiltinsArrayPrototypePushExtendedTest from './Array2/Array_PrototypePush/BuiltinsArrayPrototypePushExtendedTest.test';
 
+import arrayBigIntTest from "./array3/ArrayBigIntTest.test";
+import arrayBooleanTest from "./array3/ArrayBooleanTest.test";
+import arrayClassTest from "./array3/ArrayClassTest.test";
+import arrayDateTest from "./array3/ArrayDateTest.test";
+import arrayFunctionTest from "./array3/ArrayFunctionTest.test";
+import arrayMapTest from "./array3/ArrayMapTest.test";
+import arrayNestedTest from "./array3/ArrayNestedTest.test";
+import arrayNumberTest from "./array3/ArrayNumberTest.test";
+import arrayObjectTest from "./array3/ArrayObjectTest.test";
+import arrayRegExpTest from "./array3/ArrayRegExpTest.test";
+import arraySetTest from "./array3/ArraySetTest.test";
+import arrayStringTest from "./array3/ArrayStringTest.test";
+import arraySymbolTest from "./array3/ArraySymbolTest.test";
+import arrayUnionTest from "./array3/ArrayUnionTest.test";
+
 export default function testsuite() {
   ArraySliceTestSupplement();
   ArraySpliceMindMapTest();
@@ -122,5 +137,20 @@ export default function testsuite() {
   BuiltinsArrayPrototypePopExtendedTest()
   BuiltinsArrayPrototypePushTest()
   BuiltinsArrayPrototypePushExtendedTest();
+
+  arrayBigIntTest();
+  arrayBooleanTest();
+  arrayClassTest();
+  arrayDateTest();
+  arrayFunctionTest();
+  arrayMapTest();
+  arrayNestedTest();
+  arrayNumberTest();
+  arrayObjectTest();
+  arrayRegExpTest();
+  arraySetTest();
+  arrayStringTest();
+  arraySymbolTest();
+  arrayUnionTest();
 };
 
