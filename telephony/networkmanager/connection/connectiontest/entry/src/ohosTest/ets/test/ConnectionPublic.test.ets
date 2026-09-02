@@ -1831,7 +1831,7 @@ export default function ConnectionPublicTest() {
             console.info(`${caseName}---End`);
             done();
           } else {
-            ExpectTrue(typeof data.netId == 'number');
+            ExpectTrue(typeof data.netId === 'number');
             console.info(`${caseName}---End`);
             done();
           }
