@@ -17,6 +17,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import { describe, it, expect, beforeAll, beforeEach, afterEach, afterAll, Level } from '@ohos/hypium';
 import { fetchAllOption, getPermission, driveFn, fetchOption, photoKeys, photoType, LOG_TAG } from '../../common';
 import common from '@ohos.app.ability.common';
+import dataSharePredicates from '@ohos.data.dataSharePredicates';
 
 const TAG = LOG_TAG + 'getFirstObject';
 
@@ -194,6 +195,8 @@ export default function getFirstObjectTest() {
     it('fetchResult_getFirstObject_callback_004', Level.LEVEL0, async (done: Function) => {
       const testNum = 'fetchResult_getFirstObject_callback_004';
       const errorCode = 14000011;
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+      let helper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
       try{
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo('noexist', 'noexist');
@@ -210,5 +213,6 @@ export default function getFirstObjectTest() {
         expect(error.code).assertEqual(String(errorCode));
         done();
       }
+    })
   })
 }
