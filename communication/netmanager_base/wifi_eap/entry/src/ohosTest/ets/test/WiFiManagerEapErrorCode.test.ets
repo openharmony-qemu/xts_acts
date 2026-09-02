@@ -77,7 +77,7 @@ export default function wifiEapErrorTest(){
                                 eap.unregCustomEapHandler(invalidNetType,validEapCode,validEapType,getEapData);
                                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0100 unregCustomEapHandler success");
                             }catch(error){
-                                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 unregCustomEapHandler failed :,code is ${Number(error.code)}, message is ${error.message}`);
+                                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 unregCustomEapHandler failed :,code is ${errpr.code}, message is ${error.message}`);
                             }
                         }
                     },1*1000);
@@ -86,7 +86,7 @@ export default function wifiEapErrorTest(){
                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0100 regCustomEapHandler success");
                 expect().assertFail();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 regCustomEapHandler failed,code is ${Number(error.code)}, message is ${error.message}`);
+                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 regCustomEapHandler failed,code is ${errpr.code}, message is ${error.message}`);
                 if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0100 eap register permission denied`);
                     expect(true).assertTrue();
@@ -143,13 +143,13 @@ export default function wifiEapErrorTest(){
                             eap.replyCustomEapData(eap.CustomResult.RESULT_NEXT,eapData);
                             console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0200 replyCustomEapData success");
                         }catch(error){
-                            console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 replyCustomEapData failed :,code is ${Number(error.code)}, message is ${error.message}`);
+                            console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 replyCustomEapData failed :,code is ${errpr.code}, message is ${error.message}`);
                         }finally{
                             try{
                                 eap.unregCustomEapHandler(validNetType,invalidEapCode,validEapType,getEapData);
                                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0200 unregCustomEapHandler success");
                             }catch(error){
-                                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 unregCustomEapHandler failed :,code is ${Number(error.code)}, message is ${error.message}`);
+                                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 unregCustomEapHandler failed :,code is ${errpr.code}, message is ${error.message}`);
                             }
                         }
                     },1*1000);
@@ -159,7 +159,7 @@ export default function wifiEapErrorTest(){
                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0200 regCustomEapHandler success");
                 expect().assertFail();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 regCustomEapHandler failed,code is ${Number(error.code)}, message is ${error.message}`);
+                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 regCustomEapHandler failed,code is ${errpr.code}, message is ${error.message}`);
                 if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0200 eap register permission denied`);
                     expect(true).assertTrue();
@@ -222,7 +222,7 @@ export default function wifiEapErrorTest(){
                                 eap.unregCustomEapHandler(validNetType,validEapCode,invalidEapType,getEapData);
                                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0300 unregCustomEapHandler success");
                             }catch(error){
-                                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 unregCustomEapHandler failed :,code is ${Number(error.code)}, message is ${error.message}`);
+                                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 unregCustomEapHandler failed :,code is ${errpr.code}, message is ${error.message}`);
                             }
                         }
                     },1*1000);
@@ -231,7 +231,7 @@ export default function wifiEapErrorTest(){
                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0300 regCustomEapHandler success");
                 //expect().assertFail();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 regCustomEapHandler failed,code is ${Number(error.code)}, message is ${error.message}`);
+                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 regCustomEapHandler failed,code is ${errpr.code}, message is ${error.message}`);
                 if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0300 eap register permission denied`);
                     expect(true).assertTrue();
@@ -297,7 +297,7 @@ export default function wifiEapErrorTest(){
                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0400 unregCustomEapHandler success");
                 expect().assertFail();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 unregCustomEapHandler failed,code is ${Number(error.code)}, message is ${error.message}`);
+                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 unregCustomEapHandler failed,code is ${errpr.code}, message is ${error.message}`);
                 if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0400 eap unregister permission denied`);
                     expect(true).assertTrue();
@@ -362,7 +362,7 @@ export default function wifiEapErrorTest(){
                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0500 unregCustomEapHandler success");
                 expect().assertFail();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 unregCustomEapHandler failed,code is ${Number(error.code)}, message is ${error.message}`);
+                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 unregCustomEapHandler failed,code is ${errpr.code}, message is ${error.message}`);
                 if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0500 eap unregister permission denied`);
                     expect(true).assertTrue();
@@ -428,7 +428,7 @@ export default function wifiEapErrorTest(){
                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0600 unregCustomEapHandler success");
                 expect().assertFail();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 unregCustomEapHandler failed,code is ${Number(error.code)}, message is ${error.message}`);
+                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 unregCustomEapHandler failed,code is ${errpr.code}, message is ${error.message}`);
                 if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0600 eap unregister permission denied`);
                     expect(true).assertTrue();
@@ -479,7 +479,7 @@ export default function wifiEapErrorTest(){
                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0700 replyCustomEapData success");
                 expect().assertFail();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 replyCustomEapData failed,code is ${Number(error.code)}, message is ${error.message}`);
+                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 replyCustomEapData failed,code is ${errpr.code}, message is ${error.message}`);
                 if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0700 eap replyCustomEapData permission denied`);
                     expect(true).assertTrue();
@@ -544,7 +544,7 @@ export default function wifiEapErrorTest(){
                 console.info("SUB_Communication_Netmanager_Eap_ErrorCode_0800 startEthEap success");
                 expect().assertFail();
             }catch(error){
-                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 startEthEap failed,code is ${Number(error.code)}, message is ${error.message}`);
+                console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 startEthEap failed,code is ${errpr.code}, message is ${error.message}`);
                 if(error.code==201){
                     console.error(`SUB_Communication_Netmanager_Eap_ErrorCode_0800 eap startEthEap permission denied`);
                     expect(true).assertTrue();
