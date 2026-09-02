@@ -552,8 +552,8 @@ export default function albumGetAssetsTest () {
       const testNum = 'album_getAssets_callback_011';
       const errorCode = 13900020;
       try {
-        const fetchResult = await help.getAlbums(albumType.SYSTEM, albumSubtype.VIDEO);
-        const album = await fetchResult.getFirstObject();
+        const fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> = await helper.getAlbums(albumType.SYSTEM, albumSubtype.VIDEO);
+        const album: photoAccessHelper.Album = await fetchResult.getFirstObject();
         fetchResult.close();
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         let fetchOption: photoAccessHelper.FetchOptions = {
