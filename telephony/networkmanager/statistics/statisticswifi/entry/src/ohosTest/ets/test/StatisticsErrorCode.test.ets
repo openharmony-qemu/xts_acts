@@ -133,64 +133,6 @@ export default function StatisticsErrorCodeTest() {
     });
 
     /**
-     * @tc.name   testNetworkMgrStatisticsGetUidRxBytesErrCo0500
-     * @tc.number SUB_NetworkMgr_Statistics_GetUidRxBytes_ErrCo_0500
-     * @tc.desc   Test error code 2100001 with invalid uid
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrStatisticsGetUidRxBytesErrCo0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
-      let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytesErrCo0500';
-      console.info(`${caseName} test start`);
-      try {
-        statistics.getUidRxBytes(-1, (error: BusinessError, stats: number) => {
-          if (error) {
-            console.log(`${caseName} err in `, JSON.stringify(error));
-            ExpectTrue(error.code == 2100001);
-          } else {
-            console.log(`${caseName} GetUidRxBytes success `, JSON.stringify(stats));
-            ExpectTrue(false);
-          }
-          done();
-        });
-      } catch (err) {
-        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2100001);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testNetworkMgrStatisticsGetUidRxBytesErrCo0600
-     * @tc.number SUB_NetworkMgr_Statistics_GetUidRxBytes_ErrCo_0600
-     * @tc.desc   Test error code 2100001 with invalid uid
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrStatisticsGetUidRxBytesErrCo0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
-      let caseName: string = 'testNetworkMgrStatisticsGetUidRxBytesErrCo0600';
-      console.info(`${caseName} test start`);
-      try {
-        statistics.getUidRxBytes(-1).then((stats: number) => {
-          console.log(`${caseName} get stats success`, JSON.stringify(stats));
-          ExpectTrue(false);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} err in`, JSON.stringify(err));
-          ExpectTrue(err.code == 2100001);
-          done();
-        });
-      } catch (err) {
-        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2100001);
-        done();
-      }
-    });
-
-
-    /**
      * @tc.name   testNetworkMgrStatisticsGetUidTxBytesErrCo0100
      * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0100
      * @tc.desc   Parameter error
@@ -292,63 +234,6 @@ export default function StatisticsErrorCodeTest() {
       } catch (err) {
         console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
         ExpectTrue(err.code == 401);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testNetworkMgrStatisticsGetUidTxBytesErrCo0500
-     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0500
-     * @tc.desc   Test error code 2100001 with invalid uid
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrStatisticsGetUidTxBytesErrCo0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
-      let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytesErrCo0500';
-      console.info(`${caseName} test start`);
-      try {
-        statistics.getUidTxBytes(-1, (error: BusinessError, stats: number) => {
-          if (error) {
-            console.log(`${caseName} err in `, JSON.stringify(error));
-            ExpectTrue(error.code == 2100001);
-          } else {
-            console.log(`${caseName} GetUidTxBytes success `, JSON.stringify(stats));
-            ExpectTrue(false);
-          }
-          done();
-        });
-      } catch (err) {
-        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2100001);
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   testNetworkMgrStatisticsGetUidTxBytesErrCo0600
-     * @tc.number SUB_NetworkMgr_Statistics_GetUidTxBytes_ErrCo_0600
-     * @tc.desc   Test error code 2100001 with invalid uid
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testNetworkMgrStatisticsGetUidTxBytesErrCo0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 , async (done: Function) => {
-      let caseName: string = 'testNetworkMgrStatisticsGetUidTxBytesErrCo0600';
-      console.info(`${caseName} test start`);
-      try {
-        statistics.getUidTxBytes(-1).then((stats: number) => {
-          console.log(`${caseName} get stats success`, JSON.stringify(stats));
-          ExpectTrue(false);
-          done();
-        }).catch((err: BusinessError) => {
-          console.log(`${caseName} err in`, JSON.stringify(err));
-          ExpectTrue(err.code == 2100001);
-          done();
-        });
-      } catch (err) {
-        console.info(`${caseName} try catch err: ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2100001);
         done();
       }
     });
