@@ -1070,7 +1070,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [InvalidProtocol_0] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1100,7 +1100,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [InvalidProtocol_5] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1130,7 +1130,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [InvalidProtocol_18] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1160,7 +1160,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [InvalidProtocol_Negative] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1190,7 +1190,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [NullProtocol] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1220,7 +1220,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [UndefinedProtocol] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1250,7 +1250,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [InvalidProtocol_0_Sync] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1280,7 +1280,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [InvalidProtocol_5_Sync] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1310,7 +1310,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [InvalidProtocol_18_Sync] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1340,7 +1340,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [InvalidProtocol_Negative_Sync] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1370,7 +1370,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [NullProtocol_Sync] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
@@ -1400,7 +1400,7 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       } catch (err) {
         let error = err as BusinessError;
         console.info(`${caseName} [UndefinedProtocol_Sync] error: code=${error.code}`);
-        expect(Number(error.code)).assertEqual(401);
+        expect(Number(error.code)).assertEqual(2100001);
         console.info(`${caseName}---End`);
         done();
       }
