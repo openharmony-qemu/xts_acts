@@ -25,6 +25,11 @@ import UIPickerOnScrollStopModifierTest from './UIPickerComponent/UIPickerOnScro
 import UIPickerIndicatorModifierTest from './UIPickerComponent/UIPickerIndicatorModifier.test';
 import UIPickerItemHeightTest from './UIPickerComponent/UIPickerItemHeight.test';
 import UIPickerDisplayedItemCountTest from './UIPickerComponent/UIPickerDisplayedItemCount.test';
+import UIPickerCallbackTest from './UIPickerComponent/UIPickerCallback.test';
+import TextPickerOnChangeTest from './TextPickerComponent/TextPickerOnChange.test';
+import TextPickerOnScrollStopTest from './TextPickerComponent/TextPickerOnScrollStop.test';
+import TextPickerOnEnterSelectedAreaTest from './TextPickerComponent/TextPickerOnEnterSelectedArea.test';
+import TimePickerOnChangeTest from './TimePickerComponent/TimePickerOnChange.test';
 
 export default function testsuite() {
     UIPickerCanLoopTest();
@@ -39,4 +44,9 @@ export default function testsuite() {
     UIPickerIndicatorModifierTest();
     UIPickerItemHeightTest();
     UIPickerDisplayedItemCountTest();
+    UIPickerCallbackTest();
+    TextPickerOnChangeTest();
+    TextPickerOnScrollStopTest();
+    TextPickerOnEnterSelectedAreaTest();
+    TimePickerOnChangeTest();
 }
