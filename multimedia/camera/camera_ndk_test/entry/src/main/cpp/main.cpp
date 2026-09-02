@@ -4493,8 +4493,8 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "oHgetPhysicalAperture", nullptr, OHgetPhysicalAperture, nullptr, nullptr, nullptr,
             napi_default, nullptr },
-        { "oHgetSupportedExposureDurationRange", nullptr, OHgetSupportedExposureDurationRange, nullptr, nullptr, nullptr,
-            napi_default, nullptr },
+        { "oHgetSupportedExposureDurationRange", nullptr, OHgetSupportedExposureDurationRange, nullptr, nullptr,
+            nullptr, napi_default, nullptr },
         { "oHgetExposureDuration", nullptr, OHgetExposureDuration, nullptr, nullptr, nullptr,
             napi_default, nullptr },
     };
