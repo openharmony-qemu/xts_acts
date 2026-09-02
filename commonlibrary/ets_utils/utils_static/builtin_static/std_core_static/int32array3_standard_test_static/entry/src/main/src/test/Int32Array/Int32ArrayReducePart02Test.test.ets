@@ -910,7 +910,7 @@ export default function Int32ArrayReducePart02Test(): void {
       let msg: string = '';
       try {
         arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => {
-          expect(c).assertEqual(1);
+          expect(c).assertEqual(2);
           throw new Error('first boom');
         });
         expect().assertFail();
@@ -960,7 +960,7 @@ export default function Int32ArrayReducePart02Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       try {
         arr.reduce((p: number, c: number): number => {
-          expect(c).assertEqual(1);
+          expect(c).assertEqual(2);
           throw new RangeError('reduce range error');
         });
         expect().assertFail();
@@ -981,7 +981,7 @@ export default function Int32ArrayReducePart02Test(): void {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       try {
         arr.reduce((p: number, c: number): number => {
-          expect(c).assertEqual(1);
+          expect(c).assertEqual(2);
           throw new TypeError('reduce type error');
         });
         expect().assertFail();
