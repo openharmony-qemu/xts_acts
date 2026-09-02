@@ -139,7 +139,7 @@ struct ImageRequestDownloadInfo {
           .key('onErrorTriggered3Text')
 
         Row() {
-          Image('https://www.example.com/nonexistent2_test.png')
+          Image('https://app img.dbankcdn.com/substancechartimg/64/f7e291e71006440caed2f552f4dbb522.jpg')
             .width(100)
             .height(100)
             .border({ width : 1})
@@ -148,7 +148,7 @@ struct ImageRequestDownloadInfo {
         }.width('80%')
 
         Row() {
-          Image('https://www.example.com/nonexistent3_test.png')
+          Image('https://app img.dbankcdn.com/substancechartimg/64/f7e291e71006440caed2f552f4dbb522.jpg')
             .width(100)
             .height(100)
             .border({ width : 1})
@@ -172,7 +172,7 @@ struct ImageRequestDownloadInfo {
           .key('message5Text')
 
         Row() {
-          Image('https://www.example.com/nonexistent4_test.png')
+          Image('https://app img.dbankcdn.com/substancechartimg/64/f7e291e71006440caed2f552f4dbb522.jpg')
             .width(80)
             .height(60)
             .border({ width : 1})

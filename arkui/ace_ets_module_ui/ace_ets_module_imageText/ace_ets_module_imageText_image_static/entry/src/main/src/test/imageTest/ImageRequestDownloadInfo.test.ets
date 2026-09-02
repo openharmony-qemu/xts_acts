@@ -235,7 +235,7 @@ export default function ImageRequestDownloadInfoTest() {
     /**
      * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1200
      * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1200
-     * @tc.desc     Test downloadInfo field accessibility for another network image error
+     * @tc.desc     Test downloadInfo
      * @tc.level    Level.LEVEL1
      */
     it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
