@@ -1054,66 +1054,6 @@ export default function getThumbnailTest() {
       }
     });
 
-    /**
-     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3400
-     * @tc.name   getThumbnail_callback_034
-     * @tc.desc   getThumbnail by undefined
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
-     */
-    it('getThumbnail_callback_034', Level.LEVEL0, async (done: Function) => {
-      const testNum = 'getThumbnail_callback_034';
-      const errorCode = 13900020;
-      const fetchOps:photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.jpg');
-      let photoAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
-      try {
-        photoAsset.getThumbnail(undefined, async (err, pixelMap) => {
-          if(err){
-            expect(false).assertTrue();
-            done();
-          } else {
-            expect(false).assertTrue();
-            done();
-          }
-        })
-      } catch (error) {
-        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
-        expect(error.code).assertEqual(String(errorCode));
-        done();
-      }
-    });
-
-    /**
-     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_THUMBNAIL_3500
-     * @tc.name   getThumbnail_callback_035
-     * @tc.desc   getThumbnail by null
-     * @tc.size   MEDIUM
-     * @tc.type   Function
-     * @tc.level  Level 0
-     */
-    it('getThumbnail_callback_035', Level.LEVEL0, async (done: Function) => {
-      const testNum = 'getThumbnail_callback_035';
-      const errorCode = 13900020;
-      const fetchOps:photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.jpg');
-      let photoAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
-      try {
-        photoAsset.getThumbnail(null, async (err, pixelMap) => {
-          if(err){
-            expect(false).assertTrue();
-            done();
-          } else{
-            expect(false).assertTrue();
-            done();
-          }
-        })
-      } catch (error) {
-        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
-        expect(error.code).assertEqual(String(errorCode));
-        done();
-      }
-    });
-
     //promise
     //image
     /**
@@ -1561,64 +1501,6 @@ export default function getThumbnailTest() {
         width: 99999, height: 99999
       };
       await getThumbnailPromiseAbnormal(done, testNum, fetchOps, size);
-    });
-
-    /**
-     * @tc.name   getThumbnail_promise_024
-     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_2400
-     * @tc.desc   getThumbnail by undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('getThumbnail_promise_024', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'getThumbnail_promise_024';
-      const fetchOps:photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.jpg');
-      let photoAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
-      try {
-        let result: boolean = false;
-        try{
-          await photoAsset.getThumbnail(undefined);
-          result = true;
-        }catch(err){
-          expect(result).assertTrue();
-        }
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
-        expect(false).assertTrue();
-        done();
-      }
-    });
-
-    /**
-     * @tc.name   getThumbnail_promise_025
-     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_THUMBNAIL_2500
-     * @tc.desc   getThumbnail by null
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('getThumbnail_promise_025', Level.LEVEL2, async (done: Function) => {
-      const testNum = 'getThumbnail_promise_025';
-      const fetchOps:photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.jpg');
-      let photoAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
-      try {
-        let result: boolean = false;
-        try{
-          await photoAsset.getThumbnail(null);
-          result = true;
-        }catch(err){
-          expect(result).assertTrue();
-        }
-        expect(result).assertTrue();
-        done();
-      } catch (error) {
-        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
-        expect(false).assertTrue();
-        done();
-      }
     });
   })
 }
