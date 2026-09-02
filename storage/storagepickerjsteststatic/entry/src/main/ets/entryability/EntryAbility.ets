@@ -35,13 +35,23 @@ class EntryAbility extends UIAbility {
     try {
       windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
-        MyCallback.runCasesOfCallback();
         if (err?.code) {
           hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent error');
           return;
         }
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        if (mainWindow) {
+          hilog.info(0x0000, 'testTag', `sjd EntryAbility has mainWindow: ${JSON.stringify(mainWindow)}`);
+        } else {
+          hilog.info(0x0000, 'testTag', 'sjd EntryAbility no mainWindow');
+        }
+        AppStorage.setOrCreate<window.Window>('mainWindow',mainWindow);
+      } catch (e) {
+        hilog.info(0x0000, 'testTag', 'sjd EntryAbility getMainWindowSync err.msg: ' + e.message + ', code: ' + e.code);
+      }
     } catch (e) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }

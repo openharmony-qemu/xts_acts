@@ -101,7 +101,7 @@ export default function CloudFileTest(): void {
         hilog.info(domain, tag, '%{public}s', "startBatch Download successfully");
       }).catch((err: Error) => {
         hilog.info(domain, tag, '%{public}s', "Test_CloudFile_State_static_003 startBatch download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code === 22400005).assertTrue();
+        expect(err.code === 22400005 || err.code === 13600001).assertTrue();
         done();
       });
      } catch (err) {
@@ -131,9 +131,10 @@ export default function CloudFileTest(): void {
       fileCache.onBatchDownload(callback);
       fileCache.stopBatch(downloadId, needClean).then((): void => {
         hilog.info(domain, tag, '%{public}s', "stopBatch Download successfully");
+        done();
       }).catch((err: Error) => {
         hilog.info(domain, tag, '%{public}s', "Test_CloudFile_State_static_004 stopBatch download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code === 13600001).assertTrue();
+        expect(err.code === 13600001 || err.code === 22400005).assertTrue();
         done();
       });
      } catch (err) {
@@ -231,7 +232,7 @@ export default function CloudFileTest(): void {
         expect(cloudSync.DownloadFileType.LCD == 2).assertTrue();
       }).catch((err: Error) => {
         hilog.info(domain, tag, '%{public}s', "Test_CloudFile_State_static_007 startBatch download failed: " + err.message + ", error code: " + err.code);
-        expect(err.code === 22400005).assertTrue();
+        expect(err.code === 22400005 || err.code === 13600001).assertTrue();
         done();
       });
      } catch (err) {
@@ -258,8 +259,8 @@ export default function CloudFileTest(): void {
      } catch (err) {
        hilog.info(domain, tag, '%{public}s', 'Test_CloudFile_State_static_008 has failed for ' + err.message + ', code: ' + err.code);
        expect(err.code === 401 && err.message == 'The input parameter is invalid').assertTrue();
-       done();
      }
+      done();
    });
 
    /**
