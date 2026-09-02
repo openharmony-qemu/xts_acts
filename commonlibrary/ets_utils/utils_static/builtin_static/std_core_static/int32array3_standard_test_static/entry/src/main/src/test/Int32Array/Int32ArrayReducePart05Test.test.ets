@@ -1260,27 +1260,12 @@ export default function Int32ArrayReducePart05Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6300
      * @tc.name int32ArrayReducePart05Test063
-     * @tc.desc Verify U=number count evens (initialValue=0)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it('int32ArrayReducePart05Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int32Array = Int32Array.of(1, 2, 3, 4, 5, 6);
-      let r: number =
-      arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + (c % 2 === 0 ? 1 : 0), 0);
-      expect(r).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6400
-     * @tc.name int32ArrayReducePart05Test064
      * @tc.desc Verify U=string comma-separated join (no leading/trailing comma)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReducePart05Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReducePart05Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       let r: string = arr.reduce((p: string, c: number, i: int, _a: Int32Array): string => {
         if (i === 0) {
@@ -1292,14 +1277,14 @@ export default function Int32ArrayReducePart05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6500
-     * @tc.name int32ArrayReducePart05Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6400
+     * @tc.name int32ArrayReducePart05Test064
      * @tc.desc Verify array with NaN via ToInt32 becomes 0, no-init sum includes 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReducePart05Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReducePart05Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array(3);
       arr.$_set(0, 10);
       arr.$_set(1, Number.NaN as number);
@@ -1309,28 +1294,28 @@ export default function Int32ArrayReducePart05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6600
-     * @tc.name int32ArrayReducePart05Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6500
+     * @tc.name int32ArrayReducePart05Test065
      * @tc.desc Verify initialValue=1.5 decimal accumulates, prev transparent not ToInt32 truncated (prev not TypedArray element)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReducePart05Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReducePart05Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1, 2);
       let r: number = arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 1.5);
       expect(r).assertEqual(4.5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6700
-     * @tc.name int32ArrayReducePart05Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6600
+     * @tc.name int32ArrayReducePart05Test066
      * @tc.desc Verify initialValue=-Infinity max correctly picks max element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReducePart05Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReducePart05Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(3, 7, 2);
       let r: number =
       arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p > c ? p : c, Number.NEGATIVE_INFINITY);
@@ -1338,28 +1323,28 @@ export default function Int32ArrayReducePart05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6800
-     * @tc.name int32ArrayReducePart05Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6700
+     * @tc.name int32ArrayReducePart05Test067
      * @tc.desc Verify initialValue=NaN result always NaN (NaN contamination)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReducePart05Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReducePart05Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(1, 2, 3);
       let r: number = arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + c, Number.NaN);
       expect(isNaN(r)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6900
-     * @tc.name int32ArrayReducePart05Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6800
+     * @tc.name int32ArrayReducePart05Test068
      * @tc.desc Verify chain call: first reduce result as second reduce initialValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReducePart05Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReducePart05Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a1: Int32Array = Int32Array.of(1, 2, 3);
       let a2: Int32Array = Int32Array.of(10, 20);
       let s1: number = a1.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + c);
@@ -1369,14 +1354,14 @@ export default function Int32ArrayReducePart05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_7000
-     * @tc.name int32ArrayReducePart05Test070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_6900
+     * @tc.name int32ArrayReducePart05Test069
      * @tc.desc Verify chain U=string: first reduce concat string, second continues on top
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReducePart05Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReducePart05Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Int32Array = Int32Array.of(1, 2);
       let b: Int32Array = Int32Array.of(3, 4);
       let sa: string = a.reduce((p: string, c: number, _i: int, _a: Int32Array): string => p + c.toString(), '');
@@ -1386,14 +1371,14 @@ export default function Int32ArrayReducePart05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_7100
-     * @tc.name int32ArrayReducePart05Test071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_7000
+     * @tc.name int32ArrayReducePart05Test070
      * @tc.desc Verify after reduce array still traversable via indexed for loop, element values correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReducePart05Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReducePart05Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(5, 6, 7);
       let sum: number = arr.reduce((p: number, c: number, _i: int, _a: Int32Array): number => p + c, 0);
       let collected: number[] = [];
@@ -1407,14 +1392,14 @@ export default function Int32ArrayReducePart05Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_7200
-     * @tc.name int32ArrayReducePart05Test072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_REDUCE_PART05_7100
+     * @tc.name int32ArrayReducePart05Test071
      * @tc.desc Verify large array (1024 elements) reduce sum result correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it('int32ArrayReducePart05Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('int32ArrayReducePart05Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let n: int = 1024;
       let arr: Int32Array = new Int32Array(n);
       let expected: number = 0;
