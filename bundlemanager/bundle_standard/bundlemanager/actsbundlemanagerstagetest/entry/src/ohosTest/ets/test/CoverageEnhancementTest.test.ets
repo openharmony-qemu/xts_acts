@@ -22,6 +22,7 @@ const BUNDLE_NAME = "ohos.acts.bundle.stage.test";
 const ABILITY_NAME = "ohos.acts.bundle.stage.test.MainAbility";
 const ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID = 1;
 const INVALID_BUNDLE_FLAG = 99999;
+const PROMISE_GUARD_MS = 10000;
 
 function getErrorCode(error: BusinessError | number): number {
   if (typeof error === 'number') {
@@ -95,16 +96,44 @@ export default function CoverageEnhancementTest() {
      */
     it('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       (done: Function) => {
-        bundle.getAllBundleInfo(INVALID_BUNDLE_FLAG).then((data) => {
-          console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 should not succeed: ' +
-            JSON.stringify(data));
+        let finished = false;
+        let timer = setTimeout(() => {
+          if (finished) {
+            return;
+          }
+          finished = true;
+          console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 callback guard timeout');
           expect().assertFail();
           done();
-        }).catch((error: BusinessError | number) => {
+        }, PROMISE_GUARD_MS);
+        try {
+          bundle.getAllBundleInfo(INVALID_BUNDLE_FLAG, (err: BusinessError, data: Array<bundle.BundleInfo>) => {
+            if (finished) {
+              return;
+            }
+            finished = true;
+            clearTimeout(timer);
+            if (err) {
+              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 err: ' + JSON.stringify(err));
+              expect(getErrorCode(err)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
+              done();
+              return;
+            }
+            console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 should not succeed: ' +
+              JSON.stringify(data));
+            expect().assertFail();
+            done();
+          });
+        } catch (error) {
+          if (finished) {
+            return;
+          }
+          finished = true;
+          clearTimeout(timer);
           console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_InvalidEnum_9102 catch: ' + JSON.stringify(error));
-          expect(getErrorCode(error)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
+          expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
           done();
-        });
+        }
       });
 
     /**
