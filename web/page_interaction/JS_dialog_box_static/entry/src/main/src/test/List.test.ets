@@ -24,7 +24,7 @@ import WebKeyboardAvoidMode from './WebEmulateTouchFromMouseEvent.test'
 import SaveImageMenu from './SaveImageMenu.test'
 import WebContextMenuResultConstructor from './WebContextMenuResultConstructor.test'
 import ScreenCaptureHandlerConstructor from './ScreenCaptureHandlerConstructor.test'
-
+import FileSelectorParamTest from './FileSelectorParamTest.test'
 
 export default function testsuite() {
     geolocationPermissions();
@@ -37,4 +37,5 @@ export default function testsuite() {
 	SaveImageMenu()
     WebContextMenuResultConstructor()
     ScreenCaptureHandlerConstructor()
+	FileSelectorParamTest()
 }

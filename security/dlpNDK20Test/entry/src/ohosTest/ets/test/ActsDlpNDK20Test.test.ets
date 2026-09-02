@@ -173,6 +173,31 @@ export default function ActsDlpNDK20Test() {
       }
     })
     /**
+     * @tc.name   testOsGetDlpPermissionInfo0106
+     * @tc.number SUB_Security_DataSecurity_OsGetDlpPermissionInfo_0106
+     * @tc.desc   test dlp_permission_api with flags pointer nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOsGetDlpPermissionInfo0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>testOsGetDlpPermissionInfo0106 start====");
+        let result: number = await osAccountNdk.OsGetDlpPermissionInfo0106();
+        console.info("====>testOsGetDlpPermissionInfo0106 result: " + result);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100001);
+        }
+        done()
+      } catch (err) {
+        console.error("====>testOsGetDlpPermissionInfo0106 catch err: " + err);
+        expect(false).assertTrue();
+        done()
+      }
+    })
+    /**
      * @tc.name   testOsGetOriginalFileName0100
      * @tc.number SUB_Security_DataSecurity_OsGetOriginalFileName_0100
      * @tc.desc   test dlp_permission_api with fileName "test.txt"
@@ -270,6 +295,31 @@ export default function ActsDlpNDK20Test() {
       } catch (err) {
         console.error("====>testOsGetOriginalFileName0400 catch err: " + err);
         expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        done()
+      }
+    })
+    /**
+     * @tc.name   testOsGetOriginalFileName0500
+     * @tc.number SUB_Security_DataSecurity_OsGetOriginalFileName_0500
+     * @tc.desc   test dlp_permission_api with empty fileName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOsGetOriginalFileName0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>testOsGetOriginalFileName0500 start====");
+        let result: number = osAccountNdk.OsGetOriginalFileName0500();
+        console.info("====>testOsGetOriginalFileName0500 result: " + result);
+        if (result === 801) {
+            expect(result).assertEqual(801);
+        } else {
+            expect(result).assertEqual(19100001);
+        }
+        done()
+      } catch (err) {
+        console.error("====>testOsGetOriginalFileName0500 catch err: " + err);
+        expect(false).assertTrue();
         done()
       }
     })

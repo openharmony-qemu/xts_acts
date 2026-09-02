@@ -15,25 +15,18 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 
 const SLEEP_TIME = 1000;
 
 export default function Canvas1Test() {
   describe('Canvas1Test', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info('[ARKUI_NEW] Canvas1Test beforeAll start');
-      await UtilsTest.msSleep(2000);
-      await UtilsTest.startAbility("com.arkui.ace.canvas.static", "EntryAbility");
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info('[ARKUI_NEW] Canvas1Test beforeEach start');
       let options: router.RouterOptions = { url: 'MainAbility/pages/Canvas/CanvasIndex1' };
@@ -43,7 +36,7 @@ export default function Canvas1Test() {
         let pages = routerInstance.getState();
         console.info('[ARKUI_NEW] Canvas1Test state pages: ' + JSON.stringify(pages));
         if (pages.name !== "CanvasIndex1") {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
         }
         await Utils.sleep(500);
       } catch (err) {
@@ -54,7 +47,11 @@ export default function Canvas1Test() {
 
     afterEach(async (): Promise<void> => {
       console.info('[ARKUI_NEW] Canvas1Test afterEach start');
-      await Utils.sleep(SLEEP_TIME);
+      try {
+        await Utils.sleep(SLEEP_TIME);
+      } catch (err) {
+        console.info('[ARKUI_NEW] Canvas1Test afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('[ARKUI_NEW] Canvas1Test afterEach end');
     });
 

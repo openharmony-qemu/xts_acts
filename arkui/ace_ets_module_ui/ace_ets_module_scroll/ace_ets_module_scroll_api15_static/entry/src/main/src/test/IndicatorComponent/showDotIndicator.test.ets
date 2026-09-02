@@ -13,26 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, Component, UiWindow, ON } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { BusinessError } from '@ohos.base';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import hilog from '@ohos.hilog';
-import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest, startAbility } from '../Util.test';
+
 export default function showDotIndicator() {
   describe('showDotIndicator', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.arkui.ace.scroll15.static", "EntryAbility");
-      
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("showDotIndicator beforeEach start");
       let options: router.RouterOptions = {
@@ -46,7 +36,7 @@ export default function showDotIndicator() {
         if (!("showDotIndicator" == pages.name)) {
           console.info("get showDotIndicator pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await CommonFunc.sleep(1000);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push showDotIndicator page error:" + err);
@@ -56,8 +46,6 @@ export default function showDotIndicator() {
 
 
 
-
-    
     /**
      * @tc.number   showDotIndicator_static_0100
      * @tc.name     showDotIndicator_static_0100
@@ -65,30 +53,32 @@ export default function showDotIndicator() {
      * @tc.level    Level.LEVEL0
      */
 it('showDotIndicator_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[showDotIndicator_static_0100] START');
       try {
-        console.info('[showDotIndicator_static_0100] START');
-          await CommonFunc.sleep(1000);
-          let driver = Driver.create()
-          await driver.assertComponentExist(ON.text('2'));
-          let btn1: Component = await driver.findComponent(ON.id('indicator_showNext')) as Component;
-          await btn1.click();
-          await CommonFunc.sleep(1500);
-          await driver.assertComponentExist(ON.text('3'));
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        await driver.assertComponentExist(ON.text('2'));
+        let btn1: Component = await driver.findComponent(ON.id('indicator_showNext')) as Component;
+        await btn1.click();
+        await CommonFunc.sleep(1500);
+        await driver.assertComponentExist(ON.text('3'));
 
-          let btn2: Component = await driver.findComponent(ON.id('indicator_showPrevious')) as Component;
-          await btn2.click();
-          await CommonFunc.sleep(1500);
-          await driver.assertComponentExist(ON.text('2'));
+        let btn2: Component = await driver.findComponent(ON.id('indicator_showPrevious')) as Component;
+        await btn2.click();
+        await CommonFunc.sleep(1500);
+        await driver.assertComponentExist(ON.text('2'));
 
-          let btn3: Component = await driver.findComponent(ON.id('indicator_changeIndex')) as Component;
-          await btn3.click();
-          await CommonFunc.sleep(1500);
-          await driver.assertComponentExist(ON.text('4'));
+        let btn3: Component = await driver.findComponent(ON.id('indicator_changeIndex')) as Component;
+        await btn3.click();
+        await CommonFunc.sleep(1500);
+        await driver.assertComponentExist(ON.text('4'));
 
-          console.info('[showDotIndicator_static_0100] END');
-          done();
+        console.info('[showDotIndicator_static_0100] END');
+        done();
       } catch (error) {
+        console.error('[showDotIndicator_static_0100] error:' + error);
         expect().assertFail();
+        done();
       }
     });
   })

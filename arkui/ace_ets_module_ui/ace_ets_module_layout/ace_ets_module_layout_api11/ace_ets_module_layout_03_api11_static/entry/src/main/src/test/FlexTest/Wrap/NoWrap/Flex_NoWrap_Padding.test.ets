@@ -14,30 +14,17 @@
  * limitations under the License.
  */
 import { MessageManager, Callback } from '../../../../../ets/MainAbility/common/MessageManager';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../../../Util.test';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function flex_NoWrap_PaddingTest() {
   describe('Flex_NoWrap_PaddingTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("Flex_NoWrap_PaddingTest beforeEach start");
-     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("Flex_NoWrap_PaddingTest beforeEach start");
       let options: router.RouterOptions = {
@@ -66,7 +53,11 @@ export default function flex_NoWrap_PaddingTest() {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'flexMargin', value: 0
       })
+      try {
       await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       console.info("Flex_NoWrap_Padding after each called");
     });
     
@@ -82,7 +73,11 @@ it('testWrapNoWrapFlexPaddingOverflow_static', Level.LEVEL0, async () => {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'flexPadding', value: 60
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad1');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad3');
@@ -127,7 +122,11 @@ it('testWrapNoWrapFlexPaddingMeet_static', Level.LEVEL0, async () => {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'flexPadding', value: 10
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad1');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad3');
@@ -173,7 +172,11 @@ it('testWrapNoWrapFlexMargin_static', Level.LEVEL0, async () => {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'flexMargin', value: 10
       })
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad1');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad3');
@@ -229,7 +232,11 @@ it('testWrapNoWrapFlexMarPad_static', Level.LEVEL0, async () => {
       AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'flexPadding', value: 30
       });
+      try {
       await CommonFunc.sleep(3000);
+      } catch (err) {
+        console.info('staticTest await err: ' + JSON.stringify(err));
+      }
       let firstText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad1');
       let secondText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad2');
       let thirdText: RectValue = CommonFunc.getComponentRect('NoWrap_flex_pad3');

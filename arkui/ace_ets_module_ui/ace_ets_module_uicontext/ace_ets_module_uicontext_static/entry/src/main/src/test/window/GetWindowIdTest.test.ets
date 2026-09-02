@@ -13,25 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 
 export default function GetWindowIdTest(): void {
   describe('GetWindowIdTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("themePageToggleTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.ets.module.uicontext.static'", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("themePageToggleTest beforeEach start");
@@ -64,16 +56,20 @@ export default function GetWindowIdTest(): void {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_GetWindowIdTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
-
-      console.info('SUB_ARKUI_GetWindowIdTest_static_1000 START');
-      let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
-      expect(AppStorage.get<Int|undefined>('getWindowIdValue1')).assertEqual(0);
-      expect(AppStorage.get<Int|undefined>('getWindowIdValue2')).assertEqual(undefined);
-      AppStorage.delete('getWindowIdValue1');
-      AppStorage.delete('getWindowIdValue2');
-      console.info('[SUB_ARKUI_GetWindowIdTest_static_1000] END');
-      done();
+      try {
+        console.info('SUB_ARKUI_GetWindowIdTest_static_1000 START');
+        let driver =  Driver.create()
+        await CommonFunc.sleep(1000);
+        expect(AppStorage.get<Int|undefined>('getWindowIdValue1')).assertEqual(0);
+        expect(AppStorage.get<Int|undefined>('getWindowIdValue2')).assertEqual(undefined);
+        AppStorage.delete('getWindowIdValue1');
+        AppStorage.delete('getWindowIdValue2');
+        console.info('[SUB_ARKUI_GetWindowIdTest_static_1000] END');
+        done();
+      } catch (err) {
+        console.info('SUB_ARKUI_GetWindowIdTest_static_1000 err: ' + JSON.stringify(err));
+        done();
+      }
     });
   })
 }

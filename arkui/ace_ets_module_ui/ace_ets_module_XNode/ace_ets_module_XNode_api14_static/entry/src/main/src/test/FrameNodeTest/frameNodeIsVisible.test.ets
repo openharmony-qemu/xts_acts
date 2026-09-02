@@ -14,27 +14,15 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest, startAbility } from '../Util.test';
 export default function frameNodeIsVisibleTest() {
   describe('frameNodeIsVisibleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000);
-      await UtilsTest.startAbility("com.arkui.ace.XNode.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("frameNodeIsVisibleTest beforeEach start");
       let options: router.RouterOptions = {
@@ -58,12 +46,15 @@ export default function frameNodeIsVisibleTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('frameNodeIsVisibleTest sleep err: ' + JSON.stringify(err));
+      }
       console.info("frameNodeIsVisibleTest after each called");
     });
 
 
-    
     
 /**
      * @tc.number   frameNodeIsVisibleTest_static_0100
@@ -74,10 +65,22 @@ export default function frameNodeIsVisibleTest() {
 it('frameNodeIsVisibleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('frameNodeIsVisibleTest_static_0100 START');
       let driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('frameNodeIsVisibleTest sleep err: ' + JSON.stringify(err));
+      }
       let button = await driver.findComponent(ON.id('print_id')) as Component;
-      await button.click();
-      await CommonFunc.sleep(1000);
+      try {
+        await button.click();
+      } catch (err) {
+        console.info('frameNodeIsVisibleTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('frameNodeIsVisibleTest sleep err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('columnNodeIsVisible');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[frameNodeIsVisibleTest_static_0100] component obj is: " + JSON.stringifyJsonElement(obj));

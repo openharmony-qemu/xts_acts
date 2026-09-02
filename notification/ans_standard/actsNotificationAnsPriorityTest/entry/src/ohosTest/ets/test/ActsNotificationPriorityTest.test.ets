@@ -3,6 +3,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import notificationManager from '@ohos.notificationManager';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@kit.TestKit';
+import Base from '@ohos.base';
+import notification from '@ohos.notification'
 import image from '@ohos.multimedia.image';
 
 let context: common.UIAbilityContext;
@@ -88,6 +90,754 @@ export default function actsNotificationPriorityTest() {
           expect(false).assertTrue()
           done()
         })
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_5000
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_5000
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_5000', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_5000"
+      let count = 0
+      try {
+        notificationManager.addSlot(undefined, (err) => {
+          if (err) {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Emitter_Capabilities_5100
+     * @tc.number SUB_Notification_Emitter_Capabilities_5100
+     * @tc.desc   【getNotificationStatisticsByBundle】参数bundles下的bundleName正确，uid不填写，返回正确的包名和uid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Emitter_Capabilities_5100', Level.LEVEL0, async (done: Function) => {
+      let TAG: string = 'SUB_Notification_Emitter_Capabilities_5100';
+      let count = 0
+      try {
+        notificationManager.getSlot(undefined, (err) => {
+          if (err) {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_5200
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_5200
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_5200', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_5200"
+      let count = 0
+      try {
+        await notificationManager.addSlot(undefined).then(() => {
+          console.info(`${TAG} addSlot_21 success`)
+          count++
+          expect(count).assertEqual(1)
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG} addSlot_21 err: ${err}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_5300
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_5300
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_5300', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_5300"
+      let count = 0
+      try {
+        await notificationManager.addSlot(null).then(() => {
+          console.info(`${TAG} addSlot_21 success`)
+          count++
+          expect(count).assertEqual(1)
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG} addSlot_21 err: ${err}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_5400
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_5400
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_5400', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_5400"
+      let count = 0
+      try {
+        notification.getSlot(null, (err:Base.BusinessError) => {
+          if (err) {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(err.code).assertEqual(401)
+            done()
+          } else {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_5500
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_5500
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_5500', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_5500"
+      let count = 0
+      try {
+        notificationManager.getSlot(15, (err) => {
+          if (err) {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(err.code).assertEqual(401)
+            done()
+          } else {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_5600
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_5600
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_5600', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_5600"
+      let count = 0
+      try {
+        notificationManager.getSlot(undefined, (err) => {
+          if (err) {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(err.code).assertEqual(401)
+            done()
+          } else {
+            console.info(TAG + `addSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_5700
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_5700
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_5700', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_5700"
+      let count = 0
+      try {
+        await notificationManager.getSlot(15).then((data) => {
+          console.info(`${TAG} getSlot_43 Promise `)
+          expect(data).assertEqual(null)
+          done()
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG} getSlot_43 Promise errCode: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_5800
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_5800
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_5800', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_5800"
+      let count = 0
+      try {
+        await notificationManager.getSlot(null).then((data) => {
+          console.info(`${TAG} getSlot_43 Promise `)
+          expect(data).assertEqual(null)
+          done()
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG} getSlot_43 Promise errCode: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_5900
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_5900
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_5900', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_5900"
+      let count = 0
+      try {
+        await notificationManager.getSlot(undefined).then((data) => {
+          console.info(`${TAG} getSlot_43 Promise `)
+          expect(data).assertEqual(null)
+          done()
+        }).catch((err: BusinessError) => {
+          console.info(`${TAG} getSlot_43 Promise errCode: ${err.code}, errMes: ${err.message}`)
+          expect(false).assertTrue()
+          done()
+        })
+      }catch (err) {
+        console.info(`${TAG} addSlot_2 AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6000
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6000
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6000', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6000"
+      let count = 0
+      try {
+        let removeSlotCallback = (err: BusinessError): void => {
+          if (err) {
+            console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
+            expect(false).assertTrue();
+            done();
+          } else {
+            console.info(TAG + `Succeeded in removing slot.`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        }
+        notificationManager.removeSlot(15, removeSlotCallback);
+      }catch (err) {
+        console.info(`${TAG} removeSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6100
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6100
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6100', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6100"
+      let count = 0
+      try {
+        await notificationManager.removeSlot(15).then(() => {
+          count++
+          expect(count).assertEqual(1)
+          console.info(TAG + `Succeeded in removing slot.`);
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done()
+        });
+      }catch (err) {
+        console.info(`${TAG} removeSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6200
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6200
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6200', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6200"
+      let count = 0
+      try {
+        await notificationManager.removeSlot(null).then(() => {
+          count++
+          expect(count).assertEqual(1)
+          console.info(TAG + `Succeeded in removing slot.`);
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done()
+        });
+      }catch (err) {
+        console.info(`${TAG} removeSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+
+    })
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6300
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6300
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6300', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6300"
+      let count = 0
+      try {
+        await notificationManager.removeSlot(undefined).then(() => {
+          count++
+          expect(count).assertEqual(1)
+          console.info(TAG + `Succeeded in removing slot.`);
+          done()
+        }).catch((err: BusinessError) => {
+          console.error(TAG + `Failed to remove slot. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done()
+        });
+      }catch (err) {
+        console.info(`${TAG} removeSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+
+    })
+
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6400
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6400
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6400', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6400"
+      let count = 0
+      try {
+        notification.getSlot(undefined, (err:Base.BusinessError) => {
+          if (err) {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(err.code).assertEqual(401)
+            done()
+          } else {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} getSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6500
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6500
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6500', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6500"
+      let count = 0
+      try {
+        notification.addSlot(null, (err:Base.BusinessError) => {
+          if (err) {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(err.code).assertEqual(401)
+            done()
+          } else {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} getSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6600
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6600
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6600', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6600"
+      let count = 0
+      try {
+        notification.addSlot(undefined, (err:Base.BusinessError) => {
+          if (err) {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(err.code).assertEqual(401)
+            done()
+          } else {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} getSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6700
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6700
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6700', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6700"
+      let count = 0
+      try {
+        notification.addSlot(undefined).then(() => {
+          count++
+          expect(count).assertEqual(1)
+          console.info(TAG + `Succeeded in addSlot slot.`);
+          done()
+        }).catch((err: Base.BusinessError) => {
+          console.error(TAG + `Failed to addSlot. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done()
+        });
+      }catch (err) {
+        console.info(`${TAG} addSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6800
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6800
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6800', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6800"
+      let count = 0
+      try {
+        notification.addSlot(null).then(() => {
+          count++
+          expect(count).assertEqual(1)
+          console.info(TAG + `Succeeded in addSlot slot.`);
+          done()
+        }).catch((err: Base.BusinessError) => {
+          console.error(TAG + `Failed to addSlot. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done()
+        });
+      }catch (err) {
+        console.info(`${TAG} addSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_6900
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_6900
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_6900', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_6900"
+      let count = 0
+      try {
+        notification.getSlot(null).then(() => {
+          count++
+          expect(count).assertEqual(1)
+          console.info(TAG + `Succeeded in addSlot slot.`);
+          done()
+        }).catch((err: Base.BusinessError) => {
+          console.error(TAG + `Failed to addSlot. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done()
+        });
+      }catch (err) {
+        console.info(`${TAG} addSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_7000
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_7000
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_7000', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_7000"
+      let count = 0
+      try {
+        notification.getSlot(undefined).then(() => {
+          count++
+          expect(count).assertEqual(1)
+          console.info(TAG + `Succeeded in addSlot slot.`);
+          done()
+        }).catch((err: Base.BusinessError) => {
+          console.error(TAG + `Failed to addSlot. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done()
+        });
+      }catch (err) {
+        console.info(`${TAG} addSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_7100
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_7100
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_7100', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_7100"
+      let count = 0
+      try {
+        notification.removeSlot(null).then(() => {
+          count++
+          expect(count).assertEqual(1)
+          console.info(TAG + `Succeeded in addSlot slot.`);
+          done()
+        }).catch((err: Base.BusinessError) => {
+          console.error(TAG + `Failed to addSlot. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done()
+        });
+      }catch (err) {
+        console.info(`${TAG} addSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_7200
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_7200
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_7200', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_7200"
+      let count = 0
+      try {
+        notification.removeSlot(undefined).then(() => {
+          count++
+          expect(count).assertEqual(1)
+          console.info(TAG + `Succeeded in addSlot slot.`);
+          done()
+        }).catch((err: Base.BusinessError) => {
+          console.error(TAG + `Failed to addSlot. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done()
+        });
+      }catch (err) {
+        console.info(`${TAG} addSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_7300
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_7300
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_7300', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_7300"
+      let count = 0
+      try {
+        notification.removeSlot(undefined, (err:Base.BusinessError) => {
+          if (err) {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(err.code).assertEqual(401)
+            done()
+          } else {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} getSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Notification_Ans_Slot_CreateSlot_7400
+     * @tc.number SUB_Notification_Ans_Slot_CreateSlot_7400
+     * @tc.desc   Options填写非法枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Notification_Ans_Slot_CreateSlot_7400', Level.LEVEL0, async (done: Function) => {
+      let TAG ="SUB_Notification_Ans_Slot_CreateSlot_7400"
+      let count = 0
+      try {
+        notification.removeSlot(null, (err:Base.BusinessError) => {
+          if (err) {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION err: + ${err.code}`);
+            expect(err.code).assertEqual(401)
+            done()
+          } else {
+            console.info(TAG + `getSlot SOCIAL_COMMUNICATION success`);
+            count++
+            expect(count).assertEqual(1)
+            done()
+          }
+        })
+      }catch (err) {
+        console.info(`${TAG} getSlot AsyncCallback err: ${err.code}`)
+        expect(err.code).assertEqual(401)
+        done()
+      }
     })
   })
 }

@@ -21,7 +21,6 @@ import {
   Button,
   ClickEvent,
   Web,
-  UIContext,
   $rawfile,
   WebContextMenuResult,
   Menu,
@@ -42,6 +41,7 @@ import { Context } from '@kit.AbilityKit';
 import { util } from '@kit.ArkTS';
 import { fileIo, fileUri } from '@kit.CoreFileKit';
 import { http } from '@kit.NetworkKit';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 const EVENT_ID_SET_SUITE_KEY = 177008;
 const TAG = 'WebContextMenuResult ';
 const driver = Driver.create();
@@ -185,6 +185,13 @@ struct BindMenuTest {
               this.controller.loadUrl("resource://rawfile/canvas.html");
               break;
             }
+			
+		   case 'emitSwitchNextPageStaticFileSelect' : {
+			  let uiContext: UIContext = this.getUIContext();
+			  let router: Router = uiContext.getRouter();
+			  router.pushUrl({ url: 'pages/FileSelectorParamTest' })
+			  console.log('push URL success')
+			}
 
           }
         })

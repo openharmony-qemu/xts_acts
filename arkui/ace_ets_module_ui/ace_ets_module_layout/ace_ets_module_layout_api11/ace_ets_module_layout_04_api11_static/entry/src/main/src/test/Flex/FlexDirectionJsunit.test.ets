@@ -13,33 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import router from '@ohos.router';
 
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { RecordData } from '@ohos.base';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
-
 export default function flexDirectionJsunit() {
   describe('flexDirectionJsunit', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("flexDirectionJsunit beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("text beforeEach start");
       let options: router.RouterOptions = {
@@ -63,7 +48,11 @@ export default function flexDirectionJsunit() {
     });
 
     afterEach(async () => {
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('flexDirectionJsunitTest await err: ' + JSON.stringify(err));
+      }
       console.info("flexDirection after each called");
     });
 
@@ -221,7 +210,11 @@ it('flexDirection_static_0700', Level.LEVEL0, async (done: () => void): Promise<
       } catch (err) {
         console.log("flexDirection_static_0700 change component data error: " + (err as Error)?.message);
       }
+      try {
       await Utils.sleep(3000);
+      } catch (err) {
+      console.info('flexDirectionJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('flexDirection');
      let objNew = JSON.parseJsonElement(strJsonNew);
      console.info("flexDirection_static_0700 component objNew is: " + JSON.stringify(objNew));
@@ -260,7 +253,11 @@ it('flexDirection_static_0800', Level.LEVEL0, async (done: () => void): Promise<
       } catch (err) {
         console.log("flexDirection_static_0800 change component data error: " + (err as Error)?.message);
       }
+      try {
       await Utils.sleep(3000);
+      } catch (err) {
+      console.info('flexDirectionJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('ColumnReverse');
      let objNew = JSON.parseJsonElement(strJsonNew);
      console.info("flexDirection_static_0800 component objNew is: " + JSON.stringify(objNew));
@@ -299,7 +296,11 @@ it('flexDirection_static_0900', Level.LEVEL0, async (done: () => void): Promise<
       } catch (err) {
         console.log("flexDirection_static_0900 change component data error: " + (err as Error)?.message);
       }
+      try {
       await Utils.sleep(3000);
+      } catch (err) {
+      console.info('flexDirectionJsunitTest await err: ' + JSON.stringify(err));
+      }
       let strJsonNew = inspector.getInspectorByKey('Column');
      let objNew = JSON.parseJsonElement(strJsonNew);
     console.info("flexDirection_static_0900 component objNew is: " + JSON.stringify(objNew));

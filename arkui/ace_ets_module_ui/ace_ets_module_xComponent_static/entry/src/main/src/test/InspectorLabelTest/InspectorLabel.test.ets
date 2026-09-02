@@ -38,7 +38,7 @@ export default function InspectorLabelTest() {
         let pages = routerInstance.getState();
         console.info('InspectorLabelTest state pages: ' + JSON.stringify(pages));
         if (pages.name !== 'InspectorLabelTest') {
-          routerInstance.replaceUrl(options);
+          await routerInstance.replaceUrl(options);
         }
         await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {

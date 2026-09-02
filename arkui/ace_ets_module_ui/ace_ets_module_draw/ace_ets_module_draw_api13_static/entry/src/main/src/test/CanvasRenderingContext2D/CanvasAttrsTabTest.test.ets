@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
 import {  Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage, LocalStorage } from '@ohos.arkui.stateManagement';
-import { BusinessError } from '@ohos.base';
-import { UtilsTest } from '../Util.test';
 export default function CanvasAttrsTabTest() {
   describe('CanvasAttrsTabTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CanvasAttrsTabTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.drawAPI13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("CanvasAttrsTabTest beforeEach start");
       let options: router.RouterOptions = {
@@ -52,10 +44,12 @@ export default function CanvasAttrsTabTest() {
         console.error("push CanvasAttrsTabTest page error:" + err);
       }
       console.info("CanvasAttrsTabTest beforeEach end");
-    }); 
+    });
 
-    
-    
+
+
+
+
 
 
 
@@ -69,7 +63,11 @@ it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
 
       console.info('CanvasAttrsTabTest_0100 START');
       let driver =  Driver.create()
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       // 页面加载
       let strJson1 = inspector.getInspectorByKey('visible_content');
@@ -83,11 +81,23 @@ it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
 
       // 切换至tab two页面
       let button = await driver.findComponent(ON.text('Tab two'));     // driver.findComponent(ON.text('Tab two')) 获取不到button
-      await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest click err: ' + JSON.stringify(err));
+      }
       // OHOS_REPORT_STATUS: stack=	at std.core.ClassCastError.<ctor> (Errors.ets:187:0)
       //  at entry.src.main.src.test.CanvasRenderingContext2D.CanvasAttrsTabTest.test.ETSGLOBAL.%%async-lambda_invoke-74 (CanvasAttrsTabTest.test.ets:83:0)
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson1 = inspector.getInspectorByKey('visible_content');
       strJson2 = inspector.getInspectorByKey('invisible_content');
@@ -100,9 +110,21 @@ it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
 
       // 切换至tab three页面
       button = await driver.findComponent(ON.text('Tab three'));
-      await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson1 = inspector.getInspectorByKey('visible_content');
       strJson2 = inspector.getInspectorByKey('invisible_content');
@@ -115,9 +137,21 @@ it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
 
       // 切换至tab one页面
       button = await driver.findComponent(ON.text('Tab one'));
-      await CommonFunc.sleep(1000);
-      await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest sleep err: ' + JSON.stringify(err));
+      }
+      try {
+        await (button?.click() as Promise<void>);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest click err: ' + JSON.stringify(err));
+      }
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.info('CanvasAttrsTabTestTest sleep err: ' + JSON.stringify(err));
+      }
 
       strJson1 = inspector.getInspectorByKey('visible_content');
       strJson2 = inspector.getInspectorByKey('invisible_content');
@@ -133,4 +167,3 @@ it('CanvasAttrsTabTest_static_0100', Level.LEVEL2, async (done: () => void): Pro
     });
   })
 }
-

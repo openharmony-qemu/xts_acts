@@ -13,24 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import {UtilsTest,startAbility} from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import events_emitter from '@ohos.events.emitter';
 
 export default function swipeRefresherPageTest() {
   describe('swipeRefresherPageTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("swipeRefresherPageTest beforeEach start");
-      await UtilsTest.startAbility("com.acts.arkui.swipeRefresher.nowear.test.static", "EntryAbility")
-
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("swipeRefresherPageTest beforeEach start");
@@ -44,11 +36,8 @@ export default function swipeRefresherPageTest() {
         console.info("get swipeRefresherPageTest state pages:" + JSON.stringify(pages));
         if (!("swipeRefresherPageTest" == pages.name)) {
           console.info("get swipeRefresherPageTest pages.name:" + JSON.stringify(pages.name));
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push swipeRefresherPageTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push swipeRefresherPageTest page error:" + err);
@@ -57,7 +46,11 @@ export default function swipeRefresherPageTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('swipeRefresherPageTest afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info('swipeRefresherPageTest after each called');
     })
 
@@ -72,12 +65,17 @@ export default function swipeRefresherPageTest() {
      */
 it('swipeRefresherPageTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[swipeRefresherPageTest_static_0100] START');
-      let driver = Driver.create();
-      await driver.delayMs(2000);
-      // 查看swipeRefresherPage是否存在以下控件。
-      let swipeRefresher = await driver.findComponent(ON.text('正在加载中'));
-      expect(swipeRefresher !== null).assertTrue();
-      console.info('[swipeRefresherPageTest_static_0100] END');
+      try {
+        let driver = Driver.create();
+        await driver.delayMs(2000);
+        // 查看swipeRefresherPage是否存在以下控件。
+        let swipeRefresher = await driver.findComponent(ON.text('正在加载中'));
+        expect(swipeRefresher !== null).assertTrue();
+        console.info('[swipeRefresherPageTest_static_0100] END');
+      } catch (error) {
+        console.error('[swipeRefresherPageTest_static_0100] error: ' + JSON.stringify(error));
+        expect(false).assertTrue();
+      }
       done();
     });
   })

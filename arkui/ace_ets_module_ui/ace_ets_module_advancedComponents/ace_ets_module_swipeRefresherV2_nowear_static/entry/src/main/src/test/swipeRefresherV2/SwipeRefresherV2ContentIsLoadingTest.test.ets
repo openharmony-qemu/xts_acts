@@ -14,22 +14,16 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility } from '../Util.test';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function SwipeRefresherV2ContentIsLoadingTest() {
   describe('SwipeRefresherV2ContentIsLoadingTest', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("SwipeRefresherV2ContentIsLoadingTest beforeAll start");
-      await UtilsTest.startAbility("com.acts.arkui.swipeRefresherV2.nowear.test.static", "EntryAbility")
-    });
 
     beforeEach(async (): Promise<void> => {
       console.info("SwipeRefresherV2ContentIsLoadingTest beforeEach start");
@@ -43,7 +37,7 @@ export default function SwipeRefresherV2ContentIsLoadingTest() {
         console.info("get SwipeRefresherV2ContentIsLoading state pages:" + JSON.stringify(pages));
         if (!("SwipeRefresherV2ContentTextIsLoading" == pages.name)) {
           console.info("get SwipeRefresherV2ContentIsLoading pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options);
+          await routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -52,12 +46,12 @@ export default function SwipeRefresherV2ContentIsLoadingTest() {
     });
 
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.info('SwipeRefresherV2ContentIsLoading afterEach sleep err: ' + JSON.stringify(err));
+      }
       console.info("SwipeRefresherV2ContentIsLoading afterEach start");
-    });
-
-    afterAll(async (): Promise<void> => {
-      console.info("SwipeRefresherV2ContentIsLoading afterAll start");
     });
 
     /**
@@ -72,7 +66,7 @@ export default function SwipeRefresherV2ContentIsLoadingTest() {
       console.info("[SwipeRefresherV2ContentIsLoadingTest_0100] START");
       try {
         let driver = Driver.create();
-        await CommonFunc.sleep(1000);
+        await CommonFunc.sleep(2000);
         let component = await driver.findComponent(ON.id('swipeRefresherV2_component'));
         expect(component != null).assertTrue();
         console.info("[SwipeRefresherV2ContentIsLoadingTest_0100] END");

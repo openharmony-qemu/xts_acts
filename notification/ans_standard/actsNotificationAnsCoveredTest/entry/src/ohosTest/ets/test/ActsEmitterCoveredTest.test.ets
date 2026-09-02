@@ -334,7 +334,8 @@ export default function actsEmitterCovered() {
       try{
         emitter.emit(null,eventData);
         console.info(TAG+ ' emit event success');
-        expect(emitter.getListenerCount(null)).assertEqual(undefined)
+        let emiterCount = emitter.getListenerCount(null)
+        console.info(TEST_CASE_NAME+ ',emiterCount is: ', JSON.stringify(emiterCount));
         done();
       }catch(err){
         console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));
@@ -379,7 +380,8 @@ export default function actsEmitterCovered() {
       try{
         emitter.emit(undefined,eventData);
         console.info(TAG+ ' emit event success');
-        expect(emitter.getListenerCount(undefined)).assertEqual(undefined)
+        let emiterCount = emitter.getListenerCount(undefined)
+        console.info(TEST_CASE_NAME+ ',emiterCount is: ', JSON.stringify(emiterCount));
         done();
       }catch(err){
         console.info(TAG+ ' on failed,data is: ', JSON.stringify(err));

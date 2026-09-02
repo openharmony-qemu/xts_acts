@@ -13,30 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll,afterEach, afterAll,beforeEach, it, expect,Level} from "../../../../hypium/index"
+import { describe, afterEach, afterAll, beforeEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 
 import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: Int = 0x0000;
-let tag: string = 'testTag';
-let testAbilityContext:common.UIAbilityContext;
 export default function enumsHorizontalAlignJsunit() {
   describe('enumsHorizontalAlign', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("enumsHorizontalAlign beforeAll start");
-   
-      await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-    });
    beforeEach(async (): Promise<void> => {
      console.info("enumsHorizontalAlign beforeEach start");
       let options:router.RouterOptions = {
@@ -60,7 +46,11 @@ export default function enumsHorizontalAlignJsunit() {
     });
 
     afterEach(async () => {
+      try {
       await Utils.sleep(1000);
+      } catch (err) {
+      console.info('enumsHorizontalAlignTest await err: ' + JSON.stringify(err));
+      }
       console.info('[ afterEach ] ===================enumsFlexItemTest test after each called===================');
     });
 
@@ -75,7 +65,11 @@ export default function enumsHorizontalAlignJsunit() {
      */
 it('enumsHorizontalAlignTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('enumsHorizontalAlignTest_static_0100 START');
+      try {
       await Utils.sleep(1500);
+      } catch (err) {
+      console.info('enumsHorizontalAlignTest await err: ' + JSON.stringify(err));
+      }
       let strJson: string = inspector.getInspectorByKey('HorizontalAlign');
       console.info("enumsHorizontalAlignTest_static_0100 component strJson:" + strJson);
      console.info("enumsHorizontalAlignTest_static_0100 component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
