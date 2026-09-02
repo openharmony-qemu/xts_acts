@@ -17,7 +17,6 @@
 import router from '@ohos.router';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility } from '../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
@@ -26,9 +25,6 @@ export default function sideBarShowSideBarJsunit() {
   describe('sideBarShowSideBarTest', () => {
     beforeAll(async () => {
       console.info("sideBarShowSideBarTest beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
 
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {

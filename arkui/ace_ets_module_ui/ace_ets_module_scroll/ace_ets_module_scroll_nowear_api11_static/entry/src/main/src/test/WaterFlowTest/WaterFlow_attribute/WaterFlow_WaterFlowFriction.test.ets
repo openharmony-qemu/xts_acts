@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import { UtilsTest, startAbility } from '../../Util.test';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
@@ -25,13 +24,6 @@ import { MessageManager, Message } from '../../../../ets/MainAbility/common/Mess
 
 export default function waterFlow_WaterFlowFrictionTest() {
   describe('waterFlow_WaterFlowFrictionTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("waterFlow_WaterFlowFrictionTest beforeEach start");
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("WaterFlowFrictionPage beforeEach start");
       let options: router.RouterOptions = {
