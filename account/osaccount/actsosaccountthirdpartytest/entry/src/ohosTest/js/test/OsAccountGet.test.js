@@ -46,18 +46,24 @@ export default function ActsOsAccountThirdPartyTest_third_2() {
             var testLocalId = await osAccountManager.getOsAccountLocalIdFromProcess();
             console.info("====>testLocalId:" + testLocalId)
             console.info("====>get AccountManager finish====");
-            var bundleName = "com.example.actsosaccountthirdpartytest";
-            var bundleInfo = await bundle.getBundleInfo(bundleName, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
-            var uid = bundleInfo.uid;
-            console.info("====>obtained uid:" + uid);
-            osAccountManager.getOsAccountLocalIdFromUid(uid, (err, localId) => {
-                console.info("====>get localId err: " + JSON.stringify(err));
-                console.info("====>localId obtained by uid:" + localId);
-                expect(err).assertEqual(null);
-                expect(localId).assertEqual(testLocalId);
-                console.info("====>ActsOsAccountGetIdFormUid_0100 end====");
+            try {
+                var bundleName = "com.example.actsosaccountthirdpartytest";
+                var bundleInfo = await bundle.getBundleInfo(bundleName, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
+                var uid = bundleInfo.uid;
+                console.info("====>obtained uid:" + uid);
+                osAccountManager.getOsAccountLocalIdFromUid(uid, (err, localId) => {
+                    console.info("====>get localId err: " + JSON.stringify(err));
+                    console.info("====>localId obtained by uid:" + localId);
+                    expect(err).assertEqual(null);
+                    expect(localId).assertEqual(testLocalId);
+                    console.info("====>ActsOsAccountGetIdFormUid_0100 end====");
+                    done();
+                });
+            } catch (err) {
+                console.info("====>ActsOsAccountGetIdFormUid_0100 err:" + JSON.stringify(err));
+                expect().assertFail();
                 done();
-            });
+            } 
         });
 
         /**

@@ -47,18 +47,25 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       var testLocalId = await osAccountManager.getOsAccountLocalId();
       console.info("====>testLocalId:" + testLocalId)
       console.info("====>get AccountManager finish====");
-      var bundleName = "com.example.actsosaccountthirdpartytest";
-      var bundleInfo = await bundle.getBundleInfo(bundleName, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
-      var uid = bundleInfo.uid;
-      console.info("====>obtained uid:" + uid);
-      osAccountManager.getOsAccountLocalIdForUid(uid, (err, localId) => {
-        console.info("====>get localId err: " + JSON.stringify(err));
-        console.info("====>localId obtained by uid:" + localId);
-        expect(err).assertEqual(null);
-        expect(localId).assertEqual(testLocalId);
-        console.info("====>ActsOsAccountQueryIdFormUid_0100 end====");
+      try {
+        var bundleName = "com.example.actsosaccountthirdpartytest";
+        var bundleInfo = await bundle.getBundleInfo(bundleName, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
+        var uid = bundleInfo.uid;
+        console.info("====>obtained uid:" + uid);
+        osAccountManager.getOsAccountLocalIdForUid(uid, (err, localId) => {
+          console.info("====>get localId err: " + JSON.stringify(err));
+          console.info("====>localId obtained by uid:" + localId);
+          expect(err).assertEqual(null);
+          expect(localId).assertEqual(testLocalId);
+          console.info("====>ActsOsAccountQueryIdFormUid_0100 end====");
+          done();
+        });
+      } catch (err) {
+        console.info("====>ActsOsAccountQueryIdFormUid_0100 err:" + JSON.stringify(err));
+        expect().assertFail();
         done();
-      });
+      }
+
     });
 
     /**
