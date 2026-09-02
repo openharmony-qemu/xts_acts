@@ -1,4 +1,4 @@
-'use static';
+'use static'
 
 
 /*
@@ -44,7 +44,6 @@ export default function int32ArraySomePart03Test(): void {
 
     afterAll((): void => {
     });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_SOME_PART03_0100
      * @tc.name int32ArraySomePart03Test001
@@ -57,7 +56,7 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3, 4]);
       let reached: boolean = false;
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, i: int, _a: Int32Array): boolean => {
           if (i === 0) {
             throw new Error('first-element');
           }
@@ -83,7 +82,7 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([10, 20, 30, 40, 50]);
       let calls: int = 0;
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, i: int, _a: Int32Array): boolean => {
           calls++;
           if (i === 2) {
             throw new Error('mid-boom');
@@ -109,7 +108,7 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       let calls: int = 0;
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, i: int, a: Int32Array): boolean => {
           calls++;
           if (i === a.length - 1) {
             throw new Error('last-boom');
@@ -134,7 +133,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2]);
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, _i: int, _a: Int32Array): boolean => {
           throw new RangeError('range!');
         });
         expect().assertFail();
@@ -154,7 +153,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1]);
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, _i: int, _a: Int32Array): boolean => {
           throw new TypeError('type!');
         });
         expect().assertFail();
@@ -174,7 +173,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, _i: int, _a: Int32Array): boolean => {
           throw new ReferenceError('ref!');
         });
         expect().assertFail();
@@ -196,7 +195,7 @@ export default function int32ArraySomePart03Test(): void {
       const MARK: string = 'marker-zeta-8932';
       let msg: string = '';
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, _i: int, _a: Int32Array): boolean => {
           throw new Error(MARK);
         });
       } catch (e) {
@@ -218,7 +217,7 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3, 4, 5]);
       const origLen: int = arr.length;
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, _i: int, _a: Int32Array): boolean => {
           throw new Error('x');
         });
         expect().assertFail();
@@ -240,7 +239,7 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       const origBL: int = arr.byteLength;
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, _i: int, _a: Int32Array): boolean => {
           throw new Error('x');
         });
         expect().assertFail();
@@ -263,7 +262,7 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([1, 2]);
       let buf: ArrayBuffer = arr.buffer;
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, _i: int, _a: Int32Array): boolean => {
           throw new Error('x');
         });
         expect().assertFail();
@@ -276,7 +275,7 @@ export default function int32ArraySomePart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_SOME_PART03_1100
      * @tc.name int32ArraySomePart03Test011
-     * @tc.desc Verify some() propagates a predicate Error after writing 999 to index 0
+     * @tc.desc Verify predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -284,7 +283,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([11, 22, 33]);
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, _i: int, a: Int32Array): boolean => {
           a.$_set(0, 999);
           throw new Error('after-write');
         });
@@ -300,7 +299,7 @@ export default function int32ArraySomePart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_SOME_PART03_1200
      * @tc.name int32ArraySomePart03Test012
-     * @tc.desc Verify a predicate error propagates after mutating element 3 at index 1
+     * @tc.desc Verify predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -308,7 +307,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([10, 20, 30, 40, 50]);
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, i: int, a: Int32Array): boolean => {
           if (i === 1) {
             a.$_set(3, 9999);
             throw new Error('mid-write');
@@ -329,7 +328,7 @@ export default function int32ArraySomePart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_SOME_PART03_1300
      * @tc.name int32ArraySomePart03Test013
-     * @tc.desc Verify a predicate error does not prevent a later some call from matching 2
+     * @tc.desc Verify predicate buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -343,7 +342,7 @@ export default function int32ArraySomePart03Test(): void {
       a.$_set(3, 4);
       let b: Int32Array = new Int32Array(buf);
       try {
-        a.some((e: number, i: int, ar: Int32Array): boolean => {
+        a.some((_e: number, i: int, _ar: Int32Array): boolean => {
           if (i === 2) {
             throw new Error('sibling-boom');
           }
@@ -370,14 +369,14 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((): boolean => {
           throw new Error('first-boom');
         });
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('Error');
       }
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => e === 2);
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => e === 2);
       expect(r).assertTrue();
     });
 
@@ -393,7 +392,7 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([1, 2]);
       let sameRef: boolean = false;
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, _i: int, a: Int32Array): boolean => {
           sameRef = (a === arr);
           throw new Error('ref-check');
         });
@@ -416,7 +415,7 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([10, 20, 30, 40]);
       let thrownIdx: int = -1;
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, i: int, _a: Int32Array): boolean => {
           thrownIdx = i;
           if (i === 2) {
             throw new Error('idx-capture');
@@ -433,7 +432,7 @@ export default function int32ArraySomePart03Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_SOME_PART03_1700
      * @tc.name int32ArraySomePart03Test017
-     * @tc.desc Verify a predicate error leaves a one-element INT32_MAX array unchanged
+     * @tc.desc Verify predicate element $_get(i)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -470,7 +469,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([2147483647]);
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((): boolean => {
           throw new Error('single-boom');
         });
         expect().assertFail();
@@ -492,7 +491,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array(0);
       let called: boolean = false;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((): boolean => {
         called = true;
         return true;
       });
@@ -511,7 +510,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((): boolean => {
         cnt++;
         return false;
       });
@@ -530,7 +529,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(0);
       let arr: Int32Array = new Int32Array(buf);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => true);
+      let r: boolean = arr.some((): boolean => true);
       expect(r).assertFalse();
       expect(arr.length).assertEqual(0);
     });
@@ -547,7 +546,7 @@ export default function int32ArraySomePart03Test(): void {
       let parent: Int32Array = new Int32Array([1, 2, 3, 4]);
       let empty: Int32Array = parent.subarray(2, 2);
       expect(empty.length).assertEqual(0);
-      let r: boolean = empty.some((e: number, i: int, a: Int32Array): boolean => true);
+      let r: boolean = empty.some((): boolean => true);
       expect(r).assertFalse();
     });
 
@@ -564,7 +563,7 @@ export default function int32ArraySomePart03Test(): void {
       let empty: Int32Array = parent.subarray(3, 0);
       expect(empty.length).assertEqual(0);
       let cnt: int = 0;
-      let r: boolean = empty.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = empty.some((): boolean => {
         cnt++;
         return true;
       });
@@ -584,21 +583,21 @@ export default function int32ArraySomePart03Test(): void {
       let buf: ArrayBuffer = new ArrayBuffer(12);
       let arr: Int32Array = new Int32Array(buf, 12, 0);
       expect(arr.length).assertEqual(0);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => true);
+      let r: boolean = arr.some((): boolean => true);
       expect(r).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT32ARRAY_SOME_PART03_2500
      * @tc.name int32ArraySomePart03Test025
-     * @tc.desc Verify empty some returns false without invoking a throwing predicate
+     * @tc.desc Verify some buffer.byteLength 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
     it('int32ArraySomePart03Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array(0);
-      arr.some((e: number, i: int, a: Int32Array): boolean => true);
+      arr.some((): boolean => true);
       expect(arr.buffer.byteLength).assertEqual(0);
       expect(arr.byteLength).assertEqual(0);
       expect(arr.byteOffset).assertEqual(0);
@@ -615,7 +614,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array(0);
       let reached: boolean = false;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((): boolean => {
         reached = true;
         throw new Error('never');
       });
@@ -633,8 +632,8 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array(0);
-      let r1: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => true);
-      let r2: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => false);
+      let r1: boolean = arr.some((): boolean => true);
+      let r2: boolean = arr.some((): boolean => false);
       expect(r1).assertFalse();
       expect(r2).assertFalse();
     });
@@ -649,7 +648,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([2147483647]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => e > 2147483647);
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => e > 2147483647);
       expect(r).assertFalse();
     });
 
@@ -663,7 +662,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-2147483648]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => e < -2147483648);
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => e < -2147483648);
       expect(r).assertFalse();
     });
 
@@ -678,7 +677,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([2147483647]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         cnt++;
         return e >= 2147483647;
       });
@@ -696,7 +695,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-2147483648]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => e <= -2147483648);
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => e <= -2147483648);
       expect(r).assertTrue();
     });
 
@@ -711,7 +710,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([0]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         cnt++;
         return e !== 0;
       });
@@ -729,7 +728,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-1]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => e > -1);
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => e > -1);
       expect(r).assertFalse();
     });
 
@@ -744,7 +743,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         cnt++;
         return e === 1;
       });
@@ -764,7 +763,7 @@ export default function int32ArraySomePart03Test(): void {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let view: Int32Array = new Int32Array(buf, 4, 1);
       view.$_set(0, -2147483648);
-      let r: boolean = view.some((e: number, i: int, a: Int32Array): boolean => e === -2147483648);
+      let r: boolean = view.some((e: number, _i: int, _a: Int32Array): boolean => e === -2147483648);
       expect(r).assertTrue();
       expect(view.length).assertEqual(1);
       expect(view.byteOffset).assertEqual(4);
@@ -780,7 +779,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([42]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => i === 0);
+      let r: boolean = arr.some((_e: number, i: int, _a: Int32Array): boolean => i === 0);
       expect(r).assertTrue();
     });
 
@@ -795,7 +794,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([42]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((_e: number, i: int, a: Int32Array): boolean => {
         cnt++;
         return i === a.length - 1;
       });
@@ -814,7 +813,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([2147483647, 2147483647, 2147483647, 2147483647]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         cnt++;
         return e === 2147483647;
       });
@@ -833,7 +832,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([2147483647, 2147483647, 2147483647]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         cnt++;
         return e === -2147483648;
       });
@@ -852,7 +851,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-2147483648, -2147483648, -2147483648]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         cnt++;
         return e === -2147483648;
       });
@@ -870,7 +869,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-2147483648, -2147483648]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => e > 0);
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => e > 0);
       expect(r).assertFalse();
     });
 
@@ -885,7 +884,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-1, -1, -1, -1, -1]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         cnt++;
         return e === -1;
       });
@@ -904,7 +903,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([-1, -1, -1]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         cnt++;
         return e !== -1;
       });
@@ -922,7 +921,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([0, 0, 0, 0]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => e !== 0);
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => e !== 0);
       expect(r).assertFalse();
     });
 
@@ -937,7 +936,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([0, 0, 0]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         cnt++;
         return e === 0;
       });
@@ -956,7 +955,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([7, 7, 7, 7]);
       let allMatch: boolean = true;
-      arr.some((e: number, i: int, a: Int32Array): boolean => {
+      arr.some((e: number, _i: int, _a: Int32Array): boolean => {
         if (e !== 7) {
           allMatch = false;
         }
@@ -975,7 +974,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 1]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => e > 1);
+      let r: boolean = arr.some((e: number, _i: int, _a: Int32Array): boolean => e > 1);
       expect(r).assertFalse();
     });
 
@@ -990,7 +989,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([10, 20, 30, 40]);
       let sawNeg: boolean = false;
-      arr.some((e: number, i: int, a: Int32Array): boolean => {
+      arr.some((_e: number, i: int, _a: Int32Array): boolean => {
         if (i < 0) {
           sawNeg = true;
         }
@@ -1011,7 +1010,7 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([1, 2, 3, 4, 5]);
       let sawOOB: boolean = false;
       let maxSeen: int = -1;
-      arr.some((e: number, i: int, a: Int32Array): boolean => {
+      arr.some((_e: number, i: int, a: Int32Array): boolean => {
         if (i >= a.length) {
           sawOOB = true;
         }
@@ -1035,7 +1034,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([10, 20, 30]);
       let cnt: int = 0;
-      arr.some((e: number, i: int, a: Int32Array): boolean => {
+      arr.some((): boolean => {
         cnt++;
         return false;
       });
@@ -1074,7 +1073,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((_e: number, i: int, _a: Int32Array): boolean => {
         cnt++;
         return i === -1;
       });
@@ -1093,7 +1092,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((_e: number, i: int, a: Int32Array): boolean => {
         cnt++;
         return i === a.length;
       });
@@ -1111,7 +1110,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3, 4]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => i === a.length + 1);
+      let r: boolean = arr.some((_e: number, i: int, a: Int32Array): boolean => i === a.length + 1);
       expect(r).assertFalse();
     });
 
@@ -1125,7 +1124,7 @@ export default function int32ArraySomePart03Test(): void {
      */
     it('int32ArraySomePart03Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => i === 99999);
+      let r: boolean = arr.some((_e: number, i: int, _a: Int32Array): boolean => i === 99999);
       expect(r).assertFalse();
     });
 
@@ -1140,7 +1139,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([10, 20, 30]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((_e: number, i: int, _a: Int32Array): boolean => {
         cnt++;
         return i === 0;
       });
@@ -1159,7 +1158,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([10, 20, 30, 40]);
       let cnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((_e: number, i: int, a: Int32Array): boolean => {
         cnt++;
         return i === a.length - 1;
       });
@@ -1178,8 +1177,8 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       let other: Int32Array = new Int32Array([-1, -2]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
-        return other.some((x: number, j: int, b: Int32Array): boolean => x === -1);
+      let r: boolean = arr.some((): boolean => {
+        return other.some((x: number, _j: int, _b: Int32Array): boolean => x === -1);
       });
       expect(r).assertTrue();
     });
@@ -1195,8 +1194,8 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3]);
       let other: Int32Array = new Int32Array([10, 20]);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
-        return other.some((x: number, j: int, b: Int32Array): boolean => x < 0);
+      let r: boolean = arr.some((): boolean => {
+        return other.some((x: number, _j: int, _b: Int32Array): boolean => x < 0);
       });
       expect(r).assertFalse();
     });
@@ -1213,9 +1212,9 @@ export default function int32ArraySomePart03Test(): void {
       let arr: Int32Array = new Int32Array([1, 2]);
       let outerCnt: int = 0;
       let innerCnt: int = 0;
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
+      let r: boolean = arr.some((e: number, _i: int, a: Int32Array): boolean => {
         outerCnt++;
-        a.some((x: number, j: int, ar: Int32Array): boolean => {
+        a.some((): boolean => {
           innerCnt++;
           return false;
         });
@@ -1236,8 +1235,8 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array([1, 2, 3, 4, 5]);
       let sub: Int32Array = arr.subarray(3);
-      let r: boolean = arr.some((e: number, i: int, a: Int32Array): boolean => {
-        return sub.some((x: number, j: int, b: Int32Array): boolean => x === 4);
+      let r: boolean = arr.some((): boolean => {
+        return sub.some((x: number, _j: int, _b: Int32Array): boolean => x === 4);
       });
       expect(r).assertTrue();
       expect(sub.length).assertEqual(2);
@@ -1258,7 +1257,7 @@ export default function int32ArraySomePart03Test(): void {
       view.$_set(1, 20);
       view.$_set(2, 30);
       try {
-        view.some((e: number, i: int, a: Int32Array): boolean => {
+        view.some((_e: number, i: int, _a: Int32Array): boolean => {
           if (i === 1) {
             throw new Error('offset-boom');
           }
@@ -1286,7 +1285,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = Int32Array.of(100, 200, 300);
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((): boolean => {
           throw new Error('of-boom');
         });
         expect().assertFail();
@@ -1310,7 +1309,7 @@ export default function int32ArraySomePart03Test(): void {
       let parent: Int32Array = new Int32Array([1, 2, 3, 4, 5]);
       let child: Int32Array = parent.subarray(1, 4);
       try {
-        child.some((e: number, i: int, a: Int32Array): boolean => {
+        child.some((_e: number, i: int, a: Int32Array): boolean => {
           a.$_set(i, 99);
           if (i === 1) {
             throw new Error('sub-boom');
@@ -1339,7 +1338,7 @@ export default function int32ArraySomePart03Test(): void {
     it('int32ArraySomePart03Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int32Array = new Int32Array(3);
       try {
-        arr.some((e: number, i: int, a: Int32Array): boolean => {
+        arr.some((_e: number, i: int, _a: Int32Array): boolean => {
           if (i === 1) {
             throw new Error('zeros-boom');
           }
