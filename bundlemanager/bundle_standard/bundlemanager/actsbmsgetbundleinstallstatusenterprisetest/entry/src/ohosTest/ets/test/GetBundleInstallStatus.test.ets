@@ -17,7 +17,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import hilog from '@ohos.hilog';
 
-const BUNDLE_NAME = 'ohos.acts.bundlemanager.test.getBundleInstallStatus';
+const BUNDLE_NAME = 'ohos.acts.bundlemanager.test.getBundleInstallStatus.enterprise';
 const BUNDLE_NAME_NOT_EXIST = 'ohos.acts.bundle.not.exist.dummy';
 const ERROR_MESSAGE_PARAM_CHECK_ERROR = 'BusinessError 401: Parameter error. The type of bundleName must be string.';
 const TAG = 'BundleMgrHits';

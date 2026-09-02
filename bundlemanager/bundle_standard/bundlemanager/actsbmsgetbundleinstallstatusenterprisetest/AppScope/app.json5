@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "ohos.acts.bundlemanager.test.getBundleInstallStatus",
+    "bundleName": "ohos.acts.bundlemanager.test.getBundleInstallStatus.enterprise",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

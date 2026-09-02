@@ -4,13 +4,13 @@
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
         "shell-timeout": "180000",
-        "bundle-name": "ohos.acts.bundlemanager.test.getBundleInstallStatus",
+        "bundle-name": "ohos.acts.bundlemanager.test.getBundleInstallStatus.enterprise",
         "module-name": "entry_test"
     },
     "kits": [
         {
             "test-file-name": [
-                "ActsBmsGetBundleInstallStatusTest.hap"
+                "ActsBmsGetBundleInstallStatusEnterpriseTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
