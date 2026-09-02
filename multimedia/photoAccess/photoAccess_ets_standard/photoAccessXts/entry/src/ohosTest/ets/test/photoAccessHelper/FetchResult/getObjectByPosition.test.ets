@@ -454,6 +454,7 @@ export default function getObjectByPositionTest() {
     it('fetchResult_getObjectByPosition_abnormal_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchResult_getObjectByPosition_abnormal_promise_004';
       const errorCode = 14000011;
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       try{
         let fetchOps: photoAccessHelper.FetchOptions = fetchAllOption();
         let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(testContext);
