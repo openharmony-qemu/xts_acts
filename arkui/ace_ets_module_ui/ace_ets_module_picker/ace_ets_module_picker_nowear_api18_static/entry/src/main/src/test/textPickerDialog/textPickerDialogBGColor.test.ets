@@ -24,7 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function TextPickerDialogBGColorTest() {
   describe('TextPickerDialogBGColorTest', () => {
 
-    beforeAll(async () => {
+    beforeEach(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/textPickerDialog/textPickerDialogBgColor',
