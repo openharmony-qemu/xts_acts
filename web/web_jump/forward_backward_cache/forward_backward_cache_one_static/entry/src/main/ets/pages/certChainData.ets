@@ -36,6 +36,7 @@ struct Second {
   @State onHttpErrorReceiveResult: boolean = false;
   @State onErrorReceive: boolean = false;
   @State onSslErrorEvent: boolean = false;
+  @State waitForSslErrorEmit: boolean = false;
   @State onRequestSelected: boolean = false;
   @State certChainDataResult: boolean = false;
   aboutToAppear() {
@@ -92,12 +93,12 @@ struct Second {
 
             case "emitOnSslErrorEvent": {
               console.log('this.onSslErrorEvent1: ' + this.onSslErrorEvent);
-              this.webviewCtl.refresh();
-              this.webviewCtl.loadUrl("https://example.com/404-test",);
+              this.onSslErrorEvent = false;
+              this.waitForSslErrorEmit = true;
+              this.webviewCtl.clearSslCache();
               setTimeout(() => {
-                Utils.emitEvent(this.onSslErrorEvent, 2024120993)
-                console.log('this.onSslErrorEvent2: ' + this.onSslErrorEvent);
-              }, 3000)
+                this.webviewCtl.loadUrl("https://expired.badssl.com/");
+              }, 2000)
               break;
             }
 
@@ -164,6 +165,11 @@ struct Second {
             console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
             console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
             console.log('onSslErrorEvent handler: ' + event.handler);
+            if (this.waitForSslErrorEmit) {
+              this.waitForSslErrorEmit = false;
+              Utils.emitEvent(this.onSslErrorEvent, 2024120993);
+              console.log('this.onSslErrorEvent2: ' + this.onSslErrorEvent);
+            }
           }
         })
         .onRequestSelected(() => {
