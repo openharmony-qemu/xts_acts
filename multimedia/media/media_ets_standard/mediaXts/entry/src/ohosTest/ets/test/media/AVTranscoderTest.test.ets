@@ -21,9 +21,13 @@ import { LOG_TAG, MediaErrorCode, SLEEP_TIME_500, SLEEP_TIME_5000, SLEEP_TIME_20
 import { common } from "@kit.AbilityKit";
 import { closeFd, getFd, sleep } from '../common';
 import {image} from '@kit.ImageKit';
+import myavcapability from 'libavcapability.so'
 
 const TAG = LOG_TAG + 'AVTranscoderTest';
 const VIDEO_SOURCE = 'H264_AAC.mp4';
+const VIDEO_EXCEEDS_8K_RESOLUTION = 'output_avc_7680x4320.mp4';
+const VIDEO_LARGE_4096_RESOLUTION = 'output_avc_4096x2304.mp4';
+const VIDEO_FEWER_238_RESOLUTION = 'output_avc_238x238.mp4';
 
 let mediaTestBase = new MediaTestBase();
 let fileDescriptor: media.AVFileDescriptor;
@@ -66,6 +70,12 @@ let avTranscoderTestConfigNormal: media.AVTranscoderConfig = {
   enableBFrame: true,
 };
 
+let avTranscoderTest8KConfig: media.AVTranscoderConfig = {
+  fileFormat: media.ContainerFormatType.CFT_MPEG_4,
+  videoFrameWidth: 1080,
+  videoFrameHeight: 720,
+};
+
 function openFileFailed() {
   console.info(TAG, 'openFileFailed case file fail');
 }
@@ -90,6 +100,30 @@ async function createAVTranscoder(done: Function, context: common.UIAbilityConte
         desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
       }
       imagePixelmap = await imageResource.createPixelMap(decodingOptions);
+    } else {
+      console.error(TAG, testName + ' transcoder is undefined.');
+      expect().assertFail();
+    }
+  }).catch((error: BusinessError) => {
+    console.error(TAG, testName + ' Failed to create AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
+    expect().assertFail();
+    done();
+  });
+}
+
+async function createAVTranscoderNormal(done: Function, context: common.UIAbilityContext, resource: string, testName: string) {
+  if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+    console.info(TAG, testName + ' This device does not support transcoding.');
+    done();
+    return;
+  }
+  await media.createAVTranscoder().then(async (transcoder: media.AVTranscoder) => {
+    if (transcoder) {
+      mTranscoder = transcoder;
+      mTranscoder.fdSrc = await globalThis.abilityContext.resourceManager.getRawFd(resource);
+      mTranscoder.fdDst = await getFd('output.mp4');
+      console.info(TAG, testName + ' Succeeded in creating AVTranscoder, fd: ' + mTranscoder.fdSrc.fd + ', offset: ' +
+      mTranscoder.fdSrc.offset + ', length: ' + mTranscoder.fdSrc.length + ', fdDst: ' + mTranscoder.fdDst);
     } else {
       console.error(TAG, testName + ' transcoder is undefined.');
       expect().assertFail();
@@ -1357,6 +1391,168 @@ export default function AVTranscoderTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 4096 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100';
+      avTranscoderTest8KConfig.videoFrameWidth = 4094;
+      avTranscoderTest8KConfig.videoFrameHeight = 2302;
+      try {
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(4096, 2304);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(4094, 2302);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          await createAVTranscoderNormal(done, testContext, VIDEO_LARGE_4096_RESOLUTION, testName);
+          await prepareAVTranscoderNormal(avTranscoderTest8KConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done)
+        }
+      } catch (err) {
+        console.error('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4K_0100 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 240 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100';
+      avTranscoderTest8KConfig.videoFrameWidth = 240;
+      avTranscoderTest8KConfig.videoFrameHeight = 240;
+      try {
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(238, 238);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(240, 240);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          await createAVTranscoderNormal(done, testContext, VIDEO_FEWER_238_RESOLUTION, testName);
+          if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+            console.info(TAG, testName + ' This device does not support transcoding.');
+            done();
+            return;
+          }
+          if (mTranscoder !== undefined) {
+            await mTranscoder.prepare(avTranscoderTest8KConfig).then(() => {
+              console.info(TAG, testName + ' prepare success.');
+            }).catch((error: BusinessError) => {
+              console.error(TAG, testName + ' Failed to prepare AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
+              expect(error.code).assertEqual(401);
+              done();
+            });
+          }
+        }
+      } catch (err) {
+        console.error('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_240RESOLUTION_0100 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 7680 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100';
+      avTranscoderTest8KConfig.videoFrameWidth = 7680;
+      avTranscoderTest8KConfig.videoFrameHeight = 4318;
+      try {
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(7680, 4318);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          await createAVTranscoderNormal(done, testContext, VIDEO_EXCEEDS_8K_RESOLUTION, testName);
+          if (!canIUse("SystemCapability.Multimedia.Media.AVTranscoder")) {
+            console.info(TAG, testName + ' This device does not support transcoding.');
+            done();
+            return;
+          }
+          if (mTranscoder !== undefined) {
+            await mTranscoder.prepare(avTranscoderTest8KConfig).then(() => {
+              console.info(TAG, testName + ' prepare success.');
+            }).catch((error: BusinessError) => {
+              console.error(TAG, testName + ' Failed to prepare AVTranscoder, code: ' + error.code + ', msg: ' + error.message);
+              expect(error.code).assertEqual(5400103);
+              done();
+            });
+          }
+        }
+      } catch (err) {
+        console.error('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_7680resolution_0100 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    }); 
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100
+     * @tc.desc   Test OH_AVTranscoder_Resolution , 4096 resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100';
+      avTranscoderTest8KConfig.videoFrameWidth = 4096;
+      avTranscoderTest8KConfig.videoFrameHeight = 2304;
+      try {
+        let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
+        console.info('isSupport:', isSupport)
+        let isSupportHardware: number = await myavcapability.AVCapabilityIsSupportedHEVCHardware();
+        console.info('isSupportHardware:', isSupportHardware)
+        let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(4096, 2304);
+        console.info('isSupportEncoder:', isSupportEncoder)
+        if ((isSupport == -1) || (isSupportEncoder == -1) || (isSupportHardware == -1)) {
+          console.info('the device capability is not supported!');
+        } else {
+          console.info('the device capability is supported! start transcoder!');
+          await createAVTranscoderNormal(done, testContext, VIDEO_EXCEEDS_8K_RESOLUTION, testName);
+          await prepareAVTranscoderNormal(avTranscoderTest8KConfig, done, testName);
+          await startAVTranscoder(done, testName);
+          await listenComplete(done)
+        }
+      } catch (err) {
+        console.error('SUB_MULTIMEDIA_MEDIA_AVTRANSCODER_4096resolution_0100 failed with error:', JSON.stringify(err));
+        expect(false).assertEqual(true);
+      }
+      done();
+    });
 
     /**
      * @tc.name   null_undefined_001
