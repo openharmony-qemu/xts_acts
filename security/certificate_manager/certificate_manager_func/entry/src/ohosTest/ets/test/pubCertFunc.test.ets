@@ -862,6 +862,66 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       }
     });
     /**
+     * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0500
+     * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0500
+     * @tc.desc   Call uninstallPrivateCertificate interface with empty string keyUri return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_uninstallPrivateCertificate_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0500: started. ");
+      try{
+        await certManager.uninstallPrivateCertificate("");
+        expect(false).assertTrue();
+      }catch(err){
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0500 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0500: end. ");
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0600
+     * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0600
+     * @tc.desc   Call uninstallPrivateCertificate interface with null keyUri return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_uninstallPrivateCertificate_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0600: started. ");
+      try{
+        await certManager.uninstallPrivateCertificate(null);
+        expect(false).assertTrue();
+      }catch(err){
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0600 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0600: end. ");
+      done();
+    });
+    /**
+     * @tc.name   SUB_Security_CertManager_uninstallPrivateCertificate_Func_0700
+     * @tc.number SUB_Security_CertManager_uninstallPrivateCertificate_Func_0700
+     * @tc.desc   Call uninstallPrivateCertificate interface with undefined keyUri return 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+     it('SUB_Security_CertManager_uninstallPrivateCertificate_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0700: started. ");
+      try{
+        await certManager.uninstallPrivateCertificate(undefined);
+        expect(false).assertTrue();
+      }catch(err){
+        console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0700 e.code = " + err.code);
+        expect(err.code).assertEqual(401);
+      }
+      console.log("SUB_Security_CertManager_uninstallPrivateCertificate_Func_0700: end. ");
+      done();
+    });
+    /**
      * @tc.name   SUB_Security_CertManager_GetPriCertJsApi_Func_0030
      * @tc.number SUB_Security_CertManager_GetPriCertJsApi_Func_0030
      * @tc.desc   normal test
