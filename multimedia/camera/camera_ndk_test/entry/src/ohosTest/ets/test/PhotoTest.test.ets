@@ -4093,14 +4093,14 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_100
-     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_100
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_0100
      * @tc.desc   Test OH_CaptureSession_GetExposureDuration when the second paran null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_100', Level.LEVEL2, () => {
+    it('SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_0100', Level.LEVEL2, () => {
       captureSessionstart();
       createPhotoOutput();
       addPhotoOutput();
