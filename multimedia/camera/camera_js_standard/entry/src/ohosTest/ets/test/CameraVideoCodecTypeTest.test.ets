@@ -618,7 +618,7 @@ export default function CameraVideoCodecTypeTest() {
           } catch (err) {
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0300 FAILED VideoCodecType is: null");
-            expect(err.code).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT);
+            expect(err.code).assertEqual("7400101");
           }
 
           await stopCameraSession();
@@ -662,7 +662,7 @@ export default function CameraVideoCodecTypeTest() {
           } catch (err) {
             console.info(TAG +
               "Entering SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_0400 FAILED VideoCodecType is: null");
-            expect(err.code).assertEqual(cameraObj.CameraErrorCode.INVALID_ARGUMENT);
+            expect(err.code).assertEqual("7400101");
           }
 
           await stopCameraSession();
