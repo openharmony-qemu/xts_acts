@@ -28,7 +28,7 @@ group("bundlemanager") {
       "actsbmsgetabilityinfotest:ActsBmsGetAbilityInfoTest",
       "actsbmsgetabilityresourcendkenterprisetest:ActsBmsGetAbilityResourceNdkEnterpriseTest",
       "actsbmsgetbundleinstallstatusenterprisestatic:ActsBmsGetBundleInstallStatusStaticEnterpriseTest",
-      "actsbmsgetbundleinstallstatusenterprisetest:ActsBmsGetBundleInstallStatusEnterpriseTest",
+      "actsbmsgetbundleinstallstatusenterprise:ActsBmsGetBundleInstallStatusEnterpriseTest",
       "actsbmsgetinfostest:ActsBmsGetInfosTest",
       "actsbmsgetinfoenterprisestest:ActsbmsGetInfoEnterPriseEtsTest",
       "actsbmsgetlauncherabilityinfo2test:ActsBmsGetLauncherAbilityInfo2Test",
