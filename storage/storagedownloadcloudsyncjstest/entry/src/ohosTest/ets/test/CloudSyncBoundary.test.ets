@@ -1644,5 +1644,171 @@
  	       }
  	       done();
  	     });
+
+		/**
+			* @tc.name   test_CloudFileCache_startBatch_null_fileType
+			* @tc.number SUB_STORAGE_CLOUDSYNC_BOUNDARY_TEST_7000
+			* @tc.desc   function of API, Test CloudFileCache.startBatch with null as fileType parameter
+			* @tc.type   FUNCTION
+			* @tc.size   MEDIUMTEST
+			* @tc.level  LEVEL3
+			*/
+		it('test_CloudFileCache_startBatch_null_fileType', Level.LEVEL3, async (done: Function) => {
+			let TAG = "test_CloudFileCache_startBatch_null_fileType::";
+			let fileCache = new cloudSync.CloudFileCache();
+			let uris = ["file://media/audio/1"];
+
+			try {
+				await fileCache.startBatch(uris, null);
+				console.info(TAG + " startBatch null fileType run err");
+				expect().assertFail();
+			} catch (err) {
+				console.log(TAG + " sync error: " + err.code);
+				expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+			}
+			done();
+		});
+
+		/**
+			* @tc.name   test_CloudFileCache_startBatch_undefined_fileType
+			* @tc.number SUB_STORAGE_CLOUDSYNC_BOUNDARY_TEST_7100
+			* @tc.desc   function of API, Test CloudFileCache.startBatch with undefined as fileType parameter
+			* @tc.type   FUNCTION
+			* @tc.size   MEDIUMTEST
+			* @tc.level  LEVEL3
+			*/
+		it('test_CloudFileCache_startBatch_undefined_fileType', Level.LEVEL3, async (done: Function) => {
+			let TAG = "test_CloudFileCache_startBatch_undefined_fileType::";
+			let fileCache = new cloudSync.CloudFileCache();
+			let uris = ["file://media/audio/2"];
+
+			try {
+				await fileCache.startBatch(uris, undefined);
+				console.info(TAG + " startBatch undefined fileType run err");
+				expect().assertFail();
+			} catch (err) {
+				console.log(TAG + " sync error: " + err.code);
+				expect(err.code === 22400005 || err.code === 13600001).assertTrue();
+			}
+			done();
+		});
+
+		/**
+			* @tc.name   test_CloudFileCache_startBatch_outofrange_fileType
+			* @tc.number SUB_STORAGE_CLOUDSYNC_BOUNDARY_TEST_7200
+			* @tc.desc   function of API, Test CloudFileCache.startBatch with fileType=3 (out of DownloadFileType range)
+			* @tc.type   FUNCTION
+			* @tc.size   MEDIUMTEST
+			* @tc.level  LEVEL3
+			*/
+		it('test_CloudFileCache_startBatch_outofrange_fileType', Level.LEVEL3, async (done: Function) => {
+			let TAG = "test_CloudFileCache_startBatch_outofrange_fileType::";
+			let fileCache = new cloudSync.CloudFileCache();
+			let uris = ["file://media/audio/3"];
+
+			try {
+				await fileCache.startBatch(uris, 3);
+				console.info(TAG + " startBatch outofrange fileType run err");
+				expect().assertFail();
+			} catch (err) {
+				console.log(TAG + " startBatch outofrange fileType error: " + err.code + ", " + err.message);
+				expect(err.code === 401 || err.code === 13900020 || err.code === 13600001).assertTrue();
+			}
+			done();
+		});
+
+		/**
+			* @tc.name   test_CloudFileCache_stop_null_needClean
+			* @tc.number SUB_STORAGE_CLOUDSYNC_BOUNDARY_TEST_7300
+			* @tc.desc   function of API, Test CloudFileCache.stop with null as needClean parameter
+			* @tc.type   FUNCTION
+			* @tc.size   MEDIUMTEST
+			* @tc.level  LEVEL3
+			*/
+		it('test_CloudFileCache_stop_null_needClean', Level.LEVEL3, async (done: Function) => {
+			let TAG = "test_CloudFileCache_stop_null_needClean::";
+			let fileCache = new cloudSync.CloudFileCache();
+			let uri = "file://media/cloud/test_null.txt";
+
+			try {
+				await fileCache.stop(uri, null);
+				console.info(TAG + " stop null run err");
+				expect().assertFail();
+			} catch (err) {
+				console.log(TAG + " stop null needClean error: " + err.code + ", " + err.message);
+				expect(err.code === 13600001 || err.code === 22400005 || err.code === 401).assertTrue();
+			}
+			done();
+		});
+
+		/**
+			* @tc.name   test_CloudFileCache_stop_undefined_needClean
+			* @tc.number SUB_STORAGE_CLOUDSYNC_BOUNDARY_TEST_7400
+			* @tc.desc   function of API, Test CloudFileCache.stop with undefined as needClean parameter
+			* @tc.type   FUNCTION
+			* @tc.size   MEDIUMTEST
+			* @tc.level  LEVEL3
+			*/
+		it('test_CloudFileCache_stop_undefined_needClean', Level.LEVEL3, async (done: Function) => {
+			let TAG = "test_CloudFileCache_stop_undefined_needClean::";
+			let fileCache = new cloudSync.CloudFileCache();
+			let uri = "file://media/cloud/test_undefined.txt";
+
+			try {
+				await fileCache.stop(uri, undefined);
+				console.info(TAG + " stop undefined run err");
+				expect().assertFail();
+			} catch (err) {
+				console.log(TAG + " stop undefined needClean error: " + err.code + ", " + err.message);
+				expect(err.code === 13600001 || err.code === 22400005 || err.code === 401).assertTrue();
+			}
+			done();
+		});
+
+		/**
+			* @tc.name   test_CloudFileCache_stopBatch_null_needClean
+			* @tc.number SUB_STORAGE_CLOUDSYNC_BOUNDARY_TEST_7500
+			* @tc.desc   function of API, Test CloudFileCache.stopBatch with null as needClean parameter
+			* @tc.type   FUNCTION
+			* @tc.size   MEDIUMTEST
+			* @tc.level  LEVEL3
+			*/
+		it('test_CloudFileCache_stopBatch_null_needClean', Level.LEVEL3, async (done: Function) => {
+			let TAG = "test_CloudFileCache_stopBatch_null_needClean::";
+			let fileCache = new cloudSync.CloudFileCache();
+
+			try {
+				await fileCache.stopBatch(1, null);
+				console.info(TAG + " stopBatch null needClean run err");
+				expect().assertFail();
+			} catch (err) {
+				console.log(TAG + " stopBatch null needClean error: " + err.code + ", " + err.message);
+				expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+			}
+			done();
+		});
+
+		/**
+			* @tc.name   test_CloudFileCache_stopBatch_undefined_needClean
+			* @tc.number SUB_STORAGE_CLOUDSYNC_BOUNDARY_TEST_7600
+			* @tc.desc   function of API, Test CloudFileCache.stopBatch with undefined as needClean parameter
+			* @tc.type   FUNCTION
+			* @tc.size   MEDIUMTEST
+			* @tc.level  LEVEL3
+			*/
+		it('test_CloudFileCache_stopBatch_undefined_needClean', Level.LEVEL3, async (done: Function) => {
+			let TAG = "test_CloudFileCache_stopBatch_undefined_needClean::";
+			let fileCache = new cloudSync.CloudFileCache();
+
+			try {
+				await fileCache.stopBatch(1, undefined);
+				console.info(TAG + " stopBatch undefined needClean run err");
+				expect().assertFail();
+			} catch (err) {
+				console.log(TAG + " stopBatch undefined needClean error: " + err.code + ", " + err.message);
+				expect(err.code === 13600001 || err.code === 22400005).assertTrue();
+			}
+			done();
+		});
  	   });
  	 }

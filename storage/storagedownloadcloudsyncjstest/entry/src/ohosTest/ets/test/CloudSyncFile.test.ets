@@ -630,5 +630,29 @@ describe('cloud_file_test', () => {
       }
       done();
     });
+
+   /**
+    * @tc.name   Test_CloudFile_State_014
+    * @tc.number SUB_STORAGE_CLOUDFILE_TEST_1400
+    * @tc.desc   function of API, CloudFileCache.off
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
+   it('Test_CloudFile_State_014', Level.LEVEL3, async (done: Function) => {
+     try {
+      let fileCache = new cloudSync.CloudFileCache();
+      let callback = (pg: cloudSync.MultiDownloadProgress) => {
+        console.info("batchDownload state：" + pg.state);
+        expect(cloudSync.State.RUNNING === 0).assertTrue();
+      };
+      fileCache.on('batchDownload', callback);
+      fileCache.off('batchDownload');
+     } catch (err) {
+       console.log('Test_CloudFile_State_014 has failed for ' + err.message + ', code: ' + err.code);
+       expect(false).assertTrue();
+     }
+     done();
+   });
   });
 }

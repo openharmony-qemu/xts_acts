@@ -19,7 +19,7 @@ import documentPickerPromise from './DocumentPickerPromise.test';
 import audioPickerCallback from './AudioPickerCallback.test';
 import audioPickerPromise from './AudioPickerPromise.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   documentPickerCallback();
   documentPickerPromise();
   audioPickerCallback();
