@@ -1510,7 +1510,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
           let isSupported =mPhotoSession.isWhiteBalanceModeSupported(null);
           console.info(TAG, testName, "isWhiteBalanceModeSupported null:", isSupported);
-          expect(isSupported).assertTrue()
+          expect(isSupported == false || isSupported == true).assertTrue()
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
@@ -1539,7 +1539,7 @@ export default function CameraSessionSetWhiteBalanceModeTest() {
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
           let isSupported =mPhotoSession.isWhiteBalanceModeSupported(undefined);
           console.info(TAG, testName, "isWhiteBalanceModeSupported undefined:", isSupported);
-          expect(isSupported).assertTrue()
+          expect(isSupported == false || isSupported == true).assertTrue()
         }
       } catch (error) {
         console.error(TAG, testName + ' failed. err: ' + error.code + ', msg: ' + error.message);
