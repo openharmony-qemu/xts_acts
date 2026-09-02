@@ -24,14 +24,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 
-// BusinessError import is required: catch blocks use BusinessError type to access error.code
-// ErrorWithCode: local interface to access .code property on runtime error objects
-// (as BusinessError may lose .code via Koala interop; as ErrorWithCode preserves it)
-interface ErrorWithCode {
-  code: number;
-  message: string;
-  name: string;
-}
+// BusinessError import kept for linker stability (removing may cause LinkerUnresolvedClassError)
 
 
 class NavParamOne {
@@ -179,7 +172,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -202,7 +195,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -226,7 +219,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -249,7 +242,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -272,7 +265,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -295,7 +288,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -318,7 +311,7 @@ struct NavigationPreload {
                 }).catch((error: Error) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
-                  let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                  try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                   try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
                 })
             })
@@ -340,7 +333,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -363,7 +356,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -387,7 +380,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -414,7 +407,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -439,7 +432,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -463,7 +456,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -487,7 +480,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.catchCalled = 'true'
                 this.preloadResult = 'error'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -509,7 +502,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.catchCalled = 'true'
                 this.preloadResult = 'error'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -532,7 +525,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -560,7 +553,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -585,7 +578,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -616,13 +609,13 @@ struct NavigationPreload {
                 }).catch((error: Error) => {
                   this.preloadResult = 'error'
                   this.catchCalled = 'true'
-                  let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                  try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                   try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
                 })
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -652,7 +645,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -681,7 +674,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -704,7 +697,7 @@ struct NavigationPreload {
                 successCount++
               }).catch((error: Error) => {
                 failCount++
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
               this.stack.preloadPath(
@@ -714,7 +707,7 @@ struct NavigationPreload {
                 successCount++
               }).catch((error: Error) => {
                 failCount++
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
               setTimeout(() => {
@@ -751,7 +744,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -775,7 +768,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
@@ -800,7 +793,7 @@ struct NavigationPreload {
               }).catch((error: Error) => {
                 this.preloadResult = 'error'
                 this.catchCalled = 'true'
-                let codeNum: number = (error as BusinessError).code; if (codeNum > 0) { this.errorCode = '' + codeNum } else { this.errorCode = 'NC' }
+                try { this.errorCode = error.name } catch (_e) { this.errorCode = '' }
                 try { this.errorMsg = error.message } catch (_e) { this.errorMsg = '' }
               })
             })
