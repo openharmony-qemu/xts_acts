@@ -20,12 +20,32 @@ import { describe, it, expect, TestType, Size, Level } from "@ohos/hypium";
 const DISABLED_BUNDLE_NAME = "com.example.myapplication1";
 const ERROR_CODE_BUNDLE_DISABLED = 17700026;
 const USER_ID = 100;
+const PROMISE_GUARD_MS = 10000;
 
 function getErrorCode(error: BusinessError | number): number {
   if (typeof error === 'number') {
     return error;
   }
   return error.code;
+}
+
+function assertBundleDisabled(done: Function): boolean {
+  try {
+    bundleManager.getBundleInfoSync(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT);
+    console.info('Coverage17700026Test assist bundle is not disabled');
+    expect().assertFail();
+    done();
+    return false;
+  } catch (error) {
+    let code = getErrorCode(error as BusinessError | number);
+    console.info('Coverage17700026Test disabled check code: ' + code);
+    if (code !== ERROR_CODE_BUNDLE_DISABLED) {
+      expect().assertFail();
+      done();
+      return false;
+    }
+    return true;
+  }
 }
 
 export default function coverage17700026Test() {
@@ -41,13 +61,36 @@ export default function coverage17700026Test() {
      */
     it('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: Function) => {
+        if (!assertBundleDisabled(done)) {
+          return;
+        }
+        let finished = false;
+        let timer = setTimeout(() => {
+          if (finished) {
+            return;
+          }
+          finished = true;
+          console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 promise guard timeout');
+          expect().assertFail();
+          done();
+        }, PROMISE_GUARD_MS);
         bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT)
           .then((data) => {
+            if (finished) {
+              return;
+            }
+            finished = true;
+            clearTimeout(timer);
             console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 should not succeed: ' +
               JSON.stringify(data));
             expect().assertFail();
             done();
           }).catch((error: BusinessError | number) => {
+            if (finished) {
+              return;
+            }
+            finished = true;
+            clearTimeout(timer);
             console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 err: ' + JSON.stringify(error));
             expect(getErrorCode(error)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
             done();
@@ -64,6 +107,9 @@ export default function coverage17700026Test() {
      */
     it('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: Function) => {
+        if (!assertBundleDisabled(done)) {
+          return;
+        }
         try {
           bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT,
             (err: BusinessError | number, data: bundleManager.BundleInfo) => {
@@ -94,6 +140,9 @@ export default function coverage17700026Test() {
      */
     it('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: Function) => {
+        if (!assertBundleDisabled(done)) {
+          return;
+        }
         try {
           bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT, USER_ID,
             (err: BusinessError | number, data: bundleManager.BundleInfo) => {
@@ -126,6 +175,9 @@ export default function coverage17700026Test() {
      */
     it('SUB_BMS_FRAMEWORK_GetLaunchWantForBundleSync_17700026_9203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       (done: Function) => {
+        if (!assertBundleDisabled(done)) {
+          return;
+        }
         try {
           let res = bundleManager.getLaunchWantForBundleSync(DISABLED_BUNDLE_NAME);
           console.info('SUB_BMS_FRAMEWORK_GetLaunchWantForBundleSync_17700026_9203 should not succeed: ' +
