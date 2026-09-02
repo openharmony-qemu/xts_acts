@@ -352,7 +352,7 @@ export default function ManualFocusQueryTest(): void {
           } catch (error) {
             console.error(TAG, testName, 'isFocusDistanceSupported, failed', JSON.stringify(error), error.code,
               error);
-            expect(Number(error.code)).assertEqual(7400103);
+            expect(error.code).assertEqual(7400103);
           }
           await releasePhotoSession();
           done();
@@ -414,7 +414,7 @@ export default function ManualFocusQueryTest(): void {
           } catch (error) {
             console.error(TAG, testName, 'getFocusDistance, failed', JSON.stringify(error), error.code,
               error);
-            expect(Number(error.code)).assertEqual(7400103);
+            expect(error.code).assertEqual(7400103);
           }
           await releasePhotoSession();
           done();
@@ -478,7 +478,7 @@ export default function ManualFocusQueryTest(): void {
           } catch (error) {
             console.error(TAG, testName, 'getSupportedIsoRange, failed', JSON.stringify(error), error.code,
               error);
-            expect(Number(error.code)).assertEqual(7400103);
+            expect(error.code).assertEqual(7400103);
           }
           await releasePhotoSession();
           done();

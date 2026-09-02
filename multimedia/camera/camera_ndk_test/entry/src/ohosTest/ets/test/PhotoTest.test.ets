@@ -4039,14 +4039,14 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEIDA_OHCAMWEANDK_GET_PHYSICAL_APERTURE_0100
-     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_GET_PHYSICAL_APERTURE_0100
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_PHYSICAL_APERTURE_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_PHYSICAL_APERTURE_0100
      * @tc.desc   Test OH_CaptureSession_GetPhysicalAperture when the second paran null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEIDA_OHCAMWEANDK_GET_PHYSICAL_APERTURE_0100', Level.LEVEL2, () => {
+    it('SUB_MULTIMEIDA_CAMWEA_GET_PHYSICAL_APERTURE_0100', Level.LEVEL2, () => {
       if(PhysicalcaptureSessionstart()){
         createPhotoOutput();
         addPhotoOutput();
@@ -4057,14 +4057,14 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.name   SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
-     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100
      * @tc.desc   Test OH_CaptureSession_GetSupportedExposureDurationRange when the second paran null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100', Level.LEVEL2, () => {
+    it('SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0100', Level.LEVEL2, () => {
       if(PhysicalcaptureSessionstart()){
         createPhotoOutput();
         addPhotoOutput();
@@ -4075,14 +4075,14 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.name   SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
-     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200
      * @tc.desc   Test OH_CaptureSession_GetSupportedExposureDurationRange when the third paran null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEIDA_OHCAMWEANDK_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200', Level.LEVEL2, () => {
+    it('SUB_MULTIMEIDA_CAMWEA_GET_SUPPORTED_EXPOSURE_DURATION_RANGE_0200', Level.LEVEL2, () => {
       if(PhysicalcaptureSessionstart()){
         createPhotoOutput();
         addPhotoOutput();
@@ -4093,14 +4093,14 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.name   SUB_MULTIMEIDA_OHCAMWEANDK_GET_EXPOSURE_DURATION_100
-     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_GET_EXPOSURE_DURATION_100
+     * @tc.name   SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_100
+     * @tc.number SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_100
      * @tc.desc   Test OH_CaptureSession_GetExposureDuration when the second paran null
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('SUB_MULTIMEIDA_OHCAMWEANDK_GET_EXPOSURE_DURATION_100', Level.LEVEL2, () => {
+    it('SUB_MULTIMEIDA_CAMWEA_GET_EXPOSURE_DURATION_100', Level.LEVEL2, () => {
       captureSessionstart();
       createPhotoOutput();
       addPhotoOutput();
