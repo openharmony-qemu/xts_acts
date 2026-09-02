@@ -43,10 +43,10 @@ export default class EntryAbility extends UIAbility {
     this.onCreateFlag = true
     if (this.TEST_CASE_NAME == 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5200') {
       let keyForObjectExpected: Record<string, Object> = {
-        keyForObjectString: 'str',
-        keyForObjectInt: -200,
-        keyForObjectDouble: 35.5,
-        keyForObjectBool: false,
+        'keyForObjectString': 'str',
+        'keyForObjectInt': -200,
+        'keyForObjectDouble': 35.5,
+        'keyForObjectBool': false,
       };
       if (want.parameters?.keyForString === 'str' &&
         want.parameters?.keyForInt === 100 &&
