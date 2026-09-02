@@ -28,6 +28,7 @@ import ListImageTest from './ListImageTest/ListImage.test';
 import ImageColorFilterTest from './ImageColorFilterTest/ImageColorFilter.test';
 import ImageReloadKeyTest from './imageTest/ImageReloadKey.test';
 import ImageDrawingLatticeTest from './imageTest/ImageDrawingLattice.test';
+import ImageDrawingColorFilterTest from './imageTest/ImageDrawingColorFilter.test';
 import ImageRequestDownloadInfoTest from './imageTest/ImageRequestDownloadInfo.test';
 import DrawableDescriptorReleaseTest from './drawableDescriptorTest/DrawableDescriptorRelease.test';
 import PixelMapDrawableDescriptorConstructorTest from './drawableDescriptorTest/PixelMapDrawableDescriptorConstructor.test';
@@ -48,6 +49,7 @@ export default function testsuite() {
   ImageColorFilterTest();
   ImageReloadKeyTest();
   ImageDrawingLatticeTest();
+  ImageDrawingColorFilterTest();
   ImageRequestDownloadInfoTest();
   DrawableDescriptorReleaseTest();
   PixelMapDrawableDescriptorConstructorTest();

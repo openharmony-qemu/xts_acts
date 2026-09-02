@@ -18,6 +18,7 @@
     "MainAbility/pages/ImageColorFilter/ImageColorFilter",
     "MainAbility/pages/image/ImageReloadKey",
     "MainAbility/pages/image/ImageDrawingLattice",
+    "MainAbility/pages/image/ImageDrawingColorFilter",
     "MainAbility/pages/image/ImageRequestDownloadInfo",
     "MainAbility/pages/drawableDescriptor/DrawableDescriptorReleaseTest",
     "MainAbility/pages/drawableDescriptor/PixelMapDrawableDescriptorConstructor",
