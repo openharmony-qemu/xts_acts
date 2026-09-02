@@ -37,5 +37,70 @@ export default function TestSetForceDarkConfig(){
       expect(nativeFunc.TestSetForceDarkConfig()).assertEqual(0)
       done();
     })
+
+    /**
+     * @tc.name   TestSetForceDarkConfig_003
+     * @tc.number SUB_ARKUI_CAPI_TestSetForceDarkConfig_0300
+     * @tc.desc   Test Sets the inverse color algorithm with invalid nodeType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestSetForceDarkConfig_003', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestSetForceDarkConfigNodeTypeInvalid()).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   TestSetForceDarkConfig_005
+     * @tc.number SUB_ARKUI_CAPI_TestSetForceDarkConfig_0500
+     * @tc.desc   Test Sets the inverse color algorithm with ARKUI_NODE_CUSTOM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestSetForceDarkConfig_005', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestSetForceDarkConfigNodeTypeCustom()).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   TestSetForceDarkConfig_016
+     * @tc.number SUB_ARKUI_CAPI_TestSetForceDarkConfig_1600
+     * @tc.desc   Test Sets the inverse color algorithm with ARKUI_NODE_DATE_PICKER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestSetForceDarkConfig_016', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestSetForceDarkConfigNodeTypeDatePicker()).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   TestSetForceDarkConfig_027
+     * @tc.number SUB_ARKUI_CAPI_TestSetForceDarkConfig_2700
+     * @tc.desc   Test Sets the inverse color algorithm with ARKUI_NODE_STACK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestSetForceDarkConfig_027', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestSetForceDarkConfigNodeTypeStack()).assertEqual(0)
+      done();
+    })
+
+    /**
+     * @tc.name   TestSetForceDarkConfig_039
+     * @tc.number SUB_ARKUI_CAPI_TestSetForceDarkConfig_3900
+     * @tc.desc   Test Sets the inverse color algorithm with ARKUI_NODE_GRID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestSetForceDarkConfig_039', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.TestSetForceDarkConfigNodeTypeGrid()).assertEqual(0)
+      done();
+    })
   })
 }
