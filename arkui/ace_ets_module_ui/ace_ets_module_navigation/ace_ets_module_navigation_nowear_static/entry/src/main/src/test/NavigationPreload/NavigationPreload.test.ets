@@ -438,11 +438,11 @@ export default function NavigationPreloadTest(): void {
         expect(result).assertEqual('error');
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
-        let errorCode = getTextContentById('errorCode');
         let errorMsg = getTextContentById('errorMsg');
-        // Dynamic mode: error.code = 401/100005/100006; Static mode: error.name = 'Error'
-        expect(errorCode === '401' || errorCode === '100005' || errorCode === '100006' || errorCode === 'Error').assertTrue();
+        // Dynamic: error.code = 401/100005/100006; Static: error.code = 100005/100006
         expect(errorMsg.length).assertLarger(0);
+        let errorCode = getTextContentById('errorCode');
+        expect(errorCode === '401' || errorCode === '100005' || errorCode === '100006').assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1400 error: ' + err);
         expect(false).assertTrue();
@@ -489,11 +489,10 @@ export default function NavigationPreloadTest(): void {
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
-        let errorCode = getTextContentById('errorCode');
         let errorMsg = getTextContentById('errorMsg');
-        // Dynamic mode: error.code = 401/100005/100006; Static mode: error.name = 'Error'
-        expect(errorCode === '401' || errorCode === '100005' || errorCode === '100006' || errorCode === 'Error').assertTrue();
         expect(errorMsg.length).assertLarger(0);
+        let errorCode = getTextContentById('errorCode');
+        expect(errorCode === '401' || errorCode === '100005' || errorCode === '100006').assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1600 error: ' + err);
         expect(false).assertTrue();
@@ -519,11 +518,11 @@ export default function NavigationPreloadTest(): void {
         expect(result).assertEqual('error');
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
-        let errorCode = getTextContentById('errorCode');
-        // Dynamic mode: error.code = 100005/100006; Static mode: error.name = 'Error'
-        expect(errorCode === '100005' || errorCode === '100006' || errorCode === 'Error').assertTrue();
         let errorMsg = getTextContentById('errorMsg');
         expect(errorMsg.length).assertLarger(0);
+        let errorCode = getTextContentById('errorCode');
+        // Dynamic/Static: error.code = 100005/100006
+        expect(errorCode === '100005' || errorCode === '100006').assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1700 error: ' + err);
         expect(false).assertTrue();
@@ -549,11 +548,11 @@ export default function NavigationPreloadTest(): void {
         expect(result).assertEqual('error');
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
-        let errorCode = getTextContentById('errorCode');
-        // Dynamic mode: error.code = 100006; Static mode: error.name = 'Error'
-        expect(errorCode === '100006' || errorCode === 'Error').assertTrue();
         let errorMsg = getTextContentById('errorMsg');
         expect(errorMsg.length).assertLarger(0);
+        let errorCode = getTextContentById('errorCode');
+        // Dynamic/Static: error.code = 100006
+        expect(errorCode === '100006').assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1800 error: ' + err);
         expect(false).assertTrue();
@@ -577,11 +576,11 @@ export default function NavigationPreloadTest(): void {
         await CommonFunc.sleep(2000);
         let result = getTextContentById('preloadResult');
         expect(result).assertEqual('error');
-        let errorCode = getTextContentById('errorCode');
-        // Dynamic mode: error.code = 100005; Static mode: error.name = 'Error'
-        expect(errorCode === '100005' || errorCode === 'Error').assertTrue();
         let errorMsg = getTextContentById('errorMsg');
         expect(errorMsg.length).assertLarger(0);
+        let errorCode = getTextContentById('errorCode');
+        // Dynamic/Static: error.code = 100006 (NavDestination not found)
+        expect(errorCode === '100006').assertTrue();
       } catch (err) {
         console.error('SUB_ARKUI_NAVIGATION_PRELOADPATH_1900 error: ' + err);
         expect(false).assertTrue();
@@ -754,8 +753,8 @@ export default function NavigationPreloadTest(): void {
         await btn.click();
         await CommonFunc.sleep(2000);
         let errorCode = getTextContentById('errorCode');
-        // Dynamic mode: error.code = 100005; Static mode: error.name = 'Error'
-        expect(errorCode === '100005' || errorCode === 'Error').assertTrue();
+        // Dynamic/Static: error.code = 100006 (NavDestination not found)
+        expect(errorCode === '100006').assertTrue();
         let errorMsg = getTextContentById('errorMsg');
         expect(errorMsg.length).assertLarger(0);
       } catch (err) {
@@ -783,7 +782,7 @@ export default function NavigationPreloadTest(): void {
         expect(errorMsg.length).assertLarger(0);
         let errorCode = getTextContentById('errorCode');
         // Dynamic mode: error.code = 100006; Static mode: error.name = 'Error'
-        expect(errorCode === '100006' || errorCode === 'Error').assertTrue();
+        expect(errorCode === '100006').assertTrue();
         let catchCalled = getTextContentById('catchCalled');
         expect(catchCalled).assertEqual('true');
       } catch (err) {
@@ -996,8 +995,8 @@ export default function NavigationPreloadTest(): void {
         await btn.click();
         await CommonFunc.sleep(2000);
         let errorCode = getTextContentById('errorCode');
-        // Dynamic mode: error.code = 401 or 100005; Static mode: error.name = 'Error'
-        expect(errorCode === '401' || errorCode === '100005' || errorCode === 'Error').assertTrue();
+        // Dynamic/Static: error.code = 401/100005/100006
+        expect(errorCode === '401' || errorCode === '100005' || errorCode === '100006').assertTrue();
         let errorMsg = getTextContentById('errorMsg');
         expect(errorMsg.length).assertLarger(0);
       } catch (err) {
