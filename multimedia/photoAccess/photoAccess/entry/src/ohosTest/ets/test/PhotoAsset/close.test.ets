@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import fileio from "@ohos.fileio";
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
 import {
@@ -193,6 +194,7 @@ export default function closeTest () {
       const testNum = 'photoAsset_close_callback_003';
       const errorCode = 13900020;
       const fetchOps:photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.jpg');
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let photoAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
       try{
         photoAsset.close(-1, (err) => {
@@ -266,6 +268,7 @@ export default function closeTest () {
       const testNum = 'photoAsset_close_promise_003';
       const errorCode = 13900020;
       const fetchOps:photoAccessHelper.FetchOptions = fetchOption(testNum, photoKeys.DISPLAY_NAME, '01.jpg');
+      let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let photoAsset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testNum, fetchOps);
       try{
         await photoAsset.close(-1);
@@ -273,7 +276,7 @@ export default function closeTest () {
         done();
       }catch (error) {
         console.info(`${testNum} failed; error: ${error}`);
-        expect(error.code).assertEqual(String(errorCode)));
+        expect(error.code).assertEqual(String(errorCode));
         done();
       }
     });
