@@ -20,7 +20,7 @@ import { AppCloneIdentity } from 'bundleManager.BundleInfo';
 
 const TAG = "ErrcodeTest"
 
-export default function GetAppCloneIdentityTest(): void {
+export default function GetAppCloneIdentityTest() {
   describe('GetAppCloneIdentityTest', (): void => {
     /**
      * @tc.name   getAppCloneIdentity201

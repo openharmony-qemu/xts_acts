@@ -17,6 +17,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 
 const BUNDLE_NAME = 'ohos.acts.bundlemanagererrcode.test';
+const ERROR_MESSAGE_PERMISSION_DENIED =
+  'BusinessError 201: Permission denied. An attempt was made to GetBundleInstallStatus forbidden by permission: ohos.permission.GET_BUNDLE_INFO_PRIVILEGED.';
 
 export default function getBundleInstallStatusNoPermissionTest() {
   describe('GetBundleInstallStatusNoPermissionTest', () => {
@@ -35,8 +37,9 @@ export default function getBundleInstallStatusNoPermissionTest() {
           expect().assertFail();
         } catch (err) {
           const error = err as BusinessError;
-          console.info(`SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_NOPERM_0100: ${JSON.stringify(error)}`);
+          console.info(`SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_NOPERM_0100: code=${error.code}, message=${error.message}`);
           expect(error.code).assertEqual(201);
+          expect(error.message).assertEqual(ERROR_MESSAGE_PERMISSION_DENIED);
         }
       });
   });

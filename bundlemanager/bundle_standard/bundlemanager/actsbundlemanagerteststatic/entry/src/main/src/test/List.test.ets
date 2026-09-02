@@ -5,7 +5,7 @@ import getLaunchWant from './GetLaunchWant.test.ets';
 import GetLaunchWantForBundleSyncStatic from "./GetLaunchWantForBundleSyncStatic.test.ets";
 import getBundleInstallStatusNoPermissionTest from './GetBundleInstallStatusNoPermission.test.ets';
 
-export default function testsuite(): void {
+export default function testsuite() {
   GetBundleInfo();
   GetAppCloneIdentityTest();
   getLaunchWant();

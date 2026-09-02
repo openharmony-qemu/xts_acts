@@ -17,9 +17,13 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
 
-const BUNDLE_NAME: string = 'ohos.acts.bundle.test.static';
+const BUNDLE_NAME = 'ohos.acts.bundle.test.static';
+const ERROR_MESSAGE_PERMISSION_DENIED =
+  'BusinessError 201: Permission denied. An attempt was made to GetBundleInstallStatus forbidden by permission: ohos.permission.GET_BUNDLE_INFO_PRIVILEGED.';
+const TAG = 'testTag';
+const TEST_SUITE_NAME = 'GetBundleInstallStatusNoPermissionStaticTest';
 
-export default function getBundleInstallStatusNoPermissionTest(): void {
+export default function getBundleInstallStatusNoPermissionTest() {
   describe('GetBundleInstallStatusNoPermissionStaticTest', (): void => {
     /**
      * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_NOPERM_0100
@@ -32,14 +36,19 @@ export default function getBundleInstallStatusNoPermissionTest(): void {
     it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_NOPERM_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        const TEST_CASE_NAME = 'SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_NOPERM_0100';
+        console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case start');
         try {
           bundleManager.getBundleInstallStatus(BUNDLE_NAME);
           expect().assertFail();
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
           done();
         } catch (err) {
           const error = err as BusinessError;
-          console.info(`SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_NOPERM_0100: ${JSON.stringify(error)}`);
+          console.error(TAG + `${TEST_CASE_NAME} catch failed: code=${error.code}, message=${error.message}`);
           expect(error.code).assertEqual(201);
+          expect(error.message).assertEqual(ERROR_MESSAGE_PERMISSION_DENIED);
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
           done();
         }
       });

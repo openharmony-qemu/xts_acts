@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base';
 const TAG = 'testTag';
 const TEST_SUITE_NAME = "testGetLaunchWantForBundleSyncStatic"
 
-export default function GetLaunchWantForBundleSyncStatic(): void {
+export default function GetLaunchWantForBundleSyncStatic() {
   describe('testGetLaunchWantForBundleSyncStatic', (): void => {
     /**
      * @tc.name   GetLaunchWantForBundleSyncStatic_0600

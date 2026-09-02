@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 import bundleManager from '@ohos.bundle.bundleManager';
+import { BusinessError } from '@kit.BasicServicesKit';
 import { describe, it, expect, TestType, Size, Level } from '../../../hypium/index';
 
-const BUNDLE_NAME: string = 'ohos.acts.getbundleinstallstatus.static.enterprise';
-const BUNDLE_NAME_NOT_EXIST: string = 'ohos.acts.bundle.not.exist.dummy';
+const BUNDLE_NAME = 'ohos.acts.getbundleinstallstatus.static.enterprise';
+const BUNDLE_NAME_NOT_EXIST = 'ohos.acts.bundle.not.exist.dummy';
+const ERROR_MESSAGE_PARAM_CHECK_ERROR = 'BusinessError 401: Parameter error. The type of bundleName must be string.';
+const TAG = 'testTag';
+const TEST_SUITE_NAME = 'GetBundleInstallStatusStaticTest';
 
-export default function getBundleInstallStatusTest(): void {
+export default function getBundleInstallStatusTest() {
   describe('GetBundleInstallStatusStaticTest', (): void => {
     /**
      * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0100
@@ -32,9 +36,18 @@ export default function getBundleInstallStatusTest(): void {
     it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        const status = bundleManager.getBundleInstallStatus('');
-        expect(status).assertEqual(bundleManager.BundleInstallStatus.BUNDLE_NOT_EXIST);
-        done();
+        const TEST_CASE_NAME = 'SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0100';
+        console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case start');
+        try {
+          const status = bundleManager.getBundleInstallStatus('');
+          expect(status).assertEqual(bundleManager.BundleInstallStatus.BUNDLE_NOT_EXIST);
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
+          done();
+        } catch (err) {
+          console.error(TAG + `${TEST_CASE_NAME} catch failed: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
       });
 
     /**
@@ -48,25 +61,123 @@ export default function getBundleInstallStatusTest(): void {
     it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-        const status = bundleManager.getBundleInstallStatus(BUNDLE_NAME_NOT_EXIST);
-        expect(status).assertEqual(bundleManager.BundleInstallStatus.BUNDLE_NOT_EXIST);
-        done();
+        const TEST_CASE_NAME = 'SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0200';
+        console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case start');
+        try {
+          const status = bundleManager.getBundleInstallStatus(BUNDLE_NAME_NOT_EXIST);
+          expect(status).assertEqual(bundleManager.BundleInstallStatus.BUNDLE_NOT_EXIST);
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
+          done();
+        } catch (err) {
+          console.error(TAG + `${TEST_CASE_NAME} catch failed: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
       });
 
     /**
      * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0300
      * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0300
+     * @tc.desc Verify null is rejected with parameter error 401.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TEST_CASE_NAME = 'SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0300';
+        console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case start');
+        try {
+          bundleManager.getBundleInstallStatus(null);
+          expect().assertFail();
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          console.info(TAG + `${TEST_CASE_NAME} catch: code=${error.code}, message=${error.message}`);
+          expect(error.code).assertEqual(401);
+          expect(error.message).assertEqual(ERROR_MESSAGE_PARAM_CHECK_ERROR);
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
+          done();
+        }
+      });
+
+    /**
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0400
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0400
+     * @tc.desc Verify undefined is rejected with parameter error 401.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TEST_CASE_NAME = 'SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0400';
+        console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case start');
+        try {
+          bundleManager.getBundleInstallStatus(undefined);
+          expect().assertFail();
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          console.info(TAG + `${TEST_CASE_NAME} catch: code=${error.code}, message=${error.message}`);
+          expect(error.code).assertEqual(401);
+          expect(error.message).assertEqual(ERROR_MESSAGE_PARAM_CHECK_ERROR);
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
+          done();
+        }
+      });
+
+    /**
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0500
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0500
      * @tc.desc Verify the test bundle is reported as BUNDLE_INSTALLED.
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL0
      */
-    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0300',
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        const status = bundleManager.getBundleInstallStatus(BUNDLE_NAME);
-        expect(status).assertEqual(bundleManager.BundleInstallStatus.BUNDLE_INSTALLED);
-        done();
+        const TEST_CASE_NAME = 'SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0500';
+        console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case start');
+        try {
+          const status = bundleManager.getBundleInstallStatus(BUNDLE_NAME);
+          expect(status).assertEqual(bundleManager.BundleInstallStatus.BUNDLE_INSTALLED);
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
+          done();
+        } catch (err) {
+          console.error(TAG + `${TEST_CASE_NAME} catch failed: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0600
+     * @tc.number SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0600
+     * @tc.desc Verify BUNDLE_INSTALLING enum value is 2.
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL1
+     */
+    it('SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const TEST_CASE_NAME = 'SUB_BMS_FRAMEWORK_GETBUNDLEINSTALLSTATUS_STATIC_0600';
+        console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case start');
+        try {
+          expect(bundleManager.BundleInstallStatus.BUNDLE_INSTALLING).assertEqual(2);
+          console.info(TAG + `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + 'test case end');
+          done();
+        } catch (err) {
+          console.error(TAG + `${TEST_CASE_NAME} catch failed: ${JSON.stringify(err)}`);
+          expect().assertFail();
+          done();
+        }
       });
   });
 }
