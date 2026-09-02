@@ -63,7 +63,7 @@ export default function dequeSetTest() {
     /**
      * @tc.name   testDequeSetTest0100
      * @tc.number SUB_ARKTS_DEQUE_SET_0100
-     * @tc.desc   Test Deque constructor and insertEnd with Set items and mixed invalid values, verifying length, element access, empty-set size, and getFirst/getLast.
+     * @tc.desc   Verify Deque constructor and insertEnd with Set items and mixed invalid values, verifying length, element access, empty-set size, and getFirst/getLast.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -94,7 +94,7 @@ export default function dequeSetTest() {
     /**
      * @tc.name   testDequeSetTest0200
      * @tc.number SUB_ARKTS_DEQUE_SET_0200
-     * @tc.desc   Test insertFront/insertEnd ordering, getFirst/getLast, has() by reference identity, and single-element Set deque behavior.
+     * @tc.desc   Verify insertFront/insertEnd ordering, getFirst/getLast, has() by reference identity, and single-element Set deque behavior.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -123,7 +123,7 @@ export default function dequeSetTest() {
     /**
      * @tc.name   testDequeSetTest0300
      * @tc.number SUB_ARKTS_DEQUE_SET_0300
-     * @tc.desc   Test popFirst/popLast removal from both ends including single-element deques, verifying returned Set objects and length updates.
+     * @tc.desc   Verify popFirst/popLast removal from both ends including single-element deques, verifying returned Set objects and length updates.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -158,7 +158,7 @@ export default function dequeSetTest() {
     /**
      * @tc.name   testDequeSetTest0400
      * @tc.number SUB_ARKTS_DEQUE_SET_0400
-     * @tc.desc   Test forEach callback with value and index, Symbol.iterator traversal, and for-of iteration over a Set deque.
+     * @tc.desc   Verify forEach callback with value and index, Symbol.iterator traversal, and for-of iteration over a Set deque.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -205,7 +205,7 @@ export default function dequeSetTest() {
     /**
      * @tc.name   testDequeSetTest0500
      * @tc.number SUB_ARKTS_DEQUE_SET_0500
-     * @tc.desc   Test indexed element access on a Set deque including boundary, out-of-range, undefined results, and Set size verification.
+     * @tc.desc   Verify indexed element access on a Set deque including boundary, out-of-range, undefined results, and Set size verification.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -243,7 +243,7 @@ export default function dequeSetTest() {
     /**
      * @tc.name   testDequeSetTest0600
      * @tc.number SUB_ARKTS_DEQUE_SET_0600
-     * @tc.desc   Test out-of-bounds index access, popFirst throwing on an empty deque, and empty deque iteration/forEach behavior.
+     * @tc.desc   Verify out-of-bounds index access, popFirst throwing on an empty deque, and empty deque iteration/forEach behavior.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

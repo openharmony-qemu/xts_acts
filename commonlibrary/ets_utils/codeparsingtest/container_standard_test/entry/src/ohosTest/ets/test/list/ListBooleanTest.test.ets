@@ -102,7 +102,7 @@ export default function listBooleanTest() {
       expect(list.has(false)).assertTrue();
       expect(list.getIndexOf(false)).assertEqual(1);
       expect(list.getLastIndexOf(true)).assertEqual(2);
-      expect(list.getIndexOf(false)).assertEqual(list.getLastIndexOf(false));
+      expect(list.getLastIndexOf(false)).assertEqual(1);
 
       list.insert(false, 0);
       expect(list.get(0)).assertFalse();
@@ -195,7 +195,7 @@ export default function listBooleanTest() {
           trueCount++;
         }
       });
-      expect(trueCount === 1 || trueCount === 2).assertTrue();
+      expect(trueCount).assertEqual(2);
 
       let indexSum: number = 0;
       list.forEach((value: boolean, index?: number) => {

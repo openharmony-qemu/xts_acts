@@ -71,7 +71,7 @@ export default function dequeObjectTest() {
     /**
      * @tc.name   testDequeObjectTest0100
      * @tc.number SUB_ARKTS_DEQUE_OBJECT_0100
-     * @tc.desc   Test Deque constructor and insertEnd with object items and mixed invalid values, verifying length, element access, and getFirst/getLast.
+     * @tc.desc   Verify Deque constructor and insertEnd with object items and mixed invalid values, verifying length, element access, and getFirst/getLast.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -102,7 +102,7 @@ export default function dequeObjectTest() {
     /**
      * @tc.name   testDequeObjectTest0200
      * @tc.number SUB_ARKTS_DEQUE_OBJECT_0200
-     * @tc.desc   Test insertFront/insertEnd ordering, getFirst/getLast, has() by reference identity, and single-element object deque behavior.
+     * @tc.desc   Verify insertFront/insertEnd ordering, getFirst/getLast, has() by reference identity, and single-element object deque behavior.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -131,7 +131,7 @@ export default function dequeObjectTest() {
     /**
      * @tc.name   testDequeObjectTest0300
      * @tc.number SUB_ARKTS_DEQUE_OBJECT_0300
-     * @tc.desc   Test popFirst/popLast removal from both ends including single-element deques, verifying returned objects and length updates.
+     * @tc.desc   Verify popFirst/popLast removal from both ends including single-element deques, verifying returned objects and length updates.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -166,7 +166,7 @@ export default function dequeObjectTest() {
     /**
      * @tc.name   testDequeObjectTest0400
      * @tc.number SUB_ARKTS_DEQUE_OBJECT_0400
-     * @tc.desc   Test forEach callback with value and index, Symbol.iterator traversal, and for-of iteration over an object deque.
+     * @tc.desc   Verify forEach callback with value and index, Symbol.iterator traversal, and for-of iteration over an object deque.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -213,7 +213,7 @@ export default function dequeObjectTest() {
     /**
      * @tc.name   testDequeObjectTest0500
      * @tc.number SUB_ARKTS_DEQUE_OBJECT_0500
-     * @tc.desc   Test indexed element access on an object deque including boundary, out-of-range, undefined results, and property access.
+     * @tc.desc   Verify indexed element access on an object deque including boundary, out-of-range, undefined results, and property access.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -251,7 +251,7 @@ export default function dequeObjectTest() {
     /**
      * @tc.name   testDequeObjectTest0600
      * @tc.number SUB_ARKTS_DEQUE_OBJECT_0600
-     * @tc.desc   Test out-of-bounds index access, popFirst throwing on an empty deque, and empty deque iteration/forEach behavior.
+     * @tc.desc   Verify out-of-bounds index access, popFirst throwing on an empty deque, and empty deque iteration/forEach behavior.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

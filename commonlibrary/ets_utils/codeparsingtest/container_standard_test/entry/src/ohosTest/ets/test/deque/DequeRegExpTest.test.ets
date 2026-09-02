@@ -57,7 +57,7 @@ export default function dequeRegExpTest() {
     /**
      * @tc.name   testDequeRegExpTest0100
      * @tc.number SUB_ARKTS_DEQUE_REGEXP_0100
-     * @tc.desc   Test Deque constructor and insertEnd with RegExp items and mixed invalid values, verifying length, element access, regex matching, and getFirst/getLast.
+     * @tc.desc   Verify Deque constructor and insertEnd with RegExp items and mixed invalid values, verifying length, element access, regex matching, and getFirst/getLast.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -90,7 +90,7 @@ export default function dequeRegExpTest() {
     /**
      * @tc.name   testDequeRegExpTest0200
      * @tc.number SUB_ARKTS_DEQUE_REGEXP_0200
-     * @tc.desc   Test insertFront/insertEnd ordering, getFirst/getLast, has() by reference identity, and single-element RegExp deque behavior.
+     * @tc.desc   Verify insertFront/insertEnd ordering, getFirst/getLast, has() by reference identity, and single-element RegExp deque behavior.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -120,7 +120,7 @@ export default function dequeRegExpTest() {
     /**
      * @tc.name   testDequeRegExpTest0300
      * @tc.number SUB_ARKTS_DEQUE_REGEXP_0300
-     * @tc.desc   Test popFirst/popLast removal from both ends including single-element deques, verifying returned RegExp objects and length updates.
+     * @tc.desc   Verify popFirst/popLast removal from both ends including single-element deques, verifying returned RegExp objects and length updates.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -155,7 +155,7 @@ export default function dequeRegExpTest() {
     /**
      * @tc.name   testDequeRegExpTest0400
      * @tc.number SUB_ARKTS_DEQUE_REGEXP_0400
-     * @tc.desc   Test forEach callback with value and index, Symbol.iterator traversal, and for-of iteration over a RegExp deque.
+     * @tc.desc   Verify forEach callback with value and index, Symbol.iterator traversal, and for-of iteration over a RegExp deque.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -202,7 +202,7 @@ export default function dequeRegExpTest() {
     /**
      * @tc.name   testDequeRegExpTest0500
      * @tc.number SUB_ARKTS_DEQUE_REGEXP_0500
-     * @tc.desc   Test indexed element access on a RegExp deque including boundary, out-of-range, undefined results, and regex matching on stored elements.
+     * @tc.desc   Verify indexed element access on a RegExp deque including boundary, out-of-range, undefined results, and regex matching on stored elements.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -240,7 +240,7 @@ export default function dequeRegExpTest() {
     /**
      * @tc.name   testDequeRegExpTest0600
      * @tc.number SUB_ARKTS_DEQUE_REGEXP_0600
-     * @tc.desc   Test out-of-bounds index access, popFirst throwing on an empty deque, and empty deque iteration/forEach behavior.
+     * @tc.desc   Verify out-of-bounds index access, popFirst throwing on an empty deque, and empty deque iteration/forEach behavior.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
