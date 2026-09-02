@@ -170,7 +170,7 @@ export default function TimePickerOnChangeTest() {
       console.info('TimePickerOnChange_static_004 START');
       let strJson = inspector.getInspectorByKey('timepicker_onchange_undefined');
       console.info('TimePickerOnChange_static_004 strJson: ' + strJson);
-      expect(strJson).not().assertEqual('');
+      expect(strJson).assertContain('TimePicker');
       let obj = JSON.parseJsonElement(strJson);
       let id: string = obj.getString('id');
       expect(id).assertEqual('timepicker_onchange_undefined');

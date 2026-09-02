@@ -180,7 +180,7 @@ export default function TextPickerOnScrollStopTest() {
       console.info('TextPickerOnScrollStop_static_004 START');
       let strJson = inspector.getInspectorByKey('textpicker_onscrollstop_undefined');
       console.info('TextPickerOnScrollStop_static_004 strJson: ' + strJson);
-      expect(strJson).not().assertEqual('');
+      expect(strJson).assertContain('TextPicker');
       let obj = JSON.parseJsonElement(strJson);
       let id: string = obj.getString('id');
       expect(id).assertEqual('textpicker_onscrollstop_undefined');

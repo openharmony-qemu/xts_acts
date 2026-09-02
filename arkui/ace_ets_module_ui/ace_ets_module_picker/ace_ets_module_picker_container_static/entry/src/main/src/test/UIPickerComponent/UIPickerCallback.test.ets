@@ -138,7 +138,7 @@ export default function UIPickerCallbackTest() {
       console.info('UIPickerCallbackOnChangeUndefined_static_001 START');
       let strJson = inspector.getInspectorByKey('uipicker_callback_onchange_undefined');
       console.info('UIPickerCallbackOnChangeUndefined_static_001 strJson: ' + strJson);
-      expect(strJson).not().assertEqual('');
+      expect(strJson).assertContain('UIPickerComponent');
       let obj = JSON.parseJsonElement(strJson);
       let id: string = obj.getString('id');
       expect(id).assertEqual('uipicker_callback_onchange_undefined');
@@ -157,7 +157,7 @@ export default function UIPickerCallbackTest() {
       console.info('UIPickerCallbackOnScrollStopUndefined_static_001 START');
       let strJson = inspector.getInspectorByKey('uipicker_callback_onscrollstop_undefined');
       console.info('UIPickerCallbackOnScrollStopUndefined_static_001 strJson: ' + strJson);
-      expect(strJson).not().assertEqual('');
+      expect(strJson).assertContain('UIPickerComponent');
       let obj = JSON.parseJsonElement(strJson);
       let id: string = obj.getString('id');
       expect(id).assertEqual('uipicker_callback_onscrollstop_undefined');
