@@ -29,14 +29,44 @@ const BUNDLE_NAME = 'com.arkui.ace.navigation.nowear.static';
 const ABILITY_NAME = 'EntryAbility';
 const PAGE_URL = 'MainAbility/pages/NavigationPreload/NavigationPreload';
 
-// Find component by id with retry polling (NO swipe — swipe interferes with Navigation)
-async function findComponentWithScroll(driver: Driver, id: string, maxSwipeRetries: int = 10): Promise<Component | null> {
-  for (let i: int = 0; i < maxSwipeRetries; i++) {
+// Find component by id with accessibility scroll support.
+// driver.swipe() simulates touch swipe which does NOT trigger scroll on PC form factor devices
+// where scrolling is driven by mouse wheel events. Component.scrollSearch() uses accessibility
+// actions which work on all devices (Phone + PC).
+async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetries: int = 10): Promise<Component | null> {
+  // Try direct find first
+  for (let i: int = 0; i < 3; i++) {
     let comp = await driver.findComponent(ON.id(id));
     if (comp !== null) {
       return comp;
     }
     await CommonFunc.sleep(500);
+  }
+  // Use Component.scrollSearch() for accessibility-based scrolling
+  try {
+    let scrollComp = await driver.findComponent(ON.type('Scroll'));
+    if (scrollComp !== null) {
+      let result = await scrollComp.scrollSearch(ON.id(id));
+      if (result !== null && result !== undefined) {
+        return result;
+      }
+    }
+  } catch (e) {
+    // scrollSearch failed
+  }
+  // Fallback: try scrollToBottom then search
+  try {
+    let scrollComp = await driver.findComponent(ON.type('Scroll'));
+    if (scrollComp !== null) {
+      await scrollComp.scrollToBottom();
+      await CommonFunc.sleep(800);
+      let comp = await driver.findComponent(ON.id(id));
+      if (comp !== null) {
+        return comp;
+      }
+    }
+  } catch (e) {
+    // scrollToBottom fallback failed
   }
   return null;
 }
@@ -86,17 +116,21 @@ export default function NavigationPreloadTest(): void {
     });
 
     afterEach(async (): Promise<void> => {
-      // Clear NavPathStack via top panel clear/pop buttons (always visible in Scroll panel)
-      let driver = Driver.create();
-      let clearBtn: Component | null = await findComponentWithScroll(driver, 'preloadClearBtn');
-      if (clearBtn !== null) {
-        await clearBtn.click();
-        await CommonFunc.sleep(500);
-      }
-      let popBtn: Component | null = await findComponentWithScroll(driver, 'preloadPopBtn');
-      if (popBtn !== null) {
-        await popBtn.click();
-        await CommonFunc.sleep(500);
+      try {
+        // Clear NavPathStack via top panel clear/pop buttons (always visible in Scroll panel)
+        let driver = await Driver.create();
+        let clearBtn: Component | null = await findComponentWithScroll(driver, 'preloadClearBtn');
+        if (clearBtn !== null) {
+          await clearBtn.click();
+          await CommonFunc.sleep(500);
+        }
+        let popBtn: Component | null = await findComponentWithScroll(driver, 'preloadPopBtn');
+        if (popBtn !== null) {
+          await popBtn.click();
+          await CommonFunc.sleep(500);
+        }
+      } catch (err) {
+        console.error('NavigationPreloadTest afterEach error: ' + err);
       }
       // Clean AppStorage keys
       AppStorage.delete('preloadNavPathStack');
@@ -117,7 +151,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadStandard');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -140,7 +174,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadDialog');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -163,7 +197,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadStandard');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -192,7 +226,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadStandard');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -215,7 +249,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadDialog');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -238,7 +272,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadWrongName');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -263,7 +297,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0700', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadEmptyName');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -286,7 +320,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadObjectParam');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -309,7 +343,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadStringParam');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -332,7 +366,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadNumberParam');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -355,7 +389,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadNoParam');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -378,7 +412,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadStandard');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -403,7 +437,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadNoOptions');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -430,7 +464,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadUndefined');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -460,7 +494,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1500', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadNullParam');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -483,7 +517,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadEmptyName');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -510,7 +544,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadNoBuilder');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -540,7 +574,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadNotFound');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -570,7 +604,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_1900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadWrongName');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -598,7 +632,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadWithOnPop');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -623,7 +657,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadIsEntryTrue');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -646,7 +680,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2200', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadIsEntryFalse');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -669,7 +703,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadNameOnly');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -696,7 +730,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadThenVerify');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -723,7 +757,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadCatchVerify');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -748,7 +782,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadWrongName');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -774,7 +808,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadNotFound');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -802,7 +836,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadOnDestroyNotCalled');
         await btn.click();
         await CommonFunc.sleep(2000);
@@ -827,7 +861,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_2900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadThenClear');
         await btn.click();
         await CommonFunc.sleep(3000);
@@ -856,7 +890,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let initialNames = getTextContentById('stackNames');
         let btn = await requireComponent(driver, 'btnPreloadStandard');
         await btn.click();
@@ -882,7 +916,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadMultiple');
         await btn.click();
         await CommonFunc.sleep(5000);
@@ -912,7 +946,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadThenPush');
         await btn.click();
         await CommonFunc.sleep(3000);
@@ -940,7 +974,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3300', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadThenPushDiff');
         await btn.click();
         await CommonFunc.sleep(3000);
@@ -965,7 +999,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3400', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadSameTwice');
         await btn.click();
         await CommonFunc.sleep(5000);
@@ -990,7 +1024,7 @@ export default function NavigationPreloadTest(): void {
      */
     it('SUB_ARKUI_NAVIGATION_PRELOADPATH_3500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let driver = Driver.create();
+        let driver = await Driver.create();
         let btn = await requireComponent(driver, 'btnPreloadUndefined');
         await btn.click();
         await CommonFunc.sleep(2000);
