@@ -537,7 +537,7 @@ export default function EapErrorCodeTest() {
         done();
       } catch (error) {
         console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
-        ExpectTrue(error.code == 33200099);
+        ExpectTrue(Number(error.code) === 33200099);
         console.info(`${caseName}---End`);
         done();
       }
