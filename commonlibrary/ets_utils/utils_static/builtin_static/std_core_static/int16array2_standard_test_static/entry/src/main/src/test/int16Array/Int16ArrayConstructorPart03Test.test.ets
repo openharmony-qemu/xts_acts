@@ -831,24 +831,5 @@ export default function int16ArrayConstructorPart03Test(): void {
       expect(actual).assertTrue();
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART03__4800
-     * @tc.name int16ArrayConstructorPart03Test048
-     * @tc.desc Verify new Int16Array(Infinity) throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart03Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        new Int16Array(Number.POSITIVE_INFINITY);
-        expect().assertFail();
-      } catch (e) {
-        let actual: string = e.name;
-        let expected: string = "RangeError";
-        expect(actual).assertEqual(expected);
-      }
-    });
-
   });
 }

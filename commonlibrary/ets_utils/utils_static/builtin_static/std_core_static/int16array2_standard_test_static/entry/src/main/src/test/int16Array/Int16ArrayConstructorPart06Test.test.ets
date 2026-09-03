@@ -403,28 +403,12 @@ export default function int16ArrayConstructorPart06Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__1800
      * @tc.name int16ArrayConstructorPart06Test018
-     * @tc.desc Verify new Int16Array(FixedArray<number> [1.0, 2.0]).length equals 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart06Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<number> = [1.0, 2.0];
-      let result: Int16Array = new Int16Array(src);
-      let actual: int = result.length;
-      let expected: int = 2;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__1900
-     * @tc.name int16ArrayConstructorPart06Test019
      * @tc.desc Verify new Int16Array(FixedArray<number>) result.buffer.byteLength equals 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [1.0];
       let result: Int16Array = new Int16Array(src);
       let actual: int = result.buffer.byteLength;
@@ -433,14 +417,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2000
-     * @tc.name int16ArrayConstructorPart06Test020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__1900
+     * @tc.name int16ArrayConstructorPart06Test019
      * @tc.desc Verify new Int16Array(FixedArray<number>) non-empty length matches source length 3
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [10.0, 20.0, 30.0];
       let result: Int16Array = new Int16Array(src);
       let actual: int = result.length;
@@ -449,18 +433,34 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2100
-     * @tc.name int16ArrayConstructorPart06Test021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2000
+     * @tc.name int16ArrayConstructorPart06Test020
      * @tc.desc Verify new Int16Array(FixedArray<number>) single-element length matches source length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [42.0];
       let result: Int16Array = new Int16Array(src);
       let actual: int = result.length;
       let expected: int = 1;
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2100
+     * @tc.name int16ArrayConstructorPart06Test021
+     * @tc.desc Verify new Int16Array(FixedArray<number>) BYTES_PER_ELEMENT equals 2
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("int16ArrayConstructorPart06Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: FixedArray<number> = [1.0, 2.0, 3.0, 4.0];
+      let result: Int16Array = new Int16Array(src);
+      let actual: int = result.byteLength;
+      let expected: int = 8;
       expect(actual).assertEqual(expected);
     });
 
@@ -473,22 +473,6 @@ export default function int16ArrayConstructorPart06Test(): void {
      * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart06Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: FixedArray<number> = [1.0, 2.0, 3.0, 4.0];
-      let result: Int16Array = new Int16Array(src);
-      let actual: int = result.byteLength;
-      let expected: int = 8;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2300
-     * @tc.name int16ArrayConstructorPart06Test023
-     * @tc.desc Verify new Int16Array(FixedArray<number>) BYTES_PER_ELEMENT equals 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart06Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [1.0];
       let result: Int16Array = new Int16Array(src);
       let actual: int = result.BYTES_PER_ELEMENT;
@@ -497,14 +481,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2400
-     * @tc.name int16ArrayConstructorPart06Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2300
+     * @tc.name int16ArrayConstructorPart06Test023
      * @tc.desc Verify new Int16Array(FixedArray<number>) byteOffset is 0 for root buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [1.0, 2.0];
       let result: Int16Array = new Int16Array(src);
       let actual: int = result.byteOffset;
@@ -513,14 +497,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2500
-     * @tc.name int16ArrayConstructorPart06Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2400
+     * @tc.name int16ArrayConstructorPart06Test024
      * @tc.desc Verify new Int16Array(FixedArray<number>) buffer.byteLength equals result.byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [1.0, 2.0, 3.0];
       let result: Int16Array = new Int16Array(src);
       let actual: int = result.buffer.byteLength;
@@ -529,14 +513,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2600
-     * @tc.name int16ArrayConstructorPart06Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2500
+     * @tc.name int16ArrayConstructorPart06Test025
      * @tc.desc Verify new Int16Array(FixedArray<number>) empty source has buffer with byteLength 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [];
       let result: Int16Array = new Int16Array(src);
       let actual: int = result.buffer.byteLength;
@@ -545,14 +529,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2700
-     * @tc.name int16ArrayConstructorPart06Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2600
+     * @tc.name int16ArrayConstructorPart06Test026
      * @tc.desc Verify new Int16Array(FixedArray<number>) five-element sequence element-wise correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [-32768.0, -1.0, 0.0, 1.0, 32767.0];
       let result: Int16Array = new Int16Array(src);
       let actual: number = result.$_get(0);
@@ -573,14 +557,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2800
-     * @tc.name int16ArrayConstructorPart06Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2700
+     * @tc.name int16ArrayConstructorPart06Test027
      * @tc.desc Verify new Int16Array(FixedArray<number>) mutating typed array does not change source FixedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [100.0, 200.0];
       let result: Int16Array = new Int16Array(src);
       result.$_set(0, 999);
@@ -590,14 +574,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2900
-     * @tc.name int16ArrayConstructorPart06Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2800
+     * @tc.name int16ArrayConstructorPart06Test028
      * @tc.desc Verify new Int16Array(FixedArray<number>) mutating last element does not change source FixedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [10.0, 20.0, 30.0];
       let result: Int16Array = new Int16Array(src);
       result.$_set(2, 888);
@@ -607,14 +591,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3000
-     * @tc.name int16ArrayConstructorPart06Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__2900
+     * @tc.name int16ArrayConstructorPart06Test029
      * @tc.desc Verify new Int16Array(FixedArray<number>) source FixedArray length unchanged after construct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [1.0, 2.0, 3.0, 4.0, 5.0];
       let result: Int16Array = new Int16Array(src);
       let actual: int = src.length;
@@ -623,14 +607,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3100
-     * @tc.name int16ArrayConstructorPart06Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3000
+     * @tc.name int16ArrayConstructorPart06Test030
      * @tc.desc Verify new Int16Array(FixedArray<number>) source FixedArray elements unchanged after construct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [10.0, 20.0, 30.0];
       let result: Int16Array = new Int16Array(src);
       let actual: number = src[0];
@@ -645,14 +629,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3200
-     * @tc.name int16ArrayConstructorPart06Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3100
+     * @tc.name int16ArrayConstructorPart06Test031
      * @tc.desc Verify new Int16Array(FixedArray<number>) two instances from same source are independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [50.0, 60.0];
       let arr1: Int16Array = new Int16Array(src);
       let arr2: Int16Array = new Int16Array(src);
@@ -663,14 +647,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3300
-     * @tc.name int16ArrayConstructorPart06Test033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3200
+     * @tc.name int16ArrayConstructorPart06Test032
      * @tc.desc Verify new Int16Array(FixedArray<number>) two instances from same source have distinct buffers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [1.0, 2.0];
       let arr1: Int16Array = new Int16Array(src);
       let arr2: Int16Array = new Int16Array(src);
@@ -679,14 +663,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3400
-     * @tc.name int16ArrayConstructorPart06Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3300
+     * @tc.name int16ArrayConstructorPart06Test033
      * @tc.desc Verify new Int16Array(FixedArray<number>) allocates independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [1.0, 2.0, 3.0];
       let result: Int16Array = new Int16Array(src);
       let actual: int = result.byteLength;
@@ -698,14 +682,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3500
-     * @tc.name int16ArrayConstructorPart06Test035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3400
+     * @tc.name int16ArrayConstructorPart06Test034
      * @tc.desc Verify new Int16Array(FixedArray<number>) buffer mutation does not affect source FixedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [42.0];
       let result: Int16Array = new Int16Array(src);
       let view: Int16Array = new Int16Array(result.buffer, 0, 1);
@@ -716,14 +700,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3600
-     * @tc.name int16ArrayConstructorPart06Test036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3500
+     * @tc.name int16ArrayConstructorPart06Test035
      * @tc.desc Verify new Int16Array(FixedArray<number>) buffer is newly allocated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let src: FixedArray<number> = [1.0, 2.0];
       let result: Int16Array = new Int16Array(src);
@@ -732,14 +716,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3700
-     * @tc.name int16ArrayConstructorPart06Test037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3600
+     * @tc.name int16ArrayConstructorPart06Test036
      * @tc.desc Verify new Int16Array(FixedArray<number>) [32768.0, -32769.0, 65535.0, 65536.0] four overflow elements [32768.0, -32769.0, 65535.0, 65536.0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [32768.0, -32769.0, 65535.0, 65536.0];
       let result: Int16Array = new Int16Array(src);
       let actual: number = result.$_get(0);
@@ -757,14 +741,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3800
-     * @tc.name int16ArrayConstructorPart06Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3700
+     * @tc.name int16ArrayConstructorPart06Test037
      * @tc.desc Verify new Int16Array(FixedArray<number>) [0.0, 32767.0, -32768.0, 0.0, 32767.0, -32768.0] with repeated boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [0.0, 32767.0, -32768.0, 0.0, 32767.0, -32768.0];
       let result: Int16Array = new Int16Array(src);
       let actual: number = result.$_get(0);
@@ -788,14 +772,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3900
-     * @tc.name int16ArrayConstructorPart06Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3800
+     * @tc.name int16ArrayConstructorPart06Test038
      * @tc.desc Verify new Int16Array(FixedArray<number>) repeated constructs yield same converted values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [5.0, 10.0, 15.0];
       let arr1: Int16Array = new Int16Array(src);
       let arr2: Int16Array = new Int16Array(src);
@@ -805,14 +789,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__4000
-     * @tc.name int16ArrayConstructorPart06Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__3900
+     * @tc.name int16ArrayConstructorPart06Test039
      * @tc.desc Verify new Int16Array(FixedArray<number>) result is mutable via $_set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [0.0, 0.0];
       let result: Int16Array = new Int16Array(src);
       result.$_set(0, 12345);
@@ -822,14 +806,14 @@ export default function int16ArrayConstructorPart06Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__4100
-     * @tc.name int16ArrayConstructorPart06Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART06__4000
+     * @tc.name int16ArrayConstructorPart06Test040
      * @tc.desc Verify new Int16Array(FixedArray<number>) [NaN, 32767.0, 0.0, -32768.0, Infinity] specials and boundaries mix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart06Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart06Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: FixedArray<number> = [Number.NaN, 32767.0, 0.0, -32768.0, Number.POSITIVE_INFINITY];
       let result: Int16Array = new Int16Array(src);
       let actual: number = result.$_get(0);

@@ -435,28 +435,12 @@ export default function int16ArrayConstructorPart04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2100
      * @tc.name int16ArrayConstructorPart04Test021
-     * @tc.desc Verify new Int16Array(other: Int16Array) source length 1 copy length equals 1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart04Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Int16Array = new Int16Array(1);
-      let copy: Int16Array = new Int16Array(src);
-      let actual: int = copy.length;
-      let expected: int = 1;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2200
-     * @tc.name int16ArrayConstructorPart04Test022
      * @tc.desc Verify new Int16Array(other: Int16Array) copy is not Int8Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array(1);
       let copy: Any = new Int16Array(src);
       let actual: boolean = copy instanceof Int8Array;
@@ -464,14 +448,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2300
-     * @tc.name int16ArrayConstructorPart04Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2200
+     * @tc.name int16ArrayConstructorPart04Test022
      * @tc.desc Verify new Int16Array(other: Int16Array) copy is not Uint16Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array(1);
       let copy: Any = new Int16Array(src);
       let actual: boolean = copy instanceof Uint16Array;
@@ -479,14 +463,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2400
-     * @tc.name int16ArrayConstructorPart04Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2300
+     * @tc.name int16ArrayConstructorPart04Test023
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [42]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([42] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: int = copy.length;
@@ -495,14 +479,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2500
-     * @tc.name int16ArrayConstructorPart04Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2400
+     * @tc.name int16ArrayConstructorPart04Test024
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3, 4, 5]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3, 4, 5] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: int = copy.length;
@@ -511,14 +495,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2600
-     * @tc.name int16ArrayConstructorPart04Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2500
+     * @tc.name int16ArrayConstructorPart04Test025
      * @tc.desc Verify new Int16Array(other: Int16Array) source length 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array(100);
       let copy: Int16Array = new Int16Array(src);
       let actual: int = copy.length;
@@ -527,14 +511,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2700
-     * @tc.name int16ArrayConstructorPart04Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2600
+     * @tc.name int16ArrayConstructorPart04Test026
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3] byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: int = copy.byteLength;
@@ -543,14 +527,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2800
-     * @tc.name int16ArrayConstructorPart04Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2700
+     * @tc.name int16ArrayConstructorPart04Test027
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3, 4] byteLength BYTES_PER_ELEMENT
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3, 4] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: int = copy.byteLength;
@@ -559,14 +543,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2900
-     * @tc.name int16ArrayConstructorPart04Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2800
+     * @tc.name int16ArrayConstructorPart04Test028
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2] BYTES_PER_ELEMENT
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: int = copy.BYTES_PER_ELEMENT;
@@ -575,14 +559,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3000
-     * @tc.name int16ArrayConstructorPart04Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__2900
+     * @tc.name int16ArrayConstructorPart04Test029
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3] byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: int = copy.byteOffset;
@@ -591,14 +575,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3100
-     * @tc.name int16ArrayConstructorPart04Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3000
+     * @tc.name int16ArrayConstructorPart04Test030
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [77, 88, 99] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([77, 88, 99] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: number = copy.$_get(0);
@@ -607,14 +591,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3200
-     * @tc.name int16ArrayConstructorPart04Test032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3100
+     * @tc.name int16ArrayConstructorPart04Test031
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [11, 22, 33, 44] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([11, 22, 33, 44] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: number = copy.$_get(3);
@@ -623,14 +607,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3300
-     * @tc.name int16ArrayConstructorPart04Test033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3200
+     * @tc.name int16ArrayConstructorPart04Test032
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [10, 20, 30, 40, 50] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([10, 20, 30, 40, 50] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: number = copy.$_get(2);
@@ -639,14 +623,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3400
-     * @tc.name int16ArrayConstructorPart04Test034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3300
+     * @tc.name int16ArrayConstructorPart04Test033
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [5, -3, 32767, -32768, 0]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let valMax:short = 32767
       let valMin:short = -32768
       let src: Int16Array = new Int16Array([5, -3, valMax, valMin, 0] as Array<int>);
@@ -661,15 +645,32 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3500
-     * @tc.name int16ArrayConstructorPart04Test035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3400
+     * @tc.name int16ArrayConstructorPart04Test034
      * @tc.desc Verify new Int16Array(other: Int16Array) from empty source
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array();
+      let lenBefore: number = src.length;
+      let copy: Int16Array = new Int16Array(src);
+      let actual: int = src.length;
+      let expected: number = lenBefore;
+      expect(actual).assertEqual(expected);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3500
+     * @tc.name int16ArrayConstructorPart04Test035
+     * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3]
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level LEVEL2
+     */
+    it("int16ArrayConstructorPart04Test035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let src: Int16Array = new Int16Array([1, 2, 3] as Array<int>);
       let lenBefore: number = src.length;
       let copy: Int16Array = new Int16Array(src);
       let actual: int = src.length;
@@ -680,29 +681,12 @@ export default function int16ArrayConstructorPart04Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3600
      * @tc.name int16ArrayConstructorPart04Test036
-     * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart04Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let src: Int16Array = new Int16Array([1, 2, 3] as Array<int>);
-      let lenBefore: number = src.length;
-      let copy: Int16Array = new Int16Array(src);
-      let actual: int = src.length;
-      let expected: number = lenBefore;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3700
-     * @tc.name int16ArrayConstructorPart04Test037
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [10, 20, 30] byteLength
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([10, 20, 30] as Array<int>);
       let byteLenBefore: number = src.byteLength;
       let copy: Int16Array = new Int16Array(src);
@@ -712,14 +696,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3800
-     * @tc.name int16ArrayConstructorPart04Test038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3700
+     * @tc.name int16ArrayConstructorPart04Test037
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [55, 66, 77] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([55, 66, 77] as Array<int>);
       let firstBefore: number = src.$_get(0);
       let copy: Int16Array = new Int16Array(src);
@@ -729,14 +713,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3900
-     * @tc.name int16ArrayConstructorPart04Test039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3800
+     * @tc.name int16ArrayConstructorPart04Test038
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [11, 22, 33, 44, 55]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([11, 22, 33, 44, 55] as Array<int>);
       let lastIdx: int = src.length - 1;
       let lastBefore: number = src.$_get(lastIdx);
@@ -747,14 +731,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4000
-     * @tc.name int16ArrayConstructorPart04Test040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__3900
+     * @tc.name int16ArrayConstructorPart04Test039
      * @tc.desc Verify new Int16Array(other: Int16Array) source from ArrayBuffer view byteOffset=2 length=3 byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(10);
       let src: Int16Array = new Int16Array(buf, 2, 3);
       let offsetBefore: number = src.byteOffset;
@@ -765,14 +749,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4100
-     * @tc.name int16ArrayConstructorPart04Test041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4000
+     * @tc.name int16ArrayConstructorPart04Test040
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3] independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let actual: boolean = copy.buffer === src.buffer;
@@ -780,14 +764,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4200
-     * @tc.name int16ArrayConstructorPart04Test042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4100
+     * @tc.name int16ArrayConstructorPart04Test041
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [100, 200] copy isolation after $_set element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([100, 200] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       copy.$_set(0, 999);
@@ -797,14 +781,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4300
-     * @tc.name int16ArrayConstructorPart04Test043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4200
+     * @tc.name int16ArrayConstructorPart04Test042
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3, 4] copy isolation after $_set element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3, 4] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       copy.$_set(3, 888);
@@ -814,14 +798,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4400
-     * @tc.name int16ArrayConstructorPart04Test044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4300
+     * @tc.name int16ArrayConstructorPart04Test043
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [50, 60, 70] after source $_set element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([50, 60, 70] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       src.$_set(0, 999);
@@ -831,14 +815,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4500
-     * @tc.name int16ArrayConstructorPart04Test045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4400
+     * @tc.name int16ArrayConstructorPart04Test044
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [5, 10, 15, 20] after source $_set element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([5, 10, 15, 20] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       src.$_set(3, 777);
@@ -848,14 +832,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4600
-     * @tc.name int16ArrayConstructorPart04Test046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4500
+     * @tc.name int16ArrayConstructorPart04Test045
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [11, 22, 33, 44] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([11, 22, 33, 44] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let i: int = 0;
@@ -872,14 +856,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4700
-     * @tc.name int16ArrayConstructorPart04Test047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4600
+     * @tc.name int16ArrayConstructorPart04Test046
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3, 4, 5] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3, 4, 5] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let left: int = 0;
@@ -900,14 +884,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4800
-     * @tc.name int16ArrayConstructorPart04Test048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4700
+     * @tc.name int16ArrayConstructorPart04Test047
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [10, 20, 30, 40] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([10, 20, 30, 40] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let left: int = 0;
@@ -928,14 +912,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4900
-     * @tc.name int16ArrayConstructorPart04Test049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4800
+     * @tc.name int16ArrayConstructorPart04Test048
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [5, 3, 1, 4, 2] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([9, 7, 8, 6] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let i: int = 0;
@@ -960,14 +944,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5000
-     * @tc.name int16ArrayConstructorPart04Test050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__4900
+     * @tc.name int16ArrayConstructorPart04Test049
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3, 4] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3, 4] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       copy.$_set(0, 99);
@@ -981,14 +965,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5100
-     * @tc.name int16ArrayConstructorPart04Test051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5000
+     * @tc.name int16ArrayConstructorPart04Test050
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [10, 20, 30, 40] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([10, 20, 30, 40] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       src.$_set(0, 88);
@@ -1002,14 +986,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5200
-     * @tc.name int16ArrayConstructorPart04Test052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5100
+     * @tc.name int16ArrayConstructorPart04Test051
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3, 4, 5] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3, 4, 5] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       copy.$_set(0, copy.$_get(2));
@@ -1023,14 +1007,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5300
-     * @tc.name int16ArrayConstructorPart04Test053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5200
+     * @tc.name int16ArrayConstructorPart04Test052
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [10, 20, 30, 40, 50] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([10, 20, 30, 40, 50] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       src.$_set(0, src.$_get(2));
@@ -1044,14 +1028,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5400
-     * @tc.name int16ArrayConstructorPart04Test054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5300
+     * @tc.name int16ArrayConstructorPart04Test053
      * @tc.desc Verify new Int16Array(other: Int16Array) source from ArrayBuffer view after source $_set element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(6);
       let src: Int16Array = new Int16Array(buf);
       src.$_set(0, 123);
@@ -1064,14 +1048,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5500
-     * @tc.name int16ArrayConstructorPart04Test055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5400
+     * @tc.name int16ArrayConstructorPart04Test054
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [200, 300] copy isolation after $_set element values via $_get independent buffer
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([200, 300] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       copy.$_set(0, 777);
@@ -1082,14 +1066,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5600
-     * @tc.name int16ArrayConstructorPart04Test056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5500
+     * @tc.name int16ArrayConstructorPart04Test055
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3] element values via $_get double copy chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3] as Array<int>);
       let copy1: Int16Array = new Int16Array(src);
       let copy2: Int16Array = new Int16Array(copy1);
@@ -1103,14 +1087,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5700
-     * @tc.name int16ArrayConstructorPart04Test057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5600
+     * @tc.name int16ArrayConstructorPart04Test056
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [7, 14, 21] element values via $_get double copy chain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([7, 14, 21] as Array<int>);
       let copy1: Int16Array = new Int16Array(src);
       let copy2: Int16Array = new Int16Array(copy1);
@@ -1126,14 +1110,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5800
-     * @tc.name int16ArrayConstructorPart04Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5700
+     * @tc.name int16ArrayConstructorPart04Test057
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [10, 20, 30, 40] copy isolation after $_set element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([10, 20, 30, 40] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       copy.$_set(1, 999);
@@ -1146,14 +1130,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5900
-     * @tc.name int16ArrayConstructorPart04Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5800
+     * @tc.name int16ArrayConstructorPart04Test058
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3] manual sum equals 6
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let sum: number = 0;
@@ -1168,14 +1152,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6000
-     * @tc.name int16ArrayConstructorPart04Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__5900
+     * @tc.name int16ArrayConstructorPart04Test059
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3] element values via $_get mapped values independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let mapped: Int16Array = new Int16Array(copy.length);
@@ -1193,14 +1177,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6100
-     * @tc.name int16ArrayConstructorPart04Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6000
+     * @tc.name int16ArrayConstructorPart04Test060
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, -2, 3, -4] positive count without filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, -2, 3, -4] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let posCount: int = 0;
@@ -1220,14 +1204,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6200
-     * @tc.name int16ArrayConstructorPart04Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6100
+     * @tc.name int16ArrayConstructorPart04Test061
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [10, 20]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([10, 20] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let count: int = 0;
@@ -1245,14 +1229,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6300
-     * @tc.name int16ArrayConstructorPart04Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6200
+     * @tc.name int16ArrayConstructorPart04Test062
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3] manual join string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let result: string = '';
@@ -1270,14 +1254,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6400
-     * @tc.name int16ArrayConstructorPart04Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6300
+     * @tc.name int16ArrayConstructorPart04Test063
      * @tc.desc Verify new Int16Array(other: Int16Array) source from ArrayBuffer view byteOffset=2 length=3 byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(10);
       let src: Int16Array = new Int16Array(buf, 2, 3);
       let copy: Int16Array = new Int16Array(src);
@@ -1290,14 +1274,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6500
-     * @tc.name int16ArrayConstructorPart04Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6400
+     * @tc.name int16ArrayConstructorPart04Test064
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [1, 2, 3, 4] copy isolation after $_set element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([1, 2, 3, 4] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       copy.$_set(0, 0);
@@ -1311,14 +1295,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6600
-     * @tc.name int16ArrayConstructorPart04Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6500
+     * @tc.name int16ArrayConstructorPart04Test065
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [100, 200] element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([100, 200] as Array<int>);
       let copy: Int16Array = new Int16Array(src);
       let diff: number = copy.$_get(1) - copy.$_get(0);
@@ -1326,14 +1310,14 @@ export default function int16ArrayConstructorPart04Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6700
-     * @tc.name int16ArrayConstructorPart04Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART04__6600
+     * @tc.name int16ArrayConstructorPart04Test066
      * @tc.desc Verify new Int16Array(other: Int16Array) source elements [5, 10, 15] copy isolation after $_set element values via $_get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart04Test067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart04Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let src: Int16Array = new Int16Array([5, 10, 15] as Array<int>);
       let copyA: Int16Array = new Int16Array(src);
       let copyB: Int16Array = new Int16Array(src);

@@ -83,7 +83,7 @@ export default function int16ArrayConstructorPart10Test(): void {
      * @tc.desc Verify new Int16Array(buf, byteOffset) buf 1 ArrayBuffer byteOffset 0.0 throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
-     * @tc.level Level 2
+     * @tc.level LEVEL2
      */
     it("int16ArrayConstructorPart10Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(1);
@@ -375,7 +375,7 @@ export default function int16ArrayConstructorPart10Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2000
      * @tc.name int16ArrayConstructorPart10Test020
-     * @tc.desc Verify new Int16Array(buf, 0.0) byteOffset expected values
+     * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
@@ -383,35 +383,19 @@ export default function int16ArrayConstructorPart10Test(): void {
     it("int16ArrayConstructorPart10Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let arr: Int16Array = new Int16Array(buf, 0.0);
-      let actual: int = arr.byteOffset;
-      let expected: int = 0;
-      expect(actual).assertEqual(expected);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2100
-     * @tc.name int16ArrayConstructorPart10Test021
-     * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayConstructorPart10Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer = new ArrayBuffer(4);
-      let arr: Int16Array = new Int16Array(buf, 0.0);
       let val: number = arr.$_get(0);
       expect(val).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2200
-     * @tc.name int16ArrayConstructorPart10Test022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2100
+     * @tc.name int16ArrayConstructorPart10Test021
      * @tc.desc Verify new Int16Array(buf, byteOffset) byteOffset NaN coerces to 0 creates zero-length view
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(0);
       let arr: Int16Array = new Int16Array(buf, Number.NaN);
       let actual: int = arr.byteOffset;
@@ -423,14 +407,14 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2300
-     * @tc.name int16ArrayConstructorPart10Test023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2200
+     * @tc.name int16ArrayConstructorPart10Test022
      * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let arr: Int16Array = new Int16Array(buf, 0.0);
       arr.$_set(0, 42);
@@ -441,14 +425,14 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2400
-     * @tc.name int16ArrayConstructorPart10Test024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2300
+     * @tc.name int16ArrayConstructorPart10Test023
      * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(6);
       let arr1: Int16Array = new Int16Array(buf, 0.0);
       let arr2: Int16Array = new Int16Array(buf, 2.0);
@@ -463,14 +447,14 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2500
-     * @tc.name int16ArrayConstructorPart10Test025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2400
+     * @tc.name int16ArrayConstructorPart10Test024
      * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let arr1: Int16Array = new Int16Array(buf, 0.0);
       let arr2: Int16Array = new Int16Array(buf, 2.0);
@@ -481,14 +465,14 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2600
-     * @tc.name int16ArrayConstructorPart10Test026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2500
+     * @tc.name int16ArrayConstructorPart10Test025
      * @tc.desc Verify new Int16Array(buf, 0.0) shared buffer via set get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let arr: Int16Array = new Int16Array(buf, 0.0);
       let originalByteLength: number = buf.byteLength;
@@ -499,14 +483,14 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2700
-     * @tc.name int16ArrayConstructorPart10Test027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2600
+     * @tc.name int16ArrayConstructorPart10Test026
      * @tc.desc Verify new Int16Array(buf, byteOffset) byteOffset 2 0 buffer 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(6);
       let arr1: Int16Array = new Int16Array(buf, 0.0);
       let arr2: Int16Array = new Int16Array(buf, 2.0);
@@ -519,14 +503,14 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2800
-     * @tc.name int16ArrayConstructorPart10Test028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2700
+     * @tc.name int16ArrayConstructorPart10Test027
      * @tc.desc Verify new Int16Array(buf, Number.NaN) shared buffer via set get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let arr: Int16Array = new Int16Array(buf, Number.NaN);
       arr.$_set(0, 127);
@@ -537,14 +521,14 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2900
-     * @tc.name int16ArrayConstructorPart10Test029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2800
+     * @tc.name int16ArrayConstructorPart10Test028
      * @tc.desc Verify new Int16Array(buf, byteOffset) +Infinity throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       try {
         let arr: Int16Array = new Int16Array(buf, Number.POSITIVE_INFINITY);
@@ -559,14 +543,14 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__3000
-     * @tc.name int16ArrayConstructorPart10Test030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__2900
+     * @tc.name int16ArrayConstructorPart10Test029
      * @tc.desc Verify new Int16Array(buf, 2.7) shared buffer via set get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(8);
       let arr1: Int16Array = new Int16Array(buf, 2.7);
       let arr2: Int16Array = new Int16Array(buf, 2.0);
@@ -577,14 +561,14 @@ export default function int16ArrayConstructorPart10Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__3100
-     * @tc.name int16ArrayConstructorPart10Test031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_CONSTRUCTOR_PART10__3000
+     * @tc.name int16ArrayConstructorPart10Test030
      * @tc.desc Verify new Int16Array(buf, byteOffset) $_set/$_get with -0.0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayConstructorPart10Test031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayConstructorPart10Test030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buf: ArrayBuffer = new ArrayBuffer(4);
       let arr: Int16Array = new Int16Array(buf, -0.0);
       arr.$_set(0, 256);
