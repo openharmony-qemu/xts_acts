@@ -22,10 +22,7 @@ const BUNDLE_NAME = 'com.arkui.ace.navigation1';
 const RECYCLE_PAGE_URL = 'MainAbility/pages/Navigation/NavigationRecyclePage';
 const MODIFIER_PAGE_URL = 'MainAbility/pages/Navigation/ModifierRecyclePage';
 
-// Find component by id with accessibility scroll support.
-// driver.swipe() simulates touch swipe which does NOT trigger scroll on PC form factor devices
-// where scrolling is driven by mouse wheel events. Component.scrollSearch() uses accessibility
-// actions which work on all devices (Phone + PC).
+
 async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetries: number = 10): Promise<Component | null> {
   // Try direct find first
   for (let i = 0; i < 3; i++) {
