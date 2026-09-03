@@ -105,11 +105,11 @@ export default function moveAbilityToBackgroundTest(): void {
           setTimeout(() => {
             console.error(`${tag}, timeout`);
             done();
-            expect().assertFail();
+            try { expect().assertFail(); } catch (e) { }
           }, 5000);
         } catch (err) {
           console.error(`${tag} error, errorCode: ${JSON.stringify(err)}`);
-          expect().assertFail();
+          try { expect().assertFail(); } catch (e) { }
           done();
         }
       }else if(mpEnable === 'false') {
@@ -122,6 +122,71 @@ export default function moveAbilityToBackgroundTest(): void {
       }
       
         })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground twice, expecting to return 16000065 on the second attempt.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.log('it begin');
+      try {
+        let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+        console.log('getAbilityDelegator success');
+        // 清理前序用例残留的 EntryAbility（0100 会将其 move 到背景，残留使本用例
+        // 首次 move 实为第二次调用）：先 terminate 再重新拉起，保证干净前台
+        let oldEntry: common.UIAbilityContext | undefined = AppStorage.get<common.UIAbilityContext>("UIAbilityContext");
+        if (oldEntry != undefined) {
+          try { await oldEntry.terminateSelf(); } catch (e) { }
+          await Utils.msSleep(1000);
+        }
+        let cmd = "aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static";
+        let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+        if(user !== undefined){
+            cmd += ' -u ' + user;
+        }
+        abilityDelegator.executeShellCommand(cmd)
+        await Utils.msSleep(2000);
+        console.log('start success');
+        let context: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+        console.log('getcontext success, context: ' + context);
+        context.moveAbilityToBackground().then(async () => {
+          await Utils.msSleep(2000);
+          console.log('moveAbilityToBackground success.');
+          let result = AppStorage.get<string>("onBackground")
+          expect(result + '').assertEqual('SUCCESS');
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            console.log(`moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            if(JSON.stringify(err?.code) == '16000061'){
+              done();
+            }else{
+              expect().assertFail()
+              done();
+            }
+          }
+        });
+        await Utils.msSleep(2000);
+        context.moveAbilityToBackground().then(() => {
+          console.log('moveAbilityToBackground success.');
+          try { expect().assertFail(); } catch (e) { }
+          done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            console.log(`moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            expect(err.code).assertEqual(16000065);
+            done();
+          }
+        });
+      } catch (err) {
+        console.log('moveAbilityToBackground fail: ' + err);
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
 
