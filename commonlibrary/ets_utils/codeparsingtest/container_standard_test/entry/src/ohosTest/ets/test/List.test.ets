@@ -43,6 +43,8 @@ import listTest14 from './list/ListTest14.test';
 import listTest15 from './list/ListTest15.test';
 import listTest16 from './list/ListTest16.test';
 import listTest17 from './list/ListTest17.test';
+import dequeNew from './deque/DequeNew.test';
+import linkedListNew from './linkedlist/LinkedListNew.test';
 
 export default function testsuite() {
   deque();
@@ -90,4 +92,6 @@ export default function testsuite() {
   listTest15();
   listTest16();
   listTest17();
+  dequeNew();
+  linkedListNew();
 }

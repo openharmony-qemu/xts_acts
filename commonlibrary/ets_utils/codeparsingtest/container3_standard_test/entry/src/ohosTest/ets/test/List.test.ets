@@ -43,6 +43,12 @@ import treeSetTest04 from './treeset/TreeSetTest04.test';
 import treeSetTest05 from './treeset/TreeSetTest05.test';
 import treeSetTest06 from './treeset/TreeSetTest06.test';
 import treeSetTest07 from './treeset/TreeSetTest07.test';
+import hashMapNew from './hashmap/HashMapNew.test';
+import lightWeightMapNew from './lightweightmap/LightWeightMapNew.test';
+import lightWeightSetNew from './lightweightset/LightWeightSetNew.test';
+import StackNewTest from './stack/StackNew.test';
+import treeMapNew from './treemap/TreemapNew.test';
+import treeSetNew from './treeset/TreeSetNew.test';
 
 export default function testsuite() {
   arkList();
@@ -90,4 +96,10 @@ export default function testsuite() {
   treeSetTest05();
   treeSetTest06();
   treeSetTest07();
+  hashMapNew();
+  lightWeightMapNew();
+  lightWeightSetNew();
+  StackNewTest();
+  treeMapNew();
+  treeSetNew();
 }
