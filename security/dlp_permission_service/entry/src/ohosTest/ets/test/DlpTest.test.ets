@@ -340,13 +340,17 @@ export default function dlpTest() {
     it('testGetDLPSupportedFileTypes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let curTag = TAG + "Test_generateDLPFile_002";
       console.info(curTag, "start");
-
-      dlpPermission.getDLPSupportedFileTypes(async (err, fileTypes) => {
-        expect(err).assertEqual(null);
-        expect(typeof (fileTypes)).assertEqual("object");
-
-        console.info(curTag, "end");
-      });
+      if (canIUse("SystemCapability.Security.DataLossPrevention")) {
+        dlpPermission.getDLPSupportedFileTypes(async (err, fileTypes) => {
+          expect(err).assertEqual(null);
+          expect(typeof (fileTypes)).assertEqual("object");
+        });
+      } else {
+        dlpPermission.getDLPSupportedFileTypes(async (err, fileTypes) => {
+          expect(err.code).assertEqual(801);
+        });
+      }
+      console.info(curTag, "end");
     })
 
     /**
@@ -2236,11 +2240,15 @@ export default function dlpTest() {
     it('testGetDLPPermissionInfo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let curTag = TAG + "Test_getDLPPermissionInfo_004";
       console.info(curTag, "start");
-
-      dlpPermission.getDLPPermissionInfo(async (err, dlpPermInfo) => {
-        expect(err.code).assertEqual(DLPErrCode.ERR_JS_API_FOR_SANDBOX_ERROR);
-      });
-
+      if (canIUse("SystemCapability.Security.DataLossPrevention")) {
+        dlpPermission.getDLPPermissionInfo(async (err, dlpPermInfo) => {
+          expect(err.code).assertEqual(DLPErrCode.ERR_JS_API_FOR_SANDBOX_ERROR);
+        });
+      } else {
+        dlpPermission.getDLPPermissionInfo(async (err, dlpPermInfo) => {
+          expect(err.code).assertEqual(801);
+        });
+      }
       console.info(curTag, "end");
     })
 
