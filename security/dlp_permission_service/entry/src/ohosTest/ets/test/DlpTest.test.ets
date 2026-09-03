@@ -2247,10 +2247,9 @@ export default function dlpTest() {
       } else {
         dlpPermission.getDLPPermissionInfo(async (err, dlpPermInfo) => {
           expect(err.code).assertEqual(801);
-      });
+        });
       }
       console.info(curTag, "end");
-      done();
     })
 
     /**
