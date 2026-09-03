@@ -32,7 +32,7 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
     }
     await CommonFunc.sleep(500);
   }
-  // Use Component.scrollSearch() for accessibility-based scrolling
+ 
   try {
     let scrollComp = await driver.findComponent(ON.type('Scroll'));
     let result = await scrollComp.scrollSearch(ON.id(id));
@@ -42,7 +42,7 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
   } catch (e) {
     // scrollSearch failed
   }
-  // Fallback: scrollToTop then incremental mouse wheel scroll + search (works on PC form factor)
+  
   try {
     let scrollComp = await driver.findComponent(ON.type('Scroll'));
     let bounds = await scrollComp.getBounds();
@@ -67,7 +67,7 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
   } catch (e) {
     // mouseScroll fallback failed
   }
-  // Fallback: scrollToBottom then search
+ 
   try {
     let scrollComp = await driver.findComponent(ON.type('Scroll'));
     await scrollComp.scrollToBottom();
@@ -135,10 +135,7 @@ export default function NavigationRecycleTest() {
       done();
     });
 
-    // ========================================================================
-    // 函数调用覆盖 (Function Call Coverage)
-    // ========================================================================
-
+   
     /**
      * @tc.number SUB_ARKUI_NAVIGATION_NavigationRecycle_0100
      * @tc.name   SUB_ARKUI_NAVIGATION_NavigationRecycle_0100
