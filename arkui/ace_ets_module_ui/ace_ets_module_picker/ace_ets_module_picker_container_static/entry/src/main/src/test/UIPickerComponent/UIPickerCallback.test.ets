@@ -85,7 +85,7 @@ export default function UIPickerCallbackTest() {
       console.info('UIPickerCallbackOnChange_static_001 indexStr: ' + indexStr);
       expect(indexStr).assertContain('onChangeIndex:');
       let numStr: string = indexStr!.replace('onChangeIndex:', '');
-      let selectedIndex: int = parseInt(numStr);
+      let selectedIndex: Double = parseInt(numStr);
       expect(selectedIndex >= 0).assertTrue();
       expect(selectedIndex < ITEM_COUNT).assertTrue();
       done();
@@ -120,7 +120,7 @@ export default function UIPickerCallbackTest() {
       console.info('UIPickerCallbackOnScrollStop_static_001 indexStr: ' + indexStr);
       expect(indexStr).assertContain('onScrollStopIndex:');
       let numStr: string = indexStr!.replace('onScrollStopIndex:', '');
-      let selectedIndex: int = parseInt(numStr);
+      let selectedIndex: Double = parseInt(numStr);
       expect(selectedIndex >= 0).assertTrue();
       expect(selectedIndex < ITEM_COUNT).assertTrue();
       done();
