@@ -43,8 +43,7 @@ struct MultimodalInputPage {
   @State result: string = '';
   @State TEST: number = 0;
   private TestCaseList: TestCase[] = [
-    { title: 'InputMonitor', uri: 'pages/MultimodalInput/InputMonitor' },
-    { title: 'KeyBoard', uri: 'pages/MultimodalInput/KeyBoard' }
+    { title: 'InputMonitor', uri: 'pages/MultimodalInput/InputMonitor' }
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
