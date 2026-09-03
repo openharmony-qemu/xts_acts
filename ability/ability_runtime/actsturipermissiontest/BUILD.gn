@@ -18,7 +18,7 @@ group("actsturipermissiontest") {
   if (is_standard_system) {
     deps = [
       "ActsUriPermissionRely:ActsUriPermissionRely",
-      "ActsUriPermissionTest:ActsUriPermissionTest",
+      "ActsUriPermissionTest:ActsUriPermisssionTest",
     ]
   }
 }

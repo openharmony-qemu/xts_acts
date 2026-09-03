@@ -11,11 +11,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_suite("ActsUriPermissionTest") {
+ohos_js_app_suite("ActsUriPermisssionTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsUriPermissionTest"
+  hap_name = "ActsUriPermisssionTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
   deps = [
