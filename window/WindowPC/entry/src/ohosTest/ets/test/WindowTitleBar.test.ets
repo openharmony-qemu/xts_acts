@@ -271,15 +271,15 @@ export default function windowTitleBarTest() {
       }
     });
     /**
-     * @tc.name   test_setDecorButtonStyle_colorMode_-2
+     * @tc.name   test_setDecorButtonStyle_colorMode_negative2
      * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0300
-     * @tc.desc   test_setDecorButtonStyle_colorMode_-2
+     * @tc.desc   验证ColorMode设置为-2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_setDecorButtonStyle_colorMode_-2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'test_setDecorButtonStyle_colorMode_-2';
+    it('test_setDecorButtonStyle_colorMode_negative2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'test_setDecorButtonStyle_colorMode_negative2';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let windowClass = await windowStage.getMainWindow();
@@ -306,15 +306,15 @@ export default function windowTitleBarTest() {
         }
     });
     /**
-     * @tc.name   test_setDecorButtonStyle_colorMode_-1
+     * @tc.name   test_setDecorButtonStyle_colorMode_negative1
      * @tc.number SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_0400
-     * @tc.desc   test_setDecorButtonStyle_colorMode_-1
+     * @tc.desc   验证ColorMode设置为-1
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_setDecorButtonStyle_colorMode_-1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName: string = 'test_setDecorButtonStyle_colorMode_-1';
+    it('test_setDecorButtonStyle_colorMode_negative1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'test_setDecorButtonStyle_colorMode_negative1';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let windowClass = await windowStage.getMainWindow();
