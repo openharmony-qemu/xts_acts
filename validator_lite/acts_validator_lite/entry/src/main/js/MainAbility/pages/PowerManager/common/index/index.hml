@@ -1,8 +1,0 @@
-<div class="container" onswipe="swipeEvent">
-  <text class="titleTextStyle">PowerManager</text>
-  <list class="todo-wraper" onswipe="swipeEvent" ref="list">
-    <list-item for="{{todolist}}" class="listItem">
-      <input type="button" class="buttonStyle" value="{{$item.title}}" on:click="clickChange($item)" />
-    </list-item>
-  </list>
-</div>
