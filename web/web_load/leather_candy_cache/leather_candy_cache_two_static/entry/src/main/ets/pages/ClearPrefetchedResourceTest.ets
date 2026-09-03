@@ -105,10 +105,67 @@ struct clearPrefetchedResourceTest {
               }, 1000)
               break;
             }
+
+            case 'testPrefetchResourceEmptyStatic001': {
+              try {
+                let requestInfo: web_webview.RequestInfo = {
+                  url: '',
+                  method: '',
+                  formData: ''
+                } as web_webview.RequestInfo
+                web_webview.WebviewController.prefetchResource(requestInfo, [], '', 500);
+                Utils.emitEvent(true, 41023101)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41023101)
+              }
+              break;
+            }
+ 
+            case 'testPrefetchResourceNullStatic001': {
+              try {
+                let requestInfo: web_webview.RequestInfo = {
+                  url: null as string,
+                  method: null as string,
+                  formData: null as string
+                } as web_webview.RequestInfo
+                let headers: Array<web_webview.WebHeader> | null = null;
+                let cacheKey: string | null = null;
+                let cacheValidTime: Int | null = null;
+                web_webview.WebviewController.prefetchResource(requestInfo,
+                  headers as Array<web_webview.WebHeader>, cacheKey as string, cacheValidTime as Int);
+                Utils.emitEvent(true, 41023102)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41023102)
+              }
+              break;
+            }
+ 
+            case 'testPrefetchResourceUndefinedStatic001': {
+              try {
+                let requestInfo: web_webview.RequestInfo = {
+                  url: undefined as string,
+                  method: undefined as string,
+                  formData: undefined as string
+                } as web_webview.RequestInfo
+                let headers: Array<web_webview.WebHeader> | undefined = undefined;
+                let cacheKey: string | undefined = undefined;
+                let cacheValidTime: Int | undefined = undefined;
+                web_webview.WebviewController.prefetchResource(requestInfo,
+                  headers as Array<web_webview.WebHeader>, cacheKey as string, cacheValidTime as Int);
+                Utils.emitEvent(true, 41023103)
+              } catch (error) {
+                error = error as BusinessError;
+                Utils.emitEvent(error.code, 41023103)
+              }
+              break;
+            }
             case 'emitonSwitchNextPage': {
               let uiContext: UIContext = this.getUIContext();
               let router: Router = uiContext.getRouter();
               router.pushUrl({ url: 'pages/InjectOfflineResourcesTest' })
+              break;
             }
           }
         })
