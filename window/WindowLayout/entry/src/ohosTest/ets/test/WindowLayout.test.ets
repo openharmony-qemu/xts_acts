@@ -391,6 +391,8 @@ export default function windowLayoutTest() {
       let caseName: string = 'test_setAspectRatio_mainWindow';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
+      let BORDER_WIDTH:number = 5;
+      let TITLE_BAR_HEIGHT: number = 48;
       try {
         let mainWindow = windowStage.getMainWindowSync();
         let PropertiesRect = mainWindow.getWindowProperties().windowRect
@@ -405,8 +407,10 @@ export default function windowLayoutTest() {
           let windowRect = mainWindow.getWindowProperties().windowRect
           console.info(`${caseName} :windowRect: ` + JSON.stringify(windowRect));
           if (isFreeWindowMode) {
-            expect(windowRect.width !== windowRectbefore.width).assertTrue();
-            expect(windowRect.height !== windowRectbefore.height).assertTrue();
+            let widthPx2Vp = px2vp(windowRect.width);
+            let heightPx2Vp = px2vp(windowRect.height);
+            console.info(`${caseName} :windowRectwidth to vp: ` + JSON.stringify(widthPx2Vp)+`, windowRectHeight:`+JSON.stringify(heightPx2Vp));
+            expect(Math.abs((widthPx2Vp-BORDER_WIDTH-BORDER_WIDTH)-(heightPx2Vp-BORDER_WIDTH-TITLE_BAR_HEIGHT))).assertLessOrEqual(1);
             mainWindow.resetAspectRatio((err: BusinessError) => {
               const errCode: number = err.code;
               if (errCode) {
@@ -456,6 +460,8 @@ export default function windowLayoutTest() {
       let caseName: string = 'test_setAspectRatio_mainWindow_callback';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
+      let BORDER_WIDTH:number = 5;
+      let TITLE_BAR_HEIGHT: number = 48;
       try {
         let mainWindow = windowStage.getMainWindowSync();
         let PropertiesRect = mainWindow.getWindowProperties().windowRect
@@ -475,8 +481,10 @@ export default function windowLayoutTest() {
           let windowRect = mainWindow.getWindowProperties().windowRect
           console.info(`${caseName} :windowRect: ` + JSON.stringify(windowRect));
           if (isFreeWindowMode) {
-            expect(windowRect.width !== windowRectbefore.width).assertTrue();
-            expect(windowRect.height !== windowRectbefore.height).assertTrue();
+            let widthPx2Vp = px2vp(windowRect.width);
+            let heightPx2Vp = px2vp(windowRect.height);
+            console.info(`${caseName} :windowRectwidth to vp: ` + JSON.stringify(widthPx2Vp)+`, windowRectHeight:`+JSON.stringify(heightPx2Vp));
+            expect(Math.abs((widthPx2Vp-BORDER_WIDTH-BORDER_WIDTH)-(heightPx2Vp-BORDER_WIDTH-TITLE_BAR_HEIGHT))).assertLessOrEqual(1);
             mainWindow.resetAspectRatio((err: BusinessError) => {
               const errCode: number = err.code;
               if (errCode) {
