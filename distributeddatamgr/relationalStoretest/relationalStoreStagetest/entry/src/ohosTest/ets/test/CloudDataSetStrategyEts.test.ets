@@ -316,5 +316,55 @@ export default function cloudDataSetStrategyEtsTest() {
       console.log(TAG + "************* setCloudStrategyTest010 end *************");
     })
 
+    /**
+     * @tc.name   setCloudStrategyTest011
+     * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_1100
+     * @tc.desc   Test Js Api setCloudStrategy with invalid first param enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('setCloudStrategyTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log(TAG + "************* setCloudStrategyTest011 start *************");
+      try {
+        cloudData.setCloudStrategy(999 as cloudData.StrategyType, [cloudData.NetWorkStrategy.WIFI]).then(() => {
+          expect().assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(TAG + `setCloudStrategyTest011, errcode:${JSON.stringify(err)}`);
+          expect().assertFail();
+        })
+      } catch (err) {
+        console.error(TAG + `setCloudStrategyTest011, errcode:${JSON.stringify(err)}`);
+        expect(err.code === "401").assertTrue();
+      }
+      done();
+      console.log(TAG + "************* setCloudStrategyTest011 end *************");
+    })
+
+    /**
+     * @tc.name   setCloudStrategyTest012
+     * @tc.number SUB_DistributedData_CloudData_SDK_SetCloudStrategyTest_1200
+     * @tc.desc   Test Js Api setCloudStrategy with invalid second param enum value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('setCloudStrategyTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log(TAG + "************* setCloudStrategyTest012 start *************");
+      try {
+        cloudData.setCloudStrategy(cloudData.StrategyType.NETWORK, [999 as cloudData.NetWorkStrategy]).then(() => {
+          expect().assertFail();
+        }).catch((err: BusinessError) => {
+          console.error(TAG + `setCloudStrategyTest012, errcode:${JSON.stringify(err)}`);
+          expect().assertFail();
+        })
+      } catch (err) {
+        console.error(TAG + `setCloudStrategyTest012, errcode:${JSON.stringify(err)}`);
+        expect(err.code === "401").assertTrue();
+      }
+      done();
+      console.log(TAG + "************* setCloudStrategyTest012 end *************");
+    })
+
     console.log(TAG + "*************Unit Test End*************");
   })}
