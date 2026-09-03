@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="content-title">
+        <text class="title">text / opacity / chart / input / slider / progress / qrcode</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <list class="scroll-area">
+        <list-item class="litem" style="height:265px;">
+            <text class="box-title">文字 text</text>
+            <text style="font-size:32px;color:#ffffff;margin:5px;">Large Text 32px</text>
+            <text style="font-size:24px;color:#ffffff;margin:5px;">Medium Text 24px</text>
+            <text style="font-size:16px;color:#ffffff;margin:5px;">Small Text 16px</text>
+            <text style="font-size:20px;color:#ff0000;margin:5px;">Colored Red Text</text>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{txPassColor}};" type="button" value="pass" onclick="passTx" />
+                <input class="pfBtn" style="background-color:{{txFailColor}};" type="button" value="fail" onclick="failTx" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:270px;">
+            <text class="box-title">透明度 opacity</text>
+            <div class="op-row" style="opacity:1.0;"><image src="/common/icon.png" class="opImg"></image></div>
+            <div class="op-row" style="opacity:0.5;"><image src="/common/icon.png" class="opImg"></image></div>
+            <div class="op-row" style="opacity:0.15;"><image src="/common/icon.png" class="opImg"></image></div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{opPassColor}};" type="button" value="pass" onclick="passOp" />
+                <input class="pfBtn" style="background-color:{{opFailColor}};" type="button" value="fail" onclick="failOp" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:285px;">
+            <text class="box-title">柱状图 chart(bar)</text>
+            <chart class="chart" type="bar" id="bar-chart" options="{{barOps}}" datasets="{{barData}}"></chart>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{barPassColor}};" type="button" value="pass" onclick="passBar" />
+                <input class="pfBtn" style="background-color:{{barFailColor}};" type="button" value="fail" onclick="failBar" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:265px;">
+            <text class="box-title">输入 input</text>
+            <div class="in-row"><text class="in-text">多选框</text><input type="checkbox" class="checkbox" /></div>
+            <div class="in-row"><text class="in-text">单选框</text><input type="radio" class="radio" /></div>
+            <div class="in-row"><text class="in-text">图片按钮</text><input type="button" class="in-btn" style="background-color:{{inBtnColor}};" value="点击" onclick="imgBtnClick" /><text class="click-feedback">{{clickMsg}}</text></div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{inPassColor}};" type="button" value="pass" onclick="passIn" />
+                <input class="pfBtn" style="background-color:{{inFailColor}};" type="button" value="fail" onclick="failIn" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:190px;">
+            <text class="box-title">滑块 slider</text>
+            <slider class="demoSlider" min="0" max="100" value="{{ sliderValue }}" onchange="onSliderChange"></slider>
+            <text class="val-text">Value: {{ sliderValue }}</text>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{slPassColor}};" type="button" value="pass" onclick="passSl" />
+                <input class="pfBtn" style="background-color:{{slFailColor}};" type="button" value="fail" onclick="failSl" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:265px;">
+            <text class="box-title">进度条 progress</text>
+            <progress type="horizontal" class="hor-progress" percent="{{ horizontalVal }}" onclick="changeHorizontal"></progress>
+            <progress type="arc" class="arc-progress" percent="{{ arcVal }}" onclick="changeArc"></progress>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{prPassColor}};" type="button" value="pass" onclick="passPr" />
+                <input class="pfBtn" style="background-color:{{prFailColor}};" type="button" value="fail" onclick="failPr" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:335px;">
+            <text class="box-title">二维码 qrcode</text>
+            <qrcode style="width:160px;height:160px;color:{{qrColor}};background-color:{{qrBackgroundColor}};" value="{{qrValue}}"></qrcode>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="值" onclick="changeValue" />
+                <input class="opBtn" type="button" value="颜色" onclick="changeColor" />
+                <input class="opBtn" type="button" value="背景色" onclick="changeBackgroundColor" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{qrPassColor}};" type="button" value="pass" onclick="passQr" />
+                <input class="pfBtn" style="background-color:{{qrFailColor}};" type="button" value="fail" onclick="failQr" />
+            </div>
+        </list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>
