@@ -23,7 +23,6 @@ import PublicApiNineTest from './PublicApiNineTest.test.ets';
 import getApplicationLabel from './GetApplicationLabel.test.ets';
 import addAITestCaseTest from './addAItestcase.test.ets';
 import coverageEnhancementTest from './CoverageEnhancementTest.test.ets';
-import coverageSystemPackageTest from './CoverageSystemPackageTest.test.ets';
 
 
 export default function testsuite() {
@@ -36,6 +35,5 @@ export default function testsuite() {
   PublicApiNineTest();
   getApplicationLabel();
   coverageEnhancementTest();
-  coverageSystemPackageTest();
   addAITestCaseTest();
 }

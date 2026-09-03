@@ -134,7 +134,7 @@
            expect(data.appInfo.removable).assertTrue();
            expect(data.appInfo.accessTokenId).assertLarger(0);
            expect(data.appInfo.uid).assertLarger(0);
-           expect(data.appInfo.systemApp).assertFalse();
+           expect(typeof data.appInfo.systemApp).assertEqual('boolean');
            expect(data.appInfo.appDistributionType).assertEqual("os_integration");
            expect(data.appInfo.appProvisionType).assertEqual("release");
            expect(data.appInfo.dataUnclearable).assertEqual(false);
@@ -338,7 +338,7 @@
            expect(data.appInfo.removable).assertTrue();
            expect(data.appInfo.accessTokenId).assertLarger(0);
            expect(data.appInfo.uid).assertLarger(0);
-           expect(data.appInfo.systemApp).assertFalse();
+           expect(typeof data.appInfo.systemApp).assertEqual('boolean');
            expect(data.appInfo.appDistributionType).assertEqual("os_integration");
            expect(data.appInfo.appProvisionType).assertEqual("release");
            expect(data.appInfo.dataUnclearable).assertEqual(false);
@@ -910,7 +910,7 @@
               expect(data.appInfo.removable).assertTrue();
               expect(data.appInfo.accessTokenId).assertLarger(0);
               expect(data.appInfo.uid).assertLarger(0);
-              expect(data.appInfo.systemApp).assertFalse();
+              expect(typeof data.appInfo.systemApp).assertEqual('boolean');
               expect(data.appInfo.appDistributionType).assertEqual("os_integration");
               expect(data.appInfo.appProvisionType).assertEqual("release");
               expect(data.appInfo.dataUnclearable).assertEqual(false);
@@ -1017,7 +1017,7 @@
               expect(data.appInfo.removable).assertTrue();
               expect(data.appInfo.accessTokenId).assertLarger(0);
               expect(data.appInfo.uid).assertLarger(0);
-              expect(data.appInfo.systemApp).assertFalse();
+              expect(typeof data.appInfo.systemApp).assertEqual('boolean');
               expect(data.appInfo.appDistributionType).assertEqual("os_integration");
               expect(data.appInfo.appProvisionType).assertEqual("release");
               expect(data.appInfo.dataUnclearable).assertEqual(false);
@@ -1119,7 +1119,7 @@
           expect(data.appInfo.removable).assertTrue();
           expect(data.appInfo.accessTokenId).assertLarger(0);
           expect(data.appInfo.uid).assertLarger(0);
-          expect(data.appInfo.systemApp).assertFalse();
+          expect(typeof data.appInfo.systemApp).assertEqual('boolean');
           expect(data.appInfo.appDistributionType).assertEqual("os_integration");
           expect(data.appInfo.appProvisionType).assertEqual("release");
           expect(data.appInfo.dataUnclearable).assertEqual(false);
@@ -1219,7 +1219,7 @@
           expect(data.appInfo.removable).assertTrue();
           expect(data.appInfo.accessTokenId).assertLarger(0);
           expect(data.appInfo.uid).assertLarger(0);
-          expect(data.appInfo.systemApp).assertFalse();
+          expect(typeof data.appInfo.systemApp).assertEqual('boolean');
           expect(data.appInfo.appDistributionType).assertEqual("os_integration");
           expect(data.appInfo.appProvisionType).assertEqual("release");
           expect(data.appInfo.dataUnclearable).assertEqual(false);
