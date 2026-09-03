@@ -3,9 +3,9 @@
         "general": [],
         "custom": [
             {
+                "name": "entry",
                 "xts": [
-                    "SystemCapability.DistributedDataManager.KVStore.DistributedKVStore",
-                    "SystemCapability.DistributedDataManager.KVStore.Core"
+                    "SystemCapability.DistributedDataManager.KVStore.DistributedKVStore"
                 ]
             }
         ]
