@@ -1361,7 +1361,7 @@ export default function Int16ArrayFromTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_ONE_7400
      * @tc.name testInt16ArrayFromTestOne074
-     * @tc.desc Verify Int16Array.from empty Set $_get(0) is undefined
+     * @tc.desc Verify Int16Array.from empty Set $_get(0) throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

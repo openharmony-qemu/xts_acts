@@ -988,7 +988,7 @@ export default function Int16ArrayFromTest06(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_SIX_4500
      * @tc.name testInt16ArrayFromTestSix045
-     * @tc.desc Verify Int16Array.from empty Set returns Int16Array instance
+     * @tc.desc Verify Int16Array.from single-element Set returns Int16Array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1102,7 +1102,7 @@ export default function Int16ArrayFromTest06(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_SIX_5100
      * @tc.name testInt16ArrayFromTestSix051
-     * @tc.desc Verify Int16Array.from empty Set returns Int16Array instance
+     * @tc.desc Verify Int16Array.from single-element Set with mapfn returns Int16Array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

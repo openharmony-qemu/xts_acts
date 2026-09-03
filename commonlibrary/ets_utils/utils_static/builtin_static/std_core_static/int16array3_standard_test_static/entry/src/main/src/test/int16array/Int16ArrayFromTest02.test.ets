@@ -829,7 +829,7 @@ export default function Int16ArrayFromTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_TWO_3900
      * @tc.name testInt16ArrayFromTestTwo039
-     * @tc.desc Verify Int16Array.from result $_get(-1) is undefined
+     * @tc.desc Verify Int16Array.from result $_get(-1) throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -849,7 +849,7 @@ export default function Int16ArrayFromTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_TWO_4000
      * @tc.name testInt16ArrayFromTestTwo040
-     * @tc.desc Verify Int16Array.from result $_get(length) is undefined
+     * @tc.desc Verify Int16Array.from result $_get(length) throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -869,7 +869,7 @@ export default function Int16ArrayFromTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_TWO_4100
      * @tc.name testInt16ArrayFromTestTwo041
-     * @tc.desc Verify Int16Array.from result $_set beyond length is silent no-op
+     * @tc.desc Verify Int16Array.from result $_set beyond length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

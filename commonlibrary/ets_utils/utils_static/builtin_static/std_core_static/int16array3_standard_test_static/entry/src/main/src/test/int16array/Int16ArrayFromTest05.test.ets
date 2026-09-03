@@ -1002,7 +1002,7 @@ export default function Int16ArrayFromTest05(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FIVE_4700
      * @tc.name testInt16ArrayFromTestFive047
-     * @tc.desc Verify Int16Array.from ArrayLike length mapfn undefined
+     * @tc.desc Verify Int16Array.from ArrayLike length mapfn defined value passed through
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1500,7 +1500,7 @@ export default function Int16ArrayFromTest05(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FIVE_6900
      * @tc.name testInt16ArrayFromTestFive069
-     * @tc.desc Verify Int16Array.from with two string args length equals 2
+     * @tc.desc Verify Int16Array.from four-element source mapfn called 4 times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1779,7 +1779,7 @@ export default function Int16ArrayFromTest05(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FIVE_8100
      * @tc.name testInt16ArrayFromTestFive081
-     * @tc.desc Verify Int16Array.from ArrayLike length mapfn undefined
+     * @tc.desc Verify Int16Array.from ArrayLike length mapfn defined value passed through
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -279,7 +279,7 @@ export default function Int16ArrayFromTest04(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_1300
      * @tc.name testInt16ArrayFromTestFour013
-     * @tc.desc Verify Int16Array.from floors negative before wrap -32769.1 to 32766
+     * @tc.desc Verify Int16Array.from truncates negative before wrap -32769.1 to 32767
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1432,7 +1432,7 @@ export default function Int16ArrayFromTest04(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7000
      * @tc.name testInt16ArrayFromTestFour070
-     * @tc.desc Verify Int16Array.from ArrayLike length=2, $_get out-of-range returns undefined
+     * @tc.desc Verify Int16Array.from ArrayLike length=2, $_get out-of-range throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1453,7 +1453,7 @@ export default function Int16ArrayFromTest04(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7100
      * @tc.name testInt16ArrayFromTestFour071
-     * @tc.desc Verify Int16Array.from ArrayLike length=2, $_get(-1) returns undefined
+     * @tc.desc Verify Int16Array.from ArrayLike length=2, $_get(-1) throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1474,7 +1474,7 @@ export default function Int16ArrayFromTest04(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7200
      * @tc.name testInt16ArrayFromTestFour072
-     * @tc.desc Verify Int16Array.from ArrayLike length=-1, throws on invalid length, result not null
+     * @tc.desc Verify Int16Array.from ArrayLike constructed with negative length returns non-null result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1489,7 +1489,7 @@ export default function Int16ArrayFromTest04(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FROM_FOUR_7300
      * @tc.name testInt16ArrayFromTestFour073
-     * @tc.desc Verify Int16Array.from ArrayLike length=1e308, throws on invalid length, result not null
+     * @tc.desc Verify Int16Array.from ArrayLike constructed with overflow length returns non-null result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
