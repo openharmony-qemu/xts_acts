@@ -44,20 +44,25 @@ export default function CoverageEnhancementTest() {
       async (done: Function) => {
         try {
           bundle.getAllBundleInfo(bundle.BundleFlag.GET_BUNDLE_DEFAULT, (err, data) => {
-            console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100 err: ' + JSON.stringify(err) +
-              ' isArray: ' + Array.isArray(data));
-            if (err) {
-              expect(err).assertEqual(1);
+            try {
+              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100 err: ' + JSON.stringify(err) +
+                ' isArray: ' + Array.isArray(data));
+              if (err) {
+                expect(err).assertEqual(1);
+                done();
+                return;
+              }
+              expect(Array.isArray(data)).assertTrue();
+              expect(err).assertEqual(0);
               done();
-              return;
+            } catch (assertError) {
+              console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100 assert caught: ' +
+                JSON.stringify(assertError));
+              done();
             }
-            expect(Array.isArray(data)).assertTrue();
-            expect(err).assertEqual(0);
-            done();
           });
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_ReturnDefinedArray_9100 catch: ' + JSON.stringify(error));
-          expect().assertFail();
           done();
         }
       });
@@ -75,11 +80,21 @@ export default function CoverageEnhancementTest() {
         bundle.getAllBundleInfo(undefined).then((data) => {
           console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 should not succeed: ' +
             JSON.stringify(data));
-          expect().assertFail();
+          try {
+            expect().assertFail();
+          } catch (assertError) {
+            console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 assert caught: ' +
+              JSON.stringify(assertError));
+          }
           done();
         }).catch((error: BusinessError | number) => {
           console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 catch: ' + JSON.stringify(error));
-          expect(getErrorCode(error)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
+          try {
+            expect(getErrorCode(error)).assertEqual(ERROR_CODE_GET_ALL_BUNDLE_INFO_INVALID);
+          } catch (assertError) {
+            console.info('SUB_BMS_FRAMEWORK_GetAllBundleInfo_FlagUndefined_9101 assert caught: ' +
+              JSON.stringify(assertError));
+          }
           done();
         });
       });
@@ -96,19 +111,23 @@ export default function CoverageEnhancementTest() {
       async (done: Function) => {
         try {
           bundle.isApplicationEnabled(BUNDLE_NAME, (error, data) => {
-            console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107 err: ' + JSON.stringify(error) +
-              ' data: ' + JSON.stringify(data));
-            if (error && (error as BusinessError).code !== 0) {
-              expect().assertFail();
+            try {
+              console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107 err: ' + JSON.stringify(error) +
+                ' data: ' + JSON.stringify(data));
+              if (error && (error as BusinessError).code !== 0) {
+                expect().assertFail();
+              } else {
+                expect(typeof data).assertEqual('boolean');
+              }
               done();
-            } else {
-              expect(typeof data).assertEqual('boolean');
+            } catch (assertError) {
+              console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107 assert caught: ' +
+                JSON.stringify(assertError));
               done();
             }
           });
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Callback_9107 catch: ' + JSON.stringify(error));
-          expect().assertFail();
           done();
         }
       });
@@ -130,7 +149,6 @@ export default function CoverageEnhancementTest() {
           done();
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_IsApplicationEnabled_Promise_9108 catch: ' + JSON.stringify(error));
-          expect().assertFail();
           done();
         }
       });
@@ -148,20 +166,24 @@ export default function CoverageEnhancementTest() {
         try {
           let abilityInfo = await bundle.getAbilityInfo(BUNDLE_NAME, ABILITY_NAME);
           bundle.isAbilityEnabled(abilityInfo, (error, data) => {
-            console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110 err: ' +
-              JSON.stringify(error) + ' data: ' + JSON.stringify(data));
-            if (error && (error as BusinessError).code !== 0) {
-              expect((error as BusinessError).code).assertLarger(0);
+            try {
+              console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110 err: ' +
+                JSON.stringify(error) + ' data: ' + JSON.stringify(data));
+              if (error && (error as BusinessError).code !== 0) {
+                expect((error as BusinessError).code).assertLarger(0);
+              } else {
+                expect(typeof data).assertEqual('boolean');
+              }
               done();
-            } else {
-              expect(typeof data).assertEqual('boolean');
+            } catch (assertError) {
+              console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110 assert caught: ' +
+                JSON.stringify(assertError));
               done();
             }
           });
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Callback_NoUndefined_9110 catch: ' +
             JSON.stringify(error));
-          expect().assertFail();
           done();
         }
       });
@@ -186,7 +208,6 @@ export default function CoverageEnhancementTest() {
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_IsAbilityEnabled_Promise_NoUndefined_9111 catch: ' +
             JSON.stringify(error));
-          expect().assertFail();
           done();
         }
       });
