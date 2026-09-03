@@ -18,6 +18,14 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 import { BusinessError } from '@ohos.base';
 import { webview } from '@kit.ArkWeb';
 
+/**
+ * Compare whether two values are equal. Convert both sides to number first
+ * and then compare strictly, to tolerate inconsistent types of error.code.
+ */
+function isEqual(a: number, b: number): boolean {
+  return Number(a) === Number(b);
+}
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -88,7 +96,7 @@ export default function webCookieLazyTest() {
         webview.WebCookieManager.setLazyInitializeWebEngine(null);
       } catch (error) {
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-        if (error.code == 401) {
+        if (isEqual(error.code, 401)) {
           expect_value = true;
         }
       }
@@ -110,7 +118,7 @@ export default function webCookieLazyTest() {
         webview.WebCookieManager.setLazyInitializeWebEngine(undefined);
       } catch (error) {
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-        if (error.code == 401) {
+        if (isEqual(error.code, 401)) {
           expect_value = true;
         }
       }
