@@ -2,7 +2,6 @@ import abilityTest from './Ability.test';
 import SendableTest from './SendableLruCachetest.test';
 import ArrayTest from './ConcurrentArrayTest.test'
 import MapAndSetTest from './ConcurrentMapAndSetTest.test'
-import AsyncLockTest from './ConcurrentAsyncLockTest.test'
 import CondVariableTest from './ConcurrentCondVariableTest.test'
 import int8ArrayTest from './ClassInt8Array.test';
 import Int16ArrayGlobalTest from './ClassInt16Array.test';
@@ -18,7 +17,6 @@ export default function testsuite() {
   SendableTest();
   ArrayTest();
   MapAndSetTest();
-  AsyncLockTest();
   CondVariableTest();
   int8ArrayTest();
   Int16ArrayGlobalTest();

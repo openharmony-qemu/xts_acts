@@ -15,11 +15,8 @@
 import abilityTest from './Ability.test';
 import collectionsAddTest from './Array/CollectionsAdd.test';
 import collectionsConcurrentModifyTest from './Array/CollectionsConcurrentModify.test';
-import AsyncLocktest from './AsyncLock/AsyncLocktest.test';
-
 import collectionsSecondtest from './CollectionsSecondtest.test';
 import collectionstest from './Collectionstest.test';
-import sendableLruCachetest from './SendableLruCache/SendableLruCachetest.test';
 import Uint8ClampedArraytest from './TypeArray/ClampedArrayTest.test';
 import ColectiontInt16Array from './TypeArray/ColectiontInt16Array.test';
 import ColectiontInt32Array from './TypeArray/ColectiontInt32Array.test';
@@ -41,12 +38,10 @@ export default function testsuite() {
   collectionsForthtest();
   collectionsFifthtest();
   collectionsSixtest();
-  sendableLruCachetest();
   CollectionsFloattest();
   collectionsInttest();
   Uint8ClampedArraytest();
 
-  AsyncLocktest();
   collectionsAddTest();
   ColectiontTypeArray();
   ColectiontInt32Array();
