@@ -15,7 +15,9 @@
  */
 import ActsLongTimeTaskNopStaticTest from "./ActsLongTimeTaskNopStaticTest.test";
 import ActsBackgroundProcessManagerNopStaticTest from "./ActsBackgroundProcessManagerNopStaticTest.test";
+import BackgroundLoaderNoPermissionStaticTest from "./BackgroundLoaderNoPermissionStaticTest.test";
 export default function testsuite() {
   ActsLongTimeTaskNopStaticTest();
   ActsBackgroundProcessManagerNopStaticTest();
+  BackgroundLoaderNoPermissionStaticTest();
 }

@@ -1,0 +1,33 @@
+{
+    "description": "Configuration for resourceschedule backgroundLoader Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "600000",
+        "bundle-name": "com.acts.actsbackgroundloadertest.static",
+        "module-name": "entry",
+        "shell-timeout": "600000",
+        "testcase-timeout": "180000"
+    },
+    "kits": [
+        {
+            "type": "ShellKit",
+            "run-command":[
+                "power-shell wakeup",
+                "uinput -T -m 300 2700 280 200",
+                "power-shell setmode 602",
+                "setenforce 0"
+            ]
+        },
+        {
+            "test-file-name": ["ActsResourcescheduleBackgroundLoaderStaticTest.hap"],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },
+        {
+        "type": "ShellKit",
+        "teardown-command": [
+            "setenforce 1"
+        ]
+    }
+    ]
+}
