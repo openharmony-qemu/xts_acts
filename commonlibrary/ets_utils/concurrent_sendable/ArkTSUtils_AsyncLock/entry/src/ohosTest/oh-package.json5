@@ -1,0 +1,11 @@
+{
+  "name": "entry_test",
+  "version": "1.0.0",
+  "description": "testability",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "library1": "file:../../../library1"
+  }
+}
