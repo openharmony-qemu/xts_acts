@@ -26,10 +26,22 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility } from '../Util.test';
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 export default function LocalStorageAbsTestJsunit() {
   describe('LocalStorageAbsTestJsunit', () => {
 
-        beforeEach(async (): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
+      console.info("LocalStorageAbsTestJsunit beforeEach start");
+
+
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
+
+    });
+
+    beforeEach(async (): Promise<void> => {
       console.info("LocalStorageAbsTestJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/local_storage/LocalStorageAbs",
@@ -51,6 +63,7 @@ export default function LocalStorageAbsTestJsunit() {
       }
       console.info("LocalStorageAbsTestJsunit beforeEach end");
     });
+
 
     afterEach(async () => {
       await CommonFunc.sleep(1000);
