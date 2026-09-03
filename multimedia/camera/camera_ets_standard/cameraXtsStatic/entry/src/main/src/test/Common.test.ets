@@ -14,38 +14,55 @@
  * limitations under the License.
  */
 
-import { abilityAccessCtrl, common, PermissionRequestResult } from "@kit.AbilityKit";
+import { abilityAccessCtrl, PermissionRequestResult, Permissions } from "@kit.AbilityKit";
 import { BusinessError } from "@kit.BasicServicesKit";
 import { Driver, MatchPattern, ON } from "@kit.TestKit";
 import { camera } from "@kit.CameraKit";
 import fs from '@ohos.file.fs';
+import Utils from "./Util.test";
+import { Context } from "@kit.ArkUI";
+import { Hypium } from "../../../hypium/index";
+import { hilog } from "@kit.PerformanceAnalysisKit";
 
 const TAG = "cameraXts.common";
+export const COMMON_WAIT_DURATION: number = 500;
+const domain = 0x0000;
+const tag = 'ListTest';
 
-const COMMON_WAIT_DURATION: number = 500;
-const cameraPosition = camera.CameraPosition;
-const cameraType = camera.CameraType;
-const connectionType = camera.ConnectionType;
-const hostDeviceType = camera.HostDeviceType;
-const sceneMode = camera.SceneMode;
-const cameraErrorCode = camera.CameraErrorCode;
-const cameraConcurrentType = camera.CameraConcurrentType;
-const cameraFlashMode = camera.FlashMode;
-const cameraFocusMode = camera.FocusMode;
-const cameraPreconfigType = camera.PreconfigType;
-const cameraPreconfigRatio = camera.PreconfigRatio;
-
-export function isEmpty(data: ESObject) {
-  console.info(TAG, 'isEmpty test.');
-  if (data == null || data == undefined) {
-    console.info(TAG, 'data is null.');
-    return true;
-  }
-  return false;
+export async function getFd(pathName: string):Promise<int> {
+  console.info(TAG, 'case come in getFd');
+  let appContext: Context = Hypium.get("Context") as Context;
+  pathName = appContext.filesDir + "/" + pathName;
+  console.log(TAG, 'pathName =' + pathName);
+  let file = fs.openSync(pathName, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+  let fdNumber = file.fd;
+  console.info(TAG, 'case getFd number is: ' + fdNumber);
+  return fdNumber;
+}
+export function sleep(ms: int): Promise<int> {
+  return new Promise<int>((resolve) => {
+    setTimeout(() => {
+      resolve(0);
+    }, ms);
+  });
+}
+export function resourceName(): string {
+  let timestamp = Date.now();
+  let filename = `avRecorder_${timestamp}.mp4`;
+  return filename;
 }
 
-export function checkBackCamera() {
-  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+export function closeFd(fd: int): void {
+  try {
+    fs.closeSync(fd);
+    console.info(TAG, 'closeFd success, fd: ' + fd);
+  } catch (err) {
+    console.error(TAG, 'closeFd failed, err: ' + err);
+  }
+}
+
+export function checkBackCamera():boolean {
+  let testContext = Hypium.get("Context") as Context;
   let supportedCamera = camera.getCameraManager(testContext).getSupportedCameras();
   console.info(TAG, 'camera num: ' + supportedCamera.length);
   if (supportedCamera.length <= 0) {
@@ -53,7 +70,7 @@ export function checkBackCamera() {
     return false;
   } else {
     for (let i = 0; i < supportedCamera.length; i++) {
-      if (supportedCamera.length > 1 && supportedCamera[i].cameraPosition === cameraPosition.CAMERA_POSITION_BACK) {
+      if (supportedCamera.length > 1 && supportedCamera[i].cameraPosition === camera.CameraPosition.CAMERA_POSITION_BACK) {
         console.info(TAG, 'Supported rear Camera.');
         return true;
       }
@@ -62,90 +79,44 @@ export function checkBackCamera() {
   }
 }
 
-export function sleep(ms: number): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('');
-    }, ms);
-  });
+export function isEmpty(value: Object | null | undefined): boolean {
+  return value === null || value === undefined;
 }
 
-export async function driveFn() {
-  let dr = Driver.create();
-  await sleep(COMMON_WAIT_DURATION);
-  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
-  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
-  await sleep(COMMON_WAIT_DURATION);
-  await power1?.click();
-  await power2?.click();
-  await sleep(COMMON_WAIT_DURATION);
-}
-
-export function resourceName() {
-  let timestamp = Date.now();
-  let filename = `avRecorder_${timestamp}.mp4`;
-  return filename;
-}
-
-export async function getFd(pathName: string) {
-  console.info(TAG, 'case come in getFd');
-  let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-  pathName = testContext.filesDir + "/" + pathName;
-  console.log(TAG, 'pathName =' + pathName);
-  let file = await fs.openSync(pathName, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-  let fdNumber = file.fd;
-  console.info(TAG, 'case getFd number is: ' + fdNumber);
-  return fdNumber;
-}
-
-export async function closeFd(fdNumber: number) {
-  console.info('case come in closeFd');
-  if (fdNumber != null) {
-    fs.closeSync(fdNumber);
-  } else {
-    console.info('[fs.closeSync] case fdNumber is null');
-  }
-}
-
-export async function getPermission(name = 'ohos.acts.multimedia.camera.xts'): Promise<void> {
+export async function getPermission(name?: Permissions): Promise<void> {
   try {
+
     console.info(TAG, 'getPermission start', name);
 
+    let context = Hypium.get('Context') as Context;
+    hilog.info(domain, tag, '%{public}s', '  beforeAll get Context');
+    // 相机权限
+    hilog.info(domain, tag, '%{public}s', '  beforeAll createAtManager');
     let atManager = abilityAccessCtrl.createAtManager();
-    let testContext: common.UIAbilityContext =
-      AppStorage.get<common.UIAbilityContext>("testContext") as common.UIAbilityContext;
-    atManager.requestPermissionsFromUser(testContext, [
-      "ohos.permission.CAMERA",
-    /*
-          "ohos.permission.MICROPHONE",
-          'ohos.permission.MEDIA_LOCATION',
-          'ohos.permission.READ_IMAGEVIDEO',
-          'ohos.permission.WRITE_IMAGEVIDEO'
-    */
-    ], (err: BusinessError, data: PermissionRequestResult) => {
-      if (err) {
-        console.error(TAG, `requestPermissionsFromUser fail, err->${JSON.stringify(err)}`);
-      } else {
-        console.info(TAG, 'requestPermissionsFromUser data:' + JSON.stringify(data));
-        console.info(TAG, 'requestPermissionsFromUser data permissions:' + data.permissions);
-        console.info(TAG, 'requestPermissionsFromUser data authResults:' + data.authResults);
-        console.info(TAG, 'requestPermissionsFromUser data dialogShownResults:' + data.dialogShownResults);
-      }
-    });
-  } catch (error) {
-    console.error(TAG, `getPermission failed, error: ${error}`);
+    let arr: Array<Permissions> = new Array<Permissions>();
+    arr.push('ohos.permission.CAMERA')
+    arr.push('ohos.permission.GRANT_SENSITIVE_PERMISSIONS')
+    arr.push('ohos.permission.MICROPHONE')
+    arr.push('ohos.permission.MEDIA_LOCATION')
+    hilog.info(domain, tag, '%{public}s', '  beforeAll requestPermissionsFromUser');
+    atManager.requestPermissionsFromUser(context, arr,
+      (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
+        hilog.info(0x0000, 'testTag', '  requestPermissionsFromUser end');
+      });
+    await Utils.msSleep(500);
+
+    hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
+    for (let i = 0; i < arr.length; i++) {
+
+      let dr = Driver.create();
+      let power1 = await dr.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+      let power2 = await dr.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
+      await power1?.click();
+      await power2?.click();
+    }
+    await Utils.msSleep(1000);
+    console.info('  abilityTest beforeAll end');
+  } catch (err) {
+    hilog.error(0x0000, 'testTag', '  beforeAll failed, err: ' + err);
   }
 }
-
-export { COMMON_WAIT_DURATION,
-  cameraPosition,
-  cameraType,
-  connectionType,
-  hostDeviceType,
-  sceneMode,
-  cameraErrorCode,
-  cameraConcurrentType,
-  cameraFlashMode,
-  cameraFocusMode,
-  cameraPreconfigType,
-  cameraPreconfigRatio }
