@@ -29,12 +29,7 @@ const BUNDLE_NAME = 'com.arkui.ace.navigation.nowear.static';
 const ABILITY_NAME = 'EntryAbility';
 const PAGE_URL = 'MainAbility/pages/NavigationPreload/NavigationPreload';
 
-// Find component by id with accessibility scroll support.
-// driver.swipe() simulates touch swipe which does NOT trigger scroll on PC form factor devices
-// where scrolling is driven by mouse wheel events. Component.scrollSearch() uses accessibility
-// actions which work on all devices (Phone + PC).
 async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetries: int = 10): Promise<Component | null> {
-  // Try direct find first
   for (let i: int = 0; i < 3; i++) {
     let comp = await driver.findComponent(ON.id(id));
     if (comp !== null) {
@@ -42,7 +37,6 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
     }
     await CommonFunc.sleep(500);
   }
-  // Use Component.scrollSearch() for accessibility-based scrolling
   try {
     let scrollComp = await driver.findComponent(ON.type('Scroll'));
     if (scrollComp !== null) {
@@ -52,9 +46,7 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
       }
     }
   } catch (e) {
-    // scrollSearch failed
   }
-  // Fallback: try scrollToBottom then search
   try {
     let scrollComp = await driver.findComponent(ON.type('Scroll'));
     if (scrollComp !== null) {
@@ -66,7 +58,6 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
       }
     }
   } catch (e) {
-    // scrollToBottom fallback failed
   }
   return null;
 }
