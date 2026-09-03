@@ -851,5 +851,28 @@ export default function abilityTest() {
         console.error(`${caseName} Failed to running this case.e is ${JSON.stringify(e)}`);
       }
     });
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_1300
+     * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_1300
+     * @tc.desc   Directly call setFontSizeScale with null parameter, expect error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_setFontSizeAtApp_1300', Level.LEVEL3, async (done:Function) => {
+      let caseName = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp_1300';
+      console.log(`${caseName} starts.`);
+      try {
+        let applicationContext = context.getApplicationContext();
+        applicationContext.setFontSizeScale(null);
+        expect().assertFail();
+      } catch (e) {
+        console.error(`${caseName}, e.code: ${e.code}`);
+        expect(e.code).assertEqual(401);
+      }
+      console.log(`${caseName} ends.`);
+      done();
+    });
   })
 }
