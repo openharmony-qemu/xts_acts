@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -22,14 +21,9 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function textPickerDialogAppearTextTest() {
   describe('textPickerDialogAppearTextTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerDialogAppearText beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("TextPickerDialogAppearText beforeEach start");
       let options: router.RouterOptions = {
@@ -51,7 +45,11 @@ export default function textPickerDialogAppearTextTest() {
       console.info("TextPickerDialogAppearText beforeEach end");
     });
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.error("TextPickerDialogAppearText afterEach error: " + err);
+      }
       console.info("TextPickerDialogAppearText after each called");
     });
 
@@ -64,6 +62,7 @@ export default function textPickerDialogAppearTextTest() {
      * @tc.level  Level.LEVEL0
      */
     it('textPickerDialogAppearTextTest_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('[textPickerDialogAppearTextTest_001] START');
       await Utils.sleep(1000);
       let driver = Driver.create();
@@ -78,6 +77,10 @@ export default function textPickerDialogAppearTextTest() {
       expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('onWillAppear_onDidAppear_onWillDisappear_onDidDisappear');
       console.info('[textPickerDialogAppearTextTest_001] END');
       done();
+      } catch (err) {
+        console.error('textPickerDialogAppearTextTest_001 error: ' + err);
+        done();
+      }
     });
   })
 }

@@ -14,30 +14,17 @@
  * limitations under the License.
  */
 
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
-let domain: int = 0x0000;
-let tag: string = 'testTag';
 
 export default function selectApi1() {
   describe('selectApi1', () => {
-
-    beforeAll(async (): Promise<void> => {
-      console.info("selectApi1 beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
-    });
 
     beforeEach(async () => {
       console.info("selectApi1 beforeEach start");
@@ -72,19 +59,25 @@ export default function selectApi1() {
      * @tc.level    Level.LEVEL1
      */
 it('selectApi1_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('selectApi1_static_0100 START');
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('selectApi1_static_0100 START');
+        await CommonFunc.sleep(1000);
 
-      inspector.sendEventByKey('selectApi1_Select',10,"")
-      await CommonFunc.sleep(1000);
-      console.info('click after')
+        inspector.sendEventByKey('selectApi1_Select',10,"")
+        await CommonFunc.sleep(1000);
+        console.info('click after')
 
-      let text1 = inspector.getInspectorByKey('selectApi1_text');
-      expect(JSON.stringify(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('"item1"');
-      await CommonFunc.sleep(1000);
+        let text1 = inspector.getInspectorByKey('selectApi1_text');
+        expect(JSON.stringify(JSON.parseJsonElement(text1).getElement('$attrs').getString('content'))).assertEqual('"item1"');
+        await CommonFunc.sleep(1000);
 
-      console.info('selectApi1_static_0100 END');
-      done();
+        console.info('selectApi1_static_0100 END');
+        done();
+      } catch (err) {
+        console.error('[selectApi1_static_0100] error: ' + err);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

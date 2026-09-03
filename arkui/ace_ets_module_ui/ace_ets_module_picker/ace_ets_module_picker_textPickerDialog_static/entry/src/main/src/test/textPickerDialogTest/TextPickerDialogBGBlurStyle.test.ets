@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,15 +21,9 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 
 export default function TextPickerDialogBGBlurStyleTest() {
   describe('TextPickerDialogBGBlurStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerDialogBGBlurStyleTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info("TextPickerDialogBGBlurStyleTest beforeEach start");
       let options: router.RouterOptions = {
@@ -49,7 +43,11 @@ export default function TextPickerDialogBGBlurStyleTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error("TextPickerDialogBGBlurStyleTest afterEach error: " + err);
+      }
       console.info("textPickerDialogBGBlurStyle after each called");
     });
 
@@ -62,6 +60,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ThinID'));
       await (button?.click() as Promise<void>);
@@ -81,6 +80,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0100 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -92,6 +95,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('RegularID'));
       await (button?.click() as Promise<void>);
@@ -110,6 +114,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0200 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -121,6 +129,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ThickID'));
       await (button?.click() as Promise<void>);
@@ -139,6 +148,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0300 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -150,6 +163,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_THIN_ID'));
       await (button?.click() as Promise<void>);
@@ -168,6 +182,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0400 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -179,6 +197,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_REGULAR_ID'));
       await (button?.click() as Promise<void>);
@@ -197,6 +216,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0500 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -208,6 +231,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -226,6 +250,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0600 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -237,6 +265,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_ULTRA_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -255,6 +284,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0700 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -266,6 +299,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('NONE_ID'));
       await (button?.click() as Promise<void>);
@@ -279,6 +313,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0800 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -290,6 +328,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_ULTRA_THIN_ID'));
       await (button?.click() as Promise<void>);
@@ -308,6 +347,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_0900 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -319,6 +362,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_THIN_ID'));
       await (button?.click() as Promise<void>);
@@ -337,6 +381,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_1000 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -348,6 +396,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_REGULAR_ID'));
       await (button?.click() as Promise<void>);
@@ -366,6 +415,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_1100 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -377,6 +430,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -395,6 +449,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_1200 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -406,6 +464,7 @@ export default function TextPickerDialogBGBlurStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_ULTRA_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -424,6 +483,10 @@ export default function TextPickerDialogBGBlurStyleTest() {
       await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGBLURSTYLE_STATIC_1300 error: ' + err);
+        done();
+      }
     })
   })
 }

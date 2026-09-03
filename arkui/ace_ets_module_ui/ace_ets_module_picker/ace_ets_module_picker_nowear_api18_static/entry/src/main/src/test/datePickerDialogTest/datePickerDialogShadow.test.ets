@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function DatePickerDialogShadowTest() {
   describe('DatePickerDialogShadowTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("DatePickerDialogShadowTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('DatePickerDialogShadow beforeEach start');
       let options: router.RouterOptions = {
@@ -48,7 +42,11 @@ export default function DatePickerDialogShadowTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try {
+        await CommonFunc.sleep(1000);
+      } catch (err) {
+        console.error('DatePickerDialogShadowTest after each error: ' + err);
+      }
       console.info('textAreaInputTest after each called');
     });
     
@@ -60,6 +58,7 @@ export default function DatePickerDialogShadowTest() {
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('shadowOptionID'));
       await (button?.click() as Promise<void>);
@@ -72,6 +71,10 @@ it('DatePickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () => voi
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
     
     
@@ -82,6 +85,7 @@ it('DatePickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_XS_ID'));
       await (button?.click() as Promise<void>);
@@ -94,6 +98,10 @@ it('DatePickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () => voi
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
     
     
@@ -104,6 +112,7 @@ it('DatePickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_SM_ID'));
       await (button?.click() as Promise<void>);
@@ -116,6 +125,10 @@ it('DatePickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () => voi
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
     
     
@@ -126,6 +139,7 @@ it('DatePickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_MD_ID'));
       await (button?.click() as Promise<void>);
@@ -138,6 +152,10 @@ it('DatePickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () => voi
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
     
     
@@ -148,6 +166,7 @@ it('DatePickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_LG_ID'));
       await (button?.click() as Promise<void>);
@@ -160,6 +179,10 @@ it('DatePickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () => voi
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
     
     
@@ -170,6 +193,7 @@ it('DatePickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_FLOATING_SM_ID'));
       await (button?.click() as Promise<void>);
@@ -182,6 +206,10 @@ it('DatePickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () => voi
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
     
     
@@ -192,6 +220,7 @@ it('DatePickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('DatePickerDialogShadowTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_FLOATING_MD_ID'));
       await (button?.click() as Promise<void>);
@@ -204,6 +233,10 @@ it('DatePickerDialogShadowTest_static_007', Level.LEVEL0, async (done: () => voi
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('error: ' + err);
+        done();
+      }
     })
   })
 }

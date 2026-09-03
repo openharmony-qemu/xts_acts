@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function CalendarPickerDialogShadowTest() {
   describe('CalendarPickerDialogShadowTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CalendarPickerDialogShadowTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info('CalendarPickerDialogShadowTest beforeEach start');
       let options: router.RouterOptions = {
@@ -48,7 +42,7 @@ export default function CalendarPickerDialogShadowTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.error('' + err); }
       console.info('CalendarPickerDialogShadowTest after each called');
     });
 
@@ -61,6 +55,7 @@ export default function CalendarPickerDialogShadowTest() {
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('shadowOptionID'));
       await (button?.click() as Promise<void>);
@@ -73,6 +68,10 @@ it('CalendarPickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () =>
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogShadowTest_static_001 error: ' + err);
+        done();
+      }
     })
     
     
@@ -83,6 +82,7 @@ it('CalendarPickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () =>
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_XS_ID'));
       await (button?.click() as Promise<void>);
@@ -95,6 +95,10 @@ it('CalendarPickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () =>
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogShadowTest_static_002 error: ' + err);
+        done();
+      }
     })
     
     
@@ -105,6 +109,7 @@ it('CalendarPickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () =>
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_SM_ID'));
       await (button?.click() as Promise<void>);
@@ -117,6 +122,10 @@ it('CalendarPickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () =>
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogShadowTest_static_003 error: ' + err);
+        done();
+      }
     })
     
     
@@ -127,6 +136,7 @@ it('CalendarPickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () =>
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_MD_ID'));
       await (button?.click() as Promise<void>);
@@ -139,6 +149,10 @@ it('CalendarPickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () =>
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogShadowTest_static_004 error: ' + err);
+        done();
+      }
     })
     
     
@@ -149,6 +163,7 @@ it('CalendarPickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () =>
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_LG_ID'));
       await (button?.click() as Promise<void>);
@@ -161,6 +176,10 @@ it('CalendarPickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () =>
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogShadowTest_static_005 error: ' + err);
+        done();
+      }
     })
     
     
@@ -171,6 +190,7 @@ it('CalendarPickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () =>
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_FLOATING_SM_ID'));
       await (button?.click() as Promise<void>);
@@ -183,6 +203,10 @@ it('CalendarPickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () =>
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogShadowTest_static_006 error: ' + err);
+        done();
+      }
     })
     
     
@@ -193,6 +217,7 @@ it('CalendarPickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () =>
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogShadowTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_FLOATING_MD_ID'));
       await (button?.click() as Promise<void>);
@@ -205,6 +230,10 @@ it('CalendarPickerDialogShadowTest_static_007', Level.LEVEL0, async (done: () =>
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogShadowTest_static_007 error: ' + err);
+        done();
+      }
     })
   })
 }

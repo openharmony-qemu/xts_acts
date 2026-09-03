@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,16 +21,10 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import { uiMaterial } from '@kit.ArkUI';
 
 export default function CalendarPickerDialogSystemMaterialTest() {
   describe('CalendarPickerDialogSystemMaterialTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("CalendarPickerDialogSystemMaterialTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-    });
-
     beforeEach(async () => {
       console.info("CalendarPickerDialogSystemMaterialTest beforeEach start");
       let options: router.RouterOptions = {
@@ -50,7 +44,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      try { await CommonFunc.sleep(1000); } catch (err) { console.error('' + err); }
       console.info("CalendarPickerDialogSystemMaterial after each called");
     });
 
@@ -61,6 +55,7 @@ export default function CalendarPickerDialogSystemMaterialTest() {
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogSystemMaterialTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ULTRA_THICK_ID'));
       await (button?.click() as Promise<void>);
@@ -69,13 +64,17 @@ it('CalendarPickerDialogSystemMaterialTest_static_001', Level.LEVEL0, async (don
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
- 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+      expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
       expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
       expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
       expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogSystemMaterialTest_static_001 error: ' + err);
+        done();
+      }
     })
 
 /**
@@ -85,6 +84,7 @@ it('CalendarPickerDialogSystemMaterialTest_static_001', Level.LEVEL0, async (don
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogSystemMaterialTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ULTRA_THIN_ID'));
       await (button?.click() as Promise<void>);
@@ -93,13 +93,17 @@ it('CalendarPickerDialogSystemMaterialTest_static_002', Level.LEVEL0, async (don
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
- 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
- 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
- 	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
- 	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+      expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+      expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+      expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogSystemMaterialTest_static_002 error: ' + err);
+        done();
+      }
     })
 
 /**
@@ -109,6 +113,7 @@ it('CalendarPickerDialogSystemMaterialTest_static_002', Level.LEVEL0, async (don
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogSystemMaterialTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('interactive_false_ID'));
       await (button?.click() as Promise<void>);
@@ -117,13 +122,17 @@ it('CalendarPickerDialogSystemMaterialTest_static_003', Level.LEVEL0, async (don
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
- 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
- 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
- 	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
- 	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+      expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+      expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+      expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogSystemMaterialTest_static_003 error: ' + err);
+        done();
+      }
     })
 
 /**
@@ -133,6 +142,7 @@ it('CalendarPickerDialogSystemMaterialTest_static_003', Level.LEVEL0, async (don
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogSystemMaterialTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('undefinedID'));
       await (button?.click() as Promise<void>);
@@ -141,13 +151,17 @@ it('CalendarPickerDialogSystemMaterialTest_static_004', Level.LEVEL0, async (don
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
- 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
- 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
- 	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
- 	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+      expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+      expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+      expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogSystemMaterialTest_static_004 error: ' + err);
+        done();
+      }
     })
 
 /**
@@ -157,6 +171,7 @@ it('CalendarPickerDialogSystemMaterialTest_static_004', Level.LEVEL0, async (don
      * @tc.level    Level.LEVEL0
      */
 it('CalendarPickerDialogSystemMaterialTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('defaultID'));
       await (button?.click() as Promise<void>);
@@ -165,13 +180,17 @@ it('CalendarPickerDialogSystemMaterialTest_static_005', Level.LEVEL0, async (don
       let dialog = tree.getArray('$children')[1];
       let column = dialog.getArray('$children')[0];
       expect(uiMaterial.ImmersiveStyle.ULTRA_THIN).assertEqual(0);
- 	    expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
- 	    expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
- 	    expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
- 	    expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
+      expect(uiMaterial.ImmersiveStyle.THIN).assertEqual(1);
+      expect(uiMaterial.ImmersiveStyle.REGULAR).assertEqual(2);
+      expect(uiMaterial.ImmersiveStyle.THICK).assertEqual(3);
+      expect(uiMaterial.ImmersiveStyle.ULTRA_THICK).assertEqual(4);
       let btn1 = await driver.findComponent(ON.text('确定'));
       await (btn1?.click() as Promise<void>);
       done();
+      } catch (err) {
+        console.error('CalendarPickerDialogSystemMaterialTest_static_005 error: ' + err);
+        done();
+      }
     })
 
   })

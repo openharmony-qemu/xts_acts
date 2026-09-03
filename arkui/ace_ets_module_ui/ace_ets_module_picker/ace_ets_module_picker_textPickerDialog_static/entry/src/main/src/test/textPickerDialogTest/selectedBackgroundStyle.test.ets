@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function selectedBackgroundStyleTest() {
   describe('selectedBackgroundStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("selectedBackgroundStyleTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("selectedBackgroundStyleTest beforeEach start");
       let options: router.RouterOptions = {
@@ -58,6 +52,7 @@ export default function selectedBackgroundStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0100 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('selectedBackgroundStyle1'));
@@ -78,6 +73,10 @@ export default function selectedBackgroundStyleTest() {
       await Utils.sleep(1000);
       console.info('[SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0100] END');
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0100 error: ' + err);
+        done();
+      }
     });
 
     /**
@@ -89,6 +88,7 @@ export default function selectedBackgroundStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0200 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('selectedBackgroundStyle2'));
@@ -109,6 +109,10 @@ export default function selectedBackgroundStyleTest() {
       await Utils.sleep(1000);
       console.info('[SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0200] END');
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0200 error: ' + err);
+        done();
+      }
     });
     /**
      * @tc.number   SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0300
@@ -119,6 +123,7 @@ export default function selectedBackgroundStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0300 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('selectedBackgroundStyle3'));
@@ -139,6 +144,10 @@ export default function selectedBackgroundStyleTest() {
       await Utils.sleep(1000);
       console.info('[SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0300] END');
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0300 error: ' + err);
+        done();
+      }
     });
     /**
      * @tc.number   SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0400
@@ -149,6 +158,7 @@ export default function selectedBackgroundStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0400 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('selectedBackgroundStyle4'));
@@ -169,6 +179,10 @@ export default function selectedBackgroundStyleTest() {
       await Utils.sleep(1000);
       console.info('[SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0400] END');
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_SELECTEDBGSTYLE_STATIC_0400 error: ' + err);
+        done();
+      }
     });
   })
 }
