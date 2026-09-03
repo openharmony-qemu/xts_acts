@@ -16,7 +16,7 @@ import router from '@ohos.router';
 
 @Entry
 @Component
-struct KeyBoradTest {
+struct KeyBoardTest {
   @State text: string = 'text1';
   @State text2: string = 'text2';
   @State positionInfo: CaretOffset = { index: 0, x: 0, y: 0 }
