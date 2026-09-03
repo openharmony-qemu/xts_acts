@@ -15,6 +15,10 @@
  */
 import {  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level  } from '../../../hypium/index';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import hilog from '@ohos.hilog';
+import Want from '@ohos.app.ability.Want';
+import window from '@ohos.window';
+import InteropAbilityLifecycleCallback from '@ohos.app.ability.InteropAbilityLifecycleCallback';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
@@ -24,11 +28,108 @@ import ApplicationStateChangeCallback from '@ohos.app.ability.ApplicationStateCh
 import eventBus from '../lib/EventBus';
 
 
+const domain: int = 0x0000;
+const tag = 'testTag'
 let TestAbilityContext: common.UIAbilityContext | undefined;
 const TAG: string = 'LifeCycleLinstenerTest';
+
+class CustomApplicationStateChangeCallback implements ApplicationStateChangeCallback {
+  public isForeground: boolean = false;
+  public isBackground: boolean = false;
+
+  onApplicationForeground() {
+    hilog.info(domain, tag, 'ApplicationStateChangeCallback onApplicationForeground');
+    this.isForeground = true;
+    this.isBackground = false;
+  }
+
+  onApplicationBackground() {
+    hilog.info(domain, tag, 'ApplicationStateChangeCallback onApplicationBackground');
+    this.isForeground = false;
+    this.isBackground = true;
+  }
+}
+
+let isForeground: boolean = false;
+let isBackground: boolean = false;
+
+let interopAbilityLifecycleCallback: InteropAbilityLifecycleCallback = {
+  onAbilityCreate: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityCreate');
+  },
+  onWindowStageCreate: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageCreate');
+  },
+  onWindowStageDestroy: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageDestroy');
+  },
+  onAbilityDestroy: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityDestroy');
+  },
+  onAbilityForeground: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityForeground');
+    isForeground = true;
+    isBackground = false;
+  },
+  onAbilityBackground: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityBackground');
+    isForeground = false;
+    isBackground = true;
+  },
+  onAbilityContinue: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityContinue');
+  },
+  onWindowStageInactive: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageInactive');
+  },
+  onWindowStageActive: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageActive');
+  },
+  onNewWant: (ability: Any) => {
+    hilog.info(domain, tag, 'onNewWant');
+  },
+  onAbilityWillBackground: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillBackground');
+  },
+  onAbilityWillForeground: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillForeground');
+  },
+  onAbilityWillCreate: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillCreate');
+  },
+  onWindowStageWillDestroy: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageWillDestroy');
+  },
+  onAbilityWillDestroy: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillDestroy');
+  },
+  onWindowStageRestore: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageRestore');
+  },
+  onAbilitySaveState: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilitySaveState');
+  },
+  onAbilityWillContinue: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillContinue');
+  },
+  onAbilityWillSaveState: (ability: Any) => {
+    hilog.info(domain, tag, 'onAbilityWillSaveState');
+  },
+  onWillNewWant: (ability: Any) => {
+    hilog.info(domain, tag, 'onWillNewWant');
+  },
+  onWindowStageWillCreate: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageWillCreate');
+  },
+  onWindowStageWillRestore: (ability: Any, windowStage: window.WindowStage) => {
+    hilog.info(domain, tag, 'onWindowStageWillRestore');
+  },
+};
 export default function LifeCycleLinstenerTest(): void {
-  let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+
+let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
   let mpEnable = '';
+
   describe('LifeCycleLinstenerTest', () => {
     beforeAll(() => {
       TestAbilityContext = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
@@ -239,6 +340,165 @@ export default function LifeCycleLinstenerTest(): void {
         done();
       }
         })
+
+/**
+     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const itName = `SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300`;
+        if (mpEnable === 'false') {
+          done();
+        } else {
+          try {
+            hilog.info(domain, tag, `${itName} on applicationStateChange`);
+            const cb = new CustomApplicationStateChangeCallback();
+            TestAbilityContext!.getApplicationContext().onApplicationStateChange(cb);
+
+            hilog.info(domain, tag, `${itName} off applicationStateChange`);
+            TestAbilityContext!.getApplicationContext().offApplicationStateChange();
+
+            hilog.info(domain, tag, `${itName} start EntryAbility1 ability`);
+            const want: Want = {
+              bundleName: `com.acts.moveabilitytobgtest.static`,
+              abilityName: 'EntryAbility1'
+            }
+            await TestAbilityContext!.startAbility(want);
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} EntryAbility1 moveAbilityToBackground`);
+            const uiAbilityContext1 =
+              AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext;
+            await uiAbilityContext1.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
+            await TestAbilityContext!.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
+            expect(cb.isBackground).assertFalse();
+
+            hilog.info(domain, tag, `${itName} start EntryAbility ability`);
+            let cmd = `aa start -a EntryAbility -b com.acts.moveabilitytobgtest.static`;
+            let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator!.executeShellCommand(cmd);
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
+            expect(cb.isForeground).assertFalse();
+          } catch (err) {
+          let errB: BusinessError = err as BusinessError;
+            expect().assertFail();
+            hilog.info(domain, tag, `${itName} err: code ${errB.code}, message ${err.message}`);
+          }
+          done();
+          hilog.info(domain, tag, `${itName} end`);
+        }
+      });
+
+/**
+     * @tc.name   SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
+     * @tc.desc   onInteropAbilityLifecycle（）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const itName = `SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100`;
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} onInteropAbilityLifecycle`);
+          TestAbilityContext!.getApplicationContext().onInteropAbilityLifecycle(interopAbilityLifecycleCallback)
+          hilog.info(domain, tag, `${itName} offInteropAbilityLifecycle`);
+          TestAbilityContext!.getApplicationContext().offInteropAbilityLifecycle(interopAbilityLifecycleCallback);
+        } catch (err) {
+          let errB: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${itName} err: code ${errB.code}, message ${err.message}`);
+          expect().assertFail();
+        }
+        hilog.info(domain, tag, `${itName} end`);
+        done();
+      })
+
+/**
+     * @tc.name   SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
+     * @tc.desc   offInteropAbilityLifecycle（） no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const itName = `SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200`;
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          TestAbilityContext!.getApplicationContext().offInteropAbilityLifecycle(interopAbilityLifecycleCallback);
+          expect().assertFail()
+          done()
+        } catch (err) {
+          let errB: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${itName} err: code ${errB.code}, message ${err.message}`);
+          expect(errB.code === 401).assertTrue();
+          hilog.info(domain, tag, `${itName} end`);
+          done();
+        }
+      })
+
+/**
+     * @tc.name   SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300
+     * @tc.desc   onInteropAbilityLifecycle（）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const itName = `SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0300`;
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} onInteropAbilityLifecycle`);
+          TestAbilityContext!.getApplicationContext().onInteropAbilityLifecycle(interopAbilityLifecycleCallback)
+          hilog.info(domain, tag, `${itName} offInteropAbilityLifecycle`);
+          TestAbilityContext!.getApplicationContext().offInteropAbilityLifecycle();
+        } catch (err) {
+          let errB: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${itName} err: code ${errB.code}, message ${err.message}`);
+          expect().assertFail();
+        }
+        hilog.info(domain, tag, `${itName} end`);
+        done();
+      })
+
+/**
+     * @tc.name   SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400
+     * @tc.desc   offInteropAbilityLifecycle（） no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+        const itName = `SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0400`;
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          TestAbilityContext!.getApplicationContext().offInteropAbilityLifecycle();
+          expect().assertFail()
+          done()
+        } catch (err) {
+          let errB: BusinessError = err as BusinessError;
+          hilog.info(domain, tag, `${itName} err: code ${errB.code}, message ${err.message}`);
+          expect(errB.code === 401).assertTrue();
+          hilog.info(domain, tag, `${itName} end`);
+          done();
+        }
+      })
   })
 }
 
