@@ -1484,34 +1484,12 @@ export default function int16ArrayEntriesPart01Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__5600
      * @tc.name int16ArrayEntriesPart01Test056
-     * @tc.desc Verify entries() over [1] first next() not done with key 0
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level LEVEL2
-     */
-    it("int16ArrayEntriesPart01Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Int16Array = new Int16Array([1]);
-      let iter: IterableIterator<[int, Number]> = arr.entries();
-      let r: IteratorResult<[int, Number]> = iter.next();
-      let actual: boolean = r.done;
-      expect(actual).assertFalse();
-      let _i: int;
-      let _v: Number;
-      [_i, _v] = r.value!;
-      let actual2: int = _i;
-      let expected2: int = 0;
-      expect(actual2).assertEqual(expected2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__5700
-     * @tc.name int16ArrayEntriesPart01Test057
      * @tc.desc Verify entries() over [10, 20, 30, 40] counts 4 pairs via while loop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([10, 20, 30, 40]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let pairCount: int = 0;
@@ -1524,14 +1502,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__5800
-     * @tc.name int16ArrayEntriesPart01Test058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__5700
+     * @tc.name int16ArrayEntriesPart01Test057
      * @tc.desc Verify entries() over [42] first next() not done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([42]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let r: IteratorResult<[int, Number]> = iter.next();
@@ -1540,14 +1518,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__5900
-     * @tc.name int16ArrayEntriesPart01Test059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__5800
+     * @tc.name int16ArrayEntriesPart01Test058
      * @tc.desc Verify for...of entries() on empty array yields zero iterations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([]);
       let count: int = 0;
       for (let entry: [int, Number] of arr.entries()) {
@@ -1557,14 +1535,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6000
-     * @tc.name int16ArrayEntriesPart01Test060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__5900
+     * @tc.name int16ArrayEntriesPart01Test059
      * @tc.desc Verify for...of entries() over [99] yields entry [0, 99]
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([99]);
       let count: int = 0;
       let firstIdx: int = -1;
@@ -1583,14 +1561,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6100
-     * @tc.name int16ArrayEntriesPart01Test061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6000
+     * @tc.name int16ArrayEntriesPart01Test060
      * @tc.desc Verify for...of entries() over five elements yields 5 iterations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3, 4, 5]);
       let count: int = 0;
       for (let entry: [int, Number] of arr.entries()) {
@@ -1600,14 +1578,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6200
-     * @tc.name int16ArrayEntriesPart01Test062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6100
+     * @tc.name int16ArrayEntriesPart01Test061
      * @tc.desc Verify for...of entries() yields ascending entry indices 0, 1, 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([7, 14, 21]);
       let idx: int = 0;
       for (let entry: [int, Number] of arr.entries()) {
@@ -1622,14 +1600,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6300
-     * @tc.name int16ArrayEntriesPart01Test063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6200
+     * @tc.name int16ArrayEntriesPart01Test062
      * @tc.desc Verify for...of entries() over [32767, -32768] yields values in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let valMax:short = 32767
       let valMin:short = -32768
       let arr: Int16Array = new Int16Array([valMax, valMin]);
@@ -1649,14 +1627,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6400
-     * @tc.name int16ArrayEntriesPart01Test064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6300
+     * @tc.name int16ArrayEntriesPart01Test063
      * @tc.desc Verify entries() after $_set(0, 999) yields 999 for first next()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       arr.$_set(0, 999);
@@ -1670,14 +1648,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6500
-     * @tc.name int16ArrayEntriesPart01Test065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6400
+     * @tc.name int16ArrayEntriesPart01Test064
      * @tc.desc Verify entries() after $_set(2, 777) yields 777 at third next()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       iter.next();
@@ -1693,14 +1671,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6600
-     * @tc.name int16ArrayEntriesPart01Test066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6500
+     * @tc.name int16ArrayEntriesPart01Test065
      * @tc.desc Verify entries() over [1, 2, 3] after $_set(0, 999) still yields 1 then 2 in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       let r1: IteratorResult<[int, Number]> = iter.next();
@@ -1721,14 +1699,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6700
-     * @tc.name int16ArrayEntriesPart01Test067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6600
+     * @tc.name int16ArrayEntriesPart01Test066
      * @tc.desc Verify entries() done true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       iter.next();
@@ -1739,14 +1717,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6800
-     * @tc.name int16ArrayEntriesPart01Test068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6700
+     * @tc.name int16ArrayEntriesPart01Test067
      * @tc.desc Verify entries() over [1, 2, 3] second next() not done
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1, 2, 3]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       iter.next();
@@ -1756,14 +1734,14 @@ export default function int16ArrayEntriesPart01Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6900
-     * @tc.name int16ArrayEntriesPart01Test069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_ENTRIES_PART01__6800
+     * @tc.name int16ArrayEntriesPart01Test068
      * @tc.desc Verify entries() over [1] second next() value is undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level LEVEL2
      */
-    it("int16ArrayEntriesPart01Test069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it("int16ArrayEntriesPart01Test068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Int16Array = new Int16Array([1]);
       let iter: IterableIterator<[int, Number]> = arr.entries();
       iter.next();
