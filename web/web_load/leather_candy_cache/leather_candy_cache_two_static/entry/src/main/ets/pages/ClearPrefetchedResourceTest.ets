@@ -116,7 +116,6 @@ struct clearPrefetchedResourceTest {
                 web_webview.WebviewController.prefetchResource(requestInfo, [], '', 500);
                 Utils.emitEvent(true, 41023101)
               } catch (error) {
-                error = error as BusinessError;
                 Utils.emitEvent(error.code, 41023101)
               }
               break;
@@ -136,7 +135,6 @@ struct clearPrefetchedResourceTest {
                   headers as Array<web_webview.WebHeader>, cacheKey as string, cacheValidTime as Int);
                 Utils.emitEvent(true, 41023102)
               } catch (error) {
-                error = error as BusinessError;
                 Utils.emitEvent(error.code, 41023102)
               }
               break;
@@ -156,7 +154,6 @@ struct clearPrefetchedResourceTest {
                   headers as Array<web_webview.WebHeader>, cacheKey as string, cacheValidTime as Int);
                 Utils.emitEvent(true, 41023103)
               } catch (error) {
-                error = error as BusinessError;
                 Utils.emitEvent(error.code, 41023103)
               }
               break;
