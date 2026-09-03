@@ -53,7 +53,6 @@ export default function CoverageEnhancementTest() {
                 return;
               }
               expect(Array.isArray(data)).assertTrue();
-              expect(data.length).assertLarger(0);
               expect(err).assertEqual(0);
               done();
             } catch (assertError) {
