@@ -18,7 +18,7 @@ import { BusinessError } from '@ohos.base';
 import { systemParameterEnhance} from '@kit.BasicServicesKit';
 import { commonEventManager } from '@kit.BasicServicesKit';
 import base from '@ohos.base';
-import { common, sendableContextManager } from '@kit.AbilityKit';
+import { common, sendableContextManager, contextConstant } from '@kit.AbilityKit';
 import startupManager from '@ohos.app.appstartup.startupManager';
 import StartupConfig from '@ohos.app.appstartup.StartupConfig';
 import { wantAgent, Want } from '@kit.AbilityKit';
@@ -168,9 +168,11 @@ export default function sendableContextManagerTest() {
      */
     it('SUB_ChildProcessManager_sendableContextManager_0500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_ChildProcessManager_sendableContextManager_0500`;
-      let moduleContext: common.UIAbilityContext;
+      let moduleContext: common.Context;
       try {
-        moduleContext = context.createAreaModeContext(0) as common.UIAbilityContext;
+        moduleContext = context.createAreaModeContext(undefined as contextConstant.AreaMode);
+        expect().assertFail();
+        done();
       } catch (error) {
         console.error(`${tag} createModuleContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
         expect(error.code).assertEqual(401)
