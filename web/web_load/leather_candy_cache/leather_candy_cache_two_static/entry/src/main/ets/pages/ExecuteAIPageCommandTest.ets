@@ -24,7 +24,7 @@ import {
   Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import webview from '@ohos.web.webview'
-import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { Callback } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 
@@ -85,10 +85,10 @@ struct ExecuteAIPageCommandTest {
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    if (eventData.data != null) {
+      const data = eventData.data;
+      if (data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;
       }
@@ -106,7 +106,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0001);
                 Utils.emitEvent(true, 148111)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148111)
               }
@@ -118,7 +117,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0002);
                 Utils.emitEvent(true, 148114)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148114)
               }
@@ -130,7 +128,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0003);
                 Utils.emitEvent(true, 148115)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148115)
               }
@@ -142,7 +139,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0004);
                 Utils.emitEvent(true, 148116)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148116)
               }
@@ -154,7 +150,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0005);
                 Utils.emitEvent(true, 148117)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148117)
               }
@@ -166,7 +161,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0000);
                 Utils.emitEvent(true, 148118)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148118)
               }
@@ -178,7 +172,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0006);
                 Utils.emitEvent(true, 148119)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148119)
               }
@@ -190,7 +183,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0007);
                 Utils.emitEvent(true, 148120)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148120)
               }
@@ -202,7 +194,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0008);
                 Utils.emitEvent(true, 148121)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148121)
               }
@@ -214,7 +205,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0009);
                 Utils.emitEvent(true, 148122)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148122)
               }
@@ -226,7 +216,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0010);
                 Utils.emitEvent(true, 148123)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148123)
               }
@@ -238,7 +227,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(fullDomFunction0011);
                 Utils.emitEvent(true, 148124)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148124)
               }
@@ -250,7 +238,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand('');
                 Utils.emitEvent(true, 148125)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148125)
               }
@@ -262,7 +249,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand('not valid json');
                 Utils.emitEvent(true, 148126)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148126)
               }
@@ -274,7 +260,6 @@ struct ExecuteAIPageCommandTest {
                 this.controllerNull.executeAIPageCommand(fullDomFunction0001);
                 Utils.emitEvent(true, 148127)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148127)
               }
@@ -286,7 +271,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand('{}');
                 Utils.emitEvent(true, 148128)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148128)
               }
@@ -298,7 +282,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0001);
                 Utils.emitEvent(true, 148129)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148129)
               }
@@ -310,7 +293,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0000);
                 Utils.emitEvent(true, 148130)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148130)
               }
@@ -322,7 +304,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0002);
                 Utils.emitEvent(true, 148131)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148131)
               }
@@ -334,7 +315,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0003);
                 Utils.emitEvent(true, 148132)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148132)
               }
@@ -346,7 +326,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0004);
                 Utils.emitEvent(true, 148133)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148133)
               }
@@ -358,7 +337,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0005);
                 Utils.emitEvent(true, 148134)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148134)
               }
@@ -370,7 +348,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0006);
                 Utils.emitEvent(true, 148135)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148135)
               }
@@ -382,7 +359,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0007);
                 Utils.emitEvent(true, 148136)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148136)
               }
@@ -394,7 +370,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0008);
                 Utils.emitEvent(true, 148137)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148137)
               }
@@ -406,7 +381,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0009);
                 Utils.emitEvent(true, 148138)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148138)
               }
@@ -418,7 +392,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0010);
                 Utils.emitEvent(true, 148139)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148139)
               }
@@ -430,7 +403,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0011);
                 Utils.emitEvent(true, 148140)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148140)
               }
@@ -442,7 +414,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0012);
                 Utils.emitEvent(true, 148141)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148141)
               }
@@ -454,7 +425,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0013);
                 Utils.emitEvent(true, 148142)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148142)
               }
@@ -466,7 +436,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0014);
                 Utils.emitEvent(true, 148143)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148143)
               }
@@ -478,7 +447,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0015);
                 Utils.emitEvent(true, 148144)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148144)
               }
@@ -490,7 +458,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0016);
                 Utils.emitEvent(true, 148145)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148145)
               }
@@ -502,7 +469,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0017);
                 Utils.emitEvent(true, 148146)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148146)
               }
@@ -514,7 +480,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0018);
                 Utils.emitEvent(true, 148147)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148147)
               }
@@ -526,7 +491,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0019);
                 Utils.emitEvent(true, 148148)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148148)
               }
@@ -538,7 +502,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0020);
                 Utils.emitEvent(true, 148149)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148149)
               }
@@ -550,7 +513,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0021);
                 Utils.emitEvent(true, 148150)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148150)
               }
@@ -562,7 +524,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0022);
                 Utils.emitEvent(true, 148151)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148151)
               }
@@ -574,7 +535,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0023);
                 Utils.emitEvent(true, 148152)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148152)
               }
@@ -586,7 +546,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0024);
                 Utils.emitEvent(true, 148153)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148153)
               }
@@ -598,7 +557,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(liteDomFunction0025);
                 Utils.emitEvent(true, 148154)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148154)
               }
@@ -610,7 +568,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand(' ');
                 Utils.emitEvent(true, 148155)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148155)
               }
@@ -622,7 +579,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand('[]');
                 Utils.emitEvent(true, 148156)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148156)
               }
@@ -634,7 +590,6 @@ struct ExecuteAIPageCommandTest {
                 this.controller.executeAIPageCommand('123');
                 Utils.emitEvent(true, 148157)
               } catch (error) {
-                error = error as BusinessError;
                 console.error(msg + 'executeAIPageCommand error: ' + error.code + ' message ' + error.message);
                 Utils.emitEvent(error.code, 148157)
               }

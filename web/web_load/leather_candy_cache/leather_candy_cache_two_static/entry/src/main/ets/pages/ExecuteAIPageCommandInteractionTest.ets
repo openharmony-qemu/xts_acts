@@ -23,7 +23,7 @@ import {
   ClickEvent,
   Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { Callback } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
@@ -157,19 +157,19 @@ struct ExecuteAIPageCommandInteractionTest {
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    if (eventData.data != null) {
+      const data = eventData.data;
+      if (data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;
       }
     }
   }
 
-  private sleep(ms: number): Promise<void> {
-    return new Promise<void>((resolve: (value: void | PromiseLike<void>) => void, reject: (reason: Error) => void) => {
-      setTimeout(() => { resolve(); }, ms);
+  private sleep(ms: int): Promise<void> {
+    return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void) => {
+      setTimeout(() => { resolve(Promise.resolve()); }, ms);
     });
   }
 
@@ -181,7 +181,7 @@ struct ExecuteAIPageCommandInteractionTest {
       if (codeElem !== undefined) {
         const codeDbl = codeElem.tryAsDouble();
         if (codeDbl !== undefined) {
-          code = codeDbl as number;
+          code = codeDbl;
         }
       }
     } catch (e) {

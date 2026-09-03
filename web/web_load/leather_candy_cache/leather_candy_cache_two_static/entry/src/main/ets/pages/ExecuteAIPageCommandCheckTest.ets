@@ -23,7 +23,7 @@ import {
   ClickEvent,
   Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { Callback } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
@@ -105,19 +105,19 @@ struct ExecuteAIPageCommandCheckTest {
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    if (eventData.data != null) {
+      const data = eventData.data;
+      if (data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;
       }
     }
   }
 
-  private sleep(ms: number): Promise<void> {
-    return new Promise<void>((resolve: (value: void | PromiseLike<void>) => void, reject: (reason: Error) => void) => {
-      setTimeout(() => { resolve(); }, ms);
+  private sleep(ms: int): Promise<void> {
+    return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void) => {
+      setTimeout(() => { resolve(Promise.resolve()); }, ms);
     });
   }
 
@@ -129,7 +129,7 @@ struct ExecuteAIPageCommandCheckTest {
       if (codeElem !== undefined) {
         const codeDbl = codeElem.tryAsDouble();
         if (codeDbl !== undefined) {
-          code = codeDbl as number;
+          code = codeDbl;
         }
       }
     } catch (e) {
@@ -215,8 +215,9 @@ struct ExecuteAIPageCommandCheckTest {
       if (nodesElem === undefined) {
         return ids;
       }
-      if (nodesElem.tryAsArray()) {
-        const nodesArr = nodesElem.tryAsArray() as Array<jsonx.JsonElement>;
+      const nodesArrOpt = nodesElem.tryAsArray();
+      if (nodesArrOpt !== undefined) {
+        const nodesArr: Array<jsonx.JsonElement> = nodesArrOpt;
         const marker: string = '"data-case":"' + caseName + '"';
         for (let i = 0; i < nodesArr.length; i++) {
           const nodeElem = nodesArr[i];
@@ -487,18 +488,18 @@ struct ExecuteAIPageCommandCheckTest {
                 const addElem = JSON.parseJsonElement(addRaw);
                 const addCodeElem = addElem.tryGetElement("code");
                 if (addCodeElem !== undefined) {
-                  const addCodeDbl = addCodeElem.tryAsDouble();
-                  if (addCodeDbl !== undefined) {
-                    addCode = addCodeDbl as number;
-                  }
+                const addCodeDbl = addCodeElem.tryAsDouble();
+                if (addCodeDbl !== undefined) {
+                  addCode = addCodeDbl;
                 }
-                const addRcElem = addElem.tryGetElement("renderedCount");
-                if (addRcElem !== undefined) {
-                  const addRcDbl = addRcElem.tryAsDouble();
-                  if (addRcDbl !== undefined) {
-                    addRenderedCount = addRcDbl as number;
-                  }
+              }
+              const addRcElem = addElem.tryGetElement("renderedCount");
+              if (addRcElem !== undefined) {
+                const addRcDbl = addRcElem.tryAsDouble();
+                if (addRcDbl !== undefined) {
+                  addRenderedCount = addRcDbl;
                 }
+              }
               } catch (e) {
                 console.error('testRemovePageAnnotation001 parse add result error: ' + JSON.stringify(e));
               }
