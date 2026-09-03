@@ -21,7 +21,7 @@ import Utils from '../../src/test/Util.test';
 import webview from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
-import { Callback } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { canIUse } from '@internal.full.global'
 import webView from '@ohos.web.webview';
@@ -54,16 +54,12 @@ struct setBlanklessLoadingWithParamsTest {
   }
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null) {
-        const data = eventData.data;
-        if (data['ACTION'] != null) {
-          let strValue: string = String(data['ACTION']);
-          this.stringObj.str = strValue;
-          console.info(this.stringObj.str)
-        }
-      }
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    const data = eventData.data as Record<string, RecordData>;
+    if (data != null && data['ACTION'] != null) {
+      let strValue: string = String(data['ACTION']);
+      this.stringObj.str = strValue;
+      console.info(this.stringObj.str)
     }
   }
 
@@ -438,13 +434,6 @@ struct setBlanklessLoadingWithParamsTest {
                 }
                 break;
               }
-
-              case 'emitonSwitchNextPage': {
-                let uiContext: UIContext = this.getUIContext();
-                let router: Router = uiContext.getRouter();
-                router.pushUrl({ url: 'pages/SetBlanklessLoadingWithKeyTest' })
-                break;
-              }
               case 'testSetBlanklessLoadingWithParams801Static': {
                 let msg = 'testSetBlanklessLoadingWithParams801Static';
                 try {
@@ -504,6 +493,12 @@ struct setBlanklessLoadingWithParamsTest {
                     Utils.emitEvent(401, 148665);
                   }
                 }
+                break;
+              }
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/SetBlanklessLoadingWithKeyTest' })
                 break;
               }
             }

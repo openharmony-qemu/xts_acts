@@ -15,12 +15,11 @@
  */
 
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
-import events_emitter from '@ohos.events.emitter';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@ohos.UiTest';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -192,90 +191,60 @@ export default function SetBlanklessLoadingWithKey() : void{
 
     /**
      * @tc.name   testGetBlanklessInfoWithKey801Static
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETBLANKLESSINFOWITHKEY_801_0100
-     * @tc.desc   test getBlanklessInfoWithKey error code 801
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETBLANKLESSINFOWITHKEY_801_STATIC_0100
+     * @tc.desc   test getBlanklessInfoWithKey 801 capability not supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testGetBlanklessInfoWithKey801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      try {
-        await Utils.msSleep(2000);
-        Utils.emitEvent('testGetBlanklessInfoWithKey801Static', 10)
-        await Utils.msSleep(3000);
-        Utils.registerBaseEvent('testGetBlanklessInfoWithKey801Static', 801, 148590, done,
-          (backData: events_emitter.EventData, expected: Object) => {
-            const data = backData?.data as Record<string, RecordData>;
-            expect(data['ACTION']).assertEqual(expected);
-          });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
-        await Utils.msSleep(4000);
-        done();
-      } catch (err) {
-        console.info('[testGetBlanklessInfoWithKey801Static] err:' + JSON.stringify(err));
-        done();
-      }
+    it('testGetBlanklessInfoWithKey801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testGetBlanklessInfoWithKey801Static', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testGetBlanklessInfoWithKey801Static', 801, 148590, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
     })
 
     /**
      * @tc.name   testSetBlanklessLoadingWithKey801Static
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHKEY_801_0200
-     * @tc.desc   test setBlanklessLoadingWithKey error code 801
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGWITHKEY_801_STATIC_0100
+     * @tc.desc   test setBlanklessLoadingWithKey 801 capability not supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetBlanklessLoadingWithKey801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      try {
-        await Utils.msSleep(2000);
-        Utils.emitEvent('testSetBlanklessLoadingWithKey801Static', 10)
-        await Utils.msSleep(3000);
-        Utils.registerBaseEvent('testSetBlanklessLoadingWithKey801Static', 801, 148594, done,
-          (backData: events_emitter.EventData, expected: Object) => {
-            const data = backData?.data as Record<string, RecordData>;
-            expect(data['ACTION']).assertEqual(expected);
-          });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
-        await Utils.msSleep(6000);
-        done();
-      } catch (err) {
-        console.info('[testSetBlanklessLoadingWithKey801Static] err:' + JSON.stringify(err));
-        done();
-      }
+    it('testSetBlanklessLoadingWithKey801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testSetBlanklessLoadingWithKey801Static', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testSetBlanklessLoadingWithKey801Static', 801, 148594, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
     })
 
     /**
      * @tc.name   testClearBlanklessLoadingCache801Static
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARBLANKLESSLOADINGCACHE_801_0300
-     * @tc.desc   test clearBlanklessLoadingCache error code 801
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARBLANKLESSLOADINGCACHE_801_STATIC_0100
+     * @tc.desc   test clearBlanklessLoadingCache 801 capability not supported
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testClearBlanklessLoadingCache801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-      try {
-        await Utils.msSleep(2000);
-        Utils.emitEvent('testClearBlanklessLoadingCache801Static', 10)
-        await Utils.msSleep(3000);
-        Utils.registerBaseEvent('testClearBlanklessLoadingCache801Static', 801, 148598, done,
-          (backData: events_emitter.EventData, expected: Object) => {
-            const data = backData?.data as Record<string, RecordData>;
-            expect(data['ACTION']).assertEqual(expected);
-          });
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
-        await Utils.msSleep(4000);
-        done();
-      } catch (err) {
-        console.info('[testClearBlanklessLoadingCache801Static] err:' + JSON.stringify(err));
-        done();
-      }
+    it('testClearBlanklessLoadingCache801Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testClearBlanklessLoadingCache801Static', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testClearBlanklessLoadingCache801Static', 801, 148598, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
     })
-
+    
   })
 }

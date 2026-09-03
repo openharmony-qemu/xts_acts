@@ -23,7 +23,7 @@ import {
   ClickEvent,
   Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import { Callback } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
@@ -106,12 +106,10 @@ struct ExecuteAIPageCommandCheckTest {
 
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-    if (eventData.data != null) {
-      const data = eventData.data;
-      if (data['ACTION'] != null) {
-        let strValue: string = String(data['ACTION']);
-        this.str = strValue;
-      }
+    const data = eventData.data as Record<string, RecordData>;
+    if (data != null && data['ACTION'] != null) {
+      let strValue: string = String(data['ACTION']);
+      this.str = strValue;
     }
   }
 
@@ -217,7 +215,7 @@ struct ExecuteAIPageCommandCheckTest {
       }
       const nodesArrOpt = nodesElem.tryAsArray();
       if (nodesArrOpt !== undefined) {
-        const nodesArr: Array[jsonx.JsonElement] = nodesArrOpt;
+        const nodesArr = nodesArrOpt;
         const marker: string = '"data-case":"' + caseName + '"';
         for (let i = 0; i < nodesArr.length; i++) {
           const nodeElem = nodesArr[i];

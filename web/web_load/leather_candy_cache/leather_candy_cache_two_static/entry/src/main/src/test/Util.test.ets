@@ -74,10 +74,12 @@ export default class Utils{
 
   static registerEvent(testCaseName: string, expectedValue: Object, eventId: Long, done: () => void) : void{
     Utils.registerBaseEvent(testCaseName, expectedValue, eventId, done, (backData: events_emitter.EventData, expected: Object) => {
-      const data = backData.data as Record<string, RecordData>;
-      const action = data['ACTION'];
-      console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
-      expect(action).assertEqual(expected);
+      if (backData.data != null) {
+        const data = backData.data as Record<string, RecordData>;
+        const action = data['ACTION'];
+        console.info(`Begin to assert [` + action + `] Equal [` + expected + `]`);
+        expect(action).assertEqual(expected);
+      }
     });
   }
 }

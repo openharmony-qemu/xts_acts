@@ -25,7 +25,7 @@ import {
   Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import web_webview from '@ohos.web.webview'
-import { Callback } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
 import Utils from '../../src/test/Util.test';
@@ -129,12 +129,10 @@ struct injectOfflineResourcesTest {
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
     console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-    if (eventData.data != null) {
-      const data = eventData.data;
-      if (data['ACTION'] != null) {
-        let strValue: string = String(data['ACTION']);
-        this.str = strValue;
-      }
+    const data = eventData.data as Record<string, RecordData>;
+    if (data != null && data['ACTION'] != null) {
+      let strValue: string = String(data['ACTION']);
+      this.str = strValue;
     }
   }
 
