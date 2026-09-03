@@ -92,6 +92,6 @@ export default {
     let self = this;
     setTimeout(function() {
       self._outputReportLines(items, keys, index + 1, passCount, failCount, totalCount);
-    }, 500);
+    }, 100);
   },
 }
