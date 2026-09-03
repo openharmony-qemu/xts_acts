@@ -75,7 +75,7 @@ async function findComponentWithScroll(driver: Driver, id: string, maxScrollRetr
     }
   }
 
-  // Step 1: Try scrollSearch (uses accessibility scroll actions)
+
   try {
     let result = await scrollComp.scrollSearch(ON.id(id));
     if (result !== null && result !== undefined) {
