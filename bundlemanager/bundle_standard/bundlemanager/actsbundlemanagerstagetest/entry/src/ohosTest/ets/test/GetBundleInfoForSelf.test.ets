@@ -1140,8 +1140,8 @@ export default function getBundleInfoForSelf() {
         expect(data.hapModulesInfo.length).assertEqual(0);
         expect(data.reqPermissionDetails.length).assertEqual(0);
         expect(data.permissionGrantStates.length).assertEqual(0);
-        expect(data.signatureInfo.appId.length).assertLarger(0);
-        expect(data.signatureInfo.fingerprint.length).assertLarger(0);
+        expect(data.signatureInfo.appId).assertEqual(APPID);
+        expect(data.signatureInfo.fingerprint).assertEqual(FINGERPRINT);
         expect(data.signatureInfo.certificate).assertContain(CERTIFICATE);
         done();
       }).catch((err: BusinessError) => {
@@ -1168,8 +1168,8 @@ export default function getBundleInfoForSelf() {
         expect(data.hapModulesInfo.length).assertEqual(0);
         expect(data.reqPermissionDetails.length).assertEqual(0);
         expect(data.permissionGrantStates.length).assertEqual(0);
-        expect(data.signatureInfo.appId.length).assertLarger(0);
-        expect(data.signatureInfo.fingerprint.length).assertLarger(0);
+        expect(data.signatureInfo.appId).assertEqual(APPID);
+        expect(data.signatureInfo.fingerprint).assertEqual(FINGERPRINT);
         expect(data.signatureInfo.certificate).assertContain(CERTIFICATE);
         expect(err).assertEqual(null);
         done();
@@ -1858,8 +1858,8 @@ export default function getBundleInfoForSelf() {
       expect(data.hapModulesInfo.length).assertEqual(0);
       expect(data.reqPermissionDetails.length).assertEqual(0);
       expect(data.permissionGrantStates.length).assertEqual(0);
-      expect(data.signatureInfo.appId.length).assertLarger(0);
-      expect(data.signatureInfo.fingerprint.length).assertLarger(0);
+      expect(data.signatureInfo.appId).assertEqual(APPID);
+      expect(data.signatureInfo.fingerprint).assertEqual(FINGERPRINT);
       expect(data.signatureInfo.certificate).assertContain(CERTIFICATE);
       expect(data.signatureInfo.appIdentifier).assertEqual("");
       done();
