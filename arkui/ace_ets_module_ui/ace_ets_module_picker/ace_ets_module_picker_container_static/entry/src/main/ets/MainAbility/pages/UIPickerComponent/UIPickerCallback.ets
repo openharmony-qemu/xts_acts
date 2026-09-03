@@ -23,7 +23,10 @@ import {
   TextAlign,
   UIPickerComponent,
   ForEach,
-  UIPickerComponentOptions
+  UIPickerComponentOptions,
+  FlexAlign,
+  HorizontalAlign,
+  Scroll
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -42,84 +45,92 @@ struct UIPickerCallback {
   }
 
   build() {
-    Column(undefined) {
-      Row() {
-        UIPickerComponent() {
-          ForEach(this.monthArray, (item: string) => {
-            Text(item)
-              .fontSize(this.fontSize)
-              .textAlign(TextAlign.Center)
-              .fontColor(Color.Black)
+    Scroll() {
+      Column() {
+        Row() {
+          UIPickerComponent() {
+            ForEach(this.monthArray, (item: string) => {
+              Text(item)
+                .fontSize(this.fontSize)
+                .textAlign(TextAlign.Center)
+                .fontColor(Color.Black)
+            })
+          }
+          .width('15%')
+          .id('uipicker_callback_onchange')
+          .height('30%')
+          .onChange((selectedIndex: Int) => {
+            console.info('UIPickerComponent:onChange selectedIndex: ' + selectedIndex);
+            this.onChangeIndex = selectedIndex.toString();
           })
         }
-        .width('15%')
-        .id('uipicker_callback_onchange')
-        .height('30%')
-        .onChange((selectedIndex: Int) => {
-          console.info('UIPickerComponent:onChange selectedIndex: ' + selectedIndex);
-          this.onChangeIndex = selectedIndex.toString();
-        })
-      }
-      Text('onChangeIndex:' + this.onChangeIndex)
-        .id('text_callback_onchange_index')
-        .fontSize(12)
 
-      Row() {
-        UIPickerComponent() {
-          ForEach(this.monthArray, (item: string) => {
-            Text(item)
-              .fontSize(this.fontSize)
-              .textAlign(TextAlign.Center)
-              .fontColor(Color.Black)
-          })
-        }
-        .width('15%')
-        .id('uipicker_callback_onscrollstop')
-        .height('30%')
-        .onScrollStop((selectedIndex: Int) => {
-          console.info('UIPickerComponent:onScrollStop selectedIndex: ' + selectedIndex);
-          this.onScrollStopIndex = selectedIndex.toString();
-        })
-      }
-      Text('onScrollStopIndex:' + this.onScrollStopIndex)
-        .id('text_callback_onscrollstop_index')
-        .fontSize(12)
+        Text('onChangeIndex:' + this.onChangeIndex)
+          .id('text_callback_onchange_index')
+          .fontSize(12)
 
-      Row() {
-        UIPickerComponent() {
-          ForEach(this.monthArray, (item: string) => {
-            Text(item)
-              .fontSize(this.fontSize)
-              .textAlign(TextAlign.Center)
-              .fontColor(Color.Black)
+        Row() {
+          UIPickerComponent() {
+            ForEach(this.monthArray, (item: string) => {
+              Text(item)
+                .fontSize(this.fontSize)
+                .textAlign(TextAlign.Center)
+                .fontColor(Color.Black)
+            })
+          }
+          .width('15%')
+          .id('uipicker_callback_onscrollstop')
+          .height('30%')
+          .onScrollStop((selectedIndex: Int) => {
+            console.info('UIPickerComponent:onScrollStop selectedIndex: ' + selectedIndex);
+            this.onScrollStopIndex = selectedIndex.toString();
           })
         }
-        .width('15%')
-        .id('uipicker_callback_onchange_undefined')
-        .height('20%')
-        .onChange(undefined)
-      }
-      Text('onChangeUndefined:rendered')
-        .id('text_callback_onchange_undefined')
-        .fontSize(12)
 
-      Row() {
-        UIPickerComponent() {
-          ForEach(this.monthArray, (item: string) => {
-            Text(item)
-              .fontSize(this.fontSize)
-              .textAlign(TextAlign.Center)
-              .fontColor(Color.Black)
-          })
+        Text('onScrollStopIndex:' + this.onScrollStopIndex)
+          .id('text_callback_onscrollstop_index')
+          .fontSize(12)
+
+        Row() {
+          UIPickerComponent() {
+            ForEach(this.monthArray, (item: string) => {
+              Text(item)
+                .fontSize(this.fontSize)
+                .textAlign(TextAlign.Center)
+                .fontColor(Color.Black)
+            })
+          }
+          .width('15%')
+          .id('uipicker_callback_onchange_undefined')
+          .height('20%')
+          .onChange(undefined)
         }
-        .width('15%')
-        .id('uipicker_callback_onscrollstop_undefined')
-        .height('20%')
-        .onScrollStop(undefined)
+
+        Text('onChangeUndefined:rendered')
+          .id('text_callback_onchange_undefined')
+          .fontSize(12)
+
+        Row() {
+          UIPickerComponent() {
+            ForEach(this.monthArray, (item: string) => {
+              Text(item)
+                .fontSize(this.fontSize)
+                .textAlign(TextAlign.Center)
+                .fontColor(Color.Black)
+            })
+          }
+          .width('15%')
+          .id('uipicker_callback_onscrollstop_undefined')
+          .height('20%')
+          .onScrollStop(undefined)
+        }
+
+        Text('onScrollStopUndefined:rendered')
+          .id('text_callback_onscrollstop_undefined')
+          .fontSize(12)
       }
-      Text('onScrollStopUndefined:rendered')
-        .id('text_callback_onscrollstop_undefined')
-        .fontSize(12)
+      .justifyContent(FlexAlign.Start)
+      .alignItems(HorizontalAlign.Center)
     }.width('100%').height('100%')
   }
 }

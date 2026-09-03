@@ -52,7 +52,7 @@ struct TextPickerOnScrollStop {
       TextPicker({ range: this.singleRange })
         .id('textpicker_onscrollstop_single')
         .height('18%')
-        .onScrollStop((value: string | string[], index: number | number[]) => {
+        .onScrollStop((value: string | string[], index: int | int[]) => {
           this.onScrollStopSingleValue = JSON.stringify(value);
           this.onScrollStopSingleIndex = JSON.stringify(index);
         })
@@ -66,7 +66,7 @@ struct TextPickerOnScrollStop {
       TextPicker({ range: this.imageRange })
         .id('textpicker_onscrollstop_image')
         .height('18%')
-        .onScrollStop((value: string | string[], index: number | number[]) => {
+        .onScrollStop((value: string | string[], index: int | int[]) => {
           this.onScrollStopImageValue = JSON.stringify(value);
           this.onScrollStopImageIndex = JSON.stringify(index);
         })
@@ -80,7 +80,7 @@ struct TextPickerOnScrollStop {
       TextPicker({ range: this.multiRange })
         .id('textpicker_onscrollstop_multi')
         .height('18%')
-        .onScrollStop((value: string | string[], index: number | number[]) => {
+        .onScrollStop((value: string | string[], index: int | int[]) => {
           this.onScrollStopMultiValue = JSON.stringify(value);
           this.onScrollStopMultiIndex = JSON.stringify(index);
         })

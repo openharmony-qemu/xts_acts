@@ -52,7 +52,7 @@ struct TextPickerOnChange {
       TextPicker({ range: this.singleRange })
         .id('textpicker_onchange_single')
         .height('18%')
-        .onChange((selectItem: string | string[], index: number | number[]) => {
+        .onChange((selectItem: string | string[], index: int | int[]) => {
           this.onChangeSingleValue = JSON.stringify(selectItem);
           this.onChangeSingleIndex = JSON.stringify(index);
         })
@@ -66,7 +66,7 @@ struct TextPickerOnChange {
       TextPicker({ range: this.imageRange })
         .id('textpicker_onchange_image')
         .height('18%')
-        .onChange((selectItem: string | string[], index: number | number[]) => {
+        .onChange((selectItem: string | string[], index: int | int[]) => {
           this.onChangeImageValue = JSON.stringify(selectItem);
           this.onChangeImageIndex = JSON.stringify(index);
         })
@@ -80,7 +80,7 @@ struct TextPickerOnChange {
       TextPicker({ range: this.multiRange })
         .id('textpicker_onchange_multi')
         .height('18%')
-        .onChange((selectItem: string | string[], index: number | number[]) => {
+        .onChange((selectItem: string | string[], index: int | int[]) => {
           this.onChangeMultiValue = JSON.stringify(selectItem);
           this.onChangeMultiIndex = JSON.stringify(index);
         })

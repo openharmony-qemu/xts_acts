@@ -22,7 +22,10 @@ import {
   Text,
   TimePicker,
   TimePickerFormat,
-  TimePickerResult
+  TimePickerResult,
+  FlexAlign,
+  HorizontalAlign,
+  Scroll
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -35,45 +38,51 @@ struct TimePickerOnChange {
   @State onChange12hResult: string = 'init';
 
   build() {
-    Column(undefined) {
-      TimePicker({ selected: this.selectedTime })
-        .id('timepicker_onchange_hm')
-        .height('18%')
-        .onChange((value: TimePickerResult) => {
-          this.onChangeHmResult = JSON.stringify(value);
-        })
-      Text('hm_result:' + this.onChangeHmResult)
-        .id('text_onchange_hm_result')
-        .fontSize(12)
+    Scroll() {
+      Column() {
+        TimePicker({ selected: this.selectedTime })
+          .id('timepicker_onchange_hm')
+          .height('18%')
+          .onChange((value: TimePickerResult) => {
+            this.onChangeHmResult = JSON.stringify(value);
+          })
+        Text('hm_result:' + this.onChangeHmResult)
+          .id('text_onchange_hm_result')
+          .fontSize(12)
 
-      TimePicker({
-        selected: this.selectedTime,
-        format: TimePickerFormat.HOUR_MINUTE_SECOND
-      })
-        .id('timepicker_onchange_hms')
-        .height('18%')
-        .onChange((value: TimePickerResult) => {
-          this.onChangeHmsResult = JSON.stringify(value);
+        TimePicker({
+          selected: this.selectedTime,
+          format: TimePickerFormat.HOUR_MINUTE_SECOND
         })
-      Text('hms_result:' + this.onChangeHmsResult)
-        .id('text_onchange_hms_result')
-        .fontSize(12)
+          .id('timepicker_onchange_hms')
+          .height('18%')
+          .onChange((value: TimePickerResult) => {
+            this.onChangeHmsResult = JSON.stringify(value);
+          })
+        Text('hms_result:' + this.onChangeHmsResult)
+          .id('text_onchange_hms_result')
+          .fontSize(12)
 
-      TimePicker({ selected: this.selectedTime })
-        .id('timepicker_onchange_12h')
-        .height('18%')
-        .useMilitaryTime(false)
-        .onChange((value: TimePickerResult) => {
-          this.onChange12hResult = JSON.stringify(value);
-        })
-      Text('12h_result:' + this.onChange12hResult)
-        .id('text_onchange_12h_result')
-        .fontSize(12)
+        TimePicker({ selected: this.selectedTime })
+          .id('timepicker_onchange_12h')
+          .height('18%')
+          .useMilitaryTime(false)
+          .onChange((value: TimePickerResult) => {
+            this.onChange12hResult = JSON.stringify(value);
+          })
+        Text('12h_result:' + this.onChange12hResult)
+          .id('text_onchange_12h_result')
+          .fontSize(12)
 
-      TimePicker({ selected: this.selectedTime })
-        .id('timepicker_onchange_undefined')
-        .height('10%')
-        .onChange(undefined)
+        TimePicker({ selected: this.selectedTime })
+          .id('timepicker_onchange_undefined')
+          .height('10%')
+          .onChange(undefined)
+      }
+      .width('80%')
+      .justifyContent(FlexAlign.Start)
+      .alignItems(HorizontalAlign.Center)
     }.width('100%').height('100%')
+
   }
 }

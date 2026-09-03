@@ -52,7 +52,7 @@ struct TextPickerOnEnterSelectedArea {
       TextPicker({ range: this.singleRange })
         .id('textpicker_onenter_single')
         .height('18%')
-        .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
+        .onEnterSelectedArea((value: string | string[], index: int | int[]) => {
           this.onEnterSingleValue = JSON.stringify(value);
           this.onEnterSingleIndex = JSON.stringify(index);
         })
@@ -66,7 +66,7 @@ struct TextPickerOnEnterSelectedArea {
       TextPicker({ range: this.imageRange })
         .id('textpicker_onenter_image')
         .height('18%')
-        .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
+        .onEnterSelectedArea((value: string | string[], index: int | int[]) => {
           this.onEnterImageValue = JSON.stringify(value);
           this.onEnterImageIndex = JSON.stringify(index);
         })
@@ -80,7 +80,7 @@ struct TextPickerOnEnterSelectedArea {
       TextPicker({ range: this.multiRange })
         .id('textpicker_onenter_multi')
         .height('18%')
-        .onEnterSelectedArea((value: string | string[], index: number | number[]) => {
+        .onEnterSelectedArea((value: string | string[], index: int | int[]) => {
           this.onEnterMultiValue = JSON.stringify(value);
           this.onEnterMultiIndex = JSON.stringify(index);
         })
