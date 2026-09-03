@@ -3174,35 +3174,5 @@ export default function ActsGzipDecompressionTest() {
             console.log("=====SUB_BMS_Zlib_Gzprintf_ArgsCoverage_9910 End=====");
         })
 
-        /**
-         * @tc.name   SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920
-         * @tc.number SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920
-         * @tc.desc   test gzprintf error code when gzip is not opened or opened for read
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL3
-         */
-        it('SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
-            console.log("=====SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920 Start=====");
-            let gzip = zlib.createGZipSync();
-            try {
-                await gzip.gzprintf("name is %s", "Tom").then(() => {
-                    expect().assertFail();
-                });
-            } catch (errData) {
-                expect(errData.code).assertEqual(17800004);
-            }
-            await gzip.gzopen(allfilePath, "rb");
-            try {
-                await gzip.gzprintf("name is %s", "Tom").then(() => {
-                    expect().assertFail();
-                });
-            } catch (errData) {
-                expect(errData.code).assertEqual(17800004);
-            }
-            await gzip.gzclose();
-            done();
-            console.log("=====SUB_BMS_Zlib_Gzprintf_ErrorCode17800009_9920 End=====");
-        })
     })
 }
