@@ -242,7 +242,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_0900
      * @tc.name testInt16ArrayIndexSetTestThree009
-     * @tc.desc Verify $_set(2, 88) index=2 no-op length
+     * @tc.desc Verify $_set(2, 88) on length-1 array throws RangeError, length stays 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -301,7 +301,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_1200
      * @tc.name testInt16ArrayIndexSetTestThree012
-     * @tc.desc Verify $_set(1, NaN) NaN index=1 0 index=0
+     * @tc.desc Verify $_set(1, NaN) leaves index 0 unchanged at 50
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,7 +333,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_1400
      * @tc.name testInt16ArrayIndexSetTestThree014
-     * @tc.desc Verify $_set(1, -Infinity) Infinity $_get(1) expected
+     * @tc.desc Verify $_set(1, -Infinity) yields 0, $_get(1) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -538,7 +538,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_2600
      * @tc.name testInt16ArrayIndexSetTestThree026
-     * @tc.desc Verify $_set(-1, v) E index=-1 no-op number
+     * @tc.desc Verify $_set(-1, v) on length-3 array throws RangeError, index 0 stays 15
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -560,7 +560,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_2700
      * @tc.name testInt16ArrayIndexSetTestThree027
-     * @tc.desc Verify $_set(4, v) E index=length number no-op
+     * @tc.desc Verify $_set(4, v) at index=length throws RangeError, index 0 stays 65
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -626,7 +626,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_3100
      * @tc.name testInt16ArrayIndexSetTestThree031
-     * @tc.desc Verify $_set(3, 99) no throw $_get(0) expected
+     * @tc.desc Verify $_set(3, 99) out of range throws RangeError, index 0 stays 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -646,7 +646,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_3200
      * @tc.name testInt16ArrayIndexSetTestThree032
-     * @tc.desc Verify $_set(4, 88) no throw $_get(1) expected
+     * @tc.desc Verify $_set(4, 88) out of range throws RangeError, index 1 stays 14
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -666,7 +666,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_3300
      * @tc.name testInt16ArrayIndexSetTestThree033
-     * @tc.desc Verify $_set(-3, 77) no throw $_get(2) expected
+     * @tc.desc Verify $_set(-3, 77) out of range throws RangeError, index 2 stays 21
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -686,7 +686,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_3400
      * @tc.name testInt16ArrayIndexSetTestThree034
-     * @tc.desc Verify $_set(-4, 66) no throw $_get(0) expected
+     * @tc.desc Verify $_set(-4, 66) out of range throws RangeError, index 0 stays 7
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -706,7 +706,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_3500
      * @tc.name testInt16ArrayIndexSetTestThree035
-     * @tc.desc Verify $_set(-100000, 55) no throw $_get(0) expected
+     * @tc.desc Verify $_set(-100000, 55) out of range throws RangeError, index 0 stays 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -726,7 +726,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_3600
      * @tc.name testInt16ArrayIndexSetTestThree036
-     * @tc.desc Verify $_set(100000, 44) no throw $_get(0) expected
+     * @tc.desc Verify $_set(100000, 44) out of range throws RangeError, index 0 stays 8
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -766,7 +766,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_3800
      * @tc.name testInt16ArrayIndexSetTestThree038
-     * @tc.desc Verify $_set(0, -Infinity) no throw Infinity $_get(0) expected
+     * @tc.desc Verify $_set(0, -Infinity) yields 0, $_get(0) returns 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -901,7 +901,7 @@ export default function Int16ArrayIndexSetTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_THREE_4600
      * @tc.name testInt16ArrayIndexSetTestThree046
-     * @tc.desc Verify $_set(0, 32768) $_get(0) expected
+     * @tc.desc Verify $_set(0, 32768) then $_set(0, 100) overwrites, $_get(0) returns 100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

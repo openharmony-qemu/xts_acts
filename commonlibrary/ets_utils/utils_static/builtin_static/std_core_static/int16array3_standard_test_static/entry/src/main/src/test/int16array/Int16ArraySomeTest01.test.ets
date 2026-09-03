@@ -611,7 +611,7 @@ export default function Int16ArraySomeTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_SOME_ONE_3200
      * @tc.name testInt16ArraySomeTestOne032
-     * @tc.desc Verify element=9 predicate 9 some false
+     * @tc.desc Verify element=9 predicate 99 some false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -242,7 +242,7 @@ export default function Int16ArrayOfTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_1300
      * @tc.name testInt16ArrayOfTestTwo013
-     * @tc.desc Verify Int16Array.of chained result elements via $_get
+     * @tc.desc Verify Int16Array.of(0.0, 0.5, 0.9, 1.0) truncates fractions to 0, 0, 0, 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -266,7 +266,7 @@ export default function Int16ArrayOfTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_1400
      * @tc.name testInt16ArrayOfTestTwo014
-     * @tc.desc Verify Int16Array.of chained result elements via $_get
+     * @tc.desc Verify Int16Array.of(32768, 32769, 65535, 65536) wraps to -32768, -32767, -1, 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -443,7 +443,7 @@ export default function Int16ArrayOfTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_2200
      * @tc.name testInt16ArrayOfTestTwo022
-     * @tc.desc Verify Int16Array.of chained result elements via $_get
+     * @tc.desc Verify Int16Array.of(-32768, 32767) elements match new Int16Array(source)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -463,7 +463,7 @@ export default function Int16ArrayOfTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_TWO_2300
      * @tc.name testInt16ArrayOfTestTwo023
-     * @tc.desc Verify Int16Array.of chained result elements via $_get
+     * @tc.desc Verify Int16Array.of(NaN) yields 0 matching new Int16Array(source)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

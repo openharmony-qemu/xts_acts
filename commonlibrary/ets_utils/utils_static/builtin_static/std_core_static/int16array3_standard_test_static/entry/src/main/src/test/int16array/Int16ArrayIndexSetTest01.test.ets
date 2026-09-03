@@ -224,7 +224,7 @@ export default function Int16ArrayIndexSetTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_ONE_1200
      * @tc.name testInt16ArrayIndexSetTestOne012
-     * @tc.desc Verify $_set at length is silent no-op and $_get(0) unchanged
+     * @tc.desc Verify $_set at length throws RangeError and $_get(0) unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -245,7 +245,7 @@ export default function Int16ArrayIndexSetTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_ONE_1300
      * @tc.name testInt16ArrayIndexSetTestOne013
-     * @tc.desc Verify $_set with max int index is silent no-op and $_get(0) unchanged
+     * @tc.desc Verify $_set with max int index throws RangeError and $_get(0) unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -267,7 +267,7 @@ export default function Int16ArrayIndexSetTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_ONE_1400
      * @tc.name testInt16ArrayIndexSetTestOne014
-     * @tc.desc Verify $_set with min-like negative int index is silent no-op
+     * @tc.desc Verify $_set with negative int index throws RangeError and $_get(0) unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -439,7 +439,7 @@ export default function Int16ArrayIndexSetTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_ONE_2300
      * @tc.name testInt16ArrayIndexSetTestOne023
-     * @tc.desc Verify $_set(1) on single-element array is silent no-op
+     * @tc.desc Verify $_set(1) on single-element array throws RangeError and $_get(0) unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -460,7 +460,7 @@ export default function Int16ArrayIndexSetTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_ONE_2400
      * @tc.name testInt16ArrayIndexSetTestOne024
-     * @tc.desc Verify $_set(-1) on single-element array is silent no-op
+     * @tc.desc Verify $_set(-1) on single-element array throws RangeError and $_get(0) unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1162,7 +1162,7 @@ export default function Int16ArrayIndexSetTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_ONE_6600
      * @tc.name testInt16ArrayIndexSetTestOne066
-     * @tc.desc Verify $_set OOB index does not throw and is silent no-op
+     * @tc.desc Verify $_set OOB index throws RangeError or is silent no-op, $_get(0) unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1182,7 +1182,7 @@ export default function Int16ArrayIndexSetTest01(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_INDEXSET_ONE_6700
      * @tc.name testInt16ArrayIndexSetTestOne067
-     * @tc.desc Verify $_set negative index does not throw and is silent no-op
+     * @tc.desc Verify $_set negative index throws RangeError or is silent no-op, $_get(0) unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -333,7 +333,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_2100
      * @tc.name testInt16ArrayFindIndexTestTwo021
-     * @tc.desc Verify findIndex repeated values returns first index 0
+     * @tc.desc Verify findIndex two-element array no match returns -1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -347,7 +347,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_2200
      * @tc.name testInt16ArrayFindIndexTestTwo022
-     * @tc.desc Verify findIndex short-circuits after first match
+     * @tc.desc Verify findIndex returns first of repeated matching values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -361,7 +361,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_2300
      * @tc.name testInt16ArrayFindIndexTestTwo023
-     * @tc.desc Verify findIndex no match calls predicate length times
+     * @tc.desc Verify findIndex stops calling predicate after first match
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -379,7 +379,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_2400
      * @tc.name testInt16ArrayFindIndexTestTwo024
-     * @tc.desc Verify findIndex empty array calls predicate zero times
+     * @tc.desc Verify findIndex no match calls predicate length times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -397,7 +397,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_2500
      * @tc.name testInt16ArrayFindIndexTestTwo025
-     * @tc.desc Verify findIndex first match calls predicate once
+     * @tc.desc Verify findIndex empty array calls predicate zero times
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -415,7 +415,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_2600
      * @tc.name testInt16ArrayFindIndexTestTwo026
-     * @tc.desc Verify findIndex captured index equals match position
+     * @tc.desc Verify findIndex first match calls predicate once
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -433,7 +433,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_2700
      * @tc.name testInt16ArrayFindIndexTestTwo027
-     * @tc.desc Verify findIndex last miss index equals length-1
+     * @tc.desc Verify findIndex captured index equals match position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -454,7 +454,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_2800
      * @tc.name testInt16ArrayFindIndexTestTwo028
-     * @tc.desc Verify findIndex match leaves length unchanged
+     * @tc.desc Verify findIndex last miss index equals length-1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -472,7 +472,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_2900
      * @tc.name testInt16ArrayFindIndexTestTwo029
-     * @tc.desc Verify findIndex miss leaves length unchanged
+     * @tc.desc Verify findIndex match leaves length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -489,7 +489,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3000
      * @tc.name testInt16ArrayFindIndexTestTwo030
-     * @tc.desc Verify findIndex empty array length remains 0
+     * @tc.desc Verify findIndex miss leaves length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -506,7 +506,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3100
      * @tc.name testInt16ArrayFindIndexTestTwo031
-     * @tc.desc Verify findIndex match on empty array leaves length 0
+     * @tc.desc Verify findIndex empty array length remains 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -522,7 +522,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3200
      * @tc.name testInt16ArrayFindIndexTestTwo032
-     * @tc.desc Verify findIndex match leaves byteLength unchanged
+     * @tc.desc Verify findIndex match leaves single element length 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -538,7 +538,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3300
      * @tc.name testInt16ArrayFindIndexTestTwo033
-     * @tc.desc Verify findIndex miss leaves byteLength unchanged
+     * @tc.desc Verify findIndex match leaves byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -555,7 +555,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3400
      * @tc.name testInt16ArrayFindIndexTestTwo034
-     * @tc.desc Verify findIndex byteLength equals length times 2
+     * @tc.desc Verify findIndex miss leaves byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -572,7 +572,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3500
      * @tc.name testInt16ArrayFindIndexTestTwo035
-     * @tc.desc Verify findIndex empty array byteLength remains 0
+     * @tc.desc Verify findIndex byteLength equals length times 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -588,7 +588,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3600
      * @tc.name testInt16ArrayFindIndexTestTwo036
-     * @tc.desc Verify findIndex match on empty array leaves byteLength 0
+     * @tc.desc Verify findIndex empty array byteLength remains 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -604,7 +604,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3700
      * @tc.name testInt16ArrayFindIndexTestTwo037
-     * @tc.desc Verify findIndex miss leaves BYTES_PER_ELEMENT 2
+     * @tc.desc Verify findIndex match leaves BYTES_PER_ELEMENT 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -620,7 +620,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3800
      * @tc.name testInt16ArrayFindIndexTestTwo038
-     * @tc.desc Verify findIndex match leaves first element unchanged
+     * @tc.desc Verify findIndex empty array BYTES_PER_ELEMENT remains 2
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -636,7 +636,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_3900
      * @tc.name testInt16ArrayFindIndexTestTwo039
-     * @tc.desc Verify findIndex match leaves last element unchanged
+     * @tc.desc Verify findIndex match leaves first element unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -652,7 +652,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4000
      * @tc.name testInt16ArrayFindIndexTestTwo040
-     * @tc.desc Verify findIndex match leaves matched element unchanged
+     * @tc.desc Verify findIndex match leaves last element unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -668,7 +668,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4100
      * @tc.name testInt16ArrayFindIndexTestTwo041
-     * @tc.desc Verify findIndex miss leaves all elements unchanged
+     * @tc.desc Verify findIndex match leaves matched element unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -684,7 +684,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4200
      * @tc.name testInt16ArrayFindIndexTestTwo042
-     * @tc.desc Verify findIndex match leaves preceding elements unchanged
+     * @tc.desc Verify findIndex miss leaves all elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -709,7 +709,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4300
      * @tc.name testInt16ArrayFindIndexTestTwo043
-     * @tc.desc Verify findIndex match leaves following elements unchanged
+     * @tc.desc Verify findIndex match leaves preceding elements unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -728,7 +728,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4400
      * @tc.name testInt16ArrayFindIndexTestTwo044
-     * @tc.desc Verify findIndex miss keeps buffer non-null
+     * @tc.desc Verify findIndex match keeps buffer non-null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -743,7 +743,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4500
      * @tc.name testInt16ArrayFindIndexTestTwo045
-     * @tc.desc Verify findIndex miss leaves byteOffset unchanged
+     * @tc.desc Verify findIndex match leaves byteOffset unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -760,7 +760,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4600
      * @tc.name testInt16ArrayFindIndexTestTwo046
-     * @tc.desc Verify findIndex match leaves buffer.byteLength unchanged
+     * @tc.desc Verify findIndex miss leaves byteOffset unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -777,7 +777,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4700
      * @tc.name testInt16ArrayFindIndexTestTwo047
-     * @tc.desc Verify findIndex miss leaves buffer.byteLength unchanged
+     * @tc.desc Verify findIndex match leaves buffer.byteLength unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -794,7 +794,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4800
      * @tc.name testInt16ArrayFindIndexTestTwo048
-     * @tc.desc Verify findIndex after mutation returns updated index
+     * @tc.desc Verify findIndex repeated calls return same index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -809,7 +809,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_4900
      * @tc.name testInt16ArrayFindIndexTestTwo049
-     * @tc.desc Verify findIndex predicate uses external closure threshold
+     * @tc.desc Verify findIndex after mutation returns updated index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -826,7 +826,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5000
      * @tc.name testInt16ArrayFindIndexTestTwo050
-     * @tc.desc Verify findIndex side-effect counter and correct index
+     * @tc.desc Verify findIndex predicate uses external closure threshold
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -841,7 +841,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5100
      * @tc.name testInt16ArrayFindIndexTestTwo051
-     * @tc.desc Verify findIndex array param identity with external arr
+     * @tc.desc Verify findIndex side-effect counter and correct index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -860,7 +860,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5200
      * @tc.name testInt16ArrayFindIndexTestTwo052
-     * @tc.desc Verify findIndex array param length equals original
+     * @tc.desc Verify findIndex array param identity with external arr
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -882,7 +882,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5300
      * @tc.name testInt16ArrayFindIndexTestTwo053
-     * @tc.desc Verify findIndex visits indexes in ascending order
+     * @tc.desc Verify findIndex array param length equals original
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -900,7 +900,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5400
      * @tc.name testInt16ArrayFindIndexTestTwo054
-     * @tc.desc Verify findIndex empty array never executes predicate
+     * @tc.desc Verify findIndex visits indexes in ascending order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -932,7 +932,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5500
      * @tc.name testInt16ArrayFindIndexTestTwo055
-     * @tc.desc Verify findIndex on Int16Array.from returns correct index
+     * @tc.desc Verify findIndex empty array never executes predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -950,7 +950,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5600
      * @tc.name testInt16ArrayFindIndexTestTwo056
-     * @tc.desc Verify findIndex on Int16Array.from leaves length unchanged
+     * @tc.desc Verify findIndex on Int16Array.from returns correct index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -964,7 +964,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5700
      * @tc.name testInt16ArrayFindIndexTestTwo057
-     * @tc.desc Verify findIndex on ArrayBuffer view returns correct index
+     * @tc.desc Verify findIndex on Int16Array.from leaves length unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -981,7 +981,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5800
      * @tc.name testInt16ArrayFindIndexTestTwo058
-     * @tc.desc Verify findIndex on ArrayBuffer view leaves byteOffset
+     * @tc.desc Verify findIndex on ArrayBuffer view returns correct index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -999,7 +999,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_5900
      * @tc.name testInt16ArrayFindIndexTestTwo059
-     * @tc.desc Verify findIndex on ArrayBuffer view keeps buffer identity
+     * @tc.desc Verify findIndex on ArrayBuffer view leaves byteOffset
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1019,7 +1019,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_6000
      * @tc.name testInt16ArrayFindIndexTestTwo060
-     * @tc.desc Verify findIndex result usable as $_get index
+     * @tc.desc Verify findIndex on ArrayBuffer view keeps buffer identity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1037,7 +1037,7 @@ export default function Int16ArrayFindIndexTest02(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_FINDINDEX_TWO_6100
      * @tc.name testInt16ArrayFindIndexTestTwo061
-     * @tc.desc Verify findIndex result usable as $_set index
+     * @tc.desc Verify findIndex result usable as $_get index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

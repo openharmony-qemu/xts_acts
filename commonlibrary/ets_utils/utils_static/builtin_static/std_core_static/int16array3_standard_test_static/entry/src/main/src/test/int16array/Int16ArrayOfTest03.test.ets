@@ -254,7 +254,7 @@ export default function Int16ArrayOfTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_THREE_1000
      * @tc.name testInt16ArrayOfTestThree010
-     * @tc.desc Verify Int16Array.of() out-of-range $_get returns undefined
+     * @tc.desc Verify Int16Array.of() out-of-range $_get throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -273,7 +273,7 @@ export default function Int16ArrayOfTest03(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INT16ARRAY_OF_THREE_1100
      * @tc.name testInt16ArrayOfTestThree011
-     * @tc.desc Verify Int16Array.of() out-of-range $_set is silent no-op
+     * @tc.desc Verify Int16Array.of() out-of-range $_set throws RangeError or no-ops, index 0 preserved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
