@@ -547,5 +547,170 @@ export default function CameraPhotoQualityPrioritizationTest() {
       console.info(TAG + 'stopCameraSession end');
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0600
+     * @tc.desc   Check whether photo quality prioritization of the null type is supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0600', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0600--------------");
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0600 FAILED with NoCamera");
+        done();
+        return;
+      }
+      let ret: boolean;
+      ret = await startCameraSession(0);
+      if (!ret) {
+        console.info(TAG + 'startCameraSession failed');
+        await stopCameraSession();
+        console.info('stopCameraSession end');
+        done();
+        return;
+      }
+      let isSupported: boolean = false;
+      try {
+        isSupported = mPhotoOutput.isPhotoQualityPrioritizationSupported(null)
+        console.info(TAG + "mPhotoOutput isPhotoQualityPrioritizationSupported expect fail, but success");
+        expect().assertFail();
+      } catch (err) {
+        console.info(TAG +
+          "Entering mPhotoOutput isPhotoQualityPrioritizationSupported err : " + JSON.stringify(err));
+        expect(err.code).assertEqual("401");
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0600 ends here");
+      await stopCameraSession();
+      console.info(TAG +'stopCameraSession end');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0700
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0700
+     * @tc.desc   Check whether photo quality prioritization of the undefined type is supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0700', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0700--------------");
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0700 FAILED with NoCamera");
+        done();
+        return;
+      }
+      let ret: boolean;
+      ret = await startCameraSession(0);
+      if (!ret) {
+        console.info(TAG + 'startCameraSession failed');
+        await stopCameraSession();
+        console.info('stopCameraSession end');
+        done();
+        return;
+      }
+      let isSupported: boolean = false;
+      try {
+        isSupported = mPhotoOutput.isPhotoQualityPrioritizationSupported(undefined)
+        console.info(TAG + "mPhotoOutput isPhotoQualityPrioritizationSupported expect fail, but success");
+        expect().assertFail();
+      } catch (err) {
+        console.info(TAG +
+          "Entering mPhotoOutput isPhotoQualityPrioritizationSupported err : " + JSON.stringify(err));
+        expect(err.code).assertEqual("401");
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0700 ends here");
+      await stopCameraSession();
+      console.info(TAG +'stopCameraSession end');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0800
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0800
+     * @tc.desc   Check setPhotoQualityPrioritization when param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0800', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0800--------------");
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0800 FAILED with NoCamera");
+        done();
+        return;
+      }
+      let ret: boolean;
+      ret = await startCameraSession(0);
+      if (!ret) {
+        console.info(TAG + 'startCameraSession failed');
+        await stopCameraSession();
+        console.info('stopCameraSession end');
+        done();
+        return;
+      }
+      try {
+          mPhotoOutput.setPhotoQualityPrioritization(null);
+          console.error(TAG + "mPhotoOutput setPhotoQualityPrioritization expect fail, but success");
+          expect().assertFail();
+      } catch (err) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0800 FAILED err : " + JSON.stringify(err));
+        expect(err.code).assertEqual("401");
+      }
+      await stopCameraSession();
+      console.info(TAG + 'stopCameraSession end');
+      console.info(TAG +
+        "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0800 ends here");
+      done();   
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0900
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0900
+     * @tc.desc   Check setPhotoQualityPrioritization when param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0900', Level.LEVEL2, async (done: Function) => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0900--------------");
+      if (mCameraNum == 0) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0900 FAILED with NoCamera");
+        done();
+        return;
+      }
+      let ret: boolean;
+      ret = await startCameraSession(0);
+      if (!ret) {
+        console.info(TAG + 'startCameraSession failed');
+        await stopCameraSession();
+        console.info('stopCameraSession end');
+        done();
+        return;
+      }
+      try {
+          mPhotoOutput.setPhotoQualityPrioritization(undefined);
+          console.error(TAG + "mPhotoOutput setPhotoQualityPrioritization expect fail, but success");
+          expect().assertFail();
+      } catch (err) {
+        console.info(TAG +
+          "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0900 FAILED err : " + JSON.stringify(err));
+        expect(err.code).assertEqual("401");
+      }
+      await stopCameraSession();
+      console.info(TAG + 'stopCameraSession end');
+      console.info(TAG +
+        "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_PHOTO_QUALITY_PRIORITIZATION_0900 ends here");
+      done();   
+    })
+
   })
 }
