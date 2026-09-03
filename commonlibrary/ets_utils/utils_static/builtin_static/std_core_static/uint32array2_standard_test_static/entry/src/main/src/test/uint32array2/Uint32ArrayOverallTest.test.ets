@@ -238,7 +238,7 @@ export default function uint32ArrayOverallOneTest(): void {
       const v = Uint32Array.from<string>(src, (value: string, index: number) => Number.parseInt(value) * 1 + index);
       expect(v.length).assertEqual(2);
       expect(v.$_get(0)).assertEqual(1);
-      expect(v.$_get(1)).assertEqual(2);
+      expect(v.$_get(1)).assertEqual(3);
     });
 
     /**
