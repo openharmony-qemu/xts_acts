@@ -154,6 +154,7 @@ export default function InputDeviceComplementTest() {
                   if (deviceData) {
                     expect(deviceData!.isLocal).assertInstanceOf('Boolean');
                     expect(deviceData!.isVirtual).assertInstanceOf('Boolean');
+                    expect(deviceData!.displayId).assertEqual(undefined);
                     expect(deviceData!.id).assertInstanceOf('Int');
                     expect(deviceData!.name).assertInstanceOf('String');
                     expect(deviceData!.sources).assertInstanceOf('Array');
@@ -218,6 +219,7 @@ export default function InputDeviceComplementTest() {
                 if (deviceData) {
                     expect(deviceData.isLocal).assertInstanceOf('Boolean');
                     expect(deviceData.isVirtual).assertInstanceOf('Boolean');
+                    expect(deviceData.displayId).assertEqual(undefined);
                     expect(deviceData.id).assertInstanceOf('Int');
                     expect(deviceData.name).assertInstanceOf('String');
                     expect(deviceData.sources).assertInstanceOf('Array');
@@ -281,6 +283,7 @@ export default function InputDeviceComplementTest() {
               console.log(`Device info: ${JSON.stringify(deviceData)}`);
               expect(deviceData.isLocal).assertInstanceOf('Boolean');
               expect(deviceData.isVirtual).assertInstanceOf('Boolean');
+              expect(deviceData.displayId).assertEqual(undefined);
               expect(deviceData.id).assertInstanceOf('Int');
               expect(deviceData.name).assertInstanceOf('String');
               expect(deviceData.sources).assertInstanceOf('Array');
