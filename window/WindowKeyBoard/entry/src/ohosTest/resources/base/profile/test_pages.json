@@ -33,7 +33,7 @@
     "testability/pages/shiftAppWindow/subWindow",
     "testability/pages/shiftAppWindow/mainWindow",
     "testability/pages/WindowTest/LoadContentByName",
-    "testability/pages/WindowTest/KeyBoradTest",
+    "testability/pages/WindowTest/KeyBoardTest",
     "testability/pages/Navdestination",
     "testability/pages/Navdestination2",
     "testability/pages/WindowTest/EmbeddedComponentCreateSubWindowOptionsFalsePage",

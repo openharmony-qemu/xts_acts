@@ -22,8 +22,8 @@ import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
 import deviceInfo from '@ohos.deviceInfo';
 
-export default function windowKeyBorad() {
-  describe('windowKeyBorad', async () => {
+export default function windowKeyBoard() {
+  describe('windowKeyBoard', async () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     let context: common.UIAbilityContext;
     let windowStage: window.WindowStage;
@@ -51,7 +51,7 @@ export default function windowKeyBorad() {
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info('beforeAll isPCStatus: ' + isPCStatus);
       let mainWindow = windowStage.getMainWindowSync();
-      await mainWindow.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      await mainWindow.setUIContent('testability/pages/WindowTest/KeyBoardTest');
       isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
       console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
       isFreeWindowMode = mainWindow.isInFreeWindowMode();
@@ -233,7 +233,7 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_onKeyboradWillShow');
       console.info(`${caseName} Succeeded in creating the sub window.`);
-      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoardTest');
       await sleep(200);
       await subWindowClass.showWindow();
       await sleep(200);
@@ -268,7 +268,7 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_offKeyboradWillShow');
       console.info(`${caseName} Succeeded in creating the sub window.`);
-      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoardTest');
       await sleep(200);
       await subWindowClass.showWindow();
       await sleep(200);
@@ -535,7 +535,7 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_onkeyboardWillHide');
       console.info(`${caseName} Succeeded in creating the sub window.`);
-      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoardTest');
       await sleep(200);
       await subWindowClass.showWindow();
       await sleep(200);
@@ -571,7 +571,7 @@ export default function windowKeyBorad() {
       console.log(caseName + 'begin');
       const subWindowClass = await windowStage.createSubWindow('testSubWindowDestroy_offkeyboardWillHide');
       console.info(`${caseName} Succeeded in creating the sub window.`);
-      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoradTest');
+      await subWindowClass.setUIContent('testability/pages/WindowTest/KeyBoardTest');
       await sleep(200);
       await subWindowClass.showWindow();
       await sleep(200);
