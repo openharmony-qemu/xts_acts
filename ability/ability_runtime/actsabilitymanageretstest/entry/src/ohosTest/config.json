@@ -12,7 +12,7 @@
     "package": "com.ohos.acecollaboration",
     "name": ".MyApplication",
     "mainAbility": ".TestAbility",
-    "deviceType": [],
+    "deviceType": ["default"],
     "distro": {
       "deliveryWithInstall": true,
       "moduleName": "entry",
