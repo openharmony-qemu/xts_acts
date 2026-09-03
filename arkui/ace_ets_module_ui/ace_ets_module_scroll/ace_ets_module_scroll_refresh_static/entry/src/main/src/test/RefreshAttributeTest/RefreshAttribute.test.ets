@@ -22,6 +22,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import CommonFunc from '../../../../ets/MainAbility/common/Common';
 
 const PAGE = 'MainAbility/pages/refreshAttribute/refreshAttribute';
 const TITLE_ID = 'refreshAttr_title';
@@ -78,6 +79,7 @@ export default function RefreshAttributeTest() {
       async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
+        await CommonFunc.sleep(1000);
         done();
       } catch (e) {
         arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
@@ -166,6 +168,7 @@ export default function RefreshAttributeTest() {
       async (done: () => void): Promise<void> => {
       try {
         const d = Driver.create();
+        await CommonFunc.sleep(1000);
         let t = await d.findComponent(ON.text('pull', MatchPattern.EQUALS));
         if (!t) {
           t = await d.findComponent(ON.text('pull', MatchPattern.CONTAINS));

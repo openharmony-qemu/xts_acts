@@ -50,6 +50,7 @@ export default function tabJsunit() {
           console.info("get Tab state success " + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options)
           routerAlp.pushUrl(options)
+          await CommonFunc.sleep(2000);
           // console.info("push Tab page success " + JSON.stringify(result));
         }
       } catch (err) {

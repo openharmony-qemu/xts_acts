@@ -22,6 +22,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import CommonFunc from '../../../../ets/MainAbility/common/Common';
 
 const PAGE = 'MainAbility/pages/listScrollApi/listScrollApi';
 const TITLE_ID = 'listApi_title';
@@ -78,6 +79,7 @@ export default function ListScrollApiTest() {
     it('SUB_arkui_list_scroll_api_list_api_page_loads_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
+        await CommonFunc.sleep(1000);
         done();
       } catch (e) {
         arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
@@ -100,6 +102,7 @@ export default function ListScrollApiTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await CommonFunc.sleep(1000);
         const wire = await driver.findComponent(ON.id('listApi_wire'));
         expect(!!wire).assertTrue();
         await (wire?.click() as Promise<void>);
@@ -193,6 +196,7 @@ export default function ListScrollApiTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await CommonFunc.sleep(1000);
         const snapBtn = await driver.findComponent(ON.id('listApi_toggleSnap'));
         expect(!!snapBtn).assertTrue();
         await (snapBtn?.click() as Promise<void>);

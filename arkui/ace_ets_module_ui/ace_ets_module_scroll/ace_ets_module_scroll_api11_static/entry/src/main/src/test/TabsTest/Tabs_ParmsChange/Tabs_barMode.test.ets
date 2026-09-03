@@ -66,111 +66,118 @@ export default function Tabs_barMode() {
      * @tc.level    Level.LEVEL0
      */
 it('testTabsBarModeFixed_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsBarModeFixed_static_01] START');
-      let strJson = inspector.getInspectorByKey('Tabs_barMode' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      console.info(`[testTabsBarModeFixed_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info("[testTabsBarModeFixed_static_01] barPosition: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition')));
-      console.info("[testTabsBarModeFixed_static_01] index: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
-      console.info("[testTabsBarModeFixed_static_01] scrollable: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')));
-      console.info("[testTabsBarModeFixed_static_01] barMode: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual("false");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barMode_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_001');
-      let Tabs_barMode_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_011');
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_barMode_011.right -
-        ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt(),
-        (Math.round(Tabs_barMode_011.left + ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barMode_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_002');
-      let Tabs_barMode_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_012');
-      await driver.swipe((Math.round(Tabs_barMode_012.right -
-        ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(),
-        (Math.round(Tabs_barMode_012.left + ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barMode_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_003');
-      let Tabs_barMode_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_013');
-      let Tabs_barMode_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_01');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_yellow');
+      try {
+        console.info('[testTabsBarModeFixed_static_01] START');
+        let strJson = inspector.getInspectorByKey('Tabs_barMode' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        console.info(`[testTabsBarModeFixed_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info("[testTabsBarModeFixed_static_01] barPosition: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition')));
+        console.info("[testTabsBarModeFixed_static_01] index: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
+        console.info("[testTabsBarModeFixed_static_01] scrollable: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')));
+        console.info("[testTabsBarModeFixed_static_01] barMode: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('vertical')).assertEqual("false");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_barMode_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_001');
+        let Tabs_barMode_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_011');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_barMode_011.right -
+          ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt(),
+          (Math.round(Tabs_barMode_011.left + ((Tabs_barMode_011.right - Tabs_barMode_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barMode_011.top + ((Tabs_barMode_011.bottom - Tabs_barMode_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barMode_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_002');
+        let Tabs_barMode_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_012');
+        await driver.swipe((Math.round(Tabs_barMode_012.right -
+          ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt(),
+          (Math.round(Tabs_barMode_012.left + ((Tabs_barMode_012.right - Tabs_barMode_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barMode_012.top + ((Tabs_barMode_012.bottom - Tabs_barMode_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barMode_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_003');
+        let Tabs_barMode_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_013');
+        let Tabs_barMode_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode' + '_01');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barMode_yellow');
 
-      console.info(`[testTabsBarModeFixed_static_01]Tabs_barMode_011.left equal Tabs_barMode_001.left
-        ${Tabs_barMode_011.left} === ${Tabs_barMode_001.left}`);
-      expect(Math.abs(Tabs_barMode_011.left - Tabs_barMode_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_012.left - Tabs_barMode_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_013.left - Tabs_barMode_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_011.top - Tabs_barMode_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_012.top - Tabs_barMode_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_013.top - Tabs_barMode_003.top) <= 1).assertTrue();
+        console.info(`[testTabsBarModeFixed_static_01]Tabs_barMode_011.left equal Tabs_barMode_001.left
+          ${Tabs_barMode_011.left} === ${Tabs_barMode_001.left}`);
+        expect(Math.abs(Tabs_barMode_011.left - Tabs_barMode_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_012.left - Tabs_barMode_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_013.left - Tabs_barMode_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_011.top - Tabs_barMode_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_012.top - Tabs_barMode_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_013.top - Tabs_barMode_003.top) <= 1).assertTrue();
 
-      console.info(`[testTabsBarModeFixed_static_01]Tabs_barMode_011.left equal Tabs_barMode_01.left
-      ${Tabs_barMode_011.left} === ${Tabs_barMode_01.left}`);
-      expect(Math.abs(Tabs_barMode_011.left - Tabs_barMode_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_012.left - Tabs_barMode_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_013.left - Tabs_barMode_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_011.top - subGreen.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_012.top - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barMode_013.top - subYellow.bottom) <= 1).assertTrue();
+        console.info(`[testTabsBarModeFixed_static_01]Tabs_barMode_011.left equal Tabs_barMode_01.left
+        ${Tabs_barMode_011.left} === ${Tabs_barMode_01.left}`);
+        expect(Math.abs(Tabs_barMode_011.left - Tabs_barMode_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_012.left - Tabs_barMode_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_013.left - Tabs_barMode_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_011.top - subGreen.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_012.top - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barMode_013.top - subYellow.bottom) <= 1).assertTrue();
 
-      console.info(`[testTabsBarModeFixed_static_01]Tabs_barMode_011.bottom - Tabs_barMode_011.top=
-        ${Math.round(Tabs_barMode_011.bottom - Tabs_barMode_011.top)}`);
-      expect(Math.abs(Math.round(Tabs_barMode_011.bottom - Tabs_barMode_011.top) - Math.round(uiContext.vp2px(244))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_012.bottom - Tabs_barMode_012.top) - Math.round(uiContext.vp2px(244))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_013.bottom - Tabs_barMode_013.top) - Math.round(uiContext.vp2px(244))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_011.right - Tabs_barMode_011.left) - Math.round(uiContext.vp2px(330))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_012.right - Tabs_barMode_012.left) - Math.round(uiContext.vp2px(330))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_013.right - Tabs_barMode_013.left) - Math.round(uiContext.vp2px(330))) <=
-        1).assertTrue();
+        console.info(`[testTabsBarModeFixed_static_01]Tabs_barMode_011.bottom - Tabs_barMode_011.top=
+          ${Math.round(Tabs_barMode_011.bottom - Tabs_barMode_011.top)}`);
+        expect(Math.abs(Math.round(Tabs_barMode_011.bottom - Tabs_barMode_011.top) - Math.round(uiContext.vp2px(244))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_012.bottom - Tabs_barMode_012.top) - Math.round(uiContext.vp2px(244))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_013.bottom - Tabs_barMode_013.top) - Math.round(uiContext.vp2px(244))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_011.right - Tabs_barMode_011.left) - Math.round(uiContext.vp2px(330))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_012.right - Tabs_barMode_012.left) - Math.round(uiContext.vp2px(330))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_013.right - Tabs_barMode_013.left) - Math.round(uiContext.vp2px(330))) <=
+          1).assertTrue();
 
-      console.info(`[testTabsBarModeFixed_static_01]Tabs_barMode_001.bottom - Tabs_barMode_001.top=
-        ${Math.round(Tabs_barMode_001.bottom - Tabs_barMode_001.top)}`);
-      expect(Math.abs(Math.round(Tabs_barMode_001.bottom - Tabs_barMode_001.top) - Math.round(uiContext.vp2px(244))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_002.bottom - Tabs_barMode_002.top) - Math.round(uiContext.vp2px(244))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_003.bottom - Tabs_barMode_003.top) - Math.round(uiContext.vp2px(244))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_001.right - Tabs_barMode_001.left) - Math.round(uiContext.vp2px(330))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_002.right - Tabs_barMode_002.left) - Math.round(uiContext.vp2px(330))) <=
-        1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barMode_003.right - Tabs_barMode_003.left) - Math.round(uiContext.vp2px(330))) <=
-        1).assertTrue();
+        console.info(`[testTabsBarModeFixed_static_01]Tabs_barMode_001.bottom - Tabs_barMode_001.top=
+          ${Math.round(Tabs_barMode_001.bottom - Tabs_barMode_001.top)}`);
+        expect(Math.abs(Math.round(Tabs_barMode_001.bottom - Tabs_barMode_001.top) - Math.round(uiContext.vp2px(244))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_002.bottom - Tabs_barMode_002.top) - Math.round(uiContext.vp2px(244))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_003.bottom - Tabs_barMode_003.top) - Math.round(uiContext.vp2px(244))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_001.right - Tabs_barMode_001.left) - Math.round(uiContext.vp2px(330))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_002.right - Tabs_barMode_002.left) - Math.round(uiContext.vp2px(330))) <=
+          1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barMode_003.right - Tabs_barMode_003.left) - Math.round(uiContext.vp2px(330))) <=
+          1).assertTrue();
 
-      console.info(`[testTabsBarModeFixed_static_01]subGreen.bottom - subGreen.top=
-        ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsBarModeFixed_static_01]subGreen.bottom - subGreen.top=
+          ${Math.round(subGreen.bottom - subGreen.top)}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+          .assertTrue();
 
-      console.info('[testTabsBarModeFixed_static_01] END');
-      done();
+        console.info('[testTabsBarModeFixed_static_01] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsBarModeFixed_static_01] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     

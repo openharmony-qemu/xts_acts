@@ -27,7 +27,7 @@ const SLEEP_TIME = 1000;
 
 export default function SaveScrollSearchTest() {
   describe('SaveScrollSearchTest', () => {
-    beforeEach((): void => {
+    beforeEach(async (): Promise<void> => {
       console.info('SaveScrollSearchTest beforeEach start');
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/SaveScrollSearch/SaveScrollSearch',
@@ -39,6 +39,7 @@ export default function SaveScrollSearchTest() {
         console.info('SaveScrollSearchTest state pages: ' + JSON.stringify(pages));
         // Always replace to avoid state carry-over across cases/suites.
         routerInstance.replaceUrl(options);
+        await CommonFunc.sleep(2000);
       } catch (err) {
         console.error('SaveScrollSearchTest replaceUrl error: ' + err);
         expect().assertFail();

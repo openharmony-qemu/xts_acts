@@ -22,6 +22,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import CommonFunc from '../../../../ets/MainAbility/common/Common';
 
 const PAGE = 'MainAbility/pages/listItemSwipeManager/listItemSwipeManager';
 const TITLE_ID = 'listSwipe_title';
@@ -79,6 +80,7 @@ export default function ListItemSwipeManagerTest() {
       async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
+        await CommonFunc.sleep(1000);
         done();
       } catch (e) {
         arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
@@ -101,6 +103,7 @@ export default function ListItemSwipeManagerTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await CommonFunc.sleep(1000);
         const btn = await driver.findComponent(ON.id('listSwipe_btn'));
         expect(!!btn).assertTrue();
         await (btn?.click() as Promise<void>);

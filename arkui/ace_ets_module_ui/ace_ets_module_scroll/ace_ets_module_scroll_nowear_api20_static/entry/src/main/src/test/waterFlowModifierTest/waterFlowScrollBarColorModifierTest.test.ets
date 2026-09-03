@@ -40,6 +40,7 @@ export default function WaterFlowScrollBarColorModifierTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/waterFlowModifier/waterFlowScrollBarColorModifier',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push WaterFlowScrollBarColorModifierTest page error:' + err);

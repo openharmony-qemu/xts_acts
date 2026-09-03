@@ -36,6 +36,7 @@ export default function swiperModeTest() {
         if (!("swiperMode" == pages.name)) {
           console.info("get swiperModeTest pages.name:" + JSON.stringify(pages.name));
           swiperMode.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push swiperModeTest page error:" + err);

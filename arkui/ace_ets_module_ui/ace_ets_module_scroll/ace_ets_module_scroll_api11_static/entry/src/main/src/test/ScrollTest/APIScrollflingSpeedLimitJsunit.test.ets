@@ -38,6 +38,7 @@ export default function APIScrollflingSpeedLimitJsunit() {
           console.info("get APIScrollflingSpeedLimitJsunit state pages.name:" + JSON.stringify(pages.name));
           // let result = await routerAlp.pushUrl(options);
           routerAlp.pushUrl(options);
+          await CommonFunc.sleep(2000);
           // console.info("push APIScrollflingSpeedLimitJsunit success " + JSON.stringify(result));
         }
       } catch (err) {

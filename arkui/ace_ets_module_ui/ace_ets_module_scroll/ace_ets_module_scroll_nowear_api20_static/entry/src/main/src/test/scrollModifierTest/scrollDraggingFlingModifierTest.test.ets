@@ -68,46 +68,53 @@ export default function ScrollDraggingFlingModifierTest() {
     it('ScrollDraggingFlingModifier_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let tagName = 'ScrollDraggingFlingModifier_static_0100';
       console.info('[' + tagName + '] START============================');
-      let driver = Driver.create()
-      let dragScroll = await driver.findComponent(ON.id('scrollModifier_dragging_fling'));
-      const rect = await (dragScroll?.getBounds() as Promise<Rect>);
-      let top = rect.top;
-      let left = rect.left;
-      let right = rect.right;
-      let bottom = rect.bottom;
-      console.info('ScrollDraggingFlingModifier_static_0100 value is' + left + ' --' + right + '--' + top + '--' + bottom);
-      let height = bottom - top;
-      let width = right - left;
-      await driver.swipe(Math.round(left + width / 2).toInt(), Math.round(top + height * 0.8).toInt(),
-        Math.round(left + width / 2).toInt(), Math.round(top + height * 0.2).toInt(), 1000);
-      await CommonFunc.sleep(SLEEP_TIME_2000);
+      try {
+        let driver = Driver.create()
+        await CommonFunc.sleep(SLEEP_TIME_1000);
+        let dragScroll = await driver.findComponent(ON.id('scrollModifier_dragging_fling'));
+        const rect = await (dragScroll?.getBounds() as Promise<Rect>);
+        let top = rect.top;
+        let left = rect.left;
+        let right = rect.right;
+        let bottom = rect.bottom;
+        console.info('ScrollDraggingFlingModifier_static_0100 value is' + left + ' --' + right + '--' + top + '--' + bottom);
+        let height = bottom - top;
+        let width = right - left;
+        await driver.swipe(Math.round(left + width / 2).toInt(), Math.round(top + height * 0.8).toInt(),
+          Math.round(left + width / 2).toInt(), Math.round(top + height * 0.2).toInt(), 1000);
+        await CommonFunc.sleep(SLEEP_TIME_2000);
 
-      let strJson1 = inspector.getInspectorByKey('scrollModifier_startDragging');
-      let content1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')
-      console.info('[ScrollDraggingFlingModifier_static_0100] content1: ' + JSON.stringify(content1));
-      expect(content1).assertEqual('onWillStartDragging');
+        let strJson1 = inspector.getInspectorByKey('scrollModifier_startDragging');
+        let content1 = JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')
+        console.info('[ScrollDraggingFlingModifier_static_0100] content1: ' + JSON.stringify(content1));
+        expect(content1).assertEqual('onWillStartDragging');
 
-      let strJson2 = inspector.getInspectorByKey('scrollModifier_stopDragging');
-      let content2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')
-      console.info('[ScrollDraggingFlingModifier_static_0100] content2: ' + JSON.stringify(content2));
-      expect(content2).assertEqual('onDidStopDragging willFling: true');
+        let strJson2 = inspector.getInspectorByKey('scrollModifier_stopDragging');
+        let content2 = JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')
+        console.info('[ScrollDraggingFlingModifier_static_0100] content2: ' + JSON.stringify(content2));
+        expect(content2).assertEqual('onDidStopDragging willFling: true');
 
-      let strJson3 = inspector.getInspectorByKey('scrollModifier_startFling');
-      let content3 = JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')
-      console.info('[ScrollDraggingFlingModifier_static_0100] content3: ' + JSON.stringify(content3));
-      expect(content3).assertEqual('onWillStartFling');
+        let strJson3 = inspector.getInspectorByKey('scrollModifier_startFling');
+        let content3 = JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')
+        console.info('[ScrollDraggingFlingModifier_static_0100] content3: ' + JSON.stringify(content3));
+        expect(content3).assertEqual('onWillStartFling');
 
-      let strJson4 = inspector.getInspectorByKey('scrollModifier_stopFling');
-      let content4 = JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content')
-      console.info('[ScrollDraggingFlingModifier_static_0100] content4: ' + JSON.stringify(content4));
-      expect(content4).assertEqual('onDidStopFling');
+        let strJson4 = inspector.getInspectorByKey('scrollModifier_stopFling');
+        let content4 = JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content')
+        console.info('[ScrollDraggingFlingModifier_static_0100] content4: ' + JSON.stringify(content4));
+        expect(content4).assertEqual('onDidStopFling');
 
-      let strJson5 = inspector.getInspectorByKey('scrollModifier_willStopDragging');
-      let content5 = JSON.parseJsonElement(strJson5).getElement('$attrs').getString('content')
-      console.info('[ScrollDraggingFlingModifier_static_0100] content5: ' + JSON.stringify(content5));
-      expect(content5).assertEqual('onWillStopDragging');
-      console.info('[' + tagName + '] END============================');
-      done();
+        let strJson5 = inspector.getInspectorByKey('scrollModifier_willStopDragging');
+        let content5 = JSON.parseJsonElement(strJson5).getElement('$attrs').getString('content')
+        console.info('[ScrollDraggingFlingModifier_static_0100] content5: ' + JSON.stringify(content5));
+        expect(content5).assertEqual('onWillStopDragging');
+        console.info('[' + tagName + '] END============================');
+        done();
+      } catch (error) {
+        console.error('[ScrollDraggingFlingModifier_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

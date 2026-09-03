@@ -36,6 +36,7 @@ export default function nestedScrollSwiper() {
         if (!("nestedScrollSwiper" == pages.name)) {
           console.info("get nestedScrollSwiper pages.name:" + JSON.stringify(pages.name));
           router.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push nestedScrollSwiper page error:" + err);
@@ -98,38 +99,45 @@ it('nestedScrollSwiper_static_0100', Level.LEVEL0, async (done: () => void): Pro
      * @tc.level    Level.LEVEL0
      */
 it('nestedScrollSwiper_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[nestedScrollSwiper_static_0200] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create()
-      let strJson = inspector.getInspectorByKey('swiper_nestedScroll_2');
-      console.info("[nestedScrollSwiper_static_0200] component obj is: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("[nestedScrollSwiper_static_0200] nestedScroll: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('nestedScroll')));
-      await CommonFunc.sleep(1000);
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
-      await (driver?.assertComponentExist(ON.text('2')) as Promise<void>);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay')).assertEqual('false');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('nestedScroll'))
-        .assertEqual('SwiperNestedScrollMode.SELF_FIRST');
+      try {
+        console.info('[nestedScrollSwiper_static_0200] START');
+        await CommonFunc.sleep(1000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let strJson = inspector.getInspectorByKey('swiper_nestedScroll_2');
+        console.info("[nestedScrollSwiper_static_0200] component obj is: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)));
+        console.info("[nestedScrollSwiper_static_0200] nestedScroll: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('nestedScroll')));
+        await CommonFunc.sleep(1000);
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Swiper');
+        await (driver?.assertComponentExist(ON.text('2')) as Promise<void>);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay')).assertEqual('false');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop')).assertEqual('true');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('nestedScroll'))
+          .assertEqual('SwiperNestedScrollMode.SELF_FIRST');
 
-      let swiperScroll = CommonFunc.getComponentRectOnScreen('swiper_nestedScroll_2');
-      let top = swiperScroll.top;
-      let right = swiperScroll.right;
-      let left = swiperScroll.left;
-      let bottom = swiperScroll.bottom;
-      console.info("nestedScrollSwiper_static_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom - top;
-      let width = right - left;
-      await CommonFunc.sleep(1000);
-      await (driver?.swipe((Math.round(left + width * 0.8)).toInt(), (Math.round(top + height / 2)).toInt(),
-        (Math.round(left + width * 0.1)).toInt(), (Math.round(top + height / 2)).toInt()) as Promise<void>);
-      await CommonFunc.sleep(2000);
-      await (driver?.assertComponentExist(ON.text('3')) as Promise<void>);
+        let swiperScroll = CommonFunc.getComponentRectOnScreen('swiper_nestedScroll_2');
+        let top = swiperScroll.top;
+        let right = swiperScroll.right;
+        let left = swiperScroll.left;
+        let bottom = swiperScroll.bottom;
+        console.info("nestedScrollSwiper_static_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        let height = bottom - top;
+        let width = right - left;
+        await CommonFunc.sleep(1000);
+        await (driver?.swipe((Math.round(left + width * 0.8)).toInt(), (Math.round(top + height / 2)).toInt(),
+          (Math.round(left + width * 0.1)).toInt(), (Math.round(top + height / 2)).toInt()) as Promise<void>);
+        await CommonFunc.sleep(2000);
+        await (driver?.assertComponentExist(ON.text('3')) as Promise<void>);
 
-      console.info('[nestedScrollSwiper_static_0200] END');
-      done();
+        console.info('[nestedScrollSwiper_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[nestedScrollSwiper_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

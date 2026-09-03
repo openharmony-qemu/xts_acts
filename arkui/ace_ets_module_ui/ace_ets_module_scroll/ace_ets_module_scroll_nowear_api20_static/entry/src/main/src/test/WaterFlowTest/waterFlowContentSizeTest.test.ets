@@ -52,6 +52,7 @@ export default function WaterFlowContentSizeTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/WaterFlow/waterFlowContentSize',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push WaterFlowContentSizeTest page error:' + err);

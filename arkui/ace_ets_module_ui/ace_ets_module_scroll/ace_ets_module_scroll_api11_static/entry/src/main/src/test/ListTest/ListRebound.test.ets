@@ -52,6 +52,7 @@ export default function ListReboundTest() {
           router.pushUrl(options).then(() => {
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));

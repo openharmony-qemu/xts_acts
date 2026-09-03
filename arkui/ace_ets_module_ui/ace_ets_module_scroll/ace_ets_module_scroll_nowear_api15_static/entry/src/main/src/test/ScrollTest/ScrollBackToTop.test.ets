@@ -47,94 +47,102 @@ export default function ScrollBackToTopTest() {
     
     
 /**
-     * @tc.number   ScrollTest1_static_0100
+     * @tc.number   SUB_ARKUI_SCROLL_BACKTOTOP_STATIC_0100
      * @tc.name     ScrollTest1_static_0100
      * @tc.desc     ScrollTest1_static_0100
      * @tc.level    Level.LEVEL0
      */
 it('ScrollTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ScrollTest_0100 START');
-      await sleep(1000)
-      let driverScroll = Driver.create();
-      let scroll = await (driverScroll.findComponent(ON.id('Scroll_4')) as Promise<Component>);
-      let rect = await scroll.getBounds();
-      let top = rect.top;
-      let left = rect.left;
-      let right = rect.right;
-      let bottom = rect.bottom;
-      console.info("ScrollTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom - top;
-      let width = right - left;
-      // create driver
-      let driverTop =  Driver.create();
-      let topButton = await driverTop.findComponent(ON.id('Top'));
-      let driverSwitch =  Driver.create();
-      let switchButton = await driverSwitch.findComponent(ON.id('Switch'))
-      await sleep(1000);  //wait for driver to be ready
-      await driverScroll.swipe(
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 4).toInt(),
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 2).toInt()
-      );
-      //waiting for scroll to complete
-      await sleep(2000);
-      await (topButton?.click() as Promise<void>);
-      await sleep(1500)
-      let stopJson = inspector.getInspectorByKey('ScrollBackToTop');
-      expect(JSON.parseJsonElement(stopJson).getElement('$attrs').getString('content') !== 'onDidScrollBackToTop').assertTrue();
+      try {
+        console.info('ScrollTest_0100 START');
+        await sleep(1000)
+        let driverScroll = Driver.create();
+        await CommonFunc.sleep(1000);
+        let scroll = await (driverScroll.findComponent(ON.id('Scroll_4')) as Promise<Component>);
+        let rect = await scroll.getBounds();
+        let top = rect.top;
+        let left = rect.left;
+        let right = rect.right;
+        let bottom = rect.bottom;
+        console.info("ScrollTest_0100 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        let height = bottom - top;
+        let width = right - left;
+        // create driver
+        let driverTop =  Driver.create();
+        await CommonFunc.sleep(1000);
+        let topButton = await driverTop.findComponent(ON.id('Top'));
+        let driverSwitch =  Driver.create();
+        let switchButton = await driverSwitch.findComponent(ON.id('Switch'))
+        await sleep(1000);  //wait for driver to be ready
+        await driverScroll.swipe(
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 4).toInt(),
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 2).toInt()
+        );
+        //waiting for scroll to complete
+        await sleep(2000);
+        await (topButton?.click() as Promise<void>);
+        await sleep(1500)
+        let stopJson = inspector.getInspectorByKey('ScrollBackToTop');
+        expect(JSON.parseJsonElement(stopJson).getElement('$attrs').getString('content') !== 'onDidScrollBackToTop').assertTrue();
 
-      await (switchButton?.click() as Promise<void>);
-      await sleep(500)
-      await (topButton?.click() as Promise<void>);
-      await sleep(1500)
+        await (switchButton?.click() as Promise<void>);
+        await sleep(500)
+        await (topButton?.click() as Promise<void>);
+        await sleep(1500)
 
-      await driverScroll.swipe(
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 4).toInt(),
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 2).toInt()
-      );
-      await sleep(2000);
-      await (switchButton?.click() as Promise<void>);
-      await sleep(500)
-      await (topButton?.click() as Promise<void>);
-      await sleep(1500)
+        await driverScroll.swipe(
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 4).toInt(),
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 2).toInt()
+        );
+        await sleep(2000);
+        await (switchButton?.click() as Promise<void>);
+        await sleep(500)
+        await (topButton?.click() as Promise<void>);
+        await sleep(1500)
 
-      await driverScroll.swipe(
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 4).toInt(),
-        Math.round(left + width * 0.2).toInt(),
-        Math.round(bottom - height / 2).toInt()
-      );
-      await sleep(2000);
-      await (switchButton?.click() as Promise<void>);
-      await sleep(500)
-      await (topButton?.click() as Promise<void>);
-      await sleep(3000); //waiting for backToTop
+        await driverScroll.swipe(
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 4).toInt(),
+          Math.round(left + width * 0.2).toInt(),
+          Math.round(bottom - height / 2).toInt()
+        );
+        await sleep(2000);
+        await (switchButton?.click() as Promise<void>);
+        await sleep(500)
+        await (topButton?.click() as Promise<void>);
+        await sleep(3000); //waiting for backToTop
 
-      let strJson = inspector.getInspectorByKey('Scroll_1');
-      let strJson1 = inspector.getInspectorByKey('Scroll_2');
-      let strJson3 = inspector.getInspectorByKey('ScrollBackToTop');
-      let strJson4 = inspector.getInspectorByKey('ScrollAbnormal');
-      console.info("getInspectorByKey result for Scroll_1: " + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("getInspectorByKey result for Scroll_2: " + strJson1);
-      let obj1 = JSON.parseJsonElement(strJson1);
-      console.info("getInspectorByKey result for ScrollBackToTop: " + strJson3);
-      let obj3 = JSON.parseJsonElement(strJson3);
-      let obj4 = JSON.parseJsonElement(strJson4);
-      // output console info
-      console.info("[ScrollTest_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[ScrollTest_static_0100] component obj1 is: " + JSON.stringify(obj1));
-      console.info("[ScrollTest_static_0100] component obj3 is: " + JSON.stringify(obj3));
-      console.info("[ScrollTest_static_0100] component obj4 is: " + JSON.stringify(obj4));
-      // assertEqual backToTop event
-      expect(obj.getElement("$attrs").getString("content")).assertEqual('onWillScroll');
-      expect(obj3.getElement("$attrs").getString("content")).assertEqual('onDidScrollBackToTop');
-      expect(obj4.getElement("$attrs").getString("content")).assertEqual('DidAbnormal');
-      console.info('[ScrollTest_static_0100] END');
-      done()
+        let strJson = inspector.getInspectorByKey('Scroll_1');
+        let strJson1 = inspector.getInspectorByKey('Scroll_2');
+        let strJson3 = inspector.getInspectorByKey('ScrollBackToTop');
+        let strJson4 = inspector.getInspectorByKey('ScrollAbnormal');
+        console.info("getInspectorByKey result for Scroll_1: " + strJson);
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("getInspectorByKey result for Scroll_2: " + strJson1);
+        let obj1 = JSON.parseJsonElement(strJson1);
+        console.info("getInspectorByKey result for ScrollBackToTop: " + strJson3);
+        let obj3 = JSON.parseJsonElement(strJson3);
+        let obj4 = JSON.parseJsonElement(strJson4);
+        // output console info
+        console.info("[ScrollTest_static_0100] component obj is: " + JSON.stringify(obj));
+        console.info("[ScrollTest_static_0100] component obj1 is: " + JSON.stringify(obj1));
+        console.info("[ScrollTest_static_0100] component obj3 is: " + JSON.stringify(obj3));
+        console.info("[ScrollTest_static_0100] component obj4 is: " + JSON.stringify(obj4));
+        // assertEqual backToTop event
+        expect(obj.getElement("$attrs").getString("content")).assertEqual('onWillScroll');
+        expect(obj3.getElement("$attrs").getString("content")).assertEqual('onDidScrollBackToTop');
+        expect(obj4.getElement("$attrs").getString("content")).assertEqual('DidAbnormal');
+        console.info('[ScrollTest_static_0100] END');
+        done()
+      } catch (error) {
+        console.error('[ScrollTest1_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }

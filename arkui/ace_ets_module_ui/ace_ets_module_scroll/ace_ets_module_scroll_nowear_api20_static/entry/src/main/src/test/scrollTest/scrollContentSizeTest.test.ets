@@ -52,6 +52,7 @@ export default function ScrollContentSizeTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/scroll/scrollContentSize',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ScrollContentSizeTest page error:' + err);

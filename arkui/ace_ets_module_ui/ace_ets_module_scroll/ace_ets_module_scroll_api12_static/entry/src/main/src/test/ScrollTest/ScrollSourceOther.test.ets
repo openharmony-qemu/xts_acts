@@ -92,27 +92,34 @@ it('ScrollSourceOther_0100', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL0
      */
 it('ScrollSourceOther_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ScrollSourceOther_0200 START');
-      let driver = Driver.create();
-      let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
-      let top = swiperScroll.top;
-      let right = swiperScroll.right;
-      let left = swiperScroll.left;
-      let bottom = swiperScroll.bottom;
-      console.info("ScrollSourceOther_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom - top;
-      let width = right - left;
-      await CommonFunc.sleep(1000);
-      await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.6)).toInt(),
-        (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.2)).toInt());
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('EDGE_EFFECT');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ScrollSourceOther_0200] component obj is: " + JSON.stringifyJsonElement(obj));
-      console.info("[ScrollSourceOther_0200] content obj is: " + obj.getElement('$attrs').getString('label'));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('FLING'); //FLING
-      console.info('[ScrollSourceOther_0200] END');
-      done();
+      try {
+        console.info('ScrollSourceOther_0200 START');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
+        let top = swiperScroll.top;
+        let right = swiperScroll.right;
+        let left = swiperScroll.left;
+        let bottom = swiperScroll.bottom;
+        console.info("ScrollSourceOther_0200 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        let height = bottom - top;
+        let width = right - left;
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.6)).toInt(),
+          (Math.round(left + width / 2)).toInt(), (Math.round(top + height * 0.2)).toInt());
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('EDGE_EFFECT');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[ScrollSourceOther_0200] component obj is: " + JSON.stringifyJsonElement(obj));
+        console.info("[ScrollSourceOther_0200] content obj is: " + obj.getElement('$attrs').getString('label'));
+        expect(obj.getElement('$attrs').getString('label')).assertEqual('FLING'); //FLING
+        console.info('[ScrollSourceOther_0200] END');
+        done();
+      } catch (error) {
+        console.error('[ScrollSourceOther_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
     
@@ -125,36 +132,43 @@ it('ScrollSourceOther_0200', Level.LEVEL0, async (done: () => void): Promise<voi
      * @tc.level    Level.LEVEL0
      */
 it('ScrollSourceOther_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('ScrollSourceOther_0300 START');
-      let driver = Driver.create();
-      let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
-      let top = swiperScroll.top;
-      let right = swiperScroll.right;
-      let left = swiperScroll.left;
-      let bottom = swiperScroll.bottom;
-      console.info("ScrollSourceOther_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      let height = bottom - top;
-      let width = right - left;
-      await CommonFunc.sleep(1000);
+      try {
+        console.info('ScrollSourceOther_0300 START');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        let swiperScroll = CommonFunc.getComponentRectOnScreen('scrollSourceOther');
+        let top = swiperScroll.top;
+        let right = swiperScroll.right;
+        let left = swiperScroll.left;
+        let bottom = swiperScroll.bottom;
+        console.info("ScrollSourceOther_0300 value is" + left + " --" + right + "--" + top + "--" + bottom);
+        let height = bottom - top;
+        let width = right - left;
+        await CommonFunc.sleep(1000);
 
-      await driver.mouseScroll({
-        x: (Math.round(left + width / 2)).toInt(),
-        y: (Math.round(top + height * 0.3)).toInt()
-      }, false, 20)
-      await CommonFunc.sleep(3000);
-      await driver.mouseScroll({
-        x: (Math.round(left + width / 2)).toInt(),
-        y: (Math.round(top + height * 0.3)).toInt()
-      }, true, 20)
-      await CommonFunc.sleep(3000);
+        await driver.mouseScroll({
+          x: (Math.round(left + width / 2)).toInt(),
+          y: (Math.round(top + height * 0.3)).toInt()
+        }, false, 20)
+        await CommonFunc.sleep(3000);
+        await driver.mouseScroll({
+          x: (Math.round(left + width / 2)).toInt(),
+          y: (Math.round(top + height * 0.3)).toInt()
+        }, true, 20)
+        await CommonFunc.sleep(3000);
 
-      let strJson = inspector.getInspectorByKey('SCROLLER_ANIMATION');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[ScrollSourceOther_0300] component obj is: " + JSON.stringifyJsonElement(obj));
-      console.info("[ScrollSourceOther_0300] content obj is: " + obj.getElement('$attrs').getString('label'));
-      expect(obj.getElement('$attrs').getString('label')).assertEqual('OTHER_USER_INPUT'); //OTHER_USER_INPUT
-      console.info('[ScrollSourceOther_0300] END');
-      done();
+        let strJson = inspector.getInspectorByKey('SCROLLER_ANIMATION');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[ScrollSourceOther_0300] component obj is: " + JSON.stringifyJsonElement(obj));
+        console.info("[ScrollSourceOther_0300] content obj is: " + obj.getElement('$attrs').getString('label'));
+        expect(obj.getElement('$attrs').getString('label')).assertEqual('OTHER_USER_INPUT'); //OTHER_USER_INPUT
+        console.info('[ScrollSourceOther_0300] END');
+        done();
+      } catch (error) {
+        console.error('[ScrollSourceOther_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

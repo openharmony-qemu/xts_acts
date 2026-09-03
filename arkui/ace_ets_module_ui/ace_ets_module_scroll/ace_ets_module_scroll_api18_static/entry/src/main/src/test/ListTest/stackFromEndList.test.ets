@@ -49,6 +49,7 @@ export default function stackFromEndList() {
         if (!("stackFromEndList" == pages.name)) {
           console.info("get stackFromEndList pages.name:" + JSON.stringify(pages.name));
           router.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push stackFromEndList page error:" + err);

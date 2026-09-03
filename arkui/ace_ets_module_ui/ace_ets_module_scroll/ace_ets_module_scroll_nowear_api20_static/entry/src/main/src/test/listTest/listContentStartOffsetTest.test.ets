@@ -40,6 +40,7 @@ export default function ListContentStartOffsetTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/list/listContentStartOffset',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push ListContentStartOffsetTest page error:' + err);

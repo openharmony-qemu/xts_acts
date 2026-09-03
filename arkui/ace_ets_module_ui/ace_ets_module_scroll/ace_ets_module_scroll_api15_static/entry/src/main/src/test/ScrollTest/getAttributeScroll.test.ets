@@ -38,6 +38,7 @@ export default function getAttributeScroll() {
         if (!("getAttributeScroll" == pages.name)) {
           console.info("get getAttributeScroll pages.name:" + '');
           routerInstance.pushUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error("push getAttributeScroll page error:" + err);

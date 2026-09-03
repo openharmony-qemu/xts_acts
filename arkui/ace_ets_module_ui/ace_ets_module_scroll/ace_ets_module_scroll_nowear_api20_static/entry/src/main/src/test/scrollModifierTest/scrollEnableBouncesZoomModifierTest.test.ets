@@ -40,6 +40,7 @@ export default function EnableBouncesZoomModifierTest() {
           routerInstance.replaceUrl({
             url: 'MainAbility/pages/scrollModifier/scrollEnableBouncesZoomModifier',
           })
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push EnableBouncesZoomModifierTest page error:' + err);

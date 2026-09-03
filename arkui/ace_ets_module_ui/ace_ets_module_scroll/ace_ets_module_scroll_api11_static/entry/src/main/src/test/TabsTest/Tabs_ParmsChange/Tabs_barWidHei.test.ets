@@ -66,114 +66,121 @@ export default function Tabs_barWidHei() {
      * @tc.level    Level.LEVEL0
      */
 it('testTabsBarWidToNegative_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsBarWidToNegative_static_01] START');
-      let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      console.info(`[testTabsBarWidToNegative_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info("[testTabsBarWidToNegative_static_01] barPosition: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition')));
-      console.info("[testTabsBarWidToNegative_static_01] index: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
-      console.info("[testTabsBarWidToNegative_static_01] scrollable: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')));
-      console.info("[testTabsBarWidToNegative_static_01] barMode: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
-      let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
-      let driver = Driver.create();
-      await driver.swipe((Math.round((Tabs_barWidHei_011.right -
-        ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6)))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
-      let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
-      await driver.swipe((Math.round(Tabs_barWidHei_012.right -
-        ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
-      let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
-      let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
+      try {
+        console.info('[testTabsBarWidToNegative_static_01] START');
+        let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        console.info(`[testTabsBarWidToNegative_static_01] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info("[testTabsBarWidToNegative_static_01] barPosition: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition')));
+        console.info("[testTabsBarWidToNegative_static_01] index: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
+        console.info("[testTabsBarWidToNegative_static_01] scrollable: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')));
+        console.info("[testTabsBarWidToNegative_static_01] barMode: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
+        let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round((Tabs_barWidHei_011.right -
+          ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6)))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
+        let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
+        await driver.swipe((Math.round(Tabs_barWidHei_012.right -
+          ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
+        let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
+        let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
 
-      console.info(`[testTabsBarWidToNegative_static_01]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
+        console.info(`[testTabsBarWidToNegative_static_01]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
 
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
 
-      console.info(`[testTabsBarWidToNegative_static_01]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
+        console.info(`[testTabsBarWidToNegative_static_01]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
 
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
 
-      console.info(`[testTabsBarWidToNegative_static_01]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top
-        ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
-
-
-      expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
-
-      console.info(`[testTabsBarWidToNegative_static_01]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top
-        ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-
-      console.info(`[testTabsBarWidToNegative_static_01]subGreen.bottom - subGreen.top
-        ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsBarWidToNegative_static_01]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top
+          ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
 
 
-      console.info('[testTabsBarWidToNegative_static_01] END');
-      done();
+        expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+
+        expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+
+        console.info(`[testTabsBarWidToNegative_static_01]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top
+          ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+
+        console.info(`[testTabsBarWidToNegative_static_01]subGreen.bottom - subGreen.top
+          ${Math.round(subGreen.bottom - subGreen.top)}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+          .assertTrue();
+
+
+        console.info('[testTabsBarWidToNegative_static_01] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsBarWidToNegative_static_01] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -185,123 +192,130 @@ it('testTabsBarWidToNegative_static_01', Level.LEVEL0, async (done: () => void):
      * @tc.level    Level.LEVEL0
      */
 it('testTabsBarWidExceedTabsWid_static_02', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsBarWidExceedTabsWid_static_02] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'setBarWidth', value: 400
-      });
-      await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      console.info(`[testTabsBarWidExceedTabsWid_static_02] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info("[testTabsBarWidExceedTabsWid_static_02] barPosition: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition')));
-      console.info("[testTabsBarWidExceedTabsWid_static_02] index: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
-      console.info("[testTabsBarWidExceedTabsWid_static_02] scrollable: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable')));
-      console.info("[testTabsBarWidExceedTabsWid_static_02] barMode: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
-      let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_barWidHei_011.right -
-        ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
-      let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
-      await driver.swipe((Math.round(Tabs_barWidHei_012.right -
-        ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
-      let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
-      let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
+      try {
+        console.info('[testTabsBarWidExceedTabsWid_static_02] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'setBarWidth', value: 400
+        });
+        await CommonFunc.sleep(3000);
+        let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        console.info(`[testTabsBarWidExceedTabsWid_static_02] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info("[testTabsBarWidExceedTabsWid_static_02] barPosition: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition')));
+        console.info("[testTabsBarWidExceedTabsWid_static_02] index: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
+        console.info("[testTabsBarWidExceedTabsWid_static_02] scrollable: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable')));
+        console.info("[testTabsBarWidExceedTabsWid_static_02] barMode: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
+        let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_barWidHei_011.right -
+          ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
+        let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
+        await driver.swipe((Math.round(Tabs_barWidHei_012.right -
+          ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
+        let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
+        let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
 
-      console.info(`[testTabsBarWidExceedTabsWid_static_02]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
+        console.info(`[testTabsBarWidExceedTabsWid_static_02]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
 
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
-
-
-      console.info(`[testTabsBarWidExceedTabsWid_static_02]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
-
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
 
 
-      console.info(`[testTabsBarWidExceedTabsWid_static_02]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
-        ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
+        console.info(`[testTabsBarWidExceedTabsWid_static_02]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
 
-      expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
-
-      console.info(`[testTabsBarWidExceedTabsWid_static_02]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
-        ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-
-      console.info(`[testTabsBarWidExceedTabsWid_static_02]subGreen.bottom - subGreen.top=
-        ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
-        .assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
 
 
-      console.info('[testTabsBarWidExceedTabsWid_static_02] END');
-      done();
+        console.info(`[testTabsBarWidExceedTabsWid_static_02]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
+          ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
+
+        expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+
+        expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+
+        console.info(`[testTabsBarWidExceedTabsWid_static_02]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
+          ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+
+        console.info(`[testTabsBarWidExceedTabsWid_static_02]subGreen.bottom - subGreen.top=
+          ${Math.round(subGreen.bottom - subGreen.top)}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+          .assertTrue();
+
+
+        console.info('[testTabsBarWidExceedTabsWid_static_02] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsBarWidExceedTabsWid_static_02] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -313,121 +327,128 @@ it('testTabsBarWidExceedTabsWid_static_02', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('testTabsBarWidWithinTabsWid_static_03', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsBarWidWithinTabsWid_static_03] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'setBarWidth', value: 300
-      });
-      await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      console.info(`[testTabsBarWidWithinTabsWid_static_03] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info("[testTabsBarWidWithinTabsWid_static_03] barPosition: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition')));
-      console.info("[testTabsBarWidWithinTabsWid_static_03] index: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
-      console.info("[testTabsBarWidWithinTabsWid_static_03] scrollable: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable')));
-      console.info("[testTabsBarWidWithinTabsWid_static_03] barMode: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
-      let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_barWidHei_011.right -
-        ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
-      let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
-      await driver.swipe((Math.round(Tabs_barWidHei_012.right -
-        ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
-      let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
-      let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
+      try {
+        console.info('[testTabsBarWidWithinTabsWid_static_03] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'setBarWidth', value: 300
+        });
+        await CommonFunc.sleep(3000);
+        let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        console.info(`[testTabsBarWidWithinTabsWid_static_03] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info("[testTabsBarWidWithinTabsWid_static_03] barPosition: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition')));
+        console.info("[testTabsBarWidWithinTabsWid_static_03] index: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
+        console.info("[testTabsBarWidWithinTabsWid_static_03] scrollable: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable')));
+        console.info("[testTabsBarWidWithinTabsWid_static_03] barMode: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
+        let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_barWidHei_011.right -
+          ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
+        let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
+        await driver.swipe((Math.round(Tabs_barWidHei_012.right -
+          ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
+        let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
+        let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
 
-      console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
+        console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
 
-      console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
+        console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
 
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
-
-
-      console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
-        ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
-      expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
-
-      console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
-      ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`)
-
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-
-      console.info(`[testTabsBarWidWithinTabsWid_static_03]subGreen.bottom - subGreen.top=
-        ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(100))) <= 1)
-        .assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
 
 
-      console.info('[testTabsBarWidWithinTabsWid_static_03] END');
-      done();
+        console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
+          ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
+        expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+
+        expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+
+        console.info(`[testTabsBarWidWithinTabsWid_static_03]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
+        ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`)
+
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+
+        console.info(`[testTabsBarWidWithinTabsWid_static_03]subGreen.bottom - subGreen.top=
+          ${Math.round(subGreen.bottom - subGreen.top)}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(100))) <= 1)
+          .assertTrue();
+
+
+        console.info('[testTabsBarWidWithinTabsWid_static_03] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsBarWidWithinTabsWid_static_03] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -439,124 +460,131 @@ it('testTabsBarWidWithinTabsWid_static_03', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('testTabsBarHeiExceedTabsHei_static_04', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsBarHeiExceedTabsHei_static_04] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'setBarWidth', value: 330
-      });
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'setBarHeight', value: 320
-      });
-      await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      console.info(`[testTabsBarHeiExceedTabsHei_static_04] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info("[testTabsBarHeiExceedTabsHei_static_04] barPosition: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition')));
-      console.info("[testTabsBarHeiExceedTabsHei_static_04] index: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
-      console.info("[testTabsBarHeiExceedTabsHei_static_04] scrollable: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable')));
-      console.info("[testTabsBarHeiExceedTabsHei_static_04] barMode: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
-      let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_barWidHei_011.right -
-        ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
-      let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
-      await driver.swipe((Math.round(Tabs_barWidHei_012.right -
-        ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
-      let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
-      let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
+      try {
+        console.info('[testTabsBarHeiExceedTabsHei_static_04] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'setBarWidth', value: 330
+        });
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'setBarHeight', value: 320
+        });
+        await CommonFunc.sleep(3000);
+        let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        console.info(`[testTabsBarHeiExceedTabsHei_static_04] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info("[testTabsBarHeiExceedTabsHei_static_04] barPosition: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition')));
+        console.info("[testTabsBarHeiExceedTabsHei_static_04] index: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
+        console.info("[testTabsBarHeiExceedTabsHei_static_04] scrollable: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable')));
+        console.info("[testTabsBarHeiExceedTabsHei_static_04] barMode: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
+        let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_barWidHei_011.right -
+          ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
+        let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
+        await driver.swipe((Math.round(Tabs_barWidHei_012.right -
+          ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
+        let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
+        let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
 
-      console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
+        console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
 
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
-
-
-      console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
 
 
-      console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
-        ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
-      expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
-
-      console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
-        ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-
-      console.info(`[testTabsBarHeiExceedTabsHei_static_04]subGreen.bottom - subGreen.top=
-        ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
 
 
-      console.info('[testTabsBarHeiExceedTabsHei_static_04] END');
-      done();
+        console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
+          ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
+        expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+
+        expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
+
+        console.info(`[testTabsBarHeiExceedTabsHei_static_04]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
+          ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+
+        console.info(`[testTabsBarHeiExceedTabsHei_static_04]subGreen.bottom - subGreen.top=
+          ${Math.round(subGreen.bottom - subGreen.top)}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+          .assertTrue();
+
+
+        console.info('[testTabsBarHeiExceedTabsHei_static_04] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsBarHeiExceedTabsHei_static_04] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -568,120 +596,127 @@ it('testTabsBarHeiExceedTabsHei_static_04', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('testTabsBarHeiWithinTabsHei_static_05', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsBarHeiWithinTabsHei_static_05] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'setBarHeight', value: 100
-      });
-      await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      console.info(`[testTabsBarHeiWithinTabsHei_static_05] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info("[testTabsBarHeiWithinTabsHei_static_05] barPosition: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getString('barPosition')));
-      console.info("[testTabsBarHeiWithinTabsHei_static_05] index: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
-      console.info("[testTabsBarHeiWithinTabsHei_static_05] scrollable: " +
-      JSON.stringify(JSON.parseJsonElement(strJson)
-        .getElement('$attrs')
-        .getBoolean('scrollable')));
-      console.info("[testTabsBarHeiWithinTabsHei_static_05] barMode: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
-      let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_barWidHei_011.right -
-        ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
-      let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
-      await driver.swipe((Math.round(Tabs_barWidHei_012.right -
-        ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
-      let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
-      let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
+      try {
+        console.info('[testTabsBarHeiWithinTabsHei_static_05] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'setBarHeight', value: 100
+        });
+        await CommonFunc.sleep(3000);
+        let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        console.info(`[testTabsBarHeiWithinTabsHei_static_05] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info("[testTabsBarHeiWithinTabsHei_static_05] barPosition: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getString('barPosition')));
+        console.info("[testTabsBarHeiWithinTabsHei_static_05] index: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
+        console.info("[testTabsBarHeiWithinTabsHei_static_05] scrollable: " +
+        JSON.stringify(JSON.parseJsonElement(strJson)
+          .getElement('$attrs')
+          .getBoolean('scrollable')));
+        console.info("[testTabsBarHeiWithinTabsHei_static_05] barMode: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
+        let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_barWidHei_011.right -
+          ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
+        let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
+        await driver.swipe((Math.round(Tabs_barWidHei_012.right -
+          ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
+        let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
+        let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
 
-      console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
+        console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
 
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
-
-
-      console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
 
 
-      console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
-        ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
-      expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+        console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
 
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
 
-      console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
-        ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+        console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
+          ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
+        expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
+        Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
+        Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
+        Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
 
-      console.info(`[testTabsBarHeiWithinTabsHei_static_05]subGreen.bottom - subGreen.top=
-        ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(100))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsBarHeiWithinTabsHei_static_05]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
+          ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
+        Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
+        Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
+        Math.round(uiContext.vp2px(200))) <= 1).assertTrue();
 
-      console.info('[testTabsBarHeiWithinTabsHei_static_05] END');
-      done();
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+
+        console.info(`[testTabsBarHeiWithinTabsHei_static_05]subGreen.bottom - subGreen.top=
+          ${Math.round(subGreen.bottom - subGreen.top)}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(100))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(100))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+          .assertTrue();
+
+        console.info('[testTabsBarHeiWithinTabsHei_static_05] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsBarHeiWithinTabsHei_static_05] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
 
@@ -693,116 +728,123 @@ it('testTabsBarHeiWithinTabsHei_static_05', Level.LEVEL0, async (done: () => voi
      * @tc.level    Level.LEVEL0
      */
 it('testTabsBarHeiToNegative_static_06', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[testTabsBarHeiToNegative_static_06] START');
-      AppStorage.get<MessageManager<number>>('messageManager')?.notify({
-        name: 'setBarHeight', value: -10
-      });
-      await CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
-      let uiContext = AppStorage.get<UIContext>('uiContext')!;
-      console.info(`[testTabsBarHeiToNegative_static_06] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
-        .getString('$type'))}`);
-      console.info("[testTabsBarHeiToNegative_static_06] barPosition: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition')));
-      console.info("[testTabsBarHeiToNegative_static_06] index: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
-      console.info("[testTabsBarHeiToNegative_static_06] scrollable: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')));
-      console.info("[testTabsBarHeiToNegative_static_06] barMode: " +
-      JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
-      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
-        .assertEqual("BarPosition.Start");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
-      let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
-      let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
-      let driver = Driver.create();
-      await driver.swipe((Math.round(Tabs_barWidHei_011.right -
-        ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
-      let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
-      await driver.swipe((Math.round(Tabs_barWidHei_012.right -
-        ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
-        (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
-        (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
-      await CommonFunc.sleep(1000);
-      let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
-      let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
-      let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
-      let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
-      let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
-      let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
+      try {
+        console.info('[testTabsBarHeiToNegative_static_06] START');
+        AppStorage.get<MessageManager<number>>('messageManager')?.notify({
+          name: 'setBarHeight', value: -10
+        });
+        await CommonFunc.sleep(3000);
+        let strJson = inspector.getInspectorByKey('Tabs_barWidHei' + '_01');
+        let uiContext = AppStorage.get<UIContext>('uiContext')!;
+        console.info(`[testTabsBarHeiToNegative_static_06] type: ${JSON.stringify(JSON.parseJsonElement(strJson)
+          .getString('$type'))}`);
+        console.info("[testTabsBarHeiToNegative_static_06] barPosition: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition')));
+        console.info("[testTabsBarHeiToNegative_static_06] index: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')));
+        console.info("[testTabsBarHeiToNegative_static_06] scrollable: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')));
+        console.info("[testTabsBarHeiToNegative_static_06] barMode: " +
+        JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')));
+        expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Tabs');
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barPosition'))
+          .assertEqual("BarPosition.Start");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('index')).assertEqual("0");
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(true);
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('barMode')).assertEqual('BarMode.Fixed');
+        let Tabs_barWidHei_001: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_001');
+        let Tabs_barWidHei_011: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_011');
+        let driver = Driver.create();
+        await CommonFunc.sleep(1000);
+        await driver.swipe((Math.round(Tabs_barWidHei_011.right -
+          ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_011.left + ((Tabs_barWidHei_011.right - Tabs_barWidHei_011.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_011.top + ((Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_002: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_002');
+        let Tabs_barWidHei_012: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_012');
+        await driver.swipe((Math.round(Tabs_barWidHei_012.right -
+          ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt(),
+          (Math.round(Tabs_barWidHei_012.left + ((Tabs_barWidHei_012.right - Tabs_barWidHei_012.left) / 6))).toInt(),
+          (Math.round(Tabs_barWidHei_012.top + ((Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) / 2))).toInt());
+        await CommonFunc.sleep(1000);
+        let Tabs_barWidHei_003: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_003');
+        let Tabs_barWidHei_013: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_013');
+        let Tabs_barWidHei_01: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei' + '_01');
+        let subGreen: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_green');
+        let subBlue: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_blue');
+        let subYellow: RectValue = CommonFunc.getComponentRectOnScreen('Tabs_barWidHei_yellow');
 
-      console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
+        console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_011.left equal Tabs_barWidHei_001.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_001.left}`);
 
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
-
-
-      console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
-        ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
-      expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_001.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_002.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_003.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - Tabs_barWidHei_001.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - Tabs_barWidHei_002.top) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - Tabs_barWidHei_003.top) <= 1).assertTrue();
 
 
-      console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
-        ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
-      expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_011.left equal Tabs_barWidHei_01.left
+          ${Tabs_barWidHei_011.left} === ${Tabs_barWidHei_01.left}`);
+        expect(Math.abs(Tabs_barWidHei_011.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.left - Tabs_barWidHei_01.left) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.top - subGreen.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.top - subBlue.bottom) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.top - subYellow.bottom) <= 1).assertTrue();
 
-      expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
-      expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
 
-      console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
-        ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
-      Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top=
+          ${Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top)}`);
+        expect(Math.abs(Math.round(Tabs_barWidHei_011.bottom - Tabs_barWidHei_011.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_012.bottom - Tabs_barWidHei_012.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_013.bottom - Tabs_barWidHei_013.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
-      Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_011.right - Tabs_barWidHei_011.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_012.right - Tabs_barWidHei_012.left - uiContext.vp2px(330)) <= 1).assertTrue();
+        expect(Math.abs(Tabs_barWidHei_013.right - Tabs_barWidHei_013.left - uiContext.vp2px(330)) <= 1).assertTrue();
 
-      console.info(`[testTabsBarHeiToNegative_static_06]subGreen.bottom - subGreen.top=
-        ${Math.round(subGreen.bottom - subGreen.top)}`);
-      expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
-        .assertTrue();
-      expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
-        .assertTrue();
+        console.info(`[testTabsBarHeiToNegative_static_06]Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top=
+          ${Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top)}`);
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.bottom - Tabs_barWidHei_001.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.bottom - Tabs_barWidHei_002.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.bottom - Tabs_barWidHei_003.top) -
+        Math.round(uiContext.vp2px(244))) <= 1).assertTrue();
 
-      console.info('[testTabsBarHeiToNegative_static_06] END');
-      done();
+        expect(Math.abs(Math.round(Tabs_barWidHei_001.right - Tabs_barWidHei_001.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_002.right - Tabs_barWidHei_002.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(Tabs_barWidHei_003.right - Tabs_barWidHei_003.left) -
+        Math.round(uiContext.vp2px(330))) <= 1).assertTrue();
+
+        console.info(`[testTabsBarHeiToNegative_static_06]subGreen.bottom - subGreen.top=
+          ${Math.round(subGreen.bottom - subGreen.top)}`);
+        expect(Math.abs(Math.round(subGreen.bottom - subGreen.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.bottom - subBlue.top) - Math.round(uiContext.vp2px(56))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.bottom - subYellow.top) - Math.round(uiContext.vp2px(56))) <= 1)
+          .assertTrue();
+        expect(Math.abs(Math.round(subGreen.right - subGreen.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subBlue.right - subBlue.left) - Math.round(uiContext.vp2px(110))) <= 1).assertTrue();
+        expect(Math.abs(Math.round(subYellow.right - subYellow.left) - Math.round(uiContext.vp2px(110))) <= 1)
+          .assertTrue();
+
+        console.info('[testTabsBarHeiToNegative_static_06] END');
+        done();
+      } catch (error) {
+        console.error('[testTabsBarHeiToNegative_static_06] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
   })
 }

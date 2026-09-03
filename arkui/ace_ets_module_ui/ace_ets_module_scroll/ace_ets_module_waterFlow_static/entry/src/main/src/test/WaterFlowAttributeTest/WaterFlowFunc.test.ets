@@ -22,6 +22,7 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+import CommonFunc from '../../../../ets/MainAbility/common/Common';
 
 const PAGE = 'MainAbility/pages/waterFlowAttribute/waterFlowAttribute';
 const TITLE_ID = 'wfAttr_title';
@@ -76,6 +77,7 @@ export default function WaterFlowFuncTest() {
     it('SUB_arkui_waterflow_func_wf_attr_page_loads_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
+        await CommonFunc.sleep(1000);
         done();
       } catch (e) {
         arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
@@ -98,6 +100,7 @@ export default function WaterFlowFuncTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
+        await CommonFunc.sleep(1000);
         const wire = await driver.findComponent(ON.id('wfAttr_wire'));
         expect(!!wire).assertTrue();
         await (wire?.click() as Promise<void>);

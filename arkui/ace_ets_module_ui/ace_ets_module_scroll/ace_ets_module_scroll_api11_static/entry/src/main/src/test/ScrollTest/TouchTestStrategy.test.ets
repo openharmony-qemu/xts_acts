@@ -57,27 +57,34 @@ export default function TouchTestStrategy() {
      * @tc.level    Level.LEVEL0
      */
 it('TouchTestStrategy_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('TouchTestStrategy_static_0100 START');
-      await CommonFunc.sleep(1000);
-      let gridTop = CommonFunc.getComponentRect('border_TouchStrategy');
-      let top = gridTop.top
-      let gridBottom = CommonFunc.getComponentRect('border_TouchStrategy');
-      let bottom = gridBottom.bottom
-      let driver = Driver.create()
-      const uiContext = AppStorage.get<UIContext>('uiContext')!;
-      await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(80))).toInt(),
-        (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
-        (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(10))).toInt());
-      await CommonFunc.sleep(2000);
-      let strJson = inspector.getInspectorByKey('listText_TouchStrategy');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[TouchTestStrategy_static_0100] component obj is: " + JSON.stringify(obj));
-      console.info("[TouchTestStrategy_static_0100] text: " +
-      JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Test Text is completely invisible');
-      console.info('[Touch_static_0100] END');
-      done();
+      try {
+        console.info('TouchTestStrategy_static_0100 START');
+        await CommonFunc.sleep(1000);
+        let gridTop = CommonFunc.getComponentRect('border_TouchStrategy');
+        let top = gridTop.top
+        let gridBottom = CommonFunc.getComponentRect('border_TouchStrategy');
+        let bottom = gridBottom.bottom
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        const uiContext = AppStorage.get<UIContext>('uiContext')!;
+        await driver.swipe((Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
+          (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(80))).toInt(),
+          (Math.round((AppStorage.get<number>("winLeft") ?? 0) + uiContext.vp2px(100))).toInt(),
+          (Math.round((AppStorage.get<number>("winTop") ?? 0) + top + uiContext.vp2px(10))).toInt());
+        await CommonFunc.sleep(2000);
+        let strJson = inspector.getInspectorByKey('listText_TouchStrategy');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("[TouchTestStrategy_static_0100] component obj is: " + JSON.stringify(obj));
+        console.info("[TouchTestStrategy_static_0100] text: " +
+        JSON.stringify(obj.getElement('$attrs').getString('content')));
+        expect(obj.getElement('$attrs').getString('content')).assertEqual('Test Text is completely invisible');
+        console.info('[Touch_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[TouchTestStrategy_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     });
 
   })

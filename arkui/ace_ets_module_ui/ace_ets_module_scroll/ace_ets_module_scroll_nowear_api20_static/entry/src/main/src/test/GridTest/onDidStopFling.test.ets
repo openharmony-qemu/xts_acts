@@ -32,6 +32,7 @@ export default function onDidStopFlingModifierTest() {
         if (!('TextLineSpacing' == pages.name)) {
           console.info('get TextLineSpacingTest state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.replaceUrl(options);
+          await CommonFunc.sleep(2000);
         }
       } catch (err) {
         console.error('push TextLineSpacingTest page error: ' + err);
@@ -46,23 +47,30 @@ export default function onDidStopFlingModifierTest() {
      * @tc.level    Level.LEVEL0
      */
     it('test_onDidStopFling', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      await CommonFunc.sleep(2000);
-      let driver = Driver.create()
-      let dragScroll = await driver.findComponent(ON.id('grid_dragging_fling'));
-      const rect = await (dragScroll?.getBounds() as Promise<Rect>);
-      let top = rect.top;
-      let right = rect.right;
-      let left = rect.left;
-      let bottom = rect.bottom;
-      let height = bottom -top;
-      let width = right - left;
-      await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
-      await CommonFunc.sleep(2000);
-      expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onDidStopFling' + '_onDidStopFling'))
-        .getElement('$attrs')
-        .getString('content'))
-        .assertEqual('第1次Fling停止');
-      done();
+      try {
+        await CommonFunc.sleep(2000);
+        let driver = Driver.create()
+        await CommonFunc.sleep(1000);
+        let dragScroll = await driver.findComponent(ON.id('grid_dragging_fling'));
+        const rect = await (dragScroll?.getBounds() as Promise<Rect>);
+        let top = rect.top;
+        let right = rect.right;
+        let left = rect.left;
+        let bottom = rect.bottom;
+        let height = bottom -top;
+        let width = right - left;
+        await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
+        await CommonFunc.sleep(2000);
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onDidStopFling' + '_onDidStopFling'))
+          .getElement('$attrs')
+          .getString('content'))
+          .assertEqual('第1次Fling停止');
+        done();
+      } catch (error) {
+        console.error('[test_onDidStopFling] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }
