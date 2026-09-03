@@ -1045,6 +1045,367 @@ export default function NetWorkManagerGetConnectOwnerUid() {
       }
     });
 
+    // ==================== Invalid protocol test cases ====================
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid5400
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_5400
+     * @tc.desc    Test error code 401 with invalid protocol enum value 0
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid5400', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid5400";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          0,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [InvalidProtocol_0] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [InvalidProtocol_0] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid5500
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_5500
+     * @tc.desc    Test error code 401 with invalid protocol enum value 5
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid5500', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid5500";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          5,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [InvalidProtocol_5] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [InvalidProtocol_5] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid5600
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_5600
+     * @tc.desc    Test error code 401 with invalid protocol enum value 18
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid5600', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid5600";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          18,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [InvalidProtocol_18] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [InvalidProtocol_18] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid5700
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_5700
+     * @tc.desc    Test error code 401 with invalid protocol enum value -1
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid5700', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid5700";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          -1,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [InvalidProtocol_Negative] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [InvalidProtocol_Negative] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid5800
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_5800
+     * @tc.desc    Test error code 401 if protocol is null
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid5800', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid5800";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          null,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [NullProtocol] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [NullProtocol] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid5900
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_5900
+     * @tc.desc    Test error code 401 if protocol is undefined
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid5900', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid5900";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = await connection.getConnectOwnerUid(
+          undefined,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [UndefinedProtocol] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [UndefinedProtocol] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid6100
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_6100
+     * @tc.desc    Test sync API error code 401 with invalid protocol enum value 0
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid6100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid6100";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          0,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [InvalidProtocol_0_Sync] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [InvalidProtocol_0_Sync] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid6200
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_6200
+     * @tc.desc    Test sync API error code 401 with invalid protocol enum value 5
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid6200', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid6200";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          5,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [InvalidProtocol_5_Sync] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [InvalidProtocol_5_Sync] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid6300
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_6300
+     * @tc.desc    Test sync API error code 401 with invalid protocol enum value 18
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid6300', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid6300";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          18,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [InvalidProtocol_18_Sync] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [InvalidProtocol_18_Sync] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid6400
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_6400
+     * @tc.desc    Test sync API error code 401 with invalid protocol enum value -1
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid6400', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid6400";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          -1,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [InvalidProtocol_Negative_Sync] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [InvalidProtocol_Negative_Sync] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid6500
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_6500
+     * @tc.desc    Test sync API error code 401 if protocol is null
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid6500', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid6500";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          null,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [NullProtocol_Sync] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [NullProtocol_Sync] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name    testNetManagerBaseGetConnectOwnerUid6600
+     * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_6600
+     * @tc.desc    Test sync API error code 401 if protocol is undefined
+     * @tc.type    FUNCTION
+     * @tc.size    LARGETEST
+     * @tc.level   LEVEL1
+     */
+    it('testNetManagerBaseGetConnectOwnerUid6600', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async (done: Function) => {
+      let caseName = "testNetManagerBaseGetConnectOwnerUid6600";
+      console.info(`${caseName}---Start`);
+      try {
+        let uid = connection.getConnectOwnerUidSync(
+          undefined,
+          { address: '192.168.1.100', family: FAMILY_IPV4, port: 12345 },
+          { address: '192.168.1.200', family: FAMILY_IPV4, port: 54321 }
+        );
+        console.info(`${caseName} [UndefinedProtocol_Sync] uid=${uid}`);
+        expect().assertFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (err) {
+        let error = err as BusinessError;
+        console.info(`${caseName} [UndefinedProtocol_Sync] error: code=${error.code}`);
+        expect(Number(error.code)).assertEqual(2100001);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
     /**
      * @tc.name    testNetManagerBaseGetConnectOwnerUid9000
      * @tc.number  SUB_NetMgrBase_GetConnect_OwnerUid_9000
