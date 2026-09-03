@@ -217,7 +217,7 @@ struct ExecuteAIPageCommandCheckTest {
       }
       const nodesArrOpt = nodesElem.tryAsArray();
       if (nodesArrOpt !== undefined) {
-        const nodesArr: Array<jsonx.JsonElement> = nodesArrOpt;
+        const nodesArr: Array[jsonx.JsonElement] = nodesArrOpt;
         const marker: string = '"data-case":"' + caseName + '"';
         for (let i = 0; i < nodesArr.length; i++) {
           const nodeElem = nodesArr[i];
