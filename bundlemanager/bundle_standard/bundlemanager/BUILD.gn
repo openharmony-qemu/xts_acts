@@ -64,7 +64,6 @@ group("bundlemanager") {
       "actsbundleshortcuttest:ActsBundleShortCutTest",
       "actsbundlemanagermultiAppmodetype1teststatic:ActsbundlemanagermultiAppmodetype1StaticTest",
       "actsbundlemanagermultiAppmodetype2teststatic:ActsbundlemanagermultiAppmodetype2StaticTest",
-      "actsbundlemanagerbundle17700026test:ActsBundleManagerBundle17700026Test",
       "actsbundlemanagertestcaseGetLaunchWantForBundleSync:ActsbundlemanagercaseGetLaunchWantForBundleSyncTest",
       "actsbundlemanagertestcaseGetWantSyncstatic:ActsbundlemgrcaseGetWantSyncStaticTest",
       "actsbmspcselfdistplugintest:ActsBmsPCSelfDistPluginTest",
