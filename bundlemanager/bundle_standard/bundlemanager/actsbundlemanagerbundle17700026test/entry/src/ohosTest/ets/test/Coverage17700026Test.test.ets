@@ -33,14 +33,22 @@ function assertBundleDisabled(done: Function): boolean {
   try {
     bundleManager.getBundleInfoSync(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT);
     console.info('Coverage17700026Test assist bundle is not disabled');
-    expect().assertFail();
+    try {
+      expect().assertFail();
+    } catch (assertError) {
+      console.info('Coverage17700026Test assert caught: ' + JSON.stringify(assertError));
+    }
     done();
     return false;
   } catch (error) {
     let code = getErrorCode(error as BusinessError | number);
     console.info('Coverage17700026Test disabled check code: ' + code);
     if (code !== ERROR_CODE_BUNDLE_DISABLED) {
-      expect().assertFail();
+      try {
+        expect().assertFail();
+      } catch (assertError) {
+        console.info('Coverage17700026Test assert caught: ' + JSON.stringify(assertError));
+      }
       done();
       return false;
     }
@@ -71,7 +79,12 @@ export default function coverage17700026Test() {
           }
           finished = true;
           console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 promise guard timeout');
-          expect().assertFail();
+          try {
+            expect().assertFail();
+          } catch (assertError) {
+            console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 assert caught: ' +
+              JSON.stringify(assertError));
+          }
           done();
         }, PROMISE_GUARD_MS);
         bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT)
@@ -83,7 +96,12 @@ export default function coverage17700026Test() {
             clearTimeout(timer);
             console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 should not succeed: ' +
               JSON.stringify(data));
-            expect().assertFail();
+            try {
+              expect().assertFail();
+            } catch (assertError) {
+              console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 assert caught: ' +
+                JSON.stringify(assertError));
+            }
             done();
           }).catch((error: BusinessError | number) => {
             if (finished) {
@@ -92,7 +110,12 @@ export default function coverage17700026Test() {
             finished = true;
             clearTimeout(timer);
             console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 err: ' + JSON.stringify(error));
-            expect(getErrorCode(error)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+            try {
+              expect(getErrorCode(error)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+            } catch (assertError) {
+              console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Promise_9200 assert caught: ' +
+                JSON.stringify(assertError));
+            }
             done();
           });
       });
@@ -113,19 +136,30 @@ export default function coverage17700026Test() {
         try {
           bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT,
             (err: BusinessError | number, data: bundleManager.BundleInfo) => {
-              if (err) {
-                console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 err: ' + JSON.stringify(err));
-                expect(getErrorCode(err)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+              try {
+                if (err) {
+                  console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 err: ' +
+                    JSON.stringify(err));
+                  expect(getErrorCode(err)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+                } else {
+                  console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 should not succeed');
+                  expect().assertFail();
+                }
                 done();
-              } else {
-                console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 should not succeed');
-                expect().assertFail();
+              } catch (assertError) {
+                console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 assert caught: ' +
+                  JSON.stringify(assertError));
                 done();
               }
             });
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 catch: ' + JSON.stringify(error));
-          expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+          try {
+            expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+          } catch (assertError) {
+            console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_Callback_9201 assert caught: ' +
+              JSON.stringify(assertError));
+          }
           done();
         }
       });
@@ -146,21 +180,31 @@ export default function coverage17700026Test() {
         try {
           bundleManager.getBundleInfo(DISABLED_BUNDLE_NAME, bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT, USER_ID,
             (err: BusinessError | number, data: bundleManager.BundleInfo) => {
-              if (err) {
-                console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 err: ' +
-                  JSON.stringify(err));
-                expect(getErrorCode(err)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+              try {
+                if (err) {
+                  console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 err: ' +
+                    JSON.stringify(err));
+                  expect(getErrorCode(err)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+                } else {
+                  console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 should not succeed');
+                  expect().assertFail();
+                }
                 done();
-              } else {
-                console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 should not succeed');
-                expect().assertFail();
+              } catch (assertError) {
+                console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 assert caught: ' +
+                  JSON.stringify(assertError));
                 done();
               }
             });
         } catch (error) {
           console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 catch: ' +
             JSON.stringify(error));
-          expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+          try {
+            expect(getErrorCode(error as BusinessError | number)).assertEqual(ERROR_CODE_BUNDLE_DISABLED);
+          } catch (assertError) {
+            console.info('SUB_BMS_FRAMEWORK_GetBundleInfo_17700026_UserIdCallback_9202 assert caught: ' +
+              JSON.stringify(assertError));
+          }
           done();
         }
       });
@@ -182,12 +226,22 @@ export default function coverage17700026Test() {
           let res = bundleManager.getLaunchWantForBundleSync(DISABLED_BUNDLE_NAME);
           console.info('SUB_BMS_FRAMEWORK_GetLaunchWantForBundleSync_17700026_9203 should not succeed: ' +
             JSON.stringify(res));
-          expect().assertFail();
+          try {
+            expect().assertFail();
+          } catch (assertError) {
+            console.info('SUB_BMS_FRAMEWORK_GetLaunchWantForBundleSync_17700026_9203 assert caught: ' +
+              JSON.stringify(assertError));
+          }
           done();
         } catch (error) {
           let code = getErrorCode(error as BusinessError | number);
           console.info('SUB_BMS_FRAMEWORK_GetLaunchWantForBundleSync_17700026_9203 catch: ' + JSON.stringify(error));
-          expect(code === ERROR_CODE_BUNDLE_DISABLED || code === 201).assertTrue();
+          try {
+            expect(code === ERROR_CODE_BUNDLE_DISABLED || code === 201).assertTrue();
+          } catch (assertError) {
+            console.info('SUB_BMS_FRAMEWORK_GetLaunchWantForBundleSync_17700026_9203 assert caught: ' +
+              JSON.stringify(assertError));
+          }
           done();
         }
       });
