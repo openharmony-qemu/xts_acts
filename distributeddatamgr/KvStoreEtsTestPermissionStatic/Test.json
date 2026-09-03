@@ -1,5 +1,5 @@
 {
-    "description": "Configuration for KvStoreEtsTest With Permission Tests",
+    "description": "Configuration for KvStoreEtsTest Permission Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsKvStoreEtsStaticWithPermissionTest.hap"
+            "ActsKvStoreEtsPermissionStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
