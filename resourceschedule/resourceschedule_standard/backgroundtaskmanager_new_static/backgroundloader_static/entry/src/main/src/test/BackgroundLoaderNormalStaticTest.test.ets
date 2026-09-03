@@ -153,7 +153,7 @@ export default function BackgroundLoaderNormalStaticTest() {
         backgroundLoader.registerTask(taskInfo);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_STATIC_XTS_0400 registerTask success');
         let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        let cmd = "hidumper -s 1901 -a 'backgroundLoader com.acts.actsbackgroundloadertest TestAbility'";
+        let cmd = "hidumper -s 1901 -a 'backgroundLoader com.acts.actsbackgroundloadertest.static EntryAbility'";
         delegator.executeShellCommand(cmd)
         await Utils.msSleep(1500);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_STATIC_XTS_0400 delegator success');
@@ -517,7 +517,7 @@ export default function BackgroundLoaderNormalStaticTest() {
         backgroundLoader.registerTask(taskInfo);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_STATIC_XTS_2400 registerTask success');
         let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-        let cmd = "hidumper -s 1901 -a 'backgroundLoader com.acts.actsbackgroundloadertest TestAbility'";
+        let cmd = "hidumper -s 1901 -a 'backgroundLoader com.acts.actsbackgroundloadertest.static EntryAbility'";
         delegator.executeShellCommand(cmd)
         await Utils.msSleep(1500);
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_STATIC_XTS_2400 delegator success');
