@@ -107,7 +107,7 @@ export default function CoverageEnhancementTest() {
           done();
         }, PROMISE_GUARD_MS);
         try {
-          bundle.getAllBundleInfo(INVALID_BUNDLE_FLAG, (err: BusinessError, data: Array<bundle.BundleInfo>) => {
+          bundle.getAllBundleInfo(INVALID_BUNDLE_FLAG, (err: BusinessError, data) => {
             if (finished) {
               return;
             }
