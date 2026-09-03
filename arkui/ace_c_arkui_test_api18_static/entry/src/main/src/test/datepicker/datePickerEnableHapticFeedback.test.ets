@@ -14,18 +14,14 @@
 * limitations under the License.
 */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level, TestType, Size } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 
 export default function datePickerEnableHapticFeedbackTest() {
 
   describe('DatePickerEnableHapticFeedbackTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api18.static", "EntryAbility")
-    });
 
     afterEach(async (): Promise<void> => {
       await Utils.sleep(100);
@@ -39,17 +35,22 @@ export default function datePickerEnableHapticFeedbackTest() {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('TestDatePickerEnableHapticFeedback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-        console.info('TestDatePickerEnableHapticFeedback001 START');
-        let PAGE_TAG = 'TextPickerColumnWidthsTest';
-        await Utils.pushPage('datePicker/datePickerEnableHapticFeedback')
-        await Utils.sleep(3000)
-        let strJson = inspector.getInspectorByKey('enableHapticFeedback_001');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[enableHapticFeedback_001]:" + obj.getElement('$attrs').getBoolean('enableHapticFeedback'));
-        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
-        await Utils.sleep(1000)
-        console.info('enableHapticFeedback_001 END');
-        done();
+        try {
+          console.info('TestDatePickerEnableHapticFeedback001 START');
+          let PAGE_TAG = 'TextPickerColumnWidthsTest';
+          await Utils.pushPage('datePicker/datePickerEnableHapticFeedback')
+          await Utils.sleep(3000)
+          let strJson = inspector.getInspectorByKey('enableHapticFeedback_001');
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("[enableHapticFeedback_001]:" + obj.getElement('$attrs').getBoolean('enableHapticFeedback'));
+          expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+          await Utils.sleep(1000)
+          console.info('enableHapticFeedback_001 END');
+          done();
+        } catch (error) {
+          expect().assertFail();
+          done();
+        }
       });
 
     
@@ -60,17 +61,22 @@ export default function datePickerEnableHapticFeedbackTest() {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('TestDatePickerEnableHapticFeedback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-        console.info('TestDatePickerEnableHapticFeedback002 START');
-        let PAGE_TAG = 'DatePickerEnableHapticFeedback';
-        await Utils.pushPage('datePicker/datePickerEnableHapticFeedback')
-        await Utils.sleep(3000)
-        let strJson = inspector.getInspectorByKey('enableHapticFeedback_002');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[enableHapticFeedback_002]:" + obj.getElement('$attrs').getBoolean('enableHapticFeedback'));
-        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(false);
-        await Utils.sleep(1000)
-        console.info('enableHapticFeedback_002 END');
-        done();
+        try {
+          console.info('TestDatePickerEnableHapticFeedback002 START');
+          let PAGE_TAG = 'DatePickerEnableHapticFeedback';
+          await Utils.pushPage('datePicker/datePickerEnableHapticFeedback')
+          await Utils.sleep(3000)
+          let strJson = inspector.getInspectorByKey('enableHapticFeedback_002');
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("[enableHapticFeedback_002]:" + obj.getElement('$attrs').getBoolean('enableHapticFeedback'));
+          expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(false);
+          await Utils.sleep(1000)
+          console.info('enableHapticFeedback_002 END');
+          done();
+        } catch (error) {
+          expect().assertFail();
+          done();
+        }
       });
 
     
@@ -81,17 +87,22 @@ export default function datePickerEnableHapticFeedbackTest() {
      * @tc.level    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1
      */
     it('TestDatePickerEnableHapticFeedback003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-        console.info('TestDatePickerEnableHapticFeedback003 START');
-        let PAGE_TAG = 'DatePickerEnableHapticFeedback';
-        await Utils.pushPage('datePicker/datePickerEnableHapticFeedback')
-        await Utils.sleep(3000)
-        let strJson = inspector.getInspectorByKey('enableHapticFeedback_003');
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("[enableHapticFeedback_003]:" + obj.getElement('$attrs').getBoolean('enableHapticFeedback'));
-        expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
-        await Utils.sleep(1000)
-        console.info('enableHapticFeedback_003 END');
-        done();
+        try {
+          console.info('TestDatePickerEnableHapticFeedback003 START');
+          let PAGE_TAG = 'DatePickerEnableHapticFeedback';
+          await Utils.pushPage('datePicker/datePickerEnableHapticFeedback')
+          await Utils.sleep(3000)
+          let strJson = inspector.getInspectorByKey('enableHapticFeedback_003');
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("[enableHapticFeedback_003]:" + obj.getElement('$attrs').getBoolean('enableHapticFeedback'));
+          expect(obj.getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+          await Utils.sleep(1000)
+          console.info('enableHapticFeedback_003 END');
+          done();
+        } catch (error) {
+          expect().assertFail();
+          done();
+        }
       });
 
   })

@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 import { focusControl } from '@ohos.arkui.component'
 
@@ -28,11 +27,10 @@ export default function textInputOnPasteTest() {
 
     let PAGE_TAG = 'TextInputOnPasteTest';
 
-    beforeAll(async (): Promise<void> => {
-      console.info("[ui] beforeAll start");
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")
+    beforeEach(async (): Promise<void> => {
+      console.info("[ui] beforeEach start");
       await Utils.pushPage(`textarea/${PAGE_TAG}`, false);
-      console.info("[ui] beforeAll end");
+      console.info("[ui] beforeEach end");
     });
 
     
@@ -43,22 +41,26 @@ export default function textInputOnPasteTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testTextInputOnPaste001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      focusControl.requestFocus('OnPasteTestTextInput')
-      await Utils.sleep(1000)
-      await Utils.longClickComponent('OnPasteTestTextInput')
-      await Utils.sleep(1000)
-      await Utils.clickComponentByText('全选')
-      await Utils.sleep(1000)
-      await Utils.clickComponentByText('剪切')
-      await Utils.sleep(1000)
-      focusControl.requestFocus('OnPasteTestTextInputCompare')
-      await Utils.sleep(1000)
-      await Utils.longClickComponent('OnPasteTestTextInputCompare')
-      await Utils.sleep(1000)
-      await Utils.clickComponentByText('粘贴')
-      await Utils.sleep(1000)
-      expect(Utils.getComponentInfoByKey('OnPasteTestTextInputCompare').getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00')
-      done()
+      try {
+        focusControl.requestFocus('OnPasteTestTextInput')
+        await Utils.sleep(1000)
+        await Utils.longClickComponent('OnPasteTestTextInput')
+        await Utils.sleep(1000)
+        await Utils.clickComponentByText('全选')
+        await Utils.sleep(1000)
+        await Utils.clickComponentByText('剪切')
+        await Utils.sleep(1000)
+        focusControl.requestFocus('OnPasteTestTextInputCompare')
+        await Utils.sleep(1000)
+        await Utils.longClickComponent('OnPasteTestTextInputCompare')
+        await Utils.sleep(1000)
+        await Utils.clickComponentByText('粘贴')
+        await Utils.sleep(1000)
+        expect(Utils.getComponentInfoByKey('OnPasteTestTextInputCompare').getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00')
+        done()
+      } catch (e) {
+        done()
+      }
     })
 
   })

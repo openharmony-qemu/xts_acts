@@ -15,22 +15,16 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
+import { describe, it, expect, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import { LengthConstrain, ItemFillPolicy, CacheCountInfo, PresetFillType, EditModeOptions } from '@ohos.arkui.component';
 
 
 export default function ListImageTest(): void {
   describe('ListImageTest', (): void => {
-    beforeAll(async (): Promise<void> => {
-      console.info('ListImageTest beforeAll start');
-      await UtilsTest.startAbility('com.arkui.ace.imageText.image.static', 'EntryAbility');
-    });
-
     beforeEach((): void => {
       console.info('ListImageTest beforeEach start');
       let options: router.RouterOptions = {
