@@ -53,9 +53,12 @@ struct ImageDrawingColorFilter {
   private colorRed: common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 };
   private colorGreen: common2D.Color = { alpha: 255, red: 0, green: 255, blue: 0 };
 
-  private filterSrcInRed: drawing.ColorFilter | undefined = drawing.ColorFilter.createBlendModeColorFilter(this.colorRed, drawing.BlendMode.SRC_IN);
-  private filterSrcAtopRed: drawing.ColorFilter | undefined = drawing.ColorFilter.createBlendModeColorFilter(this.colorRed, drawing.BlendMode.SRC_ATOP);
-  private filterSrcInGreen: drawing.ColorFilter | undefined = drawing.ColorFilter.createBlendModeColorFilter(this.colorGreen, drawing.BlendMode.SRC_IN);
+  private filterSrcInRed: drawing.ColorFilter | undefined = drawing.ColorFilter
+  .createBlendModeColorFilter(this.colorRed, drawing.BlendMode.SRC_IN);
+  private filterSrcAtopRed: drawing.ColorFilter | undefined = drawing.ColorFilter
+  .createBlendModeColorFilter(this.colorRed, drawing.BlendMode.SRC_ATOP);
+  private filterSrcInGreen: drawing.ColorFilter | undefined = drawing.ColorFilter
+  .createBlendModeColorFilter(this.colorGreen, drawing.BlendMode.SRC_IN);
 
   @State drawingColorFilterDynamic: drawing.ColorFilter | undefined = undefined;
   @State modifier1: MyColorFilterModifier1 = new MyColorFilterModifier1();
