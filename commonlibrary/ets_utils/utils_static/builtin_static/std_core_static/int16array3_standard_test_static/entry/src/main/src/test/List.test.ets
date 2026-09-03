@@ -33,6 +33,7 @@ import Int16ArraySliceTest04 from './int16array/Int16ArraySliceTest04.test';
 import Int16ArraySomeTest01 from './int16array/Int16ArraySomeTest01.test';
 import Int16ArraySomeTest02 from './int16array/Int16ArraySomeTest02.test';
 import Int16ArrayValuesTest01 from './int16array/Int16ArrayValuesTest01.test';
+import Int16ArrayValuesTest02 from './int16array/Int16ArrayValuesTest02.test';
 
 export default function testsuite(): void {
   Int16ArrayFindIndexTest01();
@@ -54,4 +55,5 @@ export default function testsuite(): void {
   Int16ArraySomeTest01();
   Int16ArraySomeTest02();
   Int16ArrayValuesTest01();
+  Int16ArrayValuesTest02();
 }
