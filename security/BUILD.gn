@@ -27,7 +27,7 @@ group("security") {
       "cipher/datacipher:datacipher",
       "cryptoFramework",
       "crypto_architecture:ActsCryptoArchitectureTest",
-      "data_identify_annoymize_service_SuccessTest:ActsDataIdentifyTest",
+      "data_identify_anonymize_service_SuccessTest:ActsDataIdentifyTest",
       "dlpNDK20Test:ActsDlpNDK20Test",
       "dlpNDKTest:ActsDlpNDKTest",
       "dlp_errorcode_func:ActsDlpErrorCodeTest",

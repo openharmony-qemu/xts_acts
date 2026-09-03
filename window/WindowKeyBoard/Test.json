@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsWindowKeyBoradTest.hap"
+                "ActsWindowKeyBoardTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
