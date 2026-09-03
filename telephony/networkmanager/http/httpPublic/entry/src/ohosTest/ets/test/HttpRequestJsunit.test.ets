@@ -62,7 +62,7 @@ export default function httpRequestJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -122,7 +122,7 @@ export default function httpRequestJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -165,6 +165,7 @@ export default function httpRequestJsunit() {
         console.info(`${caseName} createHttp success `+ JSON.stringify(resp));
         expectTrue(resp.responseCode == 200);
         console.info(`${caseName}---End`);
+        httpRequest.destroy();
         done();
       } catch (error) {
         console.info("testNetworkMgrHttpHttpRequestRequest0400 : error = " + error);
@@ -188,7 +189,7 @@ export default function httpRequestJsunit() {
       try {
         let httpRequestOptions:http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          header: "content-type': 'application/json",
+          header: { 'content-type': 'application/json' },
           readTimeout: 60000,
           connectTimeout: 60000
         };
@@ -197,7 +198,7 @@ export default function httpRequestJsunit() {
           console.log(caseName + JSON.stringify(err) + " data: " + JSON.stringify(data));
           try {
             httpRequest.destroy();
-            expectTrue(true);
+            expectTrue(httpRequest !== undefined);
             console.info(`${caseName}---End`);
             done();
           } catch (error) {
@@ -228,8 +229,9 @@ export default function httpRequestJsunit() {
         let httpRequest = http.createHttp();
         httpRequest.on('headersReceive', (data) => {
           console.log(caseName + " data: " + JSON.stringify(data));
-          expectTrue(true);
+          expectTrue(data !== undefined);
           console.info(`${caseName}---End`);
+          httpRequest.destroy();
           done();
         });
         httpRequest.request("https://www.baidu.com/", (err, data) => {
@@ -270,35 +272,6 @@ export default function httpRequestJsunit() {
         });
       } catch (error) {
         console.log("testNetworkMgrHttpHttpRequestOffHeaderReceive0100 : error = " + error);
-        expectFalse();
-        console.info(`${caseName}---End`);
-        done();
-      }
-    });
-    /**
-     * @tc.name   testNetworkMgrHttpHttpRequestOnHeadersReceive0100
-     * @tc.number SUB_Telephony_Http_HttpRequest_On_HeadersReceive_0100
-     * @tc.desc   Test Test httpRequest property.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it("testNetworkMgrHttpHttpRequestOnHeadersReceive0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
-      let caseName:string = "testNetworkMgrHttpHttpRequestOnHeadersReceive0100";
-      console.info(`${caseName}---Start`);
-      try {
-        let httpRequest = http.createHttp();
-        httpRequest.on("headersReceive", (data) => {
-          console.log(caseName + " data: " + JSON.stringify(data));
-          expectTrue(true);
-          console.info(`${caseName}---End`);
-          done();
-        });
-        httpRequest.request("https://www.baidu.com/", (err, data) => {
-          console.log(caseName + " data: " + JSON.stringify(data.responseCode) + " err: " + JSON.stringify(err));
-        });
-      } catch (error) {
-        console.log("testNetworkMgrHttpHttpRequestOnHeadersReceive0100 : error = " + error);
         expectFalse();
         console.info(`${caseName}---End`);
         done();

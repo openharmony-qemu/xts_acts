@@ -1006,7 +1006,9 @@ export default function httpJsunit() {
           console.info(`${caseName}---End`);
           done();
         }).catch((err:BusinessError) => {
+
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          expectTrue(err.code == 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1035,6 +1037,7 @@ export default function httpJsunit() {
           done();
         }).catch((err:BusinessError) => {
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          expectTrue(err.code == 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1063,6 +1066,7 @@ export default function httpJsunit() {
           done();
         }).catch((err:BusinessError) => {
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          expectTrue(err.code == 2301009);
           console.info(`${caseName}---End`);
           done();
         });
@@ -1091,6 +1095,7 @@ export default function httpJsunit() {
           done();
         }).catch((err:BusinessError) => {
           console.log(`${caseName} setMulticastTTL failed, err: ${JSON.stringify(err)}`);
+          expectTrue(err.code == 2301009);
           console.info(`${caseName}---End`);
           done();
         });

@@ -65,7 +65,7 @@ export default function HttpDeleteTest() {
                  done();
                } else {
                  console.info(`${caseName} delete success httpResponseCache:${JSON.stringify(httpResponseCache)}`);
-                 ExpectTrue(true);
+                 ExpectTrue(err === undefined);
                  done();
                }
              });
@@ -101,7 +101,7 @@ export default function HttpDeleteTest() {
             let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache();
             httpResponseCache.delete().then(() => {
               console.info(`${caseName} delete success httpResponseCache:${JSON.stringify(httpResponseCache)}`);
-              ExpectTrue(true);
+              ExpectTrue(httpResponseCache !== undefined);
               done();
             }).catch((err: BusinessError) => {
               console.info(`${caseName} delete fail err:${JSON.stringify(err)}`);
@@ -186,6 +186,7 @@ export default function HttpDeleteTest() {
       }
       console.info(`${caseName}---End `);
     });
+
 
     /**
      * @tc.name   testNetworkMgrHttpHttpResponseCacheDelete0400
