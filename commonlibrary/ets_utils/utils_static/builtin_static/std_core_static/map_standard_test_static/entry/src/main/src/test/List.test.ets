@@ -70,6 +70,14 @@ import RecordIndexGetPart02Test from './map/RecordIndexGetPart02Test.test';
 import RecordIndexGetPart03Test from './map/RecordIndexGetPart03Test.test';
 import RecordIndexSetPart01Test from './map/RecordIndexSetPart01Test.test';
 import RecordIndexSetPart02Test from './map/RecordIndexSetPart02Test.test';
+import MapClearPart03Test2 from './map/MapClearPart03Test2.test';
+import MapConstructorPart03Test2 from './map/MapConstructorPart03Test2.test';
+import MapConstructorPart04Test2 from './map/MapConstructorPart04Test2.test';
+import MapDeletePart03Test2 from './map/MapDeletePart03Test2.test';
+import MapEntriesPart03Test2 from './map/MapEntriesPart03Test2.test';
+import MapForEachPart03Test2 from './map/MapForEachPart03Test2.test';
+import MapGetPart03Test2 from './map/MapGetPart03Test2.test';
+import MapHasPart03Test2 from './map/MapHasPart03Test2.test';
 
 
 export default function testsuite(): void {
@@ -128,4 +136,12 @@ export default function testsuite(): void {
   RecordIndexGetPart03Test();
   RecordIndexSetPart01Test();
   RecordIndexSetPart02Test();
+  MapClearPart03Test2();
+  MapConstructorPart03Test2();
+  MapConstructorPart04Test2();
+  MapDeletePart03Test2();
+  MapEntriesPart03Test2();
+  MapForEachPart03Test2();
+  MapGetPart03Test2();
+  MapHasPart03Test2();
 }
