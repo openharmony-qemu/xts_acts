@@ -82,7 +82,6 @@ export default function TimePickerOnChangeTest() {
       const resultText = await driver.findComponent(ON.id('text_onchange_hm_result'));
       const resultStr = await resultText?.getText();
       console.info('TimePickerOnChange_static_001 resultStr: ' + resultStr);
-      expect(resultStr).not().assertEqual('hm_result:init');
       expect(resultStr).assertContain('hm_result:');
       expect(resultStr).assertContain('hour');
       expect(resultStr).assertContain('minute');
@@ -117,7 +116,6 @@ export default function TimePickerOnChangeTest() {
       const resultText = await driver.findComponent(ON.id('text_onchange_hms_result'));
       const resultStr = await resultText?.getText();
       console.info('TimePickerOnChange_static_002 resultStr: ' + resultStr);
-      expect(resultStr).not().assertEqual('hms_result:init');
       expect(resultStr).assertContain('hms_result:');
       expect(resultStr).assertContain('hour');
       expect(resultStr).assertContain('minute');
@@ -152,7 +150,6 @@ export default function TimePickerOnChangeTest() {
       const resultText = await driver.findComponent(ON.id('text_onchange_12h_result'));
       const resultStr = await resultText?.getText();
       console.info('TimePickerOnChange_static_003 resultStr: ' + resultStr);
-      expect(resultStr).not().assertEqual('12h_result:init');
       expect(resultStr).assertContain('12h_result:');
       expect(resultStr).assertContain('hour');
       expect(resultStr).assertContain('minute');

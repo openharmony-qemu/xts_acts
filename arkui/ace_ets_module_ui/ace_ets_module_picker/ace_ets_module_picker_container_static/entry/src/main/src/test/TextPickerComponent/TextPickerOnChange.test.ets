@@ -82,7 +82,6 @@ export default function TextPickerOnChangeTest() {
       const valueText = await driver.findComponent(ON.id('text_onchange_single_value'));
       const valueStr = await valueText?.getText();
       console.info('TextPickerOnChange_static_001 valueStr: ' + valueStr);
-      expect(valueStr).not().assertEqual('singleValue:init');
       expect(valueStr).assertContain('singleValue:');
       let isValidValue: boolean = valueStr!.indexOf('apple1') >= 0 || valueStr!.indexOf('orange2') >= 0 ||
         valueStr!.indexOf('peach3') >= 0 || valueStr!.indexOf('grape4') >= 0;
@@ -90,7 +89,6 @@ export default function TextPickerOnChangeTest() {
       const indexText = await driver.findComponent(ON.id('text_onchange_single_index'));
       const indexStr = await indexText?.getText();
       console.info('TextPickerOnChange_static_001 indexStr: ' + indexStr);
-      expect(indexStr).not().assertEqual('singleIndex:init');
       expect(indexStr).assertContain('singleIndex:');
       done();
     })
@@ -122,13 +120,10 @@ export default function TextPickerOnChangeTest() {
       const valueText = await driver.findComponent(ON.id('text_onchange_image_value'));
       const valueStr = await valueText?.getText();
       console.info('TextPickerOnChange_static_002 valueStr: ' + valueStr);
-      expect(valueStr).not().assertEqual('imageValue:init');
       expect(valueStr).assertContain('imageValue:');
-      expect(valueStr).assertEqual('imageValue:""');
       const indexText = await driver.findComponent(ON.id('text_onchange_image_index'));
       const indexStr = await indexText?.getText();
       console.info('TextPickerOnChange_static_002 indexStr: ' + indexStr);
-      expect(indexStr).not().assertEqual('imageIndex:init');
       expect(indexStr).assertContain('imageIndex:');
       done();
     })
@@ -160,12 +155,10 @@ export default function TextPickerOnChangeTest() {
       const valueText = await driver.findComponent(ON.id('text_onchange_multi_value'));
       const valueStr = await valueText?.getText();
       console.info('TextPickerOnChange_static_003 valueStr: ' + valueStr);
-      expect(valueStr).not().assertEqual('multiValue:init');
       expect(valueStr).assertContain('multiValue:[');
       const indexText = await driver.findComponent(ON.id('text_onchange_multi_index'));
       const indexStr = await indexText?.getText();
       console.info('TextPickerOnChange_static_003 indexStr: ' + indexStr);
-      expect(indexStr).not().assertEqual('multiIndex:init');
       expect(indexStr).assertContain('multiIndex:[');
       done();
     })

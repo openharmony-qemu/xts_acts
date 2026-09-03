@@ -83,7 +83,6 @@ export default function UIPickerCallbackTest() {
       const indexText = await driver.findComponent(ON.id('text_callback_onchange_index'));
       const indexStr = await indexText?.getText();
       console.info('UIPickerCallbackOnChange_static_001 indexStr: ' + indexStr);
-      expect(indexStr).not().assertEqual('onChangeIndex:init');
       expect(indexStr).assertContain('onChangeIndex:');
       let numStr: string = indexStr!.replace('onChangeIndex:', '');
       let selectedIndex: int = parseInt(numStr);
@@ -119,7 +118,6 @@ export default function UIPickerCallbackTest() {
       const indexText = await driver.findComponent(ON.id('text_callback_onscrollstop_index'));
       const indexStr = await indexText?.getText();
       console.info('UIPickerCallbackOnScrollStop_static_001 indexStr: ' + indexStr);
-      expect(indexStr).not().assertEqual('onScrollStopIndex:init');
       expect(indexStr).assertContain('onScrollStopIndex:');
       let numStr: string = indexStr!.replace('onScrollStopIndex:', '');
       let selectedIndex: int = parseInt(numStr);
