@@ -856,4 +856,3 @@ export default function MapClearPart03Test(): void {
 
   });
 }
-
