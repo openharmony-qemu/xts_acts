@@ -2401,10 +2401,9 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.removeAutoStartApps(SELFWANT, [SELFWANT], null);
-        let apps = applicationManager.getAutoStartApps(SELFWANT, 100);
-        expect(Array.isArray(apps)).assertTrue();
-      } catch (error) {
         expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === '401').assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -2423,10 +2422,9 @@ export default function applicationManagerTest() {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         let ret = applicationManager.removeAutoStartApps(SELFWANT, [SELFWANT], undefined);
-        let apps = applicationManager.getAutoStartApps(SELFWANT, 100);
-        expect(Array.isArray(apps)).assertTrue();
-      } catch (error) {
         expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === '401').assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
