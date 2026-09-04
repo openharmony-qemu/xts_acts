@@ -44,14 +44,14 @@ import { UtilsTest } from '../Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function hitTestModeJsunit() {
+export default function hitTestModeJsunit(): void {
   describe('hitTestModeJsunit', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("hitTestMode beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/conponentadd/hitTestMode_y',
@@ -71,7 +71,7 @@ export default function hitTestModeJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("hitTestModeTest after each called");
     });
@@ -85,7 +85,7 @@ export default function hitTestModeJsunit() {
      * @tc.desc     testhitTestMode_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testhitTestMode_static_0002', Level.LEVEL0, async () => {
+it('testhitTestMode_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('hitTestMode testhitTestMode0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Block');

@@ -16,7 +16,7 @@
 import { OnTitleReceiveEvent, OnDataResubmittedEvent, OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import webview from '@ohos.web.webview';
-import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
@@ -101,6 +101,46 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
                   
                   Utils.emitEvent(webview.WebCookieManager.isThirdPartyCookieAllowed(), 30033)
                 }, 3000)
+                break;
+              }
+              case "testPutAcceptCookieEnabledNull": {
+                try {
+                  webview.WebCookieManager.putAcceptCookieEnabled(null as boolean);
+                  Utils.emitEvent(true, 30034);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 30034);
+                }
+                break;
+              }
+              case "testPutAcceptCookieEnabledUndefined": {
+                try {
+                  webview.WebCookieManager.putAcceptCookieEnabled(undefined as boolean);
+                  Utils.emitEvent(true, 30035);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 30035);
+                }
+                break;
+              }
+              case "testPutAcceptThirdPartyCookieEnabledNull": {
+                try {
+                  webview.WebCookieManager.putAcceptThirdPartyCookieEnabled(null as boolean);
+                  Utils.emitEvent(true, 30036);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 30036);
+                }
+                break;
+              }
+              case "testPutAcceptThirdPartyCookieEnabledUndefined": {
+                try {
+                  webview.WebCookieManager.putAcceptThirdPartyCookieEnabled(undefined as boolean);
+                  Utils.emitEvent(true, 30037);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                  Utils.emitEvent(error.code, 30037);
+                }
                 break;
               }
 

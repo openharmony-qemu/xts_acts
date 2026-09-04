@@ -32,13 +32,13 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function xcomponentGetXComponentContextJsunit() {
+export default function xcomponentGetXComponentContextJsunit(): void {
   describe('xcomponentGetXComponentContextTest', () => {
     beforeAll(async (): Promise<void> => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/xcomponent',
@@ -59,7 +59,7 @@ export default function xcomponentGetXComponentContextJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("xcomponentGetXComponentContext after each called");
     });
@@ -73,7 +73,7 @@ export default function xcomponentGetXComponentContextJsunit() {
      * @tc.desc     testxcomponentGetXComponentContext_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testxcomponentGetXComponentContext_static_0010', Level.LEVEL0, async () => {
+it('testxcomponentGetXComponentContext_static_0010', Level.LEVEL0, async (): Promise<void> => {
       console.info('xcomponentGetXComponentContext testxcomponentGetXComponentContext0010 START');
       await Utils.sleep(1000);
       try {
@@ -83,7 +83,7 @@ it('testxcomponentGetXComponentContext_static_0010', Level.LEVEL0, async () => {
         }
         let callback1: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
           console.info("onRequestPopupData_0010 get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as ESObject)?.getProperty('STATUS').toString()).assertEqual("callBackSuccess");
+          expect(((eventData.data) as ESObject).getProperty('STATUS').toString()).assertEqual("callBackSuccess");
         }
         events_emitter.on(innerEventOne, callback1);
         await Utils.sleep(1000);
@@ -106,7 +106,7 @@ it('testxcomponentGetXComponentContext_static_0010', Level.LEVEL0, async () => {
      * @tc.desc     testxcomponentSetXComponentSurfaceSize_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testxcomponentSetXComponentSurfaceSize_static_0001', Level.LEVEL0, async () => {
+it('testxcomponentSetXComponentSurfaceSize_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('xcomponentSetXComponentContext testxcomponentSetXComponentSurfaceSize0001 START');
       await Utils.sleep(2000);
       console.info("setXComponentSurfaceSize0001 click result is: " +
@@ -130,7 +130,7 @@ it('testxcomponentSetXComponentSurfaceSize_static_0001', Level.LEVEL0, async () 
      * @tc.desc     testxcomponentSetXComponentSurfaceSize_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testxcomponentSetXComponentSurfaceSize_static_0002', Level.LEVEL0, async () => {
+it('testxcomponentSetXComponentSurfaceSize_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('xcomponentSetXComponentContext testxcomponentSetXComponentSurfaceSize0002 START');
       await Utils.sleep(2000);
       console.info("testxcomponentSetXComponentSurfaceSize0002 click result is: " +

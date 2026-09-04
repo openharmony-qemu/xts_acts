@@ -26,7 +26,7 @@ import emitter from "@ohos.events.emitter"
 import Utils from "../../../ets/MainAbility/common/Utils"
 import { RecordData } from '@ohos.base';
 let emitKey = "emitUserAgent"
-export default function webJsunit() {
+export default function webJsunit(): void {
     describe("ActsAceWebDevTest1", () => {
         // beforeEach(async () => {
         //     await Utils.sleep(2000)

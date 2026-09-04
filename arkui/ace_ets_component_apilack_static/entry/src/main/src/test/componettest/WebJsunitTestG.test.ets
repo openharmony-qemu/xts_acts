@@ -48,45 +48,39 @@ let tag: string = 'testTag';
 
 let emitKey = "emitUserAgent";
 
-export default function webJsunit1() {
+export default function webJsunit1(): void {
   describe('ActsAceWebDevTest', () => {
     beforeAll(async (): Promise<void> => {
-      
+
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
-      
+
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.sleep(2000);
       console.info("web beforeEach start");
-    })
-    afterEach(async () => {
-      console.info("web afterEach start:" + emitKey);
       try {
-        let backData: events_emitter.EventData = {
-          data: {
-            "ACTION": emitKey
-          } as Record<String,RecordData>
+        let options: router.RouterOptions = {
+          url: 'MainAbility/pages/componentadd/web'
         }
-        let backEvent: events_emitter.InnerEvent = {
-          eventId: 10,
-          priority: events_emitter.EventPriority.LOW
+        const routerInstance = AppStorage.get<Router>("router") as Router;
+        routerInstance.clear();
+        let pages = routerInstance.getState();
+        if (!("web" == pages.name)) {
+          routerInstance.pushUrl(options);
+          await Utils.msSleep(2000);
         }
-        console.info("start send emitKey");
-        events_emitter.emit(backEvent, backData);
       } catch (err) {
-        console.info("emit emitKey  err: " + JSON.stringify(err));
+        console.error("push web page error:" + err);
       }
-      await Utils.sleep(2000);
     })
 
-    
     /**
      * @tc.number   storeWebArchive_static
      * @tc.name     storeWebArchive_static
      * @tc.desc     storeWebArchive_static
      * @tc.level    Level.LEVEL0
      */
-it('storeWebArchive_static', Level.LEVEL0, async () => {
+    it('storeWebArchive_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitAllowGeolocation";
         // //Utils.registerContainEvent("storeWebArchive", "/data/storage/el2/base/", 400);
@@ -96,14 +90,14 @@ it('storeWebArchive_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   allowGeolocation_static
      * @tc.name     allowGeolocation_static
      * @tc.desc     allowGeolocation_static
      * @tc.level    Level.LEVEL0
      */
-it('allowGeolocation_static', Level.LEVEL0, async () => {
+    it('allowGeolocation_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitDeleteGeolocation";
         //Utils.registerEvent("allowGeolocation", "file:///, result: true", 402);
@@ -113,31 +107,114 @@ it('allowGeolocation_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   deletGeolocation_static
-     * @tc.name     deletGeolocation_static
-     * @tc.desc     deletGeolocation_static
+     * @tc.number   testDeletGeolocation_static_001
+     * @tc.name     testDeletGeolocation_static_001
+     * @tc.desc     test GeolocationPermissions.deleteAllGeolocation with null
      * @tc.level    Level.LEVEL0
      */
-it('deletGeolocation_static', Level.LEVEL0, async () => {
+    it('testDeletGeolocation_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        emitKey = "emitDeleteAllGeolocation";
-        //Utils.registerEvent("deletGeolocation", "", 404);
-        inspector.sendEventByKey('webcomponent', 10, '');
+        emitKey = "emitDeleteAllGeolocationNull";
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeletGeolocation_static_001", 401, 528, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
       } catch (error) {
         expect().assertFail();
       }
     })
 
-    
     /**
-     * @tc.number   deletAllGeolocation_static
-     * @tc.name     deletAllGeolocation_static
-     * @tc.desc     deletAllGeolocation_static
+     * @tc.number   testDeletGeolocation_static_002
+     * @tc.name     testDeletGeolocation_static_002
+     * @tc.desc     test GeolocationPermissions.deleteAllGeolocation with no parameter
      * @tc.level    Level.LEVEL0
      */
-it('deletAllGeolocation_static', Level.LEVEL0, async () => {
+    it('testDeletGeolocation_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        emitKey = "emitDeleteAllGeolocation";
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeletGeolocation_static_002", true, 524, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number   testDeletGeolocation_static_003
+     * @tc.name     testDeletGeolocation_static_003
+     * @tc.desc     test GeolocationPermissions.deleteAllGeolocation with incognito true
+     * @tc.level    Level.LEVEL0
+     */
+    it('testDeletGeolocation_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        emitKey = "emitDeleteAllGeolocationTrue";
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeletGeolocation_static_003", true, 525, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number   testDeletGeolocation_static_004
+     * @tc.name     testDeletGeolocation_static_004
+     * @tc.desc     test GeolocationPermissions.deleteAllGeolocation with incognito false
+     * @tc.level    Level.LEVEL0
+     */
+    it('testDeletGeolocation_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        emitKey = "emitDeleteAllGeolocationTrue";
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeletGeolocation_static_004", true, 526, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number   testDeletGeolocation_static_005
+     * @tc.name     testDeletGeolocation_static_005
+     * @tc.desc     test GeolocationPermissions.deleteAllGeolocation with incognito undefined
+     * @tc.level    Level.LEVEL0
+     */
+    it('testDeletGeolocation_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        emitKey = "emitDeleteAllGeolocationTrue";
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeletGeolocation_static_005", true, 527, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number   isCookieAllowed_static
+     * @tc.name     isCookieAllowed_static
+     * @tc.desc     isCookieAllowed_static
+     * @tc.level    Level.LEVEL0
+     */
+    it('isCookieAllowed_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitIsCookieAllowed";
         //Utils.registerEvent("deletAllGeolocation", "", 406);
@@ -147,14 +224,14 @@ it('deletAllGeolocation_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   isCookieAllowed_static
-     * @tc.name     isCookieAllowed_static
-     * @tc.desc     isCookieAllowed_static
+     * @tc.number   saveCookieAsync_static
+     * @tc.name     saveCookieAsync_static
+     * @tc.desc     saveCookieAsync_static
      * @tc.level    Level.LEVEL0
      */
-it('isCookieAllowed_static', Level.LEVEL0, async () => {
+    it('saveCookieAsync_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitSaveCookieAsync";
         //Utils.registerEvent("isCookieAllowed", false, 408);
@@ -164,14 +241,14 @@ it('isCookieAllowed_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   saveCookieAsync_static
-     * @tc.name     saveCookieAsync_static
-     * @tc.desc     saveCookieAsync_static
+     * @tc.number   isThirdPartyCookieAllowed_static
+     * @tc.name     isThirdPartyCookieAllowed_static
+     * @tc.desc     isThirdPartyCookieAllowed_static
      * @tc.level    Level.LEVEL0
      */
-it('saveCookieAsync_static', Level.LEVEL0, async () => {
+    it('isThirdPartyCookieAllowed_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitIsThirdPartyCookieAllowed";
         //Utils.registerEvent("saveCookieAsync", true, 410);
@@ -181,14 +258,14 @@ it('saveCookieAsync_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   isThirdPartyCookieAllowed_static
-     * @tc.name     isThirdPartyCookieAllowed_static
-     * @tc.desc     isThirdPartyCookieAllowed_static
+     * @tc.number   existCookie_static
+     * @tc.name     existCookie_static
+     * @tc.desc     existCookie_static
      * @tc.level    Level.LEVEL0
      */
-it('isThirdPartyCookieAllowed_static', Level.LEVEL0, async () => {
+    it('existCookie_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitExistCookie";
         //Utils.registerEvent("isThirdPartyCookieAllowed", false, 412);
@@ -198,14 +275,14 @@ it('isThirdPartyCookieAllowed_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   existCookie_static
-     * @tc.name     existCookie_static
-     * @tc.desc     existCookie_static
+     * @tc.number   getLineNumber_static
+     * @tc.name     getLineNumber_static
+     * @tc.desc     getLineNumber_static
      * @tc.level    Level.LEVEL0
      */
-it('existCookie_static', Level.LEVEL0, async () => {
+    it('getLineNumber_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitOnConsole";
         //Utils.registerEvent("existCookie", false, 414);
@@ -215,14 +292,14 @@ it('existCookie_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   getLineNumber_static
-     * @tc.name     getLineNumber_static
-     * @tc.desc     getLineNumber_static
+     * @tc.number   getSourceId_static
+     * @tc.name     getSourceId_static
+     * @tc.desc     getSourceId_static
      * @tc.level    Level.LEVEL0
      */
-it('getLineNumber_static', Level.LEVEL0, async () => {
+    it('getSourceId_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitOnConsole";
         //Utils.registerEvent("getLineNumber", "51", 420);
@@ -232,14 +309,14 @@ it('getLineNumber_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   getSourceId_static
-     * @tc.name     getSourceId_static
-     * @tc.desc     getSourceId_static
+     * @tc.number   loadData_static
+     * @tc.name     loadData_static
+     * @tc.desc     loadData_static
      * @tc.level    Level.LEVEL0
      */
-it('getSourceId_static', Level.LEVEL0, async () => {
+    it('loadData_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitLoaData";
         //Utils.registerEvent("getSourceId", "file:///data/storage/el1/bundle/phone/resources/rawfile/index.html", 422);
@@ -249,14 +326,14 @@ it('getSourceId_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   loadData_static
-     * @tc.name     loadData_static
-     * @tc.desc     loadData_static
+     * @tc.number   zoomAccess_static
+     * @tc.name     zoomAccess_static
+     * @tc.desc     zoomAccess_static
      * @tc.level    Level.LEVEL0
      */
-it('loadData_static', Level.LEVEL0, async () => {
+    it('zoomAccess_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitZoomAccess";
         //Utils.registerEvent("loadData", "index", 424);
@@ -266,14 +343,14 @@ it('loadData_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   zoomAccess_static
-     * @tc.name     zoomAccess_static
-     * @tc.desc     zoomAccess_static
+     * @tc.number   saveHttpAuthCredentials_static
+     * @tc.name     saveHttpAuthCredentials_static
+     * @tc.desc     saveHttpAuthCredentials_static
      * @tc.level    Level.LEVEL0
      */
-it('zoomAccess_static', Level.LEVEL0, async () => {
+    it('saveHttpAuthCredentials_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitSaveHttpAuthCredentials";
         //Utils.registerEvent("zoomAccess", false, 428);
@@ -283,14 +360,14 @@ it('zoomAccess_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   saveHttpAuthCredentials_static
-     * @tc.name     saveHttpAuthCredentials_static
-     * @tc.desc     saveHttpAuthCredentials_static
+     * @tc.number   getHttpAuthCredentials_static
+     * @tc.name     getHttpAuthCredentials_static
+     * @tc.desc     getHttpAuthCredentials_static
      * @tc.level    Level.LEVEL0
      */
-it('saveHttpAuthCredentials_static', Level.LEVEL0, async () => {
+    it('getHttpAuthCredentials_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitGetHttpAuthCredentials";
         //Utils.registerEvent("saveHttpAuthCredentials", true, 442);
@@ -300,14 +377,14 @@ it('saveHttpAuthCredentials_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   getHttpAuthCredentials_static
-     * @tc.name     getHttpAuthCredentials_static
-     * @tc.desc     getHttpAuthCredentials_static
+     * @tc.number   deleteHttpAuthCredentials_static
+     * @tc.name     deleteHttpAuthCredentials_static
+     * @tc.desc     deleteHttpAuthCredentials_static
      * @tc.level    Level.LEVEL0
      */
-it('getHttpAuthCredentials_static', Level.LEVEL0, async () => {
+    it('deleteHttpAuthCredentials_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitDeleteHttpAuthCredentials";
         //Utils.registerEvent("getHttpAuthCredentials", "Stromgol", 444);
@@ -317,14 +394,14 @@ it('getHttpAuthCredentials_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
-     * @tc.number   deleteHttpAuthCredentials_static
-     * @tc.name     deleteHttpAuthCredentials_static
-     * @tc.desc     deleteHttpAuthCredentials_static
+     * @tc.number   searchAllAsync_static
+     * @tc.name     searchAllAsync_static
+     * @tc.desc     searchAllAsync_static
      * @tc.level    Level.LEVEL0
      */
-it('deleteHttpAuthCredentials_static', Level.LEVEL0, async () => {
+    it('searchAllAsync_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitSearchAllAsync";
         //Utils.registerEvent("deleteHttpAuthCredentials", false, 446);
@@ -334,50 +411,112 @@ it('deleteHttpAuthCredentials_static', Level.LEVEL0, async () => {
       }
     })
 
-    
     /**
-     * @tc.number   searchAllAsync_static
-     * @tc.name     searchAllAsync_static
-     * @tc.desc     searchAllAsync_static
+     * @tc.number   testDeleteAllData_static_001
+     * @tc.name     testDeleteAllData_static_001
+     * @tc.desc     test WebStorage.deleteAllData with no parameter
      * @tc.level    Level.LEVEL0
      */
-it('searchAllAsync_static', Level.LEVEL0, async () => {
-      try {
-        emitKey = "emitSearchAllAsync";
-        //Utils.registerEvent("searchAllAsync", "01", 426);
-        inspector.sendEventByKey('webcomponent', 10, '');
-      } catch (error) {
-        expect().assertFail();
-      }
-    })
-
-
-    
-    /**
-     * @tc.number   deleteAllData_static
-     * @tc.name     deleteAllData_static
-     * @tc.desc     deleteAllData_static
-     * @tc.level    Level.LEVEL0
-     */
-it('deleteAllData_static', Level.LEVEL0, async () => {
+    it('testDeleteAllData_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         emitKey = "emitdeleteAllData";
-        //Utils.registerEvent("deleteAllData", "01", 426);
-        inspector.sendEventByKey('webcomponent', 10, '');
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeleteAllData_static_001", true, 518, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
       } catch (error) {
         expect().assertFail();
       }
     })
 
+    /**
+     * @tc.number   testDeleteAllData_static_002
+     * @tc.name     testDeleteAllData_static_002
+     * @tc.desc     test WebStorage.deleteAllData with incognito true
+     * @tc.level    Level.LEVEL0
+     */
+    it('testDeleteAllData_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        emitKey = "emitdeleteAllDataTrue";
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeleteAllData_static_002", false, 519, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number   testDeleteAllData_static_003
+     * @tc.name     testDeleteAllData_static_003
+     * @tc.desc     test WebStorage.deleteAllData with incognito false
+     * @tc.level    Level.LEVEL0
+     */
+    it('testDeleteAllData_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        emitKey = "emitdeleteAllDataFalse";
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeleteAllData_static_003", false, 520, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
 
-    
+    /**
+     * @tc.number   testDeleteAllData_static_004
+     * @tc.name     testDeleteAllData_static_004
+     * @tc.desc     test WebStorage.deleteAllData with undefined
+     * @tc.level    Level.LEVEL0
+     */
+    it('testDeleteAllData_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        emitKey = "emitdeleteAllDataUndefined";
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeleteAllData_static_004", true, 521, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number   testDeleteAllData_static_005
+     * @tc.name     testDeleteAllData_static_005
+     * @tc.desc     test WebStorage.deleteAllData with null
+     * @tc.level    Level.LEVEL0
+     */
+    it('testDeleteAllData_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        emitKey = "emitdeleteAllDataNull";
+        Utils.emitEvent(emitKey, 10010)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testDeleteAllData_static_005", 401, 522, done);
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('web_webcomponent', 10, '');
+        await Utils.msSleep(5000);
+      } catch (error) {
+        expect().assertFail();
+      }
+    })
+
     /**
      * @tc.number   deleteOrigin_static
      * @tc.name     deleteOrigin_static
      * @tc.desc     deleteOrigin_static
      * @tc.level    Level.LEVEL0
      */
-it('deleteOrigin_static', Level.LEVEL0, async () => {
+    it('deleteOrigin_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitdeleteOringin";
         //Utils.registerEvent("deleteOrigin", "index", 424);
@@ -388,14 +527,13 @@ it('deleteOrigin_static', Level.LEVEL0, async () => {
     })
 
 
-    
     /**
      * @tc.number   getOrigins_static
      * @tc.name     getOrigins_static
      * @tc.desc     getOrigins_static
      * @tc.level    Level.LEVEL0
      */
-it('getOrigins_static', Level.LEVEL0, async () => {
+    it('getOrigins_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetOringin";
         //Utils.registerEvent("getOrigins", 1, 424);
@@ -406,14 +544,13 @@ it('getOrigins_static', Level.LEVEL0, async () => {
     })
 
 
-    
     /**
      * @tc.number   getOriginQuota_static
      * @tc.name     getOriginQuota_static
      * @tc.desc     getOriginQuota_static
      * @tc.level    Level.LEVEL0
      */
-it('getOriginQuota_static', Level.LEVEL0, async () => {
+    it('getOriginQuota_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetOringinQuota";
         //Utils.registerEvent("getOriginQuota", 1, 424);
@@ -424,14 +561,13 @@ it('getOriginQuota_static', Level.LEVEL0, async () => {
     })
 
 
-    
     /**
      * @tc.number   getOriginUsage_static
      * @tc.name     getOriginUsage_static
      * @tc.desc     getOriginUsage_static
      * @tc.level    Level.LEVEL0
      */
-it('getOriginUsage_static', Level.LEVEL0, async () => {
+    it('getOriginUsage_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetOringinUsage";
         //Utils.registerEvent("getOriginUsage", 1, 424);
@@ -442,14 +578,13 @@ it('getOriginUsage_static', Level.LEVEL0, async () => {
     })
 
 
-    
     /**
      * @tc.number   close_static
      * @tc.name     close_static
      * @tc.desc     close_static
      * @tc.level    Level.LEVEL0
      */
-it('close_static', Level.LEVEL0, async () => {
+    it('close_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitclose";
         //Utils.registerEvent("close", 1, 424);
@@ -460,14 +595,13 @@ it('close_static', Level.LEVEL0, async () => {
     })
 
 
-    
     /**
      * @tc.number   postMessageEvent_static_01
      * @tc.name     postMessageEvent_static_01
      * @tc.desc     postMessageEvent_static_01
      * @tc.level    Level.LEVEL0
      */
-it('postMessageEvent_static_01', Level.LEVEL0, async () => {
+    it('postMessageEvent_static_01', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitpostMessageEvent";
         //Utils.registerEvent("postMessageEvent", 'index', 424);
@@ -478,14 +612,13 @@ it('postMessageEvent_static_01', Level.LEVEL0, async () => {
     })
 
 
-    
     /**
      * @tc.number   onMessageEvent_static
      * @tc.name     onMessageEvent_static
      * @tc.desc     onMessageEvent_static
      * @tc.level    Level.LEVEL0
      */
-it('onMessageEvent_static', Level.LEVEL0, async () => {
+    it('onMessageEvent_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitonMessageEvent";
         //Utils.registerEvent("onMessageEvent", 1, 424);
@@ -495,14 +628,14 @@ it('onMessageEvent_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   getUserAgent_static
      * @tc.name     getUserAgent_static
      * @tc.desc     getUserAgent_static
      * @tc.level    Level.LEVEL0
      */
-it('getUserAgent_static', Level.LEVEL0, async () => {
+    it('getUserAgent_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetUserAgent";
         //Utils.registerEvent("getUserAgent", 1, 424);
@@ -512,14 +645,14 @@ it('getUserAgent_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   createWebMessagePorts_static
      * @tc.name     createWebMessagePorts_static
      * @tc.desc     createWebMessagePorts_static
      * @tc.level    Level.LEVEL0
      */
-it('createWebMessagePorts_static', Level.LEVEL0, async () => {
+    it('createWebMessagePorts_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitcreateWebMessagePorts";
         //Utils.registerEvent("createWebMessagePorts", 1, 424);
@@ -529,14 +662,14 @@ it('createWebMessagePorts_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   clearMatches_static
      * @tc.name     clearMatches_static
      * @tc.desc     clearMatches_static
      * @tc.level    Level.LEVEL0
      */
-it('clearMatches_static', Level.LEVEL0, async () => {
+    it('clearMatches_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitclearMatches";
         //Utils.registerEvent("clearMatches", 1, 424);
@@ -546,14 +679,14 @@ it('clearMatches_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   searchNext_static
      * @tc.name     searchNext_static
      * @tc.desc     searchNext_static
      * @tc.level    Level.LEVEL0
      */
-it('searchNext_static', Level.LEVEL0, async () => {
+    it('searchNext_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitsearchNext";
         //Utils.registerEvent("searchNext", 1, 424);
@@ -563,14 +696,14 @@ it('searchNext_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   clearSslCache_static
      * @tc.name     clearSslCache_static
      * @tc.desc     clearSslCache_static
      * @tc.level    Level.LEVEL0
      */
-it('clearSslCache_static', Level.LEVEL0, async () => {
+    it('clearSslCache_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitclearSslCache";
         //Utils.registerEvent("clearSslCache", 1, 424);
@@ -580,14 +713,14 @@ it('clearSslCache_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   clearClientAuthenticationCache_static
      * @tc.name     clearClientAuthenticationCache_static
      * @tc.desc     clearClientAuthenticationCache_static
      * @tc.level    Level.LEVEL0
      */
-it('clearClientAuthenticationCache_static', Level.LEVEL0, async () => {
+    it('clearClientAuthenticationCache_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitclearClientAuthenticationCache";
         //Utils.registerEvent("clearClientAuthenticationCache", 1, 424);
@@ -597,14 +730,14 @@ it('clearClientAuthenticationCache_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   getUrl_static
      * @tc.name     getUrl_static
      * @tc.desc     getUrl_static
      * @tc.level    Level.LEVEL0
      */
-it('getUrl_static', Level.LEVEL0, async () => {
+    it('getUrl_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetUrl";
         //Utils.registerEvent("getUrl", 1, 424);
@@ -614,14 +747,14 @@ it('getUrl_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   postMessageEvent_static
      * @tc.name     postMessageEvent_static
      * @tc.desc     postMessageEvent_static
      * @tc.level    Level.LEVEL0
      */
-it('postMessageEvent_static', Level.LEVEL0, async () => {
+    it('postMessageEvent_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitpostMessageEvent1";
         //Utils.registerEvent("postMessageEvent", 1, 424);
@@ -631,14 +764,14 @@ it('postMessageEvent_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   getData_static
      * @tc.name     getData_static
      * @tc.desc     getData_static
      * @tc.level    Level.LEVEL0
      */
-it('getData_static', Level.LEVEL0, async () => {
+    it('getData_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetData";
         //Utils.registerEvent("getData", 1, 424);
@@ -648,14 +781,14 @@ it('getData_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   setData_static
      * @tc.name     setData_static
      * @tc.desc     setData_static
      * @tc.level    Level.LEVEL0
      */
-it('setData_static', Level.LEVEL0, async () => {
+    it('setData_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitsetData";
         //Utils.registerEvent("setData", 1, 424);
@@ -665,14 +798,14 @@ it('setData_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   getPorts_static
      * @tc.name     getPorts_static
      * @tc.desc     getPorts_static
      * @tc.level    Level.LEVEL0
      */
-it('getPorts_static', Level.LEVEL0, async () => {
+    it('getPorts_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetPorts";
         //Utils.registerEvent("getPorts", 1, 424);
@@ -682,14 +815,14 @@ it('getPorts_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   getPorts_static_01
      * @tc.name     getPorts_static_01
      * @tc.desc     getPorts_static_01
      * @tc.level    Level.LEVEL0
      */
-it('getPorts_static_01', Level.LEVEL0, async () => {
+    it('getPorts_static_01', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitgetPorts";
         //Utils.registerEvent("getPorts", 1, 424);
@@ -699,14 +832,14 @@ it('getPorts_static_01', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   fullscreen_static
      * @tc.name     fullscreen_static
      * @tc.desc     fullscreen_static
      * @tc.level    Level.LEVEL0
      */
-it('fullscreen_static', Level.LEVEL0, async () => {
+    it('fullscreen_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitexitfullscreen";
         //Utils.registerEvent("exitfullscreen", 1, 424);
@@ -716,14 +849,14 @@ it('fullscreen_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   postMessage_static
      * @tc.name     postMessage_static
      * @tc.desc     postMessage_static
      * @tc.level    Level.LEVEL0
      */
-it('postMessage_static', Level.LEVEL0, async () => {
+    it('postMessage_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitpostMessage";
         //Utils.registerEvent("postMessage", 1, 424);
@@ -733,14 +866,14 @@ it('postMessage_static', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   constructor_static_01
      * @tc.name     constructor_static_01
      * @tc.desc     constructor_static_01
      * @tc.level    Level.LEVEL0
      */
-it('constructor_static_01', Level.LEVEL0, async () => {
+    it('constructor_static_01', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitAsyncControllerconstructor";
         //Utils.registerEvent("constructor", 1, 424);
@@ -750,14 +883,14 @@ it('constructor_static_01', Level.LEVEL0, async () => {
       }
     })
 
-    
+
     /**
      * @tc.number   deleteSessionCookie_static
      * @tc.name     deleteSessionCookie_static
      * @tc.desc     deleteSessionCookie_static
      * @tc.level    Level.LEVEL0
      */
-it('deleteSessionCookie_static', Level.LEVEL0, async () => {
+    it('deleteSessionCookie_static', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitdeleteSessionCookie";
         //Utils.registerEvent("deleteSessionCookie", 1, 424);
@@ -768,14 +901,13 @@ it('deleteSessionCookie_static', Level.LEVEL0, async () => {
     })
 
 
-    
     /**
      * @tc.number   constructor_static_02
      * @tc.name     constructor_static_02
      * @tc.desc     constructor_static_02
      * @tc.level    Level.LEVEL0
      */
-it('constructor_static_02', Level.LEVEL0, async () => {
+    it('constructor_static_02', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitonFullScreenExitconstructor";
         //Utils.registerEvent("constructor", 1, 424);
@@ -786,14 +918,13 @@ it('constructor_static_02', Level.LEVEL0, async () => {
     })
 
 
-    
     /**
      * @tc.number   constructor_static_03
      * @tc.name     constructor_static_03
      * @tc.desc     constructor_static_03
      * @tc.level    Level.LEVEL0
      */
-it('constructor_static_03', Level.LEVEL0, async () => {
+    it('constructor_static_03', Level.LEVEL0, async (): Promise<void> => {
       try {
         emitKey = "emitWebMessageEventconstructor";
         //Utils.registerEvent("constructor", 1, 424);
@@ -802,5 +933,366 @@ it('constructor_static_03', Level.LEVEL0, async () => {
         expect().assertFail();
       }
     })
+
+
+    /**
+     * @tc.number   testGetStoredGeolocation_static_001
+     * @tc.name     testGetStoredGeolocation_static_001
+     * @tc.desc     test getStoredGeolocation promise with incognito null, expect 401 error
+     * @tc.level    Level.LEVEL3
+     */
+    it('testGetStoredGeolocation_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitGetStoredGeolocationNull";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testGetStoredGeolocation_static_001", 401, 500, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testGetStoredGeolocation_static_002
+     * @tc.name     testGetStoredGeolocation_static_002
+     * @tc.desc     test getStoredGeolocation promise with incognito undefined, expect non-empty result
+     * @tc.level    Level.LEVEL3
+     */
+    it('testGetStoredGeolocation_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitGetStoredGeolocationUndefined";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testGetStoredGeolocation_static_002", "file:///", 501, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testGetStoredGeolocation_static_003
+     * @tc.name     testGetStoredGeolocation_static_003
+     * @tc.desc     test getStoredGeolocation promise return empty array after deleteAllGeolocation
+     * @tc.level    Level.LEVEL3
+     */
+    it('testGetStoredGeolocation_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitGetStoredGeolocationEmpty";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testGetStoredGeolocation_static_003", "", 502, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testGetStoredGeolocation_static_004
+     * @tc.name     testGetStoredGeolocation_static_004
+     * @tc.desc     test getStoredGeolocation promise return non-empty array after allowGeolocation
+     * @tc.level    Level.LEVEL3
+     */
+    it('testGetStoredGeolocation_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitGetStoredGeolocationNonEmpty";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testGetStoredGeolocation_static_004", "file:///", 503, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testGetStoredGeolocationCb_static_005
+     * @tc.name     testGetStoredGeolocationCb_static_005
+     * @tc.desc     test getStoredGeolocation callback with incognito null
+     * @tc.level    Level.LEVEL3
+     */
+    it('testGetStoredGeolocationCb_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitGetStoredGeolocationCbNull";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testGetStoredGeolocationCb_static_005", 401, 504, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testGetStoredGeolocationCb_static_006
+     * @tc.name     testGetStoredGeolocationCb_static_006
+     * @tc.desc     test getStoredGeolocation callback with incognito undefined
+     * @tc.level    Level.LEVEL3
+     */
+    it('testGetStoredGeolocationCb_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitGetStoredGeolocationCbUndefined";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testGetStoredGeolocationCb_static_006", "file:///", 505, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testGetStoredGeolocationCb_static_007
+     * @tc.name     testGetStoredGeolocationCb_static_007
+     * @tc.desc     test getStoredGeolocation callback return empty after deleteAllGeolocation
+     * @tc.level    Level.LEVEL3
+     */
+    it('testGetStoredGeolocationCb_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitGetStoredGeolocationCbEmpty";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testGetStoredGeolocationCb_static_007", "", 506, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testGetStoredGeolocationCb_static_008
+     * @tc.name     testGetStoredGeolocationCb_static_008
+     * @tc.desc     test getStoredGeolocation callback return non-empty after allowGeolocation
+     * @tc.level    Level.LEVEL3
+     */
+    it('testGetStoredGeolocationCb_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitGetStoredGeolocationCbNonEmpty";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testGetStoredGeolocationCb_static_008", "file:///", 507, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testPutAcceptCookieEnabled_static_001
+     * @tc.name     testPutAcceptCookieEnabled_static_001
+     * @tc.desc     test putAcceptCookieEnabled with accept null
+     * @tc.level    Level.LEVEL3
+     */
+    it('testPutAcceptCookieEnabled_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitPutAcceptCookieEnabledNull";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testPutAcceptCookieEnabled_static_001", 401, 508, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testPutAcceptCookieEnabled_static_002
+     * @tc.name     testPutAcceptCookieEnabled_static_002
+     * @tc.desc     test putAcceptCookieEnabled with accept undefined
+     * @tc.level    Level.LEVEL3
+     */
+    it('testPutAcceptCookieEnabled_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitPutAcceptCookieEnabledUndefined";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testPutAcceptCookieEnabled_static_002", 401, 509, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testPutAcceptThirdPartyCookieEnabled_static_001
+     * @tc.name     testPutAcceptThirdPartyCookieEnabled_static_001
+     * @tc.desc     test putAcceptThirdPartyCookieEnabled with accept null
+     * @tc.level    Level.LEVEL3
+     */
+    it('testPutAcceptThirdPartyCookieEnabled_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitPutAcceptThirdPartyCookieEnabledNull";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testPutAcceptThirdPartyCookieEnabled_static_001", 401, 510, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testPutAcceptThirdPartyCookieEnabled_static_002
+     * @tc.name     testPutAcceptThirdPartyCookieEnabled_static_002
+     * @tc.desc     test putAcceptThirdPartyCookieEnabled with accept undefined
+     * @tc.level    Level.LEVEL3
+     */
+    it('testPutAcceptThirdPartyCookieEnabled_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitPutAcceptThirdPartyCookieEnabledUndefined";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testPutAcceptThirdPartyCookieEnabled_static_002", 401, 511, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testExistCookie_static_001
+     * @tc.name     testExistCookie_static_001
+     * @tc.desc     test existCookie with incognito null
+     * @tc.level    Level.LEVEL3
+     */
+    it('testExistCookie_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitExistCookieNull";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testExistCookie_static_001", 401, 512, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testExistCookie_static_002
+     * @tc.name     testExistCookie_static_002
+     * @tc.desc     test existCookie with incognito undefined
+     * @tc.level    Level.LEVEL3
+     */
+    it('testExistCookie_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitExistCookieUndefined";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testExistCookie_static_002", false, 513, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testExistCookie_static_003
+     * @tc.name     testExistCookie_static_003
+     * @tc.desc     test existCookie with incognito false return false after clearAllCookiesSync
+     * @tc.level    Level.LEVEL3
+     */
+    it('testExistCookie_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitExistCookieEmpty";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testExistCookie_static_003", false, 514, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testExistCookie_static_004
+     * @tc.name     testExistCookie_static_004
+     * @tc.desc     test existCookie with incognito false
+     * @tc.level    Level.LEVEL3
+     */
+    it('testExistCookie_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitExistCookieNonEmpty";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testExistCookie_static_004", false, 515, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testClearAllCookiesSync_static_001
+     * @tc.name     testClearAllCookiesSync_static_001
+     * @tc.desc     test clearAllCookiesSync with incognito null
+     * @tc.level    Level.LEVEL3
+     */
+    it('testClearAllCookiesSync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitClearAllCookiesSyncNull";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testClearAllCookiesSync_static_001", 401, 516, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
+
+    /**
+     * @tc.number   testClearAllCookiesSync_static_002
+     * @tc.name     testClearAllCookiesSync_static_002
+     * @tc.desc     test clearAllCookiesSync with incognito undefined
+     * @tc.level    Level.LEVEL3
+     */
+    it('testClearAllCookiesSync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        try {
+          emitKey = "emitClearAllCookiesSyncUndefined";
+          Utils.emitEvent(emitKey, 10)
+          await Utils.msSleep(2000);
+          Utils.registerEvent("testClearAllCookiesSync_static_002", true, 517, done);
+          await Utils.msSleep(2000);
+          inspector.sendEventByKey('web_webcomponent', 10, '');
+        } catch (error) {
+          expect().assertFail();
+        }
+      })
   })
 }

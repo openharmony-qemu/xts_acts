@@ -36,14 +36,14 @@ import { RecordData } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function checkBoxGroupSelectAllJsunit() {
+export default function checkBoxGroupSelectAllJsunit(): void {
   describe('checkBoxGroupSelectAllTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/checkBoxGroup',
@@ -63,7 +63,7 @@ export default function checkBoxGroupSelectAllJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("checkBoxGroupSelectAll after each called");
     });
@@ -77,7 +77,7 @@ export default function checkBoxGroupSelectAllJsunit() {
      * @tc.desc     testcheckBoxGroupSelectAll_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testcheckBoxGroupSelectAll_static_0001', Level.LEVEL0, async () => {
+it('testcheckBoxGroupSelectAll_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('checkBoxGroupSelectAll testcheckBoxGroupSelectAll0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('CheckboxGroup');
@@ -99,7 +99,7 @@ it('testcheckBoxGroupSelectAll_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testcheckBoxGroupSelectAll_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testcheckBoxGroupSelectAll_static_0002', Level.LEVEL0, async () => {
+it('testcheckBoxGroupSelectAll_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('checkBoxGroupSelectAll testcheckBoxGroupSelectAll0002 START');
       try {
         let eventData: events_emitter.EventData = {

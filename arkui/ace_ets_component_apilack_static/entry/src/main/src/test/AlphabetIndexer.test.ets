@@ -35,14 +35,14 @@ import { UtilsTest } from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function alphabetIndexerOnSelectJsunit() {
+export default function alphabetIndexerOnSelectJsunit(): void {
   describe('alphabetIndexerOnSelectTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/alphabetIndexer',
@@ -62,7 +62,7 @@ export default function alphabetIndexerOnSelectJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("alphabetIndexerOnSelect after each called");
     });
@@ -76,7 +76,7 @@ export default function alphabetIndexerOnSelectJsunit() {
      * @tc.desc     testalphabetIndexerWidth_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerWidth_static_0001', Level.LEVEL0, async () => {
+it('testalphabetIndexerWidth_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerWidth testalphabetIndexerWidth0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -97,7 +97,7 @@ it('testalphabetIndexerWidth_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testalphabetIndexerHeight_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerHeight_static_0002', Level.LEVEL0, async () => {
+it('testalphabetIndexerHeight_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerHeight testalphabetIndexerHeight0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -118,7 +118,7 @@ it('testalphabetIndexerHeight_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testalphabetIndexerColor_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerColor_static_0003', Level.LEVEL0, async () => {
+it('testalphabetIndexerColor_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerColor testalphabetIndexerColor0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -139,7 +139,7 @@ it('testalphabetIndexerColor_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testalphabetIndexerSelectedColor_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerSelectedColor_static_0004', Level.LEVEL0, async () => {
+it('testalphabetIndexerSelectedColor_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerSelectedColor testalphabetIndexerSelectedColor0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -160,7 +160,7 @@ it('testalphabetIndexerSelectedColor_static_0004', Level.LEVEL0, async () => {
      * @tc.desc     testalphabetIndexerPopupColor_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerPopupColor_static_0005', Level.LEVEL0, async () => {
+it('testalphabetIndexerPopupColor_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerPopupColor testalphabetIndexerPopupColor0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -182,7 +182,7 @@ it('testalphabetIndexerPopupColor_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testalphabetIndexerSelectedBackgroundColor_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerSelectedBackgroundColor_static_0006', Level.LEVEL0, async () => {
+it('testalphabetIndexerSelectedBackgroundColor_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerSelectedBackgroundColor testalphabetIndexerSelectedBackgroundColor0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -203,7 +203,7 @@ it('testalphabetIndexerSelectedBackgroundColor_static_0006', Level.LEVEL0, async
      * @tc.desc     testalphabetIndexerPopupBackground_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerPopupBackground_static_0007', Level.LEVEL0, async () => {
+it('testalphabetIndexerPopupBackground_static_0007', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerPopupBackground testalphabetIndexerPopupBackground0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -224,7 +224,7 @@ it('testalphabetIndexerPopupBackground_static_0007', Level.LEVEL0, async () => {
      * @tc.desc     testalphabetIndexerUsingPopup_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerUsingPopup_static_0009', Level.LEVEL0, async () => {
+it('testalphabetIndexerUsingPopup_static_0009', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerUsingPopup testalphabetIndexerUsingPopup009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -246,7 +246,7 @@ it('testalphabetIndexerUsingPopup_static_0009', Level.LEVEL0, async () => {
      * @tc.desc     testalphabetIndexerItemSize_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerItemSize_static_0010', Level.LEVEL0, async () => {
+it('testalphabetIndexerItemSize_static_0010', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerItemSize testalphabetIndexerItemSize0010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -268,7 +268,7 @@ it('testalphabetIndexerItemSize_static_0010', Level.LEVEL0, async () => {
      * @tc.desc     testalphabetIndexerAlignStyle_static_0011
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerAlignStyle_static_0011', Level.LEVEL0, async () => {
+it('testalphabetIndexerAlignStyle_static_0011', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerAlignStyle testalphabetIndexerAlignStyle0011 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('alphabetIndexer_alphabetIndexer');
@@ -290,7 +290,7 @@ it('testalphabetIndexerAlignStyle_static_0011', Level.LEVEL0, async () => {
      * @tc.desc     testalphabetIndexerOnSelect_static_0012
      * @tc.level    Level.LEVEL0
      */
-it('testalphabetIndexerOnSelect_static_0012', Level.LEVEL0, async () => {
+it('testalphabetIndexerOnSelect_static_0012', Level.LEVEL0, async (): Promise<void> => {
       console.info('alphabetIndexerOnSelect testalphabetIndexerOnSelect0011 START');
       await Utils.sleep(2000);
       inspector.sendEventByKey('alphabetIndexer_alphabetIndexer', 10, "")

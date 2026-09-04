@@ -62,11 +62,11 @@ const TAG = 'ets_apiLack_add';
 struct TextInputOnEditChange {
   @State num: number = 0
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear TextInputOnEditChange start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear TextInputOnEditChange end`)
   }
 

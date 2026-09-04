@@ -26,7 +26,7 @@ import resourceManager from '@ohos.resourceManager'
 // import { LayoutDirection, Storage } from '@ohos.arkui.component'
 import  Environment  from '@ohos.file.environment'
 
-export default function AppStorageJsunit() {
+export default function AppStorageJsunit(): void {
   describe('appStorage', () => {
     beforeAll(async (): Promise<void> => {
       console.info("appStorage beforeAll start");
@@ -104,32 +104,6 @@ it('stateManagement_AppStorage_setOrCreate_static_0100', Level.LEVEL0, (done: ()
      * @tc.level    Level.LEVEL0
      */
 it('stateManagement_Storage_set_static_0100', Level.LEVEL0, (done: () => void):void => {
-      done();
-      return;
-
-      console.info('[stateManagement_Storage_set_0100] START');
-
-      try {
-        // let storage = new Storage();
-        // console.info('[stateManagement_Storage_set_0100] 0000');
-        // storage.set("key5", "value5");
-        // storage.set("key6", "value6");
-        // console.info('[stateManagement_Storage_set_0100] 1111');
-        // let key5: string|undefined = storage.get("key5");
-        // let key6: string|undefined = storage.get("key6");
-        // console.info('[stateManagement_Storage_set_0100] 2222' + key5);
-        // storage.delete("key5");
-        // key5 = storage.get("key5");
-        // console.info('[stateManagement_Storage_set_0100] 3333');
-        // console.info('[stateManagement_Storage_set_0100] key5 =' + key5);
-        // console.info('[stateManagement_Storage_set_0100] key6 =' + key6);
-        // storage.clear();
-        // key6 = storage.get("key6");
-        // console.info('[stateManagement_Storage_set_0100] key6 =' + key6);
-        // console.info('[stateManagement_Storage_set_0100] END');
-      }catch(Error) {
-          expect().assertFail();
-      }
       done();
     });
 

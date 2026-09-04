@@ -24,7 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 
-export default function ResourceString() {
+export default function ResourceString(): void {
   describe('ResourceString', () => {
 
     beforeAll(async (): Promise<void> => {

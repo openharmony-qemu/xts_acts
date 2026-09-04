@@ -41,11 +41,11 @@ const TAG = 'ets_apiLack_add';
 struct SearchOnCut {
   controller: SearchController = new SearchController()
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear SearchOnCut start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear SearchOnCut end`)
   }
 

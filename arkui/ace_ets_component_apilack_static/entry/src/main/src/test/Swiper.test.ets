@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function swiperCurveJsunit() {
+export default function swiperCurveJsunit(): void {
   describe('swiperCurveTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/swiper',
@@ -60,7 +60,7 @@ export default function swiperCurveJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("swiperCurve after each called");
     });
@@ -74,7 +74,7 @@ export default function swiperCurveJsunit() {
      * @tc.desc     testswiperCurve_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_0001', Level.LEVEL0, async () => {
+it('testswiperCurve_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -95,7 +95,7 @@ it('testswiperCurve_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_0002', Level.LEVEL0, async () => {
+it('testswiperCurve_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -116,7 +116,7 @@ it('testswiperCurve_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_0003', Level.LEVEL0, async () => {
+it('testswiperCurve_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -137,7 +137,7 @@ it('testswiperCurve_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_0004', Level.LEVEL0, async () => {
+it('testswiperCurve_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -158,7 +158,7 @@ it('testswiperCurve_static_0004', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_0005', Level.LEVEL0, async () => {
+it('testswiperCurve_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -179,7 +179,7 @@ it('testswiperCurve_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_0006', Level.LEVEL0, async () => {
+it('testswiperCurve_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve0006 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -200,7 +200,7 @@ it('testswiperCurve_static_0006', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_0007', Level.LEVEL0, async () => {
+it('testswiperCurve_static_0007', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -221,7 +221,7 @@ it('testswiperCurve_static_0007', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_0008
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_0008', Level.LEVEL0, async () => {
+it('testswiperCurve_static_0008', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve0008 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -242,7 +242,7 @@ it('testswiperCurve_static_0008', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_0009
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_0009', Level.LEVEL0, async () => {
+it('testswiperCurve_static_0009', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve0009 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -263,7 +263,7 @@ it('testswiperCurve_static_0009', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_00010
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_00010', Level.LEVEL0, async () => {
+it('testswiperCurve_static_00010', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve00010 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');
@@ -285,7 +285,7 @@ it('testswiperCurve_static_00010', Level.LEVEL0, async () => {
      * @tc.desc     testswiperCurve_static_00011
      * @tc.level    Level.LEVEL0
      */
-it('testswiperCurve_static_00011', Level.LEVEL0, async () => {
+it('testswiperCurve_static_00011', Level.LEVEL0, async (): Promise<void> => {
       console.info('swiperCurve testswiperCurve00011 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('swiper');

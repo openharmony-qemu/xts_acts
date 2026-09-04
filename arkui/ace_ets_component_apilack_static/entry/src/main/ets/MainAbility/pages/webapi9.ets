@@ -108,7 +108,7 @@ struct Index {
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController();
   @State str: string = "emitStoreWebArchive"
 
-  onPageShow() {
+  onPageShow(): void {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
@@ -312,13 +312,13 @@ struct Index {
             // let flag = true
             try {
               this.controllerTwo.hasImage((err, data) => {
-                if (err) {
+                if (err && err.code) {
                   console.info("has ImageError" + JSON.stringify(err))
                 }
                 // Utils.emitEvent(flag,828);
               });
             } catch (error) {
-              console.error(`ErrorCode:${(error as BusinessError)?.code},Message:${(error as Error)?.message}`);
+              console.error(`ErrorCode:${error.code},Message:${error.message}`);
             }
             break;
           case "hasImageTwo":
@@ -329,7 +329,7 @@ struct Index {
               })
 
             } catch (error) {
-              console.error(`ErrorCode:${(error as BusinessError)?.code},Message:${(error as Error)?.message}`);
+              console.error(`ErrorCode:${error.code},Message:${error.message}`);
             }
             break;
           case "setNetworkAvailable":
@@ -362,6 +362,28 @@ struct Index {
             // Utils.emitEvent(this.res,834);
             break;
 
+          case "emitPutAcceptCookieEnabledApi9Null": {
+            try {
+              web_webview.WebCookieManager.putAcceptCookieEnabled(null as boolean);
+              Utils.emitEvent(true, 835);
+            } catch (error) {
+              console.error('putAcceptCookieEnabled null error: ' + JSON.stringify(error));
+              Utils.emitEvent(error.code, 835);
+            }
+            break;
+          }
+
+          case "emitPutAcceptCookieEnabledApi9Undefined": {
+            try {
+              web_webview.WebCookieManager.putAcceptCookieEnabled(undefined as boolean);
+              Utils.emitEvent(true, 836);
+            } catch (error) {
+              console.error('putAcceptCookieEnabled undefined error: ' + JSON.stringify(error));
+              Utils.emitEvent(error.code, 836);
+            }
+            break;
+          }
+
           default:
             console.info("can not match case")
         }
@@ -386,12 +408,10 @@ struct Index {
   private valueChangeCallBack: (eventData: events_emitter.EventData) => void =
     (eventData: events_emitter.EventData) => {
       console.info("web page valueChangeCallBack");
-      if (eventData != null) {
-        const data = eventData.data as Record<String,RecordData>
-        console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-        if (data['ACTION'] != null) {
-          this.str = data['ACTION'] as string;
-        }
+      const data = eventData.data as Record<string,RecordData>
+      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      if (data['ACTION'] != null) {
+        this.str = data['ACTION'] as string;
       }
     }
 }

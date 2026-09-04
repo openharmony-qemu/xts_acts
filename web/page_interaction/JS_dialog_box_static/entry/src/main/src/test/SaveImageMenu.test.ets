@@ -25,7 +25,7 @@ const EVENT_ID_SET_SUITE_KEY = 177008;
 let driver = Driver.create();
 
 
-export default function SaveImageMenuJsunit() {
+export default function SaveImageMenuJsunit(): void {
   describe('SaveImageMenuTest',  () =>{
     beforeAll(async (): Promise<void> => {
       await Utils.msSleep(2000)

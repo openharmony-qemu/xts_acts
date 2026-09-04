@@ -75,11 +75,11 @@ const TAG = 'ets_apiLack_add';
 struct XcomponentGetXComponentContext {
   xcomponentController: XComponentController = new XComponentController()
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear XcomponentGetXComponentContext start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear XcomponentGetXComponentContext end`)
   }
 

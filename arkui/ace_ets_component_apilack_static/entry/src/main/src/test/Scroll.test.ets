@@ -32,14 +32,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
 
 
-export default function scrollOnScrollBeginJsunit() {
+export default function scrollOnScrollBeginJsunit(): void {
   describe('scrollOnScrollBeginTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/scroll',
@@ -60,7 +60,7 @@ export default function scrollOnScrollBeginJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("scrollOnScrollBegin after each called");
     });
@@ -74,7 +74,7 @@ export default function scrollOnScrollBeginJsunit() {
      * @tc.desc     testscrollOnScrollBegin_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0001', Level.LEVEL0, async () => {
+it('testscrollOnScrollBegin_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -95,7 +95,7 @@ it('testscrollOnScrollBegin_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testscrollOnScrollBegin_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0002', Level.LEVEL0, async () => {
+it('testscrollOnScrollBegin_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -116,7 +116,7 @@ it('testscrollOnScrollBegin_static_0002', Level.LEVEL0, async () => {
      * @tc.desc     testscrollOnScrollBegin_static_0003
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0003', Level.LEVEL0, async () => {
+it('testscrollOnScrollBegin_static_0003', Level.LEVEL0, async (): Promise<void> => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0003 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -137,7 +137,7 @@ it('testscrollOnScrollBegin_static_0003', Level.LEVEL0, async () => {
      * @tc.desc     testscrollOnScrollBegin_static_0004
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0004', Level.LEVEL0, async () => {
+it('testscrollOnScrollBegin_static_0004', Level.LEVEL0, async (): Promise<void> => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0004 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -159,7 +159,7 @@ it('testscrollOnScrollBegin_static_0004', Level.LEVEL0, async () => {
      * @tc.desc     testscrollOnScrollBegin_static_0005
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0005', Level.LEVEL0, async () => {
+it('testscrollOnScrollBegin_static_0005', Level.LEVEL0, async (): Promise<void> => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0005 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -181,13 +181,13 @@ it('testscrollOnScrollBegin_static_0005', Level.LEVEL0, async () => {
      * @tc.desc     testscrollOnScrollBegin_static_0006
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0006', Level.LEVEL0, async () => {
+it('testscrollOnScrollBegin_static_0006', Level.LEVEL0, async (): Promise<void> => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0006 START');
       await Utils.sleep(2000);
 
       let callback: (eventData: events_emitter.EventData) => void = (indexEvent: events_emitter.EventData) => {
         console.info("scrollOnScrollBegin get state result is: " + JSON.stringify(indexEvent));
-        expect(((indexEvent.data) as ESObject)?.getProperty('STATUS')).assertEqual(true);
+        expect(((indexEvent.data) as ESObject).getProperty('STATUS')).assertEqual(true);
       }
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 10086,
@@ -212,7 +212,7 @@ it('testscrollOnScrollBegin_static_0006', Level.LEVEL0, async () => {
      * @tc.desc     testscrollOnScrollBegin_static_0007
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0007', Level.LEVEL0, async () => {
+it('testscrollOnScrollBegin_static_0007', Level.LEVEL0, async (): Promise<void> => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0007 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('Scroll');
@@ -233,7 +233,7 @@ it('testscrollOnScrollBegin_static_0007', Level.LEVEL0, async () => {
      * @tc.desc     testscrollOnScrollBegin_static_0008
      * @tc.level    Level.LEVEL0
      */
-it('testscrollOnScrollBegin_static_0008', Level.LEVEL0, async () => {
+it('testscrollOnScrollBegin_static_0008', Level.LEVEL0, async (): Promise<void> => {
       console.info('testEdgeEffectOptions testscrollOnScrollBegin0008 START');
       AppStorage.delete('alwaysEnabled');
       await Utils.sleep(2000);

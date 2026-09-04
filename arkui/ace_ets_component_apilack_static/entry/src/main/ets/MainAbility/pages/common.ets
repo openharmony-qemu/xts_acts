@@ -55,11 +55,11 @@ const TAG = 'ets_apiLack_add';
 struct CommonBackgroundBlurStyle {
   @State value: string = ''
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear CommonBackgroundBlurStyle start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear CommonBackgroundBlurStyle end`)
   }
 
@@ -77,7 +77,7 @@ struct CommonBackgroundBlurStyle {
     instance.opacity(1)
   };
 
-  buttonTab() {
+  buttonTab(): void {
     let keyEventDown: inputEventClient.KeyEvent = {
       isPressed: true,
       keyCode: 2049,
@@ -95,7 +95,7 @@ struct CommonBackgroundBlurStyle {
     inputEventClient.injectEvent({ KeyEvent: keyEventUp });
   }
 
-  buttonOnKey() {
+  buttonOnKey(): void {
     let keyEventDown: inputEventClient.KeyEvent = {
       isPressed: true,
       keyCode: 2054,

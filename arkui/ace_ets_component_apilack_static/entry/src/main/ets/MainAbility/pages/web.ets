@@ -78,7 +78,7 @@ struct WebComponent {
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController();
   webResourceResponse: WebResourceResponse = new WebResourceResponse();
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     this.controller.setCustomUserAgent('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36');
   }
 

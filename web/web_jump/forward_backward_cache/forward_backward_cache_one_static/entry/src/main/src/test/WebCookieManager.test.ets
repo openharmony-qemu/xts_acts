@@ -244,5 +244,77 @@ export default function webCookieManagerTest(): void {
         await Utils.msSleep(2000);
         done();
       })
+
+    /**
+     * @tc.name   testPutAcceptCookieEnabledNullStatic
+     * @tc.number SUB_WEB_PUTACCEPTCOOKIEENABLED_0100
+     * @tc.desc   test putAcceptCookieEnabled with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPutAcceptCookieEnabledNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("testPutAcceptCookieEnabledNull", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testPutAcceptCookieEnabledNull", 401, 30034, done);
+        inspector.sendEventByKey('WebCookieManagerButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
+
+    /**
+     * @tc.name   testPutAcceptCookieEnabledUndefinedStatic
+     * @tc.number SUB_WEB_PUTACCEPTCOOKIEENABLED_0200
+     * @tc.desc   test putAcceptCookieEnabled with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPutAcceptCookieEnabledUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("testPutAcceptCookieEnabledUndefined", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testPutAcceptCookieEnabledUndefined", 401, 30035, done);
+        inspector.sendEventByKey('WebCookieManagerButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
+
+    /**
+     * @tc.name   testPutAcceptThirdPartyCookieEnabledNullStatic
+     * @tc.number SUB_WEB_PUTACCEPTTHIRDPARTYCOOKIEENABLED_0200
+     * @tc.desc   test putAcceptThirdPartyCookieEnabled with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPutAcceptThirdPartyCookieEnabledNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("testPutAcceptThirdPartyCookieEnabledNull", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testPutAcceptThirdPartyCookieEnabledNull", 401, 30036, done);
+        inspector.sendEventByKey('WebCookieManagerButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
+
+    /**
+     * @tc.name   testPutAcceptThirdPartyCookieEnabledUndefinedStatic
+     * @tc.number SUB_WEB_PUTACCEPTTHIRDPARTYCOOKIEENABLED_0300
+     * @tc.desc   test putAcceptThirdPartyCookieEnabled with undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPutAcceptThirdPartyCookieEnabledUndefinedStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        Utils.emitEvent("testPutAcceptThirdPartyCookieEnabledUndefined", 10)
+        await Utils.msSleep(2000);
+        Utils.registerEvent("testPutAcceptThirdPartyCookieEnabledUndefined", 401, 30037, done);
+        inspector.sendEventByKey('WebCookieManagerButton', 10, '');
+        await Utils.msSleep(4000);
+        done()
+      })
   })
 }

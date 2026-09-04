@@ -35,14 +35,14 @@ import { UtilsTest } from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function ellipseNeJsunit() {
+export default function ellipseNeJsunit(): void {
   describe('ellipseNeTest', () => {
     beforeAll(async (): Promise<void> => {
       
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
       
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/ellipse',
@@ -62,7 +62,7 @@ export default function ellipseNeJsunit() {
       }
     });
 
-    afterEach(async () => {
+    afterEach(async (): Promise<void> => {
       await Utils.sleep(1000);
       console.info("ellipseNe after each called");
     });
@@ -76,7 +76,7 @@ export default function ellipseNeJsunit() {
      * @tc.desc     testellipseNe_static_0001
      * @tc.level    Level.LEVEL0
      */
-it('testellipseNe_static_0001', Level.LEVEL0, async () => {
+it('testellipseNe_static_0001', Level.LEVEL0, async (): Promise<void> => {
       console.info('ellipseNe testellipseNe0001 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('ellipse');
@@ -97,7 +97,7 @@ it('testellipseNe_static_0001', Level.LEVEL0, async () => {
      * @tc.desc     testellipseNe_static_0002
      * @tc.level    Level.LEVEL0
      */
-it('testellipseNe_static_0002', Level.LEVEL0, async () => {
+it('testellipseNe_static_0002', Level.LEVEL0, async (): Promise<void> => {
       console.info('ellipseNe testellipseNe0002 START');
       await Utils.sleep(2000);
       let strJson = inspector.getInspectorByKey('ellipse');

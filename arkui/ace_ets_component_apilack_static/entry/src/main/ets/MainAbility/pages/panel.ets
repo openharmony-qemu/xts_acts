@@ -47,11 +47,11 @@ struct PanelBackgroundMask {
     Text('替代panel')
   }
 
-  aboutToAppear() {
+  aboutToAppear(): void {
     Log.showInfo(TAG, `aboutToAppear PanelBackgroundMask start`)
   }
 
-  aboutToDisappear() {
+  aboutToDisappear(): void {
     Log.showInfo(TAG, `aboutToDisAppear PanelBackgroundMask end`)
   }
 

@@ -13,7 +13,7 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 let testAbilityContext:common.UIAbilityContext;
 let origin: string = "resource://rawfile/"
 
-export default function webStorageTest() {
+export default function webStorageTest(): void {
 
     describe("webStorageTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
@@ -55,7 +55,7 @@ export default function webStorageTest() {
             await Utils.msSleep(2000);
             try {
                 webView.WebStorage.getOrigins((error: BusinessError<void>|null, origins: webView.WebStorageOrigin[] | undefined) => {
-                    if (error) {
+                    if (error && error.code) {
                         hilog.info(domain, tag, '%{public}s', 'error: ' + JSON.stringify(error));
                         return;
                     }
@@ -69,9 +69,9 @@ export default function webStorageTest() {
                         hilog.info(domain, tag, '%{public}s', 'usage: ' + origins[i].usage);
                         hilog.info(domain, tag, '%{public}s', 'quota: ' + origins[i].quota);
                     }
-                    expect(origins![0].origin == "resource://rawfile/").assertTrue();
-                    expect(origins![0].usage > 0).assertTrue();
-                    expect(origins![0].quota != 0).assertTrue();
+                    expect(origins[0].origin == "resource://rawfile/").assertTrue();
+                    expect(origins[0].usage > 0).assertTrue();
+                    expect(origins[0].quota != 0).assertTrue();
                 })
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOrigins_static_001 has failed for' + JSON.stringify(e));
@@ -93,15 +93,15 @@ export default function webStorageTest() {
                 webView.WebStorage.getOrigins()
                     .then((origins: webView.WebStorageOrigin[]) => {
                         hilog.info(domain, tag, '%{public}s', 'testGetOrigins_static_002 origins.length: ' + origins.length);
-                        expect(origins!.length > 0).assertTrue();
+                        expect(origins.length > 0).assertTrue();
                         for (let i = 0; i < origins.length; i++) {
                             hilog.info(domain, tag, '%{public}s', 'origin: ' + origins[i].origin);
                             hilog.info(domain, tag, '%{public}s', 'usage: ' + origins[i].usage);
                             hilog.info(domain, tag, '%{public}s', 'quota: ' + origins[i].quota);
                         }
-                        expect(origins![0].origin == "resource://rawfile/").assertTrue();
-                        expect(origins![0].usage > 0).assertTrue();
-                        expect(origins![0].quota != 0).assertTrue();
+                        expect(origins[0].origin == "resource://rawfile/").assertTrue();
+                        expect(origins[0].usage > 0).assertTrue();
+                        expect(origins[0].quota != 0).assertTrue();
                     })
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOrigins_static_001 has failed for' + JSON.stringify(e));
@@ -121,7 +121,7 @@ export default function webStorageTest() {
             await Utils.msSleep(2000);
             try {
                 webView.WebStorage.getOriginUsage(origin, (error: BusinessError<void> | null, usage: Double | undefined) => {
-                    if (error) {
+                    if (error && error.code) {
                         hilog.info(domain, tag, '%{public}s', 'error: ' + JSON.stringify(error));
                         return;
                     }
@@ -129,7 +129,7 @@ export default function webStorageTest() {
                         return;
                     }
                     hilog.info(domain, tag, '%{public}s', 'usage: ' + usage);
-                    expect(usage! > 0).assertTrue();
+                    expect(usage > 0).assertTrue();
                 })
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_001 has failed for' + JSON.stringify(e));
@@ -151,7 +151,7 @@ export default function webStorageTest() {
                 webView.WebStorage.getOriginUsage(origin)
                     .then((usage: Double) => {
                         hilog.info(domain, tag, '%{public}s', 'usage: ' + usage);
-                        expect(usage! > 0).assertTrue();
+                        expect(usage > 0).assertTrue();
                     })
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_002 has failed for' + JSON.stringify(e));
@@ -175,7 +175,7 @@ export default function webStorageTest() {
                     console.log("3. 进入getOriginUsage回调函数");
                     console.log("4. usage值:", usage, "，类型:", typeof usage);
 
-                    if (usage === undefined || usage === null) {
+                    if (usage === undefined) {
                         hilog.error(domain, tag, '%{public}s', 'testGetOriginUsage_static_003 usage is null/undefined!');
                         expect(false).assertTrue();
                         return;
@@ -208,7 +208,7 @@ export default function webStorageTest() {
                         hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_004 usage: ' + usage);
                         expect(usage === 17100011).assertTrue();
                     })
-                    .catch((error) => {
+                    .catch((error: Error) => {
                         hilog.info(domain, tag, '%{public}s', 'testGetOriginUsage_static_004 error: ' + JSON.stringify(error));
                         const errorStr = JSON.stringify(error);
                         expect(errorStr.includes("17100011") || errorStr.includes("401") ||
@@ -232,7 +232,7 @@ export default function webStorageTest() {
             await Utils.msSleep(2000);
             try {
                 webView.WebStorage.getOriginQuota(origin, (error: BusinessError<void> | null, quota: Double | undefined) => {
-                    if (error) {
+                    if (error && error.code) {
                         hilog.info(domain, tag, '%{public}s', 'error: ' + JSON.stringify(error));
                         return;
                     }
@@ -240,7 +240,7 @@ export default function webStorageTest() {
                         return;
                     }
                     hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_001 quota: ' + quota);
-                    expect(quota! != 0).assertTrue();
+                    expect(quota != 0).assertTrue();
                 })
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_001 has failed for' + JSON.stringify(e));
@@ -262,7 +262,7 @@ export default function webStorageTest() {
                 webView.WebStorage.getOriginQuota(origin)
                     .then((quota : Double) => {
                         hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_002 quota: ' + quota);
-                        expect(quota! != 0).assertTrue();
+                        expect(quota != 0).assertTrue();
                     })
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_002 has failed for' + JSON.stringify(e));
@@ -283,7 +283,7 @@ export default function webStorageTest() {
             const emptyOrigin = "";
             try {
                 webView.WebStorage.getOriginQuota(emptyOrigin, (error: BusinessError<void> | null, quota: number | undefined) => {
-                    if (quota !== undefined && quota !== null) {
+                    if (quota !== undefined) {
                         expect(quota === 17100011).assertTrue();
                         hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_003 quota: ' + quota);
                         return;
@@ -316,7 +316,7 @@ export default function webStorageTest() {
                         hilog.info(domain, tag, '%{public}s', 'testGetOriginQuota_static_004 quota: ' + quota);
                         expect(quota === 17100011).assertTrue();
                     })
-                    .catch((error) => {
+                    .catch((error: Error) => {
                         hilog.error(domain, tag, '%{public}s', 'testGetOriginQuota_static_004 unexpected error: ' + JSON.stringify(error));
                         expect(false).assertTrue();
                     })
@@ -342,7 +342,7 @@ export default function webStorageTest() {
                 webView.WebStorage.getOriginUsage(origin)
                     .then((usage : Double) => {
                         hilog.info(domain, tag, '%{public}s', 'testDeleteOrigin_static_001usage: ' + usage);
-                        expect(usage! == 0).assertTrue();
+                        expect(usage == 0).assertTrue();
                     })
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testDeleteOrigin_static_001 has failed for' + JSON.stringify(e));
@@ -369,7 +369,7 @@ export default function webStorageTest() {
                     hilog.info(domain, tag, '%{public}s', 'testDeleteOrigin_static_002 usage: ' + usage);
                     expect(usage === 17100011).assertTrue();
                 })
-                .catch((error) => {
+                .catch((error: Error) => {
                     hilog.info(domain, tag, '%{public}s', 'testDeleteOrigin_static_002 has failed for' + JSON.stringify(error));
                     expect(false).assertTrue();
                 });
@@ -390,7 +390,7 @@ export default function webStorageTest() {
                 webView.WebStorage.deleteAllData();
                 await Utils.msSleep(2000);
                 webView.WebStorage.getOrigins((error: BusinessError<void> | null, origins: webView.WebStorageOrigin[] | undefined) => {
-                    if (error) {
+                    if (error && error.code) {
                         hilog.info(domain, tag, '%{public}s', 'error: ' + JSON.stringify(error));
                         return;
                     }
@@ -404,10 +404,76 @@ export default function webStorageTest() {
                         hilog.info(domain, tag, '%{public}s', 'usage: ' + origins[i].usage);
                         hilog.info(domain, tag, '%{public}s', 'quota: ' + origins[i].quota);
                     }
-                    expect(origins![0].usage == 0).assertTrue();
+                    expect(origins[0].usage == 0).assertTrue();
                 })
             } catch (e) {
                 hilog.info(domain, tag, '%{public}s', 'testDeleteAllData_static_001 has failed for' + JSON.stringify(e));
+                expect(false).assertTrue();
+            }
+        })
+
+        /**
+         * @tc.name   testDeleteAllData_static_002
+         * @tc.number SUB_WEB_WEBSTORAGE_DELETEALLDATA_0002
+         * @tc.desc   test deleteAllData with null parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level   LEVEL3
+         */
+        it("testDeleteAllData_static_002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (): Promise<void> => {
+            await Utils.msSleep(2000);
+            try {
+                webView.WebStorage.deleteAllData(null as boolean);
+                await Utils.msSleep(2000);
+                webView.WebStorage.getOrigins((error: BusinessError<void> | null, origins: webView.WebStorageOrigin[] | undefined) => {
+                    if (error && error.code) {
+                        hilog.info(domain, tag, '%{public}s', 'error: ' + JSON.stringify(error));
+                        expect(true).assertTrue();
+                        return;
+                    }
+                    if (origins == null || origins.length == 0) {
+                        hilog.info(domain, tag, '%{public}s', 'testDeleteAllData_static_002 success with null param');
+                        expect(false).assertTrue();
+                        return;
+                    }
+                    hilog.info(domain, tag, '%{public}s', 'testDeleteAllData_static_002 origins length: ' + origins.length);
+                    expect(origins[0].usage === 0).assertTrue();
+                })
+            } catch (e) {
+                hilog.info(domain, tag, '%{public}s', 'testDeleteAllData_static_002 has failed for' + JSON.stringify(e));
+                expect(true).assertTrue();
+            }
+        })
+
+        /**
+         * @tc.name   testDeleteAllData_static_003
+         * @tc.number SUB_WEB_WEBSTORAGE_DELETEALLDATA_0003
+         * @tc.desc   test deleteAllData with undefined parameter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level   LEVEL3
+         */
+        it("testDeleteAllData_static_003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (): Promise<void> => {
+            await Utils.msSleep(2000);
+            try {
+                webView.WebStorage.deleteAllData(undefined);
+                await Utils.msSleep(2000);
+                webView.WebStorage.getOrigins((error: BusinessError<void> | null, origins: webView.WebStorageOrigin[] | undefined) => {
+                    if (error && error.code) {
+                        hilog.info(domain, tag, '%{public}s', 'error: ' + JSON.stringify(error));
+                        expect(false).assertTrue();
+                        return;
+                    }
+                    if (origins == null || origins.length == 0) {
+                        hilog.info(domain, tag, '%{public}s', 'testDeleteAllData_static_003 success with undefined param');
+                        expect(true).assertTrue();
+                        return;
+                    }
+                    hilog.info(domain, tag, '%{public}s', 'testDeleteAllData_static_003 origins length: ' + origins.length);
+                    expect(origins[0].usage == 0).assertTrue();
+                })
+            } catch (e) {
+                hilog.info(domain, tag, '%{public}s', 'testDeleteAllData_static_003 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
         })

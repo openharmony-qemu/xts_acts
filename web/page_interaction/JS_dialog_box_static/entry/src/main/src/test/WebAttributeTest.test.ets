@@ -25,7 +25,7 @@ import { Driver, ON } from '@ohos.UiTest';
 
 let testAbilityContext: common.UIAbilityContext;
 
-export default function webAttributeTest() {
+export default function webAttributeTest(): void {
 
   describe('WebAttributeTest', () => {
 
