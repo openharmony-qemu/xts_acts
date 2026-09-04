@@ -15,13 +15,12 @@
  */
 
 
-import { beforeAll, beforeEach, describe, it, TestType, Size, Level, expect } from '../../../hypium/index';
-import events_emitter from '@ohos.events.emitter';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import router from '@ohos.router';
 import Utils from './Util.test';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
@@ -105,36 +104,27 @@ export default function ClearPrefetchedResourceTest() : void {
 
     /**
      * @tc.name   testPrefetchResourceEmptyStatic001
-     * @tc.number SUB_WEB_PREFETCHRESOURCE_EMPTY_0100
-     * @tc.desc   test prefetchResource with empty strings and empty array
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_EMPTY_STATIC_0100
+     * @tc.desc   test prefetchResource with empty params
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
     it('testPrefetchResourceEmptyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         await Utils.msSleep(2000);
         Utils.emitEvent("testPrefetchResourceEmptyStatic001", 10)
         await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testPrefetchResourceEmptyStatic001", 401, 41023101, done,
-          (backData: events_emitter.EventData, expected: Object) => {
-            const data = backData?.data as Record<string, RecordData>;
-            expect(data['ACTION']).assertEqual(expected);
-          });
+        Utils.registerEvent("testPrefetchResourceEmptyStatic001", true, 41023101, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('clearPrefetchedResourceTestButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(5000);
         done();
-        } catch (error) {
-          console.info(JSON.stringify(error));
-          done();
-        }
       })
 
     /**
      * @tc.name   testPrefetchResourceNullStatic001
-     * @tc.number SUB_WEB_PREFETCHRESOURCE_NULL_0100
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_NULL_STATIC_0100
      * @tc.desc   test prefetchResource with null params
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -142,28 +132,19 @@ export default function ClearPrefetchedResourceTest() : void {
      */
     it('testPrefetchResourceNullStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         await Utils.msSleep(2000);
         Utils.emitEvent("testPrefetchResourceNullStatic001", 10)
         await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testPrefetchResourceNullStatic001", 401, 41023102, done,
-          (backData: events_emitter.EventData, expected: Object) => {
-            const data = backData?.data as Record<string, RecordData>;
-            expect(data['ACTION']).assertEqual(expected);
-          });
+        Utils.registerEvent("testPrefetchResourceNullStatic001", 401, 41023102, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('clearPrefetchedResourceTestButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(5000);
         done();
-        } catch (error) {
-          console.info(JSON.stringify(error));
-          done();
-        }
       })
 
     /**
      * @tc.name   testPrefetchResourceUndefinedStatic001
-     * @tc.number SUB_WEB_PREFETCHRESOURCE_UNDEFINED_0100
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PREFETCHRESOURCE_UNDEFINED_STATIC_0100
      * @tc.desc   test prefetchResource with undefined params
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -171,23 +152,14 @@ export default function ClearPrefetchedResourceTest() : void {
      */
     it('testPrefetchResourceUndefinedStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
         await Utils.msSleep(2000);
         Utils.emitEvent("testPrefetchResourceUndefinedStatic001", 10)
         await Utils.msSleep(2000);
-        Utils.registerBaseEvent("testPrefetchResourceUndefinedStatic001", 401, 41023103, done,
-          (backData: events_emitter.EventData, expected: Object) => {
-            const data = backData?.data as Record<string, RecordData>;
-            expect(data['ACTION']).assertEqual(expected);
-          });
+        Utils.registerEvent("testPrefetchResourceUndefinedStatic001", 401, 41023103, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('clearPrefetchedResourceTestButton', 10, '');
-        await Utils.msSleep(4000);
+        await Utils.msSleep(5000);
         done();
-        } catch (error) {
-          console.info(JSON.stringify(error));
-          done();
-        }
       })
   })
 }

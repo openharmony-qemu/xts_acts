@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Page Control Full Test</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      color: #1f2937;
+      background: #f6f8fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      padding: 10px 14px;
+      border-bottom: 1px solid #d7dde8;
+      background: #ffffff;
+    }
+
+    header strong {
+      display: block;
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    header span {
+      display: block;
+      margin-top: 2px;
+      color: #526172;
+      font-size: 12px;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 12px;
+    }
+
+    section {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid #d8e0ea;
+      border-radius: 6px;
+      background: #ffffff;
+    }
+
+    section h2 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0 4px;
+      color: #344256;
+      font-size: 12px;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      width: 100%;
+      min-height: 34px;
+      padding: 7px 8px;
+      border: 1px solid #97a5b8;
+      border-radius: 4px;
+      background: #ffffff;
+      color: #111827;
+      font-size: 14px;
+    }
+
+    .inline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .status {
+      min-height: 26px;
+      margin-top: 8px;
+      padding: 6px 8px;
+      border-radius: 4px;
+      background: #eef3ff;
+      color: #21345d;
+      font-size: 12px;
+      white-space: pre-wrap;
+    }
+
+    #mouse-target,
+    #key-target {
+      display: grid;
+      place-items: center;
+      min-height: 82px;
+      margin-top: 8px;
+      border: 2px solid #2f64d6;
+      border-radius: 6px;
+      background: #edf4ff;
+      color: #17356d;
+      outline: none;
+      user-select: none;
+    }
+
+    #key-input {
+      margin-top: 8px;
+    }
+
+    #scroll-target {
+      height: 170px;
+      margin-top: 8px;
+      overflow: auto;
+      border: 1px solid #6b7280;
+      border-radius: 6px;
+      background: #ffffff;
+    }
+
+    .scroll-content {
+      min-height: 820px;
+      padding: 12px;
+      background: linear-gradient(#ffffff, #e7f7ee);
+    }
+
+    .scroll-marker {
+      margin-top: 650px;
+      padding: 10px;
+      border-radius: 4px;
+      background: #d7f3e2;
+    }
+
+    #event-log {
+      grid-column: 1 / -1;
+    }
+
+    #event-log-text {
+      min-height: 116px;
+      max-height: 180px;
+      overflow: auto;
+      padding: 8px;
+      border-radius: 4px;
+      background: #111827;
+      color: #d1fae5;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>AI Page Control Full Test</strong>
+    <span>用于 executeAIPageCommand 五类页面操控能力验证</span>
+  </header>
+
+  <main id="fixture-root">
+    <section id="select-section">
+      <h2>Select 目标</h2>
+      <label for="country">单选 select</label>
+      <select id="country">
+        <option value="cn">China</option>
+        <option value="us">United States</option>
+        <option value="jp">Japan</option>
+      </select>
+
+      <label for="disabled-country">含 disabled option 的 select</label>
+      <select id="disabled-country">
+        <option value="first">First</option>
+        <option value="disabled" disabled>Disabled</option>
+        <option value="last">Last</option>
+      </select>
+
+      <label for="empty-select">无 option 的 select</label>
+      <select id="empty-select"></select>
+
+      <div id="not-select" class="status">非 select 元素</div>
+      <div id="select-status" class="status">country=cn</div>
+    </section>
+
+    <section id="input-section">
+      <h2>Input 目标</h2>
+      <div class="inline-grid">
+        <div>
+          <label for="username">text</label>
+          <input id="username" type="text" value="initial">
+        </div>
+        <div>
+          <label for="age">number</label>
+          <input id="age" type="number" value="18">
+        </div>
+        <div>
+          <label for="mail">email</label>
+          <input id="mail" type="email" value="a@example.com">
+        </div>
+        <div>
+          <label for="date-value">date</label>
+          <input id="date-value" type="date" value="2026-07-06">
+        </div>
+      </div>
+      <label>
+        <input id="agree" type="checkbox" style="width:auto; min-height:auto;"> checkbox
+      </label>
+      <div id="content" class="status">非 input 元素</div>
+      <div id="input-status" class="status">username=initial</div>
+    </section>
+
+    <section id="event-section">
+      <h2>鼠标和键盘目标</h2>
+      <div id="mouse-target" tabindex="0">Mouse target</div>
+      <div id="key-target" tabindex="0">Key target</div>
+      <input id="key-input" type="text" value="" placeholder="键盘事件观测输入框">
+      <div id="event-status" class="status">mouse=0, key=0, wheel=0</div>
+    </section>
+
+    <section id="scroll-section">
+      <h2>Scroll 目标</h2>
+      <div id="scroll-target">
+        <div class="scroll-content">
+          <p>滚动区域顶部</p>
+          <p class="scroll-marker" id="scroll-marker">滚动区域底部观测点</p>
+        </div>
+      </div>
+      <div id="scroll-status" class="status">scrollTop=0</div>
+    </section>
+
+    <section id="event-log">
+      <h2>页面事件日志</h2>
+      <div id="event-log-text">ready</div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const initial = {
+        country: 'cn',
+        disabledCountry: 'first',
+        username: 'initial',
+        age: '18',
+        mail: 'a@example.com',
+        dateValue: '2026-07-06',
+        keyInput: ''
+      };
+
+      const state = {
+        mousePressed: 0,
+        mouseReleased: 0,
+        mouseMoved: 0,
+        mouseWheel: 0,
+        click: 0,
+        keyDown: 0,
+        keyUp: 0,
+        keyChar: 0,
+        input: 0,
+        change: 0,
+        scroll: 0,
+        lastMouseType: '',
+        lastKey: '',
+        lastEvent: ''
+      };
+
+      function el(id) {
+        return document.getElementById(id);
+      }
+
+      function appendLog(message) {
+        const text = new Date().toLocaleTimeString() + ' ' + message;
+        const node = el('event-log-text');
+        node.textContent = text + '\n' + node.textContent;
+        state.lastEvent = message;
+      }
+
+      function updateStatus() {
+        el('select-status').textContent =
+          'country=' + el('country').value + ', disabled-country=' + el('disabled-country').value;
+        el('input-status').textContent =
+          'username=' + el('username').value +
+          ', age=' + el('age').value +
+          ', mail=' + el('mail').value +
+          ', date=' + el('date-value').value +
+          ', key-input=' + el('key-input').value;
+        el('event-status').textContent =
+          'pressed=' + state.mousePressed +
+          ', released=' + state.mouseReleased +
+          ', moved=' + state.mouseMoved +
+          ', wheel=' + state.mouseWheel +
+          ', keyDown=' + state.keyDown +
+          ', keyUp=' + state.keyUp +
+          ', keyChar=' + state.keyChar;
+        el('scroll-status').textContent = 'scrollTop=' + el('scroll-target').scrollTop;
+      }
+
+      function centerOf(id) {
+        const rect = el(id).getBoundingClientRect();
+        return {
+          x: Math.floor(rect.left + rect.width / 2),
+          y: Math.floor(rect.top + rect.height / 2),
+          width: Math.floor(rect.width),
+          height: Math.floor(rect.height)
+        };
+      }
+
+      function snapshot() {
+        const mouse = centerOf('mouse-target');
+        const key = centerOf('key-target');
+        const scroll = centerOf('scroll-target');
+        return {
+          country: el('country').value,
+          disabledCountry: el('disabled-country').value,
+          username: el('username').value,
+          age: el('age').value,
+          mail: el('mail').value,
+          dateValue: el('date-value').value,
+          keyInput: el('key-input').value,
+          scrollTop: el('scroll-target').scrollTop,
+          mousePressed: state.mousePressed,
+          mouseReleased: state.mouseReleased,
+          mouseMoved: state.mouseMoved,
+          mouseWheel: state.mouseWheel,
+          click: state.click,
+          keyDown: state.keyDown,
+          keyUp: state.keyUp,
+          keyChar: state.keyChar,
+          input: state.input,
+          change: state.change,
+          scroll: state.scroll,
+          lastMouseType: state.lastMouseType,
+          lastKey: state.lastKey,
+          lastEvent: state.lastEvent,
+          mouseX: mouse.x,
+          mouseY: mouse.y,
+          keyX: key.x,
+          keyY: key.y,
+          scrollX: scroll.x,
+          scrollY: scroll.y
+        };
+      }
+
+      function pass(detail) {
+        return JSON.stringify({ pass: true, detail: detail });
+      }
+
+      function fail(detail) {
+        return JSON.stringify({ pass: false, detail: detail });
+      }
+
+      function expectValue(id, expected) {
+        const actual = el(id).value;
+        return actual === expected ? pass(id + '=' + actual) :
+          fail(id + ' expected=' + expected + ', actual=' + actual);
+      }
+
+      function expectNumberAtLeast(name, actual, expected) {
+        return actual >= expected ? pass(name + '=' + actual) :
+          fail(name + ' expected >= ' + expected + ', actual=' + actual);
+      }
+
+      function reset() {
+        window.scrollTo(0, 0);
+        el('country').value = initial.country;
+        el('disabled-country').value = initial.disabledCountry;
+        el('username').value = initial.username;
+        el('age').value = initial.age;
+        el('mail').value = initial.mail;
+        el('date-value').value = initial.dateValue;
+        el('key-input').value = initial.keyInput;
+        el('agree').checked = false;
+        el('scroll-target').scrollTop = 0;
+        Object.keys(state).forEach(function (key) {
+          if (typeof state[key] === 'number') {
+            state[key] = 0;
+          } else {
+            state[key] = '';
+          }
+        });
+        el('event-log-text').textContent = 'reset';
+        updateStatus();
+        return pass('reset done');
+      }
+
+      function showScrollTarget() {
+        el('scroll-target').scrollIntoView({ block: 'center', inline: 'nearest' });
+        el('scroll-target').scrollTop = 0;
+        state.scroll = 0;
+        updateStatus();
+        return pass('scroll target visible');
+      }
+
+      function showMouseTarget() {
+        el('mouse-target').scrollIntoView({ block: 'center', inline: 'nearest' });
+        updateStatus();
+        return pass('mouse target visible');
+      }
+
+      ['country', 'disabled-country'].forEach(function (id) {
+        el(id).addEventListener('change', function (event) {
+          state.change++;
+          appendLog('change ' + id + '=' + event.target.value);
+          updateStatus();
+        });
+      });
+
+      ['username', 'age', 'mail', 'date-value', 'key-input'].forEach(function (id) {
+        el(id).addEventListener('input', function (event) {
+          state.input++;
+          appendLog('input ' + id + '=' + event.target.value);
+          updateStatus();
+        });
+        el(id).addEventListener('change', function (event) {
+          state.change++;
+          appendLog('change ' + id + '=' + event.target.value);
+          updateStatus();
+        });
+      });
+
+      document.addEventListener('mousedown', function (event) {
+        state.mousePressed++;
+        state.lastMouseType = 'mousedown';
+        appendLog('mousedown target=' + event.target.id);
+        updateStatus();
+      }, true);
+
+      document.addEventListener('mouseup', function (event) {
+        state.mouseReleased++;
+        state.lastMouseType = 'mouseup';
+        appendLog('mouseup target=' + event.target.id);
+        updateStatus();
+      }, true);
+
+      document.addEventListener('mousemove', function (event) {
+        state.mouseMoved++;
+        state.lastMouseType = 'mousemove';
+        updateStatus();
+      }, true);
+
+      document.addEventListener('click', function (event) {
+        state.click++;
+        appendLog('click target=' + event.target.id);
+        updateStatus();
+      }, true);
+
+      document.addEventListener('wheel', function (event) {
+        state.mouseWheel++;
+        state.lastMouseType = 'wheel';
+        appendLog('wheel target=' + event.target.id + ', deltaY=' + event.deltaY);
+        updateStatus();
+      }, true);
+
+      document.addEventListener('keydown', function (event) {
+        state.keyDown++;
+        state.lastKey = event.key;
+        appendLog('keydown key=' + event.key);
+        updateStatus();
+      }, true);
+
+      document.addEventListener('keyup', function (event) {
+        state.keyUp++;
+        state.lastKey = event.key;
+        appendLog('keyup key=' + event.key);
+        updateStatus();
+      }, true);
+
+      document.addEventListener('keypress', function (event) {
+        state.keyChar++;
+        state.lastKey = event.key;
+        appendLog('keypress key=' + event.key);
+        updateStatus();
+      }, true);
+
+      el('scroll-target').addEventListener('scroll', function (event) {
+        state.scroll++;
+        appendLog('scrollTop=' + event.target.scrollTop);
+        updateStatus();
+      });
+
+      window.__aiControlTest = {
+        reset: reset,
+        showScrollTarget: showScrollTarget,
+        showMouseTarget: showMouseTarget,
+        snapshot: snapshot,
+        centerOf: centerOf,
+        focusKeyInput: function () {
+          el('key-input').focus();
+          return pass('key input focused');
+        },
+        expectValue: expectValue,
+        expectScrollChanged: function () {
+          return expectNumberAtLeast('scrollTop', el('scroll-target').scrollTop, 1);
+        },
+        expectMousePressed: function () {
+          return expectNumberAtLeast('mousePressed', state.mousePressed, 1);
+        },
+        expectMouseReleased: function () {
+          return expectNumberAtLeast('mouseReleased', state.mouseReleased, 1);
+        },
+        expectMouseMoved: function () {
+          return expectNumberAtLeast('mouseMoved', state.mouseMoved, 1);
+        },
+        expectMouseWheel: function () {
+          return expectNumberAtLeast('mouseWheel', state.mouseWheel, 1);
+        },
+        expectKeyDown: function () {
+          return expectNumberAtLeast('keyDown', state.keyDown, 1);
+        },
+        expectKeyUp: function () {
+          return expectNumberAtLeast('keyUp', state.keyUp, 1);
+        },
+        expectKeyChar: function () {
+          return expectNumberAtLeast('keyChar', state.keyChar + state.input, 1);
+        }
+      };
+
+      reset();
+    })();
+  </script>
+</body>
+</html>
