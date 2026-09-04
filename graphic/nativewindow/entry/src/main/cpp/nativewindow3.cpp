@@ -1334,8 +1334,12 @@ napi_value testNativeWindowSetGet3DMetadataValueNormal(napi_env env, napi_callba
             napi_create_int32(env, CONSTANT_2, &result);
             return result;
         }
-        if (bufferSize != sizeof(OH_VIDEO_DIM_TYPE) || memcmp(getMetadata, &setMetadata, sizeof(OH_NativeBuffer_VideoDimensionType)) != 0) {
+        if (bufferSize != sizeof(OH_VIDEO_DIM_TYPE)) {
             napi_create_int32(env, CONSTANT_3, &result);
+            return result;
+        }
+        if (memcmp(getMetadata, &setMetadata, sizeof(OH_NativeBuffer_VideoDimensionType)) != 0) {
+            napi_create_int32(env, CONSTANT_4, &result);
             return result;
         }
     }
