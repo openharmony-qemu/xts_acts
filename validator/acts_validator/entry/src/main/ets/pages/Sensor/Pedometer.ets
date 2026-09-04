@@ -47,6 +47,22 @@ struct Pedometer {
       // 打开计步器传感器
       Logger.info(TAG, 'enter')
       try {
+        const sensorList: sensor.Sensor[] = sensor.getSingleSensorByDeviceSync(sensor.SensorId.PEDOMETER);
+        Logger.info(TAG, `sensorList.length: ${sensorList.length}`);
+        if (sensorList.length > 0) {
+          Logger.info(TAG, `isMockSensor: ${sensorList[0].isMockSensor}`);
+          if (sensorList[0].isMockSensor == true) {
+            this.isHave = false;
+            this.Vue = false;
+            promptAction.showToast({
+              message: '当前设备计步器传感器为模拟传感器'
+            })
+            router.back({
+              url: 'pages/Sensor/Sensor_index',
+              params: { result: 'true ', title: this.name }
+            })
+          }
+        }
         sensor.on(sensor.SensorId.PEDOMETER, (data: sensor.PedometerResponse) => {
           Logger.info(TAG, 'Succeeded in invoking on. steps: ' + data.steps);
           this.dataPedometer = data.steps.toFixed(2);
