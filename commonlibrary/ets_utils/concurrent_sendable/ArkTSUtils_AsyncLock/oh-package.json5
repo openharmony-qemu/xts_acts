@@ -14,8 +14,8 @@
  */
 
 {
-  "modelVersion": "6.0.0",
-  "name": "ason",
+  "modelVersion": "26.0.0",
+  "name": "asynclock",
   "version": "1.0.0",
   "description": "Please describe the basic information.",
   "main": "",
