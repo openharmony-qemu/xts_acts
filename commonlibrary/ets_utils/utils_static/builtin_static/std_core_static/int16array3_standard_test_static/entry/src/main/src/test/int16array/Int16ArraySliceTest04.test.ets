@@ -54,19 +54,13 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.reverse().slice(1, 4).reverse();
       let r1: number = result.$_get(0 as int);
       let e1: int = 20;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 30;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = result.$_get(2 as int);
       let e3: int = 40;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -84,14 +78,10 @@ export default function Int16ArraySliceTest04(): void {
       result1.$_set(0 as int, 999);
       let r1: number = result2.$_get(0 as int);
       let e1: int = 30;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = source.$_get(0 as int);
       let e2: int = 10;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -107,19 +97,13 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(1, 5).slice(1, 3);
       let r1: int = result.length;
       let e1: int = 2;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(0 as int);
       let e2: int = 30;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = result.$_get(1 as int);
       let e3: int = 40;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -135,19 +119,13 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(1, 4).slice(0);
       let r1: int = result.length;
       let e1: int = 3;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(0 as int);
       let e2: int = 20;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = result.$_get(2 as int);
       let e3: int = 40;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -163,14 +141,10 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 4).slice(-1);
       let r1: int = result.length;
       let e1: int = 1;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(0 as int);
       let e2: int = 40;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -186,19 +160,13 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(1, 6).slice(1, 4).slice(0, 2);
       let r1: int = result.length;
       let e1: int = 2;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(0 as int);
       let e2: int = 30;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = result.$_get(1 as int);
       let e3: int = 40;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -217,14 +185,10 @@ export default function Int16ArraySliceTest04(): void {
       });
       let r1: number = mapped.$_get(0 as int);
       let e1: int = 2;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = mapped.$_get(3 as int);
       let e2: int = 8;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -243,14 +207,10 @@ export default function Int16ArraySliceTest04(): void {
       });
       let r1: int = filtered.length;
       let e1: int = 3;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = filtered.$_get(0 as int);
       let e2: int = 30;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -358,11 +318,9 @@ export default function Int16ArraySliceTest04(): void {
       let source: Int16Array = Int16Array.of(10, 20, 30, 40, 50);
       let result: Int16Array = source.slice(0, 3);
       let r1: boolean = result.includes(20);
-      let r3: boolean = r1;
-      expect(r3).assertTrue();
+      expect(r1).assertTrue();
       let r2: boolean = result.includes(99);
-      let r4: boolean = r2;
-      expect(r4).assertFalse();
+      expect(r2).assertFalse();
     });
 
     /**
@@ -378,9 +336,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 4);
       let r1: int = result.indexOf(20);
       let e1: int = 1;
-      let r2: number = r1;
-      let e2: number = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -396,9 +352,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 5);
       let r1: int = result.lastIndexOf(20);
       let e1: int = 3;
-      let r2: number = r1;
-      let e2: number = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -414,9 +368,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(1, 4);
       let r1: string = result.join(',');
       let e1: string = '20,30,40';
-      let r2: string = r1;
-      let e2: string = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -490,14 +442,10 @@ export default function Int16ArraySliceTest04(): void {
       let sub: Int16Array = result.subarray(1, 3);
       let r1: int = sub.length;
       let e1: int = 2;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = sub.$_get(0 as int);
       let e2: int = 20;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -514,14 +462,10 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = sub.slice(0, 2);
       let r1: number = result.$_get(0 as int);
       let e1: int = 20;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 30;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -539,14 +483,10 @@ export default function Int16ArraySliceTest04(): void {
       sub.$_set(0 as int, 999);
       let r1: number = result.$_get(0 as int);
       let e1: int = 999;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = source.$_get(0 as int);
       let e2: int = 10;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -564,19 +504,13 @@ export default function Int16ArraySliceTest04(): void {
       target.set(partial, 1);
       let r1: number = target.$_get(0 as int);
       let e1: int = 0;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = target.$_get(1 as int);
       let e2: int = 10;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = target.$_get(2 as int);
       let e3: int = 20;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -593,19 +527,13 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 3);
       let r1: number = result.$_get(0 as int);
       let e1: int = 30;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 40;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = result.$_get(2 as int);
       let e3: int = 30;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -622,14 +550,10 @@ export default function Int16ArraySliceTest04(): void {
       result.$_set(1 as int, 32767);
       let r1: number = result.$_get(1 as int);
       let e1: int = 32767;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = source.$_get(1 as int);
       let e2: int = 20;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -646,14 +570,10 @@ export default function Int16ArraySliceTest04(): void {
       result.$_set(1 as int, -32768);
       let r1: number = result.$_get(1 as int);
       let e1: int = -32768;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = source.$_get(1 as int);
       let e2: int = 20;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -670,19 +590,13 @@ export default function Int16ArraySliceTest04(): void {
       let copy: Int16Array = new Int16Array(partial);
       let r1: int = copy.length;
       let e1: int = 3;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = copy.$_get(0 as int);
       let e2: int = 20;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = copy.$_get(2 as int);
       let e3: int = 40;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -699,19 +613,13 @@ export default function Int16ArraySliceTest04(): void {
       let copy: Int16Array = Int16Array.from(partial);
       let r1: int = copy.length;
       let e1: int = 3;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = copy.$_get(0 as int);
       let e2: int = 10;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = copy.$_get(2 as int);
       let e3: int = 30;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -727,9 +635,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(1, 4);
       let r1: int = result.buffer.byteLength;
       let e1: int = 6;
-      let r2: number = r1;
-      let e2: number = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -745,9 +651,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice();
       let r1: int = result.buffer.byteLength;
       let e1: number = source.buffer.byteLength;
-      let r2: number = r1;
-      let e2: number = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -768,9 +672,7 @@ export default function Int16ArraySliceTest04(): void {
       source.$_set(0 as int, 999);
       let r1: number = result.$_get(0 as int);
       let e1: int = 100;
-      let r2: number = r1;
-      let e2: number = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -789,19 +691,13 @@ export default function Int16ArraySliceTest04(): void {
       copy2.$_set(0 as int, 222);
       let r1: number = copy1.$_get(0 as int);
       let e1: int = 111;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = copy2.$_get(0 as int);
       let e2: int = 222;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = source.$_get(0 as int);
       let e3: int = 10;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -818,14 +714,10 @@ export default function Int16ArraySliceTest04(): void {
       result.$_set(4 as int, 999);
       let r1: number = source.$_get(4 as int);
       let e1: int = 50;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(4 as int);
       let e2: int = 999;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -841,14 +733,10 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.fill(8, 0, 2).reverse().slice(1, 4);
       let r1: number = result.$_get(0 as int);
       let e1: int = 4;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 3;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -864,19 +752,13 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.sort().fill(0, 3, 5).slice(1, 4);
       let r1: number = result.$_get(0 as int);
       let e1: int = 20;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 30;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = result.$_get(2 as int);
       let e3: int = 0;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -892,14 +774,10 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.reverse().sort().slice(1, 3);
       let r1: number = result.$_get(0 as int);
       let e1: int = 20;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 30;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -915,24 +793,16 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 4).fill(7, 0, 2).reverse();
       let r1: number = result.$_get(0 as int);
       let e1: int = 40;
-      let r5: number = r1;
-      let e5: number = e1;
-      expect(r5).assertEqual(e5);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 30;
-      let r6: number = r2;
-      let e6: number = e2;
-      expect(r6).assertEqual(e6);
+      expect(r2).assertEqual(e2);
       let r3: number = result.$_get(2 as int);
       let e3: int = 7;
-      let r7: number = r3;
-      let e7: number = e3;
-      expect(r7).assertEqual(e7);
+      expect(r3).assertEqual(e3);
       let r4: number = source.$_get(0 as int);
       let e4: int = 10;
-      let r8: number = r4;
-      let e8: number = e4;
-      expect(r8).assertEqual(e8);
+      expect(r4).assertEqual(e4);
     });
 
     /**
@@ -948,19 +818,13 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 4).sort().fill(99, 2, 4);
       let r1: number = result.$_get(0 as int);
       let e1: int = 10;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(2 as int);
       let e2: int = 99;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = source.$_get(0 as int);
       let e3: int = 40;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -978,14 +842,10 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.reverse().slice(0, 3);
       let r1: number = result.$_get(0 as int);
       let e1: int = 50;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 200;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -1009,14 +869,10 @@ export default function Int16ArraySliceTest04(): void {
       expect(r3).assertEqual(e3);
       let r1: number = source.$_get(0 as int);
       let e1: int = 999;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(0 as int);
       let e2: int = 10;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -1074,19 +930,13 @@ export default function Int16ArraySliceTest04(): void {
       });
       let r1: number = mapped.$_get(0 as int);
       let e1: int = 10;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = mapped.$_get(1 as int);
       let e2: int = 20;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = mapped.$_get(2 as int);
       let e3: int = 30;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -1102,9 +952,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 1);
       let r1: number = result.$_get(0 as int);
       let e1: int = -32768;
-      let r2: number = r1;
-      let e2: number = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -1120,14 +968,10 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 3);
       let r1: number = result.$_get(0 as int);
       let e1: int = 32767;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(2 as int);
       let e2: int = -32768;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -1143,19 +987,13 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(1, 4);
       let r1: number = result.$_get(0 as int);
       let e1: int = 0;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 0;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = result.$_get(2 as int);
       let e3: int = 0;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
@@ -1171,14 +1009,10 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 2);
       let r1: number = result.$_get(0 as int);
       let e1: int = -1;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = result.$_get(1 as int);
       let e2: int = 0;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -1194,9 +1028,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(1, 4);
       let r1: string = result.toString();
       let e1: string = '20,30,40';
-      let r2: string = r1;
-      let e2: string = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -1212,9 +1044,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(2, 5);
       let r1: int = result.length;
       let e1: int = 3;
-      let r2: number = r1;
-      let e2: number = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -1231,14 +1061,10 @@ export default function Int16ArraySliceTest04(): void {
       let part2: Int16Array = source.slice(2, 5);
       let r1: int = part1.length;
       let e1: int = 2;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: int = part2.length;
       let e2: int = 3;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -1254,14 +1080,10 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = source.slice(0, 0);
       let r1: int = result.length;
       let e1: int = 0;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: int = result.buffer.byteLength;
       let e2: int = 0;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -1279,14 +1101,10 @@ export default function Int16ArraySliceTest04(): void {
       target.set(part, 0);
       let r1: number = target.$_get(0 as int);
       let e1: int = 10;
-      let r3: number = r1;
-      let e3: number = e1;
-      expect(r3).assertEqual(e3);
+      expect(r1).assertEqual(e1);
       let r2: number = target.$_get(1 as int);
       let e2: int = 20;
-      let r4: number = r2;
-      let e4: number = e2;
-      expect(r4).assertEqual(e4);
+      expect(r2).assertEqual(e2);
     });
 
     /**
@@ -1304,9 +1122,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = view.slice(0, 2);
       let r1: int = result.BYTES_PER_ELEMENT;
       let e1: int = 2;
-      let r2: number = r1;
-      let e2: number = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -1326,9 +1142,7 @@ export default function Int16ArraySliceTest04(): void {
       let result: Int16Array = view.slice(1, 3);
       let r1: int = result.length;
       let e1: int = 2;
-      let r2: number = r1;
-      let e2: number = e1;
-      expect(r2).assertEqual(e2);
+      expect(r1).assertEqual(e1);
     });
 
     /**
@@ -1346,19 +1160,13 @@ export default function Int16ArraySliceTest04(): void {
       source.set(part, 0);
       let r1: number = source.$_get(0 as int);
       let e1: int = 999;
-      let r4: number = r1;
-      let e4: number = e1;
-      expect(r4).assertEqual(e4);
+      expect(r1).assertEqual(e1);
       let r2: number = source.$_get(1 as int);
       let e2: int = 30;
-      let r5: number = r2;
-      let e5: number = e2;
-      expect(r5).assertEqual(e5);
+      expect(r2).assertEqual(e2);
       let r3: number = source.$_get(2 as int);
       let e3: int = 40;
-      let r6: number = r3;
-      let e6: number = e3;
-      expect(r6).assertEqual(e6);
+      expect(r3).assertEqual(e3);
     });
 
     /**
