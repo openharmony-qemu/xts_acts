@@ -15,8 +15,7 @@
  */
 
 import hilog from '@ohos.hilog';
-import {  describe, beforeAll, it, expect, Level  } from '../../../hypium/index';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import { describe, beforeAll, it, expect, Level, Size, TestType } from '../../../hypium/index';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
@@ -24,6 +23,8 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import commonEventManager from '@ohos.commonEventManager';
 import { Driver, ON } from '@ohos.UiTest';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import Want from '@ohos.app.ability.Want';
 
 const TAG: string = 'ActsAbilityDelegatorTest';
@@ -56,6 +57,14 @@ function sleep(time: int): Promise<void> {
   });
 }
 let monitor1: abilityDelegatorRegistry.AbilityMonitor = { abilityName: '', onAbilityCreate: () => {} };
+
+// --- 静态特有用例（同步动态前官方基线，不可因动态无对应而删除）---
+let domain: int = 0x0000;
+let tag: string = 'testTag';
+const BUNDLE_NAME: string = 'com.ohos.abilitydelegatorstagetest.static';
+const abilityDelegator: abilityDelegatorRegistry.AbilityDelegator =
+  abilityDelegatorRegistry.getAbilityDelegator();
+
 export default function AbilityDelegatorStageTest(): void {
   describe('ActsAbilityTest', () => {
     beforeAll(async () => {
@@ -1231,5 +1240,807 @@ export default function AbilityDelegatorStageTest(): void {
         done();
       }
         })
+    // ===== restored static-only cases (pre-sync official, keep coverage) =====
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100
+     * @tc.desc   test addAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          let isAbilityCreated: boolean = false;
+          const onAbilityCreateCallback = (data: UIAbility) => {
+            hilog.info(domain, tag, `${itName} onAbilityCreateCallback trigger`);
+            isAbilityCreated = true;
+          }
+          const monitorAbilityName = 'EntryAbility'
+          let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+            moduleName: 'entry',
+            abilityName: `${monitorAbilityName}`,
+            onAbilityCreate: onAbilityCreateCallback
+          };
+          hilog.info(domain, tag, `${itName} addAbilityMonitorSync`);
+          abilityDelegator.addAbilityMonitorSync(monitor);
+          hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
+
+          hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+          let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+          if(user !== undefined){ 
+              cmd += ' -u ' + user; 
+          } 
+          await abilityDelegator.executeShellCommand(cmd); 
+          await Utils.msSleep(2000);
+
+          expect(isAbilityCreated).assertTrue();
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+          }
+        }
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
+     * @tc.desc   test removeAbilityMonitor(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          let isOnBackground: boolean = false;
+          let onAbilityBackgroundCallback = (ability: UIAbility) => {
+            hilog.info(domain, tag, `${itName} onAbilityBackgroundCallback trigger`);
+            isOnBackground = true;
+          }
+          const monitorAbilityName = 'EntryAbility'
+          let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+            moduleName: 'entry',
+            abilityName: `${monitorAbilityName}`,
+            onAbilityBackground: onAbilityBackgroundCallback
+          };
+          hilog.info(domain, tag, `${itName} addAbilityMonitorSync`);
+          abilityDelegator.addAbilityMonitorSync(monitor);
+          hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
+
+          // 静态 ArkTS 仅 promise 重载；保留「先 remove 再验证回调不触发」测试点
+          hilog.info(domain, tag, `${itName} removeAbilityMonitor`);
+          try {
+            await abilityDelegator.removeAbilityMonitor(monitor);
+            hilog.info(domain, tag, `${itName} removeAbilityMonitor success`);
+          } catch (rmErr) {
+            if (rmErr instanceof BusinessError) {
+              hilog.info(domain, tag,
+                `${itName} removeAbilityMonitor error code: ${rmErr?.code}, msg: ${rmErr?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+              return;
+            }
+          }
+          hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+          let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+          if (user !== undefined) {
+            cmd += ' -u ' + user;
+          }
+          await abilityDelegator.executeShellCommand(cmd);
+          await Utils.msSleep(2000);
+          hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+          const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+          await context.moveAbilityToBackground()
+            .catch((err): void => {
+              if (err instanceof BusinessError) {
+                hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+                if (err?.code == 16000061) {
+                  done();
+                }
+              }
+            });
+          await Utils.msSleep(2000);
+          expect(isOnBackground).assertFalse();
+          done();
+          hilog.info(domain, tag, `${itName} end`);
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300
+     * @tc.desc   test removeAbilityMonitor(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          let isOnBackground: boolean = false;
+          let onAbilityBackgroundCallback = (ability: UIAbility) => {
+            hilog.info(domain, tag, `${itName} onAbilityBackgroundCallback trigger`);
+            isOnBackground = true;
+          }
+          const monitorAbilityName = 'EntryAbility'
+          let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+            moduleName: 'entry',
+            abilityName: `${monitorAbilityName}`,
+            onAbilityBackground: onAbilityBackgroundCallback
+          };
+          hilog.info(domain, tag, `${itName} addAbilityMonitorSync`);
+          abilityDelegator.addAbilityMonitorSync(monitor);
+          hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
+
+          hilog.info(domain, tag, `${itName} removeAbilityMonitor promise`);
+          abilityDelegator.removeAbilityMonitor(monitor).then(async () => {
+            hilog.info(domain, tag, `${itName} removeAbilityMonitor promise success`);
+
+            hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if (user !== undefined) {
+              cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+            await context.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+
+            expect(isOnBackground).assertFalse();
+
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }).catch((e: Error) => {
+            if (e instanceof BusinessError) {
+              hilog.info(domain, tag,
+                `${itName} removeAbilityMonitor promise fail error code: ${e?.code} msg: ${e?.message}`);
+              if (e?.code == 16000061) {
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+              hilog.info(domain, tag, `${itName} end`);
+            }
+          })
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              if(err?.code == 16000061) {
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+              hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400
+     * @tc.desc   test removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          let isOnBackground: boolean = false;
+          let onAbilityBackgroundCallback = (ability: UIAbility) => {
+            hilog.info(domain, tag, `${itName} onAbilityBackgroundCallback trigger`);
+            isOnBackground = true;
+          }
+          const monitorAbilityName = 'EntryAbility'
+          let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+            moduleName: 'entry',
+            abilityName: `${monitorAbilityName}`,
+            onAbilityBackground: onAbilityBackgroundCallback
+          };
+          hilog.info(domain, tag, `${itName} addAbilityMonitorSync`);
+          abilityDelegator.addAbilityMonitorSync(monitor);
+          hilog.info(domain, tag, `${itName} addAbilityMonitorSync success`);
+
+          hilog.info(domain, tag, `${itName} removeAbilityMonitorSync`);
+          abilityDelegator.removeAbilityMonitorSync(monitor);
+          hilog.info(domain, tag, `${itName} removeAbilityMonitorSync success`);
+
+          hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+          let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+          if(user !== undefined){ 
+              cmd += ' -u ' + user; 
+          } 
+          await abilityDelegator.executeShellCommand(cmd);
+          await Utils.msSleep(2000);
+
+
+          hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+          const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+          await context.moveAbilityToBackground();
+          await Utils.msSleep(2000);
+
+          expect(isOnBackground).assertFalse();
+        } catch (err) {
+          hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+          if(err?.code == 16000061) {
+            done();
+          } else {
+            expect().assertFail();
+          }
+        }
+        done();
+        hilog.info(domain, tag, `${itName} end`);
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500
+     * @tc.desc   test waitAbilityMonitor(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500';
+        hilog.info(domain, tag, `${itName} start`);
+        if (deviceSupport === 'false') {
+          done();
+        } else {
+          try {
+            let isOnBackground: boolean = false;
+            let onAbilityBackgroundCallback = (ability: UIAbility) => {
+              hilog.info(domain, tag, `${itName} onAbilityBackgroundCallback trigger`);
+              isOnBackground = true;
+            }
+            const monitorAbilityName = 'EntryAbility'
+            let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+              moduleName: 'entry',
+              abilityName: `${monitorAbilityName}`,
+              onAbilityBackground: onAbilityBackgroundCallback
+            };
+            hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
+            abilityDelegator.waitAbilityMonitor(monitor, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
+              hilog.info(domain, tag, `${itName} waitAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
+              if (err?.code) {
+                hilog.info(domain, tag, `${itName} waitAbilityMonitor callback fail`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+                return;
+              }
+              hilog.info(domain, tag, `${itName} waitAbilityMonitor callback success`);
+              expect(data !== undefined).assertTrue();
+            })
+
+            hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
+            await abilityDelegator.executeShellCommand(cmd);
+            await Utils.msSleep(1000);
+
+            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+            await context.moveAbilityToBackground();
+            await Utils.msSleep(1000);
+
+            expect(isOnBackground).assertTrue();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          } catch (err) {
+            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600
+     * @tc.desc   test waitAbilityMonitor(callback) with timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600';
+        hilog.info(domain, tag, `${itName} start`);
+        if (deviceSupport === 'false') {
+          done();
+        } else {
+          try {
+            let isOnBackground: boolean = false;
+            let onAbilityBackgroundCallback = (ability: UIAbility) => {
+              hilog.info(domain, tag, `${itName} onAbilityBackgroundCallback trigger`);
+              isOnBackground = true;
+            }
+            const monitorAbilityName = 'EntryAbility'
+            let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+              moduleName: 'entry',
+              abilityName: `${monitorAbilityName}`,
+              onAbilityBackground: onAbilityBackgroundCallback
+            };
+            hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
+            abilityDelegator.waitAbilityMonitor(monitor, 10000, (err: BusinessError<void> | null, data: UIAbility | undefined) => {
+              hilog.info(domain, tag, `${itName} waitAbilityMonitor error code: ${err?.code}, msg: ${err?.message}`);
+              if (err?.code) {
+                hilog.info(domain, tag, `${itName} waitAbilityMonitor callback fail`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+                return;
+              }
+              hilog.info(domain, tag, `${itName} waitAbilityMonitor callback success`);
+              expect(data !== undefined).assertTrue();
+            })
+            hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
+            await abilityDelegator.executeShellCommand(cmd);
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+            await context.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+
+            expect(isOnBackground).assertTrue();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          } catch (err) {
+            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700
+     * @tc.desc   test waitAbilityMonitor(promise) with timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700';
+        hilog.info(domain, tag, `${itName} start`);
+        if (deviceSupport === 'false') {
+          done();
+        } else {
+          try {
+            let isOnBackground: boolean = false;
+            let onAbilityBackgroundCallback = (ability: UIAbility) => {
+              hilog.info(domain, tag, `${itName} onAbilityBackgroundCallback trigger`);
+              isOnBackground = true;
+            }
+            const monitorAbilityName = 'EntryAbility'
+            let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+              moduleName: 'entry',
+              abilityName: `${monitorAbilityName}`,
+              onAbilityBackground: onAbilityBackgroundCallback
+            };
+            hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
+            abilityDelegator.waitAbilityMonitor(monitor, 10000).then((data: UIAbility) => {
+              hilog.info(domain, tag, `${itName} waitAbilityMonitor promise success`);
+              expect(data !== undefined).assertTrue();
+            }).catch((e) => {
+              if (e instanceof BusinessError){
+                  hilog.info(domain, tag,
+                    `${itName} waitAbilityMonitor promise fail error code: ${e?.code} msg: ${e?.message}`);
+                  expect().assertFail();
+                  done();
+                  hilog.info(domain, tag, `${itName} end`);
+              }
+            })
+
+            hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
+            await abilityDelegator.executeShellCommand(cmd);
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+            await context.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+
+            expect(isOnBackground).assertTrue();
+
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          } catch (err) {
+            if(err instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+            }
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701
+     * @tc.desc   test waitAbilityMonitor(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701';
+        hilog.info(domain, tag, `${itName} start`);
+        if (deviceSupport === 'false') {
+          done();
+        } else {
+          try {
+            let isOnBackground: boolean = false;
+            let onAbilityBackgroundCallback = (ability: UIAbility) => {
+              hilog.info(domain, tag, `${itName} onAbilityBackgroundCallback trigger`);
+              isOnBackground = true;
+            }
+            const monitorAbilityName = 'EntryAbility'
+            let monitor: abilityDelegatorRegistry.AbilityMonitor = {
+              moduleName: 'entry',
+              abilityName: `${monitorAbilityName}`,
+              onAbilityBackground: onAbilityBackgroundCallback
+            };
+            hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
+            abilityDelegator.waitAbilityMonitor(monitor).then((data: UIAbility) => {
+              hilog.info(domain, tag, `${itName} waitAbilityMonitor promise success`);
+              expect(data !== undefined).assertTrue();
+            }).catch((e) => {
+              if(e instanceof BusinessError){
+                  hilog.info(domain, tag,
+                    `${itName} waitAbilityMonitor promise fail error code: ${e?.code} msg: ${e?.message}`);
+                  expect().assertFail();
+                  done();
+                  hilog.info(domain, tag, `${itName} end`);
+              }
+            })
+
+            hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
+            let cmd = `aa start -a ${monitorAbilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
+            await abilityDelegator.executeShellCommand(cmd);
+            await Utils.msSleep(1000);
+
+            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+            await context.moveAbilityToBackground();
+            await Utils.msSleep(1000);
+
+            expect(isOnBackground).assertTrue();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          } catch (err) {
+            if(err instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+            }
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800
+     * @tc.desc   test getCurrentTopAbility(callback) and getAbilityState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          const abilityName = 'EntryAbility';
+          hilog.info(domain, tag, `${itName} start ${abilityName}`);
+          let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;	 
+          let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+          if(user !== undefined){ 
+              cmd += ' -u ' + user; 
+          } 
+          await abilityDelegator.executeShellCommand(cmd);
+          await Utils.msSleep(2000);
+
+          hilog.info(domain, tag, `${itName} getCurrentTopAbility`);
+          abilityDelegator.getCurrentTopAbility((err: BusinessError<void> | null, ability: UIAbility | undefined) => {
+            hilog.info(domain, tag, `${itName} getCurrentTopAbility error code: ${err?.code}, msg: ${err?.message}`);
+            if (err?.code || !ability) {
+              hilog.info(domain, tag, `${itName} getCurrentTopAbility fail`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+              return;
+            }
+
+            const state = abilityDelegator.getAbilityState(ability as UIAbility);
+            hilog.info(domain, tag, `${itName} getAbilityState state: ${state}`);
+            expect(`${state}`).assertEqual('2');
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          })
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900
+     * @tc.desc   test doAbilityForeground(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900';
+        hilog.info(domain, tag, `${itName} start`);
+        if (deviceSupport === 'false') {
+          done();
+        } else {
+          try {
+            AppStorage.setOrCreate<boolean>('onForeground', false);
+            AppStorage.setOrCreate<boolean>('onBackground', false);
+
+            const abilityName = 'EntryAbility';
+            hilog.info(domain, tag, `${itName} start ${abilityName}`);
+            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;	 
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"]; 
+            if(user !== undefined){ 
+                cmd += ' -u ' + user; 
+            } 
+            await abilityDelegator.executeShellCommand(cmd);
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} getCurrentTopAbility`);
+            const ability: UIAbility = await abilityDelegator.getCurrentTopAbility();
+            hilog.info(domain, tag, `${itName} getCurrentTopAbility success ability: ${!!ability}`);
+
+            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+            context.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} doAbilityForeground`);
+            abilityDelegator.doAbilityForeground(ability, (err: BusinessError<void> | null) => {
+              hilog.info(domain, tag, `${itName} doAbilityForeground error code: ${err?.code}, msg: ${err?.message}`);
+              if (err?.code) {
+                hilog.info(domain, tag, `${itName} doAbilityForeground fail`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+                return;
+              }
+              hilog.info(domain, tag, `${itName} doAbilityForeground success`);
+            })
+            await Utils.msSleep(2000);
+
+            const isOnBackground = AppStorage.get<boolean>('onForeground') as boolean;
+            expect(isOnBackground).assertTrue();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          } catch (err) {
+            if(err instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+                expect().assertFail();
+            }
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000
+     * @tc.desc   test doAbilityForeground(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000';
+        hilog.info(domain, tag, `${itName} start`);
+        if (deviceSupport === 'false') {
+          done();
+        } else {
+          try {
+            AppStorage.setOrCreate<boolean>('onForeground', false);
+            AppStorage.setOrCreate<boolean>('onBackground', false);
+
+            const abilityName = 'EntryAbility';
+            hilog.info(domain, tag, `${itName} start ${abilityName}`);
+            let cmd = `aa start -a ${abilityName} -b ${BUNDLE_NAME}`;
+            let user = abilityDelegatorRegistry.getArguments().parameters["-u"];
+            if(user !== undefined){
+                cmd += ' -u ' + user;
+            }
+            await abilityDelegator.executeShellCommand(cmd);
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} getCurrentTopAbility`);
+            const ability: UIAbility = await abilityDelegator.getCurrentTopAbility();
+            hilog.info(domain, tag, `${itName} getCurrentTopAbility success ability: ${!!ability}`);
+
+            hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
+            const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+            await context.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} doAbilityForeground`);
+            abilityDelegator.doAbilityForeground(ability).then(async () => {
+              hilog.info(domain, tag, `${itName} doAbilityForeground success`);
+              await Utils.msSleep(2000);
+              const isOnBackground = AppStorage.get<boolean>('onForeground') as boolean;
+              expect(isOnBackground).assertTrue();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+            }).catch((e: Error) => {
+              if (e instanceof BusinessError) {
+                hilog.info(domain, tag,
+                  `${itName} doAbilityForeground fail error code: ${e?.code} msg: ${e?.message}`);
+                expect().assertFail();
+                hilog.info(domain, tag, `${itName} end`);
+              }
+            })
+          } catch (err) {
+            if(err instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+            }
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300
+     * @tc.desc   test print(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} print`);
+          const msg = '测试日志!@#$%^&*()_+QWE{}|?><Fafq3146';
+          abilityDelegator.print(msg, (err: BusinessError<void> | null) => {
+            hilog.info(domain, tag, `${itName} print error code: ${err?.code} msg: ${err?.message}`);
+            if (err?.code) {
+              hilog.info(domain, tag, `${itName} print fail`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+              return;
+            }
+            hilog.info(domain, tag, `${itName} print success`);
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          });
+        } catch (err) {
+          if (err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400
+     * @tc.desc   test print(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const itName = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1400';
+        hilog.info(domain, tag, `${itName} start`);
+        try {
+          hilog.info(domain, tag, `${itName} print`);
+          const msg = '';
+          abilityDelegator.print(msg, (err: BusinessError<void> | null) => {
+            hilog.info(domain, tag, `${itName} print error code: ${err?.code} msg: ${err?.message}`);
+            if (err?.code) {
+              hilog.info(domain, tag, `${itName} print fail`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+              return;
+            }
+            hilog.info(domain, tag, `${itName} print success`);
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          });
+        } catch (err) {
+          if (err instanceof BusinessError){
+            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+            expect().assertFail();
+            done();
+            hilog.info(domain, tag, `${itName} end`);
+          }
+        }
+      })
   })
 }
