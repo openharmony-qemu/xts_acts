@@ -12,7 +12,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-import ActsAnsNotificationDisableNotificationFeatureTest from "./ActsAnsNotificationDisableNotificationFeatureTest.test";
+import ActsAnsNotificationDisableNotificationFeatureTest from './ActsAnsNotificationDisableNotificationFeatureTest.test';
 
 export default function testsuite() {
   ActsAnsNotificationDisableNotificationFeatureTest();

@@ -25,7 +25,7 @@ let context: common.UIAbilityContext;
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -33,9 +33,9 @@ function sleep(time: number) {
 export default function ActsNotificationAnsThreePartyWatchWithOutAbilityTest() {
   describe('ActsNotificationAnsThreePartyWatchWithOutAbilityTest', () => {
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       notificationManager.setNotificationEnable({
-        bundle: "com.example.actsnotificationansthreepartywatchwithoutabilitytest"
+        bundle: 'com.example.actsnotificationansthreepartywatchwithoutabilitytest'
       }, true)
     })
     beforeEach(() => {
@@ -65,7 +65,7 @@ export default function ActsNotificationAnsThreePartyWatchWithOutAbilityTest() {
       try {
         await notificationExtensionSubscription.subscribe(infos).then(() => {
           num = 0
-          console.info(testNum + "subscribe success");
+          console.info(testNum + 'subscribe success');
           num++
           expect(num).assertEqual(1);
           expect(false).assertTrue();

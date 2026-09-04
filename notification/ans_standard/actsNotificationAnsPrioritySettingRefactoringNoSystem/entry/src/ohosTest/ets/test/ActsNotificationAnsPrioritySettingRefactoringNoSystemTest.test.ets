@@ -34,7 +34,7 @@ async function cancelSuspendDelay() {
 function sleep(time:number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
-      resolve("ok");
+      resolve('ok');
     }, time)
   });
 }
@@ -44,9 +44,9 @@ export default function actsNotificationAnsPrioritySettingRefactoringNoSystem() 
   describe('actsNotificationAnsPrioritySettingRefactoringNoSystem', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       notificationManager.setNotificationEnable({
-        bundle: "com.example.actsnotificationansprioritysettingrefactoring"
+        bundle: 'com.example.actsnotificationansprioritysettingrefactoring'
       }, true)
     })
     beforeEach(async () => {
@@ -213,7 +213,7 @@ export default function actsNotificationAnsPrioritySettingRefactoringNoSystem() 
           switches.forEach((value, key) => {
             num++
             hilog.info(0x0000, 'testTag', `${testNum}${num-1}getPriorityEnabledByBundles switches: ${key.bundle} ${key.uid}, ${value}`);
-            expect(key.bundle).assertEqual("com.example.hitsnotificationansprioritysettingrefactoring")
+            expect(key.bundle).assertEqual('com.example.hitsnotificationansprioritysettingrefactoring')
             expect(value).assertEqual(true)
             done();
           })
@@ -306,7 +306,7 @@ export default function actsNotificationAnsPrioritySettingRefactoringNoSystem() 
         await notificationManager.getPriorityStrategyByBundles(bundles).then((strategies: Map<notificationManager.BundleOption, number>) => {
           strategies.forEach((value, key) => {
             hilog.info(0x0000, 'testTag', `${testNum}getPriorityStrategyByBundles strategies: ${key.bundle} ${key.uid}, ${value}`);
-            expect(key.bundle).assertEqual("com.example.hitsnotificationansprioritysettingrefactoring")
+            expect(key.bundle).assertEqual('com.example.hitsnotificationansprioritysettingrefactoring')
             done();
           })
         }).catch((err: BusinessError) => {

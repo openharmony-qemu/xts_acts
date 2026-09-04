@@ -22,7 +22,7 @@ export default function ActsNotificationAnsEnableBatchNoSystemTest() {
   describe('ActsNotificationAnsEnableBatchNoSystemTest', () => {
     beforeAll(() => {
       notificationManager.setNotificationEnable({
-        bundle: "com.example.actsnotificationansenablebatchnosystemtest"
+        bundle: 'com.example.actsnotificationansenablebatchnosystemtest'
       }, true)
     })
     beforeEach(() => {
@@ -46,7 +46,7 @@ export default function ActsNotificationAnsEnableBatchNoSystemTest() {
       let reminderInfosOne: Array<notificationManager.NotificationReminderInfo> = [
         {
           bundle: {
-            bundle: "com.example.actsnotificationansenablebatchnosystemtest"
+            bundle: 'com.example.actsnotificationansenablebatchnosystemtest'
           },
           reminderFlags: 58,
           silentReminderEnabled: false
@@ -61,7 +61,7 @@ export default function ActsNotificationAnsEnableBatchNoSystemTest() {
       ];
       let bundles: Array<notificationManager.BundleOption> = [
         {
-          bundle: "com.example.actsnotificationansenablebatchnosystemtest",
+          bundle: 'com.example.actsnotificationansenablebatchnosystemtest',
         }
       ];
       let badges = new Map<notificationManager.BundleOption, boolean>();

@@ -4,8 +4,8 @@ import { notificationExtensionSubscription, notificationManager } from '@kit.Not
 import { BusinessError } from '@kit.BasicServicesKit'
 import { abilityAccessCtrl } from '@kit.AbilityKit';
 import { common } from '@kit.AbilityKit';
-let commonTag: string = "UnSubscribe"
-let bundleName:string = "com.example.actsNotificationAnsThreePartyWatchThirdParty"
+let commonTag: string = 'UnSubscribe'
+let bundleName:string = 'com.example.actsNotificationAnsThreePartyWatchThirdParty'
 export default function actsNotificationAnsThreePartyUnSubscribeTest() {
   let uiAbilityContext: common.UIAbilityContext | undefined =
     AppStorage.get<common.UIAbilityContext>('uiAbilityContext');
@@ -19,7 +19,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
       } catch (err) {
       }
     })
-    
+
     /**
       * @tc.number   Sub_Notification_Ans_ThreePartyWatch_1015
       * @tc.name     Sub_Notification_Ans_ThreePartyWatch_1015
@@ -29,7 +29,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
       * @tc.level    Level 0
     */
     it('Sub_Notification_Ans_ThreePartyWatch_1015', Level.LEVEL0, async (done: Function) => {
-      let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1015 ";
+      let TAG = commonTag + 'Sub_Notification_Ans_ThreePartyWatch_1015 ';
       let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
         {
           addr: '01:23:45:67:89:AB', // 使用动态获取的蓝牙地址
@@ -38,7 +38,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
       ];
       // 1、调用subscribe(info: NotificationExtensionSubscriptionInfo[]): Promise<void>接口订阅成功，其中addr按照备注方法获取，type填写BLUETOOTH
       await notificationExtensionSubscription.subscribe(infos).then(() => {
-        console.info(TAG+"subscribe success1111");
+        console.info(TAG+'subscribe success1111');
       }).catch((err: BusinessError) => {
         console.error(TAG+`subscribe fail: ${JSON.stringify(err)}`);
          if(err.code == 201){
@@ -65,7 +65,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
       });
       // 3、调用接口unsubscribe(): Promise<void>
       await notificationExtensionSubscription.unsubscribe().then(() => {
-        console.info(TAG+"unsubscribe success1111");
+        console.info(TAG+'unsubscribe success1111');
       }).catch((err: BusinessError) => {
         console.error(TAG+`unubscribe fail11111111: ${JSON.stringify(err)}`);
         if(err.code == 201){
@@ -101,7 +101,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
       * @tc.level     Level 1
      */
     it('Sub_Notification_Ans_ThreePartyWatch_1014', Level.LEVEL1, async (done: Function) => {
-      let TAG = commonTag + "Sub_Notification_Ans_ThreePartyWatch_1014 ";
+      let TAG = commonTag + 'Sub_Notification_Ans_ThreePartyWatch_1014 ';
       let count : number = 0
       let infos: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[] = [
         {
@@ -111,7 +111,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
       ];
       // 1、调用subscribe(info: NotificationExtensionSubscriptionInfo[]): Promise<void>接口订阅成功，其中addr按照备注方法获取，type填写BLUETOOTH
       await notificationExtensionSubscription.subscribe(infos).then(() => {
-        console.info(TAG+"subscribe success1111");
+        console.info(TAG+'subscribe success1111');
       }).catch((err: BusinessError) => {
         console.error(TAG+`subscribe fail: ${JSON.stringify(err)}`);
          if(err.code == 201){
@@ -138,7 +138,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
       });
       // 3、调用接口unsubscribe(): Promise<void>
       await notificationExtensionSubscription.unsubscribe().then(() => {
-        console.info(TAG+"unsubscribe success1111");
+        console.info(TAG+'unsubscribe success1111');
       }).catch((err: BusinessError) => {
         console.error(TAG+`unubscribe fail11111111: ${JSON.stringify(err)}`);
          if(err.code == 201){
@@ -151,7 +151,7 @@ export default function actsNotificationAnsThreePartyUnSubscribeTest() {
       });
       // 4、再次调用取消订阅接口unsubscribe(): Promise<void>
       await notificationExtensionSubscription.unsubscribe().then(() => {
-        console.info(TAG+"unsubscribe successtttttttt1111");
+        console.info(TAG+'unsubscribe successtttttttt1111');
         count++
         expect(count).assertEqual(1)
         done();

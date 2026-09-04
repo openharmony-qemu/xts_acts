@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ActsNotificationAnsPCPADSoftBusTest from "./ActsNotificationAnsPCPADSoftBusTest.test";
+import ActsNotificationAnsPCPADSoftBusTest from './ActsNotificationAnsPCPADSoftBusTest.test';
 
 export default function testsuite() {
   ActsNotificationAnsPCPADSoftBusTest()
