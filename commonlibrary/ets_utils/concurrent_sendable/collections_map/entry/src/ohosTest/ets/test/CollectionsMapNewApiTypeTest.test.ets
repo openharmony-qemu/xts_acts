@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 // CollectionsMapNewApiTypeTest.test.ets
-// Type traversal tests for containsValue, put, putAll(collections.Map), putAll(BuiltinMap), remove
+// Type traversal tests for containsValue, put, putAll(collections.Map), putAll(Map), remove
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { collections, BuiltinMap, ArkTSUtils } from '@kit.ArkTS';
+import { collections, ArkTSUtils } from '@kit.ArkTS';
 
 function sleep(time: number): Promise<void> {
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -70,14 +70,14 @@ export default function CollectionsMapNewApiTypeTest() {
         // containsValue
         expect(map.containsValue('new_' + id)).assertTrue();
         expect(map.containsValue('not_exist')).assertFalse();
-        // putAll(collections.Map)
+        // putAll(collections.Map) - use fixed different key to avoid NaN/Infinity arithmetic issues
         let src: collections.Map<number, string> = new collections.Map<number, string>();
-        src.set(num + 1000, 'src_' + id);
+        src.set(99990 + idx, 'src_' + id);
         map.putAll(src);
         expect(map.size).assertEqual(2);
         // putAll(BuiltinMap)
         let bsrc: BuiltinMap<number, string> = new Map<number, string>();
-        bsrc.set(num + 2000, 'bsrc_' + id);
+        bsrc.set(99995 + idx, 'bsrc_' + id);
         map.putAll(bsrc);
         expect(map.size).assertEqual(3);
         // remove
@@ -106,7 +106,7 @@ export default function CollectionsMapNewApiTypeTest() {
         src.set(str + '_x', 'src');
         map.putAll(src);
         expect(map.size).assertEqual(2);
-        let bsrc: BuiltinMap<string, string> = new Map<string, string>();
+        let bsrc: Map<string, string> = new Map<string, string>();
         bsrc.set(str + '_y', 'bsrc');
         map.putAll(bsrc);
         expect(map.size).assertEqual(3);
@@ -130,7 +130,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(false, 'fval');
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<boolean, string> = new Map<boolean, string>();
+      let bsrc: Map<boolean, string> = new Map<boolean, string>();
       bsrc.set(true, 'bsrc_t');
       map.putAll(bsrc);
       expect(map.size).assertEqual(2);
@@ -150,7 +150,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(true, 'tval');
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<boolean, string> = new Map<boolean, string>();
+      let bsrc: Map<boolean, string> = new Map<boolean, string>();
       bsrc.set(false, 'bsrc_f');
       map.putAll(bsrc);
       expect(map.size).assertEqual(2);
@@ -171,7 +171,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(undefined, 'src_u');
       map.putAll(src);
       expect(map.size).assertEqual(1);
-      let bsrc: BuiltinMap<undefined, string> = new Map<undefined, string>();
+      let bsrc: Map<undefined, string> = new Map<undefined, string>();
       bsrc.set(undefined, 'bsrc_u');
       map.putAll(bsrc);
       expect(map.size).assertEqual(1);
@@ -191,7 +191,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(null, 'src_n');
       map.putAll(src);
       expect(map.size).assertEqual(1);
-      let bsrc: BuiltinMap<null, string> = new Map<null, string>();
+      let bsrc: Map<null, string> = new Map<null, string>();
       bsrc.set(null, 'bsrc_n');
       map.putAll(bsrc);
       expect(map.size).assertEqual(1);
@@ -214,7 +214,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(new TestPerson('other', 30), 'src_p');
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<TestPerson, string> = new Map<TestPerson, string>();
+      let bsrc: Map<TestPerson, string> = new Map<TestPerson, string>();
       bsrc.set(new TestPerson('bsrc', 40), 'bsrc_p');
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -235,7 +235,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(new EmptyClass(), 'src_e');
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<EmptyClass, string> = new Map<EmptyClass, string>();
+      let bsrc: Map<EmptyClass, string> = new Map<EmptyClass, string>();
       bsrc.set(new EmptyClass(), 'bsrc_e');
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -256,7 +256,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(new ComplexIndexSignature(), 'src_c');
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<ComplexIndexSignature, string> = new Map<ComplexIndexSignature, string>();
+      let bsrc: Map<ComplexIndexSignature, string> = new Map<ComplexIndexSignature, string>();
       bsrc.set(new ComplexIndexSignature(), 'bsrc_c');
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -281,7 +281,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set('srcArr', new collections.Array<number>(5));
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, collections.Array<number>> = new Map<string, collections.Array<number>>();
+      let bsrc: Map<string, collections.Array<number>> = new Map<string, collections.Array<number>>();
       bsrc.set('bsrcArr', new collections.Array<number>(6));
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -304,7 +304,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set('srcFn', new SendableNormalFn());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, SendableNormalFn> = new Map<string, SendableNormalFn>();
+      let bsrc: Map<string, SendableNormalFn> = new Map<string, SendableNormalFn>();
       bsrc.set('bsrcFn', new SendableNormalFn());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -319,13 +319,15 @@ export default function CollectionsMapNewApiTypeTest() {
       let map: collections.Map<string, SendableArrowFn> = new collections.Map<string, SendableArrowFn>();
       let fn: SendableArrowFn = new SendableArrowFn();
       expect(map.put('afKey', fn)).assertEqual(undefined);
-      expect(map.put('afKey', new SendableArrowFn())).assertEqual(fn);
-      expect(map.containsValue(fn)).assertTrue();
+      let fn2: SendableArrowFn = new SendableArrowFn();
+      expect(map.put('afKey', fn2)).assertEqual(fn);
+      expect(map.containsValue(fn2)).assertTrue();
+      expect(map.containsValue(fn)).assertFalse();
       let src: collections.Map<string, SendableArrowFn> = new collections.Map<string, SendableArrowFn>();
       src.set('srcAf', new SendableArrowFn());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, SendableArrowFn> = new Map<string, SendableArrowFn>();
+      let bsrc: Map<string, SendableArrowFn> = new Map<string, SendableArrowFn>();
       bsrc.set('bsrcAf', new SendableArrowFn());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -340,13 +342,15 @@ export default function CollectionsMapNewApiTypeTest() {
       let map: collections.Map<string, SendableAsyncFn> = new collections.Map<string, SendableAsyncFn>();
       let fn: SendableAsyncFn = new SendableAsyncFn();
       expect(map.put('asKey', fn)).assertEqual(undefined);
-      expect(map.put('asKey', new SendableAsyncFn())).assertEqual(fn);
-      expect(map.containsValue(fn)).assertTrue();
+      let fn2: SendableAsyncFn = new SendableAsyncFn();
+      expect(map.put('asKey', fn2)).assertEqual(fn);
+      expect(map.containsValue(fn2)).assertTrue();
+      expect(map.containsValue(fn)).assertFalse();
       let src: collections.Map<string, SendableAsyncFn> = new collections.Map<string, SendableAsyncFn>();
       src.set('srcAs', new SendableAsyncFn());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, SendableAsyncFn> = new Map<string, SendableAsyncFn>();
+      let bsrc: Map<string, SendableAsyncFn> = new Map<string, SendableAsyncFn>();
       bsrc.set('bsrcAs', new SendableAsyncFn());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -361,13 +365,15 @@ export default function CollectionsMapNewApiTypeTest() {
       let map: collections.Map<string, SendableAddFn> = new collections.Map<string, SendableAddFn>();
       let fn: SendableAddFn = new SendableAddFn();
       expect(map.put('adKey', fn)).assertEqual(undefined);
-      expect(map.put('adKey', new SendableAddFn())).assertEqual(fn);
-      expect(map.containsValue(fn)).assertTrue();
+      let fn2: SendableAddFn = new SendableAddFn();
+      expect(map.put('adKey', fn2)).assertEqual(fn);
+      expect(map.containsValue(fn2)).assertTrue();
+      expect(map.containsValue(fn)).assertFalse();
       let src: collections.Map<string, SendableAddFn> = new collections.Map<string, SendableAddFn>();
       src.set('srcAd', new SendableAddFn());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, SendableAddFn> = new Map<string, SendableAddFn>();
+      let bsrc: Map<string, SendableAddFn> = new Map<string, SendableAddFn>();
       bsrc.set('bsrcAd', new SendableAddFn());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -389,7 +395,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(new SendableClassBasic(), 'src_b');
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<SendableClassBasic, string> = new Map<SendableClassBasic, string>();
+      let bsrc: Map<SendableClassBasic, string> = new Map<SendableClassBasic, string>();
       bsrc.set(new SendableClassBasic(), 'bsrc_b');
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -410,7 +416,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(new SendableClassComplex(), 'src_cx');
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<SendableClassComplex, string> = new Map<SendableClassComplex, string>();
+      let bsrc: Map<SendableClassComplex, string> = new Map<SendableClassComplex, string>();
       bsrc.set(new SendableClassComplex(), 'bsrc_cx');
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -431,7 +437,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(new SendableClassExtended(), 'src_e');
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<SendableClassExtended, string> = new Map<SendableClassExtended, string>();
+      let bsrc: Map<SendableClassExtended, string> = new Map<SendableClassExtended, string>();
       bsrc.set(new SendableClassExtended(), 'bsrc_e');
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -453,7 +459,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set(SendableEnum.Failure, 'src_f');
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<number, string> = new Map<number, string>();
+      let bsrc: Map<number, string> = new Map<number, string>();
       bsrc.set(SendableEnum.Pending, 'bsrc_p');
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -469,13 +475,15 @@ export default function CollectionsMapNewApiTypeTest() {
       let map: collections.Map<string, ArkTSUtils.locks.AsyncLock> = new collections.Map<string, ArkTSUtils.locks.AsyncLock>();
       let lock: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
       expect(map.put('lockKey', lock)).assertEqual(undefined);
-      expect(map.put('lockKey', new ArkTSUtils.locks.AsyncLock())).assertEqual(lock);
-      expect(map.containsValue(lock)).assertTrue();
+      let lock2: ArkTSUtils.locks.AsyncLock = new ArkTSUtils.locks.AsyncLock();
+      expect(map.put('lockKey', lock2)).assertEqual(lock);
+      expect(map.containsValue(lock2)).assertTrue();
+      expect(map.containsValue(lock)).assertFalse();
       let src: collections.Map<string, ArkTSUtils.locks.AsyncLock> = new collections.Map<string, ArkTSUtils.locks.AsyncLock>();
       src.set('srcLock', new ArkTSUtils.locks.AsyncLock());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, ArkTSUtils.locks.AsyncLock> = new Map<string, ArkTSUtils.locks.AsyncLock>();
+      let bsrc: Map<string, ArkTSUtils.locks.AsyncLock> = new Map<string, ArkTSUtils.locks.AsyncLock>();
       bsrc.set('bsrcLock', new ArkTSUtils.locks.AsyncLock());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -490,13 +498,15 @@ export default function CollectionsMapNewApiTypeTest() {
       let map: collections.Map<string, ArkTSUtils.locks.ConditionVariable> = new collections.Map<string, ArkTSUtils.locks.ConditionVariable>();
       let cv: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
       expect(map.put('cvKey', cv)).assertEqual(undefined);
-      expect(map.put('cvKey', new ArkTSUtils.locks.ConditionVariable())).assertEqual(cv);
-      expect(map.containsValue(cv)).assertTrue();
+      let cv2: ArkTSUtils.locks.ConditionVariable = new ArkTSUtils.locks.ConditionVariable();
+      expect(map.put('cvKey', cv2)).assertEqual(cv);
+      expect(map.containsValue(cv2)).assertTrue();
+      expect(map.containsValue(cv)).assertFalse();
       let src: collections.Map<string, ArkTSUtils.locks.ConditionVariable> = new collections.Map<string, ArkTSUtils.locks.ConditionVariable>();
       src.set('srcCv', new ArkTSUtils.locks.ConditionVariable());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, ArkTSUtils.locks.ConditionVariable> = new Map<string, ArkTSUtils.locks.ConditionVariable>();
+      let bsrc: Map<string, ArkTSUtils.locks.ConditionVariable> = new Map<string, ArkTSUtils.locks.ConditionVariable>();
       bsrc.set('bsrcCv', new ArkTSUtils.locks.ConditionVariable());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -512,13 +522,16 @@ export default function CollectionsMapNewApiTypeTest() {
       let cache: ArkTSUtils.SendableLruCache<number, string> = new ArkTSUtils.SendableLruCache<number, string>();
       cache.put(1, 'v1');
       expect(map.put('cacheKey', cache)).assertEqual(undefined);
-      expect(map.put('cacheKey', new ArkTSUtils.SendableLruCache<number, string>())).assertEqual(cache);
-      expect(map.containsValue(cache)).assertTrue();
+      let cache2: ArkTSUtils.SendableLruCache<number, string> = new ArkTSUtils.SendableLruCache<number, string>();
+      cache2.put(2, 'v2');
+      expect(map.put('cacheKey', cache2)).assertEqual(cache);
+      expect(map.containsValue(cache2)).assertTrue();
+      expect(map.containsValue(cache)).assertFalse();
       let src: collections.Map<string, ArkTSUtils.SendableLruCache<number, string>> = new collections.Map<string, ArkTSUtils.SendableLruCache<number, string>>();
       src.set('srcCache', new ArkTSUtils.SendableLruCache<number, string>());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, ArkTSUtils.SendableLruCache<number, string>> = new Map<string, ArkTSUtils.SendableLruCache<number, string>>();
+      let bsrc: Map<string, ArkTSUtils.SendableLruCache<number, string>> = new Map<string, ArkTSUtils.SendableLruCache<number, string>>();
       bsrc.set('bsrcCache', new ArkTSUtils.SendableLruCache<number, string>());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -535,13 +548,16 @@ export default function CollectionsMapNewApiTypeTest() {
       let nested: collections.Map<number, string> = new collections.Map<number, string>();
       nested.set(1, 'one');
       expect(map.put('nestedKey', nested)).assertEqual(undefined);
-      expect(map.put('nestedKey', new collections.Map<number, string>())).assertEqual(nested);
-      expect(map.containsValue(nested)).assertTrue();
+      let nested2: collections.Map<number, string> = new collections.Map<number, string>();
+      nested2.set(2, 'two');
+      expect(map.put('nestedKey', nested2)).assertEqual(nested);
+      expect(map.containsValue(nested2)).assertTrue();
+      expect(map.containsValue(nested)).assertFalse();
       let src: collections.Map<string, collections.Map<number, string>> = new collections.Map<string, collections.Map<number, string>>();
       src.set('srcNested', new collections.Map<number, string>());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, collections.Map<number, string>> = new Map<string, collections.Map<number, string>>();
+      let bsrc: Map<string, collections.Map<number, string>> = new Map<string, collections.Map<number, string>>();
       bsrc.set('bsrcNested', new collections.Map<number, string>());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -557,13 +573,16 @@ export default function CollectionsMapNewApiTypeTest() {
       let s: collections.Set<number> = new collections.Set<number>();
       s.add(1).add(2);
       expect(map.put('setKey', s)).assertEqual(undefined);
-      expect(map.put('setKey', new collections.Set<number>())).assertEqual(s);
-      expect(map.containsValue(s)).assertTrue();
+      let s2: collections.Set<number> = new collections.Set<number>();
+      s2.add(3);
+      expect(map.put('setKey', s2)).assertEqual(s);
+      expect(map.containsValue(s2)).assertTrue();
+      expect(map.containsValue(s)).assertFalse();
       let src: collections.Map<string, collections.Set<number>> = new collections.Map<string, collections.Set<number>>();
       src.set('srcSet', new collections.Set<number>());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, collections.Set<number>> = new Map<string, collections.Set<number>>();
+      let bsrc: Map<string, collections.Set<number>> = new Map<string, collections.Set<number>>();
       bsrc.set('bsrcSet', new collections.Set<number>());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -579,13 +598,16 @@ export default function CollectionsMapNewApiTypeTest() {
       let a: collections.Array<number> = new collections.Array<number>();
       a.push(1); a.push(2);
       expect(map.put('arrKey', a)).assertEqual(undefined);
-      expect(map.put('arrKey', new collections.Array<number>())).assertEqual(a);
-      expect(map.containsValue(a)).assertTrue();
+      let a2: collections.Array<number> = new collections.Array<number>();
+      a2.push(3); a2.push(4);
+      expect(map.put('arrKey', a2)).assertEqual(a);
+      expect(map.containsValue(a2)).assertTrue();
+      expect(map.containsValue(a)).assertFalse();
       let src: collections.Map<string, collections.Array<number>> = new collections.Map<string, collections.Array<number>>();
       src.set('srcArr', new collections.Array<number>());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, collections.Array<number>> = new Map<string, collections.Array<number>>();
+      let bsrc: Map<string, collections.Array<number>> = new Map<string, collections.Array<number>>();
       bsrc.set('bsrcArr', new collections.Array<number>());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -601,13 +623,15 @@ export default function CollectionsMapNewApiTypeTest() {
       let map: collections.Map<string, LargeObject> = new collections.Map<string, LargeObject>();
       let obj: LargeObject = new LargeObject();
       expect(map.put('largeKey', obj)).assertEqual(undefined);
-      expect(map.put('largeKey', new LargeObject())).assertEqual(obj);
-      expect(map.containsValue(obj)).assertTrue();
+      let obj2: LargeObject = new LargeObject();
+      expect(map.put('largeKey', obj2)).assertEqual(obj);
+      expect(map.containsValue(obj2)).assertTrue();
+      expect(map.containsValue(obj)).assertFalse();
       let src: collections.Map<string, LargeObject> = new collections.Map<string, LargeObject>();
       src.set('srcLarge', new LargeObject());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, LargeObject> = new Map<string, LargeObject>();
+      let bsrc: Map<string, LargeObject> = new Map<string, LargeObject>();
       bsrc.set('bsrcLarge', new LargeObject());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -631,7 +655,7 @@ export default function CollectionsMapNewApiTypeTest() {
       src.set('srcLargeArr', new collections.Array<number>());
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, collections.Array<number>> = new Map<string, collections.Array<number>>();
+      let bsrc: Map<string, collections.Array<number>> = new Map<string, collections.Array<number>>();
       bsrc.set('bsrcLargeArr', new collections.Array<number>());
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -648,13 +672,15 @@ export default function CollectionsMapNewApiTypeTest() {
       let cur: DeepNestedObject = root;
       for (let i: number = 1; i < 10; i++) { let n: DeepNestedObject = new DeepNestedObject('level' + i); cur.next = n; cur = n; }
       expect(map.put('deepKey', root)).assertEqual(undefined);
-      expect(map.put('deepKey', new DeepNestedObject('x'))).assertEqual(root);
-      expect(map.containsValue(root)).assertTrue();
+      let root2: DeepNestedObject = new DeepNestedObject('x');
+      expect(map.put('deepKey', root2)).assertEqual(root);
+      expect(map.containsValue(root2)).assertTrue();
+      expect(map.containsValue(root)).assertFalse();
       let src: collections.Map<string, DeepNestedObject> = new collections.Map<string, DeepNestedObject>();
       src.set('srcDeep', new DeepNestedObject('s'));
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, DeepNestedObject> = new Map<string, DeepNestedObject>();
+      let bsrc: Map<string, DeepNestedObject> = new Map<string, DeepNestedObject>();
       bsrc.set('bsrcDeep', new DeepNestedObject('b'));
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
@@ -671,13 +697,15 @@ export default function CollectionsMapNewApiTypeTest() {
       obj.ref = new CircularRef('child');
       obj.ref.ref = obj;
       expect(map.put('circularKey', obj)).assertEqual(undefined);
-      expect(map.put('circularKey', new CircularRef('x'))).assertEqual(obj);
-      expect(map.containsValue(obj)).assertTrue();
+      let obj2: CircularRef = new CircularRef('x');
+      expect(map.put('circularKey', obj2)).assertEqual(obj);
+      expect(map.containsValue(obj2)).assertTrue();
+      expect(map.containsValue(obj)).assertFalse();
       let src: collections.Map<string, CircularRef> = new collections.Map<string, CircularRef>();
       src.set('srcCirc', new CircularRef('s'));
       map.putAll(src);
       expect(map.size).assertEqual(2);
-      let bsrc: BuiltinMap<string, CircularRef> = new Map<string, CircularRef>();
+      let bsrc: Map<string, CircularRef> = new Map<string, CircularRef>();
       bsrc.set('bsrcCirc', new CircularRef('b'));
       map.putAll(bsrc);
       expect(map.size).assertEqual(3);
