@@ -214,13 +214,14 @@ export default function SideBarNavDestSupplement() {
     it('SUB_ArkUI_NavDest_NavPathStack_disableAnimation_0100', Level.LEVEL2, () => {
       console.info('SUB_ArkUI_NavDest_NavPathStack_disableAnimation_0100 START');
       const stack = new NavPathStack();
+      let noError = true;
       try {
         stack.disableAnimation(true);
         stack.disableAnimation(false);
-        expect(true).assertTrue();
       } catch (err) {
-        expect(false).assertTrue();
+        noError = false;
       }
+      expect(noError).assertTrue();
       console.info('SUB_ArkUI_NavDest_NavPathStack_disableAnimation_0100 END');
     });
 

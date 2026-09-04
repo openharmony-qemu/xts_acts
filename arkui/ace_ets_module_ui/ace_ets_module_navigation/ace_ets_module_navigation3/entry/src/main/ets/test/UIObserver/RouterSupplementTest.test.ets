@@ -568,7 +568,7 @@ export default function RouterSupplementTest() {
         expect(false).assertTrue();
       } catch (err) {
         console.info('SUB_ArkUI_Router_ReplaceNamedRoute_0300 expected error for non-existent route:' + err);
-        expect(true).assertTrue();
+        expect(err !== undefined && err !== null).assertTrue();
       }
       done();
     });

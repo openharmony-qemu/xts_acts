@@ -138,11 +138,11 @@ export default function UIObserverSupplementTest() {
         uiObserver.on('tabContentUpdate', options, callback);
         uiObserver.off('tabContentUpdate', options);
         console.info('SUB_ArkUI_UIObserver_off_tabContentUpdate_withOptions_0100 off with options without callback success');
-        expect(true).assertTrue();
       } catch (err) {
         console.error('SUB_ArkUI_UIObserver_off_tabContentUpdate_withOptions_0100 error:' + err);
         expect().assertFail();
       }
+      expect(true).assertTrue();
       done();
     });
 

@@ -563,14 +563,15 @@ export default function NavPathStackSupplement() {
       console.info('[testDisableAnimationParam0001] START');
       await CommonFunc.sleep(500);
       const navPathStack: NavPathStack = AppStorage.get<NavPathStack>('navPathStack') as NavPathStack;
+      let noError = true;
       try {
         navPathStack.disableAnimation(true);
         navPathStack.disableAnimation(false);
-        expect(true).assertTrue();
       } catch (error) {
         console.info('[testDisableAnimationParam0001] ERROR: ' + JSON.stringify(error));
-        expect(false).assertTrue();
+        noError = false;
       }
+      expect(noError).assertTrue();
       console.info('[testDisableAnimationParam0001] END');
       done();
     });
