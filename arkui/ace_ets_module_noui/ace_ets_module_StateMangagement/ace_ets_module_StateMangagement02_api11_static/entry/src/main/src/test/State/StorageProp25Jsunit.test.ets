@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,12 +27,22 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility } from '../Util.test';
+let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+
 export default function StorageProp25Jsunit() {
   describe('StorageProp25Jsunit', () => {
-beforeEach(async (): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
+      console.info("StorageProp25Jsunit beforeEach start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
+      
+    });
+
+    beforeEach(async (): Promise<void> => {
       console.info("StorageProp25Jsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/State/StorageProp25',
@@ -54,6 +64,8 @@ beforeEach(async (): Promise<void> => {
       }
       console.info("StorageProp25Jsunit beforeEach end");
     });
+
+
 
     /**
      * @tc.number   StorageProp25Jsunit_static_0100
@@ -260,7 +272,7 @@ it('StorageProp25Jsunit_static_0800', Level.LEVEL0, async (done: () => void): Pr
       console.info("[StorageProp25Jsunit_static_0800] component obj1 is: " + JSON.stringify(obj1));
       console.info("[StorageProp25Jsunit_static_0800] text: " + JSON.stringify(obj1.getElement('$attrs').getString('content')));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual("LocalStorage值PropB为123");
-      
+
       let strJson2 = inspector.getInspectorByKey('sonPropB');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info("[StorageProp25Jsunit_static_0800] component obj2 is: " + JSON.stringify(obj2));

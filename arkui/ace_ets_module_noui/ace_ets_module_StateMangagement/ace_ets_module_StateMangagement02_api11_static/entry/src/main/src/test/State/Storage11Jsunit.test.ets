@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,12 +26,21 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility } from '../Util.test';
+let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 export default function Storage11Jsunit() {
   describe('Storage11Jsunit', () => {
-beforeEach(async (): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
+      console.info("Storage11Jsunit beforeEach start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
+      
+    });
+
+    beforeEach(async (): Promise<void> => {
       console.info("Storage11Jsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/State/Storage11',
@@ -54,7 +63,9 @@ beforeEach(async (): Promise<void> => {
       console.info("Storage11Jsunit beforeEach end");
     });
 
-    //link给定的键值key存在，返回对应该键值的属性的双向绑定的数�?47
+
+
+    //link给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
     /**
      * @tc.number   Storage11Jsunit_static_0100
      * @tc.name     Storage11Jsunit_static_0100
@@ -97,7 +108,7 @@ it('Storage11Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
-    //setAndLink给定的键值key存在，返回对应该键值的属性的双向绑定的数�?47
+    //setAndLink给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
     /**
      * @tc.number   Storage11Jsunit_static_0300
      * @tc.name     Storage11Jsunit_static_0300
@@ -118,7 +129,7 @@ it('Storage11Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
-    //setAndLink给定的键值key不存在，初始化新的数�?5
+    //setAndLink给定的键值key不存在，初始化新的数据 5
     /**
      * @tc.number   Storage11Jsunit_static_0400
      * @tc.name     Storage11Jsunit_static_0400
@@ -139,7 +150,7 @@ it('Storage11Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
-    //prop给定的键值key存在，返回对应该键值的属性的双向绑定的数�?47
+    //prop给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
     /**
      * @tc.number   Storage11Jsunit_static_0500
      * @tc.name     Storage11Jsunit_static_0500
@@ -181,7 +192,7 @@ it('Storage11Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
-    //setAndProp给定的键值key存在，返回对应该键值的属性的双向绑定的数�?47
+    //setAndProp给定的键值key存在，返回对应该键值的属性的双向绑定的数据 47
     /**
      * @tc.number   Storage11Jsunit_static_0700
      * @tc.name     Storage11Jsunit_static_0700
@@ -202,7 +213,7 @@ it('Storage11Jsunit_static_0700', Level.LEVEL0, async (done: () => void): Promis
       done();
     });
 
-    //setAndProp给定的键值key存在，返回对应该键值的属性的双向绑定的数�?5
+    //setAndProp给定的键值key存在，返回对应该键值的属性的双向绑定的数据 5
     /**
      * @tc.number   Storage11Jsunit_static_0800
      * @tc.name     Storage11Jsunit_static_0800

@@ -21,12 +21,19 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
 import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function ConsumeDefaultValueStringTest() {
   describe('ConsumeDefaultValueStringTest', () => {
-        beforeEach(async (): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility")
+    })
+
+    beforeEach(async (): Promise<void> => {
       console.info("ConsumeDefaultValueStringTest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Consume/ConsumeDefaultValueString",
@@ -76,6 +83,7 @@ export default function ConsumeDefaultValueStringTest() {
       obj = JSON.parseJsonElement(strJson);
       console.info("[ConsumeDefaultValueStringTest_001] after click component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Child message Hello, World!a');
+
 
       console.info('[ConsumeDefaultValueStringTest_001] END');
       done();

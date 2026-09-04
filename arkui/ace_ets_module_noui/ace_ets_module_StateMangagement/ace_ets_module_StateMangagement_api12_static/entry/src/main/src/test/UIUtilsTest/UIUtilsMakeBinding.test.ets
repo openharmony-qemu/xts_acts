@@ -21,12 +21,20 @@ import { Router,UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
 import deviceInfo from "@ohos.deviceInfo"
 import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 export default function UIUtilsMakeBindingTest() {
   describe('UIUtilsMakeBindingTest', () => {
-        beforeEach(async (): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
+
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility")
+
+    })
+    beforeEach(async (): Promise<void> => {
       console.info("UIUtilsMakeBindingTest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/UIUtils/UIUtilsMakeBindingPage",
@@ -84,6 +92,7 @@ export default function UIUtilsMakeBindingTest() {
         .getString('content')));
       expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('Mutable Binding: 21');
 
+
       console.info('[UIUtilsMakeBindingTest_001] END');
       done();
     });
@@ -108,6 +117,7 @@ export default function UIUtilsMakeBindingTest() {
         .getElement('$attrs')
         .getString('content')));
       expect(JSON.parseJsonElement(strJsonNew1).getElement('$attrs').getString('content')).assertEqual('Hello world!');
+
 
       console.info('[UIUtilsMakeBindingTest_002] END');
       done();

@@ -22,12 +22,25 @@ import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility } from '../Util.test';
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 export default function LinkTest0090() {
   describe('LinkTest0090', () => {
-        beforeEach(async (): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
+      console.info("LinkTest0090 beforeEach start");
+
+
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
+
+    });
+
+    beforeEach(async (): Promise<void> => {
       console.info("LinkTest0090 beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/link/Link0090",
@@ -80,6 +93,7 @@ it('LinkTest0090_static_001', Level.LEVEL0, async (done: () => void): Promise<vo
       // console.info("[LinkTest0090_static_001] component obj is: " + JSON.stringify(obj));
       // expect(obj.getElement('$attrs').getString('content')).assertEqual('100');
       // console.info('[LinkTest0090_static_001] END');
+
 
       let strJson = inspector.getInspectorByKey('item_0');
       console.log("[LinkTest0090_static_001] component obj is: " + JSON.stringify(strJson))

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
+import { describe, beforeAll, expect, beforeEach, afterEach, afterAll, it, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Component, Driver, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,12 +26,22 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility } from '../Util.test';
+let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
+
 export default function Storage12Jsunit() {
   describe('Storage12Jsunit', () => {
-beforeEach(async (): Promise<void> => {
+    beforeAll(async (): Promise<void> => {
+      console.info("Storage12Jsunit beforeEach start");
+      
+      await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
+      
+    });
+
+    beforeEach(async (): Promise<void> => {
       console.info("Storage12Jsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/State/Storage12',
@@ -54,7 +64,7 @@ beforeEach(async (): Promise<void> => {
       console.info("Storage12Jsunit beforeEach end");
     });
 
-    //Size获取AppStorage中存在键值对的个�?
+    //Size获取AppStorage中存在键值对的个数
     /**
      * @tc.number   Storage12Jsunit_static_0100
      * @tc.name     Storage12Jsunit_static_0100

@@ -13,16 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from '../../../../hypium/index';
 import { Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import {UtilsTest,startAbility} from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 
 export default function editableTitleBarSymbolTest() {
   describe('editableTitleBarSymbolPage', () => {
+
+    beforeAll(async (): Promise<void> => {
+      console.info("editableTitleBarSymbolPage beforeEach start");
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
+
+    });
 
     beforeEach(async (): Promise<void> => {
       console.info("editableTitleBarSymbolPage beforeEach start");
