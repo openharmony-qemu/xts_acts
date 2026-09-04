@@ -15,12 +15,19 @@
 
 #include <pthread.h>
 #include <cstdlib>
+#include <sched.h>
 #include <unistd.h>
 #include "functionalext.h"
 
+static volatile int g_canExit = 0;
+
 static void *ThreadfuncA(void *arg)
 {
-    return arg;
+    (void)arg;
+    while (!g_canExit) {
+        sched_yield();
+    }
+    return nullptr;
 }
 
 /**
@@ -36,6 +43,7 @@ void PthreadGetattrNp0100(void)
     pthread_attr_init(&attr);
     void *threadResult = nullptr;
     int32_t ret = pthread_getattr_np(ph, &attr);
+    g_canExit = 1;
     pthread_attr_destroy(&attr);
     pthread_join(ph, &threadResult);
     void *stack = nullptr;
