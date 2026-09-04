@@ -530,7 +530,7 @@ export default function dataShareConfigDeleteTest() {
 
     /**
      * @tc.name   dataShareConfigDeleteTest016
-     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1200
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1210
      * @tc.desc   delete 4k value when maxValueLength = MAX_LENGTH_4K
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -670,7 +670,7 @@ export default function dataShareConfigDeleteTest() {
 
     /**
      * @tc.name   dataShareConfigDeleteTest020
-     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1600
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1601
      * @tc.desc   delete 100k value when maxValueLength = MAX_LENGTH_100K
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1228,7 +1228,7 @@ export default function dataShareConfigDeleteTest() {
 
     /**
      * @tc.name   dataShareConfigDeleteTest038
-     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_0930
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_0950
      * @tc.desc   maxValueLength = undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
