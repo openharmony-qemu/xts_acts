@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, expect, it, Level, beforeAll } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import Utils from '../common/Utils';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { LibUtil } from '../../../ets/pages/LibUtil'
-import { UtilsTest } from '../Util.test'
 
 let libUtil: LibUtil = new LibUtil();
 
 export default function listItemGroupNodeAdapterTest() {
 
   describe('listItemGroupNodeAdapterTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
-    });
     beforeEach(async () => {
-      await Utils.sleep(100);
+      try {
+        await Utils.sleep(100);
+      } catch (err) {
+        console.info('listItemGroupNodeAdapterTest beforeEach err: ' + JSON.stringify(err));
+      }
     });
 
     

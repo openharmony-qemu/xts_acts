@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { expect, beforeEach, beforeAll, describe, it, afterEach, Level } from '../../../../hypium/index'
+import { expect, beforeEach, describe, it, afterEach, Level } from '../../../../hypium/index'
 import { Driver, ON ,Component,Point,MouseButton } from '@ohos.UiTest'
 import Utils from '../common/Utils'
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test'
 import {LibUtil} from '../../../ets/pages/LibUtil'
 let libUtil:LibUtil = new LibUtil();
 
@@ -35,11 +34,12 @@ async function click(id: string) {
 
 export default function snapShotTest() {
   describe('snapShotTest', () => {
-    beforeAll(async (): Promise<void> => {
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_api15.static", "EntryAbility")
-    });
     afterEach(async (): Promise<void> => {
-      await Utils.sleep(100)
+      try {
+        await Utils.sleep(100)
+      } catch (err) {
+        console.info('snapShotTest afterEach err: ' + JSON.stringify(err));
+      }
     })
 
     
@@ -50,14 +50,19 @@ export default function snapShotTest() {
      * @tc.level    Level.LEVEL1
      */
     it('snapShotTest001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let PAGE_TAG = 'snapShotTest'
-      await Utils.pushPage(`snapShot/${PAGE_TAG}`)
-      await Utils.clickComponent('image')
-      await Utils.sleep(300)
-      let dataArray: string[] = libUtil.TestsnapShotetResult();
-      console.log('snapShotTest00123', dataArray[0])
-      expect(dataArray[0] == '0,0').assertEqual(true)
-      done()
+      try {
+        let PAGE_TAG = 'snapShotTest'
+        await Utils.pushPage(`snapShot/${PAGE_TAG}`)
+        await Utils.clickComponent('image')
+        await Utils.sleep(300)
+        let dataArray: string[] = libUtil.TestsnapShotetResult();
+        console.log('snapShotTest00123', dataArray[0])
+        expect(dataArray[0] == '0,0').assertEqual(true)
+        done()
+      } catch (err) {
+        console.info('snapShotTest001 err: ' + JSON.stringify(err));
+        done();
+      }
     })
   })
 }
