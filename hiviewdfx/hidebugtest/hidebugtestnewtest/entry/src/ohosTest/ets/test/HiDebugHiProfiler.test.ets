@@ -686,5 +686,117 @@ export default function ActsHiDebugHiProfilerTest() {
       }
       console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_2900 end");
     })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3000
+     * @tc.name testHidebugHiprofilerInterface30
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口type参数传入DMA，config参数maxDuration传入0，返回值11400411
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3000 start");
+      try {
+        let res = testNapi.startProfiler(5, 0, 1, 30, 1, 384);
+        expect(res == 11400411).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3000 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3000 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3000 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3100
+     * @tc.name testHidebugHiprofilerInterface31
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口type参数传入ASHMEM，config参数maxDuration传入0，返回值11400411
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3100 start");
+      try {
+        let res = testNapi.startProfiler(6, 0, 1, 30, 1, 384);
+        expect(res == 11400411).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3100 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3100 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3100 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3200
+     * @tc.name testHidebugHiprofilerInterface32
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400430
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3200 start");
+      try {
+        expect(testNapi.checkHidebugFailure() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3200 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3200 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3200 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3300
+     * @tc.name testHidebugHiprofilerInterface33
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400431
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3300 start");
+      try {
+        expect(testNapi.checkHidebugInvalidMaxAsyncNestingDepth() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3300 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3300 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3300 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3400
+     * @tc.name testHidebugHiprofilerInterface34
+     * @tc.desc 验证OH_HiDebug_StartProfiler接口错误码覆盖: 11400432
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+    it('testHidebugHiprofilerInterface34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3400 start");
+      try {
+        expect(testNapi.checkHidebugInvalidMaxAsyncTaskStackDepth() == true).assertTrue();
+        console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3400 success");
+        done();
+      } catch (err) {
+        console.error(`SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3400 > err code: ${err.code}, err msg: ${err.message}`)
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("SUB_DFX_DFR_HiDebug_HiProfiler_Interface_3400 end");
+    })
   })
 }
