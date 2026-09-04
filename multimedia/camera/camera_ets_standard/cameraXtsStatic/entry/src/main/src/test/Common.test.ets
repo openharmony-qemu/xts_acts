@@ -29,13 +29,6 @@ export const COMMON_WAIT_DURATION: number = 500;
 const domain = 0x0000;
 const tag = 'ListTest';
 
-
-export function resourceName(): string {
-  let timestamp = Date.now();
-  let filename = `avRecorder_${timestamp}.mp4`;
-  return filename;
-}
-
 export async function getFd(pathName: string):Promise<int> {
   console.info(TAG, 'case come in getFd');
   let appContext: Context = Hypium.get("Context") as Context;
@@ -52,6 +45,42 @@ export function sleep(ms: int): Promise<int> {
       resolve(0);
     }, ms);
   });
+}
+export function resourceName(): string {
+  let timestamp = Date.now();
+  let filename = `avRecorder_${timestamp}.mp4`;
+  return filename;
+}
+
+export function closeFd(fd: int): void {
+  try {
+    fs.closeSync(fd);
+    console.info(TAG, 'closeFd success, fd: ' + fd);
+  } catch (err) {
+    console.error(TAG, 'closeFd failed, err: ' + err);
+  }
+}
+
+export function checkBackCamera():boolean {
+  let testContext = Hypium.get("Context") as Context;
+  let supportedCamera = camera.getCameraManager(testContext).getSupportedCameras();
+  console.info(TAG, 'camera num: ' + supportedCamera.length);
+  if (supportedCamera.length <= 0) {
+    console.info(TAG, 'No supported camera.');
+    return false;
+  } else {
+    for (let i = 0; i < supportedCamera.length; i++) {
+      if (supportedCamera.length > 1 && supportedCamera[i].cameraPosition === camera.CameraPosition.CAMERA_POSITION_BACK) {
+        console.info(TAG, 'Supported rear Camera.');
+        return true;
+      }
+    }
+    return false;
+  }
+}
+
+export function isEmpty(value: Object | null | undefined): boolean {
+  return value === null || value === undefined;
 }
 
 export async function getPermission(name?: Permissions): Promise<void> {

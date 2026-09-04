@@ -28,6 +28,7 @@ import { GlobalThis } from './Constants';
 const TAG = "CameraXts CameraSessionAutoDeviceSwitchTest: ";
 const CAMERA_OK = 0;
 const CAMERA_INVALID_ARGUMENT = 7400101;
+const CAMERA_SESSION_NOT_CONFIG = 7400103;
 
 let receiver: image.ImageReceiver;
 
@@ -463,5 +464,28 @@ export default function CameraSessionAutoDeviceSwitchTest() {
       }
       console.info(TAG + "Entering testOHSessionUnregisterAutoDeviceSwitchCallbackTest300 ends here");
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100
+     * @tc.desc   Enables the automatic switchover device when session not config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100', Level.LEVEL2, async () => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100--------------");
+      let autoSwitchSupportInfo = cameraObj.sessionIsAutoDeviceSwitchSupported();
+      if (autoSwitchSupportInfo.errorCode != 0) {
+        expect().assertFail();
+      }
+      if (autoSwitchSupportInfo.isSupported) {
+        cameraObj.sessionRelease();
+        let ret = cameraObj.sessionEnableAutoDeviceSwitch(true);
+        expect(ret).assertEqual(CAMERA_SESSION_NOT_CONFIG);
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ENABLE_AUTO_DEVICE_SWITCH_C_0100 ends here");
+    })
+
   })
 }

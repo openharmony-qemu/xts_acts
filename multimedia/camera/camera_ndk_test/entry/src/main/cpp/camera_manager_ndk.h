@@ -444,7 +444,7 @@ public:
     Camera_ErrorCode TestPhyAptNullApts();
     Camera_ErrorCode TestPhyAptNoInput();
     Camera_ErrorCode TestPhyAptNoOutput();
-
+    Camera_ErrorCode TestPhyAptNoSize();
     Camera_ErrorCode TestDelPhyApts();
     Camera_ErrorCode TestDelPhyAptsNullSession();
     Camera_ErrorCode TestDelPhyAptsNullApts();
@@ -523,6 +523,9 @@ public:
     Camera_ErrorCode EnableAutoExtendedGainmapDelivery(bool enable);
     bool IsAutoExtendedGainmapDeliverySupported(int useCaseCode);
     Camera_ErrorCode EnableAutoExtendedGainmapDelivery(int useCaseCode, bool enable);
+    Camera_ErrorCode OHgetPhysicalAperture(int useCaseCode);
+    Camera_ErrorCode OHgetSupportedExposureDurationRange(int useCaseCode);
+    Camera_ErrorCode OHgetExposureDuration(int useCaseCode);
 
 private:
     NDKCamera(const NDKCamera&) = delete;
