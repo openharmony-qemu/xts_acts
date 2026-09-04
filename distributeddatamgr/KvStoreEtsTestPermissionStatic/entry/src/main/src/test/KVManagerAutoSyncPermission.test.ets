@@ -98,13 +98,13 @@ export default function KVManagerAutoSyncPermission() {
             if (kvManager !== null) {
                 try {
                     if (singleKvStore !== null) {
-                        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID_SINGLE, g_optionsAutoSyncTrueSingle);
-                        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID_SINGLE, g_optionsAutoSyncTrueSingle);
+                        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID_SINGLE, g_optionsAutoSyncTrueSingle);
+                        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID_SINGLE, g_optionsAutoSyncTrueSingle);
                         singleKvStore = null;
                     }
                     if (deviceKvStore !== null) {
-                        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID_DEVICE, g_optionsAutoSyncTrueDevice);
-                        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID_DEVICE, g_optionsAutoSyncTrueDevice);
+                        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID_DEVICE, g_optionsAutoSyncTrueDevice);
+                        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID_DEVICE, g_optionsAutoSyncTrueDevice);
                         deviceKvStore = null;
                     }
                 } catch (e) {
@@ -139,7 +139,7 @@ export default function KVManagerAutoSyncPermission() {
                     expect(store != undefined && store != null).assertTrue();
                     singleKvStore = store;
                     done();
-                }).catch((err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(TAG + ' getKVStore Single err ' + `, code=${err.code}, message=${err.message}`);
                     expect(null).assertFail();
                     done();
@@ -169,7 +169,7 @@ export default function KVManagerAutoSyncPermission() {
                     expect(store != undefined && store != null).assertTrue();
                     deviceKvStore = store;
                     done();
-                }).catch((err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(TAG + ' getKVStore Device err ' + `, code=${err.code}, message=${err.message}`);
                     expect(null).assertFail();
                     done();
@@ -200,17 +200,17 @@ export default function KVManagerAutoSyncPermission() {
                     await kvManager!.closeKVStore(TEST_BUNDLE_NAME, testStoreId, g_optionsAutoSyncFalseSingle).then(async () => {
                         await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, testStoreId, g_optionsAutoSyncFalseSingle).then(() => {
                             done();
-                        }).catch((err: BusinessError) => {
+                        }).catch((err: Error) => {
                             console.error(TAG + ' deleteKVStore err ' + `, code=${err.code}, message=${err.message}`);
                             expect(null).assertFail();
                             done();
                         });
-                    }).catch((err: BusinessError) => {
+                    }).catch((err: Error) => {
                         console.error(TAG + ' closeKVStore err ' + `, code=${err.code}, message=${err.message}`);
                         expect(null).assertFail();
                         done();
                     });
-                }).catch((err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.error(TAG + ' getKVStore err ' + `, code=${err.code}, message=${err.message}`);
                     expect(null).assertFail();
                     done();
