@@ -20,7 +20,6 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "library1": "file:../library1"
   }
 }
 

@@ -133,7 +133,7 @@ declare class ArkTools {
 }
 
 export async function testWorkerReceiveCache001(): Promise<boolean> {
-  const workerInstance = new worker.ThreadWorker('entry/ets/workers/workerReceiveCache.ets');
+  const workerInstance = new worker.ThreadWorker('../workers/workerReceiveCache.ets');
   // only new cache
   let cache = new ArkTSUtils.SendableLruCache<number, number>();
   workerInstance.postMessageWithSharedSendable(cache);
@@ -154,7 +154,7 @@ export async function testWorkerReceiveCache001(): Promise<boolean> {
 }
 
 export async function testWorkerReceiveCache002(): Promise<boolean> {
-  const workerInstance = new worker.ThreadWorker('entry/ets/workers/workerReceiveCache.ets');
+  const workerInstance = new worker.ThreadWorker('../workers/workerReceiveCache.ets');
   // initial cache after new cache
   let cache = new ArkTSUtils.SendableLruCache<number, number>();
   cache.put(5, 6)
@@ -176,7 +176,7 @@ export async function testWorkerReceiveCache002(): Promise<boolean> {
 }
 
 export async function testWorkerSendCache001(): Promise<boolean> {
-  const workerInstance = new worker.ThreadWorker('entry/ets/workers/workerSendCache.ets');
+  const workerInstance = new worker.ThreadWorker('../workers/workerSendCache.ets');
   workerInstance.postMessageWithSharedSendable('start');
   return new Promise<boolean>((resolve, reject) => {
     workerInstance.onmessage = (e: MessageEvents): void => {

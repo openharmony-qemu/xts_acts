@@ -3,6 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "800000",
+        "testcase-timeout":"30000",
         "bundle-name": "com.example.arkts.utils.conditionvariable",
         "module-name": "entry_test",
         "shell-timeout": "800000",

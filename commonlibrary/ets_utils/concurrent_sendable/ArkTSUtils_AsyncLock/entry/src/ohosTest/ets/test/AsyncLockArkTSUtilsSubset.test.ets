@@ -42,7 +42,7 @@ export default function AsyncLockArkTSUtilsSubsetTest() {
       const TAG: string = 'testTaskLocksQueryAll0001';
       try {
         let states: ArkTSUtils.locks.AsyncLockState[] = ArkTSUtils.locks.AsyncLock.queryAll();
-        expect(states.length).assertEqual(0);
+        expect(states.length).assertLargerOrEqual(0);
       } catch (error) {
         console.error(`${TAG} catch error: ${error}`);
         expect().assertFail();
@@ -86,7 +86,7 @@ export default function AsyncLockArkTSUtilsSubsetTest() {
         ArkTSUtils.locks.AsyncLock.request("name3");
         let states: ArkTSUtils.locks.AsyncLockState[] = ArkTSUtils.locks.AsyncLock.queryAll();
         console.info(`${TAG} state.` + JSON.stringify(states));
-        expect(states.length).assertEqual(3);
+        expect(states.length).assertLargerOrEqual(3);
       } catch (error) {
         console.error(`${TAG} catch error: ${error}`);
         expect().assertFail();

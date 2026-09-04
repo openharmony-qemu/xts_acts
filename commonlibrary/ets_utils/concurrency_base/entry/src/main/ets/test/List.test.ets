@@ -17,7 +17,6 @@ import ConcurrencyBaseTest from './ConcurrencyBase.test.ets'
 import SendableChainTest from './SendablesChain.test.ets'
 import SendableGroupTest from './SendablesGroup.test.ets'
 import SendableGroupWithAllocTest from './SendablesGroupWithAlloc.test.ets'
-import LockTest from './LockTest.test.ets'
 import TaskPoolTest from './TaskPoolTest.test.ets'
 import TaskGroupTest from './TaskGroupTest.test.ets'
 import SendablesTest from './SendablesTest.test.ets'
@@ -29,7 +28,6 @@ export default function testsuite() {
     SendableChainTest();
     SendableGroupTest();
     SendableGroupWithAllocTest();
-    LockTest();
     TaskPoolTest();
     TaskGroupTest();
     SendablesTest();

@@ -14,6 +14,7 @@
 */
 
 import AsynclockDifferentTest from "./AsynclockDifferentTest.test";
+import LockTest from './LockTest.test.ets'
 import AsynclockSameTest from "./AsynclockSameTest.test";
 import AsynclockSameAddTest from "./AsynclockSameAddTest.test";
 import AsynclockDifferentSecondTest from "./AsynclockDifferentSecondTest.test";
@@ -28,6 +29,7 @@ import AsyncLockArkTSUtilsSubsetTest from "./AsyncLockArkTSUtilsSubset.test";
 import AsyncLockUtilsCoverageSubsetTest from "./AsyncLockUtilsCoverageSubset.test";
 
 export default function testsuite() {
+  LockTest();
   AsynclockDifferentTest();
   AsynclockSameTest();
   AsynclockSameAddTest();

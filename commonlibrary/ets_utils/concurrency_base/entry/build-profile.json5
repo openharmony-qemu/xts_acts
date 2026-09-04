@@ -17,11 +17,7 @@
   "apiType": "stageMode",
   "buildOption": {
     "sourceOption": {
-      "workers": [
-        "./src/main/ets/workers/worker.ets",
-		"./src/main/ets/workers/workerReceiveCache.ets",
-		"./src/main/ets/workers/workerSendCache.ets"
-      ]
+      "workers": []
     }
   },
   "buildOptionSet": [

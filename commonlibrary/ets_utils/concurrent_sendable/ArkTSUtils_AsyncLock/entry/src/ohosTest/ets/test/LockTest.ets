@@ -19,7 +19,7 @@ import taskpool from '@ohos.taskpool';
 import utils  from '@arkts.utils';
 import { check, check_negative } from './utils';
 
-let globalWorker: worker.ThreadWorker = new worker.ThreadWorker("entry/ets/workers/worker.ets");;
+let globalWorker: worker.ThreadWorker = new worker.ThreadWorker("../workers/worker.ets");;
 
 // TESTS IMPLEMENTATION //
 
@@ -889,7 +889,7 @@ export function pressureTest() {
 
 // test entry point
 export async function setDelayRequestAndCloseWorkerInstantlyTest() {
-  let workerInstance: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/worker.ets');
+  let workerInstance: worker.ThreadWorker = new worker.ThreadWorker('../workers/worker.ets');
   let lockName = 'setDelayRequestAndCloseWorkerInstantlyTest';
   let lock = utils.locks.AsyncLock.request(lockName);
   let p = new Promise<void>((resolve, reject) => {
