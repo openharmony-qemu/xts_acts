@@ -37,7 +37,7 @@ import GraphicTextAPI2602 from './GraphicTextAPI2602.test';
 import GraphicGetTextStyle from './GraphicGetTextStyle.test';
 import GraphicParagraphTest from './GraphicParagraphTest.test';
 import FontDescriptor from './FontDescriptor.test';
-import GraphicStrutStyle from 'GraphicStrutStyle.test';
+import GraphicStrutStyle from './GraphicStrutStyle.test';
 export default function testsuite() {
   GraphicTextInterface();
   GraphicTextParagraphBuilder();
