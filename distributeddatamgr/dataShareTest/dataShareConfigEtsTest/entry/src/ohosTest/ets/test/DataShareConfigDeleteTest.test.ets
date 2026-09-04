@@ -632,7 +632,7 @@ export default function dataShareConfigDeleteTest() {
 
     /**
      * @tc.name   dataShareConfigDeleteTest019
-     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1500
+     * @tc.number SUB_DistributedData_DataShare_SDK_Expansion_1510
      * @tc.desc   delete 100k value when maxValueLength = MAX_LENGTH_4K
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
