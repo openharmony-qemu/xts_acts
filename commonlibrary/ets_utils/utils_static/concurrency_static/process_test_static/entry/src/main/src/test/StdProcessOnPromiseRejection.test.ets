@@ -27,7 +27,7 @@ import {
     Size
 } from "../../../hypium/index";
 
-import Utils from './Util.test';
+import Utils, { WaitCounter, WaitFlag } from './Util';
 
 interface CapturedError {
     reason: Error | null;
@@ -588,12 +588,14 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
 
                 let mainThreadListenerTriggered: boolean = false;
                 let mainThreadCapturedReason: Error | null = null;
+                let taskPoolReady: WaitFlag = new WaitFlag();
 
 
                 const listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object): void => {
                     console.info(`${TAG} main thread listener triggered`);
                     mainThreadListenerTriggered = true;
                     mainThreadCapturedReason = reason;
+                    taskPoolReady.ready = true;
                 };
 
                 StdProcess.on("unhandledPromiseRejection", listener);
@@ -608,7 +610,15 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 const task: taskpool.Task = new taskpool.Task(taskFunc);
                 await taskpool.execute(task);
 
-                await Utils.msSleep(30);
+                try {
+                    const ready: boolean = await Utils.waitReady(taskPoolReady, 5000, 100);
+                    expect(ready).assertTrue();
+                } catch (e) {
+                    if (e instanceof Error) {
+                        console.error(`${TAG} waitReady failed: ${e.message}`);
+                    }
+                    expect(false).assertFail();
+                }
 
                 console.info(`${TAG} main thread listener triggered: ${mainThreadListenerTriggered}`);
                 expect(mainThreadListenerTriggered).assertTrue();
@@ -631,8 +641,13 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 console.info(`${TAG} test start`);
 
                 let concurrentSet: containers.ConcurrentSet<string> = new containers.ConcurrentSet<string>();
+                let counter: WaitCounter = new WaitCounter();
                 const listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object): void => {
-                    concurrentSet.add(reason.message);
+                    const message: string = reason.message;
+                    if (!concurrentSet.has(message)) {
+                        concurrentSet.add(message);
+                        counter.count++;
+                    }
                 };
 
                 StdProcess.on("unhandledPromiseRejection", listener);
@@ -665,7 +680,15 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
 
                 await taskpool.execute(taskGroup);
 
-                await Utils.msSleep(50);
+                try {
+                    const total: int = await Utils.waitCountAtLeast(counter, 3, 5000, 100);
+                    expect(total).assertEqual(3);
+                } catch (e) {
+                    if (e instanceof Error) {
+                        console.error(`${TAG} waitCountAtLeast failed: ${e.message}`);
+                    }
+                    expect(false).assertFail();
+                }
                 expect(concurrentSet.has("TaskGroup task 1 error")).assertTrue();
                 expect(concurrentSet.has("TaskGroup task 2 error")).assertTrue();
                 expect(concurrentSet.has("TaskGroup task 3 error")).assertTrue();
@@ -687,10 +710,12 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 console.info(`${TAG} test start`);
 
                 let listenerTriggered: boolean = false;
+                let cancelReady: WaitFlag = new WaitFlag();
                 let capturedReason: Error | null = null;
                 const listener: StdProcess.RejectedObjectListener = (reason: Error, obj: Object): void => {
                     console.info(`${TAG} listener triggered`);
                     listenerTriggered = true;
+                    cancelReady.ready = true;
                     capturedReason = reason;
                 };
 
@@ -711,7 +736,15 @@ export default function stdProcessOnUnhandledPromiseRejectionTest(): void {
                 const executePromise = taskpool.execute(task);
                 taskpool.cancel(task);
 
-                await Utils.msSleep(30);
+                try {
+                    const ready: boolean = await Utils.waitReady(cancelReady, 5000, 100);
+                    expect(ready).assertTrue();
+                } catch (e) {
+                    if (e instanceof Error) {
+                        console.error(`${TAG} waitReady failed: ${e.message}`);
+                    }
+                    expect(false).assertFail();
+                }
 
                 console.info(`${TAG} listener triggered: ${listenerTriggered}`);
                 expect(listenerTriggered).assertTrue();

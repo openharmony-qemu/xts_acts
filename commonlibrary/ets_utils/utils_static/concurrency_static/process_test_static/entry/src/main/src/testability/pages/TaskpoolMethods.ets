@@ -85,7 +85,7 @@ export function taskpoolTestFunc2(uname: string): Promise<number> {
     try {
       const processManager = new StdProcess.ProcessManager();
       const result = processManager.getUidForName(uname);
-      if (result) {
+       if (result >= 0) {
         taskSuccess++;
         console.info(`taskpool call success, result: ${result}`);
       } else {
