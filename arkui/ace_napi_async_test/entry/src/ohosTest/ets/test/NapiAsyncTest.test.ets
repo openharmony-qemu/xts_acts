@@ -1193,7 +1193,7 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testNapiPromiseCreate0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testNapiPromiseCreate0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       console.info('testNapiPromiseCreate0003 begin');
       let result: number = await testNapi.createPromiseAndReject(new Error('promise rejected from js'))
         .then(() => {
@@ -1203,6 +1203,7 @@ export default function abilityTest() {
           return err.message === 'promise rejected from js';
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
@@ -1283,7 +1284,7 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testNapiPromiseMultiThread0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+    it('testNapiPromiseMultiThread0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testNapiPromiseMultiThread0005 begin');
       let result: number = await testNapi.testThreadSafeReject()
         .then(() => {
@@ -1293,6 +1294,7 @@ export default function abilityTest() {
           return `${err}` === 'thread safe reject';
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
@@ -1332,7 +1334,7 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 0
      */
-    it('testNapiDeferredReject0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async () => {
+    it('testNapiDeferredReject0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (done: Function) => {
       console.info('testNapiDeferredReject0001 begin');
       let result: number = await testNapi.rejectPromiseWithValue(new Error('reject-from-js'))
         .then(() => {
@@ -1342,6 +1344,7 @@ export default function abilityTest() {
           return err.message === 'reject-from-js';
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
@@ -1377,7 +1380,7 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testNapiPromiseNested0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('testNapiPromiseNested0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testNapiPromiseNested0002 begin');
       let result: number = await testNapi.createChainedTimeoutPromise()
         .then((value: Object) => {
@@ -1389,6 +1392,7 @@ export default function abilityTest() {
         .finally(() => {
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
@@ -1455,7 +1459,7 @@ export default function abilityTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('testNapiPromiseNested0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
+    it('testNapiPromiseNested0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: Function) => {
       console.info('testNapiPromiseNested0007 begin');
       let result: number = await testNapi.testRejectInNestedPromise()
         .then(() => {
@@ -1465,6 +1469,7 @@ export default function abilityTest() {
           return `${err}` === 'inner error';
         });
       expect(result).assertTrue();
+      done();
     })
 
     /**
