@@ -61,7 +61,7 @@ export default function onDidStopFlingTest() {
         let width = right - left;
         await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
         await CommonFunc.sleep(2000);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('onDidStopFling'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('GridModifier_onDidStopFling' + '_onDidStopFling'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('第1次Fling停止');

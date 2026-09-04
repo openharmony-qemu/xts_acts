@@ -61,7 +61,7 @@ export default function onDidStopDraggingTest() {
         let width = right - left;
         await driver.swipe(Math.round(left + width/2).toInt(), Math.round(top + height*0.8).toInt(), Math.round(left + width/2).toInt(),Math.round(top + height*0.2).toInt(), 1000);
         await CommonFunc.sleep(2000);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('onDidStopDragging'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('Grid_onDidStopDragging' + '_onDidStopDragging'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('第1次触发 - 有Fling动效');

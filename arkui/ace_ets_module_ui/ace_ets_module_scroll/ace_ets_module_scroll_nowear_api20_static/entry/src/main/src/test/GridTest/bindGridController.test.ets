@@ -62,15 +62,15 @@ export default function bindGridControllerSetOnTest() {
         await CommonFunc.sleep(200);
         await (oriBtn2?.click() as Promise<void>);
         await CommonFunc.sleep(1000);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('str6'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str6'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('OnWillScroll start');
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('str'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('OnDidScroll start');
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('str4'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str4'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('onScrollIndex start');
@@ -99,7 +99,7 @@ export default function bindGridControllerSetOnTest() {
         let oriBtn1 = await driver.findComponent(ON.id('set'));
         await (oriBtn1?.click() as Promise<void>);
         await CommonFunc.sleep(200);
-        let dragScroll = await driver.findComponent(ON.id('grid_dragging_fling'));
+        let dragScroll = await driver.findComponent(ON.id('bindGridController' + '_grid_dragging_fling'));
         const rect = await (dragScroll?.getBounds() as Promise<Rect>);
         let top = rect.top;
         let right = rect.right;
@@ -129,7 +129,7 @@ export default function bindGridControllerSetOnTest() {
             Math.round(left + width * 0.9).toInt(),        // 终点 X：右侧 90% 处（避免贴边）
             Math.round(top + height / 2).toInt() );
         await CommonFunc.sleep(200);
-        expect(JSON.parseJsonElement(inspector.getInspectorByKey('str7'))
+        expect(JSON.parseJsonElement(inspector.getInspectorByKey('bindGridController' + '_str7'))
             .getElement('$attrs')
             .getString('content'))
             .assertEqual('OnReachStart start');
