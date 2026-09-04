@@ -1266,7 +1266,7 @@ export default function DataSharePredicatesErrTest() {
 
     /**
      * @tc.name   SUB_DataShare_NotIn0004
-     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0520
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0800
      * @tc.desc   SUB_DataShare_NotIn0004
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1286,7 +1286,7 @@ export default function DataSharePredicatesErrTest() {
 
     /**
      * @tc.name   SUB_DataShare_NotIn0005
-     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0520
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0900
      * @tc.desc   SUB_DataShare_NotIn0005
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1307,7 +1307,7 @@ export default function DataSharePredicatesErrTest() {
 
     /**
      * @tc.name   SUB_DataShare_NotIn0006
-     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0520
+     * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesErrtest_0910
      * @tc.desc   SUB_DataShare_NotIn0006
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
