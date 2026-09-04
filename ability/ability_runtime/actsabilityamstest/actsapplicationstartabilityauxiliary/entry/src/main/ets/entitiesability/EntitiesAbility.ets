@@ -42,16 +42,18 @@ export default class EntryAbility extends UIAbility {
     this.TEST_CASE_NAME = want.action as string;
     this.onCreateFlag = true
     if (this.TEST_CASE_NAME == 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5200') {
+      let keyForObjectExpected: Record<string, Object> = {
+        'keyForObjectString': 'str',
+        'keyForObjectInt': -200,
+        'keyForObjectDouble': 35.5,
+        'keyForObjectBool': false,
+      };
       if (want.parameters?.keyForString === 'str' &&
         want.parameters?.keyForInt === 100 &&
         want.parameters?.keyForDouble === 99.99 &&
         want.parameters?.keyForBool === true &&
-      DeepEquals.deepEqual(want.parameters.keyForObject, {
-        keyForObjectString: 'str',
-        keyForObjectInt: -200,
-        keyForObjectDouble: 35.5,
-        keyForObjectBool: false,
-      }) &&
+        DeepEquals.deepEqual(want.parameters?.keyForObject as Record<string, Object>,
+          keyForObjectExpected) &&
         JSON.stringify(want.parameters?.keyForArrayString) == JSON.stringify(['str1', 'str2', 'str3']) &&
         JSON.stringify(want.parameters?.keyForArrayInt) == JSON.stringify([100, 200, 300, 400]) &&
         JSON.stringify(want.parameters?.keyForArrayDouble) == JSON.stringify([0.1, 0.2]) &&
@@ -79,7 +81,7 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     hilog.info(0x0000, 'testTag', '%{public}s', `Wantyy: ${JSON.stringify(this.onWindowStageCreateFlag)}`);
     this.onWindowStageCreateFlag = true;
-    windowStage.loadContent('pages/Index', (err) => {
+    windowStage.loadContent('pages/Index', (err: BusinessError) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;

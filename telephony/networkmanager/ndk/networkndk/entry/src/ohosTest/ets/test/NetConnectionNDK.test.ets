@@ -22,6 +22,8 @@ const CASE_INDEX_3 = 3;
 const CASE_INDEX_4 = 4;
 const CASE_INDEX_5 = 5;
 const CASE_INDEX_6 = 6;
+const CASE_INDEX_7 = 7;
+const CASE_INDEX_8 = 8;
 // 成功
 const NETCONNECTION_OK = 0;
 // 参数错误
@@ -630,6 +632,48 @@ export default function NetConnectionNDKTest() {
     it('testOHNetConnRegisterNetConnCallback_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let re: number = ncAPI.OHNetConnRegisterNetConnCallback(CASE_INDEX_5);
       expect(re).assertEqual(NETCONNECTION_OK);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHNetConnRegisterNetConnCallback_1200
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNetConnRegisterNetConnCallback_1200
+     * @tc.desc   ：Register net connection callback with bluetooth netspecifier.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHNetConnRegisterNetConnCallback_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let re: number = ncAPI.OHNetConnRegisterNetConnCallback(CASE_INDEX_6);
+      expect(re).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHNetConnRegisterNetConnCallback_1300
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNetConnRegisterNetConnCallback_1300
+     * @tc.desc   ：Register net connection callback with ethernet netspecifier.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHNetConnRegisterNetConnCallback_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let re: number = ncAPI.OHNetConnRegisterNetConnCallback(CASE_INDEX_7);
+      expect(re).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testOHNetConnRegisterNetConnCallback_1400
+     * @tc.number SUB_NETWORK_WEBSOCKET_OHNetConnRegisterNetConnCallback_1400
+     * @tc.desc   ：Register net connection callback with vpn netspecifier.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testOHNetConnRegisterNetConnCallback_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let re: number = ncAPI.OHNetConnRegisterNetConnCallback(CASE_INDEX_8);
+      expect(re).assertEqual(0);
       done();
     });
 

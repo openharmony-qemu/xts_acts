@@ -2112,6 +2112,7 @@ export default function PacketFilterTest() {
         const info: packetFilterSdk.createPacketInfo = packetFilterSdk.createPacketController(100, 500);
         hilog.info(domain, tag, `${caseName} create ret: ${JSON.stringify(info.ret)}`);
         let rule: packetFilterSdk.Rule = getBaseRule();
+        rule.hookPoint = HookPointType.INPUT;
         rule.inInterface = { enabled: true, ifName: 'eho', invert: false, isPrefix: false };
         const ret: number = packetFilterSdk.addPacketRule(info.id, rule);
         hilog.info(domain, tag, `${caseName} add rule ret: ${JSON.stringify(ret)}`);

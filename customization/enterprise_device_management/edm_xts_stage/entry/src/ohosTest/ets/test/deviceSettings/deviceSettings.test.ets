@@ -2874,7 +2874,7 @@ export default function deviceSettingsTest() {
     /**
      * @tc.name   test_device_settings_remove_hidden_settings_menu_0109
      * @tc.number SUB_CUSTOMIZATION_EDM_DEVICE_SETTINGS_REMOVE_HIDDEN_SETTINGS_MENU_JS_0109
-     * @tc.desc   test add hidden settings menu success
+     * @tc.desc   test remove hidden settings menu success
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -2886,7 +2886,7 @@ export default function deviceSettingsTest() {
         const removeResultList: Array<number> = deviceSettings.getHiddenSettingsMenu(SELFWANT) as Array<number>;
         expect(removeResultList.length).assertEqual(0);
       } catch (error) {
-        expect(error.code === 801).assertTrue();
+        expect(error.code === '801').assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

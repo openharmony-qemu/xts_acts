@@ -13,7 +13,7 @@ let subscriber: CommonEventManager.CommonEventSubscriber; // 用于保存创建�
 let Tag = actsNotificationAnsCovered
 // 订阅者信息
 let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
-  events: ["event"]
+  events: ['event']
 };
 
 async function sleep(time: number) {
@@ -26,7 +26,7 @@ export default function actsNotificationAnsCovered() {
   describe('actsNotificationAnsCovered', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
-      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext
       NotificationManager.requestEnableNotification(context).then(() => {
         console.info(`requestEnableNotification succeeded`);
       }).catch((err: BusinessError) => {
@@ -76,7 +76,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1101', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1101"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1101'
       try {
         //发布公共事件
         let publishCB = (err: Base.BusinessError) => {
@@ -85,14 +85,14 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             expect(false).assertTrue();
             done()
           }
         }
         CommonEventManager.publish(undefined, publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(error.code).assertEqual(401);
         done()
       }
@@ -107,7 +107,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1103', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1103"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1103'
       try {
         //发布公共事件
         let publishCB = (err: Base.BusinessError) => {
@@ -116,14 +116,14 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             expect(false).assertTrue();
             done()
           }
         }
         CommonEventManager.publish('', undefined,publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(error.code).assertEqual(401);
         done()
       }
@@ -138,7 +138,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1104', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1104"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1104'
       try {
         //发布公共事件
         let publishCB = (err: Base.BusinessError) => {
@@ -147,14 +147,14 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             expect(false).assertTrue();
             done()
           }
         }
         CommonEventManager.publish(undefined, undefined,publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(error.code).assertEqual(401);
         done()
       }
@@ -169,7 +169,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1105', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1105"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1105'
       try {
         //发布公共事件
         let publishCB = (err: Base.BusinessError) => {
@@ -178,14 +178,14 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             expect(false).assertTrue();
             done()
           }
         }
         CommonEventManager.publish(null,null,publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(error.code).assertEqual(401);
         done()
       }
@@ -200,7 +200,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1102', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1102"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1102'
       try {
         //发布公共事件
         let publishCB = (err: Base.BusinessError) => {
@@ -209,14 +209,14 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             expect(false).assertTrue();
             done()
           }
         }
         CommonEventManager.publish(null, publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(error.code).assertEqual(401);
         done()
       }
@@ -231,7 +231,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1001', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1000"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1000'
       try {
         //发布公共事件
         let publishCB = (err: Base.BusinessError) => {
@@ -240,14 +240,14 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             expect(false).assertTrue();
             done()
           }
         }
         commonEvent.publish('', publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(false).assertTrue();
         done()
       }
@@ -262,11 +262,11 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1011', Level.LEVEL1, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1011"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1011'
       //公共事件相关信息
       let options: CommonEventManager.CommonEventPublishData = {
         code: 0, //公共事件的初始代码
-        data: "initial data", //公共事件的初始数据
+        data: 'initial data', //公共事件的初始数据
         isOrdered: true  //有序公共事件
       }
       //发布公共事件回调
@@ -276,7 +276,7 @@ export default function actsNotificationAnsCovered() {
           expect(err.code).assertEqual(1);
           done()
         } else {
-          console.info(TAG + "publish success");
+          console.info(TAG + 'publish success');
           expect(false).assertTrue();
           done()
         }
@@ -285,7 +285,7 @@ export default function actsNotificationAnsCovered() {
         //发布公共事件
         commonEvent.publish('', options, publishCB);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -300,7 +300,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1004', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1004"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1004'
       // publish回调
       let publishCallback = (err: Base.BusinessError) => {
         if (err) {
@@ -308,7 +308,7 @@ export default function actsNotificationAnsCovered() {
           expect(false).assertTrue()
           done()
         } else {
-          console.info(TAG + "publish success");
+          console.info(TAG + 'publish success');
           expect(false).assertTrue()
           done()
         }
@@ -319,16 +319,16 @@ export default function actsNotificationAnsCovered() {
         content: {
           contentType: Notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_additionalText"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_additionalText'
           }
         }
       };
       try {
         Notification.publish(null, publishCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -343,7 +343,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1005', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1005"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1005'
       // publish回调
       let publishCallback = (err: Base.BusinessError) => {
         if (err) {
@@ -351,7 +351,7 @@ export default function actsNotificationAnsCovered() {
           expect(false).assertTrue()
           done()
         } else {
-          console.info(TAG + "publish success");
+          console.info(TAG + 'publish success');
           expect(false).assertTrue()
           done()
         }
@@ -362,16 +362,16 @@ export default function actsNotificationAnsCovered() {
         content: {
           contentType: Notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_additionalText"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_additionalText'
           }
         }
       };
       try {
         Notification.publish(undefined, publishCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -386,7 +386,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1004', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1004"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1004'
       // publish回调
       let publishCallback = (err: Base.BusinessError) => {
         if (err) {
@@ -394,7 +394,7 @@ export default function actsNotificationAnsCovered() {
           expect(false).assertTrue()
           done()
         } else {
-          console.info(TAG + "publish success");
+          console.info(TAG + 'publish success');
           expect(false).assertTrue()
           done()
         }
@@ -405,16 +405,16 @@ export default function actsNotificationAnsCovered() {
         content: {
           contentType: Notification.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
-            title: "test_title",
-            text: "test_text",
-            additionalText: "test_additionalText"
+            title: 'test_title',
+            text: 'test_text',
+            additionalText: 'test_additionalText'
           }
         }
       };
       try {
         Notification.publish(null, publishCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -429,10 +429,10 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1006', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1006"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1006'
       try {
         Notification.publish(null).then(() => {
-          console.info(TAG + "publish success");
+          console.info(TAG + 'publish success');
           expect(false).assertTrue()
           done()
         }).catch((err: Base.BusinessError) => {
@@ -441,7 +441,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -456,10 +456,10 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1007', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1007"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1007'
       try {
         Notification.publish(undefined).then(() => {
-          console.info(TAG + "publish success");
+          console.info(TAG + 'publish success');
           expect(false).assertTrue()
           done()
         }).catch((err: Base.BusinessError) => {
@@ -468,7 +468,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -483,15 +483,15 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1008', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1008"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1008'
       // cancel回调
       let cancelCallback = (err: Base.BusinessError) => {
         if (err) {
-          console.info(TAG + "cancel failed " + JSON.stringify(err));
+          console.info(TAG + 'cancel failed ' + JSON.stringify(err));
           expect(err.code).assertEqual(401);
           done()
         } else {
-          console.info(TAG + "cancel success");
+          console.info(TAG + 'cancel success');
           expect(false).assertTrue()
           done()
         }
@@ -500,7 +500,7 @@ export default function actsNotificationAnsCovered() {
       try {
         Notification.cancel(null, cancelCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -515,15 +515,15 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1009', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1009"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1009'
       // cancel回调
       let cancelCallback = (err: Base.BusinessError) => {
         if (err) {
-          console.info(TAG + "cancel failed " + JSON.stringify(err));
+          console.info(TAG + 'cancel failed ' + JSON.stringify(err));
           expect(err.code).assertEqual(401);
           done()
         } else {
-          console.info(TAG + "cancel success");
+          console.info(TAG + 'cancel success');
           expect(false).assertTrue()
           done()
         }
@@ -532,7 +532,7 @@ export default function actsNotificationAnsCovered() {
       try {
         Notification.cancel(undefined, cancelCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -547,15 +547,15 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1010', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1010"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1010'
       // cancel回调
       let cancelCallback = (err: Base.BusinessError) => {
         if (err) {
-          console.info(TAG + "cancel failed " + JSON.stringify(err));
+          console.info(TAG + 'cancel failed ' + JSON.stringify(err));
           expect(err.code).assertEqual(401);
           done()
         } else {
-          console.info(TAG + "cancel success");
+          console.info(TAG + 'cancel success');
           expect(false).assertTrue()
           done()
         }
@@ -564,7 +564,7 @@ export default function actsNotificationAnsCovered() {
       try {
         Notification.cancel(undefined, 'label', cancelCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -579,15 +579,15 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1011', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1011"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1011'
       // cancel回调
       let cancelCallback = (err: Base.BusinessError) => {
         if (err) {
-          console.info(TAG + "cancel failed " + JSON.stringify(err));
+          console.info(TAG + 'cancel failed ' + JSON.stringify(err));
           expect(err.code).assertEqual(401);
           done()
         } else {
-          console.info(TAG + "cancel success");
+          console.info(TAG + 'cancel success');
           expect(false).assertTrue()
           done()
         }
@@ -596,7 +596,7 @@ export default function actsNotificationAnsCovered() {
       try {
         Notification.cancel(null, 'label', cancelCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -611,10 +611,10 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1014', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1014"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1014'
       try {
-        Notification.cancel(null, "label").then(() => {
-          console.info(TAG + "cancel success");
+        Notification.cancel(null, 'label').then(() => {
+          console.info(TAG + 'cancel success');
           expect(false).assertTrue()
           done()
         }).catch((err: Base.BusinessError) => {
@@ -623,7 +623,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -638,10 +638,10 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1015', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1015"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1015'
       try {
-        Notification.cancel(undefined, "label").then(() => {
-          console.info(TAG + "cancel success");
+        Notification.cancel(undefined, 'label').then(() => {
+          console.info(TAG + 'cancel success');
           expect(false).assertTrue()
           done()
         }).catch((err: Base.BusinessError) => {
@@ -650,7 +650,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -665,14 +665,14 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1018', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1018"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1018'
       let cancelGroupCallback = (err: Base.BusinessError) => {
         if (err) {
-          console.info(TAG + "cancelGroup failed " + JSON.stringify(err));
+          console.info(TAG + 'cancelGroup failed ' + JSON.stringify(err));
           expect(false).assertTrue()
           done()
         } else {
-          console.info(TAG + "cancelGroup success");
+          console.info(TAG + 'cancelGroup success');
           expect(false).assertTrue()
           done()
         }
@@ -681,7 +681,7 @@ export default function actsNotificationAnsCovered() {
       try {
         Notification.cancelGroup(undefined, cancelGroupCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -696,10 +696,10 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1020', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1020"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1020'
       try {
         Notification.cancelGroup(null).then(() => {
-          console.info(TAG + "cancelGroup success");
+          console.info(TAG + 'cancelGroup success');
           expect(false).assertTrue()
           done()
         }).catch((err: Base.BusinessError) => {
@@ -708,7 +708,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -723,10 +723,10 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1029', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1029"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1029'
       try {
         Notification.cancelGroup(undefined).then(() => {
-          console.info(TAG + "cancelGroup success");
+          console.info(TAG + 'cancelGroup success');
           expect(false).assertTrue()
           done()
         }).catch((err: Base.BusinessError) => {
@@ -735,7 +735,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -750,14 +750,14 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1023', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1023"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1023'
       let isSupportTemplateCallback = (err: Base.BusinessError, data: boolean) => {
         if (err) {
-          console.info(TAG + "isSupportTemplate failed " + JSON.stringify(err));
+          console.info(TAG + 'isSupportTemplate failed ' + JSON.stringify(err));
           expect(false).assertTrue()
           done()
         } else {
-          console.info(TAG + "isSupportTemplate success");
+          console.info(TAG + 'isSupportTemplate success');
           expect(false).assertTrue()
           done()
         }
@@ -765,7 +765,7 @@ export default function actsNotificationAnsCovered() {
       try {
         Notification.isSupportTemplate(null, isSupportTemplateCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -780,14 +780,14 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1024', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1024"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1024'
       let isSupportTemplateCallback = (err: Base.BusinessError, data: boolean) => {
         if (err) {
-          console.info(TAG + "isSupportTemplate failed " + JSON.stringify(err));
+          console.info(TAG + 'isSupportTemplate failed ' + JSON.stringify(err));
           expect(false).assertTrue()
           done()
         } else {
-          console.info(TAG + "isSupportTemplate success");
+          console.info(TAG + 'isSupportTemplate success');
           expect(false).assertTrue()
           done()
         }
@@ -795,7 +795,7 @@ export default function actsNotificationAnsCovered() {
       try {
         Notification.isSupportTemplate(undefined, isSupportTemplateCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -810,11 +810,11 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1026', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1026"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1026'
 
       try {
         Notification.isSupportTemplate(null).then((data: boolean) => {
-          console.info(TAG + "isSupportTemplate success, data: " + JSON.stringify(data));
+          console.info(TAG + 'isSupportTemplate success, data: ' + JSON.stringify(data));
           expect(false).assertTrue()
           done()
         }).catch((err: Base.BusinessError) => {
@@ -823,7 +823,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -838,11 +838,11 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1027', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1027"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1027'
 
       try {
         Notification.isSupportTemplate(undefined).then((data: boolean) => {
-          console.info(TAG + "isSupportTemplate success, data: " + JSON.stringify(data));
+          console.info(TAG + 'isSupportTemplate success, data: ' + JSON.stringify(data));
           expect(false).assertTrue()
           done()
         }).catch((err: Base.BusinessError) => {
@@ -851,7 +851,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -866,12 +866,12 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1007', Level.LEVEL2, async (done: () => void) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1007"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1007'
       // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
       let subscriber: CommonEventManager.CommonEventSubscriber;
       // 订阅者信息
       let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
-        events: ["event284"],
+        events: ['event284'],
         publisherBundleName: 'com.example.myapplication'
       };
 
@@ -1025,12 +1025,12 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1008', Level.LEVEL2, async (done: () => void) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1008"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1008'
       // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
       let subscriber: CommonEventManager.CommonEventSubscriber;
       // 订阅者信息
       let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
-        events: ["event284"],
+        events: ['event284'],
         publisherBundleName: 'com.example.myapplication'
       };
 
@@ -1169,12 +1169,12 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1017', Level.LEVEL2, async (done: () => void) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1017"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1017'
       // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
       let subscriber: CommonEventManager.CommonEventSubscriber;
       // 订阅者信息
       let subscribeInfo: CommonEventManager.CommonEventSubscribeInfo = {
-        events: ["event284"],
+        events: ['event284'],
         publisherBundleName: 'com.example.myapplication'
       };
 
@@ -1260,7 +1260,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1013', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1013"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1013'
       let count = 0
       try {
         //发布公共事件
@@ -1270,7 +1270,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             count++
             expect(count).assertEqual(1);
             done()
@@ -1278,7 +1278,7 @@ export default function actsNotificationAnsCovered() {
         }
         commonEvent.publish('E', publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(false).assertTrue();
         done()
       }
@@ -1293,7 +1293,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1014', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1014"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1014'
       let count = 0
       try {
         //发布公共事件
@@ -1303,7 +1303,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             count++
             expect(count).assertEqual(1);
             done()
@@ -1312,7 +1312,7 @@ export default function actsNotificationAnsCovered() {
         commonEvent.publish('abc123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BCD890EFG123HIJ456KLM789NOP012QRS345TUV678WXY901Z!@#$%^&*()_+=-[]{};\':",.<>/?\\|',
           publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(false).assertTrue();
         done()
       }
@@ -1327,7 +1327,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_CES_CommonEvent_1015', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_CES_CommonEvent_1015"
+      let TAG: string = 'Sub_Notification_CES_CommonEvent_1015'
       let count = 0
       try {
         //发布公共事件
@@ -1337,7 +1337,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             count++
             expect(count).assertEqual(1);
             done()
@@ -1346,7 +1346,7 @@ export default function actsNotificationAnsCovered() {
         commonEvent.publish('abc123def456ghi789jkl012mno345pqr678stu901vwx234yzA567BCD890EFG123HIJ456KLM789NOP012QRS345TUV678WXY901Z!@#$%^&*()_+=-[]{};\':",.<>/?\\|a',
           publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(false).assertTrue();
         done()
       }
@@ -1361,7 +1361,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1030', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1030"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1030'
       let publishCallback = (err: BusinessError): void => {
         if (err) {
           console.error(TAG + `Failed to publish notification. Code is ${err.code}, message is ${err.message}`);
@@ -1377,7 +1377,7 @@ export default function actsNotificationAnsCovered() {
       try {
         NotificationManager.publish(null, publishCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1392,7 +1392,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1031', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1031"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1031'
       let publishCallback = (err: BusinessError): void => {
         if (err) {
           console.error(TAG + `Failed to publish notification. Code is ${err.code}, message is ${err.message}`);
@@ -1408,7 +1408,7 @@ export default function actsNotificationAnsCovered() {
       try {
         NotificationManager.publish(undefined, publishCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1423,7 +1423,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1032', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1032"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1032'
 
       try {
         await NotificationManager.publish(null).then(() => {
@@ -1436,7 +1436,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1451,7 +1451,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1033', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1033"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1033'
 
       try {
         await NotificationManager.publish(undefined).then(() => {
@@ -1464,7 +1464,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1479,7 +1479,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1034', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1034"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1034'
       // cancel回调
       let cancelCallback = (err: BusinessError): void => {
         if (err) {
@@ -1495,7 +1495,7 @@ export default function actsNotificationAnsCovered() {
       try {
         NotificationManager.cancel(null, cancelCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1510,7 +1510,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1035', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1035"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1035'
       // cancel回调
       let cancelCallback = (err: BusinessError): void => {
         if (err) {
@@ -1526,7 +1526,7 @@ export default function actsNotificationAnsCovered() {
       try {
         NotificationManager.cancel(undefined, cancelCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1541,7 +1541,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1036', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1036"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1036'
       // cancel回调
       try {
         await NotificationManager.cancel(null, 'label').then(() => {
@@ -1554,7 +1554,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1569,7 +1569,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1037', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1037"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1037'
       // cancel回调
       try {
         await NotificationManager.cancel(undefined, '').then(() => {
@@ -1582,7 +1582,7 @@ export default function actsNotificationAnsCovered() {
           done()
         });
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1597,7 +1597,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1038', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1038"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1038'
       // cancel回调
       let cancelCallback = (err: BusinessError): void => {
         if (err) {
@@ -1613,7 +1613,7 @@ export default function actsNotificationAnsCovered() {
       try {
         NotificationManager.cancel(undefined, '', cancelCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1628,7 +1628,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1039', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1039"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1039'
       // cancel回调
       let cancelCallback = (err: BusinessError): void => {
         if (err) {
@@ -1644,7 +1644,7 @@ export default function actsNotificationAnsCovered() {
       try {
         NotificationManager.cancel(null, 'label', cancelCallback);
       } catch (err) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(err.code).assertEqual(401);
         done()
       }
@@ -1659,7 +1659,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1040', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1040"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1040'
       console.info('Sub_Notification_Ans_Notification_1040 START');
 
       let count = 0
@@ -1684,7 +1684,7 @@ export default function actsNotificationAnsCovered() {
  	            expect(NotificationSlot.bypassDnd).assertEqual(false);
  	            expect(NotificationSlot.vibrationEnabled).assertEqual(true);
  	            expect(NotificationSlot.lockscreenVisibility).assertEqual(2);
- 	            expect(NotificationSlot.sound).assertEqual("file://system/etc/Light.ogg");
+	            expect(NotificationSlot.sound).assertEqual('file://system/etc/Light.ogg');
  	            expect(NotificationSlot.lightEnabled).assertEqual(false);
  	            expect(NotificationSlot.enabled).assertEqual(true);
  	            expect(NotificationSlot.vibrationValues).assertContain([200]);
@@ -1706,7 +1706,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1041', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1041"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1041'
       console.info('Sub_Notification_Ans_Notification_1040 START');
 
       let count = 0
@@ -1744,7 +1744,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1042', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1042"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1042'
       console.info('Sub_Notification_Ans_Notification_1040 START');
 
       let count = 0
@@ -1774,7 +1774,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1043', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1043"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1043'
       console.info('Sub_Notification_Ans_Notification_1040 START');
 
       let count = 0
@@ -1804,7 +1804,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1044', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1044"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1044'
       let count = 0
       await NotificationManager.addSlot(NotificationManager.SlotType.LIVE_VIEW).then(() => {
         console.info(`${TAG} addSlot_21 success`)
@@ -1842,7 +1842,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1045', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1045"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1045'
       let count = 0
       await NotificationManager.addSlot(NotificationManager.SlotType.CUSTOMER_SERVICE).then(() => {
         console.info(`${TAG} addSlot_21 success`)
@@ -1880,7 +1880,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1046', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1046"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1046'
       let count = 0
       let slotType: NotificationManager.SlotType = NotificationManager.SlotType.CUSTOMER_SERVICE;
       await NotificationManager.removeSlot(slotType).then(() => {
@@ -1904,7 +1904,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1047', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1047"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1047'
       let count = 0
       let slotType: NotificationManager.SlotType = NotificationManager.SlotType.LIVE_VIEW;
       await NotificationManager.removeSlot(slotType).then(() => {
@@ -1928,7 +1928,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1048', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1048"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1048'
       let cancelGroupCallback = (err: BusinessError): void => {
         if (err) {
           console.error(TAG + `Failed to cancel group. Code is ${err.code}, message is ${err.message}`);
@@ -1958,7 +1958,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1049', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1049"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1049'
       let cancelGroupCallback = (err: BusinessError): void => {
         if (err) {
           console.error(TAG + `Failed to cancel group. Code is ${err.code}, message is ${err.message}`);
@@ -1988,7 +1988,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1050', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1050"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1050'
       let cancelGroupCallback = (err: BusinessError): void => {
         if (err) {
           console.error(TAG + `Failed to cancel group. Code is ${err.code}, message is ${err.message}`);
@@ -2018,7 +2018,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1051', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1051"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1051'
 
       try {
         await NotificationManager.cancelGroup('').then(() => {
@@ -2046,7 +2046,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1052', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1052"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1052'
 
       try {
         await NotificationManager.cancelGroup(null).then(() => {
@@ -2074,7 +2074,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1053', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1053"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1053'
       try {
         await NotificationManager.cancelGroup(undefined).then(() => {
           console.info(TAG + `Succeeded in canceling group.`);
@@ -2101,7 +2101,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1054', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1054"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1054'
 
       let setBadgeNumberCallback = (err: BusinessError): void => {
         if (err) {
@@ -2137,7 +2137,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1055', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1055"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1055'
 
       let setBadgeNumberCallback = (err: BusinessError): void => {
         if (err) {
@@ -2173,7 +2173,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1056', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1056"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1056'
 
       try {
         await NotificationManager.setBadgeNumber(null).then(() => {
@@ -2206,7 +2206,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('Sub_Notification_Ans_Notification_1057', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "Sub_Notification_Ans_Notification_1057"
+      let TAG: string = 'Sub_Notification_Ans_Notification_1057'
 
       try {
         await NotificationManager.setBadgeNumber(undefined).then(() => {
@@ -2290,7 +2290,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('SUB_Notification_CES_CommonEvent_0100', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "SUB_Notification_CES_CommonEvent_0100"
+      let TAG: string = 'SUB_Notification_CES_CommonEvent_0100'
       let count = 0
       let event = 'T'.repeat(256)
       try {
@@ -2301,7 +2301,7 @@ export default function actsNotificationAnsCovered() {
             expect(err).assertEqual(null);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             count++
             expect(count).assertEqual(1);
             done()
@@ -2310,7 +2310,7 @@ export default function actsNotificationAnsCovered() {
         CommonEventManager.publish(event,
           publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(false).assertTrue();
         done()
       }
@@ -2325,7 +2325,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('SUB_Notification_CES_CommonEvent_0200', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "SUB_Notification_CES_CommonEvent_0200"
+      let TAG: string = 'SUB_Notification_CES_CommonEvent_0200'
       let count = 0
       try {
         //发布公共事件
@@ -2335,7 +2335,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             count++
             expect(count).assertEqual(1);
             done()
@@ -2343,7 +2343,7 @@ export default function actsNotificationAnsCovered() {
         }
         CommonEventManager.publish('a',publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(false).assertTrue();
         done()
       }
@@ -2358,7 +2358,7 @@ export default function actsNotificationAnsCovered() {
      * @tc.level   Level 2
      */
     it('SUB_Notification_CES_CommonEvent_0300', Level.LEVEL2, async (done: Function) => {
-      let TAG: string = "SUB_Notification_CES_CommonEvent_0300"
+      let TAG: string = 'SUB_Notification_CES_CommonEvent_0300'
       let count = 0
       let event = 'T'.repeat(257)
       try {
@@ -2369,7 +2369,7 @@ export default function actsNotificationAnsCovered() {
             expect(err.code).assertEqual(1);
             done()
           } else {
-            console.info(TAG + "publish success");
+            console.info(TAG + 'publish success');
             count++
             expect(count).assertEqual(1);
             done()
@@ -2378,7 +2378,7 @@ export default function actsNotificationAnsCovered() {
         CommonEventManager.publish(event,
           publishCB);
       } catch (error) {
-        console.info(TAG + " fail");
+        console.info(TAG + ' fail');
         expect(false).assertTrue();
         done()
       }

@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="content-title">
+        <text class="title">Location</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <list class="scroll-area">
+        <list-item class="litem" style="height:260px;">
+            <text class="box-title">定位信息 Info</text>
+            <text class="tip" show="{{!supported}}">{{ infoTip }}</text>
+            <text class="result">{{ infoResult }}</text>
+            <text class="status-text">状态: {{ infoMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="获取位置" onclick="getLocationInfo" />
+                <input class="opBtn" type="button" value="获取类型" onclick="getLocationType" />
+                <input class="opBtn" type="button" value="坐标系" onclick="getSupportedCoordType" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{iPassColor}};" type="button" value="pass" onclick="passInfo" />
+                <input class="pfBtn" style="background-color:{{iFailColor}};" type="button" value="fail" onclick="failInfo" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">定位订阅 Subscribe</text>
+            <text class="tip" show="{{!supported}}">{{ subTip }}</text>
+            <text class="result">{{ subResult }}</text>
+            <text class="status-text">状态: {{ subMsg }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="订阅" onclick="subscribe" />
+                <input class="opBtn" type="button" value="取消" onclick="unsubscribe" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{sPassColor}};" type="button" value="pass" onclick="passSub" />
+                <input class="pfBtn" style="background-color:{{sFailColor}};" type="button" value="fail" onclick="failSub" />
+            </div>
+        </list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>

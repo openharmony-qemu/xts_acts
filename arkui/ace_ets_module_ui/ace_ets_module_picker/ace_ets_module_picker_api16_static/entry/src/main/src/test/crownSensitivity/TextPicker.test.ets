@@ -13,13 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 
 interface optionsObj {
@@ -27,13 +26,6 @@ interface optionsObj {
 }
 export default function TextPicker() {
     describe('TextPicker', () => {
-      beforeAll(async (): Promise<void> => {
-        console.info("TextPicker beforeEach start");
-        await UtilsTest.msSleep(4000)
-        await UtilsTest.startAbility("com.arkui.ace.picker.api16.static", "EntryAbility")
-        await UtilsTest.msSleep(4000)
-      });
-
       beforeEach(async (): Promise<void> => {
         console.info("TextPicker beforeEach start");
         let options: router.RouterOptions = {

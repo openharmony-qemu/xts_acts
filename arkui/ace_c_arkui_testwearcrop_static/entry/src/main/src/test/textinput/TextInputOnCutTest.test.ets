@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
+import { describe, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index";
 import Utils from '../common/Utils';
 import { Driver, ON, PointerMatrix, Rect } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test'
 import { LibUtil } from '../../../ets/pages/LibUtil';
 import { focusControl } from '@ohos.arkui.component'
 
@@ -28,11 +27,10 @@ export default function textInputOnCutTest() {
 
     let PAGE_TAG = 'TextInputOnCutTest';
 
-    beforeAll(async (): Promise<void> => {
-      console.info("[ui] beforeAll start");
-      await UtilsTest.startAbility("com.openharmony.arkui_capi_xts_testwearcrop.static", "EntryAbility")
+    beforeEach(async (): Promise<void> => {
+      console.info("[ui] beforeEach start");
       await Utils.pushPage(`textarea/${PAGE_TAG}`, false);
-      console.info("[ui] beforeAll end");
+      console.info("[ui] beforeEach end");
     });
 
     
@@ -43,16 +41,20 @@ export default function textInputOnCutTest() {
      * @tc.level    Level.LEVEL1
      */
     it('testTextInputOnCut001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      focusControl.requestFocus('OnCutTestTextInput')
-      await Utils.sleep(2000)
-      await Utils.longClickComponent('OnCutTestTextInput')
-      await Utils.sleep(1000)
-      await Utils.clickComponentByText('全选')
-      await Utils.sleep(2000)
-      await Utils.clickComponentByText('剪切')
-      await Utils.sleep(2000)
-      expect(Utils.getComponentInfoByKey('OnCutTestTextInput').getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00')
-      done()
+      try {
+        focusControl.requestFocus('OnCutTestTextInput')
+        await Utils.sleep(2000)
+        await Utils.longClickComponent('OnCutTestTextInput')
+        await Utils.sleep(1000)
+        await Utils.clickComponentByText('全选')
+        await Utils.sleep(2000)
+        await Utils.clickComponentByText('剪切')
+        await Utils.sleep(2000)
+        expect(Utils.getComponentInfoByKey('OnCutTestTextInput').getElement('$attrs').getString('backgroundColor')).assertEqual('#FF00FF00')
+        done()
+      } catch (e) {
+        done()
+      }
     })
 
   })

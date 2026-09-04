@@ -103,6 +103,46 @@ export default function HyperSnapManagerTest() {
     })
     
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0300
+     * @tc.number SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0300
+     * @tc.desc   Test setHyperSnapEnabled with null parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0300', Level.LEVEL0, async (done: Function) => {
+      hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0300 begin');
+      try {
+        hyperSnapManager.setHyperSnapEnabled(null);
+        hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0300 success');
+      } catch (e) {
+        hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0300 catch');
+        expect((e as BusinessError).code).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0400
+     * @tc.number SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0400
+     * @tc.desc   Test setHyperSnapEnabled with undefined parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0400', Level.LEVEL0, async (done: Function) => {
+      hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0400 begin');
+      try {
+        hyperSnapManager.setHyperSnapEnabled(undefined);
+        hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0400 success');
+      } catch (e) {
+        hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_SetHyperSnapEnabled_0400 catch');
+        expect(e?.code).assertEqual(401);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_0100
      * @tc.number SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_0100
      * @tc.desc   Test RequestRebuildHyperSnap will return 16000150 when not support hyperSnap.
@@ -117,7 +157,7 @@ export default function HyperSnapManagerTest() {
         hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_0100 success');
       }catch(e){
         hilog.info(0x0000, 'testTag', 'SUB_Ability_AbilityRuntime_HyperSnapManager_RequestRebuildHyperSnap_0100 catch');
-        expect((e as BusinessError).code).assertEqual(16000150);
+        expect(e?.code).assertEqual(16000150);
       }
       done();
     })

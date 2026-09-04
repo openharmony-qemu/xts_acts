@@ -1435,6 +1435,80 @@ export default class UIExtensionProvider extends UIExtensionAbility {
         }
       }
     }
+    // errorCode_03300 - setWindowPrivacyMode param is null promise
+    if (want.action == 'Sub_UIExtensionContentSession_errorCode_3300') {
+      try {
+        session.setWindowPrivacyMode(null)
+          .then(() => {
+            console.info(`Successed in setting window to privacy mode.`);
+            console.error(`Test case execution results do not match expected outcomes.`);
+            commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+              console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+            });
+          })
+          .catch((err: BusinessError) => {
+            console.error(`Failed to set window to privacy mode, code: ${err.code}, msg: ${err.message}`);
+          });
+      } catch (error) {
+        console.error(`session.setWindowPrivacyMode fail, error: ${JSON.stringify(error)}`);
+        if (error.code == 401) {
+          globalThis.errCode = error.code
+          commonEventManager.publish('ACTS_TEST_DESTROY', {
+            parameters: {
+              'result':error?.code,
+            }
+          }, function () {
+            console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+            setTimeout(() => {
+              session?.terminateSelf((err: BusinessError) => {
+                if (err) {
+                  console.error(`Failed to terminate self, code: ${err.code}, msg: ${err.message}`);
+                  return;
+                }
+                console.info(`Successed in terminating self.`);
+              });
+            },500)
+          });
+        }
+      }
+    }
+    // errorCode_03400 - setWindowPrivacyMode param is null callback
+    if (want.action == 'Sub_UIExtensionContentSession_errorCode_3400') {
+      try {
+        session.setWindowPrivacyMode(null, (err: BusinessError) => {
+          if (err) {
+            console.error(`Failed to set window to privacy mode, code: ${err.code}, msg: ${err.message}`);
+            return;
+          }
+          console.info(`Successed in setting window to privacy mode.`);
+          console.error(`Test case execution results do not match expected outcomes.`);
+          commonEventManager.publish('ACTS_TEST_DESTROY', function () {
+            console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+          });
+        });
+      } catch (error) {
+        console.error(`session.setWindowPrivacyMode fail, error: ${JSON.stringify(error)}`);
+        if (error.code == 401) {
+          globalThis.errCode = error.code
+          commonEventManager.publish('ACTS_TEST_DESTROY', {
+            parameters: {
+              'result':error?.code,
+            }
+          }, function () {
+            console.info(`${caseTag} publish ACTS_TEST_DESTROY`);
+            setTimeout(() => {
+              session?.terminateSelf((err: BusinessError) => {
+                if (err) {
+                  console.error(`Failed to terminate self, code: ${err.code}, msg: ${err.message}`);
+                  return;
+                }
+                console.info(`Successed in terminating self.`);
+              });
+            },500)
+          });
+        }
+      }
+    }
   }
 
   onSessionDestroy(session: UIExtensionContentSession) {

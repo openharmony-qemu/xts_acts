@@ -17,8 +17,8 @@
           >
 
   <div class="bottom-bt">
-    <input type="button" value="pass" class="button" onclick="passClicked" />
-    <input type="button" value="fail" class="button" onclick="failClicked" />
+    <input type="button" value="pass" class="button" style="background-color:{{mPassColor}};" onclick="passClicked" />
+    <input type="button" value="fail" class="button" style="background-color:{{mFailColor}};" onclick="failClicked" />
     <input type="button" value="back" class="button" onclick="backClicked" />
   </div>
 </div>

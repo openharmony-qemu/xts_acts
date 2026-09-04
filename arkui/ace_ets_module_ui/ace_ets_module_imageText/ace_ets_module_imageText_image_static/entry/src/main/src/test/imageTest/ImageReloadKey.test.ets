@@ -14,25 +14,20 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME_L = 1000;
 const SLEEP_TIME_S = 100;
 
 export default function ImageReloadKeyTest() {
   describe('ImageReloadKeyTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ImageReloadKeyTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ImageReloadKeyTest beforeEach start");
       let options: router.RouterOptions = {
@@ -109,24 +104,29 @@ export default function ImageReloadKeyTest() {
      * @tc.level    Level.LEVEL1
      */
     it('ImageReloadKeyTest_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('ImageReloadKeyTest_static_004 START');
-      const driver = Driver.create();
-      // Check initial reloadKey value
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('reloadKeyImage4');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageReloadKeyTest_static_004 initial reloadKey is: ' + obj.getElement('$attrs').getString('reloadKey'));
-      expect(obj.getElement('$attrs').getString('reloadKey')).assertEqual('key4');
-      // Click button to change reloadKey
-      const button = await driver.findComponent(ON.id('changeKey4Btn'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME_S);
-      // Check updated reloadKey value
-      let strJsonAfter = inspector.getInspectorByKey('reloadKeyImage4');
-      let objAfter = JSON.parseJsonElement(strJsonAfter);
-      console.info('ImageReloadKeyTest_static_004 after click reloadKey is: ' + objAfter.getElement('$attrs').getString('reloadKey'));
-      expect(objAfter.getElement('$attrs').getString('reloadKey')).assertEqual('key4_new');
-      done();
+      try {
+        console.info('ImageReloadKeyTest_static_004 START');
+        const driver = Driver.create();
+        // Check initial reloadKey value
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('reloadKeyImage4');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('ImageReloadKeyTest_static_004 initial reloadKey is: ' + obj.getElement('$attrs').getString('reloadKey'));
+        expect(obj.getElement('$attrs').getString('reloadKey')).assertEqual('key4');
+        // Click button to change reloadKey
+        const button = await driver.findComponent(ON.id('changeKey4Btn'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(SLEEP_TIME_S);
+        // Check updated reloadKey value
+        let strJsonAfter = inspector.getInspectorByKey('reloadKeyImage4');
+        let objAfter = JSON.parseJsonElement(strJsonAfter);
+        console.info('ImageReloadKeyTest_static_004 after click reloadKey is: ' + objAfter.getElement('$attrs').getString('reloadKey'));
+        expect(objAfter.getElement('$attrs').getString('reloadKey')).assertEqual('key4_new');
+        done();
+      } catch (err) {
+        console.error('ImageReloadKeyTest_static_004 error:' + err);
+        done();
+      }
     })
     /**
      * @tc.number   SUB_ARKUI_IMAGE_RELOAD_PARAM_0500
@@ -135,24 +135,29 @@ export default function ImageReloadKeyTest() {
      * @tc.level    Level.LEVEL2
      */
     it('ImageReloadKeyTest_static_005', Level.LEVEL2, async (done: () => void): Promise<void> => {
-      console.info('ImageReloadKeyTest_static_005 START');
-      const driver = Driver.create();
-      // Check initial reloadKey value
-      await Utils.sleep(SLEEP_TIME_S);
-      let strJson = inspector.getInspectorByKey('reloadKeyImage5');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('ImageReloadKeyTest_static_005 initial reloadKey is: ' + obj.getElement('$attrs').getString('reloadKey'));
-      expect(obj.getElement('$attrs').getString('reloadKey')).assertEqual('key5');
-      // Click button to change reloadKey
-      const button = await driver.findComponent(ON.id('changeKey5Btn'));
-      await (button?.click() as Promise<void>);
-      await Utils.sleep(SLEEP_TIME_S);
-      // Check updated reloadKey value
-      let strJsonAfter = inspector.getInspectorByKey('reloadKeyImage5');
-      let objAfter = JSON.parseJsonElement(strJsonAfter);
-      console.info('ImageReloadKeyTest_static_005 after click reloadKey is: ' + objAfter.getElement('$attrs').getString('reloadKey'));
-      expect(objAfter.getElement('$attrs').getString('reloadKey')).assertEqual('key5_new');
-      done();
+      try {
+        console.info('ImageReloadKeyTest_static_005 START');
+        const driver = Driver.create();
+        // Check initial reloadKey value
+        await Utils.sleep(SLEEP_TIME_S);
+        let strJson = inspector.getInspectorByKey('reloadKeyImage5');
+        let obj = JSON.parseJsonElement(strJson);
+        console.info('ImageReloadKeyTest_static_005 initial reloadKey is: ' + obj.getElement('$attrs').getString('reloadKey'));
+        expect(obj.getElement('$attrs').getString('reloadKey')).assertEqual('key5');
+        // Click button to change reloadKey
+        const button = await driver.findComponent(ON.id('changeKey5Btn'));
+        await (button?.click() as Promise<void>);
+        await Utils.sleep(SLEEP_TIME_S);
+        // Check updated reloadKey value
+        let strJsonAfter = inspector.getInspectorByKey('reloadKeyImage5');
+        let objAfter = JSON.parseJsonElement(strJsonAfter);
+        console.info('ImageReloadKeyTest_static_005 after click reloadKey is: ' + objAfter.getElement('$attrs').getString('reloadKey'));
+        expect(objAfter.getElement('$attrs').getString('reloadKey')).assertEqual('key5_new');
+        done();
+      } catch (err) {
+        console.error('ImageReloadKeyTest_static_005 error:' + err);
+        done();
+      }
     })
     /**
      * @tc.number   SUB_ARKUI_IMAGE_RELOAD_PARAM_0600

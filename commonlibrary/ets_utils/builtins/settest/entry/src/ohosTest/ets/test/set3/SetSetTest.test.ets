@@ -1,0 +1,255 @@
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { beforeAll, beforeEach, afterEach, afterAll, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+
+function sleep(time: number): Promise<void> {
+  return new Promise<void>((resolve) => setTimeout(resolve, time));
+}
+
+const SET_A: Set<number> = new Set<number>([1]);
+const SET_B: Set<number> = new Set<number>([2]);
+const SET_C: Set<number> = new Set<number>([3]);
+const SET_D: Set<number> = new Set<number>([0, -1]);
+const SET_E: Set<number> = new Set<number>([NaN, Infinity]);
+const SET_F: Set<number> = new Set<number>([Number.MAX_SAFE_INTEGER]);
+const SET_G: Set<number> = new Set<number>();
+const VALID_VALUES: Array<Set<number>> = [SET_A, SET_B, SET_C, SET_D, SET_E, SET_F, SET_G, SET_A];
+
+interface SetInvalidObject { marker: string; }
+const SET_INVALID_OBJECT: SetInvalidObject = { marker: 'invalid' };
+type SetInvalidValue = string | number | null | undefined | SetInvalidObject | Array<Set<number>>;
+type SetAllValue = Set<number> | SetInvalidValue;
+const ALL_VALUES: Array<SetAllValue> = [
+  ...VALID_VALUES, '1', 123, null, undefined, SET_INVALID_OBJECT, [],
+];
+
+export default function setSetTest() {
+  describe('SetSetTest', () => {
+    beforeAll(() => {
+    });
+
+    beforeEach(async () => {
+      await sleep(30);
+    });
+
+    afterEach(() => {
+    });
+
+    afterAll(() => {
+    });
+
+    /**
+     * @tc.name testSetSetTest0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SET_TEST_0100
+     * @tc.desc Verify Set size and constructor overloads with Set dynamic values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetSetTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: Array<Set<number>> = VALID_VALUES;
+      const emptySet: Set<Set<number>> = new Set<Set<number>>();
+      expect(emptySet.size).assertEqual(0);
+
+      const constructed: Set<Set<number>> = new Set<Set<number>>(values);
+      expect(constructed.has(values[0])).assertTrue();
+      expect(constructed.has(values[1])).assertTrue();
+      expect(constructed.size).assertLargerOrEqual(2);
+
+      const duplicateSet: Set<Set<number>> = new Set<Set<number>>([values[0], values[0], values[1]]);
+      expect(duplicateSet.size).assertEqual(2);
+      expect(duplicateSet.has(values[0])).assertTrue();
+      expect(duplicateSet.has(values[1])).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetSetTest0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SET_TEST_0200
+     * @tc.desc Verify Set add and has semantics with Set dynamic values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetSetTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: Array<Set<number>> = VALID_VALUES;
+      const set: Set<Set<number>> = new Set<Set<number>>();
+      const addResult: Set<Set<number>> = set.add(values[0]);
+      expect(addResult).assertEqual(set);
+      expect(set.size).assertEqual(1);
+      expect(set.has(values[0])).assertTrue();
+
+      set.add(values[1]);
+      set.add(values[0]);
+      expect(set.size).assertEqual(2);
+      expect(set.has(values[1])).assertTrue();
+      expect(set.has(values[2])).assertFalse();
+    });
+
+    /**
+     * @tc.name testSetSetTest0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SET_TEST_0300
+     * @tc.desc Verify Set delete, clear and size transitions with Set dynamic values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetSetTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: Array<Set<number>> = VALID_VALUES;
+      const set: Set<Set<number>> = new Set<Set<number>>([values[0], values[1]]);
+      const beforeDeleteSize: number = set.size;
+      expect(beforeDeleteSize).assertEqual(2);
+
+      const deleted: boolean = set.delete(values[0]);
+      expect(deleted).assertTrue();
+      expect(set.has(values[0])).assertFalse();
+      expect(set.size).assertEqual(beforeDeleteSize - 1);
+
+      const missingDelete: boolean = set.delete(values[0]);
+      expect(missingDelete).assertFalse();
+      set.clear();
+      expect(set.size).assertEqual(0);
+      set.add(values[2]);
+      expect(set.has(values[2])).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetSetTest0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SET_TEST_0400
+     * @tc.desc Verify Set entries, keys and values iteration order with Set dynamic values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetSetTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: Array<Set<number>> = VALID_VALUES;
+      const set: Set<Set<number>> = new Set<Set<number>>([values[0], values[1]]);
+
+      const entryItem: IteratorResult<[Set<number>, Set<number>]> = set.entries().next();
+      expect(entryItem.done).assertFalse();
+      expect(entryItem.value[0]).assertEqual(values[0]);
+      expect(entryItem.value[1]).assertEqual(values[0]);
+
+      const keyItem: IteratorResult<Set<number>> = set.keys().next();
+      expect(keyItem.done).assertFalse();
+      expect(keyItem.value).assertEqual(values[0]);
+
+      const valueItem: IteratorResult<Set<number>> = set.values().next();
+      expect(valueItem.done).assertFalse();
+      expect(valueItem.value).assertEqual(values[0]);
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetSetTest0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SET_TEST_0500
+     * @tc.desc Verify Set forEach callback values, keys and container with Set dynamic values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetSetTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: Array<Set<number>> = VALID_VALUES;
+      const set: Set<Set<number>> = new Set<Set<number>>([values[0], values[1]]);
+      let callbackCount: number = 0;
+      let firstValue: Set<number> = values[0];
+      let lastKey: Set<number> = values[0];
+      let callbackContainer: Set<Set<number>> = set;
+
+      set.forEach((value: Set<number>, key: Set<number>, owner: Set<Set<number>>): void => {
+        if (callbackCount === 0) {
+          firstValue = value;
+        }
+        lastKey = key;
+        callbackContainer = owner;
+        callbackCount++;
+      });
+
+      expect(callbackCount).assertEqual(2);
+      expect(firstValue).assertEqual(values[0]);
+      expect(lastKey).assertEqual(values[1]);
+      expect(callbackContainer).assertEqual(set);
+      expect(set.has(values[0])).assertTrue();
+      expect(set.has(values[1])).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetSetTest0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SET_TEST_0600
+     * @tc.desc Verify Set Symbol.iterator and completion behavior with Set dynamic values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetSetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: Array<Set<number>> = VALID_VALUES;
+      const set: Set<Set<number>> = new Set<Set<number>>([values[0], values[1]]);
+      const iterator: Iterator<Set<number>> = set.values();
+      const first: IteratorResult<Set<number>> = iterator.next();
+      expect(first.done).assertFalse();
+      expect(first.value).assertEqual(values[0]);
+
+      const second: IteratorResult<Set<number>> = iterator.next();
+      expect(second.done).assertFalse();
+      expect(second.value).assertEqual(values[1]);
+
+      const end: IteratorResult<Set<number>> = iterator.next();
+      expect(end.done).assertTrue();
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetSetTest0700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SET_TEST_0700
+     * @tc.desc Verify dynamic and special Set inputs with Set values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetSetTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: Array<Set<number>> = VALID_VALUES;
+      const allValues: Array<SetAllValue> = ALL_VALUES;
+      const dynamicSet: Set<SetAllValue> = new Set<SetAllValue>(allValues);
+      expect(dynamicSet.has(allValues[0])).assertTrue();
+      expect(dynamicSet.has(allValues[1])).assertTrue();
+      expect(dynamicSet.has(allValues[VALID_VALUES.length])).assertTrue();
+      expect(dynamicSet.size).assertLargerOrEqual(VALID_VALUES.length - 1);
+
+      const added: Set<SetAllValue> = dynamicSet.add(allValues[allValues.length - 1]);
+      expect(added).assertEqual(dynamicSet);
+      expect(dynamicSet.has(allValues[allValues.length - 1])).assertTrue();
+      expect(values[0]).assertEqual(VALID_VALUES[0]);
+    });
+
+    /**
+     * @tc.name testSetSetTest0800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SET_TEST_0800
+     * @tc.desc Verify Set identity and duplicate behavior for Set special values
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetSetTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const values: Array<Set<number>> = VALID_VALUES;
+      const specialSet: Set<Set<number>> = new Set<Set<number>>([values[4], values[5], values[4]]);
+      expect(specialSet.size).assertEqual(2);
+      expect(specialSet.has(values[4])).assertTrue();
+      expect(specialSet.has(values[5])).assertTrue();
+      expect(specialSet.delete(values[4])).assertTrue();
+      expect(specialSet.has(values[4])).assertFalse();
+      expect(specialSet.size).assertEqual(1);
+    });
+  });
+}

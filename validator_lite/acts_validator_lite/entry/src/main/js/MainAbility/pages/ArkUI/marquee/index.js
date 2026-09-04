@@ -5,6 +5,7 @@ export default {
     text: 'Hello JS, we are friends. This is a marquee test.',
     speed: 1,
     flag: true,
+    mPassColor: '#555555', mFailColor: '#555555',
   },
   changeSpeed() {
     if (this.flag) {
@@ -24,12 +25,10 @@ export default {
         router.replace({ uri: 'pages/ArkUI/common/index/index' });
     },
     passClicked() {
-        getApp().data.testItems['marquee'].status = 'pass';
-        this.back();
+        if (getApp().data.testItems['marquee'].status === 'pass') { getApp().data.testItems['marquee'].status = 'null'; this.mPassColor = '#555555'; this.mFailColor = '#555555'; } else { getApp().data.testItems['marquee'].status = 'pass'; this.mPassColor = '#4caf50'; this.mFailColor = '#555555'; }
     },
     failClicked() {
-        getApp().data.testItems['marquee'].status = 'fail';
-        this.back();
+        if (getApp().data.testItems['marquee'].status === 'fail') { getApp().data.testItems['marquee'].status = 'null'; this.mFailColor = '#555555'; this.mPassColor = '#555555'; } else { getApp().data.testItems['marquee'].status = 'fail'; this.mFailColor = '#f44336'; this.mPassColor = '#555555'; }
     },
     backClicked() {
         this.back();

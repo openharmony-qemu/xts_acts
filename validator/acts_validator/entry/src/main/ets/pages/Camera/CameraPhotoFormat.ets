@@ -66,6 +66,7 @@ struct cameraOrientation {
   @State isNextEnabled: boolean = true;
   @State takeSelect: number = 0;
   @State clickFrequency: number = 0;
+  @State cameraFormat: number = 2000;
   @State resolutionSelectVal: string = ''; // 下拉框默认value
   @State clickSerialPhotoVal: number = 0;
   @State timer: number = -1;
@@ -112,7 +113,7 @@ struct cameraOrientation {
     this.setPreviewRotation();
   }
 
-  handleTakePicture = (assetUri: string) => {
+  handleTakePicture = async (assetUri: string) => {
     this.assetUri = assetUri
     Logger.info(this.tag, `takePicture end, assetUri: ${this.assetUri}`)
   }
@@ -162,20 +163,26 @@ struct cameraOrientation {
   }
 
   // 对分辨率数据处理 获取到需要的格式
-  dealWithResolutionFn(arr: ResolutionItem[]) {
+  async dealWithResolutionFn(arr: ResolutionItem[]) {
     let newResolution : Obj[] = []
+    let cameraManager: camera.CameraManager = await camera.getCameraManager(globalThis.abilityContext)
+    let cameraas: Array<camera.CameraDevice> = await cameraManager.getSupportedCameras()
+    let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraas[this.cameraDeviceIndex])
     arr.forEach((item) => {
+      let i: number = 0;
+      this.cameraFormat = cameraOutputCapability.photoProfiles[i].format;
       let indexOf: number = item.value.indexOf("x")
       let objW: number = Number(item.value.slice(0, indexOf))
       let objH: number = Number(item.value.slice(indexOf + 1))
       let obj: Obj = {
-        format: 2000,
+        format: this.cameraFormat,
         size: {
           width: objW,
           height: objH
         }
       }
       newResolution.push(obj)
+      i++;
     })
     return newResolution
   }
@@ -256,6 +263,9 @@ struct cameraOrientation {
               Image('file://' + this.assetUri)
                 .size({ width: '100%', height: '100%' })
                 .objectFit(ImageFit.Fill)
+                .onError((error) => {
+                  console.error('image load fail: ' + error.message);
+                })
               Text('图片')
                 .fontSize('20fp')
                 .fontColor(Color.White)
@@ -275,21 +285,13 @@ struct cameraOrientation {
                 .optionBgColor(Color.Yellow)
                 .selectedOptionFont({ size: 16, weight: 400 })
                 .optionFont({ size: 16, weight: 400 })
-                .onSelect((index: number, value) => {
-                  let indexOf = value.indexOf('x')
-                  let objW = Number(value.slice(0, indexOf))
-                  let objH = Number(value.slice(indexOf + 1))
-                  let obj: Obj = {
-                    format: 2000,
-                    size: {
-                      width: objW,
-                      height: objH
-                    }
-                  }
-                  CameraService.initCamera(this.surfaceId, this.cameraDeviceIndex).then(() => {
+                .onSelect(async (index: number, value) => {
+                  let newResolution = await this.dealWithResolutionFn(this.resolution)
+                  Logger.info(this.tag, `nextClickFn new Resolution: ${JSON.stringify(newResolution)}`)
+                  CameraService.initCamera(this.surfaceId, this.cameraDeviceIndex, newResolution[this.clickFrequency]).then(() => {
                     this.cameraListFn()
                   })
-                  Logger.info(this.tag, `onSelect Rotation index: ${index}, value: ${value}, obj: ${obj}`)
+                  Logger.info(this.tag, `onSelect Rotation index: ${index}, value: ${value}`)
                 })
                 .backgroundColor(Color.Black)
               Select(this.cameraList)
@@ -380,8 +382,8 @@ struct cameraOrientation {
                 this.isEnabled = true
                 this.isNextEnabled = true
                 if (this.clickFrequency) {
-                  let newResolution = this.dealWithResolutionFn(this.resolution)
-                  Logger.info(this.tag, `nextClickFn new Resolution: ${newResolution}`)
+                  let newResolution = await this.dealWithResolutionFn(this.resolution)
+                  Logger.info(this.tag, `nextClickFn new Resolution: ${JSON.stringify(newResolution)}`)
                   this.cameraInit(newResolution[this.clickFrequency])
                   this.resolutionSelectVal = String(this.resolution[this.clickFrequency].value)
                 }

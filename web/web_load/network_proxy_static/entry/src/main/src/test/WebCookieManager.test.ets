@@ -25,7 +25,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 
 let testAbilityContext:common.UIAbilityContext;
-export default function webCookieManager() {
+export default function webCookieManager():void {
   describe('WebCookieManagerTestSuite', () => {
     beforeAll(async (): Promise<void> => {
       await Utils.msSleep(2000);

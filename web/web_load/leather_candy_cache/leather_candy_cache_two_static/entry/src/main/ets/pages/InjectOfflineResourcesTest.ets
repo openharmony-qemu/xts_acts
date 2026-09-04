@@ -25,7 +25,7 @@ import {
   Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import web_webview from '@ohos.web.webview'
-import { BusinessError, Callback, RecordData } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import { AppStorage } from 'arkui.stateManagement.storage.appStorage'
 import Utils from '../../src/test/Util.test';
@@ -97,7 +97,6 @@ struct injectOfflineResourcesTest {
         return context.resourceManager.getRawFileContentSync(url);
       }
     } catch (err) {
-      err = err as BusinessError;
       return new Uint8Array(0);
     }
     return new Uint8Array(0);
@@ -129,13 +128,11 @@ struct injectOfflineResourcesTest {
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
-        let strValue: string = String(data['ACTION']);
-        this.str = strValue;
-      }
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    const data = eventData.data as Record<string, RecordData>;
+    if (data != null && data['ACTION'] != null) {
+      let strValue: string = String(data['ACTION']);
+      this.str = strValue;
     }
   }
 
@@ -154,7 +151,6 @@ struct injectOfflineResourcesTest {
                   Utils.emitEvent(true, 20001)
                 }, 2000)
               } catch (err) {
-                err = err as BusinessError;
                 console.error(msg + ' error: ' + err.code + ' message ' + err.message);
                 Utils.emitEvent(err.code, 20001)
               }
@@ -165,7 +161,6 @@ struct injectOfflineResourcesTest {
               try {
                 this.controller.injectOfflineResources([] as web_webview.OfflineResourceMap[]);
               } catch (err) {
-                err = err as BusinessError;
                 console.error(msg + ' error: ' + err.code + ' message ' + err.message);
                 Utils.emitEvent(err.code, 20002)
               }

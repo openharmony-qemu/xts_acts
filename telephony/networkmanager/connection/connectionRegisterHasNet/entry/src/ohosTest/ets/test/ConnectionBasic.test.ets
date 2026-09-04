@@ -50,7 +50,7 @@ export default function ConnectionBasicTest() {
      * @tc.desc   GetNetCapabilities  detection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level   LEVEL3
      */
     it("testNetManagerConnectionNetBearType0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName: string = "testNetManagerConnectionNetBearType0100";
@@ -76,7 +76,7 @@ export default function ConnectionBasicTest() {
      * @tc.desc   getConnectionProperties  detection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level   LEVEL3
      */
     it('testNetManagerConnectionIsExcludedRoute0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testNetManagerConnectionIsExcludedRoute0100";
@@ -110,7 +110,7 @@ export default function ConnectionBasicTest() {
      * @tc.desc   getConnectionProperties  detection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level   LEVEL3
      */
     it('testNetManagerConnectionGetConnectionPropertiesCallBack0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       let caseName: string = "testNetManagerConnectionGetConnectionPropertiesCallBack0100";
@@ -209,7 +209,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Create a network connection with optional netSpefifier and timeout.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0300";
@@ -241,7 +241,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Create a network connection with optional netSpefifier and timeout.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0400";
@@ -273,7 +273,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Create a network connection with optional netSpefifier and timeout.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0500";
@@ -305,7 +305,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   linkUpBandwidthKbps test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0600";
@@ -337,7 +337,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   nlinkDownBandwidthKbps test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0700";
@@ -368,7 +368,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   nlinkDownBandwidthKbps test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0800";
@@ -399,7 +399,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   bearerTypes test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionCreateNetConnection0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionCreateNetConnection0900";
@@ -430,7 +430,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Receives status change notifications of a specified network.
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionRegisterAndUnregister0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionRegisterAndUnregister0100";
@@ -476,7 +476,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionNetAvailable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetAvailable0100";
@@ -507,7 +507,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionNetAvailable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetAvailable0200";
@@ -539,13 +539,108 @@ export default function ConnectionBasicTest() {
      }
    });
 
-   /**
-    * @tc.name   testNetManagerConnectionNetBlockStatusChange0100
+    /**
+     * @tc.name   testNetManagerConnectionNetAvailable0300
+      * @tc.number SUB_NetManager_Connection_NetAvailable_0300
+      * @tc.desc   subscribe netAvailable twice with different callbacks, only the second callback is triggered
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level   LEVEL3
+      */
+    it('testNetManagerConnectionNetAvailable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetManagerConnectionNetAvailable0300";
+      console.info(`${caseName}---start`);
+      try {
+        let netConn = connection.createNetConnection();
+        let count1: number = 0;
+        let count2: number = 0;
+        netConn.on('netAvailable', (data: connection.NetHandle) => {
+          count1++;
+          console.info(`${caseName} callback1 triggered: ${JSON.stringify(data)}`);
+        });
+        netConn.on('netAvailable', (data: connection.NetHandle) => {
+          count2++;
+          console.info(`${caseName} callback2 triggered: ${JSON.stringify(data)}`);
+        });
+        netConn.register((error: BusinessError) => {
+          console.info(`${caseName} register callback: ${JSON.stringify(error)}`);
+        });
+        await sleep(1000);
+        netConn.unregister((error: BusinessError) => {
+          console.error(JSON.stringify(error));
+        });
+        await sleep(200);
+        ExpectTrue(count1 === 0);
+        ExpectTrue(count2 >= 1);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetManagerConnectionNetAvailable0400
+     * @tc.number SUB_NetManager_Connection_NetAvailable_0400
+     * @tc.desc   subscribe and register, unregister then re-subscribe and re-register, both callbacks are triggered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testNetManagerConnectionNetAvailable0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetManagerConnectionNetAvailable0400";
+      console.info(`${caseName}---start`);
+      try {
+        let netConn = connection.createNetConnection();
+        let count1: number = 0;
+        let count2: number = 0;
+        let callback1 = (data: connection.NetHandle) => {
+          count1++;
+          console.info(`${caseName} callback1 triggered: ${JSON.stringify(data)}`);
+        };
+        let callback2 = (data: connection.NetHandle) => {
+          count2++;
+          console.info(`${caseName} callback2 triggered: ${JSON.stringify(data)}`);
+        };
+        netConn.on('netAvailable', callback1);
+        netConn.register((error: BusinessError) => {
+          console.info(`${caseName} register callback: ${JSON.stringify(error)}`);
+        });
+        await sleep(1000);
+        netConn.unregister((error: BusinessError) => {
+          console.error(JSON.stringify(error));
+        });
+        await sleep(300);
+        netConn.on('netAvailable', callback2);
+        netConn.register((error: BusinessError) => {
+          console.info(`${caseName} re-register callback: ${JSON.stringify(error)}`);
+        });
+        await sleep(1000);
+        netConn.unregister((error: BusinessError) => {
+          console.error(JSON.stringify(error));
+        });
+        ExpectTrue(count1 >= 1);
+        ExpectTrue(count2 >= 1);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetManagerConnectionNetBlockStatusChange0100
     * @tc.number SUB_NetManager_Connection_NetBlockStatusChange_0100
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionNetBlockStatusChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetBlockStatusChange0100";
@@ -576,7 +671,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionNetCapabilitiesChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetCapabilitiesChange0100";
@@ -607,7 +702,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionNetCapabilitiesChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetCapabilitiesChange0200";
@@ -656,7 +751,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionNetConnectionPropertiesChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async  (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetConnectionPropertiesChange0100";
@@ -687,7 +782,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionNetConnectionPropertiesChange0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async  (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetConnectionPropertiesChange0200";
@@ -729,7 +824,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionNetLost0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async  (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetLost0100";
@@ -759,7 +854,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionNetUnavailable0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async  (done: Function) => {
      let caseName: string = "testNetManagerConnectionNetUnavailable0100";
@@ -783,13 +878,167 @@ export default function ConnectionBasicTest() {
      }
    });
 
-   /**
-    * @tc.name   testNetManagerConnectionSetAppNetCallback0100
+    /**
+     * @tc.name   testNetManagerConnectionNetUnavailable0200
+     * @tc.number SUB_NetManager_Connection_NetUnavailable_0200
+     * @tc.desc   subscribe netUnavailable with unmatched netSpecifier and short timeout, netUnavailable is triggered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testNetManagerConnectionNetUnavailable0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetManagerConnectionNetUnavailable0200";
+      console.info(`${caseName}---start`);
+      try {
+        let netSpecifier: connection.NetSpecifier = {
+          netCapabilities: {
+            linkUpBandwidthKbps: 0,
+            linkDownBandwidthKbps: 0,
+            bearerTypes: [connection.NetBearType.BEARER_CELLULAR],
+            networkCap: [connection.NetCap.NET_CAPABILITY_NOT_METERED],
+          }, bearerPrivateIdentifier: '123'
+        };
+        let netConn = connection.createNetConnection(netSpecifier, 100);
+        let count: number = 0;
+        netConn.on('netUnavailable', (data) => {
+          count++;
+          console.info(`${caseName} callback triggered: ${JSON.stringify(data)}`);
+        });
+        netConn.register((error: BusinessError) => {
+          console.info(`${caseName} register callback: ${JSON.stringify(error)}`);
+        });
+        await sleep(1000);
+        netConn.unregister((error: BusinessError) => {
+          console.error(JSON.stringify(error));
+        });
+        ExpectTrue(count >= 1);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetManagerConnectionNetUnavailable0300
+      * @tc.number SUB_NetManager_Connection_NetUnavailable_0300
+      * @tc.desc   subscribe netUnavailable twice with different callbacks, only the second callback is triggered
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level   LEVEL3
+      */
+    it('testNetManagerConnectionNetUnavailable0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetManagerConnectionNetUnavailable0300";
+      console.info(`${caseName}---start`);
+      try {
+        let netSpecifier: connection.NetSpecifier = {
+          netCapabilities: {
+            linkUpBandwidthKbps: 0,
+            linkDownBandwidthKbps: 0,
+            bearerTypes: [connection.NetBearType.BEARER_CELLULAR],
+            networkCap: [connection.NetCap.NET_CAPABILITY_NOT_METERED],
+          }, bearerPrivateIdentifier: '123'
+        };
+        let netConn = connection.createNetConnection(netSpecifier, 100);
+        let count1: number = 0;
+        let count2: number = 0;
+        netConn.on('netUnavailable', (data) => {
+          count1++;
+          console.info(`${caseName} callback1 triggered: ${JSON.stringify(data)}`);
+        });
+        netConn.on('netUnavailable', (data) => {
+          count2++;
+          console.info(`${caseName} callback2 triggered: ${JSON.stringify(data)}`);
+        });
+        netConn.register((error: BusinessError) => {
+          console.info(`${caseName} register callback: ${JSON.stringify(error)}`);
+        });
+        await sleep(1000);
+        netConn.unregister((error: BusinessError) => {
+          console.error(JSON.stringify(error));
+        });
+        ExpectTrue(count1 === 0);
+        ExpectTrue(count2 >= 1);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetManagerConnectionNetUnavailable0400
+     * @tc.number SUB_NetManager_Connection_NetUnavailable_0400
+     * @tc.desc   subscribe and register, unregister then re-subscribe and re-register, both callbacks are triggered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL3
+     */
+    it('testNetManagerConnectionNetUnavailable0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = "testNetManagerConnectionNetUnavailable0400";
+      console.info(`${caseName}---start`);
+      try {
+        let netSpecifier: connection.NetSpecifier = {
+          netCapabilities: {
+            linkUpBandwidthKbps: 0,
+            linkDownBandwidthKbps: 0,
+            bearerTypes: [connection.NetBearType.BEARER_CELLULAR],
+            networkCap: [connection.NetCap.NET_CAPABILITY_NOT_METERED],
+          }, bearerPrivateIdentifier: '123'
+        };
+        let netConn = connection.createNetConnection(netSpecifier, 100);
+        let count1: number = 0;
+        let count2: number = 0;
+        let callback1 = (data: void) => {
+          count1++;
+          console.info(`${caseName} callback1 triggered: ${JSON.stringify(data)}`);
+        };
+        let callback2 = (data: void) => {
+          count2++;
+          console.info(`${caseName} callback2 triggered: ${JSON.stringify(data)}`);
+        };
+        netConn.on('netUnavailable', callback1);
+        netConn.register((error: BusinessError) => {
+          console.info(`${caseName} register callback: ${JSON.stringify(error)}`);
+        });
+        await sleep(1000);
+        netConn.unregister((error: BusinessError) => {
+          console.error(JSON.stringify(error));
+        });
+        await sleep(300);
+        netConn.on('netUnavailable', callback2);
+        netConn.register((error: BusinessError) => {
+          console.info(`${caseName} re-register callback: ${JSON.stringify(error)}`);
+        });
+        await sleep(1000);
+        netConn.unregister((error: BusinessError) => {
+          console.error(JSON.stringify(error));
+        });
+        ExpectTrue(count1 >= 1);
+        ExpectTrue(count2 >= 1);
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testNetManagerConnectionSetAppNetCallback0100
     * @tc.number SUB_NetManager_Connection_SetAppNet_Callback_0100
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionSetAppNetCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionSetAppNetCallback0100";
@@ -834,7 +1083,7 @@ export default function ConnectionBasicTest() {
     * @tc.desc   Function test
     * @tc.type   FUNCTION
     * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL3
+    * @tc.level   LEVEL3
     */
    it('testNetManagerConnectionSetAppNetPromise0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
      let caseName: string = "testNetManagerConnectionSetAppNetPromise0100";

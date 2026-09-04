@@ -911,5 +911,338 @@ describe('fileIO_fs_access', function () {
         done();
       }
     });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_018
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1800
+     * @tc.desc   Test access() interface. Promise. mode is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      console.info("====>test_FileIO_Access_Async_018 start====");
+      try {
+        let res = await fileIO.access("", null);
+        console.log('test_FileIO_Access_Async_018 access success: ' + res);
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.log('test_FileIO_Access_Async_018 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_019
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_1900
+     * @tc.desc   Test access() interface. Promise. mode is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let res = await fileIO.access("", undefined);
+        console.log('test_FileIO_Access_Async_019 access success: ' + res);
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.log('test_FileIO_Access_Async_019 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code).assertEqual(13900020);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_020
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_2000
+     * @tc.desc   Test access() interface. Promise. mode=1 (out of AccessModeType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        await fileIO.access("", 1);
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.log('test_FileIO_Access_Async_020 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_021
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_2100
+     * @tc.desc   Test access() interface. Promise. mode=3 (out of AccessModeType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        await fileIO.access("", 3);
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.log('test_FileIO_Access_Async_021 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Async_022
+     * @tc.number SUB_DF_FILEIO_ACCESS_ASYNC_2200
+     * @tc.desc   Test access() interface. Promise. mode=-1 (negative, out of AccessModeType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Async_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        await fileIO.access("", -1);
+        expect().assertFail();
+        done();
+      } catch (e) {
+        console.log('test_FileIO_Access_Async_022 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_020
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2000
+     * @tc.desc   Test accessSync() interface. mode is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", null);
+        console.log('test_FileIO_Access_Sync_020 access success: ' + ret);
+        expect(typeof ret == 'boolean').assertTrue();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_020 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_021
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2100
+     * @tc.desc   Test accessSync() interface. mode is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", undefined);
+        console.log('test_FileIO_Access_Sync_021 access success: ' + ret);
+        expect(typeof ret == 'boolean').assertTrue();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_021 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_022
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2200
+     * @tc.desc   Test accessSync() interface. mode=1 (out of AccessModeType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", 1);
+        expect().assertFail();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_022 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_023
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2300
+     * @tc.desc   Test accessSync() interface. mode=5 (out of AccessModeType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", 5);
+        expect().assertFail();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_023 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_024
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2400
+     * @tc.desc   Test accessSync() interface. mode=-1 (negative, out of AccessModeType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", -1);
+        expect().assertFail();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_024 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_025
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2500
+     * @tc.desc   Test accessSync(path, mode, flag) interface. mode is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", null, fileIO.AccessFlagType.LOCAL);
+        expect(ret).assertFalse();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_025 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_026
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2600
+     * @tc.desc   Test accessSync(path, mode, flag) interface. mode is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", undefined, fileIO.AccessFlagType.LOCAL);
+        expect(ret).assertFalse();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_026 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_027
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2700
+     * @tc.desc   Test accessSync(path, mode, flag) interface. flag is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", fileIO.AccessModeType.EXIST, null);
+        expect().assertFail();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_027 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_028
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2800
+     * @tc.desc   Test accessSync(path, mode, flag) interface. flag is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", fileIO.AccessModeType.EXIST, undefined);
+        expect(ret).assertFalse();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_028 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_029
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_2900
+     * @tc.desc   Test accessSync(path, mode, flag) interface. mode=1 (out of AccessModeType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", 1, fileIO.AccessFlagType.LOCAL);
+        expect().assertFail();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_029 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_030
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_3000
+     * @tc.desc   Test accessSync(path, mode, flag) interface. flag=1 (out of AccessFlagType range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", fileIO.AccessModeType.EXIST, 30);
+        expect(typeof ret == "boolean").assertTrue();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_030 has failed for ' + e.message + ', code: ' + e.code);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_FileIO_Access_Sync_031
+     * @tc.number SUB_DF_FILEIO_ACCESS_SYNC_3100
+     * @tc.desc   Test accessSync(path, mode, flag) interface. mode=-1 and flag=2 (both out of range).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('test_FileIO_Access_Sync_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      try {
+        let ret = fileIO.accessSync("", -1, 2);
+        expect().assertFail();
+      } catch (e) {
+        console.log('test_FileIO_Access_Sync_031 has failed for ' + e.message + ', code: ' + e.code);
+        expect(e.code === 13900020).assertTrue();
+      }
+      done();
+    });
   });
 }

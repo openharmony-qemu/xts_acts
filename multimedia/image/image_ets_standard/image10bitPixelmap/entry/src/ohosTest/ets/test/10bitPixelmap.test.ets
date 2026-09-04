@@ -20,12 +20,19 @@ import rpc from '@ohos.rpc';
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import fs from '@ohos.file.fs';
-import hdrCapability from '@ohos.graphics.hdrCapability';
-import display from '@ohos.display';
-import resourceManager from '@ohos.resourceManager';
 import common from '@ohos.app.ability.common';
 
 let isSupportHdr: boolean = false;
+let globalPacker: image.ImagePacker | undefined;
+let globalPixelMap: image.PixelMap | undefined;
+const RGBA_1010102: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
+const YCBCR_P010: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
+const YCRCB_P010: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
+let openHdrPic: HdrPicture;
+let isSupportHEICEncode: boolean;
+let filesDir: string | undefined;
+let cacheDir: string | undefined;
+let testContext: common.UIAbilityContext;
 
 interface WriteFile {
   fd: number,
@@ -39,20 +46,10 @@ interface HdrPicture {
   fileData: ArrayBuffer
 }
 
-
 export default function image10bitPixelMap() {
   describe('image10bitPixelMap', () => {
-    let globalPacker: image.ImagePacker | undefined;
-    let globalPixelMap: image.PixelMap | undefined;
-    const RGBA_1010102: image.PixelMapFormat = image.PixelMapFormat.RGBA_1010102;
-    const YCBCR_P010: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
-    const YCRCB_P010: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
-    let filesDir: string | undefined;
-    let cacheDir: string | undefined;
-    let openHdrPic: HdrPicture;
-    let isSupportHEICEncode: boolean;
-
     beforeAll(async () => {
+      testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
       filesDir = AppStorage.get('pathDir');
       cacheDir = AppStorage.get('cacheDir');
       try {
@@ -101,7 +98,6 @@ export default function image10bitPixelMap() {
         hilog.info(0x0000, "image10bitPixelMap", 'case: %{public}s msg:%{public}s', this.testNum, msg);
       }
     }
-
 
     let sleep = async (delay: number): Promise<void> => {
       return new Promise((resolve, _) => {

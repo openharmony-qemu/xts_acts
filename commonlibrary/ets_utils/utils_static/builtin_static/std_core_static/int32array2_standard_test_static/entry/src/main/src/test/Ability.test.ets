@@ -1,24 +1,47 @@
 'use static';
 
-import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
+import {
+  beforeAll,
+  afterEach,
+  beforeEach,
+  afterAll,
+  describe,
+  it,
+  expect,
+  TestType,
+  Size,
+  Level
+} from '../../../hypium/index';
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000;
+let tag: string = 'testTag';
 
 export default function abilityTest() :void {
 
-    describe("abilityTest", (): void => {
+    describe('abilityTest', (): void => {
+    beforeAll((): void => {
+    });
+
+    beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(30);
+    });
+
+    afterEach((): void => {
+    });
+
+    afterAll((): void => {
+    });
         hilog.info(domain, tag, '%{public}s', 'describe start');
         /**
          * @tc.name   testErrorStatic
-         * @tc.number SUB_commonlibrary_ets_utils_Error_Static_0100
+         * @tc.number SUB_COMMONLIBRARY_UTIL_commonlibrary_ets_utils_Error_Static_0100
          * @tc.desc   Test Error static type checking and assignment compatibility in ArkTS
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
+         * @tc.level LEVEL1
          */
-        it("testErrorStatic", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+        it('testErrorStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000)
             hilog.info(domain, tag, '%{public}s', 'abilityTest001 start');
             let a:int = 1;

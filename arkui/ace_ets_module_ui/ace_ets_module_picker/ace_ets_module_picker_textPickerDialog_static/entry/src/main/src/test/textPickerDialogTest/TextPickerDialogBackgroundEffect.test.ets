@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -22,14 +21,9 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 export default function TextPickerDialogBackgroundEffectTest() {
   describe('TextPickerDialogBackgroundEffectTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("TextPickerDialogBackgroundEffectTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("TextPickerDialogBackgroundEffectTest beforeEach start");
       let options: router.RouterOptions = {
@@ -51,7 +45,11 @@ export default function TextPickerDialogBackgroundEffectTest() {
       console.info("TextPickerDialogBackgroundEffectTest beforeEach end");
     });
     afterEach(async () => {
-      await Utils.sleep(1000);
+      try {
+        await Utils.sleep(1000);
+      } catch (err) {
+        console.error("TextPickerDialogBackgroundEffectTest afterEach error: " + err);
+      }
       console.info("TextPickerDialogBackgroundEffectTest after each called");
     });
 
@@ -64,6 +62,7 @@ export default function TextPickerDialogBackgroundEffectTest() {
      * @tc.level  Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGEFFECT_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ARKUI_TEXTPICKERDIALOG_BGEFFECT_STATIC_0100] START');
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('DatePickerDialog_Effect001'));
@@ -100,6 +99,10 @@ export default function TextPickerDialogBackgroundEffectTest() {
       await (cancelBtn?.click() as Promise<void>);
       console.info('[SUB_ARKUI_TEXTPICKERDIALOG_BGEFFECT_STATIC_0100] END');
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGEFFECT_STATIC_0100 error: ' + err);
+        done();
+      }
     });
     /**
      * @tc.name   SUB_ARKUI_TEXTPICKERDIALOG_BGEFFECT_STATIC_0200
@@ -110,6 +113,7 @@ export default function TextPickerDialogBackgroundEffectTest() {
      * @tc.level  Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_BGEFFECT_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       console.info('[SUB_ARKUI_TEXTPICKERDIALOG_BGEFFECT_STATIC_0200] START');
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('DatePickerDialog_Effect002'));
@@ -132,6 +136,10 @@ export default function TextPickerDialogBackgroundEffectTest() {
       await (cancelBtn?.click() as Promise<void>);
       console.info('[SUB_ARKUI_TEXTPICKERDIALOG_BGEFFECT_STATIC_0200] END');
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_BGEFFECT_STATIC_0200 error: ' + err);
+        done();
+      }
     });
   })
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import { Component, Driver, ON, UiWindow } from '@ohos.UiTest';
@@ -32,23 +32,10 @@ import {
   TextAttribute,
 } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../Util.test.ets';
-import { UtilsTest } from '../Util.test';
 
 export default function scrollPropertiesTest() {
 
   describe('scrollPropertiesTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("scrollPropertiesTest beforeEach start");
-      await UtilsTest.startAbility("com.arkui.ace.scroll.api24.static", "EntryAbility");
-
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("scrollPropertiesTest beforeEach start");
       let options: router.RouterOptions = {
@@ -79,15 +66,20 @@ export default function scrollPropertiesTest() {
      */
     it('autoAdjustScrollBarMargin_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[autoAdjustScrollBarMargin_static_0100] START');
+      try {
+        let strJson = inspector.getInspectorByKey('scroll_autoAdjust_true');
+        console.info("[autoAdjustScrollBarMargin_static_0100] autoAdjustScrollBarMargin: " +
+          JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'));
 
-      let strJson = inspector.getInspectorByKey('scroll_autoAdjust_true');
-      console.info("[autoAdjustScrollBarMargin_static_0100] autoAdjustScrollBarMargin: " +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'));
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'))
-        .assertEqual('true');
-      console.info('[autoAdjustScrollBarMargin_static_0100] END');
-      done();
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'))
+          .assertEqual('true');
+        console.info('[autoAdjustScrollBarMargin_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[autoAdjustScrollBarMargin_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -100,15 +92,20 @@ export default function scrollPropertiesTest() {
      */
     it('autoAdjustScrollBarMargin_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[autoAdjustScrollBarMargin_static_0200] START');
+      try {
+        let strJson = inspector.getInspectorByKey('scroll_autoAdjust_false');
+        console.info("[autoAdjustScrollBarMargin_static_0200] autoAdjustScrollBarMargin: " +
+          JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'));
 
-      let strJson = inspector.getInspectorByKey('scroll_autoAdjust_false');
-      console.info("[autoAdjustScrollBarMargin_static_0200] autoAdjustScrollBarMargin: " +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'));
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'))
-        .assertEqual('false');
-      console.info('[autoAdjustScrollBarMargin_static_0200] END');
-      done();
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'))
+          .assertEqual('false');
+        console.info('[autoAdjustScrollBarMargin_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[autoAdjustScrollBarMargin_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -121,15 +118,20 @@ export default function scrollPropertiesTest() {
      */
     it('autoAdjustScrollBarMargin_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[autoAdjustScrollBarMargin_static_0300] START');
+      try {
+        let strJson = inspector.getInspectorByKey('scroll_autoAdjust_undefined');
+        console.info("[autoAdjustScrollBarMargin_static_0300] autoAdjustScrollBarMargin: " +
+          JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'));
 
-      let strJson = inspector.getInspectorByKey('scroll_autoAdjust_undefined');
-      console.info("[autoAdjustScrollBarMargin_static_0300] autoAdjustScrollBarMargin: " +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'));
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'))
-        .assertEqual('false');
-      console.info('[autoAdjustScrollBarMargin_static_0300] END');
-      done();
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoAdjustScrollBarMargin'))
+          .assertEqual('false');
+        console.info('[autoAdjustScrollBarMargin_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[autoAdjustScrollBarMargin_static_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -142,15 +144,20 @@ export default function scrollPropertiesTest() {
      */
     it('enableScrollWithMouse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[enableScrollWithMouse_static_0100] START');
+      try {
+        let strJson = inspector.getInspectorByKey('scroll_enableMouse_true');
+        console.info("[enableScrollWithMouse_static_0100] enableScrollWithMouse: " +
+          JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'));
 
-      let strJson = inspector.getInspectorByKey('scroll_enableMouse_true');
-      console.info("[enableScrollWithMouse_static_0100] enableScrollWithMouse: " +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'));
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'))
-        .assertEqual(true);
-      console.info('[enableScrollWithMouse_static_0100] END');
-      done();
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'))
+          .assertEqual(true);
+        console.info('[enableScrollWithMouse_static_0100] END');
+        done();
+      } catch (error) {
+        console.error('[enableScrollWithMouse_static_0100] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -163,15 +170,20 @@ export default function scrollPropertiesTest() {
      */
     it('enableScrollWithMouse_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[enableScrollWithMouse_static_0200] START');
+      try {
+        let strJson = inspector.getInspectorByKey('scroll_enableMouse_false');
+        console.info("[enableScrollWithMouse_static_0200] enableScrollWithMouse: " +
+          JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'));
 
-      let strJson = inspector.getInspectorByKey('scroll_enableMouse_false');
-      console.info("[enableScrollWithMouse_static_0200] enableScrollWithMouse: " +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'));
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'))
-        .assertEqual(false);
-      console.info('[enableScrollWithMouse_static_0200] END');
-      done();
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'))
+          .assertEqual(false);
+        console.info('[enableScrollWithMouse_static_0200] END');
+        done();
+      } catch (error) {
+        console.error('[enableScrollWithMouse_static_0200] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
 
     /**
@@ -184,15 +196,20 @@ export default function scrollPropertiesTest() {
      */
     it('enableScrollWithMouse_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[enableScrollWithMouse_static_0300] START');
+      try {
+        let strJson = inspector.getInspectorByKey('scroll_enableMouse_undefined');
+        console.info("[enableScrollWithMouse_static_0300] enableScrollWithMouse: " +
+          JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'));
 
-      let strJson = inspector.getInspectorByKey('scroll_enableMouse_undefined');
-      console.info("[enableScrollWithMouse_static_0300] enableScrollWithMouse: " +
-        JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'));
-
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'))
-        .assertEqual(false);
-      console.info('[enableScrollWithMouse_static_0300] END');
-      done();
+        expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('enableScrollWithMouse'))
+          .assertEqual(false);
+        console.info('[enableScrollWithMouse_static_0300] END');
+        done();
+      } catch (error) {
+        console.error('[enableScrollWithMouse_static_0300] error:' + error);
+        expect().assertFail();
+        done();
+      }
     })
   })
 }

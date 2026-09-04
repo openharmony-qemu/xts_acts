@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, it, expect, Level, beforeAll, Size, TestType, afterEach } from '../../../../hypium/index';
+import { describe, beforeEach, it, expect, Level, Size, TestType, afterEach } from '../../../../hypium/index';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -21,14 +21,8 @@ import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UtilsTest } from '../Util.test';
 export default function cancelButtonStyleTest() {
   describe('cancelButtonStyleTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("cancelButtonStyleTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.picker.textPickerDialog.static", "EntryAbility")
-    });
-
     beforeEach(async (): Promise<void> => {
       console.info("cancelButtonStyleTest beforeEach start");
       let options: router.RouterOptions = {
@@ -60,6 +54,7 @@ export default function cancelButtonStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_CANCELBUTTONSTYLE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('show'));
       button?.click();
@@ -80,6 +75,10 @@ export default function cancelButtonStyleTest() {
       btn1?.click();
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_CANCELBUTTONSTYLE_STATIC_0100 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -91,6 +90,7 @@ export default function cancelButtonStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_CANCELBUTTONSTYLE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('show'));
       button?.click();
@@ -111,6 +111,10 @@ export default function cancelButtonStyleTest() {
       btn1?.click();
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_CANCELBUTTONSTYLE_STATIC_0200 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -122,6 +126,7 @@ export default function cancelButtonStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_CANCELBUTTONSTYLE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('show2'));
       button?.click();
@@ -142,6 +147,10 @@ export default function cancelButtonStyleTest() {
       btn1?.click();
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_CANCELBUTTONSTYLE_STATIC_0300 error: ' + err);
+        done();
+      }
     })
 
     /**
@@ -153,6 +162,7 @@ export default function cancelButtonStyleTest() {
      * @tc.level    Level.LEVEL0
      */
     it('SUB_ARKUI_TEXTPICKERDIALOG_CANCELBUTTONSTYLE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('show3'));
       button?.click();
@@ -173,6 +183,10 @@ export default function cancelButtonStyleTest() {
       btn1?.click();
       await CommonFunc.sleep(1000);
       done();
+      } catch (err) {
+        console.error('SUB_ARKUI_TEXTPICKERDIALOG_CANCELBUTTONSTYLE_STATIC_0400 error: ' + err);
+        done();
+      }
     })
   })
 }

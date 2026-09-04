@@ -52,3 +52,4 @@ export const CertVerification: (a : string, b: string) => number;
 export const GetCertificatesHost: (a : string) => number;
 export const Netconn_GetEnum: () => number;
 export const Netconn_GetEnumInternalError: () => number;
+export const Netconn_GetEnumByCaseIndex: (a: number) => number;

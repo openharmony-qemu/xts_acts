@@ -17,6 +17,21 @@ import keyedCollections05Test from './set2/KeyedCollections_05.test';
 import keyedCollections12Test from './set2/KeyedCollections_12.test';
 import keyedCollections13Test from './set2/KeyedCollections_13.test';
 
+import setBigIntTest from "./set3/SetBigIntTest.test";
+import setBooleanTest from "./set3/SetBooleanTest.test";
+import setClassTest from "./set3/SetClassTest.test";
+import setDateTest from "./set3/SetDateTest.test";
+import setFunctionTest from "./set3/SetFunctionTest.test";
+import setMapTest from "./set3/SetMapTest.test";
+import setNestedTest from "./set3/SetNestedTest.test";
+import setNumberTest from "./set3/SetNumberTest.test";
+import setObjectTest from "./set3/SetObjectTest.test";
+import setRegExpTest from "./set3/SetRegExpTest.test";
+import setSetTest from "./set3/SetSetTest.test";
+import setStringTest from "./set3/SetStringTest.test";
+import setSymbolsTest from "./set3/SetSymbolsTest.test";
+import setUnionTest from "./set3/SetUnionTest.test";
+
 export default function testsuite() {
   SetSetTest();
   SetAddTest();
@@ -36,4 +51,19 @@ export default function testsuite() {
   keyedCollections05Test();
   keyedCollections12Test();
   keyedCollections13Test();
+
+  setBigIntTest();
+  setBooleanTest();
+  setClassTest();
+  setDateTest();
+  setFunctionTest();
+  setMapTest();
+  setNestedTest();
+  setNumberTest();
+  setObjectTest();
+  setRegExpTest();
+  setSetTest();
+  setStringTest();
+  setSymbolsTest();
+  setUnionTest();
 }

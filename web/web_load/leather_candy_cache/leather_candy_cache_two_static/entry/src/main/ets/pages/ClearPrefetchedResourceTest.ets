@@ -30,7 +30,7 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import web_webview from '@ohos.web.webview'
-import { BusinessError, Callback,RecordData } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
@@ -51,13 +51,11 @@ struct clearPrefetchedResourceTest {
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    if (eventData != null) {
-      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
-        let strValue: string = String(data['ACTION']);
-        this.str = strValue;
-      }
+    console.info('valueChangeCallBack:' + JSON.stringify(eventData));
+    const data = eventData.data as Record<string, RecordData>;
+    if (data != null && data['ACTION'] != null) {
+      let strValue: string = String(data['ACTION']);
+      this.str = strValue;
     }
   }
 
@@ -91,7 +89,6 @@ struct clearPrefetchedResourceTest {
                   'KeyX', 500);
                 Utils.emitEvent(true, 10110)
               } catch (error) {
-                error = error as BusinessError;
                 Utils.emitEvent(error.code, 10110)
                 console.error(`${msg} prefetchResource ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -100,17 +97,10 @@ struct clearPrefetchedResourceTest {
                   web_webview.WebviewController.clearPrefetchedResource(['KeyX']);
                   Utils.emitEvent(true, 10112)
                 } catch (err) {
-                  err = err as BusinessError;
                   Utils.emitEvent(err.code, 10112)
                   console.error(msg + 'clearPrefetchedResource error: ' + err.code + ' Message: ' + err.message);
                 }
               }, 1000)
-              break;
-            }
-            case 'emitonSwitchNextPage': {
-              let uiContext: UIContext = this.getUIContext();
-              let router: Router = uiContext.getRouter();
-              router.pushUrl({ url: 'pages/InjectOfflineResourcesTest' })
               break;
             }
 
@@ -124,7 +114,6 @@ struct clearPrefetchedResourceTest {
                 web_webview.WebviewController.prefetchResource(requestInfo, [], '', 500);
                 Utils.emitEvent(true, 41023101)
               } catch (error) {
-                error = error as BusinessError;
                 Utils.emitEvent(error.code, 41023101)
               }
               break;
@@ -144,7 +133,6 @@ struct clearPrefetchedResourceTest {
                   headers as Array<web_webview.WebHeader>, cacheKey as string, cacheValidTime as Int);
                 Utils.emitEvent(true, 41023102)
               } catch (error) {
-                error = error as BusinessError;
                 Utils.emitEvent(error.code, 41023102)
               }
               break;
@@ -164,9 +152,14 @@ struct clearPrefetchedResourceTest {
                   headers as Array<web_webview.WebHeader>, cacheKey as string, cacheValidTime as Int);
                 Utils.emitEvent(true, 41023103)
               } catch (error) {
-                error = error as BusinessError;
                 Utils.emitEvent(error.code, 41023103)
               }
+              break;
+            }
+            case 'emitonSwitchNextPage': {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/InjectOfflineResourcesTest' })
               break;
             }
           }

@@ -27,16 +27,15 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 export const FILE_CONTENT = 'hello world';
 export const CONTENT = 'hello!!!';
+let fpath2G: string = '';
 export function prepare2GFile(fpath: string) {
   try {
     let file = fs.openSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE)
     fs.truncateSync(file.fd)
     let bf = new ArrayBuffer(1024 * 1024 * 20);
-    for (let i = 0; i < 70; i++) {
-      hilog.info(domain, tag, '%{public}s', 'prepare2GFile start');
+    for (let i = 0; i < 100; i++) {
       let offset = bf.byteLength * i;
       let writeLen = fs.writeSync(file.fd, bf, { offset: offset, length: bf.byteLength, encoding: 'utf-8' });
-      hilog.info(domain, tag, '%{public}s', 'prepare2GFile end: ' + i);
     }
     fs.fsyncSync(file.fd)
     fs.closeSync(file)
@@ -51,8 +50,13 @@ export function prepare2GFile(fpath: string) {
 export default function fileIOCopy() {
   describe('fileIO_fs_copy', (): void => {
 
+    beforeAll(async (): Promise<void> => {
+      fpath2G = await Utils.nextFileName('test2G');
+      expect(prepare2GFile(fpath2G)).assertTrue();
+    });
+
     /**
-     * @tc.name   fileIO_copy_async_static_001
+      * @tc.name   fileIO_copy_async_static_001
      * @tc.number SUB_BASIC_FM_FileAPI_fileIO_copy_async_static_0100
      * @tc.desc   Test copy() interfaces.Promise.
      * @tc.type   FUNCTION
@@ -454,8 +458,6 @@ export default function fileIOCopy() {
      * @tc.level  LEVEL3
      */
     it('fileIO_copy_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void) : Promise<void> => {
-      let fpath2G = await Utils.nextFileName('test2G');
-      expect(prepare2GFile(fpath2G)).assertTrue();
       let destpath = fpath2G + 'dest';
       let srcDirUri = fileUri.getUriFromPath(fpath2G);
       let dstDirUri = fileUri.getUriFromPath(destpath);

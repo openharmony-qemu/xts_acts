@@ -460,7 +460,7 @@ export default function uint8ClampedArraySetThreeTest(): void {
         arr.set(al, 2147483647);
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
+        expect(e.name).assertEqual('RangeError');
       }
     });
 

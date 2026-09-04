@@ -592,7 +592,7 @@ class CameraService {
       Logger.info(this.tag, `createPhotoOutputFn photoProfileObj success: ` + JSON.stringify(photoProfileObj))
       let mSurfaceId = await this.mReceiver.getReceivingSurfaceId()
       this.photoOutput = await this.cameraManager.createPhotoOutput(photoProfileObj, mSurfaceId)
-      Logger.info(this.tag, `createPhotoOutputFn success: ` + JSON.stringify(this.photoOutput))
+      Logger.info(this.tag, `createPhotoOutputFn success: ${JSON.parse(this.photoOutput[0])} ${JSON.parse(this.photoOutput[1])}`)
     } catch (err) {
       Logger.info(this.tag, `createPhotoOutputFn fail err: ${err}, message: ${err.message}, code: ${err.code}`)
     }
@@ -602,7 +602,7 @@ class CameraService {
   async createCameraInputFn(cameraDeviceIndex) {
     try {
       this.cameraInput = await this.cameraManager.createCameraInput(cameraDeviceIndex)
-      Logger.info(this.tag, `createCameraInputFn success: ${this.cameraInput}`)
+      Logger.info(this.tag, `createCameraInputFn success: ${JSON.stringify(this.cameraInput)}`)
     } catch (err) {
       Logger.info(this.tag, `createCameraInputFn fail err: ${err}, message: ${err.message}, code: ${err.code}`)
     }

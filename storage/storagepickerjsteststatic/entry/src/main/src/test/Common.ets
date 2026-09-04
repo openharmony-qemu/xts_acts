@@ -44,6 +44,7 @@ export async function stopAbility(bundleName: string) {
 }
 
 export async function sleep(times: int) : Promise<int> {
+  hilog.info(domain, tag, '%{public}s', `[picker] sleep times: ${times}`)
   if (!times) {
     times = 10;
   }

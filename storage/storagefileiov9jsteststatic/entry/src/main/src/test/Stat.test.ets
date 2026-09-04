@@ -1796,7 +1796,7 @@ export default function fileIOStat() {
           }
           expect(statres?.isSymbolicLink() === false).assertTrue();
         });
-        await Utils.msSleep(3000);
+        await Utils.msSleep(1000);
         let file = fs.openSync(fpath);
         fs.stat(file.fd, (err: BusinessError | null, stat2: fs.Stat | undefined) => {
           if(err?.code != 0) {
@@ -1805,7 +1805,6 @@ export default function fileIOStat() {
           }
           expect(stat2?.isSymbolicLink() === false).assertTrue();
           fs.closeSync(file);
-          waitForCompletion(async () => {await Utils.msSleep(2000);})
           hilog.info(domain, tag, '%{public}s', 'fileIO_stat_async_is_symbolic_link_static_001 unlink start');
           fs.unlinkSync(fpath);
           done();
