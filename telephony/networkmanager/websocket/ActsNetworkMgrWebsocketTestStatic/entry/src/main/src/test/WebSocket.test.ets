@@ -1679,12 +1679,12 @@ export default function WebSocketTest() {
             done();
           })
           let client: webSocket.WebSocket = webSocket.createWebSocket();
-          client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
+          client.connect('ws://127.0.0.1:8099', (err: BusinessError<undefined> | null, value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
               let retryCount = 0;
               const maxRetries = 20;
-              function trySend(): void {
+              const trySend = (): void => {
                 let connections = server.listAllConnections();
                 if (connections && connections.length > 0) {
                   server.send("hello client", connections[0]).then((sendValue: boolean | undefined) => {
@@ -1718,7 +1718,7 @@ export default function WebSocketTest() {
                   hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                   done();
                 }
-              }
+              };
               trySend();
             } else {
               ExpectFail();
