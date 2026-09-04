@@ -540,5 +540,28 @@ export default function CollectionsMapPutTest(): void {
 
       console.info(`${caseName}, test end`);
     });
+
+    /**
+     * @tc.name   collectionsMapPutTest4200
+     * @tc.number SUB_COLLECTIONS_MAP_PUT_4200
+     * @tc.desc   Verify put return value is explicitly captured as string or undefined type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('collectionsMapPutTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName: string = 'collectionsMapPutTest4200';
+      console.info(`${caseName}, test start`);
+      const map: collections.Map<number, string> = new collections.Map<number, string>();
+      const result1: string | undefined = map.put(1, 'a');
+      expect(result1).assertEqual(undefined);
+      const result2: string | undefined = map.put(1, 'b');
+      expect(result2).assertEqual('a');
+      const result3: string | undefined = map.put(2, 'c');
+      expect(result3).assertEqual(undefined);
+      const result4: string | undefined = map.put(2, 'd');
+      expect(result4).assertEqual('c');
+      console.info(`${caseName}, test end`);
+    });
   });
 }

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from '@kit.ArkTS';
+import { collections, BuiltinArray, taskpool, worker, MessageEvents, ArkTSUtils } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import {CrossThreadApiResult} from './common'
 
@@ -791,6 +791,26 @@ export default function CollectionsArrayContainsAllSendableTest(): void {
           expect(error.code).assertEqual(10200011);
         }
         expect(thrown).assertEqual(true);
+        console.info(`${caseName}, test end`);
+      });
+
+    /**
+     * @tc.name   collectionsArrayContainsAllTest6400
+     * @tc.number SUB_COLLECTIONS_ARRAY_CONTAINS_ALL_6400
+     * @tc.desc   Verify containsAll with explicitly declared BuiltinArray type input.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL1
+     */
+    it('collectionsArrayContainsAllTest6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (): void => {
+        const caseName: string = 'collectionsArrayContainsAllTest6400';
+        console.info(`${caseName}, test start`);
+        const receiver: collections.Array<number> = new collections.Array<number>(1, 2, 3);
+        const elements: BuiltinArray<number> = [1, 2, 3];
+        expect(receiver.containsAll(elements)).assertEqual(true);
+        const notFound: BuiltinArray<number> = [4, 5];
+        expect(receiver.containsAll(notFound)).assertEqual(false);
         console.info(`${caseName}, test end`);
       });
   });

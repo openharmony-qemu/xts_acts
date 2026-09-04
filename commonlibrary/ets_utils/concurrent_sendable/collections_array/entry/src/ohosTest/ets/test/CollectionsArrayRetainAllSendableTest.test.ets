@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { collections, taskpool, worker, MessageEvents, ArkTSUtils } from '@kit.ArkTS';
+import { collections, BuiltinArray, taskpool, worker, MessageEvents, ArkTSUtils } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 
 function sleep(time: number): Promise<void> {
@@ -506,6 +506,27 @@ export default function CollectionsArrayRetainAllSendableTest(): void {
           expect(error.code).assertEqual(10200011);
         }
         expect(thrown).assertEqual(true);
+        console.info(`${caseName}, test end`);
+      });
+
+    /**
+     * @tc.name   collectionsArrayRetainAllTest3800
+     * @tc.number SUB_COLLECTIONS_ARRAY_RETAIN_ALL_3800
+     * @tc.desc   Verify retainAll with explicitly declared BuiltinArray type input.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('collectionsArrayRetainAllTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (): void => {
+        const caseName: string = 'collectionsArrayRetainAllTest3800';
+        console.info(`${caseName}, test start`);
+        const receiver: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
+        const elements: BuiltinArray<number> = [2, 4];
+        expect(receiver.retainAll(elements)).assertEqual(true);
+        expect(receiver.length).assertEqual(2);
+        expect(receiver.at(0)).assertEqual(2);
+        expect(receiver.at(1)).assertEqual(4);
         console.info(`${caseName}, test end`);
       });
   });

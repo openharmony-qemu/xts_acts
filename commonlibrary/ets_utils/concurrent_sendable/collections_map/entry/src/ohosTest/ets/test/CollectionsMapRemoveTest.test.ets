@@ -552,5 +552,30 @@ export default function CollectionsMapRemoveTest(): void {
 
       console.info(`${caseName}, test end`);
     });
+
+    /**
+     * @tc.name   collectionsMapRemoveTest4300
+     * @tc.number SUB_COLLECTIONS_MAP_REMOVE_4300
+     * @tc.desc   Verify remove return value is explicitly captured as string or undefined type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('collectionsMapRemoveTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName: string = 'collectionsMapRemoveTest4300';
+      console.info(`${caseName}, test start`);
+      const map: collections.Map<number, string> = new collections.Map<number, string>();
+      map.put(1, 'a');
+      map.put(2, 'b');
+      const removed1: string | undefined = map.remove(1);
+      expect(removed1).assertEqual('a');
+      const removed2: string | undefined = map.remove(1);
+      expect(removed2).assertEqual(undefined);
+      const removed3: string | undefined = map.remove(999);
+      expect(removed3).assertEqual(undefined);
+      const removed4: string | undefined = map.remove(2);
+      expect(removed4).assertEqual('b');
+      console.info(`${caseName}, test end`);
+    });
   });
 }

@@ -750,5 +750,27 @@ export default function CollectionsArrayRetainAllPredicateTest(): void {
         expect(receiver.at(1024)).assertEqual(0);
         console.info(`${caseName}, test end`);
       });
+
+    /**
+     * @tc.name   collectionsArrayRetainAllPredicateTest3400
+     * @tc.number SUB_COLLECTIONS_ARRAY_RETAIN_ALL_PREDICATE_3400
+     * @tc.desc   Verify retainAll with explicitly declared ArrayElementPredicateFn type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('collectionsArrayRetainAllPredicateTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      (): void => {
+        const caseName: string = 'collectionsArrayRetainAllPredicateTest3400';
+        console.info(`${caseName}, test start`);
+        const receiver: collections.Array<number> = new collections.Array<number>(1, 2, 3, 4, 5);
+        const predicate: collections.ArrayElementPredicateFn<number> = (value: number): boolean => value >= 3;
+        expect(receiver.retainAll(predicate)).assertEqual(true);
+        expect(receiver.length).assertEqual(3);
+        expect(receiver.at(0)).assertEqual(3);
+        expect(receiver.at(1)).assertEqual(4);
+        expect(receiver.at(2)).assertEqual(5);
+        console.info(`${caseName}, test end`);
+      });
   });
 }
