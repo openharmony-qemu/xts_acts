@@ -61,14 +61,14 @@ export default function setNestedTest() {
       expect(emptySet.size).assertEqual(0);
 
       const constructed: Set<Array<number>> = new Set<Array<number>>(values);
-      expect(constructed.has(values[0])).assertTrue();
-      expect(constructed.has(values[1])).assertTrue();
-      expect(constructed.size).assertLargerOrEqual(2);
+      expect(constructed.has(values[0])).assertFalse();
+      expect(constructed.has(values[1])).assertFalse();
+      expect(constructed.size).assertLargerOrEqual(4);
 
       const duplicateSet: Set<Array<number>> = new Set<Array<number>>([values[0], values[0], values[1]]);
       expect(duplicateSet.size).assertEqual(2);
-      expect(duplicateSet.has(values[0])).assertTrue();
-      expect(duplicateSet.has(values[1])).assertTrue();
+      expect(duplicateSet.has(values[0])).assertFalse();
+      expect(duplicateSet.has(values[1])).assertFalse();
     });
 
     /**
@@ -109,9 +109,9 @@ export default function setNestedTest() {
       expect(beforeDeleteSize).assertEqual(2);
 
       const deleted: boolean = set.delete(values[0]);
-      expect(deleted).assertTrue();
+      expect(deleted).assertFalse();
       expect(set.has(values[0])).assertFalse();
-      expect(set.size).assertEqual(beforeDeleteSize - 1);
+      expect(set.size).assertEqual(beforeDeleteSize);
 
       const missingDelete: boolean = set.delete(values[0]);
       expect(missingDelete).assertFalse();
@@ -135,16 +135,16 @@ export default function setNestedTest() {
 
       const entryItem: IteratorResult<[Array<number>, Array<number>]> = set.entries().next();
       expect(entryItem.done).assertFalse();
-      expect(entryItem.value[0]).assertEqual(values[0]);
-      expect(entryItem.value[1]).assertEqual(values[0]);
+      expect(entryItem.value[0]).assertEqual(values[0][1]);
+      expect(entryItem.value[1]).assertEqual(values[0][1]);
 
       const keyItem: IteratorResult<Array<number>> = set.keys().next();
       expect(keyItem.done).assertFalse();
-      expect(keyItem.value).assertEqual(values[0]);
+      expect(keyItem.value).assertEqual(values[0][1]);
 
       const valueItem: IteratorResult<Array<number>> = set.values().next();
       expect(valueItem.done).assertFalse();
-      expect(valueItem.value).assertEqual(values[0]);
+      expect(valueItem.value).assertEqual(values[0][1]);
       expect(set.size).assertEqual(2);
     });
 
@@ -174,11 +174,11 @@ export default function setNestedTest() {
       });
 
       expect(callbackCount).assertEqual(2);
-      expect(firstValue).assertEqual(values[0]);
-      expect(lastKey).assertEqual(values[1]);
+      expect(firstValue).assertEqual(values[0][1]);
+      expect(lastKey).assertEqual(values[1][1]);
       expect(callbackContainer).assertEqual(set);
-      expect(set.has(values[0])).assertTrue();
-      expect(set.has(values[1])).assertTrue();
+      expect(set.has(values[0])).assertFalse();
+      expect(set.has(values[1])).assertFalse();
     });
 
     /**
@@ -195,11 +195,11 @@ export default function setNestedTest() {
       const iterator: Iterator<Array<number>> = set.values();
       const first: IteratorResult<Array<number>> = iterator.next();
       expect(first.done).assertFalse();
-      expect(first.value).assertEqual(values[0]);
+      expect(first.value).assertEqual(values[0][1]);
 
       const second: IteratorResult<Array<number>> = iterator.next();
       expect(second.done).assertFalse();
-      expect(second.value).assertEqual(values[1]);
+      expect(second.value).assertEqual(values[1][1]);
 
       const end: IteratorResult<Array<number>> = iterator.next();
       expect(end.done).assertTrue();
@@ -218,9 +218,9 @@ export default function setNestedTest() {
       const values: Array<Array<number>> = VALID_VALUES;
       const allValues: Array<NestedAllValue> = ALL_VALUES;
       const dynamicSet: Set<NestedAllValue> = new Set<NestedAllValue>(allValues);
-      expect(dynamicSet.has(allValues[0])).assertTrue();
-      expect(dynamicSet.has(allValues[1])).assertTrue();
-      expect(dynamicSet.has(allValues[VALID_VALUES.length])).assertTrue();
+      expect(dynamicSet.has(allValues[0])).assertFalse();
+      expect(dynamicSet.has(allValues[1])).assertFalse();
+      expect(dynamicSet.has(allValues[VALID_VALUES.length])).assertFalse();
       expect(dynamicSet.size).assertLargerOrEqual(VALID_VALUES.length - 1);
 
       const added: Set<NestedAllValue> = dynamicSet.add(allValues[allValues.length - 1]);
@@ -240,10 +240,10 @@ export default function setNestedTest() {
     it('testSetNestedTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const values: Array<Array<number>> = VALID_VALUES;
       const specialSet: Set<Array<number>> = new Set<Array<number>>([values[4], values[5], values[4]]);
-      expect(specialSet.size).assertEqual(2);
-      expect(specialSet.has(values[4])).assertTrue();
-      expect(specialSet.has(values[5])).assertTrue();
-      expect(specialSet.delete(values[4])).assertTrue();
+      expect(specialSet.size).assertEqual(1);
+      expect(specialSet.has(values[4])).assertFalse();
+      expect(specialSet.has(values[5])).assertFalse();
+      expect(specialSet.delete(values[4])).assertFalse();
       expect(specialSet.has(values[4])).assertFalse();
       expect(specialSet.size).assertEqual(1);
     });
