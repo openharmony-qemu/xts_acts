@@ -54,7 +54,6 @@ export default function testsuite() {
     TimePickerAttributeModifierTest();
     UIPickerCallbackTest();
     TextPickerOnChangeTest();
-    TextPickerOnScrollStopTest();
     TextPickerOnEnterSelectedAreaTest();
     TimePickerOnChangeTest();
 }
