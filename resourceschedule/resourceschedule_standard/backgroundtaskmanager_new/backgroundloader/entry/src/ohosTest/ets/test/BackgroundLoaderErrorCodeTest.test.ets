@@ -117,7 +117,7 @@ export default function BackgroundLoaderErrorCodeTest() {
     /**
      * @tc.number SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400
      * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400
-     * @tc.desc   Test unregisterTask with invalid taskId negative number returns error 9700004
+     * @tc.desc   Test unregisterTask accepts a negative taskId in the documented integer range
      * @tc.level  LEVEL3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

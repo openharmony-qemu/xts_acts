@@ -14,11 +14,14 @@
  */
 
 import UIAbility from '@ohos.app.ability.UIAbility';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import Want from '@ohos.app.ability.Want';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
+import { BusinessError } from '@ohos.base';
 
 export default class EntryAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     globalThis.abilityWant = want;
     globalThis.abilityContext = this.context;
@@ -34,7 +37,7 @@ export default class EntryAbility extends UIAbility {
 
     globalThis.windowStage = windowStage;
     globalThis.abilityContext = this.context;
-    windowStage.loadContent('pages/index/index', (err, data) => {
+    windowStage.loadContent('pages/index/index', (err: BusinessError, data: void) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
