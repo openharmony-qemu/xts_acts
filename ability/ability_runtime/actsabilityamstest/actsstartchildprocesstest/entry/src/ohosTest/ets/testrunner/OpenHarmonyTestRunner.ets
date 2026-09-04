@@ -15,16 +15,17 @@
 
 import hilog from '@ohos.hilog';
 import TestRunner from '@ohos.application.testRunner';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { BusinessError } from '@ohos.base';
 
-let abilityDelegator;
-let abilityDelegatorArguments;
+let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = undefined;
+let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs | undefined = undefined;
 
 async function onAbilityCreateCallback() {
   hilog.info(0x0000, 'testTag', '%{public}s', 'onAbilityCreateCallback');
 }
 
-async function addAbilityMonitorCallback(err: any) {
+async function addAbilityMonitorCallback(err: BusinessError) {
   hilog.info(0x0000, 'testTag', 'addAbilityMonitorCallback : %{public}s', JSON.stringify(err) ?? '');
 }
 
@@ -41,23 +42,23 @@ export default class OpenHarmonyTestRunner implements TestRunner {
     abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
     abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
     let testAbilityName = abilityDelegatorArguments.bundleName + '.TestAbility';
-    let lMonitor = {
+    let lMonitor: AbilityDelegatorRegistry.AbilityMonitor = {
       abilityName: testAbilityName,
       onAbilityCreate: onAbilityCreateCallback,
     };
     abilityDelegator.addAbilityMonitor(lMonitor, addAbilityMonitorCallback);
     let cmd = 'aa start -d 0 -a TestAbility' + ' -b ' + abilityDelegatorArguments.bundleName;
-    let user = AbilityDelegatorRegistry.getArguments().parameters["-u"];
+    let user = AbilityDelegatorRegistry.getArguments().parameters['-u'];
     if(user !== undefined){
         cmd += ' -u ' + user;
     }
-    let debug = abilityDelegatorArguments.parameters['-D'];
+    let debug: string = abilityDelegatorArguments.parameters['-D'] as string;
     if (debug == 'true') {
       cmd += ' -D';
     }
     hilog.info(0x0000, 'testTag', 'cmd : %{public}s', cmd);
     abilityDelegator.executeShellCommand(cmd,
-      (err: any, d: any) => {
+      (err: BusinessError, d: AbilityDelegatorRegistry.ShellCmdResult) => {
         hilog.info(0x0000, 'testTag', 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
         hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.stdResult ?? '');
         hilog.info(0x0000, 'testTag', 'executeShellCommand : data : %{public}s', d.exitCode ?? '');

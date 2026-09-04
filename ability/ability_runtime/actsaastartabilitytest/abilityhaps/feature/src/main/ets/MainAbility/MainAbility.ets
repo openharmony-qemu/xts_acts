@@ -16,15 +16,18 @@
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
-import commonEvent from '@ohos.commonEvent';
+import Want from '@ohos.app.ability.Want';
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
+import commonEvent from '@ohos.commonEventManager';
+import commonEventManager from '@ohos.commonEventManager';
 
 const flag = '10000';
 const onDestroyEvent = `${flag}-onDestroyEvent`;
-const onForegroundEvent_feature = '10000-onForegroundEvent_feature';
-let lifeCircle: Array<string> = new Array();
+const onForegroundEventFeature = '10000-onForegroundEvent_feature';
+let lifeCircle: string[] = [];
 
 function publishEvent(event: string) {
-  let commonEventPublishData = {
+  let commonEventPublishData: commonEventManager.CommonEventPublishData = {
     parameters: {
       'flag': 'feature',
       'lifeCircle': lifeCircle
@@ -36,17 +39,17 @@ function publishEvent(event: string) {
 }
 
 export default class MainAbility extends UIAbility {
-  onCreate(want, launchParam) {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', flag + '-Ability onCreate');
     lifeCircle[0] = 'onCreate->';
   }
 
-  onDestroy() {
+  onDestroy(): void {
     hilog.info(0x0000, 'testTag', '%{public}s', flag + '-Ability onDestroy');
     publishEvent(onDestroyEvent);
   }
 
-  onWindowStageCreate(windowStage: window.WindowStage) {
+  onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
     lifeCircle[1] = 'onWindowStageCreate->';
@@ -68,7 +71,7 @@ export default class MainAbility extends UIAbility {
     // Ability has brought to foreground
     hilog.info(0x0000, 'testTag', '%{public}s', flag + '-Ability onForeground');
     lifeCircle[2] = 'onForeground';
-    publishEvent(onForegroundEvent_feature);
+    publishEvent(onForegroundEventFeature);
   }
 
   onBackground() {

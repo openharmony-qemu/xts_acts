@@ -42,11 +42,11 @@ export default class EntryAbility extends UIAbility {
     this.TEST_CASE_NAME = want.action as string;
     this.onCreateFlag = true
     if (this.TEST_CASE_NAME == 'SUB_Ability_AbilityRuntime_StartAndTerminate_StartAbility_5200') {
-      if (want.parameters?.keyForString === 'str' &&
-        want.parameters?.keyForInt === 100 &&
-        want.parameters?.keyForDouble === 99.99 &&
-        want.parameters?.keyForBool === true &&
-      DeepEquals.deepEqual(want.parameters.keyForObject, {
+      if (want.parameters.keyForString === 'str' &&
+        want.parameters.keyForInt === 100 &&
+        want.parameters.keyForDouble === 99.99 &&
+        want.parameters.keyForBool === true &&
+      DeepEquals.deepEqual(want.parameters?.keyForObject, {
         keyForObjectString: 'str',
         keyForObjectInt: -200,
         keyForObjectDouble: 35.5,

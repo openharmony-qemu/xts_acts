@@ -31,15 +31,17 @@ export class DeepEquals {
     }
 
     for (let key of keys1) {
-      if (!(key in obj2)) {
+      if (!(Object.keys(obj2).includes(key))) {
         return false;
       }
 
-      if (typeof obj1[key] === 'object' && typeof obj2[key] === 'object') {
-        if (!DeepEquals.deepEqual(obj1[key] as T, obj2[key] as T)) {
+      if (typeof (obj1 as Record<string, ESObject>)[key] === 'object' &&
+        typeof (obj2 as Record<string, ESObject>)[key] === 'object') {
+        if (!DeepEquals.deepEqual((obj1 as Record<string, ESObject>)[key] as T,
+          (obj2 as Record<string, ESObject>)[key] as T)) {
           return false;
         }
-      } else if (obj1[key] !== obj2[key]) {
+      } else if ((obj1 as Record<string, ESObject>)[key] !== (obj2 as Record<string, ESObject>)[key]) {
         return false;
       }
     }
