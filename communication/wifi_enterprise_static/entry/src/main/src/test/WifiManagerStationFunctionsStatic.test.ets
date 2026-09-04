@@ -51,6 +51,36 @@ export default function actsWifiManagerFunctionsTest() {
       done();
     });
     /**
+     * @tc.number SUB_Communication_WifiManager_removeCandidateConfig_0000
+     * @tc.name SUB_Communication_WifiManager_removeCandidateConfig_0000
+     * @tc.desc Test removeCandidateConfig with 异常操作
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_removeCandidateConfig_0000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_removeCandidateConfig_0000";
+      hilog.info(domain, tag, `${caseName} test start`);
+      let networkId: int = 500;
+      try {
+        //DTS2026071712031 接口removeCandidateConfig，调用该接口时若不在应用界面，返回401
+        await Utils.msSleep(5000);
+        await wifiManager.removeCandidateConfig(networkId);
+        hilog.info(domain, tag, `${caseName} removeCandidateConfig success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
      * @tc.number SUB_Communication_WifiManager_WifiStateChange_0040
      * @tc.name SUB_Communication_WifiManager_WifiStateChange_0040
      * @tc.desc WiFi state change listener full flow test.
