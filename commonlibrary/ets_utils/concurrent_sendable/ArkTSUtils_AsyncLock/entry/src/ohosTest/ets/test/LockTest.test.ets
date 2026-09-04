@@ -37,7 +37,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   exclusiveSingleTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0001
      * @tc.desc   checks exclusive single lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -51,7 +51,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   exclusiveMultiTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0002
      * @tc.desc   checks exclusive multiple locks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -65,7 +65,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   exclusiveMultiWorkerTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0003
      * @tc.desc   checks exclusive multiple locks in workers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -79,7 +79,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   sharedSingleTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0004
      * @tc.desc   checks shared single lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -93,7 +93,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   sharedMultiTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0005
      * @tc.desc   checks shared multiple locks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -107,7 +107,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   sharedMultiWorkerTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0006
      * @tc.desc   checks shared multiple locks in workers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -121,7 +121,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   isAvailableTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0007
      * @tc.desc   checks lock option isAvailable set true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -135,7 +135,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   isNotAvailableTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0008
      * @tc.desc   checks lock option isAvailable set false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -149,7 +149,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   queryTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0009
      * @tc.desc   checks lock query
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -163,7 +163,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   abortTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0010
      * @tc.desc   checks lock signal abort
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   twoLocksSingleTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0011
      * @tc.desc   checks two exclusive locks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -191,7 +191,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   twoThreadsAcquireOwnLocks
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0012
      * @tc.desc   checks two threads acquiring own exclusive locks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -205,7 +205,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   multipleWakeupTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0013
      * @tc.desc   checks multiple wake ups
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -219,7 +219,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   waitForLock
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0014
      * @tc.desc   checks wait for lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -233,7 +233,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   dontWaitForLock
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0015
      * @tc.desc   checks not waiting for lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -247,7 +247,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   sequentialLock
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0016
      * @tc.desc   checks sequentially acquiring locks
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -261,7 +261,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   sequentialLockWorkerTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0017
      * @tc.desc   checks sequentially acquiring locks in workers
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -275,7 +275,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   sequentialLockInf
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0018
      * @tc.desc   checks use of sequentially acquiring locks in Atomics
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -289,7 +289,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   sequentialLockUnlocked
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0019
      * @tc.desc   checks sequentially acquiring unlocked lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -303,7 +303,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   sequentialLockUnlocked1
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0020
      * @tc.desc   checks sequentially acquiring unlocked lock in a special case
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -317,7 +317,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   sequentialLockUnlocked3
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0021
      * @tc.desc   checks sequentially acquiring unlocked lock in yet another special case
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -331,7 +331,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   fourThreadsApplyForSameLockExclusive
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0022
      * @tc.desc   checks four threads applying same exclusive lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -345,7 +345,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   fourThreadsApplyForSameLockShared
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0023
      * @tc.desc   checks four threads applying same shared lock
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -359,7 +359,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   acquireLockTwiceSharedSharedAvailable
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0024
      * @tc.desc   checks acquiring lock twice with inner and outer mode shared and option isAvailable true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -373,7 +373,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   acquireLockTwiceSharedSharedNotAvailable
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0025
      * @tc.desc   checks acquiring lock twice with inner and outer mode shared and option isAvailable false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -387,7 +387,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   acquireLockTwiceSharedExclusiveAvailable
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0026
      * @tc.desc   checks acquiring lock twice with inner mode exclusive, outer mode shared and option isAvailable true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -401,7 +401,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   acquireLockTwiceSharedExclusiveNotAvailable
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0027
      * @tc.desc   checks acquiring lock twice with inner mode exclusive, outer mode shared and option isAvailable false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -415,7 +415,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   acquireLockTwiceExclusiveSharedAvailable
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_028
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0028
      * @tc.desc   checks acquiring lock twice with outer mode exclusive, inner mode shared and option isAvailable true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   acquireLockTwiceExclusiveSharedNotAvailable
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0029
      * @tc.desc   checks acquiring lock twice with outer mode exclusive, inner mode shared and option isAvailable false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -443,7 +443,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   acquireLockTwiceExclusiveExclusiveAvailable
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0030
      * @tc.desc   checks acquiring lock twice with inner and outer mode exclusive and option isAvailable true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -457,7 +457,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   acquireLockTwiceExclusiveExclusiveNotAvailable
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0031
      * @tc.desc   checks acquiring lock twice with inner and outer mode exclusive and option isAvailable true
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -471,7 +471,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   pressureTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0032
      * @tc.desc   checks many threads using async lock simultaneously
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -485,7 +485,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   disarmTimeoutTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_033
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0033
      * @tc.desc   checks that callback function is executed without errors after timeout
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -499,7 +499,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   disarmTimeoutLongAwaitTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_034
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0034
      * @tc.desc   checks that callback function can be properly executed and ends after 3 sec not rejected after 1 sec
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -513,7 +513,7 @@ export default function LockTest() {
 
     /**
      * @tc.name   doubleExitSharedLockTest
-     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_ASYNCLOCK_035
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ASYNC_LOCK_LOCK_TEST_0035
      * @tc.desc   checks that shared lock cannot be acquired in a worker after it is acquired twice in the main thread
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
