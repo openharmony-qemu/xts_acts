@@ -3,7 +3,6 @@
         "general": [],
         "custom": [
             {
-                "name": "entry",
                 "xts": [
                     "SystemCapability.DistributedDataManager.KVStore.DistributedKVStore"
                 ]
