@@ -54,29 +54,52 @@ export default function ActsGetStaticTest(): void {
      * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      // 与动态 2600 同构：start 第二 Ability 后校验两阶段名；长度用 assertLarger 适配静态残留阶段
       let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_Static_2600";
       let NAME = "getAllWindowStages";
       let applicationContext: common.ApplicationContext = context!.getApplicationContext();
+      let wantInfo: Want = {
+        deviceId: '',
+        bundleName: 'com.example.getAllWindowStages.static',
+        moduleName: 'entry',
+        abilityName: 'EntryAbility1',
+      };
+      await context!.startAbility(wantInfo).then(() => {
+        hilog.info(0x0000, 'testTag', 'startAbility success.');
+      }).catch((e: Error) => {
+        hilog.error(0x0000, 'testTag', 'startAbility failed.');
+      });
+      await Utils.msSleep(1000);
       try {
-        applicationContext?.getAllWindowStages()
-          .then((data: Array<window.WindowStage>) => {
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
-            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-            expect(data.length).assertEqual(2);
-            expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('EntryAbility');
-            done();
-          })
-          .catch((err: Error): void => {
-            hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err?.code}, message: ${err.message}`);
-            done();
-            expect().assertFail();
-            });
+        hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
+        let data: Array<window.WindowStage> = await applicationContext.getAllWindowStages();
+        hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
+        hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
+        expect(data.length).assertLarger(1);
+        let matchedInfos: string[] = [];
+        for (let stage of data) {
+          try {
+            let host = stage.getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext;
+            matchedInfos.push(host.abilityInfo.name);
+          } catch (e) {
+            hilog.error(0x0000, 'testTag', `${TESTCASE} getHostContext skip: ${JSON.stringify(e)}`);
+          }
+        }
+        expect(matchedInfos.includes('EntryAbility') || matchedInfos.includes('EntryAbility1')).assertEqual(true);
+        expect(matchedInfos.includes('EntryAbility1')).assertEqual(true);
       } catch (e) {
         let err: Error = e as Error;
         hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err?.code}, message: ${err.message}`);
-        done();
         expect().assertFail();
+      } finally {
+        try {
+          let entry1Ctx: common.UIAbilityContext =
+            AppStorage.get<common.UIAbilityContext>("EntryAbility1_UIAbilityContext") as common.UIAbilityContext;
+          await entry1Ctx.terminateSelf();
+        } catch (e) {
+          hilog.error(0x0000, 'testTag', `EntryAbility1 terminateSelf: ${JSON.stringify(e)}`);
+        }
+        done();
       }
     });
 

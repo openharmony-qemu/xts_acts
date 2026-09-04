@@ -14,6 +14,8 @@
 */
 
 import { describe, it, expect, beforeAll, afterEach, Level } from '@ohos/hypium';
+import { Driver, ON } from '@ohos.UiTest';
+
 import { BusinessError } from '@ohos.base';
 import { wantConstant } from '@kit.AbilityKit';
 import { appManager } from '@kit.AbilityKit';
@@ -35,7 +37,17 @@ function sleep(time: number) {
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
-    beforeAll((done: Function) => {
+    beforeAll(async (done: Function) => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
       mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model') == 'true';
       console.info('====> [test ]  mpEnable:' + mpEnable);

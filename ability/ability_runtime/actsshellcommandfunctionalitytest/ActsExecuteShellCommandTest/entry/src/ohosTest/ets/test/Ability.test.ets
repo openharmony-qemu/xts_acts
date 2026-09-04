@@ -14,6 +14,8 @@
  */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
+import { Driver, ON } from '@ohos.UiTest';
+
 import appManager from '@ohos.application.appManager';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { BusinessError } from '@ohos.base';
@@ -24,6 +26,18 @@ let user = abilityDelegatorArguments.parameters["-u"];
 
 export default function abilityTest() {
     describe('ACTS_ExecuteShellCommandTest', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
 
         /**
          * @tc.name   ACTS_ExecuteShellCommand_Callback_0100

@@ -14,6 +14,8 @@
 */
 
 import { describe, it, expect, beforeAll, Level } from '@ohos/hypium';
+import { Driver, ON } from '@ohos.UiTest';
+
 import { ChildProcessArgs, ChildProcessOptions, childProcessManager, common } from '@kit.AbilityKit';
 import fs from '@ohos.file.fs';
 import hilog from '@ohos.hilog';
@@ -27,6 +29,16 @@ export default function startArkChildProcess() {
     const PARAMETER_ERROR_CODE = 401;
     let context: common.UIAbilityContext;
     beforeAll(async (done: Function) => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       let driver = Driver.create()
       await driver.delayMs(2000)
       context = getContext() as common.UIAbilityContext;

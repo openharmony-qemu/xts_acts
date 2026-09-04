@@ -14,6 +14,8 @@
  */
 
 import hilog from '@ohos.hilog';
+import { Driver, ON } from '@ohos.UiTest';
+
 import { afterEach, beforeAll, describe, expect, it, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -37,7 +39,17 @@ let targetVersion: number = 12;
 
 export default function abilityDelegatorStage() {
   describe('abilityDelegatorStage', () => {
-    beforeAll((done: Function) => {
+    beforeAll(async (done: Function) => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700 beforeAll');
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();

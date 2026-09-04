@@ -23,6 +23,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import emitter from '@ohos.events.emitter';
 import bundle from '@ohos.bundle.bundleManager';
+import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let eventData: emitter.EventData = {
@@ -42,6 +43,16 @@ let TAG: string = 'AbilityDelegatorStageTest';
 export default function abilityDelegatorStage(): void {
   describe('abilityDelegatorStage', () => {
     beforeAll(async (done: () => void) => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
         'SUB_Ability_AbilityTools_AbilityDelegator_Stage_1270 beforeAll');
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();

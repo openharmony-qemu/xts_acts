@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import { hilog } from '@kit.PerformanceAnalysisKit';
+import { Driver, ON } from '@ohos.UiTest';
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { application, common, Want, wantConstant } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
@@ -26,6 +28,16 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async (done: Function) => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+
       try {
         const ability = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility()
         testContext = ability.context;

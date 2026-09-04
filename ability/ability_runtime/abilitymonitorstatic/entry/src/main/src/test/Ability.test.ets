@@ -21,6 +21,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import Utils from './Util.test';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function abilityTest(): void {
 
@@ -30,6 +31,18 @@ export default function abilityTest(): void {
   let TAG = "";
 
   describe('ActsAbilityMonitor', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
     afterEach(async (done: () => void) => {
       console.info(TAG + " afterEach each called");
       await Utils.msSleep(1500);
