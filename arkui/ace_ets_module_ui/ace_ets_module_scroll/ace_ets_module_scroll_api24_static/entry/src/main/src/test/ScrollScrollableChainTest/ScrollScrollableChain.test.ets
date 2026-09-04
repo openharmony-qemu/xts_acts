@@ -22,7 +22,6 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../../ets/MainAbility/common/Common';
 
 const PAGE = 'MainAbility/pages/scrollScrollableChain/scrollScrollableChain';
 const TITLE_ID = 'scrollCh_title';
@@ -83,7 +82,6 @@ export default function ScrollScrollableChainTest() {
       async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
-        await CommonFunc.sleep(1000);
         done();
       } catch (e) {
         arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
@@ -135,7 +133,7 @@ export default function ScrollScrollableChainTest() {
       async (done: () => void): Promise<void> => {
       try {
         const driver = Driver.create();
-        await CommonFunc.sleep(1000);
+        await Utils.sleep(1000);
         const wire = await driver.findComponent(ON.id('scrollCh_wire'));
         expect(!!wire).assertTrue();
         await (wire?.click() as Promise<void>);

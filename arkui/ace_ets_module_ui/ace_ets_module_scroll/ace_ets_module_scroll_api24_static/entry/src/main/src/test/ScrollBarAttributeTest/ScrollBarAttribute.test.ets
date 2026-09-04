@@ -22,7 +22,6 @@ import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import CommonFunc from '../../../../ets/MainAbility/common/Common';
 
 const PAGE = 'MainAbility/pages/scrollBarAttribute/scrollBarAttribute';
 const TITLE_ID = 'sbAttr_title';
@@ -80,7 +79,6 @@ export default function ScrollBarAttributeTest() {
       async (done: () => void): Promise<void> => {
       try {
         expect(!!await Driver.create().findComponent(ON.id(TITLE_ID))).assertTrue();
-        await CommonFunc.sleep(1000);
         done();
       } catch (e) {
         arkuiNewErr(SUITE, 'execute', 'FAIL | ' + e);
