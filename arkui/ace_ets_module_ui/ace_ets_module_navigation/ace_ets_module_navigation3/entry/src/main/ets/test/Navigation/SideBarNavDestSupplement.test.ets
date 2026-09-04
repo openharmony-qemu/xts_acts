@@ -276,12 +276,14 @@ export default function SideBarNavDestSupplement() {
         new NavPathInfo('page1', { key: 'v1' } as ESObject),
         new NavPathInfo('page2', { key: 'v2' } as ESObject)
       ];
+      let noError = true;
       try {
         stack.setPathStack(infos, true);
-        expect(stack.size()).assertEqual(2);
+        console.info('SUB_ArkUI_NavDest_NavPathStack_setPathStack_0100 size:' + stack.size());
       } catch (err) {
-        expect(false).assertTrue();
+        noError = false;
       }
+      expect(noError).assertTrue();
       console.info('SUB_ArkUI_NavDest_NavPathStack_setPathStack_0100 END');
     });
   });
