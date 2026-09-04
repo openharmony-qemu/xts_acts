@@ -29,7 +29,16 @@ export default {
       'api_brightness_value': { cat: 'api', status: 'null', help: 'Verify @system.brightness getValue/setValue (require SystemCapability.PowerManager.DisplayPowerManager.Lite; auto-skip as untested if unsupported)' },
       'api_brightness_mode': { cat: 'api', status: 'null', help: 'Verify @system.brightness getMode/setMode/setKeepScreenOn (require SystemCapability.PowerManager.DisplayPowerManager.Lite; auto-skip as untested if unsupported)' },
       'api_battery': { cat: 'api', status: 'null', help: 'Verify @system.battery getStatus (require SystemCapability.PowerManager.BatteryManager.Lite; auto-skip as untested if unsupported)' },
-      'api_nfc': { cat: 'api', status: 'null', help: 'Verify NFC HceService startHCE/on/sendResponse (require SystemCapability.Communication.NFC.CardEmulation; auto-skip as untested if unsupported)' }
+      'api_nfc': { cat: 'api', status: 'null', help: 'Verify NFC HceService startHCE/on/sendResponse (require SystemCapability.Communication.NFC.CardEmulation; auto-skip as untested if unsupported)' },
+      'api_vibrator': { cat: 'api', status: 'null', help: 'Verify @system.vibrator vibrate short/long (require SystemCapability.Sensors.MiscDevice.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_step': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeStepCounter returns step count (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_barometer': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeBarometer returns pressure (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_heartrate': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeHeartRate returns heart rate (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_onbody': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeOnBodyState returns wear state (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_accelerometer': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeAccelerometer returns x/y/z (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_sensor_gyroscope': { cat: 'api', status: 'null', help: 'Verify @system.sensor subscribeGyroscope returns x/y/z (require SystemCapability.Sensors.Sensor.Lite; auto-skip as untested if unsupported)' },
+      'api_location_info': { cat: 'api', status: 'null', help: 'Verify @system.geolocation getLocation/getLocationType/getSupportedCoordTypes (require SystemCapability.Location.Location.Lite; auto-skip as untested if unsupported)' },
+      'api_location_subscribe': { cat: 'api', status: 'null', help: 'Verify @system.geolocation subscribe/unsubscribe (require SystemCapability.Location.Location.Lite; auto-skip as untested if unsupported)' }
     }
   },
   onCreate() {

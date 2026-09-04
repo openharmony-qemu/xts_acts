@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="content-title">
+        <text class="title">PowerManager</text>
+        <input type="button" value="?" class="backBtnHelp" onclick="helpClicked" />
+    </div>
+    <list class="scroll-area">
+        <list-item class="litem" style="height:230px;">
+            <text class="box-title">电量 battery</text>
+            <text class="tip" show="{{!batSupported}}">{{ batTip }}</text>
+            <text class="result">当前电量: {{ batLevel }}%</text>
+            <text class="status-text">状态: {{ batStatus }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="获取电量" onclick="getBatInfo" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{batPassColor}};" type="button" value="pass" onclick="passBat" />
+                <input class="pfBtn" style="background-color:{{batFailColor}};" type="button" value="fail" onclick="failBat" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:290px;">
+            <text class="box-title">亮度值 brightness(value)</text>
+            <text class="tip" show="{{!brSupported}}">{{ brTip }}</text>
+            <text class="result">当前亮度值: {{ bvGetValue }}</text>
+            <slider class="sliderStyle" min="0" max="255" value="{{ bvValue }}" onclick="bvClickSlider" onchange="bvValueChange"></slider>
+            <text class="result">滑动条值: {{ bvValue }}  状态: {{ bvStatus }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="获取亮度" onclick="getBrightnessValue" />
+            </div>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{bvPassColor}};" type="button" value="pass" onclick="passBv" />
+                <input class="pfBtn" style="background-color:{{bvFailColor}};" type="button" value="fail" onclick="failBv" />
+            </div>
+        </list-item>
+        <list-item class="litem" style="height:335px;">
+            <text class="box-title">亮度模式 brightness(mode)</text>
+            <text class="tip" show="{{!brSupported}}">{{ brTip }}</text>
+            <text class="result">当前模式: {{ bmModeType }}</text>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="手动调" onclick="setBrightnessMode(0)" />
+                <input class="opBtn" type="button" value="自动调" onclick="setBrightnessMode(1)" />
+            </div>
+            <div class="op-row">
+                <text class="in-text">屏幕常亮：</text>
+                <switch class="keep-switch" checked="{{ bmKeepScreen }}" onchange="keepScreenChange"></switch>
+            </div>
+            <div class="op-row">
+                <input class="opBtn" type="button" value="获取模式" onclick="getBrightnessMode" />
+            </div>
+            <text class="status-text">状态: {{ bmStatus }}</text>
+            <div class="pf-row">
+                <input class="pfBtn" style="background-color:{{bmPassColor}};" type="button" value="pass" onclick="passBm" />
+                <input class="pfBtn" style="background-color:{{bmFailColor}};" type="button" value="fail" onclick="failBm" />
+            </div>
+        </list-item>
+    </list>
+    <div class="bottom-bt">
+        <input type="button" value="back" class="button" onclick="backClicked" />
+    </div>
+</div>
