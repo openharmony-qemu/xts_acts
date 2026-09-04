@@ -742,7 +742,7 @@ export default function dataShareConfigUnSubscribeTest() {
 
     /**
      * @tc.name   dataShareConfigUnSubscribeTest025
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_3500
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_3600
      * @tc.desc   maxValueLength: undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -773,7 +773,7 @@ export default function dataShareConfigUnSubscribeTest() {
 
     /**
      * @tc.name   dataShareConfigUnSubscribeTest026
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_3500
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_3700
      * @tc.desc   maxValueLength: 102401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -803,7 +803,7 @@ export default function dataShareConfigUnSubscribeTest() {
 
     /**
      * @tc.name   dataShareConfigUnSubscribeTest027
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_3500
+     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_3800
      * @tc.desc   maxValueLength: 4097
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
