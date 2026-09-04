@@ -1733,6 +1733,10 @@ export default function WebSocketTest() {
                   server.stop();
                   done();
                 }
+              }).catch((error: Error) => {
+                hilog.info(domain, tag, '%{public}s', caseName + 'connect fail!' + error);
+                ExpectFail();
+                done();
               });
             } else {
               ExpectFail();
