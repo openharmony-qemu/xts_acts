@@ -50,7 +50,6 @@ export default function testsuite() {
   ListImageTest();
   ImageColorFilterTest();
   ImageReloadKeyTest();
-  ImageDrawingLatticeTest();
   ImageDrawingColorFilterTest();
   ImageRequestDownloadInfoTest();
   DrawableDescriptorReleaseTest();

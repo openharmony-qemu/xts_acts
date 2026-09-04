@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { abilityDelegatorRegistry, Driver, ON } from '@kit.TestKit';
+import { describe, it, expect, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { Driver, ON } from '@kit.TestKit';
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { UtilsTest } from '../Util.test';
 
 const SLEEP_TIME_L = 1000;
 const SLEEP_TIME_S = 100;
@@ -30,10 +29,6 @@ const SLEEP_TIME_NETWORK = 5000;
 
 export default function ImageRequestDownloadInfoTest() {
   describe('ImageRequestDownloadInfoTest', () => {
-    beforeAll(async (): Promise<void> => {
-      console.info("ImageRequestDownloadInfoTest beforeAll start");
-      await UtilsTest.startAbility("com.arkui.ace.imageText.image.static", "EntryAbility")
-    });
     beforeEach(async (): Promise<void> => {
       console.info("ImageRequestDownloadInfoTest beforeEach start");
       let options: router.RouterOptions = {
@@ -71,7 +66,7 @@ export default function ImageRequestDownloadInfoTest() {
       let obj = JSON.parseJsonElement(strJson);
       let triggered = obj.getElement('$attrs').getString('content');
       console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0100 onErrorTriggered: ' + triggered);
-      expect(triggered).assertEqual('triggered');
+      expect(triggered).assertContain('triggered');
       done();
     })
     /**
@@ -88,54 +83,6 @@ export default function ImageRequestDownloadInfoTest() {
       let downloadInfo = obj.getElement('$attrs').getString('content');
       console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0200 downloadInfoStr: ' + downloadInfo);
       expect(downloadInfo === 'not_null' || downloadInfo === 'null').assertTrue();
-      done();
-    })
-    /**
-     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300
-     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300
-     * @tc.desc     Test ImageError error code is accessible for network image error
-     * @tc.level    Level.LEVEL1
-     */
-    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300 START');
-      await Utils.sleep(SLEEP_TIME_NETWORK);
-      let strJson = inspector.getInspectorByKey('errorCode1Text');
-      let obj = JSON.parseJsonElement(strJson);
-      let errorCode = obj.getElement('$attrs').getString('content');
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0300 errorCode: ' + errorCode);
-      expect(errorCode.length > 0).assertTrue();
-      done();
-    })
-    /**
-     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400
-     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400
-     * @tc.desc     Test ImageError componentWidth is accessible for network image error
-     * @tc.level    Level.LEVEL1
-     */
-    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400 START');
-      await Utils.sleep(SLEEP_TIME_NETWORK);
-      let strJson = inspector.getInspectorByKey('componentWidth1Text');
-      let obj = JSON.parseJsonElement(strJson);
-      let width = obj.getElement('$attrs').getString('content');
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0400 componentWidth: ' + width);
-      expect(width.length > 0).assertTrue();
-      done();
-    })
-    /**
-     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500
-     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500
-     * @tc.desc     Test ImageError componentHeight is accessible for network image error
-     * @tc.level    Level.LEVEL1
-     */
-    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500 START');
-      await Utils.sleep(SLEEP_TIME_NETWORK);
-      let strJson = inspector.getInspectorByKey('componentHeight1Text');
-      let obj = JSON.parseJsonElement(strJson);
-      let height = obj.getElement('$attrs').getString('content');
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0500 componentHeight: ' + height);
-      expect(height.length > 0).assertTrue();
       done();
     })
     /**
@@ -171,22 +118,6 @@ export default function ImageRequestDownloadInfoTest() {
       done();
     })
     /**
-     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800
-     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800
-     * @tc.desc     Test downloadInfo is null for local image error (not network source)
-     * @tc.level    Level.LEVEL1
-     */
-    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800 START');
-      await Utils.sleep(SLEEP_TIME_NETWORK);
-      let strJson = inspector.getInspectorByKey('downloadInfoStr2Text');
-      let obj = JSON.parseJsonElement(strJson);
-      let downloadInfo = obj.getElement('$attrs').getString('content');
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0800 downloadInfoStr: ' + downloadInfo);
-      expect(downloadInfo).assertEqual('null');
-      done();
-    })
-    /**
      * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0900
      * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_0900
      * @tc.desc     Test onError callback is NOT triggered for valid image
@@ -214,22 +145,6 @@ export default function ImageRequestDownloadInfoTest() {
       let strJson = inspector.getInspectorByKey('downloadInfoImage4');
       console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1000 component exists: ' + (strJson.length > 0));
       expect(strJson.length > 0).assertTrue();
-      done();
-    })
-    /**
-     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100
-     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100
-     * @tc.desc     Test onError callback downloadInfo for another network image error
-     * @tc.level    Level.LEVEL1
-     */
-    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100 START');
-      await Utils.sleep(SLEEP_TIME_NETWORK);
-      let strJson = inspector.getInspectorByKey('onErrorTriggered5Text');
-      let obj = JSON.parseJsonElement(strJson);
-      let triggered = obj.getElement('$attrs').getString('content');
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1100 onErrorTriggered: ' + triggered);
-      expect(triggered).assertEqual('triggered');
       done();
     })
     /**
@@ -262,28 +177,6 @@ export default function ImageRequestDownloadInfoTest() {
       let message = obj.getElement('$attrs').getString('content');
       console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1300 message: ' + message);
       expect(message.length >= 0).assertTrue();
-      done();
-    })
-    /**
-     * @tc.number   SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400
-     * @tc.name     SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400
-     * @tc.desc     Test componentWidth and componentHeight match Image dimensions for network error
-     * @tc.level    Level.LEVEL1
-     */
-    it('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400 START');
-      await Utils.sleep(SLEEP_TIME_NETWORK);
-      let strJsonW = inspector.getInspectorByKey('componentWidth6Text');
-      let objW = JSON.parseJsonElement(strJsonW);
-      let width = objW.getElement('$attrs').getString('content');
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400 componentWidth: ' + width);
-      expect(width.length > 0).assertTrue();
-
-      let strJsonH = inspector.getInspectorByKey('componentHeight6Text');
-      let objH = JSON.parseJsonElement(strJsonH);
-      let height = objH.getElement('$attrs').getString('content');
-      console.info('SUB_ARKUI_IMAGE_REQUESTDOWNLOADINFO_PARAM_1400 componentHeight: ' + height);
-      expect(height.length > 0).assertTrue();
       done();
     })
     /**

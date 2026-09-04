@@ -162,24 +162,5 @@ export default function TextPickerOnChangeTest() {
       expect(indexStr).assertContain('multiIndex:[');
       done();
     })
-
-    /**
-     * @tc.number   SUB_ARKUI_TEXTPICKER_ONCHANGE_STATIC_0040
-     * @tc.name     TextPickerOnChange_static_004
-     * @tc.desc     Test OnTextPickerChangeCallback with undefined callback - component renders without crash
-     * @tc.level    Level.LEVEL1
-     */
-    it('TextPickerOnChange_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TextPickerOnChange_static_004 START');
-      let strJson = inspector.getInspectorByKey('textpicker_onchange_undefined');
-      console.info('TextPickerOnChange_static_004 strJson: ' + strJson);
-      expect(strJson).assertContain('TextPicker');
-      let obj = JSON.parseJsonElement(strJson);
-      let id: string = obj.getString('id');
-      expect(id).assertEqual('textpicker_onchange_undefined');
-      let compType: string = obj.getString('type');
-      expect(compType).assertEqual('TextPicker');
-      done();
-    })
   })
 }

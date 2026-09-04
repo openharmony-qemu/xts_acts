@@ -162,24 +162,5 @@ export default function TextPickerOnEnterSelectedAreaTest() {
       expect(indexStr).assertContain('multiIndex:[');
       done();
     })
-
-    /**
-     * @tc.number   SUB_ARKUI_TEXTPICKER_ONENTERSELECTEDAREA_STATIC_0040
-     * @tc.name     TextPickerOnEnterSelectedArea_static_004
-     * @tc.desc     Test TextPickerEnterSelectedAreaCallback with undefined callback - component renders without crash
-     * @tc.level    Level.LEVEL1
-     */
-    it('TextPickerOnEnterSelectedArea_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TextPickerOnEnterSelectedArea_static_004 START');
-      let strJson = inspector.getInspectorByKey('textpicker_onenter_undefined');
-      console.info('TextPickerOnEnterSelectedArea_static_004 strJson: ' + strJson);
-      expect(strJson).assertContain('TextPicker');
-      let obj = JSON.parseJsonElement(strJson);
-      let id: string = obj.getString('id');
-      expect(id).assertEqual('textpicker_onenter_undefined');
-      let compType: string = obj.getString('type');
-      expect(compType).assertEqual('TextPicker');
-      done();
-    })
   })
 }

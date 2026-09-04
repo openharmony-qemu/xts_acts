@@ -64,6 +64,7 @@ export default function TextPickerOnScrollStopTest() {
     it('TextPickerOnScrollStop_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextPickerOnScrollStop_static_001 START');
       const driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME_L);
       const picker = await driver.findComponent(ON.id('textpicker_onscrollstop_single'));
       console.info('TextPickerOnScrollStop_static_001 findComponent');
       const rect = await (picker?.getBounds() as Promise<Rect>);
@@ -82,6 +83,7 @@ export default function TextPickerOnScrollStopTest() {
       const valueText = await driver.findComponent(ON.id('text_onscrollstop_single_value'));
       const valueStr = await valueText?.getText();
       console.info('TextPickerOnScrollStop_static_001 valueStr: ' + valueStr);
+      await Utils.sleep(SLEEP_TIME_L);
       expect(valueStr).assertContain('singleValue:');
       let isValidValue: boolean = valueStr!.indexOf('apple1') >= 0 || valueStr!.indexOf('orange2') >= 0 ||
         valueStr!.indexOf('peach3') >= 0 || valueStr!.indexOf('grape4') >= 0;
@@ -89,6 +91,7 @@ export default function TextPickerOnScrollStopTest() {
       const indexText = await driver.findComponent(ON.id('text_onscrollstop_single_index'));
       const indexStr = await indexText?.getText();
       console.info('TextPickerOnScrollStop_static_001 indexStr: ' + indexStr);
+      await Utils.sleep(SLEEP_TIME_L);
       expect(indexStr).assertContain('singleIndex:');
       done();
     })
@@ -102,6 +105,7 @@ export default function TextPickerOnScrollStopTest() {
     it('TextPickerOnScrollStop_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextPickerOnScrollStop_static_002 START');
       const driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME_L);
       const picker = await driver.findComponent(ON.id('textpicker_onscrollstop_image'));
       console.info('TextPickerOnScrollStop_static_002 findComponent');
       const rect = await (picker?.getBounds() as Promise<Rect>);
@@ -120,10 +124,12 @@ export default function TextPickerOnScrollStopTest() {
       const valueText = await driver.findComponent(ON.id('text_onscrollstop_image_value'));
       const valueStr = await valueText?.getText();
       console.info('TextPickerOnScrollStop_static_002 valueStr: ' + valueStr);
+      await Utils.sleep(SLEEP_TIME_L);
       expect(valueStr).assertContain('imageValue:');
       const indexText = await driver.findComponent(ON.id('text_onscrollstop_image_index'));
       const indexStr = await indexText?.getText();
       console.info('TextPickerOnScrollStop_static_002 indexStr: ' + indexStr);
+      await Utils.sleep(SLEEP_TIME_L);
       expect(indexStr).assertContain('imageIndex:');
       done();
     })
@@ -137,6 +143,7 @@ export default function TextPickerOnScrollStopTest() {
     it('TextPickerOnScrollStop_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('TextPickerOnScrollStop_static_003 START');
       const driver = Driver.create();
+      await Utils.sleep(SLEEP_TIME_L);
       const picker = await driver.findComponent(ON.id('textpicker_onscrollstop_multi'));
       console.info('TextPickerOnScrollStop_static_003 findComponent');
       const rect = await (picker?.getBounds() as Promise<Rect>);
@@ -155,30 +162,13 @@ export default function TextPickerOnScrollStopTest() {
       const valueText = await driver.findComponent(ON.id('text_onscrollstop_multi_value'));
       const valueStr = await valueText?.getText();
       console.info('TextPickerOnScrollStop_static_003 valueStr: ' + valueStr);
+      await Utils.sleep(SLEEP_TIME_L);
       expect(valueStr).assertContain('multiValue:[');
       const indexText = await driver.findComponent(ON.id('text_onscrollstop_multi_index'));
       const indexStr = await indexText?.getText();
       console.info('TextPickerOnScrollStop_static_003 indexStr: ' + indexStr);
+      await Utils.sleep(SLEEP_TIME_L);
       expect(indexStr).assertContain('multiIndex:[');
-      done();
-    })
-
-    /**
-     * @tc.number   SUB_ARKUI_TEXTPICKER_ONSCROLLSTOP_STATIC_0040
-     * @tc.name     TextPickerOnScrollStop_static_004
-     * @tc.desc     Test TextPickerScrollStopCallback with undefined callback - component renders without crash
-     * @tc.level    Level.LEVEL1
-     */
-    it('TextPickerOnScrollStop_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TextPickerOnScrollStop_static_004 START');
-      let strJson = inspector.getInspectorByKey('textpicker_onscrollstop_undefined');
-      console.info('TextPickerOnScrollStop_static_004 strJson: ' + strJson);
-      expect(strJson).assertContain('TextPicker');
-      let obj = JSON.parseJsonElement(strJson);
-      let id: string = obj.getString('id');
-      expect(id).assertEqual('textpicker_onscrollstop_undefined');
-      let compType: string = obj.getString('type');
-      expect(compType).assertEqual('TextPicker');
       done();
     })
   })

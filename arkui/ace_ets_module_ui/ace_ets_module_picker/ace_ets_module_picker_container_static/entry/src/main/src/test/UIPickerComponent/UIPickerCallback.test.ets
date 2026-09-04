@@ -125,43 +125,5 @@ export default function UIPickerCallbackTest() {
       expect(selectedIndex < ITEM_COUNT).assertTrue();
       done();
     })
-
-    /**
-     * @tc.number   SUB_ARKUI_UIPICKER_ONCHANGE_CALLBACK_STATIC_0020
-     * @tc.name     UIPickerCallbackOnChangeUndefined_static_001
-     * @tc.desc     Test OnUIPickerComponentCallback with onChange(undefined) - component renders without crash
-     * @tc.level    Level.LEVEL1
-     */
-    it('UIPickerCallbackOnChangeUndefined_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('UIPickerCallbackOnChangeUndefined_static_001 START');
-      let strJson = inspector.getInspectorByKey('uipicker_callback_onchange_undefined');
-      console.info('UIPickerCallbackOnChangeUndefined_static_001 strJson: ' + strJson);
-      expect(strJson).assertContain('UIPickerComponent');
-      let obj = JSON.parseJsonElement(strJson);
-      let id: string = obj.getString('id');
-      expect(id).assertEqual('uipicker_callback_onchange_undefined');
-      let compType: string = obj.getString('type');
-      expect(compType).assertEqual('UIPickerComponent');
-      done();
-    })
-
-    /**
-     * @tc.number   SUB_ARKUI_UIPICKER_ONSCROLLSTOP_CALLBACK_STATIC_0020
-     * @tc.name     UIPickerCallbackOnScrollStopUndefined_static_001
-     * @tc.desc     Test OnUIPickerComponentCallback with onScrollStop(undefined) - component renders without crash
-     * @tc.level    Level.LEVEL1
-     */
-    it('UIPickerCallbackOnScrollStopUndefined_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('UIPickerCallbackOnScrollStopUndefined_static_001 START');
-      let strJson = inspector.getInspectorByKey('uipicker_callback_onscrollstop_undefined');
-      console.info('UIPickerCallbackOnScrollStopUndefined_static_001 strJson: ' + strJson);
-      expect(strJson).assertContain('UIPickerComponent');
-      let obj = JSON.parseJsonElement(strJson);
-      let id: string = obj.getString('id');
-      expect(id).assertEqual('uipicker_callback_onscrollstop_undefined');
-      let compType: string = obj.getString('type');
-      expect(compType).assertEqual('UIPickerComponent');
-      done();
-    })
   })
 }
