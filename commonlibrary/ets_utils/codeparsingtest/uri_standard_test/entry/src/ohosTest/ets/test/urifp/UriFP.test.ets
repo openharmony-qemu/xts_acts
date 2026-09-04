@@ -14,7 +14,7 @@
  */
 
 import uri from '@ohos.uri';
-import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import {
   testAddEncodedSegmentPara001,
   testAddQueryValuePara001,
@@ -38,7 +38,7 @@ function sleep(ms: number) {
 
 export function UriFPTest() {
   describe('UriFPTest', () => {
-  beforeEach(() => {
+  beforeEach(async() => {
       await sleep(30);
     });
 
