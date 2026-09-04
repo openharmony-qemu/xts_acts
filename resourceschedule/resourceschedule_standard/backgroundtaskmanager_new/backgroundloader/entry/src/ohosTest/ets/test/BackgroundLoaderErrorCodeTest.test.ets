@@ -128,19 +128,17 @@ export default function BackgroundLoaderErrorCodeTest() {
         taskId: -1,
         abilityName: 'TestAbility'
       }
-      let unregisterSucceeded: boolean = false;
       try {
         backgroundLoader.unregisterTask(taskInfo);
-        unregisterSucceeded = true;
-        console.info(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400 unregisterTask success`);
+        console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400 unregisterTask unexpected success`);
+        expect(false).assertTrue();
+        done();
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_BACKGROUNDLOADER_ERROR_0400 unregisterTask failed. code is ${e.code} message is ${e.message}`);
         expect(e.code).assertEqual(9700004);
         done();
       }
-      expect(unregisterSucceeded).assertTrue();
-      done();
     })
 
     /**
