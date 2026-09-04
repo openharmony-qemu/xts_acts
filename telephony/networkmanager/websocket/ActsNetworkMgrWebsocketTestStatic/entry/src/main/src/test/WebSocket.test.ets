@@ -1679,14 +1679,13 @@ export default function WebSocketTest() {
             done();
           })
           let client: webSocket.WebSocket = webSocket.createWebSocket();
-          client.connect('ws://127.0.0.1:8099', (err: BusinessError<undefined> | null, value: boolean | undefined) => {
+          client.connect('ws://127.0.0.1:8099', (err: BusinessError<void> | null, value: boolean | undefined) => {
             if (value) {
               hilog.info(domain, tag, '%{public}s', caseName + 'connect success!');
-              let retryCount = 0;
-              const maxRetries = 20;
-              const trySend = (): void => {
-                let connections = server.listAllConnections();
-                if (connections && connections.length > 0) {
+              let connections = server.listAllConnections();
+              if (connections && connections.length > 0) {
+                hilog.info(domain, tag, '%{public}s', JSON.stringify(connections[0]) + ' connections');
+                try {
                   server.send("hello client", connections[0]).then((sendValue: boolean | undefined) => {
                     if (sendValue) {
                       ExpectTrue(sendValue !== null);
@@ -1709,17 +1708,17 @@ export default function WebSocketTest() {
                     hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
                     done();
                   });
-                } else if (retryCount < maxRetries) {
-                  retryCount++;
-                  setTimeout(trySend, 200);
-                } else {
-                  ExpectFail();
-                  server.stop();
-                  hilog.info(domain, tag, '%{public}s', caseName + 'test end!');
+                }
+                catch(err) {
+                  hilog.info(domain, tag, '%{public}s', caseName + 'send fail err code is : ' + err.code);
                   done();
                 }
-              };
-              trySend();
+
+              } else {
+                ExpectFail();
+                server.stop();
+                done();
+              }
             } else {
               ExpectFail();
               server.stop();
@@ -1733,6 +1732,7 @@ export default function WebSocketTest() {
           done();
         }
       });
+
 
     /**
      * @tc.name   testNetworkWebSocketServerSend_static_0200
