@@ -136,6 +136,7 @@ void addUsbDDkErrorCodeTest2(std::vector<napi_property_descriptor> &descData)
     descData.push_back({"ScsiPeripheralVerify10TASKABORTED", nullptr, ScsiPeripheralVerify10TASKABORTED, nullptr,
                         nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"UsbSerialInit", nullptr, UsbSerialInit, nullptr, nullptr, nullptr, napi_default, nullptr});
+    descData.push_back({"UsbSerialRelease", nullptr, UsbSerialRelease, nullptr, nullptr, nullptr, napi_default, nullptr});
     descData.push_back({"UsbSerialReleaseInitError", nullptr, UsbSerialReleaseInitError, nullptr, nullptr, nullptr,
                         napi_default, nullptr});
     descData.push_back({"UsbSerialCloseInitError", nullptr, UsbSerialCloseInitError, nullptr, nullptr, nullptr,
@@ -714,6 +715,15 @@ napi_value UsbSerialInit(napi_env env, napi_callback_info info)
     napi_value result;
     int32_t returnValue = OH_UsbSerial_Init();
     OH_UsbSerial_Release();
+    napi_create_int32(env, returnValue == USB_SERIAL_DDK_SUCCESS ? 0 : -1, &result);
+    return result;
+}
+
+napi_value UsbSerialRelease(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    OH_UsbSerial_Init();
+    int32_t returnValue = OH_UsbSerial_Release();
     napi_create_int32(env, returnValue == USB_SERIAL_DDK_SUCCESS ? 0 : -1, &result);
     return result;
 }

@@ -271,7 +271,7 @@ export default function ActsHidEmitCodeTest() {
     it('SUB_Driver_Ext_HidSynEventDropped_1100', Level.LEVEL0, async (done: Function) => {
       try {
         console.info("====>SUB_Driver_Ext_HidSynEventDropped_1100 start====");
-        let result: number = baskddkerror.HidSynEventReport();
+        let result: number = baskddkerror.HidSynEventDropped();
         expect(result).assertEqual(0);
         console.info("====>SUB_Driver_Ext_HidSynEventDropped_1100 result: " + result);
         done()
@@ -823,6 +823,27 @@ export default function ActsHidEmitCodeTest() {
         done()
       } catch (err) {
         console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYZ_3700 catch err: " + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYX_3800
+     * @tc.number SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYX_3800
+     * @tc.desc   Test HidCreateDeviceKeyCodeKEYX.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYX_3800', Level.LEVEL0, async (done: Function) => {
+      try {
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYX_3800 start====");
+        let result: number = baskddkerror.HidCreateDeviceKeyCodeKEYX();
+        expect(result >= 0).assertTrue();
+        console.info("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYX_3800 result: " + result);
+        done()
+      } catch (err) {
+        console.error("====>SUB_Driver_Ext_HidCreateDeviceKeyCodeKEYX_3800 catch err: " + err);
         expect().assertFail();
       }
     })

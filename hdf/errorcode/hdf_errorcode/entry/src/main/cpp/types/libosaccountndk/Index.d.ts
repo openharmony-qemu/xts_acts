@@ -213,6 +213,7 @@ export const ScsiPeripheralVerify10TASKSETFULL: (a: number) => number;
 export const ScsiPeripheralVerify10ACAACTIVE: (a: number) => number;
 export const ScsiPeripheralVerify10TASKABORTED: (a: number) => number;
 export const UsbSerialInit: () => number;
+export const UsbSerialRelease: () => number;
 export const UsbSerialReleaseInitError: () => number;
 export const UsbSerialCloseInitError: (a: number) => number;
 export const UsbSerialOpen: (a: number) => number;

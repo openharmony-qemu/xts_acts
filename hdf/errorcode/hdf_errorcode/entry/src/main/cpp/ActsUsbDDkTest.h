@@ -51,6 +51,7 @@ napi_value ScsiPeripheralVerify10TASKSETFULL(napi_env env, napi_callback_info in
 napi_value ScsiPeripheralVerify10ACAACTIVE(napi_env env, napi_callback_info info);
 napi_value ScsiPeripheralVerify10TASKABORTED(napi_env env, napi_callback_info info);
 napi_value UsbSerialInit(napi_env env, napi_callback_info info);
+napi_value UsbSerialRelease(napi_env env, napi_callback_info info);
 napi_value UsbSerialReleaseInitError(napi_env env, napi_callback_info info);
 napi_value UsbSerialCloseInitError(napi_env env, napi_callback_info info);
 napi_value UsbSerialOpen(napi_env env, napi_callback_info info);
