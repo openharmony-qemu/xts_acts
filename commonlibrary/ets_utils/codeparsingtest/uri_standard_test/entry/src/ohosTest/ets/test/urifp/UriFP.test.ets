@@ -32,9 +32,15 @@ import {
   testUriConstruction002
 } from './UriResource';
 
+function sleep(ms: number) {
+  return new Promise<void>((resolve, reject) => setTimeout(resolve, ms));
+}
+
 export function UriFPTest() {
   describe('UriFPTest', () => {
-
+  beforeEach(() => {
+      await sleep(30);
+    });
 
     /**
      * @tc.name   testUriConstruction001
