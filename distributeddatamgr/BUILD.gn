@@ -19,6 +19,7 @@ group("distributeddatamgr") {
       "DataObjectNoPermissionstest:DataObjectNoPermissionstest",
       "IntelligenceApiTest:ActsIntelligenceTest",
       "KvStoreEtsTestStatic:ActsKvStoreEtsStaticTest",
+      "KvStoreEtsTestPermissionStatic:ActsKvStoreEtsPermissionStaticTest",
       "PasteboardJSWithPermissionTest:ActsPasteBoardJSApiWithPermissionTest",
       "PasteboardNdkWithPermissionsTest:ActsPasteboardNapiWithPermissionTest",
       "PasteboardNoPermissionstest:PasteboardNoPermissionstest",
