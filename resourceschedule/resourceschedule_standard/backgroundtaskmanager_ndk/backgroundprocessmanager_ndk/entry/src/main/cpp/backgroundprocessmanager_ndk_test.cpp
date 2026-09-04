@@ -54,6 +54,35 @@ static napi_value SetProcessPriority(napi_env env, napi_callback_info info)
     return sum;
 }
 
+// 测试无效优先级值
+static napi_value SetProcessPriorityInvalid(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+
+    napi_valuetype valuetype1;
+    napi_typeof(env, args[1], &valuetype1);
+
+    int pid;
+    napi_get_value_int32(env, args[0], &pid);
+
+    int invalidPriority;
+    napi_get_value_int32(env, args[1], &invalidPriority);
+
+    // 直接传入无效的优先级值，测试NDK接口的错误处理
+    int ret = OH_BackgroundProcessManager_SetProcessPriority(
+        pid, (BackgroundProcessManager_ProcessPriority)invalidPriority);
+
+    napi_value sum;
+    napi_create_double(env, ret, &sum);
+    return sum;
+}
+
 //解除压制接口
 static napi_value ResetProcessPriority(napi_env env, napi_callback_info info)
 {

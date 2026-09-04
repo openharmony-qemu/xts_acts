@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -61,6 +61,28 @@ export default function ActsBackgroundProcessManagerNdkTest() {
         done();
       } catch (err) {
         console.error("SUB_Resourceschedule_BackgroundProcessManager_ResetProcessPriority_0100 catch err: " + err);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0200
+     * @tc.number SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0200
+     * @tc.desc   SetProcessPriority api with invalid priority value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0200', Level.LEVEL3, async (done: Function) => {
+      try {
+        console.info("====>SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0200 start====");
+        let childProcessPid = 33333;
+        let res: number = backgroundProcessManagerNdk.setProcessPriorityInvalid(childProcessPid, 99);
+        console.log("SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0200 res: " + res);
+        expect(res != 0).assertTrue();
+        done();
+      } catch (err) {
+        console.error("SUB_Resourceschedule_BackgroundProcessManager_SetProcessPriority_0200 catch err: " + err);
         done();
       }
     })

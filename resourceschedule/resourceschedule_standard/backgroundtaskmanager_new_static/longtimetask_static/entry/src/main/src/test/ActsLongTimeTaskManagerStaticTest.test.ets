@@ -3634,6 +3634,145 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800
+     * @tc.desc   Test that the ContinuousTaskRequest get wantAgent function normal call
+     * @tc.level  LEVEL3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800 begin---');
+
+        try {
+          wantAgent.getWantAgent(wantAgentInfo).then((want: _WantAgent) => {
+            let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+            continuousTaskRequest.wantAgent = want;
+            let getWant: _WantAgent = continuousTaskRequest.wantAgent;
+            console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800 Operation get wantAgent succeeded. getWant: ` + JSON.stringify(getWant));
+            expect(getWant !== undefined).assertTrue();
+            expect(getWant !== null).assertTrue();
+            done();
+          }).catch((error: Error) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800 getWantAgent error: %{public}s', JSON.stringify(error));
+            expect(false).assertTrue();
+            done();
+          })
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800 Operation get wantAgent failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8800 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8900
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8900
+     * @tc.desc   Test that the ContinuousTaskRequest get combinedTaskNotification function normal call
+     * @tc.level  LEVEL3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8900 begin---');
+
+        try {
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.combinedTaskNotification = false;
+          let getCombined: boolean | undefined = continuousTaskRequest.combinedTaskNotification;
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8900 Operation get combinedTaskNotification succeeded. getCombined: ` + JSON.stringify(getCombined));
+          expect(getCombined === false).assertTrue();
+
+          continuousTaskRequest.combinedTaskNotification = true;
+          getCombined = continuousTaskRequest.combinedTaskNotification;
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8900 Operation get combinedTaskNotification true succeeded. getCombined: ` + JSON.stringify(getCombined));
+          expect(getCombined === true).assertTrue();
+          done();
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8900 Operation get combinedTaskNotification failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_8900 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9000
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9000
+     * @tc.desc   Test that the ContinuousTaskRequest get continuousTaskId function normal call
+     * @tc.level  LEVEL3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9000 begin---');
+
+        try {
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          continuousTaskRequest.continuousTaskId = -1;
+          let getTaskId: int | undefined = continuousTaskRequest.continuousTaskId;
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9000 Operation get continuousTaskId succeeded. getTaskId: ` + JSON.stringify(getTaskId));
+          expect(getTaskId === -1).assertTrue();
+
+          continuousTaskRequest.continuousTaskId = 100;
+          getTaskId = continuousTaskRequest.continuousTaskId;
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9000 Operation get continuousTaskId 100 succeeded. getTaskId: ` + JSON.stringify(getTaskId));
+          expect(getTaskId === 100).assertTrue();
+          done();
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9000 Operation get continuousTaskId failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9000 end---');
+      })
+
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9100
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9100
+     * @tc.desc   Test that the ContinuousTaskRequest get progressInfo function normal call
+     * @tc.level  LEVEL3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done:() => void): Promise<void> => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9100 begin---');
+
+        try {
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          let progress: backgroundTaskManager.ProgressInfo = {
+            title: 'testTitle',
+            fileName: 'testFileName',
+            progressValue: 50,
+            isMute: false
+          };
+          continuousTaskRequest.progressInfo = progress;
+          let getProgress: backgroundTaskManager.ProgressInfo | undefined = continuousTaskRequest.progressInfo;
+          console.info(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9100 Operation get progressInfo succeeded. getProgress: ` + JSON.stringify(getProgress));
+          expect(getProgress !== undefined).assertTrue();
+          expect(getProgress!.title === 'testTitle').assertTrue();
+          expect(getProgress!.fileName === 'testFileName').assertTrue();
+          expect(getProgress!.progressValue === 50).assertTrue();
+          expect(getProgress!.isMute === false).assertTrue();
+          done();
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9100 Operation get progressInfo failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(false).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_9100 end---');
+      })
+
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
      * @tc.desc   Test that the stopBackgroundRunning callback function and errocode is 9800005
